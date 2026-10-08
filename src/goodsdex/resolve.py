@@ -149,7 +149,49 @@ CATEGORY_RULES = {
     "earphone": {"attrs": EARPHONE_ATTRS, "map": EARPHONE_MAP},
     "dryer": {"attrs": DRYER_ATTRS, "map": DRYER_MAP},
     "phone": {"attrs": PHONE_ATTRS, "map": PHONE_MAP},
+    # 通用家电/设备：不预设属性清单，而是**从实际采集到的参数动态建属性**。
+    # 85 个分类逐个手写映射表不可持续（且官方字段名会变），
+    # 但也不能乱归并 —— 动态属性用「原始字段名」作 attr_id，天然不跨类误合。
+    "generic": {"attrs": [], "map": {}, "dynamic": True},
 }
+
+# 通用品类下，这些字段属于元数据而非产品参数，不进动态属性
+_GENERIC_META = {
+    "name", "short_title", "sell_points", "gid", "commodity_id", "sku",
+    "price", "market_price", "img_url", "carousel", "attrs", "colors",
+    "evaluate_total", "evaluate_real", "review_tags", "buyer_imgs",
+    "qa_total", "qa_items", "desc", "buy_options", "pc_price",
+    "pc_market_price", "pc_tabs", "pc_imgs", "_params_empty",
+}
+
+
+def _generic_attrs_from(assertions) -> list[AttrDef]:
+    """从实际断言动态生成属性定义（按首次出现顺序，去重）。
+
+    只有真正出现在数据里的参数才会成为属性 —— 不为没有的字段造空位，
+    也不跨品类归并（attr_id 就是原始字段名，故不会与耳机/手机的 ID 相撞）。
+    """
+    seen, attrs = set(), []
+    for a in assertions:
+        f = a.attribute
+        if f in _GENERIC_META or f in seen or f.startswith("_"):
+            continue
+        seen.add(f)
+        # 值像数量的给 quantity，否则 text
+        unit = ""
+        m = re.search(r"(\d+(?:\.\d+)?)\s*(mAh|mL|L|ml|Pa|W|dB|mm|cm|kg|g|h|min|m³/min|rpm|英寸|寸|挡)"
+                      r"\s*$", str(a.raw_value))
+        vt = "quantity" if m else "text"
+        if m:
+            unit = m.group(2)
+        attrs.append(AttrDef(f, f, vt, unit))
+    return attrs
+
+
+def generic_map_from(assertions) -> dict:
+    """通用品类的映射：原始字段名 -> 自身"""
+    return {a.attribute: a.attribute for a in assertions
+            if a.attribute not in _GENERIC_META and not a.attribute.startswith("_")}
 
 
 def guess_category(text: str) -> str:
@@ -162,7 +204,8 @@ def guess_category(text: str) -> str:
     if re.search(r"Xiaomi\s*\d|小米\s*\d|REDMI\s*(K|Note|Turbo|\d)|Redmi\s*(K|Note|Turbo|\d)"
                  r"|MIX\s*(Fold|Flip|\d)|Civi\s*\d|红米\s*(K|Note)", t, re.I):
         return "phone"
-    return ""
+    # 其余一律走通用品类（动态属性），不因为没写映射表就丢数据
+    return "generic"
 
 
 # ---------------- 值解析 ----------------
@@ -330,8 +373,14 @@ def build_view(assertions: list[Assertion], category: str = "",
     if not cat:
         cat = guess_category(" ".join(str(a.raw_value) for a in assertions[:40]))
     rules = CATEGORY_RULES.get(cat, {})
-    amap: dict = rules.get("map", {})
-    adefs = {d.attr_id: d for d in rules.get("attrs", [])}
+    dynamic = bool(rules.get("dynamic"))
+    if dynamic:
+        # 通用品类：属性从实际断言动态生成，不预设清单也不造空位
+        amap = generic_map_from(assertions)
+        adefs = {d.attr_id: d for d in _generic_attrs_from(assertions)}
+    else:
+        amap: dict = rules.get("map", {})
+        adefs = {d.attr_id: d for d in rules.get("attrs", [])}
     v = View(subject_id=subject_id or (assertions[0].subject_id if assertions else ""))
 
     by_attr: dict[str, list[Assertion]] = {}
