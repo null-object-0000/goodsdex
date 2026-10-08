@@ -18,6 +18,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from .facts import Bundle, Capture, CaptureStatus, Subject
+from .identity import build_identity
 from .resolve import build_view, guess_category
 from .sources import mi_cn
 
@@ -37,11 +38,18 @@ def _trim_raw(raw: str) -> str:
 
 
 def collect_one(pid: str, name_hint: str = "", category: str = "",
-                discovery: dict | None = None) -> dict:
-    """采集单个商品，返回 {subject, captures, assertions, view}"""
-    subject = Subject(subject_id=f"mi_cn:product:{pid}", name=name_hint, market="CN",
-                      external_ids={"mi_cn.product_id": pid})
-    bundle = Bundle(subject=subject, discovery=discovery or {})
+                discovery: dict | None = None, variants: list | None = None) -> dict:
+    """采集单个商品（产品级），返回含身份、证据、断言、视图的记录"""
+    variants = variants or []
+    prod = build_identity(pid, variants, market="CN", source="mi_cn",
+                          category=category or "")
+    if not prod.name:
+        prod.name = name_hint
+
+    bundle = Bundle(subject=Subject(subject_id=prod.product_id, kind="product",
+                                    name=prod.name, market="CN",
+                                    external_ids=prod.external_ids),
+                    discovery=discovery or {})
 
     for fn in (mi_cn.fetch_mobile, mi_cn.fetch_pc):
         try:
@@ -60,15 +68,30 @@ def collect_one(pid: str, name_hint: str = "", category: str = "",
     # subject 名称以官方产品名为准
     for a in bundle.assertions:
         if a.attribute == "name" and a.raw_value:
-            subject.name = str(a.raw_value)
+            bundle.subject.name = str(a.raw_value)
             break
 
-    cat = category or guess_category(subject.name)
-    view = build_view(bundle.assertions, category=cat, subject_id=subject.subject_id)
-    return {"subject": subject.to_dict(),
+    cat = category or guess_category(bundle.subject.name)
+    prod.category = prod.category or cat
+    view = build_view(bundle.assertions, category=cat,
+                      subject_id=bundle.subject.subject_id)
+
+    # 变体级：价格与可购买属性挂在变体上（价格是时间序列，不是产品永久属性）
+    price_observations = []
+    for v in prod.variants:
+        if v.external_ids.get("mi_cn.commodity_id"):
+            price_observations.append({
+                "variant_id": v.variant_id, "name": v.name,
+                "attrs": v.attrs,
+                "external_ids": v.external_ids,
+            })
+
+    return {"product": prod.to_dict(),
             "captures": [c.to_dict() for c in bundle.captures],
             "assertions": [a.to_dict() for a in bundle.assertions],
-            "view": view.to_dict(), "discovery": bundle.discovery,
+            "view": view.to_dict(),
+            "market_prices": price_observations,
+            "discovery": bundle.discovery,
             "fetched_at": bundle.fetched_at}
 
 
@@ -77,12 +100,13 @@ def _summary(rec: dict) -> str:
     ok = sum(1 for c in caps if c["status"] == "success")
     bad = [c for c in caps if c["status"] not in ("success", "partial")]
     v = rec["view"]
-    name = rec["subject"].get("name") or "?"
+    name = rec["product"].get("name") or "?"
+    nvar = len(rec["product"].get("variants") or [])
     rej = f" 异常{len(bad)}" if bad else ""
-    return (f"  {'✓' if ok else '✗'} {name[:26]:28s} "
+    return (f"  {'✓' if ok else '✗'} {name[:24]:26s} 变体={nvar:<2d} "
             f"断言={len(rec['assertions']):3d} 视图值={len(v['values']):3d} "
             f"关系={len(v['relations']):2d} 缺口={len(v['gaps']):2d} "
-            f"[{ok}/{len(caps)}源成功]{rej}")
+            f"[{ok}/{len(caps)}源]{rej}")
 
 
 def run_category(category: str, limit: int = 0, max_pages: int = 20,
@@ -103,8 +127,8 @@ def run_category(category: str, limit: int = 0, max_pages: int = 20,
 
     out: list[dict] = []
     with ThreadPoolExecutor(max_workers=workers) as ex:
-        futs = {ex.submit(collect_one, p["pid"], p["name"], category, discovery): p
-                for p in prods}
+        futs = {ex.submit(collect_one, p["pid"], p["name"], category, discovery,
+                          p.get("variants")): p for p in prods}
         for f in as_completed(futs):
             p = futs[f]
             try:
@@ -116,7 +140,7 @@ def run_category(category: str, limit: int = 0, max_pages: int = 20,
             out.append(rec)
 
     # 稳定排序（并发完成顺序不确定，输出必须可复现）
-    out.sort(key=lambda r: r["subject"]["subject_id"])
+    out.sort(key=lambda r: r["product"]["product_id"])
     outdir.mkdir(parents=True, exist_ok=True)
     fp = outdir / f"{category}.json"
     tmp = fp.with_suffix(".json.tmp")
@@ -138,7 +162,7 @@ def run_pid(pid: str, outdir: Path = DEFAULT_OUT) -> dict:
     tmp.write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
     tmp.replace(fp)
     v = rec["view"]
-    print(f"{rec['subject'].get('name')} | 断言 {len(rec['assertions'])} | "
+    print(f"{rec['product'].get('name')} | 断言 {len(rec['assertions'])} | "
           f"视图值 {len(v['values'])} | 关系 {len(v['relations'])} | 缺口 {len(v['gaps'])}")
     print(f"-> {fp}")
     return rec

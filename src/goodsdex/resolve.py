@@ -44,6 +44,9 @@ EARPHONE_ATTRS = [
     AttrDef("driver", "发声单元", "text"),
     AttrDef("charge.time", "充电时间", "quantity", "min"),
     AttrDef("release.date", "发布日期", "text"),
+    AttrDef("weight.case", "充电盒重量", "quantity", "g"),
+    AttrDef("charge.fast", "快充", "text"),
+    AttrDef("form", "佩戴方式", "enum"),
 ]
 
 # 吹风机 / 家电
@@ -68,12 +71,16 @@ EARPHONE_MAP = {
     "整体续航": "battery.total", "总续航": "battery.total", "续航时间": "battery.total",
     "单耳重量": "weight.single", "单耳机净重": "weight.single",
     "整机重量": "weight.total", "含充电盒总重": "weight.total",
+    "产品净重（含充电盒）": "weight.total", "产品净重(含充电盒)": "weight.total",
+    "充电盒重量": "weight.case",
     "防尘防水": "water.ip", "防水防尘": "water.ip", "防护等级": "water.ip",
-    "蓝牙版本": "bt.version", "蓝牙": "bt.version",
+    "蓝牙版本": "bt.version", "蓝牙": "bt.version", "蓝牙版连接": "bt.version",
     "音频协议": "bt.codecs", "蓝牙编解码": "bt.codecs", "音频编码": "bt.codecs",
+    "蓝牙功能": "bt.codecs",
     "发音单元": "driver", "驱动单元": "driver", "发声单元": "driver",
-    "充电时间": "charge.time",
-    "发布日期": "release.date", "上市时间": "release.date",
+    "充电时间": "charge.time", "快充": "charge.fast",
+    "发布日期": "release.date", "上市时间": "release.date", "发布时间": "release.date",
+    "佩戴方式": "form", "产品形态": "form",
 }
 
 DRYER_MAP = {

@@ -105,8 +105,18 @@ def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
                 continue
             seen.add(pid)
             cl = g.get("commodity_list") or [{}]
-            rows.append({"pid": pid, "name": cl[0].get("name", ""),
-                         "price": cl[0].get("price"), "image": cl[0].get("image")})
+            rows.append({
+                "pid": pid,
+                "name": cl[0].get("name", ""),
+                "price": cl[0].get("price"),
+                "image": cl[0].get("image"),
+                # 保留全部变体：product_id 是产品级，commodity_id 才是可购买单位
+                "variants": [{"commodity_id": c.get("commodity_id"),
+                              "name": c.get("name"),
+                              "price": c.get("price"),
+                              "market_price": c.get("market_price"),
+                              "image": c.get("image")} for c in cl],
+            })
             new += 1
         if last_total is not None and len(rows) >= last_total:
             stop_reason = "reached_total"
