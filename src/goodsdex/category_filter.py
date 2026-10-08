@@ -40,19 +40,35 @@ FORM_RULES: dict[str, dict] = {
 
 
 def matches_category(name: str, category: str) -> tuple[bool, str]:
-    """判断商品名是否属于该分类。返回 (是否保留, 原因)"""
+    """判断商品名是否属于该分类。返回 (是否保留, 原因)
+
+    注意：匹数（1.5匹 / 3匹 / 5匹）必须按**数字边界**匹配 ——
+    朴素的子串匹配会让 "1.5匹" 命中排除词 "5匹"（实测踩过）。
+    """
     rule = FORM_RULES.get(category)
     if not rule:
         return True, "no_rule"
     n = name or ""
+
+    def hit(word: str) -> bool:
+        """匹数按数字边界匹配：'5匹' 不应匹配 '1.5匹'"""
+        m = re.fullmatch(r"(\d+(?:\.\d+)?)匹", word)
+        if m:
+            # 前面不能紧跟数字或小数点（避免 1.5匹 命中 5匹）
+            return re.search(rf"(?<![\d.]){re.escape(word)}", n) is not None
+        if word.isdigit() or re.fullmatch(r"\d+", word):
+            # 纯数字（如 "3"）也要数字边界
+            return re.search(rf"(?<!\d){re.escape(word)}(?!\d)", n) is not None
+        return word in n
+
     for w in rule.get("exclude", []):
-        if w in n:
+        if hit(w):
             return False, f"excluded_by:{w}"
     inc = rule.get("include", [])
     if not inc:
         return True, "include_empty"
     for w in inc:
-        if w in n:
+        if hit(w):
             return True, f"matched:{w}"
     return False, "no_include_match"
 

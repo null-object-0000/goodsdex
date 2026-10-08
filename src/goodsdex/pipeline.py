@@ -151,6 +151,22 @@ def run_category(category: str, limit: int = 0, max_pages: int = 20,
                 continue
             out.append(rec)
 
+    # 类型分流 + 分类形态过滤（搜索是模糊匹配，同义词互相污染）
+    from .kind import split_kinds
+    from .category_filter import filter_category
+    kinds = split_kinds(out)
+    machines = kinds["machines"]
+    kept, dropped = filter_category(machines, category)
+    if verbose and (len(dropped) or len(kinds["counts"]) > 1):
+        print(f"      类型分流: " + " ".join(
+            f"{k}={v}" for k, v in kinds["counts"].items() if v))
+        if dropped:
+            print(f"      形态过滤: 保留 {len(kept)} 排除 {len(dropped)}")
+    # 排除项不丢弃，随结果一起落盘（带 excluded_reason），便于复核
+    for d in dropped:
+        d["product"]["excluded"] = True
+    out = kept + dropped
+
     # 稳定排序（并发完成顺序不确定，输出必须可复现）
     out.sort(key=lambda r: r["product"]["product_id"])
     outdir.mkdir(parents=True, exist_ok=True)
