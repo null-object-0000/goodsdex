@@ -19,6 +19,7 @@ from pathlib import Path
 
 from .facts import Bundle, Capture, CaptureStatus, Subject
 from .identity import build_identity
+from .kind import classify_product_kind
 from .resolve import build_view, guess_category
 from .sources import mi_cn
 
@@ -73,6 +74,8 @@ def collect_one(pid: str, name_hint: str = "", category: str = "",
 
     cat = category or guess_category(bundle.subject.name)
     prod.category = prod.category or cat
+    # 类型分流：整机 vs 配件耗材 vs 服务（服务/耗材没有换代意义，不进代际表）
+    prod_kind = classify_product_kind(bundle.subject.name, cat)
     view = build_view(bundle.assertions, category=cat,
                       subject_id=bundle.subject.subject_id)
 
@@ -86,7 +89,9 @@ def collect_one(pid: str, name_hint: str = "", category: str = "",
                 "external_ids": v.external_ids,
             })
 
-    return {"product": prod.to_dict(),
+    pd = prod.to_dict()
+    pd["kind"] = prod_kind
+    return {"product": pd,
             "captures": [c.to_dict() for c in bundle.captures],
             "assertions": [a.to_dict() for a in bundle.assertions],
             "view": view.to_dict(),
