@@ -10,6 +10,7 @@
 from __future__ import annotations
 import argparse
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -26,8 +27,21 @@ from goodsdex.resolve import build_view, guess_category
 CATS = ROOT / "data" / "categories"
 
 
+# 非参数 tab（服务条款/安装须知等，不含规格）
+NON_SPEC_TAB = re.compile(r"售后|服务条款|安装须知|安装费用|保障|说明|政策|常见问题|推荐|评价")
+
+
 def find_spec_images(rec: dict) -> list[dict]:
-    """从一条记录里找「规格参数」tab 的图片（需要原始响应）"""
+    """从一条记录里找**规格参数图**。
+
+    实测发现：家电品类的 tab 命名没有统一规范 ——
+      空调: '规格参数'
+      冰箱: '256L(星锻银)' / '微冰鲜-十字门' / '十字-513L'（按型号命名的 tab）
+    所以不能只匹配"规格参数"这个名字。
+
+    策略：取所有**非服务类** tab 的图片（服务条款/安装须知等排除），
+    由视觉提取去判断内容是不是参数表。
+    """
     out = []
     for c in rec.get("captures") or []:
         if c.get("source") != "mi_cn_pc":
@@ -39,12 +53,14 @@ def find_spec_images(rec: dict) -> list[dict]:
             continue
         tabs = ((j.get("data") or {}).get("extend_info") or {}).get("desc_tabs_view") or []
         for ti, t in enumerate(tabs):
-            if t.get("name") != "规格参数":
+            nm = t.get("name") or ""
+            if NON_SPEC_TAB.search(nm):
                 continue
             for pi, blk in enumerate(t.get("tab_content") or []):
                 img = ((blk.get("plain_view") or {}).get("img") or "")
                 if img:
-                    out.append({"url": img, "tab_index": ti, "part_index": pi})
+                    out.append({"url": img, "tab_index": ti, "part_index": pi,
+                                "tab_name": nm})
     return out
 
 
