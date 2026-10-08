@@ -112,7 +112,12 @@ def extract_params_from_image(img_path: str, gateway: str = GATEWAY,
                     params[k] = str(v).strip()
         except Exception as e:
             errors.append(f"part{p['index']}: {type(e).__name__}: {e}")
-    return {"ok": bool(params), "params": params, "parts": parts, "errors": errors}
+    # 归一化：收敛同义写法、分离包装附件（否则无法跨商品对比）
+    from .vision_normalize import canonicalize_params
+    canon, aliases, accessories = canonicalize_params(params)
+    return {"ok": bool(canon), "params": canon, "raw_params": params,
+            "aliases": aliases, "accessories": accessories,
+            "parts": parts, "errors": errors}
 
 
 def _ask_vision(img_path: str, idx: int, total: int, gateway: str, key: str) -> dict:
@@ -146,8 +151,11 @@ def _ask_vision(img_path: str, idx: int, total: int, gateway: str, key: str) -> 
 
 
 def to_assertions(img_url: str, tab_index: int, part_index: int, params: dict,
-                  subject_id: str) -> tuple[list[Capture], list[Assertion]]:
-    """把视觉结果转成断言（来源可定位到具体图片片段）"""
+                  subject_id: str, aliases: dict | None = None) -> tuple[list[Capture], list[Assertion]]:
+    """把视觉结果转成断言（来源可定位到具体图片片段）。
+
+    属性名已归一化；aliases 记录 raw -> canonical 的映射，供复核。
+    """
     cap = Capture.make(SRC_VISION, img_url, json.dumps(params, ensure_ascii=False),
                        parser_version=PARSER_VERSION)
     out = []
@@ -158,7 +166,10 @@ def to_assertions(img_url: str, tab_index: int, part_index: int, params: dict,
             attribute=k, raw_value=v,
             locator=f"$.data.extend_info.desc_tabs_view[{tab_index}]"
                     f".tab_content[{part_index}].plain_view.img",
-            ui_location="规格参数", page="PC 商品详情页（图片）",
+            ui_location=("规格参数" + (
+                f"（归一化自 {len(aliases[k])} 种写法）"
+                if aliases and len(aliases.get(k, [])) > 1 else "")),
+            page="PC 商品详情页（图片）",
             parser_version=PARSER_VERSION))
     return [cap], out
 

@@ -1,0 +1,151 @@
+"""视觉属性归一化：把同一事实的不同写法收敛到一个属性 ID。
+
+实测问题（壁挂空调 4 台，97 个原始属性名）：
+  同一事实的多种写法：
+    额定制冷量(W) / 额定制冷量（W） / 额定制冷量 (W)
+    APF（GB 21455-2019 低温制冷实测） / APF（GB 21455-2019低温制冷实测）
+    内机净重（kg） / 内机净重 (kg)
+    定/变频 / 定频/变频
+  非规格内容混入（属于包装清单，不是参数）：
+    7号干电池 / 使用安装说明书 / 密封胶泥 / 排水嘴 / 穿墙帽 / 遥控器
+
+不归一化则无法跨商品对比 —— 这是视觉提取能否可用的决定性一环。
+
+原则：
+  - 归一化只做**规范化**（全半角/空格/括号统一），不做语义合并
+  - 语义别名需显式登记（有的确实是一个东西的不同叫法）
+  - 包装清单类**单独归到 accessories**，不混进规格参数
+  - 归一化映射可追溯：记录 raw_name -> canonical，便于复核
+"""
+from __future__ import annotations
+import re
+import unicodedata
+
+# ---------- 规范化 ----------
+
+_PUNCT = {
+    "（": "(", "）": ")", "［": "[", "］": "]", "：": ":", "，": ",",
+    "／": "/", "－": "-", "～": "~", "×": "x", "·": ".",
+}
+
+
+def normalize_name(name: str) -> str:
+    """只做字符规范化：全角->半角、去多余空格、统一括号。
+
+    不做语义合并 —— 语义别名见 ALIASES。
+    """
+    s = unicodedata.normalize("NFKC", str(name or ""))
+    for a, b in _PUNCT.items():
+        s = s.replace(a, b)
+    s = re.sub(r"\s+", "", s)          # 去所有空格（"净重 (kg)" -> "净重(kg)"）
+    s = s.strip("*").strip()
+    return s.lower()
+
+
+# ---------- 包装/附件（不是产品参数） ----------
+
+ACCESSORY_PAT = re.compile(
+    r"电池|说明书|胶泥|排水嘴|穿墙帽|护套|保护带|保护套|软管|螺丝|螺钉|支架|"
+    r"遥控器|清单|附件|随附|包装|水管|排水管|新风管|压管板|7号|干电池|"
+    r"依据国家标准|生产者名称|生产者地址|执行标准")
+
+
+def is_accessory(name: str) -> bool:
+    """判断该字段是否是包装清单/附件，而非产品规格"""
+    return bool(ACCESSORY_PAT.search(str(name or "")))
+
+
+# ---------- 语义别名（显式登记，只收真同一个东西） ----------
+
+ALIASES = {
+    # 能效
+    "能效": "能效等级", "能效级别": "能效等级", "能效等级": "能效等级",
+    "apf值": "能效APF", "apf": "能效APF",
+    "apf(gb21455-2019低温制冷实测)": "能效APF",
+    "apf(gb21455-2019低温制冷实测值)": "能效APF",
+    "全年能源消耗效率[(w.h)/(w.h)]": "能效APF",
+    # 冷暖
+    "制冷类型": "冷暖类型", "冷暖类型": "冷暖类型",
+    "定频/变频": "变频类型", "定/变频": "变频类型",
+    # 冷热量
+    "额定制冷量(w)": "额定制冷量", "制冷量(整机)": "额定制冷量",
+    "额定制热量(w)": "额定制热量", "制热量(整机)": "额定制热量",
+    "额定制冷功率(w)": "额定制冷功率",
+    "额定制热功率(w)": "额定制热功率",
+    "循环风量(m³/h)": "循环风量",
+    # 噪音
+    "室内机噪音(db(a))(高风-强力)": "室内机噪音",
+    "室内机噪音(db(a))": "室内机噪音",
+    "室外机噪音(db(a))(强力)": "室外机噪音",
+    "室外机噪音(db(a))": "室外机噪音",
+    # 尺寸重量
+    "内机尺寸(宽x高x深)mm": "内机尺寸", "内机尺寸": "内机尺寸",
+    "外机尺寸(宽x高x深)mm": "外机尺寸", "外机尺寸": "外机尺寸",
+    "内机净重(kg)": "内机净重", "外机净重(kg)": "外机净重",
+    "室内机": "室内机重量规格", "室外机": "室外机重量规格",
+    # 其他
+    "整机型号": "型号",
+    "款式": "机型款式",
+    "适用面积": "适用面积",
+    "匹数": "匹数",
+    "控制方式": "控制方式",
+    "扫风方式": "扫风方式",
+}
+
+
+def canonical(name: str) -> tuple[str, dict]:
+    """返回 (规范属性名, 归一化信息)。
+
+    归一化信息记录原始名与所用规则，便于复核与回退。
+    """
+    raw = str(name or "")
+    norm = normalize_name(raw)
+    if is_accessory(raw):
+        return "", {"raw": raw, "normalized": norm, "kind": "accessory"}
+    # 语义别名（按规范化后的名字查）
+    canon = ALIASES.get(norm)
+    if canon:
+        return canon, {"raw": raw, "normalized": norm, "kind": "alias",
+                       "rule": f"{norm} -> {canon}"}
+    # 去单位后缀，得到一个更稳定的名字（如 "额定制冷量(...)" -> 已由别名处理）
+    return norm, {"raw": raw, "normalized": norm, "kind": "normalized"}
+
+
+def canonicalize_params(params: dict) -> tuple[dict, dict, dict]:
+    """把 {原始名: 值} 归一化。
+
+    返回 (规范参数, 别名记录, 附件记录)
+      - 规范参数: {规范名: 值}
+      - 别名记录: {规范名: [原始名, ...]}  —— 可追溯
+      - 附件记录: {原始名: 值}            —— 单独存放，不混入规格
+    """
+    out, aliases, accessories = {}, {}, {}
+    for k, v in (params or {}).items():
+        canon, info = canonical(k)
+        if info["kind"] == "accessory" or not canon:
+            accessories[k] = v
+            continue
+        aliases.setdefault(canon, [])
+        if info["raw"] not in aliases[canon]:
+            aliases[canon].append(info["raw"])
+        # 同义字段合并时，保留信息量更大的值（更长的那个）
+        if canon in out and len(str(out[canon])) >= len(str(v)):
+            continue
+        out[canon] = v
+    return out, aliases, accessories
+
+
+# ---------- 品类专属：属性优先级（对比时用哪些） ----------
+
+# 空调的对比关键属性（按重要性）
+AC_KEY_ATTRS = [
+    "匹数", "能效等级", "能效APF", "冷暖类型", "变频类型",
+    "额定制冷量", "额定制热量", "额定制冷功率", "额定制热功率",
+    "循环风量", "室内机噪音", "室外机噪音",
+    "内机尺寸", "外机尺寸", "内机净重", "外机净重",
+    "适用面积", "控制方式", "扫风方式", "机型款式", "型号",
+]
+
+CATEGORY_KEY_ATTRS = {
+    "空调": AC_KEY_ATTRS,
+}

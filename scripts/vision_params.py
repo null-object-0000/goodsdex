@@ -93,7 +93,8 @@ def main() -> int:
                       + (f" 错误{len(res['errors'])}" if res["errors"] else ""))
                 caps, asserts = to_assertions(im["url"], im["tab_index"],
                                               im["part_index"], res["params"],
-                                              r["product"]["product_id"])
+                                              r["product"]["product_id"],
+                                              aliases=res.get("aliases"))
                 all_caps += caps
                 all_asserts += asserts
                 all_params.update(res["params"])
