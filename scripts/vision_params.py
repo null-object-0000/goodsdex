@@ -70,6 +70,13 @@ def main() -> int:
     ap.add_argument("--category", help="对某分类批量抽取")
     ap.add_argument("--limit", type=int, default=3)
     ap.add_argument("--write", action="store_true", help="把视觉断言合并回分类文件")
+    ap.add_argument("--min-keep", type=int, default=2, help="每台至少保留几张候选图")
+    ap.add_argument("--max-keep", type=int, default=10, help="每台最多保留几张候选图")
+    ap.add_argument("--per-tab", type=int, default=2, help="每个 tab 最多保留几张")
+    ap.add_argument("--min-params", type=int, default=8,
+                    help="接口已有多少项参数就跳过（默认 8）")
+    ap.add_argument("--no-preselect", action="store_true",
+                    help="不做预筛（成本高，仅在排查时用）")
     a = ap.parse_args()
 
     if a.category:
@@ -84,25 +91,34 @@ def main() -> int:
         tmp = tempfile.mkdtemp(prefix="gd-vision-")
         for r in targets:
             name = r["product"]["name"]
-            # 已有参数的跳过
-            vals = (r.get("view") or {}).get("values") or {}
-            if vals.get("_params_empty") is not True and len(vals) > 25:
-                print(f"  跳过（接口已有参数）: {name[:36]}")
+            # 跳过条件必须看**真实参数数**，不是视图值总数 ——
+            # 实测教训：视图值 25-44 主要是元数据（图片/评价/问答），
+            # 用它当阈值会把 12 台需要视觉提取的冰箱误判为"已有参数"。
+            from vision_params_lib import count_real_params
+            nparam = count_real_params(r)
+            if nparam >= a.min_params:
+                print(f"  跳过（接口已有 {nparam} 项参数）: {name[:36]}")
                 continue
             imgs = find_spec_images(r)
             if not imgs:
                 print(f"  无规格参数图: {name[:36]}")
                 continue
-            print(f"  {name[:36]}  规格图 {len(imgs)} 张")
+            # 零成本预筛：不做这步会按 100 张/台全量调视觉（实测冰箱），
+            # 成本高 20 倍。预筛只减少候选，不判定。
+            if not a.no_preselect:
+                from img_preselect import preselect
+                keep, pst = preselect(imgs, str(Path(tmp) / "pre"),
+                                      min_keep=a.min_keep, max_keep=a.max_keep,
+                                      per_tab=a.per_tab)
+                print(f"  {name[:36]}  规格图 {pst['unique']} 张 -> 预筛保留 {pst['kept']} 张"
+                      f"（筛掉 {pst['dropped']}）")
+                imgs = keep
+            else:
+                print(f"  {name[:36]}  规格图 {len(imgs)} 张（未预筛）")
             all_params, all_caps, all_asserts = {}, [], []
             t0 = time.time()
             for im in imgs:
-                tgt = im["url"]
-                if tgt.startswith("http"):
-                    lp = Path(tmp) / f"{len(all_params)}_{im['part_index']}.jpg"
-                    subprocess.run(["curl", "-sS", "-m", "40", "-o", str(lp), tgt],
-                                   capture_output=True)
-                    tgt = str(lp)
+                tgt = im.get("local") or im["url"]
                 res = extract_params_from_image(tgt, outdir=tmp)
                 n = len(res["params"])
                 print(f"     图{im['part_index']}: {n} 项"

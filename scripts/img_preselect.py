@@ -92,10 +92,14 @@ def download(url: str, outdir: str, timeout: int = 30) -> str | None:
 
 
 def preselect(imgs: list[dict], outdir: str, min_keep: int = 2,
-              max_keep: int = 6) -> tuple[list[dict], dict]:
+              max_keep: int = 6, per_tab: int = 2) -> tuple[list[dict], dict]:
     """从候选图中挑出最可能含规格表的，返回 (保留, 统计)
 
     imgs: [{url, tab_index, part_index, tab_name}]
+
+    关键：**按 tab 分配配额**。实测教训 —— 冰箱有 5 个型号 tab，
+    若全局取 top-N，某个 tab 的长图会挤占全部名额，
+    导致其他型号的参数完全提取不到（微冰鲜系列只拿到 4 项质保信息）。
     """
     # 去重（同 URL 只留一次）
     seen, uniq = set(), []
@@ -120,16 +124,30 @@ def preselect(imgs: list[dict], outdir: str, min_keep: int = 2,
         im2["is_spec_like"] = looks_like_spec(pr)
         scored.append(im2)
 
-    keep = [x for x in scored if x["is_spec_like"]][:max_keep]
-    # 保底：如果筛得太狠，补上长宽比最大的几张（规格表通常是长图）
+    # 按 tab 分组，每组内优先取"像规格表"的，再按长宽比降序
+    by_tab: dict = {}
+    for x in scored:
+        by_tab.setdefault(x["tab_index"], []).append(x)
+
+    keep = []
+    for ti, group in by_tab.items():
+        spec = [x for x in group if x["is_spec_like"]]
+        rest = sorted([x for x in group if not x["is_spec_like"]],
+                      key=lambda x: -x["profile"]["aspect"])
+        picked = (spec + rest)[:per_tab]
+        keep += picked
+    # 全局上限
+    if len(keep) > max_keep:
+        keep = keep[:max_keep]
+    # 保底
     if len(keep) < min_keep:
-        rest = sorted([x for x in scored if not x["is_spec_like"]],
+        rest = sorted([x for x in scored if x not in keep],
                       key=lambda x: -x["profile"]["aspect"])
         keep += rest[:min_keep - len(keep)]
 
     stats = {"total": len(imgs), "unique": len(uniq), "profiled": len(scored),
-             "kept": len(keep),
-             "dropped": len(scored) - len(keep)}
+             "kept": len(keep), "dropped": len(scored) - len(keep),
+             "tabs": len(by_tab)}
     return keep, stats
 
 
