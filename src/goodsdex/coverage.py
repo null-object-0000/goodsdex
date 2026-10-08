@@ -33,6 +33,7 @@ def coverage_report(records: list[dict], category: str = "") -> dict:
     capture_ok = capture_total = 0
     locatable = total_assertions = 0
     unresolved = 0
+    rate_limited = other_fail = 0
 
     for r in records:
         name = r["product"].get("name") or r["product"]["product_id"]
@@ -50,6 +51,10 @@ def coverage_report(records: list[dict], category: str = "") -> dict:
         caps = r.get("captures") or []
         capture_total += len(caps)
         capture_ok += sum(1 for c in caps if c.get("status") == "success")
+        # 限流是「我们没拿到」，与「官方没提供」必须分开计
+        rate_limited += sum(1 for c in caps if c.get("status") == "rate_limited")
+        other_fail += sum(1 for c in caps
+                          if c.get("status") not in ("success", "rate_limited"))
 
         asserts = r.get("assertions") or []
         total_assertions += len(asserts)
@@ -79,6 +84,8 @@ def coverage_report(records: list[dict], category: str = "") -> dict:
                       "total": len(key_attrs)},
         "summary": {
             "capture_success_rate": round(capture_ok / max(capture_total, 1), 3),
+            "rate_limited": rate_limited,
+            "other_failures": other_fail,
             "locatable_evidence_rate": round(locatable / max(total_assertions, 1), 3),
             "identity_verified_rate": round(
                 sum(1 for v in per_product.values()
@@ -97,7 +104,10 @@ def render_report(rep: dict) -> str:
     lines = [
         f"品类: {rep['category']}  |  商品数: {rep['products']}  |  schema: {rep['schema_version']}",
         "",
-        f"采集成功率        {s['capture_success_rate']:.0%}",
+        f"采集成功率        {s['capture_success_rate']:.0%}"
+        + (f"   （被限流 {s.get('rate_limited',0)} 次，"
+           f"其他失败 {s.get('other_failures',0)} 次）"
+           if s.get("rate_limited") or s.get("other_failures") else ""),
         f"可定位证据率      {s['locatable_evidence_rate']:.0%}",
         f"身份确认率        {s['identity_verified_rate']:.0%}",
         f"关键属性覆盖率    {s['key_attr_coverage_avg']:.0%}  (分母={rep['key_attrs']['total']} 项 schema 属性)",

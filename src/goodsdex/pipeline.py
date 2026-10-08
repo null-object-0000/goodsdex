@@ -31,6 +31,13 @@ DEFAULT_OUT = Path("data")
 RAW_SNAPSHOT_LIMIT = 300_000
 
 
+# 分类名 -> 安全文件名（含 / \ : * ? " < > | 等字符时替换）
+_UNSAFE = str.maketrans({c: "_" for c in '/\\:*?"<>|'})
+
+def safe_filename(name: str) -> str:
+    return (name or "unnamed").translate(_UNSAFE).strip() or "unnamed"
+
+
 def _trim_raw(raw: str) -> str:
     if len(raw) <= RAW_SNAPSHOT_LIMIT:
         return raw
@@ -147,7 +154,9 @@ def run_category(category: str, limit: int = 0, max_pages: int = 20,
     # 稳定排序（并发完成顺序不确定，输出必须可复现）
     out.sort(key=lambda r: r["product"]["product_id"])
     outdir.mkdir(parents=True, exist_ok=True)
-    fp = outdir / f"{category}.json"
+    # 分类名可能含 / 等路径分隔符（如「毛巾/浴巾」），必须转义，
+    # 否则会被当成目录层级，写文件时报 FileNotFoundError
+    fp = outdir / f"{safe_filename(category)}.json"
     tmp = fp.with_suffix(".json.tmp")
     tmp.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     tmp.replace(fp)          # 原子替换，避免写一半崩掉

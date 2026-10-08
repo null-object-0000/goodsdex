@@ -45,11 +45,48 @@ SRC_M = "mi_cn_mobile"
 SRC_P = "mi_cn_pc"
 PARSER_VERSION = "mi_cn-v2"
 
+# PC 源限流熔断（进程内）：连续 429 达阈值即开路，避免持续无效请求
+PC_BREAKER_THRESHOLD = 5
+_PC_BREAKER = {"fails": 0, "tripped": False, "reason": ""}
 
-def _get(url: str, timeout: int = 25) -> str:
-    req = urllib.request.Request(url, headers={
-        "User-Agent": UA_PC, "Referer": "https://www.mi.com/", "Accept": "*/*"})
-    return urllib.request.urlopen(req, timeout=timeout).read().decode("utf-8", "ignore")
+
+def breaker_status() -> dict:
+    return dict(_PC_BREAKER)
+
+
+def reset_breaker() -> None:
+    _PC_BREAKER.update({"fails": 0, "tripped": False, "reason": ""})
+
+
+def _get(url: str, timeout: int = 25, retries: int = 3,
+         backoff: float = 1.5) -> str:
+    """HTTP GET，带 429/5xx 退避重试。
+
+    官方接口会限流（实测 HTTP 429）—— 这不是"没有数据"，
+    必须重试；重试用尽才向上抛，由调用方记录为 transport_error。
+    """
+    import time
+    last = None
+    for attempt in range(retries + 1):
+        req = urllib.request.Request(url, headers={
+            "User-Agent": UA_PC, "Referer": "https://www.mi.com/", "Accept": "*/*"})
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read().decode("utf-8", "ignore")
+        except urllib.error.HTTPError as e:
+            last = e
+            if e.code in (429, 500, 502, 503, 504) and attempt < retries:
+                # 限流/临时故障 -> 指数退避后重试
+                time.sleep(backoff ** (attempt + 1))
+                continue
+            raise
+        except Exception as e:
+            last = e
+            if attempt < retries:
+                time.sleep(backoff ** (attempt + 1))
+                continue
+            raise
+    raise last
 
 
 def _jsonp(raw: str) -> dict:
@@ -81,6 +118,7 @@ def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
     import time
     seen, rows, page = set(), [], 1
     last_total = None
+    empty_pages = 0
     stop_reason = "unknown"
     while page <= max_pages:
         q = {"query": query, "page_index": page, "page_size": page_size,
@@ -96,8 +134,16 @@ def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
         if total is not None:
             last_total = total
         if not groups:
-            stop_reason = "empty_page"
-            break
+            # total 是全局匹配数，pc_list 才是本页可售结果 ——
+            # total>0 而 pc_list 空表示该词下没有在售商品（下架/售罄），
+            # 不是"还能翻页"。容忍一页空响后停止。
+            empty_pages += 1
+            if empty_pages >= 2 or page == 1:
+                stop_reason = "no_sellable_items" if last_total else "empty_page"
+                break
+            page += 1
+            continue
+        empty_pages = 0
         new = 0
         for g in groups:
             pid = g.get("product_id")
@@ -129,7 +175,10 @@ def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
     else:
         stop_reason = "max_pages_reached"
 
-    if last_total is not None and len(rows) >= last_total:
+    if stop_reason == "no_sellable_items":
+        # 明确：搜索命中 total 条，但没有在售商品
+        completeness = "no_sellable_items"
+    elif last_total is not None and len(rows) >= last_total:
         completeness = "complete"
     elif rows and stop_reason in ("max_pages_reached", "no_new_items"):
         completeness = "partial"      # 达到页数上限或分页异常，不能声称完整
@@ -281,11 +330,40 @@ def fetch_pc(pid: str) -> tuple[list[Capture], list[Assertion]]:
     url = f"{VIEW_URL}?product_id={pid}&version=2"
     captures: list[Capture] = []
     out: list[Assertion] = []
+    # 限流熔断：连续多次 429 说明已被 IP 级限流，继续打只会更糟。
+    # 标为 rate_limited（区别于"源未提供"），并让调用方跳过后续 PC 请求。
+    if _PC_BREAKER["tripped"]:
+        captures.append(Capture.make(
+            "mi_cn_pc", url, "", status=CaptureStatus.RATE_LIMITED,
+            error=f"circuit open: {_PC_BREAKER['reason']}"))
+        return captures, out
     try:
         raw = _get(url)
+    except urllib.error.HTTPError as e:
+        if e.code == 429:
+            _PC_BREAKER["fails"] += 1
+            if _PC_BREAKER["fails"] >= PC_BREAKER_THRESHOLD:
+                _PC_BREAKER["tripped"] = True
+                _PC_BREAKER["reason"] = f"连续 {_PC_BREAKER['fails']} 次 429"
+            captures.append(Capture.make("mi_cn_pc", url, "",
+                                         status=CaptureStatus.RATE_LIMITED,
+                                         error=f"HTTP 429 Too Many Requests"))
+            return captures, out
+        raise
+    caps, asserts = _parse_pc(raw, url, pid)
+    captures.extend(caps)
+    out.extend(asserts)
+    return captures, out
+
+
+def _parse_pc(raw: str, url: str, pid: str) -> tuple[list[Capture], list[Assertion]]:
+    """解析 PC 商品详情响应 -> (captures, assertions)"""
+    captures: list[Capture] = []
+    out: list[Assertion] = []
+    try:
         d = json.loads(raw)
     except Exception as e:
-        captures.append(Capture.make(SRC_P, url, "", status=CaptureStatus.TRANSPORT_ERROR,
+        captures.append(Capture.make(SRC_P, url, raw, status=CaptureStatus.PARSE_ERROR,
                                      error=str(e), parser_version=PARSER_VERSION))
         return captures, out
     if d.get("code") != 200:

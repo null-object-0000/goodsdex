@@ -49,7 +49,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("categories", nargs="*", help="分类名（默认全部）")
     ap.add_argument("--resume", action="store_true", help="跳过已成功采集的分类")
-    ap.add_argument("--workers", type=int, default=3)
+    ap.add_argument("--workers", type=int, default=2)
+    ap.add_argument("--pause", type=float, default=2.0, help="分类之间的停顿秒数（防限流）")
     ap.add_argument("--max-pages", type=int, default=20)
     ap.add_argument("--only-missing", action="store_true", help="只跑上次失败的分类")
     a = ap.parse_args()
@@ -64,7 +65,7 @@ def main() -> int:
     elif a.resume:
         targets = [c for c in targets
                    if prog.get(c, {}).get("status") != "ok"
-                   or not (OUT / f"{c}.json").exists()]
+                   or not (OUT / f"{pipeline.safe_filename(c)}.json").exists()]
 
     print(f"目标 {len(targets)}/{len(allcats)} 个分类", flush=True)
     t_start = time.time()
@@ -89,6 +90,8 @@ def main() -> int:
             print(f"[{i}/{len(targets)}] ✗ {cat:18s} {type(e).__name__}: {e}", flush=True)
             traceback.print_exc(limit=2)
         save_progress(prog)
+        if i < len(targets):
+            time.sleep(a.pause)   # 分类之间停顿，避免触发官方限流
 
     ok = sum(1 for v in prog.values() if v.get("status") == "ok")
     err = [k for k, v in prog.items() if v.get("status") == "error"]

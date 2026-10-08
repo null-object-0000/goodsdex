@@ -35,7 +35,8 @@ class CaptureStatus(str, Enum):
 
     SUCCESS = "success"                  # 完整成功
     PARTIAL = "partial"                  # 部分成功（如降级）
-    TRANSPORT_ERROR = "transport_error"   # 网络/HTTP 失败
+    TRANSPORT_ERROR = "transport_error"
+    RATE_LIMITED = "rate_limited"      # 被限流（429）—— 与"源未提供"完全不同   # 网络/HTTP 失败
     SOURCE_ERROR = "source_error"         # 业务错误码
     PARSE_ERROR = "parse_error"           # 解析失败
     NOT_FOUND = "not_found"

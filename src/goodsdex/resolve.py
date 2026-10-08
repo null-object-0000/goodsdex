@@ -62,6 +62,56 @@ DRYER_ATTRS = [
     AttrDef("release.date", "发布日期", "text"),
 ]
 
+# 手机的决策关键属性（换机最常看的几项）
+PHONE_ATTRS = [
+    AttrDef("cpu", "处理器", "text"),
+    AttrDef("cpu.clock", "CPU主频", "text"),
+    AttrDef("screen.size", "屏幕尺寸", "quantity", "英寸"),
+    AttrDef("screen.res", "屏幕分辨率", "text"),
+    AttrDef("screen.type", "屏幕类型", "text"),
+    AttrDef("cam.rear", "后置摄像头", "text"),
+    AttrDef("cam.front", "前置摄像头", "text"),
+    AttrDef("ram", "运行内存", "text"),
+    AttrDef("rom", "存储容量", "text"),
+    AttrDef("battery", "电池容量", "quantity", "mAh"),
+    AttrDef("charge.wired", "有线快充", "quantity", "W"),
+    AttrDef("charge.wireless", "无线快充", "quantity", "W"),
+    AttrDef("thickness", "机身厚度", "quantity", "mm"),
+    AttrDef("weight", "机身重量", "quantity", "g"),
+    AttrDef("nfc", "NFC", "enum"),
+    AttrDef("ir", "红外遥控", "enum"),
+    AttrDef("fingerprint", "指纹识别", "text"),
+    AttrDef("network", "网络类型", "text"),
+    AttrDef("sim", "网络模式", "text"),
+    AttrDef("port", "数据接口", "text"),
+    AttrDef("release.date", "发布日期", "text"),
+]
+
+PHONE_MAP = {
+    "CPU型号": "cpu", "处理器": "cpu", "CPU": "cpu",
+    "CPU主频": "cpu.clock",
+    "屏幕尺寸": "screen.size",
+    "屏幕分辨率": "screen.res", "分辨率": "screen.res",
+    "屏幕": "screen.type", "屏幕类型": "screen.type",
+    "后置摄像头": "cam.rear", "后置相机": "cam.rear",
+    "前置摄像头": "cam.front", "前置相机": "cam.front",
+    "运行内存": "ram", "内存": "ram",
+    "存储容量": "rom", "机身存储": "rom", "存储": "rom",
+    "电池容量": "battery", "电池": "battery",
+    "有线快充": "charge.wired", "有线充电": "charge.wired",
+    "无线快充": "charge.wireless", "无线充电": "charge.wireless",
+    "机身厚度": "thickness", "厚度": "thickness",
+    "机身重量": "weight", "重量": "weight",
+    "NFC": "nfc",
+    "红外遥控": "ir",
+    "指纹识别": "fingerprint",
+    "网络类型": "network",
+    "网络模式": "sim",
+    "数据接口": "port", "接口": "port",
+    "发布日期": "release.date", "上市时间": "release.date", "发布时间": "release.date",
+}
+
+
 # 原始字段名 -> 内部属性 ID（按品类；只做**精确**匹配，不做子串）
 EARPHONE_MAP = {
     "降噪": "anc.depth", "降噪深度": "anc.depth", "主动降噪": "anc.depth",
@@ -98,6 +148,7 @@ DRYER_MAP = {
 CATEGORY_RULES = {
     "earphone": {"attrs": EARPHONE_ATTRS, "map": EARPHONE_MAP},
     "dryer": {"attrs": DRYER_ATTRS, "map": DRYER_MAP},
+    "phone": {"attrs": PHONE_ATTRS, "map": PHONE_MAP},
 }
 
 
@@ -107,6 +158,10 @@ def guess_category(text: str) -> str:
         return "earphone"
     if re.search(r"吹风机|电吹风|dryer", t, re.I):
         return "dryer"
+    # 手机：官方机型名（Xiaomi 数字系列 / REDMI K / Note / Turbo / MIX / Civi）
+    if re.search(r"Xiaomi\s*\d|小米\s*\d|REDMI\s*(K|Note|Turbo|\d)|Redmi\s*(K|Note|Turbo|\d)"
+                 r"|MIX\s*(Fold|Flip|\d)|Civi\s*\d|红米\s*(K|Note)", t, re.I):
+        return "phone"
     return ""
 
 
