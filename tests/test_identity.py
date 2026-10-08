@@ -47,6 +47,16 @@ def test_product_name_strips_variant():
     assert "GB" not in n and "TB" not in n
 
 
+def test_product_name_no_char_level_corruption():
+    """回归：不能把"纯白色"打成"纯色"——全局替换单字会毁掉产品名"""
+    assert product_name("米家便携吹风机H101 白色") == "米家便携吹风机H101"
+    assert product_name("米家负离子速干吹风机 H300 纯白色") == "米家负离子速干吹风机 H300"
+    assert product_name("米家高速吹风机 粉色") == "米家高速吹风机"
+    # 产品名里的"白/黑"等字不能被误删
+    assert "白" in product_name("小白智能摄像机 白色") or \
+           product_name("小白智能摄像机 白色") == "小白智能摄像机"
+
+
 # ---------- 身份层次 ----------
 
 def test_product_variant_hierarchy():

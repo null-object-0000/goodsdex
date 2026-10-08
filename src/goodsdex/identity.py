@@ -79,16 +79,28 @@ def parse_variant_attrs(name: str) -> dict:
     return attrs
 
 
+def _is_color_token(tok: str) -> bool:
+    """判断一个 token 是否是颜色（纯中文 2-6 字，且含颜色字）"""
+    if not re.fullmatch(r"[\u4e00-\u9fff]{2,6}", tok or ""):
+        return False
+    return any(c in tok for c in COLOR_WORDS)
+
+
 def product_name(name: str) -> str:
-    """去掉变体后缀，得到产品名"""
+    """去掉变体后缀，得到产品名。
+
+    只从**尾部按 token 剥离**颜色/版本词 —— 全局替换单字会把
+    "纯白色" 打成 "纯色"、"白色" 打成 "色"。
+    """
     s = name or ""
     s = CAPACITY_RE.sub("", s)
     s = re.sub(r"\b\d+\s*(GB|TB)\b", "", s, flags=re.I)
     for w in EDITION_WORDS:
         s = s.replace(w, "")
-    for c in sorted(COLOR_WORDS, key=len, reverse=True):
-        s = s.replace(c, "")
-    return re.sub(r"\s+", " ", s).strip()
+    toks = s.split()
+    while toks and _is_color_token(toks[-1]):
+        toks.pop()
+    return " ".join(toks).strip()
 
 
 @dataclass
