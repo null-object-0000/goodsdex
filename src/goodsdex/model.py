@@ -98,23 +98,17 @@ class Record:
 SOURCE_LEVELS = {
     "mi_cn_mobile": 1,   # 官方
     "mi_cn_pc": 1,       # 官方
-    "baike": 3,          # 第三方
-    "zol": 3,            # 第三方
-    "audio52": 3,        # 第三方
 }
 
 SOURCE_META = {
     "mi_cn_mobile": {"site": "m.mi.com", "page": "移动端商品详情页"},
     "mi_cn_pc": {"site": "www.mi.com", "page": "PC 商品详情页"},
-    "baike": {"site": "baike.baidu.com", "page": "百度百科词条"},
-    "zol": {"site": "detail.zol.com.cn", "page": "ZOL 参数页"},
-    "audio52": {"site": "www.52audio.com", "page": "我爱音频网拆解"},
 }
 
 # 字段 -> 源优先级（前面的优先）
+# 注：官方给到月就用到月 —— 第三方即使精确到日也是在猜，不自动压过官方
 FIELD_PRIORITY: dict[str, list[str]] = {
-    "发布日期": ["baike", "zol", "mi_cn_mobile"],   # 百科精确到日
-    "上市日期": ["zol", "baike", "mi_cn_mobile"],
-    "型号": ["mi_cn_mobile", "zol"],
+    "发布日期": ["mi_cn_mobile"],
+    "型号": ["mi_cn_mobile"],
 }
-DEFAULT_PRIORITY = ["mi_cn_mobile", "mi_cn_pc", "baike", "zol", "audio52"]
+DEFAULT_PRIORITY = ["mi_cn_mobile", "mi_cn_pc"]

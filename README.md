@@ -54,50 +54,67 @@ GoodsDex 的核心主张是：**数据必须可溯源、冲突必须留痕、宁
 
 ```
 src/goodsdex/
-  model.py        数据模型（Record / Field / Provenance）
-  normalize.py    字段归一化 + 冲突判定
+  model.py        数据模型（Record / Provenance / Conflict / 源优先级）
+  facts.py        Capture / Assertion / Bundle（证据层）
+  resolve.py      断言 -> 视图（单位/否定/条件解析）
+  probe.py        CDP 三路并查探测器（独立可用）
   pipeline.py     采集主流程（枚举 -> 多源 -> 归一化 -> 输出）
   sources/
-    mi_cn.py      小米商城官方（PC + 移动端）
-    baike.py      百度百科（精确发布时间、代际定位）
-    zol.py        ZOL 中关村在线（第三方参数）
+    mi_cn.py      小米商城官方（PC + 移动端），返回断言列表
   parse/
     html.py       HTML 标签配对解析 + JS 注入噪声清洗
-    text.py       可见文本解析
-tools/
-  probe.py        CDP 三路并查探测器（独立可用）
 docs/
-  methodology.md 抓取方法论与实战案例
+  methodology.md    抓取方法论与实战案例
+  REVIEW-codex.md   设计评审（外部评审结果）
 ```
 
 ## 用法
 
 ```bash
-# 列出可采集的分类
+# 需先设置 PYTHONPATH（仓库尚未打包）
+export PYTHONPATH=src
+
+# 列出可采集的分类（官方分类树）
 python3 -m goodsdex.pipeline --list-categories
 
 # 采集一个分类
 python3 -m goodsdex.pipeline --category 吹风机
 
-# 只采集官方源（快）
-python3 -m goodsdex.pipeline --category 耳机 --sources mi_cn
+# 单个商品
+python3 -m goodsdex.pipeline --pid 23966
 
 # 独立探测任意页面（三路并查）
-python3 tools/probe.py <url>
+python3 -m goodsdex.probe <url>
 ```
 
-## 数据源优先级
+## 数据源
+
+**已接入**
 
 ```
 小米官方-移动端 mtop   ← 主力：参数/价格/销量/口碑/问答
 小米官方-PC 详情       ← 补充：图文详情、购买选项
-百度百科              ← 精确发布时间、代际定位（覆盖低，严格匹配）
-ZOL                   ← 第三方参数、上市日期
 ```
 
-**已排除**：小米国际站/香港站 —— 区域版本，型号体系与国行不同（港版 `M2535E1`），
-配色命名也不一致，混入会污染型号主键。
+**已排除**
+
+- **小米国际站/香港站** —— 区域版本，型号体系与国行不同（港版 `M2535E1`），
+  配色命名也不一致，混入会污染型号主键。
+- **百度百科** —— 想用它补"精确到日的发布时间"，但实测**补不上**：
+  吹风机 11 款官方无发布日期，百科也全无；耳机抽样 8 款仅命中 1 款。
+  且它是唯一会**主动产生错误**的源（把"前代产品于2020年发布"当成本产品发布日期）。
+  官方给到月就用到月 —— 第三方即使精确到日也是在猜，不自动压过官方。
 
 ## 状态
 
-早期开发中。已完成：小米官方双源采集、字段归一化、CDP 探测器、百科/ZOL 适配。
+早期开发中（采集原型）。已完成：小米官方双源采集、字段归一化、CDP 探测器。
+
+**已知问题**（来自 `docs/REVIEW-codex.md`，尚未修复）：
+
+1. 多源值在进冲突检测前就会丢失 —— 适配器用字段名当键，同名直接覆盖，
+   且同值多源时第二个佐证证据丢失
+2. 官方双源价格实际不会对账 —— `pc_` 前缀绕过别名映射，优先级表未参与选值
+3. 一旦检出冲突，输出会序列化失败（`'dict' object has no attribute 'to_dict'`）
+4. 归一化在制造语义错误 —— 忽略单位（`5g` vs `5kg` 判为表述差异）、
+   掩盖否定（`无主动降噪` vs `主动降噪`）、误并不同条件（降噪开/关续航）
+5. 溯源是说明文字而非可重放证据 —— 原响应未保存，`list[].最大风速` 这类路径在原始响应中不存在

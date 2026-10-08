@@ -8,6 +8,9 @@
   1. 必须 POST
   2. 4 个自定义头缺一不可
   3. body 是 mtop 数组格式 [{},{...}]，且带 gid 才返回完整数据
+
+本模块返回 **Capture + Assertion 列表**，不返回用属性名去重的字典 ——
+同值多源时每个来源都是独立佐证，必须全部保留。
 """
 from __future__ import annotations
 import json
@@ -15,7 +18,7 @@ import re
 import urllib.parse
 import urllib.request
 
-from ..model import Provenance
+from ..facts import Assertion, Availability, Capture, CaptureStatus
 
 UA_PC = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
          "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
@@ -34,13 +37,13 @@ MTOP_HEADERS = {
     "Origin": "https://m.mi.com",
     "DToken": "",
 }
-
 SEARCH_URL = "https://api2.order.mi.com/search/index"
 VIEW_URL = "https://api2.order.mi.com/product/view"
 CATEGORY_URL = "https://www.mi.com/shop/category/list"
 
 SRC_M = "mi_cn_mobile"
 SRC_P = "mi_cn_pc"
+PARSER_VERSION = "mi_cn-v2"
 
 
 def _get(url: str, timeout: int = 25) -> str:
@@ -69,21 +72,31 @@ def list_categories() -> dict[str, str]:
 
 
 def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
-                       pause: float = 0.3) -> list[dict]:
-    """分页枚举商品，返回 [{pid, name, price, image}]"""
+                       pause: float = 0.3) -> dict:
+    """分页枚举商品。
+
+    返回 {items: [...], discovery: {...}}。discovery 记录枚举范围与完整性 ——
+    不能把短列表当成"这个分类只有这些商品"。
+    """
     import time
     seen, rows, page = set(), [], 1
+    last_total = None
+    stop_reason = "unknown"
     while page <= max_pages:
         q = {"query": query, "page_index": page, "page_size": page_size,
              "filter_tag": 0, "main_sort": 0, "province_id": "", "city_id": "",
              "sort_by": "asc", "callback": "cb"}
         try:
             d = _jsonp(_get(f"{SEARCH_URL}?{urllib.parse.urlencode(q)}"))
-        except Exception:
+        except Exception as e:
+            stop_reason = f"error: {e}"
             break
         data = d.get("data") or {}
-        groups, total = data.get("pc_list", []), data.get("total", 0)
+        groups, total = data.get("pc_list", []), data.get("total")
+        if total is not None:
+            last_total = total
         if not groups:
+            stop_reason = "empty_page"
             break
         new = 0
         for g in groups:
@@ -95,97 +108,204 @@ def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
             rows.append({"pid": pid, "name": cl[0].get("name", ""),
                          "price": cl[0].get("price"), "image": cl[0].get("image")})
             new += 1
-        if len(rows) >= total or new == 0:
+        if last_total is not None and len(rows) >= last_total:
+            stop_reason = "reached_total"
+            break
+        if new == 0:
+            stop_reason = "no_new_items"
             break
         page += 1
         time.sleep(pause)
-    return rows
+    else:
+        stop_reason = "max_pages_reached"
+
+    if last_total is not None and len(rows) >= last_total:
+        completeness = "complete"
+    elif rows and stop_reason in ("max_pages_reached", "no_new_items"):
+        completeness = "partial"      # 达到页数上限或分页异常，不能声称完整
+    elif rows:
+        completeness = "partial"
+    else:
+        completeness = "unknown"
+
+    return {
+        "items": rows,
+        "discovery": {
+            "query": query, "pages_fetched": page, "page_size": page_size,
+            "total_reported": last_total, "found": len(rows),
+            "stop_reason": stop_reason, "completeness": completeness,
+            "universe": "中国大陆小米商城本次搜索可发现的商品",
+        },
+    }
 
 
 # ---------------- 移动端 ----------------
 
-def _mtop(pid: str, gid: str | None = None) -> dict:
+def _mtop_call(pid: str, gid: str | None = None) -> tuple[dict, str, int, str]:
+    """返回 (解析后 JSON, 原始响应文本, http 状态, 错误)"""
     body = [{}, ({"productId": pid, "gid": gid} if gid else {"productId": pid})]
-    req = urllib.request.Request(MTOP_URL, data=json.dumps(body).encode(),
-                                 headers=MTOP_HEADERS)
-    return json.loads(urllib.request.urlopen(req, timeout=30).read())
+    body_str = json.dumps(body, ensure_ascii=False)
+    req = urllib.request.Request(MTOP_URL, data=body_str.encode(), headers=MTOP_HEADERS)
+    try:
+        resp = urllib.request.urlopen(req, timeout=30)
+        raw = resp.read().decode("utf-8", "ignore")
+        return json.loads(raw), raw, resp.status, ""
+    except Exception as e:
+        return {}, "", getattr(e, "code", 0) or 0, str(e)
 
 
-def fetch_mobile(pid: str) -> dict:
-    """返回 {field: (value, Provenance)}"""
-    d = _mtop(pid)
-    if d.get("code") != 0:
-        return {}
+def fetch_mobile(pid: str) -> tuple[list[Capture], list[Assertion]]:
+    """移动端采集 -> (captures, assertions)"""
+    captures: list[Capture] = []
+    out: list[Assertion] = []
+
+    d, raw, http, err = _mtop_call(pid)
+    if err or d.get("code") != 0:
+        status = CaptureStatus.TRANSPORT_ERROR if err else CaptureStatus.SOURCE_ERROR
+        captures.append(Capture.make(
+            SRC_M, MTOP_URL, raw, status=status, http_status=http,
+            error=err or str(d.get("message")), method="POST",
+            parser_version=PARSER_VERSION))
+        return captures, out
+
+    cap0 = Capture.make(SRC_M, MTOP_URL, raw, method="POST", http_status=http,
+                        parser_version=PARSER_VERSION)
+    captures.append(cap0)
+
+    # 带 gid 的第二次请求更全；失败则降级用第一次，标记 PARTIAL
     gid = ((d.get("data") or {}).get("product") or {}).get("defaultGid")
     if gid:
-        d2 = _mtop(pid, gid)
-        if d2.get("code") == 0:
-            d = d2
+        d2, raw2, http2, err2 = _mtop_call(pid, gid)
+        if not err2 and d2.get("code") == 0:
+            d, raw = d2, raw2
+            cap0 = Capture.make(SRC_M, f"{MTOP_URL}?gid={gid}", raw2, method="POST",
+                                http_status=http2, parser_version=PARSER_VERSION)
+        else:
+            cap0.status = CaptureStatus.PARTIAL
+            cap0.error = f"gid 请求失败，降级使用首次结果: {err2 or d2.get('message')}"
+    cid = cap0.capture_id
+
     data = d.get("data") or {}
     prod = data.get("product") or {}
     gl = (data.get("goodsInfo") or {}).get("goodsList") or []
     g = gl[0] if gl else {}
-    params = {i.get("name"): i.get("value")
-              for i in (g.get("classParameters") or {}).get("list") or []}
-    attrs: dict[str, list] = {}
+
+    def A(attr, value, locator, ui="", avail=Availability.PROVIDED, **kw):
+        return Assertion(assertion_id=f"{cid}:{attr}", subject_id=pid, capture_id=cid,
+                         source=SRC_M, attribute=attr, raw_value=value, locator=locator,
+                         ui_location=ui, page="移动端商品详情页",
+                         availability=avail, parser_version=PARSER_VERSION, **kw)
+
+    if prod.get("name"):
+        out.append(A("name", prod["name"].strip(), "$.data.product.name", "商品名"))
+    if prod.get("shortTitle"):
+        out.append(A("short_title", prod["shortTitle"], "$.data.product.shortTitle", "副标题"))
+    out.append(A("sell_points", prod.get("sellPointList") or [],
+                 "$.data.product.sellPointList", "卖点"))
+    out.append(A("gid", prod.get("defaultGid"), "$.data.product.defaultGid"))
+    if g.get("commodityId"):
+        out.append(A("commodity_id", g["commodityId"],
+                     "$.data.goodsInfo.goodsList[0].commodityId"))
+    if g.get("sku"):
+        out.append(A("sku", g["sku"], "$.data.goodsInfo.goodsList[0].sku"))
+    if g.get("price"):
+        out.append(A("price", g["price"], "$.data.goodsInfo.goodsList[0].price", "现价"))
+    if g.get("marketPrice"):
+        out.append(A("market_price", g["marketPrice"],
+                     "$.data.goodsInfo.goodsList[0].marketPrice", "划线价"))
+    if g.get("imgUrl"):
+        out.append(A("img_url", g["imgUrl"], "$.data.goodsInfo.goodsList[0].imgUrl"))
+    car = [c.get("imgUrl") for c in (g.get("carouselList") or []) if c.get("imgUrl")]
+    if car:
+        out.append(A("carousel", car,
+                     "$.data.goodsInfo.goodsList[0].carouselList[].imgUrl", "轮播图"))
+
+    colors, attrs = [], {}
     for a in ((data.get("saleAttributeInfo") or {}).get("saleAttributeList") or []):
-        attrs[a.get("attributeName")] = [v.get("attributeValueName")
-                                         for v in a.get("attributeValueList") or []]
+        vals = [v.get("attributeValueName") for v in a.get("attributeValueList") or []]
+        attrs[a.get("attributeName")] = vals
+        if a.get("attributeName") == "颜色":
+            colors = vals
+    if attrs:
+        out.append(A("attrs", attrs, "$.data.saleAttributeInfo.saleAttributeList[]"))
+    if colors:
+        out.append(A("colors", colors,
+                     "$.data.saleAttributeInfo.saleAttributeList[name=颜色]", "可选颜色"))
+
     bs = data.get("buyerShow") or {}
+    if bs.get("total"):
+        out.append(A("evaluate_total", bs["total"], "$.data.buyerShow.total", "评论数"))
+    if bs.get("realTotal") is not None:
+        out.append(A("evaluate_real", bs["realTotal"], "$.data.buyerShow.realTotal", "评论数"))
+    if bs.get("tags"):
+        out.append(A("review_tags", bs["tags"], "$.data.buyerShow.tags[]", "大家评价"))
+    if bs.get("imgs"):
+        out.append(A("buyer_imgs", bs["imgs"][:12], "$.data.buyerShow.imgs[]", "买家秀"))
     ask = data.get("askAll") or {}
-    detail_url = f"https://m.mi.com/commodity/detail/{pid}"
+    if ask.get("total"):
+        out.append(A("qa_total", ask["total"], "$.data.askAll.total", "问大家"))
+    if ask.get("items"):
+        out.append(A("qa_items", ask["items"], "$.data.askAll.items[]", "问大家"))
 
-    def P(page: str, path: str, ui: str = "") -> Provenance:
-        return Provenance(source=SRC_M, site="m.mi.com", page=page,
-                          ui_location=ui, api="POST /mtop/xiaomishop/product/info",
-                          json_path=path, url=detail_url,
-                          raw_field=path.split(".")[-1])
-
-    out: dict[str, tuple] = {}
-    out["name"] = ((prod.get("name") or "").strip(), P("移动端商品详情页标题", "data.product.name", "商品名"))
-    out["short_title"] = (prod.get("shortTitle"), P("移动端商品详情页副标题", "data.product.shortTitle", "副标题"))
-    out["sell_points"] = (prod.get("sellPointList") or [],
-                          P("移动端商品详情页卖点条", "data.product.sellPointList[]", "卖点"))
-    out["gid"] = (prod.get("defaultGid"), P("接口字段", "data.product.defaultGid"))
-    out["commodity_id"] = (g.get("commodityId"), P("接口字段", "data.goodsInfo.goodsList[0].commodityId"))
-    out["goods_id"] = (g.get("goodsId"), P("接口字段", "data.goodsInfo.goodsList[0].goodsId"))
-    out["sku"] = (g.get("sku"), P("接口字段", "data.goodsInfo.goodsList[0].sku"))
-    out["price"] = (g.get("price"), P("移动端商品详情页价格区", "data.goodsInfo.goodsList[0].price", "现价"))
-    out["market_price"] = (g.get("marketPrice"),
-                           P("移动端商品详情页划线价", "data.goodsInfo.goodsList[0].marketPrice", "划线价"))
-    out["img_url"] = (g.get("imgUrl"), P("商品主图", "data.goodsInfo.goodsList[0].imgUrl"))
-    out["carousel"] = ([c.get("imgUrl") for c in (g.get("carouselList") or []) if c.get("imgUrl")],
-                       P("移动端商品详情页商品图轮播", "data.goodsInfo.goodsList[0].carouselList[].imgUrl", "轮播图"))
-    out["colors"] = (attrs.get("颜色", []),
-                     P("移动端商品详情页颜色选择器",
-                       "data.saleAttributeInfo.saleAttributeList[name=颜色]", "可选颜色"))
-    out["attrs"] = (attrs, P("销售属性", "data.saleAttributeInfo.saleAttributeList[]"))
-    out["evaluate_total"] = (bs.get("total"), P("移动端商品详情页评论数", "data.buyerShow.total", "评论数"))
-    out["evaluate_real"] = (bs.get("realTotal"), P("移动端商品详情页评论数", "data.buyerShow.realTotal", "评论数"))
-    out["review_tags"] = (bs.get("tags") or [], P("移动端商品详情页评价标签", "data.buyerShow.tags[]", "大家评价"))
-    out["buyer_imgs"] = ((bs.get("imgs") or [])[:12],
-                         P("移动端商品详情页买家秀", "data.buyerShow.imgs[]", "买家秀"))
-    out["qa_total"] = (ask.get("total"), P("移动端商品详情页问答总数", "data.askAll.total", "问大家"))
-    out["qa_items"] = (ask.get("items") or [], P("移动端商品详情页问答列表", "data.askAll.items[]", "问大家"))
-    # 关键参数整块（由 normalize 展开到顶层）
-    out["params"] = (params, P("移动端商品详情页「关键参数」表",
-                               "data.goodsInfo.goodsList[0].classParameters.list[]", "关键参数"))
-    return out
+    # 关键参数 —— 逐条断言，locator 保留**原始数组索引**
+    params = (g.get("classParameters") or {}).get("list") or []
+    for idx, item in enumerate(params):
+        name, value = item.get("name"), item.get("value")
+        if not name:
+            continue
+        avail = Availability.PROVIDED if value not in (None, "") else Availability.SOURCE_EMPTY
+        out.append(A(name, value,
+                     f"$.data.goodsInfo.goodsList[0].classParameters.list[{idx}]",
+                     "关键参数", avail))
+    if not params:
+        # 空参数列表是**有效采集结果**，不是失败，也不能推断原因
+        out.append(A("_params_empty", True,
+                     "$.data.goodsInfo.goodsList[0].classParameters.list",
+                     "关键参数", Availability.SOURCE_EMPTY))
+    return captures, out
 
 
 # ---------------- PC ----------------
 
-def fetch_pc(pid: str) -> dict:
+def fetch_pc(pid: str) -> tuple[list[Capture], list[Assertion]]:
+    url = f"{VIEW_URL}?product_id={pid}&version=2"
+    captures: list[Capture] = []
+    out: list[Assertion] = []
     try:
-        d = json.loads(_get(f"{VIEW_URL}?product_id={pid}&version=2"))
-    except Exception:
-        return {}
+        raw = _get(url)
+        d = json.loads(raw)
+    except Exception as e:
+        captures.append(Capture.make(SRC_P, url, "", status=CaptureStatus.TRANSPORT_ERROR,
+                                     error=str(e), parser_version=PARSER_VERSION))
+        return captures, out
     if d.get("code") != 200:
-        return {}
+        captures.append(Capture.make(SRC_P, url, raw, status=CaptureStatus.SOURCE_ERROR,
+                                     http_status=d.get("code"), error=str(d.get("msg")),
+                                     parser_version=PARSER_VERSION))
+        return captures, out
+    cap = Capture.make(SRC_P, url, raw, parser_version=PARSER_VERSION)
+    captures.append(cap)
+    cid = cap.capture_id
+
+    def A(attr, value, locator, ui="", **kw):
+        return Assertion(assertion_id=f"{cid}:{attr}", subject_id=pid, capture_id=cid,
+                         source=SRC_P, attribute=attr, raw_value=value, locator=locator,
+                         ui_location=ui, page="PC 商品详情页",
+                         parser_version=PARSER_VERSION, **kw)
+
     pv = d.get("data") or {}
     pi = pv.get("product_info") or {}
     gl = pv.get("goods_list") or []
     gi = (gl[0] or {}).get("goods_info", {}) if gl else {}
+    if pi.get("product_desc"):
+        out.append(A("desc", pi["product_desc"], "$.data.product_info.product_desc", "商品简介"))
+    if gi.get("price"):
+        out.append(A("pc_price", gi["price"], "$.data.goods_list[0].goods_info.price", "现价"))
+    if gi.get("market_price"):
+        out.append(A("pc_market_price", gi["market_price"],
+                     "$.data.goods_list[0].goods_info.market_price", "划线价"))
+    if pv.get("buy_option"):
+        out.append(A("buy_options", pv["buy_option"], "$.data.buy_option[]", "选择规格"))
     tabs, imgs = [], []
     for tab in ((pv.get("extend_info") or {}).get("desc_tabs_view") or []):
         tabs.append(tab.get("name"))
@@ -194,21 +314,34 @@ def fetch_pc(pid: str) -> dict:
             if p.get("img"):
                 imgs.append({"tab": tab.get("name"), "img": p["img"],
                              "w": p.get("w"), "h": p.get("h")})
-    url = f"https://www.mi.com/shop/buy/detail?product_id={pid}"
-    api = "GET api2.order.mi.com/product/view?product_id=X&version=2"
+    if tabs:
+        out.append(A("pc_tabs", tabs, "$.data.extend_info.desc_tabs_view[].name", "商品详情"))
+    if imgs:
+        out.append(A("pc_imgs", imgs,
+                     "$.data.extend_info.desc_tabs_view[].tab_content[].plain_view", "商品详情"))
+    return captures, out
 
-    def P(page: str, path: str, ui: str = "") -> Provenance:
-        return Provenance(source=SRC_P, site="www.mi.com", page=page, ui_location=ui,
-                          api=api, json_path=path, url=url, raw_field=path.split(".")[-1])
 
+# ---------------- 兼容层：断言 -> 旧式 dict ----------------
+# 新代码请直接用 fetch_mobile / fetch_pc；这两个仅供过渡期使用。
+
+def _assertions_to_legacy(pairs, site: str, api: str) -> dict:
+    from ..model import Provenance
     out = {}
-    if pi.get("product_desc"):
-        out["desc"] = (pi.get("product_desc"), P("PC 商品页商品简介", "data.product_info.product_desc", "商品简介"))
-    if gi.get("price"):
-        out["pc_price"] = (gi.get("price"), P("PC 商品页价格", "data.goods_list[0].goods_info.price", "现价"))
-    out["buy_options"] = (pv.get("buy_option") or [],
-                          P("PC 商品页规格选择器", "data.buy_option[]", "选择规格"))
-    out["pc_tabs"] = (tabs, P("PC 商品页图文页签", "data.extend_info.desc_tabs_view[].name", "商品详情"))
-    out["pc_imgs"] = (imgs, P("PC 商品页「商品详情」图文页签",
-                              "data.extend_info.desc_tabs_view[].tab_content[].plain_view", "商品详情"))
+    for a in pairs:
+        out[a.attribute] = (a.raw_value, Provenance(
+            source=a.source, site=site, page=a.page, ui_location=a.ui_location,
+            api=api, json_path=a.locator, raw_field=a.attribute))
     return out
+
+
+def fetch_mobile_legacy(pid: str) -> dict:
+    caps, assertions = fetch_mobile(pid)
+    return _assertions_to_legacy(assertions, "m.mi.com",
+                                 "POST /mtop/xiaomishop/product/info")
+
+
+def fetch_pc_legacy(pid: str) -> dict:
+    caps, assertions = fetch_pc(pid)
+    return _assertions_to_legacy(assertions, "www.mi.com",
+                                 "GET api2.order.mi.com/product/view")

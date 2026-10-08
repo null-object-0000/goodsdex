@@ -1,10 +1,14 @@
-"""采集主流程：分类 -> 枚举 -> 多源 -> 归一化 -> 输出
+"""采集主流程：分类 -> 枚举 -> 多源采集(断言) -> 解析视图 -> 输出
+
+三层（不丢证据）：
+  Capture     原响应 + 状态（证据）
+  Assertion   谁对哪个属性声明了什么
+  View        按策略选出的展示值（可重建）
 
 用法:
   python3 -m goodsdex.pipeline --list-categories
   python3 -m goodsdex.pipeline --category 吹风机
-  python3 -m goodsdex.pipeline --category 耳机 --sources mi_cn --limit 5
-  python3 -m goodsdex.pipeline --pid 23966          # 单个商品
+  python3 -m goodsdex.pipeline --pid 23966
 """
 from __future__ import annotations
 import argparse
@@ -13,62 +17,93 @@ import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-from .model import Record, SOURCE_META, now_iso
-from .normalize import normalize_record
+from .facts import Bundle, Capture, CaptureStatus, Subject
+from .resolve import build_view, guess_category
 from .sources import mi_cn
 
+# 已接入的数据源（--sources 只接受这些；未知源直接报错，不静默跳过）
+SUPPORTED_SOURCES = {"mi_cn"}
+
 DEFAULT_OUT = Path("data")
+# 原响应体积上限（避免单个商品把数据文件撑爆）
+RAW_SNAPSHOT_LIMIT = 300_000
 
 
-def collect_one(pid: str, name_hint: str = "", sources=("mi_cn",),
-                category: str = "") -> Record:
-    """采集单个商品"""
-    rec = Record(key=pid, name=name_hint, category=category)
-    rec.source_urls["mi_cn_pc"] = f"https://www.mi.com/shop/buy/detail?product_id={pid}"
-    rec.source_urls["mi_cn_mobile"] = f"https://m.mi.com/commodity/detail/{pid}"
+def _trim_raw(raw: str) -> str:
+    if len(raw) <= RAW_SNAPSHOT_LIMIT:
+        return raw
+    half = RAW_SNAPSHOT_LIMIT // 2
+    return raw[:half] + f"\n...<省略 {len(raw) - RAW_SNAPSHOT_LIMIT} 字节>...\n" + raw[-half:]
 
-    if "mi_cn" in sources:
-        raw = {}
+
+def collect_one(pid: str, name_hint: str = "", category: str = "",
+                discovery: dict | None = None) -> dict:
+    """采集单个商品，返回 {subject, captures, assertions, view}"""
+    subject = Subject(subject_id=f"mi_cn:product:{pid}", name=name_hint, market="CN",
+                      external_ids={"mi_cn.product_id": pid})
+    bundle = Bundle(subject=subject, discovery=discovery or {})
+
+    for fn in (mi_cn.fetch_mobile, mi_cn.fetch_pc):
         try:
-            raw.update(mi_cn.fetch_mobile(pid) or {})
-            rec.sources_used.append("mi_cn_mobile")
+            caps, assertions = fn(pid)
         except Exception as e:
-            rec.data["_mobile_err"] = str(e)
-        try:
-            raw.update(mi_cn.fetch_pc(pid) or {})
-            rec.sources_used.append("mi_cn_pc")
-        except Exception as e:
-            rec.data["_pc_err"] = str(e)
-        for k, (v, p) in raw.items():
-            rec.set(k, v, p)
+            # 采集异常 -> 独立状态，不伪装成字段
+            bundle.add_capture(Capture.make(
+                "mi_cn", f"unknown://{fn.__name__}", "",
+                status=CaptureStatus.TRANSPORT_ERROR, error=f"{type(e).__name__}: {e}"))
+            continue
+        for c in caps:
+            c.response_raw = _trim_raw(c.response_raw)
+            bundle.add_capture(c)
+        bundle.add_assertions(assertions)
 
-    # 归一化（展开嵌套参数、别名合并、冲突检测）
-    norm = normalize_record({"data": rec.data, "provenance": rec.provenance})
-    rec.data = norm["data"]
-    rec.provenance = norm["provenance"]
-    rec.conflicts = norm["conflicts"]
-    rec.dropped = norm["dropped"]
-    if not rec.name:
-        rec.name = str(rec.data.get("name") or name_hint)
-    return rec
+    # subject 名称以官方产品名为准
+    for a in bundle.assertions:
+        if a.attribute == "name" and a.raw_value:
+            subject.name = str(a.raw_value)
+            break
+
+    cat = category or guess_category(subject.name)
+    view = build_view(bundle.assertions, category=cat, subject_id=subject.subject_id)
+    return {"subject": subject.to_dict(),
+            "captures": [c.to_dict() for c in bundle.captures],
+            "assertions": [a.to_dict() for a in bundle.assertions],
+            "view": view.to_dict(), "discovery": bundle.discovery,
+            "fetched_at": bundle.fetched_at}
 
 
-def run_category(category: str, sources=("mi_cn",), limit: int = 0,
-                 max_pages: int = 20, workers: int = 4, outdir: Path = DEFAULT_OUT,
-                 verbose: bool = True) -> list[Record]:
+def _summary(rec: dict) -> str:
+    caps = rec["captures"]
+    ok = sum(1 for c in caps if c["status"] == "success")
+    bad = [c for c in caps if c["status"] not in ("success", "partial")]
+    v = rec["view"]
+    name = rec["subject"].get("name") or "?"
+    rej = f" 异常{len(bad)}" if bad else ""
+    return (f"  {'✓' if ok else '✗'} {name[:26]:28s} "
+            f"断言={len(rec['assertions']):3d} 视图值={len(v['values']):3d} "
+            f"关系={len(v['relations']):2d} 缺口={len(v['gaps']):2d} "
+            f"[{ok}/{len(caps)}源成功]{rej}")
+
+
+def run_category(category: str, limit: int = 0, max_pages: int = 20,
+                 workers: int = 4, outdir: Path = DEFAULT_OUT,
+                 verbose: bool = True) -> list[dict]:
     cats = mi_cn.list_categories()
     kw = cats.get(category, category)
     if verbose:
         print(f"[1/3] 分类「{category}」-> 关键词「{kw}」")
-    prods = mi_cn.enumerate_products(kw, max_pages=max_pages)
+    enum = mi_cn.enumerate_products(kw, max_pages=max_pages)
+    prods, discovery = enum["items"], enum["discovery"]
     if limit:
         prods = prods[:limit]
     if verbose:
-        print(f"      枚举到 {len(prods)} 个商品\n[2/3] 多源采集")
+        print(f"      发现 {len(prods)} 个商品 | total={discovery['total_reported']} "
+              f"完整性={discovery['completeness']} ({discovery['stop_reason']})")
+        print("[2/3] 采集（断言层，保留原响应）")
 
-    out: list[Record] = []
+    out: list[dict] = []
     with ThreadPoolExecutor(max_workers=workers) as ex:
-        futs = {ex.submit(collect_one, p["pid"], p["name"], sources, category): p
+        futs = {ex.submit(collect_one, p["pid"], p["name"], category, discovery): p
                 for p in prods}
         for f in as_completed(futs):
             p = futs[f]
@@ -76,31 +111,36 @@ def run_category(category: str, sources=("mi_cn",), limit: int = 0,
                 rec = f.result()
             except Exception as e:
                 if verbose:
-                    print(f"  ✗ {p['name'][:30]} {e}")
+                    print(f"  ✗ {p['name'][:30]} {type(e).__name__}: {e}")
                 continue
             out.append(rec)
-            if verbose:
-                print(f"  ✓ {rec.name[:26]:28s} 字段={len(rec.data):3d} "
-                      f"源={','.join(rec.sources_used)} 冲突={len(rec.conflicts)}")
 
+    # 稳定排序（并发完成顺序不确定，输出必须可复现）
+    out.sort(key=lambda r: r["subject"]["subject_id"])
     outdir.mkdir(parents=True, exist_ok=True)
     fp = outdir / f"{category}.json"
-    fp.write_text(json.dumps([r.to_dict() for r in out], ensure_ascii=False, indent=1),
-                  encoding="utf-8")
+    tmp = fp.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    tmp.replace(fp)          # 原子替换，避免写一半崩掉
     if verbose:
+        for r in out:
+            print(_summary(r))
         print(f"\n[3/3] {len(out)} 款 -> {fp}")
-        tot_c = sum(len(r.conflicts) for r in out)
-        tot_f = sum(len(r.data) for r in out)
-        print(f"      字段总数 {tot_f} | 冲突 {tot_c}")
+        print(f"      发现: {json.dumps(discovery, ensure_ascii=False)}")
     return out
 
 
-def run_pid(pid: str, sources=("mi_cn",), outdir: Path = DEFAULT_OUT) -> Record:
-    rec = collect_one(pid, sources=sources)
+def run_pid(pid: str, outdir: Path = DEFAULT_OUT) -> dict:
+    rec = collect_one(pid)
     outdir.mkdir(parents=True, exist_ok=True)
     fp = outdir / f"pid_{pid}.json"
-    fp.write_text(json.dumps(rec.to_dict(), ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"{rec.name} | 字段 {len(rec.data)} | 冲突 {len(rec.conflicts)} -> {fp}")
+    tmp = fp.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
+    tmp.replace(fp)
+    v = rec["view"]
+    print(f"{rec['subject'].get('name')} | 断言 {len(rec['assertions'])} | "
+          f"视图值 {len(v['values'])} | 关系 {len(v['relations'])} | 缺口 {len(v['gaps'])}")
+    print(f"-> {fp}")
     return rec
 
 
@@ -109,7 +149,7 @@ def main(argv=None):
     ap.add_argument("--list-categories", action="store_true", help="列出可采集分类")
     ap.add_argument("--category", help="分类名（或直接给关键词）")
     ap.add_argument("--pid", help="单个商品 ID")
-    ap.add_argument("--sources", default="mi_cn", help="数据源，逗号分隔（mi_cn,baike,zol）")
+    ap.add_argument("--sources", default="mi_cn", help="数据源。当前已接入：mi_cn")
     ap.add_argument("--limit", type=int, default=0, help="限制商品数")
     ap.add_argument("--max-pages", type=int, default=20)
     ap.add_argument("--workers", type=int, default=4)
@@ -117,6 +157,10 @@ def main(argv=None):
     a = ap.parse_args(argv)
 
     srcs = tuple(s.strip() for s in a.sources.split(",") if s.strip())
+    unknown = [s for s in srcs if s not in SUPPORTED_SOURCES]
+    if unknown:
+        ap.error(f"未接入的数据源: {', '.join(unknown)}。"
+                 f"当前支持: {', '.join(sorted(SUPPORTED_SOURCES))}")
 
     if a.list_categories:
         cats = mi_cn.list_categories()
@@ -125,12 +169,12 @@ def main(argv=None):
             print(f"  {n:24s} -> {k}")
         return 0
     if a.pid:
-        run_pid(a.pid, srcs, Path(a.out))
+        run_pid(a.pid, Path(a.out))
         return 0
     if not a.category:
         ap.print_help()
         return 1
-    run_category(a.category, srcs, a.limit, a.max_pages, a.workers, Path(a.out))
+    run_category(a.category, a.limit, a.max_pages, a.workers, Path(a.out))
     return 0
 
 

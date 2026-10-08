@@ -136,8 +136,21 @@ class Probe:
 
         data_reqs = []
         for rid, r in reqs.items():
-            if any(k in r["url"].lower() for k in DATA_HINTS) or \
-                    r.get("mime", "").startswith("application/json"):
+            rtype = (r.get("type") or "").lower()
+            mime = (r.get("mime") or "").lower()
+            # 排除静态资源
+            if rtype in ("image", "stylesheet", "font", "media", "preflight"):
+                continue
+            if mime.startswith(("image/", "text/css", "font/")):
+                continue
+            u = r["url"].lower()
+            if u.endswith((".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".css", ".woff", ".woff2")):
+                continue
+            # 判定：响应是 JSON，或 URL 命中数据特征，或类型为 XHR/Fetch
+            is_json = "json" in mime
+            hit_hint = any(k in u for k in DATA_HINTS)
+            is_xhr = rtype in ("xhr", "fetch")
+            if is_json or hit_hint or (is_xhr and r.get("body")):
                 data_reqs.append({**{k: v for k, v in r.items() if k != "headers"},
                                   "body": bodies.get(rid, "")[:200_000]})
         return {"url": url, "rendered_dom": dom, "visible_text": text,
