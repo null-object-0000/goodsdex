@@ -461,6 +461,25 @@ def fetch_mobile(pid: str) -> tuple[list[Capture], list[Assertion]]:
         out.append(A("_params_empty", g.get("classParameters"),
                      "$.data.goodsInfo.goodsList[0].classParameters",
                      "关键参数", Availability.SOURCE_EMPTY))
+
+    # **容器检测**：goodsList[0] 不是本商品时，说明这个 productId 是
+    # "系列容器" —— goodsList 装的是若干**独立商品**（不同容量/型号），
+    # 而 product.name 只是系列名。
+    #
+    # 实测（724 个整机抽样）：666 个自指（goodsList 是自己的 SKU 变体，
+    # 如手机的不同存储/颜色），54 个非自指（容器，集中在冰箱/显示器）。
+    #   自指  ：记录名 = 商品名，数据来自自己的 SKU —— 正确
+    #   非自指：记录名 = 系列名，数据却来自 goodsList[0]（**别的商品**）
+    #           —— 名实不符，且其余型号全部漏采
+    # 例：米家冰箱 对开门系列（10050151）的 goodsList 是 6 个不同容量的
+    # 冰箱（501L/550L/610L/616L/630L/700L），各自独立可采、参数完整。
+    if gl:
+        g0_pid = str(gl[0].get("productId") or "")
+        if g0_pid and g0_pid != str(pid):
+            kids = [str(x.get("productId")) for x in gl if x.get("productId")]
+            if kids:
+                out.append(A("_container_children", kids,
+                             "$.data.goodsInfo.goodsList", "容器子商品"))
     return captures, out
 
 

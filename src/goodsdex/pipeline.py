@@ -104,6 +104,11 @@ def collect_one(pid: str, name_hint: str = "", category: str = "",
     for a in bundle.assertions:
         if a.attribute == "name" and a.raw_value:
             bundle.subject.name = str(a.raw_value)
+            # **必须同时写回 prod.name** —— pd = prod.to_dict() 取的是它。
+            # 曾只更新 bundle.subject，导致容器展开来的子商品 name 为空
+            # （name_hint 为空、identity 也推不出名字时）。
+            if not prod.name:
+                prod.name = str(a.raw_value)
             break
 
     cat = category or guess_category(bundle.subject.name)
@@ -125,6 +130,28 @@ def collect_one(pid: str, name_hint: str = "", category: str = "",
 
     pd = prod.to_dict()
     pd["kind"] = prod_kind
+
+    # **容器展开**：若本商品是"系列容器"（goodsList[0] 不是自己），
+    # 则把 goodsList 里的子商品也各自采成独立记录。
+    #
+    # 为什么不直接把容器记录改名了事：
+    #   容器记录的 price/参数 来自 goodsList[0]，那是**子商品 A** 的数据。
+    #   若只改名，就成了"名字是容器、数据是 A"，仍然名实不符。
+    #   正确做法：容器记录**保留但标注**（数据归属写清），
+    #   子商品各自成记录（它们自指、参数完整）。
+    children = []
+    for a in bundle.assertions:
+        if a.attribute == "_container_children" and isinstance(a.raw_value, list):
+            children = [str(x) for x in a.raw_value]
+            break
+    pd["is_container"] = bool(children)
+    if children:
+        # 数据归属：本条记录的 price/参数 实际属于 goodsList[0]。
+        # 取 name 断言之外的方式：直接用第一条 price/sku 断言的值做线索，
+        # 更准的是从 capture 里读 —— 但那要重解析，这里用容器标记本身
+        # 已足够表达"本记录数据不属于自己的名字"。
+        pd["container_children"] = children
+
     return {"product": pd,
             "captures": [c.to_dict() for c in bundle.captures],
             "assertions": [a.to_dict() for a in bundle.assertions],
@@ -177,6 +204,36 @@ def run_category(category: str, limit: int = 0, max_pages: int = 20,
                     print(f"  ✗ {p['name'][:30]} {type(e).__name__}: {e}")
                 continue
             out.append(rec)
+
+    # **容器展开**：系列容器（如「米家冰箱 对开门系列」）的 goodsList
+    # 装着若干**独立商品**（不同容量的冰箱），各自可采、参数完整。
+    # 之前只解析 goodsList[0]，导致：容器记录名实不符（系列名 + 别的
+    # 型号的数据），且其余型号全部漏采（实测 54 个容器）。
+    containers = [r for r in out
+                  if (r.get("product") or {}).get("is_container")]
+    if containers:
+        seen_pids = {(r.get("product") or {}).get("product_id") for r in out}
+        kids_to_fetch = []
+        for r in containers:
+            for cid in (r["product"].get("container_children") or []):
+                pid_full = f"CN:mi_cn:product:{cid}"
+                if pid_full not in seen_pids:
+                    kids_to_fetch.append(cid)
+                    seen_pids.add(pid_full)
+        if kids_to_fetch:
+            if verbose:
+                print(f"      容器展开: {len(containers)} 个容器 -> "
+                      f"{len(kids_to_fetch)} 个子商品待采")
+            with ThreadPoolExecutor(max_workers=workers) as ex:
+                futs = {ex.submit(collect_one, cid, "", category, discovery): cid
+                        for cid in kids_to_fetch}
+                for f in as_completed(futs):
+                    try:
+                        kid = f.result()
+                    except Exception:
+                        continue
+                    kid["product"]["from_container"] = True
+                    out.append(kid)
 
     # 类型分流 + 分类形态过滤（搜索是模糊匹配，同义词互相污染）
     from .kind import split_kinds
