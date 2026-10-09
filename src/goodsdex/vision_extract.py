@@ -91,21 +91,72 @@ PROMPT = """这是小米商品官方「规格参数」长图的第 {i} 段（共
 - 表格按"参数名: 值"展开
 - 只输出 JSON，不要任何解释"""
 
+# 混合模式：把 OCR 文本一并给模型，让它专注做结构理解
+PROMPT_HYBRID = """这是小米商品官方「规格参数」长图的第 {i} 段（共 {n} 段）。
+
+下面是用 OCR 从**同一张图**识别出的原始文本行（按从上到下、从左到右顺序）。
+OCR 的**文字识别是准确的**，但它不知道哪些是参数名、哪些是值，
+也不懂表格结构 —— 请你结合**图片**和**这些文本**，完成结构理解。
+
+【OCR 文本行】
+{ocr_text}
+
+请输出**严格 JSON**：{{"params": {{"参数名": "值", ...}}}}
+要求：
+- 以图片为准，OCR 文本作为辅助（可用于确认易混字、数字）
+- 只提取真实存在的参数，不推测、不补全
+- 值里的单位原样保留（如 "3500W"、"5.27"、"37-41dB(A)"）
+- OCR 文本若把一行拆成多行（如 "860" 与 "(75-1950)"），请合并成完整值
+- 只输出 JSON，不要任何解释"""
+
+
+def _baidu_ocr_lines(img_path: str) -> str:
+    """用百度 OCR 取图片文本行（失败返回空串，不阻断流程）"""
+    try:
+        import sys
+        sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "scripts"))
+        from ocr_compare import baidu_token, load_keys, ocr_general
+        k = load_keys()
+        if not k.get("BAIDU_OCR_API_KEY"):
+            return ""
+        res = ocr_general(img_path, baidu_token(k))
+        return "\n".join(w.get("words", "") for w in res.get("words_result", []))
+    except Exception:
+        return ""
+
 
 def extract_params_from_image(img_path: str, gateway: str = GATEWAY,
                               api_key: Optional[str] = None,
-                              outdir: Optional[str] = None) -> dict:
-    """对一张（长）图做视觉参数提取。返回 {params, parts, errors}"""
+                              outdir: Optional[str] = None,
+                              ocr: str = "off") -> dict:
+    """对一张（长）图做视觉参数提取。
+
+    ocr 模式：
+      off    只给图片（原行为）
+      hybrid 图片 + OCR 文本一起给模型 —— 让模型专注结构理解，
+             绕开"自己写配对启发式"的脆弱环节（实测手写配对最好只有 67%）
+      only   只用 OCR，不调模型（最省，但需自己配对）
+    """
     key = api_key or _api_key()
-    if not key:
+    if not key and ocr != "only":
         return {"ok": False, "reason": "no_api_key",
                 "params": {}, "parts": [], "errors": ["缺少 Flowlet 密钥"]}
     outdir = outdir or "/tmp/goodsdex-vision"
     parts = slice_image(img_path, outdir)
     params, errors = {}, []
+
+    if ocr == "only":
+        txt = _baidu_ocr_lines(img_path)
+        return {"ok": bool(txt), "params": {}, "raw_ocr": txt,
+                "parts": parts, "errors": [] if txt else ["OCR 无输出"]}
+
     for p in parts:
         try:
-            got = _ask_vision(p["path"], p["index"], len(parts), gateway, key)
+            ocr_text = ""
+            if ocr == "hybrid":
+                ocr_text = _baidu_ocr_lines(p["path"])
+            got = _ask_vision(p["path"], p["index"], len(parts), gateway, key,
+                              ocr_text=ocr_text)
             for k, v in (got or {}).items():
                 k = str(k).strip()
                 if k and k not in params:
@@ -117,18 +168,23 @@ def extract_params_from_image(img_path: str, gateway: str = GATEWAY,
     canon, aliases, accessories = canonicalize_params(params)
     return {"ok": bool(canon), "params": canon, "raw_params": params,
             "aliases": aliases, "accessories": accessories,
-            "parts": parts, "errors": errors}
+            "parts": parts, "errors": errors, "ocr_mode": ocr}
 
 
-def _ask_vision(img_path: str, idx: int, total: int, gateway: str, key: str) -> dict:
+def _ask_vision(img_path: str, idx: int, total: int, gateway: str, key: str,
+                ocr_text: str = "") -> dict:
     with open(img_path, "rb") as f:
         b64 = base64.b64encode(f.read()).decode()
+    if ocr_text:
+        prompt = PROMPT_HYBRID.format(i=idx + 1, n=total, ocr_text=ocr_text)
+    else:
+        prompt = PROMPT.format(i=idx + 1, n=total)
     body = {
         "model": MODEL,
         "messages": [{
             "role": "user",
             "content": [
-                {"type": "text", "text": PROMPT.format(i=idx + 1, n=total)},
+                {"type": "text", "text": prompt},
                 {"type": "image_url",
                  "image_url": {"url": f"data:image/png;base64,{b64}"}},
             ],
