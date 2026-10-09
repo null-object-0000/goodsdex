@@ -7,20 +7,16 @@ name: refresh-prices
 #   价格有批量接口 dynamicv2，60 个/请求，全库仅 83 秒
 #
 # 数据分层：
+#   public/goods.json           全量商品（价格回灌后覆盖）
 #   public/prices/latest.json   最新快照（覆盖）
 #   public/prices/<月>.jsonl    时间序列（**追加，不覆盖历史**）
 
 on:
   schedule:
     # 每小时第 7 分钟（避开整点高峰）
-    # 成本：83 秒/次 x 24 = 33 分钟/天；public 仓库 Actions 免费
+    # 成本：83 秒 x 24 = 33 分钟/天；public 仓库 Actions 免费
     - cron: '7 * * * *'
   workflow_dispatch:
-    inputs:
-      full:
-        description: '全量刷新（默认只刷新整机）'
-        type: boolean
-        default: false
 
 permissions:
   contents: write
@@ -41,15 +37,10 @@ jobs:
           python-version: '3.12'
 
       - name: Refresh prices
-        env:
-          GOODSDEX_PROXY: ''      # runner 直连，禁代理
-        run: |
-          python3 -m goodsdex.prices --store data
-        working-directory: .
-
-      - name: Rebuild public dataset
-        run: |
-          python3 -m goodsdex.publish --out public
+        # 必须走 ci_refresh_prices.py —— 它从发布集读 gid
+        # （runner 上没有 data/categories/，那是内部采集产物）
+        # 并负责把新价格回灌进 goods.json
+        run: PYTHONPATH=src python3 scripts/ci_refresh_prices.py --public public
 
       - name: Commit
         run: |
@@ -57,18 +48,13 @@ jobs:
           git config user.email "goodsdex-bot@users.noreply.github.com"
           git add public/
           if git diff --cached --quiet; then
-            echo "无变化"
+            echo "无价格变化，跳过提交"
             exit 0
           fi
           git commit -m "price refresh $(date -u +%Y-%m-%dT%H:%MZ)"
           # 并发推送会 non-fast-forward，必须 pull --rebase 后重试
           for i in 1 2 3; do
-            git pull --rebase origin ${GITHUB_REF_NAME} && git push && break
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push && break
             echo "push 失败，重试 $i"
             sleep 3
           done
-
-      - name: Notify on failure
-        if: failure() && github.event_name == 'schedule'
-        run: |
-          echo "::error::价格刷新失败，需要检查"
