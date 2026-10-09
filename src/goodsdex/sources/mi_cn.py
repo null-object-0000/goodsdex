@@ -45,7 +45,8 @@ SRC_M = "mi_cn_mobile"
 SRC_P = "mi_cn_pc"
 PARSER_VERSION = "mi_cn-v2"
 
-# PC 源限流熔断（进程内）：连续 429 达阈值即开路，避免持续无效请求
+# PC 源限流熔断（进程内）：**连续** 429 达阈值即开路，避免持续无效请求。
+# 成功会清零计数（见 fetch_pc），所以是"连续"而非"累计"。
 PC_BREAKER_THRESHOLD = 5
 _PC_BREAKER = {"fails": 0, "tripped": False, "reason": ""}
 
@@ -142,12 +143,28 @@ def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
              "filter_tag": 0, "main_sort": 0, "province_id": "", "city_id": "",
              "sort_by": "asc", "callback": "cb"}
         try:
-            d = _jsonp(_get(f"{SEARCH_URL}?{urllib.parse.urlencode(q)}"))
+            raws = _get(f"{SEARCH_URL}?{urllib.parse.urlencode(q)}")
+            d = _jsonp(raws)
         except Exception as e:
             stop_reason = f"error: {e}"
             break
-        data = d.get("data") or {}
-        groups, total = data.get("pc_list", []), data.get("total")
+        # **校验业务状态与 schema** —— 不能把接口报错当成"官方没有在售"
+        # （Codex 评审指认：{code:500,data:{total:57}} 曾被判为 no_sellable_items）
+        if not isinstance(d, dict) or not d:
+            stop_reason = "parse_error: 响应无法解析（非 JSONP 或空）"
+            break
+        code = d.get("code")
+        if code is not None and code != 0:
+            stop_reason = f"api_error: code={code} msg={d.get('message')}"
+            break
+        data = d.get("data")
+        if not isinstance(data, dict):
+            stop_reason = "schema_error: data 不是对象"
+            break
+        if "pc_list" not in data:
+            stop_reason = "schema_error: 缺少 pc_list 字段"
+            break
+        groups, total = data.get("pc_list") or [], data.get("total")
         if total is not None:
             last_total = total
         if not groups:
@@ -192,7 +209,10 @@ def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
     else:
         stop_reason = "max_pages_reached"
 
-    if stop_reason == "no_sellable_items":
+    if stop_reason.startswith(("api_error", "parse_error", "schema_error", "error")):
+        # **失败绝不装成"官方没有"** —— 这是核心承诺
+        completeness = "failed"
+    elif stop_reason == "no_sellable_items":
         # 明确：搜索命中 total 条，但没有在售商品
         completeness = "no_sellable_items"
     elif last_total is not None and len(rows) >= last_total:
@@ -375,6 +395,9 @@ def fetch_pc(pid: str) -> tuple[list[Capture], list[Assertion]]:
                                          error=f"HTTP 429 Too Many Requests"))
             return captures, out
         raise
+    # 成功即清零 —— 否则熔断判据实际是"累计 5 次"而非"连续 5 次"
+    # （Codex 评审指认：429 后成功一次仍是 fails=1）
+    _PC_BREAKER["fails"] = 0
     caps, asserts = _parse_pc(raw, url, pid)
     captures.extend(caps)
     out.extend(asserts)

@@ -65,11 +65,21 @@ class ResidualQuote:
 
 def official_trade_in(original_retail_price: float, model_name: str,
                       terms: Optional[dict] = None,
-                      detected_value: float = 0.0) -> dict:
+                      detected_value: float = 0.0,
+                      meets_standard: Optional[bool] = None) -> dict:
     """按官方条款算保值换新能拿到的钱。
 
-    规则：保值金额 = 原零售价 × 保值率，与实际质检金额取高；
-        若不满足保值标准，则 实际质检金额 + 保底补贴，但总额封顶 原价×保值率。
+    **官方条款有两条互斥分支**（Codex 评审指正，此前实现错误地叠加了）：
+
+      分支 A —— 符合保值回收标准（全新/99新/95新/9新 且功能正常）：
+        拿 max(原零售价 × 保值率, 实际质检金额) 的现金券
+        例：原价 5299、保值率 50%、质检 2600 -> 拿 2649.5（不是 2649.5+338）
+
+      分支 B —— 不符合保值标准：
+        拿「实际质检金额 + 保底补贴」，但总额封顶「原零售价 × 保值率」
+        且此时**拿不到**保值额
+
+    meets_standard=None 时两种情景都算出来，不擅自选一个当结论。
     """
     terms = terms or load_terms()
     if not terms:
@@ -89,19 +99,39 @@ def official_trade_in(original_retail_price: float, model_name: str,
             break
 
     guaranteed = round(original_retail_price * rate)
-    # 二者取高
-    if detected_value > 0:
-        amount = max(guaranteed, detected_value)
-        basis = "实际质检金额高于保值金额" if detected_value > guaranteed else "保值金额"
-    else:
-        amount = guaranteed
-        basis = "保值金额（未提供质检金额）"
-    # 保底补贴封顶
-    cap = guaranteed
-    if detected_value <= guaranteed:
-        amount = min(amount, cap)
-
     win = terms.get("benefit", {}).get("service_window_days", {})
+
+    # 分支 A：符合保值标准
+    branch_a = max(guaranteed, detected_value) if detected_value > 0 else guaranteed
+
+    # 分支 B：不符合标准 -> 质检额 + 保底补贴，封顶保值额
+    branch_b = min(detected_value + subsidy, guaranteed) if detected_value > 0 else subsidy
+    branch_b = min(branch_b, guaranteed)
+
+    if meets_standard is True:
+        amount, basis, branch = branch_a, "符合保值标准：保值额与质检额取高", "A"
+    elif meets_standard is False:
+        amount, basis, branch = branch_b, "不符合保值标准：质检额+保底补贴（封顶保值额）", "B"
+    else:
+        # 未判定成色时不擅自下结论，两个情景都给出
+        return {
+            "available": True, "model": model_name,
+            "original_retail_price": original_retail_price,
+            "guaranteed_rate": rate, "guaranteed_amount": guaranteed,
+            "subsidy_amount": subsidy,
+            "scenarios": {
+                "meets_standard": {"amount": branch_a, "branch": "A",
+                                   "basis": "保值额与质检额取高"},
+                "below_standard": {"amount": branch_b, "branch": "B",
+                                   "basis": "质检额+保底补贴，封顶保值额"},
+            },
+            "estimated_amount": None,       # 成色未知，不给单一数字
+            "requires": "需确认成色（准新/99新/95新/9新 且功能正常与否）",
+            "service_window_days": win,
+            "recycler": terms.get("benefit", {}).get("recycler", ""),
+            "caveat": "以实际检测为准，非承诺值；保值额与保底补贴不可叠加",
+        }
+
     return {
         "available": True,
         "model": model_name,
@@ -110,6 +140,7 @@ def official_trade_in(original_retail_price: float, model_name: str,
         "guaranteed_amount": guaranteed,
         "subsidy_amount": subsidy,
         "estimated_amount": amount,
+        "branch": branch,
         "basis": basis,
         "service_window_days": win,
         "recycler": terms.get("benefit", {}).get("recycler", ""),
@@ -156,8 +187,23 @@ def break_even_days(net_cost: float, daily_cost_keeping: float) -> Optional[int]
 
 def advise(device: OwnedDevice, new_price: float, residual_later: float,
            horizon_days: int = 365, terms: Optional[dict] = None,
-           planned_use_days: int = 730) -> dict:
-    """给出换机建议（含依据与置信度，不下断言式结论）"""
+           planned_use_days: int = 730,
+           meets_standard: Optional[bool] = None) -> dict:
+    """给出换机成本情景（含依据与置信度，不下断言式结论）。
+
+    **两个重要约束**（Codex 评审指正）：
+
+    ① 权益窗口必须**先判定**。原实现在算完净支出后才加个文字标签，
+       于是 purchase_date=2020 的设备仍得到 recover 2650 + subsidy 338，
+       同时 window=expired —— 自相矛盾。窗口无效则权益不可用。
+
+    ② **不再叠加保值额与保底补贴** —— 官方是两条互斥分支
+       （见 official_trade_in）。
+
+    另外：不再输出"盈亏平衡天数"。原实现把旧机折旧线性外推多年、
+    未计新机折旧，不是真正的平衡点（净支出甚至可能超过当前残值）。
+    改为只给可复算的净支出与情景对比。
+    """
     terms = terms or load_terms()
     r = device.residual
     if not r:
@@ -167,37 +213,10 @@ def advise(device: OwnedDevice, new_price: float, residual_later: float,
     res_now = r.mid
     keep_daily = daily_cost_of_keeping(res_now, residual_later, horizon_days)
 
-    ti = {}
-    if device.trade_in_eligible:
-        ti = official_trade_in(device.purchase_price, device.name, terms,
-                               detected_value=res_now)
-    subsidy = ti.get("subsidy_amount", 0) if ti.get("available") else 0
-    # 保值换新权益下的回收额取高
-    recover = max(res_now, ti.get("estimated_amount", 0)) if ti.get("available") else res_now
-
-    net = upgrade_cost(new_price, recover, subsidy)
-    new_daily = round(net / planned_use_days, 2) if planned_use_days else 0.0
-    be = break_even_days(net, keep_daily)
-
-    out = {
-        "answerable": True,
-        "device": device.name,
-        "residual_observation": r.to_dict(),
-        "keep": {"residual_now": res_now, "residual_later": residual_later,
-                 "horizon_days": horizon_days, "daily_cost": keep_daily},
-        "upgrade": {"new_price": new_price, "recover": recover, "subsidy": subsidy,
-                    "net_cost": net, "planned_use_days": planned_use_days,
-                    "daily_cost": new_daily},
-        "break_even_days": be,
-        "confidence": r.confidence,
-        "evidence": [r.source] + ([ti.get("recycler", "")] if ti.get("available") else []),
-        "caveats": [
-            "残值为区间估计，实际以检测为准",
-            "换机决策还取决于新机是否带来你在意的能力提升，本模型只算钱",
-        ],
-    }
-    # 时间窗判断（官方 181-395 天）
+    # ① 先判定窗口 —— 权益是否可用取决于此
     win = terms.get("benefit", {}).get("service_window_days", {}) if terms else {}
+    window_status = "unknown"
+    age = None
     if device.purchase_date and win:
         from datetime import date
         try:
@@ -205,19 +224,68 @@ def advise(device: OwnedDevice, new_price: float, residual_later: float,
             age = (date.today() - date(y, m, d)).days
             lo, hi = win.get("start", 181), win.get("end", 395)
             if age < lo:
-                out["window"] = {"age_days": age, "status": "too_early",
-                                 "message": f"使用 {age} 天，官方保值换新窗口从第 {lo} 天开始，"
-                                            f"还有 {lo - age} 天"}
+                window_status = "too_early"
             elif age <= hi:
-                out["window"] = {"age_days": age, "status": "in_window",
-                                 "message": f"使用 {age} 天，正在官方保值换新窗口内"
-                                            f"（{lo}–{hi} 天），剩 {hi - age} 天"}
+                window_status = "in_window"
             else:
-                out["window"] = {"age_days": age, "status": "expired",
-                                 "message": f"使用 {age} 天，已超出官方保值换新窗口"
-                                            f"（{hi} 天），走高保值率的路已关闭"}
+                window_status = "expired"
         except Exception:
             pass
+
+    benefit_usable = device.trade_in_eligible and window_status in ("in_window",)
+    if not device.trade_in_eligible:
+        window_status = window_status if window_status != "unknown" else "not_enrolled"
+
+    # ② 权益计算（仅在可用时）
+    ti = {}
+    if benefit_usable:
+        ti = official_trade_in(device.purchase_price, device.name, terms,
+                               detected_value=0.0, meets_standard=meets_standard)
+    recover = res_now                     # 权益不可用时只有市场残值
+    subsidy = 0
+    scenarios = None
+    if ti.get("available"):
+        if ti.get("estimated_amount") is not None:
+            recover = max(res_now, ti["estimated_amount"])
+        else:
+            scenarios = ti.get("scenarios")
+            recover = res_now              # 成色未定 -> 先用市场残值，情景另给
+
+    net = upgrade_cost(new_price, recover, subsidy)
+    new_daily = round(net / planned_use_days, 2) if planned_use_days else 0.0
+
+    out = {
+        "answerable": True,
+        "device": device.name,
+        "residual_observation": r.to_dict(),
+        "keep": {"residual_now": res_now, "residual_later": residual_later,
+                 "horizon_days": horizon_days, "daily_cost": keep_daily,
+                 "note": "旧机折旧，机会成本口径；不含维修等支出"},
+        "upgrade": {"new_price": new_price, "recover": recover, "subsidy": subsidy,
+                    "net_cost": net, "planned_use_days": planned_use_days,
+                    "daily_cost": new_daily,
+                    "note": "净现金支出；两种方案未在同一期限比较期末净资产"},
+        "benefit_usable": benefit_usable,
+        "window": {"age_days": age, "status": window_status,
+                   "window_days": [win.get("start"), win.get("end")] if win else None},
+        "confidence": r.confidence,
+        "evidence": [r.source] + ([ti.get("recycler", "")] if ti.get("available") else []),
+        "caveats": [
+            "残值为区间估计，实际以检测为准",
+            "保值额与保底补贴是互斥分支，不可叠加",
+            "换机决策还取决于新机是否带来你在意的能力提升，本模型只算钱",
+        ],
+    }
+    if scenarios:
+        out["benefit_scenarios"] = scenarios
+        out["caveats"].append("成色未确认，权益金额按两种情景分别给出")
+    if window_status == "expired" and device.trade_in_eligible:
+        out["caveats"].append(
+            f"已超出官方保值换新窗口（第 {win.get('start')}-{win.get('end')} 天），"
+            f"当前只能按市场残值计算")
+    elif window_status == "too_early":
+        out["caveats"].append(
+            f"尚未进入官方窗口（第 {win.get('start')} 天起），当前按市场残值计算")
     return out
 
 
@@ -239,14 +307,20 @@ def render(adv: dict) -> str:
         L.append(f"  换机补贴        −¥{u['subsidy']:.0f}")
     L.append(f"  净掏钱          ¥{u['net_cost']:.0f}")
     L.append(f"  换新日均        ¥{u['daily_cost']:.2f}/天（按 {u['planned_use_days']} 天摊）")
-    if adv.get("break_even_days"):
+    if adv.get("benefit_scenarios"):
         L.append("")
-        L.append(f"  盈亏平衡        {adv['break_even_days']} 天 —— 不换的话，"
-                 f"旧机要贬掉这么多钱需要这么久")
+        L.append("  保值换新权益（成色未确认，两种情景）：")
+        for name, sc in adv["benefit_scenarios"].items():
+            label = "符合保值标准" if name == "meets_standard" else "不符合标准"
+            L.append(f"    {label}    可抵 ¥{sc['amount']:.0f}   ({sc['basis']})")
     if adv.get("window"):
         w = adv["window"]
         L.append("")
-        L.append(f"  官方窗口        {w['message']}")
+        st = {"in_window": "在窗口内", "too_early": "尚未开始",
+              "expired": "已过期", "not_enrolled": "未购买该服务",
+              "unknown": "未知"}.get(w.get("status"), w.get("status"))
+        L.append(f"  官方窗口        {st}"
+                 + (f"（已用 {w['age_days']} 天）" if w.get("age_days") else ""))
     if adv.get("caveats"):
         L.append("")
         for c in adv["caveats"]:

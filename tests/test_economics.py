@@ -56,25 +56,56 @@ def test_residual_is_observation_not_constant():
     assert q2.mid == 2000
 
 
-def test_official_trade_in_takes_higher():
-    """保值金额与实际质检金额取高"""
+def test_official_trade_in_branches_are_exclusive():
+    """保值额与保底补贴是**互斥分支**，不可叠加
+
+    Codex 评审指正：原实现把两者相加（激进且错误）。
+    正确：符合保值标准 -> max(保值额, 质检额)；
+         不符合标准   -> min(质检额 + 保底补贴, 保值额)。
+    """
     t = load_terms()
-    # 原价 5299 * 50% = 2649.5
-    a = official_trade_in(5299, "Xiaomi 15 Pro", t, detected_value=0)
+    # 符合保值标准分支
+    a = official_trade_in(5299, "Xiaomi 15 Pro", t, detected_value=3200,
+                          meets_standard=True)
     assert a["guaranteed_rate"] == 0.5
     assert a["guaranteed_amount"] == round(5299 * 0.5)
-    # 质检值更高 -> 用质检值
-    b = official_trade_in(5299, "Xiaomi 15 Pro", t, detected_value=3200)
-    assert b["estimated_amount"] == 3200
-    assert "质检" in b["basis"]
+    assert a["estimated_amount"] == 3200, "质检额高于保值额时取质检额"
+    assert a["branch"] == "A"
+
+    # 不符合标准分支：质检额 + 补贴，但封顶保值额
+    b = official_trade_in(5299, "Xiaomi 15 Pro", t, detected_value=1000,
+                          meets_standard=False)
+    assert b["estimated_amount"] <= b["guaranteed_amount"], "不得超封顶"
+    assert b["branch"] == "B"
+
+    # **关键**：两者绝不能叠加
+    c = official_trade_in(5299, "Xiaomi 15 Pro", t, detected_value=1000,
+                          meets_standard=True)
+    assert c["estimated_amount"] == round(5299 * 0.5), \
+        "符合标准时不应再加补贴"
+
+
+def test_unknown_condition_gives_scenarios_not_single_number():
+    """成色未确认时不擅自给单一数字，要列两种情景"""
+    t = load_terms()
+    r = official_trade_in(5299, "Xiaomi 15 Pro", t, detected_value=0)
+    assert r["estimated_amount"] is None, "成色未知不应给单一结论"
+    assert "scenarios" in r
+    assert set(r["scenarios"]) == {"meets_standard", "below_standard"}
+    assert "requires" in r
 
 
 def test_subsidy_cap():
-    """保底补贴+质检额不超过 原价×保值率"""
+    """保底补贴+质检额不超过 原价×保值率（仅分支 B 有补贴）"""
     t = load_terms()
-    r = official_trade_in(5299, "Xiaomi 15 Pro", t, detected_value=1000)
+    r = official_trade_in(5299, "Xiaomi 15 Pro", t, detected_value=1000,
+                          meets_standard=False)
     assert r["estimated_amount"] <= r["guaranteed_amount"] + 1e-6, \
         "补贴+质检额不能超过封顶"
+    # 成色未定时给情景，不给单一数字
+    r2 = official_trade_in(5299, "Xiaomi 15 Pro", t, detected_value=1000)
+    assert r2["estimated_amount"] is None
+    assert r2["scenarios"]["below_standard"]["amount"] <= r2["guaranteed_amount"] + 1e-6
 
 
 def test_rate_override():
@@ -100,20 +131,59 @@ def test_break_even():
     assert break_even_days(3011, 0) is None, "日均折旧为 0 时无平衡点"
 
 
-def test_advise_full_flow():
+def test_advise_does_not_double_count_subsidy():
+    """回归：不能叠加保值额与保底补贴
+
+    Codex 评审指正：原 test 把 5999-2650-338=3011 当正确答案，
+    实际固化了错误规则（保值额 2650 与补贴 338 是互斥分支）。
+    窗口内、成色未定时，回收额按市场残值算，不擅自加权益。
+    """
     dev = OwnedDevice(name="Xiaomi 15 Pro", purchase_price=5299,
-                      purchase_date="2026-01-15",
+                      purchase_date="2026-01-15",   # 窗口内
                       residual=ResidualQuote(low=2400, high=2800, source="转转",
                                              observed_at="2026-10-08"),
                       trade_in_eligible=True)
     adv = advise(dev, new_price=5999, residual_later=1800, horizon_days=365)
     assert adv["answerable"]
-    assert adv["upgrade"]["net_cost"] == 3011
-    assert adv["break_even_days"] == 1375
-    assert adv["confidence"] == "medium"
+    assert adv["window"]["status"] == "in_window"
+    assert adv["benefit_usable"] is True
+    # 成色未定 -> 不给单一金额，列情景
+    assert "benefit_scenarios" in adv
+    assert adv["upgrade"]["subsidy"] == 0, "不得额外叠加补贴"
+    assert adv["upgrade"]["recover"] == 2600, "成色未定时按市场残值"
+    assert adv["upgrade"]["net_cost"] == 3399
+    # 不该再有"盈亏平衡"这个误导性标签
+    assert "break_even_days" not in adv
     assert "转转" in " ".join(adv["evidence"])
-    # 必须带免责说明
-    assert any("检测" in c for c in adv["caveats"])
+
+
+def test_expired_window_disables_benefit():
+    """回归：权益过期不能再享保值抵扣
+
+    Codex 评审指正：原实现 purchase_date=2020 仍给 recover 2650 + subsidy 338，
+    同时 window=expired，自相矛盾。
+    """
+    dev = OwnedDevice(name="Xiaomi 15 Pro", purchase_price=5299,
+                      purchase_date="2020-01-01",
+                      residual=ResidualQuote(low=1000, source="手动"),
+                      trade_in_eligible=True)
+    adv = advise(dev, new_price=5999, residual_later=500)
+    assert adv["window"]["status"] == "expired"
+    assert adv["benefit_usable"] is False
+    assert adv["upgrade"]["recover"] == 1000, "过期后只能按市场残值"
+    assert adv["upgrade"]["subsidy"] == 0
+    assert any("超出" in c or "过期" in c for c in adv["caveats"])
+
+
+def test_too_early_window_also_disables():
+    """窗口未开始时同样不可用权益"""
+    dev = OwnedDevice(name="Xiaomi 15 Pro", purchase_price=5299,
+                      purchase_date="2026-09-01",   # 距今 < 181 天
+                      residual=ResidualQuote(low=4000, source="手动"),
+                      trade_in_eligible=True)
+    adv = advise(dev, new_price=5999, residual_later=3000)
+    assert adv["window"]["status"] == "too_early"
+    assert adv["benefit_usable"] is False
 
 
 def test_window_status():
@@ -138,13 +208,17 @@ def test_no_residual_refuses_to_guess():
 
 
 def test_render_does_not_judge_subjectively():
-    """输出是数字与依据，不做主观断言"""
+    """输出是数字与依据，不做主观断言，且不含误导性的"盈亏平衡" """
     dev = OwnedDevice(name="Xiaomi 15 Pro", purchase_price=5299,
+                      purchase_date="2026-01-15",
                       residual=ResidualQuote(low=2400, high=2800, source="转转"),
                       trade_in_eligible=True)
     txt = render(advise(dev, new_price=5999, residual_later=1800))
-    assert "净掏钱" in txt and "盈亏平衡" in txt
+    assert "净掏钱" in txt
     assert "只算钱" in txt, "必须声明模型只算钱，不含主观偏好"
+    # 不再输出"盈亏平衡天数"（口径不成立，Codex 评审指正）
+    assert "盈亏平衡" not in txt
+    assert "互斥" in txt or "不可叠加" in txt, "必须声明分支不可叠加"
 
 
 if __name__ == "__main__":
