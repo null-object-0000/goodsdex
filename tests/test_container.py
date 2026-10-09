@@ -63,6 +63,23 @@ def test_child_name_matches_expected():
     assert "610L" in str(nm), f"15948 应为 610L 型号，实际 {nm}"
 
 
+def test_duplicate_ids_not_treated_as_container():
+    """goodsList 里全是同一个 productId 的不算容器
+
+    「屏幕换新服务」这类商品的 goodsList 是同一商品的多个 SKU
+    （['13225','13225',…]），展开会重复采同一条。
+    判据必须"去重后不同 ID > 1"。
+    """
+    kids = _children_of("13225")      # REDMI Note系列屏幕换新服务
+    assert not kids, f"重复 ID 列表不该展开，得到 {kids}"
+
+
+def test_container_children_are_unique():
+    """容器的子商品列表必须去重"""
+    kids = _children_of("10050151")
+    assert len(kids) == len(set(kids)), "子商品列表有重复"
+
+
 def test_container_price_belongs_to_first_child():
     """容器的 price 确实来自 goodsList[0]（记录名实不符的证据）"""
     caps, ass = mi_cn.fetch_mobile("10050151")

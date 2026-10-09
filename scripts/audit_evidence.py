@@ -57,6 +57,8 @@ DERIVED_FIELDS = {
     "sell_points",    # 从文本拆分
     "buyer_imgs",
     "review_tags",
+    # 容器子商品 ID 列表：从 goodsList[] 提取 productId（源结构是字典数组）
+    "_container_children",
 }
 
 

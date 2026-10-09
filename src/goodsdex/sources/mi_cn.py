@@ -473,11 +473,21 @@ def fetch_mobile(pid: str) -> tuple[list[Capture], list[Assertion]]:
     #           —— 名实不符，且其余型号全部漏采
     # 例：米家冰箱 对开门系列（10050151）的 goodsList 是 6 个不同容量的
     # 冰箱（501L/550L/610L/616L/630L/700L），各自独立可采、参数完整。
+    #
+    # **去重后再判**：有些商品（如「屏幕换新服务」）的 goodsList 里
+    # 所有元素是**同一个 productId 的多个 SKU**（['13225','13225',…]），
+    # 它们不是不同商品，不该展开 —— 否则会重复采同一条。
     if gl:
         g0_pid = str(gl[0].get("productId") or "")
         if g0_pid and g0_pid != str(pid):
-            kids = [str(x.get("productId")) for x in gl if x.get("productId")]
-            if kids:
+            kids = []
+            for x in gl:
+                k = str(x.get("productId") or "")
+                if k and k not in kids:
+                    kids.append(k)
+            # 只有一个不同 ID 且它就是 goodsList[0] -> 不是容器，
+            # 而是"同一商品的多个 SKU"（或单元素列表），无需展开
+            if len(kids) > 1:
                 out.append(A("_container_children", kids,
                              "$.data.goodsInfo.goodsList", "容器子商品"))
     return captures, out
