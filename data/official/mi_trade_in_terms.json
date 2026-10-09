@@ -1,0 +1,93 @@
+{
+ "_meta": {
+  "source": "小米官方《小米手机保值换新产品服务条款》+《保值换新常见问题》",
+  "url": "https://www.mi.com/article/detail/637b5886162f.html",
+  "url_faq": "https://www.mi.com/article/detail/2eef8fde9917.html",
+  "fetched_at": "2026-10-09",
+  "traceable": true,
+  "note": "数据逐条来自官方条款页面的表格，未做推断或补填。"
+ },
+ "benchmark_rate": 0.5,
+ "guaranteed_rate_overrides": {
+  "_note": "官方条款：保值率默认 50%，部分机型 60%（表格「保值回收标准」列明确标注）",
+  "Xiaomi Civi 4 Pro": 0.6
+ },
+ "benefit": {
+  "service_window_days": {
+   "start": 181,
+   "end": 395,
+   "_note": "官方原文：本产品的服务期限为购买保值换新服务产品生效之日起的第181天至第395天内"
+  },
+  "recycler": "转转循环科技有限公司",
+  "_recycler_note": "官方原文：回收服务由转转循环科技有限公司独立提供",
+  "guaranteed_buyback": {
+   "rate_default": 0.5,
+   "rate_partial": 0.6,
+   "rule": "符合保值回收标准 -> 原设备零售价 × 50%（部分机型 60%）的现金券；若实际质检额更高则取质检额（二者取高）"
+  },
+  "fallback_subsidy": {
+   "rule": "不符合保值标准 -> 正常回收价（实时二手行情）+ 保底补贴，但补贴+质检额不超过原设备零售价 × 50%（部分机型 60%）",
+   "amount_formula": "保值换新产品建议零售价 × 2"
+  }
+ },
+ "trade_in_subsidy_table": {
+  "_note": "官方条款表格「换机补贴」列（不满足保值标准时可享受，金额为保值换新产品建议零售价*2）。逐条转录。",
+  "Xiaomi 17 Ultra": 598,
+  "REDMI K90 Pro Max": 238,
+  "REDMI K90": 178,
+  "Xiaomi 17 Pro Max": 258,
+  "Xiaomi 17 Pro": 238,
+  "Xiaomi 17": 198,
+  "REDMI Note 15 Pro": 138,
+  "REDMI Note 15 Pro+": 138,
+  "REDMI Note 15": 138,
+  "REDMI K80 至尊版": 198,
+  "Xiaomi Mix Flip 2": 598,
+  "Xiaomi 15S Pro": 338,
+  "Xiaomi Civi 5 Pro": 198,
+  "REDMI Turbo 4 Pro": 198,
+  "Xiaomi 15 Ultra": 398,
+  "REDMI Turbo 4": 198,
+  "REDMI K80 Pro": 198,
+  "REDMI K80": 198,
+  "Xiaomi 15 Pro": 338,
+  "Xiaomi 15": 258,
+  "Redmi Note 14 Pro+": 138,
+  "Redmi Note 14 Pro": 138,
+  "Redmi Note 14": 138,
+  "Xiaomi MIX Fold 4": 598,
+  "Xiaomi MIX Flip": 598,
+  "Redmi K70 至尊版": 198,
+  "Xiaomi Civi 4 Pro": 198,
+  "Xiaomi 14 Ultra": 398,
+  "Xiaomi 14 Pro": 338,
+  "Xiaomi 14": 258,
+  "Xiaomi MIX Fold 3": 598,
+  "Xiaomi MIX Fold 2": 598,
+  "Xiaomi 13 Ultra": 398,
+  "Xiaomi 13 Pro": 338,
+  "Xiaomi 13": 258,
+  "Redmi K70 Pro": 198,
+  "Redmi K70": 198,
+  "Redmi K70E": 138,
+  "Redmi K60 至尊版": 198,
+  "Redmi K60 Pro": 198,
+  "Redmi K60": 198,
+  "Redmi K60E": 138
+ },
+ "_branches": {
+  "_note": "官方是两条互斥分支（Codex 评审指正原实现错误叠加）",
+  "A_meets_standard": "max(保值额, 质检额)",
+  "B_below_standard": "min(质检额 + 保底补贴, 保值额)"
+ },
+ "condition_standard": {
+  "_note": "官方「保值回收标准」表：哪些成色可用",
+  "usable": ["全新机（含准新机、99成新、95成新）功能正常",
+             "外观完好机（含9成新）功能正常",
+             "屏幕轻微刮痕，其他正常",
+             "外壳轻微划痕，其他正常"],
+  "not_usable": ["外壳有严重磕碰掉漆", "屏幕有破损", "有进水/弯曲/拆修",
+                 "显示异常", "私修/非原厂料", "ID锁住，无法开机"]
+ },
+ "_retail_price_rule": "原设备零售价取小米商城**非划线价**（销售价），按下单时间对应的价格"
+}

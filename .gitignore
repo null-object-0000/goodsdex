@@ -4,12 +4,21 @@ __pycache__/
 .venv/
 venv/
 probe_out/
-data/
+# 注意用 `data/*` 而不是 `data/`：忽略整个目录后，
+# 后面的 `!data/official/` 否定规则**不会生效**（git 不允许在被忽略的
+# 目录内部用否定规则恢复文件）。用 `data/*` 只忽略直接子项。
+data/*
 .DS_Store
 
 # 采集产物（大数据文件不入库）
 data/categories/
 data/_progress.json
+
+# **官方一手资料必须入库**（手工整理，非采集产物，丢了无法重建）
+# 教训：data/ 整目录被忽略时，data/official/mi_trade_in_terms.json
+# 曾因一次误删彻底丢失（未入 git 无从恢复），只能重新从官方页面采集。
+!data/official/
+!data/official/**
 
 # 凭证（必须在仓库外，这里再兜一层）
 *.env
