@@ -6,14 +6,27 @@
 
 ## 公开数据集
 
-[`public/`](public/) 由 GitHub Actions 自动刷新，是本仓库对外提供的数据集：
+数据在 **独立分支 [`data`](https://github.com/null-object-0000/goodsdex/tree/data)**，
+由 GitHub Actions 自动刷新：
 
 | 文件 | 内容 |
 |---|---|
-| `public/goods.json` | 全量商品（身份 / 价格 / 参数），约 2.6 MB |
+| `public/goods.json` | 全量商品（身份 / 价格 / 参数），约 2 MB |
 | `public/meta.json` | 统计与生成时间 |
 | `public/prices/latest.json` | 最新价格快照 |
-| `public/prices/<月>.jsonl` | **价格时间序列**（追加，不覆盖历史） |
+| `public/prices/<月>.jsonl` | **价格时间序列**（按小时追加，不覆盖历史） |
+
+**为什么数据不在 main**：代码与数据混在一个分支时，每次数据提交都在推进
+该分支的 tip，本地开发与 Actions 会互相 non-fast-forward（实测反复冲突）。
+分开后 `main` 只有代码、`data` 只有产物，各自演进互不干扰。
+
+直接取用：
+
+```bash
+git clone --branch data --depth 1 https://github.com/null-object-0000/goodsdex.git
+# 或
+curl -sL https://raw.githubusercontent.com/null-object-0000/goodsdex/data/public/goods.json
+```
 
 当前 **3477 条**（整机 1808 / 配件 887 / 服务 106 / 未判定 676），价格覆盖 100%。
 

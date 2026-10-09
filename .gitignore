@@ -16,6 +16,12 @@ data/_progress.json
 !*.env.example
 data/raw/
 
-# 公开数据集**要**入库（这是本仓库的产出）
-!public/
-!public/**
+# 公开数据集在**独立分支** `data`（不在 main）
+#   main: 只有代码（src/scripts/tests/docs）
+#   data: 只有产物（public/）
+# 分开的理由：代码与数据混在一个分支时，每次数据提交都推进该分支 tip，
+# 本地开发与 Actions 互相 non-fast-forward（实测反复冲突）。
+public/
+
+# GitHub Action 挂载产物分支用的工作树
+_data/
