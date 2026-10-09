@@ -63,6 +63,29 @@ def test_model_tabs_tier2():
         assert got[0]["tier"] == 2, f"{t} 应是 tier2"
 
 
+def test_display_spec_not_model():
+    """回归：显示器的规格描述不能被当成型号名
+
+    Codex 评审指认：tier2 用"非通用名即为型号"的排除法，
+    把 "27英寸 4K Type-C接口" / "1080P 144Hz" / "4K 60Hz Type-C版"
+    当成型号 —— 而且同一款有多种表述，会导致重复条目。
+    """
+    for t in ("27英寸 4K  Type-C接口", "1080P 144Hz", "4K 60Hz Type-C版",
+              "32英寸 4K Type-C接口", "4K 双模刷新率", "1080P 100Hz"):
+        got = find_spec_images(_rec([t]))
+        assert got == [], f"{t} 是规格描述，不该被当作型号 tab"
+
+
+def test_real_model_tabs_still_match():
+    """真型号 tab 仍要能识别（白名单不能太窄）"""
+    for t in ("法式-508L-冰羽白（金属）", "DD直驱款 米家洗衣机滚筒10kg",
+              "256L(星锻银)", "直冷-186L", "微冰鲜-法式门", "十字508L",
+              "标准款DD直驱变频 洗烘10kg银灰"):
+        got = find_spec_images(_rec([t]))
+        assert len(got) == 1, f"{t} 应被识别为型号 tab"
+        assert got[0]["tier"] == 2
+
+
 def test_generic_tab_not_model():
     """通用 tab 名不该被当成型号 tab"""
     for t in ("详情", "介绍", "商品详情", "包装清单"):

@@ -38,6 +38,19 @@ GENERIC_TAB = re.compile(
     r"^(商品详情|产品详情|详情|介绍|图文详情|包装清单|常见问题|"
     r"售后|服务|保障|政策|说明|用户评价|推荐)+$")
 
+# 真正的型号 tab 特征（**白名单**，不是排除法）
+# 实测教训：用"非通用名即为型号"的排除法，会把显示器规格描述
+# （"27英寸 4K Type-C接口"、"1080P 144Hz"、"4K 60Hz Type-C版"）
+# 当成型号名 —— 而且同一款会有多种表述，导致重复条目。
+MODEL_TAB = re.compile(
+    r"\d+\s*[L升]\b|\d+L\b"          # 容量：256L / 513L / 10kg
+    r"|\d+\s*kg"                      # 重量：10kg
+    r"|匹"                            # 空调匹数
+    r"|(十字|法式|对开|三门|两门)(门)?$"  # 冰箱门体
+    r"|(风冷|直冷|变频|定频)款"        # 洗衣机/冰箱 款式
+    r"|^\d+GB|\d+GB\+"               # 手机容量
+    r"|Pro|Max|Plus|Ultra")          # 型号后缀
+
 # 名副其实的参数 tab（白名单，实测有规律）
 SPEC_TAB = re.compile(r"参数|规格|specification")
 
@@ -76,10 +89,10 @@ def find_spec_images(rec: dict) -> list[dict]:
                 continue
             if SPEC_TAB.search(nm):
                 tier = 1                      # ① 名副其实的参数 tab
-            elif nm and not GENERIC_TAB.search(nm):
-                tier = 2                      # ② 型号命名 tab
+            elif MODEL_TAB.search(nm) and not GENERIC_TAB.search(nm):
+                tier = 2                      # ② 型号 tab（白名单特征）
             else:
-                continue                      # ③ 无名字的通用 tab，不取
+                continue                      # ③ 其余不取
             for pi, blk in enumerate(t.get("tab_content") or []):
                 img = ((blk.get("plain_view") or {}).get("img") or "")
                 if img:

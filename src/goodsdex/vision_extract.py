@@ -144,6 +144,7 @@ def extract_params_from_image(img_path: str, gateway: str = GATEWAY,
     outdir = outdir or "/tmp/goodsdex-vision"
     parts = slice_image(img_path, outdir)
     params, errors = {}, []
+    observations: dict[str, list] = {}     # 同名参数的多片观测值
 
     if ocr == "only":
         txt = _baidu_ocr_lines(img_path)
@@ -159,8 +160,18 @@ def extract_params_from_image(img_path: str, gateway: str = GATEWAY,
                               ocr_text=ocr_text)
             for k, v in (got or {}).items():
                 k = str(k).strip()
-                if k and k not in params:
-                    params[k] = str(v).strip()
+                if not k:
+                    continue
+                v = str(v).strip()
+                # 不静默丢弃：同一参数名在多个切片出现时，两值都要保留
+                # （与 facts.py 的原则一致 —— 多源/多次观测是独立佐证）
+                prev = params.get(k)
+                if prev is None:
+                    params[k] = v
+                elif prev != v:
+                    existing = observations.setdefault(k, [prev])
+                    if v not in existing:
+                        existing.append(v)
         except Exception as e:
             errors.append(f"part{p['index']}: {type(e).__name__}: {e}")
     # 归一化：收敛同义写法、分离包装附件（否则无法跨商品对比）
@@ -168,6 +179,7 @@ def extract_params_from_image(img_path: str, gateway: str = GATEWAY,
     canon, aliases, accessories = canonicalize_params(params)
     return {"ok": bool(canon), "params": canon, "raw_params": params,
             "aliases": aliases, "accessories": accessories,
+            "observations": observations,
             "parts": parts, "errors": errors, "ocr_mode": ocr}
 
 

@@ -29,23 +29,55 @@ def collect(rec: dict) -> dict:
     """取一条记录的全部参数（接口 + 视觉），归一化到规范名。
 
     同一规范名有多个来源值时，**保留全部**并标注来源 —— 不静默覆盖。
+
+    **来源必须如实标注**：`view.values` 里可能混有视觉提取的值
+    （build_view 时视觉断言也会进视图），不能一律记成"接口" ——
+    否则同一份视觉值会被记两次（一次伪装成接口、一次是视觉），
+    在对比表里显示为"双源一致"，形成**虚假佐证**。
     """
+    # 先建立 capture_id -> 来源 的映射，用于判定视图值真实出处
+    src_of_cap = {}
+    for c in rec.get("captures") or []:
+        src_of_cap[c.get("capture_id")] = c.get("source", "")
+
     out: dict[str, list[tuple[str, str]]] = {}
+    # 视觉断言单独处理（它们的 attribute 是规范名）
+    vision_values = {}
+    for a in rec.get("assertions") or []:
+        if a.get("source") != "mi_cn_pc_vision":
+            continue
+        canon, _ = canonical(a["attribute"])
+        if canon:
+            vision_values[canon] = str(a["raw_value"])
+
+    # 视图值：按 selected_from 指向的断言，判断真实来源
+    sel = (rec.get("view") or {}).get("selected_from") or {}
+    assert_by_id = {a.get("assertion_id"): a for a in (rec.get("assertions") or [])}
     vals = (rec.get("view") or {}).get("values") or {}
     for k, v in vals.items():
         if k in META_FIELDS or k.startswith("_"):
             continue
-        canon, info = canonical(k)
+        canon, _ = canonical(k)
         if not canon:
             continue
-        out.setdefault(canon, []).append(("接口", str(v)))
-    for a in rec.get("assertions") or []:
-        if a.get("source") != "mi_cn_pc_vision":
-            continue
-        canon, info = canonical(a["attribute"])
-        if not canon:
-            continue
-        pair = ("视觉", str(a["raw_value"]))
+        # 该值选中的是哪条断言？据此判定来源
+        aid = sel.get(k)
+        a = assert_by_id.get(aid)
+        if a and a.get("source") == "mi_cn_pc_vision":
+            label = "视觉"
+        elif a and a.get("source") == "mi_cn_mobile":
+            label = "接口"
+        elif a and a.get("source") == "mi_cn_pc":
+            label = "接口"
+        else:
+            label = "接口"
+        pair = (label, str(v))
+        if pair not in out.setdefault(canon, []):
+            out[canon].append(pair)
+
+    # 视觉断言补漏（视图里没体现的）
+    for canon, v in vision_values.items():
+        pair = ("视觉", v)
         if pair not in out.setdefault(canon, []):
             out[canon].append(pair)
     return out

@@ -256,10 +256,17 @@ def fetch_mobile(pid: str) -> tuple[list[Capture], list[Assertion]]:
             d, raw = d2, raw2
             cap0 = Capture.make(SRC_M, f"{MTOP_URL}?gid={gid}", raw2, method="POST",
                                 http_status=http2, parser_version=PARSER_VERSION)
+            # **必须把新快照加入 captures** —— 否则断言引用的 capture_id
+            # 在 captures 里找不到，溯源链断裂（实测曾导致 77% 断言悬空）
+            captures.append(cap0)
         else:
             cap0.status = CaptureStatus.PARTIAL
             cap0.error = f"gid 请求失败，降级使用首次结果: {err2 or d2.get('message')}"
     cid = cap0.capture_id
+
+    # 自检：断言引用的快照必须在 captures 里
+    assert any(c.capture_id == cid for c in captures), \
+        f"断言的 capture_id {cid} 不在 captures 中，溯源链会断裂"
 
     data = d.get("data") or {}
     prod = data.get("product") or {}

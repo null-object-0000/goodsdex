@@ -116,7 +116,10 @@ def split_record(rec: dict) -> tuple[list[dict], dict]:
                 "kind": "machine",
             },
             "assertions": asserts,
-            "captures": [],          # 原响应属于父记录，不重复
+            # 子记录**继承父记录的 captures** —— 视觉断言的 locator 指向
+            # 父记录 PC 响应里的 tab 图片，不带着 captures 就会溯源断裂
+            # （实测：冰箱子记录 36 条视觉断言全部悬空）
+            "captures": rec.get("captures") or [],
             "view": {},              # 由调用方重建
             "market_prices": [],
             "discovery": rec.get("discovery") or {},
