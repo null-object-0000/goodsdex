@@ -1,0 +1,55 @@
+name: probe-connectivity
+
+# 一次性探针：验证 GitHub runner 能否访问全量采集所需的全部域名。
+# 采集用到三个不同域名，价格刷新只覆盖了其中一个。
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Probe all endpoints
+        run: |
+          set +e
+          echo "=== 1. api2.order.mi.com (价格/搜索/PC详情) ==="
+          curl -s -o /dev/null -w "  search: HTTP %{http_code}  %{time_total}s\n" \
+            --max-time 25 \
+            "https://api2.order.mi.com/search/index?query=%E8%80%B3%E6%9C%BA&page_index=1&page_size=5"
+          curl -s -o /dev/null -w "  dynamicv2: HTTP %{http_code}  %{time_total}s\n" \
+            --max-time 25 \
+            "https://api2.order.mi.com/product/dynamicv2?goods_ids=2230000348&type=price"
+
+          echo ""
+          echo "=== 2. m.mi.com (mtop 移动端详情，主力数据源) ==="
+          curl -s -o /dev/null -w "  mtop: HTTP %{http_code}  %{time_total}s\n" \
+            --max-time 30 -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-User-Agent: channel/mishop platform/mishop.m" \
+            -H "mishop-client-id: 180100031051" \
+            -H "Referer: https://m.mi.com/" \
+            -d '{"productId":"10050151"}' \
+            "https://m.mi.com/mtop/xiaomishop/product/info"
+
+          echo ""
+          echo "=== 3. mishop-pc.cnbj1.mi-fds.com (PC 参数页) ==="
+          curl -s -o /dev/null -w "  pc-cdn: HTTP %{http_code}  %{time_total}s\n" \
+            --max-time 25 "https://mishop-pc.cnbj1.mi-fds.com/"
+
+          echo ""
+          echo "=== 4. mi.com 分类页 ==="
+          curl -s -o /dev/null -w "  mi.com: HTTP %{http_code}  %{time_total}s\n" \
+            --max-time 25 "https://www.mi.com/"
+
+          echo ""
+          echo "=== 5. 实际取一条 mtop 数据，看内容对不对 ==="
+          curl -s --max-time 30 -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-User-Agent: channel/mishop platform/mishop.m" \
+            -H "mishop-client-id: 180100031051" \
+            -H "Referer: https://m.mi.com/" \
+            -d '{"productId":"10050151"}' \
+            "https://m.mi.com/mtop/xiaomishop/product/info" | head -c 400
+          echo ""
