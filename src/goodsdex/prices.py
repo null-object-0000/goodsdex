@@ -102,11 +102,22 @@ def refresh(gids: list[str], store: Path, stamp: Optional[str] = None) -> dict:
     (store / "prices" / "latest.json").write_text(
         json.dumps(snap, ensure_ascii=False, indent=1), encoding="utf-8")
 
+    # 时间序列按**小时**追加（同小时内重跑不重复写）
     month = stamp[:7]
-    line = json.dumps({"fetched_at": stamp, "prices": prices},
-                      ensure_ascii=False)
-    with (store / "prices" / f"{month}.jsonl").open("a", encoding="utf-8") as fp:
-        fp.write(line + "\n")
+    fp = store / "prices" / f"{month}.jsonl"
+    hour = stamp[:13]
+    seen = set()
+    if fp.exists():
+        for old in fp.read_text(encoding="utf-8").splitlines():
+            try:
+                seen.add(str(json.loads(old).get("fetched_at"))[:13])
+            except Exception:
+                pass
+    if hour not in seen:
+        line = json.dumps({"fetched_at": stamp, "prices": prices},
+                          ensure_ascii=False)
+        with fp.open("a", encoding="utf-8") as f:
+            f.write(line + "\n")
 
     return {"fetched_at": stamp, "updated": len(prices),
             "requested": len(gids), "errors": errs}

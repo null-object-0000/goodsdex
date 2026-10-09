@@ -74,14 +74,45 @@ def main() -> int:
                          encoding="utf-8")
         print(f"回灌完成，价格变化 {changed} 条")
 
-    # 时间序列也要进发布集（公开的价格历史）
+    # 时间序列：**必须追加到公开序列，不能覆盖**。
+    #
+    # 曾用「把 data/prices 复制到 public/prices」的写法 —— 在 runner 上
+    # checkout 出来的是上次的 public 文件，复制等于**用本次覆盖历史**
+    # （实测 Action 提交是 +1 -2，历史行被删）。价格历史是这份数据集的
+    # 核心价值之一，绝不能丢。
     src = Path(a.public).parent / "data" / "prices"
+    dst = Path(a.public) / "prices"
+    dst.mkdir(parents=True, exist_ok=True)
     if src.exists():
-        dst = Path(a.public) / "prices"
-        dst.mkdir(parents=True, exist_ok=True)
         for f in src.glob("*.jsonl"):
-            (dst / f.name).write_text(f.read_text(encoding="utf-8"),
-                                      encoding="utf-8")
+            target = dst / f.name
+            new_lines = f.read_text(encoding="utf-8").splitlines()
+            # 去重粒度：**按小时**（不是按秒）。
+            # 按秒去重会在同一小时内产生多条几乎相同的行（重跑、手动触发
+            # 都会各留一行），既冗余又让历史难以阅读。
+            # 按小时 = "这一小时的观测"，符合小时级刷新的语义。
+            seen = set()
+            if target.exists():
+                for old in target.read_text(encoding="utf-8").splitlines():
+                    try:
+                        seen.add(str(json.loads(old).get("fetched_at"))[:13])
+                    except Exception:
+                        pass
+            keep = []
+            for line in new_lines:
+                try:
+                    ts = str(json.loads(line).get("fetched_at"))[:13]
+                except Exception:
+                    continue
+                if ts not in seen:
+                    seen.add(ts)
+                    keep.append(line)
+            if keep:
+                with target.open("a", encoding="utf-8") as fp:
+                    fp.write("\n".join(keep) + "\n")
+                print(f"{target.name}: 追加 {len(keep)} 行")
+            else:
+                print(f"{target.name}: 无新行")
         lf = src / "latest.json"
         if lf.exists():
             (dst / "latest.json").write_text(lf.read_text(encoding="utf-8"),
