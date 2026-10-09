@@ -117,6 +117,42 @@ def test_live_evidence_resolvable():
     assert ok / tot >= 0.95, f"可验证率仅 {ok}/{tot}"
 
 
+def test_large_response_externalized_not_truncated():
+    """大响应必须外置保存，绝不截断
+
+    Codex 评审指认：原实现在 300000 字符处截去中间，
+    **却保留按完整内容计算的 hash** —— 实测导致 56 份快照
+    hash 不符且不可 JSON 解析。而依赖 JSON 的选图/拆分遇到
+    坏快照会静默跳过，使"损坏证据"伪装成"没有图"。
+    """
+    import tempfile
+    from pathlib import Path
+    from goodsdex.pipeline import store_raw
+    d = Path(tempfile.mkdtemp())
+    big = json.dumps({"data": list(range(40000))})
+    assert len(big) > 200_000, f"测试数据需超过阈值，实际 {len(big)}"
+    inline, ref = store_raw(big, d / "raw")
+    assert ref, "大响应必须外置"
+    assert inline.startswith("<externalized:"), "内联应是引用标记"
+    fp = Path(ref)                 # 返回的是绝对路径
+    assert fp.exists(), "外置文件必须存在"
+    assert fp.read_text(encoding="utf-8") == big, "外置内容必须完整无损"
+    # 小响应仍内联
+    small, r2 = store_raw('{"a":1}', d / "raw")
+    assert small == '{"a":1}' and not r2
+
+
+def test_integrity_check_detects_truncation():
+    """截断的快照必须能被检出（hash 不符 -> parse_error）"""
+    from goodsdex.facts import Capture, CaptureStatus
+    c = Capture.make("s", "u", "x" * 300)
+    assert c.verify_integrity() is True
+    c.response_raw = c.response_raw[:100]      # 模拟截断
+    assert c.verify_integrity() is False
+    assert c.status == CaptureStatus.PARSE_ERROR
+    assert "完整性校验失败" in c.error
+
+
 def test_vision_locator_resolvable():
     """视觉断言：locator 必须指向自身 capture 内存在的结构"""
     from goodsdex.vision_extract import to_assertions

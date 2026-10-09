@@ -27,22 +27,46 @@ from .sources import mi_cn
 SUPPORTED_SOURCES = {"mi_cn"}
 
 DEFAULT_OUT = Path("data")
-# 原响应体积上限（避免单个商品把数据文件撑爆）
-RAW_SNAPSHOT_LIMIT = 300_000
+# 原响应超过此大小时**外置到内容寻址文件**（data/raw/<hash>.txt），
+# 记录里只留引用。绝不截断 —— 截断会破坏 JSON 可解析性，
+# 而依赖 JSON 的选图/拆分遇到坏快照会静默跳过，
+# 使"损坏证据"伪装成"没有图"（实测 56 份快照因此损坏）。
+RAW_INLINE_LIMIT = 200_000
+RAW_STORE = Path("data/raw")
 
 
 # 分类名 -> 安全文件名（含 / \ : * ? " < > | 等字符时替换）
 _UNSAFE = str.maketrans({c: "_" for c in '/\\:*?"<>|'})
 
+
 def safe_filename(name: str) -> str:
     return (name or "unnamed").translate(_UNSAFE).strip() or "unnamed"
 
 
-def _trim_raw(raw: str) -> str:
-    if len(raw) <= RAW_SNAPSHOT_LIMIT:
-        return raw
-    half = RAW_SNAPSHOT_LIMIT // 2
-    return raw[:half] + f"\n...<省略 {len(raw) - RAW_SNAPSHOT_LIMIT} 字节>...\n" + raw[-half:]
+def store_raw(raw: str, store: Path | None = None) -> tuple[str, str]:
+    """保存原响应。返回 (内联内容, 外置文件的绝对路径)。
+
+    小于阈值时内联返回（引用为空）；
+    超过阈值时写入**内容寻址**文件（按 sha256 命名，天然去重），
+    内联只留引用标记 + 前 2000 字符预览。
+
+    绝不截断 —— 截断会破坏 JSON 可解析性，使损坏证据伪装成"没有图"。
+    """
+    import hashlib
+    if len(raw) <= RAW_INLINE_LIMIT:
+        return raw, ""
+    store = Path(store) if store else RAW_STORE
+    store.mkdir(parents=True, exist_ok=True)
+    digest = hashlib.sha256(raw.encode()).hexdigest()
+    fp = (store / f"{digest[:2]}" / f"{digest}.txt").resolve()
+    if not fp.exists():
+        fp.parent.mkdir(parents=True, exist_ok=True)
+        tmp = fp.with_suffix(".txt.tmp")
+        tmp.write_text(raw, encoding="utf-8")
+        tmp.replace(fp)
+    preview = raw[:2000]
+    return (f"<externalized:sha256={digest}:bytes={len(raw)}>\n{preview}",
+            str(fp))
 
 
 def collect_one(pid: str, name_hint: str = "", category: str = "",
@@ -69,7 +93,10 @@ def collect_one(pid: str, name_hint: str = "", category: str = "",
                 status=CaptureStatus.TRANSPORT_ERROR, error=f"{type(e).__name__}: {e}"))
             continue
         for c in caps:
-            c.response_raw = _trim_raw(c.response_raw)
+            # 大响应外置保存（不截断），并校验 hash 与内容一致
+            if c.response_raw:
+                c.response_raw, c.raw_ref = store_raw(c.response_raw)
+                c.verify_integrity()
             bundle.add_capture(c)
         bundle.add_assertions(assertions)
 

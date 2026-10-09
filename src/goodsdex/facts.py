@@ -67,8 +67,9 @@ class Capture:
     status: CaptureStatus = CaptureStatus.SUCCESS
     http_status: Optional[int] = None
     error: str = ""
-    response_raw: str = ""              # 原响应（保存证据）
+    response_raw: str = ""              # 原响应（小则内联，大则留预览+引用）
     response_hash: str = ""             # 内容哈希，用于去重/变更检测
+    raw_ref: str = ""                   # 外置原响应的路径（大响应时非空）
     parser_version: str = "v1"
     fetched_at: str = field(default_factory=now_iso)
     declared_at: str = ""               # 源声明的有效时间（如价格生效时间）
@@ -77,6 +78,26 @@ class Capture:
         d = asdict(self)
         d["status"] = self.status.value if isinstance(self.status, CaptureStatus) else self.status
         return d
+
+    def verify_integrity(self) -> bool:
+        """校验 response_hash 与当前内容一致。
+
+        **截断过的快照 hash 会对不上** —— 这正是"损坏证据伪装成没有图"
+        的根源。大响应现在外置保存（见 pipeline.store_raw），不截断。
+        """
+        if not self.response_raw or not self.response_hash:
+            return True
+        import hashlib as _h
+        # 外置预览以 <externalized:...> 开头，hash 对的是**外置的完整内容**
+        if self.response_raw.startswith("<externalized:") and self.raw_ref:
+            return True
+        actual = _h.sha256(self.response_raw.encode()).hexdigest()[:16]
+        if actual != self.response_hash:
+            self.status = CaptureStatus.PARSE_ERROR
+            self.error = (f"证据完整性校验失败：hash 记录 {self.response_hash} "
+                          f"实际 {actual}（快照可能被截断）")
+            return False
+        return True
 
     @classmethod
     def make(cls, source: str, url: str, response_raw: str = "",

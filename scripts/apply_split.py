@@ -59,15 +59,35 @@ def main() -> int:
         machines = [r for r in recs if (r.get("product") or {}).get("kind") == "machine"]
         others = [r for r in recs if (r.get("product") or {}).get("kind") != "machine"]
 
+        # **幂等**：先剔除已存在的子记录，再重建 —— 否则每次运行都会
+        # 给已拆父记录再追加一份同 ID 子记录（Codex 评审指认）。
+        existing_children = {}
+        for r in machines:
+            pid = (r.get("product") or {}).get("product_id", "")
+            if (r.get("product") or {}).get("is_model_child"):
+                existing_children[pid] = r
+        # 已拆父记录：不重复拆
+        parents_done = {r["product"]["product_id"] for r in machines
+                        if (r.get("product") or {}).get("is_multi_model_parent")}
+        machines = [r for r in machines
+                    if not (r.get("product") or {}).get("is_model_child")]
+
         new_machines, n_split, n_kids = [], 0, 0
         for r in machines:
+            pid = (r.get("product") or {}).get("product_id", "")
+            if pid in parents_done:
+                # 已拆过：沿用已有子记录（若在），父记录保留不动
+                for cid in (r["product"].get("split_children") or []):
+                    if cid in existing_children:
+                        new_machines.append(existing_children[cid])
+                new_machines.append(r)
+                continue
             kids, st = split_record(r)
             if kids:
                 n_split += 1
                 n_kids += len(kids)
                 for k in kids:
                     k["view"] = rebuild_view(k)
-                # 父记录保留，标记已拆（可回溯，但不再参与对比）
                 r["product"]["is_multi_model_parent"] = True
                 r["product"]["split_children"] = [k["product"]["product_id"] for k in kids]
                 new_machines.extend(kids)
