@@ -192,7 +192,14 @@ def run_category(category: str, limit: int = 0, max_pages: int = 20,
     # 排除项不丢弃，随结果一起落盘（带 excluded_reason），便于复核
     for d in dropped:
         d["product"]["excluded"] = True
-    out = kept + dropped
+    # **配件/服务/未判定也要落盘**（带 kind 标记）。
+    # 分流是指"不参与对比与残值"，不是"不留档"。
+    # 曾写成 out = kept + dropped，把 657 配件 + 87 服务 + 466 未判定
+    # 静默丢掉 —— 丢了就无法复核"到底抓到了什么"，
+    # 也没法回答"官方有没有这个东西"。
+    others = (kinds["buckets"]["accessory"] + kinds["buckets"]["service"]
+              + kinds["buckets"]["unknown"])
+    out = kept + dropped + others
 
     # 稳定排序（并发完成顺序不确定，输出必须可复现）
     out.sort(key=lambda r: r["product"]["product_id"])
