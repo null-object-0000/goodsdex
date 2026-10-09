@@ -300,8 +300,9 @@ def fetch_mobile(pid: str) -> tuple[list[Capture], list[Assertion]]:
         out.append(A("img_url", g["imgUrl"], "$.data.goodsInfo.goodsList[0].imgUrl"))
     car = [c.get("imgUrl") for c in (g.get("carouselList") or []) if c.get("imgUrl")]
     if car:
+        # raw_value 是提取后的 URL 列表，locator 指向**源列表**（可解析）
         out.append(A("carousel", car,
-                     "$.data.goodsInfo.goodsList[0].carouselList[].imgUrl", "轮播图"))
+                     "$.data.goodsInfo.goodsList[0].carouselList", "轮播图"))
 
     colors, attrs = [], {}
     for a in ((data.get("saleAttributeInfo") or {}).get("saleAttributeList") or []):
@@ -310,10 +311,10 @@ def fetch_mobile(pid: str) -> tuple[list[Capture], list[Assertion]]:
         if a.get("attributeName") == "颜色":
             colors = vals
     if attrs:
-        out.append(A("attrs", attrs, "$.data.saleAttributeInfo.saleAttributeList[]"))
+        out.append(A("attrs", attrs, "$.data.saleAttributeInfo.saleAttributeList"))
     if colors:
         out.append(A("colors", colors,
-                     "$.data.saleAttributeInfo.saleAttributeList[name=颜色]", "可选颜色"))
+                     "$.data.saleAttributeInfo.saleAttributeList", "可选颜色"))
 
     bs = data.get("buyerShow") or {}
     if bs.get("total"):
@@ -427,10 +428,12 @@ def _parse_pc(raw: str, url: str, pid: str) -> tuple[list[Capture], list[Asserti
                 imgs.append({"tab": tab.get("name"), "img": p["img"],
                              "w": p.get("w"), "h": p.get("h")})
     if tabs:
-        out.append(A("pc_tabs", tabs, "$.data.extend_info.desc_tabs_view[].name", "商品详情"))
+        # locator 指向**整个列表**（raw_value 就是列表），不是某个元素。
+        # 原写法 `desc_tabs_view[].name` 是"遍历"语义，不是合法可解析路径。
+        out.append(A("pc_tabs", tabs, "$.data.extend_info.desc_tabs_view", "商品详情"))
     if imgs:
         out.append(A("pc_imgs", imgs,
-                     "$.data.extend_info.desc_tabs_view[].tab_content[].plain_view", "商品详情"))
+                     "$.data.extend_info.desc_tabs_view", "商品详情"))
     return captures, out
 
 

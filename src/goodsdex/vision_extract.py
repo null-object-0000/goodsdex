@@ -151,13 +151,15 @@ def extract_params_from_image(img_path: str, gateway: str = GATEWAY,
         return {"ok": bool(txt), "params": {}, "raw_ocr": txt,
                 "parts": parts, "errors": [] if txt else ["OCR 无输出"]}
 
+    model_outputs: dict[int, str] = {}
     for p in parts:
         try:
             ocr_text = ""
             if ocr == "hybrid":
                 ocr_text = _baidu_ocr_lines(p["path"])
-            got = _ask_vision(p["path"], p["index"], len(parts), gateway, key,
-                              ocr_text=ocr_text)
+            got, mtext = _ask_vision(p["path"], p["index"], len(parts), gateway, key,
+                                     ocr_text=ocr_text)
+            model_outputs[p["index"]] = mtext
             for k, v in (got or {}).items():
                 k = str(k).strip()
                 if not k:
@@ -180,7 +182,8 @@ def extract_params_from_image(img_path: str, gateway: str = GATEWAY,
     return {"ok": bool(canon), "params": canon, "raw_params": params,
             "aliases": aliases, "accessories": accessories,
             "observations": observations,
-            "parts": parts, "errors": errors, "ocr_mode": ocr}
+            "parts": parts, "errors": errors, "ocr_mode": ocr,
+            "model_outputs": model_outputs}
 
 
 def _ask_vision(img_path: str, idx: int, total: int, gateway: str, key: str,
@@ -211,20 +214,50 @@ def _ask_vision(img_path: str, idx: int, total: int, gateway: str, key: str,
     text = (resp.get("choices") or [{}])[0].get("message", {}).get("content") or ""
     m = re.search(r"\{.*\}", text, re.S)
     if not m:
-        return {}
+        return {}, text
     try:
-        return (json.loads(m.group(0)) or {}).get("params") or {}
+        return ((json.loads(m.group(0)) or {}).get("params") or {}), text
     except Exception:
-        return {}
+        return {}, text
 
 
 def to_assertions(img_url: str, tab_index: int, part_index: int, params: dict,
-                  subject_id: str, aliases: dict | None = None) -> tuple[list[Capture], list[Assertion]]:
-    """把视觉结果转成断言（来源可定位到具体图片片段）。
+                  subject_id: str, aliases: dict | None = None,
+                  image_sha256: str = "", model_text: str = "",
+                  parent_capture_id: str = "",
+                  part_range: tuple[int, int] | None = None,
+                  ) -> tuple[list[Capture], list[Assertion]]:
+    """把视觉结果转成断言。
 
-    属性名已归一化；aliases 记录 raw -> canonical 的映射，供复核。
+    **证据必须是证据，不能是答案**（Codex 评审指认）：
+      原实现把 json.dumps(params) 当作 response_raw，而 locator 写成
+      `...desc_tabs_view[N].tab_content[M].plain_view.img` —— 这个路径
+      在那份 JSON 里**不可能解析**，等于写了个看着能定位、实际指向空处的路径。
+
+    改为：capture 里保存**可核验的派生证据**，字段名不再冒充原始响应：
+      - source_image_url / source_image_sha256：实际处理的那张图
+      - model_raw_output：模型原始输出文本
+      - model / prompt_version / parser_version：可复现所需配置
+      - parent_capture_id：父 PC 响应（图从哪来）
+      - slice_range：长图切片范围 [y0, y1]
+    locator 改为指向 **capture 自身结构 + 切片**，可真实解析。
     """
-    cap = Capture.make(SRC_VISION, img_url, json.dumps(params, ensure_ascii=False),
+    import hashlib
+    evidence = {
+        "type": "vision_extraction",
+        "source_image_url": img_url,
+        "source_image_sha256": image_sha256,
+        "tab_index": tab_index,
+        "part_index": part_index,
+        "slice_range": list(part_range) if part_range else None,
+        "model": MODEL,
+        "prompt_version": PARSER_VERSION,
+        "parent_capture_id": parent_capture_id,
+        "model_raw_output": model_text,
+        "extracted": params,
+    }
+    cap = Capture.make(SRC_VISION, img_url,
+                       json.dumps(evidence, ensure_ascii=False),
                        parser_version=PARSER_VERSION)
     out = []
     for k, v in params.items():
@@ -232,8 +265,8 @@ def to_assertions(img_url: str, tab_index: int, part_index: int, params: dict,
             assertion_id=f"{cap.capture_id}:{k}",
             subject_id=subject_id, capture_id=cap.capture_id, source=SRC_VISION,
             attribute=k, raw_value=v,
-            locator=f"$.data.extend_info.desc_tabs_view[{tab_index}]"
-                    f".tab_content[{part_index}].plain_view.img",
+            # 指向 capture 内的真实结构（可解析），而非不存在的原始响应路径
+            locator=f"$.extracted.{k}",
             ui_location=("规格参数" + (
                 f"（归一化自 {len(aliases[k])} 种写法）"
                 if aliases and len(aliases.get(k, [])) > 1 else "")),

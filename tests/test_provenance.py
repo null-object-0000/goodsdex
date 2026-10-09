@@ -87,6 +87,56 @@ def test_capture_hash_identifies_content():
     assert c.response_hash != a.response_hash
 
 
+def test_live_evidence_resolvable():
+    """locator 必须能在对应 capture 里真实解析出值
+
+    Codex 评审指认的关键自欺：视觉 capture 的 response_raw 是
+    json.dumps(params)（答案本身），而 locator 写成
+    `$.data.extend_info.desc_tabs_view[N]...img` —— 该路径在这份 JSON 里
+    **不可能解析**。即：写了个看着能定位、实际指向空处的路径。
+
+    修复前实测：59290 条断言仅 14% 可解析且值一致。
+    """
+    try:
+        from goodsdex.sources import mi_cn
+        from audit_evidence import audit
+        cp, ap = mi_cn.fetch_pc("22137")
+        cm, am = mi_cn.fetch_mobile("22137")
+    except Exception as e:
+        print(f"    (跳过：网络不可用 {type(e).__name__})")
+        return
+    recs = [{"captures": [c.to_dict() for c in cp + cm],
+             "assertions": [a.to_dict() for a in ap + am]}]
+    if not recs[0]["assertions"]:
+        return
+    s = audit(recs)["stat"]
+    ok = s["verified"] + s.get("derived_ok", 0)
+    tot = max(s["assertions"], 1)
+    assert s["orphan"] == 0, f"{s['orphan']} 条孤儿断言"
+    assert s["unresolvable"] == 0, f"{s['unresolvable']} 条 locator 解析失败"
+    assert ok / tot >= 0.95, f"可验证率仅 {ok}/{tot}"
+
+
+def test_vision_locator_resolvable():
+    """视觉断言：locator 必须指向自身 capture 内存在的结构"""
+    from goodsdex.vision_extract import to_assertions
+    caps, asserts = to_assertions("http://img", 1, 0, {"总容积": "256L"}, "p")
+    assert caps and asserts
+    raw = json.loads(caps[0].response_raw)
+    assert "extracted" in raw, "视觉证据必须含提取结果"
+    # locator 指向 $..extracted.<key>，必须能解析
+    import sys as _s
+    _s.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
+    from audit_evidence import jsonpath_get
+    for a in asserts:
+        val, err = jsonpath_get(raw, a.locator)
+        assert not err, f"视觉 locator 无法解析: {a.locator} ({err})"
+        assert str(val) == str(a.raw_value)
+    # 必须记录可复现所需信息
+    for k in ("source_image_url", "model", "prompt_version", "tab_index"):
+        assert k in raw, f"视觉证据缺少 {k}"
+
+
 def test_live_fetch_provenance_is_complete():
     """实际采集一次，验证溯源链完整（不依赖历史数据）
 
