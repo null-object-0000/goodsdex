@@ -312,6 +312,28 @@ def _mtop_call(pid: str, gid: str | None = None) -> tuple[dict, str, int, str]:
         return {}, "", getattr(e, "code", 0) or 0, str(e)
 
 
+def _classify_api_code(code, message) -> tuple[CaptureStatus, str]:
+    """把官方业务错误码映射成**有区分度**的状态。
+
+    实测（不靠猜）：
+      code=400480502  msg="该产品已下架"   -> DELISTED
+      code=400480400  msg="请求参数非法"   -> NOT_FOUND（ID 无效/格式错）
+      code=0          msg="ok"            -> 正常
+
+    DELISTED 与 NOT_FOUND 的区别很重要：
+      前者是**有效结论**——商品存在过、官方已撤下，规格不可得；
+      后者说明**我们查错了**（ID 无效）。
+    混为一谈会把"官方下架"说成"我们抓错了"，或反之把无效 ID
+    当成"官方没有"——正是本项目最要避免的自欺。
+    """
+    msg = message or ""
+    if code == 400480502 or "已下架" in msg or "已停售" in msg:
+        return CaptureStatus.DELISTED, msg
+    if code == 400480400 or "参数非法" in msg or "参数错误" in msg:
+        return CaptureStatus.NOT_FOUND, msg
+    return CaptureStatus.SOURCE_ERROR, msg
+
+
 def fetch_mobile(pid: str) -> tuple[list[Capture], list[Assertion]]:
     """移动端采集 -> (captures, assertions)"""
     captures: list[Capture] = []
@@ -319,10 +341,15 @@ def fetch_mobile(pid: str) -> tuple[list[Capture], list[Assertion]]:
 
     d, raw, http, err = _mtop_call(pid)
     if err or d.get("code") != 0:
-        status = CaptureStatus.TRANSPORT_ERROR if err else CaptureStatus.SOURCE_ERROR
+        if err:
+            status = CaptureStatus.TRANSPORT_ERROR
+            errmsg = err
+        else:
+            # 区分「已下架」（有效结论）与「ID 无效」（我们查错了）
+            status, errmsg = _classify_api_code(d.get("code"), d.get("message"))
         captures.append(Capture.make(
             SRC_M, MTOP_URL, raw, status=status, http_status=http,
-            error=err or str(d.get("message")), method="POST",
+            error=errmsg, method="POST",
             parser_version=PARSER_VERSION))
         return captures, out
 

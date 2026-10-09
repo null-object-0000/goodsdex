@@ -39,7 +39,12 @@ class CaptureStatus(str, Enum):
     RATE_LIMITED = "rate_limited"      # 被限流（429）—— 与"源未提供"完全不同   # 网络/HTTP 失败
     SOURCE_ERROR = "source_error"         # 业务错误码
     PARSE_ERROR = "parse_error"           # 解析失败
-    NOT_FOUND = "not_found"
+    NOT_FOUND = "not_found"               # 标识符在源里不存在（ID 无效/写错）
+    # **已下架 / 已停售** —— 与 NOT_FOUND 分开：
+    # NOT_FOUND 是"这个 ID 根本没有过"；DELISTED 是"有过、现在官方撤下了"。
+    # 前者说明我们查错了；后者是**有效结论**（官方已删除，规格不可得）。
+    # 混为一谈会让我们把"官方下架"误报成"我们抓错了"。
+    DELISTED = "delisted"
     UNSUPPORTED = "unsupported"
 
 
