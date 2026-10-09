@@ -1,0 +1,100 @@
+name: crawl-all
+
+# 全量采集（低频，每天一次）
+#
+# 实测 runner 上完全可行（探针验证）：
+#   list_categories() 95 个分类
+#   fetch_mobile()    success，含 20 项参数
+#   fetch_pc()        success
+# 耗时约 26 分钟 —— 用 schedule 每天跑一次。
+#
+# 产物同样推到 data 分支（不碰 main）。
+#
+# 为什么低频：全量要打 3477 个商品的详情接口 + PC 参数页，
+# 26 分钟；而价格有批量接口只需 83 秒（见 refresh-prices.yml）。
+# 商品上新/下架是慢变化，每天一次足够。
+
+on:
+  schedule:
+    # 每天 UTC 19:07 = 北京时间次日 03:07（低峰）
+    - cron: '7 19 * * *'
+  workflow_dispatch:
+    inputs:
+      categories:
+        description: '指定分类（空格分隔，留空=全部）'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crawl-all
+  cancel-in-progress: false
+
+env:
+  DATA_BRANCH: data
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch data branch
+        run: |
+          git fetch origin "${DATA_BRANCH}" --depth=1 || true
+          if git rev-parse --verify "origin/${DATA_BRANCH}" >/dev/null 2>&1; then
+            git worktree add ./_data "origin/${DATA_BRANCH}"
+          else
+            mkdir -p ./_data
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Crawl
+        env:
+          # 三态代理：runner 上禁代理（本机才需要 Clash）
+          GOODSDEX_PROXY: ''
+        run: |
+          export PYTHONPATH=src:scripts
+          mkdir -p data
+          if [ -d _data/data/categories ]; then
+            cp -r _data/data/categories data/ 2>/dev/null || true
+          fi
+          ARGS="${{ github.event.inputs.categories }}"
+          if [ -n "$ARGS" ]; then
+            python3 scripts/crawl_all.py $ARGS --workers 2 --pause 1.5
+          else
+            python3 scripts/crawl_all.py --workers 2 --pause 1.5
+          fi
+
+      - name: Rebuild public dataset
+        run: |
+          export PYTHONPATH=src
+          python3 -m goodsdex.publish --cats data/categories --out _data/public
+
+      - name: Push to data branch
+        run: |
+          cd ./_data
+          git config user.name "goodsdex-bot"
+          git config user.email "goodsdex-bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "无变化"
+            exit 0
+          fi
+          git commit -m "crawl $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do
+            git fetch origin "${DATA_BRANCH}" --depth=1 || true
+            if git rev-parse --verify "origin/${DATA_BRANCH}" >/dev/null 2>&1; then
+              git rebase -X theirs "origin/${DATA_BRANCH}" || git rebase --abort || true
+            fi
+            if git push origin "HEAD:${DATA_BRANCH}"; then
+              echo "推送成功"; break
+            fi
+            echo "重试 $i"; sleep 4
+          done
