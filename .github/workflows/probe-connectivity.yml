@@ -1,7 +1,12 @@
 name: probe-connectivity
 
-# 一次性探针：验证 GitHub runner 能否访问全量采集所需的全部域名。
-# 采集用到三个不同域名，价格刷新只覆盖了其中一个。
+# 探针：验证 runner 能否访问全量采集所需的全部域名。
+#
+# 第一版结论有假象：curl 不带 User-Agent 时 api2 返回 406，
+# 但真实采集代码带 UA/Referer 是通的（价格刷新 Action 一直成功）。
+# 所以探针必须**带真实请求头**，否则测的不是同一个东西。
+#
+# 关键在第二步：直接调采集代码，而不是手搓 curl。
 
 on:
   workflow_dispatch:
@@ -11,45 +16,80 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Probe all endpoints
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Probe with real headers
         run: |
           set +e
-          echo "=== 1. api2.order.mi.com (价格/搜索/PC详情) ==="
-          curl -s -o /dev/null -w "  search: HTTP %{http_code}  %{time_total}s\n" \
-            --max-time 25 \
-            "https://api2.order.mi.com/search/index?query=%E8%80%B3%E6%9C%BA&page_index=1&page_size=5"
-          curl -s -o /dev/null -w "  dynamicv2: HTTP %{http_code}  %{time_total}s\n" \
-            --max-time 25 \
-            "https://api2.order.mi.com/product/dynamicv2?goods_ids=2230000348&type=price"
+          UA="Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
 
-          echo ""
-          echo "=== 2. m.mi.com (mtop 移动端详情，主力数据源) ==="
-          curl -s -o /dev/null -w "  mtop: HTTP %{http_code}  %{time_total}s\n" \
+          echo "=== 1. api2 搜索（带真实 UA）==="
+          curl -s -o /tmp/s.json -w "  HTTP %{http_code}  %{time_total}s  " \
+            --max-time 25 -A "$UA" -H "Referer: https://m.mi.com/" \
+            "https://api2.order.mi.com/search/index?query=%E8%80%B3%E6%9C%BA&page_index=1&page_size=5&callback=cb"
+          head -c 100 /tmp/s.json; echo
+
+          echo "=== 2. api2 dynamicv2 价格（带真实 UA）==="
+          curl -s -o /tmp/d.json -w "  HTTP %{http_code}  %{time_total}s  " \
+            --max-time 25 -A "$UA" -H "Referer: https://m.mi.com/" \
+            "https://api2.order.mi.com/product/dynamicv2?goods_ids=2230000348&type=price"
+          head -c 100 /tmp/d.json; echo
+
+          echo "=== 3. m.mi.com mtop（主力数据源）==="
+          curl -s -o /tmp/m.json -w "  HTTP %{http_code}  %{time_total}s  " \
             --max-time 30 -X POST \
             -H "Content-Type: application/json" \
             -H "X-User-Agent: channel/mishop platform/mishop.m" \
             -H "mishop-client-id: 180100031051" \
+            -H "X-Mishop-App-Source: front-RNWeb" \
+            -H "Mishop-Channel-Id: channel" \
             -H "Referer: https://m.mi.com/" \
+            -H "Origin: https://m.mi.com" \
             -d '{"productId":"10050151"}' \
             "https://m.mi.com/mtop/xiaomishop/product/info"
+          head -c 140 /tmp/m.json; echo
 
-          echo ""
-          echo "=== 3. mishop-pc.cnbj1.mi-fds.com (PC 参数页) ==="
-          curl -s -o /dev/null -w "  pc-cdn: HTTP %{http_code}  %{time_total}s\n" \
-            --max-time 25 "https://mishop-pc.cnbj1.mi-fds.com/"
+      - name: Python 层验证（真实采集函数）
+        run: |
+          python3 - <<'PY'
+          import sys, json
+          sys.path.insert(0, "src")
+          from goodsdex.sources import mi_cn
+          from goodsdex import prices
 
-          echo ""
-          echo "=== 4. mi.com 分类页 ==="
-          curl -s -o /dev/null -w "  mi.com: HTTP %{http_code}  %{time_total}s\n" \
-            --max-time 25 "https://www.mi.com/"
+          print("=== mi_cn.list_categories() ===")
+          try:
+              cats = mi_cn.list_categories()
+              print(f"  分类数: {len(cats)}")
+          except Exception as e:
+              print(f"  失败: {type(e).__name__}: {e}")
 
-          echo ""
-          echo "=== 5. 实际取一条 mtop 数据，看内容对不对 ==="
-          curl -s --max-time 30 -X POST \
-            -H "Content-Type: application/json" \
-            -H "X-User-Agent: channel/mishop platform/mishop.m" \
-            -H "mishop-client-id: 180100031051" \
-            -H "Referer: https://m.mi.com/" \
-            -d '{"productId":"10050151"}' \
-            "https://m.mi.com/mtop/xiaomishop/product/info" | head -c 400
-          echo ""
+          print("=== mi_cn.fetch_mobile('10050151') ===")
+          try:
+              caps, ass = mi_cn.fetch_mobile("10050151")
+              print(f"  captures={len(caps)} status={caps[0].status.value}")
+              names = [a.raw_value for a in ass if a.attribute == "name"]
+              print(f"  名称: {names[:1]}")
+              params = [a for a in ass if "classParameters.list[" in (a.locator or "")]
+              print(f"  参数: {len(params)} 项")
+          except Exception as e:
+              print(f"  失败: {type(e).__name__}: {e}")
+
+          print("=== mi_cn.fetch_pc('10050151') ===")
+          try:
+              caps, ass = mi_cn.fetch_pc("10050151")
+              print(f"  captures={len(caps)} status={caps[0].status.value} 断言={len(ass)}")
+          except Exception as e:
+              print(f"  失败: {type(e).__name__}: {e}")
+
+          print("=== prices.fetch_prices ===")
+          try:
+              r = prices.fetch_prices(["2230000348"])
+              print(f"  结果: {json.dumps({k:v for k,v in list(r.items())[:2]}, ensure_ascii=False)[:150]}")
+          except Exception as e:
+              print(f"  失败: {type(e).__name__}: {e}")
+          PY
