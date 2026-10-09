@@ -18,10 +18,24 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 from goodsdex.sources import mi_cn
 
 
+def test_success_code_200_accepted():
+    """小米接口成功码是 200（不是 0）—— 曾把成功当失败
+
+    这个 bug 导致全库重采返回 0 款。测试必须覆盖**真实契约**，
+    而不是我臆想的约定。
+    """
+    payload = 'cb({"code":200,"msg":"success","data":{"total":21,"pc_list":[]}})'
+    with patch.object(mi_cn, "_get", return_value=payload):
+        d = mi_cn.enumerate_products("x", pause=0)["discovery"]
+    assert d["completeness"] == "no_sellable_items", \
+        f"code=200 是成功，应识别为无在售商品而非失败（实际 {d['completeness']}）"
+    assert d["total_reported"] == 21
+
+
 def test_api_error_not_reported_as_empty():
     """接口业务错误必须报 failed，不能装成"没有在售" """
-    with patch.object(mi_cn, "_get",
-                      return_value='cb({"code":500,"data":{"total":57}})'):
+    payload = 'cb({"code":500,"data":{"total":57}})'
+    with patch.object(mi_cn, "_get", return_value=payload):
         d = mi_cn.enumerate_products("x", pause=0)["discovery"]
     assert d["completeness"] == "failed", \
         f"接口报错应为 failed，实际 {d['completeness']}"

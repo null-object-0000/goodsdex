@@ -213,7 +213,10 @@ def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
             stop_reason = "parse_error: 响应无法解析（非 JSONP 或空）"
             break
         code = d.get("code")
-        if code is not None and code != 0:
+        # 小米搜索接口的成功码是 **200**（不是 0）；PC 详情接口也是 200。
+        # 兼容 0 以防其他端点约定不同 —— 判据是"必须校验"，而非猜测具体值。
+        # （曾把 code=200 当失败，导致全库重采返回 0 款）
+        if code is not None and code not in (0, 200):
             stop_reason = f"api_error: code={code} msg={d.get('message')}"
             break
         data = d.get("data")

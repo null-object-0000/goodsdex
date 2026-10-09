@@ -122,7 +122,9 @@ def main() -> int:
             print(f"分类文件不存在: {fp}")
             return 1
         recs = json.loads(fp.read_text(encoding="utf-8"))
-        machines = [r for r in recs if (r.get("product") or {}).get("kind") == "machine"]
+        # 统一口径：排除已被形态过滤与已拆父记录（否则父记录也会被当作待补对象）
+        from goodsdex.entities import effective_machines
+        machines = effective_machines(recs)
         targets = machines[:a.limit]
         print(f"分类「{a.category}」整机 {len(machines)} 款，处理前 {len(targets)} 款\n")
         tmp = tempfile.mkdtemp(prefix="gd-vision-")

@@ -200,6 +200,20 @@ def run_category(category: str, limit: int = 0, max_pages: int = 20,
     # 分类名可能含 / 等路径分隔符（如「毛巾/浴巾」），必须转义，
     # 否则会被当成目录层级，写文件时报 FileNotFoundError
     fp = outdir / f"{safe_filename(category)}.json"
+    # **防清空保护**：新结果为空或明显缩水时，不覆盖已有有效数据。
+    # 教训：曾因一个 bug 让全库 39 个分类被写成空文件 ——
+    # 原子替换保证了"不写坏"，但不保证"不写空"。
+    if fp.exists():
+        try:
+            old = json.loads(fp.read_text(encoding="utf-8"))
+        except Exception:
+            old = []
+        if old and (not out or len(out) < len(old) * 0.5):
+            if verbose:
+                print(f"\n⚠ 拒绝写入：新结果 {len(out)} 条 < 旧数据 {len(old)} 条的一半。"
+                      f"旧数据保留在 {fp}")
+                print(f"  如需强制覆盖，先删除该文件或设置 allow_shrink=True")
+            return out
     tmp = fp.with_suffix(".json.tmp")
     tmp.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     tmp.replace(fp)          # 原子替换，避免写一半崩掉

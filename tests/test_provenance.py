@@ -153,6 +153,31 @@ def test_integrity_check_detects_truncation():
     assert "完整性校验失败" in c.error
 
 
+def test_refuses_to_overwrite_with_empty_result():
+    """新结果为空/严重缩水时，必须拒绝覆盖已有有效数据
+
+    教训：一个 code 判据的 bug 让全库 39 个分类被写成空文件。
+    原子替换保证了"不写坏"，但不保证"不写空"。
+    """
+    import tempfile
+    from pathlib import Path
+    from unittest.mock import patch
+    from goodsdex import pipeline
+    d = Path(tempfile.mkdtemp())
+    old = [{"product": {"product_id": f"CN:x:{i}", "name": f"商品{i}",
+                        "kind": "machine"}, "assertions": [], "captures": [],
+            "view": {}} for i in range(20)]
+    (d / "测试.json").write_text(json.dumps(old), encoding="utf-8")
+    with patch.object(pipeline.mi_cn, "list_categories", return_value={"测试": "测试"}), \
+         patch.object(pipeline.mi_cn, "enumerate_products",
+                      return_value={"items": [], "discovery": {
+                          "total_reported": 0, "completeness": "unknown",
+                          "stop_reason": "empty_page"}}):
+        pipeline.run_category("测试", outdir=d, verbose=False)
+    after = json.loads((d / "测试.json").read_text(encoding="utf-8"))
+    assert len(after) == 20, f"旧数据被覆盖成 {len(after)} 条"
+
+
 def test_vision_locator_resolvable():
     """视觉断言：locator 必须指向自身 capture 内存在的结构"""
     from goodsdex.vision_extract import to_assertions

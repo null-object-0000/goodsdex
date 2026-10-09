@@ -42,7 +42,9 @@ def main() -> int:
             })
 
     total = len(rows)
-    machines = [r for r in rows if r["kind"] == "machine"]
+    # 统一口径：排除已被形态过滤、已拆父记录，并按 product_id 去重
+    from goodsdex.entities import effective_machines
+    machines = effective_machines(rows)
     with_params = [r for r in machines if r["params"] > 0]
 
     print("=" * 76)
