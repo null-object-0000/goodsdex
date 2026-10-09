@@ -15,3 +15,7 @@ data/_progress.json
 *.env
 !*.env.example
 data/raw/
+
+# 公开数据集**要**入库（这是本仓库的产出）
+!public/
+!public/**
