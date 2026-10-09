@@ -200,19 +200,16 @@ def run_category(category: str, limit: int = 0, max_pages: int = 20,
     # 分类名可能含 / 等路径分隔符（如「毛巾/浴巾」），必须转义，
     # 否则会被当成目录层级，写文件时报 FileNotFoundError
     fp = outdir / f"{safe_filename(category)}.json"
-    # **防清空保护**：新结果为空或明显缩水时，不覆盖已有有效数据。
-    # 教训：曾因一个 bug 让全库 39 个分类被写成空文件 ——
-    # 原子替换保证了"不写坏"，但不保证"不写空"。
-    if fp.exists():
-        try:
-            old = json.loads(fp.read_text(encoding="utf-8"))
-        except Exception:
-            old = []
-        if old and (not out or len(out) < len(old) * 0.5):
+    # **防清空保护**：只在"新结果为空"或"采集明显失败"时拒绝写入。
+    # 不能用"条数缩水"当判据 —— 类型分流会把配件/服务剔出去，
+    # 条数天然变少（实测：扫地机器人 85 -> 18，但新数据 0% 悬空、
+    # 旧的 77% 悬空），用条数比较会把**正确的数据**挡在门外。
+    if not out:
+        failed = (discovery or {}).get("completeness") in ("failed", "unknown")
+        if fp.exists() and failed:
             if verbose:
-                print(f"\n⚠ 拒绝写入：新结果 {len(out)} 条 < 旧数据 {len(old)} 条的一半。"
-                      f"旧数据保留在 {fp}")
-                print(f"  如需强制覆盖，先删除该文件或设置 allow_shrink=True")
+                print(f"\n⚠ 拒绝写入：新结果为空且采集状态为 "
+                      f"{(discovery or {}).get('completeness')}，保留旧数据 {fp}")
             return out
     tmp = fp.with_suffix(".json.tmp")
     tmp.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")

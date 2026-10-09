@@ -420,13 +420,19 @@ def fetch_mobile(pid: str) -> tuple[list[Capture], list[Assertion]]:
         if not name:
             continue
         avail = Availability.PROVIDED if value not in (None, "") else Availability.SOURCE_EMPTY
+        # locator 指向 `.value` —— 断言值就是它。
+        # 曾指向整个 list[idx]（一个字典），审计比对时"断言值 vs 字典"
+        # 永远不相等，产生 212 条假的不一致告警。
         out.append(A(name, value,
-                     f"$.data.goodsInfo.goodsList[0].classParameters.list[{idx}]",
+                     f"$.data.goodsInfo.goodsList[0].classParameters.list[{idx}].value",
                      "关键参数", avail))
     if not params:
-        # 空参数列表是**有效采集结果**，不是失败，也不能推断原因
-        out.append(A("_params_empty", True,
-                     "$.data.goodsInfo.goodsList[0].classParameters.list",
+        # 空参数列表是**有效采集结果**，不是失败，也不能推断原因。
+        # locator 必须指向**真实存在**的路径：无参数时 classParameters 是 {}，
+        # 没有 list 键 —— 曾指向 `...classParameters.list` 导致 677 条
+        # locator 解析失败（"key 'list' missing"）。
+        out.append(A("_params_empty", g.get("classParameters"),
+                     "$.data.goodsInfo.goodsList[0].classParameters",
                      "关键参数", Availability.SOURCE_EMPTY))
     return captures, out
 

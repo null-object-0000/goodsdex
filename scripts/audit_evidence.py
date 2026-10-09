@@ -64,6 +64,40 @@ def _is_derived(attr: str) -> bool:
     return attr in DERIVED_FIELDS
 
 
+_EXT_RE = re.compile(r"<externalized:sha256=([0-9a-f]{64})")
+
+
+def _load_raw(raw: str, cap: dict):
+    """把 capture 的 response_raw 解析成 JSON 对象。
+
+    大响应是**外置保存**的：response_raw 只留
+    `<externalized:sha256=...>` 占位，真内容在 data/raw/<前2位>/<sha>.txt。
+    审计脚本必须跟着 raw_ref 去读 —— 否则会把外置当成"不可解析"，
+    把好好的证据误报成坏的（实测 4117 条被误报）。
+    """
+    if not raw:
+        return None
+    m = _EXT_RE.match(raw.strip())
+    if m:
+        p = None
+        ref = cap.get("raw_ref") or ""
+        if ref:
+            cand = Path(ref)
+            p = cand if cand.is_absolute() else (ROOT / cand)
+            if not p.exists():
+                p = None
+        if p is None:
+            h = m.group(1)
+            p = ROOT / "data" / "raw" / h[:2] / f"{h}.txt"
+        if not p.exists():
+            return None
+        raw = p.read_text(encoding="utf-8")
+    try:
+        return json.loads(raw)
+    except Exception:
+        return None
+
+
 def audit(recs: list[dict]) -> dict:
     stat = {"assertions": 0, "orphan": 0, "verified": 0, "derived_ok": 0,
             "mismatch": 0, "unresolvable": 0, "non_jsonpath": 0,
@@ -90,10 +124,12 @@ def audit(recs: list[dict]) -> dict:
                     samples["non_jsonpath"].append((a.get("source"), loc[:60]))
                 continue
             raw = cap.get("response_raw") or ""
-            try:
-                obj = json.loads(raw)
-            except Exception:
+            obj = _load_raw(raw, cap)
+            if obj is None:
                 stat["unparseable_capture"] += 1
+                if len(samples.setdefault("unparseable", [])) < 4:
+                    samples["unparseable"].append(
+                        (a.get("source"), (raw or "")[:48]))
                 continue
             val, err = jsonpath_get(obj, loc)
             if err:
@@ -105,13 +141,20 @@ def audit(recs: list[dict]) -> dict:
             # 解析成功：值是否一致
             av = str(a.get("raw_value"))
             sv = str(val)
-            if av == sv or av in sv or sv in av:
+            if av == sv:
                 stat["verified"] += 1
             elif _is_derived(a.get("attribute", "")):
                 # 派生断言：raw_value 是从源结构**提取**出来的
                 # （如 pc_tabs 取 name 字段、carousel 取 imgUrl）
                 # 与原结构不相等是正常的；能定位到源即视为可核实
                 stat["derived_ok"] += 1
+            elif isinstance(val, dict) and av == str(val.get("value")):
+                # locator 指向容器、断言值取其中 value 字段（旧数据的写法）
+                stat["verified"] += 1
+            elif isinstance(val, str) and av == val.strip():
+                # 源值首尾有空白、断言做了 strip —— 合法规范化。
+                # 单独计数，不计入 mismatch（否则 65 条商品名被误报）。
+                stat["normalized_ok"] = stat.get("normalized_ok", 0) + 1
             else:
                 stat["mismatch"] += 1
                 if len(samples["mismatch"]) < 4:
@@ -143,6 +186,8 @@ def main() -> int:
     print(f"  locator 解析失败   {s['unresolvable']:6d}  ({s['unresolvable']/n:.1%})")
     print(f"  capture 不可解析   {s['unparseable_capture']:6d}")
     print(f"  非 JSONPath        {s['non_jsonpath']:6d}")
+    print(f"  规范化后一致       {s.get('normalized_ok',0):6d}  "
+          f"({s.get('normalized_ok',0)/n:.1%})  源值首尾空白，断言已 strip")
     print(f"  值不一致           {s['mismatch']:6d}")
     for kind, items in res["samples"].items():
         if items:

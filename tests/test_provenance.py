@@ -153,11 +153,10 @@ def test_integrity_check_detects_truncation():
     assert "完整性校验失败" in c.error
 
 
-def test_refuses_to_overwrite_with_empty_result():
-    """新结果为空/严重缩水时，必须拒绝覆盖已有有效数据
+def test_refuses_to_overwrite_on_failed_empty():
+    """采集失败且结果为空时，拒绝覆盖旧数据
 
     教训：一个 code 判据的 bug 让全库 39 个分类被写成空文件。
-    原子替换保证了"不写坏"，但不保证"不写空"。
     """
     import tempfile
     from pathlib import Path
@@ -171,11 +170,48 @@ def test_refuses_to_overwrite_with_empty_result():
     with patch.object(pipeline.mi_cn, "list_categories", return_value={"测试": "测试"}), \
          patch.object(pipeline.mi_cn, "enumerate_products",
                       return_value={"items": [], "discovery": {
-                          "total_reported": 0, "completeness": "unknown",
-                          "stop_reason": "empty_page"}}):
+                          "total_reported": 0, "completeness": "failed",
+                          "stop_reason": "api_error: code=500"}}):
         pipeline.run_category("测试", outdir=d, verbose=False)
     after = json.loads((d / "测试.json").read_text(encoding="utf-8"))
-    assert len(after) == 20, f"旧数据被覆盖成 {len(after)} 条"
+    assert len(after) == 20, f"失败采集覆盖了旧数据（现 {len(after)} 条）"
+
+
+def test_shrunk_result_still_written():
+    """条数变少但采集成功时，**必须写入**
+
+    类型分流会把配件/服务剔出去，条数天然变少
+    （实测：扫地机器人 85 -> 18，但新数据 0% 悬空、旧数据 77% 悬空）。
+    用"条数缩水"当判据会把正确的数据挡在门外 —— 曾因此让 49 个分类
+    的重采结果没能落盘。
+    """
+    import tempfile
+    from pathlib import Path
+    from unittest.mock import patch
+    from goodsdex import pipeline
+    d = Path(tempfile.mkdtemp())
+    old = [{"product": {"product_id": f"CN:x:{i}", "name": f"商品{i}",
+                        "kind": "machine"}, "assertions": [], "captures": [],
+            "view": {}} for i in range(20)]
+    (d / "壁挂空调.json").write_text(json.dumps(old), encoding="utf-8")
+    # 名字要能通过分类过滤（否则会被形态过滤剔掉，测不到写入分支）
+    new_item = {"pid": "1", "name": "米家空调 新商品", "variants": []}
+    with patch.object(pipeline.mi_cn, "list_categories",
+                      return_value={"壁挂空调": "壁挂空调"}), \
+         patch.object(pipeline.mi_cn, "enumerate_products",
+                      return_value={"items": [new_item], "discovery": {
+                          "total_reported": 1, "completeness": "complete",
+                          "stop_reason": "reached_total"}}), \
+         patch.object(pipeline, "collect_one",
+                      return_value={"product": {"product_id": "CN:x:1",
+                                                "name": "米家空调 新商品",
+                                                "kind": "machine"},
+                                    "assertions": [], "captures": [],
+                                    "view": {}, "market_prices": [],
+                                    "discovery": {}, "fetched_at": ""}):
+        pipeline.run_category("壁挂空调", outdir=d, verbose=False)
+    after = json.loads((d / "壁挂空调.json").read_text(encoding="utf-8"))
+    assert len(after) == 1, "采集成功但结果变少时必须写入（否则正确数据被挡）"
 
 
 def test_vision_locator_resolvable():

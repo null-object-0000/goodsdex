@@ -102,8 +102,14 @@ class Capture:
     @classmethod
     def make(cls, source: str, url: str, response_raw: str = "",
              status: CaptureStatus = CaptureStatus.SUCCESS, **kw) -> "Capture":
-        cid = hashlib.sha1(f"{source}|{url}|{now_iso()}".encode()).hexdigest()[:12]
+        # capture_id 必须**内容唯一**：源 + URL + 时间戳还不够 ——
+        # 移动端接口对**所有商品**用同一个 URL（商品在 POST body 里），
+        # 并发时同秒的两个商品会算出同一个 id，导致断言张冠李戴
+        # （实测 445 个 id 被多个商品共用、内容不同）。
+        # 加上响应哈希：内容不同则 id 必然不同。
         h = hashlib.sha256(response_raw.encode()).hexdigest()[:16] if response_raw else ""
+        cid = hashlib.sha1(
+            f"{source}|{url}|{now_iso()}|{h}".encode()).hexdigest()[:12]
         return cls(capture_id=cid, source=source, url=url, response_raw=response_raw,
                    response_hash=h, status=status, **kw)
 
