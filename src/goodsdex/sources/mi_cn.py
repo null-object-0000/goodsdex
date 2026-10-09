@@ -97,14 +97,31 @@ def _jsonp(raw: str) -> dict:
 # ---------------- 分类与枚举 ----------------
 
 def list_categories() -> dict[str, str]:
-    """官方分类树 -> {分类名: 搜索关键词}"""
+    """官方分类树 -> {分类名: 搜索关键词}
+
+    实测教训：分类页有**两种**链接形式，只解析一种会漏掉整片导航区：
+      ① 侧边导航  <dd><a href=".../search?keyword=耳机">耳机</a></dd>   （纯文本）
+      ② 分类面板  <a href="..."><span class="text">吹风机</span></a>    （带 span）
+    最初只认 ②，导致「耳机」「平板」「笔记本」等 10 个分类全部漏掉 ——
+    而这些恰恰是用户最常问的大类。
+    """
     d = _get(CATEGORY_URL)
-    items = re.findall(
-        r'<a[^>]*href="([^"]*)"[^>]*>\s*(?:<img[^>]*>\s*)?<span class="text">([^<]+)</span>', d)
-    tree = {}
-    for u, n in items:
-        if "search?keyword=" in u:
+    tree: dict[str, str] = {}
+
+    # 形式一：导航区 <dd><a>文本</a>
+    for u, n in re.findall(r'<dd>\s*<a[^>]*href="([^"]+)"[^>]*>([^<]+)</a>', d):
+        if "keyword=" in u:
             tree[n.strip()] = urllib.parse.unquote(u.split("keyword=")[-1])
+
+    # 形式二：分类面板 <a ...><span class="text">文本</span>
+    for u, n in re.findall(
+            r'<a[^>]*href="([^"]*)"[^>]*>\s*(?:<img[^>]*>\s*)?'
+            r'<span class="text">([^<]+)</span>', d):
+        if "search?keyword=" in u:
+            kw = urllib.parse.unquote(u.split("keyword=")[-1])
+            # 面板项优先（更具体），但不覆盖已有的导航项
+            tree.setdefault(n.strip(), kw)
+
     return tree
 
 

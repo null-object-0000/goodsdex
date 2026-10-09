@@ -37,7 +37,8 @@ CAPACITY_RE = re.compile(r"(\d+)\s*(GB|TB)\s*\+\s*(\d+)\s*(GB|TB)", re.I)
 COLOR_WORDS = ("黑", "白", "蓝", "绿", "紫", "灰", "金", "粉", "青", "红", "银", "钛",
                "冰釉", "玄悟", "薄雾", "雪山", "幻影", "山岚", "迷雾", "岩石", "贝母",
                "暮", "脂", "萃", "曜石", "云棉", "海浪", "迷雾", "朋克", "月光")
-EDITION_WORDS = ("特别版", "典藏版", "限定版", "礼盒", "套装", "至尊版", "纪念版")
+EDITION_WORDS = ("青春版", "活力版", "特别版", "典藏版", "限定版", "礼盒", "套装",
+                 "至尊版", "纪念版", "探索版", "典藏套装", "电竞版", "Pro版")
 
 
 def parse_variant_attrs(name: str) -> dict:
@@ -80,23 +81,29 @@ def parse_variant_attrs(name: str) -> dict:
 
 
 def _is_color_token(tok: str) -> bool:
-    """判断一个 token 是否是颜色（纯中文 2-6 字，且含颜色字）"""
+    """判断一个 token 是否是颜色（纯中文 2-6 字，且含颜色字）。
+
+    必须排除**版本词** —— "青春版"含"青"字，会被误判成颜色而剥掉，
+    导致「REDMI Buds 6 青春版」和「REDMI Buds 6」同名（实测踩过）。
+    """
     if not re.fullmatch(r"[\u4e00-\u9fff]{2,6}", tok or ""):
+        return False
+    if any(w in tok for w in EDITION_WORDS):
         return False
     return any(c in tok for c in COLOR_WORDS)
 
 
 def product_name(name: str) -> str:
-    """去掉变体后缀，得到产品名。
+    """去掉变体后缀（颜色/容量），得到产品名。
 
-    只从**尾部按 token 剥离**颜色/版本词 —— 全局替换单字会把
-    "纯白色" 打成 "纯色"、"白色" 打成 "色"。
+    注意：**版本词（青春版/活力版/Pro）必须保留** ——
+    「REDMI Buds 6 青春版」和「REDMI Buds 6」是两个不同产品，
+    去掉版本词会让两者同名，对比时混为一谈（实测踩过）。
+    只剥离颜色与容量这类**销售变体**。
     """
     s = name or ""
     s = CAPACITY_RE.sub("", s)
     s = re.sub(r"\b\d+\s*(GB|TB)\b", "", s, flags=re.I)
-    for w in EDITION_WORDS:
-        s = s.replace(w, "")
     toks = s.split()
     while toks and _is_color_token(toks[-1]):
         toks.pop()

@@ -47,6 +47,28 @@ def test_product_name_strips_variant():
     assert "GB" not in n and "TB" not in n
 
 
+def test_edition_vs_color_not_confused():
+    """回归：版本词不能被当成颜色剥掉
+
+    实测：「REDMI Buds 6 青春版」的"青春版"含"青"字，
+    被 _is_color_token 判成颜色剥离 -> 与「REDMI Buds 6」同名，
+    对比时会把两个不同产品混为一谈。
+    """
+    # 产品名必须保留版本词
+    assert product_name("REDMI Buds 6 青春版 子夜黑") == "REDMI Buds 6 青春版"
+    assert product_name("REDMI Buds 6 子夜黑") == "REDMI Buds 6"
+    assert product_name("REDMI Buds 8 活力版 海浪蓝") == "REDMI Buds 8 活力版"
+    assert product_name("REDMI Buds 8 脂白") == "REDMI Buds 8"
+    # 三者必须互不相同
+    a = product_name("REDMI Buds 6 青春版 子夜黑")
+    b = product_name("REDMI Buds 6 子夜黑")
+    c = product_name("REDMI Buds 6 活力版 白色")
+    assert len({a, b, c}) == 3, "青春版/标准版/活力版必须能区分"
+    # 颜色要正确提取，不能把版本词当颜色
+    assert parse_variant_attrs("REDMI Buds 6 青春版 子夜黑")["color"] == "子夜黑"
+    assert parse_variant_attrs("REDMI Buds 6 青春版 子夜黑")["edition"] == "青春版"
+
+
 def test_product_name_no_char_level_corruption():
     """回归：不能把"纯白色"打成"纯色"——全局替换单字会毁掉产品名"""
     assert product_name("米家便携吹风机H101 白色") == "米家便携吹风机H101"
