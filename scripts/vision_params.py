@@ -27,20 +27,37 @@ from goodsdex.resolve import build_view, guess_category
 CATS = ROOT / "data" / "categories"
 
 
-# 非参数 tab（服务条款/安装须知等，不含规格）
-NON_SPEC_TAB = re.compile(r"售后|服务条款|安装须知|安装费用|保障|说明|政策|常见问题|推荐|评价")
+# 非参数 tab（服务/详情/营销类，不含规格）
+NON_SPEC_TAB = re.compile(
+    r"售后|服务条款|安装须知|安装费用|保障|说明|政策|常见问题|推荐|评价|"
+    r"商品详情|产品详情|^详情|详情$|图文|介绍|晒单|开箱|安装|"
+    r"包装清单|附件清单|清单")
+
+# 通用 tab 名（不是型号，也不是参数页）—— 排除以免误当型号 tab
+GENERIC_TAB = re.compile(
+    r"^(商品详情|产品详情|详情|介绍|图文详情|包装清单|常见问题|"
+    r"售后|服务|保障|政策|说明|用户评价|推荐)+$")
+
+# 名副其实的参数 tab（白名单，实测有规律）
+SPEC_TAB = re.compile(r"参数|规格|specification")
 
 
 def find_spec_images(rec: dict) -> list[dict]:
     """从一条记录里找**规格参数图**。
 
-    实测发现：家电品类的 tab 命名没有统一规范 ——
-      空调: '规格参数'
-      冰箱: '256L(星锻银)' / '微冰鲜-十字门' / '十字-513L'（按型号命名的 tab）
-    所以不能只匹配"规格参数"这个名字。
+    实测教训（重要，曾导致系统性错误）：
+      最初用"排除服务类 tab"的排除法，结果全库 23197 张候选图里
+      **16516 张（71%）来自 tab='商品详情'** —— 那是营销图。
+      后果：把「全面升级」「10年免费包修」这类宣传文案当成了产品参数。
 
-    策略：取所有**非服务类** tab 的图片（服务条款/安装须知等排除），
-    由视觉提取去判断内容是不是参数表。
+    正确策略是**白名单优先 + 分层**：
+      ① 名字含"参数/规格"的 tab（产品参数/商品参数/规格参数/参数页/参数）
+         —— 名副其实，实测 1621 张
+      ② tab 名是**具体型号**的（"256L(星锻银)"、"直冷-186L"）
+         —— 家电按型号分栏，参数在各型号 tab 内
+      ③ 其余（商品详情等营销 tab）**不取** —— 宁可漏，不可混入伪参数
+
+    返回项带 tier 字段标明来源层级，便于事后按层级评估可信度。
     """
     out = []
     for c in rec.get("captures") or []:
@@ -53,14 +70,21 @@ def find_spec_images(rec: dict) -> list[dict]:
             continue
         tabs = ((j.get("data") or {}).get("extend_info") or {}).get("desc_tabs_view") or []
         for ti, t in enumerate(tabs):
-            nm = t.get("name") or ""
+            nm = (t.get("name") or "").strip()
+            # ③ 服务/营销类直接排除
             if NON_SPEC_TAB.search(nm):
                 continue
+            if SPEC_TAB.search(nm):
+                tier = 1                      # ① 名副其实的参数 tab
+            elif nm and not GENERIC_TAB.search(nm):
+                tier = 2                      # ② 型号命名 tab
+            else:
+                continue                      # ③ 无名字的通用 tab，不取
             for pi, blk in enumerate(t.get("tab_content") or []):
                 img = ((blk.get("plain_view") or {}).get("img") or "")
                 if img:
                     out.append({"url": img, "tab_index": ti, "part_index": pi,
-                                "tab_name": nm})
+                                "tab_name": nm, "tier": tier})
     return out
 
 
