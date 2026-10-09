@@ -17,6 +17,7 @@ import json
 import re
 import urllib.parse
 import urllib.request
+from html.parser import HTMLParser
 
 from ..facts import Assertion, Availability, Capture, CaptureStatus
 
@@ -100,30 +101,88 @@ def _jsonp(raw: str) -> dict:
 def list_categories() -> dict[str, str]:
     """官方分类树 -> {分类名: 搜索关键词}
 
-    实测教训：分类页有**两种**链接形式，只解析一种会漏掉整片导航区：
-      ① 侧边导航  <dd><a href=".../search?keyword=耳机">耳机</a></dd>   （纯文本）
-      ② 分类面板  <a href="..."><span class="text">吹风机</span></a>    （带 span）
-    最初只认 ②，导致「耳机」「平板」「笔记本」等 10 个分类全部漏掉 ——
-    而这些恰恰是用户最常问的大类。
+    实测教训：分类页有**两种**链接形式，且正则会漏：
+      ① 侧边导航  <dd><a href=".../search?keyword=耳机">耳机</a></dd>
+      ② 分类面板  <a href="..."><span class="text">吹风机</span></a>
+
+    最初只认带 <span class="text"> 的形式，漏掉 10 个大类
+    （手机/电视/笔记本/平板/穿戴/耳机/家电/路由器/音箱/配件）。
+
+    后又发现正则本身脆弱：`dd class="nav"`、`span class="text active"`、
+    实体编码 `&amp;page=2` 都会导致漏解析或关键词污染。
+    改用 HTMLParser —— 结构解析交给解析器，不靠正则猜。
+
+    额外做**健全性检查**：分类数骤降或大类缺失时抛异常，
+    不返回一个"看起来成功"的短字典。
     """
     d = _get(CATEGORY_URL)
     tree: dict[str, str] = {}
 
-    # 形式一：导航区 <dd><a>文本</a>
-    for u, n in re.findall(r'<dd>\s*<a[^>]*href="([^"]+)"[^>]*>([^<]+)</a>', d):
-        if "keyword=" in u:
-            tree[n.strip()] = urllib.parse.unquote(u.split("keyword=")[-1])
+    class _CatParser(HTMLParser):
+        """收集 <a href> 的可见文本与其 keyword 参数。
 
-    # 形式二：分类面板 <a ...><span class="text">文本</span>
-    for u, n in re.findall(
-            r'<a[^>]*href="([^"]*)"[^>]*>\s*(?:<img[^>]*>\s*)?'
-            r'<span class="text">([^<]+)</span>', d):
-        if "search?keyword=" in u:
-            kw = urllib.parse.unquote(u.split("keyword=")[-1])
-            # 面板项优先（更具体），但不覆盖已有的导航项
-            tree.setdefault(n.strip(), kw)
+        两种形式都覆盖：<dd><a>文本</a> 与 <a><span class="text">文本</span></a>
+        """
 
+        def __init__(self) -> None:
+            super().__init__(convert_charrefs=True)
+            self.in_dd = 0
+            self.cur_href: str | None = None
+            self.cur_text: list[str] = []
+            self.results: list[tuple[str, str]] = []
+
+        def handle_starttag(self, tag, attrs):
+            a = dict(attrs)
+            if tag == "dd":
+                self.in_dd += 1
+            if tag == "a" and a.get("href"):
+                self.cur_href = a["href"]
+                self.cur_text = []
+                self.in_dd = self.in_dd or 0
+
+        def handle_endtag(self, tag):
+            if tag == "dd" and self.in_dd:
+                self.in_dd -= 1
+            if tag == "a" and self.cur_href is not None:
+                txt = "".join(self.cur_text).strip()
+                if txt and "keyword=" in self.cur_href:
+                    self.results.append((self.cur_href, txt))
+                self.cur_href = None
+                self.cur_text = []
+
+        def handle_data(self, data):
+            if self.cur_href is not None and data.strip():
+                self.cur_text.append(data.strip())
+
+    p = _CatParser()
+    p.feed(d)
+    for href, name in p.results:
+        kw = _keyword_from_href(href)
+        if kw and name:
+            tree.setdefault(name, kw)
+
+    # 健全性检查：大类缺失说明页面结构变了
+    expected = {"手机", "耳机", "电视", "笔记本", "平板"}
+    missing = expected - set(tree)
+    if len(tree) < 40 or missing:
+        raise RuntimeError(
+            f"分类解析异常：仅得 {len(tree)} 个分类，缺少 {sorted(missing)}。"
+            f"页面结构可能已变化，请检查 _get(CATEGORY_URL) 的返回。")
     return tree
+
+
+def _keyword_from_href(href: str) -> str:
+    """从 search?keyword=xxx 提取关键词。
+
+    用 parse_qs 而非 split —— 后者会把 `&page=2` 一并当成关键词
+    （实测：'耳机&amp;page=2'）。
+    """
+    try:
+        q = urllib.parse.urlparse(href).query
+        vals = urllib.parse.parse_qs(q).get("keyword") or []
+        return vals[0].strip() if vals else ""
+    except Exception:
+        return ""
 
 
 def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
