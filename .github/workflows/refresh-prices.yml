@@ -1,15 +1,18 @@
 name: refresh-prices
 
-# 价格刷新（轻量，小时级）
+# 价格刷新（每小时）
 #
-# 为什么价格能小时级而全量采集不能：
-#   全量采集 3477 个商品要 26 分钟（每个都要打 mtop 详情 + PC 参数页）
-#   价格有批量接口 dynamicv2，60 个/请求，全库仅 83 秒
+# **产物走独立分支**（data），不碰 main。
+# 理由：代码与数据混在一个分支时，每次数据提交都在推进该分支的 tip，
+# 本地开发与 Action 互相 non-fast-forward（实测反复冲突）。
 #
-# 数据分层：
+# 分支布局：
+#   main:  src/ scripts/ tests/ docs/ README
+#   data:  public/goods.json、public/prices/*
+#
 #   public/goods.json           全量商品（价格回灌后覆盖）
 #   public/prices/latest.json   最新快照（覆盖）
-#   public/prices/<月>.jsonl    时间序列（**追加，不覆盖历史**）
+#   public/prices/<月>.jsonl    时间序列（**按小时追加，不覆盖历史**）
 
 on:
   schedule:
@@ -25,36 +28,65 @@ concurrency:
   group: refresh-prices
   cancel-in-progress: false
 
+env:
+  DATA_BRANCH: data
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          # 默认 --single-branch 只拉 main，后续 fetch origin data
+          # 会报"无效引用"（已在本地复现）。拉全量 refs。
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
+      - name: Fetch data branch
+        run: |
+          # 显式 refspec，不依赖 checkout 的默认配置
+          git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+          git fetch origin "${DATA_BRANCH}" || true
+          if git rev-parse --verify "origin/${DATA_BRANCH}" >/dev/null 2>&1; then
+            git worktree add ./_data "origin/${DATA_BRANCH}"
+            echo "已挂载 data 分支"
+          else
+            mkdir -p ./_data
+            echo "data 分支不存在，将新建"
+          fi
+
       - name: Refresh prices
         # 必须走 ci_refresh_prices.py —— 它从发布集读 gid
         # （runner 上没有 data/categories/，那是内部采集产物）
-        # 并负责把新价格回灌进 goods.json
-        run: PYTHONPATH=src python3 scripts/ci_refresh_prices.py --public public
-
-      - name: Commit
+        # 并负责把新价格回灌进 goods.json / 按小时追加时间序列
         run: |
+          PYTHONPATH=src python3 scripts/ci_refresh_prices.py --public _data/public
+
+      - name: Push to data branch
+        run: |
+          cd ./_data
           git config user.name "goodsdex-bot"
           git config user.email "goodsdex-bot@users.noreply.github.com"
-          git add public/
+          git add -A
           if git diff --cached --quiet; then
-            echo "无价格变化，跳过提交"
+            echo "无变化，跳过"
             exit 0
           fi
           git commit -m "price refresh $(date -u +%Y-%m-%dT%H:%MZ)"
-          # 并发推送会 non-fast-forward，必须 pull --rebase 后重试
+          # 并发 run 会撞车：先同步远程再推，失败重试
           for i in 1 2 3; do
-            git pull --rebase origin "${GITHUB_REF_NAME}" && git push && break
-            echo "push 失败，重试 $i"
-            sleep 3
+            git fetch origin "${DATA_BRANCH}" || true
+            if git rev-parse --verify "origin/${DATA_BRANCH}" >/dev/null 2>&1; then
+              git rebase -X theirs "origin/${DATA_BRANCH}" || git rebase --abort || true
+            fi
+            if git push origin "HEAD:${DATA_BRANCH}"; then
+              echo "推送成功"
+              break
+            fi
+            echo "重试 $i"
+            sleep 4
           done

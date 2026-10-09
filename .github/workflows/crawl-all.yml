@@ -41,10 +41,15 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
+        with:
+          # 默认 --single-branch 只拉 main，后续 fetch origin data
+          # 会报"无效引用"（已在本地复现）。拉全量 refs。
+          fetch-depth: 0
 
       - name: Fetch data branch
         run: |
-          git fetch origin "${DATA_BRANCH}" --depth=1 || true
+          git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+          git fetch origin "${DATA_BRANCH}" || true
           if git rev-parse --verify "origin/${DATA_BRANCH}" >/dev/null 2>&1; then
             git worktree add ./_data "origin/${DATA_BRANCH}"
           else
