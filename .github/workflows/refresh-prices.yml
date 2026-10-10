@@ -16,9 +16,14 @@ name: refresh-prices
 
 on:
   schedule:
-    # 每小时第 7 分钟（避开整点高峰）
-    # 成本：83 秒 x 24 = 33 分钟/天；public 仓库 Actions 免费
-    - cron: '7 * * * *'
+    # 每小时第 23 分钟。
+    # **为什么不用第 7 分**：实测配 '7 * * * *' 时，实际触发落在 :28 和 :58
+    # （延迟 20-50 分钟），且 10 小时只跑了 2 次。
+    # GitHub 官方文档确认：整点前后是 Actions 高负载期，
+    # "some queued jobs may be dropped" —— 越靠近整点越容易被丢。
+    # 移到第 23 分可明显降低被丢概率。
+    # 成本：~83 秒 x 24 = 33 分钟/天；public 仓库 Actions 免费。
+    - cron: '23 * * * *'
   workflow_dispatch:
 
 permissions:

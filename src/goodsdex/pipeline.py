@@ -278,6 +278,23 @@ def run_category(category: str, limit: int = 0, max_pages: int = 20,
     tmp = fp.with_suffix(".json.tmp")
     tmp.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     tmp.replace(fp)          # 原子替换，避免写一半崩掉
+
+    # **并入累积档案**（只增不减）。
+    # 快照会被下次采集覆盖，但档案不会 —— 这是"下架也留档"的保障。
+    # 实测：整分类覆盖时，下架商品在下次采集后**永久丢失**。
+    try:
+        from .archive import merge_archive
+        st = merge_archive(category, out, archive_dir=outdir.parent / "archive")
+        if verbose and (st["went_missing"] or st["revived"] or st["added"]):
+            print(f"      档案: 共 {st['total']} 条（本次在场 {st['present']}，"
+                  f"缺席 {st['missing']}）"
+                  + (f" 新增 {st['added']}" if st["added"] else "")
+                  + (f" 新缺席 {st['went_missing']}" if st["went_missing"] else "")
+                  + (f" 复活 {st['revived']}" if st["revived"] else ""))
+    except Exception as e:
+        # 档案是长期资产，写失败不能静默 —— 但也不该拖垮本次采集
+        print(f"      ⚠ 档案写入失败: {type(e).__name__}: {e}")
+
     if verbose:
         for r in out:
             print(_summary(r))

@@ -16,8 +16,10 @@ name: crawl-all
 
 on:
   schedule:
-    # 每天 UTC 19:07 = 北京时间次日 03:07（低峰）
-    - cron: '7 19 * * *'
+    # 每天 UTC 19:37 = 北京时间次日 03:37（低峰 + 避开整点）。
+    # 避开整点的理由同 refresh-prices：官方文档确认整点前后是
+    # Actions 高负载期，"some queued jobs may be dropped"。
+    - cron: '37 19 * * *'
   workflow_dispatch:
     inputs:
       categories:
@@ -38,7 +40,12 @@ env:
 jobs:
   crawl:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    # 实测 runner 上比本地慢约 5 倍（同一分类：本地 40s / runner 204s，
+    # 因为每次请求的往返延迟高得多）。本地 23.6 分钟的采集在 runner 上
+    # 超过 90 分钟仍未跑完（跑到 85/95 被 timeout 掐掉）。
+    # 所以：timeout 给足 150 分钟，并把并发提到 4 —— 高延迟场景下
+    # 多几个在途请求能有效盖住等待（本地低延迟时收益不明显）。
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
         with:
@@ -67,20 +74,31 @@ jobs:
         run: |
           export PYTHONPATH=src:scripts
           mkdir -p data
+          # 从上一次的产物里恢复「快照 + 档案」，让累积能跨 run 延续
           if [ -d _data/data/categories ]; then
             cp -r _data/data/categories data/ 2>/dev/null || true
           fi
+          if [ -d _data/data/archive ]; then
+            cp -r _data/data/archive data/ 2>/dev/null || true
+          fi
           ARGS="${{ github.event.inputs.categories }}"
           if [ -n "$ARGS" ]; then
-            python3 scripts/crawl_all.py $ARGS --workers 2 --pause 1.5
+            python3 scripts/crawl_all.py $ARGS --workers 4 --pause 1.5
           else
-            python3 scripts/crawl_all.py --workers 2 --pause 1.5
+            python3 scripts/crawl_all.py --workers 4 --pause 1.5
           fi
 
       - name: Rebuild public dataset
         run: |
           export PYTHONPATH=src
           python3 -m goodsdex.publish --cats data/categories --out _data/public
+          # 档案（累积历史）也要发布 —— 这是"下架也留档"的对外可见部分
+          python3 scripts/ci_publish_archive.py --archive data/archive \
+            --out _data/public/archive
+          # 快照与档案保留在产物里，供下次运行恢复累积上下文
+          mkdir -p _data/data
+          cp -r data/categories _data/data/ 2>/dev/null || true
+          cp -r data/archive _data/data/ 2>/dev/null || true
 
       - name: Push to data branch
         run: |
