@@ -1,0 +1,2082 @@
+[
+ {
+  "product": {
+   "product_id": "CN:mi_cn:product:20112",
+   "name": "米家运动杯",
+   "market": "CN",
+   "brand": "",
+   "category": "运动鞋",
+   "external_ids": {
+    "mi_cn.product_id": "20112"
+   },
+   "identity_evidence": {
+    "variant_count": 2,
+    "variant_names": [
+     "米家运动杯 活力白",
+     "米家运动杯 经典黑"
+    ],
+    "basis": "同一 product_id 下的 commodity 列表",
+    "scope": "CN 市场，mi_cn 源"
+   },
+   "identity_confidence": "verified",
+   "variants": [
+    {
+     "variant_id": "CN:mi_cn:commodity:1230802277",
+     "product_id": "CN:mi_cn:product:20112",
+     "name": "米家运动杯 活力白",
+     "attrs": {
+      "color": "活力白"
+     },
+     "external_ids": {
+      "mi_cn.commodity_id": "1230802277"
+     }
+    },
+    {
+     "variant_id": "CN:mi_cn:commodity:1230802278",
+     "product_id": "CN:mi_cn:product:20112",
+     "name": "米家运动杯 经典黑",
+     "attrs": {
+      "color": "经典黑"
+     },
+     "external_ids": {
+      "mi_cn.commodity_id": "1230802278"
+     }
+    }
+   ],
+   "kind": "unknown",
+   "is_container": false
+  },
+  "captures": [
+   {
+    "capture_id": "df52f6f25de9",
+    "source": "mi_cn_mobile",
+    "url": "https://m.mi.com/mtop/xiaomishop/product/info",
+    "method": "POST",
+    "request_headers": {},
+    "request_body": null,
+    "status": "success",
+    "http_status": 200,
+    "error": "",
+    "response_raw": "{\"code\":0,\"message\":\"ok\",\"data\":{\"userInfo\":{\"login\":false},\"product\":{\"productId\":20112,\"defaultGid\":2230001928,\"name\":\"米家运动杯\",\"shortTitle\":\"关盖落锁安心随行\",\"enable\":true,\"sellPointList\":[\"1L大容量：满足运动畅饮需求\",\"独立茶仓：茶叶、水果随心泡，细致过滤\",\"自动落锁：关盖即锁，不怕误触\"],\"batched\":false,\"itemType\":0,\"floatWindow\":{\"imgUrl\":\"\",\"materialType\":\"live\",\"isShowLiveWindow\":false,\"liveCloseShowImg\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9004941bb8e195ce1da465f8c7c4d287.gif\",\"liveInfo\":{\"id\":683,\"liveUrl\":\"https://nr-live.m.mi.com/caster/163f22a70f654e8c98a166c6cb5bf16f.m3u8\",\"liveUrlFlv\":\"https://nr-live.m.mi.com/caster/163f22a70f654e8c98a166c6cb5bf16f.flv\",\"discoverEntryImg\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0023d2086d6dccbeb95db1ed5bdceffd.jpg\",\"isWatchBroadcast\":true},\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.liveshow.RootFragment?pluginId\\u003d234\",\"extra\":\"{\\\"roomId\\\": \\\"683\\\"}\"}},\"isCustomerService\":true,\"shareContent\":\"\",\"changeDeliveryType\":{\"canChangeOfflineSale\":true,\"canDefaultChangeDeliveryType\":false}},\"saleAttributeInfo\":{\"saleAttributeList\":[{\"attributeId\":2,\"attributeName\":\"颜色\",\"attributeValueList\":[{\"attributeValueId\":2,\"attributeValueName\":\"活力白\"},{\"attributeValueId\":3,\"attributeValueName\":\"经典黑\"}],\"customizeType\":0,\"customizeAttributeList\":[]},{\"attributeId\":1,\"attributeName\":\"通用\",\"attributeValueList\":[{\"attributeValueId\":49,\"attributeValueName\":\"通用\"}],\"customizeType\":0,\"customizeAttributeList\":[]}]},\"askAll\":{\"total\":\"共77个问答\",\"items\":[{\"question\":\"家人们，降价了踢我一下🥰🥰\",\"answerNum\":\"15个问答\"},{\"question\":\"降价了踢我兄弟们，你们都多少钱买的\",\"answerNum\":\"2个问答\"}]},\"serverInfo\":{\"nowTime\":1791674691},\"carouselAdInfo\":{\"carouselAdList\":[{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1de8b0436b94b6b9148455d308dff0bd.jpg?w\\u003d1080\\u0026h\\u003d300\\u0026bg\\u003d70604\",\"type\":\"image\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop2.plugin.goodsdetail.GoodsDetailFragment?pluginId\\u003d101\",\"extra\":\"{\\\"goodsId\\\":\\\"2230014583\\\",\\\"default_line\\\":\\\"\\\",\\\"commodityId\\\":\\\"10050241\\\",\\\"needVersion\\\":\\\"378\\\",\\\"productId\\\":\\\"10050241\\\"}\"}},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7b9b95b9acb4e4bb4a71877091f85965.png?w\\u003d1080\\u0026h\\u003d300\\u0026bg\\u003d1\",\"type\":\"image\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop2.plugin.goodsdetail.GoodsDetailFragment?pluginId\\u003d101\",\"extra\":\"{\\\"goodsId\\\":\\\"2230005193\\\",\\\"default_line\\\":\\\"\\\",\\\"commodityId\\\":\\\"21937\\\",\\\"needVersion\\\":\\\"378\\\",\\\"productId\\\":\\\"21937\\\"}\"}}]},\"buyerShow\":{\"total\":\"3w+\",\"realTotal\":3116,\"tags\":[\"空间充足\",\"质量上乘\",\"用料扎实\",\"手感一流\",\"颜值够高\",\"质感极佳\"],\"imgs\":[\"http://i1.mifile.cn/a2/1790297449_7589314_s1080_2340wh.jpg\",\"http://i1.mifile.cn/a2/1787321443_7510239_s1536_2048wh.jpg\",\"http://i1.mifile.cn/a2/1786365050_7972029_s1536_2048wh.jpg\",\"http://i1.mifile.cn/a2/1787817089_1468454_s2048_1536wh.jpg\",\"http://i1.mifile.cn/a2/1785731843_9391657_s1536_2048wh.jpg\"]},\"realProduct\":{\"realProductInfo\":{\"20112\":{\"materialTabList\":[{\"tabCode\":\"COMMODITY_INTRODUCTION\",\"tabName\":\"商品介绍\",\"materialViewList\":[{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_c6a5ec79fa72656b37ff8ea289cf8487.jpg?w\\u003d1080\\u0026h\\u003d1661\",\"w\":1080,\"h\":1661}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_af712b6fa62a5b20c57ed91e1181c91e.jpg?w\\u003d1080\\u0026h\\u003d1441\",\"w\":1080,\"h\":1441}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_99eafe5bc1b61e56ae0dabc1b99e43c5.jpg?w\\u003d1080\\u0026h\\u003d1698\",\"w\":1080,\"h\":1698}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_66bd7a470c0e4374309c8fe707e67a6c.jpg?w\\u003d1080\\u0026h\\u003d899\",\"w\":1080,\"h\":899}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_2776c1466fd0a17c8a1164cdbce3218b.jpg?w\\u003d1080\\u0026h\\u003d1183\",\"w\":1080,\"h\":1183}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_731063cee604b685fcfeebd81b14a22f.jpg?w\\u003d1080\\u0026h\\u003d744\",\"w\":1080,\"h\":744}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_9b725472a8f68490fa8e9ff848eeae73.jpg?w\\u003d1080\\u0026h\\u003d978\",\"w\":1080,\"h\":978}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_398071436fb9f2c49f5382fc4c21b2be.jpg?w\\u003d1080\\u0026h\\u003d1582\",\"w\":1080,\"h\":1582}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_276063ad029c0b80f6948dc01685b208.jpg?w\\u003d1080\\u0026h\\u003d876\",\"w\":1080,\"h\":876}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_b25f31674f58531396247a56f70e8a97.jpg?w\\u003d1080\\u0026h\\u003d715\",\"w\":1080,\"h\":715}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_485ec53669d8860e58a4ecd8600a6d62.jpg?w\\u003d1080\\u0026h\\u003d1732\",\"w\":1080,\"h\":1732}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_62abfeae6eb7ab9520b31d44b61ec70b.jpg?w\\u003d1080\\u0026h\\u003d1602\",\"w\":1080,\"h\":1602}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_b4be9f24be04be17fa27aa3982dc46e7.jpg?w\\u003d1080\\u0026h\\u003d1584\",\"w\":1080,\"h\":1584}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_55a0423ff5dcf4903454e79dc85846e1.jpg?w\\u003d1080\\u0026h\\u003d1483\",\"w\":1080,\"h\":1483}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_750aa368609a6e143a43a1e8d66c47b7.jpg?w\\u003d1080\\u0026h\\u003d1119\",\"w\":1080,\"h\":1119}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_47db4297525486e9ddde3f39ef7e7cb0.jpg?w\\u003d1080\\u0026h\\u003d1390\",\"w\":1080,\"h\":1390}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_b6f0ffb10fd060c8f1a5c4614c2d402a.jpg?w\\u003d1080\\u0026h\\u003d1606\",\"w\":1080,\"h\":1606}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_e78cc0ac85ad06517acfe05cf99b610d.jpg?w\\u003d1080\\u0026h\\u003d930\",\"w\":1080,\"h\":930}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_53cd2fa37a2bf9f74c8e0d11cff8f592.jpg?w\\u003d1080\\u0026h\\u003d771\",\"w\":1080,\"h\":771}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202404011508_f9f708677cd67ab525c35e1f7c4c9708.jpg?w\\u003d1080\\u0026h\\u003d894\",\"w\":1080,\"h\":894}],\"interval\":0}]},{\"tabCode\":\"SPEC_PARAMETER\",\"tabName\":\"规格参数\",\"materialViewList\":[{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202407021415_9108b4c2db1e1d0243ef878fa1625cb5.jpg?w\\u003d1080\\u0026h\\u003d912\",\"w\":1080,\"h\":912}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202407021415_1dc93fec44c146dbe7555ed26b76501b.jpg?w\\u003d1080\\u0026h\\u003d1150\",\"w\":1080,\"h\":1150}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202407021415_bd7ef0bd7a3569ec7f23bc5d68b7c89d.jpg?w\\u003d1080\\u0026h\\u003d1250\",\"w\":1080,\"h\":1250}],\"interval\":0}]}],\"recommendMatch\":{}}}},\"customerService\":{\"url\":\"https://chat.kefu.mi.com/page/index/v2?tag\\u003dcn\\u0026token\\u003dY24jMTAwMSNjbi53ZWIubWkuaHR0cHMubW9iaWxlI3JlZmVyZXIjZ29vZHNEZXRhaWw\\u003d\\u0026groupId\\u003dP0\\u0026closedshow\\u003d1\"},\"evaluate\":{\"evaluateList\":[{\"type\":\"VIDEO\",\"id\":\"30913\",\"title\":\"大容量更能装，一杯喝一天\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/7dc311fe-aff2-4bc5-a3f1-a5512f46757f.jpg?thumb\\u003d150x150\",\"nickName\":\"里昂LONG\",\"viewNum\":\"9896\",\"imgList\":[],\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bd027564a78bfd3d9d37ed4a94d46aaa.mp4\",\"videoCover\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eef8cd7fc3ffd677623c718d30b8caf4.jpg\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.shortvideo.home.HomeVideoListFragment?pluginId\\u003d232\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"\\\",\\\"id\\\":\\\"\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.shortvideo.home.HomeVideoListFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"30913\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"30913,33100\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"30913\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"VIDEO\",\"id\":\"33100\",\"title\":\"米家运动杯-Tritan材质更安心\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/e6f9fc43-19b0-4dbb-b41d-b96770371d20.jpg?thumb\\u003d150x150\",\"nickName\":\"小米新品早知道\",\"viewNum\":\"2802\",\"imgList\":[],\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/107f4dd3547a42fe6d9f5e4160b55016.mp4\",\"videoCover\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/29c9f7f30b757740a5ac01d5cab891cb.jpg\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.shortvideo.home.HomeVideoListFragment?pluginId\\u003d232\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"\\\",\\\"id\\\":\\\"\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.shortvideo.home.HomeVideoListFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"33100\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"30913,33100\\\",\\\"selectIndex\\\":1,\\\"moment_id_show\\\":\\\"33100\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1576218\",\"title\":\"双色可选，一键弹盖，米家运动杯饮水安全更\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/056d508c-168e-43c1-a425-c2f5347ec206.jpg?thumb\\u003d150x150\",\"nickName\":\"弦思科技\",\"viewNum\":\"2021\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7f6013990040b2285da863b688864576.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1576218\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1576218\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"ARTICLE\",\"id\":\"1576995\",\"title\":\"酣畅充能 米家运动杯新品上市！\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9b723a578063b2163d1b30e121ef594d.jpg\",\"nickName\":\"小米新品早知道\",\"viewNum\":\"1066\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0117c709e9738d0d1037663637827cde.jpg?w\\u003d1000\\u0026h\\u003d562\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1576995\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1576995\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1575753\",\"title\":\"米家运动杯体验：贴心陪伴你的运动时光\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/5ee80a7b-b57b-4648-bf3b-23825f3a601b.jpg?thumb\\u003d150x150\",\"nickName\":\"科技磊酱\",\"viewNum\":\"414\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6b3f76fe0e15dbc0ce2bda9b7dddb1d4.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1575753\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1575753\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1575576\",\"title\":\"便携随行畅饮无限，米家运动杯喊你补水喽！\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/r3ktE6A51cwKx7Nh_1BWqBaUFNc-a398de9b.jpg?thumb\\u003d150x150\",\"nickName\":\"小呆评测\",\"viewNum\":\"628\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b9a6d23780d90f94188db93fe68889f1.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1575576\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1575576\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}}]},\"goodsInfo\":{\"goodsList\":[{\"classParameters\":{},\"marketPrice\":\"99\",\"isSupportGift\":true,\"goodsId\":2230001928,\"serviceTypeList\":[],\"shortLink\":\"https://m.mi.com/p?pid\\u003d101\\u0026commodityId\\u003d20112\\u0026fallback\\u003dhttps%3A%2F%2Fm.mi.com%2Fcommodity%2Fdetail%2F20112%3Fclient_id%3D180100031058%26g_utm%3DMiStore.FromApp.ProductPage.Share\",\"goodsAttributeList\":[{\"attributeId\":2,\"attributeValueId\":2,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0},{\"attributeId\":1,\"attributeValueId\":49,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0}],\"buyLimit\":255,\"price\":\"99\",\"serviceTermList\":[{\"isCheck\":true,\"isPageShow\":true,\"title\":\"小米自营\",\"mark\":\"type\"},{\"isCheck\":true,\"descV2\":\"由小米发货\\n包装破损必赔：该商品配送过程中，如出现外包装损坏，可支持申请赔付；具体是否支持赔付以下单后展示信息为准。\\n不上门必赔：商品承诺在指定区域支持送货上门，如果未按约定地点送达，则支持申请赔付。具体是否支持上门以下单后展示信息为准。\",\"isPageShow\":true,\"title\":\"发货说明\",\"mark\":\"sendout\",\"desc\":\"由小米发货\"},{\"isCheck\":true,\"isPageShow\":true,\"title\":\"7天无理由退货（到店自取、闪送拆封后不支持）\",\"mark\":\"return\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"7天价格保护\",\"url\":\"https://s1.mi.com/m/faq/giving/index.html?project_id\\u003d44\",\"mark\":\"protect_price\",\"desc\":\"限商城配送方式。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"运费说明\",\"mark\":\"freight\",\"desc\":\"小米发货实物商品(不含有品),单笔实付满69元包邮;\\n小米有品发货的商品,包邮;\\n由第三方商家发货的商品，运费以实际结算金额为准;\\n特殊商品需要单独收取运费,具体以实际结算金额为准;优惠券等不能抵扣运费金额;如需无理由退货,用户将承担该商品的退货物流费用;\\n使用门店闪送服务，需单独支付运费，起送费10元起 ，根据配送距离有所不同，具体请以订单结算页面显示为准。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"企业信息\",\"mark\":\"company\",\"desc\":\"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\"}],\"singleSsuList\":[],\"sku\":57777,\"customizeType\":0,\"carouselList\":[{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg\",\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202409061842_dc3fece16a87387808cf23b8149d3b6a.mp4\",\"videoName\":\"视频\",\"type\":\"video\",\"videoSize\":7129478},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_2f7a2e4da6b6781dbebd644617baa8ce.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_e13c3cfd1eac872ff3b97a343a507f56.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_266df1ea7761e85c575bf483118d5688.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_8e4a975ee1240b262984b402bdfa7716.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_cec8bf2d38105c84e240635d285efe1e.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_f1ddb3415ef3c3ef5e1871cc542e8266.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_ce05aa3babcd19d33fca7ba1af1fd2cf.jpg\",\"type\":\"img\"}],\"miniLink\":\"/pages/product/index?id\\u003d1230802277\",\"buttons\":[{\"title\":\"加入购物车\",\"type\":\"addCart\"},{\"title\":\"立即购买\",\"type\":\"buyNow\"}],\"productId\":20112,\"saleMode\":{\"isBigTap\":false,\"saleModeCode\":\"standard\",\"source\":\"common\",\"canQuickOrder\":false},\"showStoreInfo\":true,\"commodityId\":1230802277,\"shipmentList\":[{\"name\":\"配送\",\"type\":\"depot\"}],\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261700_1382cbcf95396f2b394e985210de8e2c.png\",\"nextButtons\":[],\"name\":\"米家运动杯 活力白\",\"showReducePriceNotice\":true},{\"classParameters\":{},\"marketPrice\":\"99\",\"isSupportGift\":true,\"goodsId\":2230001929,\"serviceTypeList\":[],\"shortLink\":\"https://m.mi.com/p?pid\\u003d101\\u0026commodityId\\u003d20112\\u0026fallback\\u003dhttps%3A%2F%2Fm.mi.com%2Fcommodity%2Fdetail%2F20112%3Fclient_id%3D180100031058%26g_utm%3DMiStore.FromApp.ProductPage.Share\",\"goodsAttributeList\":[{\"attributeId\":2,\"attributeValueId\":3,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0},{\"attributeId\":1,\"attributeValueId\":49,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0}],\"buyLimit\":255,\"price\":\"99\",\"serviceTermList\":[{\"isCheck\":true,\"isPageShow\":true,\"title\":\"小米自营\",\"mark\":\"type\"},{\"isCheck\":true,\"descV2\":\"由小米发货\\n包装破损必赔：该商品配送过程中，如出现外包装损坏，可支持申请赔付；具体是否支持赔付以下单后展示信息为准。\\n不上门必赔：商品承诺在指定区域支持送货上门，如果未按约定地点送达，则支持申请赔付。具体是否支持上门以下单后展示信息为准。\",\"isPageShow\":true,\"title\":\"发货说明\",\"mark\":\"sendout\",\"desc\":\"由小米发货\"},{\"isCheck\":true,\"isPageShow\":true,\"title\":\"7天无理由退货（到店自取、闪送拆封后不支持）\",\"mark\":\"return\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"7天价格保护\",\"url\":\"https://s1.mi.com/m/faq/giving/index.html?project_id\\u003d44\",\"mark\":\"protect_price\",\"desc\":\"限商城配送方式。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"运费说明\",\"mark\":\"freight\",\"desc\":\"小米发货实物商品(不含有品),单笔实付满69元包邮;\\n小米有品发货的商品,包邮;\\n由第三方商家发货的商品，运费以实际结算金额为准;\\n特殊商品需要单独收取运费,具体以实际结算金额为准;优惠券等不能抵扣运费金额;如需无理由退货,用户将承担该商品的退货物流费用;\\n使用门店闪送服务，需单独支付运费，起送费10元起 ，根据配送距离有所不同，具体请以订单结算页面显示为准。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"企业信息\",\"mark\":\"company\",\"desc\":\"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\"}],\"singleSsuList\":[],\"sku\":57813,\"customizeType\":0,\"carouselList\":[{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg\",\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202409061842_dc3fece16a87387808cf23b8149d3b6a.mp4\",\"videoName\":\"视频\",\"type\":\"video\",\"videoSize\":7129478},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_2f7a2e4da6b6781dbebd644617baa8ce.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_e13c3cfd1eac872ff3b97a343a507f56.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_266df1ea7761e85c575bf483118d5688.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_8e4a975ee1240b262984b402bdfa7716.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_cec8bf2d38105c84e240635d285efe1e.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_f1ddb3415ef3c3ef5e1871cc542e8266.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_ce05aa3babcd19d33fca7ba1af1fd2cf.jpg\",\"type\":\"img\"}],\"miniLink\":\"/pages/product/index?id\\u003d1230802278\",\"buttons\":[{\"title\":\"加入购物车\",\"type\":\"addCart\"},{\"title\":\"立即购买\",\"type\":\"buyNow\"}],\"productId\":20112,\"saleMode\":{\"isBigTap\":false,\"saleModeCode\":\"standard\",\"source\":\"common\",\"canQuickOrder\":false},\"showStoreInfo\":true,\"commodityId\":1230802278,\"shipmentList\":[{\"name\":\"配送\",\"type\":\"depot\"}],\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261700_bdd90c75c3c1f8d46e7de9dc4d9f1c1d.png\",\"nextButtons\":[],\"name\":\"米家运动杯 经典黑\",\"showReducePriceNotice\":true}]}}}",
+    "response_hash": "4b6170e317dc0b86",
+    "raw_ref": "",
+    "parser_version": "mi_cn-v2",
+    "fetched_at": "2026-10-11T07:24:52+08:00",
+    "declared_at": ""
+   },
+   {
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "url": "https://m.mi.com/mtop/xiaomishop/product/info?gid=2230001928",
+    "method": "POST",
+    "request_headers": {},
+    "request_body": null,
+    "status": "success",
+    "http_status": 200,
+    "error": "",
+    "response_raw": "{\"code\":0,\"message\":\"ok\",\"data\":{\"userInfo\":{\"login\":false},\"product\":{\"productId\":20112,\"defaultGid\":2230001928,\"name\":\"米家运动杯\",\"shortTitle\":\"关盖落锁安心随行\",\"enable\":true,\"sellPointList\":[\"1L大容量：满足运动畅饮需求\",\"独立茶仓：茶叶、水果随心泡，细致过滤\",\"自动落锁：关盖即锁，不怕误触\"],\"batched\":false,\"itemType\":0,\"floatWindow\":{\"imgUrl\":\"\",\"materialType\":\"live\",\"isShowLiveWindow\":false,\"liveCloseShowImg\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9004941bb8e195ce1da465f8c7c4d287.gif\",\"liveInfo\":{\"id\":683,\"liveUrl\":\"https://nr-live.m.mi.com/caster/163f22a70f654e8c98a166c6cb5bf16f.m3u8\",\"liveUrlFlv\":\"https://nr-live.m.mi.com/caster/163f22a70f654e8c98a166c6cb5bf16f.flv\",\"discoverEntryImg\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0023d2086d6dccbeb95db1ed5bdceffd.jpg\",\"isWatchBroadcast\":true},\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.liveshow.RootFragment?pluginId\\u003d234\",\"extra\":\"{\\\"roomId\\\": \\\"683\\\"}\"}},\"isCustomerService\":true,\"shareContent\":\"\",\"changeDeliveryType\":{\"canChangeOfflineSale\":true,\"canDefaultChangeDeliveryType\":false}},\"saleAttributeInfo\":{\"saleAttributeList\":[{\"attributeId\":2,\"attributeName\":\"颜色\",\"attributeValueList\":[{\"attributeValueId\":2,\"attributeValueName\":\"活力白\"},{\"attributeValueId\":3,\"attributeValueName\":\"经典黑\"}],\"customizeType\":0,\"customizeAttributeList\":[]},{\"attributeId\":1,\"attributeName\":\"通用\",\"attributeValueList\":[{\"attributeValueId\":49,\"attributeValueName\":\"通用\"}],\"customizeType\":0,\"customizeAttributeList\":[]}]},\"askAll\":{\"total\":\"共77个问答\",\"items\":[{\"question\":\"家人们，降价了踢我一下🥰🥰\",\"answerNum\":\"15个问答\"},{\"question\":\"降价了踢我兄弟们，你们都多少钱买的\",\"answerNum\":\"2个问答\"}]},\"serverInfo\":{\"nowTime\":1791674692},\"carouselAdInfo\":{\"carouselAdList\":[{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1de8b0436b94b6b9148455d308dff0bd.jpg?w\\u003d1080\\u0026h\\u003d300\\u0026bg\\u003d70604\",\"type\":\"image\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop2.plugin.goodsdetail.GoodsDetailFragment?pluginId\\u003d101\",\"extra\":\"{\\\"goodsId\\\":\\\"2230014583\\\",\\\"default_line\\\":\\\"\\\",\\\"commodityId\\\":\\\"10050241\\\",\\\"needVersion\\\":\\\"378\\\",\\\"productId\\\":\\\"10050241\\\"}\"}},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7b9b95b9acb4e4bb4a71877091f85965.png?w\\u003d1080\\u0026h\\u003d300\\u0026bg\\u003d1\",\"type\":\"image\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop2.plugin.goodsdetail.GoodsDetailFragment?pluginId\\u003d101\",\"extra\":\"{\\\"goodsId\\\":\\\"2230005193\\\",\\\"default_line\\\":\\\"\\\",\\\"commodityId\\\":\\\"21937\\\",\\\"needVersion\\\":\\\"378\\\",\\\"productId\\\":\\\"21937\\\"}\"}}]},\"buyerShow\":{\"total\":\"3w+\",\"realTotal\":3116,\"tags\":[\"空间充足\",\"质量上乘\",\"用料扎实\",\"手感一流\",\"颜值够高\",\"质感极佳\"],\"imgs\":[\"http://i1.mifile.cn/a2/1790297449_7589314_s1080_2340wh.jpg\",\"http://i1.mifile.cn/a2/1787321443_7510239_s1536_2048wh.jpg\",\"http://i1.mifile.cn/a2/1786365050_7972029_s1536_2048wh.jpg\",\"http://i1.mifile.cn/a2/1787817089_1468454_s2048_1536wh.jpg\",\"http://i1.mifile.cn/a2/1785731843_9391657_s1536_2048wh.jpg\"]},\"realProduct\":{\"realProductInfo\":{\"20112\":{\"materialTabList\":[{\"tabCode\":\"COMMODITY_INTRODUCTION\",\"tabName\":\"商品介绍\",\"materialViewList\":[{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_c6a5ec79fa72656b37ff8ea289cf8487.jpg?w\\u003d1080\\u0026h\\u003d1661\",\"w\":1080,\"h\":1661}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_af712b6fa62a5b20c57ed91e1181c91e.jpg?w\\u003d1080\\u0026h\\u003d1441\",\"w\":1080,\"h\":1441}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_99eafe5bc1b61e56ae0dabc1b99e43c5.jpg?w\\u003d1080\\u0026h\\u003d1698\",\"w\":1080,\"h\":1698}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_66bd7a470c0e4374309c8fe707e67a6c.jpg?w\\u003d1080\\u0026h\\u003d899\",\"w\":1080,\"h\":899}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_2776c1466fd0a17c8a1164cdbce3218b.jpg?w\\u003d1080\\u0026h\\u003d1183\",\"w\":1080,\"h\":1183}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_731063cee604b685fcfeebd81b14a22f.jpg?w\\u003d1080\\u0026h\\u003d744\",\"w\":1080,\"h\":744}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_9b725472a8f68490fa8e9ff848eeae73.jpg?w\\u003d1080\\u0026h\\u003d978\",\"w\":1080,\"h\":978}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_398071436fb9f2c49f5382fc4c21b2be.jpg?w\\u003d1080\\u0026h\\u003d1582\",\"w\":1080,\"h\":1582}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_276063ad029c0b80f6948dc01685b208.jpg?w\\u003d1080\\u0026h\\u003d876\",\"w\":1080,\"h\":876}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_b25f31674f58531396247a56f70e8a97.jpg?w\\u003d1080\\u0026h\\u003d715\",\"w\":1080,\"h\":715}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_485ec53669d8860e58a4ecd8600a6d62.jpg?w\\u003d1080\\u0026h\\u003d1732\",\"w\":1080,\"h\":1732}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_62abfeae6eb7ab9520b31d44b61ec70b.jpg?w\\u003d1080\\u0026h\\u003d1602\",\"w\":1080,\"h\":1602}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_b4be9f24be04be17fa27aa3982dc46e7.jpg?w\\u003d1080\\u0026h\\u003d1584\",\"w\":1080,\"h\":1584}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_55a0423ff5dcf4903454e79dc85846e1.jpg?w\\u003d1080\\u0026h\\u003d1483\",\"w\":1080,\"h\":1483}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_750aa368609a6e143a43a1e8d66c47b7.jpg?w\\u003d1080\\u0026h\\u003d1119\",\"w\":1080,\"h\":1119}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_47db4297525486e9ddde3f39ef7e7cb0.jpg?w\\u003d1080\\u0026h\\u003d1390\",\"w\":1080,\"h\":1390}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_b6f0ffb10fd060c8f1a5c4614c2d402a.jpg?w\\u003d1080\\u0026h\\u003d1606\",\"w\":1080,\"h\":1606}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_e78cc0ac85ad06517acfe05cf99b610d.jpg?w\\u003d1080\\u0026h\\u003d930\",\"w\":1080,\"h\":930}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202408301749_53cd2fa37a2bf9f74c8e0d11cff8f592.jpg?w\\u003d1080\\u0026h\\u003d771\",\"w\":1080,\"h\":771}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202404011508_f9f708677cd67ab525c35e1f7c4c9708.jpg?w\\u003d1080\\u0026h\\u003d894\",\"w\":1080,\"h\":894}],\"interval\":0}]},{\"tabCode\":\"SPEC_PARAMETER\",\"tabName\":\"规格参数\",\"materialViewList\":[{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202407021415_9108b4c2db1e1d0243ef878fa1625cb5.jpg?w\\u003d1080\\u0026h\\u003d912\",\"w\":1080,\"h\":912}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202407021415_1dc93fec44c146dbe7555ed26b76501b.jpg?w\\u003d1080\\u0026h\\u003d1150\",\"w\":1080,\"h\":1150}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202407021415_bd7ef0bd7a3569ec7f23bc5d68b7c89d.jpg?w\\u003d1080\\u0026h\\u003d1250\",\"w\":1080,\"h\":1250}],\"interval\":0}]}],\"recommendMatch\":{}}}},\"customerService\":{\"url\":\"https://chat.kefu.mi.com/page/index/v2?tag\\u003dcn\\u0026token\\u003dY24jMTAwMSNjbi53ZWIubWkuaHR0cHMubW9iaWxlI3JlZmVyZXIjZ29vZHNEZXRhaWw\\u003d\\u0026groupId\\u003dP0\\u0026closedshow\\u003d1\"},\"evaluate\":{\"evaluateList\":[{\"type\":\"VIDEO\",\"id\":\"30913\",\"title\":\"大容量更能装，一杯喝一天\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/7dc311fe-aff2-4bc5-a3f1-a5512f46757f.jpg?thumb\\u003d150x150\",\"nickName\":\"里昂LONG\",\"viewNum\":\"9896\",\"imgList\":[],\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bd027564a78bfd3d9d37ed4a94d46aaa.mp4\",\"videoCover\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eef8cd7fc3ffd677623c718d30b8caf4.jpg\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.shortvideo.home.HomeVideoListFragment?pluginId\\u003d232\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"\\\",\\\"id\\\":\\\"\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.shortvideo.home.HomeVideoListFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"30913\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"30913,33100\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"30913\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"VIDEO\",\"id\":\"33100\",\"title\":\"米家运动杯-Tritan材质更安心\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/e6f9fc43-19b0-4dbb-b41d-b96770371d20.jpg?thumb\\u003d150x150\",\"nickName\":\"小米新品早知道\",\"viewNum\":\"2802\",\"imgList\":[],\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/107f4dd3547a42fe6d9f5e4160b55016.mp4\",\"videoCover\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/29c9f7f30b757740a5ac01d5cab891cb.jpg\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.shortvideo.home.HomeVideoListFragment?pluginId\\u003d232\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"\\\",\\\"id\\\":\\\"\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.shortvideo.home.HomeVideoListFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"33100\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"30913,33100\\\",\\\"selectIndex\\\":1,\\\"moment_id_show\\\":\\\"33100\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1576218\",\"title\":\"双色可选，一键弹盖，米家运动杯饮水安全更\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/056d508c-168e-43c1-a425-c2f5347ec206.jpg?thumb\\u003d150x150\",\"nickName\":\"弦思科技\",\"viewNum\":\"2021\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7f6013990040b2285da863b688864576.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1576218\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1576218\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"ARTICLE\",\"id\":\"1576995\",\"title\":\"酣畅充能 米家运动杯新品上市！\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9b723a578063b2163d1b30e121ef594d.jpg\",\"nickName\":\"小米新品早知道\",\"viewNum\":\"1066\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0117c709e9738d0d1037663637827cde.jpg?w\\u003d1000\\u0026h\\u003d562\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1576995\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1576995\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1575753\",\"title\":\"米家运动杯体验：贴心陪伴你的运动时光\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/5ee80a7b-b57b-4648-bf3b-23825f3a601b.jpg?thumb\\u003d150x150\",\"nickName\":\"科技磊酱\",\"viewNum\":\"414\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6b3f76fe0e15dbc0ce2bda9b7dddb1d4.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1575753\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1575753\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1575576\",\"title\":\"便携随行畅饮无限，米家运动杯喊你补水喽！\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/r3ktE6A51cwKx7Nh_1BWqBaUFNc-a398de9b.jpg?thumb\\u003d150x150\",\"nickName\":\"小呆评测\",\"viewNum\":\"628\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b9a6d23780d90f94188db93fe68889f1.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1575576\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1575576\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}}]},\"goodsInfo\":{\"goodsList\":[{\"classParameters\":{},\"marketPrice\":\"99\",\"isSupportGift\":true,\"goodsId\":2230001928,\"serviceTypeList\":[],\"shortLink\":\"https://m.mi.com/p?pid\\u003d101\\u0026commodityId\\u003d20112\\u0026fallback\\u003dhttps%3A%2F%2Fm.mi.com%2Fcommodity%2Fdetail%2F20112%3Fclient_id%3D180100031058%26g_utm%3DMiStore.FromApp.ProductPage.Share\",\"goodsAttributeList\":[{\"attributeId\":2,\"attributeValueId\":2,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0},{\"attributeId\":1,\"attributeValueId\":49,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0}],\"buyLimit\":255,\"price\":\"99\",\"serviceTermList\":[{\"isCheck\":true,\"isPageShow\":true,\"title\":\"小米自营\",\"mark\":\"type\"},{\"isCheck\":true,\"descV2\":\"由小米发货\\n包装破损必赔：该商品配送过程中，如出现外包装损坏，可支持申请赔付；具体是否支持赔付以下单后展示信息为准。\\n不上门必赔：商品承诺在指定区域支持送货上门，如果未按约定地点送达，则支持申请赔付。具体是否支持上门以下单后展示信息为准。\",\"isPageShow\":true,\"title\":\"发货说明\",\"mark\":\"sendout\",\"desc\":\"由小米发货\"},{\"isCheck\":true,\"isPageShow\":true,\"title\":\"7天无理由退货（到店自取、闪送拆封后不支持）\",\"mark\":\"return\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"7天价格保护\",\"url\":\"https://s1.mi.com/m/faq/giving/index.html?project_id\\u003d44\",\"mark\":\"protect_price\",\"desc\":\"限商城配送方式。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"运费说明\",\"mark\":\"freight\",\"desc\":\"小米发货实物商品(不含有品),单笔实付满69元包邮;\\n小米有品发货的商品,包邮;\\n由第三方商家发货的商品，运费以实际结算金额为准;\\n特殊商品需要单独收取运费,具体以实际结算金额为准;优惠券等不能抵扣运费金额;如需无理由退货,用户将承担该商品的退货物流费用;\\n使用门店闪送服务，需单独支付运费，起送费10元起 ，根据配送距离有所不同，具体请以订单结算页面显示为准。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"企业信息\",\"mark\":\"company\",\"desc\":\"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\"}],\"singleSsuList\":[],\"sku\":57777,\"customizeType\":0,\"carouselList\":[{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg\",\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202409061842_dc3fece16a87387808cf23b8149d3b6a.mp4\",\"videoName\":\"视频\",\"type\":\"video\",\"videoSize\":7129478},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_2f7a2e4da6b6781dbebd644617baa8ce.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_e13c3cfd1eac872ff3b97a343a507f56.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_266df1ea7761e85c575bf483118d5688.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_8e4a975ee1240b262984b402bdfa7716.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_cec8bf2d38105c84e240635d285efe1e.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_f1ddb3415ef3c3ef5e1871cc542e8266.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_ce05aa3babcd19d33fca7ba1af1fd2cf.jpg\",\"type\":\"img\"}],\"miniLink\":\"/pages/product/index?id\\u003d1230802277\",\"buttons\":[{\"title\":\"加入购物车\",\"type\":\"addCart\"},{\"title\":\"立即购买\",\"type\":\"buyNow\"}],\"productId\":20112,\"saleMode\":{\"isBigTap\":false,\"saleModeCode\":\"standard\",\"source\":\"common\",\"canQuickOrder\":false},\"showStoreInfo\":true,\"commodityId\":1230802277,\"shipmentList\":[{\"name\":\"配送\",\"type\":\"depot\"}],\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261700_1382cbcf95396f2b394e985210de8e2c.png\",\"nextButtons\":[],\"name\":\"米家运动杯 活力白\",\"showReducePriceNotice\":true},{\"classParameters\":{},\"marketPrice\":\"99\",\"isSupportGift\":true,\"goodsId\":2230001929,\"serviceTypeList\":[],\"shortLink\":\"https://m.mi.com/p?pid\\u003d101\\u0026commodityId\\u003d20112\\u0026fallback\\u003dhttps%3A%2F%2Fm.mi.com%2Fcommodity%2Fdetail%2F20112%3Fclient_id%3D180100031058%26g_utm%3DMiStore.FromApp.ProductPage.Share\",\"goodsAttributeList\":[{\"attributeId\":2,\"attributeValueId\":3,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0},{\"attributeId\":1,\"attributeValueId\":49,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0}],\"buyLimit\":255,\"price\":\"99\",\"serviceTermList\":[{\"isCheck\":true,\"isPageShow\":true,\"title\":\"小米自营\",\"mark\":\"type\"},{\"isCheck\":true,\"descV2\":\"由小米发货\\n包装破损必赔：该商品配送过程中，如出现外包装损坏，可支持申请赔付；具体是否支持赔付以下单后展示信息为准。\\n不上门必赔：商品承诺在指定区域支持送货上门，如果未按约定地点送达，则支持申请赔付。具体是否支持上门以下单后展示信息为准。\",\"isPageShow\":true,\"title\":\"发货说明\",\"mark\":\"sendout\",\"desc\":\"由小米发货\"},{\"isCheck\":true,\"isPageShow\":true,\"title\":\"7天无理由退货（到店自取、闪送拆封后不支持）\",\"mark\":\"return\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"7天价格保护\",\"url\":\"https://s1.mi.com/m/faq/giving/index.html?project_id\\u003d44\",\"mark\":\"protect_price\",\"desc\":\"限商城配送方式。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"运费说明\",\"mark\":\"freight\",\"desc\":\"小米发货实物商品(不含有品),单笔实付满69元包邮;\\n小米有品发货的商品,包邮;\\n由第三方商家发货的商品，运费以实际结算金额为准;\\n特殊商品需要单独收取运费,具体以实际结算金额为准;优惠券等不能抵扣运费金额;如需无理由退货,用户将承担该商品的退货物流费用;\\n使用门店闪送服务，需单独支付运费，起送费10元起 ，根据配送距离有所不同，具体请以订单结算页面显示为准。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"企业信息\",\"mark\":\"company\",\"desc\":\"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\"}],\"singleSsuList\":[],\"sku\":57813,\"customizeType\":0,\"carouselList\":[{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg\",\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202409061842_dc3fece16a87387808cf23b8149d3b6a.mp4\",\"videoName\":\"视频\",\"type\":\"video\",\"videoSize\":7129478},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_2f7a2e4da6b6781dbebd644617baa8ce.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_e13c3cfd1eac872ff3b97a343a507f56.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_266df1ea7761e85c575bf483118d5688.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_8e4a975ee1240b262984b402bdfa7716.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_cec8bf2d38105c84e240635d285efe1e.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_f1ddb3415ef3c3ef5e1871cc542e8266.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_ce05aa3babcd19d33fca7ba1af1fd2cf.jpg\",\"type\":\"img\"}],\"miniLink\":\"/pages/product/index?id\\u003d1230802278\",\"buttons\":[{\"title\":\"加入购物车\",\"type\":\"addCart\"},{\"title\":\"立即购买\",\"type\":\"buyNow\"}],\"productId\":20112,\"saleMode\":{\"isBigTap\":false,\"saleModeCode\":\"standard\",\"source\":\"common\",\"canQuickOrder\":false},\"showStoreInfo\":true,\"commodityId\":1230802278,\"shipmentList\":[{\"name\":\"配送\",\"type\":\"depot\"}],\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261700_bdd90c75c3c1f8d46e7de9dc4d9f1c1d.png\",\"nextButtons\":[],\"name\":\"米家运动杯 经典黑\",\"showReducePriceNotice\":true}]}}}",
+    "response_hash": "13251e6fd0c303c2",
+    "raw_ref": "",
+    "parser_version": "mi_cn-v2",
+    "fetched_at": "2026-10-11T07:24:52+08:00",
+    "declared_at": ""
+   },
+   {
+    "capture_id": "10eae0aeabd2",
+    "source": "mi_cn_pc",
+    "url": "https://api2.order.mi.com/product/view?product_id=20112&version=2",
+    "method": "GET",
+    "request_headers": {},
+    "request_body": null,
+    "status": "success",
+    "http_status": null,
+    "error": "",
+    "response_raw": "{\n \"code\": 200,\n \"msg\": \"success\",\n \"data\": {\n  \"need_address_check\": true,\n  \"commodity_ids\": [\n   1230802277,\n   1230802278\n  ],\n  \"goods_ids\": [\n   2230001928,\n   2230001929\n  ],\n  \"goods_list\": [\n   {\n    \"goods_info\": {\n     \"customize_type\": 0,\n     \"product_id\": 20112,\n     \"commodity_id\": 1230802277,\n     \"goods_id\": 2230001928,\n     \"sku\": 57777,\n     \"name\": \"米家运动杯 活力白\",\n     \"price\": \"99\",\n     \"market_price\": \"99\",\n     \"shipment_text\": \"\",\n     \"buy_limit\": 255,\n     \"is_sale\": true,\n     \"is_stock\": true,\n     \"img_800_pms\": null,\n     \"img_800_custom\": null,\n     \"imgs\": [\n      \"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/E86FE16F74EB6B9BD55DBF177495F990.png\"\n     ],\n     \"img_url\": \"//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261700_1382cbcf95396f2b394e985210de8e2c.png\",\n     \"img_url_webp\": \"//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261700_1382cbcf95396f2b394e985210de8e2c.png\",\n     \"action_button\": {\n      \"sale_mode\": \"standard\",\n      \"button_title\": \"加入购物车\",\n      \"is_bigtap\": false,\n      \"use_occ\": false,\n      \"occ_timeout\": 5000,\n      \"mode_change_time\": 0,\n      \"mode_start_time\": 0,\n      \"mode_end_time\": 0,\n      \"sale_mode_title\": \"立即购买\",\n      \"top_title\": \"\",\n      \"sale_mode_line\": \"first\",\n      \"source\": \"common\",\n      \"recommend_product\": null,\n      \"standard\": []\n     },\n     \"onsale_action_button\": null,\n     \"next_onsale_action_button\": null,\n     \"prop_list\": [\n      {\n       \"prop_cfg_id\": 2,\n       \"prop_value_id\": 2\n      },\n      {\n       \"prop_cfg_id\": 1,\n       \"prop_value_id\": 49\n      }\n     ],\n     \"page_id\": 41554,\n     \"class_parameters\": {\n      \"name\": \"关键参数\"\n     },\n     \"gallery_v3\": [\n      {\n       \"type\": \"video\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_2f7a2e4da6b6781dbebd644617baa8ce.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_2f7a2e4da6b6781dbebd644617baa8ce.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_e13c3cfd1eac872ff3b97a343a507f56.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_e13c3cfd1eac872ff3b97a343a507f56.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_266df1ea7761e85c575bf483118d5688.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_266df1ea7761e85c575bf483118d5688.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_8e4a975ee1240b262984b402bdfa7716.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_8e4a975ee1240b262984b402bdfa7716.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_cec8bf2d38105c84e240635d285efe1e.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_cec8bf2d38105c84e240635d285efe1e.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_f1ddb3415ef3c3ef5e1871cc542e8266.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_f1ddb3415ef3c3ef5e1871cc542e8266.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_ce05aa3babcd19d33fca7ba1af1fd2cf.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_ce05aa3babcd19d33fca7ba1af1fd2cf.jpg?f=webp\"\n      }\n     ],\n     \"is_customize\": \"N\",\n     \"customize_template_id\": 0,\n     \"ext_buy_option\": [],\n     \"multi_price\": {\n      \"first\": \"99\",\n      \"second\": \"99\"\n     },\n     \"multi_market_price\": {\n      \"first\": \"99\",\n      \"second\": \"99\"\n     }\n    },\n    \"after_sale_info\": {\n     \"list\": [\n      {\n       \"title\": \"小米自营\",\n       \"is_check\": true,\n       \"is_page_show\": true,\n       \"mark\": \"type\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"发货说明\",\n       \"desc\": \"由小米发货\",\n       \"is_check\": true,\n       \"is_page_show\": true,\n       \"mark\": \"sendout\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"7天无理由退货（到店自取拆封后不支持）\",\n       \"is_check\": true,\n       \"is_page_show\": true,\n       \"mark\": \"return\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"运费说明\",\n       \"desc\": \"由小米发货商品(不含有品),单笔满69元免运费;\\n由小米有品发货的商品,免运费;\\n由第三方商家发货的商品，运费以实际结算金额为准;\\n特殊商品需要单独收取运费,具体以实际结算金额为准;优惠券等不能抵扣运费金额;如需无理由退货,用户将承担该商品的退货物流费用;\\n使用门店闪送服务，需单独支付运费，起送费10元起 ，根据配送距离有所不同，具体请以订单结算页面显示为准。\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"mark\": \"freight\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"企业信息\",\n       \"desc\": \"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"mark\": \"company\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"7天价格保护\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"url\": \"https://s1.mi.com/m/faq/giving/index.html?project_id=44\",\n       \"mark\": \"protect_price\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      }\n     ],\n     \"company_info\": {\n      \"name\": \"小米自营\",\n      \"business_type\": 1,\n      \"desc\": {\n       \"title\": \"企业信息\",\n       \"desc\": \"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"mark\": \"company\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      }\n     }\n    },\n    \"service_list\": null,\n    \"multi_service\": {\n     \"first\": null\n    }\n   },\n   {\n    \"goods_info\": {\n     \"customize_type\": 0,\n     \"product_id\": 20112,\n     \"commodity_id\": 1230802278,\n     \"goods_id\": 2230001929,\n     \"sku\": 57813,\n     \"name\": \"米家运动杯 经典黑\",\n     \"price\": \"99\",\n     \"market_price\": \"99\",\n     \"shipment_text\": \"\",\n     \"buy_limit\": 255,\n     \"is_sale\": true,\n     \"is_stock\": true,\n     \"img_800_pms\": null,\n     \"img_800_custom\": null,\n     \"imgs\": [\n      \"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/4260AD4661D8A6E94BFD986179952A68.png\"\n     ],\n     \"img_url\": \"//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261700_bdd90c75c3c1f8d46e7de9dc4d9f1c1d.png\",\n     \"img_url_webp\": \"//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261700_bdd90c75c3c1f8d46e7de9dc4d9f1c1d.png\",\n     \"action_button\": {\n      \"sale_mode\": \"standard\",\n      \"button_title\": \"加入购物车\",\n      \"is_bigtap\": false,\n      \"use_occ\": false,\n      \"occ_timeout\": 5000,\n      \"mode_change_time\": 0,\n      \"mode_start_time\": 0,\n      \"mode_end_time\": 0,\n      \"sale_mode_title\": \"立即购买\",\n      \"top_title\": \"\",\n      \"sale_mode_line\": \"first\",\n      \"source\": \"common\",\n      \"recommend_product\": null,\n      \"standard\": []\n     },\n     \"onsale_action_button\": null,\n     \"next_onsale_action_button\": null,\n     \"prop_list\": [\n      {\n       \"prop_cfg_id\": 2,\n       \"prop_value_id\": 3\n      },\n      {\n       \"prop_cfg_id\": 1,\n       \"prop_value_id\": 49\n      }\n     ],\n     \"page_id\": 41554,\n     \"class_parameters\": {\n      \"name\": \"关键参数\"\n     },\n     \"gallery_v3\": [\n      {\n       \"type\": \"video\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_2f7a2e4da6b6781dbebd644617baa8ce.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_2f7a2e4da6b6781dbebd644617baa8ce.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_e13c3cfd1eac872ff3b97a343a507f56.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_e13c3cfd1eac872ff3b97a343a507f56.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_266df1ea7761e85c575bf483118d5688.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_266df1ea7761e85c575bf483118d5688.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_8e4a975ee1240b262984b402bdfa7716.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_8e4a975ee1240b262984b402bdfa7716.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_cec8bf2d38105c84e240635d285efe1e.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_cec8bf2d38105c84e240635d285efe1e.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_f1ddb3415ef3c3ef5e1871cc542e8266.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_f1ddb3415ef3c3ef5e1871cc542e8266.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_ce05aa3babcd19d33fca7ba1af1fd2cf.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_ce05aa3babcd19d33fca7ba1af1fd2cf.jpg?f=webp\"\n      }\n     ],\n     \"is_customize\": \"N\",\n     \"customize_template_id\": 0,\n     \"ext_buy_option\": [],\n     \"multi_price\": {\n      \"first\": \"99\",\n      \"second\": \"99\"\n     },\n     \"multi_market_price\": {\n      \"first\": \"99\",\n      \"second\": \"99\"\n     }\n    },\n    \"after_sale_info\": {\n     \"list\": [\n      {\n       \"title\": \"小米自营\",\n       \"is_check\": true,\n       \"is_page_show\": true,\n       \"mark\": \"type\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"发货说明\",\n       \"desc\": \"由小米发货\",\n       \"is_check\": true,\n       \"is_page_show\": true,\n       \"mark\": \"sendout\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"7天无理由退货（到店自取拆封后不支持）\",\n       \"is_check\": true,\n       \"is_page_show\": true,\n       \"mark\": \"return\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"运费说明\",\n       \"desc\": \"由小米发货商品(不含有品),单笔满69元免运费;\\n由小米有品发货的商品,免运费;\\n由第三方商家发货的商品，运费以实际结算金额为准;\\n特殊商品需要单独收取运费,具体以实际结算金额为准;优惠券等不能抵扣运费金额;如需无理由退货,用户将承担该商品的退货物流费用;\\n使用门店闪送服务，需单独支付运费，起送费10元起 ，根据配送距离有所不同，具体请以订单结算页面显示为准。\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"mark\": \"freight\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"企业信息\",\n       \"desc\": \"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"mark\": \"company\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"7天价格保护\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"url\": \"https://s1.mi.com/m/faq/giving/index.html?project_id=44\",\n       \"mark\": \"protect_price\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      }\n     ],\n     \"company_info\": {\n      \"name\": \"小米自营\",\n      \"business_type\": 1,\n      \"desc\": {\n       \"title\": \"企业信息\",\n       \"desc\": \"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"mark\": \"company\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      }\n     }\n    },\n    \"service_list\": null,\n    \"multi_service\": {\n     \"first\": null\n    }\n   }\n  ],\n  \"product_info\": { \"product_id\":20112,\"name\":\"米家运动杯\",\"product_desc\":\"1L大容量｜关盖自动落锁｜独立茶仓\",\"is_enable\":true,\"is_batched\":false,\"activity_tips\":{},\"price_tips\":{},\"hidden_price_tips\":{},\"page_id\":41554,\"is_choose\":true},\n  \"buy_option\": [\n   { \"name\":\"颜色\",\"prop_cfg_id\":2,\"list\":[{\"prop_value_id\":2,\"name\":\"活力白\",\"prop_desc\":\"\",\"icon_img\":\"\",\"icon_color\":\"\",\"is_stock\":false,\"price\":\"\"},{\"prop_value_id\":3,\"name\":\"经典黑\",\"prop_desc\":\"\",\"icon_img\":\"\",\"icon_color\":\"\",\"is_stock\":false,\"price\":\"\"}]},\n   { \"name\":\"通用\",\"prop_cfg_id\":1,\"list\":[{\"prop_value_id\":49,\"name\":\"通用\",\"prop_desc\":\"\",\"icon_img\":\"\",\"icon_color\":\"\",\"is_stock\":false,\"price\":\"\"}]}\n  ],\n  \"extend_info\": {\n   \"desc_tabs_view\": [\n {\n  \"name\": \"商品详情\",\n  \"show_type\": \"config\",\n  \"tab_content\": [\n {\n  \"plain_view\": {\n \"h\": 740,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2ee14d179fdf3c78c8f0fbb7878a8dc3.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 580,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4a4e6de8e05bc2c373f6f83429e2052d.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 781,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fad1bd91833935164b4032c61838395e.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 960,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/310fa960103a7162b48dfac4fdf03885.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 719,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8386f1896403abf1b228fa57c392e48d.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 772,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b7a9f7d25104e84813a4f04cabd01d6e.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 792,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f43d50ef3dc8bb9a442989bed5460ed8.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 713,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4b6ee0136c2c4c873e1f05d2f5c7f583.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 787,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/44cd5ce797e9a2bea2fa3e3985064fab.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 706,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8d58b2eb1b3b30a706ef4932aa905f37.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 669,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ba7c68729cad7257bedeb65f46447b9e.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 786,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c32f63002a54b23abb728ad4eeade37e.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 757,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/17b5b1807f85bfc5bc44402c9ff727d6.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 562,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d8b47dc76fac40eaff8a5e5e064407c3.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 450,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/33c4ed2bc6ecc412660db791d929f84b.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 500,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/521a1bdb61831b1dc8518ba50c59a53c.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 458,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a21c567977520f1b2a1d830a348189db.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 160,\n \"img\": \"http://i8.mifile.cn/b2c-mimall-media/1a84b2b629512205bf528aae91361efb.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"官方微信\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 189,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43e2954feb6d1b108438481f1d5b0bd3.png\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"价格说明\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n }\n],\n  \"view_type\": \"desc_tabs_view\"\n }\n],\n   \"show_type\": \"config\",\n   \"view_type\": \"desc_tabs_view\"\n  },\n  \"is_buyout_recycle\": false\n }\n}\n",
+    "response_hash": "b860cbd85f4bd510",
+    "raw_ref": "",
+    "parser_version": "mi_cn-v2",
+    "fetched_at": "2026-10-11T07:24:54+08:00",
+    "declared_at": ""
+   }
+  ],
+  "assertions": [
+   {
+    "assertion_id": "9a3fc2888345:name",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "name",
+    "raw_value": "米家运动杯",
+    "locator": "$.data.product.name",
+    "ui_location": "商品名",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:short_title",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "short_title",
+    "raw_value": "关盖落锁安心随行",
+    "locator": "$.data.product.shortTitle",
+    "ui_location": "副标题",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:sell_points",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "sell_points",
+    "raw_value": [
+     "1L大容量：满足运动畅饮需求",
+     "独立茶仓：茶叶、水果随心泡，细致过滤",
+     "自动落锁：关盖即锁，不怕误触"
+    ],
+    "locator": "$.data.product.sellPointList",
+    "ui_location": "卖点",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:gid",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "gid",
+    "raw_value": 2230001928,
+    "locator": "$.data.product.defaultGid",
+    "ui_location": "",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:commodity_id",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "commodity_id",
+    "raw_value": 1230802277,
+    "locator": "$.data.goodsInfo.goodsList[0].commodityId",
+    "ui_location": "",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:sku",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "sku",
+    "raw_value": 57777,
+    "locator": "$.data.goodsInfo.goodsList[0].sku",
+    "ui_location": "",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:price",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "price",
+    "raw_value": "99",
+    "locator": "$.data.goodsInfo.goodsList[0].price",
+    "ui_location": "现价",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:market_price",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "market_price",
+    "raw_value": "99",
+    "locator": "$.data.goodsInfo.goodsList[0].marketPrice",
+    "ui_location": "划线价",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:img_url",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "img_url",
+    "raw_value": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261700_1382cbcf95396f2b394e985210de8e2c.png",
+    "locator": "$.data.goodsInfo.goodsList[0].imgUrl",
+    "ui_location": "",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:carousel",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "carousel",
+    "raw_value": [
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_2f7a2e4da6b6781dbebd644617baa8ce.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_e13c3cfd1eac872ff3b97a343a507f56.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_266df1ea7761e85c575bf483118d5688.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_8e4a975ee1240b262984b402bdfa7716.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_cec8bf2d38105c84e240635d285efe1e.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_f1ddb3415ef3c3ef5e1871cc542e8266.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_ce05aa3babcd19d33fca7ba1af1fd2cf.jpg"
+    ],
+    "locator": "$.data.goodsInfo.goodsList[0].carouselList",
+    "ui_location": "轮播图",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:attrs",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "attrs",
+    "raw_value": {
+     "颜色": [
+      "活力白",
+      "经典黑"
+     ],
+     "通用": [
+      "通用"
+     ]
+    },
+    "locator": "$.data.saleAttributeInfo.saleAttributeList",
+    "ui_location": "",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:colors",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "colors",
+    "raw_value": [
+     "活力白",
+     "经典黑"
+    ],
+    "locator": "$.data.saleAttributeInfo.saleAttributeList",
+    "ui_location": "可选颜色",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:evaluate_total",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "evaluate_total",
+    "raw_value": "3w+",
+    "locator": "$.data.buyerShow.total",
+    "ui_location": "评论数",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:evaluate_real",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "evaluate_real",
+    "raw_value": 3116,
+    "locator": "$.data.buyerShow.realTotal",
+    "ui_location": "评论数",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:review_tags",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "review_tags",
+    "raw_value": [
+     "空间充足",
+     "质量上乘",
+     "用料扎实",
+     "手感一流",
+     "颜值够高",
+     "质感极佳"
+    ],
+    "locator": "$.data.buyerShow.tags[]",
+    "ui_location": "大家评价",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:buyer_imgs",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "buyer_imgs",
+    "raw_value": [
+     "http://i1.mifile.cn/a2/1790297449_7589314_s1080_2340wh.jpg",
+     "http://i1.mifile.cn/a2/1787321443_7510239_s1536_2048wh.jpg",
+     "http://i1.mifile.cn/a2/1786365050_7972029_s1536_2048wh.jpg",
+     "http://i1.mifile.cn/a2/1787817089_1468454_s2048_1536wh.jpg",
+     "http://i1.mifile.cn/a2/1785731843_9391657_s1536_2048wh.jpg"
+    ],
+    "locator": "$.data.buyerShow.imgs[]",
+    "ui_location": "买家秀",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:qa_total",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "qa_total",
+    "raw_value": "共77个问答",
+    "locator": "$.data.askAll.total",
+    "ui_location": "问大家",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:qa_items",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "qa_items",
+    "raw_value": [
+     {
+      "question": "家人们，降价了踢我一下🥰🥰",
+      "answerNum": "15个问答"
+     },
+     {
+      "question": "降价了踢我兄弟们，你们都多少钱买的",
+      "answerNum": "2个问答"
+     }
+    ],
+    "locator": "$.data.askAll.items[]",
+    "ui_location": "问大家",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "9a3fc2888345:_params_empty",
+    "subject_id": "20112",
+    "capture_id": "9a3fc2888345",
+    "source": "mi_cn_mobile",
+    "attribute": "_params_empty",
+    "raw_value": {},
+    "locator": "$.data.goodsInfo.goodsList[0].classParameters",
+    "ui_location": "关键参数",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "source_empty",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "10eae0aeabd2:desc",
+    "subject_id": "20112",
+    "capture_id": "10eae0aeabd2",
+    "source": "mi_cn_pc",
+    "attribute": "desc",
+    "raw_value": "1L大容量｜关盖自动落锁｜独立茶仓",
+    "locator": "$.data.product_info.product_desc",
+    "ui_location": "商品简介",
+    "page": "PC 商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "10eae0aeabd2:pc_price",
+    "subject_id": "20112",
+    "capture_id": "10eae0aeabd2",
+    "source": "mi_cn_pc",
+    "attribute": "pc_price",
+    "raw_value": "99",
+    "locator": "$.data.goods_list[0].goods_info.price",
+    "ui_location": "现价",
+    "page": "PC 商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "10eae0aeabd2:pc_market_price",
+    "subject_id": "20112",
+    "capture_id": "10eae0aeabd2",
+    "source": "mi_cn_pc",
+    "attribute": "pc_market_price",
+    "raw_value": "99",
+    "locator": "$.data.goods_list[0].goods_info.market_price",
+    "ui_location": "划线价",
+    "page": "PC 商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "10eae0aeabd2:buy_options",
+    "subject_id": "20112",
+    "capture_id": "10eae0aeabd2",
+    "source": "mi_cn_pc",
+    "attribute": "buy_options",
+    "raw_value": [
+     {
+      "name": "颜色",
+      "prop_cfg_id": 2,
+      "list": [
+       {
+        "prop_value_id": 2,
+        "name": "活力白",
+        "prop_desc": "",
+        "icon_img": "",
+        "icon_color": "",
+        "is_stock": false,
+        "price": ""
+       },
+       {
+        "prop_value_id": 3,
+        "name": "经典黑",
+        "prop_desc": "",
+        "icon_img": "",
+        "icon_color": "",
+        "is_stock": false,
+        "price": ""
+       }
+      ]
+     },
+     {
+      "name": "通用",
+      "prop_cfg_id": 1,
+      "list": [
+       {
+        "prop_value_id": 49,
+        "name": "通用",
+        "prop_desc": "",
+        "icon_img": "",
+        "icon_color": "",
+        "is_stock": false,
+        "price": ""
+       }
+      ]
+     }
+    ],
+    "locator": "$.data.buy_option[]",
+    "ui_location": "选择规格",
+    "page": "PC 商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "10eae0aeabd2:pc_tabs",
+    "subject_id": "20112",
+    "capture_id": "10eae0aeabd2",
+    "source": "mi_cn_pc",
+    "attribute": "pc_tabs",
+    "raw_value": [
+     "商品详情"
+    ],
+    "locator": "$.data.extend_info.desc_tabs_view",
+    "ui_location": "商品详情",
+    "page": "PC 商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "10eae0aeabd2:pc_imgs",
+    "subject_id": "20112",
+    "capture_id": "10eae0aeabd2",
+    "source": "mi_cn_pc",
+    "attribute": "pc_imgs",
+    "raw_value": [
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2ee14d179fdf3c78c8f0fbb7878a8dc3.jpg",
+      "w": 1226,
+      "h": 740
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4a4e6de8e05bc2c373f6f83429e2052d.jpg",
+      "w": 1226,
+      "h": 580
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fad1bd91833935164b4032c61838395e.jpg",
+      "w": 1226,
+      "h": 781
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/310fa960103a7162b48dfac4fdf03885.jpg",
+      "w": 1226,
+      "h": 960
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8386f1896403abf1b228fa57c392e48d.jpg",
+      "w": 1226,
+      "h": 719
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b7a9f7d25104e84813a4f04cabd01d6e.jpg",
+      "w": 1226,
+      "h": 772
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f43d50ef3dc8bb9a442989bed5460ed8.jpg",
+      "w": 1226,
+      "h": 792
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4b6ee0136c2c4c873e1f05d2f5c7f583.jpg",
+      "w": 1226,
+      "h": 713
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/44cd5ce797e9a2bea2fa3e3985064fab.jpg",
+      "w": 1226,
+      "h": 787
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8d58b2eb1b3b30a706ef4932aa905f37.jpg",
+      "w": 1226,
+      "h": 706
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ba7c68729cad7257bedeb65f46447b9e.jpg",
+      "w": 1226,
+      "h": 669
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c32f63002a54b23abb728ad4eeade37e.jpg",
+      "w": 1226,
+      "h": 786
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/17b5b1807f85bfc5bc44402c9ff727d6.jpg",
+      "w": 1226,
+      "h": 757
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d8b47dc76fac40eaff8a5e5e064407c3.jpg",
+      "w": 1226,
+      "h": 562
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/33c4ed2bc6ecc412660db791d929f84b.jpg",
+      "w": 1226,
+      "h": 450
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/521a1bdb61831b1dc8518ba50c59a53c.jpg",
+      "w": 1226,
+      "h": 500
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a21c567977520f1b2a1d830a348189db.jpg",
+      "w": 1226,
+      "h": 458
+     },
+     {
+      "tab": "商品详情",
+      "img": "http://i8.mifile.cn/b2c-mimall-media/1a84b2b629512205bf528aae91361efb.jpg",
+      "w": 1226,
+      "h": 160
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43e2954feb6d1b108438481f1d5b0bd3.png",
+      "w": 1226,
+      "h": 189
+     }
+    ],
+    "locator": "$.data.extend_info.desc_tabs_view",
+    "ui_location": "商品详情",
+    "page": "PC 商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   }
+  ],
+  "view": {
+   "subject_id": "CN:mi_cn:product:20112",
+   "values": {
+    "name": "米家运动杯",
+    "short_title": "关盖落锁安心随行",
+    "sell_points": [
+     "1L大容量：满足运动畅饮需求",
+     "独立茶仓：茶叶、水果随心泡，细致过滤",
+     "自动落锁：关盖即锁，不怕误触"
+    ],
+    "gid": 2230001928,
+    "commodity_id": 1230802277,
+    "sku": 57777,
+    "price": "99",
+    "market_price": "99",
+    "img_url": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261700_1382cbcf95396f2b394e985210de8e2c.png",
+    "carousel": [
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_d647152d0ac5d94f2b41986ea6d8d9c5.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_2f7a2e4da6b6781dbebd644617baa8ce.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_e13c3cfd1eac872ff3b97a343a507f56.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_266df1ea7761e85c575bf483118d5688.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_8e4a975ee1240b262984b402bdfa7716.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_cec8bf2d38105c84e240635d285efe1e.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_f1ddb3415ef3c3ef5e1871cc542e8266.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202406261703_ce05aa3babcd19d33fca7ba1af1fd2cf.jpg"
+    ],
+    "attrs": {
+     "颜色": [
+      "活力白",
+      "经典黑"
+     ],
+     "通用": [
+      "通用"
+     ]
+    },
+    "colors": [
+     "活力白",
+     "经典黑"
+    ],
+    "evaluate_total": "3w+",
+    "evaluate_real": 3116,
+    "review_tags": [
+     "空间充足",
+     "质量上乘",
+     "用料扎实",
+     "手感一流",
+     "颜值够高",
+     "质感极佳"
+    ],
+    "buyer_imgs": [
+     "http://i1.mifile.cn/a2/1790297449_7589314_s1080_2340wh.jpg",
+     "http://i1.mifile.cn/a2/1787321443_7510239_s1536_2048wh.jpg",
+     "http://i1.mifile.cn/a2/1786365050_7972029_s1536_2048wh.jpg",
+     "http://i1.mifile.cn/a2/1787817089_1468454_s2048_1536wh.jpg",
+     "http://i1.mifile.cn/a2/1785731843_9391657_s1536_2048wh.jpg"
+    ],
+    "qa_total": "共77个问答",
+    "qa_items": [
+     {
+      "question": "家人们，降价了踢我一下🥰🥰",
+      "answerNum": "15个问答"
+     },
+     {
+      "question": "降价了踢我兄弟们，你们都多少钱买的",
+      "answerNum": "2个问答"
+     }
+    ],
+    "_params_empty": {},
+    "desc": "1L大容量｜关盖自动落锁｜独立茶仓",
+    "pc_price": "99",
+    "pc_market_price": "99",
+    "buy_options": [
+     {
+      "name": "颜色",
+      "prop_cfg_id": 2,
+      "list": [
+       {
+        "prop_value_id": 2,
+        "name": "活力白",
+        "prop_desc": "",
+        "icon_img": "",
+        "icon_color": "",
+        "is_stock": false,
+        "price": ""
+       },
+       {
+        "prop_value_id": 3,
+        "name": "经典黑",
+        "prop_desc": "",
+        "icon_img": "",
+        "icon_color": "",
+        "is_stock": false,
+        "price": ""
+       }
+      ]
+     },
+     {
+      "name": "通用",
+      "prop_cfg_id": 1,
+      "list": [
+       {
+        "prop_value_id": 49,
+        "name": "通用",
+        "prop_desc": "",
+        "icon_img": "",
+        "icon_color": "",
+        "is_stock": false,
+        "price": ""
+       }
+      ]
+     }
+    ],
+    "pc_tabs": [
+     "商品详情"
+    ],
+    "pc_imgs": [
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2ee14d179fdf3c78c8f0fbb7878a8dc3.jpg",
+      "w": 1226,
+      "h": 740
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4a4e6de8e05bc2c373f6f83429e2052d.jpg",
+      "w": 1226,
+      "h": 580
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fad1bd91833935164b4032c61838395e.jpg",
+      "w": 1226,
+      "h": 781
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/310fa960103a7162b48dfac4fdf03885.jpg",
+      "w": 1226,
+      "h": 960
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8386f1896403abf1b228fa57c392e48d.jpg",
+      "w": 1226,
+      "h": 719
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b7a9f7d25104e84813a4f04cabd01d6e.jpg",
+      "w": 1226,
+      "h": 772
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f43d50ef3dc8bb9a442989bed5460ed8.jpg",
+      "w": 1226,
+      "h": 792
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4b6ee0136c2c4c873e1f05d2f5c7f583.jpg",
+      "w": 1226,
+      "h": 713
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/44cd5ce797e9a2bea2fa3e3985064fab.jpg",
+      "w": 1226,
+      "h": 787
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8d58b2eb1b3b30a706ef4932aa905f37.jpg",
+      "w": 1226,
+      "h": 706
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ba7c68729cad7257bedeb65f46447b9e.jpg",
+      "w": 1226,
+      "h": 669
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c32f63002a54b23abb728ad4eeade37e.jpg",
+      "w": 1226,
+      "h": 786
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/17b5b1807f85bfc5bc44402c9ff727d6.jpg",
+      "w": 1226,
+      "h": 757
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d8b47dc76fac40eaff8a5e5e064407c3.jpg",
+      "w": 1226,
+      "h": 562
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/33c4ed2bc6ecc412660db791d929f84b.jpg",
+      "w": 1226,
+      "h": 450
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/521a1bdb61831b1dc8518ba50c59a53c.jpg",
+      "w": 1226,
+      "h": 500
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a21c567977520f1b2a1d830a348189db.jpg",
+      "w": 1226,
+      "h": 458
+     },
+     {
+      "tab": "商品详情",
+      "img": "http://i8.mifile.cn/b2c-mimall-media/1a84b2b629512205bf528aae91361efb.jpg",
+      "w": 1226,
+      "h": 160
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43e2954feb6d1b108438481f1d5b0bd3.png",
+      "w": 1226,
+      "h": 189
+     }
+    ]
+   },
+   "selected_from": {},
+   "candidates": {},
+   "relations": [],
+   "unclassified": {},
+   "availability": {
+    "name": "provided",
+    "short_title": "provided",
+    "sell_points": "provided",
+    "gid": "provided",
+    "commodity_id": "provided",
+    "sku": "provided",
+    "price": "provided",
+    "market_price": "provided",
+    "img_url": "provided",
+    "carousel": "provided",
+    "attrs": "provided",
+    "colors": "provided",
+    "evaluate_total": "provided",
+    "evaluate_real": "provided",
+    "review_tags": "provided",
+    "buyer_imgs": "provided",
+    "qa_total": "provided",
+    "qa_items": "provided",
+    "_params_empty": "source_empty",
+    "desc": "provided",
+    "pc_price": "provided",
+    "pc_market_price": "provided",
+    "buy_options": "provided",
+    "pc_tabs": "provided",
+    "pc_imgs": "provided"
+   },
+   "gaps": []
+  },
+  "market_prices": [
+   {
+    "variant_id": "CN:mi_cn:commodity:1230802277",
+    "name": "米家运动杯 活力白",
+    "attrs": {
+     "color": "活力白"
+    },
+    "external_ids": {
+     "mi_cn.commodity_id": "1230802277"
+    }
+   },
+   {
+    "variant_id": "CN:mi_cn:commodity:1230802278",
+    "name": "米家运动杯 经典黑",
+    "attrs": {
+     "color": "经典黑"
+    },
+    "external_ids": {
+     "mi_cn.commodity_id": "1230802278"
+    }
+   }
+  ],
+  "discovery": {
+   "query": "运动鞋",
+   "pages_fetched": 1,
+   "page_size": 20,
+   "total_reported": 2,
+   "found": 2,
+   "stop_reason": "reached_total",
+   "completeness": "complete",
+   "universe": "中国大陆小米商城本次搜索可发现的商品"
+  },
+  "fetched_at": "2026-10-11T07:24:51+08:00"
+ },
+ {
+  "product": {
+   "product_id": "CN:mi_cn:product:21171",
+   "name": "米家便携水杯",
+   "market": "CN",
+   "brand": "",
+   "category": "运动鞋",
+   "external_ids": {
+    "mi_cn.product_id": "21171"
+   },
+   "identity_evidence": {
+    "variant_count": 2,
+    "variant_names": [
+     "米家便携水杯 白色",
+     "米家便携水杯 黑色"
+    ],
+    "basis": "同一 product_id 下的 commodity 列表",
+    "scope": "CN 市场，mi_cn 源"
+   },
+   "identity_confidence": "verified",
+   "variants": [
+    {
+     "variant_id": "CN:mi_cn:commodity:1230804470",
+     "product_id": "CN:mi_cn:product:21171",
+     "name": "米家便携水杯 白色",
+     "attrs": {
+      "color": "白色"
+     },
+     "external_ids": {
+      "mi_cn.commodity_id": "1230804470"
+     }
+    },
+    {
+     "variant_id": "CN:mi_cn:commodity:1230804471",
+     "product_id": "CN:mi_cn:product:21171",
+     "name": "米家便携水杯 黑色",
+     "attrs": {
+      "color": "黑色"
+     },
+     "external_ids": {
+      "mi_cn.commodity_id": "1230804471"
+     }
+    }
+   ],
+   "kind": "unknown",
+   "is_container": false
+  },
+  "captures": [
+   {
+    "capture_id": "a7bafb0d1210",
+    "source": "mi_cn_mobile",
+    "url": "https://m.mi.com/mtop/xiaomishop/product/info",
+    "method": "POST",
+    "request_headers": {},
+    "request_body": null,
+    "status": "success",
+    "http_status": 200,
+    "error": "",
+    "response_raw": "{\"code\":0,\"message\":\"ok\",\"data\":{\"userInfo\":{\"login\":false},\"product\":{\"productId\":21171,\"defaultGid\":2230003943,\"name\":\"米家便携水杯\",\"shortTitle\":\"米家便携水杯\",\"enable\":true,\"sellPointList\":[\"tritan材质 耐冷耐热\",\"可拆卸滤网\",\"安全锁扣 一键开盖\"],\"batched\":false,\"itemType\":0,\"floatWindow\":{\"imgUrl\":\"\",\"materialType\":\"live\",\"isShowLiveWindow\":false,\"liveCloseShowImg\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9004941bb8e195ce1da465f8c7c4d287.gif\",\"liveInfo\":{\"id\":683,\"liveUrl\":\"https://nr-live.m.mi.com/caster/163f22a70f654e8c98a166c6cb5bf16f.m3u8\",\"liveUrlFlv\":\"https://nr-live.m.mi.com/caster/163f22a70f654e8c98a166c6cb5bf16f.flv\",\"discoverEntryImg\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0023d2086d6dccbeb95db1ed5bdceffd.jpg\",\"isWatchBroadcast\":true},\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.liveshow.RootFragment?pluginId\\u003d234\",\"extra\":\"{\\\"roomId\\\": \\\"683\\\"}\"}},\"isCustomerService\":true,\"shareContent\":\"\",\"changeDeliveryType\":{\"canChangeOfflineSale\":true,\"canDefaultChangeDeliveryType\":false}},\"saleAttributeInfo\":{\"saleAttributeList\":[{\"attributeId\":723,\"attributeName\":\"颜色\",\"attributeValueList\":[{\"attributeValueId\":2725,\"attributeValueName\":\"白色\"},{\"attributeValueId\":2724,\"attributeValueName\":\"黑色\"}],\"customizeType\":0,\"customizeAttributeList\":[]},{\"attributeId\":1,\"attributeName\":\"通用\",\"attributeValueList\":[{\"attributeValueId\":49,\"attributeValueName\":\"通用\"}],\"customizeType\":0,\"customizeAttributeList\":[]}]},\"askAll\":{\"total\":\"共28个问答\",\"items\":[{\"question\":\"多大内存？电池多大？能连米家吗？\",\"answerNum\":\"3个问答\"},{\"question\":\"放的进yu7杯架吗\",\"answerNum\":\"8个问答\"}]},\"serverInfo\":{\"nowTime\":1791674691},\"carouselAdInfo\":{\"carouselAdList\":[{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1de8b0436b94b6b9148455d308dff0bd.jpg?w\\u003d1080\\u0026h\\u003d300\\u0026bg\\u003d70604\",\"type\":\"image\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop2.plugin.goodsdetail.GoodsDetailFragment?pluginId\\u003d101\",\"extra\":\"{\\\"goodsId\\\":\\\"2230014583\\\",\\\"default_line\\\":\\\"\\\",\\\"commodityId\\\":\\\"10050241\\\",\\\"needVersion\\\":\\\"378\\\",\\\"productId\\\":\\\"10050241\\\"}\"}},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7b9b95b9acb4e4bb4a71877091f85965.png?w\\u003d1080\\u0026h\\u003d300\\u0026bg\\u003d1\",\"type\":\"image\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop2.plugin.goodsdetail.GoodsDetailFragment?pluginId\\u003d101\",\"extra\":\"{\\\"goodsId\\\":\\\"2230005193\\\",\\\"default_line\\\":\\\"\\\",\\\"commodityId\\\":\\\"21937\\\",\\\"needVersion\\\":\\\"378\\\",\\\"productId\\\":\\\"21937\\\"}\"}}]},\"buyerShow\":{\"total\":\"3w+\",\"realTotal\":2329,\"tags\":[\"服务一流\",\"价格实惠\",\"质量上乘\",\"颜值够高\",\"空间充足\",\"用料扎实\"],\"imgs\":[\"http://i1.mifile.cn/a2/1791622698_4889976_s1536_2048wh.jpg\",\"http://i1.mifile.cn/a2/1791596039_4930173_s1536_2040wh.jpg\",\"http://i1.mifile.cn/a2/1790491429_7468155_s810_1440wh.jpg\",\"http://i1.mifile.cn/a2/1791366851_4591264_s828_1227wh.jpg\",\"http://i1.mifile.cn/a2/1791076277_7900960_s1536_2048wh.jpg\"]},\"realProduct\":{\"realProductInfo\":{\"21171\":{\"materialTabList\":[{\"tabCode\":\"COMMODITY_INTRODUCTION\",\"tabName\":\"商品介绍\",\"materialViewList\":[{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_5f29b537ce5d78f75fbe6fdcf0f74d3c.jpg?w\\u003d1080\\u0026h\\u003d1657\",\"w\":1080,\"h\":1657}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_156a23fa73f7a37bd69db75312116310.jpg?w\\u003d1080\\u0026h\\u003d1337\",\"w\":1080,\"h\":1337}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_e1e0a7680944ec8f6d4d35c90a2462d7.jpg?w\\u003d1080\\u0026h\\u003d587\",\"w\":1080,\"h\":587}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_ca8ecf9c6b92c34b33b9e6e6def563bc.jpg?w\\u003d1080\\u0026h\\u003d1112\",\"w\":1080,\"h\":1112}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_db3a081bdc9a015c893ace5c209e0a91.jpg?w\\u003d1080\\u0026h\\u003d942\",\"w\":1080,\"h\":942}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_6a623a1adcfc7fd025ed907d3843eb51.jpg?w\\u003d1080\\u0026h\\u003d1088\",\"w\":1080,\"h\":1088}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_c0163e6d662bca9e920ab7fc6d3db344.jpg?w\\u003d1080\\u0026h\\u003d727\",\"w\":1080,\"h\":727}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_2b47eeef410558b69c6992aa01072396.jpg?w\\u003d1080\\u0026h\\u003d1184\",\"w\":1080,\"h\":1184}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_989fc3b535fd4875ff36c7187cc08e93.jpg?w\\u003d1080\\u0026h\\u003d1358\",\"w\":1080,\"h\":1358}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_71d435eaaf8a3a85bc5a7bafd76438e5.jpg?w\\u003d1080\\u0026h\\u003d968\",\"w\":1080,\"h\":968}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_33b9538a01eb602281e788290f597253.jpg?w\\u003d1080\\u0026h\\u003d987\",\"w\":1080,\"h\":987}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_b5dcad5d754b0ca756bcee1bfeb4170d.jpg?w\\u003d1080\\u0026h\\u003d1558\",\"w\":1080,\"h\":1558}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_64b0a2d237161c95d843da7ef1d6bbe6.jpg?w\\u003d1080\\u0026h\\u003d1574\",\"w\":1080,\"h\":1574}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_85954af0b5a2a803ff2f8dab79c8dc72.jpg?w\\u003d1080\\u0026h\\u003d1786\",\"w\":1080,\"h\":1786}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_dae26df5e8e707daf06296089f0e22e5.jpg?w\\u003d1080\\u0026h\\u003d324\",\"w\":1080,\"h\":324}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_89bccfa17327d3ff3da7c5dd2cb10f5e.jpg?w\\u003d1080\\u0026h\\u003d1487\",\"w\":1080,\"h\":1487}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_afe44c7465f029f5ddc0a764afd93b59.jpg?w\\u003d1080\\u0026h\\u003d1092\",\"w\":1080,\"h\":1092}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202501131109_08f84b3fa7e085586c4fd236a29aa7e0.jpg?w\\u003d1080\\u0026h\\u003d771\",\"w\":1080,\"h\":771}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202404011508_f9f708677cd67ab525c35e1f7c4c9708.jpg?w\\u003d1080\\u0026h\\u003d894\",\"w\":1080,\"h\":894}],\"interval\":0}]},{\"tabCode\":\"SPEC_PARAMETER\",\"tabName\":\"规格参数\",\"materialViewList\":[{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_c9e9814abded41bde3ade8809d91b7ea.jpg?w\\u003d1080\\u0026h\\u003d959\",\"w\":1080,\"h\":959}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_8733bbaf7ae169496274c79753c04565.jpg?w\\u003d1080\\u0026h\\u003d941\",\"w\":1080,\"h\":941}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_6ac31c82e8657136ef862e44f1d903e0.jpg?w\\u003d1080\\u0026h\\u003d802\",\"w\":1080,\"h\":802}],\"interval\":0}]}],\"recommendMatch\":{}}}},\"customerService\":{\"url\":\"https://chat.kefu.mi.com/page/index/v2?tag\\u003dcn\\u0026token\\u003dY24jMTAwMSNjbi53ZWIubWkuaHR0cHMubW9iaWxlI3JlZmVyZXIjZ29vZHNEZXRhaWw\\u003d\\u0026groupId\\u003dP0\\u0026closedshow\\u003d1\"},\"evaluate\":{\"evaluateList\":[{\"type\":\"VIDEO\",\"id\":\"33021\",\"title\":\"出行带一个米家便携水杯就够了\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/XoLwioWNZKgDgl5Bi3TorGxe9xw-afe5d656.jpg?thumb\\u003d150x150\",\"nickName\":\"海文同学\",\"viewNum\":\"3073\",\"imgList\":[],\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1d656dc5c5b709bdd8cd086fa631ec40.mp4\",\"videoCover\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/12e567c8478ce3ab4064718c293619a7.png\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.shortvideo.home.HomeVideoListFragment?pluginId\\u003d232\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"\\\",\\\"id\\\":\\\"\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.shortvideo.home.HomeVideoListFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"33021\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"33021\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"33021\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"ARTICLE\",\"id\":\"1673216\",\"title\":\"活力随行，米家便携水杯新品上市！\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9b723a578063b2163d1b30e121ef594d.jpg\",\"nickName\":\"小米新品早知道\",\"viewNum\":\"2005\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/adcfbdc3886b0419e7e7f822a9be019c.jpg?w\\u003d1600\\u0026h\\u003d900\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1673216\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1673216\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1673945\",\"title\":\"一键开盖 健康喝水轻巧实用 米家便携水杯\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/p01azRavkegQ/RgzzO6QP4pK6RD.jpg?thumb\\u003d150x150\",\"nickName\":\"肩冲\",\"viewNum\":\"580\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cd641f3ff1c6e0e56981bb8997c77bed.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1673945\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1673945\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1672863\",\"title\":\"米家便携水杯体验：一键开盖，轻巧实用\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/p01a74PPT844/RuAkpS2ndekHYJ.jpg?thumb\\u003d150x150\",\"nickName\":\"当当\",\"viewNum\":\"902\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/626caa4f353cad008a12c77a08195788.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1672863\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1672863\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1673423\",\"title\":\"米家便携水杯轻体验，轻装出行补水好助手！\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/r3ktE6A51cwKx7Nh_1BWqBaUFNc-a398de9b.jpg?thumb\\u003d150x150\",\"nickName\":\"小呆评测\",\"viewNum\":\"235\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c1ad84a1c35c269ab847cc34dd2b0c4.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1673423\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1673423\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1673794\",\"title\":\"简约有型随身带！米家600ml便携水杯\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/312deb85-5e03-462c-b240-a2e78673868e.jpeg?thumb\\u003d150x150\",\"nickName\":\"潇磊博客\",\"viewNum\":\"214\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eb031eb4ecd6130929b072663e7ebca6.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1673794\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1673794\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1673307\",\"title\":\"出门健康喝水，带一个米家便携水杯就够了\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/p01791T8AX8R/3gnKDPxZwhhJSV.jpg?thumb\\u003d150x150\",\"nickName\":\"ide0007\",\"viewNum\":\"290\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5e6c4a420d19cb28cfdfee7d38def97c.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1673307\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1673307\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}}]},\"goodsInfo\":{\"goodsList\":[{\"classParameters\":{},\"marketPrice\":\"59\",\"isSupportGift\":true,\"goodsId\":2230003943,\"serviceTypeList\":[],\"shortLink\":\"https://m.mi.com/p?pid\\u003d101\\u0026commodityId\\u003d21171\\u0026fallback\\u003dhttps%3A%2F%2Fm.mi.com%2Fcommodity%2Fdetail%2F21171%3Fclient_id%3D180100031058%26g_utm%3DMiStore.FromApp.ProductPage.Share\",\"goodsAttributeList\":[{\"attributeId\":723,\"attributeValueId\":2725,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0},{\"attributeId\":1,\"attributeValueId\":49,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0}],\"buyLimit\":2,\"price\":\"59\",\"serviceTermList\":[{\"isCheck\":true,\"isPageShow\":true,\"title\":\"小米自营\",\"mark\":\"type\"},{\"isCheck\":true,\"descV2\":\"由小米发货\\n包装破损必赔：该商品配送过程中，如出现外包装损坏，可支持申请赔付；具体是否支持赔付以下单后展示信息为准。\\n不上门必赔：商品承诺在指定区域支持送货上门，如果未按约定地点送达，则支持申请赔付。具体是否支持上门以下单后展示信息为准。\",\"isPageShow\":true,\"title\":\"发货说明\",\"mark\":\"sendout\",\"desc\":\"由小米发货\"},{\"isCheck\":true,\"isPageShow\":true,\"title\":\"7天无理由退货（到店自取、闪送拆封后不支持）\",\"mark\":\"return\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"7天价格保护\",\"url\":\"https://s1.mi.com/m/faq/giving/index.html?project_id\\u003d44\",\"mark\":\"protect_price\",\"desc\":\"限商城配送方式。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"运费说明\",\"mark\":\"freight\",\"desc\":\"小米发货实物商品(不含有品),单笔实付满69元包邮;\\n小米有品发货的商品,包邮;\\n由第三方商家发货的商品，运费以实际结算金额为准;\\n特殊商品需要单独收取运费,具体以实际结算金额为准;优惠券等不能抵扣运费金额;如需无理由退货,用户将承担该商品的退货物流费用;\\n使用门店闪送服务，需单独支付运费，起送费10元起 ，根据配送距离有所不同，具体请以订单结算页面显示为准。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"企业信息\",\"mark\":\"company\",\"desc\":\"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\"}],\"singleSsuList\":[],\"sku\":64189,\"customizeType\":0,\"carouselList\":[{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_576338704a3c9a82c7614bfdff818bbc.jpg\",\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_b372cd4c31ab3fcd668859d067da2e62.mp4\",\"videoName\":\"视频\",\"type\":\"video\",\"videoSize\":7684672},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_91d026129c89d6d474cd2ab38920c9a9.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_e1e8f6f98c82c4d94b02b417b550ea40.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_c835e8927fc3603459402822b7bd771e.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_451c30f43ae0e2d8e3b851c44b7d62d5.jpg\",\"type\":\"img\"}],\"miniLink\":\"/pages/product/index?id\\u003d1230804470\",\"buttons\":[{\"title\":\"加入购物车\",\"type\":\"addCart\"},{\"title\":\"立即购买\",\"type\":\"buyNow\"}],\"productId\":21171,\"saleMode\":{\"isBigTap\":false,\"saleModeCode\":\"standard\",\"source\":\"common\",\"canQuickOrder\":false},\"showStoreInfo\":true,\"commodityId\":1230804470,\"shipmentList\":[{\"name\":\"配送\",\"type\":\"depot\"}],\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141020_739f920647beb897f9a81649df32b16b.png\",\"nextButtons\":[],\"name\":\"米家便携水杯 白色\",\"showReducePriceNotice\":true},{\"classParameters\":{},\"marketPrice\":\"59\",\"isSupportGift\":true,\"goodsId\":2230003942,\"serviceTypeList\":[],\"shortLink\":\"https://m.mi.com/p?pid\\u003d101\\u0026commodityId\\u003d21171\\u0026fallback\\u003dhttps%3A%2F%2Fm.mi.com%2Fcommodity%2Fdetail%2F21171%3Fclient_id%3D180100031058%26g_utm%3DMiStore.FromApp.ProductPage.Share\",\"goodsAttributeList\":[{\"attributeId\":723,\"attributeValueId\":2724,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0},{\"attributeId\":1,\"attributeValueId\":49,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0}],\"buyLimit\":2,\"price\":\"59\",\"serviceTermList\":[{\"isCheck\":true,\"isPageShow\":true,\"title\":\"小米自营\",\"mark\":\"type\"},{\"isCheck\":true,\"descV2\":\"由小米发货\\n包装破损必赔：该商品配送过程中，如出现外包装损坏，可支持申请赔付；具体是否支持赔付以下单后展示信息为准。\\n不上门必赔：商品承诺在指定区域支持送货上门，如果未按约定地点送达，则支持申请赔付。具体是否支持上门以下单后展示信息为准。\",\"isPageShow\":true,\"title\":\"发货说明\",\"mark\":\"sendout\",\"desc\":\"由小米发货\"},{\"isCheck\":true,\"isPageShow\":true,\"title\":\"7天无理由退货（到店自取、闪送拆封后不支持）\",\"mark\":\"return\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"7天价格保护\",\"url\":\"https://s1.mi.com/m/faq/giving/index.html?project_id\\u003d44\",\"mark\":\"protect_price\",\"desc\":\"限商城配送方式。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"运费说明\",\"mark\":\"freight\",\"desc\":\"小米发货实物商品(不含有品),单笔实付满69元包邮;\\n小米有品发货的商品,包邮;\\n由第三方商家发货的商品，运费以实际结算金额为准;\\n特殊商品需要单独收取运费,具体以实际结算金额为准;优惠券等不能抵扣运费金额;如需无理由退货,用户将承担该商品的退货物流费用;\\n使用门店闪送服务，需单独支付运费，起送费10元起 ，根据配送距离有所不同，具体请以订单结算页面显示为准。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"企业信息\",\"mark\":\"company\",\"desc\":\"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\"}],\"singleSsuList\":[],\"sku\":64188,\"customizeType\":0,\"carouselList\":[{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_576338704a3c9a82c7614bfdff818bbc.jpg\",\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_b372cd4c31ab3fcd668859d067da2e62.mp4\",\"videoName\":\"视频\",\"type\":\"video\",\"videoSize\":7684672},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_91d026129c89d6d474cd2ab38920c9a9.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_e1e8f6f98c82c4d94b02b417b550ea40.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_c835e8927fc3603459402822b7bd771e.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_451c30f43ae0e2d8e3b851c44b7d62d5.jpg\",\"type\":\"img\"}],\"miniLink\":\"/pages/product/index?id\\u003d1230804471\",\"buttons\":[{\"title\":\"加入购物车\",\"type\":\"addCart\"},{\"title\":\"立即购买\",\"type\":\"buyNow\"}],\"productId\":21171,\"saleMode\":{\"isBigTap\":false,\"saleModeCode\":\"standard\",\"source\":\"common\",\"canQuickOrder\":false},\"showStoreInfo\":true,\"commodityId\":1230804471,\"shipmentList\":[{\"name\":\"配送\",\"type\":\"depot\"}],\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141020_8b66cac6e171f55f5dc95e4966b1d441.png\",\"nextButtons\":[],\"name\":\"米家便携水杯 黑色\",\"showReducePriceNotice\":true}]}}}",
+    "response_hash": "b75d5c4ff1a79e61",
+    "raw_ref": "",
+    "parser_version": "mi_cn-v2",
+    "fetched_at": "2026-10-11T07:24:52+08:00",
+    "declared_at": ""
+   },
+   {
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "url": "https://m.mi.com/mtop/xiaomishop/product/info?gid=2230003943",
+    "method": "POST",
+    "request_headers": {},
+    "request_body": null,
+    "status": "success",
+    "http_status": 200,
+    "error": "",
+    "response_raw": "{\"code\":0,\"message\":\"ok\",\"data\":{\"userInfo\":{\"login\":false},\"product\":{\"productId\":21171,\"defaultGid\":2230003943,\"name\":\"米家便携水杯\",\"shortTitle\":\"米家便携水杯\",\"enable\":true,\"sellPointList\":[\"tritan材质 耐冷耐热\",\"可拆卸滤网\",\"安全锁扣 一键开盖\"],\"batched\":false,\"itemType\":0,\"floatWindow\":{\"imgUrl\":\"\",\"materialType\":\"live\",\"isShowLiveWindow\":false,\"liveCloseShowImg\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9004941bb8e195ce1da465f8c7c4d287.gif\",\"liveInfo\":{\"id\":683,\"liveUrl\":\"https://nr-live.m.mi.com/caster/163f22a70f654e8c98a166c6cb5bf16f.m3u8\",\"liveUrlFlv\":\"https://nr-live.m.mi.com/caster/163f22a70f654e8c98a166c6cb5bf16f.flv\",\"discoverEntryImg\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0023d2086d6dccbeb95db1ed5bdceffd.jpg\",\"isWatchBroadcast\":true},\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.liveshow.RootFragment?pluginId\\u003d234\",\"extra\":\"{\\\"roomId\\\": \\\"683\\\"}\"}},\"isCustomerService\":true,\"shareContent\":\"\",\"changeDeliveryType\":{\"canChangeOfflineSale\":true,\"canDefaultChangeDeliveryType\":false}},\"saleAttributeInfo\":{\"saleAttributeList\":[{\"attributeId\":723,\"attributeName\":\"颜色\",\"attributeValueList\":[{\"attributeValueId\":2725,\"attributeValueName\":\"白色\"},{\"attributeValueId\":2724,\"attributeValueName\":\"黑色\"}],\"customizeType\":0,\"customizeAttributeList\":[]},{\"attributeId\":1,\"attributeName\":\"通用\",\"attributeValueList\":[{\"attributeValueId\":49,\"attributeValueName\":\"通用\"}],\"customizeType\":0,\"customizeAttributeList\":[]}]},\"askAll\":{\"total\":\"共28个问答\",\"items\":[{\"question\":\"多大内存？电池多大？能连米家吗？\",\"answerNum\":\"3个问答\"},{\"question\":\"放的进yu7杯架吗\",\"answerNum\":\"8个问答\"}]},\"serverInfo\":{\"nowTime\":1791674692},\"carouselAdInfo\":{\"carouselAdList\":[{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1de8b0436b94b6b9148455d308dff0bd.jpg?w\\u003d1080\\u0026h\\u003d300\\u0026bg\\u003d70604\",\"type\":\"image\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop2.plugin.goodsdetail.GoodsDetailFragment?pluginId\\u003d101\",\"extra\":\"{\\\"goodsId\\\":\\\"2230014583\\\",\\\"default_line\\\":\\\"\\\",\\\"commodityId\\\":\\\"10050241\\\",\\\"needVersion\\\":\\\"378\\\",\\\"productId\\\":\\\"10050241\\\"}\"}},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7b9b95b9acb4e4bb4a71877091f85965.png?w\\u003d1080\\u0026h\\u003d300\\u0026bg\\u003d1\",\"type\":\"image\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop2.plugin.goodsdetail.GoodsDetailFragment?pluginId\\u003d101\",\"extra\":\"{\\\"goodsId\\\":\\\"2230005193\\\",\\\"default_line\\\":\\\"\\\",\\\"commodityId\\\":\\\"21937\\\",\\\"needVersion\\\":\\\"378\\\",\\\"productId\\\":\\\"21937\\\"}\"}}]},\"buyerShow\":{\"total\":\"3w+\",\"realTotal\":2329,\"tags\":[\"服务一流\",\"价格实惠\",\"质量上乘\",\"颜值够高\",\"空间充足\",\"用料扎实\"],\"imgs\":[\"http://i1.mifile.cn/a2/1791622698_4889976_s1536_2048wh.jpg\",\"http://i1.mifile.cn/a2/1791596039_4930173_s1536_2040wh.jpg\",\"http://i1.mifile.cn/a2/1790491429_7468155_s810_1440wh.jpg\",\"http://i1.mifile.cn/a2/1791366851_4591264_s828_1227wh.jpg\",\"http://i1.mifile.cn/a2/1791076277_7900960_s1536_2048wh.jpg\"]},\"realProduct\":{\"realProductInfo\":{\"21171\":{\"materialTabList\":[{\"tabCode\":\"COMMODITY_INTRODUCTION\",\"tabName\":\"商品介绍\",\"materialViewList\":[{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_5f29b537ce5d78f75fbe6fdcf0f74d3c.jpg?w\\u003d1080\\u0026h\\u003d1657\",\"w\":1080,\"h\":1657}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_156a23fa73f7a37bd69db75312116310.jpg?w\\u003d1080\\u0026h\\u003d1337\",\"w\":1080,\"h\":1337}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_e1e0a7680944ec8f6d4d35c90a2462d7.jpg?w\\u003d1080\\u0026h\\u003d587\",\"w\":1080,\"h\":587}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_ca8ecf9c6b92c34b33b9e6e6def563bc.jpg?w\\u003d1080\\u0026h\\u003d1112\",\"w\":1080,\"h\":1112}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_db3a081bdc9a015c893ace5c209e0a91.jpg?w\\u003d1080\\u0026h\\u003d942\",\"w\":1080,\"h\":942}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_6a623a1adcfc7fd025ed907d3843eb51.jpg?w\\u003d1080\\u0026h\\u003d1088\",\"w\":1080,\"h\":1088}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_c0163e6d662bca9e920ab7fc6d3db344.jpg?w\\u003d1080\\u0026h\\u003d727\",\"w\":1080,\"h\":727}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_2b47eeef410558b69c6992aa01072396.jpg?w\\u003d1080\\u0026h\\u003d1184\",\"w\":1080,\"h\":1184}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_989fc3b535fd4875ff36c7187cc08e93.jpg?w\\u003d1080\\u0026h\\u003d1358\",\"w\":1080,\"h\":1358}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_71d435eaaf8a3a85bc5a7bafd76438e5.jpg?w\\u003d1080\\u0026h\\u003d968\",\"w\":1080,\"h\":968}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_33b9538a01eb602281e788290f597253.jpg?w\\u003d1080\\u0026h\\u003d987\",\"w\":1080,\"h\":987}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_b5dcad5d754b0ca756bcee1bfeb4170d.jpg?w\\u003d1080\\u0026h\\u003d1558\",\"w\":1080,\"h\":1558}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_64b0a2d237161c95d843da7ef1d6bbe6.jpg?w\\u003d1080\\u0026h\\u003d1574\",\"w\":1080,\"h\":1574}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_85954af0b5a2a803ff2f8dab79c8dc72.jpg?w\\u003d1080\\u0026h\\u003d1786\",\"w\":1080,\"h\":1786}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_dae26df5e8e707daf06296089f0e22e5.jpg?w\\u003d1080\\u0026h\\u003d324\",\"w\":1080,\"h\":324}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_89bccfa17327d3ff3da7c5dd2cb10f5e.jpg?w\\u003d1080\\u0026h\\u003d1487\",\"w\":1080,\"h\":1487}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_afe44c7465f029f5ddc0a764afd93b59.jpg?w\\u003d1080\\u0026h\\u003d1092\",\"w\":1080,\"h\":1092}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202501131109_08f84b3fa7e085586c4fd236a29aa7e0.jpg?w\\u003d1080\\u0026h\\u003d771\",\"w\":1080,\"h\":771}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202404011508_f9f708677cd67ab525c35e1f7c4c9708.jpg?w\\u003d1080\\u0026h\\u003d894\",\"w\":1080,\"h\":894}],\"interval\":0}]},{\"tabCode\":\"SPEC_PARAMETER\",\"tabName\":\"规格参数\",\"materialViewList\":[{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_c9e9814abded41bde3ade8809d91b7ea.jpg?w\\u003d1080\\u0026h\\u003d959\",\"w\":1080,\"h\":959}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_8733bbaf7ae169496274c79753c04565.jpg?w\\u003d1080\\u0026h\\u003d941\",\"w\":1080,\"h\":941}],\"interval\":0},{\"viewType\":\"IMAGE_TILED\",\"materialList\":[{\"imageUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141042_6ac31c82e8657136ef862e44f1d903e0.jpg?w\\u003d1080\\u0026h\\u003d802\",\"w\":1080,\"h\":802}],\"interval\":0}]}],\"recommendMatch\":{}}}},\"customerService\":{\"url\":\"https://chat.kefu.mi.com/page/index/v2?tag\\u003dcn\\u0026token\\u003dY24jMTAwMSNjbi53ZWIubWkuaHR0cHMubW9iaWxlI3JlZmVyZXIjZ29vZHNEZXRhaWw\\u003d\\u0026groupId\\u003dP0\\u0026closedshow\\u003d1\"},\"evaluate\":{\"evaluateList\":[{\"type\":\"VIDEO\",\"id\":\"33021\",\"title\":\"出行带一个米家便携水杯就够了\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/XoLwioWNZKgDgl5Bi3TorGxe9xw-afe5d656.jpg?thumb\\u003d150x150\",\"nickName\":\"海文同学\",\"viewNum\":\"3073\",\"imgList\":[],\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1d656dc5c5b709bdd8cd086fa631ec40.mp4\",\"videoCover\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/12e567c8478ce3ab4064718c293619a7.png\",\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.shortvideo.home.HomeVideoListFragment?pluginId\\u003d232\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"\\\",\\\"id\\\":\\\"\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.shortvideo.home.HomeVideoListFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"33021\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"33021\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"33021\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"ARTICLE\",\"id\":\"1673216\",\"title\":\"活力随行，米家便携水杯新品上市！\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9b723a578063b2163d1b30e121ef594d.jpg\",\"nickName\":\"小米新品早知道\",\"viewNum\":\"2005\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/adcfbdc3886b0419e7e7f822a9be019c.jpg?w\\u003d1600\\u0026h\\u003d900\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1673216\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1673216\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1673945\",\"title\":\"一键开盖 健康喝水轻巧实用 米家便携水杯\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/p01azRavkegQ/RgzzO6QP4pK6RD.jpg?thumb\\u003d150x150\",\"nickName\":\"肩冲\",\"viewNum\":\"580\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cd641f3ff1c6e0e56981bb8997c77bed.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1673945\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1673945\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1672863\",\"title\":\"米家便携水杯体验：一键开盖，轻巧实用\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/p01a74PPT844/RuAkpS2ndekHYJ.jpg?thumb\\u003d150x150\",\"nickName\":\"当当\",\"viewNum\":\"902\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/626caa4f353cad008a12c77a08195788.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1672863\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1672863\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1673423\",\"title\":\"米家便携水杯轻体验，轻装出行补水好助手！\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/r3ktE6A51cwKx7Nh_1BWqBaUFNc-a398de9b.jpg?thumb\\u003d150x150\",\"nickName\":\"小呆评测\",\"viewNum\":\"235\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c1ad84a1c35c269ab847cc34dd2b0c4.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1673423\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1673423\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1673794\",\"title\":\"简约有型随身带！米家600ml便携水杯\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/312deb85-5e03-462c-b240-a2e78673868e.jpeg?thumb\\u003d150x150\",\"nickName\":\"潇磊博客\",\"viewNum\":\"214\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eb031eb4ecd6130929b072663e7ebca6.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1673794\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1673794\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}},{\"type\":\"KOL_ARTICLE\",\"id\":\"1673307\",\"title\":\"出门健康喝水，带一个米家便携水杯就够了\",\"icon\":\"https://cdn.cnbj1.fds.api.mi-img.com/user-avatar/p01791T8AX8R/3gnKDPxZwhhJSV.jpg?thumb\\u003d150x150\",\"nickName\":\"ide0007\",\"viewNum\":\"290\",\"imgList\":[\"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5e6c4a420d19cb28cfdfee7d38def97c.jpg?w\\u003d160\\u0026h\\u003d90\"],\"action\":{\"type\":\"plugin\",\"path\":\"ShopPlugin://com.xiaomi.shop.plugin.discovery.ArticleDetailFragment?pluginId\\u003d223\",\"extra\":\"{\\\"content_id\\\":\\\"\\\",\\\"article_id\\\":\\\"1673307\\\",\\\"topic_id\\\":\\\"\\\",\\\"topic_id1\\\":\\\"\\\",\\\"tag_id\\\":\\\"\\\",\\\"type\\\":\\\"2\\\",\\\"id\\\":\\\"1673307\\\",\\\"action\\\":\\\"com.xiaomi.shop.plugin.discovery.ArticleDetailFragment\\\",\\\"tabType\\\":\\\"\\\",\\\"circle_id\\\":\\\"\\\",\\\"circle_id1\\\":\\\"\\\",\\\"moment_id\\\":\\\"\\\",\\\"moment_id_array\\\":\\\"\\\",\\\"is_hot_selected\\\":\\\"\\\",\\\"moment_id_list\\\":\\\"\\\",\\\"selectIndex\\\":0,\\\"moment_id_show\\\":\\\"\\\",\\\"need_load_more\\\":false,\\\"product_id\\\":0,\\\"__isset_bitfield\\\":3}\",\"login\":false}}]},\"goodsInfo\":{\"goodsList\":[{\"classParameters\":{},\"marketPrice\":\"59\",\"isSupportGift\":true,\"goodsId\":2230003943,\"serviceTypeList\":[],\"shortLink\":\"https://m.mi.com/p?pid\\u003d101\\u0026commodityId\\u003d21171\\u0026fallback\\u003dhttps%3A%2F%2Fm.mi.com%2Fcommodity%2Fdetail%2F21171%3Fclient_id%3D180100031058%26g_utm%3DMiStore.FromApp.ProductPage.Share\",\"goodsAttributeList\":[{\"attributeId\":723,\"attributeValueId\":2725,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0},{\"attributeId\":1,\"attributeValueId\":49,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0}],\"buyLimit\":2,\"price\":\"59\",\"serviceTermList\":[{\"isCheck\":true,\"isPageShow\":true,\"title\":\"小米自营\",\"mark\":\"type\"},{\"isCheck\":true,\"descV2\":\"由小米发货\\n包装破损必赔：该商品配送过程中，如出现外包装损坏，可支持申请赔付；具体是否支持赔付以下单后展示信息为准。\\n不上门必赔：商品承诺在指定区域支持送货上门，如果未按约定地点送达，则支持申请赔付。具体是否支持上门以下单后展示信息为准。\",\"isPageShow\":true,\"title\":\"发货说明\",\"mark\":\"sendout\",\"desc\":\"由小米发货\"},{\"isCheck\":true,\"isPageShow\":true,\"title\":\"7天无理由退货（到店自取、闪送拆封后不支持）\",\"mark\":\"return\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"7天价格保护\",\"url\":\"https://s1.mi.com/m/faq/giving/index.html?project_id\\u003d44\",\"mark\":\"protect_price\",\"desc\":\"限商城配送方式。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"运费说明\",\"mark\":\"freight\",\"desc\":\"小米发货实物商品(不含有品),单笔实付满69元包邮;\\n小米有品发货的商品,包邮;\\n由第三方商家发货的商品，运费以实际结算金额为准;\\n特殊商品需要单独收取运费,具体以实际结算金额为准;优惠券等不能抵扣运费金额;如需无理由退货,用户将承担该商品的退货物流费用;\\n使用门店闪送服务，需单独支付运费，起送费10元起 ，根据配送距离有所不同，具体请以订单结算页面显示为准。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"企业信息\",\"mark\":\"company\",\"desc\":\"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\"}],\"singleSsuList\":[],\"sku\":64189,\"customizeType\":0,\"carouselList\":[{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_576338704a3c9a82c7614bfdff818bbc.jpg\",\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_b372cd4c31ab3fcd668859d067da2e62.mp4\",\"videoName\":\"视频\",\"type\":\"video\",\"videoSize\":7684672},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_91d026129c89d6d474cd2ab38920c9a9.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_e1e8f6f98c82c4d94b02b417b550ea40.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_c835e8927fc3603459402822b7bd771e.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_451c30f43ae0e2d8e3b851c44b7d62d5.jpg\",\"type\":\"img\"}],\"miniLink\":\"/pages/product/index?id\\u003d1230804470\",\"buttons\":[{\"title\":\"加入购物车\",\"type\":\"addCart\"},{\"title\":\"立即购买\",\"type\":\"buyNow\"}],\"productId\":21171,\"saleMode\":{\"isBigTap\":false,\"saleModeCode\":\"standard\",\"source\":\"common\",\"canQuickOrder\":false},\"showStoreInfo\":true,\"commodityId\":1230804470,\"shipmentList\":[{\"name\":\"配送\",\"type\":\"depot\"}],\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141020_739f920647beb897f9a81649df32b16b.png\",\"nextButtons\":[],\"name\":\"米家便携水杯 白色\",\"showReducePriceNotice\":true},{\"classParameters\":{},\"marketPrice\":\"59\",\"isSupportGift\":true,\"goodsId\":2230003942,\"serviceTypeList\":[],\"shortLink\":\"https://m.mi.com/p?pid\\u003d101\\u0026commodityId\\u003d21171\\u0026fallback\\u003dhttps%3A%2F%2Fm.mi.com%2Fcommodity%2Fdetail%2F21171%3Fclient_id%3D180100031058%26g_utm%3DMiStore.FromApp.ProductPage.Share\",\"goodsAttributeList\":[{\"attributeId\":723,\"attributeValueId\":2724,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0},{\"attributeId\":1,\"attributeValueId\":49,\"customizeAttributeList\":[],\"viewResource\":[],\"customizeType\":0}],\"buyLimit\":2,\"price\":\"59\",\"serviceTermList\":[{\"isCheck\":true,\"isPageShow\":true,\"title\":\"小米自营\",\"mark\":\"type\"},{\"isCheck\":true,\"descV2\":\"由小米发货\\n包装破损必赔：该商品配送过程中，如出现外包装损坏，可支持申请赔付；具体是否支持赔付以下单后展示信息为准。\\n不上门必赔：商品承诺在指定区域支持送货上门，如果未按约定地点送达，则支持申请赔付。具体是否支持上门以下单后展示信息为准。\",\"isPageShow\":true,\"title\":\"发货说明\",\"mark\":\"sendout\",\"desc\":\"由小米发货\"},{\"isCheck\":true,\"isPageShow\":true,\"title\":\"7天无理由退货（到店自取、闪送拆封后不支持）\",\"mark\":\"return\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"7天价格保护\",\"url\":\"https://s1.mi.com/m/faq/giving/index.html?project_id\\u003d44\",\"mark\":\"protect_price\",\"desc\":\"限商城配送方式。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"运费说明\",\"mark\":\"freight\",\"desc\":\"小米发货实物商品(不含有品),单笔实付满69元包邮;\\n小米有品发货的商品,包邮;\\n由第三方商家发货的商品，运费以实际结算金额为准;\\n特殊商品需要单独收取运费,具体以实际结算金额为准;优惠券等不能抵扣运费金额;如需无理由退货,用户将承担该商品的退货物流费用;\\n使用门店闪送服务，需单独支付运费，起送费10元起 ，根据配送距离有所不同，具体请以订单结算页面显示为准。\"},{\"isCheck\":true,\"isPageShow\":false,\"title\":\"企业信息\",\"mark\":\"company\",\"desc\":\"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\"}],\"singleSsuList\":[],\"sku\":64188,\"customizeType\":0,\"carouselList\":[{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_576338704a3c9a82c7614bfdff818bbc.jpg\",\"videoUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_b372cd4c31ab3fcd668859d067da2e62.mp4\",\"videoName\":\"视频\",\"type\":\"video\",\"videoSize\":7684672},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_91d026129c89d6d474cd2ab38920c9a9.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_e1e8f6f98c82c4d94b02b417b550ea40.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_c835e8927fc3603459402822b7bd771e.jpg\",\"type\":\"img\"},{\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_451c30f43ae0e2d8e3b851c44b7d62d5.jpg\",\"type\":\"img\"}],\"miniLink\":\"/pages/product/index?id\\u003d1230804471\",\"buttons\":[{\"title\":\"加入购物车\",\"type\":\"addCart\"},{\"title\":\"立即购买\",\"type\":\"buyNow\"}],\"productId\":21171,\"saleMode\":{\"isBigTap\":false,\"saleModeCode\":\"standard\",\"source\":\"common\",\"canQuickOrder\":false},\"showStoreInfo\":true,\"commodityId\":1230804471,\"shipmentList\":[{\"name\":\"配送\",\"type\":\"depot\"}],\"imgUrl\":\"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141020_8b66cac6e171f55f5dc95e4966b1d441.png\",\"nextButtons\":[],\"name\":\"米家便携水杯 黑色\",\"showReducePriceNotice\":true}]}}}",
+    "response_hash": "660b60fca1af0b74",
+    "raw_ref": "",
+    "parser_version": "mi_cn-v2",
+    "fetched_at": "2026-10-11T07:24:52+08:00",
+    "declared_at": ""
+   },
+   {
+    "capture_id": "e2398e8ebfc9",
+    "source": "mi_cn_pc",
+    "url": "https://api2.order.mi.com/product/view?product_id=21171&version=2",
+    "method": "GET",
+    "request_headers": {},
+    "request_body": null,
+    "status": "success",
+    "http_status": null,
+    "error": "",
+    "response_raw": "{\n \"code\": 200,\n \"msg\": \"success\",\n \"data\": {\n  \"need_address_check\": true,\n  \"commodity_ids\": [\n   1230804470,\n   1230804471\n  ],\n  \"goods_ids\": [\n   2230003943,\n   2230003942\n  ],\n  \"goods_list\": [\n   {\n    \"goods_info\": {\n     \"customize_type\": 0,\n     \"product_id\": 21171,\n     \"commodity_id\": 1230804470,\n     \"goods_id\": 2230003943,\n     \"sku\": 64189,\n     \"name\": \"米家便携水杯 白色\",\n     \"price\": \"59\",\n     \"market_price\": \"59\",\n     \"shipment_text\": \"\",\n     \"buy_limit\": 2,\n     \"is_sale\": true,\n     \"is_stock\": true,\n     \"img_800_pms\": null,\n     \"img_800_custom\": null,\n     \"imgs\": [\n      \"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/9169EBB48432F747B0979B9FBF301265.png\"\n     ],\n     \"img_url\": \"//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141020_739f920647beb897f9a81649df32b16b.png\",\n     \"img_url_webp\": \"//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141020_739f920647beb897f9a81649df32b16b.png\",\n     \"action_button\": {\n      \"sale_mode\": \"standard\",\n      \"button_title\": \"加入购物车\",\n      \"is_bigtap\": false,\n      \"use_occ\": false,\n      \"occ_timeout\": 5000,\n      \"mode_change_time\": 0,\n      \"mode_start_time\": 0,\n      \"mode_end_time\": 0,\n      \"sale_mode_title\": \"立即购买\",\n      \"top_title\": \"\",\n      \"sale_mode_line\": \"first\",\n      \"source\": \"common\",\n      \"recommend_product\": null,\n      \"standard\": []\n     },\n     \"onsale_action_button\": null,\n     \"next_onsale_action_button\": null,\n     \"prop_list\": [\n      {\n       \"prop_cfg_id\": 723,\n       \"prop_value_id\": 2725\n      },\n      {\n       \"prop_cfg_id\": 1,\n       \"prop_value_id\": 49\n      }\n     ],\n     \"page_id\": 61679,\n     \"class_parameters\": {\n      \"name\": \"关键参数\"\n     },\n     \"gallery_v3\": [\n      {\n       \"type\": \"video\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_576338704a3c9a82c7614bfdff818bbc.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_576338704a3c9a82c7614bfdff818bbc.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_91d026129c89d6d474cd2ab38920c9a9.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_91d026129c89d6d474cd2ab38920c9a9.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_e1e8f6f98c82c4d94b02b417b550ea40.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_e1e8f6f98c82c4d94b02b417b550ea40.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_c835e8927fc3603459402822b7bd771e.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_c835e8927fc3603459402822b7bd771e.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_451c30f43ae0e2d8e3b851c44b7d62d5.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_451c30f43ae0e2d8e3b851c44b7d62d5.jpg?f=webp\"\n      }\n     ],\n     \"is_customize\": \"N\",\n     \"customize_template_id\": 0,\n     \"ext_buy_option\": [],\n     \"multi_price\": {\n      \"first\": \"59\",\n      \"second\": \"59\"\n     },\n     \"multi_market_price\": {\n      \"first\": \"59\",\n      \"second\": \"59\"\n     }\n    },\n    \"after_sale_info\": {\n     \"list\": [\n      {\n       \"title\": \"小米自营\",\n       \"is_check\": true,\n       \"is_page_show\": true,\n       \"mark\": \"type\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"发货说明\",\n       \"desc\": \"由小米发货\",\n       \"is_check\": true,\n       \"is_page_show\": true,\n       \"mark\": \"sendout\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"7天无理由退货（到店自取拆封后不支持）\",\n       \"is_check\": true,\n       \"is_page_show\": true,\n       \"mark\": \"return\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"运费说明\",\n       \"desc\": \"由小米发货商品(不含有品),单笔满69元免运费;\\n由小米有品发货的商品,免运费;\\n由第三方商家发货的商品，运费以实际结算金额为准;\\n特殊商品需要单独收取运费,具体以实际结算金额为准;优惠券等不能抵扣运费金额;如需无理由退货,用户将承担该商品的退货物流费用;\\n使用门店闪送服务，需单独支付运费，起送费10元起 ，根据配送距离有所不同，具体请以订单结算页面显示为准。\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"mark\": \"freight\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"企业信息\",\n       \"desc\": \"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"mark\": \"company\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"7天价格保护\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"url\": \"https://s1.mi.com/m/faq/giving/index.html?project_id=44\",\n       \"mark\": \"protect_price\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      }\n     ],\n     \"company_info\": {\n      \"name\": \"小米自营\",\n      \"business_type\": 1,\n      \"desc\": {\n       \"title\": \"企业信息\",\n       \"desc\": \"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"mark\": \"company\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      }\n     }\n    },\n    \"service_list\": null,\n    \"multi_service\": {\n     \"first\": null\n    }\n   },\n   {\n    \"goods_info\": {\n     \"customize_type\": 0,\n     \"product_id\": 21171,\n     \"commodity_id\": 1230804471,\n     \"goods_id\": 2230003942,\n     \"sku\": 64188,\n     \"name\": \"米家便携水杯 黑色\",\n     \"price\": \"59\",\n     \"market_price\": \"59\",\n     \"shipment_text\": \"\",\n     \"buy_limit\": 2,\n     \"is_sale\": true,\n     \"is_stock\": true,\n     \"img_800_pms\": null,\n     \"img_800_custom\": null,\n     \"imgs\": [\n      \"https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/7066F5441C6B5714FC091156E7868035.png\"\n     ],\n     \"img_url\": \"//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141020_8b66cac6e171f55f5dc95e4966b1d441.png\",\n     \"img_url_webp\": \"//cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141020_8b66cac6e171f55f5dc95e4966b1d441.png\",\n     \"action_button\": {\n      \"sale_mode\": \"standard\",\n      \"button_title\": \"加入购物车\",\n      \"is_bigtap\": false,\n      \"use_occ\": false,\n      \"occ_timeout\": 5000,\n      \"mode_change_time\": 0,\n      \"mode_start_time\": 0,\n      \"mode_end_time\": 0,\n      \"sale_mode_title\": \"立即购买\",\n      \"top_title\": \"\",\n      \"sale_mode_line\": \"first\",\n      \"source\": \"common\",\n      \"recommend_product\": null,\n      \"standard\": []\n     },\n     \"onsale_action_button\": null,\n     \"next_onsale_action_button\": null,\n     \"prop_list\": [\n      {\n       \"prop_cfg_id\": 723,\n       \"prop_value_id\": 2724\n      },\n      {\n       \"prop_cfg_id\": 1,\n       \"prop_value_id\": 49\n      }\n     ],\n     \"page_id\": 61679,\n     \"class_parameters\": {\n      \"name\": \"关键参数\"\n     },\n     \"gallery_v3\": [\n      {\n       \"type\": \"video\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_576338704a3c9a82c7614bfdff818bbc.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_576338704a3c9a82c7614bfdff818bbc.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_91d026129c89d6d474cd2ab38920c9a9.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_91d026129c89d6d474cd2ab38920c9a9.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_e1e8f6f98c82c4d94b02b417b550ea40.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_e1e8f6f98c82c4d94b02b417b550ea40.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_c835e8927fc3603459402822b7bd771e.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_c835e8927fc3603459402822b7bd771e.jpg?f=webp\"\n      },\n      {\n       \"type\": \"img\",\n       \"img_url\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_451c30f43ae0e2d8e3b851c44b7d62d5.jpg\",\n       \"img_url_webp\": \"https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_451c30f43ae0e2d8e3b851c44b7d62d5.jpg?f=webp\"\n      }\n     ],\n     \"is_customize\": \"N\",\n     \"customize_template_id\": 0,\n     \"ext_buy_option\": [],\n     \"multi_price\": {\n      \"first\": \"59\",\n      \"second\": \"59\"\n     },\n     \"multi_market_price\": {\n      \"first\": \"59\",\n      \"second\": \"59\"\n     }\n    },\n    \"after_sale_info\": {\n     \"list\": [\n      {\n       \"title\": \"小米自营\",\n       \"is_check\": true,\n       \"is_page_show\": true,\n       \"mark\": \"type\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"发货说明\",\n       \"desc\": \"由小米发货\",\n       \"is_check\": true,\n       \"is_page_show\": true,\n       \"mark\": \"sendout\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"7天无理由退货（到店自取拆封后不支持）\",\n       \"is_check\": true,\n       \"is_page_show\": true,\n       \"mark\": \"return\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"运费说明\",\n       \"desc\": \"由小米发货商品(不含有品),单笔满69元免运费;\\n由小米有品发货的商品,免运费;\\n由第三方商家发货的商品，运费以实际结算金额为准;\\n特殊商品需要单独收取运费,具体以实际结算金额为准;优惠券等不能抵扣运费金额;如需无理由退货,用户将承担该商品的退货物流费用;\\n使用门店闪送服务，需单独支付运费，起送费10元起 ，根据配送距离有所不同，具体请以订单结算页面显示为准。\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"mark\": \"freight\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"企业信息\",\n       \"desc\": \"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"mark\": \"company\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      },\n      {\n       \"title\": \"7天价格保护\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"url\": \"https://s1.mi.com/m/faq/giving/index.html?project_id=44\",\n       \"mark\": \"protect_price\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      }\n     ],\n     \"company_info\": {\n      \"name\": \"小米自营\",\n      \"business_type\": 1,\n      \"desc\": {\n       \"title\": \"企业信息\",\n       \"desc\": \"企业名称：小米通讯技术有限公司\\n企业执照注册号：91110108558521630L\\n企业地址：北京市海淀区西二旗中路33号院6 号楼9层019号\\n企业电话：950816\\n营业期限：2010年08月25日 至 2040年08月24日\\n经营范围：开发手机技术、计算机软件及信息技术；技术检测、技术咨询、技术服务、技术转让；计算机技术培训；系统集成；货物进出口、技术进出口、代理进出口；家用电器、通信设备、广播电视设备（不含卫星电视广播、地面接收装置）、机械设备、电子产品、文化用品的批发零售；维修仪器仪表；销售医疗器械I类、II、III类、针纺织品（含家纺家饰）、服装鞋帽、日用杂货、工艺品、文化用品、体育用品、照相器材、卫生用品（含个人护理用品）、钟表眼镜、箱包、家具（不从事实体店铺经营）、小饰品、日用品、乐器、自行车、智能卡；计算机、通讯设备、家用电器、电子产品、机械设备的技术开发、技术服务；销售金银饰品（不含金银质地纪念币）；家用空调的委托生产；委托生产翻译机；销售翻译机、五金交电（不含电动自行车）、厨房用品、陶瓷制品、玻璃制品、玩具、汽车零配件、食用农产品、花卉、苗木、宠物用品、建筑材料、装饰材料、化妆品、珠宝首饰、通讯设备、卫生间用品、农药；生产手机（仅限在海淀区永捷北路2号三层生产及外埠生产）；出版物批发；出版物零售；销售食品。（销售第三类医疗器械以及销售食品以及依法须经批准的项目，经相关部门批准后依批准的内容开展经营活动。）\",\n       \"is_check\": true,\n       \"is_page_show\": false,\n       \"mark\": \"company\",\n       \"business_type\": 1,\n       \"shipment_type\": \"\"\n      }\n     }\n    },\n    \"service_list\": null,\n    \"multi_service\": {\n     \"first\": null\n    }\n   }\n  ],\n  \"product_info\": { \"product_id\":21171,\"name\":\"米家便携水杯\",\"product_desc\":\"米家便携水杯\",\"is_enable\":true,\"is_batched\":false,\"activity_tips\":{},\"price_tips\":{},\"hidden_price_tips\":{},\"page_id\":61679,\"is_choose\":true},\n  \"buy_option\": [\n   { \"name\":\"颜色\",\"prop_cfg_id\":723,\"list\":[{\"prop_value_id\":2725,\"name\":\"白色\",\"prop_desc\":\"\",\"icon_img\":\"\",\"icon_color\":\"\",\"is_stock\":false,\"price\":\"\"},{\"prop_value_id\":2724,\"name\":\"黑色\",\"prop_desc\":\"\",\"icon_img\":\"\",\"icon_color\":\"\",\"is_stock\":false,\"price\":\"\"}]},\n   { \"name\":\"通用\",\"prop_cfg_id\":1,\"list\":[{\"prop_value_id\":49,\"name\":\"通用\",\"prop_desc\":\"\",\"icon_img\":\"\",\"icon_color\":\"\",\"is_stock\":false,\"price\":\"\"}]}\n  ],\n  \"extend_info\": {\n   \"desc_tabs_view\": [\n {\n  \"name\": \"商品详情\",\n  \"show_type\": \"config\",\n  \"tab_content\": [\n {\n  \"plain_view\": {\n \"h\": 740,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7f1af2f488e982a4d1fa70db6e5aa479.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 606,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b8f18033e4f5da70e0d5f467f5f14a1e.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 818,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eb2ab88e1ea7428537ed90f6235b0ebf.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 1018,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ea388d54be79430b1bcc00b1ef4fb513.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 718,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/129ebea8804366c66197f291e95c5660.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 832,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b28f6c7bfcc746c344d4db0e855b2e41.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 762,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1c5bea3884277c2385c0c9656a4eb1a0.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 795,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/20eb744ff0736da4ee956fc1bf4acd05.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 810,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/84fa3c51a6ff8b78ea817e13ade90c9e.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 535,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3ca2d4e1fcc57a32cc0fddbc5cecb492.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 661,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/07c37027289c5bf547e92daf25490b45.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 376,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f7589b930be13205d52d491f48083c03.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 418,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/764e280a58ce0ed08f2c66b15201849e.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 577,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9380a44316ad10b5376515695e258427.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 458,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cd310d7b0305c3314fe283865bb72eb1.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 160,\n \"img\": \"http://i8.mifile.cn/b2c-mimall-media/1a84b2b629512205bf528aae91361efb.jpg\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"官方微信\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n },\n {\n  \"plain_view\": {\n \"h\": 189,\n \"img\": \"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43e2954feb6d1b108438481f1d5b0bd3.png\",\n \"link_title\": \"\",\n \"link_url\": \"\",\n \"title\": \"价格说明\",\n \"w\": 1226\n},\n  \"view_type\": \"plain_view\"\n }\n],\n  \"view_type\": \"desc_tabs_view\"\n }\n],\n   \"show_type\": \"config\",\n   \"view_type\": \"desc_tabs_view\"\n  },\n  \"is_buyout_recycle\": false\n }\n}\n",
+    "response_hash": "8db5b9ccf3aaa099",
+    "raw_ref": "",
+    "parser_version": "mi_cn-v2",
+    "fetched_at": "2026-10-11T07:24:53+08:00",
+    "declared_at": ""
+   }
+  ],
+  "assertions": [
+   {
+    "assertion_id": "5084f9f14cdd:name",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "name",
+    "raw_value": "米家便携水杯",
+    "locator": "$.data.product.name",
+    "ui_location": "商品名",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:short_title",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "short_title",
+    "raw_value": "米家便携水杯",
+    "locator": "$.data.product.shortTitle",
+    "ui_location": "副标题",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:sell_points",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "sell_points",
+    "raw_value": [
+     "tritan材质 耐冷耐热",
+     "可拆卸滤网",
+     "安全锁扣 一键开盖"
+    ],
+    "locator": "$.data.product.sellPointList",
+    "ui_location": "卖点",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:gid",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "gid",
+    "raw_value": 2230003943,
+    "locator": "$.data.product.defaultGid",
+    "ui_location": "",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:commodity_id",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "commodity_id",
+    "raw_value": 1230804470,
+    "locator": "$.data.goodsInfo.goodsList[0].commodityId",
+    "ui_location": "",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:sku",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "sku",
+    "raw_value": 64189,
+    "locator": "$.data.goodsInfo.goodsList[0].sku",
+    "ui_location": "",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:price",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "price",
+    "raw_value": "59",
+    "locator": "$.data.goodsInfo.goodsList[0].price",
+    "ui_location": "现价",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:market_price",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "market_price",
+    "raw_value": "59",
+    "locator": "$.data.goodsInfo.goodsList[0].marketPrice",
+    "ui_location": "划线价",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:img_url",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "img_url",
+    "raw_value": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141020_739f920647beb897f9a81649df32b16b.png",
+    "locator": "$.data.goodsInfo.goodsList[0].imgUrl",
+    "ui_location": "",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:carousel",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "carousel",
+    "raw_value": [
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_576338704a3c9a82c7614bfdff818bbc.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_91d026129c89d6d474cd2ab38920c9a9.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_e1e8f6f98c82c4d94b02b417b550ea40.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_c835e8927fc3603459402822b7bd771e.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_451c30f43ae0e2d8e3b851c44b7d62d5.jpg"
+    ],
+    "locator": "$.data.goodsInfo.goodsList[0].carouselList",
+    "ui_location": "轮播图",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:attrs",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "attrs",
+    "raw_value": {
+     "颜色": [
+      "白色",
+      "黑色"
+     ],
+     "通用": [
+      "通用"
+     ]
+    },
+    "locator": "$.data.saleAttributeInfo.saleAttributeList",
+    "ui_location": "",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:colors",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "colors",
+    "raw_value": [
+     "白色",
+     "黑色"
+    ],
+    "locator": "$.data.saleAttributeInfo.saleAttributeList",
+    "ui_location": "可选颜色",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:evaluate_total",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "evaluate_total",
+    "raw_value": "3w+",
+    "locator": "$.data.buyerShow.total",
+    "ui_location": "评论数",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:evaluate_real",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "evaluate_real",
+    "raw_value": 2329,
+    "locator": "$.data.buyerShow.realTotal",
+    "ui_location": "评论数",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:review_tags",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "review_tags",
+    "raw_value": [
+     "服务一流",
+     "价格实惠",
+     "质量上乘",
+     "颜值够高",
+     "空间充足",
+     "用料扎实"
+    ],
+    "locator": "$.data.buyerShow.tags[]",
+    "ui_location": "大家评价",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:buyer_imgs",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "buyer_imgs",
+    "raw_value": [
+     "http://i1.mifile.cn/a2/1791622698_4889976_s1536_2048wh.jpg",
+     "http://i1.mifile.cn/a2/1791596039_4930173_s1536_2040wh.jpg",
+     "http://i1.mifile.cn/a2/1790491429_7468155_s810_1440wh.jpg",
+     "http://i1.mifile.cn/a2/1791366851_4591264_s828_1227wh.jpg",
+     "http://i1.mifile.cn/a2/1791076277_7900960_s1536_2048wh.jpg"
+    ],
+    "locator": "$.data.buyerShow.imgs[]",
+    "ui_location": "买家秀",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:qa_total",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "qa_total",
+    "raw_value": "共28个问答",
+    "locator": "$.data.askAll.total",
+    "ui_location": "问大家",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:qa_items",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "qa_items",
+    "raw_value": [
+     {
+      "question": "多大内存？电池多大？能连米家吗？",
+      "answerNum": "3个问答"
+     },
+     {
+      "question": "放的进yu7杯架吗",
+      "answerNum": "8个问答"
+     }
+    ],
+    "locator": "$.data.askAll.items[]",
+    "ui_location": "问大家",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "5084f9f14cdd:_params_empty",
+    "subject_id": "21171",
+    "capture_id": "5084f9f14cdd",
+    "source": "mi_cn_mobile",
+    "attribute": "_params_empty",
+    "raw_value": {},
+    "locator": "$.data.goodsInfo.goodsList[0].classParameters",
+    "ui_location": "关键参数",
+    "page": "移动端商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "source_empty",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "e2398e8ebfc9:desc",
+    "subject_id": "21171",
+    "capture_id": "e2398e8ebfc9",
+    "source": "mi_cn_pc",
+    "attribute": "desc",
+    "raw_value": "米家便携水杯",
+    "locator": "$.data.product_info.product_desc",
+    "ui_location": "商品简介",
+    "page": "PC 商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "e2398e8ebfc9:pc_price",
+    "subject_id": "21171",
+    "capture_id": "e2398e8ebfc9",
+    "source": "mi_cn_pc",
+    "attribute": "pc_price",
+    "raw_value": "59",
+    "locator": "$.data.goods_list[0].goods_info.price",
+    "ui_location": "现价",
+    "page": "PC 商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "e2398e8ebfc9:pc_market_price",
+    "subject_id": "21171",
+    "capture_id": "e2398e8ebfc9",
+    "source": "mi_cn_pc",
+    "attribute": "pc_market_price",
+    "raw_value": "59",
+    "locator": "$.data.goods_list[0].goods_info.market_price",
+    "ui_location": "划线价",
+    "page": "PC 商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "e2398e8ebfc9:buy_options",
+    "subject_id": "21171",
+    "capture_id": "e2398e8ebfc9",
+    "source": "mi_cn_pc",
+    "attribute": "buy_options",
+    "raw_value": [
+     {
+      "name": "颜色",
+      "prop_cfg_id": 723,
+      "list": [
+       {
+        "prop_value_id": 2725,
+        "name": "白色",
+        "prop_desc": "",
+        "icon_img": "",
+        "icon_color": "",
+        "is_stock": false,
+        "price": ""
+       },
+       {
+        "prop_value_id": 2724,
+        "name": "黑色",
+        "prop_desc": "",
+        "icon_img": "",
+        "icon_color": "",
+        "is_stock": false,
+        "price": ""
+       }
+      ]
+     },
+     {
+      "name": "通用",
+      "prop_cfg_id": 1,
+      "list": [
+       {
+        "prop_value_id": 49,
+        "name": "通用",
+        "prop_desc": "",
+        "icon_img": "",
+        "icon_color": "",
+        "is_stock": false,
+        "price": ""
+       }
+      ]
+     }
+    ],
+    "locator": "$.data.buy_option[]",
+    "ui_location": "选择规格",
+    "page": "PC 商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "e2398e8ebfc9:pc_tabs",
+    "subject_id": "21171",
+    "capture_id": "e2398e8ebfc9",
+    "source": "mi_cn_pc",
+    "attribute": "pc_tabs",
+    "raw_value": [
+     "商品详情"
+    ],
+    "locator": "$.data.extend_info.desc_tabs_view",
+    "ui_location": "商品详情",
+    "page": "PC 商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "e2398e8ebfc9:pc_imgs",
+    "subject_id": "21171",
+    "capture_id": "e2398e8ebfc9",
+    "source": "mi_cn_pc",
+    "attribute": "pc_imgs",
+    "raw_value": [
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7f1af2f488e982a4d1fa70db6e5aa479.jpg",
+      "w": 1226,
+      "h": 740
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b8f18033e4f5da70e0d5f467f5f14a1e.jpg",
+      "w": 1226,
+      "h": 606
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eb2ab88e1ea7428537ed90f6235b0ebf.jpg",
+      "w": 1226,
+      "h": 818
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ea388d54be79430b1bcc00b1ef4fb513.jpg",
+      "w": 1226,
+      "h": 1018
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/129ebea8804366c66197f291e95c5660.jpg",
+      "w": 1226,
+      "h": 718
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b28f6c7bfcc746c344d4db0e855b2e41.jpg",
+      "w": 1226,
+      "h": 832
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1c5bea3884277c2385c0c9656a4eb1a0.jpg",
+      "w": 1226,
+      "h": 762
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/20eb744ff0736da4ee956fc1bf4acd05.jpg",
+      "w": 1226,
+      "h": 795
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/84fa3c51a6ff8b78ea817e13ade90c9e.jpg",
+      "w": 1226,
+      "h": 810
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3ca2d4e1fcc57a32cc0fddbc5cecb492.jpg",
+      "w": 1226,
+      "h": 535
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/07c37027289c5bf547e92daf25490b45.jpg",
+      "w": 1226,
+      "h": 661
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f7589b930be13205d52d491f48083c03.jpg",
+      "w": 1226,
+      "h": 376
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/764e280a58ce0ed08f2c66b15201849e.jpg",
+      "w": 1226,
+      "h": 418
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9380a44316ad10b5376515695e258427.jpg",
+      "w": 1226,
+      "h": 577
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cd310d7b0305c3314fe283865bb72eb1.jpg",
+      "w": 1226,
+      "h": 458
+     },
+     {
+      "tab": "商品详情",
+      "img": "http://i8.mifile.cn/b2c-mimall-media/1a84b2b629512205bf528aae91361efb.jpg",
+      "w": 1226,
+      "h": 160
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43e2954feb6d1b108438481f1d5b0bd3.png",
+      "w": 1226,
+      "h": 189
+     }
+    ],
+    "locator": "$.data.extend_info.desc_tabs_view",
+    "ui_location": "商品详情",
+    "page": "PC 商品详情页",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "mi_cn-v2",
+    "normalization_rule_version": ""
+   }
+  ],
+  "view": {
+   "subject_id": "CN:mi_cn:product:21171",
+   "values": {
+    "name": "米家便携水杯",
+    "short_title": "米家便携水杯",
+    "sell_points": [
+     "tritan材质 耐冷耐热",
+     "可拆卸滤网",
+     "安全锁扣 一键开盖"
+    ],
+    "gid": 2230003943,
+    "commodity_id": 1230804470,
+    "sku": 64189,
+    "price": "59",
+    "market_price": "59",
+    "img_url": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141020_739f920647beb897f9a81649df32b16b.png",
+    "carousel": [
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_576338704a3c9a82c7614bfdff818bbc.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_91d026129c89d6d474cd2ab38920c9a9.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_e1e8f6f98c82c4d94b02b417b550ea40.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_c835e8927fc3603459402822b7bd771e.jpg",
+     "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202507141040_451c30f43ae0e2d8e3b851c44b7d62d5.jpg"
+    ],
+    "attrs": {
+     "颜色": [
+      "白色",
+      "黑色"
+     ],
+     "通用": [
+      "通用"
+     ]
+    },
+    "colors": [
+     "白色",
+     "黑色"
+    ],
+    "evaluate_total": "3w+",
+    "evaluate_real": 2329,
+    "review_tags": [
+     "服务一流",
+     "价格实惠",
+     "质量上乘",
+     "颜值够高",
+     "空间充足",
+     "用料扎实"
+    ],
+    "buyer_imgs": [
+     "http://i1.mifile.cn/a2/1791622698_4889976_s1536_2048wh.jpg",
+     "http://i1.mifile.cn/a2/1791596039_4930173_s1536_2040wh.jpg",
+     "http://i1.mifile.cn/a2/1790491429_7468155_s810_1440wh.jpg",
+     "http://i1.mifile.cn/a2/1791366851_4591264_s828_1227wh.jpg",
+     "http://i1.mifile.cn/a2/1791076277_7900960_s1536_2048wh.jpg"
+    ],
+    "qa_total": "共28个问答",
+    "qa_items": [
+     {
+      "question": "多大内存？电池多大？能连米家吗？",
+      "answerNum": "3个问答"
+     },
+     {
+      "question": "放的进yu7杯架吗",
+      "answerNum": "8个问答"
+     }
+    ],
+    "_params_empty": {},
+    "desc": "米家便携水杯",
+    "pc_price": "59",
+    "pc_market_price": "59",
+    "buy_options": [
+     {
+      "name": "颜色",
+      "prop_cfg_id": 723,
+      "list": [
+       {
+        "prop_value_id": 2725,
+        "name": "白色",
+        "prop_desc": "",
+        "icon_img": "",
+        "icon_color": "",
+        "is_stock": false,
+        "price": ""
+       },
+       {
+        "prop_value_id": 2724,
+        "name": "黑色",
+        "prop_desc": "",
+        "icon_img": "",
+        "icon_color": "",
+        "is_stock": false,
+        "price": ""
+       }
+      ]
+     },
+     {
+      "name": "通用",
+      "prop_cfg_id": 1,
+      "list": [
+       {
+        "prop_value_id": 49,
+        "name": "通用",
+        "prop_desc": "",
+        "icon_img": "",
+        "icon_color": "",
+        "is_stock": false,
+        "price": ""
+       }
+      ]
+     }
+    ],
+    "pc_tabs": [
+     "商品详情"
+    ],
+    "pc_imgs": [
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7f1af2f488e982a4d1fa70db6e5aa479.jpg",
+      "w": 1226,
+      "h": 740
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b8f18033e4f5da70e0d5f467f5f14a1e.jpg",
+      "w": 1226,
+      "h": 606
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eb2ab88e1ea7428537ed90f6235b0ebf.jpg",
+      "w": 1226,
+      "h": 818
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ea388d54be79430b1bcc00b1ef4fb513.jpg",
+      "w": 1226,
+      "h": 1018
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/129ebea8804366c66197f291e95c5660.jpg",
+      "w": 1226,
+      "h": 718
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b28f6c7bfcc746c344d4db0e855b2e41.jpg",
+      "w": 1226,
+      "h": 832
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1c5bea3884277c2385c0c9656a4eb1a0.jpg",
+      "w": 1226,
+      "h": 762
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/20eb744ff0736da4ee956fc1bf4acd05.jpg",
+      "w": 1226,
+      "h": 795
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/84fa3c51a6ff8b78ea817e13ade90c9e.jpg",
+      "w": 1226,
+      "h": 810
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3ca2d4e1fcc57a32cc0fddbc5cecb492.jpg",
+      "w": 1226,
+      "h": 535
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/07c37027289c5bf547e92daf25490b45.jpg",
+      "w": 1226,
+      "h": 661
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f7589b930be13205d52d491f48083c03.jpg",
+      "w": 1226,
+      "h": 376
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/764e280a58ce0ed08f2c66b15201849e.jpg",
+      "w": 1226,
+      "h": 418
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9380a44316ad10b5376515695e258427.jpg",
+      "w": 1226,
+      "h": 577
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cd310d7b0305c3314fe283865bb72eb1.jpg",
+      "w": 1226,
+      "h": 458
+     },
+     {
+      "tab": "商品详情",
+      "img": "http://i8.mifile.cn/b2c-mimall-media/1a84b2b629512205bf528aae91361efb.jpg",
+      "w": 1226,
+      "h": 160
+     },
+     {
+      "tab": "商品详情",
+      "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43e2954feb6d1b108438481f1d5b0bd3.png",
+      "w": 1226,
+      "h": 189
+     }
+    ]
+   },
+   "selected_from": {},
+   "candidates": {},
+   "relations": [],
+   "unclassified": {},
+   "availability": {
+    "name": "provided",
+    "short_title": "provided",
+    "sell_points": "provided",
+    "gid": "provided",
+    "commodity_id": "provided",
+    "sku": "provided",
+    "price": "provided",
+    "market_price": "provided",
+    "img_url": "provided",
+    "carousel": "provided",
+    "attrs": "provided",
+    "colors": "provided",
+    "evaluate_total": "provided",
+    "evaluate_real": "provided",
+    "review_tags": "provided",
+    "buyer_imgs": "provided",
+    "qa_total": "provided",
+    "qa_items": "provided",
+    "_params_empty": "source_empty",
+    "desc": "provided",
+    "pc_price": "provided",
+    "pc_market_price": "provided",
+    "buy_options": "provided",
+    "pc_tabs": "provided",
+    "pc_imgs": "provided"
+   },
+   "gaps": []
+  },
+  "market_prices": [
+   {
+    "variant_id": "CN:mi_cn:commodity:1230804470",
+    "name": "米家便携水杯 白色",
+    "attrs": {
+     "color": "白色"
+    },
+    "external_ids": {
+     "mi_cn.commodity_id": "1230804470"
+    }
+   },
+   {
+    "variant_id": "CN:mi_cn:commodity:1230804471",
+    "name": "米家便携水杯 黑色",
+    "attrs": {
+     "color": "黑色"
+    },
+    "external_ids": {
+     "mi_cn.commodity_id": "1230804471"
+    }
+   }
+  ],
+  "discovery": {
+   "query": "运动鞋",
+   "pages_fetched": 1,
+   "page_size": 20,
+   "total_reported": 2,
+   "found": 2,
+   "stop_reason": "reached_total",
+   "completeness": "complete",
+   "universe": "中国大陆小米商城本次搜索可发现的商品"
+  },
+  "fetched_at": "2026-10-11T07:24:51+08:00"
+ }
+]
