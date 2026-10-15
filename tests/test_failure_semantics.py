@@ -28,7 +28,7 @@ def test_success_code_200_accepted():
     with patch.object(mi_cn, "_get", return_value=payload):
         d = mi_cn.enumerate_products("x", pause=0)["discovery"]
     assert d["completeness"] == "no_sellable_items", \
-        f"code=200 是成功，应识别为无在售商品而非失败（实际 {d['completeness']}）"
+        f"code=200 是成功，应保留空页状态而非失败（实际 {d['completeness']}）"
     assert d["total_reported"] == 21
 
 
@@ -58,12 +58,15 @@ def test_unparseable_response_detected():
 
 
 def test_genuine_empty_still_distinguished():
-    """真正的空结果（能返回 total 与空 pc_list）仍标 no_sellable_items"""
+    """成功空响应仍保留旧状态名；这不证明下架，不能授权缺席标记。
+
+    有结果但不足 total 的反例见 test_search_pagination.py。
+    """
     with patch.object(mi_cn, "_get",
                       return_value='cb({"code":0,"data":{"total":57,"pc_list":[]}})'):
         d = mi_cn.enumerate_products("x", pause=0)["discovery"]
     assert d["completeness"] == "no_sellable_items", \
-        "真·无在售与接口失败必须区分"
+        "成功空响应与接口失败必须区分"
     assert d["total_reported"] == 57
 
 

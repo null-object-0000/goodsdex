@@ -26,7 +26,9 @@ def test_delisted_product_is_kept():
                   archive_dir=d, now_iso="2026-10-01T00:00:00+08:00")
     # B 下架：下次采集只有 A
     st = merge_archive("测试", [_rec("A", "商品A")],
-                       archive_dir=d, now_iso="2026-10-02T00:00:00+08:00")
+                       archive_dir=d, now_iso="2026-10-02T00:00:00+08:00",
+                       discovery={"completeness": "complete", "stop_reason": "reached_total",
+                                  "total_reported": 1, "found": 1})
     arch = json.loads((d / "测试.json").read_text(encoding="utf-8"))
     assert "B" in arch["items"], "下架商品被丢弃了"
     assert arch["items"]["B"]["missing_since"], "应标记缺席时刻"
@@ -55,7 +57,9 @@ def test_revived_product_clears_missing():
     merge_archive("测试", [_rec("A", "A")], archive_dir=d,
                   now_iso="2026-10-01T00:00:00+08:00")
     merge_archive("测试", [], archive_dir=d,
-                  now_iso="2026-10-02T00:00:00+08:00")     # A 消失
+                  now_iso="2026-10-02T00:00:00+08:00",
+                  discovery={"completeness": "complete", "stop_reason": "empty_page",
+                             "total_reported": 0, "found": 0})     # A 消失
     st = merge_archive("测试", [_rec("A", "A")], archive_dir=d,
                        now_iso="2026-10-03T00:00:00+08:00")  # A 回来
     arch = json.loads((d / "测试.json").read_text(encoding="utf-8"))

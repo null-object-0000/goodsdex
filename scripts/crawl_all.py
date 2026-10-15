@@ -51,7 +51,7 @@ def main() -> int:
     ap.add_argument("--resume", action="store_true", help="跳过已成功采集的分类")
     ap.add_argument("--workers", type=int, default=2)
     ap.add_argument("--pause", type=float, default=2.0, help="分类之间的停顿秒数（防限流）")
-    ap.add_argument("--max-pages", type=int, default=20)
+    ap.add_argument("--max-pages", type=int, default=100)
     ap.add_argument("--only-missing", action="store_true", help="只跑上次失败的分类")
     a = ap.parse_args()
 

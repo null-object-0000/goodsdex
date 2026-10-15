@@ -15,7 +15,7 @@
 
 档案合并规则（关键）：
   - 本次见到的商品  -> 更新 last_seen_at / last_seen_price / times_seen
-  - 本次没见到的    -> **保留**，标 missing_since（若之前是在售）
+  - 本次没见到的    -> **保留**，仅完整观测可标 missing_since
   - 曾标记下架的    -> 若又出现，清掉 missing_since（复活）
 
 这样"从某一刻开始持续积累"才有意义：档案是单调增长的，
@@ -64,12 +64,23 @@ def _slim(rec: dict) -> dict:
 def merge_archive(category: str, records: list[dict],
                   archive_dir: Path = Path("data/archive"),
                   seen_at: Optional[str] = None,
-                  now_iso: Optional[str] = None) -> dict:
+                  now_iso: Optional[str] = None,
+                  discovery: Optional[dict] = None) -> dict:
     """把一次采集结果并入档案，返回统计。
 
     幂等：同一批记录重复并入不会重复计数（按 id 更新）。
     """
     stamp = now_iso or _now()
+    discovery = discovery or {}
+    total, found = discovery.get("total_reported"), discovery.get("found")
+    # 白名单：空页/重复页/限页都不能证明全集已覆盖；缺少证据也不行。
+    complete = (
+        discovery.get("completeness") == "complete"
+        and type(total) is int and total >= 0
+        and type(found) is int and found >= total
+        and (discovery.get("stop_reason") == "reached_total"
+             or (discovery.get("stop_reason") == "empty_page" and total == found == 0))
+    )
     archive_dir = Path(archive_dir)
     archive_dir.mkdir(parents=True, exist_ok=True)
     fp = archive_dir / f"{category}.json"
@@ -105,29 +116,39 @@ def merge_archive(category: str, records: list[dict],
                 revived += 1
             updated += 1
 
-    # 本次没见到的：保留，标 missing_since（首次缺席时记录）
+    # 未见不等于下架：不完整观测保留旧状态，只更新实际见到的商品。
     went_missing = 0
     for pid, old in items.items():
         if pid in seen_ids:
             continue
-        if not old.get("missing_since"):
+        if complete and not old.get("missing_since"):
             old["missing_since"] = stamp
             went_missing += 1
 
+    missing = sum(bool(it.get("missing_since")) for it in items.values())
     out = {
         "category": category,
         "updated_at": stamp,
         "count": len(items),
-        "present": len(seen_ids),
-        "missing": len(items) - len(seen_ids),
+        "present": len(items) - missing,
+        "missing": missing,
         "items": items,
+        "last_discovery": discovery,
     }
+    if complete:
+        # 保留最近一次不完整观测，后续完整观测也不抹除审计线索。
+        for key in ("last_incomplete_at", "last_incomplete_reason"):
+            if key in arch:
+                out[key] = arch[key]
+    else:
+        out["last_incomplete_at"] = stamp
+        out["last_incomplete_reason"] = discovery.get("stop_reason") or "unknown"
     tmp = fp.with_suffix(".json.tmp")
     tmp.write_text(json.dumps(out, ensure_ascii=False, indent=1),
                    encoding="utf-8")
     tmp.replace(fp)
     return {"category": category, "total": len(items),
-            "present": len(seen_ids), "missing": out["missing"],
+            "present": out["present"], "missing": out["missing"],
             "added": added, "updated": updated,
             "went_missing": went_missing, "revived": revived}
 

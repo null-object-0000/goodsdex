@@ -185,7 +185,7 @@ def _keyword_from_href(href: str) -> str:
         return ""
 
 
-def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
+def enumerate_products(query: str, max_pages: int = 100, page_size: int = 20,
                        pause: float = 0.3) -> dict:
     """分页枚举商品。
 
@@ -197,7 +197,9 @@ def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
     last_total = None
     empty_pages = 0
     stop_reason = "unknown"
+    pages_fetched = 0
     while page <= max_pages:
+        pages_fetched = page
         q = {"query": query, "page_index": page, "page_size": page_size,
              "filter_tag": 0, "main_sort": 0, "province_id": "", "city_id": "",
              "sort_by": "asc", "callback": "cb"}
@@ -230,9 +232,8 @@ def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
         if total is not None:
             last_total = total
         if not groups:
-            # total 是全局匹配数，pc_list 才是本页可售结果 ——
-            # total>0 而 pc_list 空表示该词下没有在售商品（下架/售罄），
-            # 不是"还能翻页"。容忍一页空响后停止。
+            # total>0 而 pc_list 空只证明本页没返回商品，不能证明下架。
+            # 非首页容忍一页空响后停止，覆盖不足时保持不完整。
             empty_pages += 1
             if empty_pages >= 2 or page == 1:
                 stop_reason = "no_sellable_items" if last_total else "empty_page"
@@ -275,8 +276,8 @@ def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
         # **失败绝不装成"官方没有"** —— 这是核心承诺
         completeness = "failed"
     elif stop_reason == "no_sellable_items":
-        # 明确：搜索命中 total 条，但没有在售商品
-        completeness = "no_sellable_items"
+        # 保留空结果状态名称兼容旧产物；有结果但不足 total 必须是 partial。
+        completeness = "partial" if rows else "no_sellable_items"
     elif last_total is not None and len(rows) >= last_total:
         completeness = "complete"
     elif rows and stop_reason in ("max_pages_reached", "no_new_items"):
@@ -289,7 +290,7 @@ def enumerate_products(query: str, max_pages: int = 20, page_size: int = 20,
     return {
         "items": rows,
         "discovery": {
-            "query": query, "pages_fetched": page, "page_size": page_size,
+            "query": query, "pages_fetched": pages_fetched, "page_size": page_size,
             "total_reported": last_total, "found": len(rows),
             "stop_reason": stop_reason, "completeness": completeness,
             "universe": "中国大陆小米商城本次搜索可发现的商品",

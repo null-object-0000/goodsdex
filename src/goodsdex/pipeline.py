@@ -175,7 +175,7 @@ def _summary(rec: dict) -> str:
             f"[{ok}/{len(caps)}源]{rej}")
 
 
-def run_category(category: str, limit: int = 0, max_pages: int = 20,
+def run_category(category: str, limit: int = 0, max_pages: int = 100,
                  workers: int = 4, outdir: Path = DEFAULT_OUT,
                  verbose: bool = True) -> list[dict]:
     cats = mi_cn.list_categories()
@@ -184,8 +184,10 @@ def run_category(category: str, limit: int = 0, max_pages: int = 20,
         print(f"[1/3] 分类「{category}」-> 关键词「{kw}」")
     enum = mi_cn.enumerate_products(kw, max_pages=max_pages)
     prods, discovery = enum["items"], enum["discovery"]
-    if limit:
+    discovery = dict(discovery)
+    if limit and len(prods[:limit]) < len(prods):
         prods = prods[:limit]
+        discovery.update(completeness="partial", stop_reason="limit_reached")
     if verbose:
         print(f"      发现 {len(prods)} 个商品 | total={discovery['total_reported']} "
               f"完整性={discovery['completeness']} ({discovery['stop_reason']})")
@@ -200,6 +202,7 @@ def run_category(category: str, limit: int = 0, max_pages: int = 20,
             try:
                 rec = f.result()
             except Exception as e:
+                discovery.update(completeness="partial", stop_reason="collection_failed")
                 if verbose:
                     print(f"  ✗ {p['name'][:30]} {type(e).__name__}: {e}")
                 continue
@@ -231,6 +234,7 @@ def run_category(category: str, limit: int = 0, max_pages: int = 20,
                     try:
                         kid = f.result()
                     except Exception:
+                        discovery.update(completeness="partial", stop_reason="collection_failed")
                         continue
                     kid["product"]["from_container"] = True
                     out.append(kid)
@@ -268,25 +272,28 @@ def run_category(category: str, limit: int = 0, max_pages: int = 20,
     # 不能用"条数缩水"当判据 —— 类型分流会把配件/服务剔出去，
     # 条数天然变少（实测：扫地机器人 85 -> 18，但新数据 0% 悬空、
     # 旧的 77% 悬空），用条数比较会把**正确的数据**挡在门外。
+    preserve_snapshot = False
     if not out:
         failed = (discovery or {}).get("completeness") in ("failed", "unknown")
         if fp.exists() and failed:
             if verbose:
                 print(f"\n⚠ 拒绝写入：新结果为空且采集状态为 "
                       f"{(discovery or {}).get('completeness')}，保留旧数据 {fp}")
-            return out
-    tmp = fp.with_suffix(".json.tmp")
-    tmp.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
-    tmp.replace(fp)          # 原子替换，避免写一半崩掉
+            preserve_snapshot = True
+    if not preserve_snapshot:
+        tmp = fp.with_suffix(".json.tmp")
+        tmp.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+        tmp.replace(fp)          # 原子替换，避免写一半崩掉
 
     # **并入累积档案**（只增不减）。
     # 快照会被下次采集覆盖，但档案不会 —— 这是"下架也留档"的保障。
     # 实测：整分类覆盖时，下架商品在下次采集后**永久丢失**。
     try:
         from .archive import merge_archive
-        st = merge_archive(category, out, archive_dir=outdir.parent / "archive")
+        st = merge_archive(category, out, archive_dir=outdir.parent / "archive",
+                           discovery=discovery)
         if verbose and (st["went_missing"] or st["revived"] or st["added"]):
-            print(f"      档案: 共 {st['total']} 条（本次在场 {st['present']}，"
+            print(f"      档案: 共 {st['total']} 条（未标缺席 {st['present']}，"
                   f"缺席 {st['missing']}）"
                   + (f" 新增 {st['added']}" if st["added"] else "")
                   + (f" 新缺席 {st['went_missing']}" if st["went_missing"] else "")
@@ -324,7 +331,7 @@ def main(argv=None):
     ap.add_argument("--pid", help="单个商品 ID")
     ap.add_argument("--sources", default="mi_cn", help="数据源。当前已接入：mi_cn")
     ap.add_argument("--limit", type=int, default=0, help="限制商品数")
-    ap.add_argument("--max-pages", type=int, default=20)
+    ap.add_argument("--max-pages", type=int, default=100)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--out", default=str(DEFAULT_OUT))
     a = ap.parse_args(argv)
