@@ -243,8 +243,8 @@ def publish_apple(cats, out):
     by_id = {
         it["id"]: it
         for it in items
-        if it.get("source") == source.SOURCE
-        or str(it.get("id", "")).startswith("CN:apple_cn:")
+        if it.get("source") in (source.SOURCE, "apple_support")
+        or str(it.get("id", "")).startswith(("CN:apple_cn:", "GLOBAL:apple_support:"))
     }
     # 其他品牌的历史重复条目暂不在此处处理，保持原样。
     others = [it for it in items if it.get("id") not in by_id]

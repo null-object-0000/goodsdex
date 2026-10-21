@@ -9,7 +9,7 @@
 不硬编码在售产品名称或价格；商品上新随导航链接发现。
 
 本轮是当前官方页面列出的**中国大陆预配置购买料号**，不是 Apple 历代全产品库。
-未穷举全部 Mac CTO 内存/存储组合、Watch 表带组合、所有配件及历史停售机型。
+未穷举全部 Mac CTO 内存/存储组合、Watch 表带组合、所有配件。历史机型通过下述官方文稿源独立补采。
 没有官方购买料号的可配置入口不会被伪造成一个独立 SKU。
 `discovery.completeness` 因范围限制始终为 partial，缺席不能自动推定下架。
 
@@ -86,3 +86,57 @@ Apple 部分失败输出 workflow warning 与报告，成功页面可更新，�
 上述是本地实测结果，未直接改写线上 data 分支。完整响应、公开集预览及验证日志在本地 `data/apple/validation/`、`data/apple/raw/` 和 `public/`，不混入代码分支。
 
 PR 回归默认运行 `pytest -q -m "not live"`（185 条离线测试）；原有 8 条小米联网集成测试仅增加 live 标记，没有删除或改写判据。完整 `pytest -q` 仍运行全部 193 条，本地均已通过。
+
+
+## 历史机型补采（Apple Support）
+
+```bash
+PYTHONPATH=src python3 scripts/crawl_apple_history.py --public public
+# 只补一个系列；强制重取已有规格
+PYTHONPATH=src python3 scripts/crawl_apple_history.py --family iphone --max-age-days 0
+```
+
+从 Apple Support 的 zh-cn 文稿目录发现真实机型卡片及技术规格链接；Watch 分组目录继续展开。
+iPhone、iPad 同时核对官方“识别机型”页中的技术规格链接，兼容旧 `/kb/SP…?locale=zh_CN` 跳转。
+支持 iPhone、iPad、Mac、Watch、AirPods、HomePod、Vision、显示器，以及配件目录中的 AirTag；不宣称所有历史 Apple 产品已穷举。
+其他历史配件目录本轮不扩展。
+
+- `Apple_history_<family>.json` 独立存放文档级机型参考，主键为 `GLOBAL:apple_support:model:<官方规格文稿编号>`。
+  同一文稿的不同发现链接、不同语言入口不生成多份商品。
+- 公开集带 `record_level=model_reference`、`catalog_scope=historical_and_current`、`sale_status=unverified`。
+  文稿目录同时包含旧款和当前机型，缺席商店不能证明停售；不自动给全部参考记录贴“已停售”。
+- 中文资料也可能包含多个地区型号；`market=GLOBAL`，实际语言路径保留为 `document_locale`。
+  正文中的地区、型号及功能条件原样保留在相应规格段落，不能把所有 A 型号当成国行。
+- `specs_sections` 保留官方正文标题层级、段落/列表行及脚注，不压成每个容量/颜色共用的平面参数表。
+  容量和颜色是文档中列出的选项，不做笛卡尔积，不虚构购买料号；与当前在售 SKU 也不靠模糊名称合并。
+- 只在官方明确写推出年份或机型标题包含年份时输出 `model_year`，不拿网页更新日期当发布日期。
+- 历史记录 `price=null`，不补 0，不把发布价当现价，不写入 Apple 报价时间序列。
+- `captures/assertions` 保留规格正文及发现页的完整响应引用、哈希、时间、定位与版本。
+  原始 HTML 位于 `data/apple/history/raw/`，报告位于 `data/apple/history/report.json`。
+  公开派生视图保留官方来源链接，内部证据与现有 Apple artifact 一起保存 7 天。
+
+每日全量工作流已接入；成功历史记录默认 7 天内复用，目录继续查新。小时价格刷新只访问当前商店购买页。
+网络/解析失败保留原记录及观察时间，错误进入 `errors`；文稿页无规格入口单列 `coverage_gaps`，不声称补齐。
+`--limit` 会在报告标为 limited，限定机型目录页数量；识别页的规格补查仍会执行。
+
+
+### 2026-10-21 历史补采实测
+
+新增 **294 份官方机型规格参考**（包含历史及当前型号，不等同于 294 个已停售国行 SKU）：
+iPhone 54、iPad 35、Mac 153、Watch 22、AirPods 14、HomePod 3、Vision 2、显示器 9、AirTag 2。
+最早有明确年份的资料为 2007 年；217 份有可直接取证的机型年份，242 份有官方产品图。
+292 份资料实际返回 zh-cn，2 份返回 en-us，均保留实际语言路径及 GLOBAL 范围。
+
+完整规格及发现页共 512 个关联原始文件通过 SHA256 核对；历史价格全部为空。
+真实目录仍有 70 个机型/分组文稿入口没有直接规格链接，报告逐个保留；
+其中部分已由“识别机型”页补到同款规格，不能把这个入口数量当作缺少机型数量。
+最后一次采集没有未恢复的网络/规格解析错误；这仍不是 Apple 全部历史产品的完整覆盖声明。
+
+在已有小米数据与当前 Apple 配置上做本地合并，保留原 3,888 条小米记录（含既有重复 ID 的条目）
+和 343 个 Apple 购买配置，合并后 4,525 条。用记录多重集逐条核对，避免以 ID 字典掩盖既有重复数据；
+重复发布结果一致，Apple 报价集仍只有 343 个当前购买料号，没有历史参考混入。
+
+全套 205 项测试通过（197 项离线、8 项已有小米联网测试）。
+本地完整采集报告及验收在 `data/apple/history/report.json`、
+`data/apple/history/validation/acceptance.json`；合并预览在该验证目录的 `merged-public/goods.json`。
+代码合并到默认分支后才会进入定时发布流程，本次未直接改写生产 data 分支。
