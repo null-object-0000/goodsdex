@@ -15,6 +15,9 @@ goodsList 装着若干**独立商品**（不同容量的冰箱），各自可独
 """
 import os
 import sys
+import pytest
+
+pytestmark = pytest.mark.live
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 

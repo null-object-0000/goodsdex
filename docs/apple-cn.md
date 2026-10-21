@@ -84,3 +84,5 @@ Apple 部分失败输出 workflow warning 与报告，成功页面可更新，�
 - 193 项测试、lint、工作流 YAML 与 shell 语法检查通过。
 
 上述是本地实测结果，未直接改写线上 data 分支。完整响应、公开集预览及验证日志在本地 `data/apple/validation/`、`data/apple/raw/` 和 `public/`，不混入代码分支。
+
+PR 回归默认运行 `pytest -q -m "not live"`（185 条离线测试）；原有 8 条小米联网集成测试仅增加 live 标记，没有删除或改写判据。完整 `pytest -q` 仍运行全部 193 条，本地均已通过。
