@@ -1,0 +1,348 @@
+[
+ {
+  "product": {
+   "product_id": "CN:apple_cn:product:airtag",
+   "variant_id": "CN:apple_cn:commodity:MFE94CH/A",
+   "name": "AirTag",
+   "brand": "Apple",
+   "market": "CN",
+   "source": "apple_cn",
+   "category": "配件",
+   "family": "airtag",
+   "kind": "accessory",
+   "part_number": "MFE94CH/A",
+   "source_url": "https://www.apple.com.cn/shop/buy-airtag/airtag",
+   "currency": "CNY",
+   "price_kind": "sku",
+   "price_status": "provided",
+   "price_fetched_at": "2026-10-21T21:57:12+08:00",
+   "variant_attrs": {
+    "dimensionPackQty": {
+     "value": "1pack",
+     "label": "1 件装"
+    }
+   }
+  },
+  "view": {
+   "values": {
+    "name": "AirTag",
+    "price": 249,
+    "part_number": "MFE94CH/A",
+    "variant_attrs": {
+     "dimensionPackQty": {
+      "value": "1pack",
+      "label": "1 件装"
+     }
+    },
+    "img_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airtag-1pack-select-202601?wid=940&hei=1112&fmt=png-alpha&.v=eVZIdm00RE01SWs3QURJMUxNRitlUUZRNU9LNkVNWnlXdGtyVWlDRm54QmZhS1VCT1k0VG5wendIdURyT0d4ZURrcnNsQUdJUGlKTENUeG5lbFJUV0Y0dnJSYzFEb21pLzZjOUEzZEtaSkk"
+   },
+   "selected_from": {
+    "name": "ab6e2e0f5f1846ae",
+    "part_number": "5db363d8e30f4261",
+    "dimensionPackQty": "52bf4545876c07be",
+    "price": "b8f2e6e1c4ca7f1e",
+    "img_url": "edbc93fc05f2507a"
+   }
+  },
+  "captures": [
+   {
+    "capture_id": "0b06cbcae0cb",
+    "source": "apple_cn",
+    "url": "https://www.apple.com.cn/shop/buy-airtag/airtag",
+    "method": "GET",
+    "request_headers": {},
+    "request_body": null,
+    "status": "success",
+    "http_status": 200,
+    "error": "",
+    "response_raw": "<externalized:e654683d5da834b633a24bcfd58eaa379b8ba5d35f8d65c434a81d590918cd1c>",
+    "response_hash": "e654683d5da834b6",
+    "raw_ref": "data/apple/raw/e654683d5da834b633a24bcfd58eaa379b8ba5d35f8d65c434a81d590918cd1c.html",
+    "parser_version": "apple-cn-v1",
+    "fetched_at": "2026-10-21T21:57:12+08:00",
+    "declared_at": ""
+   }
+  ],
+  "assertions": [
+   {
+    "assertion_id": "ab6e2e0f5f1846ae",
+    "subject_id": "CN:apple_cn:commodity:MFE94CH/A",
+    "capture_id": "0b06cbcae0cb",
+    "source": "apple_cn",
+    "attribute": "name",
+    "raw_value": "购买 AirTag - Apple (中国大陆)",
+    "locator": "html:document.title",
+    "ui_location": "",
+    "page": "",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": "AirTag",
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "apple-cn-v1",
+    "normalization_rule_version": "apple-cn-v1"
+   },
+   {
+    "assertion_id": "5db363d8e30f4261",
+    "subject_id": "CN:apple_cn:commodity:MFE94CH/A",
+    "capture_id": "0b06cbcae0cb",
+    "source": "apple_cn",
+    "attribute": "part_number",
+    "raw_value": "MFE94CH/A",
+    "locator": "html:PRODUCT_SELECTION_BOOTSTRAP.productSelectionData.products[0].partNumber",
+    "ui_location": "",
+    "page": "",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "apple-cn-v1",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "52bf4545876c07be",
+    "subject_id": "CN:apple_cn:commodity:MFE94CH/A",
+    "capture_id": "0b06cbcae0cb",
+    "source": "apple_cn",
+    "attribute": "dimensionPackQty",
+    "raw_value": "1pack",
+    "locator": "html:PRODUCT_SELECTION_BOOTSTRAP.productSelectionData.products[0][\"dimensionPackQty\"]",
+    "ui_location": "",
+    "page": "",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "apple-cn-v1",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "b8f2e6e1c4ca7f1e",
+    "subject_id": "CN:apple_cn:commodity:MFE94CH/A",
+    "capture_id": "0b06cbcae0cb",
+    "source": "apple_cn",
+    "attribute": "price",
+    "raw_value": "249.00",
+    "locator": "html:PRODUCT_SELECTION_BOOTSTRAP.productSelectionData.displayValues.prices[\"249_00\"].currentPrice.raw_amount",
+    "ui_location": "",
+    "page": "",
+    "qualifiers": {
+     "market": "CN",
+     "currency": "CNY",
+     "part_number": "MFE94CH/A",
+     "price_kind": "sku"
+    },
+    "canonical": "",
+    "normalized_value": 249,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "apple-cn-v1",
+    "normalization_rule_version": "apple-cn-v1"
+   },
+   {
+    "assertion_id": "edbc93fc05f2507a",
+    "subject_id": "CN:apple_cn:commodity:MFE94CH/A",
+    "capture_id": "0b06cbcae0cb",
+    "source": "apple_cn",
+    "attribute": "img_url",
+    "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airtag-1pack-select-202601?wid=940&hei=1112&fmt=png-alpha&.v=eVZIdm00RE01SWs3QURJMUxNRitlUUZRNU9LNkVNWnlXdGtyVWlDRm54QmZhS1VCT1k0VG5wendIdURyT0d4ZURrcnNsQUdJUGlKTENUeG5lbFJUV0Y0dnJSYzFEb21pLzZjOUEzZEtaSkk",
+    "locator": "html:PRODUCT_SELECTION_BOOTSTRAP.productSelectionData.imageDictionary[\"airtag-1pack-select-202601\"].sources[0].srcSet",
+    "ui_location": "",
+    "page": "",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "apple-cn-v1",
+    "normalization_rule_version": ""
+   }
+  ],
+  "fetched_at": "2026-10-21T21:57:12+08:00",
+  "discovery": {
+   "scope": "official_CN_preconfigured_SKUs",
+   "completeness": "partial",
+   "excludes": [
+    "CTO combinations",
+    "watch band combinations",
+    "accessory catalogue",
+    "historical products not currently listed"
+   ]
+  }
+ },
+ {
+  "product": {
+   "product_id": "CN:apple_cn:product:airtag",
+   "variant_id": "CN:apple_cn:commodity:MFEA4CH/A",
+   "name": "AirTag",
+   "brand": "Apple",
+   "market": "CN",
+   "source": "apple_cn",
+   "category": "配件",
+   "family": "airtag",
+   "kind": "accessory",
+   "part_number": "MFEA4CH/A",
+   "source_url": "https://www.apple.com.cn/shop/buy-airtag/airtag",
+   "currency": "CNY",
+   "price_kind": "sku",
+   "price_status": "provided",
+   "price_fetched_at": "2026-10-21T21:57:12+08:00",
+   "variant_attrs": {
+    "dimensionPackQty": {
+     "value": "4pack",
+     "label": "4 件装"
+    }
+   }
+  },
+  "view": {
+   "values": {
+    "name": "AirTag",
+    "price": 849,
+    "part_number": "MFEA4CH/A",
+    "variant_attrs": {
+     "dimensionPackQty": {
+      "value": "4pack",
+      "label": "4 件装"
+     }
+    },
+    "img_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airtag-4pack-select-202601?wid=940&hei=1112&fmt=png-alpha&.v=QVI2eUgvdU1qT1VRdEZUOXVUVHgrUUZRNU9LNkVNWnlXdGtyVWlDRm54QmZhS1VCT1k0VG5wendIdURyT0d4ZURrcnNsQUdJUGlKTENUeG5lbFJUV1BWa1l0eDdzMlQ3d0x2UXFveE5QNjg"
+   },
+   "selected_from": {
+    "name": "a35f8c5548ee4efa",
+    "part_number": "61ca0a78c9a7f865",
+    "dimensionPackQty": "a27c32bfe8de0a54",
+    "price": "6e681a743cb6379b",
+    "img_url": "a47d1d0c1ec96c1e"
+   }
+  },
+  "captures": [
+   {
+    "capture_id": "0b06cbcae0cb",
+    "source": "apple_cn",
+    "url": "https://www.apple.com.cn/shop/buy-airtag/airtag",
+    "method": "GET",
+    "request_headers": {},
+    "request_body": null,
+    "status": "success",
+    "http_status": 200,
+    "error": "",
+    "response_raw": "<externalized:e654683d5da834b633a24bcfd58eaa379b8ba5d35f8d65c434a81d590918cd1c>",
+    "response_hash": "e654683d5da834b6",
+    "raw_ref": "data/apple/raw/e654683d5da834b633a24bcfd58eaa379b8ba5d35f8d65c434a81d590918cd1c.html",
+    "parser_version": "apple-cn-v1",
+    "fetched_at": "2026-10-21T21:57:12+08:00",
+    "declared_at": ""
+   }
+  ],
+  "assertions": [
+   {
+    "assertion_id": "a35f8c5548ee4efa",
+    "subject_id": "CN:apple_cn:commodity:MFEA4CH/A",
+    "capture_id": "0b06cbcae0cb",
+    "source": "apple_cn",
+    "attribute": "name",
+    "raw_value": "购买 AirTag - Apple (中国大陆)",
+    "locator": "html:document.title",
+    "ui_location": "",
+    "page": "",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": "AirTag",
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "apple-cn-v1",
+    "normalization_rule_version": "apple-cn-v1"
+   },
+   {
+    "assertion_id": "61ca0a78c9a7f865",
+    "subject_id": "CN:apple_cn:commodity:MFEA4CH/A",
+    "capture_id": "0b06cbcae0cb",
+    "source": "apple_cn",
+    "attribute": "part_number",
+    "raw_value": "MFEA4CH/A",
+    "locator": "html:PRODUCT_SELECTION_BOOTSTRAP.productSelectionData.products[1].partNumber",
+    "ui_location": "",
+    "page": "",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "apple-cn-v1",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "a27c32bfe8de0a54",
+    "subject_id": "CN:apple_cn:commodity:MFEA4CH/A",
+    "capture_id": "0b06cbcae0cb",
+    "source": "apple_cn",
+    "attribute": "dimensionPackQty",
+    "raw_value": "4pack",
+    "locator": "html:PRODUCT_SELECTION_BOOTSTRAP.productSelectionData.products[1][\"dimensionPackQty\"]",
+    "ui_location": "",
+    "page": "",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "apple-cn-v1",
+    "normalization_rule_version": ""
+   },
+   {
+    "assertion_id": "6e681a743cb6379b",
+    "subject_id": "CN:apple_cn:commodity:MFEA4CH/A",
+    "capture_id": "0b06cbcae0cb",
+    "source": "apple_cn",
+    "attribute": "price",
+    "raw_value": "849.00",
+    "locator": "html:PRODUCT_SELECTION_BOOTSTRAP.productSelectionData.displayValues.prices[\"849_00\"].currentPrice.raw_amount",
+    "ui_location": "",
+    "page": "",
+    "qualifiers": {
+     "market": "CN",
+     "currency": "CNY",
+     "part_number": "MFEA4CH/A",
+     "price_kind": "sku"
+    },
+    "canonical": "",
+    "normalized_value": 849,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "apple-cn-v1",
+    "normalization_rule_version": "apple-cn-v1"
+   },
+   {
+    "assertion_id": "a47d1d0c1ec96c1e",
+    "subject_id": "CN:apple_cn:commodity:MFEA4CH/A",
+    "capture_id": "0b06cbcae0cb",
+    "source": "apple_cn",
+    "attribute": "img_url",
+    "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airtag-4pack-select-202601?wid=940&hei=1112&fmt=png-alpha&.v=QVI2eUgvdU1qT1VRdEZUOXVUVHgrUUZRNU9LNkVNWnlXdGtyVWlDRm54QmZhS1VCT1k0VG5wendIdURyT0d4ZURrcnNsQUdJUGlKTENUeG5lbFJUV1BWa1l0eDdzMlQ3d0x2UXFveE5QNjg",
+    "locator": "html:PRODUCT_SELECTION_BOOTSTRAP.productSelectionData.imageDictionary[\"airtag-4pack-select-202601\"].sources[0].srcSet",
+    "ui_location": "",
+    "page": "",
+    "qualifiers": {},
+    "canonical": "",
+    "normalized_value": null,
+    "value_type": "",
+    "availability": "provided",
+    "parser_version": "apple-cn-v1",
+    "normalization_rule_version": ""
+   }
+  ],
+  "fetched_at": "2026-10-21T21:57:12+08:00",
+  "discovery": {
+   "scope": "official_CN_preconfigured_SKUs",
+   "completeness": "partial",
+   "excludes": [
+    "CTO combinations",
+    "watch band combinations",
+    "accessory catalogue",
+    "historical products not currently listed"
+   ]
+  }
+ }
+]
