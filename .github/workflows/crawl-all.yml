@@ -31,7 +31,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: crawl-all
+  group: goodsdex-data-publication
   cancel-in-progress: false
 
 env:
@@ -87,6 +87,28 @@ jobs:
           else
             python3 scripts/crawl_all.py --workers 4 --pause 1.5
           fi
+
+      - name: Crawl Apple CN official catalogue
+        run: |
+          # 部分失败已保留上次对应页面；错误明确留在报告，不能清空旧目录。
+          if ! PYTHONPATH=src python3 scripts/crawl_apple.py; then
+            echo "::warning::Apple 采集有缺口，保留上次记录；参见 apple-evidence 报告"
+          fi
+
+      - name: Backfill Apple historical model specifications
+        run: |
+          # 历史规格每 7 天重取；失败保留旧记录，绝不当作在售报价。
+          if ! PYTHONPATH=src python3 scripts/crawl_apple_history.py; then
+            echo "::warning::Apple 历史规格采集有缺口，参见 apple-evidence 中 history/report.json"
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: apple-evidence-${{ github.run_id }}
+          path: data/apple/
+          retention-days: 7
+          if-no-files-found: warn
 
       - name: Rebuild public dataset
         run: |

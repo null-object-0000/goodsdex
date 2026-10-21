@@ -49,7 +49,7 @@ def _slim(rec: dict) -> dict:
              "pc_price", "pc_market_price", "gid", "sku", "commodity_id",
              "img_url"}
     return {
-        "id": p.get("product_id"),
+        "id": p.get("variant_id") or p.get("product_id"),
         "name": p.get("name"),
         "kind": p.get("kind"),
         "price": v.get("price"),

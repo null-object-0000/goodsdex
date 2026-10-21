@@ -42,7 +42,7 @@ def to_public(rec: dict) -> dict:
     p = rec.get("product") or {}
     v = (rec.get("view") or {}).get("values") or {}
     item = {
-        "id": p.get("product_id"),
+        "id": p.get("variant_id") or p.get("product_id"),
         "name": p.get("name"),
         "kind": p.get("kind"),
         "category": p.get("category"),
@@ -52,6 +52,13 @@ def to_public(rec: dict) -> dict:
         "fetched_at": rec.get("fetched_at"),
         "params": {k: val for k, val in v.items() if k not in _NOISE},
     }
+    if p.get("source") in ("apple_cn", "apple_support"):
+        item.update({key:p.get(key) for key in ("source","brand","market","product_id","variant_id","part_number","source_url","currency","price_kind","price_status","price_fetched_at","variant_attrs")})
+        if p.get("source") == "apple_support":
+            item.update({key: p.get(key) for key in (
+                "family", "record_level", "catalog_scope", "sale_status",
+                "document_locale", "source_docs_url")})
+        if v.get("img_url"): item["image_url"] = v["img_url"]
     # 溯源标记：容器展开来的、或本身是容器
     if p.get("is_container"):
         item["is_container"] = True

@@ -11,6 +11,7 @@ Codex 评审指认 + 实测确认的严重缺陷：
 """
 import glob
 import json
+import pytest
 import os
 import sys
 
@@ -87,6 +88,7 @@ def test_capture_hash_identifies_content():
     assert c.response_hash != a.response_hash
 
 
+@pytest.mark.live
 def test_live_evidence_resolvable():
     """locator 必须能在对应 capture 里真实解析出值
 
