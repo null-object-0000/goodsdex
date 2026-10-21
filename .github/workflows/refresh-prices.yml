@@ -30,7 +30,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: refresh-prices
+  group: goodsdex-data-publication
   cancel-in-progress: false
 
 env:
@@ -70,6 +70,26 @@ jobs:
         # 并负责把新价格回灌进 goods.json / 按小时追加时间序列
         run: |
           PYTHONPATH=src python3 scripts/ci_refresh_prices.py --public _data/public
+
+      - name: Refresh Apple CN catalogue and prices
+        run: |
+          # Apple 价格在购买页，按料号采集；不能传进小米 gid 批量接口。
+          # 与原小时级 workflow 共用产物分支；只增量合并 Apple 条目。
+          if ! PYTHONPATH=src python3 scripts/crawl_apple.py \
+            --out _data/data/categories --archive _data/data/archive \
+            --raw data/apple/raw --public _data/public --prices-only; then
+            echo "::warning::Apple 采集有缺口，保留失败页旧价格与观察时间"
+          fi
+          PYTHONPATH=src python3 scripts/ci_publish_archive.py \
+            --archive _data/data/archive --out _data/public/archive
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: apple-evidence-${{ github.run_id }}
+          path: data/apple/
+          retention-days: 7
+          if-no-files-found: warn
 
       - name: Push to data branch
         run: |

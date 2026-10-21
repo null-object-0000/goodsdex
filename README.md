@@ -4,6 +4,19 @@
 
 给一个商品分类，枚举出全部商品，从多个数据源采集，合并成**每条数据都能追溯来源**的结构化数据集。
 
+## Apple 官方源（中国大陆）
+
+已增加 Apple 中国大陆官方主要产品系列采集：iPhone、iPad、Mac、Watch、AirPods、HomePod、AirTag、Vision。
+按实际购买料号拆分容量/颜色，保留官方价格、参数、来源和观察时间；失败保留旧值，不用 0 填空。
+Mac/Watch 起价和完整规格价分开标记。未覆盖历代停售机型、全部 CTO/表带组合及全配件目录。
+
+```bash
+PYTHONPATH=src python3 scripts/crawl_apple.py --public public
+```
+
+与已有小米数据增量合并，已接入每日采集和小时级刷新工作流（合并到默认分支后生效）。
+范围、证据、输出格式和错误语义见 [Apple 采集说明](docs/apple-cn.md)。
+
 ## 公开数据集
 
 数据在 **独立分支 [`data`](https://github.com/null-object-0000/goodsdex/tree/data)**，
