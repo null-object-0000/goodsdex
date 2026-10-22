@@ -74,3 +74,30 @@ def test_old_model_no_quote_and_failed_refresh_keeps_previous(tmp_path):
         out, raw, [{"url": URL, "category": "显示器"}], fail, collect, pause=0
     )["errors"]
     assert (out / "Mi_legacy.json").read_bytes() == old
+
+
+def test_manual_component_separate_from_robot_and_version_checked(tmp_path):
+    import hashlib
+    from goodsdex.mi_legacy import manual_component
+
+    data = b"%PDF-test"
+    seed = {
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/test.pdf",
+        "sha256": hashlib.sha256(data).hexdigest(),
+        "model": "JZ2301",
+        "name": "米家全能基座 JZ2301",
+        "category": "扫拖基座",
+        "pdf_page": 14,
+        "printed_page": 23,
+        "reviewed_at": "2026-10-22",
+        "facts": {"型号": "JZ2301", "产品类型": "全能基座（非扫地机器人主机）"},
+    }
+    item = to_public(manual_component(seed, tmp_path, read=lambda u: data))
+    assert item["id"] == "CN:mi_cn:reference:JZ2301"
+    assert (
+        item["kind"] == "accessory"
+        and item["model"] == "JZ2301"
+        and item["price"] is None
+    )
+    with pytest.raises(ValueError, match="版本变化"):
+        manual_component(seed, tmp_path, read=lambda u: b"changed")

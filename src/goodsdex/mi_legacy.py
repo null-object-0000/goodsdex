@@ -103,6 +103,11 @@ def crawl(
     }
     for seed in seeds:
         try:
+            if seed.get("type") == "reviewed_pdf_component":
+                rec = manual_component(seed, raw)
+                merged[rec["product"]["product_id"]] = rec
+                report["updated"].append(rec["product"]["product_id"])
+                continue
             cap = transport(official_url(seed["url"]))
             info = page_info(cap.response_raw)
             rows, captures = [], [cap]
@@ -212,3 +217,82 @@ def publish_legacy(cats, out):
         },
     )
     return {"count": len(merged), "legacy": len(incoming)}
+
+
+def manual_component(seed, raw, read=None):
+    """人工逐列核验的官方说明书事实；只在 PDF 原件哈希一致时使用。"""
+    import base64
+
+    url = seed["url"]
+    p = urllib.parse.urlsplit(url)
+    if (
+        p.scheme != "https"
+        or p.netloc != "cdn.cnbj1.fds.api.mi-img.com"
+        or not re.fullmatch(r"/iotweb-product-center/[a-zA-Z0-9_]+\.pdf", p.path)
+        or p.query
+    ):
+        raise ValueError("说明书来源不合法")
+    if read is None:
+
+        class NoRedirect(urllib.request.HTTPRedirectHandler):
+            def redirect_request(self, *args):
+                return None
+
+        with urllib.request.build_opener(NoRedirect()).open(url, timeout=30) as res:
+            body = res.read()
+    else:
+        body = read(url)
+    digest = hashlib.sha256(body).hexdigest()
+    if digest != seed["sha256"]:
+        raise ValueError("官方 PDF 版本变化，待重新逐列核验；保留原资料")
+    cap = Capture.make(
+        "mi_cn_manual",
+        url,
+        "base64:" + base64.b64encode(body).decode(),
+        parser_version="reviewed-pdf-v1",
+    )
+    externalize(cap, Path(raw))
+    pid = "CN:mi_cn:reference:" + seed["model"]
+    assertions = []
+    for label, value in seed["facts"].items():
+        assertions.append(
+            Assertion(
+                hashlib.sha256(f"{cap.capture_id}|{label}".encode()).hexdigest()[:16],
+                pid,
+                cap.capture_id,
+                "mi_cn_manual",
+                label,
+                value,
+                locator=f"pdf:page={seed['pdf_page']};printed_page={seed['printed_page']};table=全能基座;row={label}",
+                qualifiers={
+                    "binary_sha256": digest,
+                    "reviewed_at": seed["reviewed_at"],
+                    "extraction": "manual_visual_review",
+                },
+                parser_version="reviewed-pdf-v1",
+            ).to_dict()
+        )
+    return {
+        "product": {
+            "product_id": pid,
+            "name": seed["name"],
+            "source": "mi_cn",
+            "brand": "小米",
+            "market": "CN",
+            "category": seed["category"],
+            "kind": "accessory",
+            "record_level": "model_reference",
+            "catalog_scope": "component_manual",
+            "sale_status": "unverified",
+            "source_url": url,
+            "model": seed["model"],
+            "lookup_keys": [seed["model"]],
+        },
+        "fetched_at": cap.fetched_at,
+        "captures": [cap.to_dict()],
+        "assertions": assertions,
+        "view": {
+            "values": {**seed["facts"], "model": seed["model"], "price": None},
+            "selected_from": {a["attribute"]: a["assertion_id"] for a in assertions},
+        },
+    }
