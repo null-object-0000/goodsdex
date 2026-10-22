@@ -1,0 +1,45 @@
+name: refresh-legacy
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: goodsdex-data-publication
+  cancel-in-progress: false
+jobs:
+  legacy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: data
+          path: _data
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Collect and merge verified legacy product pages
+        run: |
+          mkdir -p data/categories
+          if [ -f _data/data/categories/Mi_legacy.json ]; then
+            cp _data/data/categories/Mi_legacy.json data/categories/
+          fi
+          PYTHONPATH=src python3 scripts/crawl_mi_legacy.py --public _data/public
+          mkdir -p _data/data/categories
+          cp data/categories/Mi_legacy.json _data/data/categories/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mi-legacy-evidence-${{ github.run_id }}
+          path: data/mi-legacy/
+          retention-days: 7
+      - name: Publish
+        run: |
+          cd _data
+          git config user.name goodsdex-bot
+          git config user.email goodsdex-bot@users.noreply.github.com
+          git add public/goods.json public/meta.json data/categories/Mi_legacy.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Backfill verified Xiaomi legacy model references"
+          git push origin HEAD:data

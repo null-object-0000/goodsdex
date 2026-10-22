@@ -88,6 +88,12 @@ jobs:
             python3 scripts/crawl_all.py --workers 4 --pause 1.5
           fi
 
+      - name: Collect Xiaomi official legacy product pages
+        run: |
+          if ! PYTHONPATH=src python3 scripts/crawl_mi_legacy.py; then
+            echo "::warning::小米旧款采集失败，保留已有资料"
+          fi
+
       - name: Crawl Apple CN official catalogue
         run: |
           # 部分失败已保留上次对应页面；错误明确留在报告，不能清空旧目录。
@@ -106,7 +112,9 @@ jobs:
         if: always()
         with:
           name: apple-evidence-${{ github.run_id }}
-          path: data/apple/
+          path: |
+            data/apple/
+            data/mi-legacy/
           retention-days: 7
           if-no-files-found: warn
 

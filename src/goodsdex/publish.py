@@ -59,6 +59,10 @@ def to_public(rec: dict) -> dict:
                 "family", "record_level", "catalog_scope", "sale_status",
                 "document_locale", "source_docs_url")})
         if v.get("img_url"): item["image_url"] = v["img_url"]
+    if p.get("record_level") == "model_reference":
+        item.update({key:p.get(key) for key in ("source", "brand", "market", "record_level", "catalog_scope", "sale_status", "source_url", "model", "lookup_keys") if p.get(key) is not None})
+        item["price"] = None
+        item["market_price"] = None
     # 溯源标记：容器展开来的、或本身是容器
     if p.get("is_container"):
         item["is_container"] = True
