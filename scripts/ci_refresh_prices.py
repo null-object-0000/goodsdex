@@ -35,7 +35,7 @@ def main() -> int:
         print(f"找不到 {gpath} —— 先跑 publish", file=sys.stderr)
         return 1
     items = json.loads(gpath.read_text(encoding="utf-8"))
-    gids = [str(it["gid"]) for it in items if it.get("gid") and it.get("source") != "apple_cn" and not str(it.get("id", "")).startswith("CN:apple_cn:")]
+    gids = [str(it["gid"]) for it in items if it.get("record_level") != "model_reference" and it.get("gid") and it.get("source") != "apple_cn" and not str(it.get("id", "")).startswith("CN:apple_cn:")]
     if a.limit:
         gids = gids[:a.limit]
     print(f"从发布集读到 {len(gids)} 个 gid")
@@ -49,7 +49,7 @@ def main() -> int:
         prices = json.loads(latest.read_text(encoding="utf-8")).get("prices") or {}
         changed = 0
         for it in items:
-            if it.get("source") == "apple_cn" or str(it.get("id", "")).startswith("CN:apple_cn:"):
+            if it.get("record_level") == "model_reference" or it.get("source") == "apple_cn" or str(it.get("id", "")).startswith("CN:apple_cn:"):
                 continue
             g = str(it.get("gid") or "")
             np = prices.get(g)
