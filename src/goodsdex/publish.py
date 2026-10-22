@@ -3,7 +3,7 @@
 为什么要分层（内部数据 vs 发布集）：
   - 内部数据 343 MB，含 captures/assertions（原响应快照 + 逐字段证据），
     是溯源审计用的；直接入 git 会撑爆仓库。
-  - 发布集 2 MB，只含身份/价格/参数 —— 这才是对外的数据集。
+  - 发布集约 2 MB，含身份/价格/主图链接/参数 —— 这才是对外的数据集。
   - **但两者不是简单裁剪**：发布集必须能指回证据（保留 record 的
     id 与抓取时间），否则公开数据就成了不可核对的孤证。
 
@@ -23,15 +23,15 @@ CST = timezone(timedelta(hours=8))
 
 # view.values 里**不属于商品属性**的键。
 # 分三类：
-#   ① 展示素材（体积大、对判断无益）
-#   ② 已在顶层出现的字段（避免重复）
+#   ① 未公开的展示素材（不导出整组图片与详情）
+#   ② 提升到顶层或由顶层身份/价格字段替代的原始字段（避免重复）
 #   ③ 内部标记（下划线开头，另行处理）
 _NOISE = {
-    # ① 展示素材
+    # ① 未公开的展示素材；主图 img_url 另以顶层 image 输出
     "carousel", "pc_imgs", "buyer_imgs", "qa_items", "pc_tabs",
     "desc", "attrs", "colors", "sell_points", "review_tags",
     "buy_options",
-    # ② 顶层已有
+    # ② 顶层字段的原始来源；img_url 对应顶层 image
     "name", "short_title", "price", "market_price", "pc_price",
     "pc_market_price", "gid", "sku", "commodity_id", "img_url",
 }
@@ -49,6 +49,7 @@ def to_public(rec: dict) -> dict:
         "price": v.get("price"),
         "market_price": v.get("market_price"),
         "gid": v.get("gid"),
+        "image": v.get("img_url") or None,
         "fetched_at": rec.get("fetched_at"),
         "params": {k: val for k, val in v.items() if k not in _NOISE},
     }
@@ -92,7 +93,7 @@ def build(cats_dir: Path = Path("data/categories"),
         "count": len(items),
         "by_kind": kinds,
         "with_price": withprice,
-        "note": ("发布集是派生视图：只含身份/价格/参数。"
+        "note": ("发布集是派生视图：含身份/价格/主图链接/参数。"
                  "原始响应与逐字段证据保留在采集端，用于审计。"),
     }
     (out_dir / "meta.json").write_text(
