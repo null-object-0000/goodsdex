@@ -15,7 +15,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-10-25T04:59:29+08:00",
+   "price_fetched_at": "2026-10-25T06:58:06+08:00",
    "variant_attrs": {
     "apple_vision_pro_2025-dimensionCapacity": {
      "value": "1tb",
@@ -144,16 +144,16 @@
     }
    },
    "selected_from": {
-    "name": "82f278752adaae0f",
-    "part_number": "e13554f48b453f7f",
-    "apple_vision_pro_2025-dimensionCapacity": "0a055ea7f3d16d42",
-    "price": "b6ee45cc006a83b5",
-    "specs_table": "102289e362e3dd7d"
+    "name": "2916eadbadea57f6",
+    "part_number": "0fda0d4cac35dc59",
+    "apple_vision_pro_2025-dimensionCapacity": "278362488737e579",
+    "price": "2261b9c8a68eb7aa",
+    "specs_table": "0ee9a84d482c0d08"
    }
   },
   "captures": [
    {
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-vision/apple-vision-pro",
     "method": "GET",
@@ -162,15 +162,15 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:35acd71deb70e90e08068c4adfe25a0f33d731d67beea1ab1bae57072221c902>",
-    "response_hash": "35acd71deb70e90e",
-    "raw_ref": "data/apple/raw/35acd71deb70e90e08068c4adfe25a0f33d731d67beea1ab1bae57072221c902.html",
+    "response_raw": "<externalized:e0d59eaf503bbec55d234507efcd969745b9f71db83cf734a1d9129fa94a25a8>",
+    "response_hash": "e0d59eaf503bbec5",
+    "raw_ref": "data/apple/raw/e0d59eaf503bbec55d234507efcd969745b9f71db83cf734a1d9129fa94a25a8.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-25T04:59:29+08:00",
+    "fetched_at": "2026-10-25T06:58:06+08:00",
     "declared_at": ""
    },
    {
-    "capture_id": "08deac2e3412",
+    "capture_id": "74e94a7c6ba4",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/apple-vision-pro/specs/",
     "method": "GET",
@@ -183,15 +183,15 @@
     "response_hash": "da21e53f3eb54023",
     "raw_ref": "data/apple/raw/da21e53f3eb54023067900c12c70cbf169b90583a5b4a42844ecb05b7f329115.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-24T07:43:11+08:00",
+    "fetched_at": "2026-10-25T06:58:06+08:00",
     "declared_at": ""
    }
   ],
   "assertions": [
    {
-    "assertion_id": "82f278752adaae0f",
+    "assertion_id": "2916eadbadea57f6",
     "subject_id": "CN:apple_cn:commodity:MFHG4CH/A",
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 Apple Vision Pro - Apple (中国大陆)",
@@ -207,9 +207,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "e13554f48b453f7f",
+    "assertion_id": "0fda0d4cac35dc59",
     "subject_id": "CN:apple_cn:commodity:MFHG4CH/A",
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MFHG4CH/A",
@@ -225,9 +225,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "0a055ea7f3d16d42",
+    "assertion_id": "278362488737e579",
     "subject_id": "CN:apple_cn:commodity:MFHG4CH/A",
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "attribute": "apple_vision_pro_2025-dimensionCapacity",
     "raw_value": "1tb",
@@ -243,9 +243,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "b6ee45cc006a83b5",
+    "assertion_id": "2261b9c8a68eb7aa",
     "subject_id": "CN:apple_cn:commodity:MFHG4CH/A",
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "35749.00",
@@ -266,9 +266,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "102289e362e3dd7d",
+    "assertion_id": "0ee9a84d482c0d08",
     "subject_id": "CN:apple_cn:commodity:MFHG4CH/A",
-    "capture_id": "08deac2e3412",
+    "capture_id": "74e94a7c6ba4",
     "source": "apple_cn",
     "attribute": "specs_table",
     "raw_value": {
@@ -393,7 +393,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-10-25T04:59:29+08:00",
+  "fetched_at": "2026-10-25T06:58:06+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -421,7 +421,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-10-25T04:59:29+08:00",
+   "price_fetched_at": "2026-10-25T06:58:06+08:00",
    "variant_attrs": {
     "apple_vision_pro_2025-dimensionCapacity": {
      "value": "256gb",
@@ -550,16 +550,16 @@
     }
    },
    "selected_from": {
-    "name": "06edc1f3c16402de",
-    "part_number": "370334e1c54db8d6",
-    "apple_vision_pro_2025-dimensionCapacity": "bf9651c68939dcac",
-    "price": "829f5dd73f840965",
-    "specs_table": "855475acf10dca66"
+    "name": "f70223b2501ff591",
+    "part_number": "0565957d853dc221",
+    "apple_vision_pro_2025-dimensionCapacity": "beb153be40bf4fa7",
+    "price": "d3428bffce40b4db",
+    "specs_table": "ab8409b48ad3e00d"
    }
   },
   "captures": [
    {
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-vision/apple-vision-pro",
     "method": "GET",
@@ -568,15 +568,15 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:35acd71deb70e90e08068c4adfe25a0f33d731d67beea1ab1bae57072221c902>",
-    "response_hash": "35acd71deb70e90e",
-    "raw_ref": "data/apple/raw/35acd71deb70e90e08068c4adfe25a0f33d731d67beea1ab1bae57072221c902.html",
+    "response_raw": "<externalized:e0d59eaf503bbec55d234507efcd969745b9f71db83cf734a1d9129fa94a25a8>",
+    "response_hash": "e0d59eaf503bbec5",
+    "raw_ref": "data/apple/raw/e0d59eaf503bbec55d234507efcd969745b9f71db83cf734a1d9129fa94a25a8.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-25T04:59:29+08:00",
+    "fetched_at": "2026-10-25T06:58:06+08:00",
     "declared_at": ""
    },
    {
-    "capture_id": "08deac2e3412",
+    "capture_id": "74e94a7c6ba4",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/apple-vision-pro/specs/",
     "method": "GET",
@@ -589,15 +589,15 @@
     "response_hash": "da21e53f3eb54023",
     "raw_ref": "data/apple/raw/da21e53f3eb54023067900c12c70cbf169b90583a5b4a42844ecb05b7f329115.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-24T07:43:11+08:00",
+    "fetched_at": "2026-10-25T06:58:06+08:00",
     "declared_at": ""
    }
   ],
   "assertions": [
    {
-    "assertion_id": "06edc1f3c16402de",
+    "assertion_id": "f70223b2501ff591",
     "subject_id": "CN:apple_cn:commodity:MFHE4CH/A",
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 Apple Vision Pro - Apple (中国大陆)",
@@ -613,9 +613,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "370334e1c54db8d6",
+    "assertion_id": "0565957d853dc221",
     "subject_id": "CN:apple_cn:commodity:MFHE4CH/A",
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MFHE4CH/A",
@@ -631,9 +631,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "bf9651c68939dcac",
+    "assertion_id": "beb153be40bf4fa7",
     "subject_id": "CN:apple_cn:commodity:MFHE4CH/A",
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "attribute": "apple_vision_pro_2025-dimensionCapacity",
     "raw_value": "256gb",
@@ -649,9 +649,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "829f5dd73f840965",
+    "assertion_id": "d3428bffce40b4db",
     "subject_id": "CN:apple_cn:commodity:MFHE4CH/A",
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "31999.00",
@@ -672,9 +672,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "855475acf10dca66",
+    "assertion_id": "ab8409b48ad3e00d",
     "subject_id": "CN:apple_cn:commodity:MFHE4CH/A",
-    "capture_id": "08deac2e3412",
+    "capture_id": "74e94a7c6ba4",
     "source": "apple_cn",
     "attribute": "specs_table",
     "raw_value": {
@@ -799,7 +799,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-10-25T04:59:29+08:00",
+  "fetched_at": "2026-10-25T06:58:06+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -827,7 +827,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-10-25T04:59:29+08:00",
+   "price_fetched_at": "2026-10-25T06:58:06+08:00",
    "variant_attrs": {
     "apple_vision_pro_2025-dimensionCapacity": {
      "value": "512gb",
@@ -956,16 +956,16 @@
     }
    },
    "selected_from": {
-    "name": "593cff414d50b837",
-    "part_number": "c7400205afcda3f3",
-    "apple_vision_pro_2025-dimensionCapacity": "8f72da383503b98b",
-    "price": "f400aba9b3cc26c5",
-    "specs_table": "5c6b39736e00dcbe"
+    "name": "498f5660983ae624",
+    "part_number": "3a62d8fceacc2921",
+    "apple_vision_pro_2025-dimensionCapacity": "1fb50a9ed7681814",
+    "price": "012a998f19a492c4",
+    "specs_table": "a21fd8fc10049e29"
    }
   },
   "captures": [
    {
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-vision/apple-vision-pro",
     "method": "GET",
@@ -974,15 +974,15 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:35acd71deb70e90e08068c4adfe25a0f33d731d67beea1ab1bae57072221c902>",
-    "response_hash": "35acd71deb70e90e",
-    "raw_ref": "data/apple/raw/35acd71deb70e90e08068c4adfe25a0f33d731d67beea1ab1bae57072221c902.html",
+    "response_raw": "<externalized:e0d59eaf503bbec55d234507efcd969745b9f71db83cf734a1d9129fa94a25a8>",
+    "response_hash": "e0d59eaf503bbec5",
+    "raw_ref": "data/apple/raw/e0d59eaf503bbec55d234507efcd969745b9f71db83cf734a1d9129fa94a25a8.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-25T04:59:29+08:00",
+    "fetched_at": "2026-10-25T06:58:06+08:00",
     "declared_at": ""
    },
    {
-    "capture_id": "08deac2e3412",
+    "capture_id": "74e94a7c6ba4",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/apple-vision-pro/specs/",
     "method": "GET",
@@ -995,15 +995,15 @@
     "response_hash": "da21e53f3eb54023",
     "raw_ref": "data/apple/raw/da21e53f3eb54023067900c12c70cbf169b90583a5b4a42844ecb05b7f329115.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-24T07:43:11+08:00",
+    "fetched_at": "2026-10-25T06:58:06+08:00",
     "declared_at": ""
    }
   ],
   "assertions": [
    {
-    "assertion_id": "593cff414d50b837",
+    "assertion_id": "498f5660983ae624",
     "subject_id": "CN:apple_cn:commodity:MFHF4CH/A",
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 Apple Vision Pro - Apple (中国大陆)",
@@ -1019,9 +1019,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "c7400205afcda3f3",
+    "assertion_id": "3a62d8fceacc2921",
     "subject_id": "CN:apple_cn:commodity:MFHF4CH/A",
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MFHF4CH/A",
@@ -1037,9 +1037,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "8f72da383503b98b",
+    "assertion_id": "1fb50a9ed7681814",
     "subject_id": "CN:apple_cn:commodity:MFHF4CH/A",
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "attribute": "apple_vision_pro_2025-dimensionCapacity",
     "raw_value": "512gb",
@@ -1055,9 +1055,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "f400aba9b3cc26c5",
+    "assertion_id": "012a998f19a492c4",
     "subject_id": "CN:apple_cn:commodity:MFHF4CH/A",
-    "capture_id": "f6b3ab30f857",
+    "capture_id": "11855901dd12",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "33499.00",
@@ -1078,9 +1078,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "5c6b39736e00dcbe",
+    "assertion_id": "a21fd8fc10049e29",
     "subject_id": "CN:apple_cn:commodity:MFHF4CH/A",
-    "capture_id": "08deac2e3412",
+    "capture_id": "74e94a7c6ba4",
     "source": "apple_cn",
     "attribute": "specs_table",
     "raw_value": {
@@ -1205,7 +1205,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-10-25T04:59:29+08:00",
+  "fetched_at": "2026-10-25T06:58:06+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
