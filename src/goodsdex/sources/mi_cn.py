@@ -162,9 +162,10 @@ def list_categories() -> dict[str, str]:
             tree.setdefault(name, kw)
 
     # 健全性检查：大类缺失说明页面结构变了
-    expected = {"手机", "耳机", "电视", "笔记本", "平板"}
+    expected = {"手机", "电视", "笔记本", "平板", "穿戴", "耳机", "家电", "路由器"}
     missing = expected - set(tree)
-    if len(tree) < 40 or missing:
+    # 已验证基线为 94 项；少于 80% 视为骤减，禁止静默漏类。
+    if len(tree) < 76 or missing:
         raise RuntimeError(
             f"分类解析异常：仅得 {len(tree)} 个分类，缺少 {sorted(missing)}。"
             f"页面结构可能已变化，请检查 _get(CATEGORY_URL) 的返回。")

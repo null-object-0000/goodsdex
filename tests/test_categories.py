@@ -10,6 +10,8 @@ import os
 import sys
 from unittest.mock import patch
 
+import pytest
+
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 from goodsdex.sources import mi_cn
@@ -29,7 +31,7 @@ def _big_fixture():
     nav = [(n, f"/search?keyword={n}") for n in
            ["手机", "电视", "笔记本", "平板", "穿戴", "耳机", "家电", "路由器",
             "音箱", "配件"]]
-    panel = [(f"类目{i}", f"/search?keyword=类目{i}") for i in range(45)]
+    panel = [(f"类目{i}", f"/search?keyword=类目{i}") for i in range(80)]
     return _html_with(nav, panel)
 
 
@@ -49,8 +51,11 @@ def test_attributes_on_tags_tolerated():
             '<a href="/search?keyword=耳机"><span class="text active">耳机</span></a>'
             + _html_with([("电视", "/search?keyword=电视"),
                           ("笔记本", "/search?keyword=笔记本"),
-                          ("平板", "/search?keyword=平板")], [])
-            + _html_with([], [(f"项{i}", f"/search?keyword=项{i}") for i in range(40)]))
+                          ("平板", "/search?keyword=平板"),
+                          ("穿戴", "/search?keyword=穿戴"),
+                          ("家电", "/search?keyword=家电"),
+                          ("路由器", "/search?keyword=路由器")], [])
+            + _html_with([], [(f"项{i}", f"/search?keyword=项{i}") for i in range(80)]))
     with patch.object(mi_cn, "_get", return_value=html):
         r = mi_cn.list_categories()
     assert r.get("手机") == "手机", "带 class 的 dd 不应漏掉"
@@ -63,8 +68,11 @@ def test_keyword_not_polluted_by_extra_params():
             + _html_with([("手机", "/search?keyword=手机&page=3"),
                           ("电视", "/search?keyword=电视"),
                           ("笔记本", "/search?keyword=笔记本"),
-                          ("平板", "/search?keyword=平板")], [])
-            + _html_with([], [(f"项{i}", f"/search?keyword=项{i}") for i in range(40)]))
+                          ("平板", "/search?keyword=平板"),
+                          ("穿戴", "/search?keyword=穿戴"),
+                          ("家电", "/search?keyword=家电"),
+                          ("路由器", "/search?keyword=路由器")], [])
+            + _html_with([], [(f"项{i}", f"/search?keyword=项{i}") for i in range(80)]))
     with patch.object(mi_cn, "_get", return_value=html):
         r = mi_cn.list_categories()
     assert r.get("耳机") == "耳机", f"关键词被污染: {r.get('耳机')!r}"
@@ -95,15 +103,15 @@ def test_sanity_check_raises_on_missing_major():
 
 
 def test_real_page_has_major_categories():
-    """实测真实页面：大类必须在（网络不可用时跳过）"""
-    try:
-        r = mi_cn.list_categories()
-    except Exception as e:
-        print(f"    (跳过：{type(e).__name__})")
-        return
-    for k in ("手机", "耳机", "电视", "笔记本", "平板"):
-        assert k in r, f"真实页面缺少 {k}"
-    assert len(r) >= 40
+    """复用审计快照，不在测试中绕过统一限速器请求网络。"""
+    from pathlib import Path
+    snapshot = Path(__file__).resolve().parents[1] / 'data/coverage-20261026/category.html'
+    if not snapshot.exists():
+        pytest.skip("本地没有只读审计快照")
+    with patch.object(mi_cn, "_get", return_value=snapshot.read_text()):
+        result = mi_cn.list_categories()
+    assert len(result) >= 76
+    assert {"手机", "电视", "笔记本", "平板", "穿戴", "耳机", "家电", "路由器"} <= set(result)
 
 
 if __name__ == "__main__":
@@ -117,3 +125,18 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"  ✗ {fn.__name__}: {type(e).__name__}: {e}")
     print(f"\n{ok}/{len(fns)} 通过")
+
+
+def test_sanity_check_rejects_drop_from_verified_baseline():
+    nav = [(n, f"/search?keyword={n}") for n in
+           ["手机", "电视", "笔记本", "平板", "穿戴", "耳机", "家电", "路由器"]]
+    html = _html_with(nav, [(f"类{i}", f"/search?keyword=类{i}") for i in range(50)])
+    with patch.object(mi_cn, "_get", return_value=html), pytest.raises(RuntimeError):
+        mi_cn.list_categories()
+
+
+@pytest.mark.parametrize("major", ["穿戴", "家电", "路由器"])
+def test_sanity_check_requires_all_major_categories(major):
+    html = _big_fixture().replace(f'<dd><a href="/search?keyword={major}">{major}</a></dd>', '')
+    with patch.object(mi_cn, "_get", return_value=html), pytest.raises(RuntimeError):
+        mi_cn.list_categories()
