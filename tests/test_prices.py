@@ -56,7 +56,8 @@ def test_public_view_excludes_display_material():
     (d / "cats").mkdir()
     (d / "cats" / "t.json").write_text(
         json.dumps([_rec("CN:x:1", "商品A", 100)]), encoding="utf-8")
-    meta = publish.build(d / "cats", d / "out")
+    (d / "supplements.json").write_text("[]", encoding="utf-8")
+    meta = publish.build(d / "cats", d / "out", supplements=d / "supplements.json")
     items = json.loads((d / "out" / "goods.json").read_text(encoding="utf-8"))
     p = items[0]["params"]
     assert "carousel" not in p and "attrs" not in p, "展示素材不该进发布集"

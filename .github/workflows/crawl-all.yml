@@ -62,6 +62,11 @@ jobs:
           else
             mkdir -p ./_data
           fi
+          if [ -f _data/public/goods.json ]; then
+            cp _data/public/goods.json "$RUNNER_TEMP/goods-before.json"
+          else
+            echo '[]' > "$RUNNER_TEMP/goods-before.json"
+          fi
 
       - uses: actions/setup-python@v5
         with:
@@ -130,6 +135,11 @@ jobs:
           cp -r data/categories _data/data/ 2>/dev/null || true
           cp -r data/archive _data/data/ 2>/dev/null || true
 
+      - name: Verify final release (no lost IDs)
+        run: |
+          PYTHONPATH=src python3 scripts/verify_goods_release.py --public _data/public \
+            --previous "$RUNNER_TEMP/goods-before.json"
+
       - name: Push to data branch
         run: |
           cd ./_data
@@ -141,13 +151,5 @@ jobs:
             exit 0
           fi
           git commit -m "crawl $(date -u +%Y-%m-%d)"
-          for i in 1 2 3; do
-            git fetch origin "${DATA_BRANCH}" --depth=1 || true
-            if git rev-parse --verify "origin/${DATA_BRANCH}" >/dev/null 2>&1; then
-              git rebase -X theirs "origin/${DATA_BRANCH}" || git rebase --abort || true
-            fi
-            if git push origin "HEAD:${DATA_BRANCH}"; then
-              echo "推送成功"; break
-            fi
-            echo "重试 $i"; sleep 4
-          done
+          # 远端变化时失败；重新运行以重新校验，禁止自动冲突择边。
+          git push origin "HEAD:${DATA_BRANCH}"

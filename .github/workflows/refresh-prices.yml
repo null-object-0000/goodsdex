@@ -10,7 +10,7 @@ name: refresh-prices
 #   main:  src/ scripts/ tests/ docs/ README
 #   data:  public/goods.json、public/prices/*
 #
-#   public/goods.json           全量商品（价格回灌后覆盖）
+#   public/goods.json           全量商品（回灌后按 id 合并补充集）
 #   public/prices/latest.json   最新快照（覆盖）
 #   public/prices/<月>.jsonl    时间序列（**按小时追加，不覆盖历史**）
 
@@ -63,13 +63,21 @@ jobs:
             mkdir -p ./_data
             echo "data 分支不存在，将新建"
           fi
+          if [ -f _data/public/goods.json ]; then
+            cp _data/public/goods.json "$RUNNER_TEMP/goods-before.json"
+          else
+            echo '[]' > "$RUNNER_TEMP/goods-before.json"
+          fi
+
+      - name: Test publication invariants
+        run: PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_supplement_publish.py'
 
       - name: Refresh prices
         # 必须走 ci_refresh_prices.py —— 它从发布集读 gid
         # （runner 上没有 data/categories/，那是内部采集产物）
         # 并负责把新价格回灌进 goods.json / 按小时追加时间序列
         run: |
-          PYTHONPATH=src python3 scripts/ci_refresh_prices.py --public _data/public
+          PYTHONPATH=src python3 scripts/ci_refresh_prices.py --public _data/public --supplements data/supplements/goods-supplements.json
 
       - name: Refresh Apple CN catalogue and prices
         run: |
@@ -91,6 +99,11 @@ jobs:
           retention-days: 7
           if-no-files-found: warn
 
+      - name: Verify final release (no lost IDs)
+        run: |
+          PYTHONPATH=src python3 scripts/verify_goods_release.py --public _data/public \
+            --previous "$RUNNER_TEMP/goods-before.json"
+
       - name: Push to data branch
         run: |
           cd ./_data
@@ -102,16 +115,5 @@ jobs:
             exit 0
           fi
           git commit -m "price refresh $(date -u +%Y-%m-%dT%H:%MZ)"
-          # 并发 run 会撞车：先同步远程再推，失败重试
-          for i in 1 2 3; do
-            git fetch origin "${DATA_BRANCH}" || true
-            if git rev-parse --verify "origin/${DATA_BRANCH}" >/dev/null 2>&1; then
-              git rebase -X theirs "origin/${DATA_BRANCH}" || git rebase --abort || true
-            fi
-            if git push origin "HEAD:${DATA_BRANCH}"; then
-              echo "推送成功"
-              break
-            fi
-            echo "重试 $i"
-            sleep 4
-          done
+          # 远端变化时失败；重新运行以重新校验，禁止自动冲突择边。
+          git push origin "HEAD:${DATA_BRANCH}"

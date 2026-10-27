@@ -22,12 +22,15 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 from goodsdex.prices import refresh  # noqa: E402
+from goodsdex.supplements import DEFAULT_SUPPLEMENTS, publish  # noqa: E402
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--public", default="public")
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--supplements", type=Path, default=DEFAULT_SUPPLEMENTS)
+    ap.add_argument("--offline", action="store_true", help="Replay local prices without network")
     a = ap.parse_args()
 
     gpath = Path(a.public) / "goods.json"
@@ -35,12 +38,13 @@ def main() -> int:
         print(f"找不到 {gpath} —— 先跑 publish", file=sys.stderr)
         return 1
     items = json.loads(gpath.read_text(encoding="utf-8"))
+    previous = json.loads(gpath.read_text(encoding="utf-8"))
     gids = [str(it["gid"]) for it in items if it.get("record_level") != "model_reference" and it.get("gid") and it.get("source") != "apple_cn" and not str(it.get("id", "")).startswith("CN:apple_cn:")]
     if a.limit:
         gids = gids[:a.limit]
     print(f"从发布集读到 {len(gids)} 个 gid")
 
-    res = refresh(gids, Path(a.public).parent / "data")
+    res = ({"offline": True} if a.offline else refresh(gids, Path(a.public).parent / "data"))
     print(json.dumps(res, ensure_ascii=False, indent=1))
 
     # 把最新价格回灌进发布集（保持 goods.json 的价格是新的一手数据）
@@ -70,11 +74,10 @@ def main() -> int:
                 # 统一写回数字类型
                 it["price"] = np["price"]
                 mp = num(np.get("market_price"))
-                it["market_price"] = (int(mp) if mp == int(mp) else mp
-                                      if mp is not None else None)
-        gpath.write_text(json.dumps(items, ensure_ascii=False, indent=1),
-                         encoding="utf-8")
+                it["market_price"] = (int(mp) if mp is not None and mp.is_integer() else mp)
         print(f"回灌完成，价格变化 {changed} 条")
+
+    publish(items, Path(a.public), previous, a.supplements)
 
     # 时间序列：**必须追加到公开序列，不能覆盖**。
     #

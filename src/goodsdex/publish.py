@@ -18,6 +18,7 @@ import glob
 import json
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from goodsdex.supplements import DEFAULT_SUPPLEMENTS, publish
 
 CST = timezone(timedelta(hours=8))
 
@@ -76,7 +77,7 @@ def to_public(rec: dict) -> dict:
 
 
 def build(cats_dir: Path = Path("data/categories"),
-          out_dir: Path = Path("public")) -> dict:
+          out_dir: Path = Path("public"), supplements: Path = DEFAULT_SUPPLEMENTS) -> dict:
     items = []
     for f in sorted(glob.glob(str(Path(cats_dir) / "*.json"))):
         try:
@@ -90,26 +91,9 @@ def build(cats_dir: Path = Path("data/categories"),
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    (out_dir / "goods.json").write_text(
-        json.dumps(items, ensure_ascii=False, indent=1), encoding="utf-8")
-
-    kinds: dict = {}
-    for it in items:
-        k = it.get("kind") or "unknown"
-        kinds[k] = kinds.get(k, 0) + 1
-    withprice = sum(1 for it in items if it.get("price") is not None)
-
-    meta = {
-        "generated_at": datetime.now(CST).isoformat(timespec="seconds"),
-        "count": len(items),
-        "by_kind": kinds,
-        "with_price": withprice,
-        "note": ("发布集是派生视图：含身份/价格/主图链接/参数。"
-                 "原始响应与逐字段证据保留在采集端，用于审计。"),
-    }
-    (out_dir / "meta.json").write_text(
-        json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
-    return meta
+    previous_path = out_dir / "goods.json"
+    previous = json.loads(previous_path.read_text(encoding="utf-8")) if previous_path.exists() else []
+    return publish(items, out_dir, previous, supplements)
 
 
 if __name__ == "__main__":
