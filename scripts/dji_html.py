@@ -52,4 +52,3 @@ def parameters(source):
             for key,value in re.findall(r'<strong[^>]*class="[^"]*specs-detail-key[^"]*"[^>]*>(.*?)</strong><div[^>]*>(.*?)</div>',group,re.S):
                 result.append({'section':title,'key':plain(key),'value':plain(value)})
     return result
-
