@@ -7,6 +7,10 @@ def is_car(row):
 
 
 def assert_cars_unchanged(before, after):
+    counts = lambda rows: (sum(is_car(r) for r in rows), sum(r.get('product_type') == 'car' for r in rows))
+    print(f'Hourly car counts before={counts(before)}, after={counts(after)}')
+    if counts(before) != counts(after):
+        raise ValueError('Hourly refresh changed car/type counts')
     old = {r['id']: r for r in before if is_car(r)}
     new = {r['id']: r for r in after if is_car(r)}
     if old != new:

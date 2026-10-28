@@ -104,6 +104,17 @@ jobs:
           PYTHONPATH=src python3 scripts/verify_goods_release.py --public _data/public \
             --previous "$RUNNER_TEMP/goods-before.json"
 
+      - name: Assert hourly car counts, product_type and all fields unchanged
+        run: |
+          PYTHONPATH=src python3 - <<'PYCODE'
+          import json, os
+          from pathlib import Path
+          from goodsdex.cars import assert_cars_unchanged
+          before = json.loads((Path(os.environ['RUNNER_TEMP']) / 'goods-before.json').read_text())
+          after = json.loads(Path('_data/public/goods.json').read_text())
+          assert_cars_unchanged(before, after)
+          PYCODE
+
       - name: Push to data branch
         run: |
           cd ./_data

@@ -8,6 +8,8 @@
 环境：OSS_ACCESS_KEY_ID / OSS_ACCESS_KEY_SECRET（GitHub Secrets）
 """
 import argparse
+import hashlib
+import json
 import os
 import sys
 
@@ -36,11 +38,20 @@ def main():
     for name in FILES:
         path = os.path.join(args.public, name)
         if not os.path.exists(path):
-            print(f'跳过（不存在）{name}')
-            continue
+            raise FileNotFoundError(path)
         result = bucket.put_object_from_file(
             PREFIX + name, path, headers={'Content-Type': 'application/json'})
         print(f'已镜像 {name} {os.path.getsize(path)} 字节 HTTP {result.status}')
+        if result.status != 200:
+            raise RuntimeError(f'OSS upload failed: {name} HTTP {result.status}')
+        remote = bucket.get_object(PREFIX + name).read()
+        with open(path, 'rb') as fp:
+            local = fp.read()
+        if hashlib.sha256(remote).digest() != hashlib.sha256(local).digest():
+            raise RuntimeError(f'OSS readback mismatch: {name}')
+        print(f'OSS GET verified {name}: sha256={hashlib.sha256(remote).hexdigest()}')
+        if name == 'meta.json':
+            print('OSS meta.json: ' + json.dumps(json.loads(remote), ensure_ascii=False))
         uploaded += 1
     if not uploaded:
         print('没有任何文件被镜像，判定为失败', file=sys.stderr)

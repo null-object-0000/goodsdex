@@ -181,7 +181,28 @@ def xiaomi_candidates(payload):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', required=True)
+    parser.add_argument('--approved', action='store_true', help='Refresh only reviewed configurations for daily publication')
+    parser.add_argument('--verified-only', action='store_true', help='Copy reviewed local inputs without network requests')
     args = parser.parse_args()
+    if args.approved or args.verified_only:
+        if args.approved and args.verified_only:
+            parser.error('Choose one capture mode')
+        from publish_cars import INPUT, SOURCES
+        out = Path(args.out)
+        out.mkdir(parents=True, exist_ok=True)
+        if args.verified_only:
+            import shutil
+            for filename in ('byd-verified.json', 'xiaomi-candidates.json', 'parameter-gaps.json'):
+                shutil.copyfile(INPUT / filename, out / filename)
+        else:
+            from ci_refresh_cars import refresh, CATALOG
+            rows, gaps = refresh(Capture(out / 'captures'), json.loads(CATALOG.read_text()))
+            if gaps:
+                raise ValueError('Daily capture has image gaps; preserve published release')
+            for filename, brand, *_ in SOURCES:
+                (out / filename).write_text(json.dumps([r for r in rows if r['brand'] == brand], ensure_ascii=False, indent=2) + '\n')
+            (out / 'parameter-gaps.json').write_text((INPUT / 'parameter-gaps.json').read_text())
+        return
     out = Path(args.out)
     capture = Capture(out / 'captures')
     rows, gaps = [], []

@@ -2,8 +2,13 @@ name: refresh-cars
 
 on:
   schedule:
-    - cron: '17 4 * * *' # 每天一次，北京时间 12:17
+    - cron: '17 4 * * *' # 北京时间每天 12:17
   workflow_dispatch:
+    inputs:
+      verified_only:
+        description: '仅发布本地已核实输入，不重新采集（发布验证时使用）'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -23,29 +28,45 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Require OSS credentials
+        env:
+          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+        run: |
+          test -n "$OSS_ACCESS_KEY_ID" && test -n "$OSS_ACCESS_KEY_SECRET" || {
+            echo '::error::缺少 OSS 密钥，拒绝发布'; exit 1;
+          }
       - name: Fetch latest data
         run: |
           git fetch origin data
           git worktree add --detach _data origin/data
-      - name: Verify car publication boundaries
+      - name: Test car publication guards
         run: |
           python3 -m pip install --quiet pytest
-          PYTHONPATH=src:scripts python3 -m pytest -q tests/test_car_catalog.py
-      - name: Refresh approved cars (serial, 2.2s per host, at most 120 requests)
+          PYTHONPATH=src:scripts python3 -m pytest -q tests/test_car_catalog.py tests/test_publish_cars.py
+      - name: Capture approved cars or stage verified inputs
+        env:
+          VERIFIED_ONLY: ${{ inputs.verified_only }}
         run: |
-          PYTHONPATH=src:scripts python3 scripts/ci_refresh_cars.py \
-            --public _data/public --captures "$RUNNER_TEMP/car-captures"
+          if [ "$VERIFIED_ONLY" = true ]; then
+            python3 scripts/car_catalog.py --verified-only --out "$RUNNER_TEMP/car-input"
+          else
+            python3 scripts/car_catalog.py --approved --out "$RUNNER_TEMP/car-input"
+          fi
+      - name: Merge reviewed cars (fail before writing on any invariant violation)
+        run: |
+          python3 scripts/publish_cars.py --public _data/public --input "$RUNNER_TEMP/car-input"
       - name: Push car release to data branch
         run: |
           cd _data
           git config user.name goodsdex-bot
           git config user.email goodsdex-bot@users.noreply.github.com
-          git add public/goods.json public/meta.json public/car-refresh-audit.json
+          git add public/goods.json public/meta.json
           if ! git diff --cached --quiet; then
-            git commit -m "daily car refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+            git commit -m "daily car publication $(date -u +%Y-%m-%dT%H:%MZ)"
             git push origin HEAD:data
           fi
-      - name: Mirror release to OSS
+      - name: Mirror release to OSS and verify remote contents
         env:
           OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
           OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
@@ -56,7 +77,5 @@ jobs:
         if: always()
         with:
           name: car-evidence-${{ github.run_id }}
-          path: |
-            ${{ runner.temp }}/car-captures/
-            _data/public/car-refresh-audit.json
+          path: ${{ runner.temp }}/car-input/
           retention-days: 14
