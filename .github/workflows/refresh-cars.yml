@@ -1,0 +1,62 @@
+name: refresh-cars
+
+on:
+  schedule:
+    - cron: '17 4 * * *' # 每天一次，北京时间 12:17
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: goodsdex-data-publication
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch latest data
+        run: |
+          git fetch origin data
+          git worktree add --detach _data origin/data
+      - name: Verify car publication boundaries
+        run: |
+          python3 -m pip install --quiet pytest
+          PYTHONPATH=src:scripts python3 -m pytest -q tests/test_car_catalog.py
+      - name: Refresh approved cars (serial, 2.2s per host, at most 120 requests)
+        run: |
+          PYTHONPATH=src:scripts python3 scripts/ci_refresh_cars.py \
+            --public _data/public --captures "$RUNNER_TEMP/car-captures"
+      - name: Push car release to data branch
+        run: |
+          cd _data
+          git config user.name goodsdex-bot
+          git config user.email goodsdex-bot@users.noreply.github.com
+          git add public/goods.json public/meta.json public/car-refresh-audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m "daily car refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push origin HEAD:data
+          fi
+      - name: Mirror release to OSS
+        env:
+          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+        run: |
+          python3 -m pip install --quiet oss2
+          python3 scripts/mirror_public_to_oss.py --public _data/public
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: car-evidence-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/car-captures/
+            _data/public/car-refresh-audit.json
+          retention-days: 14

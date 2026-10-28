@@ -21,6 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
+from goodsdex.cars import is_car, assert_cars_unchanged
 from goodsdex.prices import refresh  # noqa: E402
 from goodsdex.supplements import DEFAULT_SUPPLEMENTS, publish  # noqa: E402
 
@@ -39,7 +40,7 @@ def main() -> int:
         return 1
     items = json.loads(gpath.read_text(encoding="utf-8"))
     previous = json.loads(gpath.read_text(encoding="utf-8"))
-    gids = [str(it["gid"]) for it in items if it.get("record_level") != "model_reference" and it.get("gid") and it.get("source") != "apple_cn" and not str(it.get("id", "")).startswith("CN:apple_cn:")]
+    gids = [str(it["gid"]) for it in items if not is_car(it) and it.get("record_level") != "model_reference" and it.get("gid") and it.get("source") != "apple_cn" and not str(it.get("id", "")).startswith("CN:apple_cn:")]
     if a.limit:
         gids = gids[:a.limit]
     print(f"从发布集读到 {len(gids)} 个 gid")
@@ -53,7 +54,7 @@ def main() -> int:
         prices = json.loads(latest.read_text(encoding="utf-8")).get("prices") or {}
         changed = 0
         for it in items:
-            if it.get("record_level") == "model_reference" or it.get("source") == "apple_cn" or str(it.get("id", "")).startswith("CN:apple_cn:"):
+            if is_car(it) or it.get("record_level") == "model_reference" or it.get("source") == "apple_cn" or str(it.get("id", "")).startswith("CN:apple_cn:"):
                 continue
             g = str(it.get("gid") or "")
             np = prices.get(g)
@@ -77,7 +78,9 @@ def main() -> int:
                 it["market_price"] = (int(mp) if mp is not None and mp.is_integer() else mp)
         print(f"回灌完成，价格变化 {changed} 条")
 
+    assert_cars_unchanged(previous, items)
     publish(items, Path(a.public), previous, a.supplements)
+    assert_cars_unchanged(previous, json.loads(gpath.read_text(encoding="utf-8")))
 
     # 时间序列：**必须追加到公开序列，不能覆盖**。
     #
