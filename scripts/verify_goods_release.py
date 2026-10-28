@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from goodsdex.cars import assert_cars_unchanged
 from goodsdex.supplements import DEFAULT_SUPPLEMENTS, merge, metadata
 
 
@@ -16,6 +17,7 @@ def main():
     args = ap.parse_args()
     current = json.loads((args.public / "goods.json").read_text())
     previous = json.loads(args.previous.read_text())
+    assert_cars_unchanged(previous, current)
     supplements = json.loads(args.supplements.read_text())
     checked, verification = merge(current, supplements, previous)
     if len(checked) != len(current):
