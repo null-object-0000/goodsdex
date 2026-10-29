@@ -25,8 +25,10 @@ PYTHONPATH=src python3 scripts/crawl_apple_history.py --public public
 
 | 文件 | 内容 |
 |---|---|
-| `public/goods.json` | 全量商品（身份 / 价格 / 参数），约 2 MB |
-| `public/meta.json` | 统计与生成时间 |
+| `public/index/*.json` | 按品牌的轻索引，合计约 3 MB，无 params |
+| `public/detail/00.json`–`3f.json` | 按商品 id 哈希的 64 个完整详情分片，按需读取 |
+| `public/goods.json` | 保留的约 14 MB 整库导出；不要给客户端使用 |
+| `public/meta.json` | schema、统计、生成时间、每文件 sha256/count/bytes |
 | `public/prices/latest.json` | 最新价格快照 |
 | `public/prices/<月>.jsonl` | **价格时间序列**（按小时追加，不覆盖历史） |
 
@@ -34,7 +36,9 @@ PYTHONPATH=src python3 scripts/crawl_apple_history.py --public public
 该分支的 tip，本地开发与 Actions 会互相 non-fast-forward（实测反复冲突）。
 分开后 `main` 只有代码、`data` 只有产物，各自演进互不干扰。
 
-直接取用：
+客户端使用服务端 `search` / `goods/<id>`；数据同步先取 meta，再按 sha256 拉变化索引。新结构、实测和回滚说明见 [商品库分片](docs/商品库分片-20261029.md)。
+
+整库导出（外部兼容用途）：
 
 ```bash
 git clone --branch data --depth 1 https://github.com/null-object-0000/goodsdex.git
