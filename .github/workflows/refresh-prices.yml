@@ -101,6 +101,16 @@ jobs:
           retention-days: 7
           if-no-files-found: warn
 
+      - name: Refresh HP CN desktop and laptop configurations
+        # 惠普价格在商城页；每小时随其他品牌一起刷。
+        # 每日 crawl-all 仍保留一次全量发现（新 SKU、证据归档）。
+        run: |
+          python3 -m pip install --quiet Pillow
+          if ! python3 scripts/crawl_hp.py --out _data/data/hp --public _data/public \
+            --seed 'https://www.hpstore.cn/catalogsearch/result/?q=%E6%98%9F14'; then
+            echo "::warning::HP 采集有缺口，保留旧 SKU 与上次价格"
+          fi
+
       - name: Verify final release (no lost IDs)
         run: |
           PYTHONPATH=src python3 scripts/verify_goods_release.py --public _data/public \
