@@ -1,0 +1,375 @@
+refresh	Set up job	﻿2026-10-29T01:08:19.1249544Z Current runner version: '2.338.0'
+refresh	Set up job	2026-10-29T01:08:19.1276329Z ##[group]Runner Image Provisioner
+refresh	Set up job	2026-10-29T01:08:19.1277247Z Hosted Compute Agent
+refresh	Set up job	2026-10-29T01:08:19.1277847Z Version: 20261021.618
+refresh	Set up job	2026-10-29T01:08:19.1278606Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+refresh	Set up job	2026-10-29T01:08:19.1279388Z Build Date: 2026-10-21T00:45:21Z
+refresh	Set up job	2026-10-29T01:08:19.1280175Z Worker ID: {9908112b-f417-47d8-8aa5-2cc8167c5e17}
+refresh	Set up job	2026-10-29T01:08:19.1280913Z Region: eastus
+refresh	Set up job	2026-10-29T01:08:19.1281470Z Cloud: Azure
+refresh	Set up job	2026-10-29T01:08:19.1282139Z ##[endgroup]
+refresh	Set up job	2026-10-29T01:08:19.1283722Z ##[group]Operating System
+refresh	Set up job	2026-10-29T01:08:19.1284480Z Ubuntu
+refresh	Set up job	2026-10-29T01:08:19.1285030Z 24.04.5
+refresh	Set up job	2026-10-29T01:08:19.1285870Z LTS
+refresh	Set up job	2026-10-29T01:08:19.1286585Z ##[endgroup]
+refresh	Set up job	2026-10-29T01:08:19.1287240Z ##[group]Runner Image
+refresh	Set up job	2026-10-29T01:08:19.1287925Z Image: ubuntu-24.04
+refresh	Set up job	2026-10-29T01:08:19.1288521Z Version: 20261025.353.1
+refresh	Set up job	2026-10-29T01:08:19.1289698Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+refresh	Set up job	2026-10-29T01:08:19.1291536Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+refresh	Set up job	2026-10-29T01:08:19.1293029Z ##[endgroup]
+refresh	Set up job	2026-10-29T01:08:19.1294193Z ##[group]GITHUB_TOKEN Permissions
+refresh	Set up job	2026-10-29T01:08:19.1296759Z Contents: write
+refresh	Set up job	2026-10-29T01:08:19.1297471Z Metadata: read
+refresh	Set up job	2026-10-29T01:08:19.1298179Z ##[endgroup]
+refresh	Set up job	2026-10-29T01:08:19.1300407Z Secret source: Actions
+refresh	Set up job	2026-10-29T01:08:19.1301488Z Cache mode: write
+refresh	Set up job	2026-10-29T01:08:19.1302539Z Prepare workflow directory
+refresh	Set up job	2026-10-29T01:08:19.1643113Z Prepare all required actions
+refresh	Set up job	2026-10-29T01:08:19.1692190Z Getting action download info
+refresh	Set up job	2026-10-29T01:08:19.3871550Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+refresh	Set up job	2026-10-29T01:08:19.4862756Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+refresh	Set up job	2026-10-29T01:08:19.5631392Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+refresh	Set up job	2026-10-29T01:08:19.7804453Z Complete job name: refresh
+refresh	Run actions/checkout@v4	﻿2026-10-29T01:08:19.8788439Z ##[group]Run actions/checkout@v4
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8789526Z with:
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8789990Z   fetch-depth: 0
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8790477Z   repository: null-object-0000/goodsdex
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8794302Z   token: ***
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8794777Z   ssh-strict: true
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8795224Z   ssh-user: git
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8795907Z   persist-credentials: true
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8796414Z   clean: true
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8796869Z   sparse-checkout-cone-mode: true
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8797397Z   fetch-tags: false
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8797845Z   show-progress: true
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8798305Z   lfs: false
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8798718Z   submodules: false
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8799183Z   set-safe-directory: true
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8799707Z   allow-unsafe-pr-checkout: false
+refresh	Run actions/checkout@v4	2026-10-29T01:08:19.8800551Z ##[endgroup]
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2098723Z Syncing repository: null-object-0000/goodsdex
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2102176Z ##[group]Getting Git version info
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2103205Z Working directory is '/home/runner/work/goodsdex/goodsdex'
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2104460Z [command]/usr/bin/git version
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2233267Z git version 2.56.0
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2260924Z ##[endgroup]
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2277392Z Temporarily overriding HOME='/home/runner/work/_temp/d87ad2f9-e183-4120-a749-4dfd13924dfb' before making global git config changes
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2280583Z Adding repository directory to the temporary git global config as a safe directory
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2283848Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2343585Z Deleting the contents of '/home/runner/work/goodsdex/goodsdex'
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2354017Z ##[group]Initializing the repository
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2376988Z [command]/usr/bin/git init /home/runner/work/goodsdex/goodsdex
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2538539Z hint: Using 'master' as the name for the initial branch. This default branch name
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2541060Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2542236Z hint: to use in all of your new repositories, which will suppress this warning,
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2543114Z hint: call:
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2543570Z hint:
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2544164Z hint: 	git config --global init.defaultBranch <name>
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2544877Z hint:
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2545883Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2547015Z hint: 'development'. The just-created branch can be renamed via this command:
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2547864Z hint:
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2548342Z hint: 	git branch -m <name>
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2548882Z hint:
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2549614Z hint: Disable this message with "git config set advice.defaultBranchName false"
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2553439Z Initialized empty Git repository in /home/runner/work/goodsdex/goodsdex/.git/
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2568349Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/goodsdex
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2626101Z ##[endgroup]
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2627707Z ##[group]Disabling automatic garbage collection
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2629569Z [command]/usr/bin/git config --local gc.auto 0
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2668103Z ##[endgroup]
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2669545Z ##[group]Setting up auth
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2676280Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.2719023Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.3182942Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.3229863Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.3481994Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.3530265Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.3781109Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.3838433Z ##[endgroup]
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.3851343Z ##[group]Fetching the repository
+refresh	Run actions/checkout@v4	2026-10-29T01:08:20.3852968Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8376591Z From https://github.com/null-object-0000/goodsdex
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8377371Z  * [new branch]      codex/apple-cn-catalog -> origin/codex/apple-cn-catalog
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8377899Z  * [new branch]      data                   -> origin/data
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8378529Z  * [new branch]      feat/car-daily-release -> origin/feat/car-daily-release
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8379077Z  * [new branch]      feat/dji-catalog       -> origin/feat/dji-catalog
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8379588Z  * [new branch]      feat/fuji-catalog      -> origin/feat/fuji-catalog
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8380299Z  * [new branch]      feat/legacy-base-reference -> origin/feat/legacy-base-reference
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8381177Z  * [new branch]      feat/legacy-device-catalog -> origin/feat/legacy-device-catalog
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8382193Z  * [new branch]      fix/archive-partial-missing -> origin/fix/archive-partial-missing
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8383322Z  * [new branch]      fix/car-ci-import      -> origin/fix/car-ci-import
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8384234Z  * [new branch]      main                   -> origin/main
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8384857Z  * [new branch]      publish/cars-20261028  -> origin/publish/cars-20261028
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8391037Z [command]/usr/bin/git branch --list --remote origin/main
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8428543Z   origin/main
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8438172Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8474380Z 9163941d957f525f120489f2f055b5affee0ab1d
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8477928Z ##[endgroup]
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8478433Z ##[group]Determining the checkout info
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8479351Z ##[endgroup]
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8483643Z [command]/usr/bin/git sparse-checkout disable
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8544815Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8583993Z ##[group]Checking out the ref
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.8587756Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.9077949Z Switched to a new branch 'main'
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.9084925Z branch 'main' set up to track 'origin/main'.
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.9102806Z ##[endgroup]
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.9166938Z [command]/usr/bin/git log -1 --format=%H
+refresh	Run actions/checkout@v4	2026-10-29T01:08:40.9201458Z 9163941d957f525f120489f2f055b5affee0ab1d
+refresh	Run actions/setup-python@v5	﻿2026-10-29T01:08:40.9560813Z ##[group]Run actions/setup-python@v5
+refresh	Run actions/setup-python@v5	2026-10-29T01:08:40.9561238Z with:
+refresh	Run actions/setup-python@v5	2026-10-29T01:08:40.9561527Z   python-version: 3.12
+refresh	Run actions/setup-python@v5	2026-10-29T01:08:40.9561810Z   check-latest: false
+refresh	Run actions/setup-python@v5	2026-10-29T01:08:40.9564327Z   token: ***
+refresh	Run actions/setup-python@v5	2026-10-29T01:08:40.9564599Z   update-environment: true
+refresh	Run actions/setup-python@v5	2026-10-29T01:08:40.9564903Z   allow-prereleases: false
+refresh	Run actions/setup-python@v5	2026-10-29T01:08:40.9565191Z   freethreaded: false
+refresh	Run actions/setup-python@v5	2026-10-29T01:08:40.9565770Z ##[endgroup]
+refresh	Run actions/setup-python@v5	2026-10-29T01:08:41.0967575Z ##[group]Installed versions
+refresh	Run actions/setup-python@v5	2026-10-29T01:08:41.1077122Z (node:2331) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+refresh	Run actions/setup-python@v5	2026-10-29T01:08:41.1078687Z (Use `node --trace-deprecation ...` to show where the warning was created)
+refresh	Run actions/setup-python@v5	2026-10-29T01:08:41.1079678Z Successfully set up CPython (3.12.15)
+refresh	Run actions/setup-python@v5	2026-10-29T01:08:41.1080644Z ##[endgroup]
+refresh	Require OSS credentials	﻿2026-10-29T01:08:41.1275386Z ##[group]Run test -n "$OSS_ACCESS_KEY_ID" && test -n "$OSS_ACCESS_KEY_SECRET" || {
+refresh	Require OSS credentials	2026-10-29T01:08:41.1276515Z ^[[36;1mtest -n "$OSS_ACCESS_KEY_ID" && test -n "$OSS_ACCESS_KEY_SECRET" || {^[[0m
+refresh	Require OSS credentials	2026-10-29T01:08:41.1277053Z ^[[36;1m  echo '::error::缺少 OSS 密钥，拒绝发布'; exit 1;^[[0m
+refresh	Require OSS credentials	2026-10-29T01:08:41.1277406Z ^[[36;1m}^[[0m
+refresh	Require OSS credentials	2026-10-29T01:08:41.1321858Z shell: /usr/bin/bash -e {0}
+refresh	Require OSS credentials	2026-10-29T01:08:41.1322540Z env:
+refresh	Require OSS credentials	2026-10-29T01:08:41.1323260Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Require OSS credentials	2026-10-29T01:08:41.1324341Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+refresh	Require OSS credentials	2026-10-29T01:08:41.1325375Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Require OSS credentials	2026-10-29T01:08:41.1326530Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Require OSS credentials	2026-10-29T01:08:41.1327316Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Require OSS credentials	2026-10-29T01:08:41.1328098Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+refresh	Require OSS credentials	2026-10-29T01:08:41.1329048Z   OSS_ACCESS_KEY_ID: ***
+refresh	Require OSS credentials	2026-10-29T01:08:41.1329733Z   OSS_ACCESS_KEY_SECRET: ***
+refresh	Require OSS credentials	2026-10-29T01:08:41.1330243Z ##[endgroup]
+refresh	Fetch latest data	﻿2026-10-29T01:08:41.1491135Z ##[group]Run git fetch origin data
+refresh	Fetch latest data	2026-10-29T01:08:41.1491637Z ^[[36;1mgit fetch origin data^[[0m
+refresh	Fetch latest data	2026-10-29T01:08:41.1491995Z ^[[36;1mgit worktree add --detach _data origin/data^[[0m
+refresh	Fetch latest data	2026-10-29T01:08:41.1513551Z shell: /usr/bin/bash -e {0}
+refresh	Fetch latest data	2026-10-29T01:08:41.1513862Z env:
+refresh	Fetch latest data	2026-10-29T01:08:41.1514183Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Fetch latest data	2026-10-29T01:08:41.1514692Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+refresh	Fetch latest data	2026-10-29T01:08:41.1515204Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Fetch latest data	2026-10-29T01:08:41.1515927Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Fetch latest data	2026-10-29T01:08:41.1516385Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Fetch latest data	2026-10-29T01:08:41.1516830Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+refresh	Fetch latest data	2026-10-29T01:08:41.1517226Z ##[endgroup]
+refresh	Fetch latest data	2026-10-29T01:08:41.2877993Z From https://github.com/null-object-0000/goodsdex
+refresh	Fetch latest data	2026-10-29T01:08:41.2928338Z  * branch            data       -> FETCH_HEAD
+refresh	Fetch latest data	2026-10-29T01:08:41.2929257Z Preparing worktree (detached HEAD 4466574)
+refresh	Fetch latest data	2026-10-29T01:08:42.3212632Z Updating files:  30% (170/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.3302904Z Updating files:  31% (174/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.4299707Z Updating files:  32% (179/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.4628066Z Updating files:  33% (185/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.4978696Z Updating files:  34% (191/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.5567085Z Updating files:  35% (196/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.5664041Z Updating files:  36% (202/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.5886559Z Updating files:  37% (207/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6031649Z Updating files:  38% (213/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6040998Z Updating files:  39% (219/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6051590Z Updating files:  40% (224/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6057937Z Updating files:  41% (230/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6081851Z Updating files:  42% (235/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6197440Z Updating files:  43% (241/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6215458Z Updating files:  44% (246/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6227078Z Updating files:  45% (252/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6239586Z Updating files:  46% (258/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6260031Z Updating files:  47% (263/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6268984Z Updating files:  48% (269/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6274675Z Updating files:  49% (274/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6280047Z Updating files:  50% (280/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6282853Z Updating files:  51% (286/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6288348Z Updating files:  52% (291/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6291274Z Updating files:  53% (297/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6296948Z Updating files:  54% (302/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6301819Z Updating files:  55% (308/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6305470Z Updating files:  56% (314/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6311233Z Updating files:  57% (319/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6314920Z Updating files:  58% (325/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6320761Z Updating files:  59% (330/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6328574Z Updating files:  60% (336/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6332615Z Updating files:  61% (341/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6339523Z Updating files:  62% (347/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6343035Z Updating files:  63% (353/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6347532Z Updating files:  64% (358/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6350724Z Updating files:  65% (364/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6427606Z Updating files:  66% (369/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6465443Z Updating files:  67% (375/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6470334Z Updating files:  68% (381/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6765138Z Updating files:  69% (386/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.6769326Z Updating files:  70% (392/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7048586Z Updating files:  71% (397/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7057855Z Updating files:  72% (403/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7074278Z Updating files:  73% (409/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7079004Z Updating files:  74% (414/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7085989Z Updating files:  75% (420/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7091201Z Updating files:  76% (425/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7100294Z Updating files:  77% (431/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7104625Z Updating files:  78% (437/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7110247Z Updating files:  79% (442/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7113326Z Updating files:  80% (448/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7118568Z Updating files:  81% (453/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7121984Z Updating files:  82% (459/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7127621Z Updating files:  83% (464/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7133167Z Updating files:  84% (470/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7137748Z Updating files:  85% (476/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7142046Z Updating files:  86% (481/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7145065Z Updating files:  87% (487/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7152564Z Updating files:  88% (492/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7162423Z Updating files:  89% (498/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7168812Z Updating files:  90% (504/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7181942Z Updating files:  91% (509/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7198246Z Updating files:  92% (515/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7318020Z Updating files:  93% (520/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7336250Z Updating files:  94% (526/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7341591Z Updating files:  95% (532/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7360019Z Updating files:  96% (537/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7371938Z Updating files:  97% (543/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7467803Z Updating files:  98% (548/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7586688Z Updating files:  99% (554/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7587289Z Updating files: 100% (559/559)
+refresh	Fetch latest data	2026-10-29T01:08:42.7587796Z Updating files: 100% (559/559), done.
+refresh	Fetch latest data	2026-10-29T01:08:42.7597243Z HEAD is now at 4466574 price refresh 2026-10-28T23:19Z
+refresh	Test car publication guards	﻿2026-10-29T01:08:42.7750667Z ##[group]Run python3 -m pip install --quiet pytest
+refresh	Test car publication guards	2026-10-29T01:08:42.7751108Z ^[[36;1mpython3 -m pip install --quiet pytest^[[0m
+refresh	Test car publication guards	2026-10-29T01:08:42.7751656Z ^[[36;1mPYTHONPATH=src:scripts python3 -m pytest -q tests/test_car_catalog.py tests/test_publish_cars.py^[[0m
+refresh	Test car publication guards	2026-10-29T01:08:42.7773250Z shell: /usr/bin/bash -e {0}
+refresh	Test car publication guards	2026-10-29T01:08:42.7773514Z env:
+refresh	Test car publication guards	2026-10-29T01:08:42.7773796Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Test car publication guards	2026-10-29T01:08:42.7774263Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+refresh	Test car publication guards	2026-10-29T01:08:42.7774715Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Test car publication guards	2026-10-29T01:08:42.7775149Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Test car publication guards	2026-10-29T01:08:42.7775881Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Test car publication guards	2026-10-29T01:08:42.7776293Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+refresh	Test car publication guards	2026-10-29T01:08:42.7776628Z ##[endgroup]
+refresh	Test car publication guards	2026-10-29T01:08:47.4748035Z ...................                                                      [100%]
+refresh	Test car publication guards	2026-10-29T01:08:47.4748696Z 19 passed in 0.32s
+refresh	Capture approved cars or stage verified inputs	﻿2026-10-29T01:08:47.5023616Z ##[group]Run if [ "$VERIFIED_ONLY" = true ]; then
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5024043Z ^[[36;1mif [ "$VERIFIED_ONLY" = true ]; then^[[0m
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5024515Z ^[[36;1m  python3 scripts/car_catalog.py --verified-only --out "$RUNNER_TEMP/car-input"^[[0m
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5024974Z ^[[36;1melse^[[0m
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5025319Z ^[[36;1m  python3 scripts/car_catalog.py --approved --out "$RUNNER_TEMP/car-input"^[[0m
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5026075Z ^[[36;1mfi^[[0m
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5046729Z shell: /usr/bin/bash -e {0}
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5046991Z env:
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5047275Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5047729Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5048184Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5048586Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5048976Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5049405Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5049736Z   VERIFIED_ONLY: true
+refresh	Capture approved cars or stage verified inputs	2026-10-29T01:08:47.5049953Z ##[endgroup]
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	﻿2026-10-29T01:08:47.5797806Z ##[group]Run if [ "true" = true ]; then
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5798175Z ^[[36;1mif [ "true" = true ]; then^[[0m
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5798693Z ^[[36;1m  python3 scripts/publish_cars.py --public _data/public --input "$RUNNER_TEMP/car-input" --append-only^[[0m
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5799208Z ^[[36;1melse^[[0m
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5799607Z ^[[36;1m  python3 scripts/publish_cars.py --public _data/public --input "$RUNNER_TEMP/car-input"^[[0m
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5800084Z ^[[36;1mfi^[[0m
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5820522Z shell: /usr/bin/bash -e {0}
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5820779Z env:
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5821053Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5821505Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5821956Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5822355Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5822759Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5823192Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:47.5823518Z ##[endgroup]
+refresh	Merge reviewed cars (fail before writing on any invariant violation)	2026-10-29T01:08:48.3375638Z {"old_total": 5532, "added": 9, "updated": 0, "new_total": 5541}
+refresh	Push car release to data branch	﻿2026-10-29T01:08:48.3494647Z ##[group]Run cd _data
+refresh	Push car release to data branch	2026-10-29T01:08:48.3494950Z ^[[36;1mcd _data^[[0m
+refresh	Push car release to data branch	2026-10-29T01:08:48.3495189Z ^[[36;1mgit config user.name goodsdex-bot^[[0m
+refresh	Push car release to data branch	2026-10-29T01:08:48.3496164Z ^[[36;1mgit config user.email goodsdex-bot@users.noreply.github.com^[[0m
+refresh	Push car release to data branch	2026-10-29T01:08:48.3496602Z ^[[36;1mgit add public/goods.json public/meta.json^[[0m
+refresh	Push car release to data branch	2026-10-29T01:08:48.3496952Z ^[[36;1mif ! git diff --cached --quiet; then^[[0m
+refresh	Push car release to data branch	2026-10-29T01:08:48.3497361Z ^[[36;1m  git commit -m "daily car publication $(date -u +%Y-%m-%dT%H:%MZ)"^[[0m
+refresh	Push car release to data branch	2026-10-29T01:08:48.3497766Z ^[[36;1m  git push origin HEAD:data^[[0m
+refresh	Push car release to data branch	2026-10-29T01:08:48.3498021Z ^[[36;1mfi^[[0m
+refresh	Push car release to data branch	2026-10-29T01:08:48.3518433Z shell: /usr/bin/bash -e {0}
+refresh	Push car release to data branch	2026-10-29T01:08:48.3518698Z env:
+refresh	Push car release to data branch	2026-10-29T01:08:48.3518988Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Push car release to data branch	2026-10-29T01:08:48.3519454Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+refresh	Push car release to data branch	2026-10-29T01:08:48.3519919Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Push car release to data branch	2026-10-29T01:08:48.3520335Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Push car release to data branch	2026-10-29T01:08:48.3520782Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Push car release to data branch	2026-10-29T01:08:48.3521198Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+refresh	Push car release to data branch	2026-10-29T01:08:48.3521537Z ##[endgroup]
+refresh	Push car release to data branch	2026-10-29T01:08:49.7338492Z [detached HEAD ca6dd0b] daily car publication 2026-10-29T01:08Z
+refresh	Push car release to data branch	2026-10-29T01:08:49.7339105Z  2 files changed, 2085 insertions(+), 6 deletions(-)
+refresh	Push car release to data branch	2026-10-29T01:08:51.6686294Z To https://github.com/null-object-0000/goodsdex
+refresh	Push car release to data branch	2026-10-29T01:08:51.6686998Z    4466574..ca6dd0b  HEAD -> data
+refresh	Mirror release to OSS and verify remote contents	﻿2026-10-29T01:08:51.6763044Z ##[group]Run python3 -m pip install --quiet oss2
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:08:51.6763465Z ^[[36;1mpython3 -m pip install --quiet oss2^[[0m
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:08:51.6763865Z ^[[36;1mpython3 scripts/mirror_public_to_oss.py --public _data/public^[[0m
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:08:51.6784156Z shell: /usr/bin/bash -e {0}
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:08:51.6784408Z env:
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:08:51.6784682Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:08:51.6785127Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:08:51.6785902Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:08:51.6786366Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:08:51.6786770Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:08:51.6787172Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:08:51.6787828Z   OSS_ACCESS_KEY_ID: ***
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:08:51.6788148Z   OSS_ACCESS_KEY_SECRET: ***
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:08:51.6788388Z ##[endgroup]
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:09:10.8935928Z 已镜像 goods.json 14939423 字节 HTTP 200
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:09:10.8936716Z OSS GET verified goods.json: sha256=c67562aba7a4004d8c215fd5e52f481dbd80251c094dd50136e4e1587c1b7873
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:09:10.8937469Z 已镜像 meta.json 445 字节 HTTP 200
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:09:10.8938095Z OSS GET verified meta.json: sha256=7379dc1959d2f72a4f0b21bb774d4bec0f39055e4d58beb2450a1cf2ec380618
+refresh	Mirror release to OSS and verify remote contents	2026-10-29T01:09:10.8942713Z OSS meta.json: {"generated_at": "2026-10-29T01:08:47.995795+00:00", "count": 5541, "by_kind": {"machine": 2956, "accessory": 1633, "unknown": 841, "service": 111}, "with_price": 4990, "note": "发布集含多品牌；价格范围见 price_kind，Apple 规格表保留型号列，不视为所有变体共享参数。", "brands": {"Apple": 644, "比亚迪": 33, "大疆": 783, "富士": 63, "小米": 4008, "小米汽车": 10}}
+refresh	Run actions/upload-artifact@v4	﻿2026-10-29T01:09:10.9337573Z ##[group]Run actions/upload-artifact@v4
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9337909Z with:
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9338119Z   name: car-evidence-40798546489
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9338403Z   path: /home/runner/work/_temp/car-input/
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9338690Z   retention-days: 14
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9338921Z   if-no-files-found: warn
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9339172Z   compression-level: 6
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9339393Z   overwrite: false
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9339619Z   include-hidden-files: false
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9339855Z env:
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9340160Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9340605Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9341044Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9341644Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9342044Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9342441Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:10.9342817Z ##[endgroup]
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.1092219Z (node:2541) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.1093604Z (Use `node --trace-deprecation ...` to show where the warning was created)
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.1220692Z With the provided path, there will be 3 files uploaded
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.1227963Z Artifact name is valid!
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.1231359Z Root directory input is valid!
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.3397296Z Beginning upload of artifact content to blob storage
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.3759859Z (node:2541) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.4293056Z Uploaded bytes 37595
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.4479612Z Finished uploading artifact content to blob storage!
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.4480938Z SHA256 digest of uploaded artifact zip is 81d357f6dca620186e82f99739752e45beeebaa51baac9900a22ca7f01b9a4a3
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.4482375Z Finalizing artifact upload
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.8562455Z Artifact car-evidence-40798546489.zip successfully finalized. Artifact ID 12865131856
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.8564179Z Artifact car-evidence-40798546489 has been successfully uploaded! Final size is 37595 bytes. Artifact ID is 12865131856
+refresh	Run actions/upload-artifact@v4	2026-10-29T01:09:11.8570760Z Artifact download URL: https://github.com/null-object-0000/goodsdex/actions/runs/40798546489/artifacts/12865131856
+refresh	Post Run actions/setup-python@v5	﻿2026-10-29T01:09:11.8772443Z Post job cleanup.
+refresh	Post Run actions/setup-python@v5	2026-10-29T01:09:12.0018110Z (node:2553) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+refresh	Post Run actions/setup-python@v5	2026-10-29T01:09:12.0019561Z (Use `node --trace-deprecation ...` to show where the warning was created)
+refresh	Post Run actions/checkout@v4	﻿2026-10-29T01:09:12.0190424Z Post job cleanup.
+refresh	Post Run actions/checkout@v4	2026-10-29T01:09:12.1216409Z [command]/usr/bin/git version
+refresh	Post Run actions/checkout@v4	2026-10-29T01:09:12.1306510Z git version 2.56.0
+refresh	Post Run actions/checkout@v4	2026-10-29T01:09:12.1344780Z Temporarily overriding HOME='/home/runner/work/_temp/b803a61f-4223-4b9d-bd26-7c97d282c27e' before making global git config changes
+refresh	Post Run actions/checkout@v4	2026-10-29T01:09:12.1346160Z Adding repository directory to the temporary git global config as a safe directory
+refresh	Post Run actions/checkout@v4	2026-10-29T01:09:12.1347038Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+refresh	Post Run actions/checkout@v4	2026-10-29T01:09:12.1400206Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+refresh	Post Run actions/checkout@v4	2026-10-29T01:09:12.1455344Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+refresh	Post Run actions/checkout@v4	2026-10-29T01:09:12.1804366Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+refresh	Post Run actions/checkout@v4	2026-10-29T01:09:12.1837945Z http.https://github.com/.extraheader
+refresh	Post Run actions/checkout@v4	2026-10-29T01:09:12.1854364Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+refresh	Post Run actions/checkout@v4	2026-10-29T01:09:12.1898203Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+refresh	Post Run actions/checkout@v4	2026-10-29T01:09:12.2257588Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+refresh	Post Run actions/checkout@v4	2026-10-29T01:09:12.2278768Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+refresh	Complete job	﻿2026-10-29T01:09:12.2760573Z Cleaning up orphan processes
+refresh	Complete job	2026-10-29T01:09:12.3151968Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
