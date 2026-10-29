@@ -19,6 +19,7 @@ import json
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from goodsdex.supplements import DEFAULT_SUPPLEMENTS, publish
+from goodsdex.public_fields import normalize_public_row
 
 CST = timezone(timedelta(hours=8))
 
@@ -73,7 +74,7 @@ def to_public(rec: dict) -> dict:
     # 去掉空值与内部标记
     item["params"] = {k: val for k, val in item["params"].items()
                       if not str(k).startswith("_") and val not in (None, "", [])}
-    return item
+    return normalize_public_row(item)
 
 
 def build(cats_dir: Path = Path("data/categories"),

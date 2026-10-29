@@ -1,4 +1,4 @@
-"""Mandatory final merge + invariant gate, after all publishers and before push."""
+"""Mandatory public-field normalization, final merge + invariant gate, after all publishers and before push."""
 import argparse
 import json
 import sys

@@ -4,7 +4,10 @@
 默认是 dry-run：只读输入文件、打印清点结果和冲突清单，不写任何文件。
 只有显式传入 --apply 才会写文件。
 
-合并规则（刻意保守）：
+字段先按 public_fields 的明确映射归一；同 gid 的小米参数取无冲突并集。
+三组已核例外始终保留原始行；任何其他真实值冲突仍整组保留。
+
+合并规则（归一之后）：
   1. 同一 id 的所有行，除 ``category`` / ``categories`` / ``fetched_at`` 外，
      每个字段的规范 JSON 必须完全一致；只要有一个字段不同，整组跳过并列入冲突。
   2. ``fetched_at`` 是采集时间戳，不是商品属性；合并时取组内最大值。
@@ -31,6 +34,8 @@ import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
+
+from goodsdex.public_fields import PROTECTED_IDS, prepare_group, normalize_public_row, assert_public_fields
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_INPUT = ROOT / "public" / "goods.json"
@@ -281,8 +286,15 @@ def analyze(
     skipped_validation: list[dict[str, Any]] = []
 
     for pid, rows in duplicate_groups.items():
+        original_rows = rows
+        try:
+            rows = prepare_group(rows)
+        except ValueError:
+            rows = original_rows
         differing = differing_fields(rows)
         categories, structural_problems = collect_categories(rows)
+        if pid in PROTECTED_IDS:
+            structural_problems.append(f"Protected group: {PROTECTED_IDS[pid]}")
         timestamp_problems = []
         for row in rows:
             value = row.get("fetched_at")
@@ -292,7 +304,7 @@ def analyze(
             conflicts.append(
                 {
                     "id": pid,
-                    "rows": rows,
+                    "rows": original_rows,
                     "fields": differing,
                     "problems": sorted(set(structural_problems + timestamp_problems)),
                 }
@@ -312,7 +324,7 @@ def analyze(
         safe.append(
             {
                 "id": pid,
-                "rows": rows,
+                "rows": original_rows,
                 "categories": ordered_categories(categories, global_counts),
                 "merged": merged,
             }
@@ -606,12 +618,12 @@ def build_output(
                 output.append(merged_by_id[pid])
                 emitted.add(pid)
             continue
-        if pid in conflict_ids or pid in skipped_ids:
+        if pid in conflict_ids or pid in skipped_ids or pid in PROTECTED_IDS:
             # 冲突组保持原样：不合并、不补 categories，避免产生半合并状态。
             output.append(row)
             continue
         if pid not in emitted:
-            new_row = dict(row)
+            new_row = normalize_public_row(row)
             if not isinstance(new_row.get("categories"), list):
                 new_row = attach_categories(new_row, [new_row.get("category")])
             output.append(new_row)
@@ -646,6 +658,19 @@ def validate_merge(before, after, result):
                 raise ValueError(f"Conflict modified: {pid}")
         elif len(new[pid]) != 1:
             raise ValueError(f"Safe duplicate remains: {pid}")
+    for item in result["safe"]:
+        pid = item["id"]
+        prepared = prepare_group(old[pid])
+        problems = verify_no_loss(new[pid][0], prepared, collect_categories(prepared)[0])
+        if problems:
+            raise ValueError(f"Merged field loss: {pid}: {problems}")
+    def brands(groups):
+        return dict(sorted(collections.Counter(
+            rows[0].get("brand") or ("小米" if pid.startswith("CN:mi_cn:") else "未知")
+            for pid, rows in groups.items()).items()))
+    before_brands, after_brands = brands(old), brands(new)
+    if before_brands != after_brands:
+        raise ValueError("Brand facets changed")
     before_membership, after_membership = category_membership(before), category_membership(after)
     if before_membership != after_membership:
         raise ValueError("Per-ID category membership changed")
@@ -665,7 +690,7 @@ def validate_merge(before, after, result):
     return dict(before_rows=len(before), after_rows=len(after), before_unique_ids=len(old),
                 after_unique_ids=len(new), merged_groups=len(result["safe"]), removed_rows=removed,
                 conflict_groups=len(conflicts), conflict_rows=sum(len(old[pid]) for pid in conflicts),
-                conflicts_unchanged=True, facets_before=before_counts, facets_after=after_counts,
+                conflicts_unchanged=True, brands_before=before_brands, brands_after=after_brands, facets_before=before_counts, facets_after=after_counts,
                 category_queries=queries)
 
 
@@ -677,7 +702,8 @@ def dedupe_rows(rows):
         raise ValueError("Safe-group validation failed")
     output = build_output(rows, groups, result)
     audit = validate_merge(rows, output, result)
-    audit["conflicts"] = [dict(id=item["id"], fields=item["fields"],
+    audit["merged_ids"] = [item["id"] for item in result["safe"]]
+    audit["conflicts"] = [dict(id=item["id"], type=PROTECTED_IDS.get(item["id"], "field_conflict"), fields=item["fields"],
                                row_count=len(item["rows"]), problems=item["problems"],
                                rows_sha256=hashlib.sha256(json.dumps(item["rows"], ensure_ascii=False, sort_keys=True).encode()).hexdigest())
                           for item in sorted(result["conflicts"], key=lambda item: item["id"])]
@@ -690,6 +716,7 @@ def finalize_public(public):
     public = Path(public)
     rows, digest = load_rows(public / "goods.json")
     output, audit = dedupe_rows(rows)
+    assert_public_fields(output)
     audit["input_sha256"] = digest
     audit["output_sha256"] = hashlib.sha256((json.dumps(output, ensure_ascii=False, indent=1) + "\n").encode()).hexdigest()
     audit_path = public / "merge-audit.json"
