@@ -14,6 +14,8 @@ sys.path.insert(0, str(ROOT / 'src'))
 from goodsdex.supplements import metadata
 
 INPUT = ROOT / 'data/car-pilot-20261028'
+HISTORY = ROOT / 'data/car-history-20261029/byd-verified.json'
+
 SOURCES = (('byd-verified.json', '比亚迪', 'CN:byd:car:', 'www.bydauto.com.cn', 33),
            ('xiaomi-candidates.json', '小米汽车', 'CN:xiaomi_ev:car:', 'www.xiaomiev.com', 10))
 
@@ -83,15 +85,64 @@ def prepare(previous, input_dir=INPUT, append_only=False):
     return result, audit
 
 
+def prepare_history(previous, input_dir=None):
+    """Append the exact reviewed historical bundle, preserving every old object."""
+    approved = json.loads(HISTORY.read_text())
+    incoming = json.loads((input_dir / 'byd-verified.json').read_text()) if input_dir else approved
+    fresh = unique(incoming, 'historical incoming')
+    reviewed = unique(approved, 'historical reviewed')
+    if fresh != reviewed:
+        raise ValueError('Historical input differs from reviewed evidence bundle')
+    old = unique(previous, 'previous', preserve_legacy=True)
+    for row in incoming:
+        if (row.get('brand') != '比亚迪' or not row['id'].startswith('CN:byd:car:')
+                or row.get('model_year') != 2022 or '2022款' not in row.get('name', '')
+                or row.get('record_level') != 'model_reference'
+                or row.get('sale_status') != 'discontinued'
+                or row.get('category') != '汽车' or row.get('product_type') != 'car'):
+            raise ValueError('Invalid historical identity/status')
+        if row.get('source_type') not in ('official', 'official_news', 'miit', 'third_party'):
+            raise ValueError('Missing historical source type')
+        if not row.get('source_note') or not row.get('parameter_sources'):
+            raise ValueError('Missing historical provenance')
+        url = urlsplit(row.get('source_url', ''))
+        if url.scheme != 'https' or not url.hostname:
+            raise ValueError('Invalid historical source URL')
+        price = row.get('price')
+        if price is None:
+            if row.get('price_kind') != 'none':
+                raise ValueError('Null historical price requires none')
+        elif (row.get('price_kind') != 'msrp_historical'
+              or row.get('price_source_type') not in ('official', 'official_news')
+              or not row.get('price_source_url') or isinstance(price, bool)
+              or not isinstance(price, (int, float)) or not math.isfinite(price) or price <= 0):
+            raise ValueError('Historical MSRP requires official price evidence')
+        if row.get('image') is not None and row.get('image_source_type') != 'official':
+            raise ValueError('Historical image must be official or null')
+        if set(row.get('params', {})) != set(row['parameter_sources']):
+            raise ValueError('Every parameter requires provenance')
+        if row['id'] in old and row != old[row['id']]:
+            raise ValueError('Historical ID conflict; append-only publication refuses overwrite')
+    result = deepcopy(previous)
+    result.extend(deepcopy(r) for r in incoming if r['id'] not in old)
+    unique(result, 'result', preserve_legacy=True)
+    if result[:len(previous)] != previous:
+        raise ValueError('Historical publication changed existing records')
+    return result, dict(old_total=len(previous), added=len(result)-len(previous),
+                        updated=0, new_total=len(result))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--public', type=Path, default=ROOT / 'public')
     ap.add_argument('--input', type=Path, default=INPUT)
+    ap.add_argument('--historical-only', action='store_true', help='Append the reviewed 2022 historical bundle only')
     ap.add_argument('--append-only', action='store_true', help='Preserve every existing record exactly')
     args = ap.parse_args()
     try:
         previous = json.loads((args.public / 'goods.json').read_text())
-        result, audit = prepare(previous, args.input, args.append_only)
+        result, audit = (prepare_history(previous, args.input if args.input != INPUT else None)
+                         if args.historical_only else prepare(previous, args.input, args.append_only))
         meta = metadata(result, json.loads((args.public / 'meta.json').read_text()))
         # Validation is complete before either file is touched.
         for filename, value in [('goods.json', result), ('meta.json', meta)]:

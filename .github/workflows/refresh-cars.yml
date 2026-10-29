@@ -43,7 +43,7 @@ jobs:
       - name: Test car publication guards
         run: |
           python3 -m pip install --quiet pytest
-          PYTHONPATH=src:scripts python3 -m pytest -q tests/test_car_catalog.py tests/test_publish_cars.py
+          PYTHONPATH=src:scripts python3 -m pytest -q tests/test_car_catalog.py tests/test_publish_cars.py tests/test_publish_car_history.py
       - name: Capture approved cars or stage verified inputs
         env:
           VERIFIED_ONLY: ${{ inputs.verified_only }}
@@ -60,6 +60,8 @@ jobs:
           else
             python3 scripts/publish_cars.py --public _data/public --input "$RUNNER_TEMP/car-input"
           fi
+      - name: Append reviewed historical cars without changing existing objects
+        run: python3 scripts/publish_cars.py --public _data/public --historical-only
       - name: Push car release to data branch
         run: |
           cd _data
