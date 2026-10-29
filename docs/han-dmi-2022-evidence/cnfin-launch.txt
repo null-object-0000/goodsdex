@@ -1,0 +1,2254 @@
+
+
+
+
+
+
+
+
+
+ 
+
+
+比亚迪发布汉家族四款车型 - 中国金融信息网
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//终端判断
+function getQueryStringRegExp(name) {var reg = new RegExp("(^|\\?|&)"+ name +"=([^&]*)(\\s|&|$)", "i"); if (reg.test(location.href)) return unescape(RegExp.$2.replace(/\+/g, " ")); return ""; }; if(/Android|webOS|iPhone|iPod|iPad|BlackBerry|opera mini|opera mobile/i.test(navigator.userAgent) && getQueryStringRegExp('path')!='www') {window.location='//m.cnfin.com/wx/share?url=//m.cnfin.com/jgdt-lb//zixun/20220410/3579135_1.html';}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.xhcj_content .xhcj_summary{height: auto !important;}
+.blocker{z-index:100;}
+.xhcj_detail_main video{max-width: 100%;}
+
+
+
+
+  if(window.mixin){
+    mixin.data.qihuoArr = [
+      {
+        name: "上海期货交易所",
+        code: "XSGE",
+        type: 1,
+        idx: 1,
+        child: []
+      },
+      {
+        name: "大连期货交易所",
+        code: "XDCE",
+        type: 1,
+        idx: 2,
+        child: []
+      },
+      
+      {
+        name: "郑州商品交易所",
+        code: "XZCE",
+        type: 1,
+        idx: 3,
+        child: []
+      },
+      {
+        name: "广州期货交易所",
+        code: "XGFE",
+        type: 1,
+        idx: 4,
+        child: []
+      },
+      {
+        name: "上海黄金交易所",
+        code: "SHGE",
+        type: 1,
+        idx: 5,
+        child: []
+      },
+      {
+        name: "CBOT",
+        code: "CBOT",
+        type: 1,
+        idx: 7,
+        child: []
+      },
+      {
+        name: "CME",
+        code: "CME",
+        type: 1,
+        idx: 8,
+        child: []
+      },
+      {
+        name: "NYMEX",
+        code: "NYMEX",
+        type: 1,
+        idx: 9,
+        child: []
+      },
+      {
+        name: "COMEX",
+        code: "COMEX",
+        type: 1,
+        idx: 10,
+        child: []
+      }
+    ]
+    mixin.methods.getBlockInfo = function getBlockInfo(obj) {
+          var that = this;
+          $.ajax({
+            method: "get",
+            url:
+            window.config.baseUserURL+ "/quote/v1/market/summary?en_finance_mic=" +
+              obj.mic,
+            contentType: false,
+            processData: false,
+            success: function success(res) {
+              var data = res.data.finance_mic_grp[0].type_grp;
+              var showArr = [];
+
+              for (var i = 0; i 
+
+
+
+.qihuo-menu-third0 {
+  width: 360px;
+  height: 150px;
+  left: 179px;
+  top: 10px;
+}
+.qihuo-menu-third1 {
+  width: 470px;
+  height: 150px;
+  left: 179px;
+  top: 30px;
+}
+.qihuo-menu-third3 {
+  width: 150px;
+  height: 150px;
+  left: 179px;
+  top: 60px;
+}
+.qihuo-menu-third2 {
+  width: 500px;
+  height: 150px;
+  left: 179px;
+  top: 60px;
+}
+.qihuo-menu-third4 {
+  width: 150px;
+  height: 30px;
+  left: 179px;
+  top: 140px;
+}
+.qihuo-menu-third5 {
+  width: 520px;
+  height: 150px;
+  left: 179px;
+  top: 110px;
+}
+.qihuo-menu-third6 {
+  width: 720px;
+  height: 150px;
+  left: 179px;
+  top: 130px;
+}
+.qihuo-menu-third7 {
+  width: 360px;
+  height: 150px;
+  left: 179px;
+  top: 170px;
+}
+.qihuo-menu-third8 {
+  width: 360px;
+  height: 150px;
+  left: 179px;
+  top: 170px;
+}
+.qihuo-menu-third9 {
+  width: 1000px;
+  height: 180px;
+  left: 179px;
+  top: 150px;
+}
+
+ 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// aip调用接口域名
+	var cnfinApiHost = '//api.cnfin.com/';
+	// 网站域名管理
+	var cnfinHost = '//www.cnfin.com/';
+
+
+
+
+.m-head-place {
+  display: none;
+}
+.headFixedPar .m-head-place {
+  height: 60px;
+  display: block;
+}
+.ui-head-nav a {margin-right:10px; margin-left:10px;}
+.ui-head-nav a {font-size: 14px;}
+.ui-head-search {
+    float: right;
+}
+.js-head-cpfw .ui-tagcls-wrap{
+  position: relative;
+}
+.js-head-cpfw .ui-tagcls-wrap .ui-tagcls-item{
+  width: 440px;
+}
+.js-head-cpfw .ui-tagcls-wrap .ui-tagcls-item.pos{
+  position: absolute;
+  left: 960px;
+  width: 300px;
+}
+.js-head-cpfw .ui-tagcls-wrap .ui-tagcls-item.pos li{
+  float: none;
+  width: auto;
+}
+.js-head-cpfw .ui-tagcls-wrap .ui-tagcls-item.pos li a{
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  background: #EDF9FE;
+  border-radius: 3px;
+  border: 1px solid #B0E2FA;
+  padding: 0 15px;
+  color: #33A2D7;
+}
+
+
+
+
+
+
+
+
+	
+
+		
+
+
+
+中国经济信息社
+主办
+
+-->
+			
+
+				
+
+
+
+			
+
+			
+
+				
+首页
+
+				
+资讯
+
+				
+研报
+
+				
+数据
+
+				
+行情
+
+				
+工具
+
+				
+直播
+
+				
+快看
+
+				
+金融超市
+
+				
+投教
+
+        
+指数
+
+				
+产品与服务
+
+				
+聚财
+
+			
+
+
+			
+
+
+
+				
+
+			
+
+
+
+
+				
+
+登录
+
+
+			
+
+			
+
+				
+
+				
+
+				
+
+					
+
+
+					
+
+						
+
+个人中心
+
+
+						
+
+退出账号
+
+
+					
+
+				
+
+			
+
+-->
+		
+
+	
+
+	
+
+	
+
+		
+
+			
+
+				
+
+					
+主题
+
+					
+
+						
+
+要闻
+
+
+						
+
+快讯
+
+
+						
+
+政策
+
+-->
+						
+
+企业
+
+-->
+						
+
+宏观
+
+
+						
+
+股市
+
+
+						
+
+债市
+
+
+						
+
+汇市
+
+
+						
+
+货币
+
+
+						
+
+大宗
+
+
+						
+
+科创
+
+-->
+						
+
+区域
+
+
+						
+
+同业
+
+
+						
+
+产业
+
+
+						
+
+视频
+
+-->
+						
+
+财趣
+
+-->
+						
+
+聚财
+
+-->
+					
+
+				
+
+				
+
+					
+热点
+
+					
+
+						
+
+金融街发布
+
+
+						
+
+江北嘴发布
+
+
+						
+
+区块链
+
+-->
+						
+
+今日观察
+
+
+						
+
+金鱼嘴发布
+
+
+					
+
+				
+
+			
+
+		
+
+	
+
+	
+
+	
+
+	
+
+		
+
+			
+
+				
+
+
+						
+首页
+
+					
+
+
+				
+
+
+						
+股票
+
+					
+
+
+				
+
+
+						
+债券
+
+					
+
+
+				
+
+
+						
+外汇
+
+					
+
+
+				
+
+
+						
+基金
+
+					
+
+
+				
+
+
+						
+期货
+
+					
+
+
+				
+
+
+						
+指数
+
+					
+
+
+			
+
+		
+
+	
+
+	
+
+	
+
+	
+
+		
+
+			
+
+
+			
+
+		
+
+	
+
+	
+
+	
+
+	
+
+		
+
+			
+
+				
+
+财经日历
+
+				
+
+				
+
+宏观数据
+
+
+			
+
+		
+
+	
+
+	
+
+	
+
+	
+
+		
+
+			
+
+				
+
+
+						
+研报金榜
+
+					
+
+
+
+
+
+						
+可视化财报
+
+					
+
+
+-->
+				
+
+
+						
+合规评测
+
+					
+
+
+				
+
+
+						
+丝路数据库
+
+					
+
+
+			
+
+		
+
+	
+
+	
+
+	
+
+	
+
+		
+
+			
+
+				
+
+					
+新华财经
+
+					
+
+						
+
+点金学堂
+
+
+                        
+
+ESG
+
+
+						
+
+投教基地
+
+
+						
+
+路演中心
+
+
+						
+
+外汇信息服务
+
+
+					
+
+				
+
+				
+
+					
+新华丝路
+
+					
+
+						
+
+丝路资讯/智讯/案例/全球数据/知识产权
+
+
+						
+
+大讲堂
+
+
+						
+
+多语言
+
+
+					
+
+				
+
+				
+
+					
+新华信用
+
+					
+
+						
+
+企业信用
+
+
+						
+
+信用发布
+
+
+						
+
+信用名片
+
+
+						
+
+信用专题
+
+
+					
+
+				
+
+				
+
+					
+新华指数
+
+					
+
+						
+
+指数发布
+
+
+						
+
+指数授权
+
+
+						
+
+报告编制
+
+
+						
+
+智库咨询
+
+
+						
+
+定制化服务
+
+
+						
+
+空间系统
+
+
+
+					
+
+				
+
+        
+
+					
+产品下载
+
+					
+
+						
+
+专业终端（基础版）
+
+
+						
+
+专业终端（智能升级版）
+
+
+						
+
+专业终端（智能政务版）
+
+
+					
+
+				
+
+			
+
+		
+
+	
+
+	
+
+
+
+
+
+	$('.ui-head-nav a').hover(function () {
+		$('.m-head-tagcls').hide();
+		switch ($(this).data('channel')) {
+			case 'zx':
+				$('.js-head-zx').show();
+				break;
+			case 'fxgj':
+				$('.js-head-fxgj').show();
+				break;
+			case 'sj':
+				$('.js-head-sj').show();
+				break;
+			case 'hq':
+				$('.js-head-hq').show();
+				break;
+			case 'cpfw':
+				$('.js-head-cpfw').show();
+		}
+	})
+	function getTagList(id, type) {
+		$.ajax({
+			type: "GET",
+			url: cnfinApiHost + "roll/query/tagList",
+			data: {
+				id: id
+			},
+			dataType: "jsonp",
+			jsonp: "jsonpcallback",
+			success: function (data) {
+				if (data.status == 1) {
+					var arr = data.data.children;
+					var listUrl = "";
+
+					if (type == "zx") {
+						listUrl = '//www.cnfin.com/list/index.html'
+					} else if (type == "yb") {
+						listUrl = '//www.cnfin.com/yblist/index.html'
+					}
+					var html = '';
+					for (var i = 0; i 
+
+' + arr[i].name + '
+
+'
+						for (var q = 0; q 
+
+' + arr[i].tags[q].type + '
+
+'
+						};
+						html += '
+
+'
+					};
+
+					switch (type) {
+						case 'yb':
+							$('.js-head-yb .ui-tagcls-wrap').html(html);
+							break;
+						case 'zx':
+							$('.js-head-zx .ui-tagcls-wrap').html(html);
+							break;
+					}
+
+					$('.m-head-tagcls').mouseleave(function () {
+						$(this).hide();
+						$('.js-zx-hover').removeClass('on');
+					});
+				} else {
+					alert(data.msg);
+				};
+			},
+		});
+	}
+	getTagList('12', 'yb'); // 研报
+	var channelNav = $("meta[name=channelnav]").attr("content");
+	var $nav = $('.ui-head-nav a');
+	var uChannelId = $("meta[name=catalogs]").attr("content");
+	for (var q = 0; q 
+
+ 
+
+
+
+
+
+
+    
+ 
+    
+首页
+
+ > 
+ 
+  
+
+机构动态
+
+
+
+ > 
+正文
+
+    
+
+        
+
+            
+
+
+已订阅
+
+            
+
+
+订阅
+
+        
+
+    
+
+    
+
+    
+
+    
+
+      
+
+
+
+  
+比亚迪发布汉家族四款车型
+
+        
+
+            
+新华财经
+
+|
+
+2022年04月10日
+    
+            
+
+            
+
+
+            
+
+
+            
+
+
+            
+
+                  sosh('.datasetconfig', {
+                    sites: ['weixin,', 'weibo']
+                  })
+                
+
+            
+
+
+阅读量： 
+
+
+
+        
+
+                
+
+            
+4月10日，比亚迪举行“汉为观止”月球超级发布会，并正式发布汉EV创世版、汉EV千山翠限量版、汉DM-i、汉DM-p等汉家族4款车型，综合补贴后售价21.58-32.98万元。
+
+        
+
+                
+
+                
+
+
+
+
+4月10日，
+比亚迪
+举行“汉为观止”月球超级发布会，并正式发布汉EV创世版、汉EV千山翠限量版、汉DM-i、汉DM-p等汉家族4款车型，其中汉DM-i可油可电，实现中大型轿车“4.2L亏电油耗+1300km综合续航”，汉DM-p则实现中大型轿车“3.7s零百加速+5.2L 亏电油耗”成绩，4款车型综合补贴后售价21.58-32.98万元。
+
+
+
+国风设计诠释中式文化魅力
+
+
+
+作为中
+国新能源
+品牌，
+比亚迪
+设计师始终坚持将传统文化融入设计。汉家族由
+比亚迪
+全球设计总监沃尔夫冈·艾格领衔打造，车型延续了“龙颜美学”设计，在前脸、尾灯及整车设计上均做了深入雕琢，整体更具时尚和运动气息。
+
+
+
+
+
+
+此次发布的四款车型均延续了
+比亚迪
+“Dragon Face”家族式设计语言，前脸采用钢琴黑运动套件，具有极强的运动感和体量感。其中汉DM-i和汉DM-p的前脸进一步加入了跑车化设计，包括两片竖立起来的龙鳍、前格栅独特的钻石般龙鳞亮面、标志性的大嘴设计等，让整车更显优雅。
+
+
+汉家族尾灯换用全新的贯穿式中国结尾灯设计，凸显中式文化精髓。在整车造型方面，四款车型的设计及线条铺设都更加简洁、圆润、大气，通过精准的高光控制，让光影在曲面上自由流动，简约灵动之余又富有肌肉感。
+
+
+
+
+
+
+内饰方面，
+比亚迪
+全球内饰设计总监米开勒·帕加内蒂对汉进行了全面升级，环抱式品格内饰设计语言，提取古建筑中“品”字型排布方式，加之多样化龙元素细节，既凸显了强烈的中华文化风，更诠释了中式旗舰轿车的摩登精神。此外，汉家族内饰新增一体式运动座椅可选，将优雅与运动感融合，充满热烈又沉静的艺术气息。
+
+
+
+
+
+
+值得一提的是，汉EV千山翠限量版设计中，千山翠取自程俱《三峰草堂》中“雨洗千山翠欲浮，稻畦松涧已争流”。集传承、融合、创新于一体，于中国山水点翠绘画的翠青色调意境中汲取灵感，其色彩在苍颜古翠的高冷中更有些许灵动，不失低调奢华。同时，汉EV千山翠限量版还搭配了一系列专属外观内饰运动套件，与高冷配色相得益彰，碳黑轮毂、熏黑前后大灯、高性能石绿四活塞定钳(前)、绿色的碳纤维材料等，内外相呼应使得整车更具型格。
+
+
+
+强劲性能领先同级性能表现
+
+
+
+汉家族依托
+比亚迪
+刀片电池、DM-i超级混动、DM-p等技术，搭载包括EV、DM-i、DM-p三套动力系统，实现了性能与效能有机融合，满足不同消费人群的需求。
+
+
+性能方面，汉EV创世版系统综合最大扭矩达700N·m，零百加速只需3.9s。续航上，凭借宽温域高效热泵空调、电池直冷直热技术，汉EV创世版CLTC续航达715km。充电速率上，汉EV创世版具备充电10分钟续航最长增加150km、30分钟完成从30%~80%充电的超强快充能力。
+
+
+汉DM-i则由超级混动技术赋能，兼具“快、省、静、顺、绿”五大优势。其搭载了热效率高达40.12%的骁云-插混专用涡轮增压1.5Ti高效发动机、EHS电混系统、DM-i超级混动专用功率型刀片电池等核心零部件，突破传统以油为主的混动技术架构，可油可电，NEDC百公里亏电油耗低至4.2L，NEDC综合续航里程最高可达1300km，同时零百加速只需7.9s，满足了用户对极致效能的追求。此外，汉DM-i顶配车型还具有NEDC242km超长纯电续航及80kW安全升压快充。
+
+
+
+
+
+
+汉DM-p在发动机之外搭载了综合最大功率360kW，最大扭矩675N·m的前后双电机，零百加速3.7s，与汉EV四驱版一同位列“零百加速三秒俱乐部”，并且其NEDC百公里亏电油耗仅需5.2L、NEDC纯电续航高达202km，做到性能与效能兼备。
+
+
+驾控方面，汉家族底盘由前奔驰底盘专家汉斯·柯克专属调校，四驱版车型搭载了DiSus-C智能电控主动悬架和超级智能电四驱，车辆可实现毫秒级响应，同时结合中国多样复杂的路况，把握操控性和舒适性的黄金平衡点。
+
+
+
+由内而外重塑智能安全体验
+
+
+
+智能化方面，汉家族同样进行了全面升级，其搭载的DiPilot智能驾驶辅助系统，最高配备24个感知元件，增加了高速道路驾驶辅助、紧急车道保持辅助、智慧礼让等功能，辅助驾驶水平大幅提升。
+
+
+
+
+
+
+同时，汉家族新车标配DiLink 4.0(5G)智能网联系统，包括5G速联、双频定位等功能，除汉DM-i 121KM尊贵型外全系更搭载了HiFi级定制丹拿音响，同时支持整车OTA远程升级，打造出了一个“更智能、更高效、更人性”的无限畅享智能座舱，为用户解锁更多用车场景，让用户充分享受
+比亚迪
+DiLink带来的潮酷智趣生活。
+
+
+安全方面，
+比亚迪
+汉基于“全面均衡领先、全生命周期安全”的开发理念打造，全系标配刀片电池，高分通关中保研、C-NCAP两大碰撞测试，并采用“婴儿级”涂装清新工艺，由内而外全方面提升了安全性能。
+
+
+同时，汉家族主动安全也再次得到提升，新增W-HUD抬头显示相比业内HUD系统，拥有更大成像尺寸及更大亮度，显著提升行车安全性。此外，DMS驾驶员监测（含疲劳及注意力监测）配置，可时刻为驾乘安全保驾护航。
+
+
+本次发布会，
+比亚迪
+汉家族还带来4幅NFT数字典藏画作，其中3幅画作限上市发布会抖音
+直播
+间前999名预约互动用户领取，最后一幅则专属于前2022名预定汉EV千山翠限量版的用户。该系列NFT画作基于
+比亚迪
+汉月球基地主题，并结合最新汉产品矩阵创作，具有科幻属性与收藏价值。(柯涛)
+
+
+
+
+
+编辑：林郑宏
+
+
+声明：新华财经为新华社承建的国家金融信息平台。任何情况下，本平台所发布的信息均不构成投资建议。
+
+            
+新华财经声明：本文内容仅供参考，不构成投资建议。投资者据此操作，风险自担。
+
+            
+
+
+                
+
+
+            
+
+
+            
+
+                  sosh('.datasetconfig', {
+                    sites: ['weixin,', 'weibo']
+                  })
+                
+
+            
+
+
+        
+
+
+        
+
+       	 
+        
+
+    
+
+  
+
+  
+
+.ui-detail-ads{ width:600px; height:300px; background-color:#fff; padding:0 100px 30px;}
+
+
+
+
+
+
+
+
+
+
+
+  
+ 
+    
+
+  
+
+  
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+
+						
+
+						
+
+							
+
+								
+
+							
+
+						
+
+						
+
+							
+
+								
+
+							
+
+						
+
+						
+
+							
+
+								
+
+							
+
+						
+
+						
+
+							
+
+								
+
+							
+
+						
+
+						
+
+							
+
+								
+
+							
+
+						
+
+						
+
+					
+
+				
+
+
+ 
+      
+
+
+
+
+传播矩阵
+
+    
+
+        
+
+            
+
+
+
+        
+
+        
+
+            
+
+
+
+        
+
+        
+
+
+        
+
+
+        
+
+
+        
+
+
+    
+
+
+ 
+      
+
+        
+
+
+最新要闻
+更多
+
+
+        
+
+          
+
+
+新财观 | 加息暂歇，“鹰声”未止——2026年10月美联储议息会议点评
+
+
+
+
+电子布供需紧平衡 龙头业绩大增 加速产能扩张
+
+
+
+
+2026年公募基金三季报收官 主动权益基金高仓位守主线稳回报
+
+
+
+
+向“新”而行 以“质”争先——从“十五五”专项规划看新质生产力发展前景
+
+
+
+
+
+
+
+
+【五大信披媒体精华摘要】10月29日
+
+
+
+
+        
+
+      
+ 
+
+
+
+
+
+
+
+CHINASO_AD_Slot('78');
+
+
+
+
+
+      
+
+        
+
+
+热点专题
+更多
+
+
+        
+
+          
+
+    
+
+
+
+    
+二十届榆林煤博会
+
+
+
+
+
+    
+
+
+
+    
+2026第四届东北亚金融大会
+
+
+
+
+
+    
+
+
+
+    
+金融支持重庆高质量发展大会
+
+
+
+
+        
+
+      
+
+
+
+
+
+
+
+
+CHINASO_AD_Slot('79');
+
+
+
+
+
+    
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+    
+
+      
+
+        
+中经社官网
+
+        
+公司介绍
+
+        
+产品服务
+
+        
+联系我们
+
+        
+广告招商
+
+        
+版权声明
+
+        
+合作伙伴
+
+      
+
+      
+
+        
+
+          
+
+          
+新华通讯社主管
+中国经济信息社有限公司主办
+
+        
+
+        
+
+          
+传媒矩阵
+
+       
+
+          
+
+            
+
+新华财经
+
+
+            
+
+                
+新华财经App
+
+                
+
+
+
+            
+
+            
+
+                
+微信
+
+                
+
+
+
+            
+
+            
+
+微博
+
+
+            
+
+腾讯微视
+
+
+            
+
+抖音
+
+
+            
+
+快手
+
+
+            
+
+更多
+
+
+         
+
+        
+
+        
+
+        
+
+          
+友情链接
+
+          
+
+            
+中国人民银行
+
+            
+中国证监会
+
+            
+中国银保监会
+
+            
+上交所
+
+            
+深交所
+
+            
+中国外汇网
+-->
+            
+新华丝路
+
+            
+新华信用
+
+            
+新华网
+
+            
+参考消息
+
+            
+上海石油天然气交易中心
+
+            
+中证报
+
+            
+上证报
+
+            
+经参
+
+            
+半月谈
+
+            
+瞭望
+
+            
+环球
+
+            
+每日电讯
+
+            
+新华烟草
+
+            
+中国财富网
+
+            
+信用中国网
+
+            
+陆家嘴金融网
+
+            
+金融界
+-->
+            
+东方财富网
+-->
+            
+和讯网
+-->
+            
+金牛理财网
+-->
+            
+中国蓝网
+-->
+          
+
+        
+
+      
+
+      
+
+        
+
+          
+
+          
+
+
+
+          
+
+
+
+        
+
+        
+
+          
+客服热线：400-6123115
+
+          
+客服邮箱：xinhuacaijing@xinhua.org
+
+        
+
+      
+
+      
+
+
+
+
+        
+
+京ICP备17000448号-7
+
+
+        
+        
+
+
+
+京公网安备11010202011137号
+
+
+        
+互联网新闻信息服务许可证编号10120230015
+
+        
+广播电视节目制作经营许可证:(京)字第16946号
+
+      
+
+      
+中国金融信息网 版权所有 Copyright © 2010 - 2026 cnfin.com All Rights Reserved.  未经授权 不得转载
+
+    
+
+  
+
+
+
+
+
+
+
+	function openServiceWin1(){
+		var newWinC = window.open('','Customer','toolbar=no,menubar=no,scrollbars=no,titlebar=no,resizable=no,location=no,status=no');
+        newWinC.document.write('
+
+
+
+');
+	}
+
+
+
+
+	
+
+    
+
+      
+
+
+    
+
+    
+
+      
+
+
+      
+
+
+
+
+
+    
+
+    
+
+      
+
+
+      
+
+
+
+
+
+    
+
+    
+
+      
+
+
+    
+
+    
+
+      
+
+
+    
+
+    
+
+      
+
+
+    
+
+    
+
+      
+
+
+    
+
+    
+
+      
+
+
+    
+
+    
+
+      
+
+
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+    
+
+      
+提示
+
+    
+
+    
+
+      
+
+        
+
+          
+
+            
+
+              请先登录在执行此操作
+            
+
+            
+
+              
+
+                
+登录
+
+              
+
+            
+
+          
+
+        
+
+      
+
+    
+
+  
+
+
+ 
+  
+
+  
+
+  
+
+    
+
+      
+订单支付
+
+    
+
+    
+
+      
+
+        
+
+          
+加载中...
+
+          
+
+            
+
+
+            
+微信支付
+              
+ 
+
+支付宝
+              
+
+            
+
+            
+
+              
+
+
+
+
+
+              
+
+
+                微信扫码，支付
+
+元
+              
+
+            
+
+            
+
+              
+
+
+              
+
+
+                支付宝，支付
+
+元
+              
+
+            
+
+          
+
+        
+
+      
+
+    
+
+  
+
+  
+
+
+
+
+
+支付成功！
+
+
+
+查看订单
+
+关闭
+
+
+
+
+  
+
+  
+
+
+
+
+
+支付未成功
+
+
+
+查看订单
+
+关闭
+
+
+
+
+  
+
+  
+
+
+  
+ 
+  
+
+  
+
+
+
+
+$('#js-search').bind('keydown', function (event) {
+  var event = window.event || arguments.callee.caller.arguments[0];
+  if (event.keyCode == 13){
+    if($('#js-search').val() == '') {
+      alert('请输入关键词，股票代码、名称、简拼!')
+    } else {
+      window.open('//search.cnfin.com/synthesis?q='+encodeURI($('#js-search').val()));
+    }
+  }
+});
+$(".js-search-btns").click(function() {
+if($('#js-search').val() == '') {
+      alert('请输入关键词，股票代码、名称、简拼!')
+    } else {
+      window.open('//search.cnfin.com/news?q='+encodeURI($('#js-search').val()))
+    }
+});
+function getPvFun() {
+$.ajax({
+    type: "get",
+    url: cnfinApiHost+'roll/statitic/totalPv',
+    timeout: 15000,
+    data: {
+        key: $('meta[name="contentid"]').attr("content"),
+        tableId: $('meta[name="tableid"]').attr("content"),
+    },
+    cache: false,
+    // async : false,
+    dataType: "json",
+    success: function (res) {
+// 增加接口返回错误信息判断 status状态为1时返回正常,其他状态则显示1
+if(res.status == 1){
+        $('.js-pv-cont span').html(res.data + 1);
+} else {
+        $('.js-pv-cont span').html('1');
+}
+    },
+});
+};
+getPvFun();
+
+function getExpertInfo() {
+  var eName = $('meta[name="expertName"]').attr("content");
+
+  if(eName != "" && eName != 'undefined') {
+    $.ajax({
+      type: "get",
+      url: cnfinApiHost+'roll/query/getNewsList.htm',
+      timeout: 15000,
+      data: {
+        tableId: 2,
+        fields: 'PublishedAt,Detail,SourceUrl,TitleEN,TitleCN,ImageUrl,Summary,SourceName,PreviewImage,Tag',
+        tableName: 'a_cj_portal_news',
+        sourceType: '0,1,2,3,4,5',
+        pageSize: 300,
+        queryId: 1422,
+        pageNo: 0
+      },
+      cache: false,
+      // async : false,
+      dataType: "json",
+      success: function (res) {
+        var data = JSON.parse(res.data);
+        if(data.status == "OK") {
+          var dataArr = data.results;
+
+          for(var i = 0;i
+ 0 ){ 
+$('#inner1').nav({
+t: 3000
+});
+}
+
+
+
+
+
+// 神策导航栏点击事件统计 senorscnl:栏目级别 
+$('.sensorsNav').on('click', function() {
+  var name = $(this).data('senorsname');
+  var clickChl = $(this).data('senorscnl');
+  if(clickChl == "1") {
+    sensors.track('channelClick',{
+      'channel_first': name,
+      'platform':'cnfin',
+    });
+  } else if(clickChl == "2"){
+    sensors.track('channelClick',{
+      'channel_second': name,
+      'platform':'cnfin',
+    });
+  };
+});
+
+/*
+$("#login-btn").click(function(){
+window.location.href = '//uc.cnfin.com/pub/login.html?url='+window.location.href;
+});
+*/
+
+
+
+
+ 
+  
+
+  
+
+  
+
+sensors.track('infoDetailPageview', {
+	'channel_second': $(".js-sensors-chlname").html(), 
+	'article_title': $(document).attr('title'),
+	'editor': $('meta[name="operator"]').attr("content"),
+	'signer': $('meta[name="SignerName"]').attr("content"),
+	'writer': $('meta[name="author"]').attr("content"),
+	'platform_id': $('meta[name="SourceContentId"]').attr("content"),
+	'article_id': $('meta[name="contentid"]').attr("content"),
+	'datetime': $('meta[name="publishTime"]').attr("content"),
+	'platform':'cnfin'
+});
+
+ 
+  
+
+
+
+
+
