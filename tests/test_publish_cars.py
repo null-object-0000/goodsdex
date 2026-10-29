@@ -16,10 +16,10 @@ def test_initial_and_repeat_publication_preserve_other_objects():
     other = [{'id': f'other:{b}', 'brand': b, 'nested': {'opaque': [None, 1]}}
              for b in ('小米', 'Apple', '大疆', '富士')]
     rows, audit = pub.prepare(other)
-    assert audit == dict(old_total=4, added=34, updated=0, new_total=38)
+    assert audit == dict(old_total=4, added=43, updated=0, new_total=47)
     assert rows[:4] == other
     again, audit = pub.prepare(rows)
-    assert audit == dict(old_total=38, added=0, updated=34, new_total=38)
+    assert audit == dict(old_total=47, added=0, updated=0, new_total=47)
     assert rows == again
 
 
@@ -61,3 +61,20 @@ def test_hourly_guard_checks_type_counts():
     row = {'id': 'CN:byd:car:test', 'product_type': 'car', 'params': {'x': 1}}
     with pytest.raises(ValueError): assert_cars_unchanged([row], [{**row, 'product_type': 'machine'}])
     with pytest.raises(ValueError): assert_cars_unchanged([row], [{**row, 'params': {}}])
+
+
+def test_legacy_non_car_duplicates_preserved():
+    other = [{'id': 'CN:mi_cn:product:old', 'brand': '小米', 'price': v} for v in (1, 2)]
+    rows, audit = pub.prepare(other)
+    assert rows[:2] == other
+    assert audit['added'] == 43
+    assert len(rows) == 45
+
+
+def test_append_only_preserves_existing_car_exactly():
+    old = deepcopy(reviewed()[0])
+    old['opaque'] = {'keep': True}
+    old['price'] = 1
+    rows, audit = pub.prepare([old], append_only=True)
+    assert rows[0] == old
+    assert audit['updated'] == 0

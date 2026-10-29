@@ -55,7 +55,11 @@ jobs:
           fi
       - name: Merge reviewed cars (fail before writing on any invariant violation)
         run: |
-          python3 scripts/publish_cars.py --public _data/public --input "$RUNNER_TEMP/car-input"
+          if [ "${{ inputs.verified_only }}" = true ]; then
+            python3 scripts/publish_cars.py --public _data/public --input "$RUNNER_TEMP/car-input" --append-only
+          else
+            python3 scripts/publish_cars.py --public _data/public --input "$RUNNER_TEMP/car-input"
+          fi
       - name: Push car release to data branch
         run: |
           cd _data

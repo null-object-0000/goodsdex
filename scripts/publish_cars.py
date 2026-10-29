@@ -14,22 +14,22 @@ sys.path.insert(0, str(ROOT / 'src'))
 from goodsdex.supplements import metadata
 
 INPUT = ROOT / 'data/car-pilot-20261028'
-SOURCES = (('byd-verified.json', '比亚迪', 'CN:byd:car:', 'www.bydauto.com.cn', 24),
+SOURCES = (('byd-verified.json', '比亚迪', 'CN:byd:car:', 'www.bydauto.com.cn', 33),
            ('xiaomi-candidates.json', '小米汽车', 'CN:xiaomi_ev:car:', 'www.xiaomiev.com', 10))
 
 
-def unique(rows, label):
+def unique(rows, label, preserve_legacy=False):
     ids = [r.get('id') for r in rows]
     if any(not isinstance(key, str) or not key.strip() for key in ids):
         raise ValueError(f'{label}: missing id')
     duplicates = {key: n for key, n in Counter(ids).items() if n > 1}
-    if duplicates:
+    if duplicates and not (preserve_legacy and all(key.startswith(('CN:mi_cn:', 'CN:apple_cn:', 'CN:dji:', 'CN:fuji:')) for key in duplicates)):
         raise ValueError(f'{label}: duplicate IDs ({sum(n-1 for n in duplicates.values())} extra rows): ' +
                          json.dumps(dict(list(duplicates.items())[:5]), ensure_ascii=False))
     return dict(zip(ids, rows))
 
 
-def prepare(previous, input_dir=INPUT):
+def prepare(previous, input_dir=INPUT, append_only=False):
     gaps = json.loads((input_dir / 'parameter-gaps.json').read_text())
     excluded = {r['id'] for r in gaps}
     incoming = []
@@ -61,15 +61,15 @@ def prepare(previous, input_dir=INPUT):
             row['review_status'] = 'approved'
             incoming.append(row)
     fresh = unique(incoming, 'incoming')
-    old = unique(previous, 'previous')
+    old = unique(previous, 'previous', preserve_legacy=True)
     # Approved identities are a separate, checked allowlist, including for daily captures.
     catalog = json.loads((ROOT / 'data/official/car-catalog.json').read_text())
     allowed = {r['id'] for r in catalog['rows']} - excluded
     if fresh.keys() != allowed:
         raise ValueError('Incoming IDs differ from reviewed allowlist')
-    result = [{**row, **fresh[row['id']]} if row['id'] in fresh else deepcopy(row) for row in previous]
+    result = [{**row, **fresh[row['id']]} if row['id'] in fresh and not append_only else deepcopy(row) for row in previous]
     result.extend(deepcopy(row) for key, row in fresh.items() if key not in old)
-    final = unique(result, 'result')
+    final = unique(result, 'result', preserve_legacy=True)
     expected_added = len(allowed - old.keys())
     added = len(final.keys() - old.keys())
     if added != expected_added or len(result) != len(previous) + added or not old.keys() <= final.keys():
@@ -79,7 +79,7 @@ def prepare(previous, input_dir=INPUT):
         raise ValueError('Non-car records changed')
     if excluded & final.keys():
         raise ValueError('Known parameter gap would be published')
-    audit = dict(old_total=len(previous), added=added, updated=len(fresh.keys() & old.keys()), new_total=len(result))
+    audit = dict(old_total=len(previous), added=added, updated=sum(final[k] != old[k] for k in fresh.keys() & old.keys()), new_total=len(result))
     return result, audit
 
 
@@ -87,10 +87,11 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--public', type=Path, default=ROOT / 'public')
     ap.add_argument('--input', type=Path, default=INPUT)
+    ap.add_argument('--append-only', action='store_true', help='Preserve every existing record exactly')
     args = ap.parse_args()
     try:
         previous = json.loads((args.public / 'goods.json').read_text())
-        result, audit = prepare(previous, args.input)
+        result, audit = prepare(previous, args.input, args.append_only)
         meta = metadata(result, json.loads((args.public / 'meta.json').read_text()))
         # Validation is complete before either file is touched.
         for filename, value in [('goods.json', result), ('meta.json', meta)]:

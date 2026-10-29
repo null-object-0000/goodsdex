@@ -78,7 +78,7 @@ def test_daily_release_rejects_unreviewed_ids_and_preserves_every_other_object()
     before = deepcopy(other)
     result = merge_cars(other, approved, approved)
     assert result[:len(other)] == before == other
-    assert len(result) == len(other) + 34
+    assert len(result) == len(other) + 43
     assert {r['brand'] for r in result[len(other):]} == {'比亚迪', '小米汽车'}
     with pytest.raises(ValueError, match='reviewed IDs'):
         merge_cars(other, approved + [{**approved[0], 'id': 'unreviewed'}], approved)
