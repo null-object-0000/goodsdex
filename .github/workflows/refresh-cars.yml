@@ -63,7 +63,7 @@ jobs:
       - name: Append reviewed historical cars without changing existing objects
         run: python3 scripts/publish_cars.py --public _data/public --historical-only
       - name: Merge category duplicates and validate final release
-        run: python3 scripts/finalize_public.py --public _data/public
+        run: python3 scripts/finalize_public.py --public _data/public --previous "$RUNNER_TEMP/goods-before.json"
 
       - name: Push car release to data branch
         run: |

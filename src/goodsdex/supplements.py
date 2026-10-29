@@ -23,7 +23,7 @@ def indexed(rows, label, unique=False):
 def merge(rebuilt, supplements, previous):
     # Other publishers cannot drop cars; only the separate daily job refreshes them.
     present = {r['id'] for r in rebuilt}
-    rebuilt = rebuilt + [r for r in previous if is_car(r) and r['id'] not in present]
+    rebuilt = rebuilt + [r for r in previous if (is_car(r) or r.get('source') == 'hp_cn') and r['id'] not in present]
     existing = indexed(rebuilt, "rebuilt")
     extra = indexed(supplements, "supplements", unique=True)
     old = indexed(previous, "previous")

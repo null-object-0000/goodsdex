@@ -1,0 +1,81 @@
+src/product-presentation.mjs: OK
+src/catalog-dimensions.cjs: OK
+src/list-facts.mjs: OK
+ Image spendgood-api:local Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 492B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.48kB 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:24-bookworm-slim
+#3 DONE 3.4s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 120B done
+#4 DONE 0.0s
+
+#5 [ 1/13] FROM docker.io/library/node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 21.57kB 0.0s done
+#6 DONE 0.1s
+
+#7 [ 2/13] WORKDIR /app
+#7 CACHED
+
+#8 [ 3/13] RUN sed -i 's|deb.debian.org|mirrors.aliyun.com|g; s|security.debian.org|mirrors.aliyun.com|g' /etc/apt/sources.list.d/debian.sources 2>/dev/null ||     sed -i 's|deb.debian.org|mirrors.aliyun.com|g; s|security.debian.org|mirrors.aliyun.com|g' /etc/apt/sources.list
+#8 CACHED
+
+#9 [ 4/13] RUN apt-get update && apt-get install -y --no-install-recommends chromium fonts-noto-cjk gosu     && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [ 5/13] COPY package.json package-lock.json ./
+#10 CACHED
+
+#11 [ 6/13] RUN npm ci --omit=dev
+#11 CACHED
+
+#12 [ 7/13] COPY src ./src
+#12 DONE 0.1s
+
+#13 [ 8/13] COPY scripts/verify-notify.mjs ./scripts/verify-notify.mjs
+#13 DONE 0.0s
+
+#14 [ 9/13] COPY products.seed.json ./
+#14 DONE 0.0s
+
+#15 [10/13] COPY build-info.json ./
+#15 DONE 0.0s
+
+#16 [11/13] RUN mkdir -p /data && groupadd --system app && useradd --system --gid app --create-home app && chown -R app:app /data
+#16 DONE 1.8s
+
+#17 [12/13] COPY scripts/container-entrypoint.sh /usr/local/bin/spendgood-entrypoint
+#17 DONE 0.1s
+
+#18 [13/13] RUN chmod 755 /usr/local/bin/spendgood-entrypoint
+#18 DONE 0.6s
+
+#19 exporting to image
+#19 exporting layers
+#19 exporting layers 0.3s done
+#19 writing image sha256:ded0568a9087f53f43cfb51bb27b2cd9468f7043f1e7562920439cb2e854d88b done
+#19 naming to docker.io/library/spendgood-api:local done
+#19 DONE 0.3s
+
+#20 resolving provenance for metadata file
+#20 DONE 0.0s
+ Image spendgood-api:local Built 
+ Container spendgood-api Recreate 
+ Container spendgood-api Recreated 
+ Container spendgood-api Starting 
+ Container spendgood-api Started 
+curl: (22) The requested URL returned error: 502
+{"ok":true}2b739069b0828c635dce572884a28c477086d20968b42fe77d2e6a1d0aefdd44  src/product-presentation.mjs
+f72f4121133911228dc32b482d8f0a44777cd9eda1a3fade8c753f08badca7c1  src/catalog-dimensions.cjs
+fbcade70e296f82915b1bd3ecf6079a5648f1a81af1349696358992333c612de  src/list-facts.mjs
+rollback=/tmp/hp-api-rollback.jL0w7H
