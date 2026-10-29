@@ -1,0 +1,27 @@
+name: mirror-sharded-release
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: goodsdex-data-publication
+  cancel-in-progress: false
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: data
+          path: _data
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 -m pip install --quiet oss2
+      - name: Mirror validated release (immutable blobs first, manifest last)
+        env:
+          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+        run: python3 scripts/mirror_public_to_oss.py --public _data/public

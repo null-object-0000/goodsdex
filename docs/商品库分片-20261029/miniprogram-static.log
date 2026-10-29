@@ -1,0 +1,42 @@
+── 1/6 生成 H5 预览产物 ──
+H5 构建通过：14 个页面，18 个静态文件；utils、页面 JS/WXML/WXSS 均由同一份源码生成。
+── 2/6 单元测试 ──
+ℹ tests 497
+ℹ pass 497
+ℹ fail 0
+── 3/6 静态自检 ──
+静态自检通过：14 页四件套齐全，JSON 可解析，2 个 tab，事件处理函数、跳转路径与原生组件检查通过。
+排版基线通过：全站五档字号、间距token、系统字体；商品行/筛选及20261028首页按确认规格例外。
+{
+  "scheme": "light",
+  "minimumPrimary": 4.9,
+  "minimumSecondary": 4.529,
+  "pass": 83,
+  "fail": 0,
+  "unresolved": 103,
+  "failures": []
+}
+{
+  "scheme": "dark",
+  "minimumPrimary": 5.299,
+  "minimumSecondary": 5.198,
+  "pass": 83,
+  "fail": 0,
+  "unresolved": 103,
+  "failures": []
+}
+── 4/6 浏览器脚本卫生 ──
+浏览器脚本卫生检查失败：
+  ✗ measure_catalog_browser.mjs: 未找到 profile 创建语句，无法核对
+  ✗ test_kit_lens_browser.mjs: 未找到 profile 创建语句，无法核对
+  ✗ test_kit_lens_live_regression.mjs: 未找到 profile 创建语句，无法核对
+── 5/6 H5 预览自检 ──
+H5 静态自检通过：注册页面齐全（按app.json生成）；无外部引用及网络 API；本地资源齐全；交互处理函数与跳转存在；产物与 utils/、页面源码逐字同源。
+── 6/6 tab 图标像素与源文件同源 ──
+Traceback (most recent call last):
+  File "/tmp/spend-good-shards-20261029/apps/miniprogram/scripts/build_tab_icons.py", line 17, in <module>
+    assert actual == expected, 'tab 必须引用已验收的两组图标'
+           ^^^^^^^^^^^^^^^^^^
+AssertionError: tab 必须引用已验收的两组图标
+
+❌ 有失败项

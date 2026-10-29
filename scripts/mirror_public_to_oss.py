@@ -40,24 +40,40 @@ def main():
         goods = fp.read()
     if hashlib.sha256(goods).hexdigest() != audit['output_sha256']:
         raise ValueError('Goods changed after final merge validation')
+    from pathlib import Path
+    public = Path(args.public)
+    meta = json.loads((public / 'meta.json').read_bytes())
+    descriptors = meta.get('files', {})
+    if meta.get('schema') != 1 or not descriptors:
+        raise ValueError('Run finalize_public.py to generate sharded release first')
+    # Verify every file before touching OSS; the manifest is the last commit marker.
+    for name, descriptor in descriptors.items():
+        raw = (public / name).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != descriptor['sha256'] or len(raw) != descriptor['bytes']:
+            raise ValueError(f'Shard changed after generation: {name}')
+    uploads = [(name, f"blobs/{d['sha256']}.json") for name, d in descriptors.items()]
+    uploads += [(name, name) for name in descriptors if name != 'goods.json']
+    uploads += [('goods.json', 'goods.json'), ('merge-audit.json', 'merge-audit.json'), ('meta.json', 'meta.json')]
     uploaded = 0
-    for name in FILES:
-        path = os.path.join(args.public, name)
-        if not os.path.exists(path):
-            raise FileNotFoundError(path)
-        result = bucket.put_object_from_file(
-            PREFIX + name, path, headers={'Content-Type': 'application/json'})
-        print(f'已镜像 {name} {os.path.getsize(path)} 字节 HTTP {result.status}')
+    for name, destination in uploads:
+        path = public / name
+        local = path.read_bytes()
+        expected = hashlib.sha256(local).hexdigest()
+        if destination.startswith('blobs/'):
+            try:
+                head = bucket.head_object(PREFIX + destination)
+                if head.headers.get('x-oss-meta-sha256') == expected:
+                    continue
+            except oss2.exceptions.NoSuchKey:
+                pass
+        result = bucket.put_object_from_file(PREFIX + destination, str(path),
+            headers={'Content-Type': 'application/json', 'x-oss-meta-sha256': expected})
         if result.status != 200:
-            raise RuntimeError(f'OSS upload failed: {name} HTTP {result.status}')
-        remote = bucket.get_object(PREFIX + name).read()
-        with open(path, 'rb') as fp:
-            local = fp.read()
-        if hashlib.sha256(remote).digest() != hashlib.sha256(local).digest():
-            raise RuntimeError(f'OSS readback mismatch: {name}')
-        print(f'OSS GET verified {name}: sha256={hashlib.sha256(remote).hexdigest()}')
-        if name == 'meta.json':
-            print('OSS meta.json: ' + json.dumps(json.loads(remote), ensure_ascii=False))
+            raise RuntimeError(f'OSS upload failed: {destination} HTTP {result.status}')
+        remote = bucket.get_object(PREFIX + destination).read()
+        if hashlib.sha256(remote).hexdigest() != expected:
+            raise RuntimeError(f'OSS readback mismatch: {destination}')
+        print(f'OSS GET verified {destination}: bytes={len(local)} sha256={expected}')
         uploaded += 1
     if not uploaded:
         print('没有任何文件被镜像，判定为失败', file=sys.stderr)
