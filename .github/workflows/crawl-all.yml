@@ -140,6 +140,9 @@ jobs:
           PYTHONPATH=src python3 scripts/verify_goods_release.py --public _data/public \
             --previous "$RUNNER_TEMP/goods-before.json"
 
+      - name: Merge category duplicates and validate final release
+        run: python3 scripts/finalize_public.py --public _data/public
+
       - name: Push to data branch
         run: |
           cd ./_data
@@ -153,3 +156,11 @@ jobs:
           git commit -m "crawl $(date -u +%Y-%m-%d)"
           # 远端变化时失败；重新运行以重新校验，禁止自动冲突择边。
           git push origin "HEAD:${DATA_BRANCH}"
+
+      - name: Mirror validated release to OSS
+        env:
+          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+        run: |
+          python3 -m pip install --quiet oss2
+          python3 scripts/mirror_public_to_oss.py --public _data/public

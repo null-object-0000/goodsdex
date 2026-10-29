@@ -18,7 +18,7 @@ import oss2
 ENDPOINT = 'https://oss-cn-shanghai.aliyuncs.com'
 BUCKET = 'spend-good'
 PREFIX = 'data/public/'
-FILES = ('goods.json', 'meta.json')
+FILES = ('goods.json', 'meta.json', 'merge-audit.json')
 
 
 def main():
@@ -34,6 +34,12 @@ def main():
         return 2
 
     bucket = oss2.Bucket(oss2.Auth(key_id, key_secret), ENDPOINT, args.bucket)
+    with open(os.path.join(args.public, 'merge-audit.json')) as fp:
+        audit = json.load(fp)['deduplication']
+    with open(os.path.join(args.public, 'goods.json'), 'rb') as fp:
+        goods = fp.read()
+    if hashlib.sha256(goods).hexdigest() != audit['output_sha256']:
+        raise ValueError('Goods changed after final merge validation')
     uploaded = 0
     for name in FILES:
         path = os.path.join(args.public, name)

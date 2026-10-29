@@ -21,6 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
+from goodsdex.dedupe import analyze, group_by_id
 from goodsdex.cars import is_car, assert_cars_unchanged
 from goodsdex.prices import refresh  # noqa: E402
 from goodsdex.supplements import DEFAULT_SUPPLEMENTS, publish  # noqa: E402
@@ -40,7 +41,10 @@ def main() -> int:
         return 1
     items = json.loads(gpath.read_text(encoding="utf-8"))
     previous = json.loads(gpath.read_text(encoding="utf-8"))
-    gids = [str(it["gid"]) for it in items if not is_car(it) and it.get("record_level") != "model_reference" and it.get("gid") and it.get("source") != "apple_cn" and not str(it.get("id", "")).startswith("CN:apple_cn:")]
+    # Preserve ambiguous product versions, including their differing prices, until reviewed.
+    conflict_ids = {item["id"] for item in analyze(group_by_id(previous), len(previous))["conflicts"]}
+    print(f"保留 {len(conflict_ids)} 组冲突原记录，不回灌价格")
+    gids = [str(it["gid"]) for it in items if it["id"] not in conflict_ids and not is_car(it) and it.get("record_level") != "model_reference" and it.get("gid") and it.get("source") != "apple_cn" and not str(it.get("id", "")).startswith("CN:apple_cn:")]
     if a.limit:
         gids = gids[:a.limit]
     print(f"从发布集读到 {len(gids)} 个 gid")
@@ -54,7 +58,7 @@ def main() -> int:
         prices = json.loads(latest.read_text(encoding="utf-8")).get("prices") or {}
         changed = 0
         for it in items:
-            if is_car(it) or it.get("record_level") == "model_reference" or it.get("source") == "apple_cn" or str(it.get("id", "")).startswith("CN:apple_cn:"):
+            if it["id"] in conflict_ids or is_car(it) or it.get("record_level") == "model_reference" or it.get("source") == "apple_cn" or str(it.get("id", "")).startswith("CN:apple_cn:"):
                 continue
             g = str(it.get("gid") or "")
             np = prices.get(g)

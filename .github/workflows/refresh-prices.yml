@@ -70,7 +70,9 @@ jobs:
           fi
 
       - name: Test publication invariants
-        run: PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_supplement_publish.py'
+        run: |
+          PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_supplement_publish.py'
+          PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_dedupe.py'
 
       - name: Refresh prices
         # 必须走 ci_refresh_prices.py —— 它从发布集读 gid
@@ -114,6 +116,9 @@ jobs:
           after = json.loads(Path('_data/public/goods.json').read_text())
           assert_cars_unchanged(before, after)
           PYCODE
+
+      - name: Merge category duplicates and validate final release
+        run: python3 scripts/finalize_public.py --public _data/public
 
       - name: Push to data branch
         run: |

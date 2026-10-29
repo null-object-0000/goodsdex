@@ -62,12 +62,15 @@ jobs:
           fi
       - name: Append reviewed historical cars without changing existing objects
         run: python3 scripts/publish_cars.py --public _data/public --historical-only
+      - name: Merge category duplicates and validate final release
+        run: python3 scripts/finalize_public.py --public _data/public
+
       - name: Push car release to data branch
         run: |
           cd _data
           git config user.name goodsdex-bot
           git config user.email goodsdex-bot@users.noreply.github.com
-          git add public/goods.json public/meta.json
+          git add public/goods.json public/meta.json public/merge-audit.json
           if ! git diff --cached --quiet; then
             git commit -m "daily car publication $(date -u +%Y-%m-%dT%H:%MZ)"
             git push origin HEAD:data
