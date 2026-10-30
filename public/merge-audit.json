@@ -1,117 +1,11 @@
 {
  "previous_count": 4005,
- "rebuilt_count": 4005,
+ "rebuilt_count": 3968,
  "added_count": 0,
- "count": 4005,
+ "count": 3968,
  "missing_ids": [],
  "added_ids": [],
  "conflicts": [
-  {
-   "id": "CN:byd:car:goods-10030:current:ev",
-   "type": "field_conflict",
-   "fields": [
-    "image",
-    "legacy_ids",
-    "price",
-    "trims"
-   ],
-   "row_count": 3,
-   "problems": [],
-   "rows_sha256": "7f235a797bd1fe358c74a218f904a67acb2b82c5f27525fbdc0fa1aa62231344"
-  },
-  {
-   "id": "CN:byd:car:goods-130:current:dmi",
-   "type": "field_conflict",
-   "fields": [
-    "image",
-    "legacy_ids",
-    "price",
-    "trims"
-   ],
-   "row_count": 9,
-   "problems": [],
-   "rows_sha256": "6ca521eee6627eb246456b025affe4ea107bce8095597e57c43977dc9cc0b169"
-  },
-  {
-   "id": "CN:byd:car:goods-131:current:ev",
-   "type": "field_conflict",
-   "fields": [
-    "image",
-    "legacy_ids",
-    "price",
-    "trims"
-   ],
-   "row_count": 5,
-   "problems": [],
-   "rows_sha256": "ba185d5e0b864f53f8086d37dc55ecdc59d0251652f55c593c283ffa3b0f06d0"
-  },
-  {
-   "id": "CN:byd:car:goods-151:2026:dmi",
-   "type": "field_conflict",
-   "fields": [
-    "image",
-    "legacy_ids",
-    "price",
-    "trims"
-   ],
-   "row_count": 5,
-   "problems": [],
-   "rows_sha256": "8f024fa8d8cf263a51bc6a33329b725327b1747d59a624e074dc9e520412b3b3"
-  },
-  {
-   "id": "CN:byd:car:goods-154:current:dmi",
-   "type": "field_conflict",
-   "fields": [
-    "image",
-    "legacy_ids",
-    "price",
-    "trims"
-   ],
-   "row_count": 4,
-   "problems": [],
-   "rows_sha256": "09ab2936f5b4a2754e883046773241b61cf9e1175828309836ae57f82db50996"
-  },
-  {
-   "id": "CN:byd:car:goods-159:current:ev",
-   "type": "field_conflict",
-   "fields": [
-    "image",
-    "legacy_ids",
-    "price",
-    "trims"
-   ],
-   "row_count": 4,
-   "problems": [],
-   "rows_sha256": "e85f8a3e713e044f97e7cb66b02cc652974a132056d03b41ebb06186f12d1eb6"
-  },
-  {
-   "id": "CN:byd:car:goods-165:current:dmi",
-   "type": "field_conflict",
-   "fields": [
-    "image",
-    "legacy_ids",
-    "price",
-    "trims"
-   ],
-   "row_count": 3,
-   "problems": [],
-   "rows_sha256": "c64cc04226812dde1e025647e6c8a067333550a8b1aa07a4885a0edb2e790ee5"
-  },
-  {
-   "id": "CN:byd:car:han:2022:dmi",
-   "type": "field_conflict",
-   "fields": [
-    "legacy_ids",
-    "model_year_source_url",
-    "price",
-    "price_kind",
-    "source_url",
-    "trims"
-   ],
-   "row_count": 5,
-   "problems": [],
-   "rows_sha256": "46d60752c344c164d9d658c0c5afaae97e03d2cb9f840a8a38316f8c7fa53be4"
-  },
   {
    "id": "CN:mi_cn:product:10050186",
    "type": "source_drift",
@@ -152,42 +46,6 @@
     "Protected group: true_variant"
    ],
    "rows_sha256": "58c6733857005b7c9a3e6b5441e6a2808ebfd2de7a38f0f2e3f47cd5c1a74836"
-  },
-  {
-   "id": "CN:xiaomi_ev:car:item-500010402:current:ev",
-   "type": "field_conflict",
-   "fields": [
-    "legacy_ids",
-    "price",
-    "trims"
-   ],
-   "row_count": 2,
-   "problems": [],
-   "rows_sha256": "a6b0a45ad8b1d15673f28477a6e03a786eef5a14dfd0d6b9c1c9b314a8e9348b"
-  },
-  {
-   "id": "CN:xiaomi_ev:car:item-500015457:current:ev",
-   "type": "field_conflict",
-   "fields": [
-    "legacy_ids",
-    "price",
-    "trims"
-   ],
-   "row_count": 5,
-   "problems": [],
-   "rows_sha256": "4ad33c37f205e85a706550b78b7bec736d25a7c01c2a55a0ecc611902ed7125f"
-  },
-  {
-   "id": "CN:xiaomi_ev:car:item-500023067:current:ev",
-   "type": "field_conflict",
-   "fields": [
-    "legacy_ids",
-    "price",
-    "trims"
-   ],
-   "row_count": 3,
-   "problems": [],
-   "rows_sha256": "bfa20c2967fb0bb0d30b563da3ab2e5d45b1f3a1c626e8c6519490bc7ea5d154"
   }
  ],
  "allowed_deletions": {},
@@ -579,14 +437,14 @@
   "CN:mi_cn:product:9884"
  ],
  "deduplication": {
-  "before_rows": 4005,
-  "after_rows": 4005,
+  "before_rows": 3968,
+  "after_rows": 3968,
   "before_unique_ids": 3963,
   "after_unique_ids": 3963,
   "merged_groups": 0,
   "removed_rows": 0,
-  "conflict_groups": 14,
-  "conflict_rows": 56,
+  "conflict_groups": 3,
+  "conflict_rows": 8,
   "conflicts_unchanged": true,
   "brands_before": {
    "Apple": 640,
@@ -892,112 +750,6 @@
   "merged_ids": [],
   "conflicts": [
    {
-    "id": "CN:byd:car:goods-10030:current:ev",
-    "type": "field_conflict",
-    "fields": [
-     "image",
-     "legacy_ids",
-     "price",
-     "trims"
-    ],
-    "row_count": 3,
-    "problems": [],
-    "rows_sha256": "7f235a797bd1fe358c74a218f904a67acb2b82c5f27525fbdc0fa1aa62231344"
-   },
-   {
-    "id": "CN:byd:car:goods-130:current:dmi",
-    "type": "field_conflict",
-    "fields": [
-     "image",
-     "legacy_ids",
-     "price",
-     "trims"
-    ],
-    "row_count": 9,
-    "problems": [],
-    "rows_sha256": "6ca521eee6627eb246456b025affe4ea107bce8095597e57c43977dc9cc0b169"
-   },
-   {
-    "id": "CN:byd:car:goods-131:current:ev",
-    "type": "field_conflict",
-    "fields": [
-     "image",
-     "legacy_ids",
-     "price",
-     "trims"
-    ],
-    "row_count": 5,
-    "problems": [],
-    "rows_sha256": "ba185d5e0b864f53f8086d37dc55ecdc59d0251652f55c593c283ffa3b0f06d0"
-   },
-   {
-    "id": "CN:byd:car:goods-151:2026:dmi",
-    "type": "field_conflict",
-    "fields": [
-     "image",
-     "legacy_ids",
-     "price",
-     "trims"
-    ],
-    "row_count": 5,
-    "problems": [],
-    "rows_sha256": "8f024fa8d8cf263a51bc6a33329b725327b1747d59a624e074dc9e520412b3b3"
-   },
-   {
-    "id": "CN:byd:car:goods-154:current:dmi",
-    "type": "field_conflict",
-    "fields": [
-     "image",
-     "legacy_ids",
-     "price",
-     "trims"
-    ],
-    "row_count": 4,
-    "problems": [],
-    "rows_sha256": "09ab2936f5b4a2754e883046773241b61cf9e1175828309836ae57f82db50996"
-   },
-   {
-    "id": "CN:byd:car:goods-159:current:ev",
-    "type": "field_conflict",
-    "fields": [
-     "image",
-     "legacy_ids",
-     "price",
-     "trims"
-    ],
-    "row_count": 4,
-    "problems": [],
-    "rows_sha256": "e85f8a3e713e044f97e7cb66b02cc652974a132056d03b41ebb06186f12d1eb6"
-   },
-   {
-    "id": "CN:byd:car:goods-165:current:dmi",
-    "type": "field_conflict",
-    "fields": [
-     "image",
-     "legacy_ids",
-     "price",
-     "trims"
-    ],
-    "row_count": 3,
-    "problems": [],
-    "rows_sha256": "c64cc04226812dde1e025647e6c8a067333550a8b1aa07a4885a0edb2e790ee5"
-   },
-   {
-    "id": "CN:byd:car:han:2022:dmi",
-    "type": "field_conflict",
-    "fields": [
-     "legacy_ids",
-     "model_year_source_url",
-     "price",
-     "price_kind",
-     "source_url",
-     "trims"
-    ],
-    "row_count": 5,
-    "problems": [],
-    "rows_sha256": "46d60752c344c164d9d658c0c5afaae97e03d2cb9f840a8a38316f8c7fa53be4"
-   },
-   {
     "id": "CN:mi_cn:product:10050186",
     "type": "source_drift",
     "fields": [
@@ -1037,46 +789,10 @@
      "Protected group: true_variant"
     ],
     "rows_sha256": "58c6733857005b7c9a3e6b5441e6a2808ebfd2de7a38f0f2e3f47cd5c1a74836"
-   },
-   {
-    "id": "CN:xiaomi_ev:car:item-500010402:current:ev",
-    "type": "field_conflict",
-    "fields": [
-     "legacy_ids",
-     "price",
-     "trims"
-    ],
-    "row_count": 2,
-    "problems": [],
-    "rows_sha256": "a6b0a45ad8b1d15673f28477a6e03a786eef5a14dfd0d6b9c1c9b314a8e9348b"
-   },
-   {
-    "id": "CN:xiaomi_ev:car:item-500015457:current:ev",
-    "type": "field_conflict",
-    "fields": [
-     "legacy_ids",
-     "price",
-     "trims"
-    ],
-    "row_count": 5,
-    "problems": [],
-    "rows_sha256": "4ad33c37f205e85a706550b78b7bec736d25a7c01c2a55a0ecc611902ed7125f"
-   },
-   {
-    "id": "CN:xiaomi_ev:car:item-500023067:current:ev",
-    "type": "field_conflict",
-    "fields": [
-     "legacy_ids",
-     "price",
-     "trims"
-    ],
-    "row_count": 3,
-    "problems": [],
-    "rows_sha256": "bfa20c2967fb0bb0d30b563da3ab2e5d45b1f3a1c626e8c6519490bc7ea5d154"
    }
   ],
-  "input_sha256": "5127817378a46d04cc8907427cd3f718311dc664242cae403e3c6e6fb93af1dc",
-  "output_sha256": "5127817378a46d04cc8907427cd3f718311dc664242cae403e3c6e6fb93af1dc"
+  "input_sha256": "198345d077a013eb2597c23d3fdcf4d56bcbbbda704b4d80419a8288aadad426",
+  "output_sha256": "198345d077a013eb2597c23d3fdcf4d56bcbbbda704b4d80419a8288aadad426"
  },
- "published_count": 4005
+ "published_count": 3968
 }
