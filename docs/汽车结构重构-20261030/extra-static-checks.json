@@ -1,0 +1,42 @@
+[
+  {
+    "command": [
+      "node",
+      "scripts/check_contrast.mjs",
+      "--summary"
+    ],
+    "exit_code": 1,
+    "stdout": "{\n  \"scheme\": \"light\",\n  \"minimumPrimary\": 3.525,\n  \"minimumSecondary\": 4.529,\n  \"pass\": 114,\n  \"fail\": 2,\n  \"unresolved\": 156,\n  \"failures\": [\n    {\n      \"file\": \"pages/me/me.wxss\",\n      \"line\": 15,\n      \"selector\": \".account-badge\",\n      \"foreground\": \"#6283b3\",\n      \"background\": \"#eef5fe\",\n      \"ratio\": 3.531,\n      \"threshold\": 4.5,\n      \"pass\": false\n    },\n    {\n      \"file\": \"pages/me/me.wxss\",\n      \"line\": 26,\n      \"selector\": \".me-sheet .secondary\",\n      \"foreground\": \"var(--me-muted)\",\n      \"background\": \"var(--me-soft)\",\n      \"ratio\": 3.525,\n      \"threshold\": 4.5,\n      \"pass\": false\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "scripts/check_contrast.mjs",
+      "--scheme=dark",
+      "--summary"
+    ],
+    "exit_code": 1,
+    "stdout": "{\n  \"scheme\": \"dark\",\n  \"minimumPrimary\": 3.531,\n  \"minimumSecondary\": 5.198,\n  \"pass\": 116,\n  \"fail\": 1,\n  \"unresolved\": 156,\n  \"failures\": [\n    {\n      \"file\": \"pages/me/me.wxss\",\n      \"line\": 15,\n      \"selector\": \".account-badge\",\n      \"foreground\": \"#6283b3\",\n      \"background\": \"#eef5fe\",\n      \"ratio\": 3.531,\n      \"threshold\": 4.5,\n      \"pass\": false\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "scripts/check_browser_hygiene.mjs"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "浏览器脚本卫生检查失败：\n  ✗ capture_items_entry_finish.mjs: 未找到 profile 创建语句，无法核对\n  ✗ check_account_browser.mjs: 未找到 profile 创建语句，无法核对\n  ✗ check_account_profile_browser.mjs: 未找到 profile 创建语句，无法核对\n  ✗ check_car_structure_browser.mjs: 未找到 profile 创建语句，无法核对\n  ✗ check_privacy_policy_browser.mjs: 未找到 profile 创建语句，无法核对\n  ✗ measure_catalog_browser.mjs: 未找到 profile 创建语句，无法核对\n  ✗ review_bloom_items_entry.mjs: 未找到 profile 创建语句，无法核对\n  ✗ review_catalog_title_clipping.mjs: 未找到 profile 创建语句，无法核对\n  ✗ test_kit_lens_browser.mjs: 未找到 profile 创建语句，无法核对\n  ✗ test_kit_lens_live_regression.mjs: 未找到 profile 创建语句，无法核对\n"
+  },
+  {
+    "command": [
+      "/usr/bin/python3",
+      "scripts/build_tab_icons.py",
+      "--check"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/home/nichangen/代码/self-code/spend-good/apps/miniprogram/scripts/build_tab_icons.py\", line 17, in <module>\n    assert actual == expected, 'tab 必须引用已验收的两组图标'\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: tab 必须引用已验收的两组图标\n"
+  }
+]

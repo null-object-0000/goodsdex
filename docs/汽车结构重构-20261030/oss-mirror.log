@@ -1,0 +1,480 @@
+mirror	Set up job	﻿2026-10-30T01:35:57.1813284Z Current runner version: '2.338.0'
+mirror	Set up job	2026-10-30T01:35:57.1840681Z ##[group]Runner Image Provisioner
+mirror	Set up job	2026-10-30T01:35:57.1841681Z Hosted Compute Agent
+mirror	Set up job	2026-10-30T01:35:57.1842759Z Version: 20261021.618
+mirror	Set up job	2026-10-30T01:35:57.1843471Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+mirror	Set up job	2026-10-30T01:35:57.1844254Z Build Date: 2026-10-21T00:45:21Z
+mirror	Set up job	2026-10-30T01:35:57.1845094Z Worker ID: {f2207899-2e8a-40d9-ae1d-5aaad0e1f10e}
+mirror	Set up job	2026-10-30T01:35:57.1845931Z Region: westcentralus
+mirror	Set up job	2026-10-30T01:35:57.1846611Z Cloud: Azure
+mirror	Set up job	2026-10-30T01:35:57.1847245Z ##[endgroup]
+mirror	Set up job	2026-10-30T01:35:57.1848800Z ##[group]Operating System
+mirror	Set up job	2026-10-30T01:35:57.1849626Z Ubuntu
+mirror	Set up job	2026-10-30T01:35:57.1850215Z 24.04.5
+mirror	Set up job	2026-10-30T01:35:57.1850834Z LTS
+mirror	Set up job	2026-10-30T01:35:57.1851436Z ##[endgroup]
+mirror	Set up job	2026-10-30T01:35:57.1852353Z ##[group]Runner Image
+mirror	Set up job	2026-10-30T01:35:57.1853119Z Image: ubuntu-24.04
+mirror	Set up job	2026-10-30T01:35:57.1853766Z Version: 20261025.353.1
+mirror	Set up job	2026-10-30T01:35:57.1854949Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+mirror	Set up job	2026-10-30T01:35:57.1856807Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+mirror	Set up job	2026-10-30T01:35:57.1857932Z ##[endgroup]
+mirror	Set up job	2026-10-30T01:35:57.1859588Z ##[group]GITHUB_TOKEN Permissions
+mirror	Set up job	2026-10-30T01:35:57.1861833Z Contents: read
+mirror	Set up job	2026-10-30T01:35:57.1862887Z Metadata: read
+mirror	Set up job	2026-10-30T01:35:57.1863654Z ##[endgroup]
+mirror	Set up job	2026-10-30T01:35:57.1865836Z Secret source: Actions
+mirror	Set up job	2026-10-30T01:35:57.1866953Z Cache mode: write
+mirror	Set up job	2026-10-30T01:35:57.1867753Z Prepare workflow directory
+mirror	Set up job	2026-10-30T01:35:57.2251745Z Prepare all required actions
+mirror	Set up job	2026-10-30T01:35:57.2299149Z Getting action download info
+mirror	Set up job	2026-10-30T01:35:57.5011386Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+mirror	Set up job	2026-10-30T01:35:57.5988885Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+mirror	Set up job	2026-10-30T01:35:57.7936122Z Complete job name: mirror
+mirror	Run actions/checkout@v4	﻿2026-10-30T01:35:57.8779780Z ##[group]Run actions/checkout@v4
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8780704Z with:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8781182Z   repository: null-object-0000/goodsdex
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8785271Z   token: ***
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8785741Z   ssh-strict: true
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8786199Z   ssh-user: git
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8786664Z   persist-credentials: true
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8787171Z   clean: true
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8787637Z   sparse-checkout-cone-mode: true
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8788177Z   fetch-depth: 1
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8788699Z   fetch-tags: false
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8789165Z   show-progress: true
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8789618Z   lfs: false
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8790048Z   submodules: false
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8790512Z   set-safe-directory: true
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8791027Z   allow-unsafe-pr-checkout: false
+mirror	Run actions/checkout@v4	2026-10-30T01:35:57.8791758Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1290362Z Syncing repository: null-object-0000/goodsdex
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1292991Z ##[group]Getting Git version info
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1293849Z Working directory is '/home/runner/work/goodsdex/goodsdex'
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1295717Z [command]/usr/bin/git version
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1374567Z git version 2.56.0
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1397553Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1414039Z Temporarily overriding HOME='/home/runner/work/_temp/550412ae-8d2c-4399-8e1d-8e78c2fa70ba' before making global git config changes
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1415851Z Adding repository directory to the temporary git global config as a safe directory
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1419364Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1477482Z Deleting the contents of '/home/runner/work/goodsdex/goodsdex'
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1504125Z ##[group]Initializing the repository
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1515056Z [command]/usr/bin/git init /home/runner/work/goodsdex/goodsdex
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1657607Z hint: Using 'master' as the name for the initial branch. This default branch name
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1659686Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1661678Z hint: to use in all of your new repositories, which will suppress this warning,
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1663075Z hint: call:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1663765Z hint:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1664580Z hint: 	git config --global init.defaultBranch <name>
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1665583Z hint:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1666506Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1667995Z hint: 'development'. The just-created branch can be renamed via this command:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1669197Z hint:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1669875Z hint: 	git branch -m <name>
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1670654Z hint:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1671678Z hint: Disable this message with "git config set advice.defaultBranchName false"
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1673520Z Initialized empty Git repository in /home/runner/work/goodsdex/goodsdex/.git/
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1683559Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/goodsdex
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1731017Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1732662Z ##[group]Disabling automatic garbage collection
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1736542Z [command]/usr/bin/git config --local gc.auto 0
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1774297Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1775448Z ##[group]Setting up auth
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1781885Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.1822390Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.2213173Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.2277885Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.2576962Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.2625466Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.2910799Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.2960631Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.2961798Z ##[group]Fetching the repository
+mirror	Run actions/checkout@v4	2026-10-30T01:35:58.2973538Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +85d5cde3c54623229263ee957e50c1990941c28a:refs/remotes/origin/main
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.1832323Z From https://github.com/null-object-0000/goodsdex
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.1834247Z  * [new ref]         85d5cde3c54623229263ee957e50c1990941c28a -> origin/main
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.1837687Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.1839124Z ##[group]Determining the checkout info
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.1840816Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.1847062Z [command]/usr/bin/git sparse-checkout disable
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.1911239Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.1957757Z ##[group]Checking out the ref
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.1961863Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2348240Z Switched to a new branch 'main'
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2352971Z branch 'main' set up to track 'origin/main'.
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2361683Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2417855Z [command]/usr/bin/git log -1 --format=%H
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2453841Z 85d5cde3c54623229263ee957e50c1990941c28a
+mirror	Run actions/checkout@v4	﻿2026-10-30T01:35:59.2874400Z ##[group]Run actions/checkout@v4
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2875629Z with:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2876537Z   ref: data
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2877458Z   path: _data
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2878485Z   repository: null-object-0000/goodsdex
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2887028Z   token: ***
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2887978Z   ssh-strict: true
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2888946Z   ssh-user: git
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2889935Z   persist-credentials: true
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2891256Z   clean: true
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2892369Z   sparse-checkout-cone-mode: true
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2893520Z   fetch-depth: 1
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2975558Z   fetch-tags: false
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2976805Z   show-progress: true
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2977927Z   lfs: false
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2978889Z   submodules: false
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2979949Z   set-safe-directory: true
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2981073Z   allow-unsafe-pr-checkout: false
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.2982505Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.3894761Z Syncing repository: null-object-0000/goodsdex
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.3898418Z ##[group]Getting Git version info
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.3900655Z Working directory is '/home/runner/work/goodsdex/goodsdex/_data'
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.3967996Z [command]/usr/bin/git version
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4014140Z git version 2.56.0
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4034899Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4049108Z Temporarily overriding HOME='/home/runner/work/_temp/1606ea90-ffc5-4f12-ab11-dd28729ad9c5' before making global git config changes
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4053489Z Adding repository directory to the temporary git global config as a safe directory
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4057014Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex/_data
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4092863Z ##[group]Initializing the repository
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4098525Z [command]/usr/bin/git init /home/runner/work/goodsdex/goodsdex/_data
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4142790Z hint: Using 'master' as the name for the initial branch. This default branch name
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4146115Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4149192Z hint: to use in all of your new repositories, which will suppress this warning,
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4151608Z hint: call:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4153234Z hint:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4155880Z hint: 	git config --global init.defaultBranch <name>
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4157651Z hint:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4159081Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4162167Z hint: 'development'. The just-created branch can be renamed via this command:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4165039Z hint:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4166569Z hint: 	git branch -m <name>
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4168265Z hint:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4170485Z hint: Disable this message with "git config set advice.defaultBranchName false"
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4174191Z Initialized empty Git repository in /home/runner/work/goodsdex/goodsdex/_data/.git/
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4180492Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/goodsdex
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4194271Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4196661Z ##[group]Disabling automatic garbage collection
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4200176Z [command]/usr/bin/git config --local gc.auto 0
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4238079Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4240499Z ##[group]Setting up auth
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4245047Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4285527Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4567553Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4638668Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4904616Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.4952594Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.5211426Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.5263213Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.5265180Z ##[group]Fetching the repository
+mirror	Run actions/checkout@v4	2026-10-30T01:35:59.5273528Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/data*:refs/remotes/origin/data* +refs/tags/data*:refs/tags/data*
+mirror	Run actions/checkout@v4	2026-10-30T01:36:29.0086253Z From https://github.com/null-object-0000/goodsdex
+mirror	Run actions/checkout@v4	2026-10-30T01:36:29.0086949Z  * [new branch]      data       -> origin/data
+mirror	Run actions/checkout@v4	2026-10-30T01:36:29.0091492Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:36:29.0092470Z ##[group]Determining the checkout info
+mirror	Run actions/checkout@v4	2026-10-30T01:36:29.0103731Z [command]/usr/bin/git branch --list --remote origin/data
+mirror	Run actions/checkout@v4	2026-10-30T01:36:29.0147882Z   origin/data
+mirror	Run actions/checkout@v4	2026-10-30T01:36:29.0152174Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:36:29.0159988Z [command]/usr/bin/git sparse-checkout disable
+mirror	Run actions/checkout@v4	2026-10-30T01:36:29.0223509Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+mirror	Run actions/checkout@v4	2026-10-30T01:36:29.0280998Z ##[group]Checking out the ref
+mirror	Run actions/checkout@v4	2026-10-30T01:36:29.0287145Z [command]/usr/bin/git checkout --progress --force -B data refs/remotes/origin/data
+mirror	Run actions/checkout@v4	2026-10-30T01:36:30.4157050Z Updating files:  22% (143/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:30.7475843Z Updating files:  23% (146/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:31.0162363Z Updating files:  24% (153/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:31.0476557Z Updating files:  25% (159/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:31.0983492Z Updating files:  25% (160/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:31.1459340Z Updating files:  26% (165/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:31.1916575Z Updating files:  27% (172/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:31.6713284Z Updating files:  28% (178/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:31.9279297Z Updating files:  29% (184/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:32.1764693Z Updating files:  30% (191/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:32.2052804Z Updating files:  30% (194/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:32.8933688Z Updating files:  31% (197/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.0070193Z Updating files:  32% (203/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.2212905Z Updating files:  33% (210/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.4478312Z Updating files:  33% (211/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.4813606Z Updating files:  34% (216/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.4825642Z Updating files:  35% (222/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.4833270Z Updating files:  36% (229/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.4859369Z Updating files:  37% (235/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.4995592Z Updating files:  38% (241/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5015724Z Updating files:  39% (248/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5028904Z Updating files:  40% (254/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5047215Z Updating files:  41% (260/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5061869Z Updating files:  42% (267/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5066936Z Updating files:  43% (273/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5071147Z Updating files:  44% (279/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5075237Z Updating files:  45% (286/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5078123Z Updating files:  46% (292/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5081749Z Updating files:  47% (298/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5086460Z Updating files:  48% (305/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5091466Z Updating files:  49% (311/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5096471Z Updating files:  50% (317/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5100491Z Updating files:  51% (324/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5113117Z Updating files:  52% (330/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5117437Z Updating files:  53% (337/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5120998Z Updating files:  54% (343/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5126481Z Updating files:  55% (349/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5129166Z Updating files:  56% (356/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5132529Z Updating files:  57% (362/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5216700Z Updating files:  58% (368/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5257789Z Updating files:  59% (375/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5264173Z Updating files:  60% (381/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5772327Z Updating files:  61% (387/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.5776036Z Updating files:  62% (394/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8090052Z Updating files:  63% (400/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8094410Z Updating files:  64% (406/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8099788Z Updating files:  65% (413/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8108415Z Updating files:  66% (419/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8114243Z Updating files:  67% (425/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8131397Z Updating files:  68% (432/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8137476Z Updating files:  69% (438/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8140925Z Updating files:  70% (444/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8145488Z Updating files:  71% (451/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8148580Z Updating files:  72% (457/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8166056Z Updating files:  73% (463/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8169532Z Updating files:  74% (470/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8175732Z Updating files:  75% (476/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8181316Z Updating files:  76% (482/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8185042Z Updating files:  77% (489/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8188527Z Updating files:  78% (495/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8199582Z Updating files:  79% (501/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8207019Z Updating files:  80% (508/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8225507Z Updating files:  81% (514/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8362540Z Updating files:  82% (520/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8381873Z Updating files:  83% (527/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8393963Z Updating files:  84% (533/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8415261Z Updating files:  85% (539/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8429516Z Updating files:  86% (546/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8507477Z Updating files:  87% (552/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8545823Z Updating files:  88% (558/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8573008Z Updating files:  89% (565/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8612169Z Updating files:  90% (571/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8646203Z Updating files:  91% (577/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8675229Z Updating files:  92% (584/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8701747Z Updating files:  93% (590/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8735300Z Updating files:  94% (596/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8763490Z Updating files:  95% (603/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.8795157Z Updating files:  96% (609/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.9220673Z Updating files:  97% (615/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.9268107Z Updating files:  98% (622/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.9606579Z Updating files:  99% (628/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.9607477Z Updating files: 100% (634/634)
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.9607846Z Updating files: 100% (634/634), done.
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.9626535Z Switched to a new branch 'data'
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.9629739Z branch 'data' set up to track 'origin/data'.
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.9691883Z ##[endgroup]
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.9745220Z [command]/usr/bin/git log -1 --format=%H
+mirror	Run actions/checkout@v4	2026-10-30T01:36:33.9782099Z 025a36db5a777a6caeab9eda1a830678b5632120
+mirror	Run actions/setup-python@v5	﻿2026-10-30T01:36:33.9998311Z ##[group]Run actions/setup-python@v5
+mirror	Run actions/setup-python@v5	2026-10-30T01:36:33.9998619Z with:
+mirror	Run actions/setup-python@v5	2026-10-30T01:36:33.9998833Z   python-version: 3.12
+mirror	Run actions/setup-python@v5	2026-10-30T01:36:33.9999083Z   check-latest: false
+mirror	Run actions/setup-python@v5	2026-10-30T01:36:34.0001455Z   token: ***
+mirror	Run actions/setup-python@v5	2026-10-30T01:36:34.0001686Z   update-environment: true
+mirror	Run actions/setup-python@v5	2026-10-30T01:36:34.0002206Z   allow-prereleases: false
+mirror	Run actions/setup-python@v5	2026-10-30T01:36:34.0002498Z   freethreaded: false
+mirror	Run actions/setup-python@v5	2026-10-30T01:36:34.0002732Z ##[endgroup]
+mirror	Run actions/setup-python@v5	2026-10-30T01:36:34.1395434Z ##[group]Installed versions
+mirror	Run actions/setup-python@v5	2026-10-30T01:36:34.1478503Z (node:2500) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+mirror	Run actions/setup-python@v5	2026-10-30T01:36:34.1479478Z (Use `node --trace-deprecation ...` to show where the warning was created)
+mirror	Run actions/setup-python@v5	2026-10-30T01:36:34.1480087Z Successfully set up CPython (3.12.15)
+mirror	Run actions/setup-python@v5	2026-10-30T01:36:34.1480748Z ##[endgroup]
+mirror	Run python3 -m pip install --quiet oss2	﻿2026-10-30T01:36:34.1649079Z ##[group]Run python3 -m pip install --quiet oss2
+mirror	Run python3 -m pip install --quiet oss2	2026-10-30T01:36:34.1649588Z ^[[36;1mpython3 -m pip install --quiet oss2^[[0m
+mirror	Run python3 -m pip install --quiet oss2	2026-10-30T01:36:34.1688028Z shell: /usr/bin/bash -e {0}
+mirror	Run python3 -m pip install --quiet oss2	2026-10-30T01:36:34.1688327Z env:
+mirror	Run python3 -m pip install --quiet oss2	2026-10-30T01:36:34.1688619Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+mirror	Run python3 -m pip install --quiet oss2	2026-10-30T01:36:34.1689082Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+mirror	Run python3 -m pip install --quiet oss2	2026-10-30T01:36:34.1689516Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+mirror	Run python3 -m pip install --quiet oss2	2026-10-30T01:36:34.1689898Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+mirror	Run python3 -m pip install --quiet oss2	2026-10-30T01:36:34.1690288Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+mirror	Run python3 -m pip install --quiet oss2	2026-10-30T01:36:34.1690670Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+mirror	Run python3 -m pip install --quiet oss2	2026-10-30T01:36:34.1691006Z ##[endgroup]
+mirror	Mirror validated release (immutable blobs first, manifest last)	﻿2026-10-30T01:36:41.9709316Z ##[group]Run python3 scripts/mirror_public_to_oss.py --public _data/public
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:36:41.9710082Z ^[[36;1mpython3 scripts/mirror_public_to_oss.py --public _data/public^[[0m
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:36:41.9733758Z shell: /usr/bin/bash -e {0}
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:36:41.9734028Z env:
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:36:41.9734301Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:36:41.9734746Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:36:41.9735188Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:36:41.9735566Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:36:41.9735943Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:36:41.9736320Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:36:41.9736789Z   OSS_ACCESS_KEY_ID: ***
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:36:41.9737093Z   OSS_ACCESS_KEY_SECRET: ***
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:36:41.9737336Z ##[endgroup]
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.0995941Z OSS GET verified blobs/56f60e8067c220a12b750f66a5aaf33d71f3a3ef96c01a452dd4d9b88c9fff3e.json: bytes=440145 sha256=56f60e8067c220a12b750f66a5aaf33d71f3a3ef96c01a452dd4d9b88c9fff3e
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.0998137Z OSS GET verified blobs/5447aa79e244fbb300ba52f3689800868ebf22b298bfb02f861e54d96e48f719.json: bytes=2235 sha256=5447aa79e244fbb300ba52f3689800868ebf22b298bfb02f861e54d96e48f719
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1000127Z OSS GET verified blobs/ade4221cf20c3c8b41ebf7fea9b3f0d316588a7d76cc50034234d33bf18a57ff.json: bytes=1436629 sha256=ade4221cf20c3c8b41ebf7fea9b3f0d316588a7d76cc50034234d33bf18a57ff
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1002360Z OSS GET verified blobs/b34130a115dcc51e540c89b9f1e5097c9fbc66f2df8d53b2dc397e527694c54a.json: bytes=672954 sha256=b34130a115dcc51e540c89b9f1e5097c9fbc66f2df8d53b2dc397e527694c54a
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1004421Z OSS GET verified blobs/88f6ce755db1fed074c017af40848e85eb59630cebd9786c720eb6573d31d125.json: bytes=99365 sha256=88f6ce755db1fed074c017af40848e85eb59630cebd9786c720eb6573d31d125
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1006453Z OSS GET verified blobs/3aa8ec026e234da1671fc0decffd38447d72a1b34f06a24dc4bec26dd6cebfcb.json: bytes=57522 sha256=3aa8ec026e234da1671fc0decffd38447d72a1b34f06a24dc4bec26dd6cebfcb
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1008193Z OSS GET verified blobs/ca82767dc84a852a393726e40ed656c36f8b6d7aec05c071813d726a0ea35d9e.json: bytes=23962 sha256=ca82767dc84a852a393726e40ed656c36f8b6d7aec05c071813d726a0ea35d9e
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1009395Z OSS GET verified blobs/c45c891af3b50fd8aeb0fe82d5f36931feeebca7e0b9e1d87971c0c10d07bd7c.json: bytes=776267 sha256=c45c891af3b50fd8aeb0fe82d5f36931feeebca7e0b9e1d87971c0c10d07bd7c
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1010582Z OSS GET verified blobs/4b942b59b9550250b968394d81c89f539cf867d2cd4cb726cbf31ddc853517e2.json: bytes=231769 sha256=4b942b59b9550250b968394d81c89f539cf867d2cd4cb726cbf31ddc853517e2
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1011793Z OSS GET verified blobs/94f4d3230e6b1c54139ecf5f439593d541753c9ff60f1d62e5640d75393e56f6.json: bytes=204353 sha256=94f4d3230e6b1c54139ecf5f439593d541753c9ff60f1d62e5640d75393e56f6
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1013339Z OSS GET verified blobs/471a74874d12458a4afa7d0162576813ed3df67f833c1ce560baebe144c508d3.json: bytes=273491 sha256=471a74874d12458a4afa7d0162576813ed3df67f833c1ce560baebe144c508d3
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1014506Z OSS GET verified blobs/a5cf36123f2c09122ec4e038b528099ef97e13845b6b1a8930c85996305877bd.json: bytes=270189 sha256=a5cf36123f2c09122ec4e038b528099ef97e13845b6b1a8930c85996305877bd
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1015654Z OSS GET verified blobs/005d47a9838172a125a624f2859398bdec982ea40b985a451bd3f87f04ab55ff.json: bytes=220743 sha256=005d47a9838172a125a624f2859398bdec982ea40b985a451bd3f87f04ab55ff
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1016845Z OSS GET verified blobs/b4ef17ccb59a595bb0590151c0e1f871f15afdfda1cd5416c6fd6d609af2b56a.json: bytes=227678 sha256=b4ef17ccb59a595bb0590151c0e1f871f15afdfda1cd5416c6fd6d609af2b56a
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1018052Z OSS GET verified blobs/44ede47397abb5fb86b15d254b61f8a6a5677e4b0b08c5c7a171374fb2bf4688.json: bytes=283423 sha256=44ede47397abb5fb86b15d254b61f8a6a5677e4b0b08c5c7a171374fb2bf4688
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1019652Z OSS GET verified blobs/7646b73cb9b19fd9b79c56ab69d2d3f804294727400add15df7d8e8d68504c2a.json: bytes=138062 sha256=7646b73cb9b19fd9b79c56ab69d2d3f804294727400add15df7d8e8d68504c2a
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1020971Z OSS GET verified blobs/58a673a704c2fa07465a65116e3bccd49843609f2f5d85d091d42bae8b928f80.json: bytes=307419 sha256=58a673a704c2fa07465a65116e3bccd49843609f2f5d85d091d42bae8b928f80
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1022325Z OSS GET verified blobs/5ae348734051eff54a15f2ee17b897950e7f467a9a056037e3456921a3fd82af.json: bytes=492070 sha256=5ae348734051eff54a15f2ee17b897950e7f467a9a056037e3456921a3fd82af
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1023508Z OSS GET verified blobs/96fea932f79a5274d4ddb182a228a3e1e5d2737ab1f8edbce6cd875546dd4896.json: bytes=316892 sha256=96fea932f79a5274d4ddb182a228a3e1e5d2737ab1f8edbce6cd875546dd4896
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1024714Z OSS GET verified blobs/ade8e665e0cb580739862d79a4a49f2fbd869d7586ebdb41d3729d9cfe450c5e.json: bytes=190082 sha256=ade8e665e0cb580739862d79a4a49f2fbd869d7586ebdb41d3729d9cfe450c5e
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1025908Z OSS GET verified blobs/908da51bbcce30bbe41d74a6bb07e37e4d78b322d285ee0645f9fb0d25f6d091.json: bytes=180833 sha256=908da51bbcce30bbe41d74a6bb07e37e4d78b322d285ee0645f9fb0d25f6d091
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1027105Z OSS GET verified blobs/1a3e3c08d3f465b3b7dd62cf6fbdf09ccc675a7ca88f54d443952f1130930ef2.json: bytes=217838 sha256=1a3e3c08d3f465b3b7dd62cf6fbdf09ccc675a7ca88f54d443952f1130930ef2
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1028251Z OSS GET verified blobs/95f40719739105beef23262cb1579777f4986b234c6e70157c561d277b542f47.json: bytes=227779 sha256=95f40719739105beef23262cb1579777f4986b234c6e70157c561d277b542f47
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1029378Z OSS GET verified blobs/fbe4657be36b8770db173f730f195265282750c4abf5b8ea02b2dcf75cb775b9.json: bytes=295657 sha256=fbe4657be36b8770db173f730f195265282750c4abf5b8ea02b2dcf75cb775b9
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1030525Z OSS GET verified blobs/284ea0ee76b0694420e010705781803dd6dce7fa0383a7bcf30df33b1dde533f.json: bytes=275796 sha256=284ea0ee76b0694420e010705781803dd6dce7fa0383a7bcf30df33b1dde533f
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1031683Z OSS GET verified blobs/6cb414afb85c6ef2956fa0de4b137246d8ba6fab0ca075dcbd33a936fe1dc833.json: bytes=237364 sha256=6cb414afb85c6ef2956fa0de4b137246d8ba6fab0ca075dcbd33a936fe1dc833
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1033152Z OSS GET verified blobs/9936d46c5cef0c6f50e8b2d71ce0845c8e6ecac691db8ee58d9573e57034308c.json: bytes=440312 sha256=9936d46c5cef0c6f50e8b2d71ce0845c8e6ecac691db8ee58d9573e57034308c
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1034362Z OSS GET verified blobs/18bdca11baf6b9784f1cdf98c38dce0d7682cbe080dd5aef67da191a02ba591a.json: bytes=215751 sha256=18bdca11baf6b9784f1cdf98c38dce0d7682cbe080dd5aef67da191a02ba591a
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1035527Z OSS GET verified blobs/8650cce21d1d1c7091776d05bc70370d8a4e5c90c8cd225a311acd5f81320f75.json: bytes=189919 sha256=8650cce21d1d1c7091776d05bc70370d8a4e5c90c8cd225a311acd5f81320f75
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1036683Z OSS GET verified blobs/40dd9e8be7dfc6e5c1e6e538b8351dfd048434e2bde708c34d8af4442a84f028.json: bytes=287255 sha256=40dd9e8be7dfc6e5c1e6e538b8351dfd048434e2bde708c34d8af4442a84f028
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1037860Z OSS GET verified blobs/b163364729b7d593f49560d074e8c3d84e14ca3c37a7bee6b41b9712228b14b3.json: bytes=183303 sha256=b163364729b7d593f49560d074e8c3d84e14ca3c37a7bee6b41b9712228b14b3
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1039019Z OSS GET verified blobs/bf68de45d6c7e9a155e86dff1856c2b7bf41f38f607b65ca3b228c52fd7aad3c.json: bytes=104046 sha256=bf68de45d6c7e9a155e86dff1856c2b7bf41f38f607b65ca3b228c52fd7aad3c
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1040182Z OSS GET verified blobs/6b4cd9c06811849878875f1bbe7c4d311bfebb22fe99d2a6f64391126737924b.json: bytes=197354 sha256=6b4cd9c06811849878875f1bbe7c4d311bfebb22fe99d2a6f64391126737924b
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1041327Z OSS GET verified blobs/4829d48b6a7c3ab03bbcf76fe0058a89923215208862b77164f104fccdbf9a0c.json: bytes=305014 sha256=4829d48b6a7c3ab03bbcf76fe0058a89923215208862b77164f104fccdbf9a0c
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1042692Z OSS GET verified blobs/62cca9c8aff1e750b6e077de0f62ffbcb03570cd1dd92b13ad3a939895b75529.json: bytes=272098 sha256=62cca9c8aff1e750b6e077de0f62ffbcb03570cd1dd92b13ad3a939895b75529
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1044033Z OSS GET verified blobs/2477b0c94be92b47017af6fb20431276d566db268608375a4de2fa47cea5c9df.json: bytes=154534 sha256=2477b0c94be92b47017af6fb20431276d566db268608375a4de2fa47cea5c9df
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1045340Z OSS GET verified blobs/86cdb0fde34c9f61469f3363b7a1e2b5a4663f77e3c814c10ac5047cb67f85ab.json: bytes=324730 sha256=86cdb0fde34c9f61469f3363b7a1e2b5a4663f77e3c814c10ac5047cb67f85ab
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1046510Z OSS GET verified blobs/896e976f1bfabd85c70b854aa80390f7fe5de2cff9a003cab1330f360fb38f2a.json: bytes=359392 sha256=896e976f1bfabd85c70b854aa80390f7fe5de2cff9a003cab1330f360fb38f2a
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1047664Z OSS GET verified blobs/b2c515972cbd096645709d44ff703632e5283de48f0b3af8b3b05ee0942eedc9.json: bytes=128946 sha256=b2c515972cbd096645709d44ff703632e5283de48f0b3af8b3b05ee0942eedc9
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1068121Z OSS GET verified blobs/121b0d8902175f0b67f0593284dccfb8ca36a291d532162897baf56d2e95481b.json: bytes=212864 sha256=121b0d8902175f0b67f0593284dccfb8ca36a291d532162897baf56d2e95481b
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1070074Z OSS GET verified blobs/43aac6b3bdef1cdc464e08fe416d787078c44cb0a702d5484e558348af92ab84.json: bytes=169401 sha256=43aac6b3bdef1cdc464e08fe416d787078c44cb0a702d5484e558348af92ab84
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1071537Z OSS GET verified blobs/c5e5aee53f6deb99b064ba6b32e19fe01e0de65dcf9d33d0bd0261b0c15d94aa.json: bytes=324406 sha256=c5e5aee53f6deb99b064ba6b32e19fe01e0de65dcf9d33d0bd0261b0c15d94aa
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1073040Z OSS GET verified blobs/411eb5ddaaaf5aebc22e75c1da5dc9defc36889d9c7b7c8732484fdcb4dbb2a6.json: bytes=176624 sha256=411eb5ddaaaf5aebc22e75c1da5dc9defc36889d9c7b7c8732484fdcb4dbb2a6
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1074254Z OSS GET verified blobs/339d37f3cd5f506c28fa0ac92850f273f5af10eee3bd63dc09e2f6f7956f3d2d.json: bytes=293865 sha256=339d37f3cd5f506c28fa0ac92850f273f5af10eee3bd63dc09e2f6f7956f3d2d
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:18.1075473Z OSS GET verified blobs/4129b467a9e5fff7fd524e1c580d3980211741a90e806ee2bf63e07bc4a962e4.json: bytes=206546 sha256=4129b467a9e5fff7fd524e1c580d3980211741a90e806ee2bf63e07bc4a962e4
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6108149Z OSS GET verified blobs/5b61453bdce2fb9d613edcdd765bb5ab3f24f6923f7b9f292b4cb464ae2f818d.json: bytes=201193 sha256=5b61453bdce2fb9d613edcdd765bb5ab3f24f6923f7b9f292b4cb464ae2f818d
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6110252Z OSS GET verified blobs/2e5aa091baa0d7da2613a32aa15024910ac418d70e7e2974645aa0710eec4a86.json: bytes=270220 sha256=2e5aa091baa0d7da2613a32aa15024910ac418d70e7e2974645aa0710eec4a86
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6112201Z OSS GET verified blobs/0d4d229a0a2739a0e2c2b9371a4c2880649c21a647c3174bb351840d70036f44.json: bytes=196665 sha256=0d4d229a0a2739a0e2c2b9371a4c2880649c21a647c3174bb351840d70036f44
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6113959Z OSS GET verified blobs/ea2d6af06fef8038885482141f88adbcbc96f5404878a40f6b7cabb8f48c8714.json: bytes=174568 sha256=ea2d6af06fef8038885482141f88adbcbc96f5404878a40f6b7cabb8f48c8714
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6115693Z OSS GET verified blobs/700dbb71e87f240fb8e29aea16b1133c0d3c51ad0d42da2ccf4d6f96be8e2f9d.json: bytes=277355 sha256=700dbb71e87f240fb8e29aea16b1133c0d3c51ad0d42da2ccf4d6f96be8e2f9d
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6116965Z OSS GET verified blobs/1186a8bdbb687cd93462ab51dc88592afbc2b39020209dd9b73921c5eb26d402.json: bytes=221491 sha256=1186a8bdbb687cd93462ab51dc88592afbc2b39020209dd9b73921c5eb26d402
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6118222Z OSS GET verified blobs/62f6cacb9037d436ca2f8c0c4f460240602e5b9a33d7e6d364a1978384b3261e.json: bytes=278831 sha256=62f6cacb9037d436ca2f8c0c4f460240602e5b9a33d7e6d364a1978384b3261e
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6119387Z OSS GET verified blobs/6b2672d7b610942db6a17bb295c0040b5f9df0f2221a1ee3318bb4337063899c.json: bytes=218149 sha256=6b2672d7b610942db6a17bb295c0040b5f9df0f2221a1ee3318bb4337063899c
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6120558Z OSS GET verified blobs/09724958f0dd8fdf16fda9549be0f3aa817ce12e033eaa64970b40655b06d52c.json: bytes=183381 sha256=09724958f0dd8fdf16fda9549be0f3aa817ce12e033eaa64970b40655b06d52c
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6121719Z OSS GET verified blobs/9dd5579ac2a430652ac5a5aed10f3ab8129aa247bb469fbe171d870350933d34.json: bytes=305026 sha256=9dd5579ac2a430652ac5a5aed10f3ab8129aa247bb469fbe171d870350933d34
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6123781Z OSS GET verified blobs/1978dc7aa73be3a12c14234d9a0110bc807694b8e58ee897d301c6ce80e051df.json: bytes=185638 sha256=1978dc7aa73be3a12c14234d9a0110bc807694b8e58ee897d301c6ce80e051df
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6124930Z OSS GET verified blobs/373a49034ed9f2fc2637305f35228c6251949daba92b9a507750b50c0e98a195.json: bytes=241506 sha256=373a49034ed9f2fc2637305f35228c6251949daba92b9a507750b50c0e98a195
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6126068Z OSS GET verified blobs/92c3135e77b473792465bb247e2556663ba3e1efc52594d687779ae4ee23656e.json: bytes=245251 sha256=92c3135e77b473792465bb247e2556663ba3e1efc52594d687779ae4ee23656e
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6127207Z OSS GET verified blobs/62def127784f1a8bc50dbbfa975310c8c00354a34a6f14b2efd547c28d473eb1.json: bytes=271874 sha256=62def127784f1a8bc50dbbfa975310c8c00354a34a6f14b2efd547c28d473eb1
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6128356Z OSS GET verified blobs/45f17d5c620d791d4eb3a6a985267bf0b7317d563a922a5cd90eb3d100d98159.json: bytes=200147 sha256=45f17d5c620d791d4eb3a6a985267bf0b7317d563a922a5cd90eb3d100d98159
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6129514Z OSS GET verified blobs/66939af353f782f345f98d779c56af6474dee4c82f2724065e44fb66fc79a5bf.json: bytes=223334 sha256=66939af353f782f345f98d779c56af6474dee4c82f2724065e44fb66fc79a5bf
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6130672Z OSS GET verified blobs/7adfb55bc095f815a86a699c70c6cfd23879ccf2dfbf306a731ed096d71e5c43.json: bytes=363892 sha256=7adfb55bc095f815a86a699c70c6cfd23879ccf2dfbf306a731ed096d71e5c43
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6131824Z OSS GET verified blobs/215759d8f7828616a8db913102073d24fcace015c0d4f919f7eaa95a57a5fec4.json: bytes=213578 sha256=215759d8f7828616a8db913102073d24fcace015c0d4f919f7eaa95a57a5fec4
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6133280Z OSS GET verified blobs/89c67cbf2a4a5b65be7ab23b7844172e83dc62210bae50b5d40afa96e1806f61.json: bytes=266403 sha256=89c67cbf2a4a5b65be7ab23b7844172e83dc62210bae50b5d40afa96e1806f61
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6134453Z OSS GET verified blobs/c4376acfe84b73ea2b4f650ff048dd63f42099f91339466146cabbe3b65df5fc.json: bytes=198549 sha256=c4376acfe84b73ea2b4f650ff048dd63f42099f91339466146cabbe3b65df5fc
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6135619Z OSS GET verified blobs/086a985c1348a7c125ca099f9ab0d35da8f50253ae550e2ba1881c660d07f43d.json: bytes=609050 sha256=086a985c1348a7c125ca099f9ab0d35da8f50253ae550e2ba1881c660d07f43d
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6136801Z OSS GET verified blobs/9d1603ab4fbb6df339efbd52158c4dd611c654a7edf3ace2e91b14ce30979c40.json: bytes=159874 sha256=9d1603ab4fbb6df339efbd52158c4dd611c654a7edf3ace2e91b14ce30979c40
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6137968Z OSS GET verified blobs/d740e58e9daa29711913b5ec96b64e5d5492a177a0c3cfd47c39dacf24265672.json: bytes=269016 sha256=d740e58e9daa29711913b5ec96b64e5d5492a177a0c3cfd47c39dacf24265672
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6139126Z OSS GET verified blobs/55d4d58775591f21c79180f2728533214eeaae1e392977d31429dff96a518737.json: bytes=18040215 sha256=55d4d58775591f21c79180f2728533214eeaae1e392977d31429dff96a518737
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6140098Z OSS GET verified index/hp_cn.json: bytes=440145 sha256=56f60e8067c220a12b750f66a5aaf33d71f3a3ef96c01a452dd4d9b88c9fff3e
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6140856Z OSS GET verified index/mi_cn.json: bytes=2235 sha256=5447aa79e244fbb300ba52f3689800868ebf22b298bfb02f861e54d96e48f719
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6141620Z OSS GET verified index/apple_cn.json: bytes=1436629 sha256=ade4221cf20c3c8b41ebf7fea9b3f0d316588a7d76cc50034234d33bf18a57ff
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6142631Z OSS GET verified index/dji.json: bytes=672954 sha256=b34130a115dcc51e540c89b9f1e5097c9fbc66f2df8d53b2dc397e527694c54a
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6143382Z OSS GET verified index/fuji.json: bytes=99365 sha256=88f6ce755db1fed074c017af40848e85eb59630cebd9786c720eb6573d31d125
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6144107Z OSS GET verified index/byd.json: bytes=57522 sha256=3aa8ec026e234da1671fc0decffd38447d72a1b34f06a24dc4bec26dd6cebfcb
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6144857Z OSS GET verified index/xiaomi_ev.json: bytes=23962 sha256=ca82767dc84a852a393726e40ed656c36f8b6d7aec05c071813d726a0ea35d9e
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6145798Z OSS GET verified index/other.json: bytes=776267 sha256=c45c891af3b50fd8aeb0fe82d5f36931feeebca7e0b9e1d87971c0c10d07bd7c
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6146658Z OSS GET verified detail/00.json: bytes=231769 sha256=4b942b59b9550250b968394d81c89f539cf867d2cd4cb726cbf31ddc853517e2
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6147363Z OSS GET verified detail/01.json: bytes=204353 sha256=94f4d3230e6b1c54139ecf5f439593d541753c9ff60f1d62e5640d75393e56f6
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6148067Z OSS GET verified detail/02.json: bytes=273348 sha256=14fddda783b2d027e41fd0b2ea1fa60a232dbedeb9b59107c73dc2a9aaa70646
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6148787Z OSS GET verified detail/03.json: bytes=273491 sha256=471a74874d12458a4afa7d0162576813ed3df67f833c1ce560baebe144c508d3
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6149480Z OSS GET verified detail/04.json: bytes=270189 sha256=a5cf36123f2c09122ec4e038b528099ef97e13845b6b1a8930c85996305877bd
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6150174Z OSS GET verified detail/05.json: bytes=318177 sha256=20f977a4f1946523489a9eddc011e5b99f369eff2b6cafc3347907ea1d31955a
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6150897Z OSS GET verified detail/06.json: bytes=220743 sha256=005d47a9838172a125a624f2859398bdec982ea40b985a451bd3f87f04ab55ff
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6151627Z OSS GET verified detail/07.json: bytes=227678 sha256=b4ef17ccb59a595bb0590151c0e1f871f15afdfda1cd5416c6fd6d609af2b56a
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6152468Z OSS GET verified detail/08.json: bytes=283423 sha256=44ede47397abb5fb86b15d254b61f8a6a5677e4b0b08c5c7a171374fb2bf4688
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6153178Z OSS GET verified detail/09.json: bytes=138062 sha256=7646b73cb9b19fd9b79c56ab69d2d3f804294727400add15df7d8e8d68504c2a
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6153887Z OSS GET verified detail/0a.json: bytes=223760 sha256=a396dd63dfc09414f5b40953871d728a453b4a12aecc21cbc58549f4aabbde05
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6154587Z OSS GET verified detail/0b.json: bytes=276526 sha256=4b19efb78b4ec1968de9582ea61b345029298e3d0e30ecee0d709e0c1c2ebaf1
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6155284Z OSS GET verified detail/0c.json: bytes=307419 sha256=58a673a704c2fa07465a65116e3bccd49843609f2f5d85d091d42bae8b928f80
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6156015Z OSS GET verified detail/0d.json: bytes=492070 sha256=5ae348734051eff54a15f2ee17b897950e7f467a9a056037e3456921a3fd82af
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6156747Z OSS GET verified detail/0e.json: bytes=316892 sha256=96fea932f79a5274d4ddb182a228a3e1e5d2737ab1f8edbce6cd875546dd4896
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6157457Z OSS GET verified detail/0f.json: bytes=190082 sha256=ade8e665e0cb580739862d79a4a49f2fbd869d7586ebdb41d3729d9cfe450c5e
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6158169Z OSS GET verified detail/10.json: bytes=180833 sha256=908da51bbcce30bbe41d74a6bb07e37e4d78b322d285ee0645f9fb0d25f6d091
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6158892Z OSS GET verified detail/11.json: bytes=217838 sha256=1a3e3c08d3f465b3b7dd62cf6fbdf09ccc675a7ca88f54d443952f1130930ef2
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6159590Z OSS GET verified detail/12.json: bytes=227779 sha256=95f40719739105beef23262cb1579777f4986b234c6e70157c561d277b542f47
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6160288Z OSS GET verified detail/13.json: bytes=295657 sha256=fbe4657be36b8770db173f730f195265282750c4abf5b8ea02b2dcf75cb775b9
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6161038Z OSS GET verified detail/14.json: bytes=275796 sha256=284ea0ee76b0694420e010705781803dd6dce7fa0383a7bcf30df33b1dde533f
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6161765Z OSS GET verified detail/15.json: bytes=237364 sha256=6cb414afb85c6ef2956fa0de4b137246d8ba6fab0ca075dcbd33a936fe1dc833
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6162630Z OSS GET verified detail/16.json: bytes=440312 sha256=9936d46c5cef0c6f50e8b2d71ce0845c8e6ecac691db8ee58d9573e57034308c
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6163358Z OSS GET verified detail/17.json: bytes=215751 sha256=18bdca11baf6b9784f1cdf98c38dce0d7682cbe080dd5aef67da191a02ba591a
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6164080Z OSS GET verified detail/18.json: bytes=189919 sha256=8650cce21d1d1c7091776d05bc70370d8a4e5c90c8cd225a311acd5f81320f75
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:37:54.6164784Z OSS GET verified detail/19.json: bytes=287255 sha256=40dd9e8be7dfc6e5c1e6e538b8351dfd048434e2bde708c34d8af4442a84f028
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3904207Z OSS GET verified detail/1a.json: bytes=183303 sha256=b163364729b7d593f49560d074e8c3d84e14ca3c37a7bee6b41b9712228b14b3
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3906116Z OSS GET verified detail/1b.json: bytes=104046 sha256=bf68de45d6c7e9a155e86dff1856c2b7bf41f38f607b65ca3b228c52fd7aad3c
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3907540Z OSS GET verified detail/1c.json: bytes=197354 sha256=6b4cd9c06811849878875f1bbe7c4d311bfebb22fe99d2a6f64391126737924b
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3908706Z OSS GET verified detail/1d.json: bytes=305014 sha256=4829d48b6a7c3ab03bbcf76fe0058a89923215208862b77164f104fccdbf9a0c
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3909931Z OSS GET verified detail/1e.json: bytes=272098 sha256=62cca9c8aff1e750b6e077de0f62ffbcb03570cd1dd92b13ad3a939895b75529
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3911142Z OSS GET verified detail/1f.json: bytes=154534 sha256=2477b0c94be92b47017af6fb20431276d566db268608375a4de2fa47cea5c9df
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3912478Z OSS GET verified detail/20.json: bytes=324730 sha256=86cdb0fde34c9f61469f3363b7a1e2b5a4663f77e3c814c10ac5047cb67f85ab
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3913532Z OSS GET verified detail/21.json: bytes=359392 sha256=896e976f1bfabd85c70b854aa80390f7fe5de2cff9a003cab1330f360fb38f2a
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3914586Z OSS GET verified detail/22.json: bytes=128946 sha256=b2c515972cbd096645709d44ff703632e5283de48f0b3af8b3b05ee0942eedc9
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3915633Z OSS GET verified detail/23.json: bytes=212864 sha256=121b0d8902175f0b67f0593284dccfb8ca36a291d532162897baf56d2e95481b
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3916809Z OSS GET verified detail/24.json: bytes=169401 sha256=43aac6b3bdef1cdc464e08fe416d787078c44cb0a702d5484e558348af92ab84
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3917629Z OSS GET verified detail/25.json: bytes=324406 sha256=c5e5aee53f6deb99b064ba6b32e19fe01e0de65dcf9d33d0bd0261b0c15d94aa
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3918389Z OSS GET verified detail/26.json: bytes=176624 sha256=411eb5ddaaaf5aebc22e75c1da5dc9defc36889d9c7b7c8732484fdcb4dbb2a6
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3919119Z OSS GET verified detail/27.json: bytes=293865 sha256=339d37f3cd5f506c28fa0ac92850f273f5af10eee3bd63dc09e2f6f7956f3d2d
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3919860Z OSS GET verified detail/28.json: bytes=206546 sha256=4129b467a9e5fff7fd524e1c580d3980211741a90e806ee2bf63e07bc4a962e4
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3920570Z OSS GET verified detail/29.json: bytes=201193 sha256=5b61453bdce2fb9d613edcdd765bb5ab3f24f6923f7b9f292b4cb464ae2f818d
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3921282Z OSS GET verified detail/2a.json: bytes=270220 sha256=2e5aa091baa0d7da2613a32aa15024910ac418d70e7e2974645aa0710eec4a86
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3922202Z OSS GET verified detail/2b.json: bytes=196665 sha256=0d4d229a0a2739a0e2c2b9371a4c2880649c21a647c3174bb351840d70036f44
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3922931Z OSS GET verified detail/2c.json: bytes=174568 sha256=ea2d6af06fef8038885482141f88adbcbc96f5404878a40f6b7cabb8f48c8714
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3923646Z OSS GET verified detail/2d.json: bytes=277355 sha256=700dbb71e87f240fb8e29aea16b1133c0d3c51ad0d42da2ccf4d6f96be8e2f9d
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3924390Z OSS GET verified detail/2e.json: bytes=221491 sha256=1186a8bdbb687cd93462ab51dc88592afbc2b39020209dd9b73921c5eb26d402
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3925157Z OSS GET verified detail/2f.json: bytes=278831 sha256=62f6cacb9037d436ca2f8c0c4f460240602e5b9a33d7e6d364a1978384b3261e
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3925881Z OSS GET verified detail/30.json: bytes=218149 sha256=6b2672d7b610942db6a17bb295c0040b5f9df0f2221a1ee3318bb4337063899c
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3926585Z OSS GET verified detail/31.json: bytes=183381 sha256=09724958f0dd8fdf16fda9549be0f3aa817ce12e033eaa64970b40655b06d52c
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3927297Z OSS GET verified detail/32.json: bytes=305026 sha256=9dd5579ac2a430652ac5a5aed10f3ab8129aa247bb469fbe171d870350933d34
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3928031Z OSS GET verified detail/33.json: bytes=185638 sha256=1978dc7aa73be3a12c14234d9a0110bc807694b8e58ee897d301c6ce80e051df
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3928736Z OSS GET verified detail/34.json: bytes=241506 sha256=373a49034ed9f2fc2637305f35228c6251949daba92b9a507750b50c0e98a195
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3929423Z OSS GET verified detail/35.json: bytes=245251 sha256=92c3135e77b473792465bb247e2556663ba3e1efc52594d687779ae4ee23656e
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3930118Z OSS GET verified detail/36.json: bytes=271874 sha256=62def127784f1a8bc50dbbfa975310c8c00354a34a6f14b2efd547c28d473eb1
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3931066Z OSS GET verified detail/37.json: bytes=200147 sha256=45f17d5c620d791d4eb3a6a985267bf0b7317d563a922a5cd90eb3d100d98159
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3932212Z OSS GET verified detail/38.json: bytes=223334 sha256=66939af353f782f345f98d779c56af6474dee4c82f2724065e44fb66fc79a5bf
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3932939Z OSS GET verified detail/39.json: bytes=363892 sha256=7adfb55bc095f815a86a699c70c6cfd23879ccf2dfbf306a731ed096d71e5c43
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3933671Z OSS GET verified detail/3a.json: bytes=213578 sha256=215759d8f7828616a8db913102073d24fcace015c0d4f919f7eaa95a57a5fec4
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3934399Z OSS GET verified detail/3b.json: bytes=266403 sha256=89c67cbf2a4a5b65be7ab23b7844172e83dc62210bae50b5d40afa96e1806f61
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3935101Z OSS GET verified detail/3c.json: bytes=198549 sha256=c4376acfe84b73ea2b4f650ff048dd63f42099f91339466146cabbe3b65df5fc
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3935815Z OSS GET verified detail/3d.json: bytes=609050 sha256=086a985c1348a7c125ca099f9ab0d35da8f50253ae550e2ba1881c660d07f43d
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3936530Z OSS GET verified detail/3e.json: bytes=159874 sha256=9d1603ab4fbb6df339efbd52158c4dd611c654a7edf3ace2e91b14ce30979c40
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3937271Z OSS GET verified detail/3f.json: bytes=269016 sha256=d740e58e9daa29711913b5ec96b64e5d5492a177a0c3cfd47c39dacf24265672
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3937989Z OSS GET verified goods.json: bytes=18040215 sha256=55d4d58775591f21c79180f2728533214eeaae1e392977d31429dff96a518737
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3938736Z OSS GET verified merge-audit.json: bytes=14113 sha256=0a81f511c87b1316ff5d8cfd423a43370fb5efe0fcde7993b4ac2b14a64be9fc
+mirror	Mirror validated release (immutable blobs first, manifest last)	2026-10-30T01:38:21.3939473Z OSS GET verified meta.json: bytes=9432 sha256=768b26c14dea47359ea12531ccb22fe70f10ce38ea6aee34b735bc61e6ba4552
+mirror	Post Run actions/setup-python@v5	﻿2026-10-30T01:38:21.4419628Z Post job cleanup.
+mirror	Post Run actions/setup-python@v5	2026-10-30T01:38:21.5665455Z (node:2644) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+mirror	Post Run actions/setup-python@v5	2026-10-30T01:38:21.5666667Z (Use `node --trace-deprecation ...` to show where the warning was created)
+mirror	Post Run actions/checkout@v4	﻿2026-10-30T01:38:21.5812575Z Post job cleanup.
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.6755356Z [command]/usr/bin/git version
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.6804206Z git version 2.56.0
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.6847704Z Temporarily overriding HOME='/home/runner/work/_temp/57324649-f130-4259-8ddb-58b724d41b32' before making global git config changes
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.6848957Z Adding repository directory to the temporary git global config as a safe directory
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.6854239Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex/_data
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.6900171Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.6947850Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.7229853Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.7269125Z http.https://github.com/.extraheader
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.7279795Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.7323142Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.7610789Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.7662472Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+mirror	Post Run actions/checkout@v4	﻿2026-10-30T01:38:21.8122350Z Post job cleanup.
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.9048212Z [command]/usr/bin/git version
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.9096885Z git version 2.56.0
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.9139520Z Temporarily overriding HOME='/home/runner/work/_temp/9f4e24c0-c641-4a85-aa5e-a57ae16f080f' before making global git config changes
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.9140919Z Adding repository directory to the temporary git global config as a safe directory
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.9145877Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.9191077Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.9233042Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.9549925Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.9582180Z http.https://github.com/.extraheader
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.9593809Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.9636002Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.9922872Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+mirror	Post Run actions/checkout@v4	2026-10-30T01:38:21.9965266Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+mirror	Complete job	﻿2026-10-30T01:38:22.0423301Z Cleaning up orphan processes
+mirror	Complete job	2026-10-30T01:38:22.0795179Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
