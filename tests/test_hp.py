@@ -56,3 +56,25 @@ class HPTests(unittest.TestCase):
         self.assertIsNone(result);self.assertFalse(info['ok'])
     def test_no_loss_assertion_in_supplement_publisher(self):
         with self.assertRaises(ValueError):merge([],[],[dict(id='CN:mi_cn:product:1')])
+
+class HourlyImageReuseTests(unittest.TestCase):
+    def test_reuse_verified_image_still_fetches_fresh_sku_and_price(self):
+        import tempfile
+        import sys
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp)
+            _, image = hp.parse_product(FIXTURE, URL, '2026-10-29T08:00:00Z')
+            (out/'audit.json').write_text(json.dumps({'images': [{'url': image, 'ok': True}]}))
+            class FakeClient:
+                requests = []
+                def get(self, url):
+                    return FIXTURE.encode(), {'fetched_at': '2026-10-31T00:00:00Z'}
+            with patch.object(sys, 'argv', ['crawl_hp.py', '--out', tmp, '--reuse-images', '--limit', '1']), \
+                 patch.object(hp, 'Client', return_value=FakeClient()), \
+                 patch.object(hp, 'listing', return_value=([URL], None)), \
+                 patch.object(hp, 'image_check', side_effect=AssertionError('Known verified image must not be downloaded')):
+                self.assertEqual(hp.main(), 0)
+            rows = json.loads((out/'goods.json').read_text())
+            self.assertEqual(rows[0]['price'], 12499)
+            self.assertEqual(rows[0]['image'], image)
+            self.assertEqual(rows[0]['fetched_at'], '2026-10-31T00:00:00Z')

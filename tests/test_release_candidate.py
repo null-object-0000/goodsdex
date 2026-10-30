@@ -95,3 +95,14 @@ def test_apple_history_preserves_each_product_observation(tmp_path):
     assert p.read_bytes() == b''.join(lines)
     merge_candidate(tmp_path, c)
     assert p.read_bytes() == b''.join(lines)
+
+
+def test_shared_publication_does_not_replay_foreign_field_backfills(monkeypatch):
+    from goodsdex import backfill, supplements
+    base = [row('hp', 'hp_cn', 100), row('apple', 'apple_support', None)]
+    monkeypatch.setattr(backfill, 'apply_default', lambda rows: (_ for _ in ()).throw(AssertionError('No global field replay during brand publication')))
+    result, audit = supplements.merge(base, [], base, apply_backfills=False)
+    assert result == base
+    assert audit['count'] == len(base)
+    with pytest.raises(ValueError, match='drop'):
+        supplements.merge(base[:1], [], base, apply_backfills=False)

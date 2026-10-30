@@ -22,7 +22,7 @@ def indexed(rows, label, unique=False):
     return result
 
 
-def merge(rebuilt, supplements, previous, include_new_cars=False):
+def merge(rebuilt, supplements, previous, include_new_cars=False, *, apply_backfills=True):
     rebuilt = remove_reviewed_non_goods(rebuilt)
     supplements = remove_reviewed_non_goods(supplements)
     # Other publishers cannot drop cars; only the separate daily job refreshes them.
@@ -40,7 +40,12 @@ def merge(rebuilt, supplements, previous, include_new_cars=False):
             print(f"supplement conflict (keep rebuilt): {key}")
     added = [row for key, row in extra.items() if key not in existing and (include_new_cars or not is_car(row) or key in old)]
     from goodsdex.backfill import apply_default
-    result, backfill_audit = apply_default(rebuilt + added)
+    if apply_backfills:
+        result, backfill_audit = apply_default(rebuilt + added)
+    else:
+        # Brand collectors own field updates; validating a candidate must not
+        # replay unrelated historical field patches from another brand.
+        result, backfill_audit = rebuilt + added, dict(applied=[], skipped=[], unchanged=[])
     assert_no_lost_ids(previous, result)
     assert_no_empty_shells(result)
     missing = []
@@ -55,9 +60,9 @@ def merge(rebuilt, supplements, previous, include_new_cars=False):
     return result, audit
 
 
-def publish(rebuilt, out_dir, previous, supplements=DEFAULT_SUPPLEMENTS, include_new_cars=False):
+def publish(rebuilt, out_dir, previous, supplements=DEFAULT_SUPPLEMENTS, include_new_cars=False, *, apply_backfills=True):
     # Validate before writing either release file. Missing supplements fail closed.
-    result, audit = merge(rebuilt, json.loads(Path(supplements).read_text(encoding="utf-8")), previous, include_new_cars)
+    result, audit = merge(rebuilt, json.loads(Path(supplements).read_text(encoding="utf-8")), previous, include_new_cars, apply_backfills=apply_backfills)
     out_dir = Path(out_dir)
     meta_path = out_dir / "meta.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
