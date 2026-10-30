@@ -63,6 +63,8 @@ def test_corrupted_migration_and_unreviewed_products_fail_closed():
     with pytest.raises(ValueError): assert_preserved(raw,result)
     row=deepcopy(raw[0]);row['id']='CN:byd:car:goods-999:unknown:attr-1'
     with pytest.raises(ValueError): migrate([row])
+    row=deepcopy(raw[0]);row['model_year']='unknown'
+    with pytest.raises(ValueError, match='model_year'): migrate([row])
 
 
 def test_shards_retain_nested_search_and_image_metadata(tmp_path):

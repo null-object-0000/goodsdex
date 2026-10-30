@@ -27,6 +27,9 @@ def migrate(rows):
             output.append(deepcopy(original))
             continue
         row = deepcopy(original)
+        year_value = row.get('model_year')
+        if year_value is not None and (isinstance(year_value, bool) or not isinstance(year_value, int)):
+            raise ValueError('Car model_year requires an evidenced integer or null')
         historical = row.get('model_year') == 2022 and ':han-dmi:2022:' in row['id']
         if row['brand'] == '比亚迪':
             source_id = row['id'].split(':goods-')[1].split(':')[0] if ':goods-' in row['id'] else None
