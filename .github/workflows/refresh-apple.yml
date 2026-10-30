@@ -1,0 +1,37 @@
+# Apple CN 目录与价格；每小时 :33，目标总耗时 <8 分钟。
+# 产出候选差量 artifact；共享 publish-release 负责合并、门禁、分片和 OSS。
+name: refresh-apple
+on:
+  schedule:
+    - cron: '33 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/collect-base
+      - name: Refresh Apple catalogue and prices
+        run: |
+          python3 scripts/crawl_apple.py --out _data/data/categories --archive _data/data/archive --raw data/apple/raw --public _data/public --prices-only
+          python3 scripts/ci_publish_archive.py --archive _data/data/archive --out _data/public/archive
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: apple-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: data/apple/
+          retention-days: 7
+      - uses: ./.github/actions/upload-candidate
+        with:
+          scope: apple
+  publish:
+    needs: collect
+    uses: ./.github/workflows/publish-release.yml
+    with:
+      scope: apple
+    secrets: inherit

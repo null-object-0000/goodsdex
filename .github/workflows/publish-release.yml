@@ -1,0 +1,111 @@
+# 共享发布入口；仅由采集 workflow 调用。产出唯一 data 发布集及 OSS 镜像。
+# 只有此 job 可以合并、门禁、finalize、推 data；整个过程持同一把锁。
+name: publish-release
+on:
+  workflow_call:
+    inputs:
+      scope:
+        type: string
+        required: true
+    secrets:
+      OSS_ACCESS_KEY_ID:
+        required: true
+      OSS_ACCESS_KEY_SECRET:
+        required: true
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    concurrency:
+      group: goodsdex-data-publication
+      cancel-in-progress: false
+      queue: max
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Require OSS credentials before publishing
+        env:
+          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+        run: |
+          test -n "$OSS_ACCESS_KEY_ID" && test -n "$OSS_ACCESS_KEY_SECRET" || {
+            echo '::error::缺少 OSS 密钥，拒绝发布'; exit 1;
+          }
+      - name: Read latest data while holding publication lock
+        uses: actions/checkout@v4
+        with:
+          ref: data
+          path: _data
+          fetch-depth: 1
+      - uses: actions/download-artifact@v4
+        with:
+          name: candidate-${{ github.run_id }}
+          path: ${{ runner.temp }}/candidate
+      - name: Merge candidate onto latest release
+        env:
+          EXPECTED_SCOPE: ${{ inputs.scope }}
+        run: |
+          cp _data/public/goods.json "$RUNNER_TEMP/goods-before.json"
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          bundle = json.loads((Path(os.environ['RUNNER_TEMP']) / 'candidate/candidate.json').read_text())
+          assert bundle['scope'] == os.environ['EXPECTED_SCOPE'], 'Candidate scope mismatch'
+          PY
+          python3 scripts/release_candidate.py merge --root _data --candidate "$RUNNER_TEMP/candidate/candidate.json"
+      - name: Test publication invariants
+        run: |
+          python3 -m pip install --quiet pytest
+          PYTHONPATH=src:scripts python3 -m pytest -q tests/test_release_policy.py tests/test_supplement_publish.py tests/test_dedupe.py tests/test_shards.py tests/test_release_candidate.py
+      - name: Verify final release (no lost IDs and responsibility invariants)
+        env:
+          RELEASE_SCOPE: ${{ inputs.scope }}
+        run: |
+          PYTHONPATH=src python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          from goodsdex.release_policy import assert_no_lost_ids
+          from goodsdex.supplements import publish
+          public = Path('_data/public')
+          previous = json.loads((Path(os.environ['RUNNER_TEMP']) / 'goods-before.json').read_text())
+          current = json.loads((public / 'goods.json').read_text())
+          assert_no_lost_ids(previous, current)
+          publish(current, public, previous)
+          PY
+          EXTRA=()
+          if [ "$RELEASE_SCOPE" = cars ]; then EXTRA+=(--car-refresh); fi
+          python3 scripts/verify_goods_release.py --public _data/public --previous "$RUNNER_TEMP/goods-before.json" "${EXTRA[@]}"
+      - name: Finalize once (dedupe, tombstones, normalization, shards)
+        run: python3 scripts/finalize_public.py --public _data/public --previous "$RUNNER_TEMP/goods-before.json"
+      - name: Push one complete release to data
+        env:
+          RELEASE_SCOPE: ${{ inputs.scope }}
+        run: |
+          cd _data
+          git config user.name goodsdex-bot
+          git config user.email goodsdex-bot@users.noreply.github.com
+          git add -A
+          git add -f public data
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "$RELEASE_SCOPE publication $(date -u +%Y-%m-%dT%H:%MZ)"
+          # No force push or automatic conflict resolution. A failed mirror is rerunnable.
+          git push origin HEAD:data
+      - name: Mirror and verify OSS (immutable blobs first, manifest last)
+        env:
+          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+        run: |
+          python3 -m pip install --quiet oss2
+          python3 scripts/mirror_public_to_oss.py --public _data/public
+      - name: Record release summary
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          from pathlib import Path
+          meta = json.loads(Path('_data/public/meta.json').read_text())
+          print(f"Published {meta['count']} rows; {len(meta['files'])} verified files; one finalize under goodsdex-data-publication lock.")
+          PY

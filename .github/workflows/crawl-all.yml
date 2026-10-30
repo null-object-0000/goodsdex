@@ -1,3 +1,4 @@
+# 每日全量发现与证据归档；只产出候选，发布统一交给 publish-release。
 name: crawl-all
 
 # 全量采集（低频，每天一次）
@@ -30,13 +31,6 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: goodsdex-data-publication
-  cancel-in-progress: false
-
-env:
-  DATA_BRANCH: data
-
 jobs:
   crawl:
     runs-on: ubuntu-latest
@@ -45,32 +39,15 @@ jobs:
     # 超过 90 分钟仍未跑完（跑到 85/95 被 timeout 掐掉）。
     # 所以：timeout 给足 150 分钟，并把并发提到 4 —— 高延迟场景下
     # 多几个在途请求能有效盖住等待（本地低延迟时收益不明显）。
+    permissions:
+      contents: read
     timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
         with:
-          # 默认 --single-branch 只拉 main，后续 fetch origin data
-          # 会报"无效引用"（已在本地复现）。拉全量 refs。
-          fetch-depth: 0
+          fetch-depth: 1
 
-      - name: Fetch data branch
-        run: |
-          git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
-          git fetch origin "${DATA_BRANCH}" || true
-          if git rev-parse --verify "origin/${DATA_BRANCH}" >/dev/null 2>&1; then
-            git worktree add ./_data "origin/${DATA_BRANCH}"
-          else
-            mkdir -p ./_data
-          fi
-          if [ -f _data/public/goods.json ]; then
-            cp _data/public/goods.json "$RUNNER_TEMP/goods-before.json"
-          else
-            echo '[]' > "$RUNNER_TEMP/goods-before.json"
-          fi
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+      - uses: ./.github/actions/collect-base
 
       - name: Crawl
         env:
@@ -154,32 +131,12 @@ jobs:
           retention-days: 7
           if-no-files-found: warn
 
-      - name: Verify final release (no lost IDs)
-        run: |
-          PYTHONPATH=src python3 scripts/verify_goods_release.py --public _data/public \
-            --previous "$RUNNER_TEMP/goods-before.json"
-
-      - name: Merge category duplicates and validate final release
-        run: python3 scripts/finalize_public.py --public _data/public --previous "$RUNNER_TEMP/goods-before.json"
-
-      - name: Push to data branch
-        run: |
-          cd ./_data
-          git config user.name "goodsdex-bot"
-          git config user.email "goodsdex-bot@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "无变化"
-            exit 0
-          fi
-          git commit -m "crawl $(date -u +%Y-%m-%d)"
-          # 远端变化时失败；重新运行以重新校验，禁止自动冲突择边。
-          git push origin "HEAD:${DATA_BRANCH}"
-
-      - name: Mirror validated release to OSS
-        env:
-          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
-          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
-        run: |
-          python3 -m pip install --quiet oss2
-          python3 scripts/mirror_public_to_oss.py --public _data/public
+      - uses: ./.github/actions/upload-candidate
+        with:
+          scope: all
+  publish:
+    needs: crawl
+    uses: ./.github/workflows/publish-release.yml
+    with:
+      scope: all
+    secrets: inherit

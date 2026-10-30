@@ -1,159 +1,29 @@
+# 小米／大疆／富士价格回灌；每小时 :23，目标总耗时 <5 分钟。
+# 产出候选差量 artifact；共享 publish-release 负责合并、门禁、分片和 OSS。
 name: refresh-prices
-
-# 价格刷新（每小时）
-#
-# **产物走独立分支**（data），不碰 main。
-# 理由：代码与数据混在一个分支时，每次数据提交都在推进该分支的 tip，
-# 本地开发与 Action 互相 non-fast-forward（实测反复冲突）。
-#
-# 分支布局：
-#   main:  src/ scripts/ tests/ docs/ README
-#   data:  public/goods.json、public/prices/*
-#
-#   public/goods.json           全量商品（回灌后按 id 合并补充集）
-#   public/prices/latest.json   最新快照（覆盖）
-#   public/prices/<月>.jsonl    时间序列（**按小时追加，不覆盖历史**）
-
 on:
   schedule:
-    # 每小时第 23 分钟。
-    # **为什么不用第 7 分**：实测配 '7 * * * *' 时，实际触发落在 :28 和 :58
-    # （延迟 20-50 分钟），且 10 小时只跑了 2 次。
-    # GitHub 官方文档确认：整点前后是 Actions 高负载期，
-    # "some queued jobs may be dropped" —— 越靠近整点越容易被丢。
-    # 移到第 23 分可明显降低被丢概率。
-    # 成本：~83 秒 x 24 = 33 分钟/天；public 仓库 Actions 免费。
     - cron: '23 * * * *'
   workflow_dispatch:
-
 permissions:
   contents: write
-
-concurrency:
-  group: goodsdex-data-publication
-  cancel-in-progress: false
-
-env:
-  DATA_BRANCH: data
-
 jobs:
-  refresh:
+  collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 3
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
+      - uses: ./.github/actions/collect-base
+      - name: Refresh prices (only this responsibility)
+        run: python3 scripts/ci_refresh_prices.py --public _data/public --supplements data/supplements/goods-supplements.json
+      - uses: ./.github/actions/upload-candidate
         with:
-          # 默认 --single-branch 只拉 main，后续 fetch origin data
-          # 会报"无效引用"（已在本地复现）。拉全量 refs。
-          fetch-depth: 0
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Fetch data branch
-        run: |
-          # 显式 refspec，不依赖 checkout 的默认配置
-          git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
-          git fetch origin "${DATA_BRANCH}" || true
-          if git rev-parse --verify "origin/${DATA_BRANCH}" >/dev/null 2>&1; then
-            git worktree add ./_data "origin/${DATA_BRANCH}"
-            echo "已挂载 data 分支"
-          else
-            mkdir -p ./_data
-            echo "data 分支不存在，将新建"
-          fi
-          if [ -f _data/public/goods.json ]; then
-            cp _data/public/goods.json "$RUNNER_TEMP/goods-before.json"
-          else
-            echo '[]' > "$RUNNER_TEMP/goods-before.json"
-          fi
-
-      - name: Test publication invariants
-        run: |
-          PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_supplement_publish.py'
-          PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_dedupe.py'
-
-      - name: Refresh prices
-        # 必须走 ci_refresh_prices.py —— 它从发布集读 gid
-        # （runner 上没有 data/categories/，那是内部采集产物）
-        # 并负责把新价格回灌进 goods.json / 按小时追加时间序列
-        run: |
-          PYTHONPATH=src python3 scripts/ci_refresh_prices.py --public _data/public --supplements data/supplements/goods-supplements.json
-
-      - name: Refresh Apple CN catalogue and prices
-        run: |
-          # Apple 价格在购买页，按料号采集；不能传进小米 gid 批量接口。
-          # 与原小时级 workflow 共用产物分支；只增量合并 Apple 条目。
-          if ! PYTHONPATH=src python3 scripts/crawl_apple.py \
-            --out _data/data/categories --archive _data/data/archive \
-            --raw data/apple/raw --public _data/public --prices-only; then
-            echo "::warning::Apple 采集有缺口，保留失败页旧价格与观察时间"
-          fi
-          PYTHONPATH=src python3 scripts/ci_publish_archive.py \
-            --archive _data/data/archive --out _data/public/archive
-
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: apple-evidence-${{ github.run_id }}
-          path: data/apple/
-          retention-days: 7
-          if-no-files-found: warn
-
-      - name: Refresh HP CN desktop and laptop configurations
-        # 惠普价格在商城页；每小时随其他品牌一起刷。
-        # 每日 crawl-all 仍保留一次全量发现（新 SKU、证据归档）。
-        run: |
-          python3 -m pip install --quiet Pillow
-          if ! python3 scripts/crawl_hp.py --out _data/data/hp --public _data/public \
-            --seed 'https://www.hpstore.cn/catalogsearch/result/?q=%E6%98%9F14'; then
-            echo "::warning::HP 采集有缺口，保留旧 SKU 与上次价格"
-          fi
-
-      - name: Verify final release (no lost IDs)
-        run: |
-          PYTHONPATH=src python3 scripts/verify_goods_release.py --public _data/public \
-            --previous "$RUNNER_TEMP/goods-before.json"
-
-      - name: Assert hourly car counts, product_type and all fields unchanged
-        run: |
-          PYTHONPATH=src python3 - <<'PYCODE'
-          import json, os
-          from pathlib import Path
-          from goodsdex.cars import assert_cars_unchanged
-          before = json.loads((Path(os.environ['RUNNER_TEMP']) / 'goods-before.json').read_text())
-          after = json.loads(Path('_data/public/goods.json').read_text())
-          assert_cars_unchanged(before, after)
-          PYCODE
-
-      - name: Merge category duplicates and validate final release
-        run: python3 scripts/finalize_public.py --public _data/public --previous "$RUNNER_TEMP/goods-before.json"
-
-      - name: Push to data branch
-        run: |
-          cd ./_data
-          git config user.name "goodsdex-bot"
-          git config user.email "goodsdex-bot@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "无变化，跳过"
-            exit 0
-          fi
-          git commit -m "price refresh $(date -u +%Y-%m-%dT%H:%MZ)"
-          # 远端变化时失败；重新运行以重新校验，禁止自动冲突择边。
-          git push origin "HEAD:${DATA_BRANCH}"
-
-      - name: Mirror the release to OSS (the API pulls from here)
-        # 大陆机器访问 raw.githubusercontent / jsDelivr / ghproxy 全部失败（实测 000/403/000），
-        # 服务端改成只从同区域 OSS 拉取；这里把发布集镜像过去，否则接口会一直停在旧数据。
-        env:
-          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
-          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
-        run: |
-          if [ -z "$OSS_ACCESS_KEY_ID" ]; then
-            echo "::error::缺少 OSS_ACCESS_KEY_ID，服务端将拿不到新数据"
-            exit 1
-          fi
-          python3 -m pip install --quiet oss2
-          python3 scripts/mirror_public_to_oss.py --public _data/public
+          scope: prices
+  publish:
+    needs: collect
+    uses: ./.github/workflows/publish-release.yml
+    with:
+      scope: prices
+    secrets: inherit

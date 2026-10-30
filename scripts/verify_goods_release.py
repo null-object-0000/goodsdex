@@ -16,6 +16,7 @@ def main():
     ap.add_argument("--public", type=Path, required=True)
     ap.add_argument("--previous", type=Path, required=True)
     ap.add_argument("--supplements", type=Path, default=DEFAULT_SUPPLEMENTS)
+    ap.add_argument("--car-refresh", action="store_true", help="Daily reviewed car publisher: require all non-car objects unchanged instead")
     args = ap.parse_args()
     goods_path = args.public / "goods.json"
     original = json.loads(goods_path.read_text())
@@ -23,7 +24,12 @@ def main():
     # same exact-ID policy as merge before comparing the final release.
     current = remove_reviewed_non_goods(original)
     previous = json.loads(args.previous.read_text())
-    assert_cars_unchanged(previous, current)
+    if args.car_refresh:
+        from goodsdex.cars import is_car
+        if [r for r in previous if not is_car(r)] != [r for r in current if not is_car(r)]:
+            raise ValueError("Car refresh changed non-car objects")
+    else:
+        assert_cars_unchanged(previous, current)
     supplements = json.loads(args.supplements.read_text())
     checked, verification = merge(current, supplements, previous)
     if Counter(r["id"] for r in checked) != Counter(r["id"] for r in current):

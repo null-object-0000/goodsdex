@@ -51,6 +51,8 @@ def main() -> int:
 
     res = ({"offline": True} if a.offline else refresh(gids, Path(a.public).parent / "data"))
     print(json.dumps(res, ensure_ascii=False, indent=1))
+    if res.get("errors"):
+        print(f"::warning::价格采集有缺口，保留旧价格：{res['errors']}")
 
     # 把最新价格回灌进发布集（保持 goods.json 的价格是新的一手数据）
     latest = Path(a.public).parent / "data" / "prices" / "latest.json"

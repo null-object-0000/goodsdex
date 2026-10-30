@@ -183,6 +183,7 @@ def main():
     ap.add_argument('--out',type=Path,default=ROOT/'data/hp')
     ap.add_argument('--public',type=Path)
     ap.add_argument('--raw',type=Path,default=ROOT/'data/hp/raw')
+    ap.add_argument('--reuse-images', action='store_true', help='Hourly refresh: reuse prior successful image checks; new/changed images are still verified')
     ap.add_argument('--dry-run',action='store_true')
     ap.add_argument('--limit',type=int)
     ap.add_argument('--replay',type=Path,help='Reparse saved audit/raw evidence; validate images missing from that audit')
@@ -211,7 +212,10 @@ def main():
             urls.extend(u for u in links if u not in urls)
             if nxt and not args.limit: pages.append(nxt)
         except Exception as e: errors.append(dict(url=url,error=str(e)))
-    rows=[];checks={i['url']:i for i in replay['images']} if replay else {}
+    image_audit = replay
+    if args.reuse_images and image_audit is None and (args.out/'audit.json').exists():
+        image_audit = json.loads((args.out/'audit.json').read_text())
+    rows=[];checks={i['url']:i for i in image_audit['images'] if i['ok']} if image_audit else {}
     images={u:u if i['ok'] else None for u,i in checks.items()}
     for url in urls[:args.limit] if args.limit else urls:
         try:

@@ -1,9 +1,15 @@
+# main 推送／PR／手动运行离线测试；产出测试结果，不发布数据。
 name: tests
 on:
   push:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      inject_lost_id:
+        description: '验收专用：构造丢 ID 候选，verify 必须使本 job 失败'
+        type: boolean
+        default: false
 concurrency:
   group: tests-${{ github.ref }}
   cancel-in-progress: true
@@ -20,3 +26,23 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install pytest Pillow
       - run: PYTHONPATH=src python -m pytest -q -m "not live"
+      - uses: actions/checkout@v4
+        if: ${{ inputs.inject_lost_id }}
+        with:
+          ref: data
+          path: _guard_data
+          persist-credentials: false
+      - name: Deliberate lost-ID candidate must fail verify
+        if: ${{ inputs.inject_lost_id }}
+        run: |
+          cp _guard_data/public/goods.json "$RUNNER_TEMP/goods-before.json"
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('_guard_data/public/goods.json')
+          rows = json.loads(p.read_text())
+          row = next(r for r in rows if r.get('source') == 'mi_cn')
+          print(f"::notice::Deliberately removing {row['id']} from a disposable candidate")
+          p.write_text(json.dumps([r for r in rows if r['id'] != row['id']], ensure_ascii=False))
+          PY
+          python3 scripts/verify_goods_release.py --public _guard_data/public --previous "$RUNNER_TEMP/goods-before.json"

@@ -1,0 +1,14 @@
+name: Read collector baseline
+description: Read data without a publication lock; collectors never push or finalize.
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - uses: actions/checkout@v4
+      with:
+        ref: data
+        path: _data
+        fetch-depth: 1
+        persist-credentials: false

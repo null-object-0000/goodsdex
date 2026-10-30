@@ -1,0 +1,20 @@
+name: Upload collector delta
+description: Package changed inputs only, excluding generated release files.
+inputs:
+  scope:
+    required: true
+    description: Collector responsibility
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        CANDIDATE_SCOPE: ${{ inputs.scope }}
+      run: python3 scripts/release_candidate.py pack --root _data --scope "$CANDIDATE_SCOPE" --candidate "$RUNNER_TEMP/candidate/candidate.json"
+    - uses: actions/upload-artifact@v4
+      with:
+        name: candidate-${{ github.run_id }}
+        path: ${{ runner.temp }}/candidate/candidate.json
+        overwrite: true
+        retention-days: 7
+        if-no-files-found: error
