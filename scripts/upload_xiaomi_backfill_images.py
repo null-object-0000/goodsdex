@@ -19,7 +19,11 @@ def transfer(row, bucket, download):
     ext={'image/jpeg':'jpg','image/png':'png'}[row['content_type']]
     assert row['key']=='goods/'+hashlib.sha1(row['image_url'].encode()).hexdigest()+'.'+ext
     assert all(row.get(k) for k in ('source','source_url','captured_at','captured_at_kind'))
-    raw=download(row['image_url'])
+    if row.get('local_file'):
+        raw=Path(row['local_file']).read_bytes()
+        assert hashlib.sha256(raw).hexdigest()==row['local_sha256'], 'local_source_sha256_mismatch'
+    else:
+        raw=download(row['image_url'])
     assert len(raw)==row['bytes'], 'candidate_bytes_changed'
     with Image.open(io.BytesIO(raw)) as im:
         im.load()

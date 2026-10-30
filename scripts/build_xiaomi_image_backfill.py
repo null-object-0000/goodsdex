@@ -25,7 +25,8 @@ def main():
         assert len(raw)==r['readback_bytes']==r['bytes']
         assert hashlib.sha256(raw).hexdigest()==r['sha256']
         assert r['oss_url']=='https://spend-good.oss-cn-shanghai.aliyuncs.com/'+r['key']
-        note='原候选 checked_at 为图片 GET 验证的观察时间，非网页采集时间或归档时间；官方来源页按已验证 specs URL 与原研究报告还原。'
+        note='原候选 checked_at 为当轮图片 GET 验证批次的检查时间，非逐张请求时刻、网页采集时间或归档时间。'
+        note+=(' 官方来源页取自已保存的官方导航概述链接。' if r['provenance_basis'].get('navigation_capture') else ' 官方来源页按已验证 specs URL 与原研究报告还原，未保留原始页面/CSS 抓取 URL。')
         if r['image_scope']=='series':note+=' 多 pid 共用素材，仅作系列参考图，不代表某容量、配色的独占主体图。'
         fields=dict(image=r['oss_url'],image_source=r['source'],image_source_type='official',
             image_source_url=r['source_url'],image_captured_at=r['captured_at'],image_scope=r['image_scope'],image_note=note)

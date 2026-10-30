@@ -69,6 +69,15 @@ def test_failed_public_readback_removes_only_new_objects(tmp_path,monkeypatch):
     changed=dict(row,bytes=len(raw)+1);unused=Bucket()
     with pytest.raises(AssertionError,match='candidate_bytes_changed'):transfer.transfer(changed,unused,lambda url:raw)
     assert unused.puts==[]
+    Path('source.jpg').write_bytes(raw)
+    cached=dict(row,local_file='source.jpg',local_sha256=hashlib.sha256(raw).hexdigest())
+    def own_only(url):
+        assert url==transfer.BASE+row['key'], 'cached transfer must not contact source CDN'
+        return raw
+    assert transfer.transfer(cached,Bucket(),own_only)['byte_equal']
+    corrupt=dict(cached,local_sha256='bad')
+    with pytest.raises(AssertionError,match='local_source_sha256_mismatch'):
+        transfer.transfer(corrupt,Bucket(),own_only)
 
 def test_existing_navigation_capture_can_supply_missing_specs_mapping(tmp_path):
     import json
