@@ -13,8 +13,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: python3 -m pip install --quiet oss2 pillow
-      - name: Upload reviewed H1 and H2 and GET public URLs
+      - name: Upload reviewed 1920px exterior and interiors and GET public URLs
         env:
           OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
           OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
-        run: python3 scripts/upload_han_archive_images.py
+        run: python3 scripts/upload_han_archive_images.py --manifest docs/汉2022主图升级-20261030/images.json
