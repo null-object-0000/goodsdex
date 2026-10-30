@@ -1,0 +1,165 @@
+upload	Set up job	﻿2026-10-30T08:44:48.7807064Z Current runner version: '2.338.0'
+upload	Set up job	2026-10-30T08:44:48.7835730Z ##[group]Runner Image Provisioner
+upload	Set up job	2026-10-30T08:44:48.7836768Z Hosted Compute Agent
+upload	Set up job	2026-10-30T08:44:48.7837502Z Version: 20261021.618
+upload	Set up job	2026-10-30T08:44:48.7838237Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+upload	Set up job	2026-10-30T08:44:48.7839029Z Build Date: 2026-10-21T00:45:21Z
+upload	Set up job	2026-10-30T08:44:48.7840252Z Worker ID: {835c3122-b5af-46f3-9f01-93b42ca1fd97}
+upload	Set up job	2026-10-30T08:44:48.7841038Z Region: westcentralus
+upload	Set up job	2026-10-30T08:44:48.7841732Z Cloud: Azure
+upload	Set up job	2026-10-30T08:44:48.7842368Z ##[endgroup]
+upload	Set up job	2026-10-30T08:44:48.7843916Z ##[group]Operating System
+upload	Set up job	2026-10-30T08:44:48.7844748Z Ubuntu
+upload	Set up job	2026-10-30T08:44:48.7845351Z 24.04.5
+upload	Set up job	2026-10-30T08:44:48.7845958Z LTS
+upload	Set up job	2026-10-30T08:44:48.7846568Z ##[endgroup]
+upload	Set up job	2026-10-30T08:44:48.7847235Z ##[group]Runner Image
+upload	Set up job	2026-10-30T08:44:48.7848016Z Image: ubuntu-24.04
+upload	Set up job	2026-10-30T08:44:48.7848665Z Version: 20261025.353.1
+upload	Set up job	2026-10-30T08:44:48.7850148Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+upload	Set up job	2026-10-30T08:44:48.7852039Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+upload	Set up job	2026-10-30T08:44:48.7853237Z ##[endgroup]
+upload	Set up job	2026-10-30T08:44:48.7854401Z ##[group]GITHUB_TOKEN Permissions
+upload	Set up job	2026-10-30T08:44:48.7856536Z Contents: read
+upload	Set up job	2026-10-30T08:44:48.7857833Z Metadata: read
+upload	Set up job	2026-10-30T08:44:48.7858477Z ##[endgroup]
+upload	Set up job	2026-10-30T08:44:48.7861256Z Secret source: Actions
+upload	Set up job	2026-10-30T08:44:48.7862371Z Cache mode: write
+upload	Set up job	2026-10-30T08:44:48.7863181Z Prepare workflow directory
+upload	Set up job	2026-10-30T08:44:48.8260762Z Prepare all required actions
+upload	Set up job	2026-10-30T08:44:48.8312202Z Getting action download info
+upload	Set up job	2026-10-30T08:44:49.1147825Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+upload	Set up job	2026-10-30T08:44:49.2381650Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+upload	Set up job	2026-10-30T08:44:49.4280172Z Complete job name: upload
+upload	Run actions/checkout@v4	﻿2026-10-30T08:44:49.5165314Z ##[group]Run actions/checkout@v4
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5166218Z with:
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5166710Z   repository: null-object-0000/goodsdex
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5171031Z   token: ***
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5171499Z   ssh-strict: true
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5171978Z   ssh-user: git
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5172451Z   persist-credentials: true
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5172962Z   clean: true
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5173438Z   sparse-checkout-cone-mode: true
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5173967Z   fetch-depth: 1
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5174418Z   fetch-tags: false
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5174883Z   show-progress: true
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5175351Z   lfs: false
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5175778Z   submodules: false
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5176240Z   set-safe-directory: true
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5176765Z   allow-unsafe-pr-checkout: false
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.5177562Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7320949Z Syncing repository: null-object-0000/goodsdex
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7323726Z ##[group]Getting Git version info
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7324905Z Working directory is '/home/runner/work/goodsdex/goodsdex'
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7326426Z [command]/usr/bin/git version
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7387147Z git version 2.56.0
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7411302Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7429416Z Temporarily overriding HOME='/home/runner/work/_temp/b8ab698a-d119-4c76-8056-64967220a67d' before making global git config changes
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7431776Z Adding repository directory to the temporary git global config as a safe directory
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7435703Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7497971Z Deleting the contents of '/home/runner/work/goodsdex/goodsdex'
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7504938Z ##[group]Initializing the repository
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7531260Z [command]/usr/bin/git init /home/runner/work/goodsdex/goodsdex
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7638728Z hint: Using 'master' as the name for the initial branch. This default branch name
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7640588Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7642535Z hint: to use in all of your new repositories, which will suppress this warning,
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7643691Z hint: call:
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7644304Z hint:
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7645007Z hint: 	git config --global init.defaultBranch <name>
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7645678Z hint:
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7646358Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7647802Z hint: 'development'. The just-created branch can be renamed via this command:
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7648864Z hint:
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7649457Z hint: 	git branch -m <name>
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7650359Z hint:
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7651300Z hint: Disable this message with "git config set advice.defaultBranchName false"
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7652373Z Initialized empty Git repository in /home/runner/work/goodsdex/goodsdex/.git/
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7668075Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/goodsdex
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7711771Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7712775Z ##[group]Disabling automatic garbage collection
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7717274Z [command]/usr/bin/git config --local gc.auto 0
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7759174Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7760450Z ##[group]Setting up auth
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7768982Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.7817176Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.8211894Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.8279945Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.8592080Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.8649423Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.8946670Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.9004136Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.9005155Z ##[group]Fetching the repository
+upload	Run actions/checkout@v4	2026-10-30T08:44:49.9017688Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0f53f8ebecd142c4c56d820473e090eac3f6316b:refs/remotes/origin/main
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7035548Z From https://github.com/null-object-0000/goodsdex
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7037809Z  * [new ref]         0f53f8ebecd142c4c56d820473e090eac3f6316b -> origin/main
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7042469Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7044444Z ##[group]Determining the checkout info
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7046559Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7051271Z [command]/usr/bin/git sparse-checkout disable
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7117936Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7168221Z ##[group]Checking out the ref
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7171907Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7601320Z Switched to a new branch 'main'
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7604073Z branch 'main' set up to track 'origin/main'.
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7615252Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7674115Z [command]/usr/bin/git log -1 --format=%H
+upload	Run actions/checkout@v4	2026-10-30T08:44:50.7714759Z 0f53f8ebecd142c4c56d820473e090eac3f6316b
+upload	Run actions/setup-python@v5	﻿2026-10-30T08:44:50.8134371Z ##[group]Run actions/setup-python@v5
+upload	Run actions/setup-python@v5	2026-10-30T08:44:50.8135771Z with:
+upload	Run actions/setup-python@v5	2026-10-30T08:44:50.8136735Z   python-version: 3.12
+upload	Run actions/setup-python@v5	2026-10-30T08:44:50.8137865Z   check-latest: false
+upload	Run actions/setup-python@v5	2026-10-30T08:44:50.8147547Z   token: ***
+upload	Run actions/setup-python@v5	2026-10-30T08:44:50.8148553Z   update-environment: true
+upload	Run actions/setup-python@v5	2026-10-30T08:44:50.8149796Z   allow-prereleases: false
+upload	Run actions/setup-python@v5	2026-10-30T08:44:50.8150917Z   freethreaded: false
+upload	Run actions/setup-python@v5	2026-10-30T08:44:50.8152235Z ##[endgroup]
+upload	Run actions/setup-python@v5	2026-10-30T08:44:50.9664256Z ##[group]Installed versions
+upload	Run actions/setup-python@v5	2026-10-30T08:44:50.9750881Z (node:2351) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+upload	Run actions/setup-python@v5	2026-10-30T08:44:50.9755283Z (Use `node --trace-deprecation ...` to show where the warning was created)
+upload	Run actions/setup-python@v5	2026-10-30T08:44:50.9757811Z Successfully set up CPython (3.12.15)
+upload	Run actions/setup-python@v5	2026-10-30T08:44:50.9760705Z ##[endgroup]
+upload	Run python3 -m pip install --quiet oss2 pillow	﻿2026-10-30T08:44:51.0152096Z ##[group]Run python3 -m pip install --quiet oss2 pillow
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T08:44:51.0153851Z ^[[36;1mpython3 -m pip install --quiet oss2 pillow^[[0m
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T08:44:51.0208553Z shell: /usr/bin/bash -e {0}
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T08:44:51.0210088Z env:
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T08:44:51.0211216Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T08:44:51.0212978Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T08:44:51.0214715Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T08:44:51.0216256Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T08:44:51.0217879Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T08:44:51.0219451Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T08:44:51.0221080Z ##[endgroup]
+upload	Upload reviewed H1 and H2 and GET public URLs	﻿2026-10-30T08:44:59.8970231Z ##[group]Run python3 scripts/upload_han_archive_images.py
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:44:59.8970828Z ^[[36;1mpython3 scripts/upload_han_archive_images.py^[[0m
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:44:59.8994196Z shell: /usr/bin/bash -e {0}
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:44:59.8994525Z env:
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:44:59.8994855Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:44:59.8995373Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:44:59.8995860Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:44:59.8996289Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:44:59.8996726Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:44:59.8997169Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:44:59.8997808Z   OSS_ACCESS_KEY_ID: ***
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:44:59.8998179Z   OSS_ACCESS_KEY_SECRET: ***
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:44:59.8998490Z ##[endgroup]
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:45:06.1581105Z {"name": "H1", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/16a7e808f08cda47a16a7fc951c07da02e3fc257.jpg", "status": 200, "bytes": 299103, "sha256": "c23c648626a868fcc3351ddb28768dca98501ac2c2e09f8defb065d3dc50b07d"}
+upload	Upload reviewed H1 and H2 and GET public URLs	2026-10-30T08:45:06.1582965Z {"name": "H2", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/1e0f3425c6c862f466770073bed445b4417cf03b.jpg", "status": 200, "bytes": 403904, "sha256": "5efcfe3e08356a06c8cecf97c0d782d8d1f95f5c148938afe69e06890b20bfc6"}
+upload	Post Run actions/setup-python@v5	﻿2026-10-30T08:45:06.2177578Z Post job cleanup.
+upload	Post Run actions/setup-python@v5	2026-10-30T08:45:06.3476852Z (node:2462) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+upload	Post Run actions/setup-python@v5	2026-10-30T08:45:06.3596954Z (Use `node --trace-deprecation ...` to show where the warning was created)
+upload	Post Run actions/checkout@v4	﻿2026-10-30T08:45:06.3697904Z Post job cleanup.
+upload	Post Run actions/checkout@v4	2026-10-30T08:45:06.4656684Z [command]/usr/bin/git version
+upload	Post Run actions/checkout@v4	2026-10-30T08:45:06.4704116Z git version 2.56.0
+upload	Post Run actions/checkout@v4	2026-10-30T08:45:06.4744629Z Temporarily overriding HOME='/home/runner/work/_temp/d19f0a57-2c6a-4a57-ae9f-c5ab9e433cb5' before making global git config changes
+upload	Post Run actions/checkout@v4	2026-10-30T08:45:06.4747737Z Adding repository directory to the temporary git global config as a safe directory
+upload	Post Run actions/checkout@v4	2026-10-30T08:45:06.4749741Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+upload	Post Run actions/checkout@v4	2026-10-30T08:45:06.4800248Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+upload	Post Run actions/checkout@v4	2026-10-30T08:45:06.4855070Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+upload	Post Run actions/checkout@v4	2026-10-30T08:45:06.5169946Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+upload	Post Run actions/checkout@v4	2026-10-30T08:45:06.5213391Z http.https://github.com/.extraheader
+upload	Post Run actions/checkout@v4	2026-10-30T08:45:06.5233257Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+upload	Post Run actions/checkout@v4	2026-10-30T08:45:06.5299177Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+upload	Post Run actions/checkout@v4	2026-10-30T08:45:06.5710211Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+upload	Post Run actions/checkout@v4	2026-10-30T08:45:06.5775719Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+upload	Complete job	﻿2026-10-30T08:45:06.6284949Z Cleaning up orphan processes
+upload	Complete job	2026-10-30T08:45:06.6713761Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
