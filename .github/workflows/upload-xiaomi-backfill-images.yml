@@ -1,0 +1,30 @@
+name: upload-xiaomi-backfill-images
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: xiaomi-reviewed-image-transfer
+  cancel-in-progress: false
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 -m pip install --quiet oss2 pillow
+      - name: Transfer approved image URLs and verify public OSS bytes
+        env:
+          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+        run: python3 scripts/upload_xiaomi_backfill_images.py --manifest docs/小米旧图入库-20261030/resolved.json --out transfer-result
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: xiaomi-image-transfer
+          path: |
+            transfer-result/
+            image-transfer-cache/
