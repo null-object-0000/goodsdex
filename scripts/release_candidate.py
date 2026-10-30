@@ -38,7 +38,7 @@ def merge_value(before, after, latest, label):
         return after
     if all(isinstance(v, dict) for v in (before, after, latest)):
         out = dict(latest)
-        for key in before.keys() | after.keys():
+        for key in dict.fromkeys([*before, *after]):
             value = merge_value(before.get(key, MISSING), after.get(key, MISSING),
                                 latest.get(key, MISSING), f'{label}.{key}')
             if value is MISSING:
@@ -77,7 +77,7 @@ def merge_goods(before, after, latest, scope):
     assert_no_lost_ids(before, after)
     b, a, c = groups(before), groups(after), groups(latest)
     out = dict(c)
-    for key in b.keys() | a.keys():
+    for key in dict.fromkeys([*b, *a]):
         old, new = b.get(key, MISSING), a.get(key, MISSING)
         if old == new:
             continue
@@ -94,7 +94,13 @@ def merge_goods(before, after, latest, scope):
             out.pop(key, None)
         else:
             out[key] = value
-    result = [row for rows in out.values() for row in rows]
+    remaining = {key: list(rows) for key, rows in out.items()}
+    result = []
+    for row in latest:
+        if remaining.get(row["id"]):
+            result.append(remaining[row["id"]].pop(0))
+    for rows in remaining.values():
+        result.extend(rows)
     assert_no_lost_ids(latest, result)
     return result
 

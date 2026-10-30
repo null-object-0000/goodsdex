@@ -106,3 +106,10 @@ def test_shared_publication_does_not_replay_foreign_field_backfills(monkeypatch)
     assert audit['count'] == len(base)
     with pytest.raises(ValueError, match='drop'):
         supplements.merge(base[:1], [], base, apply_backfills=False)
+
+
+def test_other_brand_ambiguous_rows_keep_original_positions():
+    base = [row('ambiguous', 'mi_cn', 100), row('hp', 'hp_cn', 200), row('ambiguous', 'mi_cn', 101)]
+    candidate = copy.deepcopy(base)
+    candidate[1]['price'] = 201
+    assert merge_goods(base, candidate, base, 'hp') == candidate
