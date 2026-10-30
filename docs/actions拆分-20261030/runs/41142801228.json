@@ -1,0 +1,112 @@
+{
+  "conclusion": "failure",
+  "createdAt": "2026-10-30T23:10:08Z",
+  "databaseId": 41142801228,
+  "event": "workflow_dispatch",
+  "headSha": "9162c01b794e099451354006e03d5f52118983cc",
+  "jobs": [
+    {
+      "completedAt": "2026-10-30T23:11:11Z",
+      "conclusion": "failure",
+      "databaseId": 124360853021,
+      "name": "tests",
+      "startedAt": "2026-10-30T23:10:14Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-30T23:10:16Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-30T23:10:15Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:10:17Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-30T23:10:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:10:17Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "startedAt": "2026-10-30T23:10:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:10:23Z",
+          "conclusion": "success",
+          "name": "Run python -m pip install pytest Pillow",
+          "number": 4,
+          "startedAt": "2026-10-30T23:10:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:10:32Z",
+          "conclusion": "success",
+          "name": "Run PYTHONPATH=src python -m pytest -q -m \"not live\"",
+          "number": 5,
+          "startedAt": "2026-10-30T23:10:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:11:07Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 6,
+          "startedAt": "2026-10-30T23:10:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:11:09Z",
+          "conclusion": "failure",
+          "name": "Deliberate lost-ID candidate must fail verify",
+          "number": 7,
+          "startedAt": "2026-10-30T23:11:07Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:11:09Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 12,
+          "startedAt": "2026-10-30T23:11:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:11:09Z",
+          "conclusion": "skipped",
+          "name": "Post Run actions/setup-python@v5",
+          "number": 13,
+          "startedAt": "2026-10-30T23:11:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:11:09Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 14,
+          "startedAt": "2026-10-30T23:11:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:11:09Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 15,
+          "startedAt": "2026-10-30T23:11:09Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/null-object-0000/goodsdex/actions/runs/41142801228/job/124360853021"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-10-30T23:11:12Z",
+  "url": "https://github.com/null-object-0000/goodsdex/actions/runs/41142801228",
+  "workflowName": "tests"
+}

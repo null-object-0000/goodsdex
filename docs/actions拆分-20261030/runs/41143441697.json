@@ -1,0 +1,235 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-10-30T23:16:15Z",
+  "databaseId": 41143441697,
+  "event": "workflow_dispatch",
+  "headSha": "6c1b6a05bef3e34742626bcf9e802bdb980434e0",
+  "jobs": [
+    {
+      "completedAt": "2026-10-30T23:18:48Z",
+      "conclusion": "success",
+      "databaseId": 124362893032,
+      "name": "collect",
+      "startedAt": "2026-10-30T23:16:18Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-30T23:16:19Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-30T23:16:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:16:21Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-30T23:16:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:16:55Z",
+          "conclusion": "success",
+          "name": "Run ./.github/actions/collect-base",
+          "number": 3,
+          "startedAt": "2026-10-30T23:16:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:18:44Z",
+          "conclusion": "success",
+          "name": "Refresh prices (only this responsibility)",
+          "number": 4,
+          "startedAt": "2026-10-30T23:16:55Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:18:46Z",
+          "conclusion": "success",
+          "name": "Run ./.github/actions/upload-candidate",
+          "number": 5,
+          "startedAt": "2026-10-30T23:18:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:18:46Z",
+          "conclusion": "success",
+          "name": "Post Run ./.github/actions/collect-base",
+          "number": 9,
+          "startedAt": "2026-10-30T23:18:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:18:46Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 10,
+          "startedAt": "2026-10-30T23:18:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:18:46Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 11,
+          "startedAt": "2026-10-30T23:18:46Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/null-object-0000/goodsdex/actions/runs/41143441697/job/124362893032"
+    },
+    {
+      "completedAt": "2026-10-30T23:21:30Z",
+      "conclusion": "success",
+      "databaseId": 124363727030,
+      "name": "publish / publish",
+      "startedAt": "2026-10-30T23:20:14Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-30T23:20:16Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-30T23:20:15Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:20:17Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-30T23:20:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:20:17Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "startedAt": "2026-10-30T23:20:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:20:17Z",
+          "conclusion": "success",
+          "name": "Require OSS credentials before publishing",
+          "number": 4,
+          "startedAt": "2026-10-30T23:20:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:20:52Z",
+          "conclusion": "success",
+          "name": "Read latest data while holding publication lock",
+          "number": 5,
+          "startedAt": "2026-10-30T23:20:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:20:53Z",
+          "conclusion": "success",
+          "name": "Run actions/download-artifact@v4",
+          "number": 6,
+          "startedAt": "2026-10-30T23:20:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:20:53Z",
+          "conclusion": "success",
+          "name": "Merge candidate onto latest release",
+          "number": 7,
+          "startedAt": "2026-10-30T23:20:53Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:20:55Z",
+          "conclusion": "success",
+          "name": "Test publication invariants",
+          "number": 8,
+          "startedAt": "2026-10-30T23:20:53Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:20:57Z",
+          "conclusion": "success",
+          "name": "Verify final release (no lost IDs and responsibility invariants)",
+          "number": 9,
+          "startedAt": "2026-10-30T23:20:55Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:20:59Z",
+          "conclusion": "success",
+          "name": "Finalize once (dedupe, tombstones, normalization, shards)",
+          "number": 10,
+          "startedAt": "2026-10-30T23:20:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:21:01Z",
+          "conclusion": "success",
+          "name": "Push one complete release to data",
+          "number": 11,
+          "startedAt": "2026-10-30T23:20:59Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:21:28Z",
+          "conclusion": "success",
+          "name": "Mirror and verify OSS (immutable blobs first, manifest last)",
+          "number": 12,
+          "startedAt": "2026-10-30T23:21:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:21:28Z",
+          "conclusion": "success",
+          "name": "Record release summary",
+          "number": 13,
+          "startedAt": "2026-10-30T23:21:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:21:28Z",
+          "conclusion": "success",
+          "name": "Post Read latest data while holding publication lock",
+          "number": 24,
+          "startedAt": "2026-10-30T23:21:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:21:28Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@v5",
+          "number": 25,
+          "startedAt": "2026-10-30T23:21:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:21:29Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 26,
+          "startedAt": "2026-10-30T23:21:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-30T23:21:29Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 27,
+          "startedAt": "2026-10-30T23:21:29Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/null-object-0000/goodsdex/actions/runs/41143441697/job/124363727030"
+    }
+  ],
+  "status": "completed",
+  "updatedAt": "2026-10-30T23:21:31Z",
+  "url": "https://github.com/null-object-0000/goodsdex/actions/runs/41143441697",
+  "workflowName": "refresh-prices"
+}

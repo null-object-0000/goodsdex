@@ -1,0 +1,3 @@
+Command: go run github.com/rhysd/actionlint/cmd/actionlint@latest -ignore 'unexpected key "queue" for "concurrency" section'
+Result: exit 0, no other diagnostics.
+The installed actionlint v1.7.12 has no schema support for GitHub concurrency.queue; only that diagnostic is excluded. GitHub accepted queue:max and ran the shared jobs; simultaneous pending publishers are recorded in run evidence.

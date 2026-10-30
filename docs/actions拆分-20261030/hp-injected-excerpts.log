@@ -1,0 +1,4 @@
+collect	Inject explicit collection failure for isolation acceptance	﻿2026-10-30T23:10:57.8518089Z ##[group]Run echo '::error::Intentional HP collection failure; no candidate and no publication'
+collect	Inject explicit collection failure for isolation acceptance	2026-10-30T23:10:57.8518667Z ^[[36;1mecho '::error::Intentional HP collection failure; no candidate and no publication'^[[0m
+collect	Inject explicit collection failure for isolation acceptance	2026-10-30T23:10:57.8610938Z ##[error]Intentional HP collection failure; no candidate and no publication
+collect	Inject explicit collection failure for isolation acceptance	2026-10-30T23:10:57.8618710Z ##[error]Process completed with exit code 1.

@@ -1,0 +1,5 @@
+tests	Deliberate lost-ID candidate must fail verify	2026-10-30T23:11:07.9305099Z ^[[36;1mprint(f"::notice::Deliberately removing {row['id']} from a disposable candidate")^[[0m
+tests	Deliberate lost-ID candidate must fail verify	2026-10-30T23:11:08.2456398Z ##[notice]Deliberately removing CN:mi_cn:product:19963 from a disposable candidate
+tests	Deliberate lost-ID candidate must fail verify	2026-10-30T23:11:09.2252828Z     raise ValueError(f"Publication would drop {len(missing)} IDs: {sorted(missing)}")
+tests	Deliberate lost-ID candidate must fail verify	2026-10-30T23:11:09.2253348Z ValueError: Publication would drop 1 IDs: ['CN:mi_cn:product:19963']
+tests	Deliberate lost-ID candidate must fail verify	2026-10-30T23:11:09.3101247Z ##[error]Process completed with exit code 1.
