@@ -49,7 +49,7 @@ def normalize_public_row(row):
         if isinstance(row.get('params'), dict):
             output['params'] = normalize_params(row['params'])
         name = output.get('name')
-        if isinstance(name, str):
+        if isinstance(name, str) and not row.get("name_source"):
             name = re.sub(r'\s*系列$', '', name)
             # A container may append its child label, already present in the name.
             head, sep, tail = name.rpartition(' ')

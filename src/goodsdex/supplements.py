@@ -20,20 +20,23 @@ def indexed(rows, label, unique=False):
     return result
 
 
-def merge(rebuilt, supplements, previous):
+def merge(rebuilt, supplements, previous, include_new_cars=False):
     # Other publishers cannot drop cars; only the separate daily job refreshes them.
     present = {r['id'] for r in rebuilt}
     rebuilt = rebuilt + [r for r in previous if (is_car(r) or r.get('source') == 'hp_cn') and r['id'] not in present]
     existing = indexed(rebuilt, "rebuilt")
     extra = indexed(supplements, "supplements", unique=True)
     old = indexed(previous, "previous")
+    from goodsdex.backfill import validate_row
     for key, row in extra.items():
+        validate_row(row)
         if not row.get("source") or not row.get("catalog_identity"):
             raise ValueError(f"supplement lacks provenance: {key}")
         if key in existing:
             print(f"supplement conflict (keep rebuilt): {key}")
-    added = [row for key, row in extra.items() if key not in existing]
-    result = rebuilt + added
+    added = [row for key, row in extra.items() if key not in existing and (include_new_cars or not is_car(row) or key in old)]
+    from goodsdex.backfill import apply_default
+    result, backfill_audit = apply_default(rebuilt + added)
     missing = sorted(old.keys() - indexed(result, "merged").keys())
     if missing:
         raise ValueError(f"Publication would drop {len(missing)} IDs: {json.dumps(missing, ensure_ascii=False)}")
@@ -42,13 +45,14 @@ def merge(rebuilt, supplements, previous):
     audit = dict(previous_count=len(previous), rebuilt_count=len(rebuilt),
                  added_count=len(added), count=len(result), missing_ids=missing,
                  added_ids=[r["id"] for r in added], conflicts=sorted(extra.keys() & existing.keys()))
+    audit["backfill"] = backfill_audit
     print(json.dumps(audit, ensure_ascii=False))
     return result, audit
 
 
-def publish(rebuilt, out_dir, previous, supplements=DEFAULT_SUPPLEMENTS):
+def publish(rebuilt, out_dir, previous, supplements=DEFAULT_SUPPLEMENTS, include_new_cars=False):
     # Validate before writing either release file. Missing supplements fail closed.
-    result, audit = merge(rebuilt, json.loads(Path(supplements).read_text(encoding="utf-8")), previous)
+    result, audit = merge(rebuilt, json.loads(Path(supplements).read_text(encoding="utf-8")), previous, include_new_cars)
     out_dir = Path(out_dir)
     meta_path = out_dir / "meta.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}

@@ -18,6 +18,29 @@ BYD = {
 
 def migrate(rows):
     """Idempotent; retain every trim and every non-car object without modification."""
+    # Reviewed third-party historical supplements round-trip through immutable source rows.
+    if any(str(r.get('id', '')).startswith('CN:byd:car:pcauto:') for r in rows):
+        import json
+        from goodsdex.supplements import DEFAULT_SUPPLEMENTS
+        approved = [r for r in json.loads(DEFAULT_SUPPLEMENTS.read_text())
+                    if r.get('schema') == 'car-product-v2' and r.get('source') == 'pcauto']
+        expected = {t['id']: t['source_record'] for p in approved for t in p['trims']}
+        incoming = {r['id']: r for r in rows if r['id'] in expected}
+        for key, row in incoming.items():
+            if row != expected[key]:
+                raise ValueError('Historical source differs from reviewed supplement: ' + key)
+        output, emitted = [], set()
+        for row in rows:
+            if row['id'] not in incoming:
+                output.extend(migrate([row]))
+                continue
+            product = next(p for p in approved if row['id'] in p['legacy_ids'])
+            if not set(product['legacy_ids']) <= incoming.keys():
+                raise ValueError('Missing reviewed historical trim')
+            if product['id'] not in emitted:
+                output.append(deepcopy(product))
+                emitted.add(product['id'])
+        return output
     products, output = {}, []
     for original in rows:
         if original.get('schema') == 'car-product-v2':
