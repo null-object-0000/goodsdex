@@ -15,7 +15,9 @@ permissions:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    # The old 12m job deadline could fire after the crawler exited successfully,
+    # leaving every step green but collect cancelled. Budget setup + uploads too.
+    timeout-minutes: 15
     permissions:
       contents: read
     steps:
@@ -28,6 +30,9 @@ jobs:
           exit 1
       - run: python3 -m pip install --quiet Pillow
       - name: Refresh HP configurations (known SKUs; reuse verified images; serial rate limit)
+        # Bound collection separately so evidence/candidate upload and cleanup
+        # have time before the enclosing job deadline. Failure still skips publish.
+        timeout-minutes: 13
         run: python3 scripts/crawl_hp.py --out _data/data/hp --public _data/public --reuse-images --known-only --interval-from-start
       - uses: actions/upload-artifact@v4
         if: always()
