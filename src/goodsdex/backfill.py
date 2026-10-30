@@ -2,6 +2,9 @@
 from copy import deepcopy
 from pathlib import Path
 import json
+import re
+from datetime import datetime
+from urllib.parse import urlsplit
 
 DEFAULT = Path(__file__).resolve().parents[2] / 'data/supplements/verified-backfill-20261030.json'
 
@@ -19,6 +22,16 @@ def apply(rows, patches):
                 raise ValueError('Historical price cannot populate current price')
         if 'image' in fields and fields.get('image_scope') not in ('series', 'model'):
             raise ValueError('Image must retain reference scope')
+        if 'image' in fields:
+            if not re.fullmatch(r'https://spend-good\.oss-cn-shanghai\.aliyuncs\.com/goods/[a-f0-9]{40}\.(jpg|png)', fields['image']):
+                raise ValueError('Image backfill requires owned OSS object')
+            if (fields.get('image_source_url') != patch['source_url']
+                    or fields.get('image_captured_at') != patch['captured_at']
+                    or not fields.get('image_source') or not fields.get('image_note')):
+                raise ValueError('Image backfill requires matching image provenance')
+            if urlsplit(patch['source_url']).scheme not in ('http', 'https'):
+                raise ValueError('Image source must be a page URL')
+            datetime.fromisoformat(patch['captured_at'].replace('Z', '+00:00'))
         matches = [r for r in rows if r['id'] == patch['id']]
         if not matches:
             audit['skipped'].append(dict(id=patch['id'],reason='target_absent',field=patch['field']))
@@ -46,7 +59,12 @@ def apply(rows, patches):
 
 
 def apply_default(rows):
-    return apply(rows, json.loads(DEFAULT.read_text())) if DEFAULT.exists() else (rows, {})
+    audits = {'applied': [], 'skipped': [], 'unchanged': []}
+    for path in sorted(DEFAULT.parent.glob('verified-backfill-*.json')):
+        rows, audit = apply(rows, json.loads(path.read_text()))
+        for key in audits:
+            audits[key].extend(audit[key])
+    return rows, audits
 
 
 def validate_row(row):

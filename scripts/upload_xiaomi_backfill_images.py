@@ -7,7 +7,6 @@ import os
 from pathlib import Path
 import time
 import urllib.request
-import oss2
 from PIL import Image
 
 BASE='https://spend-good.oss-cn-shanghai.aliyuncs.com/'
@@ -45,6 +44,7 @@ def transfer(row, bucket, download):
         sha256=hashlib.sha256(raw).hexdigest(),byte_equal=True,preexisting_object=existed)
 
 def main():
+    import oss2
     p=argparse.ArgumentParser();p.add_argument('--manifest',type=Path,required=True);p.add_argument('--out',type=Path,required=True);a=p.parse_args()
     bucket=oss2.Bucket(oss2.Auth(os.environ['OSS_ACCESS_KEY_ID'],os.environ['OSS_ACCESS_KEY_SECRET']),
         'https://oss-cn-shanghai.aliyuncs.com','spend-good')

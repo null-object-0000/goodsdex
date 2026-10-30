@@ -1,0 +1,586 @@
+✔ 已有三列账号表可重复安全迁移，旧账号ID与会话不变 (6.098052ms)
+✔ 真实解码、MIME一致性、300KB上限、损坏图片和格式白名单 (35.866738ms)
+✔ 本地适配器无需密钥，限定哈希路径并忽略历史OSS key/外站URL (7.255281ms)
+✔ 资料保存与清空、隔离他人、账号及内容哈希命名、替换删除、删除失败持久化重试 (35.598033ms)
+✔ 并发替换串行化，上传失败保留原资料；崩溃遗留上传任务可由新实例清理 (42.38402ms)
+✔ HTTP两独立token同微信读回一致；GET/PUT鉴权、错误码、注销文件清理与对外接口隔离 (199.579555ms)
+✔ 真实HTTP本地文件：匿名只读、缓存、替换后旧URL/文件失效、历史key为空及拒绝用例 (95.412308ms)
+✔ 同步先授权，跨账号隔离；按提交顺序LWW，重复请求不能覆盖后来修改 (13.189905ms)
+✔ 删除胜过修改、长期保留墓碑；撤回更换代次；删除账号清全部同步数据 (10.027065ms)
+✔ 整批字段校验、容量、无效条目失败不部分写入；没有授权不得传物品 (5.733129ms)
+✔ 账号 token 随机、服务端仅保存摘要，导出不泄漏身份及会话；续期/退出/七天过期 (12.650139ms)
+✔ 删除清除本人账号、所有设备、订单、权益、关联审计，隔离他人；再登录不复活 (7.896281ms)
+✔ HTTP 账号接口鉴权、删除撤销全部会话、微信故障和敏感日志隔离 (179.713485ms)
+✔ 后台登录恢复不得重建已删除账号，主动登录才能重新建立 (26.03837ms)
+✔ 汽车搜索跨 trim 名称，完整商品含年款动力与所有配置，旧 ID 精确追溯 (30.365572ms)
+✔ 汽车 facets 计数按商品；动力系列筛选与分页游标绑定 (12.990059ms)
+✔ 小米使用新一代 SU7；没有年款也可选；共享图片标为 series (3.502351ms)
+✔ 分片索引不覆盖 hydrated trims：参数、历史价来源与旧 ID 查询和完整导出一致 (35.345257ms)
+✔ 2022 官方存档图：搜索与配置详情保留完整来源和车系范围 (8.086844ms)
+✖ sharded sync transfers only changed indexes, keeps lazy details and immutable generations (121.696132ms)
+✔ unsupported schema fails closed without fetching full catalog (74.045909ms)
+✔ EAN input: length, alphabet and incorrect checksum are explicitly rejected (1.188431ms)
+✔ builder rejects duplicate EAN, exposes both identities and keeps existing index untouched (0.899298ms)
+✔ shipped index validates every EAN and satisfies size / field bounds (6.619811ms)
+✔ real HTTP: found, unindexed, invalid, CORS and local lookup latency (152.411874ms)
+✔ HTTP strict identity, suffix, category, unknown/ambiguous identity and ten-minute cache (246.830013ms)
+✔ 中文型号（门锁2、手环8）靠严格包含配对，不许配到 Pro/猫眼版 (17.825829ms)
+✔ 品牌词插在中间、型号只在京东名里时，仍按严格包含对上（除湿机那单） (31.338997ms)
+✔ 京东标题里的修饰词（变频/轻音/一级能效）不能挡住配对 (16.240679ms)
+✔ 相机严格身份：富士（FUJIFILM）X-S20 微单相机 16-50mm套机 AI智能对焦 750张续航增强 全新Vlog模式 高便携高性能 (24.714619ms)
+✔ 相机严格身份：富士（FUJIFILM）X-S20 微单相机 16-50mm套机 AI智能对焦 750张续航增强… (14.136264ms)
+✔ 相机严格身份：富士 X-S20 微单机身（单机身） (8.061884ms)
+✔ 相机严格身份：富士X-S20 15-45套机 (5.367593ms)
+✔ 相机严格身份：富士 X-T5 1650套机 (4.752961ms)
+✔ 相机严格身份：富士 X-S10 机身 (6.966403ms)
+✔ 相机严格身份：FUJINON XF16-50mmF2.8-4.8 R LM WR 镜头 (4.244875ms)
+✔ 相机严格身份：Fujifilm XS20 1650 kit (9.086102ms)
+✔ 相机严格身份：FUJIFILM X-S 20 16-50套机 (7.53248ms)
+✔ 相机严格身份：富士 X-S20 16-50mm (8.325466ms)
+✔ 相机严格身份：富士 X-T50 XF16-50mm套机 (7.316312ms)
+✔ 相机严格身份：富士 X-S20 body (3.684919ms)
+✔ 相机严格身份：富士 X-S20 Pro body (4.05534ms)
+✔ 相机严格身份：富士 X-S20 (3.452426ms)
+✔ 相机严格身份：富士 X-S20 kit (4.178065ms)
+✔ 相机严格身份：富士 X-S200 机身 (4.143837ms)
+✔ 相机严格身份：富士 X-S10 16-50套机 (3.5042ms)
+✔ 相机严格身份：富士 X-S20 X-T50 16-50套机 (3.429652ms)
+✔ 相机严格身份：富士 X-S20 16-50套机 单机身 (3.177154ms)
+✔ 相机严格身份：富士 X-S20 16-50 15-45套机 (2.130882ms)
+✔ 相机严格身份：富士 X-S20 XF16-50mmF2.8-4.8 R LM WR 套机 (3.26029ms)
+✔ 相机严格身份：FUJINON XC16-50mmF2.8-4.8 R LM WR 镜头 (3.650313ms)
+✔ 相机严格身份：FUJINON XF16-50mmF2.8-4.8 R LM WR II 镜头 (3.838636ms)
+✔ 相机严格身份：富士 XF16-50mm 镜头 (2.826512ms)
+✔ 相机严格身份：相机 X-S20 机身 (3.269202ms)
+✔ 相机严格身份：索尼 X-S20 机身 (5.512199ms)
+✔ 相机严格身份：富士 X-H2S 机身 (4.145055ms)
+✔ 相机严格身份：富士 X-T30 III body (3.465993ms)
+✔ 相机严格身份：富士 X-T30 body (4.096732ms)
+✔ 京东分享原链接经 HTTP 匹配真实目录身份并解释；失败不写入商品库 (40.89898ms)
+✔ 非相机的 X 数字型号仍走原有严格匹配 (0.859413ms)
+✔ 20条真实HTTP列表瘦身与完整详情相互鉴别；UTF-8/gzip上限、缓存/CORS/304、导出护栏 (1111.754477ms)
+✔ listen后主动预热一次；构建中请求共享promise，首次与后续HTTP不再构建 (8.92429ms)
+✔ 预热同步抛错或异步拒绝均只记一行；服务器仍listen且请求返回500 (9.685713ms)
+✖ 真实HTTP：分页完整无重复、边界、查询、批量上限、详情、gzip与ETag、换代失效 (270.546919ms)
+✔ 同 id 多分类在分页、搜索、批量和详情仅占一条，所有分类仍可命中 (11.094674ms)
+✔ 线上索引兼容四个验收查询，补充型号只带官方身份与来源，不伪造价格 (1039.351217ms)
+✔ 年份证据排序在分页之前：新年优先、同产品容量升序、无证据保序；不随价格变化 (9.925174ms)
+✔ 产品批量详情返回全部SKU，独立于搜索容量、分页；不同产品不混入 (275.46238ms)
+✔ 产品分页只按product_id：名称与世代修订不分裂；复合维度中文且未知兜底 (3.205992ms)
+✖ 规格筛选按芯片/CPU/GPU 独立归属，返回完整源记录 (6.173514ms)
+✔ 目录里自带 brand 的记录（大疆/富士）必须按品牌分面，不许并进「其他」 (159.113718ms)
+✖ 单行分类数组：两类各计一次且可筛选；数组优先，主分类原样保留 (9.148763ms)
+✖ 旧单分类与显式单元素数组双向等价：列表、分面、筛选、分页、详情和批量 (15.615966ms)
+✔ compact仅多分类输出数组：零项、单项和旧记录省略；详情不受列表投影影响 (8.703449ms)
+✔ 30/90 天切换：明细最低上升且 UI 覆盖天数同步，日汇总低点仍在；干跑无变化 (12.99241ms)
+✔ 聚合失败整体回滚，不丢明细；UTC 边界、零价和无效配置 (2.329832ms)
+✔ HTTP 新增汇总字段与参数校验，旧 points/极值/计数仍只代表明细 (101.913522ms)
+✔ 归档干跑只列出可清理版本；只保留未封存月最新版本，未知文件不处理 (13.866426ms)
+✔ HP official SKU fixtures: brand facets count configurations; star14 groups before pagination (20.347642ms)
+✔ HP source SKU detail retains evidence, store price semantics and full configuration (4.913413ms)
+✔ health.json 报告数据新鲜度、库内计数与密钥缺口 (203.697802ms)
+✔ 未同步时 /api/goods 返回 404 而不是空数组 (115.846106ms)
+✔ 下单返回可校验的 signData / paySig / signature，并落一条 created 订单 (110.641541ms)
+✔ 未登录下单被拒 401 (111.650932ms)
+✔ 发货推送：一条单只发一次货，重复推送返回 0 且不重复建权益 (139.447306ms)
+✔ 发货推送找不到订单时回非 0，让微信重试 (98.459612ms)
+✔ 查单兜底：query_order 说已支付就补发货 (100.716772ms)
+✔ 未付款关闭后可重新下单；其余非到账状态跨设备仍拦截且不发权益 (1080.51039ms)
+✔ 查单失败、退款单、环境/订单/金额不匹配或关闭但有付款迹象，不解除阻塞 (605.682713ms)
+✔ 订阅消息发送要 admin token (47.131828ms)
+✔ 缺密钥时下单返回 503 并列出缺哪几项 (48.132653ms)
+✔ 数据出口 gzip、内容哈希 ETag、弱匹配 304 与同长度变更 (52.902223ms)
+✔ healthz 缺数据 503、完整且新鲜 200、过期 503；缺密钥登录 503 (47.070511ms)
+✔ 管理员补发鉴权、查微信、重复及异交易号通知幂等 (48.90304ms)
+✔ 管理员补发拒绝未支付及微信失败的结果，不造权益 (49.723093ms)
+✔ 微信 URL 握手逐字返回 echostr，拒绝缺参、篡改、重复参数与加密模式 (50.829424ms)
+✔ 回调未配置或配置不合法时 GET/POST 均关闭，不影响公开接口 (83.803168ms)
+✔ 未验签推送不发货，加密消息拒绝；按外部单号兜底及重复推送仍成功 (50.276356ms)
+✔ 环境隔离不回退密钥；非法环境拒绝启动 (0.692775ms)
+✔ 购买开关关闭时不能下单，密钥 ready 不代表可购买 (45.392038ms)
+✔ 同一购买请求超时重试只建一单；客户端金额不能覆盖目录分值，权益取订单快照 (53.728704ms)
+✔ 遗留订单目录缺失不得发永久；查询拒绝他人订单和退款状态 (50.172668ms)
+✔ 退款与其他非发货事件不能误走发货路径 (48.606079ms)
+✔ 真实 seed 的展示目录、订单快照、签名金额一致，/data 旧价不可覆盖 (70.214383ms)
+✔ 展示 800 分但 seed 1200 分或缺少展示价时拒绝，不能建单签名 (60.784341ms)
+✔ 切换环境后旧未付款关闭单按订单环境签名核查，新单仍使用当前环境 (111.311205ms)
+✔ 历史环境缺 key 或查单失败时明确提示原环境核查，保留 pending 且不发权益 (142.248877ms)
+✔ 沙箱 key 兼容旧名，新名非空时优先且不影响现网 key (0.22592ms)
+✔ 权益 API 只展示当前环境；跨环境查单补发沿用订单环境，重复推送/查单/补发不翻倍 (148.415219ms)
+✔ 已发货退款回归：5/9/10 立即回收，8 完成；重复查单、管理员补发及迟到推送不复活 (313.350361ms)
+✔ 官方退款通知字段 MchOrderId/WxOrderId，XML/JSON 响应、验签、重复通知及查单失败重试 (64.786646ms)
+✔ 启动自动回收存量 env=1 的指定退款单，补发与购买关闭、当前 env=0 也生效 (54.498968ms)
+✔ 进入会员页核查已到账订单，返回新权益与可解释的订单状态；五分钟节流 (56.045401ms)
+✔ 后台定时检查已发货订单，不要求用户打开会员页或打开补发开关 (45.295488ms)
+✔ 退款查单缺原环境密钥或订单/环境/金额不一致，不误作废；失败不删除原权益 (203.065915ms)
+✔ 并发旧支付查询迟于退款完成返回，也不能把已退款订单恢复为到账 (62.248048ms)
+✖ 按需商品路由保持旧全量格式，单条完整、gids 只返回指定项且超限拒绝 (58.175567ms)
+✖ 商品新接口合并分类，旧全量接口仍逐字返回源行 (52.754314ms)
+✔ 容量作为规格的HTTP验收：iPad Air一行、Neo一行，product_ids取完整规格与SKU (256.996045ms)
+✔ missing, malformed, empty and non-JD cookies return share needLogin without launch (3.513353ms)
+✔ timeout kills browser, cleanup permits retry; upstream failures redact secrets (28.756757ms)
+✔ concurrent busy cannot clear the first slot; immediate failure releases for a real next run (4.871576ms)
+✔ context cleanup timeout restarts browser and releases task slot (24.981915ms)
+✔ upload config prefers dedicated token and falls back to admin; cookie parser preserves equals and deduplicates (3.750495ms)
+✔ HTTP upload enforces dedicated token, atomically replaces 0600 file, returns only names and never logs values (145.526323ms)
+✔ HTTP upload fallback, disabled token, malformed/oversized bodies, and write failures remain redacted (38.387225ms)
+✔ atomic save writes 0600 and rename; interrupted partial write preserves the previous file (41.841078ms)
+✔ retired account-order and PC login routes return 404 without acquiring a browser (110.44693ms)
+✔ visible share DOM: expand first, parse fields; absent details never invent dates; injected money stays null (1030.106247ms)
+✔ validation rejects non-JD, credentials, ports, scripts and arbitrary JD pages (1.367829ms)
+✔ cache lasts ten minutes, IP request 61 is limited even on cache hits, windows reset (1.308829ms)
+✔ timeout resets slot while late launch cannot replace a newer browser (22.504997ms)
+✔ HTTP rejects invalid links, limits 61st request; login, busy and timeout are normal JSON (136.34001ms)
+✔ successive share tasks reuse one browser with fresh contexts (1.011624ms)
+✔ IP forwarding is ignored by default; configured proxies walk chain from the right (0.237584ms)
+✔ HTTP share uses extracted pool and actual browser DOM across requests, preserving all fields and price contract (804.36816ms)
+✔ share retries one non-login failure and caches success; login/busy never retry (0.858558ms)
+✔ 没有规格行的虚拟商品：不许把「共计 1 件商品」当成商品名 (0.522819ms)
+✔ product share HTTP: clean contexts never read cookies, short/item redirects and multi SKU use listing prices; orders require cookies (1170.96242ms)
+✔ SKU extraction covers direct pages and URL parameters without accepting arbitrary text (0.658276ms)
+✔ 带管理员令牌的请求不受每小时额度限制 (33.319492ms)
+✔ params capacity reaches the actual client row; fallback and contract mutations fail (41.056389ms)
+✔ clean values, combine real family values, retain literal units and bound Unicode length (6.219597ms)
+✔ sanitized detail shell and mtop response preserve product name, SKU suffix, current price and empty parameters (23.298561ms)
+✔ all MI forms use anonymous POST with four custom headers; redirect checks every destination, invalid IDs are normal JSON (15.416349ms)
+✔ missing cookie throws: MI succeeds without reading or launching, only order returns needLogin (2.379856ms)
+✔ MI identity only binds exact pid/gid; similar name or foreign gid cannot match (36.152126ms)
+✔ shortlink browser fallback stays anonymous, uses pool slot and rejects external redirects before fetch (5.381685ms)
+✔ MI success shares the ten-minute cache and hourly quota, without launching browser (6.484147ms)
+✔ 短链中间跳转页 /p?commodityId=… 也要能取出商品 id (0.41861ms)
+✔ 公开空状态；缺少或错误口令禁止写入 (157.132353ms)
+✔ 写入、同 commit 多次发布、倒序持久化、重读、PNG 与 XSS 转义 (90.279713ms)
+✔ 到期边界：少 1ms 可用，恰好 25 分钟及以后隐藏最新二维码，历史仍保留 (48.795714ms)
+✔ 输入校验与 body 上限均返回 400，不写入坏记录 (79.671253ms)
+✔ 并发追加无丢记录 (70.371944ms)
+✔ 页面停留期间到期和返回前台：更新状态并移除最新码，保留历史码 (3.569915ms)
+✔ price 区间极值、原始时间、缺测、幂等和事务回滚；不补小时点 (133.934397ms)
+✔ 6 小时持久节流、ETag/304、镜像回退、幂等与跨月保留 (161.050432ms)
+✔ 历史坏行/镜像失败与三份最新文件同步双向隔离 (94.859103ms)
+✔ 只读 HTTP 返回全部稀疏点、限定措辞、空结果与参数校验 (137.190234ms)
+✔ 保留维护每天一次、默认干跑；启用后先打印计划，失败记录且次日重试 (79.720476ms)
+✔ 清除匿名分享缓存也阻止删除期间的在途解析重新写入缓存 (2.149119ms)
+✔ 真实HTTP账号删除清空数据库与匿名订单分享缓存，旧会话不能导出 (93.358102ms)
+✔ 产品线矩阵及实际身份代码变异：尺寸/芯片回身份、Air/Pro合并必须报红 (65.553431ms)
+✔ 规格稀疏矩阵：不存在组合禁选、全SKU可达、无预选；取消禁选变异必红 (31.807595ms)
+✔ 摘要写芯片的取值而不是数量，且不重复标题已有的芯片 (3.527458ms)
+✔ 同产品线里没价没规格的孤立条目不许单独占一行 (5.837586ms)
+✔ 真实全库：产品标题唯一、摘要4项/12字、中文维度与复合拆分 (7.109773ms)
+✔ 鉴别性检查：重复标题、营销文案、五项摘要、三种原始维度、GPU混CPU逐项必红 (47.845061ms)
+✔ 无规格、未知标签、首标点截断、label优先、价格与完整SKU计数 (1.761295ms)
+✔ 独立源产品按尺寸、容量、芯片区分标题；无可区分规格时使用稳定款式编号 (1.311294ms)
+✔ 真实HTTP：完整聚合、筛选/跨页不变、旧响应字段不变、服务端更新可见 (598.048291ms)
+✔ 真实Neo：同型号单容量或两种容量各四色均为一行 (2.124987ms)
+✔ 实际代码变异：改回颜色ID商品键、标题重新带颜色均必须报红 (19.405139ms)
+✔ 真实全库：每族关键规格恒定、SKU无丢失无重复、非苹果身份不跨源合并 (208.93516ms)
+✔ 未知代号不解码；已知产品线与年份合并尺寸、芯片、核心 (2.668981ms)
+✔ 名称颜色去除及营销句截断；多容量摘要用明确名称 (1.585433ms)
+✖ 列表到完整SKU链路：同一族ID贯穿ids、familyCounts、product_ids与前端规格选择 (180.451166ms)
+✔ 鉴别性矩阵：4容量×4颜色一行；容量身份键与名称容量身份变异必红 (11.20041ms)
+✔ 同产品线M5与M5 Pro为一族；容量、存储、内存和连接方式均留在族内 (1.088751ms)
+✔ 真实验收：iPad Air/Neo/Air同代各一行；尺寸芯片是规格 (0.716881ms)
+✔ physical tank capacities use existing fields without creating selectable dimensions (0.323382ms)
+✔ 词表每条有依据，值为可扩展数组；不把泛称饮水机映射到宠物 (2.569589ms)
+✔ 真实4231行目录：口语词命中足浴器/宠物饮水机；展示、摘要逐字等于标准词查询 (577.818997ms)
+✔ 原词优先于新年份与源顺序；聚合/非聚合、分页、AND筛选及游标隔离 (48.015799ms)
+✖ 宠物叫法不命中人用饮水机；详情及源记录不被词表改写 (18.712106ms)
+✔ 真实规模HTTP：泡脚桶20条聚合 <200ms/≤20KB；每次仅遍历索引候选一次 (423.477563ms)
+ℹ {"sourceRows":5031,"indexRows":3036,"measurements":[{"ms":20.13,"bytes":5154},{"ms":12.64,"bytes":5154},{"ms":13.02,"bytes":5154},{"ms":14.04,"bytes":5154},{"ms":16.57,"bytes":5154}]}
+✔ 空格不敏感：商品名里有空格，搜索词没有也能命中 (8.635619ms)
+✔ 中文品牌词「富士」能命中官方名里的 FUJIFILM (13.002987ms)
+✔ paySig 对 C 端 uri 的拼法正确 (2.779847ms)
+✔ paySig 对 B 端接口路径的拼法正确 (0.423759ms)
+✔ signature 用 session_key 签 signData (0.334935ms)
+✔ paySig 缺 appKey 直接报错，不静默返回空串 (0.692405ms)
+✔ outTradeNo 满足 8-32 位、字母数字、不以 _ 开头，且不重复 (49.952917ms)
+✔ isValidOutTradeNo 拒绝超长、下划线开头与非字母数字 (0.305704ms)
+✔ signData 字段与顺序固定，同输入同输出 (1.228507ms)
+✔ hmacSha256Hex 是 HS256 十六进制 (0.283883ms)
+✔ 发货幂等：同一 deliveryKey 只产生一条权益 (66.236083ms)
+✔ 永久权益 expires_at 为 null，限期权益按天数算到期 (104.854371ms)
+✔ 过期权益不再出现在有效列表里 (69.324367ms)
+✔ 对账用：created/paid 状态的单能被 pendingOlderThan 捞出 (86.525857ms)
+✔ 会话过期后 getSession 返回 null (82.395354ms)
+✔ 续购顺延，换交易号重推也不能加天数；到期边界精确 (65.079627ms)
+✔ 非法金额分及跨单复用交易号必须拒绝 (53.746819ms)
+✔ 沙箱权益不进入现网，续购也不能继承另一环境的有效期 (70.756797ms)
+✔ 老权益启动迁移按订单回填，孤立行保持未知，重启可重试且不改原有数据 (113.213507ms)
+✔ 退款整笔回收限期及永久权益，保留原始记录与审计，旧单不能复活，新单独立发放 (111.987777ms)
+✔ 退款失败单独出现不作废；已回收后的失败不恢复或重复发货 (54.27953ms)
+✔ 退款移除整笔顺延时长，保留其他订单天数和原到期日；后续续购按重算结果顺延 (54.667709ms)
+✔ 对账排序持久化轮转，失败旧单不饿死后续单；历史已发货不被排除 (257.594716ms)
+✔ 退款列自动迁移：旧累计有效期还原独立时长，回收后重启不复原、不删原始数据 (145.561716ms)
+✔ 部分同步保留整份上次资料及观察时间，三份文件一致后才更新 (107.055397ms)
+✔ 固定上游 commit 取三份文件，拒绝版本查询失败和数量不符，成功回退不冒充同步失败 (130.408913ms)
+✔ historical MSRP stays out of current price and retains provenance in search and detail (34.075901ms)
+✔ Xiaomi image-only backfill retains source, observed time and reference scope in both searches and detail (12.729713ms)
+ℹ tests 215
+ℹ suites 0
+ℹ pass 206
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5371.79513
+
+✖ failing tests:
+
+test at test/catalog-shards.test.js:24:1
+✖ sharded sync transfers only changed indexes, keeps lazy details and immutable generations (121.696132ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///home/nichangen/%E4%BB%A3%E7%A0%81/self-code/spend-good/services/api/test/catalog-shards.test.js:50:104)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/goods.test.js:10:1
+✖ 真实HTTP：分页完整无重复、边界、查询、批量上限、详情、gzip与ETag、换代失效 (270.546919ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      {
+        categories: [
+          '冰箱'
+        ],
+        category: '冰箱',
+  +     category_confidence: 0.98,
+  +     category_l1: '厨房电器',
+  +     category_l2: '冰箱',
+  +     category_mapping_version: '2026-10-30.1',
+  +     category_path: [
+  +       '厨房电器',
+  +       '冰箱'
+  +     ],
+        gid: 1,
+        id: 'item:0',
+        image: 'https://example.com/0',
+        kind: 'machine',
+  +     legacy: false,
+        name: '商品 0',
+  +     original_category: '冰箱',
+        params: {
+          '秘密': '完整详情'
+        },
+  +     parent: '厨房电器',
+        price: 1
+      },
+      {
+        categories: [
+          '电视'
+        ],
+        category: '电视',
+  +     category_confidence: 0.98,
+  +     category_l1: '电视与影音',
+  +     category_l2: '电视',
+  +     category_mapping_version: '2026-10-30.1',
+  +     category_path: [
+  +       '电视与影音',
+  +       '电视'
+  +     ],
+        gid: 2,
+        id: 'item:1',
+        image: 'https://example.com/1',
+        kind: 'machine',
+  +     legacy: false,
+        name: '商品 1',
+  +     original_category: '电视',
+        params: {
+          '秘密': '完整详情'
+        },
+  +     parent: '电视与影音',
+        price: 2
+      },
+      {
+        categories: [
+          '冰箱'
+        ],
+        category: '冰箱',
+  +     category_confidence: 0.98,
+  +     category_l1: '厨房电器',
+  +     category_l2: '冰箱',
+  +     category_mapping_version: '2026-10-30.1',
+  +     category_path: [
+  +       '厨房电器',
+  +       '冰箱'
+  +     ],
+        gid: 3,
+        id: 'item:2',
+        image: 'https://example.com/2',
+        kind: 'machine',
+  +     legacy: false,
+        name: '商品 2',
+  +     original_category: '冰箱',
+        params: {
+          '秘密': '完整详情'
+        },
+  +     parent: '厨房电器',
+        price: 3
+      }
+    ]
+  
+      at TestContext.<anonymous> (file:///home/nichangen/%E4%BB%A3%E7%A0%81/self-code/spend-good/services/api/test/goods.test.js:25:76)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { id: 'item:0', name: '商品 0', category: '冰箱', kind: 'machine', price: 1, gid: 1, image: 'https://example.com/0', params: [Object], categories: [Array], original_category: '冰箱', category_mapping_version: '2026-10-30.1', category_l1: '厨房电器', category_l2: '冰箱', category_path: [Array], parent: '厨房电器', category_confidence: 0.98, legacy: false }, { id: 'item:1', name: '商品 1', category: '电视', kind: 'machine', price: 2, gid: 2, image: 'https://example.com/1', params: [Object], categories: [Array], original_category: '电视', category_mapping_version: '2026-10-30.1', category_l1: '电视与影音', category_l2: '电视', category_path: [Array], parent: '电视与影音', category_confidence: 0.98, legacy: false }, { id: 'item:2', name: '商品 2', category: '冰箱', kind: 'machine', price: 3, gid: 3, image: 'https://example.com/2', params: [Object], categories: [Array], original_category: '冰箱', category_mapping_version: '2026-10-30.1', category_l1: '厨房电器', category_l2: '冰箱', category_path: [Array], parent: '厨房电器', category_confidence: 0.98, legacy: false } ],
+    expected: [ { id: 'item:0', name: '商品 0', category: '冰箱', kind: 'machine', price: 1, gid: 1, image: 'https://example.com/0', params: [Object], categories: [Array] }, { id: 'item:1', name: '商品 1', category: '电视', kind: 'machine', price: 2, gid: 2, image: 'https://example.com/1', params: [Object], categories: [Array] }, { id: 'item:2', name: '商品 2', category: '冰箱', kind: 'machine', price: 3, gid: 3, image: 'https://example.com/2', params: [Object], categories: [Array] } ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test/goods.test.js:138:1
+✖ 规格筛选按芯片/CPU/GPU 独立归属，返回完整源记录 (6.173514ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    {
+      categories: [
+        '电脑'
+      ],
+  +   category: '台式机与一体机',
+  +   category_confidence: 0.98,
+  +   category_l1: '电脑与平板',
+  +   category_l2: '台式机与一体机',
+  +   category_mapping_version: '2026-10-30.1',
+  +   category_path: [
+  +     '电脑与平板',
+  +     '台式机与一体机'
+  +   ],
+  -   category: '电脑',
+      id: 'CN:apple_cn:commodity:cpu18',
+  +   legacy: false,
+      name: 'Mac mini',
+  +   original_category: '电脑',
+      params: {
+        variant_attrs: {
+          'processor-dimensionChip': {
+            label: 'M5 Pro 芯片 带来更出色的性能表现，还可选配更大的内存。',
+            value: 'm5pro'
+  ...
+      },
+  +   parent: '电脑与平板'
+    }
+  
+      at TestContext.<anonymous> (file:///home/nichangen/%E4%BB%A3%E7%A0%81/self-code/spend-good/services/api/test/goods.test.js:148:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { id: 'CN:apple_cn:commodity:cpu18', name: 'Mac mini', category: '台式机与一体机', params: { variant_attrs: [Object] }, categories: [ '电脑' ], original_category: '电脑', category_mapping_version: '2026-10-30.1', category_l1: '电脑与平板', category_l2: '台式机与一体机', category_path: [ '电脑与平板', '台式机与一体机' ], parent: '电脑与平板', category_confidence: 0.98, legacy: false },
+    expected: { id: 'CN:apple_cn:commodity:cpu18', name: 'Mac mini', category: '电脑', params: { variant_attrs: [Object] }, categories: [ '电脑' ] },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test/goods.test.js:176:1
+✖ 单行分类数组：两类各计一次且可筛选；数组优先，主分类原样保留 (9.148763ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      categories: [
+        '家电',
+        '电饭煲'
+      ],
+      category: '家电',
+  +   category_confidence: 0,
+  +   category_l1: null,
+  +   category_l2: null,
+  +   category_mapping_version: '2026-10-30.1',
+  +   category_path: null,
+      gid: 1,
+      id: 'rice',
+      image: 'https://example.com/0',
+      kind: 'machine',
+  +   legacy: false,
+      name: '商品 0',
+  +   original_category: '家电',
+      params: {
+        '秘密': '完整详情'
+      },
+      price: 1,
+  +   review_note: '未映射，发布前必须人工复核'
+    }
+  
+      at TestContext.<anonymous> (file:///home/nichangen/%E4%BB%A3%E7%A0%81/self-code/spend-good/services/api/test/goods.test.js:190:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { id: 'rice', name: '商品 0', category: '家电', kind: 'machine', price: 1, gid: 1, image: 'https://example.com/0', params: { '秘密': '完整详情' }, categories: [ '家电', '电饭煲' ], original_category: '家电', category_mapping_version: '2026-10-30.1', legacy: false, category_path: null, category_l1: null, category_l2: null, category_confidence: 0, review_note: '未映射，发布前必须人工复核' },
+    expected: { id: 'rice', name: '商品 0', category: '家电', kind: 'machine', price: 1, gid: 1, image: 'https://example.com/0', params: { '秘密': '完整详情' }, categories: [ '家电', '电饭煲' ] },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test/goods.test.js:197:1
+✖ 旧单分类与显式单元素数组双向等价：列表、分面、筛选、分页、详情和批量 (15.615966ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      categories: [
+        '冰箱'
+      ],
+      category: '冰箱',
+  +   category_confidence: 0.98,
+  +   category_l1: '厨房电器',
+  +   category_l2: '冰箱',
+  +   category_mapping_version: '2026-10-30.1',
+  +   category_path: [
+  +     '厨房电器',
+  +     '冰箱'
+  +   ],
+      gid: 1,
+      id: 'item:0',
+      image: 'https://example.com/0',
+      kind: 'machine',
+  +   legacy: false,
+      name: '商品 0',
+  +   original_category: '冰箱',
+      params: {
+        '秘密': '完整详情'
+      },
+  +   parent: '厨房电器',
+      price: 1
+    }
+  
+      at TestContext.<anonymous> (file:///home/nichangen/%E4%BB%A3%E7%A0%81/self-code/spend-good/services/api/test/goods.test.js:218:11)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { id: 'item:0', name: '商品 0', category: '冰箱', kind: 'machine', price: 1, gid: 1, image: 'https://example.com/0', params: { '秘密': '完整详情' }, categories: [ '冰箱' ], original_category: '冰箱', category_mapping_version: '2026-10-30.1', category_l1: '厨房电器', category_l2: '冰箱', category_path: [ '厨房电器', '冰箱' ], parent: '厨房电器', category_confidence: 0.98, legacy: false },
+    expected: { id: 'item:0', name: '商品 0', category: '冰箱', kind: 'machine', price: 1, gid: 1, image: 'https://example.com/0', params: { '秘密': '完整详情' }, categories: [ '冰箱' ] },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test/http.test.js:705:1
+✖ 按需商品路由保持旧全量格式，单条完整、gids 只返回指定项且超限拒绝 (58.175567ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      categories: [
+        '电视'
+      ],
+      category: '电视',
+  +   category_confidence: 0.98,
+  +   category_l1: '电视与影音',
+  +   category_l2: '电视',
+  +   category_mapping_version: '2026-10-30.1',
+  +   category_path: [
+  +     '电视与影音',
+  +     '电视'
+  +   ],
+      gid: 1,
+      id: 'CN:mi_cn:product:0',
+      image_url: 'https://example.com/0',
+      kind: 'machine',
+  +   legacy: false,
+      name: '商品0',
+  +   original_category: '电视',
+      params: {
+        '容量': '3L'
+      },
+  +   parent: '电视与影音',
+      price: 100
+    }
+  
+      at TestContext.<anonymous> (file:///home/nichangen/%E4%BB%A3%E7%A0%81/self-code/spend-good/services/api/test/http.test.js:712:88)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { id: 'CN:mi_cn:product:0', name: '商品0', category: '电视', kind: 'machine', gid: 1, price: 100, image_url: 'https://example.com/0', params: { '容量': '3L' }, categories: [ '电视' ], original_category: '电视', category_mapping_version: '2026-10-30.1', category_l1: '电视与影音', category_l2: '电视', category_path: [ '电视与影音', '电视' ], parent: '电视与影音', category_confidence: 0.98, legacy: false },
+    expected: { id: 'CN:mi_cn:product:0', name: '商品0', category: '电视', kind: 'machine', gid: 1, price: 100, image_url: 'https://example.com/0', params: { '容量': '3L' }, categories: [ '电视' ] },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at test/http.test.js:718:1
+✖ 商品新接口合并分类，旧全量接口仍逐字返回源行 (52.754314ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  '电饭煲' !== '家电'
+  
+      at TestContext.<anonymous> (file:///home/nichangen/%E4%BB%A3%E7%A0%81/self-code/spend-good/services/api/test/http.test.js:729:69)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '电饭煲',
+    expected: '家电',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/product-presentation.test.js:121:1
+✖ 列表到完整SKU链路：同一族ID贯穿ids、familyCounts、product_ids与前端规格选择 (180.451166ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'CN:apple_cn:product:MBN_2026_ROC_SL_G'
+  - 'CN:apple_cn:product:line:MacBook%20Neo:2026'
+  
+      at TestContext.<anonymous> (file:///home/nichangen/%E4%BB%A3%E7%A0%81/self-code/spend-good/services/api/test/product-presentation.test.js:127:90)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'CN:apple_cn:product:MBN_2026_ROC_SL_G',
+    expected: 'CN:apple_cn:product:line:MacBook%20Neo:2026',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/search-synonyms.test.js:80:1
+✖ 宠物叫法不命中人用饮水机；详情及源记录不被词表改写 (18.712106ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      categories: [
+        '测试'
+      ],
+      category: '测试',
+  +   category_confidence: 0,
+  +   category_l1: null,
+  +   category_l2: null,
+  +   category_mapping_version: '2026-10-30.1',
+  +   category_path: null,
+      id: 'pet',
+  +   legacy: false,
+      name: '米家智能宠物饮水机 2',
+  +   original_category: '测试',
+      price: 99,
+      product_id: 'pet',
+  +   review_note: '未映射，发布前必须人工复核'
+    }
+  
+      at TestContext.<anonymous> (file:///home/nichangen/%E4%BB%A3%E7%A0%81/self-code/spend-good/services/api/test/search-synonyms.test.js:87:9)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { id: 'pet', product_id: 'pet', name: '米家智能宠物饮水机 2', category: '测试', price: 99, categories: [ '测试' ], original_category: '测试', category_mapping_version: '2026-10-30.1', legacy: false, category_path: null, category_l1: null, category_l2: null, category_confidence: 0, review_note: '未映射，发布前必须人工复核' },
+    expected: { id: 'pet', product_id: 'pet', name: '米家智能宠物饮水机 2', category: '测试', price: 99, categories: [ '测试' ] },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

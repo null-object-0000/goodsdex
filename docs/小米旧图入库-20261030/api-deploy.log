@@ -1,0 +1,77 @@
+src/goods.mjs: OK
+b27502a11d7027c2af1ace36793b3503ad20f568b88c4b37ee07827dcd0462cb  src/goods.mjs
+ Image spendgood-api:local Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 492B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.49kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:24-bookworm-slim
+#3 DONE 4.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 120B done
+#4 DONE 0.0s
+
+#5 [ 1/13] FROM docker.io/library/node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 26.55kB 0.0s done
+#6 DONE 0.0s
+
+#7 [ 2/13] WORKDIR /app
+#7 CACHED
+
+#8 [ 3/13] RUN sed -i 's|deb.debian.org|mirrors.aliyun.com|g; s|security.debian.org|mirrors.aliyun.com|g' /etc/apt/sources.list.d/debian.sources 2>/dev/null ||     sed -i 's|deb.debian.org|mirrors.aliyun.com|g; s|security.debian.org|mirrors.aliyun.com|g' /etc/apt/sources.list
+#8 CACHED
+
+#9 [ 4/13] RUN apt-get update && apt-get install -y --no-install-recommends chromium fonts-noto-cjk gosu     && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [ 5/13] COPY package.json package-lock.json ./
+#10 CACHED
+
+#11 [ 6/13] RUN npm ci --omit=dev
+#11 CACHED
+
+#12 [ 7/13] COPY src ./src
+#12 DONE 0.1s
+
+#13 [ 8/13] COPY scripts/verify-notify.mjs scripts/verify-avatar.mjs ./scripts/
+#13 DONE 0.1s
+
+#14 [ 9/13] COPY products.seed.json ./
+#14 DONE 0.0s
+
+#15 [10/13] COPY build-info.json ./
+#15 DONE 0.0s
+
+#16 [11/13] RUN mkdir -p /data && groupadd --system app && useradd --system --gid app --create-home app && chown -R app:app /data
+#16 DONE 1.8s
+
+#17 [12/13] COPY scripts/container-entrypoint.sh /usr/local/bin/spendgood-entrypoint
+#17 DONE 0.1s
+
+#18 [13/13] RUN chmod 755 /usr/local/bin/spendgood-entrypoint
+#18 DONE 0.5s
+
+#19 exporting to image
+#19 exporting layers
+#19 exporting layers 0.3s done
+#19 writing image sha256:2a3969cd28a10b3f1ba41885572b08be79e1ddc4e3d73292d521d4f520ebf5cb done
+#19 naming to docker.io/library/spendgood-api:local done
+#19 DONE 0.3s
+
+#20 resolving provenance for metadata file
+#20 DONE 0.0s
+ Image spendgood-api:local Built 
+ Container spendgood-api Recreate 
+ Container spendgood-api Recreated 
+ Container spendgood-api Starting 
+ Container spendgood-api Started 
+ok
+backup=/tmp/xiaomi-image-api-rollback.XeBRuM
