@@ -27,8 +27,8 @@ jobs:
           echo '::error::Intentional HP collection failure; no candidate and no publication'
           exit 1
       - run: python3 -m pip install --quiet Pillow
-      - name: Refresh HP configurations (reuse previously verified images)
-        run: python3 scripts/crawl_hp.py --out _data/data/hp --public _data/public --reuse-images --seed 'https://www.hpstore.cn/catalogsearch/result/?q=%E6%98%9F14'
+      - name: Refresh HP configurations (known SKUs; reuse verified images; serial rate limit)
+        run: python3 scripts/crawl_hp.py --out _data/data/hp --public _data/public --reuse-images --known-only --interval-from-start
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -78,3 +78,39 @@ class HourlyImageReuseTests(unittest.TestCase):
             self.assertEqual(rows[0]['price'], 12499)
             self.assertEqual(rows[0]['image'], image)
             self.assertEqual(rows[0]['fetched_at'], '2026-10-31T00:00:00Z')
+
+    def test_known_only_refresh_never_enters_catalogue_discovery(self):
+        import tempfile
+        import sys
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp)
+            row, image = hp.parse_product(FIXTURE, URL, '2026-10-29T08:00:00Z')
+            (out/'goods.json').write_text(json.dumps([row]))
+            (out/'audit.json').write_text(json.dumps({'images': [{'url': image, 'ok': True}]}))
+            class FakeClient:
+                requests = []
+                def get(self, url):
+                    if url != URL:
+                        raise AssertionError('Hourly known-only refresh must not discover more URLs')
+                    return FIXTURE.encode(), {'fetched_at': '2026-10-31T00:00:00Z'}
+            with patch.object(sys, 'argv', ['crawl_hp.py', '--out', tmp, '--reuse-images', '--known-only']), \
+                 patch.object(hp, 'Client', return_value=FakeClient()), \
+                 patch.object(hp, 'listing', side_effect=AssertionError('No catalogue discovery')):
+                self.assertEqual(hp.main(), 0)
+            self.assertEqual(len(json.loads((out/'goods.json').read_text())), 1)
+
+    def test_hourly_request_starts_stay_at_least_2_1_seconds_apart(self):
+        client = hp.Client(interval_from_start=True)
+        with patch.object(hp.time, 'monotonic', side_effect=[0.0, 0.0, 1.0, 2.1]), \
+             patch.object(hp.time, 'sleep') as sleep, \
+             patch.object(hp.urllib.request, 'urlopen') as open_url:
+            response = open_url.return_value.__enter__.return_value
+            response.read.return_value = b'fresh response'
+            response.url = URL
+            response.status = 200
+            response.headers.get.return_value = 'text/html'
+            client.get(URL)
+            client.get(URL)
+            self.assertAlmostEqual(sleep.call_args_list[0].args[0], 0)
+            self.assertAlmostEqual(sleep.call_args_list[1].args[0], 1.1)
+            self.assertEqual(client.last['www.hpstore.cn'], 2.1)

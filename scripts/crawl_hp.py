@@ -38,14 +38,18 @@ def json_after(text, marker):
     return json.JSONDecoder().raw_decode(text[pos + len(marker):].lstrip())[0]
 
 class Client:
-    def __init__(self, raw=None):
+    def __init__(self, raw=None, interval_from_start=False):
+        self.interval_from_start = interval_from_start
         self.last = {}
         self.raw = raw
         self.requests = []
     def get(self, url):
         host = urlparse(url).netloc
         time.sleep(max(0, 2.1 - (time.monotonic() - self.last.get(host, -100))))
-        # Wait from completion, so even slow requests cannot overlap the next GET.
+        # Requests remain serial. Hourly mode overlaps the spacing interval
+        # with network latency, retaining >=2.1 seconds between request starts.
+        if self.interval_from_start:
+            self.last[host] = time.monotonic()
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent':'GoodsDex/1.0 (public computer catalogue; daily)'}), timeout=45) as r:
                 data = r.read()
@@ -53,7 +57,8 @@ class Client:
                             content_type=r.headers.get('Content-Type',''), bytes=len(data),
                             sha256=hashlib.sha256(data).hexdigest(), fetched_at=datetime.now(timezone.utc).isoformat())
         finally:
-            self.last[host] = time.monotonic()
+            if not self.interval_from_start:
+                self.last[host] = time.monotonic()
         self.requests.append(info)
         if self.raw:
             self.raw.mkdir(parents=True, exist_ok=True)
@@ -183,13 +188,15 @@ def main():
     ap.add_argument('--out',type=Path,default=ROOT/'data/hp')
     ap.add_argument('--public',type=Path)
     ap.add_argument('--raw',type=Path,default=ROOT/'data/hp/raw')
+    ap.add_argument('--known-only', action='store_true', help='Refresh every archived SKU URL; daily crawl owns discovery')
+    ap.add_argument('--interval-from-start', action='store_true', help='Keep serial GETs >=2.1 seconds apart by start time')
     ap.add_argument('--reuse-images', action='store_true', help='Hourly refresh: reuse prior successful image checks; new/changed images are still verified')
     ap.add_argument('--dry-run',action='store_true')
     ap.add_argument('--limit',type=int)
     ap.add_argument('--replay',type=Path,help='Reparse saved audit/raw evidence; validate images missing from that audit')
     ap.add_argument('--seed',action='append',help='Additional public HP catalogue/search page')
     args=ap.parse_args()
-    client=Client(None if args.dry_run else args.raw)
+    client=Client(None if args.dry_run else args.raw, interval_from_start=args.interval_from_start)
     replay=json.loads((args.replay/'audit.json').read_text()) if args.replay else None
     evidence={r['url']:r for r in replay['requests']} if replay else {}
     def page_get(url):
@@ -201,6 +208,16 @@ def main():
             return data,info
         return client.get(url)
     errors=[];urls=[];seen=set();pages=list(SEEDS)+(args.seed or [])
+    known_ids = None
+    if args.known_only:
+        if args.seed:
+            ap.error('--known-only cannot be combined with discovery seeds')
+        known = json.loads((args.out/'goods.json').read_text())
+        if not known or any(r.get('source') != 'hp_cn' or not r.get('source_url') for r in known):
+            raise ValueError('Known-only refresh requires a complete prior HP SKU archive')
+        known_ids = {r['id'] for r in known}
+        urls = list(dict.fromkeys(r['source_url'] for r in known))
+        pages = []
     while pages:
         url=pages.pop(0)
         if url in seen: continue
@@ -222,6 +239,8 @@ def main():
             if urlparse(url).hostname!='www.hpstore.cn': raise ValueError('Unexpected product host')
             data,info=page_get(url)
             row,img=parse_product(data.decode(),url,info['fetched_at'])
+            if known_ids is not None and row['id'] not in known_ids:
+                raise ValueError('Archived URL changed SKU identity; daily discovery must review it')
             if img not in checks: images[img],checks[img]=image_check(client,img)
             row['image']=images[img]
             if not row['image']:
