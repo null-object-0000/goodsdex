@@ -1,0 +1,189 @@
+tests	Set up job	﻿2026-10-30T15:23:40.3733646Z Current runner version: '2.338.0'
+tests	Set up job	2026-10-30T15:23:40.3762104Z ##[group]Runner Image Provisioner
+tests	Set up job	2026-10-30T15:23:40.3763036Z Hosted Compute Agent
+tests	Set up job	2026-10-30T15:23:40.3764078Z Version: 20261021.618
+tests	Set up job	2026-10-30T15:23:40.3764775Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+tests	Set up job	2026-10-30T15:23:40.3765578Z Build Date: 2026-10-21T00:45:21Z
+tests	Set up job	2026-10-30T15:23:40.3766680Z Worker ID: {13d582a6-1727-469f-b4c9-7e83c99640b2}
+tests	Set up job	2026-10-30T15:23:40.3767465Z Region: northcentralus
+tests	Set up job	2026-10-30T15:23:40.3768127Z Cloud: Azure
+tests	Set up job	2026-10-30T15:23:40.3768745Z ##[endgroup]
+tests	Set up job	2026-10-30T15:23:40.3770341Z ##[group]Operating System
+tests	Set up job	2026-10-30T15:23:40.3771116Z Ubuntu
+tests	Set up job	2026-10-30T15:23:40.3771700Z 24.04.5
+tests	Set up job	2026-10-30T15:23:40.3772297Z LTS
+tests	Set up job	2026-10-30T15:23:40.3772885Z ##[endgroup]
+tests	Set up job	2026-10-30T15:23:40.3773738Z ##[group]Runner Image
+tests	Set up job	2026-10-30T15:23:40.3774471Z Image: ubuntu-24.04
+tests	Set up job	2026-10-30T15:23:40.3775097Z Version: 20261025.353.1
+tests	Set up job	2026-10-30T15:23:40.3776211Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+tests	Set up job	2026-10-30T15:23:40.3778180Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+tests	Set up job	2026-10-30T15:23:40.3779247Z ##[endgroup]
+tests	Set up job	2026-10-30T15:23:40.3780460Z ##[group]GITHUB_TOKEN Permissions
+tests	Set up job	2026-10-30T15:23:40.3782807Z Contents: read
+tests	Set up job	2026-10-30T15:23:40.3783866Z Metadata: read
+tests	Set up job	2026-10-30T15:23:40.3784667Z ##[endgroup]
+tests	Set up job	2026-10-30T15:23:40.3787384Z Secret source: Actions
+tests	Set up job	2026-10-30T15:23:40.3788719Z Cache mode: write
+tests	Set up job	2026-10-30T15:23:40.3789838Z Prepare workflow directory
+tests	Set up job	2026-10-30T15:23:40.4137212Z Prepare all required actions
+tests	Set up job	2026-10-30T15:23:40.4186477Z Getting action download info
+tests	Set up job	2026-10-30T15:23:40.6981771Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+tests	Set up job	2026-10-30T15:23:40.7959256Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+tests	Set up job	2026-10-30T15:23:40.9872714Z Complete job name: tests
+tests	Run actions/checkout@v4	﻿2026-10-30T15:23:41.0855365Z ##[group]Run actions/checkout@v4
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0856248Z with:
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0856715Z   repository: null-object-0000/goodsdex
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0860618Z   token: ***
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0861066Z   ssh-strict: true
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0861513Z   ssh-user: git
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0861962Z   persist-credentials: true
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0862448Z   clean: true
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0862900Z   sparse-checkout-cone-mode: true
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0863682Z   fetch-depth: 1
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0864121Z   fetch-tags: false
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0864566Z   show-progress: true
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0865007Z   lfs: false
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0865420Z   submodules: false
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0865872Z   set-safe-directory: true
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0866378Z   allow-unsafe-pr-checkout: false
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.0867093Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3137645Z Syncing repository: null-object-0000/goodsdex
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3140958Z ##[group]Getting Git version info
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3142325Z Working directory is '/home/runner/work/goodsdex/goodsdex'
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3144599Z [command]/usr/bin/git version
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3201337Z git version 2.56.0
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3225050Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3245489Z Temporarily overriding HOME='/home/runner/work/_temp/054788e4-782b-402d-8186-033729d7b4a4' before making global git config changes
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3249009Z Adding repository directory to the temporary git global config as a safe directory
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3251410Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3312072Z Deleting the contents of '/home/runner/work/goodsdex/goodsdex'
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3318192Z ##[group]Initializing the repository
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3322111Z [command]/usr/bin/git init /home/runner/work/goodsdex/goodsdex
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3424187Z hint: Using 'master' as the name for the initial branch. This default branch name
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3426178Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3428594Z hint: to use in all of your new repositories, which will suppress this warning,
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3430178Z hint: call:
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3440561Z hint:
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3441755Z hint: 	git config --global init.defaultBranch <name>
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3442946Z hint:
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3444198Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3445932Z hint: 'development'. The just-created branch can be renamed via this command:
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3447056Z hint:
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3447538Z hint: 	git branch -m <name>
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3448072Z hint:
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3448758Z hint: Disable this message with "git config set advice.defaultBranchName false"
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3449865Z Initialized empty Git repository in /home/runner/work/goodsdex/goodsdex/.git/
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3465931Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/goodsdex
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3530452Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3532410Z ##[group]Disabling automatic garbage collection
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3537062Z [command]/usr/bin/git config --local gc.auto 0
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3584305Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3585308Z ##[group]Setting up auth
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3586146Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.3626983Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.4043577Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.4106407Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.4401531Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.4461867Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.4759709Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.4817354Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.4818447Z ##[group]Fetching the repository
+tests	Run actions/checkout@v4	2026-10-30T15:23:41.4831283Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d211b10439b127d69b948cf50c73a314baa42f30:refs/remotes/origin/main
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.2250309Z From https://github.com/null-object-0000/goodsdex
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.2253057Z  * [new ref]         d211b10439b127d69b948cf50c73a314baa42f30 -> origin/main
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.2258133Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.2259800Z ##[group]Determining the checkout info
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.2265168Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.2266301Z [command]/usr/bin/git sparse-checkout disable
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.2329968Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.2375775Z ##[group]Checking out the ref
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.2388723Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.3060920Z Switched to a new branch 'main'
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.3063670Z branch 'main' set up to track 'origin/main'.
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.3075343Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.3131520Z [command]/usr/bin/git log -1 --format=%H
+tests	Run actions/checkout@v4	2026-10-30T15:23:42.3168248Z d211b10439b127d69b948cf50c73a314baa42f30
+tests	Run actions/setup-python@v5	﻿2026-10-30T15:23:42.3576064Z ##[group]Run actions/setup-python@v5
+tests	Run actions/setup-python@v5	2026-10-30T15:23:42.3577347Z with:
+tests	Run actions/setup-python@v5	2026-10-30T15:23:42.3578220Z   python-version: 3.12
+tests	Run actions/setup-python@v5	2026-10-30T15:23:42.3579233Z   check-latest: false
+tests	Run actions/setup-python@v5	2026-10-30T15:23:42.3588407Z   token: ***
+tests	Run actions/setup-python@v5	2026-10-30T15:23:42.3589374Z   update-environment: true
+tests	Run actions/setup-python@v5	2026-10-30T15:23:42.3590485Z   allow-prereleases: false
+tests	Run actions/setup-python@v5	2026-10-30T15:23:42.3591568Z   freethreaded: false
+tests	Run actions/setup-python@v5	2026-10-30T15:23:42.3592776Z ##[endgroup]
+tests	Run actions/setup-python@v5	2026-10-30T15:23:42.5062272Z ##[group]Installed versions
+tests	Run actions/setup-python@v5	2026-10-30T15:23:42.5175662Z (node:2315) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+tests	Run actions/setup-python@v5	2026-10-30T15:23:42.5179722Z (Use `node --trace-deprecation ...` to show where the warning was created)
+tests	Run actions/setup-python@v5	2026-10-30T15:23:42.5182041Z Successfully set up CPython (3.12.15)
+tests	Run actions/setup-python@v5	2026-10-30T15:23:42.5184791Z ##[endgroup]
+tests	Run python -m pip install pytest Pillow	﻿2026-10-30T15:23:42.5377165Z ##[group]Run python -m pip install pytest Pillow
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:42.5379521Z ^[[36;1mpython -m pip install pytest Pillow^[[0m
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:42.5424983Z shell: /usr/bin/bash -e {0}
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:42.5426410Z env:
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:42.5428014Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:42.5552073Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:42.5554352Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:42.5555993Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:42.5557740Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:42.5559409Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:42.5560810Z ##[endgroup]
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.3374899Z Collecting pytest
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.3848733Z   Downloading pytest-9.2.0-py3-none-any.whl.metadata (7.9 kB)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.5729671Z Collecting Pillow
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.5770991Z   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.5897184Z Collecting iniconfig>=2 (from pytest)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.5934173Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.6065095Z Collecting packaging>=24 (from pytest)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.6099227Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.6211856Z Collecting pluggy<2,>=1.6 (from pytest)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.6246283Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.6404513Z Collecting pygments>=2.15 (from pytest)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.6440455Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.6527604Z Downloading pytest-9.2.0-py3-none-any.whl (411 kB)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.6724656Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.6777429Z Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.7465003Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 111.5 MB/s  0:00:00
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.7503831Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.7556110Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.7613646Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.7707817Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 147.5 MB/s  0:00:00
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:43.8336570Z Installing collected packages: pygments, pluggy, Pillow, packaging, iniconfig, pytest
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:45.3383006Z 
+tests	Run python -m pip install pytest Pillow	2026-10-30T15:23:45.3396396Z Successfully installed Pillow-13.0.0 iniconfig-2.3.1 packaging-26.3 pluggy-1.7.0 pygments-2.21.0 pytest-9.2.0
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	﻿2026-10-30T15:23:45.4039078Z ##[group]Run PYTHONPATH=src python -m pytest -q -m "not live"
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:45.4039582Z ^[[36;1mPYTHONPATH=src python -m pytest -q -m "not live"^[[0m
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:45.4063126Z shell: /usr/bin/bash -e {0}
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:45.4063557Z env:
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:45.4063839Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:45.4064304Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:45.4064739Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:45.4065116Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:45.4065496Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:45.4065877Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:45.4066430Z ##[endgroup]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:46.7529026Z ........................................................................ [ 25%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:50.0919652Z ........................................................................ [ 50%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:54.2995125Z ........................................................................ [ 75%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:54.8455379Z ......................................................................   [100%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-10-30T15:23:54.8455882Z 286 passed, 8 deselected in 9.14s
+tests	Post Run actions/setup-python@v5	﻿2026-10-30T15:23:54.8981561Z Post job cleanup.
+tests	Post Run actions/setup-python@v5	2026-10-30T15:23:55.0232842Z (node:2374) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+tests	Post Run actions/setup-python@v5	2026-10-30T15:23:55.0233866Z (Use `node --trace-deprecation ...` to show where the warning was created)
+tests	Post Run actions/checkout@v4	﻿2026-10-30T15:23:55.0441666Z Post job cleanup.
+tests	Post Run actions/checkout@v4	2026-10-30T15:23:55.1374174Z [command]/usr/bin/git version
+tests	Post Run actions/checkout@v4	2026-10-30T15:23:55.1451803Z git version 2.56.0
+tests	Post Run actions/checkout@v4	2026-10-30T15:23:55.1492734Z Temporarily overriding HOME='/home/runner/work/_temp/e8251e5b-ef96-431f-b516-e4bf7a41be49' before making global git config changes
+tests	Post Run actions/checkout@v4	2026-10-30T15:23:55.1494418Z Adding repository directory to the temporary git global config as a safe directory
+tests	Post Run actions/checkout@v4	2026-10-30T15:23:55.1499090Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+tests	Post Run actions/checkout@v4	2026-10-30T15:23:55.1557906Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+tests	Post Run actions/checkout@v4	2026-10-30T15:23:55.1604947Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+tests	Post Run actions/checkout@v4	2026-10-30T15:23:55.1908779Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+tests	Post Run actions/checkout@v4	2026-10-30T15:23:55.1937505Z http.https://github.com/.extraheader
+tests	Post Run actions/checkout@v4	2026-10-30T15:23:55.1955377Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+tests	Post Run actions/checkout@v4	2026-10-30T15:23:55.2003824Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+tests	Post Run actions/checkout@v4	2026-10-30T15:23:55.2329619Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+tests	Post Run actions/checkout@v4	2026-10-30T15:23:55.2386531Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+tests	Complete job	﻿2026-10-30T15:23:55.2854434Z Cleaning up orphan processes
+tests	Complete job	2026-10-30T15:23:55.3274649Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
