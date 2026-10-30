@@ -29,10 +29,12 @@ def migrate(rows):
         for key, row in incoming.items():
             if row != expected[key]:
                 raise ValueError('Historical source differs from reviewed supplement: ' + key)
-        output, emitted = [], set()
+        # Group all official configurations together. Migrating each row on
+        # its own emits one product per trim with repeated product IDs.
+        output = migrate([row for row in rows if row['id'] not in incoming])
+        emitted = set()
         for row in rows:
             if row['id'] not in incoming:
-                output.extend(migrate([row]))
                 continue
             product = next(p for p in approved if row['id'] in p['legacy_ids'])
             if not set(product['legacy_ids']) <= incoming.keys():
@@ -138,3 +140,16 @@ def assert_preserved(before, after):
         cars = lambda rows: {r['id']: r for r in expand_sources(rows) if is_car(r)}
         if other(before) != other(after) or cars(before) != cars(after):
             raise ValueError('Car migration lost or changed source records')
+
+
+def assert_unique_car_ids(rows):
+    """Cars have one product per ID and one occurrence per nested trim identity."""
+    from collections import Counter
+    cars = [r for r in rows if is_car(r)]
+    for label, keys in (
+        ('product', [r['id'] for r in cars]),
+        ('trim', [t['id'] for r in cars for t in r.get('trims', [])]),
+    ):
+        repeated = {key: n for key, n in Counter(keys).items() if n > 1}
+        if repeated:
+            raise ValueError(f'Duplicate car {label} IDs: {repeated}')

@@ -14,8 +14,9 @@ if __name__ == "__main__":
     from migrate_car_structure import migrate_public
     migrate_public(args.public)
     previous = json.loads(args.previous.read_text()) if args.previous else None
-    from goodsdex.car_structure import mappings
+    from goodsdex.car_structure import mappings, assert_unique_car_ids
     current = json.loads((args.public / "goods.json").read_text())
+    assert_unique_car_ids(current)
     retained = {m['old_id'] for m in mappings(current)}
     print(json.dumps(finalize_public(args.public, previous, retained), ensure_ascii=False))
     build_shards(args.public)

@@ -24,6 +24,8 @@ def main():
     # same exact-ID policy as merge before comparing the final release.
     current = remove_reviewed_non_goods(original)
     previous = json.loads(args.previous.read_text())
+    from goodsdex.car_structure import assert_unique_car_ids
+    assert_unique_car_ids(current)
     if args.car_refresh:
         from goodsdex.cars import is_car
         if [r for r in previous if not is_car(r)] != [r for r in current if not is_car(r)]:

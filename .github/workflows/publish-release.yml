@@ -60,7 +60,7 @@ jobs:
       - name: Test publication invariants
         run: |
           python3 -m pip install --quiet pytest
-          PYTHONPATH=src:scripts python3 -m pytest -q tests/test_release_policy.py tests/test_supplement_publish.py tests/test_dedupe.py tests/test_shards.py tests/test_release_candidate.py tests/test_mirror_public.py
+          PYTHONPATH=src:scripts python3 -m pytest -q tests/test_release_policy.py tests/test_supplement_publish.py tests/test_dedupe.py tests/test_shards.py tests/test_release_candidate.py tests/test_mirror_public.py tests/test_car_structure.py
       - name: Verify final release (no lost IDs and responsibility invariants)
         env:
           RELEASE_SCOPE: ${{ inputs.scope }}

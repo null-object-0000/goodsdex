@@ -162,3 +162,33 @@ def test_finalized_archive_product_survives_daily_and_history_publication():
     daily, _ = prepare(rows)
     repeated, _ = prepare_history(daily)
     assert next(r for r in repeated if r['model_year'] == 2022) == history
+
+
+def test_daily_round_trip_with_pcauto_supplements_never_splits_products():
+    import sys
+    sys.path.insert(0, str(ROOT/'scripts'))
+    from publish_cars import prepare, prepare_history
+    from goodsdex.supplements import DEFAULT_SUPPLEMENTS
+    third_party = [r for r in json.loads(DEFAULT_SUPPLEMENTS.read_text())
+                   if r.get('schema') == 'car-product-v2' and r.get('source') == 'pcauto']
+    expected = migrate(sources()) + third_party
+    raw = expand_sources(expected)
+    grouped = migrate(raw)
+    assert len(grouped) == len(expected) == 17
+    assert len({r['id'] for r in grouped}) == 17
+    assert_preserved(raw, grouped)
+    refreshed, _ = prepare(expected, append_only=True)
+    historical, _ = prepare_history(refreshed)
+    assert {r['id']:r for r in historical} == {r['id']:r for r in expected}
+    assert len(historical) == 17
+
+
+def test_duplicate_product_or_trim_ids_are_release_errors():
+    from goodsdex.car_structure import assert_unique_car_ids
+    rows = migrate(sources())
+    assert_unique_car_ids(rows)
+    with pytest.raises(ValueError, match='Duplicate car product'):
+        assert_unique_car_ids(rows + [deepcopy(rows[0])])
+    rows[0]['trims'].append(deepcopy(rows[0]['trims'][0]))
+    with pytest.raises(ValueError, match='Duplicate car trim'):
+        assert_unique_car_ids(rows)
