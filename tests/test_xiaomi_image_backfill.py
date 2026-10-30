@@ -69,3 +69,12 @@ def test_failed_public_readback_removes_only_new_objects(tmp_path,monkeypatch):
     changed=dict(row,bytes=len(raw)+1);unused=Bucket()
     with pytest.raises(AssertionError,match='candidate_bytes_changed'):transfer.transfer(changed,unused,lambda url:raw)
     assert unused.puts==[]
+
+def test_existing_navigation_capture_can_supply_missing_specs_mapping(tmp_path):
+    import json
+    (tmp_path/'nav.txt').write_text('productNav('+json.dumps(dict(data=dict(right=[dict(title='概述',url='http://www.mi.com/redmi5/')],left=[])))+');')
+    candidate=dict(pid='10000079',source='live_official_page',checked_at='2026-10-30T21:17:37+08:00')
+    result,reason=prepare.resolve(candidate,dict(source=dict(body_file='nav.txt')),root=tmp_path)
+    assert reason is None and result['source_url']=='http://www.mi.com/redmi5/'
+    assert result['captured_at']==candidate['checked_at']
+    assert result['provenance_basis']['navigation_capture']['body_file']=='nav.txt'

@@ -1,6 +1,11 @@
 name: upload-xiaomi-backfill-images
 on:
   workflow_dispatch:
+    inputs:
+      manifest:
+        description: Reviewed local manifest path
+        default: docs/小米旧图入库-20261030/resolved.json
+        type: string
 permissions:
   contents: read
 concurrency:
@@ -20,7 +25,8 @@ jobs:
         env:
           OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
           OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
-        run: python3 scripts/upload_xiaomi_backfill_images.py --manifest docs/小米旧图入库-20261030/resolved.json --out transfer-result
+          REVIEWED_MANIFEST: ${{ inputs.manifest }}
+        run: python3 scripts/upload_xiaomi_backfill_images.py --manifest "$REVIEWED_MANIFEST" --out transfer-result
       - uses: actions/upload-artifact@v4
         if: always()
         with:
