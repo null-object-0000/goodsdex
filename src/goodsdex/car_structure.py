@@ -69,7 +69,7 @@ def migrate(rows):
                            trims=[], legacy_ids=[])
             product.update({k: row[k] for k in IMAGE_FIELDS if historical and k in row})
             if historical:
-                product['image_evidence'] = ('docs/汉2022官方存档图-20261030.md' if row.get('image') else
+                product['image_evidence'] = (('docs/汉2022主图升级-20261030.md' if row.get('detail_images') else 'docs/汉2022官方存档图-20261030.md') if row.get('image') else
                                              'docs/汽车年款与图源-20261030.md#23-汉-dm-i-2022-款官方整车图拿不到')
             products[pid] = product
             output.append(product)

@@ -2,7 +2,7 @@
 from urllib.parse import urlsplit
 
 IMAGE_FIELDS = ('image_source', 'image_source_type', 'image_source_url',
-                'image_captured_at', 'image_note')
+                'image_captured_at', 'image_note', 'detail_images')
 
 
 def validate_historical_image(row):

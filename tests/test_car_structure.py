@@ -29,13 +29,14 @@ def test_year_provenance_and_no_image_substitution():
     history = next(r for r in result if r['model_year'] == 2022)
     assert history['model_year_source'] == 'pcauto'
     assert history['model_year_confidence'] == 'third_party'
-    assert history['image'] == 'https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/16a7e808f08cda47a16a7fc951c07da02e3fc257.jpg'
+    assert history['image'] == 'https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/c1116b822a2e678c45d7316abf02e24ca6866c77.jpg'
     assert history['image_status'] == 'available'
     assert history['image_source'] == history['image_source_type'] == 'official_archive'
-    assert history['image_source_url'].startswith('https://web.archive.org/web/20220516034632id_/')
-    assert history['image_captured_at'] == '2022-05-16'
-    assert history['image_note'] == '2022 年官网车型页存档图，时光灰；非当前在售款'
+    assert history['image_source_url'].startswith('https://web.archive.org/web/20220401000000id_/')
+    assert history['image_captured_at'] == '2022-04-01'
+    assert history['image_note'] == '2022 年官网首页预售 banner 图，时光灰；非当前在售款'
     assert history['image_scope'] == 'series'
+    assert history['detail_images'] == [{'url': 'https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/c1116b822a2e678c45d7316abf02e24ca6866c77.jpg', 'kind': 'exterior', 'width': 1920, 'height': 974}, {'url': 'https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/c7aeef0c9fc9519fd1f05794500d73d1e4f3df83.jpg', 'kind': 'interior', 'width': 1920, 'height': 785}, {'url': 'https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/b890768eee82d3bd1ecf0a2e564c2d70d61c0f3f.jpg', 'kind': 'interior', 'width': 1667, 'height': 806}]
     assert len(history['trims']) == 5
     assert all(t['image'] == history['image'] and t['image_scope'] == 'series' and t['image_source'] == 'official_archive' and t['range_std'] == 'NEDC' for t in history['trims'])
     assert history['trims'][0]['name'] == '121KM 尊贵型'
@@ -89,6 +90,9 @@ def test_shards_retain_nested_search_and_image_metadata(tmp_path):
     assert row['image_scope']=='series'
     assert len(row['trims']) == 5
     assert 'source_record' not in row['trims'][0]
+    detail = json.loads((tmp_path/'detail/08.json').read_text())[row['id']]
+    assert detail['detail_images'] == next(r for r in result if r['id'] == row['id'])['detail_images']
+    assert len(detail['detail_images']) == 3
 
 
 def test_existing_daily_and_history_publishers_do_not_reintroduce_configuration_rows():
