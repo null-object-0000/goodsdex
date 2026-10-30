@@ -1,0 +1,252 @@
+upload	Set up job	﻿2026-10-30T15:05:45.2538244Z Current runner version: '2.338.0'
+upload	Set up job	2026-10-30T15:05:45.2575897Z ##[group]Runner Image Provisioner
+upload	Set up job	2026-10-30T15:05:45.2577794Z Hosted Compute Agent
+upload	Set up job	2026-10-30T15:05:45.2579076Z Version: 20261021.618
+upload	Set up job	2026-10-30T15:05:45.2580290Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+upload	Set up job	2026-10-30T15:05:45.2582018Z Build Date: 2026-10-21T00:45:21Z
+upload	Set up job	2026-10-30T15:05:45.2583356Z Worker ID: {bd18a8b3-0c63-4f89-954d-b7e2ae440787}
+upload	Set up job	2026-10-30T15:05:45.2584655Z Region: eastus
+upload	Set up job	2026-10-30T15:05:45.2585855Z Cloud: Azure
+upload	Set up job	2026-10-30T15:05:45.2586976Z ##[endgroup]
+upload	Set up job	2026-10-30T15:05:45.2589348Z ##[group]Operating System
+upload	Set up job	2026-10-30T15:05:45.2591076Z Ubuntu
+upload	Set up job	2026-10-30T15:05:45.2592237Z 24.04.5
+upload	Set up job	2026-10-30T15:05:45.2593218Z LTS
+upload	Set up job	2026-10-30T15:05:45.2594124Z ##[endgroup]
+upload	Set up job	2026-10-30T15:05:45.2595167Z ##[group]Runner Image
+upload	Set up job	2026-10-30T15:05:45.2596265Z Image: ubuntu-24.04
+upload	Set up job	2026-10-30T15:05:45.2597514Z Version: 20261025.353.1
+upload	Set up job	2026-10-30T15:05:45.2599485Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+upload	Set up job	2026-10-30T15:05:45.2603148Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+upload	Set up job	2026-10-30T15:05:45.2605048Z ##[endgroup]
+upload	Set up job	2026-10-30T15:05:45.2607624Z ##[group]GITHUB_TOKEN Permissions
+upload	Set up job	2026-10-30T15:05:45.2611044Z Contents: read
+upload	Set up job	2026-10-30T15:05:45.2612317Z Metadata: read
+upload	Set up job	2026-10-30T15:05:45.2613273Z ##[endgroup]
+upload	Set up job	2026-10-30T15:05:45.2616369Z Secret source: Actions
+upload	Set up job	2026-10-30T15:05:45.2617923Z Cache mode: write
+upload	Set up job	2026-10-30T15:05:45.2619277Z Prepare workflow directory
+upload	Set up job	2026-10-30T15:05:45.3095565Z Prepare all required actions
+upload	Set up job	2026-10-30T15:05:45.3165743Z Getting action download info
+upload	Set up job	2026-10-30T15:05:45.5417184Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+upload	Set up job	2026-10-30T15:05:45.6311784Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+upload	Set up job	2026-10-30T15:05:45.7051545Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+upload	Set up job	2026-10-30T15:05:45.9209929Z Complete job name: upload
+upload	Run actions/checkout@v4	﻿2026-10-30T15:05:46.0215796Z ##[group]Run actions/checkout@v4
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0216728Z with:
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0217219Z   repository: null-object-0000/goodsdex
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0221489Z   token: ***
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0221990Z   ssh-strict: true
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0222469Z   ssh-user: git
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0222952Z   persist-credentials: true
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0223481Z   clean: true
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0223960Z   sparse-checkout-cone-mode: true
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0224514Z   fetch-depth: 1
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0224976Z   fetch-tags: false
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0225451Z   show-progress: true
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0225926Z   lfs: false
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0226369Z   submodules: false
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0226855Z   set-safe-directory: true
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0227391Z   allow-unsafe-pr-checkout: false
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.0228466Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3033498Z Syncing repository: null-object-0000/goodsdex
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3036129Z ##[group]Getting Git version info
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3037065Z Working directory is '/home/runner/work/goodsdex/goodsdex'
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3038802Z [command]/usr/bin/git version
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3145322Z git version 2.56.0
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3171886Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3195941Z Temporarily overriding HOME='/home/runner/work/_temp/eac34b29-4173-4046-a33a-7f882923daba' before making global git config changes
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3197664Z Adding repository directory to the temporary git global config as a safe directory
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3198983Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3258154Z Deleting the contents of '/home/runner/work/goodsdex/goodsdex'
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3264293Z ##[group]Initializing the repository
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3268258Z [command]/usr/bin/git init /home/runner/work/goodsdex/goodsdex
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3382451Z hint: Using 'master' as the name for the initial branch. This default branch name
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3384240Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3385366Z hint: to use in all of your new repositories, which will suppress this warning,
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3386251Z hint: call:
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3386766Z hint:
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3387424Z hint: 	git config --global init.defaultBranch <name>
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3388169Z hint:
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3388881Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3389948Z hint: 'development'. The just-created branch can be renamed via this command:
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3391147Z hint:
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3391755Z hint: 	git branch -m <name>
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3392361Z hint:
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3393447Z hint: Disable this message with "git config set advice.defaultBranchName false"
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3408229Z Initialized empty Git repository in /home/runner/work/goodsdex/goodsdex/.git/
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3423839Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/goodsdex
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3510327Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3512494Z ##[group]Disabling automatic garbage collection
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3515216Z [command]/usr/bin/git config --local gc.auto 0
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3580307Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3582447Z ##[group]Setting up auth
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3583924Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.3614912Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.4049265Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.4099473Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.4351203Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.4397583Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.4648193Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.4697921Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.4699691Z ##[group]Fetching the repository
+upload	Run actions/checkout@v4	2026-10-30T15:05:46.4711921Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7d9d2e9865a8371ef1efab22173f27032c7988fe:refs/remotes/origin/main
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.0256596Z From https://github.com/null-object-0000/goodsdex
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.0259205Z  * [new ref]         7d9d2e9865a8371ef1efab22173f27032c7988fe -> origin/main
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.0265484Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.0268000Z ##[group]Determining the checkout info
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.0271158Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.0273002Z [command]/usr/bin/git sparse-checkout disable
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.0334164Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.0376751Z ##[group]Checking out the ref
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.0381699Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.0935602Z Switched to a new branch 'main'
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.0939128Z branch 'main' set up to track 'origin/main'.
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.0949386Z ##[endgroup]
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.1003860Z [command]/usr/bin/git log -1 --format=%H
+upload	Run actions/checkout@v4	2026-10-30T15:05:47.1037910Z 7d9d2e9865a8371ef1efab22173f27032c7988fe
+upload	Run actions/setup-python@v5	﻿2026-10-30T15:05:47.1444122Z ##[group]Run actions/setup-python@v5
+upload	Run actions/setup-python@v5	2026-10-30T15:05:47.1518283Z with:
+upload	Run actions/setup-python@v5	2026-10-30T15:05:47.1519407Z   python-version: 3.12
+upload	Run actions/setup-python@v5	2026-10-30T15:05:47.1520543Z   check-latest: false
+upload	Run actions/setup-python@v5	2026-10-30T15:05:47.1531379Z   token: ***
+upload	Run actions/setup-python@v5	2026-10-30T15:05:47.1532392Z   update-environment: true
+upload	Run actions/setup-python@v5	2026-10-30T15:05:47.1533860Z   allow-prereleases: false
+upload	Run actions/setup-python@v5	2026-10-30T15:05:47.1534979Z   freethreaded: false
+upload	Run actions/setup-python@v5	2026-10-30T15:05:47.1535987Z ##[endgroup]
+upload	Run actions/setup-python@v5	2026-10-30T15:05:47.2920547Z ##[group]Installed versions
+upload	Run actions/setup-python@v5	2026-10-30T15:05:47.3009200Z (node:2317) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+upload	Run actions/setup-python@v5	2026-10-30T15:05:47.3014109Z (Use `node --trace-deprecation ...` to show where the warning was created)
+upload	Run actions/setup-python@v5	2026-10-30T15:05:47.3017166Z Successfully set up CPython (3.12.15)
+upload	Run actions/setup-python@v5	2026-10-30T15:05:47.3020263Z ##[endgroup]
+upload	Run python3 -m pip install --quiet oss2 pillow	﻿2026-10-30T15:05:47.3245618Z ##[group]Run python3 -m pip install --quiet oss2 pillow
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T15:05:47.3247484Z ^[[36;1mpython3 -m pip install --quiet oss2 pillow^[[0m
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T15:05:47.3285356Z shell: /usr/bin/bash -e {0}
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T15:05:47.3286504Z env:
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T15:05:47.3287649Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T15:05:47.3289576Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T15:05:47.3291841Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T15:05:47.3293772Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T15:05:47.3295519Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T15:05:47.3297315Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+upload	Run python3 -m pip install --quiet oss2 pillow	2026-10-30T15:05:47.3298803Z ##[endgroup]
+upload	Transfer approved image URLs and verify public OSS bytes	﻿2026-10-30T15:05:55.0770390Z ##[group]Run python3 scripts/upload_xiaomi_backfill_images.py --manifest docs/小米旧图入库-20261030/resolved.json --out transfer-result
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:05:55.0771789Z ^[[36;1mpython3 scripts/upload_xiaomi_backfill_images.py --manifest docs/小米旧图入库-20261030/resolved.json --out transfer-result^[[0m
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:05:55.0793624Z shell: /usr/bin/bash -e {0}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:05:55.0793895Z env:
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:05:55.0794177Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:05:55.0794632Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:05:55.0795107Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:05:55.0795495Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:05:55.0795892Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:05:55.0796300Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:05:55.0796791Z   OSS_ACCESS_KEY_ID: ***
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:05:55.0797098Z   OSS_ACCESS_KEY_SECRET: ***
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:05:55.0797367Z ##[endgroup]
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:06:02.4129681Z {"pid": "1945", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/4a9f32462a3dd3c6965d340bfb2d9287812a5762.jpg", "status": 200, "bytes": 67471, "sha256": "75bce0ceef21da24428e509d3ebe56c33b60c4a17e6f01ddb66458368fcd9be7", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:06:08.3077264Z {"pid": "7852", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/ca4cd2ea308300ff63e2dd610633f6819744f24e.png", "status": 200, "bytes": 94427, "sha256": "7ac6baf969ae55f8e7a98353c1a55f0ed4db1376e292776e0c5b2867f5b6d703", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:06:16.5152093Z {"pid": "7129", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/b772280cea2fbdbb6b6348f2f009e5b119ed47e5.jpg", "status": 200, "bytes": 371847, "sha256": "6f372e897211fb353fb1f453e7955535546e2a0ef1297194a8dbccfe5820d8ba", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:06:24.1506344Z {"pid": "3806", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/eab5d32157200c94c2a661b4176ad4fec7b64e3c.png", "status": 200, "bytes": 322568, "sha256": "fdf27b7e285222fbf467910b45374723114fa336672afe4d1d072f9281bceba3", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:06:29.6887924Z {"pid": "3943", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/ac591250f958f5d435918a8ff2a6827444737d7f.jpg", "status": 200, "bytes": 30759, "sha256": "516d070dfc635267981fe9f9e945c2830a92ed380c96451dbe22b3d3ce2881da", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:06:38.7911062Z {"pid": "10000108", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/927020d0757db7c8a4b62d3da5022aa3dcc12290.jpg", "status": 200, "bytes": 612569, "sha256": "7d6d7f1448113bdea6ba5150912aeee0b483f5541932f0115ebee43dffeb27ed", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:06:44.9368515Z {"pid": "8385", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/927020d0757db7c8a4b62d3da5022aa3dcc12290.jpg", "status": 200, "bytes": 612569, "sha256": "7d6d7f1448113bdea6ba5150912aeee0b483f5541932f0115ebee43dffeb27ed", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:06:51.4448904Z {"pid": "8387", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/927020d0757db7c8a4b62d3da5022aa3dcc12290.jpg", "status": 200, "bytes": 612569, "sha256": "7d6d7f1448113bdea6ba5150912aeee0b483f5541932f0115ebee43dffeb27ed", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:06:57.4297514Z {"pid": "8388", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/927020d0757db7c8a4b62d3da5022aa3dcc12290.jpg", "status": 200, "bytes": 612569, "sha256": "7d6d7f1448113bdea6ba5150912aeee0b483f5541932f0115ebee43dffeb27ed", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:07:04.7528475Z {"pid": "4565", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/20bf67d54032c27e1e7deec546f389825d45403f.png", "status": 200, "bytes": 301522, "sha256": "20efa91cf71e5f24f6f50a82c86af6bbcdcc31f5dfe23870733c663e9cfc0f53", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:07:45.5677102Z {"pid": "8134", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/cfb7c4aea60c41942ed62743e2168dbe14749eac.jpg", "status": 200, "bytes": 94143, "sha256": "ea17ab4f8abbec9a0acd8cf367e1529ed427ca736f4fd28c4e5189896018ebbe", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:07:51.6097866Z {"pid": "8810", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/af34d2683b0e694a286e0a478bd89dbff97209bb.jpg", "status": 200, "bytes": 123718, "sha256": "36ab3e8dd98b1130bc1203689a66843820a9fdbb6840d2fb6fa7d8a59e4a4942", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:08:03.2981207Z {"pid": "10000059", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/d41f0eb7dbf06792176e6280d1e495c3c00cefeb.jpg", "status": 200, "bytes": 143759, "sha256": "c8df0ecc0b8e6cdfd188baa62c49340536f9e4697d6125ffb7d7f5bb78dd05e6", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:08:10.4796234Z {"pid": "6007", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/5744b6bc50d037e46fbe87db7a1e0b5bdce654ce.jpg", "status": 200, "bytes": 66312, "sha256": "fb44c179718451369d32dad025412cde3f97db2d0e410aee5ed16f76e6a4bc14", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:08:16.3288539Z {"pid": "6820", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/44fd4fa2f4f15f9969537841dc230af2ffd09dd3.jpg", "status": 200, "bytes": 170146, "sha256": "f36d12875151ae7c551c914faa772d479d93ae3598c04503aef1a23ff743606b", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:08:24.2153121Z {"pid": "4348", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/539eb03fe7cb6c695245225d6368995fb667f384.png", "status": 200, "bytes": 550291, "sha256": "1b034a4d952dd80dd112db90bd7c4a480693de74edb48d6427ee6d688b4cbdbc", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:08:28.8400294Z {"pid": "5911", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/599494336a5238284b0b83acf0f39bc2851d1fa8.jpg", "status": 200, "bytes": 32484, "sha256": "4914480365a852bce26996508bf98189a1060aa6e68a1540a71c119a53b7c20d", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:08:35.3432453Z {"pid": "7440", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/061736677ce0ea7908a7481e577b3046e27e182c.jpg", "status": 200, "bytes": 85548, "sha256": "cee489f3d5a345d4319146b13891ecc5002213c4ec5d95643234c00033e33f4d", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:08:41.0857264Z {"pid": "6067", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/883e892e538c710847c3a493a7be031b08fbf30d.jpg", "status": 200, "bytes": 112097, "sha256": "23b97236a46a64f9c8a1dec3500ed7b6745536f91cafb07f79d0eb4e0694a05c", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:08:49.9752081Z {"pid": "4375", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/c48848fd598588ac2f64fabf399796c6999546e7.jpg", "status": 200, "bytes": 155395, "sha256": "89b9faa005ac119d0d10ad2ce42da782b1bfb75791607db9f3c54190b2c43264", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:08:56.5625227Z {"pid": "4374", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/d07f894de5067b41a24bcb1f3ac3dd09b526fa8f.jpg", "status": 200, "bytes": 272546, "sha256": "942fd2a42428d9a607491abbc7fba4e05de5204a86e866c7e82ca66c5ed55e29", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:09:02.9232269Z {"pid": "6621", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/e62d1b2496052d2a4e5b5bcb90ee401eef1490f1.jpg", "status": 200, "bytes": 266827, "sha256": "17430b26e43cc19af2e3ad8cdb529af83321eef3c9bb650b3d478d3dbd53ab8f", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:10:05.3538403Z {"pid": "4230", "skipped": "<urlopen error _ssl.c:993: The handshake operation timed out>"}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:10:13.2722488Z {"pid": "10000067", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/ca020799856dd38ca321a8817d5fd5806a919c99.jpg", "status": 200, "bytes": 174584, "sha256": "fa6e1869d49220ec46692e5d2aa0949a9517d5373157150ea5911efe23608490", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:10:19.3317836Z {"pid": "6518", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/ca020799856dd38ca321a8817d5fd5806a919c99.jpg", "status": 200, "bytes": 174584, "sha256": "fa6e1869d49220ec46692e5d2aa0949a9517d5373157150ea5911efe23608490", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:10:25.3352792Z {"pid": "7716", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/cc18b00796abcfcfc8e13b4afb83b691b1fc98a3.jpg", "status": 200, "bytes": 126393, "sha256": "21a6339ae9dfc217b66a94090d5581b094d77896d00a47048046ce3d6b3cf11b", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:10:33.5984281Z {"pid": "7163", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/d6a58ec7789f0a8406d117a528dbbace1781a87b.jpg", "status": 200, "bytes": 471385, "sha256": "ab60c31c1a9d76f35f0223f57bbb2349b4ef17c29da81d0332fbd30b3175c0b2", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:11:36.0384722Z {"pid": "7157", "skipped": "<urlopen error _ssl.c:993: The handshake operation timed out>"}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:11:44.1958464Z {"pid": "2785", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/bfcece8a2558a01ec346985dfbe9f2478797b408.jpg", "status": 200, "bytes": 307787, "sha256": "53338014d98698c9237342ee7f692929a92df1a5f9c277592d77c8bd65a78314", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:11:54.3837908Z {"pid": "7457", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/0c4089a182e4d3dc5db2198e6d51d1ce7473c8fb.jpg", "status": 200, "bytes": 287633, "sha256": "7de6e6a2156cd1083595a859016701d7ad2f083ac91399dcf6b7283cb7fbc4ba", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:11:59.7262255Z {"pid": "8107", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/e893aff0a9174e82ab87898a5d9a149c4dbdd8e8.jpg", "status": 200, "bytes": 67160, "sha256": "4010381b3a311b7a342b28b7b85027cfd9a802e972799a882ac8a5a77e2de664", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:12:04.8576977Z {"pid": "5145", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/b183d676d572422eea02a15ecd303638abfc89df.png", "status": 200, "bytes": 55107, "sha256": "8b8915dec868d04feee986bfeb21a2214f240f1d46b84cf69cc9caa69b5cd9f4", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:12:11.4210341Z {"pid": "5770", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/14176cef89fcc394f6fc01e87eec5a28889fa4b4.jpg", "status": 200, "bytes": 254943, "sha256": "c137163c9985831928ba0e4d21960b6ab7d8d6233163e56434cc71dff45fcc39", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:12:18.4132363Z {"pid": "8382", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/0d007951e18a8231cc3fd0285c0e40efb0bb4377.jpg", "status": 200, "bytes": 155530, "sha256": "db8c7c023ee3ce773aabf8ba4578834dcf26338e54abe3011ccf0b35c0155035", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:12:23.1155138Z {"pid": "10000070", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/c360283fd38fef2a42b1c8204e4d3a1ce5bae75b.jpg", "status": 200, "bytes": 55677, "sha256": "38bc924e5dd287e307abc0c62c95f2fdf3a94f442cceca0ad707a41a30577829", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:12:27.6499456Z {"pid": "7154", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/c360283fd38fef2a42b1c8204e4d3a1ce5bae75b.jpg", "status": 200, "bytes": 55677, "sha256": "38bc924e5dd287e307abc0c62c95f2fdf3a94f442cceca0ad707a41a30577829", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:12:37.1563118Z {"pid": "10000057", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/9c433bfdf6fd16cf23dbebf144a6e0a78fc87c12.png", "status": 200, "bytes": 1581764, "sha256": "675fc28628017b2da44225fe596918bcd05a2b2826028544f93a7b4309f33ad1", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:12:48.7539689Z {"pid": "5781", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/9c433bfdf6fd16cf23dbebf144a6e0a78fc87c12.png", "status": 200, "bytes": 1581764, "sha256": "675fc28628017b2da44225fe596918bcd05a2b2826028544f93a7b4309f33ad1", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:12:58.2354377Z {"pid": "5780", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/9c433bfdf6fd16cf23dbebf144a6e0a78fc87c12.png", "status": 200, "bytes": 1581764, "sha256": "675fc28628017b2da44225fe596918bcd05a2b2826028544f93a7b4309f33ad1", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:13:05.0299200Z {"pid": "3459", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/617e5bc504a87d57356741fbeba3a71a9e1dd4b0.jpg", "status": 200, "bytes": 131005, "sha256": "1f191e461802e2ee14c0af462ef76c70bbfb081e74d51e17349983878646bb06", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:13:13.7820493Z {"pid": "10000101", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/4a713f820d49f40f317c189da547e3a263c2331f.jpg", "status": 200, "bytes": 124273, "sha256": "7321d13cac9576d7d48fef566122a1c107e7f0cf19afed022cc41cfd534948c4", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:13:20.6955862Z {"pid": "8202", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/4a713f820d49f40f317c189da547e3a263c2331f.jpg", "status": 200, "bytes": 124273, "sha256": "7321d13cac9576d7d48fef566122a1c107e7f0cf19afed022cc41cfd534948c4", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:13:27.3202272Z {"pid": "4830", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/ae2184d1ece9b9fa8704a2caaa7c9f748d489884.jpg", "status": 200, "bytes": 296084, "sha256": "ac2f375dafe418196cefc583ca60b9b44eb6e948c42e1a1968e4de302c736e18", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:13:37.8227893Z {"pid": "4679", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/50a7716cf2cabfda36d53efed6b3b3682a59fcd2.jpg", "status": 200, "bytes": 219132, "sha256": "3509aee463e864a4ccc761d7433c76043eb605b5417275312d53bd4f5fbdd247", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:13:44.4544935Z {"pid": "4910", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/cb918778f32dc3c3f6ad3eb3cb689f5055c81c3d.png", "status": 200, "bytes": 109902, "sha256": "d98aa25ca3dc51a0cf9704b9a028df3f1dc3da201687df4879085ffbfe532dc6", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:13:51.4864814Z {"pid": "8790", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/533dd33da060f8e3366bbd1056098410fd7cb7fa.jpg", "status": 200, "bytes": 282523, "sha256": "58420a104a7452e856010426f069ad9d6521cbe9f7b4ec52262badef0a16bf0a", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:13:57.8771772Z {"pid": "5051", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/5c23e27d7e8d399f062d666a001cadf55f62eff1.png", "status": 200, "bytes": 171412, "sha256": "fd4cc36c562cc6efe12785f4b6b57406c0eb2a7e4830f55483a67ce8df2d8a0f", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:14:05.0623413Z {"pid": "5434", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/39998a1db9d488afeb0765550c88e85faa867bc3.png", "status": 200, "bytes": 414427, "sha256": "012359d9dc4c866e92fb7e64eebb36d804c4d781f2f6b0f1dcbfe702b1f1573c", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:14:10.9453168Z {"pid": "8133", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/e723a0f988ab3375ca388a2af67a4ed4d572ae94.jpg", "status": 200, "bytes": 119994, "sha256": "8fd36e75208c1749f4023ef9736f095bdd6ae80586457971004f8c3aa96709ab", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:14:17.0458368Z {"pid": "8125", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/4f3ce4daac16cba66ec0cbe7abdc8666437ebbc4.jpg", "status": 200, "bytes": 120519, "sha256": "09c4873ef58d147d896e29b537d8e37457afa68f0198a10fe689c87c5d23d6d0", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:14:22.7121704Z {"pid": "4893", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/1c4e92451467af75e2f96bb55377e233a899fc8e.jpg", "status": 200, "bytes": 96188, "sha256": "cdfc456bd1137693bf18ae94ca21e96af99314dc59a377117330124d4b06cb4f", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:14:27.9938849Z {"pid": "7599", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/0f8a3e7cd5378303523215e44dfe47e47673c622.png", "status": 200, "bytes": 112951, "sha256": "ae72cd4b0cd2f7db58f1cae28710bbe004424f7bf7cfe7b906d43a969922a280", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:14:34.5191747Z {"pid": "10000063", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/a19e6276a738c417eb721f6de5c1455928cd48fc.jpg", "status": 200, "bytes": 119639, "sha256": "bb878144e2f1144f525b98ff78a1ac489f1aa4c99d55751240e64d1dd63073c6", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:14:41.8986229Z {"pid": "8321", "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/5f720d6abfc756f4ade219c6ec22f31f5005a938.jpg", "status": 200, "bytes": 97940, "sha256": "9b189e81a0fd1975202f34e92f168b7e182b9ff7ce38e19d44b913ffe19c1d78", "byte_equal": true}
+upload	Transfer approved image URLs and verify public OSS bytes	2026-10-30T15:14:42.5838208Z ##[error]The operation was canceled.
+upload	Run actions/upload-artifact@v4	﻿2026-10-30T15:14:42.5915243Z ##[group]Run actions/upload-artifact@v4
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5915575Z with:
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5915783Z   name: xiaomi-image-transfer
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5916084Z   path: transfer-result/
+upload	Run actions/upload-artifact@v4	image-transfer-cache/
+upload	Run actions/upload-artifact@v4	
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5916413Z   if-no-files-found: warn
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5916663Z   compression-level: 6
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5916908Z   overwrite: false
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5917129Z   include-hidden-files: false
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5917363Z env:
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5917623Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5918086Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5918536Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5918939Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5919345Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5919762Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.5920129Z ##[endgroup]
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.7701954Z (node:2615) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.7702725Z (Use `node --trace-deprecation ...` to show where the warning was created)
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.7931294Z Multiple search paths detected. Calculating the least common ancestor of all paths
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.7934833Z The least common ancestor is /home/runner/work/goodsdex/goodsdex. This will be the root directory of the artifact
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.7935967Z With the provided path, there will be 44 files uploaded
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.7937731Z Artifact name is valid!
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:42.7938002Z Root directory input is valid!
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:43.0123717Z Beginning upload of artifact content to blob storage
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:43.3736157Z (node:2615) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:43.5804724Z Uploaded bytes 8388608
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:43.6160345Z Uploaded bytes 9192670
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:43.7527109Z Finished uploading artifact content to blob storage!
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:43.7528301Z SHA256 digest of uploaded artifact zip is 76e5de17a46d23e35daa79ed7360679e808b18a3d9b61fa6b5895b78158f6a1c
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:43.7529443Z Finalizing artifact upload
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:44.1324381Z Artifact xiaomi-image-transfer.zip successfully finalized. Artifact ID 12988626892
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:44.1326203Z Artifact xiaomi-image-transfer has been successfully uploaded! Final size is 9192670 bytes. Artifact ID is 12988626892
+upload	Run actions/upload-artifact@v4	2026-10-30T15:14:44.1332351Z Artifact download URL: https://github.com/null-object-0000/goodsdex/actions/runs/41077506109/artifacts/12988626892
+upload	Post Run actions/checkout@v4	﻿2026-10-30T15:14:44.1560109Z Post job cleanup.
+upload	Post Run actions/checkout@v4	2026-10-30T15:14:44.2444281Z [command]/usr/bin/git version
+upload	Post Run actions/checkout@v4	2026-10-30T15:14:44.2492105Z git version 2.56.0
+upload	Post Run actions/checkout@v4	2026-10-30T15:14:44.2534136Z Temporarily overriding HOME='/home/runner/work/_temp/4d5bc2ab-123e-427e-8cd0-6bb78fda2431' before making global git config changes
+upload	Post Run actions/checkout@v4	2026-10-30T15:14:44.2535588Z Adding repository directory to the temporary git global config as a safe directory
+upload	Post Run actions/checkout@v4	2026-10-30T15:14:44.2539376Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+upload	Post Run actions/checkout@v4	2026-10-30T15:14:44.2584084Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+upload	Post Run actions/checkout@v4	2026-10-30T15:14:44.2624823Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+upload	Post Run actions/checkout@v4	2026-10-30T15:14:44.2922364Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+upload	Post Run actions/checkout@v4	2026-10-30T15:14:44.2954180Z http.https://github.com/.extraheader
+upload	Post Run actions/checkout@v4	2026-10-30T15:14:44.2967661Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+upload	Post Run actions/checkout@v4	2026-10-30T15:14:44.3007620Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+upload	Post Run actions/checkout@v4	2026-10-30T15:14:44.3311496Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+upload	Post Run actions/checkout@v4	2026-10-30T15:14:44.3363126Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+upload	Complete job	﻿2026-10-30T15:14:44.3809243Z Cleaning up orphan processes
+upload	Complete job	2026-10-30T15:14:44.4050460Z Terminate orphan process: pid (2410) (python3)
+upload	Complete job	2026-10-30T15:14:44.4173835Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
