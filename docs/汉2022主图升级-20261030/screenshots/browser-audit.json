@@ -1,0 +1,773 @@
+{
+  "viewport": {
+    "width": 393,
+    "height": 852
+  },
+  "source": "real WXML/WXSS/JS H5 preview with live API, not WeChat device",
+  "requests": [
+    "/__proxy/api/goods/search?group_products=1&attrs=%7B%7D&limit=20",
+    "/__proxy/api/goods/search?group_products=1&attrs=%7B%7D&q=%E6%B1%89%20121&limit=20",
+    "/__proxy/api/goods?product_ids=CN%3Abyd%3Acar%3Ahan%3A2022%3Admi"
+  ],
+  "errors": [],
+  "steps": [
+    {
+      "name": "01-list",
+      "text": "记一件\n×\n搜索结果\n1 款商品\n比亚迪 汉 2022款 DM-i\n2022款 · 车系参考图\n手动填写\n快捷录入\n••• │ ◉",
+      "product": null,
+      "variant": null,
+      "form": {
+        "spec": "",
+        "qty": 1,
+        "name": "",
+        "model": "",
+        "price": "",
+        "acquisitionSource": "",
+        "date": "",
+        "ownershipDateUnknown": true,
+        "condition": "正常使用",
+        "residual": "",
+        "note": ""
+      }
+    },
+    {
+      "name": "01-search",
+      "text": "记一件\n×\n搜索结果\n1 款商品\n比亚迪 汉 2022款 DM-i\n2022款 · 车系参考图\n手动填写\n快捷录入\n••• │ ◉",
+      "product": null,
+      "variant": null,
+      "form": {
+        "spec": "",
+        "qty": 1,
+        "name": "",
+        "model": "",
+        "price": "",
+        "acquisitionSource": "",
+        "date": "",
+        "ownershipDateUnknown": true,
+        "condition": "正常使用",
+        "residual": "",
+        "note": ""
+      }
+    },
+    {
+      "name": "02-model",
+      "text": "记一件\n← 返回\n车系参考图\n官方图（2022 官网预售存档）\n比亚迪 汉 2022款 DM-i\n选规格\n年款 · 唯一选项\n2022\n¥215,800 起\n余 5 个规格\n就用这台\n手动填写\n说明\n••• │ ◉",
+      "product": null,
+      "variant": {
+        "image_source_label": "官方图（2022 官网预售存档）",
+        "image_source": "official_archive",
+        "image_status": "available",
+        "image_scope": "series",
+        "categoryIconKey": "goods",
+        "image": "",
+        "name": "比亚迪 汉 2022款 DM-i",
+        "subtitle": "",
+        "dimensions": [
+          {
+            "key": "model_year",
+            "label": "年款",
+            "options": [
+              {
+                "value": "2022",
+                "label": "2022",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112911",
+                  "CN:byd:car:han-dmi:2022:121km-112979",
+                  "CN:byd:car:han-dmi:2022:121km-112987",
+                  "CN:byd:car:han-dmi:2022:121km-121948",
+                  "CN:byd:car:han-dmi:2022:242km-112534"
+                ],
+                "selected": false,
+                "disabled": false
+              }
+            ],
+            "visible": true,
+            "only": true
+          },
+          {
+            "key": "powertrain",
+            "label": "动力",
+            "options": [
+              {
+                "value": "DM-i",
+                "label": "DM-i",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112911",
+                  "CN:byd:car:han-dmi:2022:121km-112979",
+                  "CN:byd:car:han-dmi:2022:121km-112987",
+                  "CN:byd:car:han-dmi:2022:121km-121948",
+                  "CN:byd:car:han-dmi:2022:242km-112534"
+                ],
+                "selected": false,
+                "disabled": false
+              }
+            ],
+            "visible": false,
+            "only": true
+          },
+          {
+            "key": "trim",
+            "label": "配置",
+            "options": [
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-112911",
+                "label": "121KM 尊荣型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112911"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-112979",
+                "label": "121KM 尊贵型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112979"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-112987",
+                "label": "121KM 尊享型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112987"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-121948",
+                "label": "121KM 领航型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-121948"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:242km-112534",
+                "label": "242KM 旗舰型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:242km-112534"
+                ],
+                "selected": false,
+                "disabled": false
+              }
+            ],
+            "visible": false,
+            "only": false
+          }
+        ],
+        "count": 5,
+        "partNumber": "",
+        "priceText": "¥215,800 起",
+        "canConfirm": false
+      },
+      "form": {
+        "spec": "",
+        "qty": 1,
+        "name": "",
+        "model": "",
+        "price": "",
+        "acquisitionSource": "",
+        "date": "",
+        "ownershipDateUnknown": true,
+        "condition": "正常使用",
+        "residual": "",
+        "note": ""
+      }
+    },
+    {
+      "name": "03-year",
+      "text": "记一件\n← 返回\n车系参考图\n官方图（2022 官网预售存档）\n比亚迪 汉 2022款 DM-i\n选规格\n年款 · 唯一选项\n2022\n动力 · 唯一选项\nDM-i\n¥215,800 起\n余 5 个规格\n就用这台\n手动填写\n说明\n••• │ ◉",
+      "product": null,
+      "variant": {
+        "image_source_label": "官方图（2022 官网预售存档）",
+        "image_source": "official_archive",
+        "image_status": "available",
+        "image_scope": "series",
+        "categoryIconKey": "goods",
+        "image": "",
+        "name": "比亚迪 汉 2022款 DM-i",
+        "subtitle": "",
+        "dimensions": [
+          {
+            "key": "model_year",
+            "label": "年款",
+            "options": [
+              {
+                "value": "2022",
+                "label": "2022",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112911",
+                  "CN:byd:car:han-dmi:2022:121km-112979",
+                  "CN:byd:car:han-dmi:2022:121km-112987",
+                  "CN:byd:car:han-dmi:2022:121km-121948",
+                  "CN:byd:car:han-dmi:2022:242km-112534"
+                ],
+                "selected": true,
+                "disabled": false
+              }
+            ],
+            "visible": true,
+            "only": true
+          },
+          {
+            "key": "powertrain",
+            "label": "动力",
+            "options": [
+              {
+                "value": "DM-i",
+                "label": "DM-i",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112911",
+                  "CN:byd:car:han-dmi:2022:121km-112979",
+                  "CN:byd:car:han-dmi:2022:121km-112987",
+                  "CN:byd:car:han-dmi:2022:121km-121948",
+                  "CN:byd:car:han-dmi:2022:242km-112534"
+                ],
+                "selected": false,
+                "disabled": false
+              }
+            ],
+            "visible": true,
+            "only": true
+          },
+          {
+            "key": "trim",
+            "label": "配置",
+            "options": [
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-112911",
+                "label": "121KM 尊荣型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112911"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-112979",
+                "label": "121KM 尊贵型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112979"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-112987",
+                "label": "121KM 尊享型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112987"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-121948",
+                "label": "121KM 领航型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-121948"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:242km-112534",
+                "label": "242KM 旗舰型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:242km-112534"
+                ],
+                "selected": false,
+                "disabled": false
+              }
+            ],
+            "visible": false,
+            "only": false
+          }
+        ],
+        "count": 5,
+        "partNumber": "",
+        "priceText": "¥215,800 起",
+        "canConfirm": false
+      },
+      "form": {
+        "spec": "",
+        "qty": 1,
+        "name": "",
+        "model": "",
+        "price": "",
+        "acquisitionSource": "",
+        "date": "",
+        "ownershipDateUnknown": true,
+        "condition": "正常使用",
+        "residual": "",
+        "note": ""
+      }
+    },
+    {
+      "name": "04-powertrain",
+      "text": "记一件\n← 返回\n车系参考图\n官方图（2022 官网预售存档）\n比亚迪 汉 2022款 DM-i\n选规格\n年款 · 唯一选项\n2022\n动力 · 唯一选项\nDM-i\n配置\n121KM 尊荣型\n121KM 尊贵型\n121KM 尊享型\n121KM 领航型\n242KM 旗舰型\n¥215,800 起\n余 5 个规格\n就用这台\n手动填写\n说明\n••• │ ◉",
+      "product": null,
+      "variant": {
+        "image_source_label": "官方图（2022 官网预售存档）",
+        "image_source": "official_archive",
+        "image_status": "available",
+        "image_scope": "series",
+        "categoryIconKey": "goods",
+        "image": "",
+        "name": "比亚迪 汉 2022款 DM-i",
+        "subtitle": "",
+        "dimensions": [
+          {
+            "key": "model_year",
+            "label": "年款",
+            "options": [
+              {
+                "value": "2022",
+                "label": "2022",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112911",
+                  "CN:byd:car:han-dmi:2022:121km-112979",
+                  "CN:byd:car:han-dmi:2022:121km-112987",
+                  "CN:byd:car:han-dmi:2022:121km-121948",
+                  "CN:byd:car:han-dmi:2022:242km-112534"
+                ],
+                "selected": true,
+                "disabled": false
+              }
+            ],
+            "visible": true,
+            "only": true
+          },
+          {
+            "key": "powertrain",
+            "label": "动力",
+            "options": [
+              {
+                "value": "DM-i",
+                "label": "DM-i",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112911",
+                  "CN:byd:car:han-dmi:2022:121km-112979",
+                  "CN:byd:car:han-dmi:2022:121km-112987",
+                  "CN:byd:car:han-dmi:2022:121km-121948",
+                  "CN:byd:car:han-dmi:2022:242km-112534"
+                ],
+                "selected": true,
+                "disabled": false
+              }
+            ],
+            "visible": true,
+            "only": true
+          },
+          {
+            "key": "trim",
+            "label": "配置",
+            "options": [
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-112911",
+                "label": "121KM 尊荣型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112911"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-112979",
+                "label": "121KM 尊贵型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112979"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-112987",
+                "label": "121KM 尊享型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112987"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-121948",
+                "label": "121KM 领航型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-121948"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:242km-112534",
+                "label": "242KM 旗舰型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:242km-112534"
+                ],
+                "selected": false,
+                "disabled": false
+              }
+            ],
+            "visible": true,
+            "only": false
+          }
+        ],
+        "count": 5,
+        "partNumber": "",
+        "priceText": "¥215,800 起",
+        "canConfirm": false
+      },
+      "form": {
+        "spec": "",
+        "qty": 1,
+        "name": "",
+        "model": "",
+        "price": "",
+        "acquisitionSource": "",
+        "date": "",
+        "ownershipDateUnknown": true,
+        "condition": "正常使用",
+        "residual": "",
+        "note": ""
+      }
+    },
+    {
+      "name": "05-trim",
+      "text": "记一件\n← 返回\n车系参考图\n官方图（2022 官网预售存档）\n比亚迪 汉 2022款 DM-i\n选规格\n年款 · 唯一选项\n2022\n动力 · 唯一选项\nDM-i\n配置\n121KM 尊荣型\n121KM 尊贵型\n121KM 尊享型\n121KM 领航型\n242KM 旗舰型\n历史上市价 ¥215800.00\n余 1 个规格\n就用这台\n手动填写\n说明\n••• │ ◉",
+      "product": null,
+      "variant": {
+        "image_source_label": "官方图（2022 官网预售存档）",
+        "image_source": "official_archive",
+        "image_status": "available",
+        "image_scope": "series",
+        "categoryIconKey": "goods",
+        "image": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/c1116b822a2e678c45d7316abf02e24ca6866c77.jpg",
+        "name": "比亚迪 汉 2022款 DM-i",
+        "subtitle": "",
+        "dimensions": [
+          {
+            "key": "model_year",
+            "label": "年款",
+            "options": [
+              {
+                "value": "2022",
+                "label": "2022",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112911",
+                  "CN:byd:car:han-dmi:2022:121km-112979",
+                  "CN:byd:car:han-dmi:2022:121km-112987",
+                  "CN:byd:car:han-dmi:2022:121km-121948",
+                  "CN:byd:car:han-dmi:2022:242km-112534"
+                ],
+                "selected": true,
+                "disabled": false
+              }
+            ],
+            "visible": true,
+            "only": true
+          },
+          {
+            "key": "powertrain",
+            "label": "动力",
+            "options": [
+              {
+                "value": "DM-i",
+                "label": "DM-i",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112911",
+                  "CN:byd:car:han-dmi:2022:121km-112979",
+                  "CN:byd:car:han-dmi:2022:121km-112987",
+                  "CN:byd:car:han-dmi:2022:121km-121948",
+                  "CN:byd:car:han-dmi:2022:242km-112534"
+                ],
+                "selected": true,
+                "disabled": false
+              }
+            ],
+            "visible": true,
+            "only": true
+          },
+          {
+            "key": "trim",
+            "label": "配置",
+            "options": [
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-112911",
+                "label": "121KM 尊荣型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112911"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-112979",
+                "label": "121KM 尊贵型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112979"
+                ],
+                "selected": true,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-112987",
+                "label": "121KM 尊享型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-112987"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:121km-121948",
+                "label": "121KM 领航型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:121km-121948"
+                ],
+                "selected": false,
+                "disabled": false
+              },
+              {
+                "value": "CN:byd:car:han-dmi:2022:242km-112534",
+                "label": "242KM 旗舰型",
+                "sku_ids": [
+                  "CN:byd:car:han-dmi:2022:242km-112534"
+                ],
+                "selected": false,
+                "disabled": false
+              }
+            ],
+            "visible": true,
+            "only": false
+          }
+        ],
+        "count": 1,
+        "partNumber": "",
+        "priceText": "历史上市价 ¥215800.00",
+        "canConfirm": true
+      },
+      "form": {
+        "spec": "",
+        "qty": 1,
+        "name": "",
+        "model": "",
+        "price": "",
+        "acquisitionSource": "",
+        "date": "",
+        "ownershipDateUnknown": true,
+        "condition": "正常使用",
+        "residual": "",
+        "note": ""
+      }
+    },
+    {
+      "name": "06-entry",
+      "text": "记一件\n比亚迪 汉 2022款 DM-i\n2022 · DM-i · 121KM 尊贵型\n车系参考图 · 官方图（2022 官网预售存档）\n换一个商品\n个人购入信息\n已有\n想买\n购入金额\n¥\n购入日期\n不记得了\n金额或日期未知，不算日均。\n更多信息\n＋\n保存这件物品\n••• │ ◉",
+      "product": {
+        "schema": "picker-row-v1",
+        "key": "snapshot:1",
+        "identity": "CN:byd:car:han-dmi:2022:121km-112979",
+        "image": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/c1116b822a2e678c45d7316abf02e24ca6866c77.jpg",
+        "brand": "比亚迪",
+        "name": "比亚迪 汉 2022款 DM-i",
+        "year": null,
+        "generation": "",
+        "yearSource": null,
+        "yearSourceValue": null,
+        "displayName": "比亚迪 汉 2022款 DM-i",
+        "specText": "NEDC纯电续航里程(km) 121 · WLTC纯电续航里程(km) 101 · 电池容量(kWh) 18.3",
+        "category": "汽车",
+        "categories": [
+          "汽车"
+        ],
+        "partNumber": "",
+        "params": [
+          {
+            "label": "NEDC纯电续航里程(km)",
+            "value": "121",
+            "scope": ""
+          },
+          {
+            "label": "WLTC纯电续航里程(km)",
+            "value": "101",
+            "scope": ""
+          },
+          {
+            "label": "电池容量(kWh)",
+            "value": "18.3",
+            "scope": ""
+          },
+          {
+            "label": "电动机总功率(kW)",
+            "value": "145",
+            "scope": ""
+          },
+          {
+            "label": "官方0-100km/h加速(s)",
+            "value": "7.9",
+            "scope": ""
+          },
+          {
+            "label": "长×宽×高(mm)",
+            "value": "4975×1910×1495",
+            "scope": ""
+          },
+          {
+            "label": "B状态综合油耗(L/100km)",
+            "value": "4.2",
+            "scope": ""
+          }
+        ],
+        "price": 215800,
+        "url": "https://price.pcauto.com.cn/m112979/config.html",
+        "productType": "car",
+        "priceKind": "msrp_historical",
+        "series": "汉",
+        "product_id": "CN:byd:car:han:2022:dmi",
+        "trim_id": "CN:byd:car:han-dmi:2022:121km-112979",
+        "trim": "121KM 尊贵型",
+        "powertrain": "DM-i",
+        "model_year": 2022,
+        "model_year_source": "pcauto",
+        "model_year_confidence": "third_party",
+        "image_status": "available",
+        "image_scope": "series",
+        "image_source": "official_archive",
+        "image_source_label": "官方图（2022 官网预售存档）",
+        "image_source_type": "official_archive",
+        "image_source_url": "https://web.archive.org/web/20220401000000id_/https://www.bydauto.com.cn/sites/Satellite?blobcol=urldata&blobkey=id&blobtable=MungoBlobs&blobwhere=1558402556990&ssbinary=true",
+        "image_captured_at": "2022-04-01",
+        "image_note": "2022 年官网首页预售 banner 图，时光灰；非当前在售款",
+        "source_type": "third_party",
+        "isSeries": false,
+        "priceText": "历史上市价 ¥215800.00",
+        "summary": "汉 · 2022款 · DM-i · 121KM 尊贵型"
+      },
+      "variant": null,
+      "form": {
+        "spec": "",
+        "qty": 1,
+        "name": "比亚迪 汉 2022款 DM-i",
+        "model": "",
+        "price": "",
+        "acquisitionSource": "",
+        "date": "",
+        "ownershipDateUnknown": true,
+        "condition": "正常使用",
+        "residual": "",
+        "note": ""
+      }
+    },
+    {
+      "name": "07-entry-loaded",
+      "text": "记一件\n比亚迪 汉 2022款 DM-i\n2022 · DM-i · 121KM 尊贵型\n车系参考图 · 官方图（2022 官网预售存档）\n换一个商品\n个人购入信息\n已有\n想买\n购入金额\n¥\n购入日期\n不记得了\n金额或日期未知，不算日均。\n更多信息\n＋\n保存这件物品\n••• │ ◉",
+      "product": {
+        "schema": "picker-row-v1",
+        "key": "snapshot:1",
+        "identity": "CN:byd:car:han-dmi:2022:121km-112979",
+        "image": "https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/c1116b822a2e678c45d7316abf02e24ca6866c77.jpg",
+        "brand": "比亚迪",
+        "name": "比亚迪 汉 2022款 DM-i",
+        "year": null,
+        "generation": "",
+        "yearSource": null,
+        "yearSourceValue": null,
+        "displayName": "比亚迪 汉 2022款 DM-i",
+        "specText": "NEDC纯电续航里程(km) 121 · WLTC纯电续航里程(km) 101 · 电池容量(kWh) 18.3",
+        "category": "汽车",
+        "categories": [
+          "汽车"
+        ],
+        "partNumber": "",
+        "params": [
+          {
+            "label": "NEDC纯电续航里程(km)",
+            "value": "121",
+            "scope": ""
+          },
+          {
+            "label": "WLTC纯电续航里程(km)",
+            "value": "101",
+            "scope": ""
+          },
+          {
+            "label": "电池容量(kWh)",
+            "value": "18.3",
+            "scope": ""
+          },
+          {
+            "label": "电动机总功率(kW)",
+            "value": "145",
+            "scope": ""
+          },
+          {
+            "label": "官方0-100km/h加速(s)",
+            "value": "7.9",
+            "scope": ""
+          },
+          {
+            "label": "长×宽×高(mm)",
+            "value": "4975×1910×1495",
+            "scope": ""
+          },
+          {
+            "label": "B状态综合油耗(L/100km)",
+            "value": "4.2",
+            "scope": ""
+          }
+        ],
+        "price": 215800,
+        "url": "https://price.pcauto.com.cn/m112979/config.html",
+        "productType": "car",
+        "priceKind": "msrp_historical",
+        "series": "汉",
+        "product_id": "CN:byd:car:han:2022:dmi",
+        "trim_id": "CN:byd:car:han-dmi:2022:121km-112979",
+        "trim": "121KM 尊贵型",
+        "powertrain": "DM-i",
+        "model_year": 2022,
+        "model_year_source": "pcauto",
+        "model_year_confidence": "third_party",
+        "image_status": "available",
+        "image_scope": "series",
+        "image_source": "official_archive",
+        "image_source_label": "官方图（2022 官网预售存档）",
+        "image_source_type": "official_archive",
+        "image_source_url": "https://web.archive.org/web/20220401000000id_/https://www.bydauto.com.cn/sites/Satellite?blobcol=urldata&blobkey=id&blobtable=MungoBlobs&blobwhere=1558402556990&ssbinary=true",
+        "image_captured_at": "2022-04-01",
+        "image_note": "2022 年官网首页预售 banner 图，时光灰；非当前在售款",
+        "source_type": "third_party",
+        "isSeries": false,
+        "priceText": "历史上市价 ¥215800.00",
+        "summary": "汉 · 2022款 · DM-i · 121KM 尊贵型"
+      },
+      "variant": null,
+      "form": {
+        "spec": "",
+        "qty": 1,
+        "name": "比亚迪 汉 2022款 DM-i",
+        "model": "",
+        "price": "",
+        "acquisitionSource": "",
+        "date": "",
+        "ownershipDateUnknown": true,
+        "condition": "正常使用",
+        "residual": "",
+        "note": ""
+      }
+    },
+    {
+      "name": "08-owned-items",
+      "text": "我的物品\n已记录 1 件\n＋\n记一件\n比亚迪 汉 2022款 DM-i\n金额未填\n日期未填\n—\n日均待补\n查看已保存的处理单 →\n首页\n物品\n我的\n••• │ ◉"
+    },
+    {
+      "name": "09-detail",
+      "text": "物品详情\n官方图（2022 官网预售存档） · 车系参考图\n比亚迪 汉 2022款 DM-i\n还差购入价和购入日期，才能算\n每天摊多少，还说不准。购入日期不确定 · 还没摊到每天\n补上购入价\n补上购入日期\n查看依据与细节\n••• │ ◉"
+    }
+  ]
+}
