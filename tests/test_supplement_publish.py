@@ -8,6 +8,44 @@ from goodsdex.supplements import merge, publish
 
 
 class SupplementPublicationTests(unittest.TestCase):
+    def test_reviewed_deletions_in_supplements_and_replayed_brand_cache(self):
+        import subprocess
+        import sys
+        from goodsdex.release_policy import ALLOWED_DELETIONS
+
+        rebuilt = [dict(id="keep", name="商品")]
+        tombstones = [dict(id=key) for key in ALLOWED_DELETIONS]
+        previous = rebuilt + tombstones
+        rows, audit = merge(rebuilt, tombstones, previous)
+        self.assertEqual(rows, rebuilt)
+        self.assertEqual(len(rows), len(rebuilt))
+        self.assertEqual(set(audit["allowed_deletions"]), set(ALLOWED_DELETIONS))
+        script = Path(__file__).resolve().parents[1] / "scripts/verify_goods_release.py"
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d)
+            (path / "previous.json").write_text(json.dumps(previous))
+            (path / "extras.json").write_text(json.dumps(tombstones))
+            (path / "merge-audit.json").write_text(json.dumps(audit))
+            command = [sys.executable, str(script), "--public", str(path),
+                       "--previous", str(path / "previous.json"),
+                       "--supplements", str(path / "extras.json")]
+            # Both already-clean input and a later publisher replaying old rows
+            # must produce exactly the same final release.
+            for current in (rebuilt, previous):
+                (path / "goods.json").write_text(json.dumps(current))
+                (path / "meta.json").write_text('{}')
+                subprocess.run(command, check=True, capture_output=True)
+                self.assertEqual(json.loads((path / "goods.json").read_text()), rebuilt)
+            # A genuine absent supplement still blocks before removing anything.
+            extras = tombstones + [dict(id="missing", source="s", catalog_identity="s")]
+            (path / "extras.json").write_text(json.dumps(extras))
+            (path / "goods.json").write_text(json.dumps(previous))
+            original = (path / "goods.json").read_bytes()
+            failed = subprocess.run(command, capture_output=True, text=True)
+            self.assertNotEqual(failed.returncode, 0)
+            self.assertIn('missing', failed.stderr)
+            self.assertEqual((path / "goods.json").read_bytes(), original)
+
     def test_crawler_wins_and_repeat_is_idempotent(self):
         current = [{"id": "same", "price": 200}]
         supplements = [dict(id=k, price=None, source="supplement", catalog_identity="supplement")

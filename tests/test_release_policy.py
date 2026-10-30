@@ -9,12 +9,14 @@ from goodsdex.dedupe import finalize_public
 
 EXPECTED = {
     'CN:mi_cn:product:25077', 'CN:mi_cn:product:25078',
+    'CN:mi_cn:product:18032', 'CN:mi_cn:product:18034',
+    'CN:mi_cn:product:21403', 'CN:mi_cn:product:21404',
     'GLOBAL:apple_support:model:111980', 'GLOBAL:apple_support:model:111988',
     'GLOBAL:apple_support:model:112591', 'GLOBAL:apple_support:model:112593',
 }
 
 
-def test_only_six_reviewed_ids_removed_and_all_other_objects_kept():
+def test_only_ten_reviewed_ids_removed_and_all_other_objects_kept():
     assert set(ALLOWED_DELETIONS) == EXPECTED
     assert all(ALLOWED_DELETIONS.values())
     old = [dict(id=k) for k in sorted(EXPECTED)] + [dict(id='keep', name='原样', params={'k': [1, 2]})] * 2
