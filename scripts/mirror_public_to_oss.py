@@ -12,6 +12,8 @@ import hashlib
 import json
 import os
 import sys
+import threading
+from concurrent.futures import ThreadPoolExecutor
 
 import oss2
 
@@ -19,6 +21,47 @@ ENDPOINT = 'https://oss-cn-shanghai.aliyuncs.com'
 BUCKET = 'spend-good'
 PREFIX = 'data/public/'
 FILES = ('goods.json', 'meta.json', 'merge-audit.json')
+
+
+def upload_release(public, uploads, make_bucket, workers=4):
+    """Parallelize verified objects; publish meta only after every worker succeeds.
+
+    Each thread owns its OSS client/session. Immutable blobs and aliases retain
+    their PUT + GET digest checks; failures leave the manifest unpublished.
+    """
+    clients = threading.local()
+    def upload(entry):
+        name, destination = entry
+        if not hasattr(clients, 'bucket'):
+            clients.bucket = make_bucket()
+        bucket = clients.bucket
+        path = public / name
+        local = path.read_bytes()
+        expected = hashlib.sha256(local).hexdigest()
+        if destination.startswith('blobs/'):
+            try:
+                head = bucket.head_object(PREFIX + destination)
+                if head.headers.get('x-oss-meta-sha256') == expected:
+                    return 0
+            except oss2.exceptions.NoSuchKey:
+                pass
+        result = bucket.put_object_from_file(PREFIX + destination, str(path),
+            headers={'Content-Type': 'application/json', 'x-oss-meta-sha256': expected})
+        if result.status != 200:
+            raise RuntimeError(f'OSS upload failed: {destination} HTTP {result.status}')
+        remote = bucket.get_object(PREFIX + destination).read()
+        if hashlib.sha256(remote).hexdigest() != expected:
+            raise RuntimeError(f'OSS readback mismatch: {destination}')
+        print(f'OSS GET verified {destination}: bytes={len(local)} sha256={expected}')
+        return 1
+    objects = [(name, destination) for name, destination in uploads if destination != 'meta.json']
+    manifest = [(name, destination) for name, destination in uploads if destination == 'meta.json']
+    if len(manifest) != 1:
+        raise ValueError('Exactly one final manifest is required')
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        uploaded = sum(pool.map(upload, objects))
+    # No worker can still be uploading, and every readback has passed.
+    return uploaded + upload(manifest[0])
 
 
 def main():
@@ -33,7 +76,6 @@ def main():
         print('缺少 OSS_ACCESS_KEY_ID / OSS_ACCESS_KEY_SECRET', file=sys.stderr)
         return 2
 
-    bucket = oss2.Bucket(oss2.Auth(key_id, key_secret), ENDPOINT, args.bucket)
     with open(os.path.join(args.public, 'merge-audit.json')) as fp:
         audit = json.load(fp)['deduplication']
     with open(os.path.join(args.public, 'goods.json'), 'rb') as fp:
@@ -54,27 +96,8 @@ def main():
     uploads = [(name, f"blobs/{d['sha256']}.json") for name, d in descriptors.items()]
     uploads += [(name, name) for name in descriptors if name != 'goods.json']
     uploads += [('goods.json', 'goods.json'), ('merge-audit.json', 'merge-audit.json'), ('meta.json', 'meta.json')]
-    uploaded = 0
-    for name, destination in uploads:
-        path = public / name
-        local = path.read_bytes()
-        expected = hashlib.sha256(local).hexdigest()
-        if destination.startswith('blobs/'):
-            try:
-                head = bucket.head_object(PREFIX + destination)
-                if head.headers.get('x-oss-meta-sha256') == expected:
-                    continue
-            except oss2.exceptions.NoSuchKey:
-                pass
-        result = bucket.put_object_from_file(PREFIX + destination, str(path),
-            headers={'Content-Type': 'application/json', 'x-oss-meta-sha256': expected})
-        if result.status != 200:
-            raise RuntimeError(f'OSS upload failed: {destination} HTTP {result.status}')
-        remote = bucket.get_object(PREFIX + destination).read()
-        if hashlib.sha256(remote).hexdigest() != expected:
-            raise RuntimeError(f'OSS readback mismatch: {destination}')
-        print(f'OSS GET verified {destination}: bytes={len(local)} sha256={expected}')
-        uploaded += 1
+    uploaded = upload_release(public, uploads,
+        lambda: oss2.Bucket(oss2.Auth(key_id, key_secret), ENDPOINT, args.bucket))
     if not uploaded:
         print('没有任何文件被镜像，判定为失败', file=sys.stderr)
         return 1
