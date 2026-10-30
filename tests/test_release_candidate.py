@@ -82,3 +82,16 @@ def test_invalid_delta_does_not_partially_write(tmp_path):
 @pytest.mark.parametrize('name', ['../public/goods.json', '/public/goods.json', 'public/meta.json', 'public/index/hp_cn.json', 'public/detail/00.json', '.github/workflows/evil.yml'])
 def test_candidate_never_contains_generated_shards_or_unsafe_paths(name):
     assert not allowed_path(name)
+
+
+def test_apple_history_preserves_each_product_observation(tmp_path):
+    p = tmp_path / 'public/prices/apple/month.jsonl'
+    p.parent.mkdir(parents=True)
+    events = [dict(id=key, fetched_at='2026-10-31T01:02:03Z', price=100) for key in ('a','b','c')]
+    lines = [(json.dumps(e)+'\n').encode() for e in events]
+    p.write_bytes(lines[0])
+    c = bundle(tmp_path, {'public/prices/apple/month.jsonl': (lines[0], b''.join(lines))})
+    merge_candidate(tmp_path, c)
+    assert p.read_bytes() == b''.join(lines)
+    merge_candidate(tmp_path, c)
+    assert p.read_bytes() == b''.join(lines)

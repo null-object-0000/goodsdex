@@ -30,6 +30,7 @@ from goodsdex.supplements import DEFAULT_SUPPLEMENTS, publish  # noqa: E402
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--public", default="public")
+    ap.add_argument("--candidate-only", action="store_true", help="Collector mode: defer global supplements and publication to shared publisher")
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--supplements", type=Path, default=DEFAULT_SUPPLEMENTS)
     ap.add_argument("--offline", action="store_true", help="Replay local prices without network")
@@ -85,7 +86,10 @@ def main() -> int:
         print(f"回灌完成，价格变化 {changed} 条")
 
     assert_cars_unchanged(previous, items)
-    publish(items, Path(a.public), previous, a.supplements)
+    if a.candidate_only:
+        gpath.write_text(json.dumps(items, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    else:
+        publish(items, Path(a.public), previous, a.supplements)
     assert_cars_unchanged(previous, json.loads(gpath.read_text(encoding="utf-8")))
 
     # 时间序列：**必须追加到公开序列，不能覆盖**。

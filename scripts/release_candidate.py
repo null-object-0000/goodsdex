@@ -65,12 +65,12 @@ def owns(row, scope):
     if scope == 'cars':
         return is_car(row)
     if scope == 'apple':
-        return source == 'apple_cn' or key.startswith('CN:apple_cn:')
+        return source in ('apple_cn', 'apple_support') or key.startswith(('CN:apple_cn:', 'GLOBAL:apple_support:'))
     if scope == 'hp':
         return source == 'hp_cn'
     if scope == 'legacy':
         return key.startswith('CN:mi_cn:') and not is_car(row)
-    return not is_car(row) and source not in ('apple_cn', 'hp_cn') and not key.startswith('CN:apple_cn:')
+    return not is_car(row) and source not in ('apple_cn', 'apple_support', 'hp_cn') and row.get('brand') != 'Apple' and not key.startswith(('CN:apple_cn:', 'GLOBAL:apple_support:'))
 
 
 def merge_goods(before, after, latest, scope):
@@ -145,9 +145,13 @@ def merge_candidate(root, candidate):
             if new_lines[:len(old_lines)] != old_lines:
                 raise ValueError(f'Candidate rewrites price history: {name}')
             lines = (latest or b'').splitlines()
-            hours = {str(json.loads(line).get('fetched_at'))[:13] for line in lines}
+            def observation_key(line):
+                event = json.loads(line)
+                stamp = str(event.get('fetched_at'))
+                return (event['id'], stamp) if 'id' in event else stamp[:13]
+            hours = {observation_key(line) for line in lines}
             for line in new_lines[len(old_lines):]:
-                hour = str(json.loads(line).get('fetched_at'))[:13]
+                hour = observation_key(line)
                 if hour not in hours:
                     lines.append(line)
                     hours.add(hour)

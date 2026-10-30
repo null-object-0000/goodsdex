@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/collect-base
       - name: Refresh prices (only this responsibility)
-        run: python3 scripts/ci_refresh_prices.py --public _data/public --supplements data/supplements/goods-supplements.json
+        run: python3 scripts/ci_refresh_prices.py --public _data/public --candidate-only --supplements data/supplements/goods-supplements.json
       - uses: ./.github/actions/upload-candidate
         with:
           scope: prices
