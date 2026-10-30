@@ -6,6 +6,8 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from goodsdex.cars import is_car
+from goodsdex.release_policy import (remove_reviewed_non_goods, assert_no_empty_shells,
+                                     assert_no_lost_ids, allowed_deletions)
 
 DEFAULT_SUPPLEMENTS = Path(__file__).resolve().parents[2] / "data/supplements/goods-supplements.json"
 
@@ -21,6 +23,8 @@ def indexed(rows, label, unique=False):
 
 
 def merge(rebuilt, supplements, previous, include_new_cars=False):
+    rebuilt = remove_reviewed_non_goods(rebuilt)
+    supplements = remove_reviewed_non_goods(supplements)
     # Other publishers cannot drop cars; only the separate daily job refreshes them.
     present = {r['id'] for r in rebuilt}
     rebuilt = rebuilt + [r for r in previous if (is_car(r) or r.get('source') == 'hp_cn') and r['id'] not in present]
@@ -37,14 +41,15 @@ def merge(rebuilt, supplements, previous, include_new_cars=False):
     added = [row for key, row in extra.items() if key not in existing and (include_new_cars or not is_car(row) or key in old)]
     from goodsdex.backfill import apply_default
     result, backfill_audit = apply_default(rebuilt + added)
-    missing = sorted(old.keys() - indexed(result, "merged").keys())
-    if missing:
-        raise ValueError(f"Publication would drop {len(missing)} IDs: {json.dumps(missing, ensure_ascii=False)}")
+    assert_no_lost_ids(previous, result)
+    assert_no_empty_shells(result)
+    missing = []
     if len(result) != len(rebuilt) + len(added):
         raise ValueError("count != rebuilt_count + added_count")
     audit = dict(previous_count=len(previous), rebuilt_count=len(rebuilt),
                  added_count=len(added), count=len(result), missing_ids=missing,
                  added_ids=[r["id"] for r in added], conflicts=sorted(extra.keys() & existing.keys()))
+    audit["allowed_deletions"] = allowed_deletions(previous, result)
     audit["backfill"] = backfill_audit
     print(json.dumps(audit, ensure_ascii=False))
     return result, audit

@@ -15,7 +15,7 @@ from ..facts import Capture, CaptureStatus, Assertion
 from .apple_cn import text
 
 SOURCE = "apple_support"
-VERSION = "apple-support-v1"
+VERSION = "apple-support-v2"
 ORIGIN = "https://support.apple.com"
 IDENTIFY = {"iphone": "108044", "ipad": "108043"}
 NAME_PATTERNS = {
@@ -40,6 +40,17 @@ FAMILIES = {
     "displays": ("displays", "显示器"),
     "airtag": ("accessories", "配件"),
 }
+
+
+class SoftwarePage(ValueError):
+    """An official software/version document, intentionally outside model scope."""
+
+
+def is_software_title(title):
+    return bool(re.match(
+        r"^(?:macOS\s+\S|Mac\s+OS\s+X\s+v?\d|(?:iOS|iPadOS|watchOS|tvOS|visionOS)\s+\d)",
+        text(title or ""), re.I,
+    ))
 
 
 def official_url(url, base=ORIGIN):
@@ -155,6 +166,7 @@ def model_links(body, base, family):
             name = attrs.get("data-ss-analytics-link-text") or label
             if (
                 name
+                and not is_software_title(name)
                 and re.search(NAME_PATTERNS[family], name, re.I)
                 and not re.search(
                     r"电池|充电线|键盘|Pencil|Keyboard|Battery",
@@ -305,6 +317,8 @@ def parse_specs(cap, family, docs_url):
         title,
         flags=re.I,
     ).strip()
+    if is_software_title(name):
+        raise SoftwarePage(f"软件版本页不算机型: {name}")
     sections = [s for s in parser.sections if s["lines"]]
     if not sections:
         raise ValueError("技术规格正文为空")

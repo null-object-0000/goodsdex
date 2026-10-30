@@ -710,13 +710,19 @@ def dedupe_rows(rows):
     return output, audit
 
 
-def finalize_public(public):
+def finalize_public(public, previous=None, retained_ids=()):
     """Run after all brand publishers and guards, before push/OSS upload."""
     from goodsdex.supplements import metadata
     public = Path(public)
     rows, digest = load_rows(public / "goods.json")
-    output, audit = dedupe_rows(rows)
+    from goodsdex.release_policy import remove_reviewed_non_goods, assert_no_empty_shells, allowed_deletions
+    retained = remove_reviewed_non_goods(rows)
+    assert_no_empty_shells(retained)
+    output, audit = dedupe_rows(retained)
     assert_public_fields(output)
+    if previous is not None:
+        from goodsdex.release_policy import assert_no_lost_ids
+        assert_no_lost_ids(previous, output, retained_ids)
     audit["input_sha256"] = digest
     audit["output_sha256"] = hashlib.sha256((json.dumps(output, ensure_ascii=False, indent=1) + "\n").encode()).hexdigest()
     audit_path = public / "merge-audit.json"
@@ -724,6 +730,7 @@ def finalize_public(public):
     # Keep the supplemental arithmetic audit under its original keys.
     if "deduplication" not in combined:
         combined["supplement_conflicts"] = combined.get("conflicts", [])
+    combined["allowed_deletions"] = {**combined.get("allowed_deletions", {}), **allowed_deletions(rows, output)}
     combined["conflicts"] = audit["conflicts"]
     combined["deduplication"] = audit
     combined["published_count"] = len(output)

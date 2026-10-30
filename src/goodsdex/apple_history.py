@@ -38,6 +38,7 @@ def crawl_history(
         "attempt_errors": [],
         "coverage_gaps": [],
         "cached": 0,
+        "filtered_software": [],
         "by_locale": {},
     }
     locale_counts = Counter()
@@ -69,6 +70,10 @@ def crawl_history(
         for family in families or source.FAMILIES:
             path = out / f"Apple_history_{family}.json"
             old = json.loads(path.read_text()) if path.exists() else []
+            for r in old:
+                if source.is_software_title(r["product"].get("name", "")):
+                    report["filtered_software"].append(dict(id=r["product"]["product_id"], name=r["product"]["name"]))
+            old = [r for r in old if not source.is_software_title(r["product"].get("name", ""))]
             merged = {r["product"]["product_id"]: r for r in old}
             threshold = datetime.fromisoformat(now_iso()) - timedelta(days=max_age_days)
             recent_docs = {
@@ -186,6 +191,8 @@ def crawl_history(
                     try:
                         docs_url, docs_capture = spec_targets[requested]
                         rec = source.parse_specs(spec_cap, family, docs_url)
+                    except source.SoftwarePage as exc:
+                        report["filtered_software"].append(dict(url=spec_cap.url, reason=str(exc)))
                     except (ValueError, KeyError, TypeError) as exc:
                         spec_cap.status, spec_cap.error = (
                             CaptureStatus.PARSE_ERROR,
@@ -223,7 +230,7 @@ def crawl_history(
                     merged[key] = rec
                     fresh_ids.add(key)
             # Missing or failed pages never delete earlier references or refresh their observation time.
-            if merged:
+            if merged or path.exists():
                 write_json(
                     path,
                     sorted(merged.values(), key=lambda r: r["product"]["product_id"]),

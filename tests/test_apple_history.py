@@ -213,3 +213,53 @@ def test_legacy_mac_specs_language_title_requires_real_spec_sections():
         support.parse_specs(
             cap("<h1>Mac Pro - 简体中文</h1><p>其他文档</p>"), "mac", DOC
         )
+
+
+@pytest.mark.parametrize('name', [
+    'macOS Big Sur', 'macOS Sierra', 'Mac OS X v10.6 Snow Leopard',
+    'Mac OS X v10.5 Leopard', 'iOS 18', 'iPadOS 18',
+])
+def test_software_titles_never_become_models(name):
+    assert support.is_software_title(name)
+    with pytest.raises(support.SoftwarePage):
+        support.parse_specs(cap(BODY.replace('iPhone Test', name)), 'mac', DOC)
+    base = 'https://support.apple.com/zh-cn/docs/mac'
+    assert support.model_links(f'<a href="{base}/1">{name}</a>', base, 'mac') == {}
+
+
+def test_real_macbook_model_survives_software_filter():
+    name = 'MacBook Pro (14-inch, 2021)'
+    assert not support.is_software_title(name)
+    rec = support.parse_specs(cap(BODY.replace('iPhone Test', name)), 'mac', DOC)
+    assert rec['product']['name'] == name
+    base = 'https://support.apple.com/zh-cn/docs/mac'
+    assert support.model_links(f'<a href="{base}/1">{name}</a>', base, 'mac') == {base + '/1': name}
+
+
+def test_cached_software_not_restored_on_failed_crawl(tmp_path):
+    out = tmp_path / 'cats'
+    out.mkdir()
+    path = out / 'Apple_history_mac.json'
+    rec = support.parse_specs(cap(BODY.replace('iPhone Test', 'MacBook Pro (14-inch, 2021)')), 'mac', DOC)
+    software = json.loads(json.dumps(rec))
+    software['product']['name'] = 'macOS Big Sur'
+    software['product']['product_id'] = 'GLOBAL:apple_support:model:111980'
+    path.write_text(json.dumps([rec, software]))
+    report = crawl_history(out, tmp_path / 'raw', ['mac'], transport=lambda url: cap('', url, CaptureStatus.TRANSPORT_ERROR))
+    assert json.loads(path.read_text()) == [rec]
+    assert len(report['filtered_software']) == 1
+
+
+def test_software_specs_reached_through_model_link_are_reported_as_filtered(tmp_path):
+    seed = 'https://support.apple.com/zh-cn/docs/mac'
+    model = seed + '/1'
+    def redirected_software(url):
+        pages = {
+            seed: f'<a href="{model}">MacBook Pro (14-inch, 2021)</a>',
+            model: f'<a href="{SPEC}">技术规格</a>',
+            SPEC: BODY.replace('iPhone Test', 'macOS Big Sur'),
+        }
+        return cap(pages[url], url)
+    report = crawl_history(tmp_path / 'cats', tmp_path / 'raw', ['mac'], transport=redirected_software)
+    assert report['models'] == 0 and report['errors'] == []
+    assert len(report['filtered_software']) == 1

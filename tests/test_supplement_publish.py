@@ -40,7 +40,7 @@ class SupplementPublicationTests(unittest.TestCase):
     def test_meta_recomputed(self):
         with tempfile.TemporaryDirectory() as d:
             path = Path(d)
-            extra = [dict(id="CN:mi_cn:product:1", kind="machine", price=None,
+            extra = [dict(id="CN:mi_cn:product:1", name="测试商品", kind="machine", price=None,
                           source="supplement", catalog_identity="supplement")]
             (path / "extra.json").write_text(json.dumps(extra))
             (path / "meta.json").write_text('{"count":999,"brands":{"old":999}}')

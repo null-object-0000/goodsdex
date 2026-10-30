@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/nichangen/代码/self-code/goodsdex/scripts/clean_non_goods.py", line 48, in <module>
+    print(json.dumps(clean(p.parse_args().public), ensure_ascii=False, indent=2))
+                     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nichangen/代码/self-code/goodsdex/scripts/clean_non_goods.py", line 25, in clean
+    publish(previous, stage, previous, extra)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nichangen/代码/self-code/goodsdex/src/goodsdex/supplements.py", line 60, in publish
+    result, audit = merge(rebuilt, json.loads(Path(supplements).read_text(encoding="utf-8")), previous, include_new_cars)
+                    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nichangen/代码/self-code/goodsdex/src/goodsdex/supplements.py", line 45, in merge
+    assert_no_empty_shells(result)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/home/nichangen/代码/self-code/goodsdex/src/goodsdex/release_policy.py", line 46, in assert_no_empty_shells
+    raise ValueError(f"Empty Xiaomi records cannot be published: {invalid}")
+ValueError: Empty Xiaomi records cannot be published: ['CN:mi_cn:product:18032', 'CN:mi_cn:product:18034', 'CN:mi_cn:product:21403', 'CN:mi_cn:product:21404']

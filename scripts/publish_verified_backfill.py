@@ -15,5 +15,6 @@ rows=json.loads((a.public/'goods.json').read_text())
 assert migrate(rows)==rows
 finalize_public(a.public)
 rows=json.loads((a.public/'goods.json').read_text())
-assert {r['id'] for r in previous}<={r['id'] for r in rows}
+from goodsdex.release_policy import assert_no_lost_ids
+assert_no_lost_ids(previous, rows)
 build_shards(a.public)

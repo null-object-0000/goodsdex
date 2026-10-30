@@ -1,0 +1,783 @@
+✔ 新安装拉取云端资料，无本机nickname持久化；撤回后另一端也回到默认 (1.323593ms)
+✔ 只有主动头像事件读取文件；大小和格式拒绝；失败不假更新 (0.522286ms)
+✔ 退出时未完成读取不能把昵称头像泄漏到游客；旧读取不覆盖新修改 (0.911719ms)
+✔ 网络模块只向鉴权资料路由PUT，正文不混入公开查询；编辑面板有原生入口与撤回 (1.340527ms)
+✔ 游客不能静默登录；主动确认调用只传code和随机安装标记，页面快照不含凭证 (1.367936ms)
+✔ 续期提前一天、401只重试一次；退出后无感恢复被禁用 (0.346557ms)
+✔ 服务端删除失败保留凭证供重试；成功后清空；网络错误文案不含原始密钥 (0.62273ms)
+✔ 删除后的另一端恢复失败会清掉旧凭证，重新登录入口可用，不偷偷重建 (0.876421ms)
+✔ 四场景每条验证都有动作、物体、地点、时间、判定、入口；实际不通过必须改变判断 (7.976559ms)
+✔ 鉴别测试：第四条、空话动作、测了也白测都报红 (1.378848ms)
+✔ 扫地机失败排除对应SKU；两款均失败无候选；绕开不能伪造支持或升档 (1.410002ms)
+✔ 喂食器成功继续用；失败仅证明本次配置未满足；官方未知仍未知 (4.265964ms)
+✔ C1发现露底转检查；新购除毛失败排除3C；撤销与需求变化恢复原判断 (2.409631ms)
+✔ 验证记录可随草稿备份恢复，旧物实参与官方表不被写入 (6.629056ms)
+✔ 页面入口记录、撤销、保存恢复真的重算；不触碰旧物实参 (5.654496ms)
+✔ 新增流程四种视口主题：真实渲染、首屏必要输入、44px、4.5对比度；详情单入口及删除/替换/重复变异 (3622.667071ms)
+✔ 别名 + 关键词 5 条：6 条并集、别名置顶、其余保持服务端顺序，仅标一行；清空 q 变异报红 (52.072453ms)
+✔ 关键词 0 条 + 有效别名：只留 1 条，标记和说明均准确 (5.84743ms)
+✔ 别名已在结果里不重复；翻页仍只标一行；失效别名保留全部关键词命中 (13.292554ms)
+✔ 损坏、空文件、逐个缺必需字段、未知版本均在写入前拒绝 (7.405246ms)
+✔ 鉴别守卫：写后才报错、缺字段补默认、忽略版本三个变异必须被抓住 (1.43727ms)
+✔ 验证记录结构、孤儿引用校验且恢复限制对用户可见 (1.781074ms)
+✔ scan is barCode only; refusal returns focus with inline explanation and no second dialog (8.114393ms)
+✔ invalid length, letters and checksum never query service and retain scanned text (3.983016ms)
+✔ unindexed code remains visible, survives manual name flow and saving, even after editing note (9.574471ms)
+✔ hit reuses existing detail form and persists packaging identity/source without filling purchase price (3.400376ms)
+✔ network failure and retry keep numeric code; cancel is inline (1.579096ms)
+✔ BLE 构造帧：固定头小端、v2—v5、加密标志不妨碍 PID (5.717027ms)
+✔ BLE 拒绝不足固定头、MAC、Capability、未知版本和 Mesh，给出原因 (0.317718ms)
+✔ BLE AD 按长度/类型分段；非 FE95 不命中；截断不越界 (0.332372ms)
+✔ BLE 重复上报合并、最新 RSSI、完整 hex、PID 命中与未命中 (0.586951ms)
+✔ BLE 厂商数据不能当完整 AD；仅 UUID 或未知数据类型不猜 PID (0.250605ms)
+✔ BLE 页面：隐私→初始化→监听→扫描；导出完整 JSON；离页停止关闭且移除监听 (3.195166ms)
+✔ BLE 体验版、正式版、未知环境不可进入或扫描；过低基础库与权限拒绝有指引 (3.586965ms)
+✔ BLE 初始化晚回调：离页后不启动扫描，并再次清理适配器 (0.641883ms)
+✔ BLE 等待扫描启动时离页：清理完成前不能重开，晚成功仍关闭 (0.742124ms)
+✔ BLE 合并不改动输入，未知 PID 及加密帧保留原始证据 (0.389118ms)
+✔ 能力集合矩阵：新增、升级、持平、缺失同屏；在意升级值得换 (2.758016ms)
+✔ 能力集合矩阵：在意新增值得换 (0.294828ms)
+✔ 能力集合矩阵：新增升级都不在意 (0.254891ms)
+✔ 能力集合矩阵：在意的能力缺失优先否决 (0.229436ms)
+✔ 能力集合矩阵：没在意的缺失不否决 (0.200924ms)
+✔ 能力集合矩阵：有在意收益但明显贵 (0.194969ms)
+✔ 能力集合矩阵：先修能改善全部在意项 (0.241654ms)
+✔ 能力集合矩阵：维修没改善在意项 (0.183004ms)
+✔ 能力集合矩阵：维修不能创造旧物没有的能力 (0.231119ms)
+✔ 能力集合矩阵：维修同价不推荐先修 (0.302382ms)
+✔ 能力集合矩阵：免费维修已确认 (0.191455ms)
+✔ 能力集合矩阵：全部不勾不编造收益 (0.149978ms)
+✔ 能力集合矩阵：只有持平没有收益 (0.16527ms)
+✔ 能力集合矩阵：只缺旧物期末值 (0.601516ms)
+✔ 能力集合矩阵：只缺新机清单 (0.198292ms)
+✔ 能力集合矩阵：未确认在意清单 (0.159675ms)
+✔ 能力集合矩阵：只缺维修能力确认 (0.181699ms)
+✔ 能力集合矩阵：只缺修后估值 (0.155ms)
+✔ 能力集合矩阵：精确每天一元临界 (0.101554ms)
+✔ 能力集合矩阵：边界下方一分钱 (0.110527ms)
+✔ 能力集合矩阵：边界上方一分钱 (0.105821ms)
+✔ 能力集合矩阵：其他能力说明必填 (0.119828ms)
+✔ 能力集合矩阵：其他按原话列出 (0.122714ms)
+✔ 能力集合矩阵：未知配置键诚实说不准 (0.104419ms)
+✔ 能力集合矩阵：非法金额不作判断 (0.108017ms)
+✔ 能力集合矩阵：升级标记不创造不存在的能力 (0.114627ms)
+✔ 能力集合矩阵：负补款保持独立 (0.088458ms)
+✔ 四种关系逐项准确、去重、0/1加权；新增升级不淹没缺失 (0.37069ms)
+✔ 页面集合保存、重进、备份恢复、实时在意开关、升级清理、取消与改绑 (28.83899ms)
+✔ 新表单全不勾可以保存；老数据切换集合时保留金额、不臆造能力 (6.93698ms)
+✔ 真实3C进入二级；删除任一必要事实立即降级；原随包数据仍缺 (3.206355ms)
+✔ 身份反例：名称不能绑定、错SKU/productId/系列/冲突identity均不能继承 (0.228711ms)
+✔ 原有否定优先，补充幂等且不修改输入 (0.682229ms)
+✔ 扫地机只证实数据线和割毛；绳子/袋子仍阻断 (1.113304ms)
+✔ 喂食器整机严格分型号，回看条件保留；升级仍需旧物证据 (0.877547ms)
+✔ 口号不算机制，缺不当无；3C/4C之外不凑齐两字段 (2.133758ms)
+✔ 每条有事实均有可打开原图、时间、短摘录、对应成功抓取；来源进入页面数据 (4.228638ms)
+✔ 候选全部请求线上，缺少任一SKU就不使用本地价格补齐 (0.72094ms)
+✔ 齐全能力不提示补缺项；明确不支持仍列入待确认，完整候选不渲染伪缺项 (0.646731ms)
+✔ 汽车选择保留独立品牌、官方源和 MSRP；实付价与参考价独立持久化并可导入恢复 (10.463613ms)
+✔ 汽车资料拒绝串品牌、促销口径、非官方来源和伪造身份；未知多段 ID 不能混入备份 (0.676387ms)
+✔ 汉 121：年款→动力→配置明确选择；唯一 product_id + trim_id 保存并恢复 (15.388153ms)
+✔ 不记得年款可选到 SU7 Max，车系图保留粒度 (1.881389ms)
+✔ 汽车结构身份拒绝错绑商品、动力、虚构年份及历史图片 (0.682815ms)
+✔ 汉2022存档车系图可选、可保存恢复；缺来源、伪域名和第三方图仍拒绝 (5.739398ms)
+✔ 自带 brand 的记录（大疆/富士）在小程序端也按品牌归类，不并进「其他」 (1.739723ms)
+✔ 首页缓存立即返回且标明时间；后台失败可感知；过期与筛选必须等待网络 (9.244691ms)
+✔ 真实全库：尺寸进标题、单值可见、维度中文兜底、只按产品id聚合 (90.962434ms)
+✔ 三个鉴别变异必须报红：吞尺寸、漏内部键、名称进入聚合键 (176.751464ms)
+✔ 复合键只读末段语义，未知字段绝不展示原始名称；详情页复用映射 (0.627695ms)
+✔ 手机宽度真实DOM：两种Air标题与Mac中文摘要、展开规格 (629.077283ms)
+✔ 全库摘要：12 字、无营销文案、CPU/GPU 各归各位、最多 4 项 (6.53087ms)
+✔ 摘要三个鉴别变异必须报红：长值/营销、GPU 混 CPU、超过四项 (28.172311ms)
+✔ 优先 label、句界/12 字截断；短值重名不损失详情配置；维度顺序稳定 (0.604179ms)
+✔ 年份、世代、规格逐字段取证；未知不并组，按年份倒序与容量升序 (2.023977ms)
+✔ 真实两条料号均与product_id、variant_attrs一致 (1.853142ms)
+✔ 列表不展示料号，列表和详情标题使用可读款式名 (0.493448ms)
+✔ 四种回退变异确实报红：价格猜年、无来源年份、料号标题、容量未排序 (4.15967ms)
+✔ 手机宽度真实DOM：产品聚合，按顺序选规格，确认后才显示料号 (2144.389678ms)
+✔ 接口图片完整穿过商品转换、分组列表、换新候选与规格；空图保留真实图片字段，分类图标另列 (9.686829ms)
+✔ WXML 不内联 base64；注入 base64 的变异必定报红 (1.601242ms)
+✔ 真实 DOM：无图分类兜底、失败替换、三项破坏变异报红 (5789.66802ms)
+✔ 当前页空关键词即拉20个商品；全部筛选面来自facets，分类8项+更多 (44.208304ms)
+✔ 品牌分类属性叠加、总数可见；改品牌保留分类与属性，点已选项或chip可取消 (21.209413ms)
+✔ 空结果根据远端逐项去除计数定位关键词，恢复时保留其余三个条件 (14.325302ms)
+✔ 冲突属性仅去除恢复最多的单个属性；不清掉整层 (8.168807ms)
+✔ 诊断请求失败不编造卡住原因；旧诊断响应不能覆盖新查询 (12.583804ms)
+✔ 线上目录自身空时可重试；诊断不把没有筛选条件误报成品牌卡住 (6.395238ms)
+✔ 描述按语义缩写，容量单位完整、最多16字符；必要型号后缀保留 (8.3248ms)
+✔ 价格有效性、精度与超宽兜底，不能把未知显示为零或约数 (0.465461ms)
+✔ 草稿点选/重置/关闭不修改已应用结果；分类变更清属性，清空保留搜索 (1.044011ms)
+✔ 候选数只采纳同查询商品族productTotal：迟到响应、未知、零结果、失败重试 (4.666988ms)
+✔ 容量列全或按数值区间缩写，核心优先于颜色，芯片标题不屏蔽核心数 (1.762171ms)
+✔ 真实五商品：容量必须带数值和单位，M40 S 保留带主语的真实水箱参数 (3.193512ms)
+✔ 先去重再补位：尺寸/芯片的引号大小写归一，容量→颜色→连接→待补充 (0.937858ms)
+✔ 同一描述验收器能报红：标题尺寸/芯片重复、空描述、错误区间符号 (5.310283ms)
+规格逐条核对：160 / 160，料号、价格一致
+✔ 160 平板按产品身份聚合成6组，代际尺寸可辨，原始4231行保留、展示按唯一 id 聚合 (75.028597ms)
+✔ 逐个遍历160个真实SKU，选全后唯一命中原料号与价格 (11.949182ms)
+✔ 按产品身份与代际聚合，未知产品不与在售产品混合；缺身份逐行保留 (1.602209ms)
+✔ 规格不完整不能确认；Pro小容量禁选纳米玻璃，取消选择可恢复 (0.718768ms)
+✔ 录入与想买共用流程：返回、换规格、手填、保存备份身份；价格不进入购入成本 (252.900022ms)
+✔ 料号直查仍精确到SKU，三条型号映射不受聚合影响，未知料号不近似匹配 (24.562515ms)
+✔ 后台更新返回时保留正在选择的规格，确认资料与直查均带款式标注 (27.852175ms)
+✔ 产品契约与五个鉴别变异：平铺、跨产品合并、编造选项、预选、列表放料号均报红 (4.958728ms)
+✔ 全部产品的每个真实SKU可选；单选项有说明标记，小米无规格直接可用 (30.926996ms)
+✔ 选择顺序与价格范围：首屏仅容量；选大容量提价；换容量清空后续选择 (24.072546ms)
+✔ 真实索引按需补齐产品：分页20条、筛选容量、精确料号搜索均保留产品全部SKU (266.052576ms)
+✔ 服务端展示字段原样渲染；规格用服务端关联，旧服务端缺字段仍可用 (2061.785039ms)
+✔ 换新分类严格限于四类加手机，摘要随选择更新，再点取消 (1.73943ms)
+✔ 更改及取消类别保留型号输入，清空同时清除类别、旧物、型号与手机料号 (0.391542ms)
+✔ 手机料号自动识别后仍能取消，换类别不会被输入的料号强制改回 (0.284482ms)
+✔ 直接记名称保留原文及类别，不伪造准确型号；类别更改取消旧物关联 (0.486924ms)
+✔ 新购清空条件保留新购意图与原话 (0.338485ms)
+✔ 清空使已发出的型号搜索失效，迟到请求不能恢复旧列表 (300.206752ms)
+✔ 真实H5鉴别：摘要不更新、不能取消、零结果无出口、混入不支持类别均报红 (10762.756386ms)
+✔ 本机模式所有CRUD零网络；确认前sync拒绝；启用稳定映射、重复合并不重复、备份不含授权 (6.333789ms)
+✔ 两设备本地id相同不错误去重，同名物品保留；本地修改时间/删除墓碑一起落盘 (1.031537ms)
+✔ 同步中本机新修改不被旧响应覆盖；坏响应/落盘失败保持物品与身份供幂等重试 (0.866461ms)
+✔ 云端墓碑胜过本机未提交修改，保留本机愿望并移除失效旧物引用 (0.807883ms)
+✔ 服务器失败不改本机，换账号和撤回的旧代次不能提交；撤回失败不假成功 (1.125692ms)
+✔ 备份导入后本机id与未知云记录同名也不得覆盖本机物品或映射 (0.789887ms)
+Mutation rejected: 不得补入容量
+Mutation rejected: 家庭短句
+Mutation rejected: 全文复制必须收进更多
+Mutation rejected: API 拒绝时必须通过 execCommand 复制
+Mutation rejected: 复制内容必须等于展示文案
+Mutation rejected: 失败提示必须有操作指引
+✔ 冷读真实点击：容量未知、短句主按钮、剪贴板读回与降级；六种变异必须报红 (9218.829238ms)
+✖ 默认模板字数含按钮与折叠区仍在预算内 (7.522923ms)
+✔ 日均口径收进弹层仍只出现一次，未知日期及下一步动作不能被删 (0.780132ms)
+✔ 说明必须由点击打开，逐字核对弹层与全部支持范围 (1.672522ms)
+✔ 设计说明账本：三件物品的历史日均、总额与组合日均逐条对账 (7.612219ms)
+✔ 设计说明账本：泛化换新未来 180 天，折损差与补款分开 (0.550272ms)
+✔ 设计说明账本：旧机估值变化后的泛化换新算术对账 (0.312574ms)
+✔ 设计说明账本：具体新品的折损、差额、补款不能混用泛化新机 (0.349965ms)
+✔ 设计说明账本：三个愿望的到价与差额 (0.39725ms)
+✔ 设计说明账本：包装、独立总价和预算余量逐条对账 (0.503221ms)
+✔ 设计说明账本：200 元只留茶礼盒，100 元无合适商品 (0.423824ms)
+✔ 边界：估值未填与零估值均不阻塞日均，购入价改变日均 (0.236222ms)
+✔ 边界：购入当天及未满一天不除零，满一天可计算 (0.286322ms)
+✔ 边界：估值超过购入价、未来购入日期被拦截 (2.753741ms)
+✔ 边界：金额与天数拒绝非数字、非有限数和负数 (1.754278ms)
+✔ 边界：未来折损需要正时段和有效的两端估值 (0.545098ms)
+✔ 边界：换新缺失旧机未来估值不能凭空生成比较 (0.382891ms)
+✔ 边界：换成更便宜的新品，卖旧现金结余不影响折损口径 (0.212974ms)
+✔ 边界：礼物刚好用完预算、空选项、无效选项 (0.472149ms)
+✔ 纯函数：冻结输入可调用、重复调用一致、没有提前四舍五入 (0.412694ms)
+✔ 新增日期未知，显式选择设备当天后跨日保存不重置；未来日期仍拒绝 (17.263112ms)
+✔ 旧存档按当天计算，今日记录可保存/导出，次日天数推进且旧记录不变 (2.458105ms)
+✔ 本地日期使用设备时区，覆盖 UTC 前后跨日与年界 (96.656334ms)
+✔ onQuickSearch routes 【京东】https://3.cn/38U9S-Zd 「订单」 (14.749682ms)
+✔ onQuickSearch routes 电饭煲 (1.837796ms)
+✔ onQuickSearch routes https://example.com/x (1.451641ms)
+✔ detail basics exposes actual purchase date, elapsed days and condition, unknown date never becomes creation date (1.313877ms)
+✔ spentPerDay guards price/date boundaries, ignores residual in both directions and keeps precision (0.643539ms)
+✔ local catalog matching ignores spaces in both query and name, preserves AND terms and filters (0.945847ms)
+✔ T11 首次无数据：三页明确引导；清空重启仍为空，不复活演示 (25.304367ms)
+✔ T11 全数据导出带日期、完整再导入；非法输入拒绝且不覆盖原数据 (5.255454ms)
+✔ T11 微信导出调用真实本地文件 API 与分享；失败提供可复制 JSON；清空取消与确认 (6.884035ms)
+✔ T11+T26 隐私与真实代码一致：仅声明客户端可联网；其余注入五种网络 API 必须失败 (20.427734ms)
+✔ T11 首页文案核查拒绝写死建议，保留动态判断绑定 (15.21408ms)
+✔ T11 H5 bundle：同源空状态、JSON 导出恢复、清空均真实执行 (78.56969ms)
+✔ 体验交付包排除蓝牙调试页，已注册页面及工具无设备权限调用 (59.411748ms)
+✔ 筛选面板按内容高度展开，长内容限高，安全区计入可用空间 (6.584267ms)
+✔ 全部分类只搜索已提供的 facets，选择回到草稿，选中分类保持可见 (1.130223ms)
+/home/nichangen/代码/self-code/spend-good/apps/miniprogram/scripts/build_category_icons.py:17: DeprecationWarning: Rsvg.Handle.get_pixbuf is deprecated
+  ok,data=Rsvg.Handle.new_from_file(str(source)).get_pixbuf().save_to_bufferv('png',[],[])
+✔ 96分类都有24网格同线宽SVG与单份PNG；未知分类回通用图 (379.5931ms)
+✔ 确认稿落地：三尺寸布局、排序、筛选、快捷录入与未知金额日期保存 (17018.546821ms)
+✔ 名称即可保存；空价格保持 null、来源和实际日期均保留 (11.490958ms)
+✔ 名称 + 目标价只写 wishes；重启/备份不伪造报价、不混入首页日均 (2.291382ms)
+✔ 购入一次性转换：必须补实价，保留目标记录、日期和来源，失败不丢想买条目 (2.319276ms)
+✔ 上次品牌分类影响空输入候选，不能限制新的名称/型号/料号搜索 (230.031291ms)
+✔ 确认稿：手动与商品录入都不猜购入日期；快捷弹层的返回只关闭当前层 (1.987239ms)
+✔ T16：多场景的展示金额逐次对应引擎返回值，缺口、来源与两页绑定可复跑 (72.225171ms)
+✔ T16：月年仅折算同期日均，优惠只改变一次现金流，维修/二手/无估值诚实展示 (5.666395ms)
+✔ T16：缺口与实际降级条件同源，明确建议没有虚构缺口 (8.620189ms)
+✔ T16：自检能抓多写金额、漏写百分比、伪造引用、遗漏缺口和错误月均 (4.127333ms)
+✔ robot：一句话独立交代对象、决定、卡上已有的理由 (3.661941ms)
+✔ rice：一句话独立交代对象、决定、卡上已有的理由 (0.944062ms)
+✔ feed：一句话独立交代对象、决定、卡上已有的理由 (0.718617ms)
+✔ vacuum：一句话独立交代对象、决定、卡上已有的理由 (0.940491ms)
+✔ 逐张注入错误决定、虚构事实、改写原话和营销承诺，测试锁必须报红 (4.225391ms)
+✔ 未知类目不冒充四种品类，有无候选均跟随卡上决定 (0.553039ms)
+✔ 型号为空且选择不清楚型号，仍按卡上决定生成完整句子 (0.285537ms)
+✔ 空商品库、未知型号仍有口语决定，既有锅不编成 C1，新购不编旧机 (0.529707ms)
+✔ 条件变化要跟随卡上决定：锅体异常、查内胆、查刻度、可先看款、实时喂食 (2.293685ms)
+✔ 只复制一句话，成功与失败均有反馈，保存快照带原句 (7.996868ms)
+✔ 收尾文案：全部读取按钮用重试读取，返回首页及首件愿望同措辞 (3.120048ms)
+✔ 收尾脚注：日期和示例说明分别保持完整语义，公共样式支持短句换行 (0.726004ms)
+✔ 第二批：首页去掉常驻隐私入口，官方隐私入口及错误恢复入口保留 (0.384438ms)
+✔ 第二批：可达性计入已绑定的共享恢复跳转，移除绑定或方法目标则不计入 (7.510197ms)
+✔ 首页与物品页共用搜索、规格和详情字段，不预选物品 (13.567267ms)
+✔ 选择自己的名称、两个输入、保存后直接首页；600÷300=2，次日重算 (5.556221ms)
+✔ 只记名称清除未完成金额日期，未知日期不伪造0天且不计入合计 (2.409535ms)
+✔ 共用流程未来/无效日期不落库 (2.62651ms)
+✔ 首次真实H5点击、持久化、首页因产品定位调整从50放宽到96字/字号和四种错误鉴别 (10774.041064ms)
+✔ 空库首页保留新购入口，不要求先录一件已有物品 (0.614233ms)
+✔ 两入口选择商品后都保存同一组身份、来源、备注、状态与未知日期 (184.149439ms)
+✔ 真实随包目录：四个实际处境均给证据缺口，新购无旧物与估值要求 (5.973225ms)
+✔ 鉴别性：同一候选下把旧锅改成 IH 5L，结论和比较实质改变 (2.232411ms)
+✔ 内胆适配报价不借用其他机型，补齐后只消除对应缺口 (0.666183ms)
+✔ AI避障与大吸力不能代替防缠绕和三类杂物证据；空参数不能当不支持 (0.583096ms)
+✔ 新购排除真实误分类的配件、护理液、洗地机、车载和随手款 (1.02385ms)
+✔ 合成规则边界：能力证据、预算和操作意愿必须同时满足（不是真实推荐） (0.726035ms)
+✔ 实参校验与备份：来源必填、金额合法、改名后不沿用旧机实参 (4.793906ms)
+✔ 真实页面：补实参保存重算，备份重进继续生效，失败不关闭输入 (13.535127ms)
+✔ 没有报价也能保存四场景需求草稿，备份恢复，页面重开不伪造商品或旧物 (3.233649ms)
+✔ C1实答：没有任何估值或适配报价仍能给二级候选；保留3L且安全前置 (3.349295ms)
+✔ 一级是检查动作，三级明确由谁补哪项和如何变化，未知用途不伪造候选 (0.368361ms)
+✔ 真实页面按两次继续生成处理单，状态检查前置，主动改容量才改变候选；可保存恢复 (5.810815ms)
+✔ 翻转条件真的生效：发现露底先检查适配；明确未露底仍可条件选型 (1.334375ms)
+✔ 选型异常：无目录不出候选，失败清除结果，保留需求 (1.463177ms)
+✔ 真实接口的字符串报价不会在联网重算后清空 C1 候选 (9.455424ms)
+✔ C1 官方事实只按精确商品身份带入，用户核对的实参优先 (0.701693ms)
+✔ 尚无能力证据的目录候选也会按需刷新，喂食器空目录明说 (7.475291ms)
+✔ 首页、选品第一步与录入选择器零商品请求，没有随包目录 (26.971002ms)
+✔ 查询失败明确连不上，空目录不能显示没有结果 (7.113611ms)
+✔ 搜索过期响应不覆盖新查询；结果批量失败保留本地而不接受旧全量响应 (62.484919ms)
+✔ 远端搜索先取20条身份再批量详情，继续加载只补下一页，保留品牌与分类入口 (14.414229ms)
+✔ 多分类商品：本地和远端列表唯一、逐分类命中，带入详情保留全部分类 (14.979146ms)
+✔ 目录归一：按具体商品去重，优先子型号，公开报价精确匹配；不拿系列容量当单规格 (3.076235ms)
+✔ 真实商品选入物品：仅关联资料，不填个人金额；编辑与导出导入保留关联 (42.683064ms)
+✔ 购买判断：用途、预算、已有同款与同容量差异均实际改变结果，缺资料不冒充支持 (1.455378ms)
+✔ 买不买选后保存/重开/修改不重复，没有设置目标价就不会报到价 (15.924759ms)
+✔ 结果只批量读取候选 gids，不请求全量和价格库；失败或脏响应返回空目录 (31.581724ms)
+✔ 目录无损压缩保持全部商品、参数、价格及采集时间一致 (15.201994ms)
+✔ H5 首选 Clipboard API，成功后读回核对 (6.74218ms)
+✔ H5 API 不可用必须 execCommand 兜底 {"write":"missing"} (0.896413ms)
+✔ H5 API 不可用必须 execCommand 兜底 {"write":"reject"} (0.718082ms)
+✔ H5 API 不可用必须 execCommand 兜底 {"secure":false} (0.682656ms)
+✔ H5 两层失败清理 textarea 并选中原句 false (0.819663ms)
+✔ H5 两层失败清理 textarea 并选中原句 throw (0.61948ms)
+✔ H5 可读但内容不一致不得报成功 (1.734131ms)
+✔ H5 无读取权限或无读取 API 保留真实写入结果 reject (0.71663ms)
+✔ H5 无读取权限或无读取 API 保留真实写入结果 missing (0.649985ms)
+✔ H5 未获读取授权不弹授权框 prompt (0.78762ms)
+✔ H5 未获读取授权不弹授权框 denied (0.569274ms)
+✔ robot 家人单：保留事实强度、条件、预算与首尾完整句 (5.069868ms)
+✔ rice 家人单：保留事实强度、条件、预算与首尾完整句 (2.476671ms)
+✔ feed 家人单：保留事实强度、条件、预算与首尾完整句 (1.588954ms)
+✔ vacuum 家人单：保留事实强度、条件、预算与首尾完整句 (2.719916ms)
+✔ 逐张注入禁语、未知改不支持、暂缓改不用换、删再考虑：每个变异都必须报红 (39.178213ms)
+✔ 四场景与长文本：真正的绘图指令保留决定、原因、改变条件、范围日期；不裁切、不添文 (2.885858ms)
+✔ 删改变条件、添营销句、改一字：每个源码变异都报红 (5.728142ms)
+✔ 权限检查及注入相册权限都会报红 (8.797025ms)
+✔ 旧基础库、canIUse=false、生成失败、分享失败降级全文；复制失败明确提示 (1.900576ms)
+✔ 原生路径导出PNG后调起分享，不触碰剪贴板；取消和连点有明确状态 (1.081648ms)
+✔ 处理契约：型号未知、未定预算、资料缺口、改变条件与未知边界 (4.265655ms)
+✔ C1先检查再候选，清楚/不清楚/露底均给处理动作，不伪造适配报价或饭感 (4.271556ms)
+✔ 真实页面：空库未知型号经两次继续可保存复述、备份恢复；不生成资产或购买日期 (15.343991ms)
+✔ 准确型号作为咨询快照保存，恢复仍可重算；不借用相似型号能力 (4.522334ms)
+✔ 五种错误实现逐个注入必须被契约拒绝（实际执行变异，非字符串存在性检查） (8.074432ms)
+✔ 新增处理边界隔离观察：改变硬要求/预算状态后不得套用上次现场结果 (1.978464ms)
+✔ 原生dataset布尔值能设置硬要求；主动取消上限时清除旧金额 (1.416484ms)
+✔ 自愿另存商品方案时才建旧物，保留准确型号且购入日期未知；成本比较入口可用 (5.491004ms)
+✔ 真实默认DOM契约，删除界面改变条件的变异必须报红 (5932.592071ms)
+✔ 无旧物的新购身份行：不同品类、null/缺省旧物均用完整添置口径 (2.665818ms)
+✔ 新购处理单不虚构旧物，保存恢复保留 buy；手动清洁改变候选 (5.826452ms)
+✔ 喂食器回看诉求进入 history，缺口和改变条件留在默认处理单 (3.237169ms)
+✔ buy 0条：徽标数量来自真实记录 (0.983456ms)
+✔ buy 1条：徽标数量来自真实记录 (0.177618ms)
+✔ buy 3条：徽标数量来自真实记录 (6.133129ms)
+✔ buy 5条：徽标数量来自真实记录 (0.144087ms)
+✔ buy 8条：徽标数量来自真实记录 (0.119378ms)
+✔ replace 0条：徽标数量来自真实记录 (0.10776ms)
+✔ replace 1条：徽标数量来自真实记录 (0.454189ms)
+✔ replace 3条：徽标数量来自真实记录 (0.175853ms)
+✔ replace 5条：徽标数量来自真实记录 (0.124794ms)
+✔ replace 8条：徽标数量来自真实记录 (0.173976ms)
+✔ 四张现有PNG素材签名正确，无重新生成封面 (1.042864ms)
+✔ 首页采用确认的B版素材、色板和精确排版例外 (13.442648ms)
+✔ 首页排版例外仅覆盖已确认选择器和数值，拒绝任意字号 (0.340076ms)
+✔ 真实页面refresh只读default礼物，重复进入刷新最新摘要 (4.237233ms)
+✔ B版首页统计、四态、五尺寸、深色与各入口真实点击 (24760.483242ms)
+✔ 最近更新取摘要，不按存储顺序或报价选 (1.894288ms)
+✔ updatedAt兼容，非法日期最后，同日ID稳定 (5.974548ms)
+✔ 最近换新取对应旧物，不能用候选名称或第一件 (0.890704ms)
+✔ 日期缺失、非法、未来不编天数，当天0天有效 (0.219493ms)
+✔ 价格缺失、非数字、无穷、非正值只写待补 (0.166159ms)
+✔ 送礼缺预算保留人与场合，缺人或场合降级 (0.160992ms)
+✔ 金额按真实小数格式，目标为0不能造免费购买 (0.128586ms)
+✔ 纯函数不排序原数组、不改记录或礼物 (0.163285ms)
+✔ 全有逐字：三个徽标/摘要，旧物购入天数 (11.0711ms)
+✔ 部分数据逐字：无价格待补，无送礼记录降级 (0.175473ms)
+✔ 全空逐字：零条无徽标，空库不造0元 (0.200266ms)
+✔ 换新只数真实绑定，buy只数明确intent (0.111332ms)
+✔ 无目标只显示名称，不从现价推目标 (0.162248ms)
+✔ 合计逐件日均只舍入一次，金额随输入变化 (0.457149ms)
+✔ 无有效日均不写0，不冒充已知 (0.176376ms)
+✔ 首页删除P1–P5、历史拉取与延后动作；计算能力仍存在 (0.624673ms)
+✔ 购入价除以已过日历日，不依赖卖价或未来期限 (1.844973ms)
+✔ 四档降级，日期非法/未来/未确认不硬算；当天不除零 (1.243567ms)
+✔ 列表按日均排序；首页多件改为合计，不再选择第一件 (0.855844ms)
+✔ 鉴别：有价格不算日均、改写已用、乘未来天数全部报红 (3.154285ms)
+✔ 返回/次日重算且不写访问或使用记录，读取失败移除旧主体 (8.043627ms)
+✔ 真实渲染：三场景首页三态、五尺寸与下一步入口 (19400.85714ms)
+✔ 首页逐件合计与列表格式逐字相等，单件和无日均保留原降级；合计跳列表 (2.189835ms)
+✔ 合计鉴别：退回第一件、件数乘平均持有期、浮点原文均报红 (2.541611ms)
+✔ 首页入场220ms/8px/ease-out，封面及卡片延迟0/60/120/180，第二次onShow不重播 (6.345163ms)
+✔ 数字插值600ms，12帧内且最终逐字等于15.12 (0.877187ms)
+✔ 数字插值600ms，12帧内且最终逐字等于1,234.56 (1.20837ms)
+✔ 数字插值600ms，12帧内且最终逐字等于0.07 (1.545442ms)
+✔ 空库及日均待补不播数字动画，保留原文 (1.525756ms)
+✔ 旧值到新值400ms，200ms高亮，相同值不启动计时器 (0.644529ms)
+✔ 减弱动态效果跳过全部动画，无法读取设置时数字不超过220ms (1.165193ms)
+✔ 离开页面取消计时器、落到真实值，返回不重播；中途变更从当前文本续算 (0.61462ms)
+✔ 性能守卫扫描所有transition及keyframes属性，布局属性反证报红 (6.323171ms)
+✔ 三条navigator按压即时反馈，松开120ms，不延迟跳转 (0.256536ms)
+✔ 真实首页onShow首次入场，第二次同值不启动动画，物品变化才过渡 (6.277854ms)
+✔ 浏览器验证新版首页呼吸、回应、减弱动态效果及离开清理 (18859.327816ms)
+✔ 购入合计独立于日均、未知日期、估值及商品现价，并按分相加 (2.10131ms)
+✔ 空态与全未知金额不冒充已知0，部分缺失明确说明 (0.362152ms)
+✔ 超过一年按日历周年严格判断，闰日和未知/未来日期不编造 (0.339779ms)
+✔ 大金额保持完整值，显示紧凑单位避免挤出卡片 (0.159734ms)
+✔ 进度数量只取真实购买意向和已保存换新，不把未保存候选算方案 (0.216082ms)
+✔ 首页六档视口 × 100/130/150% 字号 × 浅深色：零滚动、完整文字、44px卡片与页底铺满 (12328.661411ms)
+✔ 首页布局不能借助裁切或整页缩放掩盖溢出 (0.680309ms)
+✔ 首页缩略图按未四舍五入日均降序，0/4/5/8件边界及缺日均兜底 (6.030408ms)
+✔ 缩略图工具仍保留真实来源；首页不得渲染缩略图条或列表，图片仅封面与三场景素材 (0.605123ms)
+✔ 真实DOM：首页三场景卡、去向与五尺寸首屏 (18257.283669ms)
+✔ 首页三态五尺寸：三张完整卡、决策卡0、恰好三入口、路由及深色；记录实际字数 (18514.811523ms)
+✔ 首页仅三个插画场景，更多消失；愿望、处理单和方案均可达 (52.171923ms)
+✔ HP every collected fixture SKU is selectable by CPU, memory+disk and graphics without flattening the model (5.606682ms)
+✔ HP incomplete choices cannot confirm or silently pick the first CPU (0.5984ms)
+✔ 主数字按日均、购入价、天数降级；只有两样都未知才用说明 (2.636678ms)
+✔ 不到一天、零购入支出与舍入零都不冒充有效日均；估值不阻塞 (1.3422ms)
+✔ 观测不足三点不报最低价；永久会员不造到期天数 (0.468428ms)
+✔ 真实渲染：四种主数字状态、16px说明及三条写反规则都能鉴别 (1613.967089ms)
+✔ migration changes only the linked name, keeps original source, costs and wishes; second read writes nothing (2.393709ms)
+✔ user rename survives migration and automatic rematch; flag stays true even after user returns to official name (7.773009ms)
+✔ nameEdited guard is discriminating: removing it from actual migration function fails the protected-name assertion (1.545076ms)
+✔ validation retains source title and user intent; migration never overwrites existing source (0.413813ms)
+✔ 物品分类兜底优先记录分类，其次关联商品分类，未知分类使用通用图标；失败状态不修改商品 (0.693126ms)
+✔ 真实 DOM：保存后列表/详情渲染照片、兜底、失败替换；漏图、漏兜底、行高不一致均报红 (3183.604492ms)
+✔ 本地有结果或空白搜索，不出现商品区块也不发请求 (7.699828ms)
+✔ 本地零匹配且服务端有结果：聚合计数、最多三行、价格与无报价 (2.079775ms)
+✔ 零结果、网络失败、超时、无效响应静默保持原空态，同词不重试 (6.053817ms)
+✔ 400ms连续输入只查最终词，同词刷新与首尾空格复用缓存，变词重新查询 (1.540349ms)
+✔ 旧请求不能污染新词或卸载页；清空和卸载取消防抖 (4.490813ms)
+✔ 本地重新匹配立即隐藏缓存结果，请求中出现匹配也不得展示 (6.294393ms)
+✔ 添加传商品ID而非物品ID，本地匹配与伪造ID不能跳转 (1.860597ms)
+✔ 模板硬约束：未录入标题、参考价声明、添加按钮和旧导航，无成本或归属信息 (0.628101ms)
+✔ 新增按商品ID预填，想买和已有均不默认，参考价不写买入价，未选择不能保存 (206.065648ms)
+✔ 预填失败或卸载后返回不崩溃、不接受过期商品、不写记录 (5.202072ms)
+✔ 多规格商品沿用规格选择，确认具体SKU后仍须用户点选想买或已有 (10.066099ms)
+✔ 确认稿以物品列表为主，计数常驻，完整日均口径在排序面板可查 (1.93501ms)
+✔ 未计入短话只在有未计入时出现；完整口径可查 (7.027612ms)
+✔ 二次确认取消或未回应不调用remove，成功后refresh同步总账并归档消息，不动想买 (7.753244ms)
+✔ 绑定换新候选删除失败，原因原样展示且提供处理单入口 (1.365346ms)
+✔ 假store：确认弹窗未回应和取消均零调用 (0.737237ms)
+✔ 日均低于一分和缺日期仍保持文字区分，口径入口可用 (0.232818ms)
+✔ 时长边界：固定30日一月，360日一年，不受跨年及闰日影响 (2.148299ms)
+✔ 空库、计数、绑定派生状态、搜索与标签相交，清空搜索恢复 (13.456273ms)
+✔ 日均与降级直接来自ownershipFact，跳转编码，读失败不伪装空态 (1.751595ms)
+✔ 导航事实：14页（含选型、换锅体验与会员，排除蓝牙实验）、首页/物品/我的三tab，旧tab只用navigateTo (0.871ms)
+✔ 精致数码无障碍门禁拒绝小字、选中状态丢失加粗及低对比配色 (114.522172ms)
+✔ 稳定新增入口覆盖空库、列表和搜索无结果，读取失败只提供恢复操作 (3.160192ms)
+✔ 缓存列表取消新增保留筛选；保存新记录清除筛选、最近记录排首位并提示且不改旧记录 (2.199871ms)
+✔ 列表按已发生购入支出计算与排序，无卖价也有日均，非法日期只降级本行 (1.366415ms)
+✔ 总览只算已购且日均有效的物品，筛选不改变总账，最贵一件可跳转 (1.085882ms)
+✔ 总览沿用每行口径：缺日期、非法/未来日期、日期未确认、当天、缺价均不计，微额不冒充零 (0.588825ms)
+✔ 类目最多三组，其余归其他，其他原有金额不能丢失；无价格无日期不参与类目 (0.274801ms)
+✔ 旧首页方案迁至物品页顶部：新购与替换均保留原方案 ID，读取失败清空入口 (1.601437ms)
+✔ 确认稿：最近记录、实际金额和购入时间排序；零元与未知金额不同 (1.367955ms)
+✔ share extraction accepts surrounding copy and rejects missing, lookalike or non-JD URL (1.721682ms)
+✔ share prefill uses order date, clears a previous price, keeps spec/quantity, and chooses one item (3.33884ms)
+✔ share errors are explicit and missing URL never sends a request (3.264038ms)
+✔ spec and qty survive existing item save validation; blank price remains null (1.99824ms)
+✔ request service encodes entire share URL and retains HTTP status for failure copy (0.882676ms)
+✔ matched share uses selection path, preserves full title/spec/date and never uses reference price (3.243697ms)
+✔ unmatched or failed match stays name-only; long names get a sixty-character cap (1.920272ms)
+✔ a late match cannot overwrite a newer share selection (0.869986ms)
+✔ goodsMatch requests encode share name and spec as independent query fields (0.457681ms)
+✔ a family match binds the family without inventing a SKU capacity or part number (1.446708ms)
+✔ product URL extraction covers item and listing pages in share copy (0.246079ms)
+✔ product import keeps listing price separate from paid price, preserves match identity, persists source and excludes listing from paid price (6.215042ms)
+✔ MI share extracts all forms, binds only server identity and persists current price/source (1.758072ms)
+✔ manual rename survives reimport and matching in JD and Xiaomi paths (1.638309ms)
+✔ matched display name survives missing or failed detail hydration (1.410411ms)
+✔ JD server matched name is used directly without a second matching request (0.984708ms)
+✔ search-box import shows loading notice until failure and always releases busy (1.812913ms)
+✔ 未确认套机从候选条目生成三选项；默认留空可保存，选择仅写物品 (39.506885ms)
+✔ 已确认套机不显示补选，直接使用确认镜头 (5.042529ms)
+✔ 机身、镜头、未匹配商品不显示；换商品清除上次选择 (3.080786ms)
+✔ 不确定清除选择，编辑保留选择，迟到响应不污染新商品 (2.126219ms)
+✔ 确认套机请求未完成也能保存确认镜头；缺失候选不从 id 猜型号 (6.215141ms)
+✔ 模板要求非空选择，失效的已存镜头必须清掉 (0.879232ms)
+✔ 真实线上商品单候选，经 acceptCatalogProduct 后未点击时按钮均不选中 (5.417675ms)
+✔ 失效的已存镜头在请求前清空，包括空候选与请求失败 (4.027041ms)
+✔ 证据确认后的真实 X-S20 数据直接采用完整镜头，不等网络也能保存 (2.893075ms)
+✔ 旧物目录包含294份Apple历史资料及官方G27Q旧款，完整规格随包保留 (186.265231ms)
+✔ G27Q型号直查→确认→保存→编辑→备份导入，个人金额保持未知，日期默认为未知且可修改 (110.932661ms)
+✔ Apple历史机型按名称找到后保存官方资料，不把容量选项或上市年份当作个人购入资料 (85.424691ms)
+✔ 手填型号也能带出官方旧款；真实购入金额影响日均，公开报价不参与 (65.430169ms)
+✔ 历史参考不进入买新候选，伪造历史价格和站外链接的备份被拒绝 (201.434041ms)
+✔ JZ2301独立基座可直查保存，官方说明书链接及组件身份保留，不绑定整机 (53.398691ms)
+✔ 主链路：浅深色四屏、四项门禁、五种变异均执行 (4774.665378ms)
+✔ 检查前的容量、功能和预算不改变决定；检查结果确实改变判断 (8.854438ms)
+✔ 所有处理分支下一步均三行、每行≤20字、合计≤60字，保留完整旧口径 (7.95781ms)
+✔ 旧单只调整回看呈现，保存原文不变；手机下一步也遵守三行 (3.065744ms)
+✔ 昵称只有用户主动填写才显示，默认微信用户；续期保留，退出和删除清除，游客不能填 (9.270255ms)
+✔ 主页面只含身份、备份、两个轻入口；删除和同步弹层从主页一步打开 (0.586795ms)
+✔ 删除先等服务端成功才清本机；失败不丢凭证与记录；取消不执行 (7.642746ms)
+✔ 确认的 demo 规格只允许精确选择器和值；同选择器随意改字号、留白或配色仍被拒绝 (1.884551ms)
+✔ 插画源 SVG 逐路径沿用 demo，提供透明 2x/3x，深色和短屏参数与 demo 一致 (0.916432ms)
+✔ 单屏动线守卫：商品库按钮或未经审查的第二列表入口回归时必须报红 (7.388036ms)
+格式容错：小写、空格、全角均命中 15061；0/O、1/I、5/S 错字均返回 null
+MPBJ003CM → 米家智能轻音破壁料理机S1 → CN:mi_cn:product:19600
+VD30F-VA5A → 米家智能变频除湿机 30L → CN:mi_cn:product:20807
+AC-M17-SC → 米家空气净化器 4 Lite → CN:mi_cn:product:15061
+UNLISTED-OLD-MODEL：型号尚未关联线上资料，照常保存；无参照；保存后 1000÷20 = 50.00
+购入价 1000→1200：日均 50.00→60.00；实际目录在售价 599→9999：日均 60.00→60.00
+✔ 型号映射：三条高置信种子精确命中，格式归一但易混字符不纠正 (3.383121ms)
+✔ 录入正例：自动带名与精确参照 id，保存、编辑、备份不丢型号且金额保持未知 (42.904454ms)
+✔ 未知旧款：明确提示且无近似推荐；型号单填、名称单填均可保存，两者空才拦 (12.491103ms)
+✔ 口径集成：实际目录参照价改变后重算、保存；历史购入价变日均变，在售价变日均不变 (6.691147ms)
+✔ 切换商品、手填名与清空型号不残留自动关联 (8.863706ms)
+✔ 金额不带 Intl：小数位固定、千分位手动加 (0.90536ms)
+✔ 金额格式化模块不许再用 toLocaleString（安卓微信会忽略参数） (0.39567ms)
+✔ 搜索提示只承诺名称/叫法，两个入口给出手记动作；建议和直接记名称均可见 (23.664978ms)
+✔ 两个无结果词保留空命中和真实名称建议；点建议才学习，直接记名称不绑定商品 (18.159966ms)
+✔ 名称前缀只产生独立建议，不伪装正式命中 (5.596627ms)
+✔ 选中后记别名，重开后标明来源；关键词始终真搜，仅本机别名映射不上传 (14.196553ms)
+✔ 别名只有 query/id，无商品目录；随本机备份恢复，独立用户存储隔离，清空会删除 (8.970945ms)
+✔ 换新入口同样使用名称提示、真实建议与本机别名；手记保留未核实身份 (1282.405023ms)
+✔ 鉴别守卫：型号提示、移除建议和手记出口、隐藏别名来源、清空关键词四种变异均报红 (3205.126802ms)
+✔ 沉浸头部：动态状态栏/胶囊尺寸决定布局，按钮热区始终留在胶囊左侧 (0.875957ms)
+✔ 沉浸头部：生命周期参数/业务上下文保留，resize更新，返回失败回首页 (0.675427ms)
+✔ 沉浸头部：12页统一模板、导航模式、正式SVG逐字复用且无近似logo (86.851507ms)
+✔ 沉浸头部门禁反证：删标题接入、复活近似logo、缩小返回热区均判红 (59.629302ms)
+✔ 快网从未显示骨架；慢网满800ms才出现，响应后移除 (36.058255ms)
+✔ 5秒超时明确连不上、终止请求；迟到响应不能复活目录 (4.418446ms)
+✔ 搜索和详情共用5秒预算，而非分别等待5秒 (4.077425ms)
+✔ 4xx不自动重试；5xx和断网显示连接失败且可重试 (20.179929ms)
+✔ 卸载后不更新页面；切换查询后旧超时不清除新查询骨架 (6.149261ms)
+✔ 推荐结果的失败重试也防连点，短提示和日期在首屏折叠区外 (11.766633ms)
+✔ 四类不支持必须明确拒绝生成处理单；不能空卡或串用通用缺资料文案 (9.24733ms)
+✔ 鉴别性：放行空卡、把不支持说成资料不足，两种变异都报红 (2.73415ms)
+✔ 旧物来源逐字段可追溯，缺项也有原文及具体失败边界；所有请求间隔至少2.1秒 (57.290103ms)
+✔ 旧物绝不按名称或不完整商品身份继承；型号与冲突身份反例 (1.41019ms)
+✔ 旧C1与新品共用事实表，picker保留SKU；部分用户实参优先并补余项 (165.764994ms)
+✔ 明确无会沿同一补充链进入比较；缺不会变成无；已有摄像与回看不能算新增升级 (2.60065ms)
+✔ 真实普通版仍缺内置摄像/视频回看；逐项原因和官方来源进入旧物结论 (0.665682ms)
+✔ 选择的旧型号可保存备份恢复且身份不变；新购不带入旧物来源或比较值 (6.972065ms)
+✔ 断网名称录入→保存→首页日均：没有商品资料也不丢个人价格 (27.070276ms)
+✔ 线上曾命中后断网：清空旧结果和筛选面，直查也不能假报未收录 (219.984251ms)
+✔ 预览构建没有任何测试目录、压缩快照或旧报价目录模块 (5.326842ms)
+✔ 线上十进制字符串报价按数字展示，不拿随包数值补齐 (5.865628ms)
+✔ T4 表单校验：空名、无效金额、超值、未来日期及非法日期逐项阻止保存 (28.225814ms)
+✔ T4 成本展示逐条对账；未填估值照算，缺价/日期与购入当天不显示虚假日均 (1.783863ms)
+✔ T4 判断工具摘要优先有效到价候选，缺候选和空数据有下一步 (8.923562ms)
+✔ T4 记一件：实际事件填写、存储、详情重算与首页返回刷新闭环 (5.027534ms)
+✔ T4 选填估值保持 null；修改记录沿用 ID、状态与备注，不新增物品 (2.919842ms)
+✔ T4 详情更新估值：拦截越界、实际持久化与重算、历史只取记录点、导航传对 ID (1.713509ms)
+✔ T4 不存在物品与存储失败有明确解释，不假装保存成功 (4.202257ms)
+✔ T4 重置按钮：取消保留数据，确认才恢复演示 (1.55442ms)
+✔ T4 静态事件自检正反验证：三页绑定真实存在，缺失或同名非函数被拦截 (766.010304ms)
+✔ 首页保留真实物品和愿望计数，返回刷新不写入数据 (2.242788ms)
+✔ 首页方案迁移：只展示已存选型，保留新购和旧物关联，编码跳转并清除失效内容 (1.343859ms)
+✔ 首页落稿：仅有愿望仍属有数据，空态与示例确认/取消均遵守数据归属 (1.059189ms)
+✔ 首页：更多默认收起，消息与常驻隐私入口仍移除 (0.659272ms)
+✔ 首页落稿：每个可见入口保持静态目标、双 tab 限定及定稿文案 (0.343723ms)
+✔ 入口门禁反证：恢复隐私、消息目录及未绑定旧更多按钮均被拒绝 (671.297268ms)
+✔ 首页两态：物品决定主体，有愿望但无物品也只给录第一件 (1.395859ms)
+✔ 列表只填名称即可保存回列表；跳转失败重试不重复新增 (3.836128ms)
+✔ 详情进入编辑后返回原详情，避免重复页面；原生状态选择器可更改状态 (1.464353ms)
+✔ 补价动作直达原记录，展开补充信息并聚焦真实购入价输入 (1.885192ms)
+✔ T5 两套页面账本分别对账：同期折损、日均、差额与补款不混用 (17.39789ms)
+✔ T5 判断页：非示例物品不套预测，实际填写与保存后重算；非法值不落盘 (15.802067ms)
+✔ T5 具体新品：核对状态、问题、改善、匹配及估值，持久化后重新判断 (14.702141ms)
+✔ T5 估值与匹配边界：缺失、超范围、改绑和新增候选不冒充有效判断 (1.799592ms)
+✔ T5 清单：全部 / 已到价 / 换新筛选、绑定标识、无结果及回显刷新 (4.251817ms)
+✔ T5 新增愿望与换新候选：必填金额、旧物绑定、默认无预测且未开启提醒 (4.448822ms)
+✔ T5 愿望调价：实际保存、到价消息、重复值不重复发、关提醒及只改目标不发消息 (5.74978ms)
+✔ T5 移除愿望：取消保留，确认删除，历史消息保留并返回原生 tab (1.630403ms)
+✔ T5 数据原子保存：写入失败不留下半份问题匹配或孤立到价消息 (1.627808ms)
+✔ T5 四页错误与静态事件自检：无记录 / 读取失败可解释，绑定逐页正反检查 (1129.631205ms)
+✔ T6 送礼页面账本：三份互斥选项分别为 239/189/289，余量 61/111/11 (3.719225ms)
+✔ T6 偏好排序与有限避雷：关系场合进上下文，未知避雷不伪装识别 (1.123179ms)
+✔ T6 送礼表单：实际填写、快捷预算、关系场合与偏好事件、保存后跳转并回显 (10.603191ms)
+✔ T6 预算与表单边界：空值、负数、NaN、精度、超上限、非法枚举均阻止落盘 (3.32932ms)
+✔ T6 礼物保存是替换：刷新持久化、非当前选项拒绝；改条件清除过期选择和提醒 (3.125923ms)
+✔ T6 礼物提醒闭环：日期校验、实际安排、持久化、取消仍保留礼物 (2.544206ms)
+✔ T6 到价与历史记录：当前状态替代集中页，已读与归档数据保留 (5.730291ms)
+✔ T6 读写失败真实展示，批量已读原子写入，礼物与提醒失败不冒充成功 (3.757ms)
+✔ T6 两页所有绑定事件真实存在：正向自检与逐页缺失事件反向检查 (723.905019ms)
+✔ success、取消、失败都必须查服务端；未到账不发权益，保留待确认订单 (8.212964ms)
+✔ 连点只下单拉起一次；到账后从服务端重新读取权益 (1.764598ms)
+✔ 购买门禁与 iOS 未开通时均不下单 (1.229683ms)
+✔ 放弃支付后平台确认关闭，清理 pending 并允许创建新单 (1.385468ms)
+✔ 待支付、退款、未知数字、无解锁许可及失败响应均保留阻塞和可操作提示 (8.369512ms)
+✔ 查询历史关闭或到账订单不能清除另一笔待确认订单 (1.230652ms)
+✔ 限期、永久、到期状态准确；提醒仅提前七天 (0.905429ms)
+✔ seed 与已发布后台价格契约一致；页面按 seed 格式化，不含独立价格表 (1.030772ms)
+✔ 签名金额、商品、数量、币种、订单号、环境不一致均不拉起支付，并保留待查订单 (4.95149ms)
+✔ 服务端拒绝过期展示价时不支付、清理未建单请求，允许重新读取 (0.781351ms)
+✔ 会员页使用 seed 展示真实价格；服务端允许购买或篡改 canBuy 也不能在体验包建单 (1.437059ms)
+✔ 会员页关闭单不恢复阻塞；体验包禁购且保留历史核查 (2.19305ms)
+✔ 会员页恢复服务端待确认订单；unknown 保留查询、订单号和客服出口 (1.278418ms)
+✔ 沙箱刷新核查遗留现网关闭单仍禁购，失败保留原环境核查提示 (2.659144ms)
+✔ 会员页说明当前环境和测试权益隔离，正式环境空权益不显示会员有效期 (1.626048ms)
+✔ 退款确认刷新服务端权益，清除对应 pending；作废原因与时间可见，另一笔 pending 保留 (0.619438ms)
+✔ 游客购买不得偷偷建账号，必须先在我的主动登录 (0.641111ms)
+✔ 手机三种不满、未知机型及精确料号均只出核对单，无新机、报价或等级 (3.470674ms)
+✔ 料号精确匹配，老款、错一字及带机型名称的未知料号均不近似绑定 (1.30931ms)
+✔ 支持文案锁定：每条说明只有一次手机，一遍说明能力与边界 (0.313023ms)
+✔ 鉴别性：新机型号、报价、近似绑定、重复文案、旧三级结论逐个报红 (2.006309ms)
+✔ 手机真实三屏、未收录料号、保存回看和DOM鉴别性走查 (7889.312561ms)
+真实维度：电饭煲 加热方式:20 / 容量:20 / 适用人数:20；Apple配件 包装数量:2；Apple平板 容量:160 / 连接方式:160 / 颜色:160
+硬计数核对：15559 个筛选组合，页面计数 = 独立原始快照过滤后的唯一 id 数，误差 0
+AirPods Pro 3：品牌 Apple → 分类耳机，2 次筛选进入首批列表；颜色未收录
+命中后：购入价=""，日期默认为未知；原记录日均 50.00 → 50.00；新记录日均为空
+✔ 旧4231行回归基线保留；随包资料仅省略未消费长表，包含294份Apple历史资料与小米旧款 (226.637408ms)
+✔ 料号归一精确命中 iPad；缺失的 MRX33CH/A 与 P27QCA-RG 均不返回相似候选 (6.632038ms)
+✔ 型号只走已有三条映射；直查未知时有手填与品类恢复文案 (19.252082ms)
+✔ 动态维度与原快照统计一致：饭煲、Apple配件、平板各自独立 (2.478201ms)
+✔ 硬计数：每品牌、每分类、所有动态单维与双维组合，页面值等于独立快照过滤 (77910.729787ms)
+✔ 品牌→耳机分类：两步看到 AirPods Pro 3；快照没有颜色时不虚构白色 (42.412552ms)
+✔ 0条提示定位收窄层，可清除该层；切品牌保留分类叠加筛选 (60.823596ms)
+✔ 属性首批最多12选项、分类前8项可展开，触底每次18条 (67.423828ms)
+✔ 料号/型号直查不带入购买价，日期默认为未知可修改；原有日均不变，空价格不计算日均 (14.470555ms)
+✔ 新商品身份可备份往返；身份、料号、URL与价格篡改均拒绝 (12.531088ms)
+✔ 生成阶段精简后，全目录离线搜索字段、详情保存字段和规格分组与源快照一致 (128.499962ms)
+✖ T9：全部静态产物由当前小程序 utils 与页面源码确定性生成 (58.436467ms)
+✔ T9：浏览器 bundle 与 Node 使用同一计算、视图、存储逻辑 (77.237407ms)
+✔ T9：静态自检会拒绝缺文件、外部资源、产物篡改 (190.590698ms)
+✔ 三行价格文案：动态观测日期、点计算极值、来源日期、必备空档提示和禁词门禁 (1.259779ms)
+✔ 0/1/2 次观测不显示最低；缺价不凑足三个有效价；零元是有效观测 (0.159464ms)
+✔ 10 分钟缓存、并发去重；超时/HTTP/坏响应降级且不缓存失败 (2.673694ms)
+✔ 结果先展示、候选切换不串数据、卸载后不更新、失败无弹窗 (4.236675ms)
+✔ 隐私说明从我的调用官方指引，动态守卫拒绝 navigateTo 变异 (12.892337ms)
+✔ 正式政策包含真实采集、云地域、第三方、保留期限、儿童现状与权利，主动头像边界和对外披露 (0.313462ms)
+✔ 删除承诺与执行顺序一致，失败保护本机，覆盖凭证/导出文件与账号注销 (0.833864ms)
+✔ 后台填写事实文档与披露资料逐段一致，不漏第三方或删除限制 (3.152917ms)
+✔ 官方指引缺失、回调失败与同步抛错均明确提示，不静默失败 (0.364133ms)
+✔ 删页后导出删除、第三方清单、客服及会员条款仍在站内可达 (0.358588ms)
+✔ 两行文案只影响列表，完整标题摘要与维度保留；产品线与年份保留，规格描述单行 (4.172178ms)
+✔ 393×852及四视口真实DOM：两行、草稿筛选、完整商品可见与十个破坏变异 (7795.109653ms)
+✔ 阅读副本只换词：所有鉴别场景的数字、方向、缺失项数量与原始模型不变 (14.36091ms)
+✔ 页面保留原模型，更新阅读副本，表单不被重写，setData回调继续执行 (0.781937ms)
+✔ 同库连续真实点击：记账、两单原文、物品页处理单、导出清空恢复均一致 (40722.63571ms)
+✔ 替换恢复的计数真实，自动快照跨实例可撤销一次，包含云端本机元数据 (20.146964ms)
+✔ 坏 JSON、空文件、超大 UTF8、错误版本、错误结构均不动主数据与撤销快照 (188.732806ms)
+✔ 快照写入失败或回读失败均拒绝覆盖；导入失败后仍可撤销 (3.124438ms)
+✔ 第二次导入替换快照，清空数据删除快照，导出时间不冒充 asOf (2.600361ms)
+✔ 微信只处理用户选中第一份 json，限制参数固定，超大文件不读取 (2.074916ms)
+✔ 入口守卫：删除任一恢复按钮或文件/粘贴入口都必须报红 (4.622877ms)
+✔ 我的页先摘要确认才写入；失败出口与成功撤销状态可达 (3.056138ms)
+✔ 恢复错误只显示受控文案，未知内部异常保留重新选择与存储出口 (0.728336ms)
+✔ 原生换锅：零输入先出建议，五款可比，未知不混同不支持，不猜旧型号 (4.282067ms)
+✔ 精确报价：productId和goodsId同时匹配，失效不保留旧价 (0.587475ms)
+✔ 原生事件链：自动报价、改选、涂层否决、远程备选、证据返回保留条件和采购出口 (5.695184ms)
+✔ 官方完整对比图、脚注、涂层与旧锅面板均随包可用 (0.343034ms)
+✔ 共用H5已验收事实与规则，换锅案例保留注册，正式首页不放案例入口 (5.290991ms)
+✔ 短建议与分层导航：保留要求/对比/折叠，依据返回不丢位置，无涂层不能进入购买 (2.497428ms)
+✔ 生活编辑两步要求：未选择不能继续，后退保留答案，完成回到建议，无涂层始终否决 (2.370162ms)
+✔ 未完成需求不进入处理单列表；保留需求与新单不覆盖已保存原文；更新只针对该单 (16.102734ms)
+✔ 旧版本缺少价格元数据也提示历史时点；任何旧单均不得表示当前结论 (0.430917ms)
+Mutation rejected: 物品页看不到处理单入口
+Mutation rejected: 列表打开是空表单
+Mutation rejected: 旧单价格未标时点
+✔ 真实393×852点击：保存→物品页/独立列表→原单逐字一致；三个错误实现必须报红 (12263.764328ms)
+✔ 选型从需求收敛：两人IH，预算内明确首选、基础替代和跨容量取舍 (3.236386ms)
+✔ 强约束不暗改：无涂层、低预算、小容量远程IH都不硬荐；接受3L才转微压 (0.65158ms)
+✔ 不能仅因年限促换，同款不冒充升级；不确定旧物身份不捏造精确对比 (0.858689ms)
+✔ 只想修内胆时不引导花钱升级，先指出真正缺的实物信息 (0.219211ms)
+✔ 多品类按真实规格筛选，排除配件、缺参数与无价；无数据返回无匹配 (0.387506ms)
+✔ 未知日期不按建档日计算日均；选型备份保留绑定并拒绝篡改品类 (29.276882ms)
+✔ 已有物品直接升级：不额外建档，购买与升级保存不混淆，必填字段不会回流 (8.29855ms)
+✔ 备选可以走到购买与保存，改选会同步用途和容量，不冒充原要求已匹配 (7.431455ms)
+✔ 已知但不支持的旧物不会改绑到其他品类的新品 (5.065895ms)
+✔ 会员缺配置时不调用 wx.login、不伪造 token，购买入口只解释未开放 (2.481716ms)
+✔ 就绪时游客不自动登录，已有凭证过期才 wx.login 重登并读取真实权益 (4.740739ms)
+✔ 网络失败不能报登录成功或假权益 (0.578403ms)
+✔ 商品状态只描述线上同步或连接失败，不声称本地快照 (3.120515ms)
+✔ 真实传输层限制固定接口，登录只带临时 code 和恢复标记、权益只带 Bearer，拒绝任意路径 (1.070693ms)
+✔ 首次播种：设计物品、愿望、绑定、送礼场景与两条消息逐条对账 (1.979794ms)
+✔ items CRUD：新增、查询、修改、删除及不存在记录 (6.720775ms)
+✔ wishes CRUD：新增、查询、修改、删除及不存在记录 (0.83443ms)
+✔ gifts CRUD：新增、查询、修改、删除及不存在记录 (0.835112ms)
+✔ messages CRUD：新增、查询、修改、删除及不存在记录 (0.733265ms)
+✔ 换新候选：必须绑定已有旧物，更新与删除保持绑定一致 (1.430696ms)
+✔ 多实例重读持久快照；用户删除所有数据后重启不复活种子 (1.59726ms)
+✔ 重置恢复完整演示且只覆盖自己的存储键 (0.891958ms)
+✔ 读写均隔离对象引用，嵌套预测不能绕过保存修改 (0.68093ms)
+✔ 自动 ID 重启后不重复，手动占用的 ID 会跳过 (0.701959ms)
+✔ 微信适配使用同步原生 API，首次仅播种一次；失败不得降级假保存 (1.010118ms)
+✔ Node 自动内存降级；损坏数据保留且明确报错，显式重置可恢复 (0.257716ms)
+✔ 应用启动实际初始化数据层 (1.268672ms)
+
+Interrupted while running:
+
+⚠ tests/support-scope.test.js (tests/support-scope.test.js:1:1)
+✖ tests/support-scope.test.js (4405.171836ms)
+✖ tests/t12.test.js
+✖ tests/t13.test.js
+✖ tests/t14.test.js
+✖ tests/t15.test.js
+✖ tests/t17.test.js
+✖ tests/t18.test.js
+✖ tests/t19.test.js
+✖ tests/t20.test.js
+✖ tests/t21.test.js
+✖ tests/t22.test.js
+✖ tests/t24.test.js
+✖ tests/t25.test.js
+✖ tests/t26.test.js
+✖ tests/t29.test.js
+✖ tests/t31.test.js
+✖ tests/three-fixes.test.js
+✖ tests/three-paths.test.js
+✖ tests/typography.test.js
+✖ tests/upgrade-verdict.test.js
+✖ tests/upgrade-visual.test.js
+✖ tests/verdict.test.js
+✖ tests/visual-build.test.js
+✖ tests/wxml-bindings.test.js
+ℹ tests 610
+ℹ suites 0
+ℹ pass 584
+ℹ fail 2
+ℹ cancelled 24
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 361688.263145
+
+✖ failing tests:
+
+test at tests/copy-slim.test.js:5:1
+✖ 默认模板字数含按钮与折叠区仍在预算内 (7.522923ms)
+  AssertionError [ERR_ASSERTION]: catalog-picker
+      at TestContext.<anonymous> (/home/nichangen/代码/self-code/spend-good/apps/miniprogram/tests/copy-slim.test.js:7:83)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/preview.test.js:7:1
+✖ T9：全部静态产物由当前小程序 utils 与页面源码确定性生成 (58.436467ms)
+  AssertionError [ERR_ASSERTION]: bundle.js
+  + actual - expected
+  ... Skipped lines
+  
+    '/* 由 scripts/build_preview.mjs 从小程序源文件生成，请勿手改。 */\n' +
+      '(function(){\n' +
+      'const modules={"utils/account-files.js": function(require,module,exports){\n' +
+      "'use strict';\n" +
+      'function exportFile(api,filename,json){\n' +
+  ...
+      ' let out=r;\n' +
+  +   ' const failed=cards.filter(c=>observatio'... 2490381 more characters
+  -   ' const failed=cards.filter(c=>observatio'... 2490904 more characters
+  
+      at TestContext.<anonymous> (/home/nichangen/代码/self-code/spend-good/apps/miniprogram/tests/preview.test.js:10:68)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: `/* 由 scripts/build_preview.mjs 从小程序源文件生成，请勿手改。 */\n(function(){\nconst modules={"utils/account-files.js": function(require,module,exports){\n'use strict';\nfunction exportFile(api,filename,json){\n  return new Promise((resolve,reject)=>{\n    if(!api.env?.USER_DATA_PATH||typeof api.getFileSystemManager!=='function')return reject({code:'EXPORT_FAILED'});\n    const filePath=api.env.USER_DATA_PATH+'/'+filename;\n    api.getFileSystemManager().writeFile({filePath,data:json,encoding:'utf8',fail:()=>reject({code:'EXPORT_FAILED'}),success:()=>{\n      if(typeof api.shareFileMessage!=='function')return reject({code:'SHARE_UNAVAILABLE'});\n      api.shareFileMessage({filePath,fileName:filename,success:resolve,fail:()=>reject({code:'EXPORT_CANCELLED'})});\n    }});\n  });\n}\nfunction clearExportFiles(api){const fs=api.getFileSystemManager();for(const name of fs.readdirSync(api.env.USER_DATA_PATH))if(/^goodsdex-(?:account-)?\\d{4}-\\d{2}-\\d{2}\\.json$/.test(name))fs.unlinkSync(api.env.USER_DATA_PATH+'/'+name);}\nmodule.exports={exportFile,clearExportFiles};\n\n},\n"utils/account.js": function(require,module,exports){\n'use strict';\nconst { requestService } = require('./goodsdex-client');\nconst TOKEN_KEY = 'spendgood-member-token', META_KEY = 'spendgood-account-v1', DEVICE_KEY = 'spendgood-install-v1';\n// Random installation label only; never a hardware identifier or an authentication factor.\nfunction randomId() { return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.floor(Math.random()*16);return (c==='x'?r:(r&3)|8).toString(16);}); }\nfunction errorText(error) {\n  error=error||{};\n  if(error.code==='AVATAR_TOO_LARGE')return '头像需为300KB以内的 JPG 或 PNG，请换一张较小的图片。';\n  if(error.code==='INVALID_AVATAR')return '请选择有效的 JPG 或 PNG 头像。';\n  if(error.code==='INVALID_NICKNAME')return '昵称最多24个字，不能包含控制字符。';\n  if(['AVATAR_UNAVAILABLE','AVATAR_UPLOAD_FAILED'].includes(error.code))return '头像未能保存，请稍后重试。';\n  if(error.code==='EXPORT_FAILED')return '备份文件写入失败。请重试导出，或到隐私页复制完整 JSON。';\n  if(error.code==='SHARE_UNAVAILABLE')return '当前微信不支持文件分享，请升级微信，或到隐私页复制完整 JSON。文件仍在本机。';\n  if(error.code==='EXPORT_CANCELLED')return '分享未完成，文件仍在本机。可再次导出并选择保存位置。';\n  if(error.code==='ACCOUNT_DELETED')return '这个账号的数据已删除，自动登录已停止。若要重新使用账号，请主动点击微信登录。';\n  if(error.code==='AUTH_EXPIRED'||error.status===401)return '登录已失效，请重新登录。本机记录还在。';\n  if(error.code==='LOCAL_COMMIT_FAILED')return '云端已处理，本机保存失败，请重试同步或先导出本机。';\n  if(error.code==='TOO_LARGE')return '物品数据超过同步容量（2000条或4MB），本机记录还在，请先导出或减少同步数据后重试。';\n  if(error.code==='CANCELLED')return '已取消，继续使用本机模式。';\n  if(error.code==='CONSENT_CHANGED'||error.code==='CONSENT_REQUIRED')return '同步授权已撤回，请重新确认后再同步。本机记录还在。';\n  if(error.code==='RATE_LIMITED')return '登录次数较多，请一分钟后重试。本机记录仍可使用。';\n  if(error.status>=500)return '服务暂不可用，这次操作未确认完成，请稍后重试。';\n  return '现在连不上，本机记录仍可使用；这次云端操作未确认完成。请重试或导出本机。';\n}\nfunction createAccount({ api, request = requestService, now = Date.now }) {\n  let pending=null, generation=0, profile={nickname:'',avatarUrl:''}, profileVersion=0;\n  const get=k=>api.getStorageSync(k),set=(k,v)=>api.setStorageSync(k,v);\n  const meta=()=>get(META_KEY)||{};\n  function snapshot(){const m=meta();return {loggedIn:!!get(TOKEN_KEY),authorized:!!m.authorized,expiresAt:m.expiresAt||0,nickname:get(TOKEN_KEY)&&profile.nickname?profile.nickname:'微信用户',avatarUrl:get(TOKEN_KEY)?profile.avatarUrl:''};}\n  function device(){let id=get(DEVICE_KEY);if(!id){id=randomId();set(DEVICE_KEY,id);}return id;}\n  async function login(explicit=false){\n    if(!explicit&&!meta().authorized&&!get(TOKEN_KEY))throw {code:'AUTH_EXPIRED',status:401};\n    if(pending)return pending;\n    const current=generation;\n    pending=(async()=>{\n      if(typeof api.login!=='function')throw {code:'AUTH_EXPIRED',status:401};\n      const code=await new Promise((resolve,reject)=>api.login({success:r=>r.code?resolve(r.code):reject({code:'CANCELLED'}),fail:e=>reject({code:/cancel|deny|denied/i.test(e?.errMsg||'')?'CANCELLED':'NETWORK_FAILED'})}));\n      const result=await request('accountLogin',null,{code,deviceId:device(),resume:!explicit});\n      if(!result.ok||typeof result.token!=='string'||!Number.isFinite(result.expiresAt))throw {status:503};\n      if(current!==generation)throw {code:'CANCELLED'};\n      set(TOKEN_KEY,result.token);set(META_KEY,{authorized:true,expiresAt:result.expiresAt});return true;\n    })().catch(error=>{if(error.code==='ACCOUNT_DELETED')forget();throw error;}).finally(()=>{pending=null;});return pending;\n  }\n  async function call(route,data){\n    if(!get(TOKEN_KEY)&&!meta().authorized)throw {code:'AUTH_EXPIRED',status:401};\n    if(!get(TOKEN_KEY)||(meta().expiresAt&&meta().expiresAt-now()<86400000))await login();\n    try{return await request(route,get(TOKEN_KEY),data);}catch(error){\n      if(error.status!==401)throw error;\n      await login();return request(route,get(TOKEN_KEY),data);\n    }\n  }\n  function forget(){generation++;profileVersion++;profile={nickname:'',avatarUrl:''};set(TOKEN_KEY,'');set(META_KEY,{});set('spendgood-pending-payment','');}\n  return {snapshot,login,call,device,forget,\n    async profile(){\n      const current=generation,version=profileVersion;\n      const value=await call('accountProfile');\n      if(current===generation&&version===profileVersion)profile={nickname:value.nickname||'',avatarUrl:value.avatarUrl||''};\n      return snapshot();\n    },\n    async updateProfile(patch){\n      const current=generation;profileVersion++;\n      const value=await call('accountProfileUpdate',patch);\n      if(current!==generation)throw {code:'CANCELLED'};\n      profileVersion++;profile={nickname:value.nickname||'',avatarUrl:value.avatarUrl||''};return snapshot();\n    },\n    setNickname(value){if(!snapshot().loggedIn)throw {code:'AUTH_EXPIRED'};return this.updateProfile({nickname:String(value||'').trim()});},\n    async chooseAvatar(filePath){\n      if(!snapshot().loggedIn)throw {code:'AUTH_EXPIRED'};\n      const fs=api.getFileSystemManager();\n      const stat=await new Promise((resolve,reject)=>fs.stat({path:filePath,success:resolve,fail:reject}));\n      if(stat.stats.size>300*1024)throw {code:'AVATAR_TOO_LARGE'};\n      const result=await new Promise((resolve,reject)=>fs.readFile({filePath,encoding:'base64',success:resolve,fail:reject}));\n      const contentType=result.data.startsWith('/9j/')?'image/jpeg':result.data.startsWith('iVBORw0KGgo')?'image/png':'';\n      if(!contentType)throw {code:'INVALID_AVATAR'};\n      return this.updateProfile({avatar:{contentType,base64:result.data}});\n    },\n    async logout(localOnly=false){if(!localOnly)await call('accountLogout');forget();},\n    async erase(){await call('accountDelete');forget();},\n    async exportData(){return (await call('accountExport')).data;},\n    async info(){return call('account');}\n  };\n}\nlet singleton;\nfunction current(){if(!singleton)singleton=createAccount({api:wx});return singleton;}\nmodule.exports={createAccount,current,errorText,randomId,TOKEN_KEY,META_KEY,DEVICE_KEY};\n\n},\n"utils/action-verification.js": function(require,module,exports){\n'use strict';\n// Observations are local to a decision. They never become catalog/official capability facts.\nfunction context(a,old){return JSON.stringify([a.mode,a.category,a.goal,a.size,a.budget,a.remote,a.bare,a.manualCleaning||'',a.dissatisfaction||'',old?.id||old?.name,old?.product?.key,old?.model,old?.scenarioEvidence,...(a.budgetState?[a.budgetState,a.groundRule||'',a.wear||'']:[])]);}\nfunction actions(r,a,old){\n const cards=[];\n if(a.category==='扫地机器人')for(const p of (r.candidates||[]).filter(p=>/2230004779|2230007883/.test(p.key)).slice(0,2))cards.push({id:'robot:'+p.key,key:p.key,title:'绳子、袋子会被卷入吗？',target:p.name,minutes:4,reason:'先测公开价较低的款；任一物体被拖动就能排除这款，无需再测其他能力。',how:'仅在有这款现场或试用机时测。在客厅空地，放一根松散的鞋带和一个展开的空纸袋，相隔半米。让机器从正前方局部清扫，各接近两次；手放暂停键旁，碰到就停。',pass:'两次均提前绕开两件物体：只记本次未碰到，不能证明普遍支持，暂不下单。',fail:'任一次碰到、推走或卷入：排除这款；两款都失败则本轮无候选，暂不下单。',limit:'没有现场或试用机就跳过，别为验证先买机器；不测试接电电线。',entry:'本条下方「碰到或卷入」',passLabel:'两次均绕开',failLabel:'碰到或卷入'});\n if(a.category==='宠物喂食器'&&a.mode==='upgrade'&&old&&r.product)cards.push({id:'feeder:'+r.product.key,key:r.product.key,title:'旧机能看现场并回放吗？',target:old.name,minutes:5,reason:'只做这一条：两项都能用，就不因摄像与回看换新；已有配置无法完成时，才保留可视版试用候选。',how:'在家打开米家里这台喂食器。若已有实时画面，在食盆前挥手，确认画面同步；等一分钟，再打开这台设备的历史视频，回放刚才挥手片段。不要用另一台摄像机或进食克数记录代替。',pass:'现场同步且能回放挥手片段：旧机已满足这次需求，先继续用。',fail:'已联网且已完成现有存储配置，仍无法看现场或回放：旧机当前配置不满足需求，可视版只作有条件试用候选。',limit:'离线、没配存储、事件没触发或分不清设备时，结果不明，先不记录；这不能证明普通版硬件不支持。',entry:'本条下方「两项都可用」或「配置完成仍不可用」',passLabel:'两项都可用',failLabel:'配置完成仍不可用'});\n if(a.category==='电饭煲'&&a.mode==='upgrade'&&old&&r.product)cards.push({id:'rice:coating',key:r.product.key,title:'内锅涂层有没有露底？',target:old.name,minutes:3,reason:'先做这一条：发现露底或脱落，会立即暂停整锅候选；五分钟不能验证饭感改善。',how:'在家等内锅冷却后取出，用清水和软布清掉残留，在厨房灯下转动查看锅底和侧壁。看是否有露出金属底色、涂层片状脱落；不再用钢丝球刮擦。',pass:'只有刻度模糊、没见露底或脱落：保留当前有条件候选，不证明饭感改善。',fail:'看见金属底色或片状脱落：暂停整锅候选，先检查锅体并核对适配内胆。',limit:'锅仍烫或污渍遮挡时先不测；照片看不清不能当涂层完好。',entry:'本条下方「发现露底或脱落」',passLabel:'没见露底脱落',failLabel:'发现露底或脱落'});\n if(a.category==='吸尘器'&&a.size==='floor'&&r.product)cards.push({id:'vacuum:'+r.product.key,key:r.product.key,title:'这款地刷能收走猫毛吗？',target:r.product.name,minutes:3,reason:'只做这一条：地面猫毛收不走就排除这款；参数适配不等于你家效果。',how:'仅在已有现场或试用机时，在客厅一块干燥硬地板放一小撮日常掉落的猫毛。装上这款标配地刷，用正常档往返两次，关机后看地面和刷头；不测织物。',pass:'地面猫毛已收走：保留有条件候选，只代表这次地面和毛量；刷头缠毛只记录维护，你已接受手动清理。',fail:'往返两次后地面仍有明显猫毛：排除这款，重新筛选。',limit:'没机器就跳过；不为测试先买，不捏造地刷能力。',entry:'本条下方「地面仍有猫毛」',passLabel:'地面猫毛已收走',failLabel:'地面仍有猫毛'});\n return cards.map((c,i)=>({...c,priority:i+1}));\n}\nfunction validateActions(cards,changes){\n if(!Array.isArray(cards)||cards.length>3)throw Error('验证最多3条');\n for(const c of cards){\n  if(!c.id||!c.target||!c.title||!c.entry||!c.reason||!c.pass||!c.fail||!c.how||c.minutes>5||c.minutes<=0||/请自行查阅|咨询客服|自行搜索/.test(c.how))throw Error('验证必须具体且五分钟内可做');\n  if(changes&&!changes(c))throw Error('测了也白测：验证无法改变结论');\n }\n}\nfunction apply(r,a,old,base,catalog){\n const cards=actions(r,a,old),scope=context(a,old);\n const observations=a.verification?.context===scope?a.verification.results||{}:{};\n let out=r;\n const failed=cards.filter(c=>observatio`... 2490381 more characters,
+    expected: `/* 由 scripts/build_preview.mjs 从小程序源文件生成，请勿手改。 */\n(function(){\nconst modules={"utils/account-files.js": function(require,module,exports){\n'use strict';\nfunction exportFile(api,filename,json){\n  return new Promise((resolve,reject)=>{\n    if(!api.env?.USER_DATA_PATH||typeof api.getFileSystemManager!=='function')return reject({code:'EXPORT_FAILED'});\n    const filePath=api.env.USER_DATA_PATH+'/'+filename;\n    api.getFileSystemManager().writeFile({filePath,data:json,encoding:'utf8',fail:()=>reject({code:'EXPORT_FAILED'}),success:()=>{\n      if(typeof api.shareFileMessage!=='function')return reject({code:'SHARE_UNAVAILABLE'});\n      api.shareFileMessage({filePath,fileName:filename,success:resolve,fail:()=>reject({code:'EXPORT_CANCELLED'})});\n    }});\n  });\n}\nfunction clearExportFiles(api){const fs=api.getFileSystemManager();for(const name of fs.readdirSync(api.env.USER_DATA_PATH))if(/^goodsdex-(?:account-)?\\d{4}-\\d{2}-\\d{2}\\.json$/.test(name))fs.unlinkSync(api.env.USER_DATA_PATH+'/'+name);}\nmodule.exports={exportFile,clearExportFiles};\n\n},\n"utils/account.js": function(require,module,exports){\n'use strict';\nconst { requestService } = require('./goodsdex-client');\nconst TOKEN_KEY = 'spendgood-member-token', META_KEY = 'spendgood-account-v1', DEVICE_KEY = 'spendgood-install-v1';\n// Random installation label only; never a hardware identifier or an authentication factor.\nfunction randomId() { return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{const r=Math.floor(Math.random()*16);return (c==='x'?r:(r&3)|8).toString(16);}); }\nfunction errorText(error) {\n  error=error||{};\n  if(error.code==='AVATAR_TOO_LARGE')return '头像需为300KB以内的 JPG 或 PNG，请换一张较小的图片。';\n  if(error.code==='INVALID_AVATAR')return '请选择有效的 JPG 或 PNG 头像。';\n  if(error.code==='INVALID_NICKNAME')return '昵称最多24个字，不能包含控制字符。';\n  if(['AVATAR_UNAVAILABLE','AVATAR_UPLOAD_FAILED'].includes(error.code))return '头像未能保存，请稍后重试。';\n  if(error.code==='EXPORT_FAILED')return '备份文件写入失败。请重试导出，或到隐私页复制完整 JSON。';\n  if(error.code==='SHARE_UNAVAILABLE')return '当前微信不支持文件分享，请升级微信，或到隐私页复制完整 JSON。文件仍在本机。';\n  if(error.code==='EXPORT_CANCELLED')return '分享未完成，文件仍在本机。可再次导出并选择保存位置。';\n  if(error.code==='ACCOUNT_DELETED')return '这个账号的数据已删除，自动登录已停止。若要重新使用账号，请主动点击微信登录。';\n  if(error.code==='AUTH_EXPIRED'||error.status===401)return '登录已失效，请重新登录。本机记录还在。';\n  if(error.code==='LOCAL_COMMIT_FAILED')return '云端已处理，本机保存失败，请重试同步或先导出本机。';\n  if(error.code==='TOO_LARGE')return '物品数据超过同步容量（2000条或4MB），本机记录还在，请先导出或减少同步数据后重试。';\n  if(error.code==='CANCELLED')return '已取消，继续使用本机模式。';\n  if(error.code==='CONSENT_CHANGED'||error.code==='CONSENT_REQUIRED')return '同步授权已撤回，请重新确认后再同步。本机记录还在。';\n  if(error.code==='RATE_LIMITED')return '登录次数较多，请一分钟后重试。本机记录仍可使用。';\n  if(error.status>=500)return '服务暂不可用，这次操作未确认完成，请稍后重试。';\n  return '现在连不上，本机记录仍可使用；这次云端操作未确认完成。请重试或导出本机。';\n}\nfunction createAccount({ api, request = requestService, now = Date.now }) {\n  let pending=null, generation=0, profile={nickname:'',avatarUrl:''}, profileVersion=0;\n  const get=k=>api.getStorageSync(k),set=(k,v)=>api.setStorageSync(k,v);\n  const meta=()=>get(META_KEY)||{};\n  function snapshot(){const m=meta();return {loggedIn:!!get(TOKEN_KEY),authorized:!!m.authorized,expiresAt:m.expiresAt||0,nickname:get(TOKEN_KEY)&&profile.nickname?profile.nickname:'微信用户',avatarUrl:get(TOKEN_KEY)?profile.avatarUrl:''};}\n  function device(){let id=get(DEVICE_KEY);if(!id){id=randomId();set(DEVICE_KEY,id);}return id;}\n  async function login(explicit=false){\n    if(!explicit&&!meta().authorized&&!get(TOKEN_KEY))throw {code:'AUTH_EXPIRED',status:401};\n    if(pending)return pending;\n    const current=generation;\n    pending=(async()=>{\n      if(typeof api.login!=='function')throw {code:'AUTH_EXPIRED',status:401};\n      const code=await new Promise((resolve,reject)=>api.login({success:r=>r.code?resolve(r.code):reject({code:'CANCELLED'}),fail:e=>reject({code:/cancel|deny|denied/i.test(e?.errMsg||'')?'CANCELLED':'NETWORK_FAILED'})}));\n      const result=await request('accountLogin',null,{code,deviceId:device(),resume:!explicit});\n      if(!result.ok||typeof result.token!=='string'||!Number.isFinite(result.expiresAt))throw {status:503};\n      if(current!==generation)throw {code:'CANCELLED'};\n      set(TOKEN_KEY,result.token);set(META_KEY,{authorized:true,expiresAt:result.expiresAt});return true;\n    })().catch(error=>{if(error.code==='ACCOUNT_DELETED')forget();throw error;}).finally(()=>{pending=null;});return pending;\n  }\n  async function call(route,data){\n    if(!get(TOKEN_KEY)&&!meta().authorized)throw {code:'AUTH_EXPIRED',status:401};\n    if(!get(TOKEN_KEY)||(meta().expiresAt&&meta().expiresAt-now()<86400000))await login();\n    try{return await request(route,get(TOKEN_KEY),data);}catch(error){\n      if(error.status!==401)throw error;\n      await login();return request(route,get(TOKEN_KEY),data);\n    }\n  }\n  function forget(){generation++;profileVersion++;profile={nickname:'',avatarUrl:''};set(TOKEN_KEY,'');set(META_KEY,{});set('spendgood-pending-payment','');}\n  return {snapshot,login,call,device,forget,\n    async profile(){\n      const current=generation,version=profileVersion;\n      const value=await call('accountProfile');\n      if(current===generation&&version===profileVersion)profile={nickname:value.nickname||'',avatarUrl:value.avatarUrl||''};\n      return snapshot();\n    },\n    async updateProfile(patch){\n      const current=generation;profileVersion++;\n      const value=await call('accountProfileUpdate',patch);\n      if(current!==generation)throw {code:'CANCELLED'};\n      profileVersion++;profile={nickname:value.nickname||'',avatarUrl:value.avatarUrl||''};return snapshot();\n    },\n    setNickname(value){if(!snapshot().loggedIn)throw {code:'AUTH_EXPIRED'};return this.updateProfile({nickname:String(value||'').trim()});},\n    async chooseAvatar(filePath){\n      if(!snapshot().loggedIn)throw {code:'AUTH_EXPIRED'};\n      const fs=api.getFileSystemManager();\n      const stat=await new Promise((resolve,reject)=>fs.stat({path:filePath,success:resolve,fail:reject}));\n      if(stat.stats.size>300*1024)throw {code:'AVATAR_TOO_LARGE'};\n      const result=await new Promise((resolve,reject)=>fs.readFile({filePath,encoding:'base64',success:resolve,fail:reject}));\n      const contentType=result.data.startsWith('/9j/')?'image/jpeg':result.data.startsWith('iVBORw0KGgo')?'image/png':'';\n      if(!contentType)throw {code:'INVALID_AVATAR'};\n      return this.updateProfile({avatar:{contentType,base64:result.data}});\n    },\n    async logout(localOnly=false){if(!localOnly)await call('accountLogout');forget();},\n    async erase(){await call('accountDelete');forget();},\n    async exportData(){return (await call('accountExport')).data;},\n    async info(){return call('account');}\n  };\n}\nlet singleton;\nfunction current(){if(!singleton)singleton=createAccount({api:wx});return singleton;}\nmodule.exports={createAccount,current,errorText,randomId,TOKEN_KEY,META_KEY,DEVICE_KEY};\n\n},\n"utils/action-verification.js": function(require,module,exports){\n'use strict';\n// Observations are local to a decision. They never become catalog/official capability facts.\nfunction context(a,old){return JSON.stringify([a.mode,a.category,a.goal,a.size,a.budget,a.remote,a.bare,a.manualCleaning||'',a.dissatisfaction||'',old?.id||old?.name,old?.product?.key,old?.model,old?.scenarioEvidence,...(a.budgetState?[a.budgetState,a.groundRule||'',a.wear||'']:[])]);}\nfunction actions(r,a,old){\n const cards=[];\n if(a.category==='扫地机器人')for(const p of (r.candidates||[]).filter(p=>/2230004779|2230007883/.test(p.key)).slice(0,2))cards.push({id:'robot:'+p.key,key:p.key,title:'绳子、袋子会被卷入吗？',target:p.name,minutes:4,reason:'先测公开价较低的款；任一物体被拖动就能排除这款，无需再测其他能力。',how:'仅在有这款现场或试用机时测。在客厅空地，放一根松散的鞋带和一个展开的空纸袋，相隔半米。让机器从正前方局部清扫，各接近两次；手放暂停键旁，碰到就停。',pass:'两次均提前绕开两件物体：只记本次未碰到，不能证明普遍支持，暂不下单。',fail:'任一次碰到、推走或卷入：排除这款；两款都失败则本轮无候选，暂不下单。',limit:'没有现场或试用机就跳过，别为验证先买机器；不测试接电电线。',entry:'本条下方「碰到或卷入」',passLabel:'两次均绕开',failLabel:'碰到或卷入'});\n if(a.category==='宠物喂食器'&&a.mode==='upgrade'&&old&&r.product)cards.push({id:'feeder:'+r.product.key,key:r.product.key,title:'旧机能看现场并回放吗？',target:old.name,minutes:5,reason:'只做这一条：两项都能用，就不因摄像与回看换新；已有配置无法完成时，才保留可视版试用候选。',how:'在家打开米家里这台喂食器。若已有实时画面，在食盆前挥手，确认画面同步；等一分钟，再打开这台设备的历史视频，回放刚才挥手片段。不要用另一台摄像机或进食克数记录代替。',pass:'现场同步且能回放挥手片段：旧机已满足这次需求，先继续用。',fail:'已联网且已完成现有存储配置，仍无法看现场或回放：旧机当前配置不满足需求，可视版只作有条件试用候选。',limit:'离线、没配存储、事件没触发或分不清设备时，结果不明，先不记录；这不能证明普通版硬件不支持。',entry:'本条下方「两项都可用」或「配置完成仍不可用」',passLabel:'两项都可用',failLabel:'配置完成仍不可用'});\n if(a.category==='电饭煲'&&a.mode==='upgrade'&&old&&r.product)cards.push({id:'rice:coating',key:r.product.key,title:'内锅涂层有没有露底？',target:old.name,minutes:3,reason:'先做这一条：发现露底或脱落，会立即暂停整锅候选；五分钟不能验证饭感改善。',how:'在家等内锅冷却后取出，用清水和软布清掉残留，在厨房灯下转动查看锅底和侧壁。看是否有露出金属底色、涂层片状脱落；不再用钢丝球刮擦。',pass:'只有刻度模糊、没见露底或脱落：保留当前有条件候选，不证明饭感改善。',fail:'看见金属底色或片状脱落：暂停整锅候选，先检查锅体并核对适配内胆。',limit:'锅仍烫或污渍遮挡时先不测；照片看不清不能当涂层完好。',entry:'本条下方「发现露底或脱落」',passLabel:'没见露底脱落',failLabel:'发现露底或脱落'});\n if(a.category==='吸尘器'&&a.size==='floor'&&r.product)cards.push({id:'vacuum:'+r.product.key,key:r.product.key,title:'这款地刷能收走猫毛吗？',target:r.product.name,minutes:3,reason:'只做这一条：地面猫毛收不走就排除这款；参数适配不等于你家效果。',how:'仅在已有现场或试用机时，在客厅一块干燥硬地板放一小撮日常掉落的猫毛。装上这款标配地刷，用正常档往返两次，关机后看地面和刷头；不测织物。',pass:'地面猫毛已收走：保留有条件候选，只代表这次地面和毛量；刷头缠毛只记录维护，你已接受手动清理。',fail:'往返两次后地面仍有明显猫毛：排除这款，重新筛选。',limit:'没机器就跳过；不为测试先买，不捏造地刷能力。',entry:'本条下方「地面仍有猫毛」',passLabel:'地面猫毛已收走',failLabel:'地面仍有猫毛'});\n return cards.map((c,i)=>({...c,priority:i+1}));\n}\nfunction validateActions(cards,changes){\n if(!Array.isArray(cards)||cards.length>3)throw Error('验证最多3条');\n for(const c of cards){\n  if(!c.id||!c.target||!c.title||!c.entry||!c.reason||!c.pass||!c.fail||!c.how||c.minutes>5||c.minutes<=0||/请自行查阅|咨询客服|自行搜索/.test(c.how))throw Error('验证必须具体且五分钟内可做');\n  if(changes&&!changes(c))throw Error('测了也白测：验证无法改变结论');\n }\n}\nfunction apply(r,a,old,base,catalog){\n const cards=actions(r,a,old),scope=context(a,old);\n const observations=a.verification?.context===scope?a.verification.results||{}:{};\n let out=r;\n const failed=cards.filter(c=>observatio`... 2490904 more characters,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/support-scope.test.js:1:1
+✖ tests/support-scope.test.js (4405.171836ms)
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t12.test.js:1:1
+✖ tests/t12.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t13.test.js:1:1
+✖ tests/t13.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t14.test.js:1:1
+✖ tests/t14.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t15.test.js:1:1
+✖ tests/t15.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t17.test.js:1:1
+✖ tests/t17.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t18.test.js:1:1
+✖ tests/t18.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t19.test.js:1:1
+✖ tests/t19.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t20.test.js:1:1
+✖ tests/t20.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t21.test.js:1:1
+✖ tests/t21.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t22.test.js:1:1
+✖ tests/t22.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t24.test.js:1:1
+✖ tests/t24.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t25.test.js:1:1
+✖ tests/t25.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t26.test.js:1:1
+✖ tests/t26.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t29.test.js:1:1
+✖ tests/t29.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/t31.test.js:1:1
+✖ tests/t31.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/three-fixes.test.js:1:1
+✖ tests/three-fixes.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/three-paths.test.js:1:1
+✖ tests/three-paths.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/typography.test.js:1:1
+✖ tests/typography.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/upgrade-verdict.test.js:1:1
+✖ tests/upgrade-verdict.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/upgrade-visual.test.js:1:1
+✖ tests/upgrade-visual.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/verdict.test.js:1:1
+✖ tests/verdict.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/visual-build.test.js:1:1
+✖ tests/visual-build.test.js
+  'Promise resolution is still pending but the event loop has already resolved'
+
+test at tests/wxml-bindings.test.js:1:1
+✖ tests/wxml-bindings.test.js
+  'Promise resolution is still pending but the event loop has already resolved'

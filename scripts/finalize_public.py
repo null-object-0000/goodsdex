@@ -13,13 +13,9 @@ if __name__ == "__main__":
     args = ap.parse_args()
     from migrate_car_structure import migrate_public
     migrate_public(args.public)
-    print(json.dumps(finalize_public(args.public), ensure_ascii=False))
-    if args.previous:
-        previous = json.loads(args.previous.read_text())
-        current = json.loads((args.public / "goods.json").read_text())
-        from goodsdex.car_structure import mappings
-        retained = {r['id'] for r in current} | {m['old_id'] for m in mappings(current)}
-        missing = {r['id'] for r in previous} - retained
-        if missing:
-            raise ValueError(f"Final release lost previous IDs: {sorted(missing)}")
+    previous = json.loads(args.previous.read_text()) if args.previous else None
+    from goodsdex.car_structure import mappings
+    current = json.loads((args.public / "goods.json").read_text())
+    retained = {m['old_id'] for m in mappings(current)}
+    print(json.dumps(finalize_public(args.public, previous, retained), ensure_ascii=False))
     build_shards(args.public)
