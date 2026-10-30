@@ -32,6 +32,10 @@ def unique(rows, label, preserve_legacy=False):
 
 
 def prepare(previous, input_dir=INPUT, append_only=False):
+    if any(r.get('schema') == 'car-product-v2' for r in previous):
+        from goodsdex.car_structure import migrate, expand_sources
+        result, audit = prepare(expand_sources(previous), input_dir, append_only)
+        return migrate(result), audit
     gaps = json.loads((input_dir / 'parameter-gaps.json').read_text())
     excluded = {r['id'] for r in gaps}
     incoming = []
@@ -86,6 +90,10 @@ def prepare(previous, input_dir=INPUT, append_only=False):
 
 
 def prepare_history(previous, input_dir=None):
+    if any(r.get('schema') == 'car-product-v2' for r in previous):
+        from goodsdex.car_structure import migrate, expand_sources
+        result, audit = prepare_history(expand_sources(previous), input_dir)
+        return migrate(result), audit
     """Append the exact reviewed historical bundle, preserving every old object."""
     approved = json.loads(HISTORY.read_text())
     incoming = json.loads((input_dir / 'byd-verified.json').read_text()) if input_dir else approved

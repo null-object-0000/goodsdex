@@ -18,6 +18,9 @@ def assert_cars_unchanged(before, after):
 
 
 def merge_cars(previous, cars, approved):
+    if any(r.get('schema') == 'car-product-v2' for r in previous):
+        from goodsdex.car_structure import migrate, expand_sources
+        return migrate(merge_cars(expand_sources(previous), cars, approved))
     allowed = {r['id'] for r in approved}
     incoming = {r['id']: r for r in cars}
     if len(incoming) != len(cars) or incoming.keys() != allowed:
