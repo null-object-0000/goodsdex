@@ -79,3 +79,16 @@ def test_shards_retain_nested_search_and_image_metadata(tmp_path):
     assert row['image_status']=='official_unavailable'
     assert len(row['trims']) == 5
     assert 'source_record' not in row['trims'][0]
+
+
+def test_existing_daily_and_history_publishers_do_not_reintroduce_configuration_rows():
+    import sys
+    sys.path.insert(0, str(ROOT/'scripts'))
+    from publish_cars import prepare, prepare_history
+    previous=migrate(sources())
+    refreshed, _=prepare(previous)
+    assert len(refreshed)==11
+    assert len(mappings(refreshed))==48
+    assert all(r['schema']=='car-product-v2' for r in refreshed)
+    repeated, _=prepare_history(refreshed)
+    assert repeated==refreshed
