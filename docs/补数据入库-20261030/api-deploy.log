@@ -1,0 +1,78 @@
+src/goods.mjs: OK
+src/product-presentation.mjs: OK
+eaf4b518ccbb6c4fa5d84e09070a99631752794bbd0aca61914ab2f89437a9e6  src/goods.mjs
+415aa8986375e21c5f9e72512f179a63724e67602149c119644b7c46a05ee4e6  src/product-presentation.mjs
+ Image spendgood-api:local Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 492B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.49kB 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:24-bookworm-slim
+#3 DONE 3.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 120B done
+#4 DONE 0.0s
+
+#5 [ 1/13] FROM docker.io/library/node:24-bookworm-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 38.51kB 0.0s done
+#6 DONE 0.0s
+
+#7 [ 5/13] COPY package.json package-lock.json ./
+#7 CACHED
+
+#8 [ 2/13] WORKDIR /app
+#8 CACHED
+
+#9 [ 3/13] RUN sed -i 's|deb.debian.org|mirrors.aliyun.com|g; s|security.debian.org|mirrors.aliyun.com|g' /etc/apt/sources.list.d/debian.sources 2>/dev/null ||     sed -i 's|deb.debian.org|mirrors.aliyun.com|g; s|security.debian.org|mirrors.aliyun.com|g' /etc/apt/sources.list
+#9 CACHED
+
+#10 [ 4/13] RUN apt-get update && apt-get install -y --no-install-recommends chromium fonts-noto-cjk gosu     && rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [ 6/13] RUN npm ci --omit=dev
+#11 CACHED
+
+#12 [ 7/13] COPY src ./src
+#12 DONE 0.1s
+
+#13 [ 8/13] COPY scripts/verify-notify.mjs scripts/verify-avatar.mjs ./scripts/
+#13 DONE 0.1s
+
+#14 [ 9/13] COPY products.seed.json ./
+#14 DONE 0.0s
+
+#15 [10/13] COPY build-info.json ./
+#15 DONE 0.0s
+
+#16 [11/13] RUN mkdir -p /data && groupadd --system app && useradd --system --gid app --create-home app && chown -R app:app /data
+#16 DONE 1.4s
+
+#17 [12/13] COPY scripts/container-entrypoint.sh /usr/local/bin/spendgood-entrypoint
+#17 DONE 0.1s
+
+#18 [13/13] RUN chmod 755 /usr/local/bin/spendgood-entrypoint
+#18 DONE 0.6s
+
+#19 exporting to image
+#19 exporting layers
+#19 exporting layers 0.3s done
+#19 writing image sha256:ecebb7b1f02202536e7717f641b74b8a7674c13c534c582789b04197ff7b5ce1 done
+#19 naming to docker.io/library/spendgood-api:local done
+#19 DONE 0.3s
+
+#20 resolving provenance for metadata file
+#20 DONE 0.0s
+ Image spendgood-api:local Built 
+ Container spendgood-api Recreate 
+ Container spendgood-api Recreated 
+ Container spendgood-api Starting 
+ Container spendgood-api Started 
+okbackup=/tmp/backfill-api-rollback.fa42gT
