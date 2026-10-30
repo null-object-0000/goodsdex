@@ -29,10 +29,15 @@ def test_year_provenance_and_no_image_substitution():
     history = next(r for r in result if r['model_year'] == 2022)
     assert history['model_year_source'] == 'pcauto'
     assert history['model_year_confidence'] == 'third_party'
-    assert history['image'] is None
-    assert history['image_status'] == 'official_unavailable'
+    assert history['image'] == 'https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/16a7e808f08cda47a16a7fc951c07da02e3fc257.jpg'
+    assert history['image_status'] == 'available'
+    assert history['image_source'] == history['image_source_type'] == 'official_archive'
+    assert history['image_source_url'].startswith('https://web.archive.org/web/20220516034632id_/')
+    assert history['image_captured_at'] == '2022-05-16'
+    assert history['image_note'] == '2022 年官网车型页存档图，时光灰；非当前在售款'
+    assert history['image_scope'] == 'series'
     assert len(history['trims']) == 5
-    assert all(t['image'] is None and t['range_std'] == 'NEDC' for t in history['trims'])
+    assert all(t['image'] == history['image'] and t['image_scope'] == 'series' and t['image_source'] == 'official_archive' and t['range_std'] == 'NEDC' for t in history['trims'])
     assert history['trims'][0]['name'] == '121KM 尊贵型'
     for r in result:
         assert r['model_year'] is None or isinstance(r['model_year'], int)
@@ -78,7 +83,10 @@ def test_shards_retain_nested_search_and_image_metadata(tmp_path):
     index=next(i for i,r in enumerate(data['items']) if r['model_year']==2022)
     assert '121KM' in queries[index]['search_text'].upper()
     row=data['items'][index]
-    assert row['image_status']=='official_unavailable'
+    assert row['image_status']=='available'
+    assert row['image_source']=='official_archive'
+    assert row['image_source_url'].startswith('https://web.archive.org/')
+    assert row['image_scope']=='series'
     assert len(row['trims']) == 5
     assert 'source_record' not in row['trims'][0]
 
@@ -94,3 +102,59 @@ def test_existing_daily_and_history_publishers_do_not_reintroduce_configuration_
     assert all(r['schema']=='car-product-v2' for r in refreshed)
     repeated, _=prepare_history(refreshed)
     assert repeated==refreshed
+
+
+def test_history_without_image_still_has_unavailable_placeholder():
+    raw = sources()
+    for row in raw:
+        if row.get('model_year') == 2022:
+            row['image'] = None
+    history = next(r for r in migrate(raw) if r['model_year'] == 2022)
+    assert history['image'] is None and history['image_status'] == 'official_unavailable'
+    assert all(t['image'] is None for t in history['trims'])
+
+
+def test_archive_image_amendment_only_changes_exact_han_product_and_is_idempotent():
+    import sys
+    sys.path.insert(0, str(ROOT/'scripts'))
+    from apply_han_archive_image import apply, TARGET, AMENDED
+    rows = migrate(sources())
+    old = deepcopy(rows)
+    parent = next(r for r in old if r['id'] == TARGET)
+    for trim in parent['trims']:
+        trim['source_record'] = {k:v for k,v in trim['source_record'].items() if k not in AMENDED}
+        trim['source_record']['image'] = None
+    old_parent = migrate([t['source_record'] for t in parent['trims']])[0]
+    old = [old_parent if r['id'] == TARGET else r for r in old]
+    result = apply(old)
+    assert sum(a != b for a,b in zip(old,result)) == 1
+    assert [r for r in old if r['id'] != TARGET] == [r for r in result if r['id'] != TARGET]
+    assert apply(result) == result
+    damaged = deepcopy(old)
+    next(r for r in damaged if r['id'] == TARGET)['trims'][0]['source_record']['price'] = 1
+    with pytest.raises(ValueError, match='configuration evidence'):
+        apply(damaged)
+
+
+def test_finalized_category_projection_survives_canonical_migration():
+    rows = migrate(sources())
+    for product in rows:
+        product['categories'] = [product['category']]
+        for trim in product['trims']:
+            trim['source_record']['categories'] = [trim['source_record']['category']]
+    assert migrate(rows) == rows
+
+
+def test_finalized_archive_product_survives_daily_and_history_publication():
+    import sys
+    sys.path.insert(0, str(ROOT/'scripts'))
+    from publish_cars import prepare, prepare_history
+    rows = migrate(sources())
+    for product in rows:
+        product['categories'] = [product['category']]
+        for trim in product['trims']:
+            trim['source_record']['categories'] = [trim['source_record']['category']]
+    history = next(r for r in rows if r['model_year'] == 2022)
+    daily, _ = prepare(rows)
+    repeated, _ = prepare_history(daily)
+    assert next(r for r in repeated if r['model_year'] == 2022) == history

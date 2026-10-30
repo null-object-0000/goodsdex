@@ -12,6 +12,7 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
 from goodsdex.supplements import metadata
+from goodsdex.car_images import validate_historical_image
 
 INPUT = ROOT / 'data/car-pilot-20261028'
 HISTORY = ROOT / 'data/car-history-20261029/byd-verified.json'
@@ -125,12 +126,15 @@ def prepare_history(previous, input_dir=None):
               or not row.get('price_source_url') or isinstance(price, bool)
               or not isinstance(price, (int, float)) or not math.isfinite(price) or price <= 0):
             raise ValueError('Historical MSRP requires official price evidence')
-        if row.get('image') is not None and row.get('image_source_type') != 'official':
-            raise ValueError('Historical image must be official or null')
+        validate_historical_image(row)
         if set(row.get('params', {})) != set(row['parameter_sources']):
             raise ValueError('Every parameter requires provenance')
-        if row['id'] in old and row != old[row['id']]:
-            raise ValueError('Historical ID conflict; append-only publication refuses overwrite')
+        if row['id'] in old:
+            comparable = deepcopy(row)
+            if old[row['id']].get('categories') == [row['category']] and 'categories' not in comparable:
+                comparable['categories'] = [row['category']]
+            if comparable != old[row['id']]:
+                raise ValueError('Historical ID conflict; append-only publication refuses overwrite')
     result = deepcopy(previous)
     result.extend(deepcopy(r) for r in incoming if r['id'] not in old)
     unique(result, 'result', preserve_legacy=True)

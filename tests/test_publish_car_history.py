@@ -40,7 +40,37 @@ def test_history_provenance_guards(tmp_path, monkeypatch, mutation):
     rows = json.loads(pub.HISTORY.read_text())
     if mutation == 'third-party-price': rows[0]['price_source_type'] = 'third_party'
     elif mutation == 'missing-provenance': rows[0]['parameter_sources'].pop('电池容量(kWh)')
-    elif mutation == 'third-party-image': rows[0]['image'] = 'https://example.com/car.jpg'
+    elif mutation == 'third-party-image': rows[0].update(image='https://example.com/car.jpg', image_source_type='third_party', image_source='third_party')
     bundle = tmp_path / 'reviewed.json'; bundle.write_text(json.dumps(rows))
     monkeypatch.setattr(pub, 'HISTORY', bundle)
     with pytest.raises(ValueError): pub.prepare_history([])
+
+
+@pytest.mark.parametrize('source,url,accepted', [
+    ('official_archive', 'https://web.archive.org/web/20220516034632id_/https://www.bydauto.com.cn/image.jpg', True),
+    ('official_archive', None, False),
+    ('official_archive', '', False),
+    ('official_archive', 'https://www.bydauto.com.cn/image.jpg', False),
+    ('official_archive', 'https://web.archive.org.evil.example/image.jpg', False),
+    ('official_archive', 'https://web.archive.org@evil.example/image.jpg', False),
+    ('official_archive', 'http://web.archive.org/image.jpg', False),
+    ('third_party', 'https://web.archive.org/image.jpg', False),
+    ('user_upload', 'https://web.archive.org/image.jpg', False),
+    ('official', 'https://www.bydauto.com.cn/image.jpg', True),
+])
+def test_history_archive_image_gate(tmp_path, monkeypatch, source, url, accepted):
+    rows = json.loads(pub.HISTORY.read_text())
+    rows[0].update(image='https://spend-good.oss-cn-shanghai.aliyuncs.com/goods/test.jpg',
+                   image_source_type=source, image_source=source)
+    rows[0].pop('image_source_url', None)
+    if url is not None:
+        rows[0]['image_source_url'] = url
+    bundle = tmp_path / 'reviewed.json'
+    bundle.write_text(json.dumps(rows))
+    monkeypatch.setattr(pub, 'HISTORY', bundle)
+    if accepted:
+        result, _ = pub.prepare_history([])
+        assert result[0] == rows[0]
+    else:
+        with pytest.raises(ValueError, match='Historical.*image'):
+            pub.prepare_history([])

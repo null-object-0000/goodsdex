@@ -2,6 +2,7 @@
 from copy import deepcopy
 import re
 from goodsdex.cars import is_car
+from goodsdex.car_images import IMAGE_FIELDS, validate_historical_image
 
 # Source product IDs are stable generation boundaries, never inferred launch years.
 BYD = {
@@ -31,6 +32,8 @@ def migrate(rows):
         if year_value is not None and (isinstance(year_value, bool) or not isinstance(year_value, int)):
             raise ValueError('Car model_year requires an evidenced integer or null')
         historical = row.get('model_year') == 2022 and ':han-dmi:2022:' in row['id']
+        if historical:
+            validate_historical_image(row)
         if row['brand'] == '比亚迪':
             source_id = row['id'].split(':goods-')[1].split(':')[0] if ':goods-' in row['id'] else None
             if historical:
@@ -53,19 +56,21 @@ def migrate(rows):
         name = ('小米汽车 ' + official_name if row['brand'] == '小米汽车' else
                 ' '.join(filter(None, [row['brand'], generation, series, f'{year}款' if year else None, power, edition])))
         if pid not in products:
-            product = {k: row[k] for k in ('brand', 'kind', 'category', 'product_type', 'sale_status', 'source_url') if k in row}
+            product = {k: row[k] for k in ('brand', 'kind', 'category', 'categories', 'product_type', 'sale_status', 'source_url') if k in row}
             product.update(id=pid, product_id=pid, schema='car-product-v2', record_level='car_product',
                            series=series, model_year=year, powertrain=power, edition=edition, generation=generation,
                            official_name=official_name, name=name, display_name=name,
                            model_year_source='pcauto' if historical else 'official_name' if year else 'official_absent',
                            model_year_confidence='third_party' if historical else 'official' if year else None,
                            model_year_source_url=row['source_url'] if year else None,
-                           image=None if historical else row.get('image'),
-                           image_status='official_unavailable' if historical else 'available' if row.get('image') else 'missing',
-                           image_scope=None if historical or not row.get('image') else 'series' if row['brand'] == '小米汽车' else 'trim',
+                           image=row.get('image'),
+                           image_status='available' if row.get('image') else 'official_unavailable' if historical else 'missing',
+                           image_scope=None if not row.get('image') else 'series' if historical or row['brand'] == '小米汽车' else 'trim',
                            trims=[], legacy_ids=[])
+            product.update({k: row[k] for k in IMAGE_FIELDS if historical and k in row})
             if historical:
-                product['image_evidence'] = 'docs/汽车年款与图源-20261030.md#23-汉-dm-i-2022-款官方整车图拿不到'
+                product['image_evidence'] = ('docs/汉2022官方存档图-20261030.md' if row.get('image') else
+                                             'docs/汽车年款与图源-20261030.md#23-汉-dm-i-2022-款官方整车图拿不到')
             products[pid] = product
             output.append(product)
         product = products[pid]
@@ -73,9 +78,10 @@ def migrate(rows):
         if re.search(r'DM-[ip]|\bEV\b', trim_name):
             raise ValueError('Powertrain must not be a trim')
         trim = dict(id=row['id'], name=trim_name, price=row['price'], price_kind=row['price_kind'],
-                    params=deepcopy(row.get('params', {})), image=None if historical else row.get('image'),
+                    params=deepcopy(row.get('params', {})), image=row.get('image'),
                     image_status=product['image_status'], image_scope=product['image_scope'],
                     source_record=row)
+        trim.update({k: row[k] for k in IMAGE_FIELDS if historical and k in row})
         distance = re.search(r'(\d+)KM', trim_name, re.I)
         if distance:
             trim['range_km'] = int(distance[1])
