@@ -3,6 +3,10 @@ from types import MappingProxyType
 
 ALLOWED_DELETIONS = MappingProxyType({
     "CN:mi_cn:product:25077": "空壳：名称空、无型号、无参数、无图、无价",
+    "CN:mi_cn:product:18032": "空壳：名称空、无型号、无参数、无图、无价",
+    "CN:mi_cn:product:18034": "空壳：名称空、无型号、无参数、无图、无价",
+    "CN:mi_cn:product:21403": "空壳：名称空、无型号、无参数、无图、无价",
+    "CN:mi_cn:product:21404": "空壳：名称空、无型号、无参数、无图、无价",
     "CN:mi_cn:product:25078": "空壳：名称空、无型号、无参数、无图、无价",
     "GLOBAL:apple_support:model:111980": "macOS Big Sur：操作系统页面，非商品机型",
     "GLOBAL:apple_support:model:111988": "macOS Sierra：操作系统页面，非商品机型",
