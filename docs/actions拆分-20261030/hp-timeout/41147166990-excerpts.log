@@ -1,0 +1,6 @@
+collect	Refresh HP configurations (known SKUs; reuse verified images; serial rate limit)	2026-10-31T00:04:49.9519210Z {"fetched_at": "2026-10-31T00:04:49.282609+00:00", "count": 218, "categories": {"笔记本": 174, "台式机": 44}, "configuration_complete": 218, "fields": {"CPU型号": 218, "运行内存": 218, "存储容量": 218, "显卡": 218, "屏幕尺寸": 177, "重量": 142, "上市时间": 0}, "with_image": 218, "with_price": 218, "errors": []}
+collect	Run ./.github/actions/upload-candidate	2026-10-31T00:04:56.4855500Z hp: packed 3 changed inputs
+publish / publish	UNKNOWN STEP	2026-10-31T00:05:48.1534392Z 53 passed in 1.39s
+publish / publish	UNKNOWN STEP	2026-10-31T00:05:54.8019754Z [data 26a8b78] hp publication 2026-10-31T00:05Z
+publish / publish	UNKNOWN STEP	2026-10-31T00:05:59.4432775Z    42f96e5..26a8b78  HEAD -> data
+publish / publish	UNKNOWN STEP	2026-10-31T00:06:36.6781879Z OSS GET verified meta.json: bytes=9438 sha256=7e7e84e1a9b6f2a9f27fc97152909067f04b6dbf6233ecdd426d15dfb587155d

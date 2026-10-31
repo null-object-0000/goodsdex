@@ -1,0 +1,90 @@
+9162c01 .github/workflows/refresh-hp.yml
+18:     timeout-minutes: 12
+25:         if: ${{ inputs.inject_failure }}
+33:         if: always()
+44:     needs: collect
+
+9162c01 .github/workflows/refresh-prices.yml
+13:     timeout-minutes: 3
+25:     needs: collect
+
+9162c01 .github/workflows/refresh-apple.yml
+13:     timeout-minutes: 5
+24:         if: always()
+33:     needs: collect
+
+9162c01 .github/workflows/publish-release.yml
+20:     timeout-minutes: 5
+21:     concurrency:
+22:       group: goodsdex-data-publication
+23:       cancel-in-progress: false
+24:       queue: max
+
+9162c01 .github/workflows/tests.yml
+13: concurrency:
+14:   group: tests-${{ github.ref }}
+15:   cancel-in-progress: true
+20:     timeout-minutes: 10
+30:         if: ${{ inputs.inject_lost_id }}
+36:         if: ${{ inputs.inject_lost_id }}
+
+cde08f5 .github/workflows/refresh-hp.yml
+18:     timeout-minutes: 12
+25:         if: ${{ inputs.inject_failure }}
+33:         if: always()
+44:     needs: collect
+
+cde08f5 .github/workflows/refresh-prices.yml
+13:     timeout-minutes: 3
+25:     needs: collect
+
+cde08f5 .github/workflows/refresh-apple.yml
+13:     timeout-minutes: 5
+24:         if: always()
+33:     needs: collect
+
+cde08f5 .github/workflows/publish-release.yml
+20:     timeout-minutes: 5
+21:     concurrency:
+22:       group: goodsdex-data-publication
+23:       cancel-in-progress: false
+24:       queue: max
+
+cde08f5 .github/workflows/tests.yml
+13: concurrency:
+14:   group: tests-${{ github.ref }}
+15:   cancel-in-progress: true
+20:     timeout-minutes: 10
+30:         if: ${{ inputs.inject_lost_id }}
+36:         if: ${{ inputs.inject_lost_id }}
+
+5252ee6 .github/workflows/refresh-hp.yml
+20:     timeout-minutes: 15
+27:         if: ${{ inputs.inject_failure }}
+35:         timeout-minutes: 13
+38:         if: always()
+49:     needs: collect
+
+5252ee6 .github/workflows/refresh-prices.yml
+13:     timeout-minutes: 3
+25:     needs: collect
+
+5252ee6 .github/workflows/refresh-apple.yml
+13:     timeout-minutes: 5
+24:         if: always()
+33:     needs: collect
+
+5252ee6 .github/workflows/publish-release.yml
+20:     timeout-minutes: 5
+21:     concurrency:
+22:       group: goodsdex-data-publication
+23:       cancel-in-progress: false
+24:       queue: max
+
+5252ee6 .github/workflows/tests.yml
+13: concurrency:
+14:   group: tests-${{ github.ref }}
+15:   cancel-in-progress: true
+20:     timeout-minutes: 10
+30:         if: ${{ inputs.inject_lost_id }}
+36:         if: ${{ inputs.inject_lost_id }}
