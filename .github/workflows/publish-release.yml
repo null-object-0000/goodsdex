@@ -17,7 +17,9 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    # 门禁 + finalize + 推 data + OSS 镜像是一整段；惠普这一路实测要 5 分以上，
+    # 5 分钟会被 job 超时砍在中间（2026-10-31 run 41153825489 就是这么废掉的）。
+    timeout-minutes: 15
     concurrency:
       group: goodsdex-data-publication
       cancel-in-progress: false
