@@ -15,7 +15,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-10-31T11:08:50+08:00",
+   "price_fetched_at": "2026-10-31T12:08:46+08:00",
    "variant_attrs": {
     "dimensionCharging": {
      "value": "usbc",
@@ -37,16 +37,16 @@
     "img_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-select-202609_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=eFJocjZCNlgzZlpSRHllMEpvT0N5MFc3QXkrd1lOczBINzN1b204SXc5djNHc3NlSmU2dzJyR1kxZEwyTE1neUJkRlpCNVhYU3AwTldRQldlSnpRa081UnNNSklyczA1UVE2Mk05aktxd1E"
    },
    "selected_from": {
-    "name": "b928d84b82ec1f5b",
-    "part_number": "3e190aa1815f4a89",
-    "dimensionCharging": "780312a7ebc7d7fc",
-    "price": "badb8b1ae1d6396e",
-    "img_url": "28329bd531195171"
+    "name": "23a887e9788b1022",
+    "part_number": "a4697aaee4c515ea",
+    "dimensionCharging": "5baafe5a25b0534a",
+    "price": "e0ff08b8b59771e3",
+    "img_url": "f6253c626d1da2ac"
    }
   },
   "captures": [
    {
-    "capture_id": "487b45fb0f62",
+    "capture_id": "868c03bcc68a",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-airpods/airpods-5",
     "method": "GET",
@@ -55,19 +55,19 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:3c802c82f7b0358d91a918d8fd05d05931d3978d9becd4cc47630ab082e17fce>",
-    "response_hash": "3c802c82f7b0358d",
-    "raw_ref": "data/apple/raw/3c802c82f7b0358d91a918d8fd05d05931d3978d9becd4cc47630ab082e17fce.html",
+    "response_raw": "<externalized:118d7eb3cdc6e7e71a06e584642a3be9963e799371ae8627950c740c46b19ad2>",
+    "response_hash": "118d7eb3cdc6e7e7",
+    "raw_ref": "data/apple/raw/118d7eb3cdc6e7e71a06e584642a3be9963e799371ae8627950c740c46b19ad2.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-31T11:08:50+08:00",
+    "fetched_at": "2026-10-31T12:08:46+08:00",
     "declared_at": ""
    }
   ],
   "assertions": [
    {
-    "assertion_id": "b928d84b82ec1f5b",
+    "assertion_id": "23a887e9788b1022",
     "subject_id": "CN:apple_cn:commodity:MKFW4CH/A",
-    "capture_id": "487b45fb0f62",
+    "capture_id": "868c03bcc68a",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 AirPods 5 - Apple (中国大陆)",
@@ -83,9 +83,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "3e190aa1815f4a89",
+    "assertion_id": "a4697aaee4c515ea",
     "subject_id": "CN:apple_cn:commodity:MKFW4CH/A",
-    "capture_id": "487b45fb0f62",
+    "capture_id": "868c03bcc68a",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MKFW4CH/A",
@@ -101,9 +101,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "780312a7ebc7d7fc",
+    "assertion_id": "5baafe5a25b0534a",
     "subject_id": "CN:apple_cn:commodity:MKFW4CH/A",
-    "capture_id": "487b45fb0f62",
+    "capture_id": "868c03bcc68a",
     "source": "apple_cn",
     "attribute": "dimensionCharging",
     "raw_value": "usbc",
@@ -119,9 +119,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "badb8b1ae1d6396e",
+    "assertion_id": "e0ff08b8b59771e3",
     "subject_id": "CN:apple_cn:commodity:MKFW4CH/A",
-    "capture_id": "487b45fb0f62",
+    "capture_id": "868c03bcc68a",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "999.00",
@@ -142,9 +142,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "28329bd531195171",
+    "assertion_id": "f6253c626d1da2ac",
     "subject_id": "CN:apple_cn:commodity:MKFW4CH/A",
-    "capture_id": "487b45fb0f62",
+    "capture_id": "868c03bcc68a",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-select-202609_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=eFJocjZCNlgzZlpSRHllMEpvT0N5MFc3QXkrd1lOczBINzN1b204SXc5djNHc3NlSmU2dzJyR1kxZEwyTE1neUJkRlpCNVhYU3AwTldRQldlSnpRa081UnNNSklyczA1UVE2Mk05aktxd1E",
@@ -160,7 +160,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-10-31T11:08:50+08:00",
+  "fetched_at": "2026-10-31T12:08:46+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -188,7 +188,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-10-31T11:08:50+08:00",
+   "price_fetched_at": "2026-10-31T12:08:46+08:00",
    "variant_attrs": {
     "dimensionCharging": {
      "value": "wirelesscharging",
@@ -210,16 +210,16 @@
     "img_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-wcc-select-202609_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=aFZUWmUrUDM2bFVzejhMU3AxSHJHendJQVRIbmUrVkgvaHR4ajlmK3pJN0hJa2hkRmxkTlJIMk9SdFNSaWFNODE1UUxLT2t0cW42N3FvQzVqaGhrVWRsZXJCWXk5YjBoSm5GZDdURmRwclorYWpGdS9XeFgvbS9ITnNYOEhYaG4"
    },
    "selected_from": {
-    "name": "9fb0ef48a563cb29",
-    "part_number": "ef180a8895252287",
-    "dimensionCharging": "11a56096d6b16a98",
-    "price": "0e61f7289b7a2a17",
-    "img_url": "b0b0d374bad60dc6"
+    "name": "b32d07a6b143c920",
+    "part_number": "ad1195340da0e067",
+    "dimensionCharging": "9bd6f70ec80b8bf7",
+    "price": "e1bab4ba3b2b705f",
+    "img_url": "51b0053bf40cc373"
    }
   },
   "captures": [
    {
-    "capture_id": "487b45fb0f62",
+    "capture_id": "868c03bcc68a",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-airpods/airpods-5",
     "method": "GET",
@@ -228,19 +228,19 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:3c802c82f7b0358d91a918d8fd05d05931d3978d9becd4cc47630ab082e17fce>",
-    "response_hash": "3c802c82f7b0358d",
-    "raw_ref": "data/apple/raw/3c802c82f7b0358d91a918d8fd05d05931d3978d9becd4cc47630ab082e17fce.html",
+    "response_raw": "<externalized:118d7eb3cdc6e7e71a06e584642a3be9963e799371ae8627950c740c46b19ad2>",
+    "response_hash": "118d7eb3cdc6e7e7",
+    "raw_ref": "data/apple/raw/118d7eb3cdc6e7e71a06e584642a3be9963e799371ae8627950c740c46b19ad2.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-31T11:08:50+08:00",
+    "fetched_at": "2026-10-31T12:08:46+08:00",
     "declared_at": ""
    }
   ],
   "assertions": [
    {
-    "assertion_id": "9fb0ef48a563cb29",
+    "assertion_id": "b32d07a6b143c920",
     "subject_id": "CN:apple_cn:commodity:MKFT4CH/A",
-    "capture_id": "487b45fb0f62",
+    "capture_id": "868c03bcc68a",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 AirPods 5 - Apple (中国大陆)",
@@ -256,9 +256,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "ef180a8895252287",
+    "assertion_id": "ad1195340da0e067",
     "subject_id": "CN:apple_cn:commodity:MKFT4CH/A",
-    "capture_id": "487b45fb0f62",
+    "capture_id": "868c03bcc68a",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MKFT4CH/A",
@@ -274,9 +274,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "11a56096d6b16a98",
+    "assertion_id": "9bd6f70ec80b8bf7",
     "subject_id": "CN:apple_cn:commodity:MKFT4CH/A",
-    "capture_id": "487b45fb0f62",
+    "capture_id": "868c03bcc68a",
     "source": "apple_cn",
     "attribute": "dimensionCharging",
     "raw_value": "wirelesscharging",
@@ -292,9 +292,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "0e61f7289b7a2a17",
+    "assertion_id": "e1bab4ba3b2b705f",
     "subject_id": "CN:apple_cn:commodity:MKFT4CH/A",
-    "capture_id": "487b45fb0f62",
+    "capture_id": "868c03bcc68a",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "1149.00",
@@ -315,9 +315,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "b0b0d374bad60dc6",
+    "assertion_id": "51b0053bf40cc373",
     "subject_id": "CN:apple_cn:commodity:MKFT4CH/A",
-    "capture_id": "487b45fb0f62",
+    "capture_id": "868c03bcc68a",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-wcc-select-202609_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=aFZUWmUrUDM2bFVzejhMU3AxSHJHendJQVRIbmUrVkgvaHR4ajlmK3pJN0hJa2hkRmxkTlJIMk9SdFNSaWFNODE1UUxLT2t0cW42N3FvQzVqaGhrVWRsZXJCWXk5YjBoSm5GZDdURmRwclorYWpGdS9XeFgvbS9ITnNYOEhYaG4",
@@ -333,7 +333,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-10-31T11:08:50+08:00",
+  "fetched_at": "2026-10-31T12:08:46+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -361,7 +361,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-10-31T11:08:50+08:00",
+   "price_fetched_at": "2026-10-31T12:08:46+08:00",
    "variant_attrs": {
     "dimensionColor": {
      "value": "blue",
@@ -383,16 +383,16 @@
     "img_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-blue_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmaVZsckZUTTZZd1pFb3lRTGNlYkF0Yy9BSXRGSWdwVEs0NXdLd3JPRVQ3TGROL2hTdHRlcnVBMFhCNlFSVHgrS01jL2RQeWJYZ1FmWXUzRFBMSzJrTlJTZy9JeUNjV2pzbzd6anYzTldHVWw"
    },
    "selected_from": {
-    "name": "8e5f9b2f7063c8a1",
-    "part_number": "fdc4ab48fd197cb0",
-    "dimensionColor": "c0918417ec796f6b",
-    "price": "02c85c72b7b12fc5",
-    "img_url": "6ec4834f0fb17c4c"
+    "name": "b46c61384fccfbff",
+    "part_number": "53a774842f589ad0",
+    "dimensionColor": "f41e71af3c60e350",
+    "price": "ca34d7a2b41b946d",
+    "img_url": "669fda866b68fde2"
    }
   },
   "captures": [
    {
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-airpods/airpods-max-2",
     "method": "GET",
@@ -401,19 +401,19 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:03f016f99d9e3935d813a7f0c81af93f12ea4d8ad0986080580f034a203403ee>",
-    "response_hash": "03f016f99d9e3935",
-    "raw_ref": "data/apple/raw/03f016f99d9e3935d813a7f0c81af93f12ea4d8ad0986080580f034a203403ee.html",
+    "response_raw": "<externalized:45e92a8a6ee690660541d5981faa2d3d248824ccbbde5b7df7a855c3163ad4d4>",
+    "response_hash": "45e92a8a6ee69066",
+    "raw_ref": "data/apple/raw/45e92a8a6ee690660541d5981faa2d3d248824ccbbde5b7df7a855c3163ad4d4.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-31T11:08:50+08:00",
+    "fetched_at": "2026-10-31T12:08:46+08:00",
     "declared_at": ""
    }
   ],
   "assertions": [
    {
-    "assertion_id": "8e5f9b2f7063c8a1",
+    "assertion_id": "b46c61384fccfbff",
     "subject_id": "CN:apple_cn:commodity:MHWM4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 AirPods Max 2 - Apple (中国大陆)",
@@ -429,9 +429,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "fdc4ab48fd197cb0",
+    "assertion_id": "53a774842f589ad0",
     "subject_id": "CN:apple_cn:commodity:MHWM4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MHWM4CH/A",
@@ -447,9 +447,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "c0918417ec796f6b",
+    "assertion_id": "f41e71af3c60e350",
     "subject_id": "CN:apple_cn:commodity:MHWM4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "dimensionColor",
     "raw_value": "blue",
@@ -465,9 +465,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "02c85c72b7b12fc5",
+    "assertion_id": "ca34d7a2b41b946d",
     "subject_id": "CN:apple_cn:commodity:MHWM4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "3999.00",
@@ -488,9 +488,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "6ec4834f0fb17c4c",
+    "assertion_id": "669fda866b68fde2",
     "subject_id": "CN:apple_cn:commodity:MHWM4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-blue_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmaVZsckZUTTZZd1pFb3lRTGNlYkF0Yy9BSXRGSWdwVEs0NXdLd3JPRVQ3TGROL2hTdHRlcnVBMFhCNlFSVHgrS01jL2RQeWJYZ1FmWXUzRFBMSzJrTlJTZy9JeUNjV2pzbzd6anYzTldHVWw",
@@ -506,7 +506,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-10-31T11:08:50+08:00",
+  "fetched_at": "2026-10-31T12:08:46+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -534,7 +534,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-10-31T11:08:50+08:00",
+   "price_fetched_at": "2026-10-31T12:08:46+08:00",
    "variant_attrs": {
     "dimensionColor": {
      "value": "purple",
@@ -556,16 +556,16 @@
     "img_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-purple_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdEFZMGtjOXNTYXJEaHFYa1lFVzIyUnJHdFc3SWNOdWRSclF6WTRFc2h1eFJnYUxCQWt1UDJiRlJNZVhPYkVVc2hXdERnUW81QWI5aTlucjZuTWh1dnhzQVNZV1grZHBseDduSWhqSlA3QUE"
    },
    "selected_from": {
-    "name": "3eac857cc673fb80",
-    "part_number": "3cc31cb009fae2ec",
-    "dimensionColor": "07152adc388446ed",
-    "price": "6a5b8c08cd0f8a21",
-    "img_url": "2afb1a968f870e7a"
+    "name": "715848b735d4a660",
+    "part_number": "1643cab574d59285",
+    "dimensionColor": "429eb5ab00258cc1",
+    "price": "d938baacf1df5d1d",
+    "img_url": "b3b21d7c69811463"
    }
   },
   "captures": [
    {
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-airpods/airpods-max-2",
     "method": "GET",
@@ -574,19 +574,19 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:03f016f99d9e3935d813a7f0c81af93f12ea4d8ad0986080580f034a203403ee>",
-    "response_hash": "03f016f99d9e3935",
-    "raw_ref": "data/apple/raw/03f016f99d9e3935d813a7f0c81af93f12ea4d8ad0986080580f034a203403ee.html",
+    "response_raw": "<externalized:45e92a8a6ee690660541d5981faa2d3d248824ccbbde5b7df7a855c3163ad4d4>",
+    "response_hash": "45e92a8a6ee69066",
+    "raw_ref": "data/apple/raw/45e92a8a6ee690660541d5981faa2d3d248824ccbbde5b7df7a855c3163ad4d4.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-31T11:08:50+08:00",
+    "fetched_at": "2026-10-31T12:08:46+08:00",
     "declared_at": ""
    }
   ],
   "assertions": [
    {
-    "assertion_id": "3eac857cc673fb80",
+    "assertion_id": "715848b735d4a660",
     "subject_id": "CN:apple_cn:commodity:MHWP4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 AirPods Max 2 - Apple (中国大陆)",
@@ -602,9 +602,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "3cc31cb009fae2ec",
+    "assertion_id": "1643cab574d59285",
     "subject_id": "CN:apple_cn:commodity:MHWP4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MHWP4CH/A",
@@ -620,9 +620,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "07152adc388446ed",
+    "assertion_id": "429eb5ab00258cc1",
     "subject_id": "CN:apple_cn:commodity:MHWP4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "dimensionColor",
     "raw_value": "purple",
@@ -638,9 +638,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "6a5b8c08cd0f8a21",
+    "assertion_id": "d938baacf1df5d1d",
     "subject_id": "CN:apple_cn:commodity:MHWP4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "3999.00",
@@ -661,9 +661,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "2afb1a968f870e7a",
+    "assertion_id": "b3b21d7c69811463",
     "subject_id": "CN:apple_cn:commodity:MHWP4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-purple_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdEFZMGtjOXNTYXJEaHFYa1lFVzIyUnJHdFc3SWNOdWRSclF6WTRFc2h1eFJnYUxCQWt1UDJiRlJNZVhPYkVVc2hXdERnUW81QWI5aTlucjZuTWh1dnhzQVNZV1grZHBseDduSWhqSlA3QUE",
@@ -679,7 +679,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-10-31T11:08:50+08:00",
+  "fetched_at": "2026-10-31T12:08:46+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -707,7 +707,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-10-31T11:08:50+08:00",
+   "price_fetched_at": "2026-10-31T12:08:46+08:00",
    "variant_attrs": {
     "dimensionColor": {
      "value": "midnight",
@@ -729,16 +729,16 @@
     "img_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-midnight_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdmVWNWdHYnp5cHkwMldsSElEOHpyd0cyWGRFNFZ5QTk3bFlteis2Q2NNaWpENFdPQTN0TWQ4ejhtTWxrUHVDeElGZGV2eWhZaEljUzNSeDlxcDVuWGszbTFldUtUQzN0ellEWHZ3UUFYSS8"
    },
    "selected_from": {
-    "name": "f2f9fe360a9fcd08",
-    "part_number": "4ec84c0704f07a55",
-    "dimensionColor": "cb21faf5d0197482",
-    "price": "e91a8e05beeebcb4",
-    "img_url": "ec81fd5052d15f8e"
+    "name": "a15b145a222c079d",
+    "part_number": "0921c8a27cb9349c",
+    "dimensionColor": "935d9de97e49fd04",
+    "price": "ffedc671c81ed27e",
+    "img_url": "c05e39975258147f"
    }
   },
   "captures": [
    {
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-airpods/airpods-max-2",
     "method": "GET",
@@ -747,19 +747,19 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:03f016f99d9e3935d813a7f0c81af93f12ea4d8ad0986080580f034a203403ee>",
-    "response_hash": "03f016f99d9e3935",
-    "raw_ref": "data/apple/raw/03f016f99d9e3935d813a7f0c81af93f12ea4d8ad0986080580f034a203403ee.html",
+    "response_raw": "<externalized:45e92a8a6ee690660541d5981faa2d3d248824ccbbde5b7df7a855c3163ad4d4>",
+    "response_hash": "45e92a8a6ee69066",
+    "raw_ref": "data/apple/raw/45e92a8a6ee690660541d5981faa2d3d248824ccbbde5b7df7a855c3163ad4d4.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-31T11:08:50+08:00",
+    "fetched_at": "2026-10-31T12:08:46+08:00",
     "declared_at": ""
    }
   ],
   "assertions": [
    {
-    "assertion_id": "f2f9fe360a9fcd08",
+    "assertion_id": "a15b145a222c079d",
     "subject_id": "CN:apple_cn:commodity:MHWK4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 AirPods Max 2 - Apple (中国大陆)",
@@ -775,9 +775,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "4ec84c0704f07a55",
+    "assertion_id": "0921c8a27cb9349c",
     "subject_id": "CN:apple_cn:commodity:MHWK4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MHWK4CH/A",
@@ -793,9 +793,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "cb21faf5d0197482",
+    "assertion_id": "935d9de97e49fd04",
     "subject_id": "CN:apple_cn:commodity:MHWK4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "dimensionColor",
     "raw_value": "midnight",
@@ -811,9 +811,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "e91a8e05beeebcb4",
+    "assertion_id": "ffedc671c81ed27e",
     "subject_id": "CN:apple_cn:commodity:MHWK4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "3999.00",
@@ -834,9 +834,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "ec81fd5052d15f8e",
+    "assertion_id": "c05e39975258147f",
     "subject_id": "CN:apple_cn:commodity:MHWK4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-midnight_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdmVWNWdHYnp5cHkwMldsSElEOHpyd0cyWGRFNFZ5QTk3bFlteis2Q2NNaWpENFdPQTN0TWQ4ejhtTWxrUHVDeElGZGV2eWhZaEljUzNSeDlxcDVuWGszbTFldUtUQzN0ellEWHZ3UUFYSS8",
@@ -852,7 +852,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-10-31T11:08:50+08:00",
+  "fetched_at": "2026-10-31T12:08:46+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -880,7 +880,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-10-31T11:08:50+08:00",
+   "price_fetched_at": "2026-10-31T12:08:46+08:00",
    "variant_attrs": {
     "dimensionColor": {
      "value": "starlight",
@@ -902,16 +902,16 @@
     "img_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-starlight_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdWd1NjlYUXFPTDZEK2xySGJScW1PS1Rpbjg5MjlaRWkwN0JTZEtNR2p3b2dmcFJCOTlLWlREUEJzL3lTN2VnL0cvVnNUQWxFNHNrME94a1pxdUNOU29FM01jakdGSHhMVXhHQ21YeXBIKzU"
    },
    "selected_from": {
-    "name": "9ac4e977e7828805",
-    "part_number": "8a3dd97bbe62a1f1",
-    "dimensionColor": "7ae258ec7365fd00",
-    "price": "92b44737823c6102",
-    "img_url": "28481354e64d591a"
+    "name": "a7453527e98c5dd9",
+    "part_number": "6f6e58c01d44537f",
+    "dimensionColor": "9921b44fc78d6628",
+    "price": "3ff2f6397d2ed4c1",
+    "img_url": "f454129a795204f6"
    }
   },
   "captures": [
    {
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-airpods/airpods-max-2",
     "method": "GET",
@@ -920,19 +920,19 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:03f016f99d9e3935d813a7f0c81af93f12ea4d8ad0986080580f034a203403ee>",
-    "response_hash": "03f016f99d9e3935",
-    "raw_ref": "data/apple/raw/03f016f99d9e3935d813a7f0c81af93f12ea4d8ad0986080580f034a203403ee.html",
+    "response_raw": "<externalized:45e92a8a6ee690660541d5981faa2d3d248824ccbbde5b7df7a855c3163ad4d4>",
+    "response_hash": "45e92a8a6ee69066",
+    "raw_ref": "data/apple/raw/45e92a8a6ee690660541d5981faa2d3d248824ccbbde5b7df7a855c3163ad4d4.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-31T11:08:50+08:00",
+    "fetched_at": "2026-10-31T12:08:46+08:00",
     "declared_at": ""
    }
   ],
   "assertions": [
    {
-    "assertion_id": "9ac4e977e7828805",
+    "assertion_id": "a7453527e98c5dd9",
     "subject_id": "CN:apple_cn:commodity:MHWL4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 AirPods Max 2 - Apple (中国大陆)",
@@ -948,9 +948,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "8a3dd97bbe62a1f1",
+    "assertion_id": "6f6e58c01d44537f",
     "subject_id": "CN:apple_cn:commodity:MHWL4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MHWL4CH/A",
@@ -966,9 +966,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "7ae258ec7365fd00",
+    "assertion_id": "9921b44fc78d6628",
     "subject_id": "CN:apple_cn:commodity:MHWL4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "dimensionColor",
     "raw_value": "starlight",
@@ -984,9 +984,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "92b44737823c6102",
+    "assertion_id": "3ff2f6397d2ed4c1",
     "subject_id": "CN:apple_cn:commodity:MHWL4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "3999.00",
@@ -1007,9 +1007,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "28481354e64d591a",
+    "assertion_id": "f454129a795204f6",
     "subject_id": "CN:apple_cn:commodity:MHWL4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-starlight_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdWd1NjlYUXFPTDZEK2xySGJScW1PS1Rpbjg5MjlaRWkwN0JTZEtNR2p3b2dmcFJCOTlLWlREUEJzL3lTN2VnL0cvVnNUQWxFNHNrME94a1pxdUNOU29FM01jakdGSHhMVXhHQ21YeXBIKzU",
@@ -1025,7 +1025,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-10-31T11:08:50+08:00",
+  "fetched_at": "2026-10-31T12:08:46+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -1053,7 +1053,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-10-31T11:08:50+08:00",
+   "price_fetched_at": "2026-10-31T12:08:46+08:00",
    "variant_attrs": {
     "dimensionColor": {
      "value": "orange",
@@ -1075,16 +1075,16 @@
     "img_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-orange_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmbVl3dU4zNmtlQ1czYnJUSEJUcWowRnJHdFc3SWNOdWRSclF6WTRFc2h1eFJnYUxCQWt1UDJiRlJNZVhPYkVVc2hXdERnUW81QWI5aTlucjZuTWh1dnk3Zm5tZm5FR0tlWnFHbkRhQU5lZmc"
    },
    "selected_from": {
-    "name": "b2214eb6f6713dbf",
-    "part_number": "855ac40460a54dbc",
-    "dimensionColor": "1bd2a3b3e20f0cb4",
-    "price": "a10dd74ea33c96d3",
-    "img_url": "8d8cfee4f01943b6"
+    "name": "9fdbb5c9a20ac73e",
+    "part_number": "661470bccf24c9fa",
+    "dimensionColor": "543f1520c5dd4339",
+    "price": "432b10c5b71558d0",
+    "img_url": "f773bc4912c14bfe"
    }
   },
   "captures": [
    {
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-airpods/airpods-max-2",
     "method": "GET",
@@ -1093,19 +1093,19 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:03f016f99d9e3935d813a7f0c81af93f12ea4d8ad0986080580f034a203403ee>",
-    "response_hash": "03f016f99d9e3935",
-    "raw_ref": "data/apple/raw/03f016f99d9e3935d813a7f0c81af93f12ea4d8ad0986080580f034a203403ee.html",
+    "response_raw": "<externalized:45e92a8a6ee690660541d5981faa2d3d248824ccbbde5b7df7a855c3163ad4d4>",
+    "response_hash": "45e92a8a6ee69066",
+    "raw_ref": "data/apple/raw/45e92a8a6ee690660541d5981faa2d3d248824ccbbde5b7df7a855c3163ad4d4.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-31T11:08:50+08:00",
+    "fetched_at": "2026-10-31T12:08:46+08:00",
     "declared_at": ""
    }
   ],
   "assertions": [
    {
-    "assertion_id": "b2214eb6f6713dbf",
+    "assertion_id": "9fdbb5c9a20ac73e",
     "subject_id": "CN:apple_cn:commodity:MHWN4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 AirPods Max 2 - Apple (中国大陆)",
@@ -1121,9 +1121,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "855ac40460a54dbc",
+    "assertion_id": "661470bccf24c9fa",
     "subject_id": "CN:apple_cn:commodity:MHWN4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MHWN4CH/A",
@@ -1139,9 +1139,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "1bd2a3b3e20f0cb4",
+    "assertion_id": "543f1520c5dd4339",
     "subject_id": "CN:apple_cn:commodity:MHWN4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "dimensionColor",
     "raw_value": "orange",
@@ -1157,9 +1157,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "a10dd74ea33c96d3",
+    "assertion_id": "432b10c5b71558d0",
     "subject_id": "CN:apple_cn:commodity:MHWN4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "3999.00",
@@ -1180,9 +1180,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "8d8cfee4f01943b6",
+    "assertion_id": "f773bc4912c14bfe",
     "subject_id": "CN:apple_cn:commodity:MHWN4CH/A",
-    "capture_id": "16e9566c5167",
+    "capture_id": "3739981e05d6",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-orange_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmbVl3dU4zNmtlQ1czYnJUSEJUcWowRnJHdFc3SWNOdWRSclF6WTRFc2h1eFJnYUxCQWt1UDJiRlJNZVhPYkVVc2hXdERnUW81QWI5aTlucjZuTWh1dnk3Zm5tZm5FR0tlWnFHbkRhQU5lZmc",
@@ -1198,7 +1198,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-10-31T11:08:50+08:00",
+  "fetched_at": "2026-10-31T12:08:46+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -1226,7 +1226,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-10-31T11:08:51+08:00",
+   "price_fetched_at": "2026-10-31T12:08:47+08:00",
    "variant_attrs": {}
   },
   "view": {
@@ -1238,15 +1238,15 @@
     "img_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-3-hero-select-202509?wid=940&hei=1112&fmt=png-alpha&.v=cmp4MmZ6OWxOeHNNTXh4SzlBNUpEb1RucE9zZTI5eEREaWZpY29lSld3eWpxMXNjUlV4SEN2MTZxWE5rL3l2d3AxemF2anFla0E2R0xKdlltYU9XUXo5dGhRWlhERVM3YlhPemV3RUhPMzUrYWpGdS9XeFgvbS9ITnNYOEhYaG4"
    },
    "selected_from": {
-    "name": "02482aac8142bcde",
-    "part_number": "4c54c481dfc159a4",
-    "price": "264b66a2af5ef7b1",
-    "img_url": "b9230c540698c54a"
+    "name": "2c027839b8f4c8ca",
+    "part_number": "45b99f335b2940d4",
+    "price": "6e672fa02248c727",
+    "img_url": "d5ce923d1feec337"
    }
   },
   "captures": [
    {
-    "capture_id": "d18f0b68e65f",
+    "capture_id": "b2f29c5bda5e",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-airpods/airpods-pro-3",
     "method": "GET",
@@ -1255,19 +1255,19 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:612829f14b501b0fc87548a2ff11136fe26445b5cc9aee8aff4a03dc7eb163a4>",
-    "response_hash": "612829f14b501b0f",
-    "raw_ref": "data/apple/raw/612829f14b501b0fc87548a2ff11136fe26445b5cc9aee8aff4a03dc7eb163a4.html",
+    "response_raw": "<externalized:f738ffa9b88bf6a094a9583633b87d31126bd822ddbdfadae4f7c37df4024088>",
+    "response_hash": "f738ffa9b88bf6a0",
+    "raw_ref": "data/apple/raw/f738ffa9b88bf6a094a9583633b87d31126bd822ddbdfadae4f7c37df4024088.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-10-31T11:08:51+08:00",
+    "fetched_at": "2026-10-31T12:08:47+08:00",
     "declared_at": ""
    }
   ],
   "assertions": [
    {
-    "assertion_id": "02482aac8142bcde",
+    "assertion_id": "2c027839b8f4c8ca",
     "subject_id": "CN:apple_cn:commodity:MFHP4CH/A",
-    "capture_id": "d18f0b68e65f",
+    "capture_id": "b2f29c5bda5e",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 AirPods Pro 3 - Apple (中国大陆)",
@@ -1283,9 +1283,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "4c54c481dfc159a4",
+    "assertion_id": "45b99f335b2940d4",
     "subject_id": "CN:apple_cn:commodity:MFHP4CH/A",
-    "capture_id": "d18f0b68e65f",
+    "capture_id": "b2f29c5bda5e",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MFHP4CH/A",
@@ -1301,9 +1301,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "264b66a2af5ef7b1",
+    "assertion_id": "6e672fa02248c727",
     "subject_id": "CN:apple_cn:commodity:MFHP4CH/A",
-    "capture_id": "d18f0b68e65f",
+    "capture_id": "b2f29c5bda5e",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "1899.00",
@@ -1324,9 +1324,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "b9230c540698c54a",
+    "assertion_id": "d5ce923d1feec337",
     "subject_id": "CN:apple_cn:commodity:MFHP4CH/A",
-    "capture_id": "d18f0b68e65f",
+    "capture_id": "b2f29c5bda5e",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-pro-3-hero-select-202509?wid=940&hei=1112&fmt=png-alpha&.v=cmp4MmZ6OWxOeHNNTXh4SzlBNUpEb1RucE9zZTI5eEREaWZpY29lSld3eWpxMXNjUlV4SEN2MTZxWE5rL3l2d3AxemF2anFla0E2R0xKdlltYU9XUXo5dGhRWlhERVM3YlhPemV3RUhPMzUrYWpGdS9XeFgvbS9ITnNYOEhYaG4",
@@ -1342,7 +1342,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-10-31T11:08:51+08:00",
+  "fetched_at": "2026-10-31T12:08:47+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
