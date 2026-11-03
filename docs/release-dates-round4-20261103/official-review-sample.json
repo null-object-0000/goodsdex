@@ -1,0 +1,210 @@
+{
+  "initial_accuracy": 0.95,
+  "initial_result": "19/20; X9-8K rejected and removed",
+  "correct": 20,
+  "total": 20,
+  "accuracy": 1.0,
+  "method": "Keep original 19 accepted samples + one deterministic replacement (seed 20261105), retain failed initial sample; extraction/identity review against captured direct Chinese primary source, not independent ground truth",
+  "samples": [
+    {
+      "id": "CN:mi_cn:product:8382",
+      "name": "小米8 透明探索版",
+      "date": "2018-05",
+      "event": "announcement",
+      "quote": "5月31日小米正式发布小米8透明探索版，它是全球首款压感屏幕指纹识别手机 、安卓首款“Face ID” 手机、全球首款双频GPS手机。",
+      "url": "https://www.mi.com/about/history",
+      "correct": true,
+      "review": "年/月节点2018/05且原句5月31日点名透明探索版；仅发布。"
+    },
+    {
+      "id": "CN:dji:sku:116781",
+      "name": "DJI 图传发射器",
+      "date": "2022-06",
+      "event": "announcement",
+      "quote": "售价与服务 大疆图传 DJI Transmission 套装官方售价 13499 元，内含 DJI 图传发射器、 DJI 图传高亮监视器、电池转接板、智能电池、充电管家等丰富配件。 DJI 图传发射器单品售价 5999 元， DJI 图传高亮监视器单品售价 7999 元。 DJI RS 3 Pro 官方售价 5499 元，内含 DJI RS 3 Pro 云台主体、便携收纳包、 BG30 电池手柄、镜头固定支架、手柄延长脚架、双层快装板、手提转接手柄、相机控制线等丰富配件。 DJI RS 3 Pro 套装版官方售价 6999 元，额外附有 Ronin 图传（原鹰眼图传）、跟焦电机、下层快装板（加长版）、手机夹、 HDMI 线等丰富配件。 DJI RS 3 官方售价 2999 元，内含 DJI RS 3 云台主体、 BG21 电池手柄、双层快装板、镜头固定支架、手柄延长脚架、相机控制线等丰富配件。 DJI RS 3 套装版官方售价 3899 元，额外附有跟焦电机、跟焦电机齿条、手提转接手柄、便携收纳包等丰富配件。 6 月 15 日起， DJI RS 3 系列产品都将于 DJI 大疆官方商城开放购买，大疆图传 DJI Transmission 计划于 9 月上市，详细信息请留意后续官方信息。",
+      "url": "https://www.dji.com/cn/media-center/announcements/dji-release-rs3-rs3pro",
+      "correct": true,
+      "review": "单品单独定价；6月为公告日，9月仅计划，未混写开售。"
+    },
+    {
+      "id": "CN:dji:sku:146391",
+      "name": "DJI 图传接收器",
+      "date": "2023-08",
+      "event": "availability",
+      "quote": "DJI Transmission 图传接收器标准套装、DJI Transmission 高亮监视器套装售价均为人民币13499元，大疆图传接收器 7999元、图传发射器 5999 元、DJI 图传高亮监视器 7999 元、DJI LiDAR 焦点测距器（RS）图传连接线售价599 元，即日起均已正式开售。",
+      "url": "https://www.dji.com/cn/media-center/announcements/dji-release-transmission-cn",
+      "correct": true,
+      "review": "新图传接收器独立价格7999及即日起均已正式开售；非套装内附属品继承。"
+    },
+    {
+      "id": "CN:dji:sku:173061",
+      "name": "DJI Power Expansion Battery 2000",
+      "date": "2024-09",
+      "event": "availability",
+      "quote": "发售价格 DJI Power Expansion Battery 2000 售价4999元。首发更有惊喜价格及赠品，先到先得。 即日起，DJI大疆官方商城、京东、天猫、抖音正式发售；",
+      "url": "https://www.dji.com/cn/media-center/announcements/dji-power-release-expansion-battery-2000",
+      "correct": true,
+      "review": "标题及价格段点名加电包，文章9月即日起线上正式发售；未错取10月线下批次。"
+    },
+    {
+      "id": "CN:dji:sku:241282",
+      "name": "Osmo Pocket 4P 标准套装",
+      "date": "2026-06",
+      "event": "announcement",
+      "quote": "产品与售价 即日起，Osmo Pocket 4P 于 DJI 大疆官方商城、京东、天猫、抖音及线下授权体验店等渠道开启开售预约，共包含 2 种套装： Osmo Pocket 4P 标准套装售价 3799 元，内含 Osmo Pocket 4P 主相机、补光灯、1/4’’ 螺纹手柄、便携收纳袋、USB-C 至 USB-C PD 快充线（USB 3.1）等配件。",
+      "url": "https://www.dji.com/cn/media-center/announcements/dji-release-osmo-pocket-4p",
+      "correct": true,
+      "review": "明确标准套装；即日起开售预约，保守仅记6月发布。"
+    },
+    {
+      "id": "CN:dji:sku:169731",
+      "name": "DJI DL 75 mm F1.8 镜头",
+      "date": "2024-09",
+      "event": "availability",
+      "quote": "售价与信息 DJI DL 75 mm F1.8 镜头售价为 8499 元，包含镜头、镜头保护镜、镜头配重环、俯仰轴配重块、偏航轴配重块、收纳盒、螺丝刀与螺丝。即日起，大疆官方商城开始同步发售。",
+      "url": "https://www.dji.com/cn/media-center/announcements/dl-75mm-lens-cn",
+      "correct": true,
+      "review": "精确75mm F1.8，单列价格与即日起发售，非其他DL镜头。"
+    },
+    {
+      "id": "CN:dji:sku:209931",
+      "name": "DJI RS 5",
+      "date": "2026-01",
+      "event": "availability",
+      "quote": "DJI RS 5 售价 3099 元，DJI RS 5 套装版售价 3899 元。即日起于 DJI 大疆官方商城、京东、天猫、苏宁易购及北京、上海、深圳、南京、杭州旗舰店和线下授权体验店等渠道正式发售。",
+      "url": "https://www.dji.com/cn/media-center/announcements/dji-release-rs-5",
+      "correct": true,
+      "review": "RS5本体3099元，套装另列；明确即日起正式发售。"
+    },
+    {
+      "id": "CN:apple_cn:commodity:MYEW3CH/A",
+      "name": "iPhone 16",
+      "date": "2024-09",
+      "event": "announcement",
+      "quote": "2024 年 9 月 10 日 Apple 推出 iPhone 16 和 iPhone 16 Plus 两款机型均搭载全新 A18 芯片，推出相机控制，先进的摄像头系统强力升级，具备可快速调用常用功能的操作按钮，并大幅提升电池续航时间 iPhone 16 和 iPhone 16 Plus 配备相机控制和操作按钮，配备全新 4800 万像素融合式摄像头，搭载 A18 芯片。 加利福尼亚州，库比提诺 Apple 今日推出 iPhone 16 和 iPhone 16 Plus ，定制的 A18 芯片和让人耳目一新的各种摄像头功能将 iPhone 的能力提升至新境界。iPhone 16 系列还具备相机控制，开启与先进摄像头系统交互的新方式，帮助用户更轻松更快捷地捕捉美好瞬间。强大的摄像头系统中包含支持 2 倍长焦的 4800 万像素融合式摄像头，将两个镜头合而为一，全新超广角摄像头支持微距摄影。运用新一代摄影风格功能，用户可为图像增添个性化风格，而空间照片和空间视频拍摄功能，可供用户在 Apple Vision Pro 上以非凡的景深效果重温生活中珍贵的回忆。全新 A18 芯片实现性能和能效的巨大飞跃，支持要求严苛的 AAA 游戏，同时大幅提升电池续航能力。此外，iPhone 16 和 iPhone 16 Plus 专为 Apple 智能打造。这套简单易用的个性化智能系统能够理解用户的个人情境，提供实用且与用户高度相关的智能功能，同时全程保护用户隐私和安全 1 。 iPhone 16 和 iPhone 16 Plus 带来 6.1 英寸和 6.7 英寸两种尺寸，采用精美耐用的设计，电池续航能力大幅提升。 两款机型均推出五种醒目配色：黑色、白色、粉色、深青色和群青色。9 月 13 日（周五）起接受预购，9 月 20 日（周五）起正式发售。 “iPhone 16 和 iPhone 16 Plus 带来的重大进步，会为用户的日常生活带来美好的改变，” Apple 全球 iPhone 产品市场营销副总裁 Kaiann Drance 表示，“通过相机控制用新方式留住美好回忆；4800 万像素融合式摄像头将两个光学品质摄像头集于一身；电池续航能力大幅提升；更有 A18 芯片带来强大性能与高能效。这正是用户升级现有 iPhone 或改用 iPhone 的最佳时机。” iPhone 16 和 iPhone 16 Plus 提供五种醒目配色：黑色、白色、粉色、深青色和群青色。 优雅的新设计，领先的耐用性 iPhone 16 和 iPhone 16 Plus 优雅精致，专为经久耐用而打造。iPhone 格外保值，得益于领先的耐用性，包括坚固的玻璃背板、抗水防尘设计、频繁的软件更新，以及采用先进配方工艺的新一代超瓷晶面板，其硬度相较第一代提升 50% 2 。iPhone 16 和 iPhone 16 Plus 的内部结构也经过重新打造，以容纳更大的电池、改善散热，同时降低电池维修难度。得益于全新的内部设计和 iOS 18 先进的电源管理，电池经过优化，续航能力大大提升。提供 6.1 英寸和 6.7 英寸两种尺寸，超视网膜 XDR 显示屏采用 OLED 技术，更有灵动岛加持，带来超凡视觉体验 3 。 新一代超瓷晶面板采用先进配方制成。 操作按钮登陆 iPhone 16 和 iPhone 16 Plus，用户只需轻轻一按，即可轻松调用各种功能。用户可快速开启摄像头、手电筒或其他控制选项；切换响铃和静音模式；使用 Shazam 识别音乐；开启语音备忘录、专注模式、翻译和辅助功能（如放大器）；或使用快捷指令 app 启动更多选项。操作按钮还可用于访问 app 内功能，例如帮助用户通过 FordPass 解锁或锁上车门 4 。 操作按钮可供用户快速调用常用功能。默认情况下，操作按钮的功能设定为切换响铃与静音模式。用户也可任选其他功能，享受便利性和灵活性的提升。 相机控制全新登场 在软硬件的精心整合下，相机控制提升 iPhone 16 系列的相机体验。这一功能满载创新技术，包括实现点按体验的触感式开关，支持轻按手势的高精度压力传感器，以及提供触摸交互的电容传感器。相机控制可快速启动相机拍照和录制视频，以免用户错过精彩瞬间。全新相机预览方便用户取景构图，也可用于调整其他控制选项，例如变焦、曝光、景深等，只需在相机控制上滑动，便可制作出令人惊艳的照片或视频。此外，开发者也可将相机控制功能集成至各种第三方 app 中。 一位用户使用 iPhone 16 拍摄人像时在调整设置。 一位用户使用 iPhone 16 拍摄湖中水花的视频。 用户使用 iPhone 16 为一个戴蓝色围巾的人拍摄视频。 借助相机控制，只需轻轻一按，即可轻松、即时地启动相机。 无论在横屏还是竖屏拍摄模式下，相机控制都易于使用，用户只需在相机控制上滑动，即可调整各种设置。 按一下开启相机，再按一下拍摄照片，长按即可开始录制视频，无需担心错过精彩瞬间。 previous next 全新拍摄体验 强大的全新摄像头系统能够以前所未有的方式帮助用户捕捉日常瞬间、留住美好回忆。全新 4800 万像素融合式摄像头支持 2 倍光学品质长焦选项，这就像是将两个镜头集于一身，拉近与拍摄对象的距离，更便于用户取景。具备自动对焦功能的全新 1200 万像素超广角摄像头，除了拍摄广角照片以外，还支持微距摄影。此外，超广角摄像头的进光量提升最高可达 2.6 倍，呈现更出色的画质。iPhone 16 和 iPhone 16 Plus 如今还可拍摄空间照片和空间视频，供用户在 Apple Vision Pro 上以非凡的景深效果重温美好回忆。 一只青蛙的特写。 图片展示一个人斜靠在色彩明艳的粉紫色建筑物上。 展示一张自拍照片，背景处是一片通向大海的草地。 在低光室内环境下，一个人倚靠台球桌摆造型。 以树叶为背景的大头照。 上一张图片中展示的以树叶为背景的大头照现在被放大。 人像照片：以手托腮的人。 全新 1200 万像素超广角摄像头具备自动对焦功能，支持微距摄影，可近距离捕捉拍摄对象，细节纤毫毕现。 全新 1200 万像素超广角摄像头帮助用户捕捉独特视角。 使用超广角摄像头自拍，用户可发挥创意、自由构图。 4800 万像素融合式摄像头依托深度融合技术、零快门延迟和优秀的低光表现，呈现令人惊叹的画质。 4800 万像素融合式摄像头将两个光学品质摄像头集于一身，包括可精准捕捉生动细节的 4800 万像素选项。 依靠软硬件的紧密集成，4800 万像素融合式摄像头支持 2 倍光学质量长焦选项。 4800 万像素融合式摄像头帮助用户拍摄充满细节、令人惊艳的照片和视频。 previous next 用户可借助新一代摄影风格挥洒创意，并在设备上实时调整色彩、高光和阴影，为自己的照片增添个性。摄影风格还能够更细腻地呈现肌肤的底色，方便用户在照片中打造具有个人特色的形象。不同于滤镜，摄影风格不会为整个画面整齐划一地添加同一种颜色，而是将调整应用于选定风格中的特定色彩。更多的摄影风格组合带来更多创作选项，供用户对照片进行美学层面的调整，在实时预览阶段即可渲染呈现风格，然后在完成拍摄后应用，也可稍后再撤销。 iPhone 16 上显示摄影风格界面，给出四个选项并提示“选择风格”。 iPhone 16 上显示摄影风格界面和一张人像照片，且已选中金色风格。 iPhone 16 上显示摄影风格界面和位于底部的控制板。 有了最新一代的摄影风格，用户能以新方式挥洒创意，同时轻松调整图像的色调和颜色。 摄影风格能够细腻呈现肌肤底色，方便用户在照片中打造具有个人特色的形象，还提供更多名为“心情”的创新风格，从美学层面上改变照片的整体效果。 易于使用的全新控制板和强度滑块可供用户同时调整色调和颜色，为摄影风格进一步添加个性化元素。 previous next 视频模式现在支持空间音频录制，用户在使用 AirPods、Apple Vision Pro 或环绕立体声音响系统时，可尽享沉浸式聆听体验。依托先进的智能技术和机器学习 (ML) 技术，两款 iPhone 机型均支持混音功能，推出多种用于编辑视频声音的创新方式。借助混音功能，用户可以在声音录制完成后进行调整，突出拍摄对象的人声，呈现媲美专业摄影棚录制的音频效果，或是前置人声音轨，同时以环绕立体声的形式呈现环境噪音。风噪降低利用强大的机器学习算法减少不想要的噪声，提高音频质量。 iPhone 16 系列引入风噪降低，利用强大的机器学习算法降低多余的噪音，呈现更佳音质。 A18：性能和手游体验再创新高 A18 带来性能和能效的巨大飞跃。新芯片基于第二代 3 纳米制程工艺打造，可支持图形密集型游戏，驱动计算摄影功能，并进一步加速 Apple 智能。升级后的 16 核神经网络引擎针对大型生成式模型进行优化，运行机器学习模型的速度，相比 A16 仿生芯片提升最高可达 2 倍。 6 核中央处理器的速度比 A16 仿生芯片快 30%，且快于所有竞品。能效表现也更胜一筹，在运行同样的工作负载时，能耗相比 A16 仿生芯片降低 30%。与 A16 仿生芯片相比，这款芯片的 5 核图形处理器速度提升最高可达 40%，能效提升最高可达 35%，为用户带来一部可放入口袋的超强游戏机。如今，在硬件加速光线追踪技术的加持下，iPhone 16 和 iPhone 16 Plus 上的游戏可更精准地呈现光线的表现，与基于软件的光线追踪相比，帧率提升最高可达 5 倍。两款机型均支持此前仅适用于 iPhone 15 Pro 的 AAA 游戏，还将支持《王者荣耀：世界》，这款新作将于明年推出，并针对 iPhone 16 系列优化了超高图形模式。iOS 18 中的游戏模式在带来更稳定帧率表现的同时，也会令 AirPods、游戏手柄和其他无线配件的响应格外灵敏。得益于 A18 芯片的高能效和经过重新设计的内部架构，游戏的持续性能提升最高可达 30% 。 A18 芯片搭载全新 5 核图形处理器，带来兼顾速度和能效的卓越性能以及震撼图形效果，为包括 AAA 游戏在内的手游体验开启新次元，包括《王者荣耀：世界》等游戏。 专为 Apple 智能设计 iPhone 16 系列为 Apple 智能 而设计，利用 Apple 芯片和 Apple 设计的生成式模型结合用户个人情境，实现实用且与 iPhone 用户高度相关的智能功能，同时全程保护用户数据的隐私和安全。Apple 智能可协助用户轻松写作、表达自我、处理各种事务。 对环境更友好 iPhone 16 和 iPhone 16 Plus 的设计以环保为宗旨。作为 Apple 2030 实现碳中和的目标，Apple 在制造中优先使用再生电力，并积极在全球范围内投资于风能和光伏项目，以补偿包括 iPhone 16 系列在内的所有 Apple 产品使用和充电所耗费的电力。如今，Apple 的所有设施均已使用 100% 再生电力，包括为 Apple 智能提供支持的数据中心。 为了实现 Apple 2030 目标，Apple 还采用回收和再生材料进行产品设计。iPhone 16 和 iPhone 16 Plus 采用的再生材料总含量均超过 30%，其中机身采用 85% 再生铝金属，多个部件采用 80% 或更高比例的再生钢。电池采用 100% 再生钴，并采用 95% 以上的再生锂（为 iPhone 系列首例） 5 。iPhone 16 系列符合 Apple 设定的高能效标准，而且不含汞和聚氯乙烯 (PVC)。包装材料全部为纤维基材料，使 Apple 朝着在 2025 年完全淘汰塑料包装的目标又迈进了一步。 价格与上市时间 iPhone 16 和 iPhone 16 Plus 将提供群青色、深青色、粉色、白色和黑色五种绝美配色，以及 128GB、256GB、512GB 三种容量配置选择。iPhone 16 的起售价为 RMB 5,999 或每月 RMB 250 ，iPhone 16 Plus 的起售价为 RMB 6,999 或每月 RMB 292 。 Apple 提供多种有效方式帮助用户节省购买和升级至最新款 iPhone 的开支。 适用条件及详细信息请参阅 apple.com.cn/shop/buy-iphone/carrier-offers 。顾客可访问 apple.com.cn/shop/trade-in 查看现有设备的预估折抵金额以及条款和条件。 澳大利亚 、 加拿大 、 中国大陆 、 法国 、 德国 、 印度 、 日本 、 马来西亚 、 墨西哥 、 韩国 、 土耳其 、 阿联酋 、 英国 和 美国 等超过 58 个国家或地区的用户自当地时间 9 月 13 日（周五）起将可预购 iPhone 16 和 iPhone 16 Plus，上述机型将自 9 月 20 日（周五）起正式发售。 iPhone 16 和 iPhone 16 Plus 将自 9 月 27 日（周五）起在 澳门 、 越南 等 19 个国家或地区正式发售。 iOS 18 将于 9 月 16 日（周一）以免费软件更新的形式推出。 除售价为 RMB 399 的 iPhone 16 和 iPhone 16 Plus 专用透明保护壳以外，还将推出 MagSafe 硅胶保护壳，售价为 RMB 399 ，提供黑色、丹宁色、紫红色、湖绿色、梅子色、杨桃色、岩灰色和群青色选项。Apple 的 iPhone 16 系列专用保护壳完美支持相机控制，采用蓝宝石玻璃与导电层结合的方式将手指动作传导至相机控制。MagSafe 精织斜纹卡包售价为 RMB 479 ，提供黑色、黑莓色、暗绿色、深蓝色选项。 适用于 iPhone 的 AppleCare+ 服务计划为用户提供了无与伦比的服务和保障，包括不限次数的意外损坏和电池维修服务，以及精通 iPhone 的专家提供的全天候支持。 iCloud+ 套餐起步容量为 50GB，费用为每月 RMB 6 ，最大容量为 12TB，费用为每月 RMB 398 ，为用户提供额外空间存放文件、照片、视频，以及更高的云端安全性，支持不同设备端访问，可与他人共享。iCloud+ 还可提供多种高级功能，包括专用转接代理、隐藏邮件地址、自定电子邮件域、HomeKit 安防视频支持等。 购买 iPhone 16 和 iPhone 16 Plus 的用户首次订阅 Apple Music 将免费获赠 3 个月服务。",
+      "url": "https://www.apple.com.cn/newsroom/2024/09/apple-introduces-iphone-16-iphone-16-plus/",
+      "correct": true,
+      "review": "128GB与白色均在价格配置段明确列出；只记9月10日公告。"
+    },
+    {
+      "id": "CN:apple_cn:commodity:MHWK4CH/A",
+      "name": "AirPods Max 2",
+      "date": "2026-03",
+      "event": "announcement",
+      "quote": "2026 年 3 月 16 日 Apple 宣布推出 AirPods Max 2 AirPods Max 在 H2 驱动下更加出色，具备更好的主动降噪效果、提升的音质和自适应音频等多项新功能 AirPods Max 2 为标志性包耳式设计带来更强的主动降噪、更出色的音质和多项智能功能。 加利福尼亚州，库比提诺 Apple 今日宣布推出 AirPods Max 2 ，为标志性包耳式设计带来更强的主动降噪（ANC）、更出色的音质和多项智能功能。在 H2 芯片驱动下，AirPods Max 首次具备了自适应音频、对话感知和语音突显等功能。新款 AirPods Max 还通过录音棚级音频录制和相机遥控等实用功能为播客主播、音乐家、内容创作者解锁了更多创意可能。 AirPods Max 2 提供午夜色、星光色、橙色、紫色和蓝色外观，3 月 25 日起接受预购，下月初正式发售。 “得益于 H2 芯片的卓越性能，AirPods Max 的主动降噪效果提升 1.5 倍，为用户带来极致全天候聆听体验。”Apple 音频产品市场营销总监 Eric Treski 表示，“音质极为清晰、丰富、满载声学细节，结合个性化空间音频等功能，AirPods Max 2 将为用户呈现极具沉浸感的聆听体验。” 主动降噪效果进一步提升 得益于 H2 芯片和新的计算音频算法，AirPods Max 2 的主动降噪效果相比前代提升 1.5 倍，能够更有效地降低飞机引擎声或火车行驶声等噪音，让用户完全沉浸在音乐、工作或通话中。 依托为 H2 优化的新数字信号处理算法和 AirPods Max 的麦克风阵列，通透模式下的声音听来更加自然，帮助用户持续感知所处环境和身边人与事物。 得益于 H2 芯片和新的计算音频算法，AirPods Max 2 的主动降噪效果相比前代提升 1.5 倍。 高保真聆听体验 AirPods Max 2 配备了新的高动态范围放大器，在保留 AirPods Max 卓越声音特质的同时呈现更加清晰的音频。空间音频内容聆听体验更胜以往，乐器定位更准确，低频响应更精准连贯，中高音更自然。 新款 AirPods Max 支持 24-bit、48 kHz 无损音频（需使用随附的 USB-C 连接线），在音乐、电影、游戏中呈现极佳品质的音频。依托无损音频与超低延迟音频，音乐创作者可在 Logic Pro 等音乐创作 app 的整个专业工作流中全面利用 AirPods Max 进行创作。利用 USB-C 连接线，AirPods Max 便成为一款可供音乐家通过支持头部追踪的空间音频创作歌曲与制作混音的耳机 1 。 无线音频延迟亦有降低，让游戏体验更加得心应手。用户佩戴 AirPods Max 2 并开启游戏模式时，iOS、macOS 和 iPadOS 游戏的体验更灵敏、更具沉浸感。 AirPods Max 2 配备新的高动态范围放大器，在保留 AirPods Max 卓越声音特质的同时呈现更加清晰的音频。 AirPods Max 迎来多项智能功能 H2 芯片带来一系列功能，让 AirPods Max 2 更智能、更便捷。 自适应音频 可根据周边环境自动调整主动降噪和通透模式的强度，优化音频体验 2 。 对话感知 可在用户开始与附近的人说话时降低内容音量并降低背景噪音 2 。 语音突显 利用先进的计算音频技术在通话中突显用户语音并屏蔽背景噪音 2 。 用户可使用 相机遥控 远距离拍摄内容：在 iPhone 或 iPad 上打开相机 app 或兼容第三方相机 app，按下数码旋钮以拍摄照片或开始/停止录制音频。 录音棚级音频录制 可供采访者、播客主播、歌手和其他创作者录制更高音质的内容，呈现更自然的语音 5 。 降低高音量 可帮助用户免于暴露在音量过高的环境噪音中，同时保留音频内容的声音特质。 个性化音量 可根据用户使用偏好，随着时间推移自动对聆听体验进行精细调整 2 。 Siri 交互 可帮助用户便捷私密地回应 Siri 通知：微微点头代表同意，轻轻摇头代表拒绝。 AirPods Max 2 与环境 Apple 2030 是 Apple 的远大计划，旨在从产品生命周期中三个最主要的碳排放来源着手进行减排：电力、材料和运输，致力于到 2030 年实现公司所有足迹的碳中和。AirPods Max 2 所有磁体采用 100% 再生稀土元素，耳垫采用 100% 再生聚酯纤维，所有 Apple 设计的印刷电路板均采用 100% 再生金镀层和 100% 再生锡焊料。纸质包装采用 100% 纤维基材料，便于回收利用 6 。 价格与上市时间 3 月 25 日（周三）起，美国和其他 30 多个国家和地区的顾客可通过 apple.com.cn/store 和 Apple Store app 预购 AirPods Max 2。AirPods Max 2 下月初开始面向顾客发货并在 Apple Store 零售店发售。 AirPods Max 2 起售价为 RMB 3999 。 AppleCare 为 Apple 用户提供卓越的服务与支持，以及灵活的方案选择。顾客可选择 AppleCare+ 服务计划为新购入的耳机提供保障。该计划包含跌落和液体泼溅等意外损坏、失窃和遗失（仅限符合条件的产品）、电池更换服务以及 Apple 专家的全天候支持。如需了解更多信息，请访问 apple.com.cn/applecare 。 购买 AirPods Max 2 的新订阅用户可免费试听 Apple Music 三个月。详情请参阅 apple.com.cn/promo 。",
+      "url": "https://www.apple.com.cn/newsroom/2026/03/apple-introduces-airpods-max-2-powered-by-h2/",
+      "correct": true,
+      "review": "H2版Max2午夜色原文明确；3月公告，未把4月计划写成3月开售。"
+    },
+    {
+      "id": "CN:apple_cn:commodity:MFEX4CH/A",
+      "name": "Studio Display",
+      "date": "2026-03",
+      "event": "announcement",
+      "quote": "2026 年 3 月 3 日 Apple 推出新款 Studio Display 和全新的 Studio Display XDR Studio Display XDR 是全球首屈一指的专业级显示器，采用 27 英寸 5K 视网膜 XDR 显示屏，配备 mini-LED 背光技术，提供高达 2000 尼特的 HDR 峰值亮度和 120Hz 刷新率 Apple 推出最新的显示器产品系列，由新款 Studio Display 和全新的 Studio Display XDR 构成。 加利福尼亚州，库比提诺 Apple 今日宣布推出全新的显示器产品系列，与 Mac 完美搭配，能够满足从普通用户到顶尖专业人士的各类用户的需要。新款 Studio Display 配备 1200 万像素 Center Stage 摄像头，画面质量升级，并且支持桌上视角功能，此外还配备录音棚级三麦克风阵列，以及支持空间音频的六扬声器系统，营造沉浸感十足的体验。同时新增强大的雷雳 5 连接能力，为高速配件和串联多台显示器提供额外的下行连接支持。全新的 Studio Display XDR 则将专业工作流带入全新境界。27 英寸 5K 视网膜 XDR 显示屏采用先进的 mini-LED 背光技术，拥有超过 2000 个调光分区，SDR 亮度最高可达 1000 尼特，HDR 峰值亮度可达 2000 尼特，当然还有更宽广的色域，令屏幕上呈现的内容对比鲜明，鲜活亮丽，真实准确，栩栩如生。支持 120Hz 刷新率，能够更快速地响应动态化内容，自适应同步技术则能为视频播放、图形密集型游戏等内容动态调整帧率。Studio Display XDR 也配备了与 Studio Display 同样的先进摄像头和音频系统，以及雷雳 5 连接能力，能令专业工作流的构成变得更加简洁。配备可调倾斜度支架的新款 Studio Display 起售价为 RMB 11,999 ，配备可调倾斜度及高度支架的 Studio Display XDR 起售价为 RMB 24,999。两款产品均提供标准玻璃和 Nano-texture 纳米纹理显示屏玻璃两种选配方案，可于明日 3 月 4 日起接受订购，3 月 11 日（周三）起正式发售。 “Apple 一向走在行业前列，为专业人士提供采用世界顶级技术的显示器，助力他们创作出人生中的得意之作。这一次的 Studio Display 系列也是如此，”Apple 硬件工程高级副总裁 John Ternus 表示，“Studio Display 全新配备的 1200 万像素 Center Stage 摄像头和强大的雷雳 5 连接能力，令使用体验全面升级。Studio Display XDR 则带来 mini-LED 背光技术、2000 尼特 HDR 峰值亮度、更加出色的色准和 120Hz 刷新率，代表着 XDR 技术的巨大飞跃，将为电影制作、设计印刷、3D 动画等工作流带来显著变革，堪称全球迄今为止首屈一指的专业级显示器。” Studio Display 和 Studio Display XDR 配备强大的雷雳 5 连接能力，为高速配件和串联多台显示器提供额外的下行连接支持。 Studio Display — Mac 的绝佳伴侣 新款 Studio Display 兼具出众画质和强力功能，在连接 Mac 使用时，能为各行各业的专业工作流带来无与伦比的美妙体验。处理照片，剪辑视频，编写程序代码，制作音乐，或者只是处理常规任务，皆不在话下。惊艳的 27 英寸 5K 视网膜显示屏，总计超过 1400 万像素，亮度达到 600 尼特，支持 P3 广色域，让画面细节满满，栩栩如生。Studio Display 配备 1200 万像素 Center Stage 摄像头，支持桌上视角功能，此外还配备录音棚级三麦克风阵列，以及无与伦比的六扬声器系统，四个振动抵消低音单元发出的低音相比前代进一步低沉 30%，配合两个高性能高音单元，营造出沉浸感十足的音响体验。Studio Display 还新增雷雳 5 连接能力，总共提供 2 个端口，可让用户同时串联最多达 4 台 Studio Display 显示器，实现总计接近 6000 万像素的画面显示，也可用于连接高速配件 1 。此外还有 2 个 USB-C 端口，可用于连接外设和充电。使用包装内随附的雷雳 5 Pro 连接线，用户将可获得无比便捷的多功能连接以及功率最高达 96W 的充电能力，足以为一台 14 英寸的 MacBook Pro 快速充电 2 。Studio Display 提供标准玻璃和 Nano-texture 纳米纹理显示屏玻璃两种选配方案，后者更加适合在光照条件不利的环境下使用。标准配备可调倾斜度的支架，也可选配可调倾斜度及高度的支架，或者 VESA 支架转换器，方便用户自行布设桌面环境。 Studio Display 上展示着 Adobe Lightroom。 Studio Display 和 MacBook Air 上一同展示着 Adobe Illustrator。 Studio Display 上展示着 Pro Tools。 连接 Mac 使用的新款 Studio Display 能为不同行业的用户提供无与伦比的美妙体验，无论是使用 Adobe Lightroom 处理照片的摄影师，还是使用 Adobe Illustrator 进行创作的设计师，亦或使用 Pro Tools 的音乐制作人，皆可得心应手。 连接 Mac 使用的新款 Studio Display 能为不同行业的用户提供无与伦比的美妙体验，无论是使用 Adobe Lightroom 处理照片的摄影师，还是使用 Adobe Illustrator 进行创作的设计师，亦或使用 Pro Tools 的音乐制作人，皆可得心应手。 连接 Mac 使用的新款 Studio Display 能为不同行业的用户提供无与伦比的美妙体验，无论是使用 Adobe Lightroom 处理照片的摄影师，还是使用 Adobe Illustrator 进行创作的设计师，亦或使用 Pro Tools 的音乐制作人，皆可得心应手。 previous next Studio Display XDR — 首屈一指的专业级显示器 全新的 Studio Display XDR 集顶尖显示技术于一身，为需求极致画面显示性能的专业级用户带来无可挑剔的强大功能。提供 2000 尼特峰值亮度和 1,000,000:1 对比度，支持 P3 和 Adobe RGB 广色域、120Hz 刷新率和自适应同步技术，配备摄像头与音频系统的强力组合和雷雳 5 连接能力，Studio Display XDR 专为 HDR 视频后期、3D 渲染等工作流打造。 Studio Display XDR 上展示着 Adobe Premiere。 Studio Display XDR 上展示着 Autodesk Flame。 Studio Display XDR 上展示着 SideFX Houdini。 Studio Display XDR 将专业级显示器的体验带入全新境界，专为使用 Adobe Premiere、Autodesk Flame、SideFX Houdini 等 app 的用户打造。 Studio Display XDR 将专业级显示器的体验带入全新境界，专为使用 Adobe Premiere、Autodesk Flame、SideFX Houdini 等 app 的用户打造。 Studio Display XDR 将专业级显示器的体验带入全新境界，专为使用 Adobe Premiere、Autodesk Flame、SideFX Houdini 等 app 的用户打造。 previous next 先进的 XDR 显示技术 Studio Display XDR 采用惊艳的 27 英寸 5K 视网膜 XDR 显示屏，最高支持 5120 x 2880 分辨率，细节丰富又无比清晰。mini-LED 背光系统利用 2,304 个调光分区，呈现出极致的对比度效果。Studio Display XDR 还可提供最高达 1000 尼特的 SDR 亮度、2000 尼特的 HDR 峰值亮度以及 1,000,000:1 的对比度。从最耀眼的亮光到最深邃的黑，如此宽广的动态区间，令 HDR 内容似要跃出屏幕般栩栩如生，又完全没有光晕和高光溢出的问题干扰画面。 Studio Display XDR 配备的 27 英寸 5K 视网膜 XDR 显示屏采用先进的 mini-LED 背光技术，拥有超过 2000 个调光分区。 更加出色的色准 Studio Display XDR 在 P3 广色域之外新增对 Adobe RGB 色域的支持，成为一款更加出色的校准参考显示器，极为适合印刷设计类专业人士使用。这能为 HDR 视频的后期剪辑和调色提供超过 80% 的 Rec. 2020 标准色域覆盖率。P3 和 Adobe RGB 色域皆可通过同一份默认预置进行调用，这能帮助需要频繁切换不同色彩空间的专业工作流精简流程。 一名用户的 Studio Display XDR 上展示着 DaVinci Resolve。 一名用户的 Studio Display XDR 上展示着 Capture One。 一名用户的 Studio Display XDR 上展示着 Adobe InDesign。 Studio Display XDR 支持 P3 和 Adobe RGB 广色域，极为适合操作 DaVinci Resolve、Capture One、Adobe InDesign 等 app 的印刷设计类专业人士使用。 Studio Display XDR 支持 P3 和 Adobe RGB 广色域，极为适合操作 DaVinci Resolve、Capture One、Adobe InDesign 等 app 的印刷设计类专业人士使用。 Studio Display XDR 支持 P3 和 Adobe RGB 广色域，极为适合操作 DaVinci Resolve、Capture One、Adobe InDesign 等 app 的印刷设计类专业人士使用。 previous next 流畅的 120Hz 刷新率和自适应同步技术 Studio Display XDR 支持 120Hz 刷新率，能够呈现出无比丝滑、响应速度极快的动态画面。自适应同步技术支持刷新率在最低 47Hz、最高 120Hz 的区间内持续变化，能够提升画面帧率，降低显示延迟，带来更加流畅的游戏体验。 Studio Display XDR 还提供 120Hz 刷新率和自适应同步技术，支持刷新率在最低 47Hz、最高 120Hz 的区间内持续变化。 摄像头、音频与雷雳 5 连接的强力组合 Studio Display XDR 配备 1200 万像素 Center Stage 摄像头，让用户能在随意走动时始终位于画面中央。桌上视角模式能够增强视频通话的互动感，同时显示用户本人的正面视图和用户桌面的俯视图，在展示创意类项目时效果尤为出众。同时配备录音棚级三麦克风阵列，支持定向波束成形，以及支持空间音频的六扬声器系统，营造沉浸感十足的体验。 Studio Display XDR 配备 1200 万像素 Center Stage 摄像头，让用户能在随意走动时始终位于画面中央。 Studio Display XDR 还具备雷雳 5 连接能力，并且将端口数量增加至 2 个，可用于连接下行高速配件，或者串联多台显示器。配合另外 2 个 USB-C 端口提供的更多连接能力，它可被用作为一台雷雳连接中枢，令整个工作空间保持简明整洁，并可通过包装内随附的雷雳 5 Pro 连接线提供功率最高达 140W 的充电能力，足以为一台 16 英寸的 MacBook Pro 快速充电 2 。 Studio Display XDR 配备 2 个雷雳 5 端口和 2 个 USB-C 端口，提供丰富的连接能力，能够支持各种类型的工作流。 功能丰富的支架和配件 Studio Display XDR 配备可调倾斜度及高度的支架，能够满足各种工作环境的需要。支架提供 105 毫米的高度调节范围，巧妙的抗衡力臂设计，让用户在调节过程中的手感轻盈，又能让显示屏位置精准摆放稳定。对于更喜欢使用符合 VESA 标准的支架、挂架和悬臂自行布设桌面环境的用户，也有可选配的 VESA 支架转换器可供选择。 Studio Display XDR 的可调倾斜度及高度支架。 Studio Display XDR 与可选配的 VESA 支架转换器。 Studio Display XDR 的可调倾斜度及高度支架能够满足各种工作环境的需要。 对于更喜欢使用符合 VESA 标准的支架、挂架和悬臂自行布设桌面环境的用户，也有可选配的 VESA 支架转换器可供选择。 previous next Studio Display 系列与环境 Studio Display 和 Studio Display XDR 的设计心系环境，令 Apple 更加接近到 2030 年实现公司所有足迹碳中和的远大计划。两款产品均采用再生材料生产，包括支架采用 100% 再生铝金属，标准玻璃选项采用 80% 再生玻璃。Studio Display 和 Studio Display XDR 的设计耐用、易于维修，且提供行业领先的软件支持，同时符合 Apple 对能效和安全化学的高标准。纸质包装采用 100% 纤维基材料，容易降解，方便回收 3 。 价格与发布时间 中国等 35 个国家和地区的顾客可从明日 3 月 4 日起通过 apple.com.cn/store 和 Apple Store app 订购新款 Studio Display 和 Studio Display XDR 显示器，3 月 11 日（周三）起将面向顾客发货，并通过 Apple Store 零售店和 Apple 授权经销商正式发售。 Studio Display 起售价为 RMB 11,999 ，教育优惠起售价为 RMB 11,249 。Studio Display XDR 将替代 Pro Display XDR，起售价为 RMB 24,999 ，教育优惠起售价为 RMB 24,239 。 有关其他技术规格，包括 Nano-texture 纳米纹理显示屏玻璃和不同支架选择，请访问 apple.com.cn/store 。 配备触控 ID 和数字小键盘的妙控键盘起售价为 RMB 1,249 ，妙控板起售价为 RMB 899 ，提供黑色和白色两种外观选择的妙控鼠标起售价为 RMB 549 ，全部在 apple.com.cn/store 有售。 AppleCare 为 Apple 用户提供卓越的服务与支持，以及灵活的方案选择。顾客可选择 AppleCare+ 服务计划为新购入的 Mac 提供保障。该计划包含跌落和液体泼溅等意外损坏、失窃和遗失（仅限符合条件的产品）、电池更换服务以及 Apple 专家的全天候支持。如需了解更多信息，请访问 apple.com.cn/applecare 。",
+      "url": "https://www.apple.com.cn/newsroom/2026/03/apple-introduces-stunning-studio-display-xdr/",
+      "correct": true,
+      "review": "当前规格雷雳5匹配2026新款；标准玻璃+可调倾斜度支架在原文明确。"
+    },
+    {
+      "id": "CN:apple_cn:commodity:MFHP4CH/A",
+      "name": "AirPods Pro 3",
+      "date": "2025-09",
+      "event": "announcement",
+      "quote": "2025 年 9 月 10 日 AirPods Pro 3 问世，带来极致音频体验 AirPods Pro 3 采用全新设计，具备卓越音质、领先全球的入耳式主动降噪功能、出类拔萃的入耳贴合度和稳固性、体能训练时的心率传感功能以及更出色的电池续航能力 AirPods Pro 3 带来卓越音质、突破性入耳式主动降噪功能、出类拔萃的入耳贴合度和稳固性、体能训练时的心率传感功能以及更出色的电池续航能力。 加利福尼亚州，库比提诺 Apple 今日宣布推出 AirPods Pro 3，为备受全球欢迎的耳机带来全新升级。AirPods Pro 3 具备超乎想象的音质和突破性的入耳式主动降噪（ANC）功能，降噪能力相较于前代 AirPods Pro 提升了多达 2 倍，比初代 AirPods Pro 更是提升了多达 4 倍。全新设计使 AirPods Pro 3 的贴合度更高，在进行跑步、高强度间歇训练和瑜伽等活动时，入耳稳固性更佳。AirPods Pro 3 首次为用户带来心率监测功能，并可跟测 50 种训练类型，在 iPhone 上的健身 app 中即可实现。 AirPods Pro 3 即日起接受预购，9 月 19 日（周五）起正式发售。 “AirPods Pro 3 的问世为这款备受全球欢迎的耳机带来了重大跃升，为用户带来妙不可言的音质以及突破性主动降噪功能。”Apple 硬件工程高级副总裁 John Ternus 表示，“改进的贴合度带来适合更多人的稳定佩戴体验，再加上心率传感功能和更持久的电池续航，集这些功能于一体的 AirPods Pro 3 把个人音频体验提升到了全新高度。” 在体能训练过程中， AirPods Pro 3 用户可以通过 iPhone 健身 app 的全新功能，监测心率并跟测体能训练数据，并在跑步、高强度间歇训练和瑜伽等活动中充分感受升级的入耳贴合度，和 IP57 级抗汗、抗水性能带来的更强耐用性。 突破性主动降噪 AirPods Pro 3 采用全新多孔声学架构，可以精准控制承载着声音流入耳道的气流，带来出类拔萃的空间聆听体验。结合新一代自适应均衡模式，新的架构大大改善了低音响应，营造出更广阔的音场，确保每一件乐器都能精准入耳，歌曲、影视内容和通话中的高频人声更生动清晰。通透模式更为个性化，让用户自己的声音和别人对他们说话的声音更为自然，帮用户保持留意周围环境，一句都不会错过。 AirPods Pro 3 采用全新多孔声学架构，带来出类拔萃的空间聆听体验。 AirPods Pro 3 同时具备突破性主动降噪功能。 这一功能的实现依托超低噪音麦克风和先进的计算音频技术，以及新款海绵耳塞带来的更强被动噪音屏蔽效果。AirPods Pro 3 带来大幅提升的沉浸式聆听体验，无论在通勤路上、在办公室或是休憩在家，其主动降噪效果比 AirPods Pro 2 提高达 2 倍，与第一代 AirPods Pro 相比，降噪效果提高达 4 倍。此外，在开启主动降噪聆听音乐时，AirPods Pro 3 的音乐播放时间可长达 8 小时，比上一代延长了 33%。 AirPods Pro 3 带来了更具沉浸感的聆听体验和突破性的主动降噪功能，用户无论在通勤路上、在办公室或是休憩在家，都能尽情享受。 全新入耳设计，适合更多人群 上万次耳内扫描和逾 10 万小时用户研究使得 AirPods Pro 3 成为迄今为止佩戴最稳固、贴合度最高的 AirPods。为了让更多人体验到改进后的贴合度，内部架构经过彻底重新打造，让每只 AirPod 更加小巧，同时耳塞的外部形状和耳机中心协调一致，以增加稳固性——这一设计以前所未有的超过 3 亿个数据点为基础构建。此外，新款海绵耳塞共有 5 种尺寸可供选择，增加了新的 XXS 号，为 AirPods Pro 3 带来了卓越的入耳贴合体验。在升级的 IP57 级别抗汗、抗水性能加持下，AirPods Pro 3 可抵御高强度体能训练和突发恶劣天气。 AirPods Pro 3 是迄今为止佩戴最稳固、贴合度最高的 AirPods，配备的全新耳塞有五种尺寸可供选择。 高性能助力体能训练 AirPods Pro 是全球众多用户锻炼身体时的首选耳机。AirPods Pro 3 搭载了 Apple 最小巧的定制心率传感器并全面整合体能训练体验，开启体能训练新篇章。AirPods Pro 3 搭载了定制的光电容积脉搏波 (PPG) 传感器，通过每秒 256 次脉冲频率发射不可见的红外线，测量血流所吸收光线的变化。利用融合了 AirPods Pro 加速感应器、陀螺仪和 GPS 的传感器和 iPhone 上的全新设备端 AI 模型，用户可在进行 50 种体能训练时，通过健身 app 跟测心率和消耗的卡路里，完成健身圆环并拿到奖章。 AirPods Pro 3 配备了新的心率传感器，以每秒 256 次的脉冲频率发射不可见的红外线，测量血流中吸收的光线。 AirPods Pro 3 与环境 Apple 2030 是 Apple 的远大计划，旨在从产品生命周期中三个最主要的碳排放来源着手进行减排：电力、材料和运输，致力于到 2030 年实现公司所有足迹的碳中和。AirPods Pro 3 使用的再生材料占比达到 40%，其中电池采用 100% 再生钴，表壳采用 65% 再生塑料。整个供应链上的生产过程使用 40% 可再生电力，例如风电和太阳能。AirPods Pro 3 的设计经久耐用，同时符合 Apple 在能效和安全化学工艺方面的高标准。纸质包装采用 100% 纤维基材料，方便回收。 价格与上市时间 AirPods Pro 3 即日起在美国等 50 个国家和地区接受预购，9 月 19 日（周五）正式发售。 AirPods Pro 3 的售价为 RMB 1,899 。 为实现全部功能，需将 AirPods Pro 3 和运行最新操作系统软件的 Apple 设备配对使用。 购买 AirPods Pro 3 的用户首次订阅 Apple Music 将免费获赠 3 个月服务。详情请参阅 apple.com.cn/promo 。 AppleCare 为 Apple 用户提供卓越的服务与支持，以及灵活的方案选择。顾客可选择 AppleCare+ 服务计划为新购入的耳机提供保障。该计划的保障内容包含跌落和液体泼贱等意外损坏、失窃和遗失（仅限符合条件的产品）、电池更换服务以及 Apple 专家的全天候支持。如需了解更多信息，请访问 apple.com.cn/applecare 。",
+      "url": "https://www.apple.com.cn/newsroom/2025/09/introducing-airpods-pro-3-the-ultimate-audio-experience-cn/",
+      "correct": true,
+      "review": "明确第三代Pro；单品无其他容量继承，9月公告。"
+    },
+    {
+      "id": "GLOBAL:apple_support:model:148758",
+      "name": "Apple Watch Ultra 4",
+      "date": "2026-09",
+      "event": "announcement",
+      "quote": "2026 年 9 月 9 日 Apple 发布 Apple Watch Ultra 4 配备全新健康感测系统，心率传准确度居于可穿戴设备前列；提供身体状态准备指数等深度洞察；续航更持久 Apple Watch Ultra 4 专攻运动与户外挑战，实力过硬。现更满载先进的全新健康和健身功能，电池续航亦更持久。 加利福尼亚州，库比提诺 Apple 今日发布 Apple Watch Ultra 4。这块专攻运动与户外挑战的表款实力过硬，现更纳入先进的全新健康与健身功能，电池续航亦更持久。 Apple Watch Ultra 4 搭载全新健康感测系统和 S11 芯片，带来可穿戴设备中领先的精准心率感测功能 1 、更高频的心率与心率变异性 (HRV) 监测指标，更全新推出身体状态准备指数，为各界运动人士提供支持。Apple Watch Ultra 4 还具备更持久的续航能力，在户外体能训练场景下支持最长达 45 小时的跟测，同时配备运动手表中领先的设备端 GPS 功能 2 。作为 Apple 迄今最强大的可穿戴设备芯片，全新的 S11 芯片不仅为健康感测系统注入动力，还将为未来新推出的功能提供支持，帮助用户随时留意重要声音，并将隐私、安全和辅助功能方面的创新置于首位。 除这些新功能外，Apple Watch Ultra 本身已通过多种方式为用户提供支持，包括覆盖各项活动的高级体能训练跟测、睡眠监测、心脏健康通知和移动心电图房颤提示软件等强大的健康功能 3、 4 。Apple Watch Ultra 4 集健康、健身和安全功能于一身，是一款全能的可穿戴设备 5 。 佩戴 Apple Watch Ultra 4 的跑者在户外冲刺的黑白照片。",
+      "url": "https://www.apple.com.cn/newsroom/2026/09/apple-unveils-apple-watch-ultra-4/",
+      "correct": true,
+      "review": "原文直接点名Ultra4及今日发布；不是普通Series12或Hermès版。"
+    },
+    {
+      "id": "GLOBAL:apple_support:model:128107",
+      "name": "Mac Studio（M5 Max 或 M5 Ultra）",
+      "date": "2026-08",
+      "event": "announcement",
+      "quote": "2026 年 8 月 25 日 Apple 推出搭载 M5 Max 和 M5 Ultra 芯片的新款 Mac Studio，造就为设备端 AI 和极繁重专业工作流而生的终极桌面电脑 Apple 性能最强的 Mac 系列机型再度进化，本地 AI 性能提升最高可达 4.3 倍，图形性能更加先进，并配备最高达 512GB 的统一内存和丰富的连接性 Apple 发布搭载 M5 Max 和 M5 Ultra 芯片的新款 Mac Studio，造就迄今最强 Mac 机型。 加利福尼亚州，库比提诺 Apple 今日宣布推出新款 Mac Studio ，搭载 M5 Max 和全新 M5 Ultra 芯片，AI 性能实现巨大飞跃，图形处理速度更快，可从容应对要求极高的专业工作流，将澎湃性能纳入经典紧凑设计，安放于用户桌面。新款 Mac Studio AI 性能提升最高可达 4.3 倍 1 ，存储速度提升最高可达 2 倍 2 ，图形处理器速度提升最高可达 1.8 倍 1 ，中央处理器速度提升最高可达 1.3 倍 1 ，内存带宽更高，赋能创意工作者、开发者、AI 研发人员、数据科学家等不断探索潜能边界。搭载 M5 Max 芯片的 Mac Studio 配备 18 核中央处理器、最高 40 核图形处理器（每颗核心均集成神经网络加速器）以及最高 128GB 统一内存，为复杂专业任务和 AI 工作负载加速。搭载强劲 M5 Ultra 芯片的 Mac Studio 则进一步升级至 36 核中央处理器和最高 80 核图形处理器，统一内存容量高达惊人的 512GB，供用户完全在设备端运行超大规模大语言模型。Mac Studio 首次支持 Wi-Fi 7 和蓝牙 6，雷雳 5 端口则丰富了连接性，供用户利用高速外接存储设备、PCIe 扩展机箱和强大的中枢解决方案处理繁重任务。",
+      "url": "https://www.apple.com.cn/newsroom/2026/08/apple-introduces-mac-studio-with-m5-max-and-m5-ultra/",
+      "correct": true,
+      "review": "明确M5 Max/M5 Ultra两种处理器的Mac Studio；非前代Studio。"
+    },
+    {
+      "id": "GLOBAL:apple_support:model:125093",
+      "name": "Apple Watch Series 11",
+      "date": "2025-09",
+      "event": "announcement",
+      "quote": "2025 年 9 月 10 日 Apple 发布 Apple Watch Series 11 Apple Watch Series 11 带来睡眠评分功能，以及最长可达 24 小时的电池续航和抗刮划能力提升至 2 倍的表镜 Apple Watch Series 11 提供最长可达 24 小时的电池续航和抗刮划能力提升至 2 倍的表镜。 加利福尼亚州，库比提诺 Apple 今日发布了 Apple Watch Series 11 ，提供迄今最为综合全面的健康功能、更持久的电池续航、更耐用的玻璃表镜和 5G 蜂窝网络功能，全部 集成在极为纤薄舒适的设计中。Apple Watch Series 11 是绝佳的健康健身伴侣，能通过睡眠评分提供对用户睡眠质量的全新洞察，此外还提供全套的健康功能。电池续航时间最长可达 24 小时，Ion-X 玻璃的抗刮划能力提升至 2 倍，令 Apple Watch 更加便于全天持续佩戴。watchOS 26 带来更多个性化方式，帮助用户保持运动、健康和连接，此外还有轻翻手腕手势、新款表盘等更多特色。 Apple Watch Series 11 即日起接受预购，9 月 19 日（星期五）起正式发售。Apple Watch Series 11 的铝金属表壳新增深空灰色，另有亮黑色、玫瑰金色和银色可选；抛光钛金属表壳提供原色、金色、石板色三种颜色可选。 “Apple Watch 是备受全球欢迎的智能手表，采用先进的传感技术，赋能全球数以百万计的人群，只需随身佩戴，便可更好地了解自己的健康状况，此外还可用作为健身教练、信息中心、移动钱包和美观腕表，”负责 Apple Watch 和健康产品市场营销的 Apple 副总裁 Stan Ng 表示，“强大的睡眠评分新功能，以及更持久的电池续航、更抗刮划的玻璃表镜和 5G 功能，全部集成在深受用户喜爱的纤薄舒适设计中，令 Apple Watch Series 11 成为用户的必备伴侣，日以继夜地为用户的健康、健身、安全和连接提供支持。",
+      "url": "https://www.apple.com.cn/newsroom/2025/09/apple-introduces-apple-watch-series-11-cn/",
+      "correct": true,
+      "review": "原文直接点名Series11今日发布；没有套给SE或Ultra。"
+    },
+    {
+      "id": "GLOBAL:apple_support:model:126620",
+      "name": "AirPods Max 2",
+      "date": "2026-03",
+      "event": "announcement",
+      "quote": "2026 年 3 月 16 日 Apple 宣布推出 AirPods Max 2 AirPods Max 在 H2 驱动下更加出色，具备更好的主动降噪效果、提升的音质和自适应音频等多项新功能 AirPods Max 2 为标志性包耳式设计带来更强的主动降噪、更出色的音质和多项智能功能。 加利福尼亚州，库比提诺 Apple 今日宣布推出 AirPods Max 2 ，为标志性包耳式设计带来更强的主动降噪（ANC）、更出色的音质和多项智能功能。在 H2 芯片驱动下，AirPods Max 首次具备了自适应音频、对话感知和语音突显等功能。新款 AirPods Max 还通过录音棚级音频录制和相机遥控等实用功能为播客主播、音乐家、内容创作者解锁了更多创意可能。 AirPods Max 2 提供午夜色、星光色、橙色、紫色和蓝色外观，3 月 25 日起接受预购，下月初正式发售。 “得益于 H2 芯片的卓越性能，AirPods Max 的主动降噪效果提升 1.5 倍，为用户带来极致全天候聆听体验。”Apple 音频产品市场营销总监 Eric Treski 表示，“音质极为清晰、丰富、满载声学细节，结合个性化空间音频等功能，AirPods Max 2 将为用户呈现极具沉浸感的聆听体验。” 主动降噪效果进一步提升 得益于 H2 芯片和新的计算音频算法，AirPods Max 2 的主动降噪效果相比前代提升 1.5 倍，能够更有效地降低飞机引擎声或火车行驶声等噪音，让用户完全沉浸在音乐、工作或通话中。 依托为 H2 优化的新数字信号处理算法和 AirPods Max 的麦克风阵列，通透模式下的声音听来更加自然，帮助用户持续感知所处环境和身边人与事物。",
+      "url": "https://www.apple.com.cn/newsroom/2026/03/apple-introduces-airpods-max-2-powered-by-h2/",
+      "correct": true,
+      "review": "精确Max2 H2，公告月份3月；未套用4月计划开售。"
+    },
+    {
+      "id": "GLOBAL:apple_support:model:121557",
+      "name": "iMac（24 英寸，2024 年，四个端口）",
+      "date": "2024-10",
+      "event": "announcement",
+      "quote": "2024 年 10 月 28 日 Apple 推出新款 iMac，搭载强劲 M4 芯片，提供多种全新色彩 全球领先的桌面一体机性能再度升级，采用惊艳纤薄设计，提供纳米纹理显示屏选项、12MP Center Stage 摄像头并支持雷雳 4 连接功能 新款 iMac 搭载强大的 M4 芯片，支持 Apple 智能的卓越功能，采用极致纤薄的一体式设计，并提供多种生动色彩选项。 加利福尼亚州，库比提诺 Apple 今日宣布推出新款 iMac ，采用惊艳超薄设计，搭载强劲的 M4 芯片。得益于 M4 芯片，iMac 在运行日常任务时，性能相比搭载 M1 芯片的 iMac 提升最多 1.7 倍；在处理照片编辑或游戏等繁重任务时，性能更可提升最多达 2.1 倍 1 。iMac 凭借 M4 芯片集成的神经网络引擎成为世界领先的 AI 一体机，围绕 Apple 智能 2 特别设计，这一个人智能系统改变了用户工作、交流和表达自我的方式，同时保护用户隐私。新款 iMac 提供多种鲜艳新色彩，24 英寸 4.5K 视网膜显示屏还提供新的纳米纹理玻璃选项 3 。iMac 配备了支持人物居中和桌上视角功能的全新 12MP Center Stage 摄像头，最多 4 个雷雳 4 端口 4 和支持 USB-C 的同色系配件。新款 iMac 起售价仅为 RMB 10,999，现标配 16 GB 统一内存，即日起接受订购，11 月 8 日（星期五）起正式发售。 “从家庭用户到努力奋斗的创业者，iMac 深受广大用户喜爱。依托 Apple 芯片的强劲性能，新款 iMac 再次带来颠覆性改变。”Apple 硬件工程高级副总裁 John Ternus 表示，“凭借 M4 芯片、能为任意空间添加绚丽新色彩、拥有先进的 12MP Center Stage 摄像头，以及新的纳米纹理显示屏选项，新款 iMac 掀开了 iMac 的全新篇章。",
+      "url": "https://www.apple.com.cn/newsroom/2024/10/apple-unveils-the-new-imac-with-the-powerful-m4-chip-available-in-fresh-colors/",
+      "correct": true,
+      "review": "2024 M4四端口iMac在正文及配置段明确；10月公告，非11月8日开售。"
+    },
+    {
+      "id": "GLOBAL:apple_support:model:111849",
+      "name": "iPhone 14 Pro",
+      "date": "2022-09",
+      "event": "announcement",
+      "quote": "2022 年 9 月 7 日 Apple 全新推出 iPhone 14 Pro 和 iPhone 14 Pro Max 新增全天候显示、首度登陆 iPhone 的 4800 万像素摄像头、车祸检测，并可通过灵动岛以创新方式接收通知和活动 iPhone 14 Pro 和 iPhone 14 Pro Max 实现 iPhone 迄今最大飞跃，配备灵动岛、iPhone 上前所未有的 4800 万像素摄像头、全天候显示以及开创性的安全功能。 加利福尼亚州，库比提诺 Apple 今日宣布推出 iPhone 14 Pro 和 iPhone 14 Pro Max，打造迄今最先进的 Pro 产品阵容，通过灵动岛的全新设计引入直观体验 iPhone 的方式，并新添全天候显示。iPhone 14 Pro 搭载 iPhone 上速度首屈一指的 A16 仿生芯片，带来一组更上新高的 Pro 级摄像头系统，配备四合一像素传感器、首度应用于 iPhone 的 4800 万像素主摄，并采用光像引擎提升图像管线，大幅提升低光照片质量。这些开创性的飞跃使 iPhone 成为处理日常任务和创意项目时更加不可或缺的工具。有了车祸检测功能，它甚至还可应对紧急状况。iPhone 14 Pro 和 iPhone 14 Pro Max 将推出 4 种绝美配色：暗紫色、银色、金色和深空黑。9 月 9 日开启预购，9 月 16 日（星期五）开始发售。 “我们的客户在日常生活中离不开 iPhone，而 iPhone 14 Pro 和 iPhone 14 Pro Max 搭载的先进技术超越史上任何一款 iPhone。 从日常到专业使用，iPhone 14 Pro 上推出的摄像头系统将为每一位用户赋能，令他们的照片和视频更出彩，还新添全天候显示等创新性新技术和灵动岛，让通知和活动的交互方式更具新意。",
+      "url": "https://www.apple.com.cn/newsroom/2022/09/apple-debuts-iphone-14-pro-and-iphone-14-pro-max/",
+      "correct": true,
+      "review": "明确14 Pro，非14 Pro Max或普通14；9月7日公告。"
+    },
+    {
+      "id": "GLOBAL:apple_support:model:125092",
+      "name": "iPhone Air",
+      "date": "2025-09",
+      "event": "announcement",
+      "quote": "2025 年 9 月 10 日 兼具突破设计与强大性能的全新 iPhone——iPhone Air 隆重登场 iPhone Air 采用极致轻薄设计，较以往机型更经久耐用，带来创新摄像头体验，且具备满足全天所需的出色电池续航能力 iPhone Air 是史上最薄的 iPhone 机型，具备专业级性能、前后均配备全新卓越摄像头系统，且具备满足全天所需的出色电池续航能力。 加利福尼亚州，库比提诺 Apple 今日首次发布了全新 iPhone Air ，这款史上最薄的 iPhone 为用户带来专业级性能表现。iPhone Air 采用突破性钛金属设计，优雅轻盈、坚固耐用，以创新内部架构实现最新 iPhone 体验。iPhone Air 的背部由超瓷晶面板保护，正面则由全新超瓷晶面板 2 覆盖，抗刮划能力提升至 3 倍，令 iPhone Air 比前代 iPhone 机型更加坚固耐用。iPhone Air 还配备了绚丽的 6.5 英寸超视网膜 XDR 显示屏，ProMotion 自适应刷新率最高可达 120Hz 1 。iPhone Air 搭载了 iPhone 迄今最多的 Apple 设计芯片，包括强大的 A19 Pro、N1 和 C1X，使其登顶史上能效最高的 iPhone。结合重新设计的内部架构和软件优化，造就了 iPhone Air 满足全天所需的卓越电池续航。强大的 4800 万像素融合式主摄可实现相当于四颗镜头的卓越画质，创新的 1800 万像素 Center Stage 前置摄像头则将自拍体验提升至全新境界。 iPhone Air 提供四种惊艳外观：深空黑色、云白色、浅金色和天蓝色。 “全新 iPhone Air 性能强劲而又极为轻薄，只有将其握在手中才能体会这种轻若无物的绝妙质感。",
+      "url": "https://www.apple.com.cn/newsroom/2025/09/introducing-iphone-air-a-powerful-new-iphone/",
+      "correct": true,
+      "review": "Air本尊9月10日首次发布；国行延期到10月开售未混入。"
+    },
+    {
+      "id": "GLOBAL:apple_support:model:125089",
+      "name": "iPhone 17",
+      "date": "2025-09",
+      "event": "announcement",
+      "quote": "2025 年 9 月 10 日 Apple 发布 iPhone 17 iPhone 17 搭载创新的 Center Stage 前置摄像头、更宽大明亮且支持 ProMotion 自适应刷新率技术的新显示屏，以及 A19 芯片，性能大幅提升 iPhone 17 搭载 Center Stage 前置摄像头，超凡 4800 万像素融合式双摄系统，更宽大明亮且支持 ProMotion 自适应刷新率技术的 6.3 英寸显示屏，同时具备满足全天所需的电池续航能力。 加利福尼亚州，库比提诺 Apple 今日发布 iPhone 17 ，全新 Center Stage 前置摄像头将自拍体验提升至新境界；4800 万像素融合式主摄提供 2 倍光学品质长焦选项；全新 4800 万像素融合式超广角摄像头可拍摄细节更丰富的开阔场景和微距照片。6.3 英寸超视网膜 XDR 显示屏支持 ProMotion 自适应刷新率技术，较前代机型更加宽大明亮，提供极为顺畅的滑动体验、沉浸式游戏体验以及能效提升 1 。得益于全新的超瓷晶面板 2，前面板抗刮划能力提升至 3 倍，同时有效减少眩光。全新一代 iPhone 17 由 A19 芯片注入磅礴动力，带来性能和使用寿命的双重提升。 iPhone 17 的存储容量现在从 256GB 起步——较上一代产品的起步容量扩大一倍——此外还提供 512GB 选项，并推出五种绚丽配色：黑色、薰衣草紫色、青雾蓝色、鼠尾草绿色和白色。新机型自 9 月 12 日（星期五）起接受预购，9 月 19 日（星期五）起正式发售。 “iPhone 17 带来巨大升级，身携众多强大功能，使 iPhone 成为用户日常生活中愈加实用的好帮手，配备更宽大明亮、抗刮划能力提升至 3 倍的 ProMotion 显示屏，充电更快捷、满足全天所需的电池，性能强劲的 A19 芯片，超凡的 4800 万像素融合式双摄系统，以及创新的 Center Stage 前置摄像头——我们迄今最佳的前置摄像头。",
+      "url": "https://www.apple.com.cn/newsroom/2025/09/apple-debuts-iphone-17/",
+      "correct": true,
+      "review": "iPhone17原文直接点名；未使用Pro或Air的句子。"
+    },
+    {
+      "id": "CN:dji:sku:137781",
+      "name": "DJI Mavic 3 Pro Cine 大师套装（DJI RC Pro 遥控器）",
+      "date": "2023-04",
+      "event": "availability",
+      "quote": "Mavic 3 Pro系列分四个版本发售。DJI Mavic 3 Pro(DJI RC) 售价13888元。两款畅飞套装DJI Mavic 3 Pro 畅飞套装(DJI RC)以及DJI Mavic 3 Pro 畅飞套装(DJI RC Pro)差别在于所配备遥控器不同，售价分别为17688元和21988元。更高阶的DJI Mavic 3 Pro Cine 大师套装(DJI RC Pro)售价为31688元。 Mavic 3、Mavic 3 Classic以及Mavic 3 Pro均支持DJI飞行眼镜一体版、DJI Goggles 2和DJI穿越摇杆2，让沉浸式飞行乐趣再度加倍。DJI飞行眼镜一体版体感飞行套装售价4299元，DJI Goggles 2体感飞行套装售价5299元。 即日起，DJI大疆官方商城、京东、天猫、苏宁易购及北京、上海、南京、杭州旗舰店和线下授权体验店等渠道正式发售。",
+      "url": "https://www.dji.com/cn/media-center/announcements/dji-release-mavic3-pro-cn",
+      "correct": true,
+      "review": "正文明确Cine大师套装(DJI RC Pro)、31688元及即日起正式发售；不是RC普通版、后续基础版或其他套装。"
+    }
+  ]
+}
