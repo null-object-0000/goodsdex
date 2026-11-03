@@ -46,6 +46,8 @@ def validate(candidate):
     if e['source_type'] == 'official' and not any(
             url.hostname == d or url.hostname.endswith('.'+d) for d in official_domains):
         raise ValueError('Unofficial domain cannot be marked official')
+    if e.get('isPageShow') is False and r['source'] != 'official_hidden':
+        raise ValueError('Hidden official parameter must use reviewed official_hidden provenance')
     if r['source'] == 'official_hidden':
         if (e['source_type'] != 'official' or e.get('isPageShow') is not False
                 or not candidate.get('category') or candidate.get('method') != 'hidden_official_parameter'):

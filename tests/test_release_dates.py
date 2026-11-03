@@ -185,6 +185,9 @@ def test_hidden_cannot_be_marked_visible_or_official_fact():
     c = hidden_candidates()[0]
     validate(c)
     c['release']['source'] = 'official'
+    c['method'] = 'explicit_dated_statement'
+    with pytest.raises(ValueError, match='Hidden official'):
+        validate(c)
     c['method'] = 'explicit_official_parameter'
     with pytest.raises(ValueError, match='Hidden official'):
         validate(c)

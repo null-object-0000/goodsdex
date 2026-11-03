@@ -32,6 +32,7 @@
 - 所有隐藏日期均为耳机；手机、家电在本次成功返回的命名日期节点中都没有 hidden 日期。
 - 按品类统计：[mi-scan-summary.json](mi-scan-summary.json)。完整逐请求结果：[mi-scan.jsonl.gz](mi-scan.jsonl.gz)，包括业务码、精确 productId、原名、节点 locator、isPageShow、值、响应 hash。16 个隐藏源的单独 JSON 留在 evidence/。
 - 同型号多个 goodsList 节点只计一次，未用重复颜色／容量节点凑数。
+- 另从 4 个耳机媒体正文的京东链接继续核对，3 条最终跳到京东首页，1 条只返回 JS 跳转壳（均 HTTP 200），没有拿到型号规格和上市时间；不把 200 当核验成功。见 [hidden-jd-attempts.json](hidden-jd-attempts.json)。
 
 | 品类 | 隐藏日期独立型号 | 辅助第二来源核对 | 指定来源类型核对 | 放行结论 |
 |---|---:|---:|---:|---|
@@ -110,7 +111,7 @@ Avata 2 单飞行器、智能飞行电池、螺旋桨、后续智选套装／140
 
 [usage.json](usage.json)：先确定外部 LLM 调用预算为 0，实际 0 次、0 input / output tokens、0 API 花费；全程没有调用网关补日期。规则提候选，当前交互会话阅读原文并审核，没有用模型记忆填日期；交互会话本身由宿主计费，本进程没有其 usage，**不把交互总成本说成 0**。上一轮 40 个 LLM 候选及其抽样全集哈希保持原样。
 
-`official_hidden` 新增独立验证契约：全集哈希绑定、至少 30 个独立产品、每条第二来源及正确值、按品类分别计算准确率。≥97% 的品类仅能按 reference 和“推出月份（参考）”发布；90—97% 仅内部，<90% 禁用。未取样品类不能随其他品类解锁。测试覆盖门槛不足、全集修改、同源自证、跨品类错误率和参考标签。实际 hidden 候选为 0，不存在绕过本次门槛的数据。
+`official_hidden` 新增独立验证契约：全集哈希绑定、至少 30 个独立产品、每条第二来源及正确值、按品类分别计算准确率。≥97% 的品类仅能按 reference 和“推出月份（参考）”发布；90—97% 仅内部，<90% 禁用。未取样品类不能随其他品类解锁。测试覆盖门槛不足、全集修改、同源自证、跨品类错误率和参考标签；证据一旦有 isPageShow=false，即使改 method 也不能标 official 或 llm 绕过审核。实际 hidden 候选为 0，不存在绕过本次门槛的数据。
 
 ## 8. 界面展示口径（本轮之后）
 
@@ -133,6 +134,6 @@ PYTHONPATH=src:scripts python3 -m pytest -q
 python3 scripts/finalize_public.py --public <最新data工作树>/public --previous <发布前goods.json>
 ```
 
-来源全清单的状态、hash、错误和片段：[source-inventory.json](source-inventory.json)（2492 个采集记录，包含重试与失败，不当成独立成功源数量）。使用过的公开正文 / PDF、16 个隐藏节点保留在 evidence/；其余完整 HTTP 字节归档于本地忽略目录 `data/release-dates/round2/raw/`，inventory 同时保留审阅所需失败片段与状态。候选发现队列不是自动导入结果。
+来源全清单的状态、hash、错误和片段：[source-inventory.json](source-inventory.json)（2496 个采集记录，包含重试与失败，不当成独立成功源数量）。使用过的公开正文 / PDF、16 个隐藏节点保留在 evidence/；其余完整 HTTP 字节归档于本地忽略目录 `data/release-dates/round2/raw/`，inventory 同时保留审阅所需失败片段与状态。候选发现队列不是自动导入结果。
 
 **验收结论：覆盖表、真实源证据、全量测试及代码提交可以核对；发布与线上检查以完成后的 JSON 为准；“30 条指定来源 hidden 核验”仍不满足，不能声称六项全部完成。**
