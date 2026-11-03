@@ -1,0 +1,19 @@
+--- a/apps/miniprogram/utils/renewal-catalog.js
++++ b/apps/miniprogram/utils/renewal-catalog.js
+@@ -22,7 +22,7 @@
+ function facts(p={}){
+  const r=rawParams(p),name=p.name||'',air=/^AirPods|^无线充电盒款 AirPods/.test(name),audio=lines(p,'音频技术'),battery=lines(p,'电池'),charging=lines(p,'充电盒'),weights=lines(p,'重量');
+  const rows=[];const add=(k,l,v,opt)=>rows.push(fact(k,l,v,opt));
+- const date=release(p);add('release',date.label||'推出时间',date.year&&!date.internal&&date.displayAllowed!==false?date.year+' 年'+(date.month?' '+date.month+' 月':''):null,{raw:date.raw});
++ const date=release(p);add('release',date.label||'推出时间',date.year&&!date.internal&&date.displayAllowed!==false?(date.level==='series'?'该系列 ':'')+date.year+' 年'+(date.month?' '+date.month+' 月':'')+(date.level==='series'?'推出':''):null,{raw:date.raw});
+  if(!earphones(p)){for(const [k,v] of Object.entries(r))if((typeof v==='string'||typeof v==='number')&&/[\u3400-\u9fff]/.test(k)&&!/来源|上市|发布|机型年份/.test(k)&&String(v).length<=160)rows.push(fact('param:'+k,k,String(v)));return rows;}
+  let form=r.form||r['佩戴方式']||r['佩戴形态'];
+  if(!form&&air)form=/Max/.test(name)?'头戴式':/Pro/.test(name)?'入耳式':'无耳塞式';
+@@ -115,6 +115,6 @@
+   return Number(b.brand===old.brand)-Number(a.brand===old.brand)||Number(b.form===old.form)-Number(a.form===old.form)||Number(b.facts.find(f=>f.key==='wireless')?.value==='支持')-Number(a.facts.find(f=>f.key==='wireless')?.value==='支持')||b.release.order-a.release.order||a.price-b.price;
+  });
+ }
+-function card(old,p,saved=false){const d=changes(old,p);const single=p.facts.find(f=>f.key==='single'),weight=p.facts.find(f=>f.key==='weight');return {...p,route:classify(old,p),priceText:p.price===null?'现价待核':'¥'+p.price.toLocaleString('zh-CN'),yearText:p.release.internal?'按型号世代估算':p.release.year?p.release.year+' 年':'推出时间待核',saved,metrics:p.earphones?[single?.n!=null?single.n+'h 单次':null,weight?.n!=null?weight.n+'g / 只':null,p.form].filter(Boolean):p.facts.filter(f=>f.key!=='release'&&f.value!==null&&String(f.value).length<=24).slice(0,3).map(f=>f.label+' '+f.value),gains:d.gains.slice(0,2),losses:d.losses.slice(0,2)};}
++function card(old,p,saved=false){const d=changes(old,p);const single=p.facts.find(f=>f.key==='single'),weight=p.facts.find(f=>f.key==='weight');return {...p,route:classify(old,p),priceText:p.price===null?'现价待核':'¥'+p.price.toLocaleString('zh-CN'),yearText:p.release.internal?'按型号世代估算':p.release.year?(p.release.level==='series'?'该系列 ':'')+p.release.year+' 年'+(p.release.level==='series'?'推出':''):'推出时间待核',saved,metrics:p.earphones?[single?.n!=null?single.n+'h 单次':null,weight?.n!=null?weight.n+'g / 只':null,p.form].filter(Boolean):p.facts.filter(f=>f.key!=='release'&&f.value!==null&&String(f.value).length<=24).slice(0,3).map(f=>f.label+' '+f.value),gains:d.gains.slice(0,2),losses:d.losses.slice(0,2)};}
+ function comparison(old,p){const keys=[...new Set([...old.facts,...p.facts].map(f=>f.key))],different=[],common=[];for(const k of keys){const l=old.facts.find(f=>f.key===k),r=p.facts.find(f=>f.key===k),row={key:k,label:l?.label||r.label,left:l?.value??'？未核实',right:r?.value??'？未核实',note:k==='single'?'标称数据，按各自测试条件':''};(l?.value!=null&&r?.value!=null&&l.value===r.value&&(!['single','total'].includes(k)||l.mode&&l.mode===r.mode)?common:different).push(row);}return {different,common};}
+ module.exports={release,facts,catalog,fromOwned,classify,changes,rank,card,comparison};

@@ -723,6 +723,8 @@ def finalize_public(public, previous=None, retained_ids=()):
     # publication lock. Daily rebuilds must not erase the enrichment.
     from goodsdex.release_dates import apply_release_dates
     output = apply_release_dates(output)
+    from goodsdex.series_release import apply_series_releases
+    output = apply_series_releases(output)
     assert_public_fields(output)
     if previous is not None:
         from goodsdex.release_policy import assert_no_lost_ids

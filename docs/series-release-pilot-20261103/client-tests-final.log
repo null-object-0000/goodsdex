@@ -1,0 +1,21 @@
+✔ LLM dates remain internal even at high confidence and cannot fall back to a displayed legacy date (0.729809ms)
+✔ official announcement, availability and plans keep distinct display labels (0.225976ms)
+✔ series dates have explicit labels, accept year precision and rank below product facts (0.30976ms)
+✔ catalogue selection preserves the independent series sidecar (3.106234ms)
+✔ 真实目录按充电盒规格关联型号资料，不把普通款和无线款混成一台 (10.655604ms)
+✔ 最新普通款可以入选但不冒充全面升级，头戴/有线/日期未知不进入直接候选 (0.310922ms)
+✔ 购买记录不能改变候选资格；只有主动选择原价位才按原实付重新排序 (0.282808ms)
+✔ 未知参数不折叠成共同点；不同续航条件不直接相减 (0.248018ms)
+✔ 候选沿用本机愿望和备份恢复；不生成目标价/提醒，删除旧物引用继续受保护 (7.946743ms)
+✔ 现有公开接口按分类分页并校验完整详情，拒绝循环分页与中途失效响应 (0.588516ms)
+✔ 未关联型号从目录点选，只更新商品身份，原购入日期、实付、备注均保留 (2.964389ms)
+✔ 页面首屏沿用所选排序，跨品牌原价位结果不会被同品牌硬覆盖；无报价型号也能比较 (1.883688ms)
+✔ 小程序源码完整换新交互：真实目录响应、保存恢复、网络错误与三种屏宽 (2355.590198ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2448.582377

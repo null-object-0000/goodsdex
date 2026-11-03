@@ -26,6 +26,8 @@ def validate(candidate):
     if not candidate.get('family') or not candidate.get('ids'):
         raise ValueError('Release candidate needs exact family and IDs')
     r = candidate['release']
+    if r.get('level', 'product') != 'product' or r.get('source') == 'series':
+        raise ValueError('Series assertions belong in series_release, never release')
     if not re.fullmatch(r'(?:19|20)\d{2}-(?:0[1-9]|1[0-2])', str(r.get('date', ''))):
         raise ValueError('Release date must have month precision')
     if r.get('granularity') != 'month' or r.get('source') not in ('official', 'official_hidden', 'third_party', 'llm'):
