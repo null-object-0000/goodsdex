@@ -1,8 +1,8 @@
 {
- "previous_count": 3968,
- "rebuilt_count": 3968,
+ "previous_count": 2939,
+ "rebuilt_count": 2990,
  "added_count": 0,
- "count": 3968,
+ "count": 2990,
  "missing_ids": [],
  "added_ids": [],
  "conflicts": [
@@ -456,10 +456,6 @@
    },
    {
     "id": "GLOBAL:apple_support:model:111846",
-    "field": "historical_price"
-   },
-   {
-    "id": "GLOBAL:apple_support:model:111847",
     "field": "historical_price"
    },
    {
@@ -1123,10 +1119,6 @@
     "field": "historical_price"
    },
    {
-    "id": "GLOBAL:apple_support:model:126203",
-    "field": "historical_price"
-   },
-   {
     "id": "GLOBAL:apple_support:model:126318",
     "field": "historical_price"
    },
@@ -1193,9 +1185,44 @@
    {
     "id": "GLOBAL:apple_support:model:148760",
     "field": "historical_price"
+   },
+   {
+    "id": "CN:mi_cn:product:5770",
+    "field": "image"
+   },
+   {
+    "id": "CN:mi_cn:product:3459",
+    "field": "image"
+   },
+   {
+    "id": "CN:mi_cn:product:5051",
+    "field": "image"
+   },
+   {
+    "id": "CN:mi_cn:product:5499",
+    "field": "image"
+   },
+   {
+    "id": "CN:mi_cn:product:6135",
+    "field": "image"
+   },
+   {
+    "id": "CN:mi_cn:product:8133",
+    "field": "image"
    }
   ],
-  "skipped": [],
+  "skipped": [
+   {
+    "id": "GLOBAL:apple_support:model:111847",
+    "reason": "target_absent",
+    "field": "historical_price"
+   },
+   {
+    "id": "GLOBAL:apple_support:model:126203",
+    "reason": "target_absent",
+    "field": "historical_price"
+   }
+  ],
   "unchanged": [
    {
     "id": "CN:mi_cn:product:722",
@@ -2042,14 +2069,6 @@
     "field": "image"
    },
    {
-    "id": "CN:mi_cn:product:5770",
-    "field": "image"
-   },
-   {
-    "id": "CN:mi_cn:product:3459",
-    "field": "image"
-   },
-   {
     "id": "CN:mi_cn:product:10000057",
     "field": "image"
    },
@@ -2082,10 +2101,6 @@
     "field": "image"
    },
    {
-    "id": "CN:mi_cn:product:5051",
-    "field": "image"
-   },
-   {
     "id": "CN:mi_cn:product:5434",
     "field": "image"
    },
@@ -2107,10 +2122,6 @@
    },
    {
     "id": "CN:mi_cn:product:8321",
-    "field": "image"
-   },
-   {
-    "id": "CN:mi_cn:product:5499",
     "field": "image"
    },
    {
@@ -2199,10 +2210,6 @@
    },
    {
     "id": "CN:mi_cn:product:10000023",
-    "field": "image"
-   },
-   {
-    "id": "CN:mi_cn:product:6135",
     "field": "image"
    },
    {
@@ -2375,10 +2382,6 @@
    },
    {
     "id": "CN:mi_cn:product:8790",
-    "field": "image"
-   },
-   {
-    "id": "CN:mi_cn:product:8133",
     "field": "image"
    },
    {
