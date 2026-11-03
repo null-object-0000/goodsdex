@@ -229,3 +229,15 @@ class BlockedSourceTests(unittest.TestCase):
             status = json.loads((out/'collection-status.json').read_text())
             self.assertEqual(status['conclusion'], 'degraded')
             self.assertEqual(status['error'], 'blocked: 403 from hpstore.cn')
+
+    def test_http_retry_is_bounded_and_backs_off(self):
+        from urllib.error import HTTPError
+        client = hp.Client()
+        forbidden = HTTPError(URL, 403, 'Forbidden', {}, None)
+        with patch.object(client, '_get_once', side_effect=forbidden) as get, patch.object(hp.time, 'sleep') as sleep:
+            with self.assertRaises(HTTPError):
+                client.get(URL)
+            self.assertEqual(get.call_count, 3)
+            self.assertEqual([c.args[0] for c in sleep.call_args_list], [5, 10])
+        with patch.object(client, '_get_once', side_effect=[forbidden, (b'ok', {})]), patch.object(hp.time, 'sleep'):
+            self.assertEqual(client.get(URL), (b'ok', {}))

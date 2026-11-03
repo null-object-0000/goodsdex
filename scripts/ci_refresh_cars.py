@@ -1,4 +1,4 @@
-"""Daily refresh of the reviewed 24 BYD + 10 Xiaomi EV configurations only."""
+"""Daily refresh of reviewed BYD and Xiaomi EV configurations only."""
 from __future__ import annotations
 import argparse
 from copy import deepcopy
@@ -88,11 +88,18 @@ def main():
     previous = json.loads((args.public / 'goods.json').read_text())
     capture = Capture(args.captures)
     cars, gaps = refresh(capture, catalog)
-    result = merge_cars(previous, cars, catalog['rows'])
+    skipped = [g for g in gaps if g.get('skipped_reason')]
+    skipped_ids = {g['id'] for g in skipped}
+    from goodsdex.car_structure import expand_sources
+    prior_ids = {r['id'] for r in expand_sources(previous)}
+    if not skipped_ids <= prior_ids:
+        raise ValueError('Skipped SKU has no previous published record')
+    result = merge_cars(previous, cars, [r for r in catalog['rows'] if r['id'] not in skipped_ids])
     old_meta = json.loads((args.public / 'meta.json').read_text())
     audit = {'approved_count': len(cars), 'previous_count': len(previous), 'count': len(result),
              'non_car_objects_unchanged': True, 'non_car_count': sum(not is_car(r) for r in previous),
-             'network_requests': capture.requests, 'image_gaps': gaps, 'excluded': catalog['excluded']}
+             'network_requests': capture.requests, 'image_gaps': [g for g in gaps if 'skipped_reason' not in g],
+             'skipped': skipped, 'excluded': catalog['excluded']}
     # All checks above complete before writing either public artifact.
     for name, value in [('goods.json', result), ('meta.json', metadata(result, old_meta)), ('car-refresh-audit.json', audit)]:
         target = args.public / name

@@ -162,3 +162,24 @@ def test_daily_skips_preserve_published_sku_without_fresh_timestamp(tmp_path):
     import pytest
     with pytest.raises(ValueError, match='no previous'):
         prepare([], tmp_path)
+
+
+def test_direct_refresh_cli_also_preserves_skipped_skus(tmp_path, monkeypatch):
+    import json
+    from copy import deepcopy
+    import ci_refresh_cars as ci
+    approved = json.loads(ci.CATALOG.read_text())['rows']
+    previous = [{'id': 'other', 'unchanged': ['yes']}, *deepcopy(approved)]
+    (tmp_path/'goods.json').write_text(json.dumps(previous))
+    (tmp_path/'meta.json').write_text('{}')
+    class Capture:
+        requests = 0
+    monkeypatch.setattr(ci, 'Capture', lambda *a: Capture())
+    monkeypatch.setattr(ci, 'refresh', lambda *a: (deepcopy(approved[1:]), [
+        dict(id=approved[0]['id'], skipped_reason='missing_trim_columns')]))
+    monkeypatch.setattr(sys, 'argv', ['ci_refresh_cars', '--public', str(tmp_path), '--captures', str(tmp_path/'captures')])
+    ci.main()
+    assert json.loads((tmp_path/'goods.json').read_text()) == previous
+    audit = json.loads((tmp_path/'car-refresh-audit.json').read_text())
+    assert audit['approved_count'] == len(approved)-1
+    assert audit['skipped'][0]['id'] == approved[0]['id']
