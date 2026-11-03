@@ -14,6 +14,7 @@ from urllib.parse import urlparse
 
 DEFAULT_INPUT = Path(__file__).resolve().parents[2] / 'data/official/release-dates.json'
 LLM_INPUT = Path(__file__).resolve().parents[2] / 'data/llm/release-dates.json'
+CROSSCHECK_INPUT = LLM_INPUT.with_name('release-crosschecks.json')
 
 
 def digest(value):
@@ -169,11 +170,19 @@ def brand_llm_gate(candidates, reviews):
     return gates
 
 
-def apply_release_dates(rows, path=DEFAULT_INPUT, llm_path=None):
+def apply_release_dates(rows, path=DEFAULT_INPUT, llm_path=None, crosscheck_path=None):
     path = Path(path)
     if not path.exists():
         raise ValueError(f'Missing reviewed release input: {path}')
     bundle = json.loads(path.read_text())
+    from goodsdex.release_crosschecks import reconcile
+    check_path = Path(crosscheck_path) if crosscheck_path is not None else CROSSCHECK_INPUT if path == DEFAULT_INPUT else None
+    check_bundle = json.loads(check_path.read_text()) if check_path and check_path.exists() else {}
+    if check_bundle and check_bundle.get('schema') != 1:
+        raise ValueError('Unsupported independent check schema')
+    independent_checks = check_bundle.get('checks', {})
+    if any(c.get('source') != 'llm' or c.get('independent') is not True for c in independent_checks.values()):
+        raise ValueError('Independent checks must retain LLM provenance')
     if bundle.get('schema') != 1:
         raise ValueError('Unsupported release input schema')
     candidates = bundle['candidates']
@@ -217,6 +226,7 @@ def apply_release_dates(rows, path=DEFAULT_INPUT, llm_path=None):
     managed_ids = set(extra.get('managed_ids', []))
     output = deepcopy(rows)
     for row in output:
+        previous_release = deepcopy(row.get('release') or {})
         if row['id'] in withdrawn:
             row.pop('release', None)
             continue
@@ -225,23 +235,32 @@ def apply_release_dates(rows, path=DEFAULT_INPUT, llm_path=None):
             if row['id'] in managed_ids and (row.get('release') or {}).get('source') == 'llm':
                 row.pop('release', None)
             # Existing dates must still satisfy the provenance contract.
-            if row.get('release'):
+            if row.get('release') and row['release'].get('date'):
                 validate(dict(family=row['id'], ids=[row['id']], release=row['release']))
                 if row['release']['source'] in ('llm', 'official_hidden'):
                     raise ValueError(f'Unreviewed LLM/hidden release outside sampled universe: {row["id"]}')
+                if row['release']['source'] == 'third_party':
+                    family = row['release'].get('family') or row['id']
+                    check = independent_checks.get(family)
+                    if check and check['original_sha256'] != digest(row['release']):
+                        prior = row['release'].get('checks', [])
+                        replay = (any(p.get('original_sha256') == check['original_sha256'] for p in prior)
+                                  and any(p.get('verdict') == 'original' and p['date'] == row['release']['date']
+                                          and p['source'] == 'third_party' for p in prior))
+                        if not replay:
+                            raise ValueError(f'Stale independent release check: {family}')
+                    row['release'] = reconcile(row['release'], [check] if check else [], row['release'].get('checks', []))
             continue
         if c['family'].startswith('CN:apple_cn:product:') and row.get('product_id') != c['family']:
             raise ValueError(f'Release family identity changed: {row["id"]}')
         r = deepcopy(c['release'])
         inferred = r['source'] == 'llm'
-        if inferred and (row.get('release') or {}).get('source') in ('official', 'third_party', 'official_hidden'):
-            continue
         current_gate = brand_gates[c['brand']] if c['family'] in extra_families else gate
         is_hidden = r['source'] == 'official_hidden'
         if is_hidden and hidden.get(c['category'], {}).get('usage') != 'reference':
             row.pop('release', None)
             continue
-        if inferred and current_gate['usage'] == 'disabled':
+        if inferred and current_gate['usage'] == 'disabled' and previous_release.get('source') not in ('official', 'official_hidden', 'third_party'):
             row.pop('release', None)
             continue
         planned = r['event'] == 'planned_availability'
@@ -263,7 +282,29 @@ def apply_release_dates(rows, path=DEFAULT_INPUT, llm_path=None):
             r['display_allowed'] = False
             r['internal_only'] = True
             r['estimate_notice'] = '按型号世代估算'
-        row['release'] = r
+        observations = []
+        check = independent_checks.get(c['family'])
+        if check:
+            if check['original_sha256'] != digest(c['release']):
+                raise ValueError(f'Stale independent release check: {c["family"]}')
+            observations.append(check)
+        # Preserve official priority and document the rejected assertion.
+        old = previous_release
+        if old.get('date') and ((old.get('source') in ('official', 'official_hidden') and r['source'] not in ('official', 'official_hidden')) or (old.get('source') == 'third_party' and inferred)):
+            observations.insert(0, dict(source=r['source'], date=r['date'], family=c['family']))
+            r = old
+        elif old.get('date') and (old['date'], old['source']) != (r['date'], r['source']):
+            observations.insert(0, dict(source=old['source'], date=old['date']))
+        # Sidecar overlap is audited even when a reviewed source wins.
+        for alt in extra_cs:
+            if row['id'] in alt['ids'] and alt['family'] != c['family']:
+                observations.append(dict(source='llm', date=alt['release']['date'], family=alt['family']))
+                alt_check = independent_checks.get(alt['family'])
+                if alt_check:
+                    if alt_check['original_sha256'] != digest(alt['release']):
+                        raise ValueError('Stale independent sidecar check')
+                    observations.append(alt_check)
+        row['release'] = reconcile(r, observations, old.get('checks', []))
     return output
 
 

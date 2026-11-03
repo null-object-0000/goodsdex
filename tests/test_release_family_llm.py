@@ -55,7 +55,8 @@ def test_sidecar_official_priority_internal_only_and_single_switch_rollback(tmp_
     official = deepcopy(candidate(0, 'official')['release'])
     rows = [dict(id=cs[0]['ids'][0], release=official), dict(id=cs[1]['ids'][0])]
     out = apply_release_dates(rows, main, sidecar)
-    assert out[0] == rows[0]
+    assert all(out[0]['release'][k] == v for k, v in official.items())
+    assert any(c['source'] == 'llm' for c in out[0]['release']['checks'])
     r = out[1]['release']
     assert r['confidence'] == 'high' and r['usage'] == 'reference'
     assert r['internal_only'] and not r['display_allowed']
@@ -64,7 +65,7 @@ def test_sidecar_official_priority_internal_only_and_single_switch_rollback(tmp_
     b['enabled'] = False
     sidecar.write_text(json.dumps(b))
     rolled = apply_release_dates(out, main, sidecar)
-    assert rolled[0] == rows[0] and 'release' not in rolled[1]
+    assert rolled[0] == out[0] and 'release' not in rolled[1]
 
 
 def test_family_grouping_retains_se_and_platform_but_merges_storage_and_body_kits():

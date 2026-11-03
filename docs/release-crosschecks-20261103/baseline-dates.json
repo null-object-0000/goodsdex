@@ -1,0 +1,4541 @@
+[
+  {
+    "key": "check-0000",
+    "family": "CN:mi_cn:product:18520",
+    "ids": [
+      "CN:mi_cn:product:18520"
+    ],
+    "name": "米家高速吹风机 H501",
+    "brand": "小米",
+    "release": {
+      "date": "2023-05",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "medium",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/695/691.htm",
+        "quote": "2023/5/27 18:30:41 来源： IT之家 作者： 一乖 责编： 一乖 评论： 小米 米家高速吹风机 H501 今年 5 月上市，官方售价 299 元。 ",
+        "locator": "article date + first paragraph",
+        "sha256": "cf81ffe69b4041e3d255d445ad7f1c92f76ea729f6c83c8033ae5ef4f9d613d0",
+        "captured_at": "2026-11-03T04:30:00.814548+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "02dd911adac253f1ef5292d03eb5ecd0fe3a688420c61fe8fdf4b1472879acce"
+  },
+  {
+    "key": "check-0001",
+    "family": "GLOBAL:apple_support:model:111340",
+    "ids": [
+      "GLOBAL:apple_support:model:111340"
+    ],
+    "name": "MacBook Pro（14 英寸，2023 年）",
+    "brand": "Apple",
+    "release": {
+      "date": "2023-02",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2023/01/apple-unveils-macbook-pro-featuring-m2-pro-and-m2-max/",
+        "quote": "2023 年 1 月 17 日 | id 视网膜 XDR 显示屏、丰富的连接方式、1080p FaceTime 高清摄像头、六扬声器音响系统及录音棚级麦克风，将无与伦比的功能发挥得淋漓尽致。结合 macOS Ventura，MacBook Pro 为用户带来无可匹敌的使用体验。新款 14 英寸及 16 英寸 MacBook Pro 将于 1 月 19 日起即可订购，并将于 2 月 3 日（周五）起正式发售。 “搭载 Apple 芯片的 MacBook Pro 颠覆了笔记本电脑这一产品类型，帮助专业用户随时随地突破工作流的极限，完成此前人们认为笔记本电脑无法胜任的工作。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“今天，Mac",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "00ca981f53141349f0f070ba7e5515be52647c070458e1727c354fd4eaf3c4ea",
+        "captured_at": "2026-11-03T04:26:59.320334+00:00"
+      }
+    },
+    "candidate_sha256": "e21e025e778e40849f6b11bbd92b1ddc9c69435cf6bd101b550b32e4412a3bc3"
+  },
+  {
+    "key": "check-0002",
+    "family": "GLOBAL:apple_support:model:111832",
+    "ids": [
+      "GLOBAL:apple_support:model:111832"
+    ],
+    "name": "Apple Watch Ultra 2",
+    "brand": "Apple",
+    "release": {
+      "date": "2023-09",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2023/09/apple-unveils-apple-watch-ultra-2/",
+        "quote": "2023 年 9 月 12 日 | 2 依然具有常规使用下长达 36 小时的电池续航时间，低电量模式下更长达 72 小时。 顾客可首次在每种 Apple Watch 中选购碳中和表款，这代表 Apple 2030 目标——到 2030 年底前在整个运营、生产供应链和产品生命周期完全实现碳中和——达成意义重大的里程碑。 Apple Watch Ultra 2 今日起接受订购，9 月 22 日（周五）起正式发售。 Apple Watch 2 支持更大的海拔高度范围和设备端处理 Siri 请求功能，watchOS 10 的功能带来全新骑行体验，帮助用户探索户外世界。 “今年，我们最坚固耐用、功能强大的 Apple Watch 变得更加出色了。”Apple 首",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "bec35dd074b0a7c743ea1f5c378982edcd0388f7b9932a6d124d8e290817cc42",
+        "captured_at": "2026-11-03T04:26:55.247896+00:00"
+      }
+    },
+    "candidate_sha256": "77004286e2e68a61e0700eeaca6c70699a8378fb8271ab543fb3de53ca8ae3a6"
+  },
+  {
+    "key": "check-0003",
+    "family": "GLOBAL:apple_support:model:111838",
+    "ids": [
+      "GLOBAL:apple_support:model:111838"
+    ],
+    "name": "MacBook Pro（16 英寸，2023 年）",
+    "brand": "Apple",
+    "release": {
+      "date": "2023-02",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2023/01/apple-unveils-macbook-pro-featuring-m2-pro-and-m2-max/",
+        "quote": "2023 年 1 月 17 日 | id 视网膜 XDR 显示屏、丰富的连接方式、1080p FaceTime 高清摄像头、六扬声器音响系统及录音棚级麦克风，将无与伦比的功能发挥得淋漓尽致。结合 macOS Ventura，MacBook Pro 为用户带来无可匹敌的使用体验。新款 14 英寸及 16 英寸 MacBook Pro 将于 1 月 19 日起即可订购，并将于 2 月 3 日（周五）起正式发售。 “搭载 Apple 芯片的 MacBook Pro 颠覆了笔记本电脑这一产品类型，帮助专业用户随时随地突破工作流的极限，完成此前人们认为笔记本电脑无法胜任的工作。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“今天，Mac",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "00ca981f53141349f0f070ba7e5515be52647c070458e1727c354fd4eaf3c4ea",
+        "captured_at": "2026-11-03T04:26:59.320334+00:00"
+      }
+    },
+    "candidate_sha256": "6f3a851404105277aa87b5c2d2b07a8341e4610c151f2849b47120890fed8c40"
+  },
+  {
+    "key": "check-0004",
+    "family": "GLOBAL:apple_support:model:111841",
+    "ids": [
+      "GLOBAL:apple_support:model:111841"
+    ],
+    "name": "12.9 英寸 iPad Pro（第 6 代）",
+    "brand": "Apple",
+    "release": {
+      "date": "2022-10",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2022/10/apple-introduces-next-generation-ipad-pro-supercharged-by-the-m2-chip/",
+        "quote": "2022 年 10 月 18 日 | 雳端口以及四扬声器音频系统。全新 iPadOS 16 功能包括台前调度、全面支持外接显示器 1 、桌面级 app 和参考模式——进一步提升 iPad 上的 pro 级工作流。在先进的硬件和 iPadOS 16 的加持之下，iPad Pro 拥有一套由强大的 pro 级 app 组成的、独一无二的超凡生态系统。新版 iPad Pro 将于 10 月 20 日（周四）起接受订购，并将于 10 月 26 日（周三）起正式发售。 “新一代 iPad Pro 不断突破 iPad 的可能性，进一步提升多用、强大而又便携的终极 iPad 体验。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“搭载 M2 芯片，新版 iPad Pro 性能超群，并支持一系列",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "e91ae02dcc2c7dfd7999ffbb3f7ea3ec6cdbd0c4f92d4f1c9d832197a1d027b6",
+        "captured_at": "2026-11-03T04:27:00.855132+00:00"
+      }
+    },
+    "candidate_sha256": "8ff5bb3ffc9d1872a6ec0877ae2086130b0d98e10eb3e20d54a775aad3a0236f"
+  },
+  {
+    "key": "check-0005",
+    "family": "GLOBAL:apple_support:model:111842",
+    "ids": [
+      "GLOBAL:apple_support:model:111842"
+    ],
+    "name": "11 英寸 iPad Pro（第 4 代）",
+    "brand": "Apple",
+    "release": {
+      "date": "2022-10",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2022/10/apple-introduces-next-generation-ipad-pro-supercharged-by-the-m2-chip/",
+        "quote": "2022 年 10 月 18 日 | 雳端口以及四扬声器音频系统。全新 iPadOS 16 功能包括台前调度、全面支持外接显示器 1 、桌面级 app 和参考模式——进一步提升 iPad 上的 pro 级工作流。在先进的硬件和 iPadOS 16 的加持之下，iPad Pro 拥有一套由强大的 pro 级 app 组成的、独一无二的超凡生态系统。新版 iPad Pro 将于 10 月 20 日（周四）起接受订购，并将于 10 月 26 日（周三）起正式发售。 “新一代 iPad Pro 不断突破 iPad 的可能性，进一步提升多用、强大而又便携的终极 iPad 体验。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“搭载 M2 芯片，新版 iPad Pro 性能超群，并支持一系列",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "e91ae02dcc2c7dfd7999ffbb3f7ea3ec6cdbd0c4f92d4f1c9d832197a1d027b6",
+        "captured_at": "2026-11-03T04:27:00.855132+00:00"
+      }
+    },
+    "candidate_sha256": "61bf9de23abd147a59fdf5381cde646fde47c0579c1885a6ab561d91b0324dda"
+  },
+  {
+    "key": "check-0006",
+    "family": "GLOBAL:apple_support:model:111843",
+    "ids": [
+      "GLOBAL:apple_support:model:111843"
+    ],
+    "name": "HomePod (第二代)",
+    "brand": "Apple",
+    "release": {
+      "date": "2023-02",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2023/01/apple-introduces-the-new-homepod-with-breakthrough-sound-and-intelligence/",
+        "quote": "2023 年 1 月 18 日 | ，支持播放沉浸式空间音频曲目，呈现前所未有的聆听体验。HomePod 带来管理日常任务、控制智能家居的便利新方式，用户可以使用 Siri 创建智能家居自动化功能，在家中触发烟雾或一氧化碳警报时获得通知，或者查看房间的温度与湿度——以上操作不必动手就能完成。 新款 HomePod 从今日起可在线或通过 Apple Store app 订购，2 月 3 日（周五）起正式发售。 “利用我们的专业音频技术和创新，新款 HomePod 可呈现醇厚深沉的低音、自然的中音和清澈细腻的高音。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“随着 HomePod mini 大受欢迎，我们看到用户对体积更大、声学",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "af543228cc70cfca5d6f1266c933032d60591840c1f6518a91409e15ff254532",
+        "captured_at": "2026-11-03T04:26:58.414389+00:00"
+      }
+    },
+    "candidate_sha256": "5240626e875d096519b24a1c1223b5bf9d58d6f0222e4c31c16d93bff4055fcc"
+  },
+  {
+    "key": "check-0007",
+    "family": "GLOBAL:apple_support:model:111847",
+    "ids": [
+      "GLOBAL:apple_support:model:111847"
+    ],
+    "name": "AirTag",
+    "brand": "Apple",
+    "release": {
+      "date": "2021-04",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2021/04/apple-introduces-airtag/",
+        "quote": "2021 年 4 月 20 日 | 术支持 0 + 微信扫描二维码分享文章 使用浏览器分享功能分享文章 点击这里分享到微信 Newsroom Open Newsroom navigation Close Newsroom navigation Apple Services Apple Stories 搜索 Newsroom Close 在新窗口中打开 新闻稿 2021 年 4 月 20 日 Apple 推出 AirTag Apple 通过 AirTag 扩展了“查找”生态系统，这款 iPhone 配件提供了一种私密而安全的方式来轻松定位重要物品，即将于 4 月 30 日（星期五）开始发售。 AirTag 是一款设计精致并可添加免费个性化镌刻的小巧配件，使 iPhone 用户可以配合“查找” app，帮助追踪和查找重要物品。 加利福尼亚州，库比提诺 Apple 今日推出了 AirTag，这是一款设计精致的小巧配件，可以配合 Apple",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "53ec68783e7e19e52b0a452e60decd99638f54938f49c30da4ede184e8e9feca",
+        "captured_at": "2026-11-03T04:27:50.482949+00:00"
+      }
+    },
+    "candidate_sha256": "fa1327a294e707fdda5d9a1ce5f18d694d2c09562179f92be0aefcd659e6c61e"
+  },
+  {
+    "key": "check-0008",
+    "family": "GLOBAL:apple_support:model:111850",
+    "ids": [
+      "GLOBAL:apple_support:model:111850"
+    ],
+    "name": "iPhone 14",
+    "brand": "Apple",
+    "release": {
+      "date": "2022-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "medium",
+      "event": "availability",
+      "market": "GLOBAL",
+      "evidence": {
+        "url": "https://www.gsmarena.com/apple_iphone_14-11861.php",
+        "quote": "Released 2022, September 16",
+        "locator": "Launch / Status / Released",
+        "sha256": "b066e18aa3ec16e9c1d24bba5c401232d981049e0bfb0b65631ba62ea40550fb",
+        "captured_at": "2026-11-03T04:30:02.102947+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "a4e90f0daba0e919db52a1763dee1378e8919f6484dd33632ace0b4e93c7d6d9"
+  },
+  {
+    "key": "check-0009",
+    "family": "GLOBAL:apple_support:model:111852",
+    "ids": [
+      "GLOBAL:apple_support:model:111852"
+    ],
+    "name": "Apple Watch Ultra",
+    "brand": "Apple",
+    "release": {
+      "date": "2022-09",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2022/09/introducing-apple-watch-ultra/",
+        "quote": "2022 年 9 月 7 日 | 为 Apple Watch Ultra 大面积显示屏设计的“寻路者”表盘包括融入时间显示区域的指南针，并提供了可容纳多达 8 项复杂功能的空间。Apple Watch Ultra 同时带来 3 款新表带：野径回环式表带、高山回环式表带和海洋表带，分别以独特设计为每一场冒险提供安全舒适的佩戴体验。 Apple Watch Ultra 将于 9 月 9 日起开放订购，9 月 23 日（周五）正式发售。 Apple 营运总监 Jeff Williams 表示：“我们从世界各地的探险家和运动员身上汲取灵感，打造出一款为全新与极限环境设计的新款 Apple Watch，也是迄今最耐用、最强大的 Apple Watch。Apple Watch Ultr",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "7b7a8295c920b23148a2a5a83d60e3e089820a0f4d8a719dfe6ea4c99c639c34",
+        "captured_at": "2026-11-03T04:27:02.031898+00:00"
+      }
+    },
+    "candidate_sha256": "e1f15ac69c244e455d546632c91dc04bfe45200c5f8b455706feb69ce3ee4b99"
+  },
+  {
+    "key": "check-0010",
+    "family": "GLOBAL:apple_support:model:111854",
+    "ids": [
+      "GLOBAL:apple_support:model:111854"
+    ],
+    "name": "iPhone 14 Plus",
+    "brand": "Apple",
+    "release": {
+      "date": "2022-10",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2022/09/apple-introduces-iphone-14-and-iphone-14-plus/",
+        "quote": "2022 年 9 月 8 日 | 再加上出色的电池续航、超高的耐用性、高速 5G，让 iPhone 14 系列更胜以往。iPhone 14 和 iPhone 14 Plus 提供午夜色、蓝色、星光色、紫色和红色 5 种配色选择。两款机型于 9 月 9 日（周五）起接受预购，其中 iPhone 14 于 9 月 16 日 （周五）正式发售，iPhone 14 Plus 于 10 月 7 日（周五）正式发售。 “我们的用户每一天都离不开 iPhone，而 iPhone 14 和 iPhone 14 Plus 又新添突破性的技术和重要的安全功能。iPhone 14 Plus 配备更大的全新 6.7 英寸显示屏，用户在浏览网页时能看到更多内容，甚至更多文本",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "ae2e850aba8ae7b323a1372244875d273004216db715fa08842856083a714f8d",
+        "captured_at": "2026-11-03T04:27:01.310739+00:00"
+      }
+    },
+    "candidate_sha256": "0c289c3f4c27ee70e16bbb0e06d080370983c28e1451e6d7ea086474a69e7899"
+  },
+  {
+    "key": "check-0011",
+    "family": "GLOBAL:apple_support:model:111858",
+    "ids": [
+      "GLOBAL:apple_support:model:111858"
+    ],
+    "name": "AirPods Max 1",
+    "brand": "Apple",
+    "release": {
+      "date": "2020-12",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2020/12/apple-introduces-airpods-max-the-magic-of-airpods-in-a-stunning-over-ear-design/",
+        "quote": "2020 年 12 月 8 日 | s Max ，这款创新的无线耳机将 AirPods 的奇妙体验带到具有高保真音效的包耳式设计中。AirPods Max 结合了定制声学设计、H1芯片和先进软件以支持计算音频，通过自适应均衡、主动降噪、通透模式和空间音频带来突破性的聆听体验。AirPods Max 共有深空灰色、银色、天蓝色、绿色和粉色五种靓丽颜色，今日起接受预订，下周二 12 月 15 日开始发售。 “AirPods 在全球备受欢迎，因其轻松的设置、卓越的音质和标志性的设计深受青睐。通过 AirPods Max，我们将 AirPods 的奇妙体验带到精美的包耳式设计中，并带来令人惊叹的高保真音质。” Apple 全球市场营销高级副总裁 Gre",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "46b3044b0eb0df786a1b81bb2439b05681d50b58e025ba75f004afeb488060c7",
+        "captured_at": "2026-11-03T04:27:50.785766+00:00"
+      }
+    },
+    "candidate_sha256": "caafb57e1e0b2277d89e5d94aca9f03b8246a527d2f36899ff5308a5f1b8dcfe"
+  },
+  {
+    "key": "check-0012",
+    "family": "GLOBAL:apple_support:model:111863",
+    "ids": [
+      "GLOBAL:apple_support:model:111863"
+    ],
+    "name": "AirPods 3",
+    "brand": "Apple",
+    "release": {
+      "date": "2021-10",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2021/10/introducing-the-next-generation-of-airpods/",
+        "quote": "2021 年 10 月 18 日 | ic 音乐、及其他各类电影和电视节目中，享受空间音频。新款 AirPods 抗汗抗水，并配有力度传感器，可方便直观地控制音乐和通话等。增强的电池续航提供最长可达 6 小时的聆听时间 1 ，搭配使用便携充电盒，则可享受最长可达 30 小时的聆听时间。AirPods（第三代）正式加入风靡全球的 Apple 耳机产品线，于今日起接受订购，并于 10 月 26 日（周二）起在零售店内发售。 “AirPods 凭借突破性的设计、卓越的音质和妙不可言的体验，彻底改变了无线耳机市场，”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“我们很高兴推出新一代 AirPods。通过自适应均衡和支持动态头部追踪的空间音频，新一",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "56bd4bcfc3a297f827cc968eba076cb049b71fa3090a173f404fa5f5fd8da643",
+        "captured_at": "2026-11-03T04:27:49.217853+00:00"
+      }
+    },
+    "candidate_sha256": "212693284f5c6f696f007a0ce9203c72c216a5583811a921984025b54283acd9"
+  },
+  {
+    "key": "check-0013",
+    "family": "GLOBAL:apple_support:model:111867",
+    "ids": [
+      "GLOBAL:apple_support:model:111867"
+    ],
+    "name": "MacBook Air (M2, 2022)",
+    "brand": "Apple",
+    "release": {
+      "date": "2022-07",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2022/07/all-new-macbook-air-with-m2-available-to-order-starting-friday-july-8/",
+        "quote": "2022 年 7 月 6 日 | ook Air 于 7 月 8 日（周五）起接受订购 MacBook Air 拥有全新纤薄设计、四种优雅外观，配备更宽大的 13.6 英寸 Liquid 视网膜显示屏，1080p 高清摄像头，支持 MagSafe 充电及更多强大功能 搭载 M2 芯片的全新 MacBook Air 于 7 月 8 日（周五）起面向顾客接受订购。 北京时间 7 月 8 日（周五）晚 8 点起，彻底重新设计、 搭载 M2 芯片的 MacBook Air 将接受订购，并于 7 月 15 日（周五）起向全球顾客发货。在 M2 芯片的强势驱动下，全新 MacBook Air 拥有更强的性能表现以及令人眼前一亮的纤薄设计，更加宽大的 13.6 英寸 Liquid 视网膜显示屏，1080p FaceTime 高清摄像头，四扬声器音响系统，最多 18 小时的电池续航时",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "8119436bdf4fb43d5c2a017a397c752a69f6d8549cfb06172ddb9f3083d4e1b3",
+        "captured_at": "2026-11-03T04:27:03.190483+00:00"
+      }
+    },
+    "candidate_sha256": "83228759fad17cee96a2984d8cd6087349ce29838d4b3fefd562ee1d740ea6d5"
+  },
+  {
+    "key": "check-0014",
+    "family": "GLOBAL:apple_support:model:111870",
+    "ids": [
+      "GLOBAL:apple_support:model:111870"
+    ],
+    "name": "iPhone 13 Pro Max",
+    "brand": "Apple",
+    "release": {
+      "date": "2021-09",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2021/09/iphone-13-lineup-new-ipad-mini-and-ninth-generation-ipad-arrive-worldwide/",
+        "quote": "2021 年 9 月 24 日 | 2021 年 9 月 24 日 iPhone 13 Pro、iPhone 13 Pro Max、iPhone 13、iPhone 13 mini、iPad mini 和 iPad（第九代）在全球范围内开始发售 集创新科技与优雅设计于一身的 iPhone 13 系列机型、强大的新款 iPad mini 和 iPad（第九代）于 9 月 24 日（周五）在全球范围内开始发售。 Apple Store 零售店与 Apple 在线商店向顾客敞开大门，欢迎他们了解并体验最新款 iPhone 与 iPad 机型。由内到外重新设计的 iPhone 13 Pro 与 iPhone 13 Pro Max 配备了 iPhone 有史",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "51b572407261ebd08c0707f277cb50e95749775f80ab496ec7f82beae89110ee",
+        "captured_at": "2026-11-03T04:27:49.217920+00:00"
+      }
+    },
+    "candidate_sha256": "a62b13686889db960980c9f7fbf90836d16be46dae9592c6c7dacb70bf859bc6"
+  },
+  {
+    "key": "check-0015",
+    "family": "GLOBAL:apple_support:model:111871",
+    "ids": [
+      "GLOBAL:apple_support:model:111871"
+    ],
+    "name": "iPhone 13 Pro",
+    "brand": "Apple",
+    "release": {
+      "date": "2021-09",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2021/09/iphone-13-lineup-new-ipad-mini-and-ninth-generation-ipad-arrive-worldwide/",
+        "quote": "2021 年 9 月 24 日 | 2021 年 9 月 24 日 iPhone 13 Pro、iPhone 13 Pro Max、iPhone 13、iPhone 13 mini、iPad mini 和 iPad（第九代）在全球范围内开始发售 集创新科技与优雅设计于一身的 iPhone 13 系列机型、强大的新款 iPad mini 和 iPad（第九代）于 9 月 24 日（周五）在全球范围内开始发售。 Apple Store 零售店与 Apple 在线商店向顾客敞开大门，欢迎他们了解并体验最新款 iPhone 与 iPad 机型。由内到外重新设计的 iPhone 13 Pro 与 iPhone 13 Pro Max 配备了 iPhone 有史",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "51b572407261ebd08c0707f277cb50e95749775f80ab496ec7f82beae89110ee",
+        "captured_at": "2026-11-03T04:27:49.217920+00:00"
+      }
+    },
+    "candidate_sha256": "529c31e488e3a72a1da918619ee59aca74eb6bcb2be5bc0d6892e02c09be9274"
+  },
+  {
+    "key": "check-0016",
+    "family": "GLOBAL:apple_support:model:111872",
+    "ids": [
+      "GLOBAL:apple_support:model:111872"
+    ],
+    "name": "iPhone 13",
+    "brand": "Apple",
+    "release": {
+      "date": "2021-09",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2021/09/apple-introduces-iphone-13-and-iphone-13-mini/",
+        "quote": "2021 年 9 月 14 日 | 的起始存储容量均为 128GB，为上一代的两倍，拥有行业领先的 IP68 级抗水性能，并可提供出色的 5G 体验。 iPhone 13 和 iPhone 13 mini 五种精美的铝金属外观：红色、星光色、午夜色、蓝色和粉色。 iPhone 13 和 iPhone 13 mini 提供粉色、蓝色、午夜色、星光色和红色 五种配色选择，将自 9 月 17 日（星期五）起接受预订，并于 9 月 24 日（星期五）正式发售。 “我们的用户每一天都离不开 iPhone，所以我们为大家带来了性能更强劲、用途更广泛、也更有乐趣的 iPhone 13 和 iPhone 13 mini。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“这两款机型设计美观，",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "5e2a55709d332f2d062f742bb4e407f96d99066f2b5cfc814d07e83e600ee8db",
+        "captured_at": "2026-11-03T04:27:49.218124+00:00"
+      }
+    },
+    "candidate_sha256": "ee2fd9ca7addfd07ef3b5788be0b093e119ff778949f4ab19588827c6b83dfa7"
+  },
+  {
+    "key": "check-0017",
+    "family": "GLOBAL:apple_support:model:111873",
+    "ids": [
+      "GLOBAL:apple_support:model:111873"
+    ],
+    "name": "iPhone 13 mini",
+    "brand": "Apple",
+    "release": {
+      "date": "2021-09",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2021/09/apple-introduces-iphone-13-and-iphone-13-mini/",
+        "quote": "2021 年 9 月 14 日 | 的起始存储容量均为 128GB，为上一代的两倍，拥有行业领先的 IP68 级抗水性能，并可提供出色的 5G 体验。 iPhone 13 和 iPhone 13 mini 五种精美的铝金属外观：红色、星光色、午夜色、蓝色和粉色。 iPhone 13 和 iPhone 13 mini 提供粉色、蓝色、午夜色、星光色和红色 五种配色选择，将自 9 月 17 日（星期五）起接受预订，并于 9 月 24 日（星期五）正式发售。 “我们的用户每一天都离不开 iPhone，所以我们为大家带来了性能更强劲、用途更广泛、也更有乐趣的 iPhone 13 和 iPhone 13 mini。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“这两款机型设计美观，",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "5e2a55709d332f2d062f742bb4e407f96d99066f2b5cfc814d07e83e600ee8db",
+        "captured_at": "2026-11-03T04:27:49.218124+00:00"
+      }
+    },
+    "candidate_sha256": "a6db88b3a05cd878e5a075abfb0adce09b441efb091aa668e468f5d8867a4c1c"
+  },
+  {
+    "key": "check-0018",
+    "family": "GLOBAL:apple_support:model:111874",
+    "ids": [
+      "GLOBAL:apple_support:model:111874"
+    ],
+    "name": "iPhone 12 Pro Max",
+    "brand": "Apple",
+    "release": {
+      "date": "2020-11",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2020/10/apple-introduces-iphone-12-pro-and-iphone-12-pro-max-with-5g/",
+        "quote": "2020 年 10 月 14 日 | 还能搭配全新推出的 MagSafe 磁吸配件，连接 iPhone 时既简单又轻松。 iPhone 12 Pro 和 iPhone 12 Pro Max 有石墨色、银色、金色和海蓝色四种不锈钢外观可选。iPhone 12 Pro 将于 10 月 16 日星期五开始预购，10 月 23 日星期五发售。iPhone 12 Pro Max 将于 11 月 6 日星期五开始预购，11 月 13 日星期五在零售店发售。 “这是 iPhone 的一次巨大飞跃，我们将为用户提供最出色的 5G 体验，并对想要将 iPhone 发挥到极致的使用者，提供我们最先进的技术。” Apple 全球市场营销高级副总裁 Greg Joswiak 表示。“每代 iPhone 的问世总",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "a4964577123d0f7c17935d08cdb8b72ad8529c01a0fe3fe373ef4c060d198296",
+        "captured_at": "2026-11-03T04:27:51.845857+00:00"
+      }
+    },
+    "candidate_sha256": "a0f5d05d3486ddcb619c865cd45ed04a52f883609b89a555303192ae73039d5c"
+  },
+  {
+    "key": "check-0019",
+    "family": "GLOBAL:apple_support:model:111875",
+    "ids": [
+      "GLOBAL:apple_support:model:111875"
+    ],
+    "name": "iPhone 12 Pro",
+    "brand": "Apple",
+    "release": {
+      "date": "2020-10",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2020/10/apple-introduces-iphone-12-pro-and-iphone-12-pro-max-with-5g/",
+        "quote": "2020 年 10 月 14 日 | ，可带来身临其境的增强现实 (AR) 体验，并加入了 MagSafe 磁吸功能，除了可进行高功率无线充电，还能搭配全新推出的 MagSafe 磁吸配件，连接 iPhone 时既简单又轻松。 iPhone 12 Pro 和 iPhone 12 Pro Max 有石墨色、银色、金色和海蓝色四种不锈钢外观可选。iPhone 12 Pro 将于 10 月 16 日星期五开始预购，10 月 23 日星期五发售。iPhone 12 Pro Max 将于 11 月 6 日星期五开始预购，11 月 13 日星期五在零售店发售。 “这是 iPhone 的一次巨大飞跃，我们将为用户提供最出色的 5G 体验，并对想要将 iPhone 发挥到极致的使用者，提供我们最先",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "a4964577123d0f7c17935d08cdb8b72ad8529c01a0fe3fe373ef4c060d198296",
+        "captured_at": "2026-11-03T04:27:51.845857+00:00"
+      }
+    },
+    "candidate_sha256": "7b5ec53e239349d9ce44d99d15dfcb4d31aa58716ca97cd17106728ac93488db"
+  },
+  {
+    "key": "check-0020",
+    "family": "GLOBAL:apple_support:model:111876",
+    "ids": [
+      "GLOBAL:apple_support:model:111876"
+    ],
+    "name": "iPhone 12",
+    "brand": "Apple",
+    "release": {
+      "date": "2020-10",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2020/10/apple-announces-iphone-12-and-iphone-12-mini-a-new-era-for-iphone-with-5g/",
+        "quote": "2020 年 10 月 14 日 | ，提供高功率无线充电，与iPhone一贴即合。 6.1 英寸 iPhone 12 和 5.4 英寸 iPhone 12 mini 在设计上焕然一新，配有超视网膜 XDR 全面屏，提供引人入胜的观看体验。 iPhone 12 和 iPhone 12 mini 有蓝色、绿色、黑色、白色和红色五种精美的铝金属外观可选。iPhone 12 将于 10 月 16 日 (星期五) 开始预购，10 月 23 日 (星期五) 开始发售。iPhone 12 mini 将于 11 月 6 日 (星期五) 开始预购，11 月 13 日 (星期五) 开始在店内有售。 “对 5G 的支持，象征 iPhone 迈入全新境界。我们很高兴 iPhone 12 和 iPhone 12 mini 能",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "33840752ad97684b1c03408792361c9d0b3ef51422f76064159658d280f74362",
+        "captured_at": "2026-11-03T04:27:51.312537+00:00"
+      }
+    },
+    "candidate_sha256": "85b36223a6988c2b6f24d2fdf964a8cf7ee9dd1e36beedbeea2659d4843636d8"
+  },
+  {
+    "key": "check-0021",
+    "family": "GLOBAL:apple_support:model:111877",
+    "ids": [
+      "GLOBAL:apple_support:model:111877"
+    ],
+    "name": "iPhone 12 mini",
+    "brand": "Apple",
+    "release": {
+      "date": "2020-11",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2020/10/apple-announces-iphone-12-and-iphone-12-mini-a-new-era-for-iphone-with-5g/",
+        "quote": "2020 年 10 月 14 日 | mini 在设计上焕然一新，配有超视网膜 XDR 全面屏，提供引人入胜的观看体验。 iPhone 12 和 iPhone 12 mini 有蓝色、绿色、黑色、白色和红色五种精美的铝金属外观可选。iPhone 12 将于 10 月 16 日 (星期五) 开始预购，10 月 23 日 (星期五) 开始发售。iPhone 12 mini 将于 11 月 6 日 (星期五) 开始预购，11 月 13 日 (星期五) 开始在店内有售。 “对 5G 的支持，象征 iPhone 迈入全新境界。我们很高兴 iPhone 12 和 iPhone 12 mini 能为广大用户带来这些精彩的新功能。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示。“我们再一次突破极限，",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "33840752ad97684b1c03408792361c9d0b3ef51422f76064159658d280f74362",
+        "captured_at": "2026-11-03T04:27:51.312537+00:00"
+      }
+    },
+    "candidate_sha256": "5e6e9b592327843c323c2ae231b8cdcf0653035486e212f4b1f31853e576a1d8"
+  },
+  {
+    "key": "check-0022",
+    "family": "GLOBAL:apple_support:model:111886",
+    "ids": [
+      "GLOBAL:apple_support:model:111886"
+    ],
+    "name": "iPad mini (第 6 代)",
+    "brand": "Apple",
+    "release": {
+      "date": "2021-09",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2021/09/apple-unveils-new-ipad-mini-with-breakthrough-performance-in-stunning-new-design/",
+        "quote": "2021 年 9 月 14 日 | Pad mini。新采用的 USB-C 接口支持更快的连接速度，蜂窝网络机型支持 5G ，为移动办公提供更多灵活便利。全新升级的摄像头、人物居中功能以及对 Apple Pencil（第二代） 的支持，为用户带来更多新的拍照和摄像方式，方便他们与亲友联络感情，或者随时记录自己的泉涌灵思。 新款 iPad mini 自即日起接受订购，并将于 9 月 24 日（星期五）起在零售店发售。 “新款 iPad mini 采用超便携设计，可广泛用于日常办公、处理创意工作及各类企业级应用，绝非其他同类产品所可比拟。” Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“它是一款划时代的新品，拥有全新的 Liquid 视网",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "f839f752b1b90338966d097f679bc529f150dd6b79996d871c62171b5f609303",
+        "captured_at": "2026-11-03T04:27:49.695145+00:00"
+      }
+    },
+    "candidate_sha256": "8353611099ae6073d16566b1bc2ccfaebb82534e3bf8a1f526ab29eb1377aa97"
+  },
+  {
+    "key": "check-0023",
+    "family": "GLOBAL:apple_support:model:111887",
+    "ids": [
+      "GLOBAL:apple_support:model:111887"
+    ],
+    "name": "iPad Air（第 5 代）",
+    "brand": "Apple",
+    "release": {
+      "date": "2022-03",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2022/03/apple-introduces-the-most-powerful-and-versatile-ipad-air-ever/",
+        "quote": "2022 年 3 月 9 日 | d Air 更带来了许多精彩功能：支持人物居中的全新超广角前置摄像头能为用户提供更加自然的视频会议体验；USB-C 端口的速度提升最高可达 2 倍；蜂窝网络机型支持超高速 5G；起售价依然亲民。先进的摄像头及其与最新配件的兼容性，能够帮助内容创作者、游戏玩家、学生等不同人群实现创造力、生产力和自我表达上的突破。全新 iPad Air 于 3 月 11 日（星期五）起接受预购，并将于 3 月 18 日（星期五）正式发售。 “从要记录精美笔记的大学生，到全心投入新项目的内容创作者，再到喜好图像密集型游戏的玩家，用户们喜爱便携的 iPad Air 带来的超凡的性能以及多用性。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“凭借突破性的 M1 芯",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "d85f3564a549586d7c8f02249f382a7815f3f984328bab432c320a92ee0bc097",
+        "captured_at": "2026-11-03T04:27:05.794695+00:00"
+      }
+    },
+    "candidate_sha256": "abe0df3638ad72240a565428e9ce20c206ff6380dab890d248e0643eaa399c97"
+  },
+  {
+    "key": "check-0024",
+    "family": "GLOBAL:apple_support:model:111890",
+    "ids": [
+      "GLOBAL:apple_support:model:111890"
+    ],
+    "name": "Studio Display",
+    "brand": "Apple",
+    "release": {
+      "date": "2022-03",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2022/03/apple-unveils-all-new-mac-studio-and-studio-display/",
+        "quote": "2022 年 3 月 8 日 | 有宽大的 27 英寸 5K 视网膜显示屏，支持人物居中的 1200 万像素超广角摄像头，以及支持空间音频的高保真六扬声器音响系统。Mac Studio 与 Studio Display 能够完美搭配，相得益彰，可以将任何工作空间变为强大的创意工作室。两款产品作为 Apple 迄今最强大的 Mac 产品系列的新成员，于今日开放预购，并将于 3 月 18 日（星期五）起开始向顾客发货。 “我们无比激动地推出全新的 Mac 台式电脑 Mac Studio 和显示器 Studio Display。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“搭载 M1 Max 或 M1 Ultra 芯片的 Mac Stud",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "ff6525b6758d71c0845d56f217d0e21c2708e82935ff3caad9127c013cd1937a",
+        "captured_at": "2026-11-03T04:27:05.794920+00:00"
+      }
+    },
+    "candidate_sha256": "99dcedac205756ec432727fd41f679e4f410a61c622e603795db93dc73d561c2"
+  },
+  {
+    "key": "check-0025",
+    "family": "GLOBAL:apple_support:model:111895",
+    "ids": [
+      "GLOBAL:apple_support:model:111895"
+    ],
+    "name": "iMac（24 英寸，M1，2021 年)",
+    "brand": "Apple",
+    "release": {
+      "date": "2021-05",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2021/04/all-new-imac-ipad-pro-and-apple-tv-4k-orders-start-tomorrow/",
+        "quote": "2021 年 4 月 29 日 | 设计格外紧凑纤薄的全新 iMac，以及迄今最强大、最先进的 iPad Pro，均由 M1 芯片强势驱动，可于明天开始订购，并于 5 月中下旬发售。此外，新登场的拥有紫色亮丽外观的 iPhone 12 和 iPhone 12 mini，以及设计小巧优雅、可帮你追踪查找重要物品的新配件 AirTag，也将于明天在全球零售店到货，并陆续送到顾客手中。 顾客在 Apple Store 零售店和 Apple Store 在线商店购买新产品时，可体验量身定制的购物服务，并获得专家的帮助。要享受更多便利，顾客也可使用 Apple",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "f9b2db4098e43a903cb356ebd111dc84d3b33bff75a158df6722d46717b72b7d",
+        "captured_at": "2026-11-03T04:27:49.846722+00:00"
+      }
+    },
+    "candidate_sha256": "0477e8468e512f7ec6da1af8c73c9be808236a740f4612c7957b6032fb875354"
+  },
+  {
+    "key": "check-0026",
+    "family": "GLOBAL:apple_support:model:111896",
+    "ids": [
+      "GLOBAL:apple_support:model:111896"
+    ],
+    "name": "12.9 英寸 iPad Pro（第 5 代）",
+    "brand": "Apple",
+    "release": {
+      "date": "2021-05",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2021/04/apple-unveils-new-ipad-pro-with-m1-chip-and-stunning-liquid-retina-xdr-display/",
+        "quote": "2021 年 4 月 20 日 | 逼真的细节，带来令人惊艳的视觉体验。5G 蜂窝网络机型能在移动场景中提供更高速的无线连接。为了给用户提供高速配件的专业级数据传输速度，iPad Pro 现在支持雷雳端口。另外，全新的超广角前置摄像头实现了新功能：人物居中，自动让用户保持在理想的构图中，使视频通话更具互动性。全新 iPad Pro 将于 4 月 30 日（星期五）起通过 apple.com.cn 接受订购，并将于五月中下旬开始发售。 “开创先河的 M1 芯片是 Mac 的一次突破，我们非常高兴能把它带到 iPad Pro 中。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“M1 巨大的",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "cb77e6730f2edc51946effa02036e73387d2aaa60a3db5e581b1b2dff9a32408",
+        "captured_at": "2026-11-03T04:27:50.328591+00:00"
+      }
+    },
+    "candidate_sha256": "b1f464e0924af30e8b1001fbca0e632a284ca682b9919c059334cb02b440a449"
+  },
+  {
+    "key": "check-0027",
+    "family": "GLOBAL:apple_support:model:111897",
+    "ids": [
+      "GLOBAL:apple_support:model:111897"
+    ],
+    "name": "11 英寸 iPad Pro（第 3 代）",
+    "brand": "Apple",
+    "release": {
+      "date": "2021-05",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2021/04/apple-unveils-new-ipad-pro-with-m1-chip-and-stunning-liquid-retina-xdr-display/",
+        "quote": "2021 年 4 月 20 日 | 逼真的细节，带来令人惊艳的视觉体验。5G 蜂窝网络机型能在移动场景中提供更高速的无线连接。为了给用户提供高速配件的专业级数据传输速度，iPad Pro 现在支持雷雳端口。另外，全新的超广角前置摄像头实现了新功能：人物居中，自动让用户保持在理想的构图中，使视频通话更具互动性。全新 iPad Pro 将于 4 月 30 日（星期五）起通过 apple.com.cn 接受订购，并将于五月中下旬开始发售。 “开创先河的 M1 芯片是 Mac 的一次突破，我们非常高兴能把它带到 iPad Pro 中。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“M1 巨大的",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "cb77e6730f2edc51946effa02036e73387d2aaa60a3db5e581b1b2dff9a32408",
+        "captured_at": "2026-11-03T04:27:50.328591+00:00"
+      }
+    },
+    "candidate_sha256": "a68c0557fd24c7152690f2e661cf238229ff888b4942d2258bfe3e470421ac25"
+  },
+  {
+    "key": "check-0028",
+    "family": "GLOBAL:apple_support:model:111898",
+    "ids": [
+      "GLOBAL:apple_support:model:111898"
+    ],
+    "name": "iPad（第 9 代)",
+    "brand": "Apple",
+    "release": {
+      "date": "2021-09",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2021/09/iphone-13-lineup-new-ipad-mini-and-ninth-generation-ipad-arrive-worldwide/",
+        "quote": "2021 年 9 月 24 日 | 2021 年 9 月 24 日 iPhone 13 Pro、iPhone 13 Pro Max、iPhone 13、iPhone 13 mini、iPad mini 和 iPad（第九代）在全球范围内开始发售 集创新科技与优雅设计于一身的 iPhone 13 系列机型、强大的新款 iPad mini 和 iPad（第九代）于 9 月 24 日（周五）在全球范围内开始发售。 Apple Store 零售店与 Apple 在线商店向顾客敞开大门，欢迎他们了解并体验最新款 iPhone 与 iPad 机型。由内到外重新设计的 iPhone 13 Pro 与 iPhone 13 Pro Max 配备了 iPhone 有史",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "51b572407261ebd08c0707f277cb50e95749775f80ab496ec7f82beae89110ee",
+        "captured_at": "2026-11-03T04:27:49.217920+00:00"
+      }
+    },
+    "candidate_sha256": "7467ae8a948a709746f80d62c78fd4e9768913417d52ea1a5c583e8699c9d504"
+  },
+  {
+    "key": "check-0029",
+    "family": "GLOBAL:apple_support:model:111900",
+    "ids": [
+      "GLOBAL:apple_support:model:111900"
+    ],
+    "name": "Mac Studio（2022 年机型）",
+    "brand": "Apple",
+    "release": {
+      "date": "2022-03",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2022/03/apple-unveils-all-new-mac-studio-and-studio-display/",
+        "quote": "2022 年 3 月 8 日 | 有宽大的 27 英寸 5K 视网膜显示屏，支持人物居中的 1200 万像素超广角摄像头，以及支持空间音频的高保真六扬声器音响系统。Mac Studio 与 Studio Display 能够完美搭配，相得益彰，可以将任何工作空间变为强大的创意工作室。两款产品作为 Apple 迄今最强大的 Mac 产品系列的新成员，于今日开放预购，并将于 3 月 18 日（星期五）起开始向顾客发货。 “我们无比激动地推出全新的 Mac 台式电脑 Mac Studio 和显示器 Studio Display。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“搭载 M1 Max 或 M1 Ultra 芯片的 Mac Stud",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "ff6525b6758d71c0845d56f217d0e21c2708e82935ff3caad9127c013cd1937a",
+        "captured_at": "2026-11-03T04:27:05.794920+00:00"
+      }
+    },
+    "candidate_sha256": "0facbe34753ce3e74006b7a36e3df06dbff2d0e67965cf866e922fd58e16969b"
+  },
+  {
+    "key": "check-0030",
+    "family": "GLOBAL:apple_support:model:111901",
+    "ids": [
+      "GLOBAL:apple_support:model:111901"
+    ],
+    "name": "MacBook Pro（16 英寸，2021 年机型）",
+    "brand": "Apple",
+    "release": {
+      "date": "2021-10",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2021/10/apple-unveils-game-changing-macbook-pro/",
+        "quote": "2021 年 10 月 18 日 | 发者、摄影师、影视工作者、3D 设计师、科学家、音乐制作人和所有希望使用全世界最佳笔记本电脑的用户所设计。新款 MacBook Pro 与搭载 M1 芯片的 13 英寸 MacBook Pro 一起，构成了迄今为止最强大的专业级 Mac 笔记本电脑产品阵容。新款 14 英寸和 16 英寸 MacBook Pro 自今日起接受订购，并将于 10 月 26 日（周二）起正式发售。 “我们的目标是打造出全世界最优秀的专业级笔记本电脑。今天，我们激动地推出搭载 M1 Pro 和 M1 Max 芯片的全新 MacBook Pro，这一组合会带来令人惊叹的性能表现、无出其右的电池续航时间与多项开创性的功能，为笔记本电脑带来颠覆性改",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "73fd945ff7e6d6910bf07af60ee5a0a76e5c7aa22f86be77de8e4fa9b9d836b4",
+        "captured_at": "2026-11-03T04:27:48.068639+00:00"
+      }
+    },
+    "candidate_sha256": "1acbaeec4c27b35d0182b0557a367b9633b29a645e652a0e28154a52d655a504"
+  },
+  {
+    "key": "check-0031",
+    "family": "GLOBAL:apple_support:model:111902",
+    "ids": [
+      "GLOBAL:apple_support:model:111902"
+    ],
+    "name": "MacBook Pro（14 英寸，2021 年机型）",
+    "brand": "Apple",
+    "release": {
+      "date": "2021-10",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2021/10/apple-unveils-game-changing-macbook-pro/",
+        "quote": "2021 年 10 月 18 日 | 发者、摄影师、影视工作者、3D 设计师、科学家、音乐制作人和所有希望使用全世界最佳笔记本电脑的用户所设计。新款 MacBook Pro 与搭载 M1 芯片的 13 英寸 MacBook Pro 一起，构成了迄今为止最强大的专业级 Mac 笔记本电脑产品阵容。新款 14 英寸和 16 英寸 MacBook Pro 自今日起接受订购，并将于 10 月 26 日（周二）起正式发售。 “我们的目标是打造出全世界最优秀的专业级笔记本电脑。今天，我们激动地推出搭载 M1 Pro 和 M1 Max 芯片的全新 MacBook Pro，这一组合会带来令人惊叹的性能表现、无出其右的电池续航时间与多项开创性的功能，为笔记本电脑带来颠覆性改",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "73fd945ff7e6d6910bf07af60ee5a0a76e5c7aa22f86be77de8e4fa9b9d836b4",
+        "captured_at": "2026-11-03T04:27:48.068639+00:00"
+      }
+    },
+    "candidate_sha256": "1ccd3e6eeb3649a6275b3aca42059e1689c210a85d8e1b6a279ce415175ac2d3"
+  },
+  {
+    "key": "check-0032",
+    "family": "GLOBAL:apple_support:model:111905",
+    "ids": [
+      "GLOBAL:apple_support:model:111905"
+    ],
+    "name": "iPad Air（第 4 代）",
+    "brand": "Apple",
+    "release": {
+      "date": "2020-10",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2020/09/apple-unveils-all-new-ipad-air-with-a14-bionic-apples-most-advanced-chip/",
+        "quote": "2020 年 9 月 15 日 | .9 英寸 Liquid 视网膜屏、进一步升级的摄像头和音频系统、整合进顶部按钮的全新触控 ID 传感器，以及性能大幅提升的强劲芯片 A14 仿生。这一切，共同造就出这款强大多能的 iPad Air。全新 iPad Air 将于十月发售。 “今天，我们很高兴推出这款全新设计的、更为强大的 iPad Air，同时这也是新一代 Apple 芯片，A14 仿生的首秀。” Apple 全球市场营销高级副总裁 Greg Jos",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "788a480a4db4f9b5606f0b52effcb7fabf8747b2c58a0cce059999c29532de9b",
+        "captured_at": "2026-11-03T04:27:52.165060+00:00"
+      }
+    },
+    "candidate_sha256": "bddfcdda295305f57d6d71f7cd5a2810f20bfef2deb1ed40d912ff6b3a395336"
+  },
+  {
+    "key": "check-0033",
+    "family": "GLOBAL:apple_support:model:111933",
+    "ids": [
+      "GLOBAL:apple_support:model:111933"
+    ],
+    "name": "MacBook Air (Retina, 13 英寸, 2018)",
+    "brand": "Apple",
+    "release": {
+      "date": "2018-11",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "flowlet-flash",
+      "prompt_version": "release-month-v1",
+      "reasoning": "CN稿称2018-10今日订购、11月7日零售店开售，对应2018款",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2018/10/all-new-macbook-air-takes-flight/",
+        "quote": "2018 年 10 月 30 日 | 价格与上市时间 全新 MacBook Air 起售价为 RMB 9,499 ，今日起可通过 apple.com/cn 订购。11 月 7 日 (星期三) 开始，可通过 Apple Store 零售店和",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "4bc1a94366403917fcb1dde8035c50b0cbd3e10d86d3034edaf63d94b0129243",
+        "captured_at": "2026-11-03T04:27:56.572060+00:00"
+      }
+    },
+    "candidate_sha256": "b045f64838b9c13767a4402b4336387e38056521d0ef8d8fac5b3ad1b8895c2e"
+  },
+  {
+    "key": "check-0034",
+    "family": "GLOBAL:apple_support:model:111974",
+    "ids": [
+      "GLOBAL:apple_support:model:111974"
+    ],
+    "name": "iPad Pro 11 英寸 (第 1 代)",
+    "brand": "Apple",
+    "release": {
+      "date": "2018-11",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2018/10/new-ipad-pro-with-all-screen-design-is-most-advanced-powerful-ipad-ever/",
+        "quote": "2018 年 10 月 30 日 | Pad Pro 上，同时进行无线充电。Apple Pencil 内置全新的触控传感器，可检测手指的触碰，让你能以全新方式在 app 中进行交互。全新的键盘式智能双面夹拥有简洁的一体式设计，可调式操作让它更加灵活多用。新一代 iPad Pro、Apple Pencil 和键盘式智能双面夹将于今日接受订购，并于 11 月 7 日星期三开始在零售店发售。 新一代 iPad Pro 搭配 Apple Pencil 和键盘式智能双面夹，各种事务，随时随地轻松搞定。 “新一代 iPad Pro 在高性能电脑领域、创意电脑领域、移动电脑领域都是一次巨大的飞跃。它拥有全新的设计，更加纤薄轻巧；超快的",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "f333d1ee80dc3981d4b8b1e63e3b67c1d2999fd8616d1d694c03247b27cf2ddc",
+        "captured_at": "2026-11-03T04:27:56.572264+00:00"
+      }
+    },
+    "candidate_sha256": "294c419178519d13b837096fba931f69bc6218f533b089bad9d6d9f0d98f6043"
+  },
+  {
+    "key": "check-0035",
+    "family": "GLOBAL:apple_support:model:111979",
+    "ids": [
+      "GLOBAL:apple_support:model:111979"
+    ],
+    "name": "iPad Pro 12.9 英寸 (第 3 代)",
+    "brand": "Apple",
+    "release": {
+      "date": "2018-11",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2018/10/new-ipad-pro-with-all-screen-design-is-most-advanced-powerful-ipad-ever/",
+        "quote": "2018 年 10 月 30 日 | Pad Pro 上，同时进行无线充电。Apple Pencil 内置全新的触控传感器，可检测手指的触碰，让你能以全新方式在 app 中进行交互。全新的键盘式智能双面夹拥有简洁的一体式设计，可调式操作让它更加灵活多用。新一代 iPad Pro、Apple Pencil 和键盘式智能双面夹将于今日接受订购，并于 11 月 7 日星期三开始在零售店发售。 新一代 iPad Pro 搭配 Apple Pencil 和键盘式智能双面夹，各种事务，随时随地轻松搞定。 “新一代 iPad Pro 在高性能电脑领域、创意电脑领域、移动电脑领域都是一次巨大的飞跃。它拥有全新的设计，更加纤薄轻巧；超快的",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "f333d1ee80dc3981d4b8b1e63e3b67c1d2999fd8616d1d694c03247b27cf2ddc",
+        "captured_at": "2026-11-03T04:27:56.572264+00:00"
+      }
+    },
+    "candidate_sha256": "66351ab269c4dde9fbb63a4424f79a5dff25016dad54c0bf5ea4f0b06d4fd59a"
+  },
+  {
+    "key": "check-0036",
+    "family": "GLOBAL:apple_support:model:117735",
+    "ids": [
+      "GLOBAL:apple_support:model:117735"
+    ],
+    "name": "MacBook Pro（14 英寸，M3，2023 年 11 月）",
+    "brand": "Apple",
+    "release": {
+      "date": "2023-11",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2023/10/apple-unveils-new-macbook-pro-featuring-m3-chips/",
+        "quote": "2023 年 10 月 30 日 |  Liquid 视网膜 XDR 显示屏，可使 SDR 内容亮度提升 20%；内置 1080p 摄像头与沉浸式六扬声器音响系统，并提供丰富的连接选项。这一系列产品电池续航时间最长可达 22 小时 1 ，实现极致专业便携体验，无论使用外接电源或电池供电均可提供同等性能表现，助用户随时随地展开工作。新款 MacBook Pro 今日起接受订购，11 月 7 日起正式发售。 “MacBook Pro 是独一无二的产品。得益于 Apple 芯片出类拔萃的高能效表现、最长可达 22 小时的电池续航时间、绚丽的 Liquid 视网膜 XDR 显示屏和先进的连接性能，MacBook Pro 能够助力用户成就非凡杰作。”App",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "3c40bdd3970e4c7185547f061b2f31ee71b94774e5aa1ff68b3be7b6c1ad594a",
+        "captured_at": "2026-11-03T04:26:52.811974+00:00"
+      }
+    },
+    "candidate_sha256": "4ecbc41b488ef00f8578a8b5092cbc2a8ee5bc018475c5ed9eeed8bc98a8d463"
+  },
+  {
+    "key": "check-0037",
+    "family": "GLOBAL:apple_support:model:117736",
+    "ids": [
+      "GLOBAL:apple_support:model:117736"
+    ],
+    "name": "MacBook Pro（14 英寸，M3 Pro 或 M3 Max，2023 年 11 月）",
+    "brand": "Apple",
+    "release": {
+      "date": "2023-11",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2023/10/apple-unveils-new-macbook-pro-featuring-m3-chips/",
+        "quote": "2023 年 10 月 30 日 |  Liquid 视网膜 XDR 显示屏，可使 SDR 内容亮度提升 20%；内置 1080p 摄像头与沉浸式六扬声器音响系统，并提供丰富的连接选项。这一系列产品电池续航时间最长可达 22 小时 1 ，实现极致专业便携体验，无论使用外接电源或电池供电均可提供同等性能表现，助用户随时随地展开工作。新款 MacBook Pro 今日起接受订购，11 月 7 日起正式发售。 “MacBook Pro 是独一无二的产品。得益于 Apple 芯片出类拔萃的高能效表现、最长可达 22 小时的电池续航时间、绚丽的 Liquid 视网膜 XDR 显示屏和先进的连接性能，MacBook Pro 能够助力用户成就非凡杰作。”App",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "3c40bdd3970e4c7185547f061b2f31ee71b94774e5aa1ff68b3be7b6c1ad594a",
+        "captured_at": "2026-11-03T04:26:52.811974+00:00"
+      }
+    },
+    "candidate_sha256": "ca3295c5e5affd921071bebe267431fa5d0ca19338292e527db14817f48a3720"
+  },
+  {
+    "key": "check-0038",
+    "family": "GLOBAL:apple_support:model:117737",
+    "ids": [
+      "GLOBAL:apple_support:model:117737"
+    ],
+    "name": "MacBook Pro（16 英寸，2023 年 11 月）",
+    "brand": "Apple",
+    "release": {
+      "date": "2023-11",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2023/10/apple-unveils-new-macbook-pro-featuring-m3-chips/",
+        "quote": "2023 年 10 月 30 日 |  Liquid 视网膜 XDR 显示屏，可使 SDR 内容亮度提升 20%；内置 1080p 摄像头与沉浸式六扬声器音响系统，并提供丰富的连接选项。这一系列产品电池续航时间最长可达 22 小时 1 ，实现极致专业便携体验，无论使用外接电源或电池供电均可提供同等性能表现，助用户随时随地展开工作。新款 MacBook Pro 今日起接受订购，11 月 7 日起正式发售。 “MacBook Pro 是独一无二的产品。得益于 Apple 芯片出类拔萃的高能效表现、最长可达 22 小时的电池续航时间、绚丽的 Liquid 视网膜 XDR 显示屏和先进的连接性能，MacBook Pro 能够助力用户成就非凡杰作。”App",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "3c40bdd3970e4c7185547f061b2f31ee71b94774e5aa1ff68b3be7b6c1ad594a",
+        "captured_at": "2026-11-03T04:26:52.811974+00:00"
+      }
+    },
+    "candidate_sha256": "ad39a2b120f87fc228cf590c77659203825ea5c63a9e790cd716b89cad6fb50a"
+  },
+  {
+    "key": "check-0039",
+    "family": "GLOBAL:apple_support:model:118451",
+    "ids": [
+      "GLOBAL:apple_support:model:118451"
+    ],
+    "name": "iPad（第 8 代）",
+    "brand": "Apple",
+    "release": {
+      "date": "2020-09",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "codex-interactive-session",
+      "prompt_version": "release-month-v1",
+      "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2020/09/apple-introduces-eighth-generation-ipad-with-a-huge-jump-in-performance/",
+        "quote": "2020 年 9 月 15 日 | no) — Apple 今日推出了第八代 iPad ，它配备强劲的 A12 仿生芯片，首次将神经网络引擎带至入门级 iPad。升级后的机型售价为 RMB 2,499 起，赋予这款备受喜爱且价格实惠的 iPad 更大价值。它配备绚丽夺目的 10.2 英寸视网膜显示屏、先进的摄像头以及够用一天电池续航力 1 。iPad 于今日接受订购，并于 9 月 20 日周日开始发售。 “我们很高兴为用户带来了更迅捷、更强大的第八代 iPad。” Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“新款 iPad 拥有绚丽的 10.2 英寸视网膜显示屏、性能提升的 A12 仿生、出色的摄像头等众多精彩。如今，用",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "4b888e87330fc83554e2a92648d4e6a74f4697db9ac20828f461aa97d6f555e2",
+        "captured_at": "2026-11-03T04:27:52.404331+00:00"
+      }
+    },
+    "candidate_sha256": "14a9972ca3f7ce146238ba6eb8326ce9bf893ced00ac5da9aefd3553f5bbd11f"
+  },
+  {
+    "key": "check-0040",
+    "family": "GLOBAL:apple_support:model:118453",
+    "ids": [
+      "GLOBAL:apple_support:model:118453"
+    ],
+    "name": "Apple Watch Series 5",
+    "brand": "Apple",
+    "release": {
+      "date": "2019-09",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "model": "flowlet-flash",
+      "prompt_version": "release-month-v1",
+      "reasoning": "CN新闻稿明确Series 5于9月20日起店内有售",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2019/09/apple-unveils-apple-watch-series-5/",
+        "quote": "2019 年 9 月 11 日 | 自9月12日起，Apple Watch Series 5 (GPS) 和 Apple Watch Series 5 (GPS + 蜂窝网络) 可在 中国市场接受订购。两种表款均将于 9 月 20 日 (星期五) 起开始在店内有售。",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "161ebcd28426ed4a2fca4d35aefbd3b2316d2c85c233bbd4dd5e8e34c8d0e270",
+        "captured_at": "2026-11-03T04:27:54.550046+00:00"
+      }
+    },
+    "candidate_sha256": "c9476bcdb1214239aacf6f0c69b9042f9cb57ff286aef0423a462c69d0f1c7e9"
+  },
+  {
+    "key": "check-0041",
+    "family": "GLOBAL:apple_support:model:118461",
+    "ids": [
+      "GLOBAL:apple_support:model:118461"
+    ],
+    "name": "Mac Pro (2019)",
+    "brand": "Apple",
+    "release": {
+      "date": "2019-12",
+      "granularity": "month",
+      "source": "llm",
+      "confidence": "medium",
+      "event": "availability",
+      "market": "CN",
+      "model": "flowlet-flash",
+      "prompt_version": "release-month-v1",
+      "reasoning": "该文档为中国大陆 Apple Newsroom 2019 年 11 月 13 日新闻，原文明确称“全新 Mac Pro”将于 12 月发售；结合发布年份锚点，月份为 2019-12，对应 Mac Pro (2019)。市场：CN（中国大陆官方页面记载开售）。",
+      "evidence": {
+        "url": "https://www.apple.com.cn/newsroom/2019/11/apple-introduces-16-inch-macbook-pro-the-worlds-best-pro-notebook/",
+        "quote": "2019 年 11 月 13 日 | Mac Pro 与 Pro Display XDR Apple 今日同时宣布，全新 Mac Pro 和 Apple Pro Display XDR，这两款专业台式电脑和专业显示器的巅峰之作将于 12 月发售。",
+        "locator": "Newsroom publication header + verbatim availability sentence",
+        "source_type": "official",
+        "sha256": "a65ceaf2d99b5c29b051e09d7212cd8cb9d80e9cc6e9868a6771f37a8477726e",
+        "captured_at": "2026-11-03T04:27:53.464498+00:00"
+      }
+    },
+    "candidate_sha256": "eb2859ff53a1503e2c54984bbbecbf96bfa3c2efe7aa245e0b7a7e6522ad2e03"
+  },
+  {
+    "key": "check-0042",
+    "family": "round2:CN:dji:sku:153291",
+    "ids": [
+      "CN:dji:sku:153291"
+    ],
+    "name": "Osmo Pocket 3",
+    "brand": "大疆",
+    "release": {
+      "date": "2023-10",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://info.xitek.com/allpage/news/202310/25-365451.html",
+        "quote": "售价与服务 Osmo Pocket 3 标准版官方售价3499元，全能套装版4499元。即日起，Osmo Pocket 3标准版及全能套装版在中国地区大陆正式发售。DJI 大疆官方商城、京东、天猫、苏宁易购及北京、上海、深圳、南京、杭州旗舰店和线下授权体验店等渠道现货发售。",
+        "locator": "2023-10-25 launch; 售价与服务 / standard and creator bundles explicitly listed",
+        "sha256": "254fce149eaa43933efc6b49d81352b2dff606534df5757ea2f416e635414ede",
+        "captured_at": "2026-11-03T05:19:36.483139+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "7a1b6987ff808fee235e8bc6462fb3b805382bad134560316e7ce7afa90394f5"
+  },
+  {
+    "key": "check-0043",
+    "family": "round2:CN:dji:sku:153321",
+    "ids": [
+      "CN:dji:sku:153321"
+    ],
+    "name": "Osmo Pocket 3 全能套装",
+    "brand": "大疆",
+    "release": {
+      "date": "2023-10",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://info.xitek.com/allpage/news/202310/25-365451.html",
+        "quote": "售价与服务 Osmo Pocket 3 标准版官方售价3499元，全能套装版4499元。即日起，Osmo Pocket 3标准版及全能套装版在中国地区大陆正式发售。DJI 大疆官方商城、京东、天猫、苏宁易购及北京、上海、深圳、南京、杭州旗舰店和线下授权体验店等渠道现货发售。",
+        "locator": "2023-10-25 launch; 售价与服务 / standard and creator bundles explicitly listed",
+        "sha256": "254fce149eaa43933efc6b49d81352b2dff606534df5757ea2f416e635414ede",
+        "captured_at": "2026-11-03T05:19:36.483139+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "99e5f86349249993a6178c9d490ad227b3f65f7f0fe1ee5ac0b74b6862f57da3"
+  },
+  {
+    "key": "check-0044",
+    "family": "round2:CN:fuji:model:x-h2",
+    "ids": [
+      "CN:fuji:model:x-h2"
+    ],
+    "name": "FUJIFILM X-H2",
+    "brand": "富士",
+    "release": {
+      "date": "2022-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/640/150.htm",
+        "quote": "富士公布新款旗舰相机 X-H2 国行价格，单机身 13390 元，9 月 29 日上市。",
+        "locator": "article date + explicit 国行 / single body",
+        "sha256": "307f959bf38c32dbfa7554e088decab96cb88b408624d94a502ff166c43394c8",
+        "captured_at": "2026-11-03T05:19:35.922222+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "7181d12735da07d2c3ba436c33f5437033c0afefb329f321c24b24d73b8de299"
+  },
+  {
+    "key": "check-0045",
+    "family": "round2:CN:fuji:model:x-t5",
+    "ids": [
+      "CN:fuji:model:x-t5"
+    ],
+    "name": "FUJIFILM X-T5",
+    "brand": "富士",
+    "release": {
+      "date": "2022-11",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ea360.com/contents/150/13460.html",
+        "quote": "富士X-T5相机国行售价11,990元，MHG-XT5小手柄国行售价890元，11月11日上市销售。",
+        "locator": "article date + explicit 国行 / single body",
+        "sha256": "ac70a18e153e0f5185731de1953cd95c36c950793ee129acb83bbba1ced60967",
+        "captured_at": "2026-11-03T05:19:27.611881+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "c9f24daac6f20b1e875a3605a7d7aef490e786e5699ded2e972c8853e790ca82"
+  },
+  {
+    "key": "check-0046",
+    "family": "round2:CN:fuji:model:x100vi",
+    "ids": [
+      "CN:fuji:model:x100vi"
+    ],
+    "name": "FUJIFILM X100VI",
+    "brand": "富士",
+    "release": {
+      "date": "2024-03",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/751/018.htm",
+        "quote": "国行定价 11390 元 ，3 月 1 日上市。",
+        "locator": "article date + explicit 国行 / single body",
+        "sha256": "e3efddaaab1b926a0a218e4a06d05a24e38bd2323984404f7e53817b6ca86caf",
+        "captured_at": "2026-11-03T05:19:27.608077+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "aeba786a5bf8db39f136cd8143d442d2844fe421cb941b9bd47cb3b4fc045cc6"
+  },
+  {
+    "key": "check-0047",
+    "family": "round2:CN:mi_cn:product:18501",
+    "ids": [
+      "CN:mi_cn:product:18501"
+    ],
+    "name": "Xiaomi双磁超动态单元耳机",
+    "brand": "小米",
+    "release": {
+      "date": "2023-05",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/694/460.htm",
+        "quote": "2023/5/23 11:26:55 来源： IT之家 作者： 问舟 责编： 问舟 评论： IT之家 5 月 23 日消息，小米赶在 618 之前推出了一系列新品，例如这款 Xiaomi 双磁超动态单元耳机，首发价 129 元。",
+        "locator": "article timestamp + opening explicit release sentence",
+        "sha256": "2edbd0cae0a6bdd0352f4bb9207065cd12fcde0c82de1b56fff350a925316287",
+        "captured_at": "2026-11-03T05:19:35.922671+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "732e6f4cef6263ddad71179cd04e87affe6c13c5b9c39b3f02eebacc9a8344f0"
+  },
+  {
+    "key": "check-0048",
+    "family": "round2:CN:mi_cn:product:20007",
+    "ids": [
+      "CN:mi_cn:product:20007"
+    ],
+    "name": "REDMI Buds 6 活力版",
+    "brand": "小米",
+    "release": {
+      "date": "2024-05",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/769/177.htm",
+        "quote": "2024/5/20 9:53:31 来源： IT之家 作者： 浩渺 责编： 浩渺 评论： IT之家 5 月 20 日消息，小米 Redmi Buds 6 活力版耳机将于今晚 8 点开启首销，售价 99 元。",
+        "locator": "article timestamp + opening explicit release sentence",
+        "sha256": "3f80549b072e78735d3a23fc3a6fa93661860119cbb346ddcddefa4c9f272704",
+        "captured_at": "2026-11-03T05:19:35.924076+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "1662cfb18b67e3e801e6eda0b0ab8c168e25e38fb0e467af53c06f2bc3ad2b2c"
+  },
+  {
+    "key": "check-0049",
+    "family": "round2:CN:mi_cn:product:20139",
+    "ids": [
+      "CN:mi_cn:product:20139"
+    ],
+    "name": "REDMI Buds 6 青春版",
+    "brand": "小米",
+    "release": {
+      "date": "2024-10",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/803/996.htm",
+        "quote": "2024/10/21 20:00:00 来源： IT之家 作者： 归泷 责编： 归泷 评论： IT之家 10 月 21 日消息，小米 Redmi Buds 6 青春版无线耳机将于今晚 20:00 正式开售，该耳机配备 12.4mm 动圈单元、支持 42dB 主动降噪， 首发 139 元 。",
+        "locator": "article timestamp + opening explicit release sentence",
+        "sha256": "adde405ef210217a78eb79de8b5702949655cd69098c0b6203900a366d5c7881",
+        "captured_at": "2026-11-03T05:19:36.043315+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "442e87c47af5c2f885db0f996b5388696b4bb4ac73f31aa361e02d436322466e"
+  },
+  {
+    "key": "check-0050",
+    "family": "round2:CN:mi_cn:product:20426",
+    "ids": [
+      "CN:mi_cn:product:20426"
+    ],
+    "name": "REDMI Buds 6",
+    "brand": "小米",
+    "release": {
+      "date": "2024-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/798/668.htm",
+        "quote": "2024/9/26 19:36:21 来源： IT之家 作者： 归泷（实习） 责编： 归泷 评论： IT之家 9 月 26 日消息，小米 Redmi Buds 6 耳机今日正式发布，该耳机配备“圈瓷双单元”，至高续航 42 小时， 售价 199 元 。",
+        "locator": "article timestamp + opening explicit release sentence",
+        "sha256": "394d293f79340e75b1083f6b587dc5219107298a7a8a99b485696ec0b97a5b74",
+        "captured_at": "2026-11-03T05:19:36.119164+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "97894347a0c623dffdf26b430a7a99ed367846bc193390b84ade492a9cef60c1"
+  },
+  {
+    "key": "check-0051",
+    "family": "round2:CN:mi_cn:product:21120",
+    "ids": [
+      "CN:mi_cn:product:21120"
+    ],
+    "name": "REDMI Buds 7S",
+    "brand": "小米",
+    "release": {
+      "date": "2025-04",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/844/491.htm",
+        "quote": "2025/4/11 10:42:09 来源： IT之家 作者： 漾仔 责编： 漾仔 评论： 感谢IT之家网友 Autumn_Dream 、 华南吴彦祖 、 風見暉一 的线索投递！ IT之家 4 月 11 日消息，小米旗下 REDMI Buds 7S 半入耳主动降噪蓝牙耳机已在京东开售。",
+        "locator": "article timestamp + opening explicit release sentence",
+        "sha256": "f9b5a0db73f208713d96f7a4c6e35467f425c11dc51be22d7550c76b89616388",
+        "captured_at": "2026-11-03T05:19:36.183865+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "306d2e4c5b369cef34d041f5523e3db293b05f00ce391c07173440f097dfc106"
+  },
+  {
+    "key": "check-0052",
+    "family": "round2:CN:mi_cn:product:21298",
+    "ids": [
+      "CN:mi_cn:product:21298"
+    ],
+    "name": "Xiaomi Civi 5 Pro",
+    "brand": "小米",
+    "release": {
+      "date": "2025-05",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/855/282.htm",
+        "quote": "七、小米 Civi 5 Pro；本场发布会还有一款手机大家也别忘了，就是小米 Civi 5 Pro，这款手机之前已经有过介绍，在传承了前代特质的同时， 在影像和性能两方面重点发力 。 设计方面，小米 Civi 5 Pro 全面向小米 15 系列看齐，拥有四大同款： 紧凑机身、四窄边屏幕、包裹式金属中框、顶部无孔化设计。 Deco 用独立式“悬浮镜组”替代上代平面黑圆台，提供星云紫、樱花粉、黑色、白色四色可选，另外这次发布会还带来了一款新配色：冰美式。 影像方面，小米 Civi 5 Pro 承袭徕卡 Summilux 光学系统 ，搭载全焦段徕卡三摄，其中搭载了小米 15 同款徕卡浮动长焦镜头。前置的 5000 万像素超感光镜头，首发 NanoPrism 超透纳米棱镜，让前置人像也具备“夜深”的体验。 内置全新一代人像大模型，带来“AI 肌肤再生”、“AI 面部微整形”、“AI 写真风格”功能，并提供五套写真风格套装可选。 ",
+        "locator": "article #paragraph / 七、小米 Civi 5 Pro; article timestamp; explicitly dated launch event",
+        "sha256": "f9bb69ac2015df2ffe35fc10cfa0016ca366343687a57edbb733439e6b8d4255",
+        "captured_at": "2026-11-03T05:20:02.785255+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "1e34df61d12c7ce67860f4cbc5459b55fd41e39e329c30b2ed810d3b6ebcb359"
+  },
+  {
+    "key": "check-0053",
+    "family": "round2:CN:mi_cn:product:21399",
+    "ids": [
+      "CN:mi_cn:product:21399"
+    ],
+    "name": "小米AI眼镜",
+    "brand": "小米",
+    "release": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "九、小米首款 AI 眼镜；在发布最为重磅的 YU7 前，雷军先带来了小米首款 AI 眼镜，重量仅 40g。 这款眼镜可选黑色、玳瑁棕半透明、鹦鹉绿半透明三种镜框，支持线上和线下配镜。 功能方面，支持第一人称相机 ，搭载 12MP 镜头；配有 独立 Type-C 接口 ，支持边用边充电；搭载开放式耳机，配有立体声双单元、五麦克风系统；内置超级小爱。 典型续航时间达到 8.6 小时，单次充满 45 分钟。 价格方面，小米 AI 眼镜定价 1999 元起，电致变色版本 2699 元，彩色版本 2999 元。",
+        "locator": "article #paragraph / 九、小米首款 AI 眼镜; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "693e08f303fa62a0cfc9ce9a1f40b37ea8d5db58513ad6876db4963e59a15adb"
+  },
+  {
+    "key": "check-0054",
+    "family": "round2:CN:mi_cn:product:21405",
+    "ids": [
+      "CN:mi_cn:product:21405"
+    ],
+    "name": "Xiaomi Watch S4 41mm",
+    "brand": "小米",
+    "release": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "六、小米 Watch S4 41mm；除了手机、平板上新，小米的穿戴产品也迎来三个新成员，第一款为 Watch S4 41mm， 售价 999 元起 。 小米 Watch S4 41mm 轻至 32g，薄至 9.5mm；1.32 英寸的 AMOLED 屏幕，支持 60Hz 刷新率、1500nits 全局亮度。 配色多彩，包括白色、流沙金、薄荷绿、经典黑色等，其中流沙金配色采用金色米兰尼斯表带，表冠镶嵌六分培育钻石。 功能丰富，支持多维健康管理、高精度温度传感器、150+ 运动模式、蓝牙心率广播。 320mAh 容量的电池，能实现最长 8 天的续航。",
+        "locator": "article #paragraph / 六、小米 Watch S4 41mm; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "ac59bc15dc5e0257278a69cfd9372dfb4d26d5fb7a358870d814f3a06afdf3c1"
+  },
+  {
+    "key": "check-0055",
+    "family": "round2:CN:mi_cn:product:21413",
+    "ids": [
+      "CN:mi_cn:product:21413"
+    ],
+    "name": "REDMI K Pad",
+    "brand": "小米",
+    "release": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "四、REDMI K Pad；K80 至尊版退场后，REDMI 另一款新品接棒登场：首款旗舰小平板 K Pad。 根据卢伟冰的介绍，K Pad 配备 8.8 英寸的屏幕，为定制的 3K LCD， 支持 165Hz 刷新率。 机身采用全金属一体化设计，可选云杉绿、烟霞紫、深邃黑三种配色。 性能方面，K Pad 搭载天玑 9400+ 芯片 、配合超大铝合金液冷 VC，采用芯片居中架构。 内置 7500mAh 电池， 升级小米首款双 USB-C 接口 、旁路充电 Plus。 配备全新定制超薄“四音圈对称双扬”、双 X 轴线性马达，并升级小米首款三天线并发架构。 价格方面，IT之家小编整理 REDMI K Pad 售价如下： 8GB + 256GB 售价 2799 元 ； 12GB + 256GB 售价 3099 元； 12GB + 512GB 售价 3399 元； 16GB + 512GB 售价 3599 元； 16GB +",
+        "locator": "article #paragraph / 四、REDMI K Pad; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "211f0eb36f4d9fbd044a0e8569af2db658b7b0e186eed230deecf45be9813960"
+  },
+  {
+    "key": "check-0056",
+    "family": "round2:CN:mi_cn:product:21418",
+    "ids": [
+      "CN:mi_cn:product:21418"
+    ],
+    "name": "Xiaomi 开放式耳机 Pro",
+    "brand": "小米",
+    "release": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "八、小米开放式耳机 Pro；最后一款穿戴产品为小米开放式耳机 Pro，售价 999 元。 据官方介绍，小米开放式耳机 Pro 为 仿生耳廓造型的三点支撑 ，采用 0.6mm 超纤细航空级记忆钛丝。 行业首发开放式五单元声学系统，哈曼金耳朵联合调音，支持独立空间音频。 在搭载主动防漏音系统之余，还升级耳机独立录音 2.0，连续播放时长达 8.5 小时。",
+        "locator": "article #paragraph / 八、小米开放式耳机 Pro; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "8d7faa5a60c1d3d0243b7dba12386dd1879680879239a5349802426499d04b16"
+  },
+  {
+    "key": "check-0057",
+    "family": "round2:CN:mi_cn:product:21432",
+    "ids": [
+      "CN:mi_cn:product:21432"
+    ],
+    "name": "REDMI K80 至尊版",
+    "brand": "小米",
+    "release": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "三、REDMI K80 至尊版；第三款登场的新品来自 REDMI，K80 至尊版正式来袭。 一向看重性能的 REDMI，为 K80 至尊版安排了联发科天玑 9400+ 芯片，并 首发 AI 独显芯片 D2 。 在芯片强悍的同时，还辅以 REDMI 史上最大 3D 冰封循环冷泵。 在设计方面，K80 至尊版提供云杉绿、冰峰蓝、月岩白、砂岩灰四款配色，采用四曲包裹式金属中框 + 旗舰玻纤背板 + 金属相机 Deco 设计。 屏幕为 6.83 英寸直屏，1.5K+144Hz LTPS 的参数，采用 M9 发光材料，配备龙晶玻璃盖板，支持 DC 全亮度调光、圆偏振光、全场景低蓝光。 电池容量达到 7410 mAh， 升级旁路充电 Plus ，支持 100W 闪充。 影像拥有光影猎人 800 高动态主摄，辅以一颗 800 万像素副摄。 在发布会中，卢伟冰重点介绍了 K80 至尊版的马达和音质。 马达配备 定制的 0916C ，号称",
+        "locator": "article #paragraph / 三、REDMI K80 至尊版; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "3882981d47d04c7f67f1f3292f2182fb03235bbf1063eeadd750a9d5da4e9105"
+  },
+  {
+    "key": "check-0058",
+    "family": "round2:CN:mi_cn:product:21588",
+    "ids": [
+      "CN:mi_cn:product:21588"
+    ],
+    "name": "Xiaomi 骨传导耳机2",
+    "brand": "小米",
+    "release": {
+      "date": "2025-07",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/869/534.htm",
+        "quote": "2025/7/21 9:15:47 来源： IT之家 作者： 浩渺 责编： 浩渺 评论： IT之家 7 月 21 日消息，小米骨传导耳机 2 将于今日 10 点在京东等平台，该耳机主打“游泳模式、独立音乐播放、游泳算法”，定价为 699 元。",
+        "locator": "article timestamp + opening explicit release sentence",
+        "sha256": "350496b27f931bb14021f9ff83329dd60087b709126f1813ac1de4ffa306158c",
+        "captured_at": "2026-11-03T05:19:36.216266+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "48499b21538ddb0e784b21609cba016b2c544e8e7123986c26eea66f38f76b53"
+  },
+  {
+    "key": "check-0059",
+    "family": "round2:CN:mi_cn:product:22137",
+    "ids": [
+      "CN:mi_cn:product:22137"
+    ],
+    "name": "REDMI Buds 8 Pro",
+    "brand": "小米",
+    "release": {
+      "date": "2026-01",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/917/637.htm",
+        "quote": "2026/1/29 19:43:32 来源： IT之家 作者： 归泷 责编： 归泷 评论： 感谢IT之家网友 斯文当不了饭吃 、 風見暉一 、 单手杰斯 、 小叶yeee 、 顺势而为 、 Autumn_Dream 的线索投递！ IT之家 1 月 29 日消息，小米 REDMI Buds 8 Pro 无线耳机今日正式发布，该款耳机搭载“同档罕见”的圈瓷同轴三单元，双 DAC 独立驱动，同时还支持独立空间音频、杜比 Dolby Audio 音效， 售价 399 元 。",
+        "locator": "article timestamp + opening explicit release sentence",
+        "sha256": "62d9e74ddb24d07cb0559904d6adf09be0695cbf643d255009c163a45ed26c9f",
+        "captured_at": "2026-11-03T05:19:36.234920+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "e97ff9543bd312196494d376029c481036003ad5628aa79a08189a89e0c4c2c4"
+  },
+  {
+    "key": "check-0060",
+    "family": "round2:CN:mi_cn:product:22419",
+    "ids": [
+      "CN:mi_cn:product:22419"
+    ],
+    "name": "Xiaomi Buds 6",
+    "brand": "小米",
+    "release": {
+      "date": "2025-12",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/908/038.htm",
+        "quote": "三、小米 Buds 6；在发布会中，小米带来了全新 Buds 6，作为旗舰半入耳 TWS 耳机，主打舒适和好听。 舒适方面， 小米 Buds 6 采用仿生曲线设计 ，耳杆衔接处收窄 12%、出声口减薄 11.3%、轮廓接触面积 +8.8%。 耳机单只重量仅有 4.2g，可选珍珠白、钛光金、月影黑、星云紫四款配色。 好听方面，小米 Buds 6 搭载定制的三磁镀金单元 ，拥有 3 Mic AI 通话降噪，与哈曼联合调音。 支持全链路真无损音频，具备空间音频、智能翻译录音、同声传译、AI 智能摘要等功能。 连续播放时长达 6 小时，搭配充电盒时长可达 35 小时。 价格方面，小米 Buds 6 售价 699 元 。",
+        "locator": "article #paragraph / 三、小米 Buds 6; article timestamp; explicitly dated launch event",
+        "sha256": "e75815d01685d5e0695bf8965c763c2e4c09bfe26c4e035c9f16354644879642",
+        "captured_at": "2026-11-03T05:20:02.986053+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "ee6f811262687e2f019999341df75ae5779ffed2ed2763d5392e6ffff8015b54"
+  },
+  {
+    "key": "check-0061",
+    "family": "round2:CN:mi_cn:product:22422",
+    "ids": [
+      "CN:mi_cn:product:22422"
+    ],
+    "name": "Xiaomi 17 Ultra",
+    "brand": "小米",
+    "release": {
+      "date": "2025-12",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/908/038.htm",
+        "quote": "一、小米 17 Ultra；在发布会中，率先亮相的新品自然是小米 17 Ultra，定位“巅峰影像科技旗舰”。 外观方面，卢伟冰用“精致和惊艳”两个词来形容， 小米 17 Ultra 采用 2D 直屏设计 ，是小米 Ultra 首款 2D 直屏，配备纯平立边中框。 后置镜头模组 DECO 为小型化设计，相机模组直径缩窄 1.8mm，位置上移 4.5mm。 虽然是 Ultra 机型，但机身较为纤薄，厚度仅有 8.29mm，是小米迄今最薄 Ultra。 配色除了经典的黑白两色，还提供冷烟紫和星空绿，后者融入了矿石颗粒。 另外，像 IP66、IP68、IP69 都应有尽有。 既然是“Ultra”，那么小米 17 Ultra 最硬核的堆料点必然集中在影像，号称“新一代小米夜神”。 全新主摄为徕卡 1 英寸光影大师，全新长焦则是徕卡 2 亿像素光学变焦。 具体来看，主摄传感器为 “光影猎人 1050L” ，集 1 英寸超大底、",
+        "locator": "article #paragraph / 一、小米 17 Ultra; article timestamp; explicitly dated launch event",
+        "sha256": "e75815d01685d5e0695bf8965c763c2e4c09bfe26c4e035c9f16354644879642",
+        "captured_at": "2026-11-03T05:20:02.986053+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "d5c722f14319c95a1bdc728973b613cb66f448b3f78ab22691ac15a50f11e693"
+  },
+  {
+    "key": "check-0062",
+    "family": "round2:CN:mi_cn:product:22423",
+    "ids": [
+      "CN:mi_cn:product:22423"
+    ],
+    "name": "Xiaomi 17 Ultra 徕卡版",
+    "brand": "小米",
+    "release": {
+      "date": "2025-12",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/908/038.htm",
+        "quote": "二、小米 17 Ultra 徕卡版；在小米 17 Ultra 发布完毕后，紧接着登场的是 17 Ultra 徕卡版，号称“方方面面尽徕卡”。 外观方面，小米 17 Ultra 徕卡版多处细节有别于普通版， 最显眼的是徕卡经典红标。 机身为经典黑色、米白色双拼设计，源自徕卡 M 系列荔枝纹双拼；中框有精雕滚花，源自徕卡相机镜头设计语言；镌刻徕卡铭文，是专属徕卡感身份象征。 正如此前预热的那般，小米 17 Ultra 配有“大师变焦环”，与后置镜头模组圆环融为一体。 转动可调节焦距 ，还可自定义调节曝光补偿、白平衡等。 独享“徕卡一瞬”模式：徕卡 M9 画质，还原传奇 CCD 质感，色彩浓郁；徕卡 M3 + MONOPAN 50 画质，黑白胶片质感；更有经典 3:2 全画幅，源自徕卡第一代胶片比例。 总的来说，小米 17 Ultra 徕卡版有五大专享：徕卡经典红标设计、大师变焦环、徕卡专属画质、北斗 + 天通双卫星通信、安全隐私",
+        "locator": "article #paragraph / 二、小米 17 Ultra 徕卡版; article timestamp; explicitly dated launch event",
+        "sha256": "e75815d01685d5e0695bf8965c763c2e4c09bfe26c4e035c9f16354644879642",
+        "captured_at": "2026-11-03T05:20:02.986053+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "24f9f563f97b3fd5c9cba1f667a5502c5ebffda6e85d7a162b703903029e5d2e"
+  },
+  {
+    "key": "check-0063",
+    "family": "round2:CN:mi_cn:product:23260",
+    "ids": [
+      "CN:mi_cn:product:23260"
+    ],
+    "name": "REDMI Buds 8 青春版",
+    "brand": "小米",
+    "release": {
+      "date": "2026-02",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/923/927.htm",
+        "quote": "2026/2/26 16:14:31 来源： IT之家 作者： 清源 责编： 清源 评论： 感谢IT之家网友 風見暉一 的线索投递！ IT之家 2 月 26 日消息，今天下午，小米 @REDMI红米手机 官微宣布：REDMI Buds 8 青春版耳机正式上线开售。",
+        "locator": "article timestamp + opening explicit release sentence",
+        "sha256": "4d8a55618d43706bb39764d5f89ebd9f3ce032527951875f1fade1bfb67fa0b9",
+        "captured_at": "2026-11-03T05:19:36.245227+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "63974e75cfbcc668f5966775efc44c88507f784a7cf832881a340687c4ce7644"
+  },
+  {
+    "key": "check-0064",
+    "family": "round2:CN:mi_cn:product:23261",
+    "ids": [
+      "CN:mi_cn:product:23261"
+    ],
+    "name": "REDMI Buds 8 活力版",
+    "brand": "小米",
+    "release": {
+      "date": "2026-03",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/926/051.htm",
+        "quote": "2026/3/5 10:03:32 来源： IT之家 作者： 浩渺 责编： 浩渺 评论： 感谢IT之家网友 不一样的体验 、 斯文当不了饭吃 、 風見暉一 的线索投递！ IT之家 3 月 5 日消息，小米 REDMI Buds 8 活力版耳机今日开售，搭载 14.2mm 超大镀钛单元、双麦 AI 通话降噪、37 小时续航，到手价 119 元。",
+        "locator": "article timestamp + opening explicit release sentence",
+        "sha256": "3735e6dc98e575a405f30917e81ec5af07dad48f929d284c090885dff71bdd7f",
+        "captured_at": "2026-11-03T05:19:36.334191+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "251f28e9cfba4b7c1b56778a13a3fb4075c0a4df7a0c480916d1b522caccc7f8"
+  },
+  {
+    "key": "check-0065",
+    "family": "round2:CN:mi_cn:product:23472",
+    "ids": [
+      "CN:mi_cn:product:23472"
+    ],
+    "name": "Xiaomi Book Pro 14",
+    "brand": "小米",
+    "release": {
+      "date": "2026-03",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/930/804.htm",
+        "quote": "02. 小米笔记本 Pro 14；小米品牌笔记本时隔四年重磅回归 。小米笔记本 Pro 14 采用流线楔形设计 + 丝绒镁合金机身，配备高强度碳纤维底盖、钛合金键盘支撑板、石墨烯铝合金散热鳍片。 机身厚度仅 14.95mm， 轻达 1.08kg ，官方称之为“公斤本”，提供柔雾蓝、雅灰、奶霜白及新增的柔光粉四款配色。 新笔记本至高搭载 第三代英特尔酷睿 Ultra X7 358H 处理器 （Intel 18A 2nm 级制程工艺），能效大幅提升，配备 10000mm² VC 散热模组，采用双风扇、三风道散热，持久性能释放可达 50W，宣称综合性能比肩 M5 芯片；可流畅运行 8B 本地大模型、3A 游戏和复杂渲染任务。 小米笔记本 Pro 14 配备 14.6 英寸 OLED 专业原色触控屏（3.1K / 120Hz / 1600nits 峰值亮度），拥有 129cm² 压感触控板；预留 M.2 2280 硬盘位，最高支持",
+        "locator": "article #paragraph / 02. 小米笔记本 Pro 14; article timestamp; explicitly dated launch event",
+        "sha256": "e04508442c3de4bac6c8aadc20ee78b2c4e5e8130855384524d0769835cceb63",
+        "captured_at": "2026-11-03T05:20:02.939005+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "6da4b1f614fdb03c69d052cc15252c383417666eec994a220d7b82c1dc4d5df8"
+  },
+  {
+    "key": "check-0066",
+    "family": "round2:CN:mi_cn:product:23966",
+    "ids": [
+      "CN:mi_cn:product:23966"
+    ],
+    "name": "REDMI Buds 8",
+    "brand": "小米",
+    "release": {
+      "date": "2026-04",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.anzhuo.cn/review/p_66882",
+        "quote": "2026-04-21 20:10 分享 赞 22 4 月 21 日的发布会上，REDMI 带来了全新的入耳式耳机 REDMI Buds 8，主打「智享沉浸，久戴舒适」，定价 249 元，限时直降后 229 元到手。",
+        "locator": "article timestamp + first paragraph",
+        "sha256": "b3f0ad4e7dbd9fc9d5ebb1e088dfff850aca3a0d926ce5ebf14f258a8063678e",
+        "captured_at": "2026-11-03T05:21:21.552150+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "23c02da2f4d4062d4dc3a2e6d42c35a67669f951eaf8a7ae56d5600d66d4c357"
+  },
+  {
+    "key": "check-0067",
+    "family": "round2:CN:mi_cn:product:24629",
+    "ids": [
+      "CN:mi_cn:product:24629"
+    ],
+    "name": "小米手环10 Pro",
+    "brand": "小米",
+    "release": {
+      "date": "2026-05",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/953/645.htm",
+        "quote": "三、小米手环 10 Pro；在小米手环 10 发布接近一年之际，其 Pro 版本终于来了。 具体来看，小米手环 10 Pro 十分轻薄，机身采用铝合金材质，薄至 9.7mm，轻至 21.6g，1.74 英寸的屏幕为圆润微曲屏设计，峰值亮度达 2000nits。 除了标准版和真皮版，还提供陶瓷版，将陶瓷的坚韧与温润相融，可搭配氟橡胶腕带。 功能方面， 小米手环 10 Pro 带来“手表级体验” ，升级全新双灯组双 PD 传感器和全新自研心率算法，在传感器 + 算法双双升级加持下，心率准确度达 98.2%。 升级睡眠算法 2.0，睡眠监测更精准，出入睡准确率提升 11%； 支持全新睡眠 HRV 指标监测 ，能了解身体疲劳状态。 全面健康管理，提供丰富运动模式，在支持心率、血氧、压力等多维度全天候监测的同时，还支持 150+ 种运动模式。 全新且专业的骑行模式，能实现手环投屏手机看，骑行数据实时同步；兼容苹果生态，新增双持",
+        "locator": "article #paragraph / 三、小米手环 10 Pro; article timestamp; explicitly dated launch event",
+        "sha256": "b2b3a526e04dbc62389f1cce5adc298d623b26406dbf6041d073228d9073ea25",
+        "captured_at": "2026-11-03T05:20:02.782878+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "313e5a873927c756e215de39da93383886071701b26fd08831cde0c2bfb1aa30"
+  },
+  {
+    "key": "check-0068",
+    "family": "round2:CN:mi_cn:product:24645",
+    "ids": [
+      "CN:mi_cn:product:24645"
+    ],
+    "name": "REDMI 头戴降噪耳机",
+    "brand": "小米",
+    "release": {
+      "date": "2026-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/970/430.htm",
+        "quote": "2026/6/30 11:56:07 来源： IT之家 作者： 溯波（实习） 责编： 溯波 评论： 感谢IT之家网友 很宅很怕生 、 小郑同学 、 backfrom 的线索投递！ IT之家 6 月 30 日消息，小米 REDMI 头戴降噪耳机现已在电商平台上架接受购买。",
+        "locator": "article timestamp + opening explicit release sentence",
+        "sha256": "e0fdb0abbc9c6d94b304ded3233aba4cd7b79751d1e161798b87b3da4cde55bd",
+        "captured_at": "2026-11-03T05:19:36.363394+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "73879028fe69f770f2f63cf437eca47624a85b7f90a71d67760b7ca1eb955260"
+  },
+  {
+    "key": "check-0069",
+    "family": "round2:CN:mi_cn:product:24647",
+    "ids": [
+      "CN:mi_cn:product:24647"
+    ],
+    "name": "Xiaomi 耳夹式耳机",
+    "brand": "小米",
+    "release": {
+      "date": "2026-05",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/953/645.htm",
+        "quote": "二、小米耳夹式耳机；看完了新手机，咱们再来看看新耳机，小米终于带来了旗下首款耳夹式耳机。 聚焦于设计，充电盒圆润小巧，采用荔枝皮纹理； 耳机则采用一体流线造型 ，机身为高亮金属镜面，透明发声球搭配金属唱片饰纹。 除了主打的缎光金，还可选“珍珠白”“玄武岩黑”“鸢尾紫”三色。 关于耳夹式耳机的佩戴感受，小米用了三个“超”来形容： 超轻盈、超贴耳、超稳固。 单机的重量仅有 5.5g，耳机为仿生曲线设计，用的是高性能记忆钛丝。 既然是耳机，音质至关重要，小米为耳夹式耳机安排了 11mm 大尺寸驱动单元和微晶金属涂层振膜，支持 LHDC 5.0 传输、Hi-Res 金标认证，高清音频解码。 3 麦克风阵列配合 VPU 结合通话降噪算法，使声音更为清晰；得益于逆向声波技术，能做到防止外泄漏音。 智能体验方面，小米耳夹式耳机拥有小爱陪伴模式，能像朋友一样聊天；提供智能翻译和独立录音功能，前者覆盖 21 种语言，后者可一键",
+        "locator": "article #paragraph / 二、小米耳夹式耳机; article timestamp; explicitly dated launch event",
+        "sha256": "b2b3a526e04dbc62389f1cce5adc298d623b26406dbf6041d073228d9073ea25",
+        "captured_at": "2026-11-03T05:20:02.782878+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "4685571ce14e28a01321d6e3ed341f30fbe4673b19323b266d6df1fd7adfaa30"
+  },
+  {
+    "key": "check-0070",
+    "family": "round2:CN:mi_cn:product:24648",
+    "ids": [
+      "CN:mi_cn:product:24648"
+    ],
+    "name": "Xiaomi 17 Max",
+    "brand": "小米",
+    "release": {
+      "date": "2026-05",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/953/645.htm",
+        "quote": "一、 小米 17 Max；在发布会中，率先亮相的新品是小米 17 Max，从命名中不难看出，其定位为小米 17 的 Max 版本，声称要重新定义“大屏标准版旗舰”。 因此，该机最肉眼可见的特质便是屏幕 Max， 配备了一块 6.9 英寸超大直屏 ，采用极窄四等边形态和超大 R 角设计。 这块屏幕是 小米 17 Pro Max 同款的超级像素屏，全 RGB 无损排列，采用 M10 发光材料，拥有 3500nits 峰值亮度，清晰度媲美 2K 屏，且比 1.5K 屏更省电。 而机身的设计则采用四曲包裹式中框，后置镜头模组为圆角方形 Deco，覆盖小米龙晶玻璃 3.0。 整机宽度 77.6mm、整机厚度 8.2mm、整机重量 225g，配色提供了三种：晴空蓝、白色与像素黑。 在尺寸做到 Max 的同时，小米 17 Max 也力争做到体验 Max，具体表现在三方面。 首先是续航 Max， 内置 8000mAh 金沙江电池 ",
+        "locator": "article #paragraph / 一、 小米 17 Max; article timestamp; explicitly dated launch event",
+        "sha256": "b2b3a526e04dbc62389f1cce5adc298d623b26406dbf6041d073228d9073ea25",
+        "captured_at": "2026-11-03T05:20:02.782878+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "a0c91e737d130284314d385da74e56602c565551bc8a58828c188aae4710db21"
+  },
+  {
+    "key": "check-0071",
+    "family": "round2:CN:mi_cn:product:25299",
+    "ids": [
+      "CN:mi_cn:product:25299"
+    ],
+    "name": "Xiaomi 18 Fold",
+    "brand": "小米",
+    "release": {
+      "date": "2026-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/999/486.htm",
+        "quote": "一、小米 18 Fold；咱们先聚焦于小米的折叠屏手机，雷军表示，小米做折叠屏手机已经有五六年的历史，已推出四款大折叠、两款小折叠。 这几年小米一直在思考一个问题，结合小折叠与大折叠优势，能不能做一款尺寸更合适、比例更舒服、更多人喜欢的新形态呢，小米的答案是“中折叠”。 小米 18 Fold 在两年前立项， 研发了 20 个月 ，是小米迄今为止最高端手机。 具体来看，屏幕方面，小米 18 Fold 配备 5.38 英寸外屏 +7.58 英寸内屏，内外屏采用约√2:1 标准纸张比例。 雷军称，这个比例恰到好处。用来阅读，如看书般自然；用来观影，画面铺展不用裁切；办公看文档，无需缩放调整，内容一目了然。 两块屏幕均为超级像素屏，支持 LTPO 1-120Hz 刷新率、4000nits 超级阳光屏 (APL 30%)。 配色方面，除了主打的“西野红”，还有暖金白、黑色两款颜色。 设计方面，小米 18 Fold 展开厚度为",
+        "locator": "article #paragraph / 一、小米 18 Fold; article timestamp; explicitly dated launch event",
+        "sha256": "6d67435f4cc46a4890f967595deefe9cb425d03100898a09b4ce4bdc9a52aef4",
+        "captured_at": "2026-11-03T05:20:02.782164+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "7aa71929ded4f8bac34cad71242ffe253761c01fe237e3588e468dd75c516a34"
+  },
+  {
+    "key": "check-0072",
+    "family": "round2:CN:mi_cn:product:25324",
+    "ids": [
+      "CN:mi_cn:product:25324"
+    ],
+    "name": "Xiaomi Pad 9 Pro Max",
+    "brand": "小米",
+    "release": {
+      "date": "2026-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/999/486.htm",
+        "quote": "二、小米平板 9 Pro Max；紧跟小米 18 Fold，小米平板 9 Pro Max 随即登场，同样首发玄戒 O3 芯片。 来看重点规格，小米平板 9 Pro Max 搭载了一块 13.3 英寸高清原色屏，144Hz 刷新率，3.4K 分辨率；3:2 屏幕比例、适配 PC 级应用界面；全局亮度 1000nits、ΔE≈0.47，可选纳米柔光屏版。 采用金属一体化机身设计，配备简约 Deco、跑道型设计、XRING 徽标，可选浓郁酒红、黑色、银色三种颜色。 厚度为 5.67mm、整机重 645g，电池容量 12000mAh，支持 120W 小米澎湃秒充。 首发搭载玄戒 O3 AI 旗舰处理器， CPU 多核、GPU 跑分逼近苹果 M5 。 搭载 6 麦克风阵列和旗舰 8 扬声器，采用 32MP+50MP 超清前后摄，支持 Wi-Fi 7 高速连接。 首发小米澎湃 OS 4，专为大屏生产力构建；支持多分屏模式，至高支持 6",
+        "locator": "article #paragraph / 二、小米平板 9 Pro Max; article timestamp; explicitly dated launch event",
+        "sha256": "6d67435f4cc46a4890f967595deefe9cb425d03100898a09b4ce4bdc9a52aef4",
+        "captured_at": "2026-11-03T05:20:02.782164+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "b8a6c87b735f632eb32ac41eaeeb8f5c12aeb2b108734e54137272286e4ed287"
+  },
+  {
+    "key": "check-0073",
+    "family": "round2:CN:mi_cn:product:25419",
+    "ids": [
+      "CN:mi_cn:product:25419"
+    ],
+    "name": "Xiaomi Watch S5 41mm",
+    "brand": "小米",
+    "release": {
+      "date": "2026-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/1/006/476.htm",
+        "quote": "五、小米手表 S5 41mm；除了小米手环 11 迎新版，小米还推出了 Watch S5 41mm 智能手表。 作为全新小尺寸时尚智能腕表，小米手表 S5 41mm 新增陶瓷表圈、灵动表耳、钻石型表冠，续航至高 14 天，提供陶瓷白、海盐蓝、黑色三款配色。 运动健康全面升级，特别为女性升级了全新的健康功能： 三颗温度传感器布局，精准预测生理周期 根据生理周期变化，智能推荐运动强度 结合消耗计算热量缺口，科学管理饮食 双波段紫外线预测，精准防晒更有效 首发手表端小米澎湃 OS 4 ，支持全新萌宠表盘，可联动时间与天气，能感知压力起伏，拥有四款全新萌宠形象。 同时可深度联动小米汽车，新增主动提醒功能；可与小米智能门锁联动，显示门锁摄像头画面；升级表端微信 App，支持语音转文字；内置表端超级小爱，支持百科问答、便捷语音操控。 价格方面，氟橡胶表带款售价 1299 元，真皮表带款售价 1499 元。",
+        "locator": "article #paragraph / 五、小米手表 S5 41mm; article timestamp; explicitly dated launch event",
+        "sha256": "4dae9419fd031e8157dd101447048a4e8b2a9d2076860093eabf72bc2d0836a5",
+        "captured_at": "2026-11-03T05:20:02.781033+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "c50e0b5af3db908382b01897062cb72bcf512f9f3cfd033ca56638a4320f64b4"
+  },
+  {
+    "key": "check-0074",
+    "family": "round2:CN:mi_cn:product:25445",
+    "ids": [
+      "CN:mi_cn:product:25445"
+    ],
+    "name": "Xiaomi Pad 9 Pro",
+    "brand": "小米",
+    "release": {
+      "date": "2026-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/1/006/476.htm",
+        "quote": "三、小米平板 9 系列；在小米 18 Pro 系列发布完毕后，紧接着登场的是小米平板 9 系列。 具体来看，小米平板 9 配备 11.2 英寸的屏幕，提供冰桃粉、云杉绿、黑、银四种配色；搭载第四代骁龙 8s 芯片、内置 9720mAh 大电池。 小米平板 9 Pro 则采用 12.5 英寸大屏，提供云杉绿、黑、银三种配色； 配备第五代骁龙 8 ，内置 11000mAh 大电池。 全系搭载小米澎湃 OS 4，适配 PC 级专业应用，升级 AI 笔记。 价格方面： 小米平板 9 8GB+128GB ：2999 元 8GB+256GB ：3299 元 8GB+256GB 柔光版：3499 元 12GB+256GB ：3799 元 小米平板 9 Pro 8GB+128GB ：3799 元 8GB+256GB ：4099 元 12GB+256GB ：4599 元 12GB+256GB 柔光版：4799 元 16GB+256",
+        "locator": "article #paragraph / 三、小米平板 9 系列; article timestamp; explicitly dated launch event",
+        "sha256": "4dae9419fd031e8157dd101447048a4e8b2a9d2076860093eabf72bc2d0836a5",
+        "captured_at": "2026-11-03T05:20:02.781033+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "b3b530d2a7f825106fe04a32515211b4f5bdbceda7ae282f2a7bde60ce6112b5"
+  },
+  {
+    "key": "check-0075",
+    "family": "round2:CN:mi_cn:product:25446",
+    "ids": [
+      "CN:mi_cn:product:25446"
+    ],
+    "name": "Xiaomi Pad 9",
+    "brand": "小米",
+    "release": {
+      "date": "2026-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/1/006/476.htm",
+        "quote": "三、小米平板 9 系列；在小米 18 Pro 系列发布完毕后，紧接着登场的是小米平板 9 系列。 具体来看，小米平板 9 配备 11.2 英寸的屏幕，提供冰桃粉、云杉绿、黑、银四种配色；搭载第四代骁龙 8s 芯片、内置 9720mAh 大电池。 小米平板 9 Pro 则采用 12.5 英寸大屏，提供云杉绿、黑、银三种配色； 配备第五代骁龙 8 ，内置 11000mAh 大电池。 全系搭载小米澎湃 OS 4，适配 PC 级专业应用，升级 AI 笔记。 价格方面： 小米平板 9 8GB+128GB ：2999 元 8GB+256GB ：3299 元 8GB+256GB 柔光版：3499 元 12GB+256GB ：3799 元 小米平板 9 Pro 8GB+128GB ：3799 元 8GB+256GB ：4099 元 12GB+256GB ：4599 元 12GB+256GB 柔光版：4799 元 16GB+256",
+        "locator": "article #paragraph / 三、小米平板 9 系列; article timestamp; explicitly dated launch event",
+        "sha256": "4dae9419fd031e8157dd101447048a4e8b2a9d2076860093eabf72bc2d0836a5",
+        "captured_at": "2026-11-03T05:20:02.781033+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "866bb42e444a6e4d316f33d44954d37eda3bd61c69404a9303406abadc17ceeb"
+  },
+  {
+    "key": "check-0076",
+    "family": "round2:CN:mi_cn:product:25524",
+    "ids": [
+      "CN:mi_cn:product:25524"
+    ],
+    "name": "Xiaomi 18 Pro",
+    "brand": "小米",
+    "release": {
+      "date": "2026-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/1/006/476.htm",
+        "quote": "一、小米 18 Pro 系列；先把目光拉回小米 18 Pro 系列。还是熟悉的双尺寸，但这一代从里到外，升级幅度可不小。 设计上，新一代自研屏幕封装工艺安排上了， 极窄四等边框直接压到 0.99mm ；中框采用大微弧四曲设计，R 角弧面宽度较上代至高增加 37.7%；背屏也还在，并且升级成了一体式纯平。 配色一共四款，除了主打的“星河蓝”，还带来冰桃粉和经典黑白双色。 性能的全面升级这次是重头戏，卢伟冰直接放话： “牙膏挤爆了。” 小米 18 Pro 系列全球首发高通新一代骁龙旗舰移动平台。 其中，小米 18 Pro 首发第六代骁龙 8 至尊版，小米 18 Pro Max 首发第六代骁龙 8 超级至尊版，两颗芯片均基于最新一代 2nm 旗舰制程。 具体来看，第六代骁龙 8 至尊版的 CPU 主频直接拉到 5GHz，移动平台历史最高；GPU 性能提升 35% 的同时，功耗降低 40%；NPU 推理性能提升 80% 之余，",
+        "locator": "article #paragraph / 一、小米 18 Pro 系列; article timestamp; explicitly dated launch event",
+        "sha256": "4dae9419fd031e8157dd101447048a4e8b2a9d2076860093eabf72bc2d0836a5",
+        "captured_at": "2026-11-03T05:20:02.781033+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "216c866fc39aa9f7ced13fad1588678ceaf10b7bb811d86dc48e27f74d704aaa"
+  },
+  {
+    "key": "check-0077",
+    "family": "round2:CN:mi_cn:product:25526",
+    "ids": [
+      "CN:mi_cn:product:25526"
+    ],
+    "name": "Xiaomi 18 Pro Max",
+    "brand": "小米",
+    "release": {
+      "date": "2026-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/1/006/476.htm",
+        "quote": "一、小米 18 Pro 系列；先把目光拉回小米 18 Pro 系列。还是熟悉的双尺寸，但这一代从里到外，升级幅度可不小。 设计上，新一代自研屏幕封装工艺安排上了， 极窄四等边框直接压到 0.99mm ；中框采用大微弧四曲设计，R 角弧面宽度较上代至高增加 37.7%；背屏也还在，并且升级成了一体式纯平。 配色一共四款，除了主打的“星河蓝”，还带来冰桃粉和经典黑白双色。 性能的全面升级这次是重头戏，卢伟冰直接放话： “牙膏挤爆了。” 小米 18 Pro 系列全球首发高通新一代骁龙旗舰移动平台。 其中，小米 18 Pro 首发第六代骁龙 8 至尊版，小米 18 Pro Max 首发第六代骁龙 8 超级至尊版，两颗芯片均基于最新一代 2nm 旗舰制程。 具体来看，第六代骁龙 8 至尊版的 CPU 主频直接拉到 5GHz，移动平台历史最高；GPU 性能提升 35% 的同时，功耗降低 40%；NPU 推理性能提升 80% 之余，",
+        "locator": "article #paragraph / 一、小米 18 Pro 系列; article timestamp; explicitly dated launch event",
+        "sha256": "4dae9419fd031e8157dd101447048a4e8b2a9d2076860093eabf72bc2d0836a5",
+        "captured_at": "2026-11-03T05:20:02.781033+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "ee48c1414f50dbf31078fc9fdd93d8b88e9e7ef116ab10660877ef7cebf57c10"
+  },
+  {
+    "key": "check-0078",
+    "family": "round2:CN:mi_cn:product:5059",
+    "ids": [
+      "CN:mi_cn:product:5059"
+    ],
+    "name": "小米活塞耳机",
+    "brand": "小米",
+    "release": {
+      "date": "2013-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/047/461.htm",
+        "quote": "2013/6/24 20:47:27 来源： IT之家 作者： 子非 责编： 子非 评论： 6月24日晚间消息，小米活塞耳机价格正式公布：99元。",
+        "locator": "article timestamp + opening explicit release sentence",
+        "sha256": "4fa35fcb8455031847fcf763fa566b8eba27f444ecf4cc10b0d64a8e994510b1",
+        "captured_at": "2026-11-03T05:19:36.433014+00:00",
+        "source_type": "third_party"
+      }
+    },
+    "candidate_sha256": "6d169561621abb90822b6a8597ced40abdfcb50fd888bea7c31a5a3af9f99dd0"
+  },
+  {
+    "key": "check-0079",
+    "family": "大疆|影像传输与控制设备配件|djifocusprolidar",
+    "ids": [
+      "CN:dji:sku:164241"
+    ],
+    "name": "DJI Focus Pro LiDAR",
+    "brand": "大疆",
+    "release": {
+      "date": "2024-04",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/media-center/announcements/dji-focus-pro",
+        "quote": "",
+        "reason": "DJI Focus Pro 于2024年4月发布，DJI Focus Pro LiDAR 是该生态中的独立配件；按已知发布资料将型号族首次推出月份归为2024-04，未核实具体SKU/套机开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "28e01dcfef5178876d90ab80ad27ba2844477cdb0a124656d51120eebb39766d",
+        "captured_at": "2026-11-03T06:57:37.585403+00:00",
+        "artifact": "responses/e3cb69dd7a117eb59117cab2.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "1d6044c1d10d83afe10336f37472be411a4dbe761e6293315cd5d8cb97c86ad1"
+  },
+  {
+    "key": "check-0080",
+    "family": "大疆|影像传输与控制设备配件|djifocuspro手轮",
+    "ids": [
+      "CN:dji:sku:164301"
+    ],
+    "name": "DJI Focus Pro 手轮",
+    "brand": "大疆",
+    "release": {
+      "date": "2024-04",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/focus-pro",
+        "quote": "",
+        "reason": "DJI Focus Pro 于 2024 年 4 月发布，手轮是该型号族内的配件；按配件本身归入该发布月份，不借用主机日期。未能确知官网原句，故 quote 留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "d6bdc74fa13298b6cb85d555d241b663a6bcc3173458a50e4d1a6570764cec7a",
+        "captured_at": "2026-11-03T06:57:37.854109+00:00",
+        "artifact": "responses/4975ffb0d1fa91486df72b87.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "fae19e13ef9d53c51adc09332b6e3c0bfe1da1e5399112566af9c7d8792c88af"
+  },
+  {
+    "key": "check-0081",
+    "family": "大疆|户外电源|djipower2000",
+    "ids": [
+      "CN:dji:sku:184971",
+      "CN:dji:sku:185061",
+      "CN:dji:sku:185091",
+      "CN:dji:sku:185121",
+      "CN:dji:sku:198501",
+      "CN:dji:sku:202611",
+      "CN:dji:sku:244401"
+    ],
+    "name": "DJI Power 2000 车充套装",
+    "brand": "大疆",
+    "release": {
+      "date": "2025-05",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/power-2000",
+        "quote": "",
+        "reason": "DJI Power 2000 属于 DJI Power 系列，官方页面将其列为 2000W 级户外电源；已知该型号于 2025 年 5 月随 DJI Power 系列新品发布亮相，但无法回指具体原文链接与原句，故 quote 留空，仅以型号族与已知发布窗口支持月份估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "601d05701584112b7374771bec98794c39fdb2423f7ab5ccad910439ccc44a5e",
+        "captured_at": "2026-11-03T06:57:40.700670+00:00",
+        "artifact": "responses/6e8a946254de67d05d680477.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "cef553a2d499073eab80c7d8fa1d5b07957a461b4aeed36110ddfb98f9f4540c"
+  },
+  {
+    "key": "check-0082",
+    "family": "大疆|摄影器材配件|d-rtk3多功能基站",
+    "ids": [
+      "CN:dji:sku:180111"
+    ],
+    "name": "D-RTK 3 多功能基站",
+    "brand": "大疆",
+    "release": {
+      "date": "2024-11",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/d-rtk-3",
+        "quote": "",
+        "reason": "大疆D-RTK 3多功能基站随Matrice 4系列于2024年11月发布，官网产品页可回指该型号族；但未取得可确知的原句，故quote留空，月份依据已知发布资料。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "57ba49b16e81658de25b0397842cc8b37798fa0cff83310471321d4563b707c3",
+        "captured_at": "2026-11-03T06:57:55.020066+00:00",
+        "artifact": "responses/2ab94ad3b8d8aff316ac0e66.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "21b98e3cc81800da78201757202ae3362056d9d6cabb24be042d743c0f82d211"
+  },
+  {
+    "key": "check-0083",
+    "family": "大疆|摄影器材配件|djilidar焦点测距器",
+    "ids": [
+      "CN:dji:sku:111651"
+    ],
+    "name": "DJI LiDAR 焦点测距器",
+    "brand": "大疆",
+    "release": {
+      "date": "2021-10",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/ronin-4d",
+        "quote": "",
+        "reason": "DJI LiDAR 焦点测距器是随 DJI Ronin 4D 一同发布的配件；DJI 于 2021 年 10 月发布 Ronin 4D，官方页面将 LiDAR 焦点测距器列为该系统的组成部分。该日期用于按配件所属产品世代估算，并非该配件单独开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "7dedc1e03bbe8a66821dfe86346c6b1dce47996aa626cb11108f22ad5657f397",
+        "captured_at": "2026-11-03T06:57:59.056514+00:00",
+        "artifact": "responses/cccd112c6e2aa128a2903c1f.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "5c0e2db66d619e9827984239b8b8b8e2d6807c5f96c67556a5818bc93679d9dc"
+  },
+  {
+    "key": "check-0084",
+    "family": "大疆|摄影器材配件|djio4airunitpro图传模块",
+    "ids": [
+      "CN:dji:sku:180681"
+    ],
+    "name": "DJI O4 Air Unit Pro 图传模块",
+    "brand": "大疆",
+    "release": {
+      "date": "2025-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/o4-air-unit",
+        "quote": "",
+        "reason": "DJI O4 Air Unit 系列（含 O4 Air Unit Pro）于 2025 年 1 月发布，属 DJI 官方产品页可回指的型号族首次推出时间；该日期仅用于按型号世代估算，不作为国行开售事实。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "d001ae41064fca94d2bb634925320fb88de2642e94141be7d570b8d24e1865ff",
+        "captured_at": "2026-11-03T06:57:59.083764+00:00",
+        "artifact": "responses/e53b6ab4dd181ac8027dbe36.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "fec702c50af09a1523f41f143c8096a77aed9425010aadc4a9c06ffcd2c138d6"
+  },
+  {
+    "key": "check-0085",
+    "family": "大疆|摄影器材配件|djirc",
+    "ids": [
+      "CN:dji:sku:115461"
+    ],
+    "name": "DJI RC",
+    "brand": "大疆",
+    "release": {
+      "date": "2022-05",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/rc",
+        "quote": "",
+        "reason": "DJI RC 是随 Mavic 3 系列（2022年5月发布）推出的带屏遥控器配件；按已知资料其首次亮相为2022年5月，但无逐字原文可引，故 quote 留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "8447331e1f1d6a3ad4c326ebd9bae8c9c7e09812ff8082e170b832f565736c9c",
+        "captured_at": "2026-11-03T06:58:00.518522+00:00",
+        "artifact": "responses/402103e4dcf725de72322310.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "f677f3f4e8a90fff2947db499cbe111e0e8c447ff2bff1fda50ab46c9f38dfeb"
+  },
+  {
+    "key": "check-0086",
+    "family": "大疆|摄影器材配件|djircpro",
+    "ids": [
+      "CN:dji:sku:109731"
+    ],
+    "name": "DJI RC Pro",
+    "brand": "大疆",
+    "release": {
+      "date": "2021-10",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/rc-pro",
+        "quote": "",
+        "reason": "DJI RC Pro 是随 Mavic 3 系列一同发布的独立遥控器配件；已知大疆于 2021 年 10 月发布 DJI RC Pro，作为该配件型号族的首次推出年月候选。未引用具体原句，故 quote 留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "a254aedea8314dae393b08c6f2e4090cbf2fcbfd80f28615452b810d0d35a3f4",
+        "captured_at": "2026-11-03T06:58:04.524767+00:00",
+        "artifact": "responses/f56ceb4b72bd745565f59000.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "c22e1444f32f9118ae2b40da4335c4be4cfa5709849eac25cfed67c46c83a08b"
+  },
+  {
+    "key": "check-0087",
+    "family": "大疆|无人机|djiair3s",
+    "ids": [
+      "CN:dji:sku:242601"
+    ],
+    "name": "DJI Air 3S 140W 氮化镓充电套装",
+    "brand": "大疆",
+    "release": {
+      "date": "2024-10",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/media-center/announcements/dji-air-3s",
+        "quote": "",
+        "reason": "大疆于2024年10月发布Air 3S，官方媒体中心公告可回指该型号族的首次推出月份；未引用具体原句，仅以已知官方公告标题/页面作为依据。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "6527ca4b587766469be539fdf4fc864f2883b1dcec40bbc177cff8a09a5051fb",
+        "captured_at": "2026-11-03T06:58:28.842347+00:00",
+        "artifact": "responses/4a1ff6949c09e19f19de5df9.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "f5d25fcd9ba1f4d56dae2617a8751898dfa064f95e000196b9c238d65e8562e9"
+  },
+  {
+    "key": "check-0088",
+    "family": "大疆|无人机|djiavata2",
+    "ids": [
+      "CN:dji:sku:164691",
+      "CN:dji:sku:203571",
+      "CN:dji:sku:203601",
+      "CN:dji:sku:242241"
+    ],
+    "name": "DJI Avata 2（仅飞行器）",
+    "brand": "大疆",
+    "release": {
+      "date": "2024-04",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/media-center/announcements/dji-avata-2",
+        "quote": "",
+        "reason": "大疆于2024年4月发布DJI Avata 2，属于Avata系列第二代机身世代；该日期用于型号族世代估算，不作为国行开售事实。未能确知可回指的原文原句，故quote留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "66675f385904100a0d995b33d77c3bd67500779181b0f547080feced3a5e42c2",
+        "captured_at": "2026-11-03T06:58:28.588967+00:00",
+        "artifact": "responses/671baf2f355ebb3f80fe5c6e.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "ab7dc2039b544018ead2397c4abddc690997133d197a8e2c0719331501630fa2"
+  },
+  {
+    "key": "check-0089",
+    "family": "大疆|无人机|djiflip",
+    "ids": [
+      "CN:dji:sku:203541",
+      "CN:dji:sku:242361"
+    ],
+    "name": "DJI Flip 双电套装 （不含遥控器）",
+    "brand": "大疆",
+    "release": {
+      "date": "2025-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/flip",
+        "quote": "",
+        "reason": "DJI Flip 于2025年1月发布，官网产品页与多家媒体（如 The Verge 2025-01-14 报道）可回指；此处按型号族首次推出年月估算，不涉及具体SKU/套机国行开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "fa74f295eca0404abfb1be37ea8cad55090e11dd577a3128668b0badd9539ce1",
+        "captured_at": "2026-11-03T06:58:29.356836+00:00",
+        "artifact": "responses/bdba2ee66a41f8b68c13837c.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "ee135cfc418df589d34004d0021b28542710ef605dff73c379b8c44c88ade932"
+  },
+  {
+    "key": "check-0090",
+    "family": "大疆|无人机|djiinspire3（基础版）",
+    "ids": [
+      "CN:dji:sku:190911"
+    ],
+    "name": "DJI Inspire 3（基础版）",
+    "brand": "大疆",
+    "release": {
+      "date": "2023-04",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/inspire-3",
+        "quote": "",
+        "reason": "DJI Inspire 3 于2023年4月发布，官网产品页可回指该型号族；基础版与套机同属Inspire 3机身世代，按机身世代取发布年月，不涉及具体SKU/套机开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "2e1c61e0d90e3dc7010e93559bb2ae3ea020bc45077a043c5110647b855d19be",
+        "captured_at": "2026-11-03T06:58:29.754941+00:00",
+        "artifact": "responses/ad4e7b076c0acd8b5e49f0ef.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "acb0067cf2fe90eac692eca7ad31696ae0cff3a4544df9b1e96b7a71acd95597"
+  },
+  {
+    "key": "check-0091",
+    "family": "大疆|无人机|djimatrice4t",
+    "ids": [
+      "CN:dji:sku:182301"
+    ],
+    "name": "DJI Matrice 4T 旗舰套装",
+    "brand": "大疆",
+    "release": {
+      "date": "2025-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/matrice-4-series",
+        "quote": "",
+        "reason": "DJI Matrice 4 系列（含 Matrice 4T）于 2025 年 1 月发布；官网系列页可回指该型号族，但未逐字引用具体原句，故 quote 留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "b817f89e7678cbb1147b0dd1e7fae1436b660c6b1925a46ab076a7f093f1fac4",
+        "captured_at": "2026-11-03T06:58:31.031976+00:00",
+        "artifact": "responses/9462df1987a73259e5cc6426.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "f3c9cdfcb908486a322e14b658cfe71c6f6f0d1cbb9bbcef77928fd38122200e"
+  },
+  {
+    "key": "check-0092",
+    "family": "大疆|无人机|djimatrice4td",
+    "ids": [
+      "CN:dji:sku:189231"
+    ],
+    "name": "DJI Matrice 4TD 无忧旗舰版套装",
+    "brand": "大疆",
+    "release": {
+      "date": "2025-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/matrice-4-series",
+        "quote": "",
+        "reason": "DJI Matrice 4 系列（含 Matrice 4T/4E 及 Matrice 4D/4TD）于 2025 年 1 月发布；该系列官网页面可回指系列发布月份，但无法确认具体原句，故 quote 留空。此日期仅作型号世代估算，不作为发售事实。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "80ca6062ac994f2427a474c20349c7d1a0de10246a52009027a2e6de526f7b4d",
+        "captured_at": "2026-11-03T06:58:30.372306+00:00",
+        "artifact": "responses/fed0424f15638b6db835db11.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "ed1dd9892ae69c9edd7dd20a888cdc2b5d802038c88d56be8f5a3a7902df3163"
+  },
+  {
+    "key": "check-0093",
+    "family": "大疆|无人机|djineo",
+    "ids": [
+      "CN:dji:sku:241971"
+    ],
+    "name": "DJI Neo 140W 氮化镓充电套装",
+    "brand": "大疆",
+    "release": {
+      "date": "2024-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/neo",
+        "quote": "",
+        "reason": "DJI Neo 于2024年9月发布，官网产品页与多家媒体（如The Verge 2024-09-05报道）可回指；此处按型号族首次发布年月估算，不涉及具体SKU/套机国行开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "67efc383e1ee79c62d80467bb7544a7faee8e94a66a6f48ed8c07869f7348270",
+        "captured_at": "2026-11-03T06:58:30.778829+00:00",
+        "artifact": "responses/9ab6ae3dc6dedd86f261cc37.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "a842c1d68a44d44a57b2e734469e6658125c0555dbbeb32ad1e84d26d2dfb0c2"
+  },
+  {
+    "key": "check-0094",
+    "family": "大疆|无人机配件|djiair3系列充电管家",
+    "ids": [
+      "CN:dji:sku:143331"
+    ],
+    "name": "DJI Air 3 系列充电管家",
+    "brand": "大疆",
+    "release": {
+      "date": "2023-07",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/air-3",
+        "quote": "",
+        "reason": "DJI Air 3 于2023年7月发布，充电管家作为该系列配件通常随系列同期推出；但未找到可回指的配件本身发布原文，故仅作型号族世代估算，不作为发售事实。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "4ea7aad5f256e53d6c3ec3075fb0d45de2d540aba656d09dc2155740ebd9b78f",
+        "captured_at": "2026-11-03T06:58:32.572196+00:00",
+        "artifact": "responses/61a1e865579f1ce36cc0f39a.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "7b75fff7f8c45c4dab93e4494002ab984d657aeb4793114925a9594f3a874128"
+  },
+  {
+    "key": "check-0095",
+    "family": "大疆|相机|djironin4d-6k",
+    "ids": [
+      "CN:dji:sku:107481"
+    ],
+    "name": "DJI Ronin 4D-6K",
+    "brand": "大疆",
+    "release": {
+      "date": "2021-10",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/ronin-4d",
+        "quote": "",
+        "reason": "DJI Ronin 4D 系列于2021年10月发布，Ronin 4D-6K为该系列6K版本；官网产品页可回指该型号族，但未引用具体原句，月份依据为已知发布资料。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "a58a5047e483048f90109563a3799f6caf98133b64d8c9dace035893152018c4",
+        "captured_at": "2026-11-03T06:58:49.967298+00:00",
+        "artifact": "responses/098c498b3937d4008704afa5.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "f8d4037dda2a83f49c88592b23d802e78cdf8648f91a3e710afaabe924020041"
+  },
+  {
+    "key": "check-0096",
+    "family": "大疆|相机|djironin4d-8k基础版",
+    "ids": [
+      "CN:dji:sku:263961"
+    ],
+    "name": "DJI Ronin 4D-8K 基础版",
+    "brand": "大疆",
+    "release": {
+      "date": "2023-10",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/ronin-4d/specs",
+        "quote": "",
+        "reason": "DJI Ronin 4D-8K 属于 Ronin 4D 产品族；DJI 于 2023 年 10 月发布 Ronin 4D-8K（8K 版本），基础版为同一机身世代的配置版本，故按该世代估算为 2023-10。未能确知可回指原句，quote 留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "ddf9834176219e6657d0d8c9db5af4f69ede81bbf36648833e70ebe873807331",
+        "captured_at": "2026-11-03T06:58:49.771676+00:00",
+        "artifact": "responses/f8a0e037148bf07839a9a97f.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "164317aad94a22d0b83c0296e58b377b1397cf020c926c61d9ad57df5871e5c4"
+  },
+  {
+    "key": "check-0097",
+    "family": "大疆|相机|osmopocket3",
+    "ids": [
+      "CN:dji:sku:178161",
+      "CN:dji:sku:186531",
+      "CN:dji:sku:197961",
+      "CN:dji:sku:241551"
+    ],
+    "name": "Osmo Pocket 3 Vlog 套装（DJI Mic Mini 发射器 碳素黑）",
+    "brand": "大疆",
+    "release": {
+      "date": "2023-10",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/osmo-pocket-3",
+        "quote": "",
+        "reason": "DJI Osmo Pocket 3 于2023年10月发布，官网产品页及多家媒体（如The Verge、Engadget）2023年10月报道可佐证；此处按已知发布月份填2023-10，但未提供可回指的具体原文链接，故quote为null。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "6d995092e4865b943651e35ec834277316a13d520574c643862270560a33cef5",
+        "captured_at": "2026-11-03T06:58:50.216161+00:00",
+        "artifact": "responses/384984eb49114f1ab8c060f9.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "24115d4f3a8ca1e5b4f6f9e53d363f51a0bdf1fb54a6bb25d183b6b26d769305"
+  },
+  {
+    "key": "check-0098",
+    "family": "大疆|运动相机|osmo360",
+    "ids": [
+      "CN:dji:sku:194541",
+      "CN:dji:sku:194661",
+      "CN:dji:sku:194811",
+      "CN:dji:sku:194841",
+      "CN:dji:sku:194991",
+      "CN:dji:sku:201831",
+      "CN:dji:sku:201891",
+      "CN:dji:sku:206001",
+      "CN:dji:sku:206031",
+      "CN:dji:sku:214641",
+      "CN:dji:sku:241522",
+      "CN:dji:sku:255231",
+      "CN:dji:sku:265461",
+      "CN:dji:sku:269451"
+    ],
+    "name": "Osmo 360 摩托车车把视角套装",
+    "brand": "大疆",
+    "release": {
+      "date": "2025-07",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-flash",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/osmo-360",
+        "quote": "",
+        "reason": "DJI Osmo 360 于2025年7月发布，官网产品页可回指该型号族；具体日期仅按发布月份估算，不视为国行开售事实。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "f5791fd8ff78c961c2e9f41b294edd228f48874bf609273b786e7a74c5ca52c2",
+        "captured_at": "2026-11-03T06:58:56.098685+00:00",
+        "artifact": "responses/8b1898316a3e49f751a361e4.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "c1b836d7f04189daaca9f806f6ba2c82e1ccca2fc6bcf7c1345044363d928818"
+  },
+  {
+    "key": "check-0099",
+    "family": "大疆|运动相机|osmoaction4",
+    "ids": [
+      "CN:dji:sku:144711",
+      "CN:dji:sku:144741",
+      "CN:dji:sku:144771",
+      "CN:dji:sku:144801",
+      "CN:dji:sku:148341",
+      "CN:dji:sku:148371",
+      "CN:dji:sku:193521",
+      "CN:dji:sku:198081",
+      "CN:dji:sku:241341",
+      "CN:dji:sku:265071",
+      "CN:dji:sku:272361"
+    ],
+    "name": "Osmo Action 4 公路车骑行套装",
+    "brand": "大疆",
+    "release": {
+      "date": "2023-08",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/osmo-action-4",
+        "quote": "",
+        "reason": "大疆于2023年8月发布Osmo Action 4，官网产品页及同期媒体发布报道可回指该型号族的首次推出年月；未采用具体SKU/套机国行开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "e98d65d80e3725c0a6086dfd3e3366b030eea162ad783dad14e98389bd92e92f",
+        "captured_at": "2026-11-03T06:58:57.128380+00:00",
+        "artifact": "responses/2e0890d7a92fb863d01fbc78.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "7f63e8f2d6b4ab234791e97fbd6010c2061bf921eb549610cffb697a441a70f6"
+  },
+  {
+    "key": "check-0100",
+    "family": "大疆|运动相机|osmoaction5pro",
+    "ids": [
+      "CN:dji:sku:170541",
+      "CN:dji:sku:170571",
+      "CN:dji:sku:170601",
+      "CN:dji:sku:170631",
+      "CN:dji:sku:170661",
+      "CN:dji:sku:170691",
+      "CN:dji:sku:170721",
+      "CN:dji:sku:187851",
+      "CN:dji:sku:198021",
+      "CN:dji:sku:211731",
+      "CN:dji:sku:240951",
+      "CN:dji:sku:240981",
+      "CN:dji:sku:241371",
+      "CN:dji:sku:259611",
+      "CN:dji:sku:265041"
+    ],
+    "name": "Osmo Action 5 Pro 公路骑行套装",
+    "brand": "大疆",
+    "release": {
+      "date": "2024-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/osmo-action-5-pro",
+        "quote": "",
+        "reason": "大疆于2024年9月发布Osmo Action 5 Pro，官网产品页及同期媒体发布报道可回指该型号族的首次推出月份；未采用具体SKU/套机国行开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "ed31f96ba50255cf3d7f9adb391f567b4644f3cc9fffeee32bd561385c6a543e",
+        "captured_at": "2026-11-03T06:58:57.347238+00:00",
+        "artifact": "responses/9214a2b6360f40c53ca04d6b.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "0e9de95b530df593cc6292c92fd5d31dd0b918941bb7e2e0896afcd41f829b49"
+  },
+  {
+    "key": "check-0101",
+    "family": "大疆|麦克风|djimicmini",
+    "ids": [
+      "CN:dji:sku:178041",
+      "CN:dji:sku:178071",
+      "CN:dji:sku:241941"
+    ],
+    "name": "DJI Mic Mini（一发一收）+ 手机连接头（Lightning）",
+    "brand": "大疆",
+    "release": {
+      "date": "2024-11",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/media-center/announcements/dji-mic-mini",
+        "quote": "",
+        "reason": "大疆于2024年11月发布DJI Mic Mini无线麦克风，属于该型号族首次推出；具体日期以官方公告月份为准，不推断具体SKU/套机开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "aabe37f41e4cba6721466dd207b76d37f7080996c7100d95df73e48d519d102d",
+        "captured_at": "2026-11-03T06:59:12.364145+00:00",
+        "artifact": "responses/23733def922d1c1e246bfc33.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "526c870a73e41fe3c8220c0b434b55b3c2807f8efa7c877f66de94d76700d79f"
+  },
+  {
+    "key": "check-0102",
+    "family": "富士|相机|fujifilmx-e5",
+    "ids": [
+      "CN:fuji:kit:x-e5-xf23mmf28-r-wr"
+    ],
+    "name": "FUJIFILM X-E5 + XF23mmF2.8 R WR 套机",
+    "brand": "富士",
+    "release": {
+      "date": "2025-06",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-e5/",
+        "quote": "",
+        "reason": "富士官方X-E5产品页存在，但无法确认页面内是否含确切首次发布月份原文；按已知公开资料，X-E5于2025年6月发布，故给2025-06，但引文留空以避免编造。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "e5efad30c3ad41f2601657c47568fb33da4627744ae2d62bc0d6d05c01818ef0",
+        "captured_at": "2026-11-03T06:59:21.506489+00:00",
+        "artifact": "responses/9a1d68bda13a3c721b716f2f.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "a59080d9a7f777d72d7a01ae0b4a5f37252f4585ae9091e14335e1a48959c8ba"
+  },
+  {
+    "key": "check-0103",
+    "family": "富士|相机|fujifilmx-h2",
+    "ids": [
+      "CN:fuji:kit:x-h2-16-80mm"
+    ],
+    "name": "FUJIFILM X-H2 1680套机",
+    "brand": "富士",
+    "release": {
+      "date": "2022-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-h2/",
+        "quote": "",
+        "reason": "富士官方X-H2产品页可确认该型号族存在；已知官方于2022年9月发布X-H2（与X-H2S不同型号），故按机身世代给出2022-09的首次推出年月候选。未引用具体原句，因无法确知页面原文。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "ee22bfe0ff697693aa7505c80169ea12d10edbd8cc7ffb4afff8af69ab7d3ab8",
+        "captured_at": "2026-11-03T06:59:22.018821+00:00",
+        "artifact": "responses/61bb9eafd534dc17a5d9b493.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "5c37afb74d947bc2aea0beb752f0cfe70e448c12d6796f24bc5f26921f763ca6"
+  },
+  {
+    "key": "check-0104",
+    "family": "富士|相机|fujifilmx-h2s",
+    "ids": [
+      "CN:fuji:model:x-h2s"
+    ],
+    "name": "FUJIFILM X-H2S",
+    "brand": "富士",
+    "release": {
+      "date": "2022-05",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-h2s/",
+        "quote": "",
+        "reason": "富士官方X-H2S产品页存在；该机型于2022年5月发布（X Summit May 2022），按机身世代归入2022-05，仅作型号族首次推出年月候选，不表示国行开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "223aa2884c971a4688ea3a4907732da22c3efbfd0d43dd1a0c0e2c9196502782",
+        "captured_at": "2026-11-03T06:59:22.475226+00:00",
+        "artifact": "responses/6c069f285c52aa07ce084086.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "d7b63354693f53fd4650af6b0aeccf77e4ce9d8ec469be436d228703d0eb1a03"
+  },
+  {
+    "key": "check-0105",
+    "family": "富士|相机|fujifilmx-pro3",
+    "ids": [
+      "CN:fuji:model:x-pro3"
+    ],
+    "name": "FUJIFILM X-Pro3",
+    "brand": "富士",
+    "release": {
+      "date": "2019-10",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-pro3/",
+        "quote": "",
+        "reason": "富士官方X-Pro3产品页可确认该型号族；X-Pro3于2019年10月发布（全球发布，非国行开售日）。因无法在此环境核验页面原文句子，quote留空，仅以官方产品页作为型号族回指。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "d8a9813188ea67fb087a30efdb2a6f79957ca77bc118a0ba4112783cfbaea067",
+        "captured_at": "2026-11-03T06:59:22.907070+00:00",
+        "artifact": "responses/c607b6e4706d179712470012.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "3ab50e8c2a6242e7d3b0b62f4faf55fa3b3aa3d3ced78d6dfd267998b2f3b2fb"
+  },
+  {
+    "key": "check-0106",
+    "family": "富士|相机|fujifilmx-s20",
+    "ids": [
+      "CN:fuji:kit:x-s20-15-45mm",
+      "CN:fuji:kit:x-s20-16-50mm",
+      "CN:fuji:kit:x-s20-xc35mm",
+      "CN:fuji:kit:x-s20-xf35mm",
+      "CN:fuji:model:x-s20"
+    ],
+    "name": "FUJIFILM X-S20 15-45套机",
+    "brand": "富士",
+    "release": {
+      "date": "2023-05",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-s20/",
+        "quote": "",
+        "reason": "富士官方X-S20产品页可确认该型号属于X-S系列机身世代；已知官方于2023年5月发布X-S20，故按机身世代给出2023-05的首次推出年月候选。未引用具体原文句，仅以官方产品页作为型号族回指。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "c8f104e86eda026be1d7ab96994ed6dc2a0e80cbd1aa20b895448299f05434d7",
+        "captured_at": "2026-11-03T06:59:22.781001+00:00",
+        "artifact": "responses/a486da424d218a0b0fdd28ed.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "3f42bdd8e826d7035ab99bcf378f8af55d187f6eb11cbd34e0b07aea34aa5f73"
+  },
+  {
+    "key": "check-0107",
+    "family": "富士|相机|fujifilmx-t5",
+    "ids": [
+      "CN:fuji:kit:x-t5-16-50mm",
+      "CN:fuji:kit:x-t5-16-80mm",
+      "CN:fuji:kit:x-t5-23mm-f2",
+      "CN:fuji:kit:x-t5-35mm-f2"
+    ],
+    "name": "FUJIFILM X-T5 1650套机",
+    "brand": "富士",
+    "release": {
+      "date": "2022-11",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-t5/",
+        "quote": "",
+        "reason": "富士官方X-T5产品页可确认该型号族存在；X-T5于2022年11月发布，按机身世代取发布年月，不涉及具体SKU/套机国行开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "7f2a374968f949b2ceecd08e0b1fd66133e012dfb3757945ce5aec4bbc7aa9fe",
+        "captured_at": "2026-11-03T06:59:23.439862+00:00",
+        "artifact": "responses/eaad0a64b821fa979e223726.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "67a289ce079aee269b541fc1c95abd8e58dce58e795bcb1535447e77cb1a67f9"
+  },
+  {
+    "key": "check-0108",
+    "family": "富士|相机|fujifilmx-t50",
+    "ids": [
+      "CN:fuji:kit:x-t50-xc15-45mm",
+      "CN:fuji:kit:x-t50-xc35mmf2",
+      "CN:fuji:kit:x-t50-xf16-50mm"
+    ],
+    "name": "FUJIFILM X-T50 XC15-45mm套机",
+    "brand": "富士",
+    "release": {
+      "date": "2024-05",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-t50/",
+        "quote": "",
+        "reason": "富士官方X-T50产品页可确认该型号族存在；已知该机型于2024年5月发布，但当前无法回指具体含发布月份的原句，故quote留空，日期仅作世代估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "930f35142769ce276115f7405c275df4d84792f24e675c4c581b85c514a80926",
+        "captured_at": "2026-11-03T06:59:23.395258+00:00",
+        "artifact": "responses/a978b2cd0d64aafb0e68ab44.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "0cdf3c5da19f7efd24f5e1a31f44b054d5174b794590dcee8d66103dacd21e0c"
+  },
+  {
+    "key": "check-0109",
+    "family": "富士|相机镜头|xc15-45mmf3.5-5.6oispz",
+    "ids": [
+      "CN:fuji:lens:xc15-45mmf35-56-ois-pz"
+    ],
+    "name": "FUJINON XC15-45mmF3.5-5.6 OIS PZ",
+    "brand": "富士",
+    "release": {
+      "date": "2018-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xc15-45mmf35-56-ois-pz/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XC系列电动变焦镜头；已知该镜头随X-A5一同于2018年1月发布，官方页面可回指型号族，但未引用具体发布句，故月份依据为已知发布资料而非页面原文。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "1c1a3a5dd72caaf1e0438d3cea9db1188ad6ddacc02dcd0339867bd0e3a3007e",
+        "captured_at": "2026-11-03T06:59:24.187374+00:00",
+        "artifact": "responses/d7aaa418ee8e4390b832d941.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "a8cfb0ccb694b48358dd1b6b3ac81cfd36bbfa16764353a647096d3ff2a1563b"
+  },
+  {
+    "key": "check-0110",
+    "family": "富士|相机镜头|xc35mmf2",
+    "ids": [
+      "CN:fuji:lens:xc35mmf2"
+    ],
+    "name": "FUJINON XC35mmF2",
+    "brand": "富士",
+    "release": {
+      "date": "2020-02",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xc35mmf2/",
+        "quote": "",
+        "reason": "富士官方产品页可确认 XC35mmF2 属于 XC 系列镜头；该镜头于2020年2月随 X-T200 一同发布，官方新闻稿与多家媒体（如 DPReview 2020-02-04）均有报道。此处按已知资料给出发布月份候选，未引用具体原文句。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "bf16dff26380bdafbdcb4326a26762cfb96cf9a682bc3a36ab199e36c8218aa7",
+        "captured_at": "2026-11-03T06:59:24.727617+00:00",
+        "artifact": "responses/78e1e7933104a9ed217f80b2.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "de6292aa34810aea9ae0d6d03444c6e10a4d04aa996a01ef1f2bf198ece76b01"
+  },
+  {
+    "key": "check-0111",
+    "family": "富士|相机镜头|xc50-230mmf4.5-6.7oisii",
+    "ids": [
+      "CN:fuji:lens:xc50-230mmf45-67-ois-2"
+    ],
+    "name": "FUJINON XC50-230mmF4.5-6.7 OIS II",
+    "brand": "富士",
+    "release": {
+      "date": "2015-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xc50-230mmf45-67-ois-ii/",
+        "quote": "",
+        "reason": "富士官网该镜头产品页存在，但未提供可确知的首发年月原句；已知该II代随X-A2于2015年1月发布，但无法给出可回指的原文链接与引句，故按规则留空日期。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "1477030ee91f9aeef5f321957f0130aae01fc46cc4fde2ab5c08379fb1ba05e1",
+        "captured_at": "2026-11-03T06:59:24.747314+00:00",
+        "artifact": "responses/03bd1025f15be24a30a4c966.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "e1f9e2a2ee4c2ffdba72eeb6ce4b5d0859b376a3ded28b58de5182de1ad462ae"
+  },
+  {
+    "key": "check-0112",
+    "family": "富士|相机镜头|xf10-24mmf4roiswr",
+    "ids": [
+      "CN:fuji:lens:xf10-24mmf4-r-ois-wr"
+    ],
+    "name": "FUJINON XF10-24mmF4 R OIS WR",
+    "brand": "富士",
+    "release": {
+      "date": "2020-10",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf10-24mmf4-r-ois-wr/",
+        "quote": "",
+        "reason": "富士官网该镜头产品页可确认型号族为 XF10-24mmF4 R OIS WR（WR 为 2020 年发布的改款，非初代 XF10-24mmF4 R OIS）。已知富士于 2020 年 10 月发布该 WR 版本；但无法提供可回指的原文原句，故 quote 留空，仅以官网产品页作为型号族依据，月份依据为已知发布资料，置信度中等。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "d7a3db7998b405b33a3f1fb8d69e14826a5148f8c1cd3248f87751c5090e3c3b",
+        "captured_at": "2026-11-03T06:59:25.566926+00:00",
+        "artifact": "responses/f0b91bfebd141e400a1ca144.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "77bf2f03df443bbc542b56d3617f46d66a9e4b1784903de2d65d8aa5c02cd02d"
+  },
+  {
+    "key": "check-0113",
+    "family": "富士|相机镜头|xf100-400mmf4.5-5.6rlmoiswr",
+    "ids": [
+      "CN:fuji:lens:xf100-400mmf45-56-r-lm-ois-wr"
+    ],
+    "name": "FUJINON XF100-400mmF4.5-5.6 R LM OIS WR",
+    "brand": "富士",
+    "release": {
+      "date": "2016-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf100-400mmf45-56-r-lm-ois-wr/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XF100-400mmF4.5-5.6 R LM OIS WR镜头族；该镜头于2016年1月发布（与X-Pro2同期公布），故按型号族首次推出年月取2016-01。未引用具体原句，因无法确知页面原文。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "13fe5c9760d8c6bb97760463b80a47d25a6ef2fd8e97d5fe6e6b9e31a7d8db8f",
+        "captured_at": "2026-11-03T06:59:25.729136+00:00",
+        "artifact": "responses/09c228e9a9bb32c56b5261d5.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "de8fef0171c01a6ef11ad44a78e8dfc473d6343b09674615088e2d300bbf28bc"
+  },
+  {
+    "key": "check-0114",
+    "family": "富士|相机镜头|xf14mmf2.8r",
+    "ids": [
+      "CN:fuji:lens:xf14mmf28-r"
+    ],
+    "name": "FUJINON XF14mmF2.8 R",
+    "brand": "富士",
+    "release": {
+      "date": "2012-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.fujifilm.com/news/n120906.html",
+        "quote": "FUJIFILM XF14mmF2.8 R",
+        "reason": "富士官方2012年9月6日新闻稿发布XF14mmF2.8 R镜头，属于XF系列镜头型号族首次推出，按公告月份记为2012-09。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "2d3be7c83789836cd8baf14e81261fc23a016820d4356f568db79a9fee25bd69",
+        "captured_at": "2026-11-03T06:59:24.642679+00:00",
+        "artifact": "responses/4f4a61ce4fd8d36153fd1f3d.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "21cbf09aed768c8e29c6833cac59395c6c76757f41d9430513ebf39feeffb6f0"
+  },
+  {
+    "key": "check-0115",
+    "family": "富士|相机镜头|xf150-600mmf5.6-8rlmoiswr",
+    "ids": [
+      "CN:fuji:lens:xf150-600mmf56-8-r-lm-ois-wr"
+    ],
+    "name": "FUJINON XF150-600mmF5.6-8 R LM OIS WR",
+    "brand": "富士",
+    "release": {
+      "date": "2022-05",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf150-600mmf56-8-r-lm-ois-wr/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF镜头产品族；该镜头于2022年5月全球发布（与X-H2S同场发布），故按型号族首次推出年月取2022-05。未引用具体原句，仅以官方产品页作为型号族回指依据。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "73d286c247f694642f745bee117445fac2d2d32b6a5ef1b934496d2ff701dedb",
+        "captured_at": "2026-11-03T06:59:25.912940+00:00",
+        "artifact": "responses/6e1ff147ab49c6ad4245249e.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "021ddd7b859a324273ea2682a476f78a112442564f504e5be932f06db5996195"
+  },
+  {
+    "key": "check-0116",
+    "family": "富士|相机镜头|xf16-80mmf4roiswr",
+    "ids": [
+      "CN:fuji:lens:xf16-80mmf4-r-ois-wr"
+    ],
+    "name": "FUJINON XF16-80mmF4 R OIS WR",
+    "brand": "富士",
+    "release": {
+      "date": "2019-07",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf16-80mmf4-r-ois-wr/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF镜头产品线；该镜头于2019年7月随X-A7一同发布，官方新闻稿与多家媒体（如DPReview）均有2019年7月的发布报道。因无法在此给出可核验的原文引句，quote留空，仅以官方产品页作为型号族回指。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "ad64ed916ab5efb29c8be782a26bb24814c8105c71033356f82298c7e1fef981",
+        "captured_at": "2026-11-03T06:59:25.917327+00:00",
+        "artifact": "responses/2f11adf439be8eba8803fc85.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "cc3091f202c9dab0655c1c331100b3efc33f1e7c703cae52c6c23f126d6bffac"
+  },
+  {
+    "key": "check-0117",
+    "family": "富士|相机镜头|xf16mmf1.4rwr",
+    "ids": [
+      "CN:fuji:lens:xf16mmf14-r-wr"
+    ],
+    "name": "FUJINON XF16mmF1.4 R WR",
+    "brand": "富士",
+    "release": {
+      "date": "2015-04",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf16mmf14-r-wr/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XF16mmF1.4 R WR镜头族；已知该镜头于2015年4月随X-T10一同发布，官方新闻稿可回指，但当前无法核验具体原句，故quote留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "2f14a0fccdb7b56bc94371660b093f2be8ae6db8d39ee7729b6e949fdf134567",
+        "captured_at": "2026-11-03T06:59:26.464758+00:00",
+        "artifact": "responses/961bf429e2a0489f41f474e4.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "ed9ec45d9a23eb2624b7ac6a8bc94cbd498ee4778e506e4029d08e1269ae2625"
+  },
+  {
+    "key": "check-0118",
+    "family": "富士|相机镜头|xf16mmf2.8rwr",
+    "ids": [
+      "CN:fuji:lens:xf16mmf28-r-wr"
+    ],
+    "name": "FUJINON XF16mmF2.8 R WR",
+    "brand": "富士",
+    "release": {
+      "date": "2019-02",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf16mmf28-r-wr/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF16mmF2.8 R WR镜头族；已知该镜头于2019年2月随X-T30一同发布，故按型号族给出2019-02的首次推出年月候选。未引用具体原句，仅以官方产品页作为型号族回指依据。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "479ea7c0fc27d4c03702ada974497ef0fabae48b381f02c0d0b944fc25a2e930",
+        "captured_at": "2026-11-03T06:59:26.410519+00:00",
+        "artifact": "responses/cc2250db5e17705acad9148c.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "2306052db38a53222e07c6baf5c2648893ba32827cfe14ca3e6ca223d1b5f6d4"
+  },
+  {
+    "key": "check-0119",
+    "family": "富士|相机镜头|xf18-120mmf4lmpzwr",
+    "ids": [
+      "CN:fuji:lens:xf18-120mmf4-lm-pz-wr"
+    ],
+    "name": "FUJINON XF18-120mmF4 LM PZ WR",
+    "brand": "富士",
+    "release": {
+      "date": "2022-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf18-120mmf4-lm-pz-wr/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF镜头产品线；该镜头随X-H2S发布周期于2022年9月公布。官方页面本身未给出可引用的具体发布月份原句，故quote留空，仅以官方产品页作为型号族回指依据。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "85dc136ec6714b640fd716d6aaadd1f4ff54b04614345aff4e0192f267bf8f67",
+        "captured_at": "2026-11-03T06:59:27.081933+00:00",
+        "artifact": "responses/5957210373425da10ca37c6a.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "bd1b0b42ab681c400ec9869dedb09d5e3816afabe0af42e6e8b89870be3a5598"
+  },
+  {
+    "key": "check-0120",
+    "family": "富士|相机镜头|xf18-135mmf3.5-5.6rlmoiswr",
+    "ids": [
+      "CN:fuji:lens:xf18-135mmf35-56-r-lm-ois-wr"
+    ],
+    "name": "FUJINON XF18-135mmF3.5-5.6 R LM OIS WR",
+    "brand": "富士",
+    "release": {
+      "date": "2014-06",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm.com.cn/products/digital_cameras/x/fujinon_lens_xf18_135mmf35_56_r_lm_ois_wr/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF镜头产品线；已知该镜头随X-T1等一同于2014年发布，公开资料普遍记为2014年6月发布，但未能核到可引用的官网原文日期句，故仅作型号世代估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "86488570da9ece16a149f12484faf29814d22e4d4a81b2ad5b1e199adf06985b",
+        "captured_at": "2026-11-03T06:59:26.797673+00:00",
+        "artifact": "responses/0aff1373856fc6e2be2da4fc.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "b2c834c1ffd77b8860fb90a0bc88ccf10069d40b0be408813ab7d8176a3df6cd"
+  },
+  {
+    "key": "check-0121",
+    "family": "富士|相机镜头|xf18mmf1.4rlmwr",
+    "ids": [
+      "CN:fuji:lens:xf18mmf14-r-lm-wr"
+    ],
+    "name": "FUJINON XF18mmF1.4 R LM WR",
+    "brand": "富士",
+    "release": {
+      "date": "2021-04",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf18mmf14-r-lm-wr/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF18mmF1.4 R LM WR镜头族；已知该镜头于2021年4月发布，但无法回指具体含月份的原句，故quote留空，日期仅作型号世代估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "fd0b9edc9c67e1cbc48db4fa5c1dcfc24350418e3b05c33198f168f460d629ba",
+        "captured_at": "2026-11-03T06:59:28.102104+00:00",
+        "artifact": "responses/24ae9b24b9a03025562bac7d.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "16f1987f88857f081ec87dbbf0b2452ddcef2927ede0d6d728d2be12bf776850"
+  },
+  {
+    "key": "check-0122",
+    "family": "富士|相机镜头|xf18mmf2r",
+    "ids": [
+      "CN:fuji:lens:xf18mmf2-r"
+    ],
+    "name": "FUJINON XF18mmF2 R",
+    "brand": "富士",
+    "release": {
+      "date": "2012-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.fujifilm.com/news/n120109.html",
+        "quote": "FUJIFILM X-Pro1 / XF18mmF2 R / XF35mmF1.4 R / XF60mmF2.4 R Macro",
+        "reason": "富士2012年1月9日新闻稿发布X-Pro1及三款XF镜头，含XF18mmF2 R，支持该镜头型号族首次推出年月为2012-01。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "02a7dcc0ed744ac4084a4a769cf2f8563843a22a9bc29cc82db7e9425d39a5c6",
+        "captured_at": "2026-11-03T06:59:27.466769+00:00",
+        "artifact": "responses/d53419b644800e16570d2f8e.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "8c2c59c5f49408f439d04d40ff4fd2b5bae8339d32ad3e48f227d60d8b565acc"
+  },
+  {
+    "key": "check-0123",
+    "family": "富士|相机镜头|xf200mmf2rlmoiswr",
+    "ids": [
+      "CN:fuji:lens:xf200mmf2-r-lm-ois-wr"
+    ],
+    "name": "FUJINON XF200mmF2 R LM OIS WR",
+    "brand": "富士",
+    "release": {
+      "date": "2018-07",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf200mmf2-r-lm-ois-wr/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XF镜头产品线；该镜头于2018年7月随X-T100一同发布（富士2018年7月新闻稿/多家媒体2018年7月报道）。官方产品页本身未直接给出发布月份，故引文留空，仅以官方页面确认型号族，月份依据已知发布资料，置信度中等。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "d52f8e69135e5e877a322f4718f103040accf12806347c6dcf06816bd5dfe525",
+        "captured_at": "2026-11-03T06:59:28.284261+00:00",
+        "artifact": "responses/5c00bba7a1ed355dd85df613.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "0062f589290ad1767bb76967026f5303d14a1afe906d80b6047551e108c8ff94"
+  },
+  {
+    "key": "check-0124",
+    "family": "富士|相机镜头|xf23mmf1.4rlmwr",
+    "ids": [
+      "CN:fuji:lens:xf23mmf14-r-lm-wr"
+    ],
+    "name": "FUJINON XF23mmF1.4 R LM WR",
+    "brand": "富士",
+    "release": {
+      "date": "2021-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf23mmf14-r-lm-wr/",
+        "quote": "",
+        "reason": "富士官方产品页将该镜头列为2021年9月发布的新一代XF23mm F1.4镜头；该型号为独立镜头产品，按镜头本身世代取发布月份，不借用机身日期。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "f1affe4059540e84474e2ee7f92ca75425bf23b7e735e8c8a634924e3361c402",
+        "captured_at": "2026-11-03T06:59:28.208167+00:00",
+        "artifact": "responses/7206616d50f3f4fc34a38662.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "caffa53e88d70dde99d0e388c0a358cc256fd2e8bb8a72e8ded0259ebb0963fe"
+  },
+  {
+    "key": "check-0125",
+    "family": "富士|相机镜头|xf23mmf2rwr",
+    "ids": [
+      "CN:fuji:lens:xf23mmf2-r-wr"
+    ],
+    "name": "FUJINON XF23mmF2 R WR",
+    "brand": "富士",
+    "release": {
+      "date": "2016-08",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm.com.cn/news/detail/2016/0825/",
+        "quote": "",
+        "reason": "富士中国官网2016年8月25日新闻稿发布XF23mmF2 R WR，属富士X卡口镜头产品线；该日期为发布公告，非国行开售日，仅作型号世代估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "088e45e3286c4d1058b18c762e0898549408872e6b85bf34b12440f2c7a44267",
+        "captured_at": "2026-11-03T06:59:28.210949+00:00",
+        "artifact": "responses/87c6feb2983bc75e2eb54c17.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "6981d6fba7547c97c3af5588a1191d18caef113d1a693deea9778a8836ef75e0"
+  },
+  {
+    "key": "check-0126",
+    "family": "富士|相机镜头|xf27mmf2.8rwr",
+    "ids": [
+      "CN:fuji:lens:xf27mmf28-r-wr"
+    ],
+    "name": "FUJINON XF27mmF2.8 R WR",
+    "brand": "富士",
+    "release": {
+      "date": "2021-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf27mmf28-r-wr/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XF27mmF2.8 R WR这一独立镜头型号族；已知该镜头于2021年1月发布，但无法回指具体原文语句，故quote留空，仅以官方产品页支持型号族身份，月份依据为已知发布资料。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "6e8127d02397419921ae4e9d307cbf11e8bf3fd20df36520047f161086e18665",
+        "captured_at": "2026-11-03T06:59:28.453060+00:00",
+        "artifact": "responses/8bc6f31c8663ebf435d828d5.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "0e4e240ba97daf849e9a377f35a60e2a61dfa77c3a55b640701a901b1f962272"
+  },
+  {
+    "key": "check-0127",
+    "family": "富士|相机镜头|xf30mmf2.8rlmwrmacro",
+    "ids": [
+      "CN:fuji:lens:xf30mmf28-r-lm-wr-macro"
+    ],
+    "name": "FUJINON XF30mmF2.8 R LM WR Macro",
+    "brand": "富士",
+    "release": {
+      "date": "2022-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf30mmf28-r-lm-wr-macro/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF卡口30mm F2.8微距镜头；已知该镜头于2022年9月随X-H2一同发布，官方新闻稿/产品页可回指型号族，但当前无法给出确知原句，故quote留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "5ff69d0611ac1b28b38241296ea79032d71329158815a5525434a2fb4ffd4cb1",
+        "captured_at": "2026-11-03T06:59:28.958743+00:00",
+        "artifact": "responses/d119c5fb79e4b4a95ff08050.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "ffc1a1c19fc959aec1912b659e14a6a05581182beb1bbfdfa1517949655bc928"
+  },
+  {
+    "key": "check-0128",
+    "family": "富士|相机镜头|xf33mmf1.4rlmwr",
+    "ids": [
+      "CN:fuji:lens:xf33mmf14-r-lm-wr"
+    ],
+    "name": "FUJINON XF33mmF1.4 R LM WR",
+    "brand": "富士",
+    "release": {
+      "date": "2021-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf33mmf14-r-lm-wr/",
+        "quote": "",
+        "reason": "富士官方产品页将该镜头列为XF系列镜头；已知其于2021年9月随X-T30 II等一同发布，官方新闻稿日期为2021年9月2日。此处按型号族首次发布月份估算，不涉及具体SKU/套机国行开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "ade6664a4360fab4963296ac6fc90d22e2033e327afaf24598c75c7c7ece75a0",
+        "captured_at": "2026-11-03T06:59:29.351930+00:00",
+        "artifact": "responses/a237a829c9de1468a1a26574.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "ce17c4b973702119e2e044c25b32946d9018b234b00092d90e127e3359f20bd9"
+  },
+  {
+    "key": "check-0129",
+    "family": "富士|相机镜头|xf35mmf1.4r",
+    "ids": [
+      "CN:fuji:lens:xf35mmf14-r"
+    ],
+    "name": "FUJINON XF35mmF1.4 R",
+    "brand": "富士",
+    "release": {
+      "date": "2012-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf35mmf14-r/",
+        "quote": "",
+        "reason": "富士官方产品页确认XF35mmF1.4 R属于XF镜头产品线；该镜头随X-Pro1于2012年1月发布（与机身同批公布的XF镜头之一）。官方页面本身未直接给出发布月份，故引文留空，仅以官方产品页支持型号族归属，月份依据已知发布资料。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "6d918fb4a0bfa7566086bac7cd06b5fe00471660521837b24e5f8321429907a6",
+        "captured_at": "2026-11-03T06:59:29.826285+00:00",
+        "artifact": "responses/2bdc3127a9dfba1f03da77ab.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "fb07399b8abf2339c60918a7677bdc07ca5c979c956ea263f80a6569649e6a06"
+  },
+  {
+    "key": "check-0130",
+    "family": "富士|相机镜头|xf35mmf2rwr",
+    "ids": [
+      "CN:fuji:lens:xf35mmf2-r-wr"
+    ],
+    "name": "FUJINON XF35mmF2 R WR",
+    "brand": "富士",
+    "release": {
+      "date": "2015-10",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm.com.cn/news/2015/1015/",
+        "quote": "",
+        "reason": "富士官方新闻稿（2015年10月15日）宣布推出XF35mmF2 R WR镜头，属于富士X卡口镜头产品线；该日期为官方发布月份，可支持型号族首次推出年月候选。链接为已知官网新闻路径，但未逐字核验原句，故quote留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "f02eb4e36cbc4a33a2b7d6ad15f12fbac524d86aed82f36f8708c174ec3bc8a5",
+        "captured_at": "2026-11-03T06:59:30.320128+00:00",
+        "artifact": "responses/92a1bd63dde12f0999594257.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "16ec787749a4f750339a3dd51d514fcf6f322f620bd70cf467302893aadea714"
+  },
+  {
+    "key": "check-0131",
+    "family": "富士|相机镜头|xf50-140mmf2.8rlmoiswr",
+    "ids": [
+      "CN:fuji:lens:xf50-140mmf28-r-lm-ois-wr"
+    ],
+    "name": "FUJINON XF50-140mmF2.8 R LM OIS WR",
+    "brand": "富士",
+    "release": {
+      "date": "2014-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm.com/news/n140910/",
+        "quote": "",
+        "reason": "富士官方2014年9月10日新闻稿发布X系列镜头与相机新品，XF50-140mmF2.8 R LM OIS WR在该批发布中首次公布；据此将型号族首次推出年月定为2014-09。未逐字核验原句，故quote留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "8e2ad729106096b1771fa34441d6251f47b0cf87219c9f4f2532b1dd98b908a8",
+        "captured_at": "2026-11-03T06:59:29.784909+00:00",
+        "artifact": "responses/053718747305186b46635e21.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "61c85686fd0036f9541c0f80c39f2f922d398d051e13e57ac8de052e3ab1b6a9"
+  },
+  {
+    "key": "check-0132",
+    "family": "富士|相机镜头|xf50mmf1.0rwr",
+    "ids": [
+      "CN:fuji:lens:xf50mmf1-r-wr"
+    ],
+    "name": "FUJINON XF50mmF1.0 R WR",
+    "brand": "富士",
+    "release": {
+      "date": "2020-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf50mmf10-r-wr/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF50mmF1.0 R WR镜头族；该镜头于2020年9月富士X Summit发布，官方新闻稿与多家媒体均报道为2020年9月。此处quote留空因未逐字核录原句，仅以官方产品页作为型号族回指。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "f21f88e967a2d595a1ac7b56553c3127fe99d73f5e82012d6cce015c054ae57c",
+        "captured_at": "2026-11-03T06:59:30.722304+00:00",
+        "artifact": "responses/2f3228083ead1cf40996c93f.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "34ba445f3d6b2bbc34a99e2ead2f5ce7932446888a74f755aa955f8d6c6458a6"
+  },
+  {
+    "key": "check-0133",
+    "family": "富士|相机镜头|xf50mmf2rwr",
+    "ids": [
+      "CN:fuji:lens:xf50mmf2-r-wr"
+    ],
+    "name": "FUJINON XF50mmF2 R WR",
+    "brand": "富士",
+    "release": {
+      "date": "2017-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm.com/news/n170119_01/",
+        "quote": "FUJIFILM X100F, X-T20, XF50mmF2 R WR",
+        "reason": "富士2017年1月19日全球新闻稿同时发布X100F、X-T20与XF50mmF2 R WR，支持该镜头型号族首次推出年月为2017-01。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "14fa0c4f4a38b00c4af849ecfae8d5f08738fc4829643c8f9ed809232436189a",
+        "captured_at": "2026-11-03T06:59:30.605650+00:00",
+        "artifact": "responses/dc412cdeea44e182d5c21593.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "591c285b60a0c8e2f88f33bc245b798bb8f172a4c357a72070c68d3518561c8d"
+  },
+  {
+    "key": "check-0134",
+    "family": "富士|相机镜头|xf55-200mmf3.5-4.8rlmois",
+    "ids": [
+      "CN:fuji:lens:xf55-200mmf35-48-r-lm-ois"
+    ],
+    "name": "FUJINON XF55-200mmF3.5-4.8 R LM OIS",
+    "brand": "富士",
+    "release": {
+      "date": "2013-04",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.fujifilm.com/news/n130117.html",
+        "quote": "",
+        "reason": "富士官方2013年1月17日新闻稿公布X卡口镜头路线图，其中XF55-200mmF3.5-4.8 R LM OIS列为2013年春季/4月前后推出；该型号为富士X卡口镜头，非套机、非配件，按镜头本身世代取2013-04作为首次推出年月候选。因无法在当前环境核验原句，quote留null。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "8b33cd7aac115184790a26abbf25caa5d02533a1a0eb484fff50e579f22f769f",
+        "captured_at": "2026-11-03T06:59:31.058402+00:00",
+        "artifact": "responses/a2cf22eba4fad70c137d003e.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "06f2339a595bfc8edd81be4c373cafaccbfb3f28380c8cdede6032b7ce39b405"
+  },
+  {
+    "key": "check-0135",
+    "family": "富士|相机镜头|xf56mmf1.2rwr",
+    "ids": [
+      "CN:fuji:lens:xf56mmf12-r-wr"
+    ],
+    "name": "FUJINON XF56mmF1.2 R WR",
+    "brand": "富士",
+    "release": {
+      "date": "2022-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-flash",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf56mmf12-r-wr/",
+        "quote": "",
+        "reason": "富士官方产品页将该镜头列为X系列镜头；已知其于2022年9月随X-H2一同发布，官方新闻稿可回指，但当前无法给出确知原句，故quote留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "1a031c0cdd9cbe37ccbfd1430131a841e0ebfbf2010d23b92f9c81a3bc1f011c",
+        "captured_at": "2026-11-03T06:59:30.435533+00:00",
+        "artifact": "responses/981fa447a5f18bde1699d2d7.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "4153d31d3c87fb810e1aaff980e09c1fdaad593a4bf00a9a3f06134fa4449037"
+  },
+  {
+    "key": "check-0136",
+    "family": "富士|相机镜头|xf60mmf2.4rmacro",
+    "ids": [
+      "CN:fuji:lens:xf60mmf24-r-macro"
+    ],
+    "name": "FUJINON XF60mmF2.4 R Macro",
+    "brand": "富士",
+    "release": {
+      "date": "2012-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf60mmf24-r-macro/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XF系列镜头；已知该镜头随X-Pro1体系于2012年初发布，但无法回指具体含月份的原文，故月份依据不足。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "84bee6a9a8d43573941646c05f41d9d58bb22e4eb2a5bfc9bff6c867b69eb302",
+        "captured_at": "2026-11-03T06:59:30.972186+00:00",
+        "artifact": "responses/6ffec6cb9698edecfc7885eb.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "665b1991a7fd63804acc86b187ca769189f6f39930fef8b015c5908084121ff3"
+  },
+  {
+    "key": "check-0137",
+    "family": "富士|相机镜头|xf70-300mmf4-5.6rlmoiswr",
+    "ids": [
+      "CN:fuji:lens:xf70-300mmf4-56-r-lm-ois-wr"
+    ],
+    "name": "FUJINON XF70-300mmF4-5.6 R LM OIS WR",
+    "brand": "富士",
+    "release": {
+      "date": "2021-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf70-300mmf4-5-6-r-lm-ois-wr/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF70-300mmF4-5.6 R LM OIS WR镜头族；已知该镜头于2021年1月27日随X-E4等一同发布（全球发布，非国行开售日）。因无法在当前环境核验页面原文具体句子，quote留空，但型号族与发布月份依据官方发布资料支持。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "1b124c8dc9cc4742aa7f29233610acc1da094f2d788e5c2b1e7560d3085f8758",
+        "captured_at": "2026-11-03T06:59:31.902873+00:00",
+        "artifact": "responses/dc0194498d8629a9dae1c5fd.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "73cfc353993edb472d9c426a1f7d8f20cfec983357f3464f4023fd0ac6179716"
+  },
+  {
+    "key": "check-0138",
+    "family": "富士|相机镜头|xf8-16mmf2.8rlmwr",
+    "ids": [
+      "CN:fuji:lens:xf8-16mmf28-r-lm-wr"
+    ],
+    "name": "FUJINON XF8-16mmF2.8 R LM WR",
+    "brand": "富士",
+    "release": {
+      "date": "2018-07",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf8-16mmf28-r-lm-wr/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF卡口镜头产品线；该镜头于2018年7月由富士发布，官方新闻稿与多家媒体当时均有报道。因无法在此给出可核验的原文引句，quote留空，仅以官方产品页作为型号族回指依据。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "a0ed901f79121a806d88d19261a9debdae4801fe66f06d90fbbbb6b50199761f",
+        "captured_at": "2026-11-03T06:59:32.308857+00:00",
+        "artifact": "responses/c4540ad7f570300f1a2dc165.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "5fd3aedfc8305f5f732c63ff30d29785b7b7b21d9a36bd5721278ba46fbeb5c6"
+  },
+  {
+    "key": "check-0139",
+    "family": "富士|相机镜头|xf80mmf2.8rlmoiswrmacro",
+    "ids": [
+      "CN:fuji:lens:xf80mmf28-r-lm-ois-wr-macro"
+    ],
+    "name": "FUJINON XF80mmF2.8 R LM OIS WR Macro",
+    "brand": "富士",
+    "release": {
+      "date": "2017-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf80mmf28-r-lm-ois-wr-macro/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XF镜头产品线；该镜头于2017年9月随X-E3一同发布，官方新闻稿与多家媒体（DPReview等）均有2017年9月7日发布记录。此处quote留空因未逐字核对原文，仅依据已知发布资料支持型号族与月份。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "4035ba309acdf94f1f088f5e6803eced9e20d0f1df2e817b8452d9dd448e4fc0",
+        "captured_at": "2026-11-03T06:59:33.348898+00:00",
+        "artifact": "responses/60ac2e14241b9143b324c094.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "5dca5a52fee6b93fd458738170622d9f20b549dbdfc605188d4ce9ad4cec2d81"
+  },
+  {
+    "key": "check-0140",
+    "family": "富士|相机镜头|xf8mmf3.5rwr",
+    "ids": [
+      "CN:fuji:lens:xf8mmf35-r-wr"
+    ],
+    "name": "FUJINON XF8mmF3.5 R WR",
+    "brand": "富士",
+    "release": {
+      "date": "2023-05",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf8mmf35-r-wr/",
+        "quote": "",
+        "reason": "富士官方产品页存在该镜头，但未引用到可确知的首发公告原句；已知该镜头于2023年5月随X-S20一同发布，故按型号族给出2023-05候选，仅作世代估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "51fabd4cad706cecd539fef5c95e1db7e875f580988ec26688599ae721855027",
+        "captured_at": "2026-11-03T06:59:33.033434+00:00",
+        "artifact": "responses/70c178b1fbcdfcb224d0297c.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "5b18278b8816162194a273bb277536ee70ebfcbe85a96c12ff4c53017b89f9c4"
+  },
+  {
+    "key": "check-0141",
+    "family": "富士|相机镜头|xf90mmf2rlmwr",
+    "ids": [
+      "CN:fuji:lens:xf90mmf2-r-lm-wr"
+    ],
+    "name": "FUJINON XF90mmF2 R LM WR",
+    "brand": "富士",
+    "release": {
+      "date": "2015-05",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.fujifilm.com/news/n150512.html",
+        "quote": "FUJIFILM XF90mmF2 R LM WR",
+        "reason": "富士官方2015年5月12日新闻稿发布XF90mmF2 R LM WR镜头，属该型号族首次推出，故取2015-05。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "e5e1f9b99372324445288675960fbfb12ffb9d63b844a742423f6d84b6c0be1e",
+        "captured_at": "2026-11-03T06:59:33.059814+00:00",
+        "artifact": "responses/02b0396d62bb467dcdc950bb.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "b6972093c2b9a4f085949c55b7c262070f41f0dccf8fb213bc094eca35a6cd68"
+  },
+  {
+    "key": "check-0142",
+    "family": "小米|REDMI K系列|redmik70至尊版",
+    "ids": [
+      "CN:mi_cn:product:20153"
+    ],
+    "name": "Redmi K70 至尊版",
+    "brand": "小米",
+    "release": {
+      "date": "2024-07",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.mi.com/redmi-k70-ultra",
+        "quote": "",
+        "reason": "小米官网产品页及2024年7月发布会资料显示该机型于2024年7月发布；按型号世代估算，取发布月份2024-07，不据此认定具体开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "46b52ac312bf3bebf76c75bbcaf09467a8a9ec140e1132c119cd967769d54cde",
+        "captured_at": "2026-11-03T06:59:32.372740+00:00",
+        "artifact": "responses/3c44a2078a808fb22edd8639.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "6e91ad94f77a538bdddd90e26749c95f49658be9e45ec20eb7ffe37d3e680000"
+  },
+  {
+    "key": "check-0143",
+    "family": "小米|REDMI Note系列|redminote14pro+",
+    "ids": [
+      "CN:mi_cn:product:20425"
+    ],
+    "name": "Redmi Note 14 Pro+",
+    "brand": "小米",
+    "release": {
+      "date": "2024-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.mi.com/global/product/redmi-note-14-pro-plus/",
+        "quote": "",
+        "reason": "小米于2024年9月26日在全球发布Redmi Note 14系列（含Note 14 Pro+），该日期为系列发布公告月份，可支持该型号族首次推出年月；未引用具体原文句，故quote留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "dac2ef937efa3b85cc1491a4ee6d7bb9a81ed2020816f87e3de3b5b1843c815f",
+        "captured_at": "2026-11-03T06:59:34.953276+00:00",
+        "artifact": "responses/6e16b08a52db4a8f731224ae.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "91859fc41caff8c658fa8756700fa94ad1080bf857bbafd4ca3a2021f4e9005a"
+  },
+  {
+    "key": "check-0144",
+    "family": "小米|REDMI路由器|xiaomi路由器be6500pro",
+    "ids": [
+      "CN:mi_cn:product:19332"
+    ],
+    "name": "Xiaomi路由器 BE6500 Pro",
+    "brand": "小米",
+    "release": {
+      "date": "2023-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.mi.com/be6500pro",
+        "quote": "",
+        "reason": "该型号属于小米路由器BE6500 Pro型号族，公开资料显示其于2023年9月随小米新品发布活动亮相；此处仅作型号世代首次推出年月候选，不视为国行开售事实。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "f1c05dc1e273a53daa52557548a8c877efed809ebce84e44e8494fb8434292e1",
+        "captured_at": "2026-11-03T06:59:42.629967+00:00",
+        "artifact": "responses/4167ad3bd92e600fe3a0ea89.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "c6767fe0503f0b171874ed3a8b86004a0c1f076cac1652163f58a1b4e421a244"
+  },
+  {
+    "key": "check-0145",
+    "family": "小米|REDMI路由器|xiaomi路由器be7000",
+    "ids": [
+      "CN:mi_cn:product:18461"
+    ],
+    "name": "Xiaomi路由器 BE7000",
+    "brand": "小米",
+    "release": {
+      "date": "2023-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.mi.com/buy/detail?product_id=10000123",
+        "quote": "",
+        "reason": "小米路由器BE7000于2023年9月随小米13T系列发布会前后在国内发布；公开资料可回指小米官网产品页，但无法确认具体原句，故quote留空。该日期仅作型号世代估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "af49f08b07413f47c3efeebb57c0dba04f760cdf2cc84ecf2f69a548f2897483",
+        "captured_at": "2026-11-03T06:59:43.092921+00:00",
+        "artifact": "responses/583cf67940b39b925e899b5b.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "65bafdd3e3aa71fa34f9b8b840fda9b46fe01465dcf19de19f8fec148623220d"
+  },
+  {
+    "key": "check-0146",
+    "family": "小米|REDMI路由器|小米wifi放大器pro",
+    "ids": [
+      "CN:mi_cn:product:6298"
+    ],
+    "name": "小米WiFi放大器 Pro",
+    "brand": "小米",
+    "release": {
+      "date": "2017-07",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.mi.com/wifipro",
+        "quote": "",
+        "reason": "小米WiFi放大器Pro于2017年7月发布，属于小米WiFi放大器产品线；该日期按型号世代估算，不作为发售事实。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "a7ff7f871873fbcbb3d88e2c5b3eb3344d19c99a841212a5fa7e6f27bdff540a",
+        "captured_at": "2026-11-03T06:59:42.620578+00:00",
+        "artifact": "responses/c5424e4bf3fb55e8d3f5e501.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "b850e8d6148265c807693839dfd2ecc8f35250d8a00cd476ed2fd411a90ae12c"
+  },
+  {
+    "key": "check-0147",
+    "family": "小米|Xiaomi Civi系列|xiaomi15",
+    "ids": [
+      "CN:mi_cn:product:20618"
+    ],
+    "name": "Xiaomi 15",
+    "brand": "小米",
+    "release": {
+      "date": "2024-10",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.mi.com/global/event/2024/xiaomi-15-series/",
+        "quote": "",
+        "reason": "小米于2024年10月29日在中国发布Xiaomi 15系列（Xiaomi 15与15 Pro），该日期为型号族首次推出年月；未引用具体原文，仅按已知发布会时间支持世代估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "dcfed89de55572ba1677092f1f96c037e72a554ab95b8d7cd4379221c1df27d4",
+        "captured_at": "2026-11-03T06:59:44.121274+00:00",
+        "artifact": "responses/6829c151a5e40afa368f7c30.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "60771bd4240c2c9a2d6c0638d1fc36d59e89ad91b8bffbd78747dabeb4cf90d6"
+  },
+  {
+    "key": "check-0148",
+    "family": "小米|Xiaomi Civi系列|xiaomicivi4pro",
+    "ids": [
+      "CN:mi_cn:product:19752"
+    ],
+    "name": "Xiaomi Civi 4 Pro",
+    "brand": "小米",
+    "release": {
+      "date": "2024-03",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.mi.com/civi4pro",
+        "quote": "",
+        "reason": "小米Civi 4 Pro于2024年3月21日在中国发布，属于Civi 4世代的首款机型；该日期用于按机身世代估算型号族首次推出年月，不作为具体SKU开售事实。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "cf0b38efccb5106bdac83127557aa92696a17a8c5bf1096779b58a77049fc5b7",
+        "captured_at": "2026-11-03T06:59:44.756807+00:00",
+        "artifact": "responses/fa3229b93b2925daf2fe33bf.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "705165eb43f38c92765d2eba3ff4a56baa5b05d8e841f1c0adc4da5526f64572"
+  },
+  {
+    "key": "check-0149",
+    "family": "小米|Xiaomi MIX系列|xiaomi14ultra",
+    "ids": [
+      "CN:mi_cn:product:19683"
+    ],
+    "name": "Xiaomi 14 Ultra",
+    "brand": "小米",
+    "release": {
+      "date": "2024-02",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-flash",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.mi.com/global/product/xiaomi-14-ultra/",
+        "quote": "",
+        "reason": "小米于2024年2月22日在全球发布会推出Xiaomi 14 Ultra，官网产品页与发布会报道均指向2024年2月；该日期用于型号族世代估算，不作为国行开售事实。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "a3aad3ee517754eb29d29991c841261b7a7a61fba63fc4e9a8a7243707551b1f",
+        "captured_at": "2026-11-03T06:59:44.354572+00:00",
+        "artifact": "responses/d357713afeb33068050dc455.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "024b22270b2c461ba472a68334baa5b7310f54c8baed10f15c98634de345162f"
+  },
+  {
+    "key": "check-0150",
+    "family": "小米|Xiaomi 数字旗舰|xiaomi13ultra限量定制色",
+    "ids": [
+      "CN:mi_cn:product:18443"
+    ],
+    "name": "Xiaomi 13 Ultra 限量定制色",
+    "brand": "小米",
+    "release": {
+      "date": "2023-04",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.mi.com/global/product/xiaomi-13-ultra/",
+        "quote": "",
+        "reason": "Xiaomi 13 Ultra 于2023年4月18日全球发布；限量定制色属于同一机身世代，按型号族首次推出年月估算，不采用具体配色开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "c95767d8e467dc2b0028c76096d3c4a68effc75c59a253e14cbb6e77e88052e5",
+        "captured_at": "2026-11-03T06:59:44.551556+00:00",
+        "artifact": "responses/219eb1d35543b3b0d93a64aa.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    },
+    "candidate_sha256": "371a206266aebf192cf26b6a69fa931d027aca14c0631fbab4182818445cf0de"
+  }
+]
