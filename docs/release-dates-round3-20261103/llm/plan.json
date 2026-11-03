@@ -1,0 +1,21 @@
+{
+  "universe_rows": 3101,
+  "families": 2904,
+  "grouping": "brand + category + exact model string; variants never inherit dates",
+  "full_calls_at_30_families": 97,
+  "pilot_calls": 1,
+  "pilot_families": 30,
+  "max_output_tokens": 6000,
+  "input_utf8_bytes": 37726,
+  "input_token_estimate": 16053,
+  "input_token_upper_bound": 37726,
+  "model": "flowlet-flash",
+  "price": "Gateway tariff unavailable; no currency estimate, no automatic retries",
+  "gate": {
+    "min_distinct_sample": 30,
+    "below_90": "disabled",
+    "from_90_to_below_97": "internal_reference",
+    "at_least_97": "eligible_fact_still_llm"
+  },
+  "full_rollout": false
+}
