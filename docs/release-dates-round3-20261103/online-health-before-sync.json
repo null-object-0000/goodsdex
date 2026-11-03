@@ -1,0 +1,67 @@
+{
+  "now": 1793685797654,
+  "gitCommit": "91304e8f54cc6bed304fbc27e942029fe0e9df1e",
+  "data": {
+    "revision": null,
+    "generatedAt": "2026-11-03T05:39:10.969727+00:00",
+    "count": 3968,
+    "lastSyncAt": 1793685018928,
+    "staleMinutes": 13,
+    "lastError": null,
+    "attempts": 1332,
+    "history": {
+      "months": {
+        "2026-10": {
+          "validators": {
+            "https://cdn.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-10.jsonl": "W/\"1164156-62ef621263e37620\""
+          },
+          "lastAttemptAt": 1793669716952,
+          "bytes": 18235734,
+          "parsedLines": 122,
+          "insertedPoints": 14248,
+          "observationPoints": 207589,
+          "uniqueGids": 1909,
+          "sha256": "57933720477abcef38193a7afd54bf4b76d8c49d1b2107eb2ca4b3fae42a093f",
+          "goodsMatchedRows": 2041,
+          "sourceUrl": "https://cdn.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-10.jsonl",
+          "lastCheckedAt": 1793669718851,
+          "lastError": null,
+          "notModified": true
+        },
+        "2026-11": {
+          "validators": {
+            "https://cdn.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-11.jsonl": "W/\"79bca2-5c7cd704544fedf9\""
+          },
+          "lastAttemptAt": 1793682316933,
+          "lastError": null,
+          "bytes": 7978146,
+          "parsedLines": 51,
+          "insertedPoints": 8905,
+          "observationPoints": 90831,
+          "uniqueGids": 1781,
+          "sha256": "6759d2a8077e375fbf2df49f0b505aeb248dd900e3109c791a4dea9ad575f932",
+          "goodsMatchedRows": 2036,
+          "sourceUrl": "https://cdn.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-11.jsonl",
+          "lastCheckedAt": 1793682327428,
+          "notModified": false
+        }
+      },
+      "lastError": null,
+      "maintenance": {
+        "lastAttemptAt": 1793644516622,
+        "plan": {
+          "dryRun": true,
+          "days": 90,
+          "cutoff": "2026-08-05T00:00:00.000Z",
+          "deleteRows": 0,
+          "aggregateInputRows": 0,
+          "aggregateRows": 0,
+          "archiveFiles": 25,
+          "archiveBytes": 30871098
+        },
+        "lastError": null,
+        "lastSuccessAt": 1793644517287
+      }
+    }
+  }
+}

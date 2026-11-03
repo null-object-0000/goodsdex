@@ -84,4 +84,6 @@
 
 本地真正重放 finalize_public：前后3968行、3963唯一ID，所有非release字段逐值相等；全部93条证据hash、原句、source验证通过。[finalize.log](finalize.log)、[identity-invariants.json](identity-invariants.json)。另用seed=20261103抽20条回读原文，逐一核对精确配置、事件和市场，20/20符合抽取；这是直接源复核，不冒充独立真值或京东全量准确率。[样本](official-review-sample.json)。
 
-发布及线上核对结果将在正式workflow完成后补入 publication.json 和 online-verification.json；此阶段尚未声称线上验收完成。
+正式 [refresh-release-dates 发布](https://github.com/null-object-0000/goodsdex/actions/runs/41587159960) **success**：代码/输入提交 `e26d1582ef68c993c167ebf9c3872d58ffe1573a`，data 提交 `364faac32c0eb24c985cadeacd4adfa70884957a`。共享 publication lock、合并门禁、finalize、分片、data推送、OSS逐文件GET校验均真实执行。[publication.json](publication.json)、[发布日志](publication-success-excerpt.log)。
+
+首次线上核验确实读到旧版，已留 [记录](online-first-attempt.json) 和 [同步前健康状态](online-health-before-sync.json)；不能把workflow成功冒充API已更新。等待服务15分钟刷新间隔后，generatedAt更新至 `2026-11-03T06:01:51.602859+00:00`、lastError=null。最终 **3968行整库逐值相等，100个真实 `/api/goods/<id>` 的release对象逐字段相等**，其中含本轮全部93个新增ID（source全部official）、既有third_party、llm、planned/reference及缺日期样本。[online-verification.json](online-verification.json)、[线上核验输出](online-verification.log)、[同步后健康状态](online-sync-health.json)。
