@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-03T18:12:09Z",
+  "generatedAt": "2026-11-03T19:11:31Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-03T17:53:41Z",
+      "lastAttemptAt": "2026-11-03T19:07:09Z",
       "lastSuccessAt": "2026-11-03T17:59:33Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41688597050",
+      "conclusion": "cancelled",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41700246537",
       "error": null,
       "stale": false,
       "staleReason": null
@@ -17,10 +17,10 @@
       "sourceId": "refresh-apple",
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-03T18:07:10Z",
-      "lastSuccessAt": "2026-11-03T17:11:55Z",
+      "lastAttemptAt": "2026-11-03T19:07:12Z",
+      "lastSuccessAt": "2026-11-03T18:13:29Z",
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41690722028",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41700254199",
       "error": null,
       "stale": false,
       "staleReason": null
@@ -29,10 +29,10 @@
       "sourceId": "refresh-hp",
       "workflow": ".github/workflows/refresh-hp.yml",
       "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-03T18:07:13Z",
+      "lastAttemptAt": "2026-11-03T19:07:15Z",
       "lastSuccessAt": "2026-11-03T16:22:47Z",
       "conclusion": "degraded",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41690729232",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41700262506",
       "error": "blocked: 403 from hpstore.cn",
       "stale": false,
       "staleReason": null
@@ -53,10 +53,10 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-03T18:09:31Z",
+      "lastAttemptAt": "2026-11-03T19:09:27Z",
       "lastSuccessAt": null,
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41690722028",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41700254199",
       "error": null,
       "stale": false,
       "staleReason": null
