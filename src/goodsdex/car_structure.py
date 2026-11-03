@@ -47,7 +47,10 @@ def migrate(rows):
     for original in rows:
         if original.get('schema') == 'car-product-v2':
             expected = migrate([t['source_record'] for t in original['trims']])
-            if len(expected) != 1 or expected[0] != original:
+            # Release is a separately validated product-level enrichment. It
+            # must survive replay without becoming immutable trim evidence.
+            structural = {k: v for k, v in original.items() if k != 'release'}
+            if len(expected) != 1 or expected[0] != structural:
                 raise ValueError('Canonical car product differs from source evidence')
         if not is_car(original) or original.get('trims') is not None:
             output.append(deepcopy(original))

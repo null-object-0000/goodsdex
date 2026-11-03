@@ -149,6 +149,18 @@ def test_finalized_category_projection_survives_canonical_migration():
     assert migrate(rows) == rows
 
 
+def test_release_enrichment_survives_republication_without_weakening_source_checks():
+    rows = migrate(sources())
+    product = next(r for r in rows if r['brand'] == '小米汽车')
+    product['release'] = {'date': '2025-02', 'source': 'official'}
+    assert migrate(rows) == rows
+    assert all('release' not in t['source_record'] for t in product['trims'])
+    damaged = deepcopy(rows)
+    next(r for r in damaged if r['id'] == product['id'])['price'] = 1
+    with pytest.raises(ValueError, match='Canonical car product'):
+        migrate(damaged)
+
+
 def test_finalized_archive_product_survives_daily_and_history_publication():
     import sys
     sys.path.insert(0, str(ROOT/'scripts'))
