@@ -24,7 +24,7 @@ def bundle():
 
 @pytest.fixture
 def rows():
-    return json.loads((DOC / 'pilot-rows.json').read_text())
+    return apply_series_releases(json.loads((DOC / 'pilot-rows.json').read_text()))
 
 
 def test_pilot_preserves_product_dates_and_is_idempotent(rows):
@@ -40,7 +40,7 @@ def test_pilot_preserves_product_dates_and_is_idempotent(rows):
 def test_product_priority_even_when_series_is_official(rows, source):
     row = deepcopy(rows[0])
     row['release'] = dict(date='2020-01', source=source)
-    row['series_release']['source'] = 'official'
+    row['release_series']['source'] = 'official'
     r = effective_release(row)
     assert r['date'] == '2020-01' and r['level'] == 'product'
     row['release']['source'] = 'llm'
@@ -61,7 +61,7 @@ def test_accessory_service_and_new_variants_never_inherit(rows):
         with pytest.raises(ValueError, match='Accessory'):
             apply_series_releases([row])
     row = dict(rows[0], id='CN:mi_cn:product:unreviewed',name='同系列2024款')
-    assert 'series_release' not in apply_series_releases([row])[0]
+    assert 'release_series' not in apply_series_releases([row])[0]
     assert is_accessory(dict(name='米家扫拖机器人 5 Pro 配件', kind='unknown'))
     assert not is_accessory(dict(name='Xiaomi Watch S4', kind='machine', category='穿戴配件'))
 
@@ -75,12 +75,12 @@ def test_conflicts_rollback_and_year_precision(tmp_path, rows, bundle):
     bundle['batches'].pop()
     bundle['enabled'] = False
     path.write_text(json.dumps(bundle))
-    assert all('series_release' not in r for r in apply_series_releases(rows,path))
+    assert all('release_series' not in r for r in apply_series_releases(rows,path))
     bundle['enabled'] = True
     bundle['batches'][0]['series_release'].update(date='2025',granularity='year')
     path.write_text(json.dumps(bundle))
     out=apply_series_releases(rows,path)
-    r=next(r['series_release'] for r in out if r['series_release']['batch_id']==bundle['batches'][0]['id'])
+    r=next(r['release_series'] for r in out if r['release_series']['batch_id']==bundle['batches'][0]['id'])
     assert r['display']=='该系列 2025 年发布'
 
 
@@ -110,6 +110,6 @@ def test_sharded_index_and_detail_keep_series_provenance(rows,tmp_path):
     (tmp_path/'goods.json').write_text(json.dumps(rows))
     build_shards(tmp_path)
     index=json.loads((tmp_path/'index/other.json').read_text())
-    assert [r['series_release'] for r in index['items']]==[r['series_release'] for r in rows]
+    assert all('release_series' not in r and 'series_release' not in r for r in index['items'])
     detail={k:v for p in (tmp_path/'detail').glob('*.json') for k,v in json.loads(p.read_text()).items()}
-    assert all(detail[r['id']]['series_release']==r['series_release'] for r in rows)
+    assert all(detail[r['id']]['release_series']==r['release_series'] for r in rows)

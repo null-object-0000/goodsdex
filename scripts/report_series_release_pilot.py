@@ -18,21 +18,21 @@ def run(snapshot, out):
     enriched = apply_series_releases(rows)
     mi = [r for r in enriched if r['id'].startswith('CN:mi_cn:')]
     for before, r in zip(rows, enriched, strict=True):
-        assert {k:v for k,v in r.items() if k != 'series_release'} == {k:v for k,v in before.items() if k != 'series_release'}
-        assert not is_accessory(r) or 'series_release' not in r
+        assert {k:v for k,v in r.items() if k not in ('series_release', 'release_series')} == {k:v for k,v in before.items() if k not in ('series_release', 'release_series')}
+        assert not is_accessory(r) or 'release_series' not in r
     assert apply_series_releases(enriched) == enriched
     batches = []
     for batch in json.loads(DEFAULT_INPUT.read_text())['batches']:
-        matched = [r for r in mi if r.get('series_release', {}).get('batch_id') == batch['id']]
+        matched = [r for r in mi if r.get('release_series', {}).get('batch_id') == batch['id']]
         batches.append(dict(batch_id=batch['id'],series=batch['series'],generation=batch['generation'],
             date=batch['series_release']['date'],granularity=batch['series_release']['granularity'],
             source=batch['series_release']['source'],evidence=batch['series_release']['evidence'],
             members=len(matched),inherited_without_product=sum(not (r.get('release') or {}).get('date') for r in matched),
             product_retained=sum(bool((r.get('release') or {}).get('date')) for r in matched)))
-    inherited = sorted([r for r in mi if r.get('series_release') and not (r.get('release') or {}).get('date')],key=lambda r:r['id'])
+    inherited = sorted([r for r in mi if r.get('release_series') and not (r.get('release') or {}).get('date')],key=lambda r:r['id'])
     # Deterministic 10 of 11, including every batch with newly inherited rows.
-    samples = [dict(id=r['id'],name=r['name'],batch_id=r['series_release']['batch_id'],
-        date=r['series_release']['date'],level='series',url=r['series_release']['evidence']['url'],
+    samples = [dict(id=r['id'],name=r['name'],batch_id=r['release_series']['batch_id'],
+        date=r['release_series']['date'],level='series',url=r['release_series']['evidence']['url'],
         identity_reason=next(m['identity_reason'] for b in json.loads(DEFAULT_INPUT.read_text())['batches'] for m in b['members'] if m['id']==r['id'])) for r in inherited[:10]]
     result = dict(snapshot_sha256=hashlib.sha256(raw).hexdigest(),requested_denominator=4008,
         denominator_matches_request=len(mi)==4008,coverage=coverage(mi),
@@ -45,7 +45,7 @@ def run(snapshot, out):
         invariants=dict(product_release_unchanged=True,other_fields_unchanged=True,idempotent=True,accessory_series_dates=0))
     out.mkdir(parents=True,exist_ok=True)
     (out/'report.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
-    (out/'pilot-rows.json').write_text(json.dumps([r for r in mi if r.get('series_release')],ensure_ascii=False,indent=2)+'\n')
+    (out/'pilot-rows.json').write_text(json.dumps([r for r in mi if r.get('release_series')],ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(result['coverage'],ensure_ascii=False))
     return result
 

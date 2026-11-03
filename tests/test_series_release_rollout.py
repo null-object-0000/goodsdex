@@ -16,16 +16,16 @@ def test_full_reviewed_census_preserves_every_other_field():
     result = apply_series_releases(rows)
     assert rows == before
     assert [r.get('release') for r in result] == [r.get('release') for r in before]
-    assert [{k: v for k, v in r.items() if k != 'series_release'} for r in result] == [
-        {k: v for k, v in r.items() if k != 'series_release'} for r in before]
+    assert [{k: v for k, v in r.items() if k not in ('series_release', 'release_series')} for r in result] == [
+        {k: v for k, v in r.items() if k not in ('series_release', 'release_series')} for r in before]
     assert apply_series_releases(result) == result
     by_id = {r['id']: r for r in result}
     for sample in json.loads((DOC / 'sample-30.json').read_text()):
-        assert by_id[sample['id']].get('series_release', {}).get('date') == sample['correct_value']
+        assert by_id[sample['id']].get('release_series', {}).get('date') == sample['correct_value']
     # Same name / capacity alone is insufficient; later white 6 Max has its own batch.
-    assert by_id['CN:mi_cn:product:23615']['series_release']['date'] == '2026-03'
-    assert by_id['CN:mi_cn:product:25466']['series_release']['date'] == '2026-09'
-    assert 'series_release' not in by_id['CN:mi_cn:product:23676']
+    assert by_id['CN:mi_cn:product:23615']['release_series']['date'] == '2026-03'
+    assert by_id['CN:mi_cn:product:25466']['release_series']['date'] == '2026-09'
+    assert 'release_series' not in by_id['CN:mi_cn:product:23676']
 
 
 def test_unreviewed_scope_is_rejected(tmp_path):
@@ -35,3 +35,41 @@ def test_unreviewed_scope_is_rejected(tmp_path):
     p.write_text(json.dumps(bundle))
     with pytest.raises(ValueError, match='explicitly reviewed'):
         apply_series_releases([], p)
+
+
+def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_path):
+    import subprocess
+    import sys
+    from goodsdex.shards import shard_for
+
+    before = json.loads(gzip.decompress((DOC / 'baseline-goods.json.gz').read_bytes()))
+    (tmp_path / 'goods.json').write_text(json.dumps(before))
+    (tmp_path / 'meta.json').write_text('{}')
+    (tmp_path / 'prices.json').write_text('{}')
+    manifest = json.loads((DOC / 'batches.json').read_text())
+    expected = {key: b for b in manifest for key in b['ids']}
+    assert len(expected) == sum(b['members'] for b in manifest) == 149
+    command = [sys.executable, str(ROOT / 'scripts/finalize_public.py'), '--public', str(tmp_path)]
+    subprocess.run(command, check=True)
+    result = json.loads((tmp_path / 'goods.json').read_text())
+    by_id = {r['id']: r for r in result}
+    assert sum(bool(r.get('release')) for r in result) == sum(bool(r.get('release')) for r in before) == 671
+    assert {r['id']: r.get('release') for r in result} == {r['id']: r.get('release') for r in before}
+    assert {r['id'] for r in result if r.get('release_series')} == expected.keys()
+    assert all('series_release' not in r for r in result)
+    for key, batch in expected.items():
+        row = by_id[key]
+        series = row['release_series']
+        assert (series['date'], series['batch_id'], series['evidence']['url']) == (batch['date'], batch['batch_id'], batch['url'])
+        assert series['granularity'] == 'month' and series['level'] == 'series'
+        assert series['inherited'] is (not bool((row.get('release') or {}).get('date')))
+        assert series['evidence']['quote'] and len(series['evidence']['sha256']) == 64
+        detail = json.loads((tmp_path / f'detail/{shard_for(key):02x}.json').read_text())
+        assert detail[key]['release_series'] == series
+    for filename in (tmp_path / 'index').glob('*.json'):
+        assert all('release_series' not in row for row in json.loads(filename.read_text())['items'])
+    # A collector may replace all rows; the next ordinary finalize restores the field.
+    stripped = [{k: v for k, v in r.items() if k != 'release_series'} for r in result]
+    (tmp_path / 'goods.json').write_text(json.dumps(stripped))
+    subprocess.run(command, check=True)
+    assert json.loads((tmp_path / 'goods.json').read_text()) == result

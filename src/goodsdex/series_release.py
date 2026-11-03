@@ -2,6 +2,8 @@
 
 Membership is an exact ID plus a frozen identity (name, model, parameters).
 New variants and identity drift require review, not fuzzy matching.
+The reviewed input keeps its legacy series_release key; public rows expose only
+release_series. inherited means no product-level release.date is present.
 """
 from copy import deepcopy
 import json
@@ -72,7 +74,8 @@ def apply_series_releases(rows, path=DEFAULT_INPUT):
     output = deepcopy(rows)
     for row in output:
         # Rebuild the managed projection; removed memberships cannot linger.
-        row.pop('series_release', None)
+        row.pop('series_release', None)  # Retire the old public spelling.
+        row.pop('release_series', None)
         if not bundle.get('enabled', False) or row['id'] not in by_id:
             continue
         batch, member = by_id[row['id']]
@@ -88,7 +91,8 @@ def apply_series_releases(rows, path=DEFAULT_INPUT):
         parts = r['date'].split('-')
         when = f'{parts[0]} 年' + (f' {int(parts[1])} 月' if len(parts) == 2 else '')
         r['display'] = f'该系列 {when}' + ('发布' if r['event'] == 'announcement' else '开售')
-        row['series_release'] = r
+        r['inherited'] = not bool((row.get('release') or {}).get('date'))
+        row['release_series'] = r
     return output
 
 
@@ -98,7 +102,7 @@ def effective_release(row):
     Return provenance intact, including level; callers must not promote to release.
     """
     product = row.get('release') or {}
-    series = row.get('series_release') or {}
+    series = row.get('release_series') or {}
     if is_accessory(row) or row.get('kind') == 'service':
         return None
     if product.get('date') and product.get('usage') != 'disabled' and product.get('level', 'product') == 'product' and product.get('source') in ('official', 'official_hidden', 'third_party'):
@@ -118,7 +122,7 @@ def coverage(rows):
         # Usability for internal decisions is separately resolved above.
         if (row.get('release') or {}).get('date'):
             result['product'] += 1
-        elif (row.get('series_release') or {}).get('date'):
+        elif (row.get('release_series') or {}).get('date'):
             result['series'] += 1
         else:
             result['missing'] += 1
