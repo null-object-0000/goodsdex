@@ -1,5 +1,5 @@
 """Public archive capture: shared per-host 2.1s spacing, cached evidence, no login/retries."""
-import gzip,hashlib,json,re,time,threading,urllib.request,urllib.error,fcntl
+import gzip,hashlib,json,re,time,threading,urllib.request,urllib.error,fcntl,subprocess,tempfile
 from datetime import datetime,timezone
 from pathlib import Path
 from urllib.parse import urlsplit,quote
@@ -35,7 +35,18 @@ def get(url, payload=None):
  try:
   with urllib.request.urlopen(urllib.request.Request(quote(url,safe=':/?=&%'),data=json.dumps(payload).encode() if payload is not None else None,headers={'User-Agent':'Mozilla/5.0','Accept-Encoding':'identity','Content-Type':'application/json'}),timeout=25) as r:raw=r.read();o.update(http_status=r.status,final_url=r.url)
  except urllib.error.HTTPError as e:raw=e.read();o.update(http_status=e.code,final_url=e.url,error=str(e))
- except Exception as e:o.update(http_status=0,error=str(e))
+ except Exception as e:
+  o.update(http_status=0,error=str(e))
+  # urllib has no SOCKS transport. curl uses the configured proxy unchanged.
+  if 'unknown url type: socks5h' in str(e):
+   with tempfile.TemporaryDirectory(prefix='goodsdex-news-') as tmp:
+    target=Path(tmp)/'body'
+    command=['curl','--location','--max-time','25','--silent','--show-error','--user-agent','Mozilla/5.0','--header','Accept-Encoding: identity','--output',str(target),'--write-out','%{http_code}\n%{url_effective}',quote(url,safe=':/?=&%')]
+    if payload is not None:command+=['--header','Content-Type: application/json','--data-binary',json.dumps(payload)]
+    result=subprocess.run(command,capture_output=True,text=True);raw=target.read_bytes() if target.exists() else b'';parts=result.stdout.splitlines()
+    o.update(http_status=int(parts[0]) if parts and parts[0].isdigit() else 0,final_url=parts[-1] if len(parts)>1 else url,transport='curl_configured_proxy')
+    if result.returncode:o['error']=result.stderr.strip()
+    else:o.pop('error',None)
  decoded=gzip.decompress(raw) if raw.startswith(b'\x1f\x8b') else raw
  h=decoded.decode('utf-8','replace');p=Text();p.feed(h)
  key=hashlib.sha256(cache_key.encode()).hexdigest()[:20]
