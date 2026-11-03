@@ -1,0 +1,3238 @@
+{
+  "http_status": 200,
+  "baseline": "47cfd505f3c0b77c030c4fe384c06556e6e86b81",
+  "data_revision": "73f3c9d0",
+  "revision": "fab4d2a79aad4884898c387c3eab0e98",
+  "generated_at": "2026-11-03T15:40:10.041297+00:00",
+  "total_all": 3978,
+  "total_published": 2898,
+  "total_excluded": 1080,
+  "reasons": {
+    "accessory:sticker": 7,
+    "accessory:screen_film": 23,
+    "accessory:cleaning_consumable": 3,
+    "accessory:category": 649,
+    "accessory:name": 388,
+    "container": 0,
+    "duplicate": 0,
+    "invalid": 6,
+    "manual": 4
+  },
+  "sha256": "5d82a89531e9f4c9ab55ed3b376c7dac0c3d413f80811545dbbc047a499be2e2",
+  "data_and_oss_byte_identical": true,
+  "published_objects_unchanged": true,
+  "accessory_whole_device_decisions": 0,
+  "reviewed_software_tombstones": 4,
+  "category_distribution": {
+    "REDMI Turbo系列": 2,
+    "中央空调Pro": 16,
+    "云台配件": 46,
+    "修剪器": 1,
+    "儿童手表": 5,
+    "冰箱": 1,
+    "净水器": 67,
+    "剃须刀": 18,
+    "加湿器": 19,
+    "吸尘器": 5,
+    "壁挂空调": 1,
+    "宠物饮水机": 2,
+    "家电": 9,
+    "小爱音箱": 3,
+    "平板": 15,
+    "平板配件": 15,
+    "影像传输与控制设备配件": 15,
+    "户外电源配件": 32,
+    "手机壳": 54,
+    "手机贴膜": 5,
+    "打印机": 5,
+    "扫地机器人": 1,
+    "扫地机器人配件": 22,
+    "扫拖基座": 1,
+    "投影仪": 5,
+    "摄影器材配件": 151,
+    "教育机器人配件": 4,
+    "数据线": 24,
+    "无人机配件": 83,
+    "无线充电器": 26,
+    "旧款机型": 45,
+    "显示器": 1,
+    "智能门锁": 3,
+    "服饰": 1,
+    "水壶": 1,
+    "洗地机": 56,
+    "灯具": 1,
+    "牙刷": 17,
+    "电池": 17,
+    "电脑": 4,
+    "电视": 1,
+    "相机配件": 34,
+    "眼镜": 2,
+    "空气净化器": 37,
+    "穿戴": 4,
+    "穿戴配件": 40,
+    "笔": 3,
+    "笔记本": 5,
+    "耳机": 1,
+    "自拍杆": 2,
+    "落地风扇": 1,
+    "运动相机配件": 71,
+    "配件": 10,
+    "键鼠套装": 4,
+    "除螨仪": 22,
+    "麦克风配件": 44
+  },
+  "sensitive_category_review": [
+    {
+      "id": "CN:mi_cn:product:10000275",
+      "name": "米家净水器800G、小米净水器H800G/H800G Pro滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10000292",
+      "name": "「新秀无畏」系列笔记本定制贴纸",
+      "category": "笔记本",
+      "excluded_reason": "accessory:sticker",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "贴纸"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10010007",
+      "name": "小米净水器400G(厨下式)/小米净水器400G厨上增强版滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10010008",
+      "name": "小米台式净饮机，米家台式净饮机智享版/冷热版/凉白开版滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10010029",
+      "name": "小米净水器1A （厨下式） 滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10010030",
+      "name": "小米净水器500G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10010031",
+      "name": "小米净水器600G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10010032",
+      "name": "小米净水器400G增强版滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10010033",
+      "name": "小米净水器500G增强版滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10010034",
+      "name": "小米净水器H600G/米家净水器600G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050013",
+      "name": "小米双核净水器1000G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050014",
+      "name": "小米双核净水器1200G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050015",
+      "name": "米家净水器1000G、1000G Pro/Plus滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050016",
+      "name": "米家净水器1200G/1200G Pro滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050019",
+      "name": "米家净水器1600G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050028",
+      "name": "小米即热净水器Q800滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050047",
+      "name": "米家净水器400G/小米净水器H400G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050066",
+      "name": "米家即热净水器Q1000滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050067",
+      "name": "米家双核净水器1200G Pro滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050090",
+      "name": "米家净水器N1 800G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050092",
+      "name": "米家富矿净水器滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050095",
+      "name": "米家除醛滤网（中央空调）",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050106",
+      "name": "米家净水器Pro 双出水 1200G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050107",
+      "name": "米家净水器Pro 双出水 1600G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050108",
+      "name": "米家净水器S1 1600G/N1 1600G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050109",
+      "name": "米家净水器S1 1000G/N1 1000G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050145",
+      "name": "米家MIFD滤网（中央空调）",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050147",
+      "name": "米家台式净饮机 制冰版滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10050175",
+      "name": "扫拖机器人 6 Max配件（拖布&边刷&滚筒&除臭模块）",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10106",
+      "name": "小米净水器反渗透滤芯600G(5号滤芯)",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10178",
+      "name": "净化器滤芯 除甲醛增强版S1",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:10462",
+      "name": "米家空气净化器MAX滤芯 除甲醛增强版 除甲醛增强版",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:11107",
+      "name": "米家空气净化器Pro H滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:11120",
+      "name": "米家扫拖一体机器人 配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:11258",
+      "name": "小米净水器C1（三出水）/小米净水器扁豆滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:11282",
+      "name": "米家无线手持擦地机一次性清洁拖布",
+      "category": "洗地机",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "拖布"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:11403",
+      "name": "米家新风机A1 复合滤芯",
+      "category": "家电",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:11703",
+      "name": "小米净水器S1 800G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:11800",
+      "name": "小米前置抑垢过滤器 滤芯 滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:11804",
+      "name": "米家空气净化器F1复合滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:11828",
+      "name": "除甲醛增强版S1滤芯2个装",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:12137",
+      "name": "米家智能除菌加湿器 S 滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:12184",
+      "name": "米家空气净化器滤芯 抗菌抗病毒版 个",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:12308",
+      "name": "米家扫拖机器人G1 配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:12626",
+      "name": "米家无线除螨仪 滤芯（两支装） 两支装",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:12630",
+      "name": "米家无线吸尘器 滤芯（两支装） 两支装",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:12641",
+      "name": "米家新风机C1复合滤芯",
+      "category": "家电",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:12771",
+      "name": "米家随手吸尘器滤芯（两支装）",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:12779",
+      "name": "小米净水器500G增强版RO滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:12780",
+      "name": "小米净水器增强版复合滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:12781",
+      "name": "小米净水器400G增强版RO滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:12810",
+      "name": "米家除螨仪滤芯（两支装）",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:12949",
+      "name": "米家空气净化器X 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:12963",
+      "name": "米家纯净式智能加湿器滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13098",
+      "name": "米家桌面空气净化器滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13107",
+      "name": "米家有线吸尘器/无线吸尘器2Lite/Lite滤芯配件（两只装）",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13343",
+      "name": "小米净水器H1000G滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13805",
+      "name": "米家无线吸尘器 2 Pro/ K10 Pro滤芯（两支装)",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13809",
+      "name": "米家无线吸尘器 2 Pro/K10 Pro 拖布（两支装）",
+      "category": "吸尘器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "拖布"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13840",
+      "name": "米家纯净式智能加湿器 Pro 滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13929",
+      "name": "【定制】小米笔记本Pro 15 OLED 机车女孩款贴纸",
+      "category": "笔记本",
+      "excluded_reason": "accessory:sticker",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "贴纸"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13930",
+      "name": "小米笔记本Pro 15 OLED 宇航员款贴纸",
+      "category": "笔记本",
+      "excluded_reason": "accessory:sticker",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "贴纸"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13931",
+      "name": "【定制】RedmiBook Pro 15 机车女孩款贴纸",
+      "category": "笔记本",
+      "excluded_reason": "accessory:sticker",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "贴纸"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13932",
+      "name": "【定制】RedmiBook Pro 15 宇航员款贴纸",
+      "category": "笔记本",
+      "excluded_reason": "accessory:sticker",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "贴纸"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:14038",
+      "name": "米家新风空调滤芯 （挂机）",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:14181",
+      "name": "米家扫拖机器人Pro 配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:14491",
+      "name": "米家超薄扫拖机器人配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:14852",
+      "name": "米家集尘扫拖机器人配件",
+      "category": "吸尘器",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:14895",
+      "name": "米家空气净化器 4Pro 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:14973",
+      "name": "米家空气净化器 4 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:14988",
+      "name": "小米即热净水器Q600滤芯 小米",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:15062",
+      "name": "米家空气净化器 4 Lite 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:15063",
+      "name": "米家循环风空气净化器 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:15070",
+      "name": "米家无线吸尘器2slim/米家轻羽无线吸尘器滤芯（两支装） 滤芯（两支装）",
+      "category": "吸尘器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:15323",
+      "name": "小米电视移动支架 单机",
+      "category": "电视",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:15396",
+      "name": "米家扫拖机器人 2/3 配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:15449",
+      "name": "米家免洗扫拖机器人Pro 配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:15601",
+      "name": "米家免洗扫拖机器人 配件 拖布",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:15831",
+      "name": "米家高温无线洗地机配件套装 套装",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:15836",
+      "name": "小米台式净饮机复合滤芯PPC1 RFID版",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:15899",
+      "name": "小米台式净饮机反渗透滤芯RO1 RFID版",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:15939",
+      "name": "米家新风空调滤芯（柜机）",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:15977",
+      "name": "米家防缠绕扫拖机器人 配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "配件"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:15979",
+      "name": "米家扫拖机器人 配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16022",
+      "name": "米家扫拖机器人3C 配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16030",
+      "name": "米家智能无叶净化扇滤芯",
+      "category": "家电",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16168",
+      "name": "米家双刷无线吸尘器滚刷（两支装） 米家双刷无线吸尘器滚刷",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滚刷"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16169",
+      "name": "米家双刷无线吸尘器滤芯（两支装） 米家双刷无线吸尘器滤芯",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16263",
+      "name": "米家驱蚊滤网（挂机）",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16314",
+      "name": "米家无线吸尘器 湿拖套装配件 配件",
+      "category": "吸尘器",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16422",
+      "name": "日常元素地面清洁剂 1L",
+      "category": "家电",
+      "excluded_reason": "accessory:cleaning_consumable",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "清洁剂"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16431",
+      "name": "米家台式净饮机 乐享版/制冰版滤芯 RO",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16555",
+      "name": "米家扫拖机器人 自动上下水装置 自动上下水装置",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16580",
+      "name": "米家扫拖机器人全能系列配件套装 配件套装",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16608",
+      "name": "米家纯净式智能加湿器 2 滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16612",
+      "name": "米家无线洗地机 滚刷套装",
+      "category": "洗地机",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滚刷"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16613",
+      "name": "米家无线洗地机滤芯（2支装）",
+      "category": "洗地机",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16641",
+      "name": "米家双刷无线拖地机 滚刷",
+      "category": "洗地机",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滚刷"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16655",
+      "name": "米家消毒空气净化器 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16661",
+      "name": "米家空气净化器 4 MAX 滤芯 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16716",
+      "name": "米家全效空气净化器 Ultra 耐久滤芯 耐久滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16717",
+      "name": "米家全效空气净化器 Ultra 碳素阵列滤芯 碳素阵列",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16718",
+      "name": "米家全效空气净化器 Ultra 催化醛解滤芯 催化醛解滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16719",
+      "name": "米家全效空气净化器 Ultra 自洁滤芯 自洁滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16736",
+      "name": "米家纯净式智能加湿器 2 Lite 滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16745",
+      "name": "米家纯净式智能加湿器 Pro 增强版滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18012",
+      "name": "日常元素地面清洁剂 200ml",
+      "category": "家电",
+      "excluded_reason": "accessory:cleaning_consumable",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "清洁剂"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18027",
+      "name": "米家无线吸尘器2 Slim 湿拖套装配件",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18029",
+      "name": "日常元素地面清洁剂（自动添加版）",
+      "category": "扫地机器人",
+      "excluded_reason": "accessory:cleaning_consumable",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "清洁剂"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18208",
+      "name": "米家除螨仪Pro 滤芯（两只装）",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18258",
+      "name": "小米净水器200G反渗透滤芯RO2",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18259",
+      "name": "小米净水器600G反渗透滤芯RO3",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18260",
+      "name": "小米净水器复合滤芯PPC5 白色(6号滤芯) 净水器复合滤芯PPC5",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18261",
+      "name": "米家净水器1000G反渗透滤芯RO1(7号滤芯)",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18262",
+      "name": "米家净水器1200G反渗透滤芯RO1(8号滤芯)",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18263",
+      "name": "米家净水器1600G反渗透滤芯RO1(9号滤芯)",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18315",
+      "name": "米家全效空气净化器 催化醛解滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18317",
+      "name": "米家全效空气净化器 复合滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18349",
+      "name": "小米净水器800G反渗透滤芯RO3",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18465",
+      "name": "米家无线洗地机3 Max/3 Pro/2 滚刷",
+      "category": "洗地机",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滚刷"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18466",
+      "name": "米家无线洗地机3 Max/3 Pro/2 滤芯（两只装）",
+      "category": "洗地机",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18467",
+      "name": "米家无线洗地机2 2. Lite/2C/4C/5C 滚刷",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18468",
+      "name": "米家无线洗地机2 Lite/2C/4C/5C滤芯(两只装",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18477",
+      "name": "米家免洗扫拖机器人2 配件（拖布同时适配M30 Pro）",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19030",
+      "name": "米家空气净化器4 Pro H滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19114",
+      "name": "米家净水器400G复合滤芯PPC1",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19127",
+      "name": "米家净水器600G反渗透滤芯RO1",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19135",
+      "name": "米家净水器400G反渗透滤芯RO1滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19136",
+      "name": "米家净水器600G复合滤芯PPC2",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19144",
+      "name": "米家无雾加湿器3 Pro 滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19150",
+      "name": "米家无雾加湿器3[400] 滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19156",
+      "name": "米家净水器复合滤芯PPC7（10号滤芯） 复合滤芯PPC7",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19168",
+      "name": "米家扫拖机器人3C 增强版 配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19190",
+      "name": "米家净水器1000G反渗透滤芯RO2（11号滤芯） 1000G反渗透滤芯RO2",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19272",
+      "name": "米家健康滤网（MIFD净化滤芯）",
+      "category": "壁挂空调",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯",
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19447",
+      "name": "米家扫拖机器人拖布",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19523",
+      "name": "米家无雾加湿器3[1200] 滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19585",
+      "name": "米家全能扫拖机器人M30 Pro配件 主刷",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19702",
+      "name": "米家全能扫拖机器人 M30 Pro 配件套装 配件套装",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19727",
+      "name": "米家净水器复合滤芯PPC5 竹炭版",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19728",
+      "name": "米家净水器400G反渗透滤芯RO2",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19768",
+      "name": "米家除螨仪2 滤芯（两只装）",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19826",
+      "name": "米家空气净化器5S 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19852",
+      "name": "米家洗地机3Max/3Pro/2 配件套装(滚刷*3,滤芯*2)",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:19996",
+      "name": "米家扫拖机器人配件 适配型号M40/M30 S/H40",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20143",
+      "name": "米家无线洗地机3 Max吸尘组件滤芯套装",
+      "category": "洗地机",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20242",
+      "name": "米家全效空气净化器 Ultra 增强版 中效复合滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20243",
+      "name": "米家全效空气净化器 Ultra 增强版 碳素阵列滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20244",
+      "name": "米家全效空气净化器 Ultra 增强版 催化醛解滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20250",
+      "name": "米家全效空气净化器 Ultra 增强版 全效复合滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20267",
+      "name": "米家空气净化器 5 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20277",
+      "name": "米家龙头净水器滤芯2 龙头净水器",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20337",
+      "name": "米家无线吸尘器 3C 滤芯",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20465",
+      "name": "米家净化加湿器 3 Max 加湿滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20467",
+      "name": "米家净化加湿器 3 Max 空气净化滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20522",
+      "name": "米家扫拖机器人 H40 主机尘袋",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20523",
+      "name": "米家扫拖机器人尘盒滤网 适配5/5C/5Pro/M40S/M30",
+      "category": "洗地机",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20533",
+      "name": "米家无雾加湿器3 (800) 滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20748",
+      "name": "米家扫拖机器人 M40 配件 边刷",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20830",
+      "name": "米家空气净化器 5 Pro 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20882",
+      "name": "米家冲牙器 云感喷嘴",
+      "category": "家电",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "喷嘴"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20930",
+      "name": "米家净水器13号滤芯（PPC）",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20931",
+      "name": "米家净水器14号滤芯（RO） 14号滤芯（RO）",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20932",
+      "name": "米家净水器12号滤芯（MC） 12号滤芯（MC）",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21030",
+      "name": "米家中央空调健康滤网（1.5匹）",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21031",
+      "name": "米家中央空调健康滤网（3匹）",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21149",
+      "name": "米家无线吸尘器 3/3 基站版 滤芯套装",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21154",
+      "name": "米家无线吸尘器 3 基站版 尘袋套装",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21173",
+      "name": "米家宠物空气净化器 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21184",
+      "name": "米家除螨仪2 Pro滤芯（2只装）",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21240",
+      "name": "米家净水器19号滤芯（RO） 19号滤芯（RO）",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21253",
+      "name": "米家净水器18号滤芯（PPC）",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21254",
+      "name": "米家净水器20号滤芯（RO） 20号滤芯（RO）",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21255",
+      "name": "米家无线洗地机 滚刷",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21256",
+      "name": "米家无线洗地机 滤芯（两个装）",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21293",
+      "name": "米家扫拖机器人 M40 S 配件套装",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21295",
+      "name": "米家无线洗地机 贴边刷拖布（两个装）",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21306",
+      "name": "米家除醛滤网（挂机）25款 通用",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21311",
+      "name": "米家MIFD滤网（挂机） 通用",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21383",
+      "name": "米家车载吸尘器 滤芯",
+      "category": "吸尘器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21614",
+      "name": "米家无线洗地机 滚刷提手",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21626",
+      "name": "米家无线洗地机 抑味棒",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21647",
+      "name": "米家扫拖机器人 5 Pro 配件套装",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21694",
+      "name": "米家无雾加湿器3 400mL/h 滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:21705",
+      "name": "米家无雾加湿器3 600mL/h 滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22148",
+      "name": "米家净化加湿器3Max空气净化除醛滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22164",
+      "name": "米家空气净化器 6 双芯除醛 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22208",
+      "name": "米家台式净饮机后置活性炭滤芯GC1 后置活性炭滤芯GC1",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22250",
+      "name": "米家扫拖机器人 5 主刷罩",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22266",
+      "name": "米家扫拖机器人 5C 配件（拖布&主刷&主刷罩）",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22267",
+      "name": "米家扫拖机器人配件（主刷&边刷&主刷罩）",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22319",
+      "name": "米家扫拖机器人 5 Pro 边刷",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22355",
+      "name": "米家轻量吸尘器 滤芯套装",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22473",
+      "name": "米家中央空调健康滤网（内置MIFD净化模块）1.5匹 通用",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22474",
+      "name": "米家中央空调健康滤网（内置MIFD净化模块）3匹 通用",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22482",
+      "name": "米家中央空调新风HEPA滤芯 通用",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22492",
+      "name": "米家空气净化器 6 Pro 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22727",
+      "name": "米家变频净化除湿机 Max 滤芯",
+      "category": "家电",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:22915",
+      "name": "米家中央空调 新风面板 2026款",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:23553",
+      "name": "米家扫拖机器人 6 Max 贴边拖布 配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:23580",
+      "name": "米家冰箱制冰机配件",
+      "category": "冰箱",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:23632",
+      "name": "米家除螨仪3PRO滤芯（两个装）",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:23963",
+      "name": "米家空气净化器 6 Max 装修滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:23994",
+      "name": "米家扫拖机器人 6 配件套装 配件套装",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:23995",
+      "name": "米家扫拖机器人 4 主刷 主刷",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:23996",
+      "name": "米家扫拖机器人 6 Max 除臭模块 配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:23997",
+      "name": "米家扫拖机器人 6 Max 滚筒 配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:24000",
+      "name": "米家洗地机5MAX/5PRO泡沫清洁模组 洗地机配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "配件"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:24225",
+      "name": "米家空气净化器 6 Max 全效滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:24239",
+      "name": "米家扫拖机器人 6 滚筒拖布 配件",
+      "category": "洗地机",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "配件",
+          "拖布"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:24240",
+      "name": "米家扫拖机器人 4 拖布 拖布",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:24241",
+      "name": "米家扫拖机器人 6 Max 配件 边刷",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:24548",
+      "name": "米家无线吸尘器 4 C 滤芯套装",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:24631",
+      "name": "米家空气净化器 6 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:24635",
+      "name": "米家无线吸尘器 4/4 Pro 滤芯套装",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:24764",
+      "name": "米家无线吸尘器 4 Pro/4 Max 尘袋套装",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "尘袋"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:24788",
+      "name": "米家无线吸尘器 4 Max 滤芯套装",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:24819",
+      "name": "米家空调健康滤网（内置驱蚊模块）（2026款）",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:24820",
+      "name": "米家空调健康滤网（内置除醛模块）（2026款）",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:24825",
+      "name": "米家空调健康滤网（内置MIFD净化模块）（2026款）",
+      "category": "中央空调Pro",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤网"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:25088",
+      "name": "米家净化加湿器3 Pro 加湿滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:25091",
+      "name": "米家净化加湿器3 Pro 空气净化滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:25220",
+      "name": "米家净水器24号滤芯（RO）",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:25221",
+      "name": "米家净水器23号滤芯（PPC）",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:25241",
+      "name": "米家扫拖机器人7C防缠边刷",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:25271",
+      "name": "米家无雾加湿器3 1500mL/h 净水滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:25279",
+      "name": "米家无雾加湿器3 1500mL/h 加湿滤芯",
+      "category": "加湿器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:25330",
+      "name": "米家净水器21号滤芯（矿化PPC）",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:25589",
+      "name": "米家空气净化器 6 C 滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:25629",
+      "name": "米家扫拖机器人 滚筒拖布 配件（适用QV12 11 22)",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:25665",
+      "name": "米家扫拖机器人 7 Max 配件套装",
+      "category": "洗地机",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "平板配件"
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:25718",
+      "name": "米家除螨仪3 滤芯（两个装）",
+      "category": "除螨仪",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:4664",
+      "name": "米家空气净化器滤芯 标准版",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:8016",
+      "name": "小米净水器反渗透滤芯400G(3号滤芯)",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:8017",
+      "name": "小米净水器后置活性炭滤芯(4号滤芯)",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:8018",
+      "name": "小米净水器前置活性炭滤芯(2号滤芯)",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:8019",
+      "name": "小米净水器PP棉滤芯 白色(1号滤芯)",
+      "category": "净水器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:8647",
+      "name": "净化器MAX滤芯",
+      "category": "空气净化器",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:9292",
+      "name": "米家新风机中效滤芯",
+      "category": "家电",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:9403",
+      "name": "米家新风机高效滤芯",
+      "category": "家电",
+      "excluded_reason": "accessory:name",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "滤芯"
+        ]
+      }
+    }
+  ],
+  "first_three_items": [
+    {
+      "id": "CN:apple_cn:commodity:MFE94CH/A",
+      "name": "AirTag",
+      "kind": "accessory",
+      "category": "配件",
+      "categories": [
+        "配件"
+      ],
+      "price": 249,
+      "market_price": null,
+      "gid": null,
+      "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airtag-1pack-select-202601?wid=940&hei=1112&fmt=png-alpha&.v=eVZIdm00RE01SWs3QURJMUxNRitlUUZRNU9LNkVNWnlXdGtyVWlDRm54QmZhS1VCT1k0VG5wendIdURyT0d4ZURrcnNsQUdJUGlKTENUeG5lbFJUV0Y0dnJSYzFEb21pLzZjOUEzZEtaSkk",
+      "fetched_at": "2026-11-03T17:07:59+08:00",
+      "params": {
+        "part_number": "MFE94CH/A",
+        "variant_attrs": {
+          "dimensionPackQty": {
+            "value": "1pack",
+            "label": "1 件装"
+          }
+        }
+      },
+      "source": "apple_cn",
+      "brand": "Apple",
+      "market": "CN",
+      "product_id": "CN:apple_cn:product:airtag",
+      "variant_id": "CN:apple_cn:commodity:MFE94CH/A",
+      "part_number": "MFE94CH/A",
+      "source_url": "https://www.apple.com.cn/shop/buy-airtag/airtag",
+      "currency": "CNY",
+      "price_kind": "sku",
+      "price_status": "provided",
+      "price_fetched_at": "2026-11-03T17:07:59+08:00",
+      "variant_attrs": {
+        "dimensionPackQty": {
+          "value": "1pack",
+          "label": "1 件装"
+        }
+      },
+      "image_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airtag-1pack-select-202601?wid=940&hei=1112&fmt=png-alpha&.v=eVZIdm00RE01SWs3QURJMUxNRitlUUZRNU9LNkVNWnlXdGtyVWlDRm54QmZhS1VCT1k0VG5wendIdURyT0d4ZURrcnNsQUdJUGlKTENUeG5lbFJUV0Y0dnJSYzFEb21pLzZjOUEzZEtaSkk",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "配件"
+      },
+      "excluded_at": "2026-11-03T15:40:10.041297+00:00",
+      "category_l1": null,
+      "category_l2": "配件",
+      "brand_source": "id_prefix"
+    },
+    {
+      "id": "CN:apple_cn:commodity:MFEA4CH/A",
+      "name": "AirTag",
+      "kind": "accessory",
+      "category": "配件",
+      "categories": [
+        "配件"
+      ],
+      "price": 849,
+      "market_price": null,
+      "gid": null,
+      "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airtag-4pack-select-202601?wid=940&hei=1112&fmt=png-alpha&.v=QVI2eUgvdU1qT1VRdEZUOXVUVHgrUUZRNU9LNkVNWnlXdGtyVWlDRm54QmZhS1VCT1k0VG5wendIdURyT0d4ZURrcnNsQUdJUGlKTENUeG5lbFJUV1BWa1l0eDdzMlQ3d0x2UXFveE5QNjg",
+      "fetched_at": "2026-11-03T17:07:59+08:00",
+      "params": {
+        "part_number": "MFEA4CH/A",
+        "variant_attrs": {
+          "dimensionPackQty": {
+            "value": "4pack",
+            "label": "4 件装"
+          }
+        }
+      },
+      "source": "apple_cn",
+      "brand": "Apple",
+      "market": "CN",
+      "product_id": "CN:apple_cn:product:airtag",
+      "variant_id": "CN:apple_cn:commodity:MFEA4CH/A",
+      "part_number": "MFEA4CH/A",
+      "source_url": "https://www.apple.com.cn/shop/buy-airtag/airtag",
+      "currency": "CNY",
+      "price_kind": "sku",
+      "price_status": "provided",
+      "price_fetched_at": "2026-11-03T17:07:59+08:00",
+      "variant_attrs": {
+        "dimensionPackQty": {
+          "value": "4pack",
+          "label": "4 件装"
+        }
+      },
+      "image_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airtag-4pack-select-202601?wid=940&hei=1112&fmt=png-alpha&.v=QVI2eUgvdU1qT1VRdEZUOXVUVHgrUUZRNU9LNkVNWnlXdGtyVWlDRm54QmZhS1VCT1k0VG5wendIdURyT0d4ZURrcnNsQUdJUGlKTENUeG5lbFJUV1BWa1l0eDdzMlQ3d0x2UXFveE5QNjg",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "配件"
+      },
+      "excluded_at": "2026-11-03T15:40:10.041297+00:00",
+      "category_l1": null,
+      "category_l2": "配件",
+      "brand_source": "id_prefix"
+    },
+    {
+      "id": "CN:dji:sku:101241",
+      "mall_sku_id": 101241,
+      "brand": "大疆",
+      "name": "御 Mavic 2 行业版智能飞行电池",
+      "kind": "accessory",
+      "category": "无人机配件",
+      "categories": [
+        "无人机配件"
+      ],
+      "series": "DJI",
+      "price": 1000,
+      "price_kind": "listing",
+      "image": "https://se-cdn.djiits.com/tpc/uploads/spu/cover/d21bde5700b890ff8a2624d96396a35e@origin.png",
+      "source_url": "https://store.dji.com/cn/product/mavic-2-enterprise-battery?vid=101241",
+      "catalog_identity": "dji_mall_json",
+      "lookup_keys": [
+        "大疆",
+        "DJI"
+      ],
+      "model": null,
+      "model_or_part_number": null,
+      "variant_hint": "御 Mavic 2 行业版智能飞行电池",
+      "params": {},
+      "fetched_at": "2026-10-27T12:19:03.715445+00:00",
+      "family_id": "CN:dji:sku:101241",
+      "source": "dji_mall_json",
+      "excluded_reason": "accessory:category",
+      "exclusion": {
+        "accessory": true,
+        "basis": "category",
+        "matched": "无人机配件"
+      },
+      "excluded_at": "2026-11-03T15:40:10.041297+00:00",
+      "category_l1": null,
+      "category_l2": "无人机配件",
+      "brand_source": "id_prefix"
+    }
+  ]
+}
