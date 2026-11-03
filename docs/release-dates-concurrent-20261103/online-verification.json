@@ -1,0 +1,267 @@
+{
+  "checked_at": "2026-11-03T07:57:50.466839+00:00",
+  "coverage": {
+    "total": 3968,
+    "covered": 688,
+    "coverage": 0.17338709677419356,
+    "sources": {
+      "official": 615,
+      "official_hidden": 0,
+      "third_party": 34,
+      "llm": 39
+    },
+    "brands": {
+      "Apple": {
+        "total": 640,
+        "true_source": 419,
+        "official_hidden": 0,
+        "llm": 39,
+        "missing": 182
+      },
+      "比亚迪": {
+        "total": 14,
+        "true_source": 0,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 14
+      },
+      "大疆": {
+        "total": 783,
+        "true_source": 107,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 676
+      },
+      "富士": {
+        "total": 63,
+        "true_source": 14,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 49
+      },
+      "惠普": {
+        "total": 218,
+        "true_source": 0,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 218
+      },
+      "小米": {
+        "total": 2247,
+        "true_source": 106,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 2141
+      },
+      "小米汽车": {
+        "total": 3,
+        "true_source": 3,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 0
+      }
+    }
+  },
+  "samples": [
+    {
+      "id": "GLOBAL:apple_support:model:111340",
+      "name": "MacBook Pro（14 英寸，2023 年）",
+      "url": "https://spend.snewbie.site/api/goods/GLOBAL%3Aapple_support%3Amodel%3A111340?release_check=2026-11-03T07%3A57%3A50.466839%2B00%3A00",
+      "release": {
+        "date": "2023-02",
+        "granularity": "month",
+        "source": "llm",
+        "confidence": "high",
+        "event": "availability",
+        "market": "CN",
+        "model": "codex-interactive-session",
+        "prompt_version": "release-month-v1",
+        "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2023/01/apple-unveils-macbook-pro-featuring-m2-pro-and-m2-max/",
+          "quote": "2023 年 1 月 17 日 | id 视网膜 XDR 显示屏、丰富的连接方式、1080p FaceTime 高清摄像头、六扬声器音响系统及录音棚级麦克风，将无与伦比的功能发挥得淋漓尽致。结合 macOS Ventura，MacBook Pro 为用户带来无可匹敌的使用体验。新款 14 英寸及 16 英寸 MacBook Pro 将于 1 月 19 日起即可订购，并将于 2 月 3 日（周五）起正式发售。 “搭载 Apple 芯片的 MacBook Pro 颠覆了笔记本电脑这一产品类型，帮助专业用户随时随地突破工作流的极限，完成此前人们认为笔记本电脑无法胜任的工作。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“今天，Mac",
+          "locator": "Newsroom publication header + verbatim availability sentence",
+          "source_type": "official",
+          "sha256": "00ca981f53141349f0f070ba7e5515be52647c070458e1727c354fd4eaf3c4ea",
+          "captured_at": "2026-11-03T04:26:59.320334+00:00"
+        },
+        "usage": "disabled",
+        "inferred": true,
+        "family": "GLOBAL:apple_support:model:111340",
+        "display": null,
+        "label": "推出月份（推断）",
+        "validation": {
+          "usage": "fact",
+          "sample_size": 30,
+          "accuracy": 1,
+          "universe_sha256": "a80ddcebd26b5e442ec3a798a3d0afce43275ed3039a920b55d8d945c669e9eb"
+        },
+        "display_allowed": false,
+        "internal_only": true,
+        "estimate_notice": "按型号世代估算",
+        "checks": [
+          {
+            "source": "llm",
+            "date": "2023-02",
+            "delta_days": 0,
+            "verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": "2023-01",
+            "reason": "Apple 于 2023 年 1 月 17 日发布搭载 M2 Pro/M2 Max 的 14 英寸与 16 英寸 MacBook Pro，中国大陆官网同日开放订购，1 月 19 日起正式发售。因此指定市场 CN 的首次正式开售日期为 2023-01-19。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:28:04.284982+00:00",
+            "original_sha256": "9f5b4388f814079a0391be79f255103ee6592c273003398e147882e1bb34cca1",
+            "prompt_sha256": "661e1c6d0259b5d9e6dba06fe8efec35931f6f26aa276341e20888811990fba2",
+            "response_sha256": "a84d299ef3fcda49a0305499125364eb2b8047d4377056739bec8a011129e419",
+            "artifact": "docs/release-crosschecks-20261103/responses/4131393523c2b30e22f8f68b.json",
+            "independent": true,
+            "delta_days": 30,
+            "verdict": "disagreement",
+            "compared_to": {
+              "source": "llm",
+              "date": "2023-02"
+            }
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "disagreement"
+      }
+    },
+    {
+      "id": "GLOBAL:apple_support:model:111832",
+      "name": "Apple Watch Ultra 2",
+      "url": "https://spend.snewbie.site/api/goods/GLOBAL%3Aapple_support%3Amodel%3A111832?release_check=2026-11-03T07%3A57%3A50.466839%2B00%3A00",
+      "release": {
+        "date": "2023-09",
+        "granularity": "month",
+        "source": "llm",
+        "confidence": "high",
+        "event": "availability",
+        "market": "CN",
+        "model": "codex-interactive-session",
+        "prompt_version": "release-month-v1",
+        "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2023/09/apple-unveils-apple-watch-ultra-2/",
+          "quote": "2023 年 9 月 12 日 | 2 依然具有常规使用下长达 36 小时的电池续航时间，低电量模式下更长达 72 小时。 顾客可首次在每种 Apple Watch 中选购碳中和表款，这代表 Apple 2030 目标——到 2030 年底前在整个运营、生产供应链和产品生命周期完全实现碳中和——达成意义重大的里程碑。 Apple Watch Ultra 2 今日起接受订购，9 月 22 日（周五）起正式发售。 Apple Watch 2 支持更大的海拔高度范围和设备端处理 Siri 请求功能，watchOS 10 的功能带来全新骑行体验，帮助用户探索户外世界。 “今年，我们最坚固耐用、功能强大的 Apple Watch 变得更加出色了。”Apple 首",
+          "locator": "Newsroom publication header + verbatim availability sentence",
+          "source_type": "official",
+          "sha256": "bec35dd074b0a7c743ea1f5c378982edcd0388f7b9932a6d124d8e290817cc42",
+          "captured_at": "2026-11-03T04:26:55.247896+00:00"
+        },
+        "usage": "reference",
+        "inferred": true,
+        "family": "GLOBAL:apple_support:model:111832",
+        "display": "约 2023 年 9 月（推断）",
+        "label": "推出月份（推断）",
+        "validation": {
+          "usage": "fact",
+          "sample_size": 30,
+          "accuracy": 1,
+          "universe_sha256": "a80ddcebd26b5e442ec3a798a3d0afce43275ed3039a920b55d8d945c669e9eb"
+        },
+        "display_allowed": false,
+        "internal_only": true,
+        "estimate_notice": "按型号世代估算",
+        "checks": [
+          {
+            "source": "llm",
+            "date": "2023-09",
+            "delta_days": 0,
+            "verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": "2023-09-22",
+            "reason": "Apple Watch Ultra 2 于2023年9月12日发布，中国大陆于2023年9月22日首次正式开售（与iPhone 15系列等同步首发）。该日期为已知的Apple中国官网及媒体当时报道的首发开售日，非发布/预售日。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:28:05.936234+00:00",
+            "original_sha256": "0579c7c05bd4ee2fd672bb3ff124930e2a206ea49e414b8eb48236de98c8c337",
+            "prompt_sha256": "bf6007885795e18124826d73e062f47c1965808a6dd1ece731c0c29d2259eeba",
+            "response_sha256": "65931606229c7c97a9eb4301876a21bf3a40f4dd34d1d10737d3423cd71536b0",
+            "artifact": "docs/release-crosschecks-20261103/responses/e1d2e09cda55fcd9d61edcbc.json",
+            "independent": true,
+            "delta_days": 0,
+            "verdict": "corroborated",
+            "compared_to": {
+              "source": "llm",
+              "date": "2023-09"
+            }
+          }
+        ],
+        "corroborated": true,
+        "crosscheck_status": "corroborated"
+      }
+    },
+    {
+      "id": "GLOBAL:apple_support:model:111838",
+      "name": "MacBook Pro（16 英寸，2023 年）",
+      "url": "https://spend.snewbie.site/api/goods/GLOBAL%3Aapple_support%3Amodel%3A111838?release_check=2026-11-03T07%3A57%3A50.466839%2B00%3A00",
+      "release": {
+        "date": "2023-02",
+        "granularity": "month",
+        "source": "llm",
+        "confidence": "high",
+        "event": "availability",
+        "market": "CN",
+        "model": "codex-interactive-session",
+        "prompt_version": "release-month-v1",
+        "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2023/01/apple-unveils-macbook-pro-featuring-m2-pro-and-m2-max/",
+          "quote": "2023 年 1 月 17 日 | id 视网膜 XDR 显示屏、丰富的连接方式、1080p FaceTime 高清摄像头、六扬声器音响系统及录音棚级麦克风，将无与伦比的功能发挥得淋漓尽致。结合 macOS Ventura，MacBook Pro 为用户带来无可匹敌的使用体验。新款 14 英寸及 16 英寸 MacBook Pro 将于 1 月 19 日起即可订购，并将于 2 月 3 日（周五）起正式发售。 “搭载 Apple 芯片的 MacBook Pro 颠覆了笔记本电脑这一产品类型，帮助专业用户随时随地突破工作流的极限，完成此前人们认为笔记本电脑无法胜任的工作。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“今天，Mac",
+          "locator": "Newsroom publication header + verbatim availability sentence",
+          "source_type": "official",
+          "sha256": "00ca981f53141349f0f070ba7e5515be52647c070458e1727c354fd4eaf3c4ea",
+          "captured_at": "2026-11-03T04:26:59.320334+00:00"
+        },
+        "usage": "disabled",
+        "inferred": true,
+        "family": "GLOBAL:apple_support:model:111838",
+        "display": null,
+        "label": "推出月份（推断）",
+        "validation": {
+          "usage": "fact",
+          "sample_size": 30,
+          "accuracy": 1,
+          "universe_sha256": "a80ddcebd26b5e442ec3a798a3d0afce43275ed3039a920b55d8d945c669e9eb"
+        },
+        "display_allowed": false,
+        "internal_only": true,
+        "estimate_notice": "按型号世代估算",
+        "checks": [
+          {
+            "source": "llm",
+            "date": "2023-02",
+            "delta_days": 0,
+            "verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": "2023-01-19",
+            "reason": "Apple 于 2023 年 1 月 17 日发布搭载 M2 Pro/M2 Max 的 14/16 英寸 MacBook Pro，中国大陆官网显示 1 月 19 日起接受订购/发售；该日期对应中国市场的首次正式开售。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:28:08.098730+00:00",
+            "original_sha256": "9f5b4388f814079a0391be79f255103ee6592c273003398e147882e1bb34cca1",
+            "prompt_sha256": "40787375743db35ab05f613650c3036d657516a0311cff325f4ded8458a07d8c",
+            "response_sha256": "c1b930e56defb4655f2835cb90724fb1d55a7837466ae1b84916a7fb4e15cc66",
+            "artifact": "docs/release-crosschecks-20261103/responses/a3733699667c56ab718665f4.json",
+            "independent": true,
+            "delta_days": 30,
+            "verdict": "disagreement",
+            "compared_to": {
+              "source": "llm",
+              "date": "2023-02"
+            }
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "disagreement"
+      }
+    }
+  ],
+  "new_candidates_published": 0,
+  "note": "Read-only snapshot. This run has not passed quality acceptance, so no new candidate fields were published."
+}

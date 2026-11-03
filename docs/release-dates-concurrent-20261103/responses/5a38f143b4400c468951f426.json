@@ -1,0 +1,64 @@
+{
+  "family": "大疆|摄影器材配件|禅思h30t红外衰减镜",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 95,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 282,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 377
+  },
+  "captured_at": "2026-11-03T07:55:04.219307+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"禅思 H30T 红外衰减镜\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为禅思 H30T 的配件（红外衰减镜），并非机身世代；未掌握大疆官网或媒体对该配件本身首次推出年月的可回指资料，且不得借用 H30T 机身日期，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692504,
+    "id": "0217936925025806cb63cadb26a6eb1a5dd8bb71cce3d7fb02488",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 95,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 282,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 377
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:02.528099+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.691202827001689,
+      "usage": {
+        "completion_tokens": 95,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 282,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 377
+      }
+    }
+  ]
+}

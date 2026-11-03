@@ -1,0 +1,62 @@
+{
+  "family": "小米|办公娱乐显示器|redmi显示器g27节能版",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 86,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 280,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 366
+  },
+  "captured_at": "2026-11-03T07:55:03.770939+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"REDMI显示器G27 节能版\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为Redmi G27系列的中国节能版变体，缺乏可回指的官方发布资料确认其首次推出年月；不能仅凭G27系列或面板/接口年份推断月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692502,
+    "id": "d5aeaf0a-3dd4-4aef-bb0a-2a77e445fa30",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 86,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 280,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 366
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:01.630922+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.1400138219905784,
+      "usage": {
+        "completion_tokens": 86,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 280,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 366
+      }
+    }
+  ]
+}

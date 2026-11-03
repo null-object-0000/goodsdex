@@ -1,0 +1,728 @@
+[
+  {
+    "family": "小米|旧款机型|红米5plus",
+    "brand": "小米",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "红米5 Plus",
+      "date": "2017-12",
+      "evidence": {
+        "url": "https://www.mi.com/redmi5plus",
+        "quote": null,
+        "reason": "小米于2017年12月7日发布红米5/红米5 Plus，红米5 Plus为该型号族首次推出；官网原页可能已下线，故不引用具体原句，仅以已知发布月份作世代估算。"
+      },
+      "confidence": "medium",
+      "market": "CN",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2017-12",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://m.21jingji.com/article/20171207/herald/39632cbe1b2efc81da5c7d434135357a.html",
+    "verification_quote": "2017-12-07 现场发布报道同时报道红米5和5 Plus。",
+    "verdict_reason": "原引用跳转 err.www.mi.com/04.html；无月份原文。",
+    "original_citation_capture": {
+      "family": "小米|旧款机型|红米5plus",
+      "url": "https://www.mi.com/redmi5plus",
+      "captured_at": "2026-11-03T07:58:13.847441+00:00",
+      "http_status": 200,
+      "final_url": "http://err.www.mi.com/04.html",
+      "sha256": "a0cd749f2e53c202165a9d4080dbf5048fafade597810a4000246d4f2585a078",
+      "text_artifact": "verification-sources/040c07ed724dc2bc1bc9aebe.txt",
+      "text_chars": 25,
+      "status": "captured"
+    },
+    "checked_at": "2026-11-03T08:02:57.513363+00:00"
+  },
+  {
+    "family": "小米|平板|redmipad2",
+    "brand": "小米",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "REDMI Pad 2",
+      "date": "2025-08",
+      "evidence": {
+        "url": "https://www.mi.com/global/product/redmi-pad-2/",
+        "quote": null,
+        "reason": "小米全球官网存在 REDMI Pad 2 产品页，可确认该型号族存在；但未联网核验页面发布/公告日期，且不能仅凭型号或平台年份推断月份，故日期留空。"
+      },
+      "confidence": "low",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": "无法在离线条件下确知该型号族首次推出年月，且禁止仅由型号年份推断月份；未提供可回指的公告日期原文。"
+    },
+    "correct_date": "2025-06",
+    "date_correct": false,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.mi.com/my/support/faq/details/KA-572986/",
+    "verification_quote": "The launch time of the REDMI Pad 2 is June 5th, 2025.",
+    "verdict_reason": "候选填2025-08，且abstention_reason称无法确定月份；原产品页不支持其月份。",
+    "original_citation_capture": {
+      "family": "小米|平板|redmipad2",
+      "url": "https://www.mi.com/global/product/redmi-pad-2/",
+      "captured_at": "2026-11-03T07:58:13.847936+00:00",
+      "http_status": 200,
+      "final_url": "https://www.mi.com/global/product/redmi-pad-2/",
+      "sha256": "baf2819b87f1af721628dbb5ef6d19e42a2d50015991e2375903abcb6cee591b",
+      "text_artifact": "verification-sources/a00181b419880a840bc1c3ff.txt",
+      "text_chars": 6254,
+      "status": "captured"
+    },
+    "checked_at": "2026-11-03T08:02:57.513378+00:00"
+  },
+  {
+    "family": "小米|旧款机型|小米无人机4k版套装",
+    "brand": "小米",
+    "requested": true,
+    "result": "invalid_or_failed",
+    "proposal": {
+      "model": "小米无人机4K版套装",
+      "date": "2017-05或null",
+      "evidence": {
+        "url": null,
+        "quote": null,
+        "reason": "小米无人机4K版于2017年5月发布（媒体广泛报道），但无法提供可回指的具体网页链接或确知原文，故按规则留空证据与日期。"
+      },
+      "confidence": "low",
+      "market": "CN",
+      "event": "announcement",
+      "abstention_reason": "缺乏可回指的具体资料链接或确知原文，无法满足证据要求，故date与evidence留空。"
+    },
+    "error": "Release date must have month precision",
+    "response_error": null,
+    "correct_date": "2017-03",
+    "date_correct": false,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.fimi.com/cn/about-fimi.html",
+    "verification_quote": "2017年3月 小米无人机4K版本发布",
+    "verdict_reason": "date为“2017-05或null”，格式非法；无url/quote；制造商里程碑为2017-03。",
+    "original_citation_capture": {
+      "family": "小米|旧款机型|小米无人机4k版套装",
+      "url": null,
+      "captured_at": "2026-11-03T07:58:13.848425+00:00",
+      "status": "no_original_citation"
+    },
+    "checked_at": "2026-11-03T08:02:57.513382+00:00"
+  },
+  {
+    "family": "大疆|影像传输与控制设备配件|djifocusprolidar",
+    "brand": "大疆",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "DJI Focus Pro LiDAR",
+      "date": "2024-04",
+      "evidence": {
+        "url": "https://www.dji.com/cn/media-center/announcements/dji-focus-pro",
+        "quote": null,
+        "reason": "DJI Focus Pro 于2024年4月发布，LiDAR 是该型号族中的组成配件；按配件本身归入该发布月份，不借用主机日期。未能确知可回指原句，故 quote 留空。"
+      },
+      "confidence": "medium",
+      "market": "CN",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2024-04",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.mynewsdesk.com/uk/dji/pressreleases/dji-pro-launches-next-generation-tools-offering-swift-setup-intuitive-operation-seamless-integration-and-extended-focus-control-3315434",
+    "verification_quote": "9 April 2024; DJI Focus Pro; LiDAR",
+    "verdict_reason": "DJI自行发布的新闻稿支持月份与LiDAR组件；原引用404，不能事后替换抬分。",
+    "original_citation_capture": {
+      "family": "大疆|影像传输与控制设备配件|djifocusprolidar",
+      "url": "https://www.dji.com/cn/media-center/announcements/dji-focus-pro",
+      "captured_at": "2026-11-03T07:58:13.848838+00:00",
+      "status": "fetch_failed",
+      "http_status": 404,
+      "error": "HTTP Error 404: Not Found"
+    },
+    "checked_at": "2026-11-03T08:02:57.513386+00:00"
+  },
+  {
+    "family": "富士|相机|fujifilmx-s20",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "FUJIFILM X-S20",
+      "date": "2023-05",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-s20/",
+        "quote": null,
+        "reason": "富士官方X-S20产品页可确认该型号族存在；该机型于2023年5月由富士发布，故以2023-05作为该型号族首次推出年月候选。未引用具体原句，因无法确知页面原文。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2023-05",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.fujifilm.com/ae/en/news/hq/9421",
+    "verification_quote": "May 24, 2023; FUJIFILM X-S20",
+    "verdict_reason": "月份正确，6月为开售；原引用仅产品页、quote空，模型承认未核原句；直抓403，原依据未证实月份。",
+    "original_citation_capture": {
+      "family": "富士|相机|fujifilmx-s20",
+      "url": "https://fujifilm-x.com/global/products/cameras/x-s20/",
+      "captured_at": "2026-11-03T07:58:13.848554+00:00",
+      "status": "fetch_failed",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "checked_at": "2026-11-03T08:02:57.513388+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xf50mmf2rwr",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "XF50mmF2 R WR",
+      "date": "2017-01",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf50mmf2-r-wr/",
+        "quote": null,
+        "reason": "富士官方产品页确认 XF50mmF2 R WR 属于 XF 镜头产品线；该镜头于2017年1月随 X-T20 等一同发布，官方新闻稿与多家媒体（如 DPReview 2017-01-19）均有报道。此处按已知发布资料给出月份候选，未引用具体原文句。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2017-01",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.dpreview.com/news/2919368831/fujifilm-expands-weather-resistant-lens-selection-with-xf-50mm-f2-r-wr/",
+    "verification_quote": "January 19, 2017; FUJINON XF50mmF2 R WR",
+    "verdict_reason": "现场新闻及内嵌原厂新闻稿支持1月公告；2月开售；原引用产品页未核月份。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xf50mmf2rwr",
+      "url": "https://fujifilm-x.com/global/products/lenses/xf50mmf2-r-wr/",
+      "captured_at": "2026-11-03T07:58:13.848979+00:00",
+      "status": "fetch_failed",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "checked_at": "2026-11-03T08:02:57.513390+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xf70-300mmf4-5.6rlmoiswr",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "XF70-300mmF4-5.6 R LM OIS WR",
+      "date": "2021-01",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf70-300mmf4-5-6-r-lm-ois-wr/",
+        "quote": null,
+        "reason": "富士官方产品页可确认该型号属于XF70-300mmF4-5.6 R LM OIS WR镜头族；已知该镜头于2021年1月发布，但无法在无联网条件下回指具体含月份的原句，故quote留空，日期仅作型号世代估算。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2021-01",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.fujifilm-x.com/global/news/fujifilm-announces-new-fujinon-xf70-300mmf4-5-6-r-lm-ois-wr-lens/",
+    "verification_quote": "01.27.2021; XF70-300mmF4-5.6 R LM OIS WR",
+    "verdict_reason": "官方页头2021-01-27，正文年份2020疑为笔误；页头及同期报道支持2021-01公告，3月开售；原产品页月份未核准。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xf70-300mmf4-5.6rlmoiswr",
+      "url": "https://fujifilm-x.com/global/products/lenses/xf70-300mmf4-5-6-r-lm-ois-wr/",
+      "captured_at": "2026-11-03T07:58:13.850859+00:00",
+      "status": "fetch_failed",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "checked_at": "2026-11-03T08:02:57.513392+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xf90mmf2rlmwr",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "XF90mmF2 R LM WR",
+      "date": "2015-05",
+      "evidence": {
+        "url": "https://fujifilm.com.cn/news/2015/0518/",
+        "quote": null,
+        "reason": "富士官方新闻稿页面路径含2015/0518，指向2015年5月18日发布；该镜头为富士XF 90mmF2 R LM WR，属XF镜头产品线，按发布公告月份记为2015-05。链接为已知官网新闻路径，但未逐字核验原句，故quote留空。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2015-05",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://fujifilm-korea.co.kr/support/notice/id/7173",
+    "verification_quote": "2015-05-18; XF90mmF2 R LM WR",
+    "verdict_reason": "官方分站5月公告、7月开售；原引用fujifilm.com.cn无www路径DNS失败；原句空。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xf90mmf2rlmwr",
+      "url": "https://fujifilm.com.cn/news/2015/0518/",
+      "captured_at": "2026-11-03T07:58:14.099304+00:00",
+      "status": "fetch_failed",
+      "http_status": null,
+      "error": "<urlopen error [Errno -5] No address associated with hostname>"
+    },
+    "checked_at": "2026-11-03T08:02:57.513394+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xc35mmf2",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "富士 XC35mmF2",
+      "date": "2020-02",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xc35mmf2/",
+        "quote": null,
+        "reason": "富士官方产品页确认 XC35mmF2 属于 XC 系列镜头；该镜头于2020年2月随 X-T200 一同发布，官方新闻稿可回指，但当前无法给出确知原句，故 quote 留空。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2020-01",
+    "date_correct": false,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.dpreview.com/news/4262945623/fujifilm-announces-more-affordable-xc-35mm-f2-prime-lens/",
+    "verification_quote": "January 23, 2020; XC 35mm F2",
+    "verdict_reason": "首次公告1月；候选2月是开售月，event=announcement时错误；原产品页无公告引文。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xc35mmf2",
+      "url": "https://fujifilm-x.com/global/products/lenses/xc35mmf2/",
+      "captured_at": "2026-11-03T07:58:14.126834+00:00",
+      "status": "fetch_failed",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "checked_at": "2026-11-03T08:02:57.513397+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xf60mmf2.4rmacro",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "XF60mmF2.4 R Macro",
+      "date": "2012-01",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf60mmf24-r-macro/",
+        "quote": null,
+        "reason": "富士官方产品页确认该型号属于XF镜头产品线；已知该镜头随X-Pro1系统于2012年初发布，官方新闻稿日期为2012年1月，故按型号族给出2012-01候选。未能核验到可引用的原句，quote留空。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2012-01",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://thelensdb.com/lenses/fujifilm-super-ebc-fujinon-xf-60mm-f24-aspherical-r-macro-2012",
+    "verification_quote": "Mississauga, ON, January 9, 2012; XF60mmF2.4 R Macro",
+    "verdict_reason": "保留的原厂X-Pro1新闻稿明确包含该镜头；不能仅借机身日期。原产品页原句空，月份未回指。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xf60mmf2.4rmacro",
+      "url": "https://fujifilm-x.com/global/products/lenses/xf60mmf24-r-macro/",
+      "captured_at": "2026-11-03T07:58:14.208027+00:00",
+      "status": "fetch_failed",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "checked_at": "2026-11-03T08:02:57.513399+00:00"
+  },
+  {
+    "family": "富士|相机|fujifilmx-e5",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "FUJIFILM X-E5",
+      "date": "2025-06",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-e5/",
+        "quote": null,
+        "reason": "富士官方X-E5产品页可确认该型号属于X-E系列新一代机身；已知该机型于2025年6月发布，故按机身世代给出2025-06作为首次推出年月候选。未引用具体原文句，仅以官方产品页作为型号族回指依据。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2025-06",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.fujifilm.com/us/en/news/digital-cameras/fujifilm-introduces-fujifilm-x-e5-mirrorless-digital-camera",
+    "verification_quote": "June 12, 2025; FUJIFILM X-E5",
+    "verdict_reason": "官方6月公告；8月为发售，原产品页/空quote未支持月份。",
+    "original_citation_capture": {
+      "family": "富士|相机|fujifilmx-e5",
+      "url": "https://fujifilm-x.com/global/products/cameras/x-e5/",
+      "captured_at": "2026-11-03T07:58:14.349102+00:00",
+      "status": "fetch_failed",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "checked_at": "2026-11-03T08:02:57.513401+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xf35mmf2rwr",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "XF35mmF2 R WR",
+      "date": "2015-10",
+      "evidence": {
+        "url": "https://fujifilm.com.cn/news/2015/1015/",
+        "quote": null,
+        "reason": "富士官方新闻稿（2015年10月15日）宣布推出XF35mmF2 R WR，属于富士龙XF系列镜头，支持该型号族首次发布月份为2015-10；链接为富士中国官网新闻页，但未逐字核验原句，故quote留空。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2015-10",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.fujifilm.co.jp/corporate/news/articleffnr_1016.html",
+    "verification_quote": "2015年10月21日; XF35mmF2 R WR",
+    "verdict_reason": "官方10月21日公告；候选reason说15日但年月相符；原fujifilm.com.cn/2015/1015路径DNS失败，原依据未证实。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xf35mmf2rwr",
+      "url": "https://fujifilm.com.cn/news/2015/1015/",
+      "captured_at": "2026-11-03T07:58:14.491504+00:00",
+      "status": "fetch_failed",
+      "http_status": null,
+      "error": "<urlopen error [Errno -5] No address associated with hostname>"
+    },
+    "checked_at": "2026-11-03T08:02:57.513403+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xf30mmf2.8rlmwrmacro",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "XF30mmF2.8 R LM WR Macro",
+      "date": "2022-09",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf30mmf28-r-lm-wr-macro/",
+        "quote": null,
+        "reason": "富士官方产品页可确认该型号属于XF卡口30mm F2.8微距镜头；已知该镜头于2022年9月随X-H2一同发布，但无法回指具体含月份的原句，故quote留空，日期仅作型号世代估算。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2022-11",
+    "date_correct": false,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.fujifilm-x.com/en-gb/news/fujifilm-launches-fujinon-xf30mmf2-8-r-lm-wr-macro/",
+    "verification_quote": "TOKYO, November 2, 2022; XF30mmF2.8 R LM WR Macro",
+    "verdict_reason": "候选2022-09误把X-H2同期事件混进来，正式产品公告为11月；原产品页无引文。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xf30mmf2.8rlmwrmacro",
+      "url": "https://fujifilm-x.com/global/products/lenses/xf30mmf28-r-lm-wr-macro/",
+      "captured_at": "2026-11-03T07:58:14.497920+00:00",
+      "status": "fetch_failed",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "checked_at": "2026-11-03T08:02:57.513405+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xf14mmf2.8r",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "XF14mmF2.8 R",
+      "date": "2012-09",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf14mmf28-r/",
+        "quote": null,
+        "reason": "富士官方产品页确认该型号属于XF系列镜头；已知资料显示XF14mmF2.8 R于2012年9月随X-E1等一同发布，但无法提供可回指的原文原句，故quote留空。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2012-09",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.dpreview.com/articles/9897321674/fujufilm-launches-xf-18-55mm-f2-8-4-0-ois-semi-fast-standard-zoom-and-xf14mm-f2-8-21mm-equivalent/",
+    "verification_quote": "September 6, 2012; XF14mm F2.8",
+    "verdict_reason": "按正式产品公告9月核对；此前6月路线图已预告开发，不能称毫无更早信息；原产品页无月份引文。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xf14mmf2.8r",
+      "url": "https://fujifilm-x.com/global/products/lenses/xf14mmf28-r/",
+      "captured_at": "2026-11-03T07:58:15.053150+00:00",
+      "status": "fetch_failed",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "checked_at": "2026-11-03T08:02:57.513407+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xc15-45mmf3.5-5.6oispz",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "富士 XC15-45mmF3.5-5.6 OIS PZ",
+      "date": "2018-01",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xc15-45mmf35-56-ois-pz/",
+        "quote": null,
+        "reason": "富士官方产品页确认该型号属于XC系列电动变焦镜头；已知该镜头随X-A5一同于2018年1月发布，官方页面可回指型号族，但未引用具体发布句，月份依据为已知发布资料而非页面原文。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2018-01",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.chem-t.com/fax/images/tmp_file3_1517391530.pdf",
+    "verification_quote": "2018年1月31日; XC15-45mmF3.5-5.6 OIS PZ",
+    "verdict_reason": "存档原厂新闻稿支持1月公告，非3月单镜开售；原产品页无日期原句。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xc15-45mmf3.5-5.6oispz",
+      "url": "https://fujifilm-x.com/global/products/lenses/xc15-45mmf35-56-ois-pz/",
+      "captured_at": "2026-11-03T07:58:15.243360+00:00",
+      "status": "fetch_failed",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "checked_at": "2026-11-03T08:02:57.513409+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xf8mmf3.5rwr",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "XF8mmF3.5 R WR",
+      "date": "2023-05",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf8mmf35-r-wr/",
+        "quote": null,
+        "reason": "富士官网该镜头产品页可确认型号族为XF8mmF3.5 R WR；已知该镜头于2023年5月发布，但无法回指具体含月份的原句，故quote留空，日期仅作世代估算。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2023-05",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.fujifilm.com/kr/en/news/hq/9420",
+    "verification_quote": "May 24, 2023; XF8mmF3.5 R WR",
+    "verdict_reason": "官方5月公告，6月29日开售；原产品页无原句且未核月份。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xf8mmf3.5rwr",
+      "url": "https://fujifilm-x.com/global/products/lenses/xf8mmf35-r-wr/",
+      "captured_at": "2026-11-03T07:58:15.603180+00:00",
+      "status": "fetch_failed",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "checked_at": "2026-11-03T08:02:57.513411+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xf200mmf2rlmoiswr",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "XF200mmF2 R LM OIS WR",
+      "date": "2018-07",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf200mmf2-r-lm-ois-wr/",
+        "quote": null,
+        "reason": "富士官方产品页确认该型号属于XF镜头产品线；该镜头于2018年7月随X-T100等一同公布开发/发布信息，媒体广泛报道其2018年7月发布、2018年10月上市。此处按发布（announcement）月份取2018-07，仅作型号世代估算。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2018-07",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://dc.watch.impress.co.jp/docs/news/1133999.html",
+    "verification_quote": "2018年7月20日; XF200mmF2 R LM OIS WR",
+    "verdict_reason": "原始发布报道支持7月公告，10月开售；候选reason提X-T100同期不准确，原产品页无月份支持。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xf200mmf2rlmoiswr",
+      "url": "https://fujifilm-x.com/global/products/lenses/xf200mmf2-r-lm-ois-wr/",
+      "captured_at": "2026-11-03T07:58:15.817154+00:00",
+      "status": "fetch_failed",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "checked_at": "2026-11-03T08:02:57.513413+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xf18mmf1.4rlmwr",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "XF18mmF1.4 R LM WR",
+      "date": "2021-04",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf18mmf14-r-lm-wr/",
+        "quote": null,
+        "reason": "富士官方产品页可确认该型号属于XF18mmF1.4 R LM WR镜头族；已知该镜头于2021年4月发布，但无法回指具体原文句子，故quote留空，日期仅作型号世代估算。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2021-04",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.fujifilm-x.com/en-sg/news/fujifilm-announces-new-fujinon-xf18mmf1-4-r-lm-wr-lens/",
+    "verification_quote": "TOKYO, April 15, 2021; XF18mmF1.4 R LM WR",
+    "verdict_reason": "官方4月公告，5月开售；原产品页无原句且模型承认无法回指。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xf18mmf1.4rlmwr",
+      "url": "https://fujifilm-x.com/global/products/lenses/xf18mmf14-r-lm-wr/",
+      "captured_at": "2026-11-03T07:58:16.041089+00:00",
+      "status": "fetch_failed",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "checked_at": "2026-11-03T08:02:57.513416+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xf23mmf2rwr",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "XF23mmF2 R WR",
+      "date": "2016-07",
+      "evidence": {
+        "url": "https://fujifilm.com.cn/news/detail/2016/0707/",
+        "quote": null,
+        "reason": "富士中国官网2016年7月7日新闻稿宣布推出XF23mmF2 R WR，属于富士龙XF系列镜头，按公告月份记为2016-07；未核实到可引用的原句，故quote留空。"
+      },
+      "confidence": "medium",
+      "market": "CN",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2016-08",
+    "date_correct": false,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://dc.watch.impress.co.jp/docs/news/1016454.html",
+    "verification_quote": "2016年8月25日; XF23mmF2 R WR",
+    "verdict_reason": "现场发布报道为8月，10月开售；候选7月混淆X-T2，原引用fujifilm.com.cn路径DNS失败。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xf23mmf2rwr",
+      "url": "https://fujifilm.com.cn/news/detail/2016/0707/",
+      "captured_at": "2026-11-03T07:58:16.383997+00:00",
+      "status": "fetch_failed",
+      "http_status": null,
+      "error": "<urlopen error [Errno -5] No address associated with hostname>"
+    },
+    "checked_at": "2026-11-03T08:02:57.513418+00:00"
+  },
+  {
+    "family": "富士|相机镜头|xf150-600mmf5.6-8rlmoiswr",
+    "brand": "富士",
+    "requested": true,
+    "result": "candidate",
+    "proposal": {
+      "model": "XF150-600mmF5.6-8 R LM OIS WR",
+      "date": "2022-05",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf150-600mmf56-8-r-lm-ois-wr/",
+        "quote": null,
+        "reason": "富士官方产品页存在该型号；该镜头于2022年5月随X-H2S一同发布，官方新闻稿可回指，但当前无法给出确知原句，故quote留空。月份依据为已知发布资料，非由型号年份或CPU年份推断。"
+      },
+      "confidence": "medium",
+      "market": "global",
+      "event": "announcement",
+      "abstention_reason": null
+    },
+    "correct_date": "2022-05",
+    "date_correct": true,
+    "identity_match": true,
+    "evidence_supported": false,
+    "correct": false,
+    "verification_url": "https://www.fujifilm-x.com/en-us/news/fujifilm-announces-fujinon-xf150-600mmf5-6-8-r-lm-ois-wr/",
+    "verification_quote": "TOKYO, May 31, 2022; XF150-600mmF5.6-8 R LM OIS WR",
+    "verdict_reason": "官方5月公告，7月开售；原产品页未回指月份，quote空。",
+    "original_citation_capture": {
+      "family": "富士|相机镜头|xf150-600mmf5.6-8rlmoiswr",
+      "url": "https://fujifilm-x.com/global/products/lenses/xf150-600mmf56-8-r-lm-ois-wr/",
+      "captured_at": "2026-11-03T07:58:16.389878+00:00",
+      "status": "fetch_failed",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "checked_at": "2026-11-03T08:02:57.513420+00:00"
+  }
+]

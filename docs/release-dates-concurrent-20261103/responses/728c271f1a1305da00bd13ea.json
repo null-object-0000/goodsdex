@@ -1,0 +1,62 @@
+{
+  "family": "大疆|麦克风配件|djimic接收器",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 102,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 279,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 381
+  },
+  "captured_at": "2026-11-03T07:55:05.651949+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"DJI Mic 接收器\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"unknown\",\"event\":\"announcement\",\"abstention_reason\":\"“DJI Mic 接收器”未指明属于哪一代（DJI Mic、DJI Mic 2、DJI Mic Mini 等），且接收器作为配件不能借用主机（机身/套装）的发布日期；无足够资料确定具体配件型号族的首次推出年月，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692504,
+    "id": "2731e79b-7457-47d0-b699-6675581e73ae",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 102,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 279,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 381
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:03.278547+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.3733967159932945,
+      "usage": {
+        "completion_tokens": 102,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 279,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 381
+      }
+    }
+  ]
+}

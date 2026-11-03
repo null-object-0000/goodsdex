@@ -1,0 +1,62 @@
+{
+  "family": "惠普|笔记本|惠普战66airg2i14英寸商务笔记本电脑|英特尔®酷睿™5处理器320|英特尔®显卡",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 98,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 306,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 404
+  },
+  "captured_at": "2026-11-03T07:55:14.535995+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"惠普 战66 Air G2i 14英寸\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为惠普中国战66 Air系列G2i世代，但无法确认其首次推出年月；已知资料不足以将世代与具体月份对应，且不得仅凭CPU世代（酷睿5 320）推断月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692513,
+    "id": "ac73cfa1-3d9d-4d7b-939b-db0b43e60073",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 98,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 306,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 404
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:12.135717+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.4002733630040893,
+      "usage": {
+        "completion_tokens": 98,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 306,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 404
+      }
+    }
+  ]
+}

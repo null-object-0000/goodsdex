@@ -1,0 +1,62 @@
+{
+  "family": "富士|相机镜头|xf8mmf3.5rwr",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 131,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 280,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 411
+  },
+  "captured_at": "2026-11-03T07:55:31.469317+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"XF8mmF3.5 R WR\",\"date\":\"2023-05\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xf8mmf35-r-wr/\",\"quote\":null,\"reason\":\"富士官网该镜头产品页可确认型号族为XF8mmF3.5 R WR；已知该镜头于2023年5月发布，但无法回指具体含月份的原句，故quote留空，日期仅作世代估算。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692530,
+    "id": "06747816-20ea-406b-aa61-6ee6d5a89c04",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 131,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 280,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 411
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:29.234622+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.234694311002386,
+      "usage": {
+        "completion_tokens": 131,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 280,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 411
+      }
+    }
+  ]
+}

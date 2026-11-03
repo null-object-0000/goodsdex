@@ -1,0 +1,64 @@
+{
+  "family": "富士|相机|fujifilmx-pro3",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 130,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 278,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 408
+  },
+  "captured_at": "2026-11-03T07:55:27.677871+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"FUJIFILM X-Pro3\",\"date\":\"2019-10\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/cameras/x-pro3/\",\"quote\":null,\"reason\":\"富士官方X-Pro3产品页可确认该型号族存在；已知该机型于2019年10月发布，故按机身世代给出2019-10作为首次推出年月候选。未引用具体原文句，仅以官方产品页作为型号族回指依据。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692527,
+    "id": "021793692525691ab257ece25bd0fea81c82ca5c15ec8fdb64f32",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 130,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 278,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 408
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:25.645676+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.0321884479926666,
+      "usage": {
+        "completion_tokens": 130,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 278,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 408
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "family": "小米|冰箱|米家冰箱610l对开",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 83,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 278,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 361
+  },
+  "captured_at": "2026-11-03T07:55:00.779908+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"米家冰箱 610L对开\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为渠道/商品命名，未提供可回指的官方发布页或媒体原文；无法确认其所属型号族的首次推出年月，且不能仅凭型号容量或品牌年份推断月份。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692500,
+    "id": "021793692498994ab257ece25bd0fea81c82ca5c15ec8fd888e14",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 83,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 278,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 361
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:58.941778+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.838126127011492,
+      "usage": {
+        "completion_tokens": 83,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 278,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 361
+      }
+    }
+  ]
+}

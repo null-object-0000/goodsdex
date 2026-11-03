@@ -1,0 +1,62 @@
+{
+  "family": "惠普|笔记本|惠普战6616英寸商务笔记本电脑|amd锐龙™7h255处理器|amdradeon™",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 130,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 300,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 430
+  },
+  "captured_at": "2026-11-03T07:55:14.050764+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"惠普 战66 16英寸（AMD 锐龙 7 H 255）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该SKU为惠普战66系列16英寸AMD锐龙7 H 255版本，但战66存在多代平台（Intel/AMD、不同世代），且H255为较新锐龙处理器；无确知可回指的官网/媒体原文能将该具体型号族与某一年月对应，不能仅凭CPU年份推断月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692512,
+    "id": "50878a49-f80d-4d74-a452-7fc914413579",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 130,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 300,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 430
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:11.625228+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.425530071996036,
+      "usage": {
+        "completion_tokens": 130,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 300,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 430
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "family": "小米|电视|小米盒子4c",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 76,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 274,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 350
+  },
+  "captured_at": "2026-11-03T07:54:57.212579+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"小米盒子4c\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"小米盒子4C属于小米盒子4系列，但无法从已知可靠资料确认该型号族首次发布的年月；不能仅凭型号年份或芯片年份推断月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692497,
+    "id": "0217936924956384f170dda172df2cc79a65077ac74d4044ce06a",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 76,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 274,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 350
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:55.541652+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.6709235470043495,
+      "usage": {
+        "completion_tokens": 76,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 274,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 350
+      }
+    }
+  ]
+}

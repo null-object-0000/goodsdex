@@ -1,0 +1,64 @@
+{
+  "family": "富士|相机镜头|xf16mmf1.4rwr",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 137,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 280,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 417
+  },
+  "captured_at": "2026-11-03T07:55:26.162602+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"XF16mmF1.4 R WR\",\"date\":\"2015-04\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xf16mmf14-r-wr/\",\"quote\":null,\"reason\":\"富士官方产品页确认该型号属于XF16mmF1.4 R WR镜头族；已知该镜头于2015年4月发布，官方页面可回指型号族，但未引用具体发布月份原句，故月份依据为已知发布资料而非页面原文。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692526,
+    "id": "0217936925240015c7f85291e6ad850e47f0b8bb356de2fcf6ee7",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 137,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 280,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 417
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:23.954664+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.207929409996723,
+      "usage": {
+        "completion_tokens": 137,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 280,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 417
+      }
+    }
+  ]
+}

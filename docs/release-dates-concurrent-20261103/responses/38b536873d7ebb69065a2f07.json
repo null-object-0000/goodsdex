@@ -1,0 +1,64 @@
+{
+  "family": "小米|穿戴|xiaomiwatchstrap22mm米兰尼斯表带",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 102,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 284,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 386
+  },
+  "captured_at": "2026-11-03T07:54:58.317876+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"Xiaomi Watch Strap 22mm 米兰尼斯表带\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为小米22mm米兰尼斯表带配件，属通用表带而非某一主机世代；无法从已知资料确定其作为独立配件首次推出的年月，且不得借用主机（如Xiaomi Watch S系列）的发布月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692498,
+    "id": "0217936924966586cb63cadb26a6eb1a5dd8bb71cce3d7f3ebae2",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 102,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 284,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 386
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:56.606325+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.7115484709938755,
+      "usage": {
+        "completion_tokens": 102,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 284,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 386
+      }
+    }
+  ]
+}

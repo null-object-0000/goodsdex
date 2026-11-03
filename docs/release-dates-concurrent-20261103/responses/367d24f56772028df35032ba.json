@@ -1,0 +1,64 @@
+{
+  "family": "惠普|笔记本|惠普战6614英寸商务笔记本电脑|第二代英特尔®酷睿™ultra7处理器256v|英特尔®arc™",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 133,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 304,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 437
+  },
+  "captured_at": "2026-11-03T07:55:18.656204+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"惠普 战66 14英寸商务笔记本电脑（第二代英特尔酷睿Ultra 7 256V）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该输入仅给出惠普战66 14英寸机型与第二代酷睿Ultra 7 256V处理器，未指明具体世代/平台版本（战66各代命名与惠普平台不得混同），且无可靠可回指资料能将该型号族首次推出年月定位到具体月份；不能仅凭CPU年份推断月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692518,
+    "id": "0217936925167285c7f85291e6ad850e47f0b8bb356de2fed3517",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 133,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 304,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 437
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:16.679706+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.9764952690020436,
+      "usage": {
+        "completion_tokens": 133,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 304,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 437
+      }
+    }
+  ]
+}

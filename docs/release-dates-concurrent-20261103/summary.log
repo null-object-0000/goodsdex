@@ -1,0 +1,25 @@
+{
+  "families": 100,
+  "requests": 100,
+  "successful_responses": 100,
+  "abstentions": 71,
+  "valid_date_candidates": 28,
+  "invalid_date_outputs": 1,
+  "elapsed_seconds": 38.32692950400815,
+  "serial_baseline_seconds_per_family": 1.9229569490496943,
+  "speedup": 5.017247595710988,
+  "http_429": 0,
+  "backoff_seconds": 0,
+  "usage": {
+    "prompt_tokens": 28741,
+    "completion_tokens": 11597,
+    "total_tokens": 40338
+  },
+  "sample_families": 20,
+  "sample_date_matches": 15,
+  "sample_evidence_accepted": 0,
+  "acceptance": "failed",
+  "full_run_started": false,
+  "remaining_families_not_sent": 2713,
+  "reason": "Per-brand month and original-citation audit failed. No corrected dates or replacement citations were written to official/LLM inputs."
+}

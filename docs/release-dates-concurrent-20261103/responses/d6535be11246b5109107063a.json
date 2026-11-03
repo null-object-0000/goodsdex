@@ -1,0 +1,64 @@
+{
+  "family": "惠普|笔记本|惠普星book16英寸ai笔记本电脑|amd锐龙™7h255处理器|amdradeon™780m显卡",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 176,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 306,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 482
+  },
+  "captured_at": "2026-11-03T07:55:13.151083+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"惠普 星Book 16英寸 AI 笔记本电脑（AMD 锐龙 7 H 255 / Radeon 780M）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该输入仅给出惠普星Book 16英寸、锐龙7 H 255与Radeon 780M的配置组合，未提供可唯一对应到具体型号族/世代的官方型号名或发布资料；锐龙7 H 255属较新移动处理器，但不能仅凭CPU年份推断整机发布月份。惠普星Book系列存在多个平台与世代（含不同处理器平台版本），在缺乏可回指的官网或媒体原文时无法确定该型号族的首次推出年月，故date与evidence留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692513,
+    "id": "0217936925110224f170dda172df2cc79a65077ac74d40487444a",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 176,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 306,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 482
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:10.970488+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.1805927789973794,
+      "usage": {
+        "completion_tokens": 176,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 306,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 482
+      }
+    }
+  ]
+}

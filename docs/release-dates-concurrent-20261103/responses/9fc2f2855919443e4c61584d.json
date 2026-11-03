@@ -1,0 +1,64 @@
+{
+  "family": "小米|洗地机|米家扫拖机器人2/3配件",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 104,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 283,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 387
+  },
+  "captured_at": "2026-11-03T07:55:00.279588+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"米家扫拖机器人 2/3 配件\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"输入为配件类目（米家扫拖机器人 2/3 配件），并非单一型号族；配件不得借用主机（米家扫拖机器人 2/3）的发布月份，且无该配件本身首次推出年月的可回指依据，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692500,
+    "id": "021793692498742ab257ece25bd0fea81c82ca5c15ec8fdfc8a4d",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 104,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 283,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 387
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:58.691632+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.5879553800041322,
+      "usage": {
+        "completion_tokens": 104,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 283,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 387
+      }
+    }
+  ]
+}

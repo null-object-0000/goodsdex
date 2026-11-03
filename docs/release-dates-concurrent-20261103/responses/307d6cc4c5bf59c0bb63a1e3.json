@@ -1,0 +1,62 @@
+{
+  "family": "惠普|笔记本|惠普星bookpro16英寸ai笔记本电脑|第三代英特尔®酷睿™ultrax7358h|英特尔®锐炫™b390显卡",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 172,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 308,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 480
+  },
+  "captured_at": "2026-11-03T07:55:21.711306+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"惠普 星Book Pro 16英寸 AI 笔记本电脑（第三代英特尔酷睿Ultra X7 358H / 锐炫B390）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号对应惠普星Book Pro 16的第三代酷睿Ultra（Panther Lake，Ultra X7 358H + 锐炫B390）配置。已知资料仅能确认Panther Lake平台于2026年CES（2026年1月）发布，但无法确认惠普该具体型号族（星Book Pro 16 2026款）的首次推出年月，且不得仅由CPU年份推断月份；惠普平台/型号世代不得混同，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692520,
+    "id": "e3bb3f59-4d36-4f31-9dd6-b7a9007566cd",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 172,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 308,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 480
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:18.915206+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.7960980469943024,
+      "usage": {
+        "completion_tokens": 172,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 308,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 480
+      }
+    }
+  ]
+}

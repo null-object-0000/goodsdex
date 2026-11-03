@@ -1,0 +1,64 @@
+{
+  "family": "小米|剃须刀|米家电动剃须刀刀头往复双刀头",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 98,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 285,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 383
+  },
+  "captured_at": "2026-11-03T07:54:56.955022+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"米家电动剃须刀刀头 往复双刀头\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为剃须刀配件（往复双刀头），并非主机型号族；无可靠公开资料可回指其作为独立配件型号的首次推出年月，且不得借用米家电动剃须刀主机的发布日期，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692496,
+    "id": "021793692495377ab257ece25bd0fea81c82ca5c15ec8fd1d01a5",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 98,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 285,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 383
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:55.291520+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.663500088994624,
+      "usage": {
+        "completion_tokens": 98,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 285,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 383
+      }
+    }
+  ]
+}

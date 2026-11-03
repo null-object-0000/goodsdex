@@ -1,0 +1,43 @@
+{
+  "totals": {
+    "sent_families": 100,
+    "calls": 100,
+    "http_429": 0,
+    "backoff_seconds": 0,
+    "backoff_elapsed_seconds": 0,
+    "completion_tokens": 11597,
+    "prompt_tokens": 28741,
+    "total_tokens": 40338
+  },
+  "brands": {
+    "小米": {
+      "sent_families": 25,
+      "calls": 25,
+      "completion_tokens": 2401,
+      "prompt_tokens": 6999,
+      "total_tokens": 9400
+    },
+    "大疆": {
+      "sent_families": 25,
+      "calls": 25,
+      "completion_tokens": 2344,
+      "prompt_tokens": 7069,
+      "total_tokens": 9413
+    },
+    "惠普": {
+      "sent_families": 25,
+      "calls": 25,
+      "completion_tokens": 3268,
+      "prompt_tokens": 7650,
+      "total_tokens": 10918
+    },
+    "富士": {
+      "sent_families": 25,
+      "calls": 25,
+      "completion_tokens": 3584,
+      "prompt_tokens": 7023,
+      "total_tokens": 10607
+    }
+  },
+  "caveat": "Sent requests lacking a response have unknown usage; totals cover recorded responses only. Calls include recorded attempts and retries; interrupted attempts have unknown billing. Backoff seconds are per-worker sums, not wall-clock duration."
+}

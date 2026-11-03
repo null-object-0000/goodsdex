@@ -1,0 +1,64 @@
+{
+  "family": "小米|小爱音箱|redmi电视条形音箱",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 89,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 278,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 367
+  },
+  "captured_at": "2026-11-03T07:55:02.561730+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"Redmi 电视条形音箱\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为Redmi电视条形音箱，属于配件类产品，不能借用电视主机或手机等主机的发布日期。已知资料中无法确认其作为独立配件型号族的首次推出年月，且不具备联网检索条件，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692502,
+    "id": "0217936925011125c7f85291e6ad850e47f0b8bb356de2f1bf57e",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 89,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 278,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 367
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:01.029937+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.5317921189998742,
+      "usage": {
+        "completion_tokens": 89,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 278,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 367
+      }
+    }
+  ]
+}

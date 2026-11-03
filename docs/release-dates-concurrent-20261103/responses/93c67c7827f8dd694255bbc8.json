@@ -1,0 +1,64 @@
+{
+  "family": "大疆|云台配件|如影sc跟焦器电机安装组件",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 92,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 283,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 375
+  },
+  "captured_at": "2026-11-03T07:55:05.652015+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"如影 SC 跟焦器电机安装组件\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为DJI Ronin-SC的配件，并非独立发布的型号族；无已知官方或媒体资料给出该配件本身的首次推出年月，且不得借用主机（Ronin-SC）的发布日期，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692505,
+    "id": "021793692503826ab257ece25bd0fea81c82ca5c15ec8fdd0938f",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 92,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 283,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 375
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:03.778808+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.8732040540053276,
+      "usage": {
+        "completion_tokens": 92,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 283,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 375
+      }
+    }
+  ]
+}

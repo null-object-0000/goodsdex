@@ -1,0 +1,64 @@
+{
+  "family": "富士|相机镜头|xc15-45mmf3.5-5.6oispz",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 149,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 288,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 437
+  },
+  "captured_at": "2026-11-03T07:55:29.177841+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"富士 XC15-45mmF3.5-5.6 OIS PZ\",\"date\":\"2018-01\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xc15-45mmf35-56-ois-pz/\",\"quote\":null,\"reason\":\"富士官方产品页确认该型号属于XC系列电动变焦镜头；已知该镜头随X-A5一同于2018年1月发布，官方页面可回指型号族，但未引用具体发布句，月份依据为已知发布资料而非页面原文。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692529,
+    "id": "021793692527159ab257ece25bd0fea81c82ca5c15ec8fdac5b58",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 149,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 288,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 437
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:27.113405+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.0644340020080563,
+      "usage": {
+        "completion_tokens": 149,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 288,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 437
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "family": "小米|中央空调Pro|柔风立式3匹新一级能效米家空调",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 178,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 287,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 465
+  },
+  "captured_at": "2026-11-03T07:55:00.279922+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"米家空调 柔风 立式3匹新一级能效\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为小米米家空调柔风立式3匹新一级能效机型，属于小米空调产品线中的具体SKU/系列组合，并非有明确单一“首次推出年月”的型号族。已知公开资料中，小米柔风系列空调（含立式柜机）多在2021—2023年间陆续发布，但无法确知该具体“柔风 立式3匹新一级能效”型号族的首次推出年月，且不能仅凭型号年份或能效等级推断月份。无可靠可回指的具体网页链接或确知原文，故date与evidence留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692500,
+    "id": "0217936924980106cb63cadb26a6eb1a5dd8bb71cce3d7fa437ce",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 178,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 287,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 465
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:57.941161+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.3387566020101076,
+      "usage": {
+        "completion_tokens": 178,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 287,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 465
+      }
+    }
+  ]
+}

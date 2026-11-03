@@ -1,0 +1,62 @@
+{
+  "family": "富士|相机镜头|xf14mmf2.8r",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 127,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 279,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 406
+  },
+  "captured_at": "2026-11-03T07:55:30.009446+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"XF14mmF2.8 R\",\"date\":\"2012-09\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xf14mmf28-r/\",\"quote\":null,\"reason\":\"富士官方产品页确认该型号属于XF系列镜头；已知资料显示XF14mmF2.8 R于2012年9月随X-E1等一同发布，但无法提供可回指的原文原句，故quote留空。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692528,
+    "id": "b733bd40-2198-4196-b9e1-44ed3654fe5d",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 127,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 279,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 406
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:27.677813+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.331630939996103,
+      "usage": {
+        "completion_tokens": 127,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 279,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 406
+      }
+    }
+  ]
+}

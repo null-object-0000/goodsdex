@@ -1,0 +1,62 @@
+{
+  "family": "富士|相机镜头|xf8-16mmf2.8rlmwr",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 151,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 283,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 434
+  },
+  "captured_at": "2026-11-03T07:55:28.978437+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"XF8-16mmF2.8 R LM WR\",\"date\":\"2018-07\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xf8-16mmf28-r-lm-wr/\",\"quote\":null,\"reason\":\"富士官方产品页可确认该型号属于XF镜头产品线；该镜头于2018年7月发布（与X-T100等同期公布），官方页面未直接给出可引用的发布月份原句，故quote留空，仅以官方产品页支持型号族身份，月份依据已知发布资料。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692527,
+    "id": "0ccacfa2-86fe-4cc4-8276-0a8583f1218e",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 151,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 283,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 434
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:26.420391+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.558044325996889,
+      "usage": {
+        "completion_tokens": 151,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 283,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 434
+      }
+    }
+  ]
+}

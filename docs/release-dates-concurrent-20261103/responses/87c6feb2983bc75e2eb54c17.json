@@ -1,0 +1,64 @@
+{
+  "family": "富士|相机镜头|xf23mmf2rwr",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 123,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 278,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 401
+  },
+  "captured_at": "2026-11-03T07:55:25.638413+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"XF23mmF2 R WR\",\"date\":\"2016-07\",\"evidence\":{\"url\":\"https://fujifilm.com.cn/news/detail/2016/0707/\",\"quote\":null,\"reason\":\"富士中国官网2016年7月7日新闻稿宣布推出XF23mmF2 R WR，属于富士龙XF系列镜头，按公告月份记为2016-07；未核实到可引用的原句，故quote留空。\"},\"confidence\":\"medium\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692525,
+    "id": "0217936925235254f170dda172df2cc79a65077ac74d404941147",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 123,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 278,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 401
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:23.476774+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.1616351550037507,
+      "usage": {
+        "completion_tokens": 123,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 278,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 401
+      }
+    }
+  ]
+}

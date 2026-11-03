@@ -1,0 +1,64 @@
+{
+  "family": "富士|相机镜头|xf70-300mmf4-5.6rlmoiswr",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 160,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 287,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 447
+  },
+  "captured_at": "2026-11-03T07:55:30.702703+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"XF70-300mmF4-5.6 R LM OIS WR\",\"date\":\"2021-01\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xf70-300mmf4-5-6-r-lm-ois-wr/\",\"quote\":null,\"reason\":\"富士官方产品页可确认该型号属于XF70-300mmF4-5.6 R LM OIS WR镜头族；已知该镜头于2021年1月发布，但无法在无联网条件下回指具体含月份的原句，故quote留空，日期仅作型号世代估算。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692530,
+    "id": "021793692529033ab257ece25bd0fea81c82ca5c15ec8fdbad075",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 160,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 287,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 447
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:28.984493+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.7182073690055404,
+      "usage": {
+        "completion_tokens": 160,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 287,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 447
+      }
+    }
+  ]
+}

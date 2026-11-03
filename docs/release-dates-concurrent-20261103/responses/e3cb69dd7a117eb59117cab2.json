@@ -1,0 +1,62 @@
+{
+  "family": "大疆|影像传输与控制设备配件|djifocusprolidar",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 123,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 281,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 404
+  },
+  "captured_at": "2026-11-03T07:55:10.164437+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"DJI Focus Pro LiDAR\",\"date\":\"2024-04\",\"evidence\":{\"url\":\"https://www.dji.com/cn/media-center/announcements/dji-focus-pro\",\"quote\":null,\"reason\":\"DJI Focus Pro 于2024年4月发布，LiDAR 是该型号族中的组成配件；按配件本身归入该发布月份，不借用主机日期。未能确知可回指原句，故 quote 留空。\"},\"confidence\":\"medium\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692509,
+    "id": "d04201ce-e8ed-4b10-99c9-792185d7d2e1",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 123,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 281,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 404
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:07.855024+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.3094118570006685,
+      "usage": {
+        "completion_tokens": 123,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 404
+      }
+    }
+  ]
+}

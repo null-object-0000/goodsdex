@@ -1,0 +1,62 @@
+{
+  "family": "小米|耳机|小米臻享礼盒",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 86,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 275,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 361
+  },
+  "captured_at": "2026-11-03T07:55:03.028468+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"小米臻享礼盒\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"“小米臻享礼盒”是促销礼盒/套装名称，并非可独立识别的耳机型号族；无法确定其对应耳机型号世代，也无可靠公开资料给出该礼盒首次推出年月，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692501,
+    "id": "8d1f5275-d08c-448b-a464-ba83b8a06bf0",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 86,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 275,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 361
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:00.779849+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.24861494700599,
+      "usage": {
+        "completion_tokens": 86,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 275,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 361
+      }
+    }
+  ]
+}

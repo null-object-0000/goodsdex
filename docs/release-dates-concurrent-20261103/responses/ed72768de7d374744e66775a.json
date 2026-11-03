@@ -1,0 +1,64 @@
+{
+  "family": "大疆|麦克风配件|djimicmini2s充电盒",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 85,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 283,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 368
+  },
+  "captured_at": "2026-11-03T07:55:03.454552+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"DJI Mic Mini 2S 充电盒\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"unknown\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为配件，且“DJI Mic Mini 2S”本身并非已知的公开产品世代；无法确认该充电盒作为独立配件首次推出的年月，资料不足，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692503,
+    "id": "0217936925019315c7f85291e6ad850e47f0b8bb356de2f80c7ea",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 85,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 283,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 368
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:01.881043+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.5735063809988787,
+      "usage": {
+        "completion_tokens": 85,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 283,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 368
+      }
+    }
+  ]
+}

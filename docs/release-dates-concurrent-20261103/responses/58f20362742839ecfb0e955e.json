@@ -1,0 +1,64 @@
+{
+  "family": "小米|家电|米家智能无叶净化扇滤芯通用",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 80,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 281,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 361
+  },
+  "captured_at": "2026-11-03T07:54:56.356277+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"米家智能无叶净化扇滤芯 通用\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为通用滤芯配件，非主机型号族；无可靠公开资料可回指其首次推出年月，且配件不得借用主机日期，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692496,
+    "id": "021793692494871ab257ece25bd0fea81c82ca5c15ec8fd8bbc62",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 80,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 281,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 361
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:54.791339+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.5649369009915972,
+      "usage": {
+        "completion_tokens": 80,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 361
+      }
+    }
+  ]
+}

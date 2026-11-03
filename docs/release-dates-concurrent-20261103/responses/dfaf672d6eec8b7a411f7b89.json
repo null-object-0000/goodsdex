@@ -1,0 +1,62 @@
+{
+  "family": "惠普|笔记本|惠普战9916英寸商务笔记本电脑|英特尔®酷睿™ultra7-255h处理器|nvidiartx™pro500",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 142,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 305,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 447
+  },
+  "captured_at": "2026-11-03T07:55:21.282250+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"惠普 战99 16英寸商务笔记本电脑（英特尔酷睿Ultra 7-255H / NVIDIA RTX PRO 500）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该配置对应惠普战99（ZBook Power 16 G11 世代之后的 2025 平台）中国区型号族，但无法确知该型号族首次推出的具体年月；仅凭 Ultra 7-255H（2025 年平台）与 RTX PRO 500 不能推断月份，且惠普平台世代不得混同，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692520,
+    "id": "827365b5-6064-49c5-bf31-8de84b99d728",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 142,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 305,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 447
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:18.665083+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.6171630220051156,
+      "usage": {
+        "completion_tokens": 142,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 305,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 447
+      }
+    }
+  ]
+}

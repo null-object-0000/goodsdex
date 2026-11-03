@@ -1,0 +1,876 @@
+[
+  {
+    "family": "小米|旧款机型|红米5plus",
+    "brand": "小米",
+    "category": "旧款机型",
+    "ids": [
+      "CN:mi_cn:product:10000080",
+      "CN:mi_cn:product:7357",
+      "CN:mi_cn:product:7359"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2017-12",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.mi.com/redmi5plus",
+        "quote": "",
+        "reason": "小米于2017年12月7日发布红米5/红米5 Plus，红米5 Plus为该型号族首次推出；官网原页可能已下线，故不引用具体原句，仅以已知发布月份作世代估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "3d811a047077e34662026853c9a6212c91ad7278dd026a3ac0920fd969f5b131",
+        "captured_at": "2026-11-03T07:54:58.030821+00:00",
+        "artifact": "responses/5e8bd2e468ade4fbf1f80d77.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "小米|平板|redmipad2",
+    "brand": "小米",
+    "category": "平板",
+    "ids": [
+      "CN:mi_cn:product:21591"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2025-08",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.mi.com/global/product/redmi-pad-2/",
+        "quote": "",
+        "reason": "小米全球官网存在 REDMI Pad 2 产品页，可确认该型号族存在；但未联网核验页面发布/公告日期，且不能仅凭型号或平台年份推断月份，故日期留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "e326261a3c0868298dbbe2aaeb65eb56c62a7546de02bfd81a6934f85c057df0",
+        "captured_at": "2026-11-03T07:54:59.229519+00:00",
+        "artifact": "responses/4c6880bf8e3370b91c9d3c3d.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "大疆|影像传输与控制设备配件|djifocusprolidar",
+    "brand": "大疆",
+    "category": "影像传输与控制设备配件",
+    "ids": [
+      "CN:dji:sku:164241"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2024-04",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://www.dji.com/cn/media-center/announcements/dji-focus-pro",
+        "quote": "",
+        "reason": "DJI Focus Pro 于2024年4月发布，LiDAR 是该型号族中的组成配件；按配件本身归入该发布月份，不借用主机日期。未能确知可回指原句，故 quote 留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "b804810ff1bbc1f2a3211cfe0f1bce191e5314d093b6b451728c784f9d3594b5",
+        "captured_at": "2026-11-03T07:55:10.164437+00:00",
+        "artifact": "responses/e3cb69dd7a117eb59117cab2.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机|fujifilmx-h2s",
+    "brand": "富士",
+    "category": "相机",
+    "ids": [
+      "CN:fuji:model:x-h2s"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2022-05",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-h2s/",
+        "quote": "",
+        "reason": "富士官方X-H2S产品页可确认该型号属于X-H2S世代；该机型于2022年5月发布（X Summit 2022年5月31日），故按型号族首次推出年月取2022-05。未引用具体原句，仅以官方产品页作为型号族回指。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "6ae479ad574cc9e0b060e4b6925b6d2365f31f852d0c7ec7ce4c87f04066de14",
+        "captured_at": "2026-11-03T07:55:22.375826+00:00",
+        "artifact": "responses/6c069f285c52aa07ce084086.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机|fujifilmx-s20",
+    "brand": "富士",
+    "category": "相机",
+    "ids": [
+      "CN:fuji:kit:x-s20-15-45mm",
+      "CN:fuji:kit:x-s20-16-50mm",
+      "CN:fuji:kit:x-s20-xc35mm",
+      "CN:fuji:kit:x-s20-xf35mm",
+      "CN:fuji:model:x-s20"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2023-05",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-s20/",
+        "quote": "",
+        "reason": "富士官方X-S20产品页可确认该型号族存在；该机型于2023年5月由富士发布，故以2023-05作为该型号族首次推出年月候选。未引用具体原句，因无法确知页面原文。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "754dd8204fdc3c1df25c23a848fd043e73a12fc56d90299f9fcdd678d614b87f",
+        "captured_at": "2026-11-03T07:55:22.441795+00:00",
+        "artifact": "responses/a486da424d218a0b0fdd28ed.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xc50-230mmf4.5-6.7oisii",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xc50-230mmf45-67-ois-2"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2015-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm.com.cn/news/2015/0115/",
+        "quote": "",
+        "reason": "富士中国官网2015年1月15日新闻稿发布X-A2及XC16-50mm II、XC50-230mm II镜头；该镜头为XC50-230mmF4.5-6.7 OIS的II代版本，属同一型号族换代，按机身世代/镜头世代估算首次推出月份为2015-01。链接为官网新闻栏目路径，具体原文未逐字核录，故quote留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "84896ef4ef509294016187ae74cb65572abf0628ba9a698a8e2c36e67f427a7f",
+        "captured_at": "2026-11-03T07:55:23.467987+00:00",
+        "artifact": "responses/03bd1025f15be24a30a4c966.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf200mmf2rlmoiswr",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf200mmf2-r-lm-ois-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2018-07",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf200mmf2-r-lm-ois-wr/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XF镜头产品线；该镜头于2018年7月随X-T100等一同公布开发/发布信息，媒体广泛报道其2018年7月发布、2018年10月上市。此处按发布（announcement）月份取2018-07，仅作型号世代估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "28fb5abdfb261903a8bb54050a2c8d4cd4dfe6a8692298def819a5c260d5891c",
+        "captured_at": "2026-11-03T07:55:23.948058+00:00",
+        "artifact": "responses/5c00bba7a1ed355dd85df613.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机|fujifilmx-e5",
+    "brand": "富士",
+    "category": "相机",
+    "ids": [
+      "CN:fuji:kit:x-e5-xf23mmf28-r-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2025-06",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-e5/",
+        "quote": "",
+        "reason": "富士官方X-E5产品页可确认该型号属于X-E系列新一代机身；已知该机型于2025年6月发布，故按机身世代给出2025-06作为首次推出年月候选。未引用具体原文句，仅以官方产品页作为型号族回指依据。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "eb2e5bc8e49ab7f40af3ca0c2566e352293a94f6c4eb409e92a3bebd33878a77",
+        "captured_at": "2026-11-03T07:55:24.666647+00:00",
+        "artifact": "responses/9a1d68bda13a3c721b716f2f.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf90mmf2rlmwr",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf90mmf2-r-lm-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2015-05",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm.com.cn/news/2015/0518/",
+        "quote": "",
+        "reason": "富士官方新闻稿页面路径含2015/0518，指向2015年5月18日发布；该镜头为富士XF 90mmF2 R LM WR，属XF镜头产品线，按发布公告月份记为2015-05。链接为已知官网新闻路径，但未逐字核验原句，故quote留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "e078bc202ff177ccd3289b5061e539c517ccdb0e3fafdb15b79c9b0ab240646b",
+        "captured_at": "2026-11-03T07:55:24.257624+00:00",
+        "artifact": "responses/02b0396d62bb467dcdc950bb.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf30mmf2.8rlmwrmacro",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf30mmf28-r-lm-wr-macro"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2022-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf30mmf28-r-lm-wr-macro/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF卡口30mm F2.8微距镜头；已知该镜头于2022年9月随X-H2一同发布，但无法回指具体含月份的原句，故quote留空，日期仅作型号世代估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "021ba3a7c40c9b6b7c32724fdd7a0f80a645e0f86eaa549bdbd52a66dcbbcdd7",
+        "captured_at": "2026-11-03T07:55:24.171823+00:00",
+        "artifact": "responses/d119c5fb79e4b4a95ff08050.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机|fujifilmx-h2",
+    "brand": "富士",
+    "category": "相机",
+    "ids": [
+      "CN:fuji:kit:x-h2-16-80mm"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2022-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-h2/",
+        "quote": "",
+        "reason": "富士官方X-H2产品页可确认该型号族存在；X-H2于2022年9月发布，按机身世代归入2022-09，仅作型号族首次推出年月候选，不涉及具体SKU/套机国行开售日。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "76cbfcef8e15943add2ba32e159067a9e41179290c76200a5f3c01ae102cc6e2",
+        "captured_at": "2026-11-03T07:55:24.903674+00:00",
+        "artifact": "responses/61bb9eafd534dc17a5d9b493.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf23mmf2rwr",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf23mmf2-r-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2016-07",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "CN",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm.com.cn/news/detail/2016/0707/",
+        "quote": "",
+        "reason": "富士中国官网2016年7月7日新闻稿宣布推出XF23mmF2 R WR，属于富士龙XF系列镜头，按公告月份记为2016-07；未核实到可引用的原句，故quote留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "21859a01fc2c46648247d77794678292a345592e004aeb8db0f8ccde4e2705b6",
+        "captured_at": "2026-11-03T07:55:25.638413+00:00",
+        "artifact": "responses/87c6feb2983bc75e2eb54c17.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf16mmf1.4rwr",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf16mmf14-r-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2015-04",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf16mmf14-r-wr/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XF16mmF1.4 R WR镜头族；已知该镜头于2015年4月发布，官方页面可回指型号族，但未引用具体发布月份原句，故月份依据为已知发布资料而非页面原文。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "aa9131002cc6cb766f81e1adabdf701d683f90b74dd0d1b57c31494f91c06b5d",
+        "captured_at": "2026-11-03T07:55:26.162602+00:00",
+        "artifact": "responses/961bf429e2a0489f41f474e4.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf150-600mmf5.6-8rlmoiswr",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf150-600mmf56-8-r-lm-ois-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2022-05",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf150-600mmf56-8-r-lm-ois-wr/",
+        "quote": "",
+        "reason": "富士官方产品页存在该型号；该镜头于2022年5月随X-H2S一同发布，官方新闻稿可回指，但当前无法给出确知原句，故quote留空。月份依据为已知发布资料，非由型号年份或CPU年份推断。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "006802028f1f96f046c5d1b8094ccbf9535a8b60d2391552319fc0130eca222e",
+        "captured_at": "2026-11-03T07:55:26.182612+00:00",
+        "artifact": "responses/6e1ff147ab49c6ad4245249e.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf50mmf2rwr",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf50mmf2-r-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2017-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf50mmf2-r-wr/",
+        "quote": "",
+        "reason": "富士官方产品页确认 XF50mmF2 R WR 属于 XF 镜头产品线；该镜头于2017年1月随 X-T20 等一同发布，官方新闻稿与多家媒体（如 DPReview 2017-01-19）均有报道。此处按已知发布资料给出月份候选，未引用具体原文句。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "13b23c9e93b6b3b441a45909f9b19960210e718b12d9e075d34b94b12f0083d4",
+        "captured_at": "2026-11-03T07:55:27.416818+00:00",
+        "artifact": "responses/dc412cdeea44e182d5c21593.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf18mmf1.4rlmwr",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf18mmf14-r-lm-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2021-04",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf18mmf14-r-lm-wr/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF18mmF1.4 R LM WR镜头族；已知该镜头于2021年4月发布，但无法回指具体原文句子，故quote留空，日期仅作型号世代估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "6a75b8006a10a4962edc630ac36d49c39e5fa2168cb1a8b3a0eff964ebfc7b06",
+        "captured_at": "2026-11-03T07:55:27.107723+00:00",
+        "artifact": "responses/24ae9b24b9a03025562bac7d.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf100-400mmf4.5-5.6rlmoiswr",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf100-400mmf45-56-r-lm-ois-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2016-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf100-400mmf45-56-r-lm-ois-wr/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XF100-400mmF4.5-5.6 R LM OIS WR这一镜头型号族；该镜头于2016年1月发布（与X-Pro2同期公布），故按型号世代给出2016-01作为首次推出年月候选。未引用具体原句，因无法确知页面原文。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "8e0a85cd1ff36abdbf74b292cf812b0f4b443c219704945d8f2057fa0f3aa29d",
+        "captured_at": "2026-11-03T07:55:27.420259+00:00",
+        "artifact": "responses/09c228e9a9bb32c56b5261d5.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机|fujifilmx-pro3",
+    "brand": "富士",
+    "category": "相机",
+    "ids": [
+      "CN:fuji:model:x-pro3"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2019-10",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/cameras/x-pro3/",
+        "quote": "",
+        "reason": "富士官方X-Pro3产品页可确认该型号族存在；已知该机型于2019年10月发布，故按机身世代给出2019-10作为首次推出年月候选。未引用具体原文句，仅以官方产品页作为型号族回指依据。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "f6cbd1622b0d10798da1c73b3e33f49d9523f35729c07431e61e06e67b666594",
+        "captured_at": "2026-11-03T07:55:27.677871+00:00",
+        "artifact": "responses/c607b6e4706d179712470012.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf35mmf2rwr",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf35mmf2-r-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2015-10",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm.com.cn/news/2015/1015/",
+        "quote": "",
+        "reason": "富士官方新闻稿（2015年10月15日）宣布推出XF35mmF2 R WR，属于富士龙XF系列镜头，支持该型号族首次发布月份为2015-10；链接为富士中国官网新闻页，但未逐字核验原句，故quote留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "fe0bd34645c78a9125bc8daeb8b0a8f49328d30b60dfe75e3d09a914af172703",
+        "captured_at": "2026-11-03T07:55:27.928020+00:00",
+        "artifact": "responses/92a1bd63dde12f0999594257.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf8-16mmf2.8rlmwr",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf8-16mmf28-r-lm-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2018-07",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf8-16mmf28-r-lm-wr/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF镜头产品线；该镜头于2018年7月发布（与X-T100等同期公布），官方页面未直接给出可引用的发布月份原句，故quote留空，仅以官方产品页支持型号族身份，月份依据已知发布资料。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "eb25348b8b1b2a738f6dd2f73a1e599b60d040ab7c298ab4c4d61dfccaddcad6",
+        "captured_at": "2026-11-03T07:55:28.978437+00:00",
+        "artifact": "responses/c4540ad7f570300f1a2dc165.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xc15-45mmf3.5-5.6oispz",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xc15-45mmf35-56-ois-pz"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2018-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xc15-45mmf35-56-ois-pz/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XC系列电动变焦镜头；已知该镜头随X-A5一同于2018年1月发布，官方页面可回指型号族，但未引用具体发布句，月份依据为已知发布资料而非页面原文。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "f8495e5c213183865935af81a9e1844a74ff0d4b47ee02ba5dd2cc48666e726b",
+        "captured_at": "2026-11-03T07:55:29.177841+00:00",
+        "artifact": "responses/d7aaa418ee8e4390b832d941.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf50mmf1.0rwr",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf50mmf1-r-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2020-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf50mmf10-r-wr/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XF50mmF1.0 R WR镜头族；该镜头于2020年9月富士X Summit发布，官方新闻稿与多家媒体（DPReview等）均报道为2020年9月发布，故按型号族首次推出年月取2020-09。未引用具体原句，仅以官方产品页作为型号族回指。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "f94cc671c2e4d7efb7656260d53b99ca8e4fa0d5fc1ffbcc2376df587d9bddf7",
+        "captured_at": "2026-11-03T07:55:30.198988+00:00",
+        "artifact": "responses/2f3228083ead1cf40996c93f.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf14mmf2.8r",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf14mmf28-r"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2012-09",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf14mmf28-r/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XF系列镜头；已知资料显示XF14mmF2.8 R于2012年9月随X-E1等一同发布，但无法提供可回指的原文原句，故quote留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "73fb885be9884af89696294f70b0feee73e5c74555798db20e4db57b85d9109e",
+        "captured_at": "2026-11-03T07:55:30.009446+00:00",
+        "artifact": "responses/4f4a61ce4fd8d36153fd1f3d.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf35mmf1.4r",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf35mmf14-r"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2012-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf35mmf14-r/",
+        "quote": "",
+        "reason": "富士官方产品页确认XF35mmF1.4 R属于XF镜头产品线；该镜头随X-Pro1体系于2012年初发布，公开资料普遍记为2012年1月。因未核到可引原句，quote留空，仅以官方产品页支持型号族，月份依据已知发布资料。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "ec5403bf8e5424afbd4e22f8fce6347e0fc0289cb9d14d5dbece42c476219246",
+        "captured_at": "2026-11-03T07:55:30.199050+00:00",
+        "artifact": "responses/2bdc3127a9dfba1f03da77ab.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf60mmf2.4rmacro",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf60mmf24-r-macro"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2012-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf60mmf24-r-macro/",
+        "quote": "",
+        "reason": "富士官方产品页确认该型号属于XF镜头产品线；已知该镜头随X-Pro1系统于2012年初发布，官方新闻稿日期为2012年1月，故按型号族给出2012-01候选。未能核验到可引用的原句，quote留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "061c1aecddd61dbbdc8b7dd3e4737b4b52d7f345c68d79ad22593b7e66d0d67e",
+        "captured_at": "2026-11-03T07:55:29.899290+00:00",
+        "artifact": "responses/6ffec6cb9698edecfc7885eb.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf70-300mmf4-5.6rlmoiswr",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf70-300mmf4-56-r-lm-ois-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2021-01",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf70-300mmf4-5-6-r-lm-ois-wr/",
+        "quote": "",
+        "reason": "富士官方产品页可确认该型号属于XF70-300mmF4-5.6 R LM OIS WR镜头族；已知该镜头于2021年1月发布，但无法在无联网条件下回指具体含月份的原句，故quote留空，日期仅作型号世代估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "862ea993079c34f9f967b4c17c140409ec2f9c67a28f7ea430110ee68ced2c3f",
+        "captured_at": "2026-11-03T07:55:30.702703+00:00",
+        "artifact": "responses/dc0194498d8629a9dae1c5fd.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xf8mmf3.5rwr",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xf8mmf35-r-wr"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2023-05",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xf8mmf35-r-wr/",
+        "quote": "",
+        "reason": "富士官网该镜头产品页可确认型号族为XF8mmF3.5 R WR；已知该镜头于2023年5月发布，但无法回指具体含月份的原句，故quote留空，日期仅作世代估算。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "3dc77898b7eb942488cf43cc05910a8bd3b5f033762095a9ab600210ea340b7d",
+        "captured_at": "2026-11-03T07:55:31.469317+00:00",
+        "artifact": "responses/70c178b1fbcdfcb224d0297c.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  },
+  {
+    "family": "富士|相机镜头|xc35mmf2",
+    "brand": "富士",
+    "category": "相机镜头",
+    "ids": [
+      "CN:fuji:lens:xc35mmf2"
+    ],
+    "method": "model_family_generation_estimate",
+    "release": {
+      "date": "2020-02",
+      "source": "llm",
+      "confidence": "low",
+      "granularity": "month",
+      "event": "announcement",
+      "market": "global",
+      "model": "deepseek-v4.1-flash-1017",
+      "scope": "model_family_generation",
+      "evidence": {
+        "url": "https://fujifilm-x.com/global/products/lenses/xc35mmf2/",
+        "quote": "",
+        "reason": "富士官方产品页确认 XC35mmF2 属于 XC 系列镜头；该镜头于2020年2月随 X-T200 一同发布，官方新闻稿可回指，但当前无法给出确知原句，故 quote 留空。",
+        "capture_type": "model_output",
+        "locator": "choices[0].message.content.evidence",
+        "source_type": "third_party",
+        "sha256": "5c0db764225f7d07dd8c7237736c3a632536b8bbdbaf0de976eb4abfc1e043be",
+        "captured_at": "2026-11-03T07:55:32.389835+00:00",
+        "artifact": "responses/78e1e7933104a9ed217f80b2.json",
+        "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+      }
+    }
+  }
+]

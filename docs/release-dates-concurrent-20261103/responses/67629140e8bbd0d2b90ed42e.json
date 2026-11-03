@@ -1,0 +1,64 @@
+{
+  "family": "小米|旧款机型|小米无人机4k版套装",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 118,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 278,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 396
+  },
+  "captured_at": "2026-11-03T07:55:00.173319+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"小米无人机4K版套装\",\"date\":\"2017-05或null\",\"evidence\":{\"url\":null,\"quote\":null,\"reason\":\"小米无人机4K版于2017年5月发布（媒体广泛报道），但无法提供可回指的具体网页链接或确知原文，故按规则留空证据与日期。\"},\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"缺乏可回指的具体资料链接或确知原文，无法满足证据要求，故date与evidence留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692500,
+    "id": "0217936924984936cb63cadb26a6eb1a5dd8bb71cce3d7f9efca5",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 118,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 278,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 396
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:58.441410+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.7319040570000652,
+      "usage": {
+        "completion_tokens": 118,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 278,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 396
+      }
+    }
+  ]
+}

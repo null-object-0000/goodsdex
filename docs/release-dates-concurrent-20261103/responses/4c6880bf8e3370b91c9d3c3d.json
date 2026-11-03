@@ -1,0 +1,64 @@
+{
+  "family": "小米|平板|redmipad2",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 145,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 275,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 420
+  },
+  "captured_at": "2026-11-03T07:54:59.229519+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"REDMI Pad 2\",\"date\":\"2025-08\",\"evidence\":{\"url\":\"https://www.mi.com/global/product/redmi-pad-2/\",\"quote\":null,\"reason\":\"小米全球官网存在 REDMI Pad 2 产品页，可确认该型号族存在；但未联网核验页面发布/公告日期，且不能仅凭型号或平台年份推断月份，故日期留空。\"},\"confidence\":\"low\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":\"无法在离线条件下确知该型号族首次推出年月，且禁止仅由型号年份推断月份；未提供可回指的公告日期原文。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692499,
+    "id": "0217936924975115c7f85291e6ad850e47f0b8bb356de2fe88115",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 145,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 275,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 420
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:57.462680+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.7668353850021958,
+      "usage": {
+        "completion_tokens": 145,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 275,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 420
+      }
+    }
+  ]
+}

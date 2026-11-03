@@ -1,0 +1,64 @@
+{
+  "family": "大疆|摄影器材配件|osmo自行车车尾套件",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 102,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 281,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 383
+  },
+  "captured_at": "2026-11-03T07:55:08.452618+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"Osmo 自行车车尾套件\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为DJI Osmo系列自行车车尾安装配件，属于摄影器材配件而非主机；其首次推出年月无确知的官网或媒体原文可回指，且配件日期不得借用主机（如Osmo Action、Osmo Pocket等）的发布月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692508,
+    "id": "0217936925067016cb63cadb26a6eb1a5dd8bb71cce3d7fe02b7c",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 102,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 281,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 383
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:06.652277+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.8003378840076039,
+      "usage": {
+        "completion_tokens": 102,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 383
+      }
+    }
+  ]
+}

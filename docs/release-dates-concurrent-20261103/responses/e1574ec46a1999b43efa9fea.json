@@ -1,0 +1,62 @@
+{
+  "family": "大疆|麦克风配件|djimicmini接收器",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 87,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 280,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 367
+  },
+  "captured_at": "2026-11-03T07:55:09.713841+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"DJI Mic Mini 接收器\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"DJI Mic Mini 于2024年11月发布，但该日期属于主机/整套系统，不能直接作为独立接收器配件的首次推出年月；缺乏可回指的配件本身发布资料，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692508,
+    "id": "bbc89af4-4cf5-40bb-90ac-18d2c79ddbeb",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 87,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 280,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 367
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:07.604806+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.109030571009498,
+      "usage": {
+        "completion_tokens": 87,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 280,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 367
+      }
+    }
+  ]
+}

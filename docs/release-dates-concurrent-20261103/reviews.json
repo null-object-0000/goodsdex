@@ -1,0 +1,85 @@
+{
+  "小米": {
+    "seed": 20261105,
+    "universe_sha256": "060df7fab065beb862bad3145425b4408d7c9552e308f3fb206ec53df535ecb9",
+    "samples": [
+      {
+        "family": "小米|平板|redmipad2",
+        "correct_date": "2025-06",
+        "date_correct": false,
+        "identity_match": true,
+        "evidence_supported": false,
+        "correct": false,
+        "verification_url": "https://www.mi.com/my/support/faq/details/KA-572986/",
+        "verification_quote": "The launch time of the REDMI Pad 2 is June 5th, 2025.",
+        "verdict_reason": "候选填2025-08，且abstention_reason称无法确定月份；原产品页不支持其月份。",
+        "checked_at": "2026-11-03T08:02:57.513378+00:00",
+        "candidate_sha256": "e87249142cb527495b622308f7cd8ebe0a30f0e572d31fc632a1a8b6b413ce17"
+      }
+    ]
+  },
+  "大疆": {
+    "seed": 20261105,
+    "universe_sha256": "d940c9c552253f60008fffa4380f069da24a18eb53203c4599251d318746b274",
+    "samples": [
+      {
+        "family": "大疆|影像传输与控制设备配件|djifocusprolidar",
+        "correct_date": "2024-04",
+        "date_correct": true,
+        "identity_match": true,
+        "evidence_supported": false,
+        "correct": false,
+        "verification_url": "https://www.mynewsdesk.com/uk/dji/pressreleases/dji-pro-launches-next-generation-tools-offering-swift-setup-intuitive-operation-seamless-integration-and-extended-focus-control-3315434",
+        "verification_quote": "9 April 2024; DJI Focus Pro; LiDAR",
+        "verdict_reason": "DJI自行发布的新闻稿支持月份与LiDAR组件；原引用404，不能事后替换抬分。",
+        "checked_at": "2026-11-03T08:02:57.513386+00:00",
+        "candidate_sha256": "ad473a953a942b5f701e51ba2d94b01c0637163d0245492c0924dccde3fb4222"
+      }
+    ]
+  },
+  "富士": {
+    "seed": 20261105,
+    "universe_sha256": "1327a186569e59289f970ef691f6f9c6ae9da4aeb65e74a43445bf32b136a094",
+    "samples": [
+      {
+        "family": "富士|相机|fujifilmx-s20",
+        "correct_date": "2023-05",
+        "date_correct": true,
+        "identity_match": true,
+        "evidence_supported": false,
+        "correct": false,
+        "verification_url": "https://www.fujifilm.com/ae/en/news/hq/9421",
+        "verification_quote": "May 24, 2023; FUJIFILM X-S20",
+        "verdict_reason": "月份正确，6月为开售；原引用仅产品页、quote空，模型承认未核原句；直抓403，原依据未证实月份。",
+        "checked_at": "2026-11-03T08:02:57.513388+00:00",
+        "candidate_sha256": "89ebba0ae833d293533c4be873a1ac0ed9ecc03e3ed22836f73adf1796bcecd8"
+      },
+      {
+        "family": "富士|相机镜头|xf70-300mmf4-5.6rlmoiswr",
+        "correct_date": "2021-01",
+        "date_correct": true,
+        "identity_match": true,
+        "evidence_supported": false,
+        "correct": false,
+        "verification_url": "https://www.fujifilm-x.com/global/news/fujifilm-announces-new-fujinon-xf70-300mmf4-5-6-r-lm-ois-wr-lens/",
+        "verification_quote": "01.27.2021; XF70-300mmF4-5.6 R LM OIS WR",
+        "verdict_reason": "官方页头2021-01-27，正文年份2020疑为笔误；页头及同期报道支持2021-01公告，3月开售；原产品页月份未核准。",
+        "checked_at": "2026-11-03T08:02:57.513392+00:00",
+        "candidate_sha256": "77d825633a3306f6b099146adf9be6d59efd58711bc309aafd0fdb26fe624266"
+      },
+      {
+        "family": "富士|相机镜头|xf50mmf2rwr",
+        "correct_date": "2017-01",
+        "date_correct": true,
+        "identity_match": true,
+        "evidence_supported": false,
+        "correct": false,
+        "verification_url": "https://www.dpreview.com/news/2919368831/fujifilm-expands-weather-resistant-lens-selection-with-xf-50mm-f2-r-wr/",
+        "verification_quote": "January 19, 2017; FUJINON XF50mmF2 R WR",
+        "verdict_reason": "现场新闻及内嵌原厂新闻稿支持1月公告；2月开售；原引用产品页未核月份。",
+        "checked_at": "2026-11-03T08:02:57.513390+00:00",
+        "candidate_sha256": "0cd17e1331d44a27923f669d8533820c40fea6a71a0a70048c99df9b98c07887"
+      }
+    ]
+  }
+}

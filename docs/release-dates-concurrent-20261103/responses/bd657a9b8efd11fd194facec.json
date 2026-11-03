@@ -1,0 +1,62 @@
+{
+  "family": "惠普|笔记本|惠普战99air16英寸移动工作站|英特尔®酷睿™ultrax7处理器358h|英特尔®显卡",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 106,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 303,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 409
+  },
+  "captured_at": "2026-11-03T07:55:18.043907+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"惠普 战99 Air 16英寸移动工作站\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为惠普战99 Air 16英寸移动工作站，搭载酷睿Ultra X7 358H（Panther Lake世代）。我无法确知该具体型号族的首次发布年月，且不能仅凭CPU世代推断月份；无可靠可回指资料，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692517,
+    "id": "ad0cd20d-d650-477f-ae52-c2c36c281871",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 106,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 303,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 409
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:15.673687+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.370213526999578,
+      "usage": {
+        "completion_tokens": 106,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 303,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 409
+      }
+    }
+  ]
+}

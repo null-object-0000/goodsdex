@@ -1,0 +1,64 @@
+{
+  "family": "小米|平板|redmipad2pro",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 68,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 276,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 344
+  },
+  "captured_at": "2026-11-03T07:54:57.932675+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"REDMI Pad 2 Pro\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"无法确认该型号族的首次推出年月；不具备联网检索，且不能仅凭型号年份或CPU年份推断月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692497,
+    "id": "0217936924964035c7f85291e6ad850e47f0b8bb356de2fd95a47",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 68,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 276,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 344
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:56.356211+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.5764609689940698,
+      "usage": {
+        "completion_tokens": 68,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 276,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 344
+      }
+    }
+  ]
+}

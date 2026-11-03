@@ -1,0 +1,62 @@
+{
+  "family": "富士|相机镜头|xf100-400mmf4.5-5.6rlmoiswr",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 171,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 289,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 460
+  },
+  "captured_at": "2026-11-03T07:55:27.420259+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"XF100-400mmF4.5-5.6 R LM OIS WR\",\"date\":\"2016-01\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xf100-400mmf45-56-r-lm-ois-wr/\",\"quote\":null,\"reason\":\"富士官方产品页确认该型号属于XF100-400mmF4.5-5.6 R LM OIS WR这一镜头型号族；该镜头于2016年1月发布（与X-Pro2同期公布），故按型号世代给出2016-01作为首次推出年月候选。未引用具体原句，因无法确知页面原文。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692526,
+    "id": "620cacaf-a301-4ddc-bf49-a5340a61c76e",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 171,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 289,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 460
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:24.955146+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.465111515004537,
+      "usage": {
+        "completion_tokens": 171,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 289,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 460
+      }
+    }
+  ]
+}

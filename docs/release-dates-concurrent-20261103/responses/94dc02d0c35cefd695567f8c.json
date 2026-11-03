@@ -1,0 +1,64 @@
+{
+  "family": "惠普|笔记本|惠普probook14airg2i14英寸商务笔记本电脑|英特尔®酷睿™7处理器350|英特尔®显卡",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 123,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 306,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 429
+  },
+  "captured_at": "2026-11-03T07:55:16.470019+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"惠普 ProBook 14 Air G2i\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"无法确认该型号族（ProBook 14 Air G2i，惠普平台）的首次推出年月；仅有型号中的 G2 世代与酷睿 7 350 处理器信息，不足以推断具体月份，且不得仅凭型号年份/CPU年份推断。未提供可回指的官网或媒体资料链接/原文，故 date 与 evidence 留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692516,
+    "id": "0217936925146024f170dda172df2cc79a65077ac74d404f1963b",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 123,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 306,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 429
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:14.543867+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.9261479869892355,
+      "usage": {
+        "completion_tokens": 123,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 306,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 429
+      }
+    }
+  ]
+}

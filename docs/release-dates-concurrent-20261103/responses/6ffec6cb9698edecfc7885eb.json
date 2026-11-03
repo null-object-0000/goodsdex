@@ -1,0 +1,64 @@
+{
+  "family": "富士|相机镜头|xf60mmf2.4rmacro",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 141,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 280,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 421
+  },
+  "captured_at": "2026-11-03T07:55:29.899290+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"XF60mmF2.4 R Macro\",\"date\":\"2012-01\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xf60mmf24-r-macro/\",\"quote\":null,\"reason\":\"富士官方产品页确认该型号属于XF镜头产品线；已知该镜头随X-Pro1系统于2012年初发布，官方新闻稿日期为2012年1月，故按型号族给出2012-01候选。未能核验到可引用的原句，quote留空。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692529,
+    "id": "0217936925282275c7f85291e6ad850e47f0b8bb356de2f2d28c2",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 141,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 280,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 421
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:28.178088+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.7212005580076948,
+      "usage": {
+        "completion_tokens": 141,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 280,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 421
+      }
+    }
+  ]
+}

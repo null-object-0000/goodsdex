@@ -1,0 +1,62 @@
+{
+  "family": "富士|相机镜头|xf50mmf2rwr",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 151,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 278,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 429
+  },
+  "captured_at": "2026-11-03T07:55:27.416818+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"XF50mmF2 R WR\",\"date\":\"2017-01\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xf50mmf2-r-wr/\",\"quote\":null,\"reason\":\"富士官方产品页确认 XF50mmF2 R WR 属于 XF 镜头产品线；该镜头于2017年1月随 X-T20 等一同发布，官方新闻稿与多家媒体（如 DPReview 2017-01-19）均有报道。此处按已知发布资料给出月份候选，未引用具体原文句。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692525,
+    "id": "fabd8f02-5281-42f3-92ca-3ad4db9b0efb",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 151,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 278,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 429
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:24.454944+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.9618714149983134,
+      "usage": {
+        "completion_tokens": 151,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 278,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 429
+      }
+    }
+  ]
+}

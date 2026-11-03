@@ -1,0 +1,204 @@
+{
+  "小米": {
+    "seed": 20261105,
+    "universe_sha256": "060df7fab065beb862bad3145425b4408d7c9552e308f3fb206ec53df535ecb9",
+    "samples": [
+      {
+        "family": "小米|平板|redmipad2",
+        "candidate_sha256": "e87249142cb527495b622308f7cd8ebe0a30f0e572d31fc632a1a8b6b413ce17",
+        "candidate": {
+          "family": "小米|平板|redmipad2",
+          "brand": "小米",
+          "category": "平板",
+          "ids": [
+            "CN:mi_cn:product:21591"
+          ],
+          "method": "model_family_generation_estimate",
+          "release": {
+            "date": "2025-08",
+            "source": "llm",
+            "confidence": "low",
+            "granularity": "month",
+            "event": "announcement",
+            "market": "global",
+            "model": "deepseek-v4.1-flash-1017",
+            "scope": "model_family_generation",
+            "evidence": {
+              "url": "https://www.mi.com/global/product/redmi-pad-2/",
+              "quote": "",
+              "reason": "小米全球官网存在 REDMI Pad 2 产品页，可确认该型号族存在；但未联网核验页面发布/公告日期，且不能仅凭型号或平台年份推断月份，故日期留空。",
+              "capture_type": "model_output",
+              "locator": "choices[0].message.content.evidence",
+              "source_type": "third_party",
+              "sha256": "e326261a3c0868298dbbe2aaeb65eb56c62a7546de02bfd81a6934f85c057df0",
+              "captured_at": "2026-11-03T07:54:59.229519+00:00",
+              "artifact": "responses/4c6880bf8e3370b91c9d3c3d.json",
+              "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+            }
+          }
+        }
+      }
+    ]
+  },
+  "大疆": {
+    "seed": 20261105,
+    "universe_sha256": "d940c9c552253f60008fffa4380f069da24a18eb53203c4599251d318746b274",
+    "samples": [
+      {
+        "family": "大疆|影像传输与控制设备配件|djifocusprolidar",
+        "candidate_sha256": "ad473a953a942b5f701e51ba2d94b01c0637163d0245492c0924dccde3fb4222",
+        "candidate": {
+          "family": "大疆|影像传输与控制设备配件|djifocusprolidar",
+          "brand": "大疆",
+          "category": "影像传输与控制设备配件",
+          "ids": [
+            "CN:dji:sku:164241"
+          ],
+          "method": "model_family_generation_estimate",
+          "release": {
+            "date": "2024-04",
+            "source": "llm",
+            "confidence": "low",
+            "granularity": "month",
+            "event": "announcement",
+            "market": "CN",
+            "model": "deepseek-v4.1-flash-1017",
+            "scope": "model_family_generation",
+            "evidence": {
+              "url": "https://www.dji.com/cn/media-center/announcements/dji-focus-pro",
+              "quote": "",
+              "reason": "DJI Focus Pro 于2024年4月发布，LiDAR 是该型号族中的组成配件；按配件本身归入该发布月份，不借用主机日期。未能确知可回指原句，故 quote 留空。",
+              "capture_type": "model_output",
+              "locator": "choices[0].message.content.evidence",
+              "source_type": "third_party",
+              "sha256": "b804810ff1bbc1f2a3211cfe0f1bce191e5314d093b6b451728c784f9d3594b5",
+              "captured_at": "2026-11-03T07:55:10.164437+00:00",
+              "artifact": "responses/e3cb69dd7a117eb59117cab2.json",
+              "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+            }
+          }
+        }
+      }
+    ]
+  },
+  "惠普": {
+    "seed": 20261105,
+    "universe_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "samples": []
+  },
+  "富士": {
+    "seed": 20261105,
+    "universe_sha256": "1327a186569e59289f970ef691f6f9c6ae9da4aeb65e74a43445bf32b136a094",
+    "samples": [
+      {
+        "family": "富士|相机|fujifilmx-s20",
+        "candidate_sha256": "89ebba0ae833d293533c4be873a1ac0ed9ecc03e3ed22836f73adf1796bcecd8",
+        "candidate": {
+          "family": "富士|相机|fujifilmx-s20",
+          "brand": "富士",
+          "category": "相机",
+          "ids": [
+            "CN:fuji:kit:x-s20-15-45mm",
+            "CN:fuji:kit:x-s20-16-50mm",
+            "CN:fuji:kit:x-s20-xc35mm",
+            "CN:fuji:kit:x-s20-xf35mm",
+            "CN:fuji:model:x-s20"
+          ],
+          "method": "model_family_generation_estimate",
+          "release": {
+            "date": "2023-05",
+            "source": "llm",
+            "confidence": "low",
+            "granularity": "month",
+            "event": "announcement",
+            "market": "global",
+            "model": "deepseek-v4.1-flash-1017",
+            "scope": "model_family_generation",
+            "evidence": {
+              "url": "https://fujifilm-x.com/global/products/cameras/x-s20/",
+              "quote": "",
+              "reason": "富士官方X-S20产品页可确认该型号族存在；该机型于2023年5月由富士发布，故以2023-05作为该型号族首次推出年月候选。未引用具体原句，因无法确知页面原文。",
+              "capture_type": "model_output",
+              "locator": "choices[0].message.content.evidence",
+              "source_type": "third_party",
+              "sha256": "754dd8204fdc3c1df25c23a848fd043e73a12fc56d90299f9fcdd678d614b87f",
+              "captured_at": "2026-11-03T07:55:22.441795+00:00",
+              "artifact": "responses/a486da424d218a0b0fdd28ed.json",
+              "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+            }
+          }
+        }
+      },
+      {
+        "family": "富士|相机镜头|xf70-300mmf4-5.6rlmoiswr",
+        "candidate_sha256": "77d825633a3306f6b099146adf9be6d59efd58711bc309aafd0fdb26fe624266",
+        "candidate": {
+          "family": "富士|相机镜头|xf70-300mmf4-5.6rlmoiswr",
+          "brand": "富士",
+          "category": "相机镜头",
+          "ids": [
+            "CN:fuji:lens:xf70-300mmf4-56-r-lm-ois-wr"
+          ],
+          "method": "model_family_generation_estimate",
+          "release": {
+            "date": "2021-01",
+            "source": "llm",
+            "confidence": "low",
+            "granularity": "month",
+            "event": "announcement",
+            "market": "global",
+            "model": "deepseek-v4.1-flash-1017",
+            "scope": "model_family_generation",
+            "evidence": {
+              "url": "https://fujifilm-x.com/global/products/lenses/xf70-300mmf4-5-6-r-lm-ois-wr/",
+              "quote": "",
+              "reason": "富士官方产品页可确认该型号属于XF70-300mmF4-5.6 R LM OIS WR镜头族；已知该镜头于2021年1月发布，但无法在无联网条件下回指具体含月份的原句，故quote留空，日期仅作型号世代估算。",
+              "capture_type": "model_output",
+              "locator": "choices[0].message.content.evidence",
+              "source_type": "third_party",
+              "sha256": "862ea993079c34f9f967b4c17c140409ec2f9c67a28f7ea430110ee68ced2c3f",
+              "captured_at": "2026-11-03T07:55:30.702703+00:00",
+              "artifact": "responses/dc0194498d8629a9dae1c5fd.json",
+              "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+            }
+          }
+        }
+      },
+      {
+        "family": "富士|相机镜头|xf50mmf2rwr",
+        "candidate_sha256": "0cd17e1331d44a27923f669d8533820c40fea6a71a0a70048c99df9b98c07887",
+        "candidate": {
+          "family": "富士|相机镜头|xf50mmf2rwr",
+          "brand": "富士",
+          "category": "相机镜头",
+          "ids": [
+            "CN:fuji:lens:xf50mmf2-r-wr"
+          ],
+          "method": "model_family_generation_estimate",
+          "release": {
+            "date": "2017-01",
+            "source": "llm",
+            "confidence": "low",
+            "granularity": "month",
+            "event": "announcement",
+            "market": "global",
+            "model": "deepseek-v4.1-flash-1017",
+            "scope": "model_family_generation",
+            "evidence": {
+              "url": "https://fujifilm-x.com/global/products/lenses/xf50mmf2-r-wr/",
+              "quote": "",
+              "reason": "富士官方产品页确认 XF50mmF2 R WR 属于 XF 镜头产品线；该镜头于2017年1月随 X-T20 等一同发布，官方新闻稿与多家媒体（如 DPReview 2017-01-19）均有报道。此处按已知发布资料给出月份候选，未引用具体原文句。",
+              "capture_type": "model_output",
+              "locator": "choices[0].message.content.evidence",
+              "source_type": "third_party",
+              "sha256": "13b23c9e93b6b3b441a45909f9b19960210e718b12d9e075d34b94b12f0083d4",
+              "captured_at": "2026-11-03T07:55:27.416818+00:00",
+              "artifact": "responses/dc412cdeea44e182d5c21593.json",
+              "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+            }
+          }
+        }
+      }
+    ]
+  }
+}

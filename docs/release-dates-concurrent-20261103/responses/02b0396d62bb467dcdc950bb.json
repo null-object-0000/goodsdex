@@ -1,0 +1,64 @@
+{
+  "family": "富士|相机镜头|xf90mmf2rlmwr",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 144,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 279,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 423
+  },
+  "captured_at": "2026-11-03T07:55:24.257624+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"XF90mmF2 R LM WR\",\"date\":\"2015-05\",\"evidence\":{\"url\":\"https://fujifilm.com.cn/news/2015/0518/\",\"quote\":null,\"reason\":\"富士官方新闻稿页面路径含2015/0518，指向2015年5月18日发布；该镜头为富士XF 90mmF2 R LM WR，属XF镜头产品线，按发布公告月份记为2015-05。链接为已知官网新闻路径，但未逐字核验原句，故quote留空。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692524,
+    "id": "0217936925218854f170dda172df2cc79a65077ac74d4042423eb",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 144,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 279,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 423
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:21.833799+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.4238237230019877,
+      "usage": {
+        "completion_tokens": 144,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 279,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 423
+      }
+    }
+  ]
+}

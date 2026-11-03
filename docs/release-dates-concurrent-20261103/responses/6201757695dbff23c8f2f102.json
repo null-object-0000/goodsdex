@@ -1,0 +1,62 @@
+{
+  "family": "惠普|台式机|惠普战99台式机电脑|第十三代英特尔®酷睿™i5-13500处理器|英特尔®超核芯",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 104,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 305,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 409
+  },
+  "captured_at": "2026-11-03T07:55:19.442469+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"惠普 战99 台式机电脑（第十三代英特尔酷睿 i5-13500 处理器）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"无法确认该型号族（战99 台式机 13代酷睿世代）的首次推出年月；仅有处理器世代不足以推断月份，且未掌握可回指的官网/媒体原文链接与日期，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692518,
+    "id": "a7be46b3-7812-4a64-99db-d57f9d593473",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 104,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 305,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 409
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:17.179917+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.262549471008242,
+      "usage": {
+        "completion_tokens": 104,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 305,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 409
+      }
+    }
+  ]
+}

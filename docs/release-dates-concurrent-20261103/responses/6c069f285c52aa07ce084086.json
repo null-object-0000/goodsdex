@@ -1,0 +1,64 @@
+{
+  "family": "富士|相机|fujifilmx-h2s",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 144,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 279,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 423
+  },
+  "captured_at": "2026-11-03T07:55:22.375826+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"FUJIFILM X-H2S\",\"date\":\"2022-05\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/cameras/x-h2s/\",\"quote\":null,\"reason\":\"富士官方X-H2S产品页可确认该型号属于X-H2S世代；该机型于2022年5月发布（X Summit 2022年5月31日），故按型号族首次推出年月取2022-05。未引用具体原句，仅以官方产品页作为型号族回指。\"},\"confidence\":\"high\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692522,
+    "id": "0217936925197326cb63cadb26a6eb1a5dd8bb71cce3d7f75480c",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 144,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 279,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 423
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:19.665635+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.7101872010098305,
+      "usage": {
+        "completion_tokens": 144,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 279,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 423
+      }
+    }
+  ]
+}

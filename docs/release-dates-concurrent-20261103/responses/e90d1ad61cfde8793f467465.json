@@ -1,0 +1,64 @@
+{
+  "family": "惠普|台式机|惠普战99台式机电脑|英特尔®酷睿™i5-14500处理器|英特尔®uhd显卡770",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 105,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 306,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 411
+  },
+  "captured_at": "2026-11-03T07:55:16.832555+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"惠普 战99 台式机电脑（i5-14500 / UHD 770）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"无法确认该型号族（战99台式机）搭载i5-14500的具体首次推出年月；仅凭CPU代数（14代）不能推断月份，且惠普平台不同代际/版本不得混同，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692516,
+    "id": "021793692515090ab257ece25bd0fea81c82ca5c15ec8fd4068cd",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 105,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 306,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 411
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:15.044039+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.788513345993124,
+      "usage": {
+        "completion_tokens": 105,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 306,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 411
+      }
+    }
+  ]
+}

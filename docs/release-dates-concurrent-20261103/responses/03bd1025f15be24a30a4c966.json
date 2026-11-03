@@ -1,0 +1,64 @@
+{
+  "family": "富士|相机镜头|xc50-230mmf4.5-6.7oisii",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 177,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 287,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 464
+  },
+  "captured_at": "2026-11-03T07:55:23.467987+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"富士 XC50-230mmF4.5-6.7 OIS II\",\"date\":\"2015-01\",\"evidence\":{\"url\":\"https://fujifilm.com.cn/news/2015/0115/\",\"quote\":null,\"reason\":\"富士中国官网2015年1月15日新闻稿发布X-A2及XC16-50mm II、XC50-230mm II镜头；该镜头为XC50-230mmF4.5-6.7 OIS的II代版本，属同一型号族换代，按机身世代/镜头世代估算首次推出月份为2015-01。链接为官网新闻栏目路径，具体原文未逐字核录，故quote留空。\"},\"confidence\":\"medium\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692523,
+    "id": "021793692521000ab257ece25bd0fea81c82ca5c15ec8fd14c51c",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 177,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 287,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 464
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:20.953907+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.5140747319965158,
+      "usage": {
+        "completion_tokens": 177,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 287,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 464
+      }
+    }
+  ]
+}

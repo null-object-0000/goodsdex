@@ -1,0 +1,62 @@
+{
+  "family": "富士|相机镜头|xf200mmf2rlmoiswr",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 155,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 281,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 436
+  },
+  "captured_at": "2026-11-03T07:55:23.948058+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"XF200mmF2 R LM OIS WR\",\"date\":\"2018-07\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xf200mmf2-r-lm-ois-wr/\",\"quote\":null,\"reason\":\"富士官方产品页确认该型号属于XF镜头产品线；该镜头于2018年7月随X-T100等一同公布开发/发布信息，媒体广泛报道其2018年7月发布、2018年10月上市。此处按发布（announcement）月份取2018-07，仅作型号世代估算。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692522,
+    "id": "9d38f6ad-f249-4b04-8de4-34f38cecdb74",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 155,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 281,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 436
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:21.288545+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.659508247001213,
+      "usage": {
+        "completion_tokens": 155,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 436
+      }
+    }
+  ]
+}

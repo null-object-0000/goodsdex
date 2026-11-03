@@ -1,0 +1,64 @@
+{
+  "family": "小米|手机|米家自动洗手机套装",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 80,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 276,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 356
+  },
+  "captured_at": "2026-11-03T07:54:58.691928+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"米家自动洗手机套装\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号属于米家自动洗手机配件/套装，非手机主机；无可靠公开资料可回指其型号族首次推出年月，且不得借主机日期推断，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692498,
+    "id": "0217936924972636cb63cadb26a6eb1a5dd8bb71cce3d7f493345",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 80,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 276,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 356
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:57.212508+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.4794171049870783,
+      "usage": {
+        "completion_tokens": 80,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 276,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 356
+      }
+    }
+  ]
+}

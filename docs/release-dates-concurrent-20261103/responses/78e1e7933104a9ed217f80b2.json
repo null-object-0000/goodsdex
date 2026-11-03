@@ -1,0 +1,62 @@
+{
+  "family": "富士|相机镜头|xc35mmf2",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 130,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 276,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 406
+  },
+  "captured_at": "2026-11-03T07:55:32.389835+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"富士 XC35mmF2\",\"date\":\"2020-02\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xc35mmf2/\",\"quote\":null,\"reason\":\"富士官方产品页确认 XC35mmF2 属于 XC 系列镜头；该镜头于2020年2月随 X-T200 一同发布，官方新闻稿可回指，但当前无法给出确知原句，故 quote 留空。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692531,
+    "id": "5758bffa-8cf2-4131-8892-39ea1b0d92da",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 130,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 276,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 406
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:29.908432+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.4813997199962614,
+      "usage": {
+        "completion_tokens": 130,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 276,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 406
+      }
+    }
+  ]
+}

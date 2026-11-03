@@ -1,0 +1,62 @@
+{
+  "family": "大疆|扫地机器人配件|romo除菌清洁液（适用于djiromop）",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 98,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 288,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 386
+  },
+  "captured_at": "2026-11-03T07:55:08.278149+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"ROMO 除菌清洁液（适用于 DJI ROMO P）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为扫地机器人配件（清洁液），并非主机或换新路线中的型号族；无已知官网或媒体资料给出该配件本身的首次推出年月，且不得借用 DJI ROMO P 主机日期，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692507,
+    "id": "8410a7f0-5d52-47ac-898f-9e7af2d33f2f",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 98,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 288,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 386
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:05.901961+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.3761861519888043,
+      "usage": {
+        "completion_tokens": 98,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 288,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 386
+      }
+    }
+  ]
+}

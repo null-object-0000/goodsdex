@@ -1,0 +1,64 @@
+{
+  "family": "惠普|台式机|惠普星deskmini台式机电脑m05-0007cn|英特尔®酷睿™ultra5325|英特尔®显卡",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 129,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 306,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 435
+  },
+  "captured_at": "2026-11-03T07:55:20.941165+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"惠普 星 Desk Mini 台式机电脑 M05-0007cn\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号属于惠普星Desk Mini M05系列，搭载英特尔酷睿Ultra 5 325（Arrow Lake-H Refresh平台，2025年CES后发布）。但无法确认M05-0007cn这一具体型号族（M05系列）的首次推出年月，且不能仅凭CPU年份推断月份。惠普平台不得混同，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692520,
+    "id": "0217936925192166cb63cadb26a6eb1a5dd8bb71cce3d7f81bbcf",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 129,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 306,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 435
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:19.165402+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.775762068995391,
+      "usage": {
+        "completion_tokens": 129,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 306,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 435
+      }
+    }
+  ]
+}

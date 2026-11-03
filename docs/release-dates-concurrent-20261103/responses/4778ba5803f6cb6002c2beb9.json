@@ -1,0 +1,64 @@
+{
+  "family": "惠普|笔记本|惠普战99air14英寸移动工作站|英特尔®酷睿™ultrax7处理器358h|英特尔®显卡",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 109,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 303,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 412
+  },
+  "captured_at": "2026-11-03T07:55:14.762491+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"惠普 战99 Air 14英寸移动工作站\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为惠普战99 Air 14英寸移动工作站，搭载酷睿Ultra X7 358H（Panther Lake世代）。我无法确知该具体型号族的首次发布年月，且不具备联网检索条件；仅凭CPU世代（2026年）不能推断月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692514,
+    "id": "0217936925132435c7f85291e6ad850e47f0b8bb356de2f425140",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 109,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 303,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 412
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:13.195601+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.5668861800077138,
+      "usage": {
+        "completion_tokens": 109,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 303,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 412
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "family": "富士|相机镜头|xf35mmf1.4r",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 145,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 279,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 424
+  },
+  "captured_at": "2026-11-03T07:55:30.199050+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"XF35mmF1.4 R\",\"date\":\"2012-01\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xf35mmf14-r/\",\"quote\":null,\"reason\":\"富士官方产品页确认XF35mmF1.4 R属于XF镜头产品线；该镜头随X-Pro1体系于2012年初发布，公开资料普遍记为2012年1月。因未核到可引原句，quote留空，仅以官方产品页支持型号族，月份依据已知发布资料。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692528,
+    "id": "e5d6e94d-e1a8-46a1-a61a-9f755fdfa988",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 145,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 279,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 424
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:27.927892+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.2711573889973806,
+      "usage": {
+        "completion_tokens": 145,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 279,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 424
+      }
+    }
+  ]
+}

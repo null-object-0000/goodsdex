@@ -1,0 +1,62 @@
+{
+  "family": "富士|相机镜头|xf18mmf1.4rlmwr",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 134,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 281,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 415
+  },
+  "captured_at": "2026-11-03T07:55:27.107723+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"XF18mmF1.4 R LM WR\",\"date\":\"2021-04\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xf18mmf14-r-lm-wr/\",\"quote\":null,\"reason\":\"富士官方产品页可确认该型号属于XF18mmF1.4 R LM WR镜头族；已知该镜头于2021年4月发布，但无法回指具体原文句子，故quote留空，日期仅作型号世代估算。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692525,
+    "id": "7871b41b-5e04-412b-b3fe-b4c25a0a6c0b",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 134,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 281,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 415
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:24.705037+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.40268486799323,
+      "usage": {
+        "completion_tokens": 134,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 415
+      }
+    }
+  ]
+}

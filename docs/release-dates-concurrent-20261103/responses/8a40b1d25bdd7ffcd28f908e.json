@@ -1,0 +1,62 @@
+{
+  "family": "惠普|台式机|惠普战99台式机电脑|英特尔®酷睿™i5-14500处理器|nvidia®geforcertx™5060显卡",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 125,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 309,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 434
+  },
+  "captured_at": "2026-11-03T07:55:16.423557+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"惠普 战99 台式机电脑（i5-14500 / RTX 5060）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"无法确认该型号族（战99台式机）搭载 i5-14500 与 RTX 5060 这一具体配置世代的首次推出年月；RTX 5060 为较新显卡，但仅凭型号/CPU/GPU年份不能推断月份，且无可靠可回指资料，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692515,
+    "id": "12c0b56d-4be8-450c-ae3a-9c40c672ef24",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 125,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 309,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 434
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:14.105213+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.3183424690068932,
+      "usage": {
+        "completion_tokens": 125,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 309,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 434
+      }
+    }
+  ]
+}

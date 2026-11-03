@@ -1,0 +1,62 @@
+{
+  "family": "富士|相机|fujifilmx-h2",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 130,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 278,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 408
+  },
+  "captured_at": "2026-11-03T07:55:24.903674+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"FUJIFILM X-H2\",\"date\":\"2022-09\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/cameras/x-h2/\",\"quote\":null,\"reason\":\"富士官方X-H2产品页可确认该型号族存在；X-H2于2022年9月发布，按机身世代归入2022-09，仅作型号族首次推出年月候选，不涉及具体SKU/套机国行开售日。\"},\"confidence\":\"high\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692523,
+    "id": "9c6799e3-fbbf-4fdb-b8ba-8ada56a08197",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 130,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 278,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 408
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:22.634460+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.269211542006815,
+      "usage": {
+        "completion_tokens": 130,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 278,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 408
+      }
+    }
+  ]
+}

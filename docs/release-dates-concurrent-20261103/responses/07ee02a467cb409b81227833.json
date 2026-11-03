@@ -1,0 +1,62 @@
+{
+  "family": "惠普|台式机|惠普战99台式机电脑|第十四代英特尔®酷睿™i5-14500处理器|英特尔®超核芯",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 119,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 306,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 425
+  },
+  "captured_at": "2026-11-03T07:55:17.180108+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"惠普 战99 台式机（第14代酷睿 i5-14500）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"无法确认该型号族（战99台式机第14代酷睿版本）的首次推出年月；仅有CPU世代（第14代酷睿，2023年Q4发布）不足以推断整机型号族的发布月份，且未掌握可回指的官网/媒体原文链接与日期，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692515,
+    "id": "8cbfa424-414a-4bdf-8118-26b35bc0943c",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 119,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 306,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 425
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:14.793952+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.3861526620021323,
+      "usage": {
+        "completion_tokens": 119,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 306,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 425
+      }
+    }
+  ]
+}

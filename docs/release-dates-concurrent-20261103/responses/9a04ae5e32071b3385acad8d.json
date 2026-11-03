@@ -1,0 +1,64 @@
+{
+  "family": "小米|落地风扇|米家智能直流变频落地扇1x升级版",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 97,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 283,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 380
+  },
+  "captured_at": "2026-11-03T07:55:00.780060+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"米家智能直流变频落地扇1X 升级版\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为米家直流变频落地扇1X的升级版，属于风扇产品线，无可靠公开资料可回指其首次发布年月；不能仅凭型号年份或主机（如空调/手机）日期推断，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692500,
+    "id": "0217936924992884f170dda172df2cc79a65077ac74d4048f6bc7",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 97,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 283,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 380
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:59.238668+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.541388013996766,
+      "usage": {
+        "completion_tokens": 97,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 283,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 380
+      }
+    }
+  ]
+}

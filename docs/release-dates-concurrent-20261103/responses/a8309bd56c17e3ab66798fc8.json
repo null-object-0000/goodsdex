@@ -1,0 +1,64 @@
+{
+  "family": "惠普|笔记本|惠普战x14英寸aipc商务笔记本电脑|英特尔®酷睿™ultra5-225h处理器|英特尔®arc™",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 163,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 306,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 469
+  },
+  "captured_at": "2026-11-03T07:55:20.308063+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"惠普 战X 14英寸 AI PC（酷睿Ultra 5-225H）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号属于惠普战X（EliteBook）中国区商务本产品线，搭载酷睿Ultra 200H（Arrow Lake-H）平台。已知该平台机型多在2025年CES（1月）前后由英特尔发布，但惠普战X 14英寸对应具体型号族的首次推出年月缺乏可回指的官网或媒体原文；且惠普平台不得混同（战X与战66、EliteBook不同子系列），不能仅凭CPU年份推断月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692520,
+    "id": "0217936925181005c7f85291e6ad850e47f0b8bb356de2fc02fb8",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 163,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 306,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 469
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:18.051370+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.256688474008115,
+      "usage": {
+        "completion_tokens": 163,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 306,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 469
+      }
+    }
+  ]
+}

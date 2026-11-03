@@ -1,0 +1,64 @@
+{
+  "family": "大疆|无人机配件|djimavic4pro智能飞行电池",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 87,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 284,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 371
+  },
+  "captured_at": "2026-11-03T07:55:07.336861+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"DJI Mavic 4 Pro 智能飞行电池\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"unknown\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为无人机配件（智能飞行电池），按规则配件不得借用主机（Mavic 4 Pro）的发布日期；缺乏可回指的配件本身首次推出年月资料，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692507,
+    "id": "0217936925057015c7f85291e6ad850e47f0b8bb356de2f1482b5",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 87,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 284,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 371
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:05.651877+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.6849816629983252,
+      "usage": {
+        "completion_tokens": 87,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 284,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 371
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "family": "大疆|相机配件|osmopocket3摇杆帽",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 92,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 281,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 373
+  },
+  "captured_at": "2026-11-03T07:55:11.849397+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"Osmo Pocket 3 摇杆帽\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为第三方/配件类摇杆帽，非大疆官方主机型号族；无可靠官网或媒体资料可回指其首次推出年月，且配件不得借用 Osmo Pocket 3 主机日期，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692511,
+    "id": "0217936925100175c7f85291e6ad850e47f0b8bb356de2f3a5e44",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 92,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 281,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 373
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:09.970050+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.8793441589950817,
+      "usage": {
+        "completion_tokens": 92,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 373
+      }
+    }
+  ]
+}

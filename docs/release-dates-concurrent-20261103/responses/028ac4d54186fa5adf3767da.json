@@ -1,0 +1,62 @@
+{
+  "family": "小米|平板|redmikpad2",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 81,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 276,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 357
+  },
+  "captured_at": "2026-11-03T07:54:57.006892+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"REDMI K Pad 2\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"REDMI K Pad 2 尚未发布，无官方或可靠媒体公布其首次推出年月；不能由型号序号或前代 REDMI K Pad（2025年6月发布）推断。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692496,
+    "id": "5abed437-ac6d-420d-83df-35930515ed2f",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 81,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 276,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 357
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:55.041424+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.9654655540070962,
+      "usage": {
+        "completion_tokens": 81,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 276,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 357
+      }
+    }
+  ]
+}

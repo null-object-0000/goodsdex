@@ -1,0 +1,62 @@
+{
+  "family": "惠普|笔记本|惠普战6616英寸商务笔记本电脑|英特尔®酷睿™ultra5处理器325|英特尔®显卡",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 127,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 301,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 428
+  },
+  "captured_at": "2026-11-03T07:55:17.014680+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"惠普 战66 16英寸（酷睿Ultra 5 325）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号描述仅给出处理器（酷睿Ultra 5 325）与屏幕尺寸，未提供可回指的官网/媒体发布资料；且惠普战66存在多代平台（如Intel与AMD平台、不同世代），题目要求惠普平台不得混同，无法确认此SKU所属具体世代与首次推出年月，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692515,
+    "id": "a7abcab3-9fa8-4b49-be19-97a392904d46",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 127,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 301,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 428
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:13.855089+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 3.1595856769999955,
+      "usage": {
+        "completion_tokens": 127,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 301,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 428
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "family": "惠普|笔记本|惠普星bookx14英寸ai笔记本电脑|英特尔®酷睿™ultra7356h|英特尔®显卡",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 150,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 302,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 452
+  },
+  "captured_at": "2026-11-03T07:55:19.334019+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"惠普 星Book X 14英寸 AI 笔记本电脑（英特尔酷睿 Ultra 7 356H）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号指向惠普星Book X 14英寸、酷睿Ultra 7 356H（Panther Lake世代）平台。已知资料不足以确认该具体型号族（星Book X 14 2026款/Ultra 7 356H配置）的首次推出年月；不能仅凭CPU世代（2026年CES前后发布）推断整机月份，且惠普平台不同型号不得混同，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692519,
+    "id": "0217936925174824f170dda172df2cc79a65077ac74d4043c64b7",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 150,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 302,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 452
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:17.430061+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.9039563800033648,
+      "usage": {
+        "completion_tokens": 150,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 302,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 452
+      }
+    }
+  ]
+}

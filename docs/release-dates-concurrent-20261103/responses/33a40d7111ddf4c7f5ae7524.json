@@ -1,0 +1,64 @@
+{
+  "family": "大疆|云台配件|djirsbg33电池手柄",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 101,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 281,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 382
+  },
+  "captured_at": "2026-11-03T07:55:09.066208+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"DJI RS BG33 电池手柄\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为DJI RS 4 Pro/RS 4的BG33电池手柄配件，属于配件本身而非主机；未掌握可回指的官方或媒体原文明确其首次推出年月，且不得借用RS 4/RS 4 Pro机身发布日期推断，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692509,
+    "id": "0217936925073926cb63cadb26a6eb1a5dd8bb71cce3d7f44aa30",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 101,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 281,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 382
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:07.345452+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.7207517269998789,
+      "usage": {
+        "completion_tokens": 101,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 281,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 382
+      }
+    }
+  ]
+}

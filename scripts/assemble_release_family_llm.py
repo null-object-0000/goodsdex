@@ -22,14 +22,25 @@ def assemble(root):
         sent = (root / 'sent' / (k + '.json')).exists()
         status = dict(family=f['family'], brand=f['brand'], requested=sent, result='pending')
         if sent:
-            usage['calls'] += 1
-            brand_usage[f['brand']]['calls'] += 1
+            usage['sent_families'] += 1
+            brand_usage[f['brand']]['sent_families'] += 1
         if not p.exists():
+            if sent:
+                usage['calls'] += 1
+                brand_usage[f['brand']]['calls'] += 1
             if sent and (root / 'run-closed.json').exists():
                 status['result'] = 'interrupted_usage_unknown'
             outcomes.append(status)
             continue
         o = json.loads(p.read_text())
+        attempts = o.get('attempts', [])
+        # Legacy one-call artifacts predate the per-attempt ledger.
+        calls = len(attempts) if attempts else int(sent)
+        usage['calls'] += calls
+        brand_usage[f['brand']]['calls'] += calls
+        usage['http_429'] += sum(a.get('http_status') == 429 for a in attempts)
+        usage['backoff_seconds'] += sum(a.get('backoff_seconds', 0) for a in attempts)
+        usage['backoff_elapsed_seconds'] += sum(a.get('backoff_elapsed_seconds', 0) for a in attempts)
         for key, value in o.get('response', {}).get('usage', {}).items():
             if isinstance(value, int):
                 usage[key] += value
@@ -64,7 +75,7 @@ def assemble(root):
     write(root / 'candidates.json', candidates)
     write(root / 'outcomes.json', outcomes)
     write(root / 'usage.json', dict(totals=dict(usage), brands={b: dict(v) for b, v in brand_usage.items()},
-        caveat='Sent requests lacking a response have unknown usage; totals cover recorded responses only. No charged retries.'))
+        caveat='Sent requests lacking a response have unknown usage; totals cover recorded responses only. Calls include recorded attempts and retries; interrupted attempts have unknown billing. Backoff seconds are per-worker sums, not wall-clock duration.'))
     queue = {}
     for b in BRANDS:
         cs = [c for c in candidates if c['brand'] == b]

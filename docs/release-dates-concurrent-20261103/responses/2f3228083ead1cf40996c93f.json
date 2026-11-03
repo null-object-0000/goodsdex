@@ -1,0 +1,62 @@
+{
+  "family": "富士|相机镜头|xf50mmf1.0rwr",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 162,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 280,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 442
+  },
+  "captured_at": "2026-11-03T07:55:30.198988+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"XF50mmF1.0 R WR\",\"date\":\"2020-09\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xf50mmf10-r-wr/\",\"quote\":null,\"reason\":\"富士官方产品页确认该型号属于XF50mmF1.0 R WR镜头族；该镜头于2020年9月富士X Summit发布，官方新闻稿与多家媒体（DPReview等）均报道为2020年9月发布，故按型号族首次推出年月取2020-09。未引用具体原句，仅以官方产品页作为型号族回指。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692528,
+    "id": "9e3c2207-ceed-4a30-ab19-ecb855b256d8",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 162,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 280,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 442
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:27.427737+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.7712469000107376,
+      "usage": {
+        "completion_tokens": 162,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 280,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 442
+      }
+    }
+  ]
+}

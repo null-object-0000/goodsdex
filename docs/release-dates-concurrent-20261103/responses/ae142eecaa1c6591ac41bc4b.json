@@ -1,0 +1,64 @@
+{
+  "family": "惠普|笔记本|惠普hyperx暗影精灵max16英寸游戏笔记本电脑|第二代英特尔®酷睿™ultra9-290hxplus处理器|nvidia®geforcertx™5090独立显卡",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 149,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 317,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 466
+  },
+  "captured_at": "2026-11-03T07:55:18.755385+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"惠普 HyperX 暗影精灵MAX 16英寸游戏笔记本电脑（第二代英特尔酷睿Ultra 9-290HX Plus / RTX 5090）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号族（暗影精灵MAX 16，HyperX 联名，第二代酷睿 Ultra 9-290HX Plus + RTX 5090）属于较新的平台组合，我无法确知该具体型号族的首次推出年月，也没有可回指的官网或媒体原文链接；按规则不得仅凭 CPU/GPU 世代年份推断月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692518,
+    "id": "0217936925169804f170dda172df2cc79a65077ac74d4048d2394",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 149,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 317,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 466
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:16.929796+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.8255872919980902,
+      "usage": {
+        "completion_tokens": 149,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 317,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 466
+      }
+    }
+  ]
+}

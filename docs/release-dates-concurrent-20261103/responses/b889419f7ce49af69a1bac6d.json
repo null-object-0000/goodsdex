@@ -1,0 +1,64 @@
+{
+  "family": "小米|耳机|头戴式耳机轻松版",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 84,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 277,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 361
+  },
+  "captured_at": "2026-11-03T07:55:01.728342+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"小米头戴式耳机 轻松版\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为小米生态链早期头戴式耳机产品，公开可回指的官网/媒体资料中未找到明确的首次发布年月；无法仅凭型号或产品类别推断月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692501,
+    "id": "021793692500329ab257ece25bd0fea81c82ca5c15ec8fd32f834",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 84,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 277,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 361
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:00.279529+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.4488111440005014,
+      "usage": {
+        "completion_tokens": 84,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 277,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 361
+      }
+    }
+  ]
+}

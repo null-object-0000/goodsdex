@@ -1,0 +1,62 @@
+{
+  "family": "惠普|笔记本|惠普战9916英寸商务笔记本电脑|英特尔®酷睿™ultra7-255h处理器|英特尔®arc™",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 133,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 303,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 436
+  },
+  "captured_at": "2026-11-03T07:55:14.967892+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"惠普 战99 16英寸商务笔记本电脑（英特尔酷睿Ultra 7-255H / Arc核显）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该输入仅给出品牌、系列（战99）、尺寸与CPU型号，未提供具体世代/平台代号或SKU；惠普战99存在多代平台（如不同英特尔/AMD平台）且不得混同，仅凭Ultra 7-255H的CPU年份无法可靠推断该型号族的首次推出年月，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692513,
+    "id": "3a3fc2ea-221e-44cd-b611-c641a751a954",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 133,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 303,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 436
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:12.385806+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.5820827560091857,
+      "usage": {
+        "completion_tokens": 133,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 303,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 436
+      }
+    }
+  ]
+}

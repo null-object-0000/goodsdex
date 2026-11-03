@@ -1,0 +1,62 @@
+{
+  "family": "惠普|笔记本|惠普战6616英寸商务笔记本电脑|amd锐龙™ai7450处理器|amdradeon™860m",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 132,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 303,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 435
+  },
+  "captured_at": "2026-11-03T07:55:15.666801+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"惠普 战66 16英寸商务笔记本电脑（AMD 锐龙 AI 7 450 / Radeon 860M）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号属于惠普战66系列，但所给配置（锐龙 AI 7 450、Radeon 860M）指向较新的AMD平台世代，我无法确知该具体型号族的首次推出年月；且惠普平台不得混同，不能借用其他战66世代或英特尔平台的发布日期，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692514,
+    "id": "0458372f-b286-4dbe-a516-77bf70141663",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 132,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 303,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 435
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:12.945356+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.721441332003451,
+      "usage": {
+        "completion_tokens": 132,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 303,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 435
+      }
+    }
+  ]
+}

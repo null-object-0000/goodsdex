@@ -1,0 +1,62 @@
+{
+  "family": "富士|相机|fujifilmx-s20",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 126,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 278,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 404
+  },
+  "captured_at": "2026-11-03T07:55:22.441795+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"FUJIFILM X-S20\",\"date\":\"2023-05\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/cameras/x-s20/\",\"quote\":null,\"reason\":\"富士官方X-S20产品页可确认该型号族存在；该机型于2023年5月由富士发布，故以2023-05作为该型号族首次推出年月候选。未引用具体原句，因无法确知页面原文。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692521,
+    "id": "294b5c5a-f1dd-4b2e-a710-8a10a6fcbc13",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 126,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 278,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 404
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:20.313674+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.12811755000439,
+      "usage": {
+        "completion_tokens": 126,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 278,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 404
+      }
+    }
+  ]
+}

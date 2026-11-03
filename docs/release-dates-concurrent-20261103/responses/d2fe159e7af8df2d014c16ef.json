@@ -1,0 +1,62 @@
+{
+  "family": "惠普|台式机|惠普战66台式机电脑|英特尔®酷睿™i5-14500处理器|英特尔®超核芯显卡770",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 124,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 305,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 429
+  },
+  "captured_at": "2026-11-03T07:55:18.755459+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"惠普 战66 台式机电脑（i5-14500）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为惠普战66台式机，搭载i5-14500（第14代酷睿，2024年初发布）。但战66台式机存在多个世代与平台版本，且惠普平台不得混同；无可靠资料可回指该具体配置型号族的首次推出年月，不能仅由CPU年份推断月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692517,
+    "id": "24d7884d-a943-4122-aab3-9a4ff11f63ec",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 124,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 305,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 429
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:16.429491+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.325964842995745,
+      "usage": {
+        "completion_tokens": 124,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 305,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 429
+      }
+    }
+  ]
+}

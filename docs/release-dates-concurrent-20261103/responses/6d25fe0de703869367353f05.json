@@ -1,0 +1,64 @@
+{
+  "family": "小米|枕头|米家车载舒适腰靠",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 88,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 276,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 364
+  },
+  "captured_at": "2026-11-03T07:54:58.441483+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"米家车载舒适腰靠\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为汽车腰靠配件，不属于手机/平板/笔记本等主机型号族，无法按机身世代或换新路线推定首次推出年月；且无确知可回指的官网或媒体原文日期，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692498,
+    "id": "0217936924970235c7f85291e6ad850e47f0b8bb356de2faff6d6",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 88,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 276,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 364
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:54:56.962372+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.4791024799924344,
+      "usage": {
+        "completion_tokens": 88,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 276,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 364
+      }
+    }
+  ]
+}

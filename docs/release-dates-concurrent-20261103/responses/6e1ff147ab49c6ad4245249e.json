@@ -1,0 +1,64 @@
+{
+  "family": "富士|相机镜头|xf150-600mmf5.6-8rlmoiswr",
+  "model": "deepseek-v4.1-flash-1017",
+  "usage": {
+    "completion_tokens": 154,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 287,
+    "prompt_tokens_details": {
+      "cached_tokens": 256
+    },
+    "total_tokens": 441
+  },
+  "captured_at": "2026-11-03T07:55:26.182612+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"XF150-600mmF5.6-8 R LM OIS WR\",\"date\":\"2022-05\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/lenses/xf150-600mmf56-8-r-lm-ois-wr/\",\"quote\":null,\"reason\":\"富士官方产品页存在该型号；该镜头于2022年5月随X-H2S一同发布，官方新闻稿可回指，但当前无法给出确知原句，故quote留空。月份依据为已知发布资料，非由型号年份或CPU年份推断。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793692526,
+    "id": "0217936925242534f170dda172df2cc79a65077ac74d4041682eb",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 154,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 287,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 441
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:55:24.204771+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.977838482009247,
+      "usage": {
+        "completion_tokens": 154,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 287,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 441
+      }
+    }
+  ]
+}
