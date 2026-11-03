@@ -122,7 +122,6 @@ disagreement 和 unverified 保留原日期给内部参考，但 display_allowed
       "source": "third_party",
       "corroborated": false,
       "crosscheck_status": "conflict",
-      "display_allowed": false,
       "checks": [
         {
           "source": "third_party",
@@ -148,7 +147,6 @@ disagreement 和 unverified 保留原日期给内部参考，但 display_allowed
       "source": "third_party",
       "corroborated": true,
       "crosscheck_status": "corroborated",
-      "display_allowed": true,
       "checks": [
         {
           "source": "third_party",
@@ -174,7 +172,6 @@ disagreement 和 unverified 保留原日期给内部参考，但 display_allowed
       "source": "third_party",
       "corroborated": false,
       "crosscheck_status": "unverified",
-      "display_allowed": false,
       "checks": [
         {
           "source": "third_party",

@@ -104,7 +104,7 @@ with (ROOT/'README.md').open('a') as f:
             r = s['release']
             examples.append(dict(id=key, name=s['name'], url=s['url'], release=dict(
                 date=r['date'], source=r['source'], corroborated=r['corroborated'],
-                crosscheck_status=r['crosscheck_status'], display_allowed=r.get('display_allowed', True),
+                crosscheck_status=r['crosscheck_status'],
                 checks=[{k:c[k] for k in ('source','date','delta_days','verdict')} for c in r['checks']])))
         write('api-excerpts.json', examples)
         f.write(json.dumps(examples, ensure_ascii=False, indent=2)+'\n```\n')
