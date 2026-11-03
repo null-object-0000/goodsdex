@@ -22,7 +22,8 @@
           "request": {
             "method": "POST",
             "productId": "10050050"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -50,7 +51,8 @@
           "request": {
             "method": "POST",
             "productId": "10050072"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -78,7 +80,8 @@
           "request": {
             "method": "POST",
             "productId": "10050111"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -106,7 +109,8 @@
           "request": {
             "method": "POST",
             "productId": "10050131"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -134,7 +138,8 @@
           "request": {
             "method": "POST",
             "productId": "10050173"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -162,7 +167,8 @@
           "request": {
             "method": "POST",
             "productId": "10050236"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -190,122 +196,11 @@
           "request": {
             "method": "POST",
             "productId": "10050247"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:18501",
-      "ids": [
-        "CN:mi_cn:product:18501"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2023-05",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/18501",
-          "quote": "发布日期：2023年5月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "36462534471136e221309ec4a91dd27af14591618b53bf1d47497bafaa0c9c59",
-          "captured_at": "2026-11-03T04:26:44.083133+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "18501"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:20007",
-      "ids": [
-        "CN:mi_cn:product:20007"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2024-05",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/20007",
-          "quote": "发布日期：2024年5月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "e6d26c57f51ca739e423c41dd1d6288aa1d901885f30696f02067d7cc84d5869",
-          "captured_at": "2026-11-03T04:26:44.186296+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "20007"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:20139",
-      "ids": [
-        "CN:mi_cn:product:20139"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2024-10",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/20139",
-          "quote": "发布日期：2024年10月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "27c187e37b4230648d2ffb0ac8e8bda098626f13674aec4ab5c097f5c028d222",
-          "captured_at": "2026-11-03T04:26:44.309640+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "20139"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:20426",
-      "ids": [
-        "CN:mi_cn:product:20426"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2024-09",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/20426",
-          "quote": "发布日期：2024年9月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "5fc0f0e4a4a8a14dfa976ce5b08c6ca51c43810e882946a072006b80398738f2",
-          "captured_at": "2026-11-03T04:26:44.331395+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "20426"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
         "market": "CN"
       }
     },
@@ -330,7 +225,8 @@
           "request": {
             "method": "POST",
             "productId": "20543"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -358,7 +254,8 @@
           "request": {
             "method": "POST",
             "productId": "20548"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -386,38 +283,11 @@
           "request": {
             "method": "POST",
             "productId": "20549"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:20978",
-      "ids": [
-        "CN:mi_cn:product:20978"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2025-02",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/20978",
-          "quote": "发布日期：2025年2月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "5d962b6580c2017395a854e702d399e4230b052ff6d93702029b2f792e58b2dc",
-          "captured_at": "2026-11-03T04:26:44.643524+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "20978"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
         "market": "CN"
       }
     },
@@ -442,7 +312,8 @@
           "request": {
             "method": "POST",
             "productId": "20988"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -470,7 +341,8 @@
           "request": {
             "method": "POST",
             "productId": "20989"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -498,7 +370,8 @@
           "request": {
             "method": "POST",
             "productId": "21045"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -526,7 +399,8 @@
           "request": {
             "method": "POST",
             "productId": "21054"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -554,7 +428,8 @@
           "request": {
             "method": "POST",
             "productId": "21101"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -582,38 +457,11 @@
           "request": {
             "method": "POST",
             "productId": "21102"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:21120",
-      "ids": [
-        "CN:mi_cn:product:21120"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2025-04",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/21120",
-          "quote": "发布日期：2025年4月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "d916d03b5a38cd4e0be00929e069f179c9ff2539222d8d2fc428932b9226fb24",
-          "captured_at": "2026-11-03T04:26:45.293646+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "21120"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
         "market": "CN"
       }
     },
@@ -638,7 +486,8 @@
           "request": {
             "method": "POST",
             "productId": "21236"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -666,7 +515,8 @@
           "request": {
             "method": "POST",
             "productId": "21244"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -694,7 +544,8 @@
           "request": {
             "method": "POST",
             "productId": "21259"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -722,7 +573,8 @@
           "request": {
             "method": "POST",
             "productId": "21260"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -750,66 +602,11 @@
           "request": {
             "method": "POST",
             "productId": "21351"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:21418",
-      "ids": [
-        "CN:mi_cn:product:21418"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2025-06",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/21418",
-          "quote": "发布日期：2025年6月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "9fd2f2c1e76401a6ed720bc2054b21b5d86e87959e4edc68acc7df09f333210e",
-          "captured_at": "2026-11-03T04:26:45.755855+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "21418"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:21588",
-      "ids": [
-        "CN:mi_cn:product:21588"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2025-07",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/21588",
-          "quote": "发布日期：2025年7月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "106a76100dcc8e9a9ae724bf9a4ada7c604fff44e61246894242eb70dcca59d9",
-          "captured_at": "2026-11-03T04:26:45.721720+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "21588"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
         "market": "CN"
       }
     },
@@ -834,7 +631,8 @@
           "request": {
             "method": "POST",
             "productId": "21754"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -862,7 +660,8 @@
           "request": {
             "method": "POST",
             "productId": "21765"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -890,7 +689,8 @@
           "request": {
             "method": "POST",
             "productId": "21766"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -918,7 +718,8 @@
           "request": {
             "method": "POST",
             "productId": "21771"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -946,38 +747,11 @@
           "request": {
             "method": "POST",
             "productId": "22023"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:22137",
-      "ids": [
-        "CN:mi_cn:product:22137"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2026-01",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/22137",
-          "quote": "发布日期：2026年1月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "4e4aef98f8072d2859e21eaec41e41704952a1e0ddeb1d51285090e594449481",
-          "captured_at": "2026-11-03T04:26:46.263852+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "22137"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
         "market": "CN"
       }
     },
@@ -1002,7 +776,8 @@
           "request": {
             "method": "POST",
             "productId": "22235"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1030,7 +805,8 @@
           "request": {
             "method": "POST",
             "productId": "22310"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1058,7 +834,8 @@
           "request": {
             "method": "POST",
             "productId": "22317"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1086,94 +863,11 @@
           "request": {
             "method": "POST",
             "productId": "22318"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:22419",
-      "ids": [
-        "CN:mi_cn:product:22419"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2025-12",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/22419",
-          "quote": "发布日期：2025年12月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "399f50c6462d11e0be6c041cd2405cb8dec61d2cf87c88673c21a29bc40ae240",
-          "captured_at": "2026-11-03T04:26:46.691441+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "22419"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:23260",
-      "ids": [
-        "CN:mi_cn:product:23260"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2026-02",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/23260",
-          "quote": "发布日期：2026年2月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "33703d13c91521a814d3b521216a12e31cffe8390d3aa88698af29b3c8e45cbe",
-          "captured_at": "2026-11-03T04:26:46.705181+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "23260"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:23261",
-      "ids": [
-        "CN:mi_cn:product:23261"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2026-03",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/23261",
-          "quote": "发布日期：2026年3月 ",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "002e3f098ca09d037def33a5f477ff813c8ab829ef82949587ad545569e61b52",
-          "captured_at": "2026-11-03T04:26:46.822561+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "23261"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
         "market": "CN"
       }
     },
@@ -1198,7 +892,8 @@
           "request": {
             "method": "POST",
             "productId": "23474"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1226,7 +921,8 @@
           "request": {
             "method": "POST",
             "productId": "23522"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1254,7 +950,8 @@
           "request": {
             "method": "POST",
             "productId": "23538"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1282,7 +979,8 @@
           "request": {
             "method": "POST",
             "productId": "23539"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1310,7 +1008,8 @@
           "request": {
             "method": "POST",
             "productId": "23558"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1338,7 +1037,8 @@
           "request": {
             "method": "POST",
             "productId": "23559"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1366,7 +1066,8 @@
           "request": {
             "method": "POST",
             "productId": "23560"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1394,7 +1095,8 @@
           "request": {
             "method": "POST",
             "productId": "23561"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1422,7 +1124,8 @@
           "request": {
             "method": "POST",
             "productId": "23562"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1450,7 +1153,8 @@
           "request": {
             "method": "POST",
             "productId": "23595"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1478,7 +1182,8 @@
           "request": {
             "method": "POST",
             "productId": "23596"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1506,7 +1211,8 @@
           "request": {
             "method": "POST",
             "productId": "23597"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1534,7 +1240,8 @@
           "request": {
             "method": "POST",
             "productId": "23598"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1562,7 +1269,8 @@
           "request": {
             "method": "POST",
             "productId": "23599"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1590,7 +1298,8 @@
           "request": {
             "method": "POST",
             "productId": "23633"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1618,7 +1327,8 @@
           "request": {
             "method": "POST",
             "productId": "23634"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1646,7 +1356,8 @@
           "request": {
             "method": "POST",
             "productId": "23675"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1674,7 +1385,8 @@
           "request": {
             "method": "POST",
             "productId": "23676"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1702,94 +1414,11 @@
           "request": {
             "method": "POST",
             "productId": "23677"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:23966",
-      "ids": [
-        "CN:mi_cn:product:23966"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2026-04",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/23966",
-          "quote": "发布日期：2026年4月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "17135c71cfba0b3c031b8edf199762f5e9cace30d81a78ecbb7238962651b0e8",
-          "captured_at": "2026-11-03T04:26:48.296537+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "23966"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:24645",
-      "ids": [
-        "CN:mi_cn:product:24645"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2026-06",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/24645",
-          "quote": "发布日期：2026年6月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "ec3629faf62f417817b6d2ef9e0a34d400ce5cb9502b2b413b89c3d77505e4ae",
-          "captured_at": "2026-11-03T04:26:48.378319+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "24645"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:24647",
-      "ids": [
-        "CN:mi_cn:product:24647"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2026-05",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/24647",
-          "quote": "发布日期：2026年5月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "d914a9bb1d5c91ee89e09200259c7aa261e974afcc227626fc270d9f44d92c40",
-          "captured_at": "2026-11-03T04:26:48.482938+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "24647"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
         "market": "CN"
       }
     },
@@ -1814,7 +1443,8 @@
           "request": {
             "method": "POST",
             "productId": "25232"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1842,7 +1472,8 @@
           "request": {
             "method": "POST",
             "productId": "25233"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1870,7 +1501,8 @@
           "request": {
             "method": "POST",
             "productId": "25234"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1898,7 +1530,8 @@
           "request": {
             "method": "POST",
             "productId": "25235"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1926,7 +1559,8 @@
           "request": {
             "method": "POST",
             "productId": "25255"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1954,7 +1588,8 @@
           "request": {
             "method": "POST",
             "productId": "25256"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -1982,7 +1617,8 @@
           "request": {
             "method": "POST",
             "productId": "25257"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -2010,7 +1646,8 @@
           "request": {
             "method": "POST",
             "productId": "25258"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -2038,7 +1675,8 @@
           "request": {
             "method": "POST",
             "productId": "25586"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -2066,7 +1704,8 @@
           "request": {
             "method": "POST",
             "productId": "25587"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -2094,7 +1733,8 @@
           "request": {
             "method": "POST",
             "productId": "25588"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -2122,7 +1762,8 @@
           "request": {
             "method": "POST",
             "productId": "25600"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -2150,7 +1791,8 @@
           "request": {
             "method": "POST",
             "productId": "25601"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -2178,7 +1820,8 @@
           "request": {
             "method": "POST",
             "productId": "25689"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -2206,7 +1849,8 @@
           "request": {
             "method": "POST",
             "productId": "25710"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -2234,7 +1878,8 @@
           "request": {
             "method": "POST",
             "productId": "25732"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
@@ -2262,38 +1907,11 @@
           "request": {
             "method": "POST",
             "productId": "25733"
-          }
+          },
+          "isPageShow": true
         },
         "confidence": "high",
         "event": "announcement",
-        "market": "CN"
-      }
-    },
-    {
-      "family": "CN:mi_cn:product:5059",
-      "ids": [
-        "CN:mi_cn:product:5059"
-      ],
-      "method": "explicit_official_parameter",
-      "release": {
-        "date": "2013-06",
-        "granularity": "month",
-        "source": "official",
-        "evidence": {
-          "url": "https://m.mi.com/commodity/detail/5059",
-          "quote": "发布日期：2013年6月",
-          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
-          "sha256": "5e59c558e4ccc4e1320b595cbeb423f218887d32c714141fb2f51209bdb1e667",
-          "captured_at": "2026-11-03T04:26:49.785672+00:00",
-          "source_type": "official",
-          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
-          "request": {
-            "method": "POST",
-            "productId": "5059"
-          }
-        },
-        "confidence": "high",
-        "event": "availability",
         "market": "CN"
       }
     },
@@ -5098,5 +4716,23 @@
         "reviewer": "Codex agent: source comparison; no claim of independent human sign-off"
       }
     ]
+  },
+  "withdrawn_release_ids": {
+    "CN:mi_cn:product:23261": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:21120": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:23966": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:20139": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:23260": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:5059": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:21588": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:24647": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:20426": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:21418": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:18501": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:24645": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:20007": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:22419": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:20978": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布",
+    "CN:mi_cn:product:22137": "官方接口日期节点 isPageShow=false，未核得页面明确日期；不按真源发布"
   }
 }

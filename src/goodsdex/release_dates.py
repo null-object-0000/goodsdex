@@ -50,6 +50,8 @@ def validate(candidate):
         raise ValueError('Release source cannot impersonate underlying evidence')
     if r['source'] == 'llm' and not r.get('model'):
         raise ValueError('LLM release must retain model provenance')
+    if candidate.get('method') == 'explicit_official_parameter' and e.get('isPageShow') is not True:
+        raise ValueError('Hidden official parameter is not an explicit page date')
     return r
 
 
@@ -90,6 +92,7 @@ def apply_release_dates(rows, path=DEFAULT_INPUT):
     if bundle.get('schema') != 1:
         raise ValueError('Unsupported release input schema')
     candidates = bundle['candidates']
+    withdrawn = bundle.get('withdrawn_release_ids', {})
     for c in candidates:
         validate(c)
     if len({c['family'] for c in candidates}) != len(candidates):
@@ -98,11 +101,16 @@ def apply_release_dates(rows, path=DEFAULT_INPUT):
     by_id = {}
     for c in candidates:
         for key in c['ids']:
+            if key in withdrawn:
+                raise ValueError(f'Withdrawn release evidence cannot be published: {key}')
             if key in by_id:
                 raise ValueError(f'Conflicting release candidates for {key}')
             by_id[key] = c
     output = deepcopy(rows)
     for row in output:
+        if row['id'] in withdrawn:
+            row.pop('release', None)
+            continue
         c = by_id.get(row['id'])
         if not c:
             # Existing dates must still satisfy the provenance contract.

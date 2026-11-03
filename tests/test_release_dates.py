@@ -112,3 +112,23 @@ def test_committed_evidence_and_sampling_manifest_are_valid():
     assert gate['sample_size'] == 30
     ids = [key for c in b['candidates'] for key in c['ids']]
     assert len(set(ids)) == len(ids)
+
+
+def test_hidden_parameter_withdrawal_removes_previously_published_date(tmp_path):
+    path = tmp_path/'dates.json'
+    row = dict(id='hidden',name='原样',params={'型号':'原样'},release=candidate(0,'official')['release'])
+    path.write_text(json.dumps(dict(schema=1,candidates=[],withdrawn_release_ids={'hidden':'isPageShow=false'})))
+    assert apply_release_dates([row],path) == [dict(id='hidden',name='原样',params={'型号':'原样'})]
+    path.write_text(json.dumps(dict(schema=1,candidates=[candidate(0,'official')],withdrawn_release_ids={'id-0':'hidden'})))
+    with pytest.raises(ValueError,match='Withdrawn'):
+        apply_release_dates([dict(id='id-0')],path)
+
+
+def test_official_interface_date_requires_page_visibility():
+    c = candidate(1,'official')
+    c['method'] = 'explicit_official_parameter'
+    c['release']['evidence']['isPageShow'] = False
+    with pytest.raises(ValueError,match='Hidden official'):
+        validate(c)
+    c['release']['evidence']['isPageShow'] = True
+    validate(c)

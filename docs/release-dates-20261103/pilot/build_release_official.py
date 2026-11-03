@@ -12,7 +12,7 @@ for p in sorted(root.glob('mi-*.json')):
  o=json.loads(p.read_text());found=[]
  def walk(v,path='$'):
   if isinstance(v,dict):
-   if v.get('name') in ('发布时间','上市时间','发布日期','发售时间') and v.get('value'):found.append((path,v['name'],str(v['value'])))
+   if v.get('name') in ('发布时间','上市时间','发布日期','发售时间') and v.get('value') and v.get('isPageShow') is True:found.append((path,v['name'],str(v['value'])))
    for k,x in v.items():walk(x,path+'.'+k)
   elif isinstance(v,list):
    for i,x in enumerate(v):walk(x,f'{path}[{i}]')
