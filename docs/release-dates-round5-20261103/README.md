@@ -83,7 +83,7 @@ python3 scripts/disable_llm_release.py
 
 ## 测试、发布和可重放
 
-正确环境命令 `PYTHONPATH=src:scripts pytest -q`：基线 **365 passed**，本轮 **368 passed**，无新增失败，均只有原有pytest插件warning。直接无PYTHONPATH调用会遇到既存导入错误，未拿它代替有效基线。客户端原换新测试9通过，本轮加入来源策略测试后11通过，包含既有浏览器换新流程测试；不是微信线上截图验收。
+正确环境命令 `PYTHONPATH=src:scripts pytest -q`：基线 **365 passed**，本轮 **369 passed**，无新增失败，均只有原有pytest插件warning。直接无PYTHONPATH调用会遇到既存导入错误，未拿它代替有效基线。客户端原换新测试9通过，本轮加入来源策略测试后11通过，包含既有浏览器换新流程测试；不是微信线上截图验收。
 
 本地从最新data提交 `4c732e6e` 重放finalize：3968行、3963唯一ID；全部非release字段相等，所有非LLM日期相等，official输入hash相等；只变更40条旧LLM的使用限制与置信度字段。见 [finalize.log](finalize.log)、[不变量](invariants.json)、[完整测试](tests-final.log)、[客户端测试](client-tests-final.log)。
 

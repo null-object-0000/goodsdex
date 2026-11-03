@@ -6,6 +6,7 @@ import pytest
 from goodsdex.release_dates import apply_release_dates, brand_llm_gate, brand_sample, digest
 from test_release_dates import candidate
 from release_family_llm import aggregate
+import release_family_llm as runner
 
 
 def corpus(brand, count=100):
@@ -76,3 +77,29 @@ def test_family_grouping_retains_se_and_platform_but_merges_storage_and_body_kit
     assert len(fs) == 3
     assert sorted(len(f['variants']) for f in fs) == [1, 1, 2]
     assert next(f for f in fs if f['brand'] == '富士')['model'] == 'FUJIFILM X-T5'
+
+
+def test_rate_limit_opens_circuit_without_sending_or_retrying_other_families(tmp_path, monkeypatch):
+    from urllib.error import HTTPError
+    calls = []
+
+    class Limited:
+        def open(self, request, timeout):
+            calls.append(request.full_url)
+            raise HTTPError(request.full_url, 429, 'Rate limited', {'Retry-After': '60'}, None)
+
+    monkeypatch.setattr(runner.urllib.request, 'build_opener', lambda *args: Limited())
+    monkeypatch.setattr(runner, '_api_key', lambda: 'fixture')
+    f = dict(family='小米|相机|H501', brand='小米', category='相机', model='H501')
+    runner.STOP.clear()
+    try:
+        assert runner.run_one(f, tmp_path) == 'failed'
+        assert runner.run_one({**f, 'family': '小米|相机|H501 SE'}, tmp_path) == 'circuit_open_not_sent'
+        assert len(calls) == 1 and len(list((tmp_path / 'sent').glob('*.json'))) == 1
+        failure = json.loads(next((tmp_path / 'responses').glob('*.json')).read_text())
+        assert failure['retry_after'] == '60'
+        runner.STOP.clear()
+        assert runner.run_one(f, tmp_path) == 'already_sent'
+        assert len(calls) == 1
+    finally:
+        runner.STOP.clear()
