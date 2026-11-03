@@ -767,17 +767,41 @@
    }
   ],
   "input_sha256": "114d606eb1c0d9c553b1070bf2ceab753c4f1fbf28f0d7a5a867a5ba6b7e20ef",
-  "output_sha256": "75352f147088992aee5709b02ca3f971d448812e87aaa923c6fe6acd1437831b"
+  "output_sha256": "139ebb86943fec20aa16bfd2c30df3ec8995680dc0d3888257f7c0e2ed1952d1"
  },
- "published_count": 2909,
+ "published_count": 2898,
  "accessories": {
-  "excluded_count": 51,
-  "newly_excluded_count": 0,
+  "excluded_count": 62,
+  "newly_excluded_count": 11,
   "denominator": 2887,
-  "newly_excluded_ratio": 0.0,
+  "newly_excluded_ratio": 0.0038101835815725666,
   "threshold": 0.05,
   "gate": "green",
-  "review_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "review_sha256": "d79c1b3b256163081571bedc3056c553765494ea5c627af6f2fcae3c4bead8b1",
   "reviewed": false
+ },
+ "brands": {
+  "before": {
+   "Apple": 635,
+   "大疆": 281,
+   "富士": 63,
+   "小米": 179,
+   "小米汽车": 3,
+   "惠普": 218,
+   "未知": 1567,
+   "比亚迪": 14
+  },
+  "after": {
+   "Apple": 635,
+   "大疆": 281,
+   "富士": 63,
+   "小米": 1746,
+   "小米汽车": 3,
+   "惠普": 218,
+   "比亚迪": 14
+  },
+  "unknown_ratio": 0.0,
+  "unknown_prefix_top10": [],
+  "manual_review": []
  }
 }
