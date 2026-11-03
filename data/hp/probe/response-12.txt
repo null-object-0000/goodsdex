@@ -1,0 +1,48 @@
+    <!-- combo_final -->
+    <!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="//storage.360buyimg.com/retail-mall/mall-common-component/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="京东,京东商品详情页,京东网页版商品详情" />
+    <title>京东(JD.COM)-正品低价、品质保障、配送及时、轻松购物！</title>
+
+    <!-- 资源预链接 -->
+    <link rel="preconnect" href="https://img10.360buyimg.com" />
+    <link rel="preconnect" href="https://api.m.jd.com" crossorigin />
+
+    <!-- dns预链接 -->
+    <link rel="dns-prefetch" href="//img10.360buyimg.com" />
+    <link rel="dns-prefetch" href="//img11.360buyimg.com" />
+    <link rel="dns-prefetch" href="//img12.360buyimg.com" />
+    <link rel="dns-prefetch" href="//img13.360buyimg.com" />
+    <link rel="dns-prefetch" href="//img14.360buyimg.com" />
+    <link rel="dns-prefetch" href="//img20.360buyimg.com" />
+    <link rel="dns-prefetch" href="//img30.360buyimg.com" />
+    <link rel="dns-prefetch" href="//storage.360buyimg.com" />
+    <link rel="dns-prefetch" href="//misc.360buyimg.com" />
+    <link rel="dns-prefetch" href="//gias.jd.com" />
+    <link rel="dns-prefetch" href="//wl.jd.com" />
+
+    <!-- 跳转M站 -->
+    <script>
+      try {
+        function jump_mobile() {
+          var sku = location.href.split('.html')[0].split('/').pop()
+          var isEbook = location.origin.indexOf('e.jd.com') > -1
+          var targetUrl = '//item.m.jd.com/product/' + sku + '.html'
+
+          if (isEbook) {
+            targetUrl = '//e.m.jd.com/ebook/' + sku + '.html'
+          }
+
+          var userAgent = navigator.userAgent || ''
+          userAgent = userAgent.toUpperCase()
+          if (userAgent == '' || userAgent.indexOf('PAD') > -1) {
+            return
+          }
+
+          if (window.location.hash == '#m') {
+            var exp = new Date()
+  
