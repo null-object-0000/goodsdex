@@ -68,7 +68,7 @@ jobs:
       - name: Test publication invariants
         run: |
           python3 -m pip install --quiet pytest
-          PYTHONPATH=src:scripts python3 -m pytest -q tests/test_accessories.py tests/test_brands.py tests/test_release_policy.py tests/test_release_dates.py tests/test_series_release.py tests/test_series_release_rollout.py tests/test_date_enrichment.py tests/test_release_crosschecks.py tests/test_supplement_publish.py tests/test_dedupe.py tests/test_shards.py tests/test_release_candidate.py tests/test_mirror_public.py tests/test_sources_status.py tests/test_car_structure.py
+          PYTHONPATH=src:scripts python3 -m pytest -q tests/test_accessories.py tests/test_exclusions.py tests/test_brands.py tests/test_release_policy.py tests/test_release_dates.py tests/test_series_release.py tests/test_series_release_rollout.py tests/test_date_enrichment.py tests/test_release_crosschecks.py tests/test_supplement_publish.py tests/test_dedupe.py tests/test_shards.py tests/test_release_candidate.py tests/test_mirror_public.py tests/test_sources_status.py tests/test_car_structure.py
       - name: Verify final release (no lost IDs and responsibility invariants)
         env:
           RELEASE_SCOPE: ${{ inputs.scope }}
@@ -122,6 +122,7 @@ jobs:
           import json
           from pathlib import Path
           meta = json.loads(Path('_data/public/meta.json').read_text())
+          print(f"Inventory: {meta['total_all']} = {meta['total_published']} published + {meta['total_excluded']} excluded; revision={meta['revision']}; excluded sha256={meta['files']['goods-excluded.json']['sha256']}")
           accessory = meta.get('accessories', {})
           print(f"Accessory exclusions: new={accessory.get('newly_excluded_count')}, ratio={accessory.get('newly_excluded_ratio')}, gate={accessory.get('gate')}, exact batch reviewed={accessory.get('reviewed')}")
           print(f"Published {meta['count']} rows; {len(meta['files'])} verified files; one finalize under goodsdex-data-publication lock.")

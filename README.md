@@ -27,6 +27,7 @@ PYTHONPATH=src python3 scripts/crawl_apple_history.py --public public
 |---|---|
 | `public/index/*.json` | 按品牌的轻索引，合计约 3 MB，无 params |
 | `public/detail/00.json`–`3f.json` | 按商品 id 哈希的 64 个完整详情分片，按需读取 |
+| `public/goods-excluded.json` | 同次发布的排除明细、主理由、判定时间（后台复核） |
 | `public/goods.json` | 保留的约 14 MB 整库导出；不要给客户端使用 |
 | `public/meta.json` | schema、统计、生成时间、每文件 sha256/count/bytes |
 | `public/prices/latest.json` | 最新价格快照 |
@@ -35,6 +36,10 @@ PYTHONPATH=src python3 scripts/crawl_apple_history.py --public public
 **为什么数据不在 main**：代码与数据混在一个分支时，每次数据提交都在推进
 该分支的 tip，本地开发与 Actions 会互相 non-fast-forward（实测反复冲突）。
 分开后 `main` 只有代码、`data` 只有产物，各自演进互不干扰。
+
+排除发布契约见 [被排除商品清单](docs/goods-excluded-20261103/README.md)。meta 提供 `total_all = total_published + total_excluded`，并在 `files["goods-excluded.json"]` 记录 sha256/count/bytes；排除文件与 meta 的 revision、生成时间必须一致。后台默认展示已发布记录，通过独立排除清单查看全量。原始类目不改写，未采集的两级分类及来源 URL 为 null。
+
+固定主理由枚举：`accessory:sticker`、`accessory:screen_film`、`accessory:cleaning_consumable`、`accessory:category`、`accessory:name`、`container`、`duplicate`、`invalid`、`manual`。每条一个主理由；新增枚举必须同时更新 README 与上述契约文件。配件的匹配词/类目、审核删除依据和去重身份保存在 `exclusion`；`container` 暂无新增过滤规则。每次共享 finalize 从当前输入和源档案重新判定，不读取上一次生成的排除清单。
 
 客户端使用服务端 `search` / `goods/<id>`；数据同步先取 meta，再按 sha256 拉变化索引。新结构、实测和回滚说明见 [商品库分片](docs/商品库分片-20261029.md)。
 

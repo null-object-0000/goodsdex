@@ -71,6 +71,11 @@ def build_shards(public):
         write(f'detail/{n:02x}.json', bucket, len(bucket))
     raw = (public / 'goods.json').read_bytes()
     files['goods.json'] = dict(sha256=hashlib.sha256(raw).hexdigest(), count=len(rows), bytes=len(raw), usage='full export; do not use for clients')
+    excluded_path = public / 'goods-excluded.json'
+    if excluded_path.exists():
+        raw = excluded_path.read_bytes()
+        files['goods-excluded.json'] = dict(sha256=hashlib.sha256(raw).hexdigest(),
+            bytes=len(raw), count=json.loads(raw)['total'])
     status_path = public / 'sources-status.json'
     if status_path.exists():
         raw = status_path.read_bytes()
@@ -78,6 +83,9 @@ def build_shards(public):
             bytes=len(raw), count=len(json.loads(raw)['sources']))
     meta_path = public / 'meta.json'
     meta = json.loads(meta_path.read_bytes()) if meta_path.exists() else {}
+    if 'revision' in meta:
+        from goodsdex.exclusions import validate_excluded
+        validate_excluded(meta, json.loads(excluded_path.read_bytes()), rows)
     meta.update(schema=SCHEMA, count=len(rows), files=files,
                 detail_sharding=dict(algorithm='sha256-first32-mod', count=SHARDS),
                 index_order='ascending _query.ordinal', unique_count=sum(len(b) for b in details))

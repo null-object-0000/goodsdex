@@ -716,9 +716,13 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     public = Path(public)
     rows, digest = load_rows(public / "goods.json")
     from goodsdex.release_policy import remove_reviewed_non_goods, assert_no_empty_shells, allowed_deletions
+    from goodsdex.exclusions import reviewed_observations, build_excluded, validate_excluded
+    reviewed = reviewed_observations(public, rows, previous)
     retained = remove_reviewed_non_goods(rows)
     assert_no_empty_shells(retained)
     output, audit = dedupe_rows(retained)
+    merge_plan = analyze(group_by_id(retained), len(retained))
+    duplicate_rows = [r for group in merge_plan["safe"] for r in group["rows"][1:]]
     # Replay reviewed date evidence after every brand collector, under the same
     # publication lock. Daily rebuilds must not erase the enrichment.
     from goodsdex.release_dates import apply_release_dates
@@ -771,9 +775,20 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     meta['accessories'] = accessory_audit
     meta['release_dates_other_brands'] = coverage([r for r in output if classify(r)['basis'] != 'car'])
     meta['release_dates_cars'] = coverage([r for r in output if classify(r)['basis'] == 'car'])
+    from uuid import uuid4
+    revision = uuid4().hex
+    generated_at = datetime.now(timezone.utc).isoformat()
+    excluded = build_excluded(rows, output, accessory_archive, reviewed, duplicate_rows, generated_at, revision)
+    input_ids = {r["id"] for r in rows}
+    historical_ids = {r["id"] for r in excluded["items"]} - input_ids
+    meta.update(revision=revision, generated_at=generated_at, total_all=len(rows) + len(historical_ids),
+                total_published=len(output), total_excluded=excluded["total"])
+    validate_excluded(meta, excluded, output)
     # All checks finish before the first release file is replaced.
     archive_path.parent.mkdir(parents=True, exist_ok=True)
     atomic_write(archive_path, accessory_archive)
+    atomic_write(public / "archive/non-goods.json", reviewed)
+    atomic_write(public / "goods-excluded.json", excluded)
     atomic_write(public / "archive" / "brand-review.json", brand_audit["manual_review"])
     for name, value in (("goods.json", output), ("meta.json", meta), ("merge-audit.json", combined)):
         atomic_write(public / name, value)

@@ -88,6 +88,12 @@ def main():
     descriptors = meta.get('files', {})
     if meta.get('schema') != 1 or not descriptors:
         raise ValueError('Run finalize_public.py to generate sharded release first')
+    if 'revision' in meta:
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
+        from goodsdex.exclusions import validate_excluded
+        if 'goods-excluded.json' not in descriptors:
+            raise ValueError('Missing exclusion descriptor')
+        validate_excluded(meta, json.loads((public / 'goods-excluded.json').read_bytes()), json.loads(goods))
     # Verify every file before touching OSS; the manifest is the last commit marker.
     for name, descriptor in descriptors.items():
         raw = (public / name).read_bytes()

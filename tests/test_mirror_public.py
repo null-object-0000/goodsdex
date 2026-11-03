@@ -86,3 +86,27 @@ def test_status_manifest_descriptor_drives_blob_and_public_alias(tmp_path, mirro
     (tmp_path/'sources-status.json').write_bytes(b'changed after manifest')
     with pytest.raises(ValueError, match='changed after generation'):
         mirror.main()
+
+
+def test_exclusion_file_is_mirrored_and_stale_release_fails_before_upload(tmp_path, mirror, monkeypatch):
+    import json
+    from goodsdex.dedupe import finalize_public
+    from goodsdex.shards import build_shards
+    (tmp_path/'goods.json').write_text('[]')
+    finalize_public(tmp_path)
+    meta = build_shards(tmp_path)
+    uploads_seen = []
+    monkeypatch.setattr(mirror, 'upload_release', lambda public, uploads, make_bucket: uploads_seen.extend(uploads) or len(uploads))
+    monkeypatch.setenv('OSS_ACCESS_KEY_ID', 'test')
+    monkeypatch.setenv('OSS_ACCESS_KEY_SECRET', 'test')
+    monkeypatch.setattr(sys, 'argv', ['mirror', '--public', str(tmp_path)])
+    assert mirror.main() == 0
+    assert ('goods-excluded.json', 'goods-excluded.json') in uploads_seen
+    assert ('goods-excluded.json', f"blobs/{meta['files']['goods-excluded.json']['sha256']}.json") in uploads_seen
+    excluded = json.loads((tmp_path/'goods-excluded.json').read_text())
+    excluded['revision'] = 'stale'
+    (tmp_path/'goods-excluded.json').write_text(json.dumps(excluded))
+    uploads_seen.clear()
+    with pytest.raises(ValueError, match='another release'):
+        mirror.main()
+    assert not uploads_seen
