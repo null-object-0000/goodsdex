@@ -234,6 +234,15 @@ def apply_release_dates(rows, path=DEFAULT_INPUT, llm_path=None, crosscheck_path
         if not c:
             if row['id'] in managed_ids and (row.get('release') or {}).get('source') == 'llm':
                 row.pop('release', None)
+            # Recover old policy nulls from the retained original assertion.
+            # This also covers third-party rows outside managed candidates.
+            existing = row.get('release') or {}
+            if existing.get('source') == 'third_party' and not existing.get('date'):
+                originals = {p['date'] for p in existing.get('checks', [])
+                             if p.get('verdict') == 'original' and p.get('source') == 'third_party'
+                             and p.get('date')}
+                if len(originals) == 1:
+                    existing['date'] = originals.pop()
             # Existing dates must still satisfy the provenance contract.
             if row.get('release') and row['release'].get('date'):
                 validate(dict(family=row['id'], ids=[row['id']], release=row['release']))
@@ -291,14 +300,14 @@ def apply_release_dates(rows, path=DEFAULT_INPUT, llm_path=None, crosscheck_path
         # Preserve official priority and document the rejected assertion.
         old = previous_release
         if old.get('date') and ((old.get('source') in ('official', 'official_hidden') and r['source'] not in ('official', 'official_hidden')) or (old.get('source') == 'third_party' and inferred)):
-            observations.insert(0, dict(source=r['source'], date=r['date'], family=c['family']))
+            observations.insert(0, dict(source=r['source'], date=r['date'], family=c['family'], evidence=deepcopy(r.get('evidence'))))
             r = old
         elif old.get('date') and (old['date'], old['source']) != (r['date'], r['source']):
-            observations.insert(0, dict(source=old['source'], date=old['date']))
+            observations.insert(0, dict(source=old['source'], date=old['date'], evidence=deepcopy(old.get('evidence'))))
         # Sidecar overlap is audited even when a reviewed source wins.
         for alt in extra_cs:
             if row['id'] in alt['ids'] and alt['family'] != c['family']:
-                observations.append(dict(source='llm', date=alt['release']['date'], family=alt['family']))
+                observations.append(dict(source='llm', date=alt['release']['date'], family=alt['family'], evidence=deepcopy(alt['release'].get('evidence'))))
                 alt_check = independent_checks.get(alt['family'])
                 if alt_check:
                     if alt_check['original_sha256'] != digest(alt['release']):

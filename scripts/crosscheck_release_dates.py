@@ -85,8 +85,13 @@ def assemble(root):
                 raise ValueError('Market/event mismatch')
             reason = value.get('reason')
         except (ValueError, TypeError, AttributeError) as exc:
+            value = {}
             date, reason = None, f'Unusable independent response: {exc}'
+        supplied = value.get('evidence')
+        # Verification metadata can only be added by source review, never by a model.
+        evidence = {k: supplied.get(k) for k in ('url', 'quote')} if isinstance(supplied, dict) else None
         checks[item['family']] = dict(source='llm', date=date, reason=reason,
+            evidence=evidence,
             model=response.get('model', runner.MODEL), checked_at=raw.get('captured_at'),
             original_sha256=digest(item['release']), prompt_sha256=hashlib.sha256(prompt(identity).encode()).hexdigest(),
             response_sha256=hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else None,

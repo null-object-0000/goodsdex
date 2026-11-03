@@ -1,5 +1,7 @@
 # 全库第三方日期独立核验
 
+> 本文件保留旧规则和旧发布结果作为历史。当前证据规则、39 条重放及 5 条恢复处置见 [规则修正报告](../release-crosschecks-policy-fix-20261103/README.md)。旧版“conflict 即置空”已撤销。
+
 每条独立请求只含品牌、品类、型号、市场和事件；不含原日期、来源网页、原文、既有 LLM 答案或候选族 key。提示词见 prompts/，身份冻结于 identities.json；完整后端响应、usage、时间、请求状态见 responses/、sent/、states/。151 次请求：39 条 third_party + 112 条既有 LLM 候选（包括先前门禁禁用的 72 条，不将其重新启用）。全部原始日期与原证据保留在 baseline-dates.json，模型结果永远 source=llm。
 
 规则：有任一月粒度时两侧按年月对齐，同月为 0，跨月按绝对月差 × 30 天；两侧均到日才按实际日差。≤14 corroborated，15–45 disagreement，>45 conflict 且 release.date=null。保留 release.checks[]，含被比较方 source/date；LLM 两两也比较。official 优先且保留冲突检查；原日期候选未改写。无独立日期（弃答）单列 unverified，不冒充日期冲突或一致。

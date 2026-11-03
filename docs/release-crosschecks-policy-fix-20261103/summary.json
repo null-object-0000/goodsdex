@@ -1,0 +1,33 @@
+{
+  "total": 39,
+  "replay": "frozen independent responses; deterministic policy rerun, no new LLM calls",
+  "previous": {
+    "corroborated": 14,
+    "disagreement": 0,
+    "conflict": 5,
+    "unverified": 20,
+    "nulled": 5
+  },
+  "raw_comparisons": {
+    "conflict": 5,
+    "corroborated": 14,
+    "unverified": 20,
+    "disagreement": 0
+  },
+  "effective_decisions": {
+    "unverified": 25,
+    "corroborated": 14,
+    "disagreement": 0,
+    "conflict": 0
+  },
+  "nulled": 0,
+  "restored_conflicts": 5,
+  "catalog": {
+    "count": 3968,
+    "non_release_unchanged": true,
+    "idempotent": true,
+    "changed": 694,
+    "input_sha256": "f9ded678997f90b35ef8ed71546b9f9fde6e0315a6158edcdec7b9cc37cdaf6a",
+    "output": "/tmp/goodsdex-crosscheck-fix/goods-after.json"
+  }
+}
