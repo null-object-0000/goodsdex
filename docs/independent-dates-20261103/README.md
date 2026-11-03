@@ -55,4 +55,11 @@ python scripts/finalize_public.py --public /path/to/data/public
 python docs/independent-dates-20261103/verify_publication.py --published /path/to/data/public/goods.json --online
 ```
 
-正式流水线、OSS读回及线上详情的执行记录将在本目录 publication.json、online-verification.log、live-api-samples.json 保留。
+## 真实发布与线上验收
+
+2026-11-03 21:30（北京时间）完成线上验证。[正式流水线41644321802](https://github.com/null-object-0000/goodsdex/actions/runs/41644321802)成功，发布门禁181项通过；云端完整测试成功。代码提交 `9c2058ac`，数据提交 `c45a37a18a3b837c78edd173956a7a7ac5aea600`，API契约提交 `621e767`。
+
+OSS goods.json读回字节与发布分支完全一致，SHA256=`5e927238d68150d7a1541dc6641262e7155c0a86d4b09161d3d8a10ad9f99f13`。服务端现有同步器 primeCatalog 返回 `{"ok":true,"count":2909,"errors":[]}`，线上 meta 引用同一 SHA256，完整目录逐值相同。上述四个验收计数及两路品牌数均已在真实发布产物验证。
+
+十条新字段样本和一条release_series均逐字段对照真实HTTP返回，分页/分组列表均不携带三个详情日期字段。[线上真实返回摘录](live-excerpts.md)、[完整详情返回](live-api-samples.json)、[最终验收](verification.json)、[同步记录](api-sync.log)、[正式发布记录](publication.json)、[流水线日志](pipeline.log)保留完整证据。所有原release和release_series逐值不变；与其并存的模型日期永远优先级最低。
+

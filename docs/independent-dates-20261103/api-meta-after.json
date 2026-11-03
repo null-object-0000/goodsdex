@@ -1,0 +1,565 @@
+{
+  "generated_at": "2026-11-03T13:28:24.908979+00:00",
+  "count": 2909,
+  "by_kind": {
+    "machine": 2139,
+    "accessory": 55,
+    "unknown": 666,
+    "service": 49
+  },
+  "with_price": 2243,
+  "note": "发布集含多品牌；价格范围见 price_kind，Apple 规格表保留型号列，不视为所有变体共享参数。",
+  "brands": {
+    "Apple": 635,
+    "比亚迪": 14,
+    "大疆": 281,
+    "富士": 63,
+    "惠普": 218,
+    "小米": 1695,
+    "小米汽车": 3
+  },
+  "schema": 1,
+  "files": {
+    "index/hp_cn.json": {
+      "sha256": "eac5725d9b423ee56fa14246ab1b6d81ecb9058d313243100b642405d83b4d54",
+      "count": 218,
+      "bytes": 440289
+    },
+    "index/mi_cn.json": {
+      "sha256": "c405dc40e6aa04a92a97806d958a9f03f4197e3760ad3b7b26a8596851a4a28f",
+      "count": 143,
+      "bytes": 61953
+    },
+    "index/apple_cn.json": {
+      "sha256": "1f3ebb2ae9d71f9e904552d0349ed04c45972adb29ecd065c028ac24cabada4a",
+      "count": 635,
+      "bytes": 3289543
+    },
+    "index/dji.json": {
+      "sha256": "bd0c4d72df7c30860981ec83da09de88e6198a58ba2c62c8d4bb9f413cf3e7f8",
+      "count": 281,
+      "bytes": 613521
+    },
+    "index/fuji.json": {
+      "sha256": "7156bd9ba9776aaba8c4e142eca20f7c97f25ff7dd9e8ff0a6195e05413588ec",
+      "count": 63,
+      "bytes": 152984
+    },
+    "index/byd.json": {
+      "sha256": "dd2188ef3430088fb6ab5739f92f0beedc19ccb20fe73356b0f818b676733960",
+      "count": 14,
+      "bytes": 70458
+    },
+    "index/xiaomi_ev.json": {
+      "sha256": "b8b812d369fe6bb7c96a2d0fa8c0f56bff536ecf7820a83defbef8eb33b8726c",
+      "count": 3,
+      "bytes": 27826
+    },
+    "index/other.json": {
+      "sha256": "f1f02398365458bcd368d5450fd6a6d6a01552d8c89994afb38262b68fb12e14",
+      "count": 1552,
+      "bytes": 910509
+    },
+    "detail/00.json": {
+      "sha256": "2087c6e03f10f8ce7d74b697786b00aa49ef9afaf9df6d999c1a9f2e8f0057c3",
+      "count": 42,
+      "bytes": 282105
+    },
+    "detail/01.json": {
+      "sha256": "e8bab9fe4b63f6d50f9d5d1aa387fdaacc3b6ef123cd792dcff18e2311472661",
+      "count": 54,
+      "bytes": 230218
+    },
+    "detail/02.json": {
+      "sha256": "bc28dfd433c1e4a41c0065af627f6089abae37591b44bf12166772c3b3ed345f",
+      "count": 52,
+      "bytes": 330249
+    },
+    "detail/03.json": {
+      "sha256": "1c835b81e6c0a30bbaac05e1b97e9d114725139130db8a421b28172844ef5775",
+      "count": 52,
+      "bytes": 308742
+    },
+    "detail/04.json": {
+      "sha256": "985b0ccd7caaceea4aaac1b1e3e49baacbd3a971b91b10cc6acd07aeb879a881",
+      "count": 47,
+      "bytes": 321762
+    },
+    "detail/05.json": {
+      "sha256": "356fbf798e920e91bd3bf6c0915d519a751db33fe11c00821740256d9111484d",
+      "count": 52,
+      "bytes": 372204
+    },
+    "detail/06.json": {
+      "sha256": "afa251020e451d313babeb52d40c82b9e078217c1a4f18df2e3e1d3ab67b920e",
+      "count": 42,
+      "bytes": 250377
+    },
+    "detail/07.json": {
+      "sha256": "2154f65bb804bd6b1c1e450b0d11e11b2e3dffe70684dcfa7cd5d03c5d811624",
+      "count": 41,
+      "bytes": 266383
+    },
+    "detail/08.json": {
+      "sha256": "9864cb545998d82a2e33f8b2edf774b7ff544100642eee7b1a4c5d476fbfda87",
+      "count": 60,
+      "bytes": 360636
+    },
+    "detail/09.json": {
+      "sha256": "bcb65b044dd50a65f4a1598647a981d846d0125533002d17504da6df93f73a8d",
+      "count": 41,
+      "bytes": 194656
+    },
+    "detail/0a.json": {
+      "sha256": "cc9c9d637ab4a3243749704f6f13704f3993a135b0729d449e6f2f522915d4fa",
+      "count": 54,
+      "bytes": 271671
+    },
+    "detail/0b.json": {
+      "sha256": "486b089e48ad5b425eb05b4b8f4b3135a7329d448179fc3038fd7005fa48a486",
+      "count": 54,
+      "bytes": 338384
+    },
+    "detail/0c.json": {
+      "sha256": "cd6d8c0a9697c967cf76eb9a464e80e4d593bc2ada5f30192045aa658bfcaf66",
+      "count": 58,
+      "bytes": 372440
+    },
+    "detail/0d.json": {
+      "sha256": "aa9337d1a58574a0f87d09e5a8c86efe522d0710999829205ea9ae68bc3f2471",
+      "count": 60,
+      "bytes": 528761
+    },
+    "detail/0e.json": {
+      "sha256": "e27650379a3aa055b26b63028a6d0d479c899cec2d610026024d7bcf3c5c5d94",
+      "count": 42,
+      "bytes": 380933
+    },
+    "detail/0f.json": {
+      "sha256": "cd3cb96e90454c7e0509627b28310c83caa2036179e454d9af256b1369b27f5e",
+      "count": 44,
+      "bytes": 215201
+    },
+    "detail/10.json": {
+      "sha256": "6b37f6cee2cdd47f117931d293cc8a168ac625700fef73e487c43318243417ee",
+      "count": 37,
+      "bytes": 243841
+    },
+    "detail/11.json": {
+      "sha256": "42d6cd9c5d43e86d5db87c4fe866574d258fa918d9c7ef62c635bb2a17ae75bd",
+      "count": 40,
+      "bytes": 255373
+    },
+    "detail/12.json": {
+      "sha256": "acb89f42c9599df988ee54c64f6afc73431c4681738300472e2ce3c186d19dad",
+      "count": 46,
+      "bytes": 262158
+    },
+    "detail/13.json": {
+      "sha256": "794dc986f0fce911606148e554f9d0c9472506541b5859c272c6a4ef83ea6ee0",
+      "count": 40,
+      "bytes": 334378
+    },
+    "detail/14.json": {
+      "sha256": "480528923d34bea36e21dd2ac78c817f3621e571009aa7a738347b8c28d5cc97",
+      "count": 41,
+      "bytes": 311528
+    },
+    "detail/15.json": {
+      "sha256": "c3fbb0999aa6d90b9ee3f0f861a27bda383ea96dab9c516889fd122d4943b531",
+      "count": 50,
+      "bytes": 258818
+    },
+    "detail/16.json": {
+      "sha256": "35d3b71748c774e8036f7b81c2e23fd680f2a310d4931aa84546e0bf8b46a72a",
+      "count": 52,
+      "bytes": 466940
+    },
+    "detail/17.json": {
+      "sha256": "1c5e06d0ba7e6ee4b92cd0e3d612c4680944eab94e23e0e6b68879662fcd1e9d",
+      "count": 44,
+      "bytes": 255081
+    },
+    "detail/18.json": {
+      "sha256": "55f66422cf2803ad1eb21714ee7ea1201a43dc67066bafa43c40f269ecc2ce62",
+      "count": 52,
+      "bytes": 225298
+    },
+    "detail/19.json": {
+      "sha256": "c930bb10a6944362cb93353b93b6e3435293c362525ef53b19e31182669457a2",
+      "count": 41,
+      "bytes": 319612
+    },
+    "detail/1a.json": {
+      "sha256": "ee963231bd4ef0e96b599b72cb6807d688fd28f3a7006ac16243718e304dcba3",
+      "count": 40,
+      "bytes": 221341
+    },
+    "detail/1b.json": {
+      "sha256": "fceba31197ac739f625f764506979ff984a7eae5b791273f4ab3641890b5fca8",
+      "count": 36,
+      "bytes": 138245
+    },
+    "detail/1c.json": {
+      "sha256": "87042fb621425e158cabe6775e76b4ee540272b324f2309eb8e907f8e7d53f75",
+      "count": 33,
+      "bytes": 245515
+    },
+    "detail/1d.json": {
+      "sha256": "942ec29224b8efbdc2f75bc2cd3554553ffb16f87660ac048f91362f1166f83c",
+      "count": 49,
+      "bytes": 373664
+    },
+    "detail/1e.json": {
+      "sha256": "b8153b19f92a78436e55afcaba5b8ca546a1ae5d7b1e1632ae15b5ddce87748f",
+      "count": 52,
+      "bytes": 319640
+    },
+    "detail/1f.json": {
+      "sha256": "4cbf84b95f1dea6aef4ea98cbd0066b7a4a0e5690ca200a0e5299a0e6f49d862",
+      "count": 50,
+      "bytes": 194130
+    },
+    "detail/20.json": {
+      "sha256": "7fe14b8ff643980bb4fc75ed684baac6c7112e267617bf6c412c3b5484d66f3f",
+      "count": 50,
+      "bytes": 369015
+    },
+    "detail/21.json": {
+      "sha256": "7e41603217274cec3f35745d3299b5b507a7cfa33fabb4bb5209c28a762fba2e",
+      "count": 51,
+      "bytes": 399829
+    },
+    "detail/22.json": {
+      "sha256": "d2a0105bb4f16557ca5a0101a15748defd1f5afaa758a60c4ac914bde2020882",
+      "count": 36,
+      "bytes": 168527
+    },
+    "detail/23.json": {
+      "sha256": "2ecaa14a607121b990c0da747c71667e0f3356dccc635d041d28ad2d136dd48e",
+      "count": 43,
+      "bytes": 229403
+    },
+    "detail/24.json": {
+      "sha256": "f300c8d23fbfbe4ee506fb096fad16fd557f11aa03c9eb153d3b5df0131c9b5b",
+      "count": 43,
+      "bytes": 192511
+    },
+    "detail/25.json": {
+      "sha256": "d682240a573c584fc87c312c3eb99018e09aedf37dfafa8ec70c8c46a1a4564d",
+      "count": 49,
+      "bytes": 357572
+    },
+    "detail/26.json": {
+      "sha256": "d48d60b98d0c6889bea4229d289e75e096272cd6d2ebfbb60f81058080895f8c",
+      "count": 48,
+      "bytes": 215904
+    },
+    "detail/27.json": {
+      "sha256": "9e9c471c368a67521d41bb04c4a3ec1057f466e80792e198cc1e2ac5870a4590",
+      "count": 47,
+      "bytes": 328290
+    },
+    "detail/28.json": {
+      "sha256": "3a910dcfd83cc709b75d3541e8f8296f12d7ffa487a22fbd813fd6222316b3cb",
+      "count": 48,
+      "bytes": 254397
+    },
+    "detail/29.json": {
+      "sha256": "b092b42f7e352112a523c5bd224a3e8a898f06ba0c57224940d724bf843a2e86",
+      "count": 42,
+      "bytes": 220997
+    },
+    "detail/2a.json": {
+      "sha256": "a15cb4f4093ed12a89bf7b5a09f7bb5ba23060cae5be1fb568f7067f768f0e23",
+      "count": 53,
+      "bytes": 303644
+    },
+    "detail/2b.json": {
+      "sha256": "12e4862e75e97d6990cc4e24bb4ef96a390cd9712aabe7dcac7858bf1d88a706",
+      "count": 45,
+      "bytes": 288598
+    },
+    "detail/2c.json": {
+      "sha256": "620b1e92776fa6ff5ebfd08c55773d124b11227b9a725f46f7773330053c8fb1",
+      "count": 45,
+      "bytes": 199552
+    },
+    "detail/2d.json": {
+      "sha256": "9ce385df9a9cb430c6e74e5789e656a5dabe8d8fcc20db42daf62ba84201c914",
+      "count": 46,
+      "bytes": 299608
+    },
+    "detail/2e.json": {
+      "sha256": "feea0dab43dbb1e55acf1fe83e91940fad889381b8eddb078a14bb0dcf2a57b1",
+      "count": 41,
+      "bytes": 306645
+    },
+    "detail/2f.json": {
+      "sha256": "a03a557292960d00bfe54e79fd027b0d9ed8c03803521eae88a19862a248524d",
+      "count": 38,
+      "bytes": 321791
+    },
+    "detail/30.json": {
+      "sha256": "673f768c6ce90c23d63a7e5e9fb1b7a798e755eca41315fc4df992088e511851",
+      "count": 40,
+      "bytes": 237542
+    },
+    "detail/31.json": {
+      "sha256": "e26c152a73ed4833ddb4788bcd6726bfc8391d27953252f4a87fe3b4c15a88fd",
+      "count": 42,
+      "bytes": 210436
+    },
+    "detail/32.json": {
+      "sha256": "db341ab5da2e463370764d3714291dfb8926fb571fd93adedc8d600b8d1ab1da",
+      "count": 48,
+      "bytes": 344433
+    },
+    "detail/33.json": {
+      "sha256": "61663bb7e560d76633f63b421f1d089d2724caf63d0d80b99517311e4c91b68e",
+      "count": 41,
+      "bytes": 218008
+    },
+    "detail/34.json": {
+      "sha256": "39aae0c5d7c7e81344b970158d0c9d824079df213ecb536163fcfae87c2a5fa2",
+      "count": 42,
+      "bytes": 285972
+    },
+    "detail/35.json": {
+      "sha256": "d86de29d155118c11d1f84ddc98ebc9b0de5c0001d3fc5808a1b7e2b177440aa",
+      "count": 39,
+      "bytes": 258508
+    },
+    "detail/36.json": {
+      "sha256": "a31da6547c2f98a99d21b34c5cbb2819ea3828977f3795e1f6015038e95cd1dc",
+      "count": 42,
+      "bytes": 316113
+    },
+    "detail/37.json": {
+      "sha256": "c56ca6a64e1072ddde8c9c7337ec707aa27192b16c703e6329c31b9a6db8bd2a",
+      "count": 44,
+      "bytes": 240004
+    },
+    "detail/38.json": {
+      "sha256": "70886042faf90d35b5a27cf140e1765cf5e147221e97be2ec12ea8453a130805",
+      "count": 47,
+      "bytes": 276638
+    },
+    "detail/39.json": {
+      "sha256": "605058baa46217a02f2d54f5f9cf724ed61d0f159a31897f2477d8ab53ee1f9d",
+      "count": 42,
+      "bytes": 419858
+    },
+    "detail/3a.json": {
+      "sha256": "a781191c4ed9d96148ff7877e659c19f31ce371d3223cf3563bde87bb3c72412",
+      "count": 41,
+      "bytes": 227459
+    },
+    "detail/3b.json": {
+      "sha256": "2dfcf5afc382415946800caf09c53f634cee30f2edfdf59b4f1d0a1efb748e02",
+      "count": 42,
+      "bytes": 296546
+    },
+    "detail/3c.json": {
+      "sha256": "663d2a10122dfe614991d138093977f9ccb0d7fc61bc5f39c46aa45434a1cc55",
+      "count": 45,
+      "bytes": 261930
+    },
+    "detail/3d.json": {
+      "sha256": "4be19148f3968bb641bbb7cab3dcacc2126a647b3bc340ce846cc8ebff6150e7",
+      "count": 39,
+      "bytes": 630185
+    },
+    "detail/3e.json": {
+      "sha256": "a2e3978f998ae14f242ddf0cc16d8660329b0f4ef469812ac651d3c5bdbcc3c8",
+      "count": 39,
+      "bytes": 181417
+    },
+    "detail/3f.json": {
+      "sha256": "5597d3554eddc846c23df0b125d46f7c369bc825d7971086b5ce03ab1c4b1c5f",
+      "count": 48,
+      "bytes": 293192
+    },
+    "goods.json": {
+      "sha256": "5e927238d68150d7a1541dc6641262e7155c0a86d4b09161d3d8a10ad9f99f13",
+      "count": 2909,
+      "bytes": 20828185,
+      "usage": "full export; do not use for clients"
+    }
+  },
+  "detail_sharding": {
+    "algorithm": "sha256-first32-mod",
+    "count": 64
+  },
+  "index_order": "ascending _query.ordinal",
+  "unique_count": 2904,
+  "release_dates": {
+    "total": 2909,
+    "covered": 671,
+    "coverage": 0.23066345823306977,
+    "sources": {
+      "official": 593,
+      "official_hidden": 0,
+      "third_party": 39,
+      "llm": 39
+    },
+    "brands": {
+      "Apple": {
+        "total": 635,
+        "true_source": 418,
+        "official_hidden": 0,
+        "llm": 39,
+        "missing": 178
+      },
+      "比亚迪": {
+        "total": 14,
+        "true_source": 0,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 14
+      },
+      "大疆": {
+        "total": 281,
+        "true_source": 86,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 195
+      },
+      "富士": {
+        "total": 63,
+        "true_source": 14,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 49
+      },
+      "惠普": {
+        "total": 218,
+        "true_source": 0,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 218
+      },
+      "小米": {
+        "total": 1695,
+        "true_source": 111,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 1584
+      },
+      "小米汽车": {
+        "total": 3,
+        "true_source": 3,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 0
+      }
+    }
+  },
+  "accessories": {
+    "excluded_count": 51,
+    "newly_excluded_count": 0,
+    "denominator": 2887,
+    "newly_excluded_ratio": 0.0,
+    "threshold": 0.05,
+    "gate": "green",
+    "review_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "reviewed": false
+  },
+  "release_dates_other_brands": {
+    "total": 2892,
+    "covered": 668,
+    "coverage": 0.23098201936376211,
+    "sources": {
+      "official": 590,
+      "official_hidden": 0,
+      "third_party": 39,
+      "llm": 39
+    },
+    "brands": {
+      "Apple": {
+        "total": 635,
+        "true_source": 418,
+        "official_hidden": 0,
+        "llm": 39,
+        "missing": 178
+      },
+      "大疆": {
+        "total": 281,
+        "true_source": 86,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 195
+      },
+      "富士": {
+        "total": 63,
+        "true_source": 14,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 49
+      },
+      "惠普": {
+        "total": 218,
+        "true_source": 0,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 218
+      },
+      "小米": {
+        "total": 1695,
+        "true_source": 111,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 1584
+      }
+    }
+  },
+  "release_dates_cars": {
+    "total": 17,
+    "covered": 3,
+    "coverage": 0.17647058823529413,
+    "sources": {
+      "official": 3,
+      "official_hidden": 0,
+      "third_party": 0,
+      "llm": 0
+    },
+    "brands": {
+      "比亚迪": {
+        "total": 14,
+        "true_source": 0,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 14
+      },
+      "小米汽车": {
+        "total": 3,
+        "true_source": 3,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 0
+      }
+    }
+  },
+  "release_series": {
+    "count": 149,
+    "inherited_without_product": 101,
+    "batch_count": 81
+  },
+  "page_first_archived": {
+    "count": 1262,
+    "by_brand": {
+      "Apple": 623,
+      "大疆": 79,
+      "富士": 11,
+      "惠普": 38,
+      "小米": 511
+    }
+  },
+  "release_llm": {
+    "count": 233,
+    "by_brand": {
+      "Apple": 185,
+      "富士": 48
+    }
+  }
+}
