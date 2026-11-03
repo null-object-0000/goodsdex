@@ -719,6 +719,10 @@ def finalize_public(public, previous=None, retained_ids=()):
     retained = remove_reviewed_non_goods(rows)
     assert_no_empty_shells(retained)
     output, audit = dedupe_rows(retained)
+    # Replay reviewed date evidence after every brand collector, under the same
+    # publication lock. Daily rebuilds must not erase the enrichment.
+    from goodsdex.release_dates import apply_release_dates
+    output = apply_release_dates(output)
     assert_public_fields(output)
     if previous is not None:
         from goodsdex.release_policy import assert_no_lost_ids
@@ -736,6 +740,8 @@ def finalize_public(public, previous=None, retained_ids=()):
     combined["published_count"] = len(output)
     meta_path = public / "meta.json"
     meta = metadata(output, json.loads(meta_path.read_text()) if meta_path.exists() else {})
+    from goodsdex.release_dates import coverage
+    meta['release_dates'] = coverage(output)
     # All checks finish before the first release file is replaced.
     for name, value in (("goods.json", output), ("meta.json", meta), ("merge-audit.json", combined)):
         atomic_write(public / name, value)

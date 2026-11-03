@@ -1,0 +1,24 @@
+name: refresh-release-dates
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/collect-base
+      # Evidence/model calls happen in the bounded pilot, not in CI. The shared
+      # finalizer replays the committed, reviewed input over the latest data.
+      - uses: ./.github/actions/upload-candidate
+        with:
+          scope: all
+  publish:
+    needs: collect
+    uses: ./.github/workflows/publish-release.yml
+    with:
+      scope: all
+    secrets: inherit

@@ -1,0 +1,40 @@
+{
+ "url": "https://m.mi.com/mtop/xiaomishop/product/info",
+ "request": {
+  "method": "POST",
+  "productId": "18501"
+ },
+ "id": "CN:mi_cn:product:18501",
+ "name": "Xiaomi双磁超动态单元耳机",
+ "http_status": 200,
+ "error": "",
+ "sha256": "36462534471136e221309ec4a91dd27af14591618b53bf1d47497bafaa0c9c59",
+ "code": 0,
+ "product": {
+  "productId": 18501,
+  "name": "Xiaomi双磁超动态单元耳机"
+ },
+ "parameter_excerpts": [
+  {
+   "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
+   "name": "发布日期",
+   "value": "2023年5月"
+  },
+  {
+   "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[1]",
+   "name": "佩戴方式",
+   "value": "入耳式"
+  },
+  {
+   "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[2]",
+   "name": "发音单元",
+   "value": "磁式微平板单元"
+  },
+  {
+   "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[3]",
+   "name": "产品净重（含充电盒）",
+   "value": "约14.7g"
+  }
+ ],
+ "capture_note": "原响应哈希；这里只保留逐字段原文片段和 JSON locator，未声称此摘要文件与响应字节同哈希。"
+}

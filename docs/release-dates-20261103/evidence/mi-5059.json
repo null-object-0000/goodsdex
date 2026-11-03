@@ -1,0 +1,45 @@
+{
+ "url": "https://m.mi.com/mtop/xiaomishop/product/info",
+ "request": {
+  "method": "POST",
+  "productId": "5059"
+ },
+ "id": "CN:mi_cn:product:5059",
+ "name": "小米活塞耳机",
+ "http_status": 200,
+ "error": "",
+ "sha256": "5e59c558e4ccc4e1320b595cbeb423f218887d32c714141fb2f51209bdb1e667",
+ "code": 0,
+ "product": {
+  "productId": 5059,
+  "name": "小米活塞耳机  "
+ },
+ "parameter_excerpts": [
+  {
+   "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[0]",
+   "name": "发布日期",
+   "value": "2013年6月"
+  },
+  {
+   "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[1]",
+   "name": "特色简介",
+   "value": "铝合金音腔、内置线控麦克风"
+  },
+  {
+   "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[2]",
+   "name": "佩戴方式",
+   "value": "入耳式"
+  },
+  {
+   "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[3]",
+   "name": "发音单元",
+   "value": "10mm动圈"
+  },
+  {
+   "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[4]",
+   "name": "产品净重（含充电盒）",
+   "value": "约14g"
+  }
+ ],
+ "capture_note": "原响应哈希；这里只保留逐字段原文片段和 JSON locator，未声称此摘要文件与响应字节同哈希。"
+}
