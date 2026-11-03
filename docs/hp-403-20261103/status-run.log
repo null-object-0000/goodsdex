@@ -1,0 +1,493 @@
+status	Set up job	﻿2026-11-03T15:02:04.5137837Z Current runner version: '2.338.2'
+status	Set up job	2026-11-03T15:02:04.5160008Z ##[group]Runner Image Provisioner
+status	Set up job	2026-11-03T15:02:04.5160778Z Hosted Compute Agent
+status	Set up job	2026-11-03T15:02:04.5161234Z Version: 20261021.618
+status	Set up job	2026-11-03T15:02:04.5161843Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+status	Set up job	2026-11-03T15:02:04.5162427Z Build Date: 2026-10-21T00:45:21Z
+status	Set up job	2026-11-03T15:02:04.5162991Z Worker ID: {a423d011-29e6-4624-8b35-e83ae034b26d}
+status	Set up job	2026-11-03T15:02:04.5163556Z Region: centralus
+status	Set up job	2026-11-03T15:02:04.5164068Z Cloud: Azure
+status	Set up job	2026-11-03T15:02:04.5164505Z ##[endgroup]
+status	Set up job	2026-11-03T15:02:04.5165537Z ##[group]Operating System
+status	Set up job	2026-11-03T15:02:04.5166042Z Ubuntu
+status	Set up job	2026-11-03T15:02:04.5166726Z 26.04.1
+status	Set up job	2026-11-03T15:02:04.5167208Z LTS
+status	Set up job	2026-11-03T15:02:04.5167761Z ##[endgroup]
+status	Set up job	2026-11-03T15:02:04.5168314Z ##[group]Runner Image
+status	Set up job	2026-11-03T15:02:04.5168828Z Image: ubuntu-26.04
+status	Set up job	2026-11-03T15:02:04.5169318Z Version: 20261025.179.1
+status	Set up job	2026-11-03T15:02:04.5170185Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+status	Set up job	2026-11-03T15:02:04.5171572Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+status	Set up job	2026-11-03T15:02:04.5172366Z ##[endgroup]
+status	Set up job	2026-11-03T15:02:04.5173426Z ##[group]GITHUB_TOKEN Permissions
+status	Set up job	2026-11-03T15:02:04.5175872Z Actions: read
+status	Set up job	2026-11-03T15:02:04.5176924Z Checks: read
+status	Set up job	2026-11-03T15:02:04.5177419Z Contents: write
+status	Set up job	2026-11-03T15:02:04.5177889Z Metadata: read
+status	Set up job	2026-11-03T15:02:04.5178307Z ##[endgroup]
+status	Set up job	2026-11-03T15:02:04.5180299Z Secret source: Actions
+status	Set up job	2026-11-03T15:02:04.5181002Z Cache mode: write
+status	Set up job	2026-11-03T15:02:04.5181823Z Prepare workflow directory
+status	Set up job	2026-11-03T15:02:04.5445556Z Prepare all required actions
+status	Set up job	2026-11-03T15:02:04.5488287Z Getting action download info
+status	Set up job	2026-11-03T15:02:04.8520971Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+status	Set up job	2026-11-03T15:02:04.9591724Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+status	Set up job	2026-11-03T15:02:05.0498018Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+status	Set up job	2026-11-03T15:02:05.2535054Z Complete job name: status
+status	Run actions/checkout@v4	﻿2026-11-03T15:02:05.3189241Z ##[group]Run actions/checkout@v4
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3189999Z with:
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3190479Z   repository: null-object-0000/goodsdex
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3193744Z   token: ***
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3194285Z   ssh-strict: true
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3194710Z   ssh-user: git
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3195142Z   persist-credentials: true
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3195598Z   clean: true
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3196035Z   sparse-checkout-cone-mode: true
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3196736Z   fetch-depth: 1
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3197162Z   fetch-tags: false
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3197599Z   show-progress: true
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3198247Z   lfs: false
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3198639Z   submodules: false
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3199058Z   set-safe-directory: true
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3199531Z   allow-unsafe-pr-checkout: false
+status	Run actions/checkout@v4	2026-11-03T15:02:05.3200219Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5671159Z Syncing repository: null-object-0000/goodsdex
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5673852Z ##[group]Getting Git version info
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5675021Z Working directory is '/home/runner/work/goodsdex/goodsdex'
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5677338Z [command]/usr/bin/git version
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5678155Z git version 2.56.0
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5680570Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5687950Z Temporarily overriding HOME='/home/runner/work/_temp/019a52aa-3282-40d2-956c-65e71eb26168' before making global git config changes
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5698341Z Adding repository directory to the temporary git global config as a safe directory
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5700442Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5767924Z Deleting the contents of '/home/runner/work/goodsdex/goodsdex'
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5782410Z ##[group]Initializing the repository
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5788088Z [command]/usr/bin/git init /home/runner/work/goodsdex/goodsdex
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5908177Z hint: Using 'master' as the name for the initial branch. This default branch name
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5910067Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5911613Z hint: to use in all of your new repositories, which will suppress this warning,
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5912954Z hint: call:
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5913627Z hint:
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5914482Z hint: 	git config --global init.defaultBranch <name>
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5915435Z hint:
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5916523Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5917860Z hint: 'development'. The just-created branch can be renamed via this command:
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5918920Z hint:
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5919592Z hint: 	git branch -m <name>
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5920369Z hint:
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5921328Z hint: Disable this message with "git config set advice.defaultBranchName false"
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5922819Z Initialized empty Git repository in /home/runner/work/goodsdex/goodsdex/.git/
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5928818Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/goodsdex
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5996967Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:05.5999472Z ##[group]Disabling automatic garbage collection
+status	Run actions/checkout@v4	2026-11-03T15:02:05.6001979Z [command]/usr/bin/git config --local gc.auto 0
+status	Run actions/checkout@v4	2026-11-03T15:02:05.6044296Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:05.6045403Z ##[group]Setting up auth
+status	Run actions/checkout@v4	2026-11-03T15:02:05.6051190Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+status	Run actions/checkout@v4	2026-11-03T15:02:05.6080590Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+status	Run actions/checkout@v4	2026-11-03T15:02:05.6461522Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+status	Run actions/checkout@v4	2026-11-03T15:02:05.6492179Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+status	Run actions/checkout@v4	2026-11-03T15:02:05.6689364Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+status	Run actions/checkout@v4	2026-11-03T15:02:05.6717596Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+status	Run actions/checkout@v4	2026-11-03T15:02:05.6911240Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+status	Run actions/checkout@v4	2026-11-03T15:02:05.6947717Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:05.6949335Z ##[group]Fetching the repository
+status	Run actions/checkout@v4	2026-11-03T15:02:05.6957125Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8169869486f980820de34d6186e1cea83d3686fd:refs/remotes/origin/main
+status	Run actions/checkout@v4	2026-11-03T15:02:09.7441444Z From https://github.com/null-object-0000/goodsdex
+status	Run actions/checkout@v4	2026-11-03T15:02:09.7443719Z  * [new ref]         8169869486f980820de34d6186e1cea83d3686fd -> origin/main
+status	Run actions/checkout@v4	2026-11-03T15:02:09.7448437Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:09.7450238Z ##[group]Determining the checkout info
+status	Run actions/checkout@v4	2026-11-03T15:02:09.7452011Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:09.7453287Z [command]/usr/bin/git sparse-checkout disable
+status	Run actions/checkout@v4	2026-11-03T15:02:09.7506298Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+status	Run actions/checkout@v4	2026-11-03T15:02:09.7533498Z ##[group]Checking out the ref
+status	Run actions/checkout@v4	2026-11-03T15:02:09.7543265Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+status	Run actions/checkout@v4	2026-11-03T15:02:10.3364115Z Switched to a new branch 'main'
+status	Run actions/checkout@v4	2026-11-03T15:02:10.3366878Z branch 'main' set up to track 'origin/main'.
+status	Run actions/checkout@v4	2026-11-03T15:02:10.3391972Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:10.3437824Z [command]/usr/bin/git log -1 --format=%H
+status	Run actions/checkout@v4	2026-11-03T15:02:10.3456379Z 8169869486f980820de34d6186e1cea83d3686fd
+status	Run actions/setup-python@v5	﻿2026-11-03T15:02:10.3715366Z ##[group]Run actions/setup-python@v5
+status	Run actions/setup-python@v5	2026-11-03T15:02:10.3715800Z with:
+status	Run actions/setup-python@v5	2026-11-03T15:02:10.3716053Z   python-version: 3.12
+status	Run actions/setup-python@v5	2026-11-03T15:02:10.3716524Z   check-latest: false
+status	Run actions/setup-python@v5	2026-11-03T15:02:10.3718932Z   token: ***
+status	Run actions/setup-python@v5	2026-11-03T15:02:10.3719182Z   update-environment: true
+status	Run actions/setup-python@v5	2026-11-03T15:02:10.3719491Z   allow-prereleases: false
+status	Run actions/setup-python@v5	2026-11-03T15:02:10.3719759Z   freethreaded: false
+status	Run actions/setup-python@v5	2026-11-03T15:02:10.3720045Z ##[endgroup]
+status	Run actions/setup-python@v5	2026-11-03T15:02:10.4835199Z ##[group]Installed versions
+status	Run actions/setup-python@v5	2026-11-03T15:02:10.4918343Z (node:2169) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+status	Run actions/setup-python@v5	2026-11-03T15:02:10.4919063Z (Use `node --trace-deprecation ...` to show where the warning was created)
+status	Run actions/setup-python@v5	2026-11-03T15:02:10.4919712Z Successfully set up CPython (3.12.15)
+status	Run actions/setup-python@v5	2026-11-03T15:02:10.4920353Z ##[endgroup]
+status	Run actions/checkout@v4	﻿2026-11-03T15:02:10.5090594Z ##[group]Run actions/checkout@v4
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5090959Z with:
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5091263Z   ref: data
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5091522Z   path: _data
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5091793Z   fetch-depth: 1
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5092113Z   repository: null-object-0000/goodsdex
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5094475Z   token: ***
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5094761Z   ssh-strict: true
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5095015Z   ssh-user: git
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5095282Z   persist-credentials: true
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5095581Z   clean: true
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5095880Z   sparse-checkout-cone-mode: true
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5096493Z   fetch-tags: false
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5096774Z   show-progress: true
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5097077Z   lfs: false
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5097397Z   submodules: false
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5097662Z   set-safe-directory: true
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5097972Z   allow-unsafe-pr-checkout: false
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5098255Z env:
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5098625Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5099154Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5099607Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5100021Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5100438Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5100894Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5101240Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5845145Z Syncing repository: null-object-0000/goodsdex
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5846680Z ##[group]Getting Git version info
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5847311Z Working directory is '/home/runner/work/goodsdex/goodsdex/_data'
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5877164Z [command]/usr/bin/git version
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5912069Z git version 2.56.0
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5927362Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5938107Z Temporarily overriding HOME='/home/runner/work/_temp/90feb4ac-2187-4cef-afd4-7e124bf39cc4' before making global git config changes
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5939386Z Adding repository directory to the temporary git global config as a safe directory
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5943009Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex/_data
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5975486Z ##[group]Initializing the repository
+status	Run actions/checkout@v4	2026-11-03T15:02:10.5980372Z [command]/usr/bin/git init /home/runner/work/goodsdex/goodsdex/_data
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6017533Z hint: Using 'master' as the name for the initial branch. This default branch name
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6018451Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6019462Z hint: to use in all of your new repositories, which will suppress this warning,
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6020172Z hint: call:
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6020626Z hint:
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6021114Z hint: 	git config --global init.defaultBranch <name>
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6021710Z hint:
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6022233Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6023064Z hint: 'development'. The just-created branch can be renamed via this command:
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6023734Z hint:
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6024181Z hint: 	git branch -m <name>
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6025726Z hint:
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6026563Z hint: Disable this message with "git config set advice.defaultBranchName false"
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6027986Z Initialized empty Git repository in /home/runner/work/goodsdex/goodsdex/_data/.git/
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6029643Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/goodsdex
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6057424Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6058180Z ##[group]Disabling automatic garbage collection
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6060997Z [command]/usr/bin/git config --local gc.auto 0
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6087906Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6088616Z ##[group]Setting up auth
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6097140Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6127858Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6341633Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6374912Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6608781Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6642744Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6846242Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6882689Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6883354Z ##[group]Fetching the repository
+status	Run actions/checkout@v4	2026-11-03T15:02:10.6891538Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/data*:refs/remotes/origin/data* +refs/tags/data*:refs/tags/data*
+status	Run actions/checkout@v4	2026-11-03T15:02:53.5586303Z From https://github.com/null-object-0000/goodsdex
+status	Run actions/checkout@v4	2026-11-03T15:02:53.5587028Z  * [new branch]      data       -> origin/data
+status	Run actions/checkout@v4	2026-11-03T15:02:53.5590049Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:53.5590648Z ##[group]Determining the checkout info
+status	Run actions/checkout@v4	2026-11-03T15:02:53.5597869Z [command]/usr/bin/git branch --list --remote origin/data
+status	Run actions/checkout@v4	2026-11-03T15:02:53.5623879Z   origin/data
+status	Run actions/checkout@v4	2026-11-03T15:02:53.5627156Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:53.5632892Z [command]/usr/bin/git sparse-checkout disable
+status	Run actions/checkout@v4	2026-11-03T15:02:53.5673753Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+status	Run actions/checkout@v4	2026-11-03T15:02:53.5698727Z ##[group]Checking out the ref
+status	Run actions/checkout@v4	2026-11-03T15:02:53.5702969Z [command]/usr/bin/git checkout --progress --force -B data refs/remotes/origin/data
+status	Run actions/checkout@v4	2026-11-03T15:02:54.7024195Z Updating files:  21% (143/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:55.2457968Z Updating files:  22% (144/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:55.4946876Z Updating files:  23% (151/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:55.5803340Z Updating files:  24% (157/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:55.6241427Z Updating files:  24% (160/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:55.6525920Z Updating files:  25% (164/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:55.7210130Z Updating files:  26% (170/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:56.0140831Z Updating files:  27% (177/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:56.4733214Z Updating files:  28% (183/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:56.7295862Z Updating files:  29% (190/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:56.7515281Z Updating files:  29% (194/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:57.4571850Z Updating files:  30% (196/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:57.5544363Z Updating files:  31% (203/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:57.7827750Z Updating files:  32% (209/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0189930Z Updating files:  32% (211/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0494340Z Updating files:  33% (216/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0503317Z Updating files:  34% (223/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0515780Z Updating files:  35% (229/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0533721Z Updating files:  36% (236/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0673645Z Updating files:  37% (242/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0689269Z Updating files:  38% (249/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0700850Z Updating files:  39% (255/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0720682Z Updating files:  40% (262/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0731085Z Updating files:  41% (268/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0734868Z Updating files:  42% (275/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0737504Z Updating files:  43% (281/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0739748Z Updating files:  44% (288/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0740741Z Updating files:  45% (294/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0743482Z Updating files:  46% (301/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0746236Z Updating files:  47% (307/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0748939Z Updating files:  48% (314/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0751973Z Updating files:  49% (320/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0754839Z Updating files:  50% (327/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0757920Z Updating files:  51% (334/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0761343Z Updating files:  52% (340/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0763867Z Updating files:  53% (347/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0766397Z Updating files:  54% (353/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0768282Z Updating files:  55% (360/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0813005Z Updating files:  56% (366/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0854811Z Updating files:  57% (373/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0899378Z Updating files:  58% (379/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0960560Z Updating files:  59% (386/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.0962032Z Updating files:  60% (392/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.1337020Z Updating files:  61% (399/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.1395133Z Updating files:  62% (405/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.1606301Z Updating files:  63% (412/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3650397Z Updating files:  64% (418/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3673105Z Updating files:  65% (425/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3678440Z Updating files:  66% (431/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3684308Z Updating files:  67% (438/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3698170Z Updating files:  68% (445/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3701825Z Updating files:  69% (451/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3705126Z Updating files:  70% (458/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3707880Z Updating files:  71% (464/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3710077Z Updating files:  72% (471/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3713735Z Updating files:  73% (477/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3727667Z Updating files:  74% (484/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3731109Z Updating files:  75% (490/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3735540Z Updating files:  76% (497/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3738040Z Updating files:  77% (503/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3739779Z Updating files:  78% (510/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3748485Z Updating files:  79% (516/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3754138Z Updating files:  80% (523/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3773353Z Updating files:  81% (529/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3912242Z Updating files:  82% (536/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3932988Z Updating files:  83% (542/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3944194Z Updating files:  84% (549/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3963380Z Updating files:  85% (556/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.3977574Z Updating files:  86% (562/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.4078500Z Updating files:  87% (569/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.4124132Z Updating files:  88% (575/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.4149056Z Updating files:  89% (582/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.4194215Z Updating files:  90% (588/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.4216588Z Updating files:  91% (595/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.4244190Z Updating files:  92% (601/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.4273456Z Updating files:  93% (608/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.4311998Z Updating files:  94% (614/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.4355861Z Updating files:  95% (621/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.4389615Z Updating files:  96% (627/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.4923157Z Updating files:  97% (634/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.5229354Z Updating files:  98% (640/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.5303661Z Updating files:  99% (647/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.5304019Z Updating files: 100% (653/653)
+status	Run actions/checkout@v4	2026-11-03T15:02:58.5304483Z Updating files: 100% (653/653), done.
+status	Run actions/checkout@v4	2026-11-03T15:02:58.5326661Z Switched to a new branch 'data'
+status	Run actions/checkout@v4	2026-11-03T15:02:58.5327967Z branch 'data' set up to track 'origin/data'.
+status	Run actions/checkout@v4	2026-11-03T15:02:58.5357248Z ##[endgroup]
+status	Run actions/checkout@v4	2026-11-03T15:02:58.5393813Z [command]/usr/bin/git log -1 --format=%H
+status	Run actions/checkout@v4	2026-11-03T15:02:58.5414726Z 968114c2245995c45412c5a462ba77404af45d6d
+status	Test liveness contract	﻿2026-11-03T15:02:58.5544396Z ##[group]Run python3 -m pip install --quiet pytest oss2
+status	Test liveness contract	2026-11-03T15:02:58.5545105Z ^[[36;1mpython3 -m pip install --quiet pytest oss2^[[0m
+status	Test liveness contract	2026-11-03T15:02:58.5545647Z ^[[36;1mPYTHONPATH=src:scripts python3 -m pytest -q tests/test_sources_status.py tests/test_mirror_public.py tests/test_shards.py^[[0m
+status	Test liveness contract	2026-11-03T15:02:58.5577175Z shell: /usr/bin/bash -e {0}
+status	Test liveness contract	2026-11-03T15:02:58.5577633Z env:
+status	Test liveness contract	2026-11-03T15:02:58.5577949Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Test liveness contract	2026-11-03T15:02:58.5578447Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+status	Test liveness contract	2026-11-03T15:02:58.5578862Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Test liveness contract	2026-11-03T15:02:58.5579227Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Test liveness contract	2026-11-03T15:02:58.5579685Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Test liveness contract	2026-11-03T15:02:58.5580073Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+status	Test liveness contract	2026-11-03T15:02:58.5580423Z ##[endgroup]
+status	Test liveness contract	2026-11-03T15:03:05.5907472Z
+status	Test liveness contract	2026-11-03T15:03:05.5908922Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+status	Test liveness contract	2026-11-03T15:03:05.5909894Z [notice] To update, run: pip install --upgrade pip
+status	Test liveness contract	2026-11-03T15:03:06.1848635Z .....................                                                    [100%]
+status	Test liveness contract	2026-11-03T15:03:06.1849231Z 21 passed in 0.17s
+status	Snapshot status and update only its manifest descriptor	﻿2026-11-03T15:03:06.2179317Z ##[group]Run python3 scripts/generate_sources_status.py --public _data/public
+status	Snapshot status and update only its manifest descriptor	2026-11-03T15:03:06.2179860Z ^[[36;1mpython3 scripts/generate_sources_status.py --public _data/public^[[0m
+status	Snapshot status and update only its manifest descriptor	2026-11-03T15:03:06.2200697Z shell: /usr/bin/bash -e {0}
+status	Snapshot status and update only its manifest descriptor	2026-11-03T15:03:06.2200995Z env:
+status	Snapshot status and update only its manifest descriptor	2026-11-03T15:03:06.2201388Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Snapshot status and update only its manifest descriptor	2026-11-03T15:03:06.2201824Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+status	Snapshot status and update only its manifest descriptor	2026-11-03T15:03:06.2202289Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Snapshot status and update only its manifest descriptor	2026-11-03T15:03:06.2202671Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Snapshot status and update only its manifest descriptor	2026-11-03T15:03:06.2203033Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Snapshot status and update only its manifest descriptor	2026-11-03T15:03:06.2203484Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+status	Snapshot status and update only its manifest descriptor	2026-11-03T15:03:06.2205970Z   GITHUB_TOKEN: ***
+status	Snapshot status and update only its manifest descriptor	2026-11-03T15:03:06.2206370Z ##[endgroup]
+status	Publish status under the shared publication lock	﻿2026-11-03T15:03:16.0868560Z ##[group]Run cd _data
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0868898Z ^[[36;1mcd _data^[[0m
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0869198Z ^[[36;1mgit config user.name goodsdex-bot^[[0m
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0869574Z ^[[36;1mgit config user.email goodsdex-bot@users.noreply.github.com^[[0m
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0870056Z ^[[36;1mgit add -f public/sources-status.json public/meta.json^[[0m
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0870445Z ^[[36;1mif git diff --cached --quiet; then exit 0; fi^[[0m
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0870837Z ^[[36;1mgit commit -m "Sources status $(date -u +%Y-%m-%dT%H:%MZ)"^[[0m
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0871228Z ^[[36;1mgit push origin HEAD:data^[[0m
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0891914Z shell: /usr/bin/bash -e {0}
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0892285Z env:
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0892630Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0893094Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0893530Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0893910Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0894446Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0894822Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.0895208Z ##[endgroup]
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.4018144Z [data 399bf0b] Sources status 2026-11-03T15:03Z
+status	Publish status under the shared publication lock	2026-11-03T15:03:16.4018758Z  2 files changed, 8 insertions(+), 8 deletions(-)
+status	Publish status under the shared publication lock	2026-11-03T15:03:17.6906591Z To https://github.com/null-object-0000/goodsdex
+status	Publish status under the shared publication lock	2026-11-03T15:03:17.6907402Z    968114c..399bf0b  HEAD -> data
+status	Mirror and verify OSS (manifest last)	﻿2026-11-03T15:03:17.6999731Z ##[group]Run python3 scripts/mirror_public_to_oss.py --public _data/public
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:17.7000463Z ^[[36;1mpython3 scripts/mirror_public_to_oss.py --public _data/public^[[0m
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:17.7027317Z shell: /usr/bin/bash -e {0}
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:17.7027923Z env:
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:17.7028338Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:17.7029135Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:17.7029749Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:17.7030358Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:17.7030915Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:17.7031471Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:17.7032263Z   OSS_ACCESS_KEY_ID: ***
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:17.7032822Z   OSS_ACCESS_KEY_SECRET: ***
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:17.7033226Z ##[endgroup]
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2703555Z OSS GET verified blobs/7629791bab62b1223f8391571da8714d2620696e265d76922ba4737b28619116.json: bytes=2192 sha256=7629791bab62b1223f8391571da8714d2620696e265d76922ba4737b28619116
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2705379Z OSS GET verified index/mi_cn.json: bytes=61953 sha256=c405dc40e6aa04a92a97806d958a9f03f4197e3760ad3b7b26a8596851a4a28f
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2706490Z OSS GET verified index/fuji.json: bytes=152984 sha256=7156bd9ba9776aaba8c4e142eca20f7c97f25ff7dd9e8ff0a6195e05413588ec
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2707603Z OSS GET verified index/hp_cn.json: bytes=440301 sha256=0b8a85889c29cf913703d5bda52085fdcd24bca0a5648d9bd6aee3eed9d4bc63
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2708659Z OSS GET verified index/xiaomi_ev.json: bytes=27830 sha256=777625cd151b40be71fdec0f570049f72ac861e3334a414ae1409f3b2ef55d20
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2709622Z OSS GET verified index/byd.json: bytes=70434 sha256=2f07b646cec9bc7cb064d7fb0bead05b1615cba73e31cd2c5a61383d05e29630
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2710547Z OSS GET verified index/dji.json: bytes=613521 sha256=bd0c4d72df7c30860981ec83da09de88e6198a58ba2c62c8d4bb9f413cf3e7f8
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2711469Z OSS GET verified index/apple_cn.json: bytes=3289543 sha256=1f3ebb2ae9d71f9e904552d0349ed04c45972adb29ecd065c028ac24cabada4a
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2712412Z OSS GET verified detail/01.json: bytes=230218 sha256=21ff708a2f78118369ae1907c7b0680be7794cb0cf44be337fdf5ee49a41151e
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2713280Z OSS GET verified detail/00.json: bytes=282105 sha256=1de406ab89a34b752d600df4d26f03937e9c94673931aca376e60a1601078f07
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2714244Z OSS GET verified index/other.json: bytes=910509 sha256=e4cf6935c0affdda11f88b87b4d122633bf18347c8f68ba142d3bba5961ba7fe
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2715161Z OSS GET verified detail/02.json: bytes=330249 sha256=fc9eb47df7fa4692fda0176cf0f92141ae65fb94131935047163f33db1af12e0
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2716248Z OSS GET verified detail/03.json: bytes=308742 sha256=3030729007607d609ee2bc23ce9c92cb259f0edace7777cee4d6201724a662c0
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2717240Z OSS GET verified detail/05.json: bytes=372204 sha256=4c053e63e249f2d720fcf469e8f68e3b561604f86cbf11f4804bd71c916a644d
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2718200Z OSS GET verified detail/06.json: bytes=250377 sha256=34f0fa48bee36d097d3cdfaa8c81d1f6d24f04be6c0f7b0c6131da5f8ed144b2
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2719088Z OSS GET verified detail/07.json: bytes=266383 sha256=dc3786b3644833c262edfe80b63548dd2729890f2ee0ec5f1cebfd89754376cb
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2719900Z OSS GET verified detail/04.json: bytes=321762 sha256=5be53eba445dc8a63c40e69b461730c9ac6364639d78304d06f6c74a9c8de708
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2720922Z OSS GET verified detail/09.json: bytes=194656 sha256=b1a020ea9da79476fa45fb49d1fa25a89c78be6ddc48e58e1355c7a2c9cd4825
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2721935Z OSS GET verified detail/08.json: bytes=360636 sha256=574aceb4061d2bc5296697084c92561f93eee91397b674b212bb8e8c362dab90
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2722968Z OSS GET verified detail/0a.json: bytes=271671 sha256=f32e332db1b1ff24fda0f1d1bc187455066b7075d3f475d612580be098f6e548
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2724159Z OSS GET verified detail/0c.json: bytes=372440 sha256=a2e374cbd1048d536e088eb894eadea720d9b6d029bb5484f2295f2c4cd6ed2c
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2725873Z OSS GET verified detail/0d.json: bytes=528761 sha256=c6a1518de452d4f688e601352ff2664d503243fc6c609030b85433b8e143cc61
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2727233Z OSS GET verified detail/0e.json: bytes=380936 sha256=6a8f03f7938ea3c51539ce84b74c3d00fbfa90dbda48960aebbefa84b9c53b45
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2728584Z OSS GET verified detail/0b.json: bytes=338384 sha256=12551e6f3eb6e4199db3caa29fbc261b73c44d5192e1e7a1fc8587555f51a064
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2729759Z OSS GET verified detail/0f.json: bytes=215201 sha256=1ec8d71b2da671c4f040a69b9766009d81568d4513d851921ab7362ee9b3fbd1
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2730951Z OSS GET verified detail/10.json: bytes=243841 sha256=eab248d40638b3701f45d56a931c8505c5e88caba9830df4f5e844debe2c45fe
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2731939Z OSS GET verified detail/11.json: bytes=255373 sha256=6c5777461e4c385913230fa5123421da2cabf050c2ceb039fde543161566f9ef
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2732805Z OSS GET verified detail/13.json: bytes=334378 sha256=3cfda4b0260f095caafebe616a102409f93ffac59c0163400eaf8b7460263ebf
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2733464Z OSS GET verified detail/14.json: bytes=311528 sha256=5154598eecad96eab4c5cf07c82f300e9454f6c8f548514ab088fa0b61b1fad6
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2734101Z OSS GET verified detail/12.json: bytes=262158 sha256=d6c8a76c5c61e5925efd7ae0d6559d567bcf4d7d56ab3ed79360068af7ed7974
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2734793Z OSS GET verified detail/15.json: bytes=258818 sha256=fd76d970bdd59e105faddf44784c2c745e760a109916ad39d9761c6b07b43970
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2735461Z OSS GET verified detail/16.json: bytes=466940 sha256=98abaf212d713b28a7f7128e917421879e65e63cc53a0b91401bfb1ca4feb51d
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2736355Z OSS GET verified detail/17.json: bytes=255081 sha256=298e95ea8a47920abe23a46b6cf8b88a66c0785f377666733ff3b2dbca3815f3
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2737065Z OSS GET verified detail/19.json: bytes=319612 sha256=8df6b68e63fd3d642d3c34a9fcc9d2f61eb030b93e0a09f55e4ba7ffc307002b
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2737763Z OSS GET verified detail/1a.json: bytes=221341 sha256=f67b6ef5e982c80d9ede2e594bb0bca3b2856190f530369a1998eb8d0062d02b
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2738450Z OSS GET verified detail/18.json: bytes=225298 sha256=e1b52ef1673864463bbd030cd65264b63ff9305f105c93bf135d8338f90c9713
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2739089Z OSS GET verified detail/1b.json: bytes=138245 sha256=0fa87cfe5c70675acb63a306a5fbc5d84df595a3414cba48db2091a23fa03280
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2739777Z OSS GET verified detail/1d.json: bytes=373664 sha256=d0667d5ce3ee89c7b0916268a889a953084f5805c5be3f1b333b4fb805aabfb0
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2740467Z OSS GET verified detail/1c.json: bytes=245515 sha256=5149ecb6582dfa7c8c559c4ef231fa9dcc19ea1410898fa6e0524e71ad00ddb6
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2741109Z OSS GET verified detail/1f.json: bytes=194130 sha256=32f6543d7f71616746cec505c93e4ad020e90821c30bb53afb1ceb6dada53def
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2741759Z OSS GET verified detail/20.json: bytes=369015 sha256=1098f9649e5b10b4037037b0b6476e52892e1d3ae2e16c841732a2720fd4e8a5
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2742409Z OSS GET verified detail/1e.json: bytes=319640 sha256=201fc6469c613215f42d75f1156efe7ef4e88cb5f735ac5dcdf17f749e3b9abd
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2743073Z OSS GET verified detail/21.json: bytes=399829 sha256=a39ab0691842b1188179bb66ff962096ecb79210ee82207af64e512f6a6c4e80
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2743711Z OSS GET verified detail/22.json: bytes=168527 sha256=2667cebfa781269f97b100911fff7008ca7170c0026a423f945fb26d9cb20270
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2744421Z OSS GET verified detail/23.json: bytes=229403 sha256=33e6562f2282da1e0c4c7b4776f2c032661cfd7eba55b8a373aa228e17e86d7d
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2745048Z OSS GET verified detail/25.json: bytes=357572 sha256=9d17beaa2f40eb624cc0af9693077880d09cc09369c46e682e008968ba687437
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2745674Z OSS GET verified detail/24.json: bytes=192511 sha256=9db4862884356843b107aea2bad5539470ee4a8ed83676e4e6b4c11fae7784c5
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2746544Z OSS GET verified detail/26.json: bytes=215907 sha256=f87026b7f1ad1512c3532e73612ea15db9046bf4fc7a05e241156056178a8e98
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2747176Z OSS GET verified detail/27.json: bytes=328290 sha256=3fd36b2839dc1acba9c44228373d65fb98da02f51bea679ad44434c7d8950c79
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2748110Z OSS GET verified detail/28.json: bytes=254397 sha256=9678558c8aafe73d1cc232cf9e91189ec6a9d9d5031d7f7b8e57ba8b0368af10
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2748765Z OSS GET verified detail/2a.json: bytes=303644 sha256=5f05edfad03363ee2025b8e476cb25fbfd735599274680c164d0135e6f6545a6
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2749560Z OSS GET verified detail/2b.json: bytes=288598 sha256=30970a7a40a28dbc8270b0e05986177c1aed85b5c1ffe75a4b76f6e9fb059b7f
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2750235Z OSS GET verified detail/29.json: bytes=220997 sha256=1e49d6afae32ad714bbeb7849ec77f942a9f2c49151a2059e2d7a897a54c8b33
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2750920Z OSS GET verified detail/2c.json: bytes=199552 sha256=5603a2dc97659397ee921a005dd541162b5b65780e8063af262f1ce330ff95db
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2751634Z OSS GET verified detail/2e.json: bytes=306645 sha256=74b6f8952cc4e54754b796dc1dbb1b8878d5aac8240627d6507e2be7a14cac14
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2752291Z OSS GET verified detail/2d.json: bytes=299608 sha256=e5b39c6f17bb50e60f86c041099125af5d7f5961cdedd3740977e413d23c8082
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2752946Z OSS GET verified detail/30.json: bytes=237542 sha256=7f13104c6ab74e068e70d83abdfa58524de6913e6f2b489013cc276e9ebef0b7
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2753614Z OSS GET verified detail/2f.json: bytes=321791 sha256=39da29cb83f8573fe19198b58d35c4008853f2b988790416a58584d5dfed16d3
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2754313Z OSS GET verified detail/31.json: bytes=210436 sha256=f56097fca2108f5eae8a83de81ac14eb2d30bcf8831e20a39c3d7e82c594fc92
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2755020Z OSS GET verified detail/32.json: bytes=344433 sha256=fb65db44297113055b9ea5c9899262df334950a8b02b5781ddf26a20509ed9c0
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2755676Z OSS GET verified detail/33.json: bytes=218008 sha256=1c0ccc5692b90e88102a35c9415690f30bb8ef44a47f9f6d086097f3ff741d95
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2756501Z OSS GET verified detail/35.json: bytes=258508 sha256=3a0208499017bde206ce1d1f423ffb6d44c93b4ae5a63a765a7b954f4127fcdd
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2757158Z OSS GET verified detail/36.json: bytes=316113 sha256=73ab85027d39781853e5334b37f776443b4442e185d4a66ba0ceeed3d847a553
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2757854Z OSS GET verified detail/34.json: bytes=285972 sha256=236cbebf992b51594fa05719f95b7030d500cdb83019c3358954cc072a47fc53
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2758543Z OSS GET verified detail/37.json: bytes=240004 sha256=6e59d6e897b34481401593558f7aa4d956d79ed8c4f82a16263fae8dd3648969
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2759174Z OSS GET verified detail/38.json: bytes=276638 sha256=c767f0820c9d3d3904e5a89585a2511e42a10f375dd4a88bfb8ad5dbe1ce00f0
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2759825Z OSS GET verified detail/39.json: bytes=419858 sha256=baf222668913a4ec39ea10e00a971b44e7e51870727bdaaed8c69cd2ae99150a
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:35.2760476Z OSS GET verified detail/3a.json: bytes=227459 sha256=5530244893cb676a0d5d2ce9ada2b8181f89971e8a79baab51155659c5a02856
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:40.4583966Z OSS GET verified detail/3b.json: bytes=296546 sha256=db6aecda1ec2b5d9f772d7cefc623fcb9a83672d7072e82c6650b3043e7c5b9a
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:40.4584831Z OSS GET verified detail/3c.json: bytes=261930 sha256=d7957da7df417ae7b9e936caba80880ff587eb23a4571fcbabc540ea24068092
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:40.4585702Z OSS GET verified detail/3d.json: bytes=629861 sha256=11ac7f7f48386be0128b3f89550c359db59ab71972e4c099b87a0c81318a248c
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:40.4586624Z OSS GET verified detail/3e.json: bytes=181417 sha256=a6e65f70f44584a752bb24c0b0dcd54a9166489dbf1dab9b9bebecb9a52d4e1e
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:40.4587296Z OSS GET verified detail/3f.json: bytes=293192 sha256=61af712b662b0c92064fe3a2fce530a1706ca375b6a8459e881c572784e681b2
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:40.4587993Z OSS GET verified sources-status.json: bytes=2192 sha256=7629791bab62b1223f8391571da8714d2620696e265d76922ba4737b28619116
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:40.4588698Z OSS GET verified merge-audit.json: bytes=17427 sha256=8fcb835eb2ad44857a73ec1a3b5cbbf7fc25a57c1bc90f05671893114f2bfc8c
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:40.4589427Z OSS GET verified goods.json: bytes=20827795 sha256=89d07aa137388c5433290ed203a611f2818d1f6dd50c161ef5268b1b95333fd1
+status	Mirror and verify OSS (manifest last)	2026-11-03T15:03:40.4590133Z OSS GET verified meta.json: bytes=11696 sha256=bd3b1c1fe6596a2b69db03ae5bbd3d4061d23142f8076f39dbd581d14d7130c4
+status	Record status evidence	﻿2026-11-03T15:03:40.5101791Z ##[group]Run actions/upload-artifact@v4
+status	Record status evidence	2026-11-03T15:03:40.5102108Z with:
+status	Record status evidence	2026-11-03T15:03:40.5102417Z   name: sources-status-41659618688
+status	Record status evidence	2026-11-03T15:03:40.5102900Z   path: _data/public/sources-status.json
+status	Record status evidence	2026-11-03T15:03:40.5103213Z   if-no-files-found: warn
+status	Record status evidence	2026-11-03T15:03:40.5103481Z   compression-level: 6
+status	Record status evidence	2026-11-03T15:03:40.5103716Z   overwrite: false
+status	Record status evidence	2026-11-03T15:03:40.5104129Z   include-hidden-files: false
+status	Record status evidence	2026-11-03T15:03:40.5104397Z env:
+status	Record status evidence	2026-11-03T15:03:40.5104693Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Record status evidence	2026-11-03T15:03:40.5105096Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+status	Record status evidence	2026-11-03T15:03:40.5105544Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Record status evidence	2026-11-03T15:03:40.5105935Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Record status evidence	2026-11-03T15:03:40.5106603Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Record status evidence	2026-11-03T15:03:40.5107005Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+status	Record status evidence	2026-11-03T15:03:40.5107425Z ##[endgroup]
+status	Record status evidence	2026-11-03T15:03:40.6477948Z (node:2427) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+status	Record status evidence	2026-11-03T15:03:40.6478674Z (Use `node --trace-deprecation ...` to show where the warning was created)
+status	Record status evidence	2026-11-03T15:03:40.6516301Z With the provided path, there will be 1 file uploaded
+status	Record status evidence	2026-11-03T15:03:40.6538941Z Artifact name is valid!
+status	Record status evidence	2026-11-03T15:03:40.6541221Z Root directory input is valid!
+status	Record status evidence	2026-11-03T15:03:40.9488424Z Beginning upload of artifact content to blob storage
+status	Record status evidence	2026-11-03T15:03:40.9672803Z (node:2427) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+status	Record status evidence	2026-11-03T15:03:41.1671858Z Uploaded bytes 559
+status	Record status evidence	2026-11-03T15:03:41.2176871Z Finished uploading artifact content to blob storage!
+status	Record status evidence	2026-11-03T15:03:41.2177573Z SHA256 digest of uploaded artifact zip is 98ab26393864e6402d39d652419525f0e1189fb03bed571fba31abf625076a08
+status	Record status evidence	2026-11-03T15:03:41.2178310Z Finalizing artifact upload
+status	Record status evidence	2026-11-03T15:03:41.8018836Z Artifact sources-status-41659618688.zip successfully finalized. Artifact ID 13240049322
+status	Record status evidence	2026-11-03T15:03:41.8019812Z Artifact sources-status-41659618688 has been successfully uploaded! Final size is 559 bytes. Artifact ID is 13240049322
+status	Record status evidence	2026-11-03T15:03:41.8024441Z Artifact download URL: https://github.com/null-object-0000/goodsdex/actions/runs/41659618688/artifacts/13240049322
+status	Post Run actions/checkout@v4	﻿2026-11-03T15:03:41.8199104Z Post job cleanup.
+status	Post Run actions/checkout@v4	2026-11-03T15:03:41.8912841Z [command]/usr/bin/git version
+status	Post Run actions/checkout@v4	2026-11-03T15:03:41.8949650Z git version 2.56.0
+status	Post Run actions/checkout@v4	2026-11-03T15:03:41.8981236Z Temporarily overriding HOME='/home/runner/work/_temp/48bf4ba7-9480-49af-8347-bf5a16933963' before making global git config changes
+status	Post Run actions/checkout@v4	2026-11-03T15:03:41.8982381Z Adding repository directory to the temporary git global config as a safe directory
+status	Post Run actions/checkout@v4	2026-11-03T15:03:41.8985240Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex/_data
+status	Post Run actions/checkout@v4	2026-11-03T15:03:41.9022630Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+status	Post Run actions/checkout@v4	2026-11-03T15:03:41.9052776Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+status	Post Run actions/checkout@v4	2026-11-03T15:03:41.9263570Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+status	Post Run actions/checkout@v4	2026-11-03T15:03:41.9283274Z http.https://github.com/.extraheader
+status	Post Run actions/checkout@v4	2026-11-03T15:03:41.9292299Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+status	Post Run actions/checkout@v4	2026-11-03T15:03:41.9326539Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+status	Post Run actions/checkout@v4	2026-11-03T15:03:41.9534951Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+status	Post Run actions/checkout@v4	2026-11-03T15:03:41.9570836Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+status	Post Run actions/setup-python@v5	﻿2026-11-03T15:03:41.9967299Z Post job cleanup.
+status	Post Run actions/setup-python@v5	2026-11-03T15:03:42.0978179Z (node:2536) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+status	Post Run actions/setup-python@v5	2026-11-03T15:03:42.0979000Z (Use `node --trace-deprecation ...` to show where the warning was created)
+status	Post Run actions/checkout@v4	﻿2026-11-03T15:03:42.1130672Z Post job cleanup.
+status	Post Run actions/checkout@v4	2026-11-03T15:03:42.1915884Z [command]/usr/bin/git version
+status	Post Run actions/checkout@v4	2026-11-03T15:03:42.1958726Z git version 2.56.0
+status	Post Run actions/checkout@v4	2026-11-03T15:03:42.1993853Z Temporarily overriding HOME='/home/runner/work/_temp/82ffc3ba-3b5d-4e0e-a178-585822b72291' before making global git config changes
+status	Post Run actions/checkout@v4	2026-11-03T15:03:42.1994698Z Adding repository directory to the temporary git global config as a safe directory
+status	Post Run actions/checkout@v4	2026-11-03T15:03:42.1999750Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+status	Post Run actions/checkout@v4	2026-11-03T15:03:42.2039851Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+status	Post Run actions/checkout@v4	2026-11-03T15:03:42.2073236Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+status	Post Run actions/checkout@v4	2026-11-03T15:03:42.2324540Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+status	Post Run actions/checkout@v4	2026-11-03T15:03:42.2352657Z http.https://github.com/.extraheader
+status	Post Run actions/checkout@v4	2026-11-03T15:03:42.2363134Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+status	Post Run actions/checkout@v4	2026-11-03T15:03:42.2400514Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+status	Post Run actions/checkout@v4	2026-11-03T15:03:42.2625035Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+status	Post Run actions/checkout@v4	2026-11-03T15:03:42.2658644Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+status	Complete job	﻿2026-11-03T15:03:42.3014122Z Cleaning up orphan processes
+status	Complete job	2026-11-03T15:03:42.3292683Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

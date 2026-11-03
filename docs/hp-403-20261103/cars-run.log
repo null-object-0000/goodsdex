@@ -1,0 +1,1240 @@
+collect	Set up job	﻿2026-11-03T14:47:17.9657469Z Current runner version: '2.338.2'
+collect	Set up job	2026-11-03T14:47:17.9684134Z ##[group]Runner Image Provisioner
+collect	Set up job	2026-11-03T14:47:17.9685125Z Hosted Compute Agent
+collect	Set up job	2026-11-03T14:47:17.9685796Z Version: 20261021.618
+collect	Set up job	2026-11-03T14:47:17.9686422Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+collect	Set up job	2026-11-03T14:47:17.9687162Z Build Date: 2026-10-21T00:45:21Z
+collect	Set up job	2026-11-03T14:47:17.9687907Z Worker ID: {fbf2243c-f512-4e64-9d62-c539cb111e75}
+collect	Set up job	2026-11-03T14:47:17.9688644Z Region: westus2
+collect	Set up job	2026-11-03T14:47:17.9689220Z Cloud: Azure
+collect	Set up job	2026-11-03T14:47:17.9689804Z ##[endgroup]
+collect	Set up job	2026-11-03T14:47:17.9691252Z ##[group]Operating System
+collect	Set up job	2026-11-03T14:47:17.9692000Z Ubuntu
+collect	Set up job	2026-11-03T14:47:17.9692853Z 26.04.1
+collect	Set up job	2026-11-03T14:47:17.9693419Z LTS
+collect	Set up job	2026-11-03T14:47:17.9693956Z ##[endgroup]
+collect	Set up job	2026-11-03T14:47:17.9694548Z ##[group]Runner Image
+collect	Set up job	2026-11-03T14:47:17.9695204Z Image: ubuntu-26.04
+collect	Set up job	2026-11-03T14:47:17.9695802Z Version: 20261025.179.1
+collect	Set up job	2026-11-03T14:47:17.9696846Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+collect	Set up job	2026-11-03T14:47:17.9698663Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+collect	Set up job	2026-11-03T14:47:17.9699693Z ##[endgroup]
+collect	Set up job	2026-11-03T14:47:17.9700858Z ##[group]GITHUB_TOKEN Permissions
+collect	Set up job	2026-11-03T14:47:17.9703186Z Contents: read
+collect	Set up job	2026-11-03T14:47:17.9703805Z Metadata: read
+collect	Set up job	2026-11-03T14:47:17.9705020Z ##[endgroup]
+collect	Set up job	2026-11-03T14:47:17.9707337Z Secret source: Actions
+collect	Set up job	2026-11-03T14:47:17.9708430Z Cache mode: write
+collect	Set up job	2026-11-03T14:47:17.9709140Z Prepare workflow directory
+collect	Set up job	2026-11-03T14:47:18.0117418Z Prepare all required actions
+collect	Set up job	2026-11-03T14:47:18.0167981Z Getting action download info
+collect	Set up job	2026-11-03T14:47:18.3447422Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+collect	Set up job	2026-11-03T14:47:18.4709635Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+collect	Set up job	2026-11-03T14:47:18.6539835Z Complete job name: collect
+collect	Run actions/checkout@v4	﻿2026-11-03T14:47:18.7419166Z ##[group]Run actions/checkout@v4
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7420107Z with:
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7420591Z   repository: null-object-0000/goodsdex
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7424767Z   token: ***
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7425219Z   ssh-strict: true
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7425670Z   ssh-user: git
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7426136Z   persist-credentials: true
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7426627Z   clean: true
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7427095Z   sparse-checkout-cone-mode: true
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7427657Z   fetch-depth: 1
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7428098Z   fetch-tags: false
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7428549Z   show-progress: true
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7429012Z   lfs: false
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7429442Z   submodules: false
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7429906Z   set-safe-directory: true
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7430432Z   allow-unsafe-pr-checkout: false
+collect	Run actions/checkout@v4	2026-11-03T14:47:18.7431228Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.0723566Z Syncing repository: null-object-0000/goodsdex
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.0727327Z ##[group]Getting Git version info
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.0728954Z Working directory is '/home/runner/work/goodsdex/goodsdex'
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.0731594Z [command]/usr/bin/git version
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.0734547Z git version 2.56.0
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.0750383Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.0774999Z Temporarily overriding HOME='/home/runner/work/_temp/d57f0659-2678-48b3-99d6-bbfa6694503a' before making global git config changes
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.0778891Z Adding repository directory to the temporary git global config as a safe directory
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.0785650Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1015552Z Deleting the contents of '/home/runner/work/goodsdex/goodsdex'
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1018374Z ##[group]Initializing the repository
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1020088Z [command]/usr/bin/git init /home/runner/work/goodsdex/goodsdex
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1179652Z hint: Using 'master' as the name for the initial branch. This default branch name
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1182484Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1184964Z hint: to use in all of your new repositories, which will suppress this warning,
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1186459Z hint: call:
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1187304Z hint:
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1188517Z hint: 	git config --global init.defaultBranch <name>
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1189675Z hint:
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1190728Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1192985Z hint: 'development'. The just-created branch can be renamed via this command:
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1194501Z hint:
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1195398Z hint: 	git branch -m <name>
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1196317Z hint:
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1197515Z hint: Disable this message with "git config set advice.defaultBranchName false"
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1199622Z Initialized empty Git repository in /home/runner/work/goodsdex/goodsdex/.git/
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1216985Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/goodsdex
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1280152Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1281719Z ##[group]Disabling automatic garbage collection
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1283585Z [command]/usr/bin/git config --local gc.auto 0
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1326638Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1328196Z ##[group]Setting up auth
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1335240Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1382537Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1887950Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.1925301Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.2210048Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.2247570Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.2530147Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.2573339Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.2574664Z ##[group]Fetching the repository
+collect	Run actions/checkout@v4	2026-11-03T14:47:19.2583676Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ae1dc8854d232796ea2c07fb136cf0044f48d064:refs/remotes/origin/main
+collect	Run actions/checkout@v4	2026-11-03T14:47:22.3821017Z From https://github.com/null-object-0000/goodsdex
+collect	Run actions/checkout@v4	2026-11-03T14:47:22.3824371Z  * [new ref]         ae1dc8854d232796ea2c07fb136cf0044f48d064 -> origin/main
+collect	Run actions/checkout@v4	2026-11-03T14:47:22.3828647Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-11-03T14:47:22.3829757Z ##[group]Determining the checkout info
+collect	Run actions/checkout@v4	2026-11-03T14:47:22.3830869Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-11-03T14:47:22.3837143Z [command]/usr/bin/git sparse-checkout disable
+collect	Run actions/checkout@v4	2026-11-03T14:47:22.3895197Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+collect	Run actions/checkout@v4	2026-11-03T14:47:22.3926336Z ##[group]Checking out the ref
+collect	Run actions/checkout@v4	2026-11-03T14:47:22.3933051Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+collect	Run actions/checkout@v4	2026-11-03T14:47:23.0933073Z Switched to a new branch 'main'
+collect	Run actions/checkout@v4	2026-11-03T14:47:23.0937798Z branch 'main' set up to track 'origin/main'.
+collect	Run actions/checkout@v4	2026-11-03T14:47:23.0981718Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-11-03T14:47:23.1031950Z [command]/usr/bin/git log -1 --format=%H
+collect	Run actions/checkout@v4	2026-11-03T14:47:23.1058891Z ae1dc8854d232796ea2c07fb136cf0044f48d064
+collect	Run ./.github/actions/collect-base	﻿2026-11-03T14:47:23.1352515Z Prepare all required actions
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.1353244Z Getting action download info
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.2726087Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.3618860Z ##[group]Run ./.github/actions/collect-base
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.3619246Z ##[endgroup]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.3677186Z ##[start-action display=Run actions/setup-python@v5;id=__self.__actions_setup-python]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.3778968Z ##[group]Run actions/setup-python@v5
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.3779326Z with:
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.3779570Z   python-version: 3.12
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.3779846Z   check-latest: false
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.3782715Z   token: ***
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.3782986Z   update-environment: true
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.3783297Z   allow-prereleases: false
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.3783577Z   freethreaded: false
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.3783839Z ##[endgroup]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5227073Z ##[group]Installed versions
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5366724Z (node:2625) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5368150Z (Use `node --trace-deprecation ...` to show where the warning was created)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5369117Z Successfully set up CPython (3.12.15)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5370287Z ##[endgroup]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5513061Z ##[end-action id=__self.__actions_setup-python;outcome=success;conclusion=success;duration_ms=183]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5516115Z ##[start-action display=Run actions/checkout@v4;id=__self.__actions_checkout]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5609150Z ##[group]Run actions/checkout@v4
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5609584Z with:
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5609866Z   ref: data
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5610143Z   path: _data
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5610440Z   fetch-depth: 1
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5610778Z   persist-credentials: false
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5611205Z   repository: null-object-0000/goodsdex
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5616484Z   token: ***
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5616877Z   ssh-strict: true
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5617120Z   ssh-user: git
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5617351Z   clean: true
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5617569Z   sparse-checkout-cone-mode: true
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5617983Z   fetch-tags: false
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5618197Z   show-progress: true
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5618405Z   lfs: false
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5618597Z   submodules: false
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5618807Z   set-safe-directory: true
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5619061Z   allow-unsafe-pr-checkout: false
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5619324Z env:
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5619576Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5620039Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5620488Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5620875Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5621249Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5621637Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.5621973Z ##[endgroup]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6542468Z Syncing repository: null-object-0000/goodsdex
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6544433Z ##[group]Getting Git version info
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6545319Z Working directory is '/home/runner/work/goodsdex/goodsdex/_data'
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6598551Z [command]/usr/bin/git version
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6646941Z git version 2.56.0
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6677028Z ##[endgroup]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6684442Z Temporarily overriding HOME='/home/runner/work/_temp/125be2c8-a8eb-4454-b4bd-0700cc11ae12' before making global git config changes
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6685914Z Adding repository directory to the temporary git global config as a safe directory
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6691633Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex/_data
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6743508Z ##[group]Initializing the repository
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6745437Z [command]/usr/bin/git init /home/runner/work/goodsdex/goodsdex/_data
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6799429Z hint: Using 'master' as the name for the initial branch. This default branch name
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6801653Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6803783Z hint: to use in all of your new repositories, which will suppress this warning,
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6804854Z hint: call:
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6805393Z hint:
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6806002Z hint: 	git config --global init.defaultBranch <name>
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6807074Z hint:
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6807787Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6808977Z hint: 'development'. The just-created branch can be renamed via this command:
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6810029Z hint:
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6810721Z hint: 	git branch -m <name>
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6811430Z hint:
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6812571Z hint: Disable this message with "git config set advice.defaultBranchName false"
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6814018Z Initialized empty Git repository in /home/runner/work/goodsdex/goodsdex/_data/.git/
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6816308Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/goodsdex
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6855024Z ##[endgroup]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6855950Z ##[group]Disabling automatic garbage collection
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6859883Z [command]/usr/bin/git config --local gc.auto 0
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6899332Z ##[endgroup]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6900323Z ##[group]Setting up auth
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6908376Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.6949655Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.7281104Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.7333791Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.7647901Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.7686927Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.7976626Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.8020517Z ##[endgroup]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.8020998Z ##[group]Fetching the repository
+collect	Run ./.github/actions/collect-base	2026-11-03T14:47:23.8031023Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/data*:refs/remotes/origin/data* +refs/tags/data*:refs/tags/data*
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:00.4067373Z From https://github.com/null-object-0000/goodsdex
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:00.4067832Z  * [new branch]      data       -> origin/data
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:00.4081153Z ##[endgroup]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:00.4081847Z ##[group]Determining the checkout info
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:00.4082688Z [command]/usr/bin/git branch --list --remote origin/data
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:00.4112077Z   origin/data
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:00.4117847Z ##[endgroup]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:00.4124140Z [command]/usr/bin/git sparse-checkout disable
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:00.4205406Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:00.4238805Z ##[group]Checking out the ref
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:00.4243654Z [command]/usr/bin/git checkout --progress --force -B data refs/remotes/origin/data
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:01.7778643Z Updating files:  22% (143/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:02.0429159Z Updating files:  23% (147/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:02.3211352Z Updating files:  24% (154/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:02.3737329Z Updating files:  25% (160/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:02.4482694Z Updating files:  26% (167/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:02.6456853Z Updating files:  27% (173/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:03.1213602Z Updating files:  28% (179/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:03.1881359Z Updating files:  29% (186/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:03.4331736Z Updating files:  30% (192/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:03.6187503Z Updating files:  30% (198/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.1003629Z Updating files:  31% (199/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.3672966Z Updating files:  32% (205/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.5820605Z Updating files:  33% (211/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6123780Z Updating files:  33% (216/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6138638Z Updating files:  34% (218/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6149812Z Updating files:  35% (224/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6163200Z Updating files:  36% (231/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6181418Z Updating files:  37% (237/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6311678Z Updating files:  38% (243/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6326643Z Updating files:  39% (250/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6339447Z Updating files:  40% (256/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6366065Z Updating files:  41% (262/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6377189Z Updating files:  42% (269/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6386130Z Updating files:  43% (275/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6391347Z Updating files:  44% (282/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6396501Z Updating files:  45% (288/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6400847Z Updating files:  46% (294/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6406211Z Updating files:  47% (301/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6411255Z Updating files:  48% (307/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6416035Z Updating files:  49% (314/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6421064Z Updating files:  50% (320/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6426153Z Updating files:  51% (326/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6431061Z Updating files:  52% (333/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6436275Z Updating files:  53% (339/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6441221Z Updating files:  54% (346/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6445683Z Updating files:  55% (352/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6449489Z Updating files:  56% (358/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6489957Z Updating files:  57% (365/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6529711Z Updating files:  58% (371/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6569445Z Updating files:  59% (378/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.6633761Z Updating files:  60% (384/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.7110876Z Updating files:  61% (390/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.7237075Z Updating files:  62% (397/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9264733Z Updating files:  63% (403/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9290176Z Updating files:  64% (409/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9296166Z Updating files:  65% (416/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9306446Z Updating files:  66% (422/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9311197Z Updating files:  67% (429/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9328129Z Updating files:  68% (435/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9334494Z Updating files:  69% (441/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9338128Z Updating files:  70% (448/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9343532Z Updating files:  71% (454/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9348561Z Updating files:  72% (461/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9364218Z Updating files:  73% (467/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9369635Z Updating files:  74% (473/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9376026Z Updating files:  75% (480/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9380146Z Updating files:  76% (486/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9384709Z Updating files:  77% (493/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9388342Z Updating files:  78% (499/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9401002Z Updating files:  79% (505/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9408357Z Updating files:  80% (512/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9433488Z Updating files:  81% (518/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9559000Z Updating files:  82% (524/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9577297Z Updating files:  83% (531/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9590561Z Updating files:  84% (537/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9606190Z Updating files:  85% (544/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9620467Z Updating files:  86% (550/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9729640Z Updating files:  87% (556/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9764308Z Updating files:  88% (563/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9802779Z Updating files:  89% (569/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9844794Z Updating files:  90% (576/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9867976Z Updating files:  91% (582/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9898499Z Updating files:  92% (588/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9930195Z Updating files:  93% (595/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:04.9970739Z Updating files:  94% (601/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.0015341Z Updating files:  95% (608/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.0049631Z Updating files:  96% (614/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.0552143Z Updating files:  97% (620/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.0876730Z Updating files:  98% (627/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.0961170Z Updating files:  99% (633/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.0961714Z Updating files: 100% (639/639)
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.0962394Z Updating files: 100% (639/639), done.
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.0981218Z Switched to a new branch 'data'
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.0985123Z branch 'data' set up to track 'origin/data'.
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.1044220Z ##[endgroup]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.1091876Z [command]/usr/bin/git log -1 --format=%H
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.1120404Z c5edd060914b2f4ebb0bd970d015c8a3a1303b68
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.1132105Z ##[group]Removing auth
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.1137476Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.1175846Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.1504862Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.1533946Z http.https://github.com/.extraheader
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.1543025Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.1582886Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.1881078Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.1917535Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.2206958Z ##[endgroup]
+collect	Run ./.github/actions/collect-base	2026-11-03T14:48:05.2316167Z ##[end-action id=__self.__actions_checkout;outcome=success;conclusion=success;duration_ms=41679]
+collect	Test car publication guards	﻿2026-11-03T14:48:05.2374039Z ##[group]Run python3 -m pip install --quiet pytest
+collect	Test car publication guards	2026-11-03T14:48:05.2374491Z ^[[36;1mpython3 -m pip install --quiet pytest^[[0m
+collect	Test car publication guards	2026-11-03T14:48:05.2375144Z ^[[36;1mPYTHONPATH=src:scripts python3 -m pytest -q tests/test_car_catalog.py tests/test_publish_cars.py tests/test_publish_car_history.py^[[0m
+collect	Test car publication guards	2026-11-03T14:48:05.2420269Z shell: /usr/bin/bash -e {0}
+collect	Test car publication guards	2026-11-03T14:48:05.2420564Z env:
+collect	Test car publication guards	2026-11-03T14:48:05.2420832Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Test car publication guards	2026-11-03T14:48:05.2421271Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+collect	Test car publication guards	2026-11-03T14:48:05.2421713Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Test car publication guards	2026-11-03T14:48:05.2422414Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Test car publication guards	2026-11-03T14:48:05.2422892Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Test car publication guards	2026-11-03T14:48:05.2423286Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+collect	Test car publication guards	2026-11-03T14:48:05.2423613Z ##[endgroup]
+collect	Test car publication guards	2026-11-03T14:48:07.7690317Z
+collect	Test car publication guards	2026-11-03T14:48:07.7691081Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+collect	Test car publication guards	2026-11-03T14:48:07.7691873Z [notice] To update, run: pip install --upgrade pip
+collect	Test car publication guards	2026-11-03T14:48:08.9600928Z ........................................                                 [100%]
+collect	Test car publication guards	2026-11-03T14:48:08.9601582Z 40 passed in 0.65s
+collect	Capture approved cars or stage verified inputs	﻿2026-11-03T14:48:08.9907827Z ##[group]Run if [ "$VERIFIED_ONLY" = true ]; then
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9908241Z ^[[36;1mif [ "$VERIFIED_ONLY" = true ]; then^[[0m
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9908693Z ^[[36;1m  python3 scripts/car_catalog.py --verified-only --out "$RUNNER_TEMP/car-input"^[[0m
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9909396Z ^[[36;1m  python3 scripts/publish_cars.py --public _data/public --input "$RUNNER_TEMP/car-input" --append-only^[[0m
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9909891Z ^[[36;1melse^[[0m
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9910222Z ^[[36;1m  python3 scripts/car_catalog.py --approved --out "$RUNNER_TEMP/car-input"^[[0m
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9910799Z ^[[36;1m  python3 scripts/publish_cars.py --public _data/public --input "$RUNNER_TEMP/car-input"^[[0m
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9911232Z ^[[36;1mfi^[[0m
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9911557Z ^[[36;1mpython3 scripts/publish_cars.py --public _data/public --historical-only^[[0m
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9941789Z shell: /usr/bin/bash -e {0}
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9942047Z env:
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9942454Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9942920Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9943540Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9943918Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9944308Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9944691Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9945015Z   VERIFIED_ONLY: false
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:48:08.9945226Z ##[endgroup]
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:49:14.7109039Z {"count": 43, "skipped": []}
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:49:15.9898114Z {"old_total": 2963, "added": 0, "updated": 43, "new_total": 2963}
+collect	Capture approved cars or stage verified inputs	2026-11-03T14:49:17.2340095Z {"old_total": 2963, "added": 0, "updated": 0, "new_total": 2963}
+collect	Run actions/upload-artifact@v4	﻿2026-11-03T14:49:17.2532611Z ##[group]Run actions/upload-artifact@v4
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2532944Z with:
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2533156Z   name: car-evidence-41657125381-1
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2533440Z   path: /home/runner/work/_temp/car-input/
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2533739Z   retention-days: 14
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2533969Z   if-no-files-found: warn
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2534202Z   compression-level: 6
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2534424Z   overwrite: false
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2534637Z   include-hidden-files: false
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2534864Z env:
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2535106Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2535534Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2535960Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2536342Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2536728Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2537119Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.2537471Z ##[endgroup]
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.4245510Z (node:2917) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.4246510Z (Use `node --trace-deprecation ...` to show where the warning was created)
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.4417557Z With the provided path, there will be 75 files uploaded
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.4424160Z Artifact name is valid!
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.4424625Z Root directory input is valid!
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:17.9213881Z Beginning upload of artifact content to blob storage
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:18.1034525Z (node:2917) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:18.8878626Z Uploaded bytes 2462441
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:18.9673062Z Finished uploading artifact content to blob storage!
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:18.9674213Z SHA256 digest of uploaded artifact zip is 42bbe612d31883a68584da97293b960a4dffcc69751855d5a69c912023295299
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:18.9675958Z Finalizing artifact upload
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:19.4640672Z Artifact car-evidence-41657125381-1.zip successfully finalized. Artifact ID 13240411472
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:19.4642672Z Artifact car-evidence-41657125381-1 has been successfully uploaded! Final size is 2462441 bytes. Artifact ID is 13240411472
+collect	Run actions/upload-artifact@v4	2026-11-03T14:49:19.4649211Z Artifact download URL: https://github.com/null-object-0000/goodsdex/actions/runs/41657125381/artifacts/13240411472
+collect	Run ./.github/actions/upload-candidate	﻿2026-11-03T14:49:19.4811222Z Prepare all required actions
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.4811709Z Getting action download info
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7622654Z ##[group]Run ./.github/actions/upload-candidate
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7622993Z with:
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7623185Z   scope: cars
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7623375Z env:
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7623637Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7624071Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7624514Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7624903Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7625503Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7625902Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7626226Z ##[endgroup]
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7631722Z ##[start-action display=Run python3 scripts/release_candidate.py pack --root _data --scope "$CANDIDATE_SCOPE" --candidate "$RUNNER_TEMP/candidate/candidate.json";id=__self_2.__run]
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7649246Z ##[group]Run python3 scripts/release_candidate.py pack --root _data --scope "$CANDIDATE_SCOPE" --candidate "$RUNNER_TEMP/candidate/candidate.json"
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7650218Z ^[[36;1mpython3 scripts/release_candidate.py pack --root _data --scope "$CANDIDATE_SCOPE" --candidate "$RUNNER_TEMP/candidate/candidate.json"^[[0m
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7681628Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7681977Z env:
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7682382Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7682837Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7683287Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7683675Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7684055Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7684444Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7684783Z   CANDIDATE_SCOPE: cars
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:19.7685015Z ##[endgroup]
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0816754Z cars: packed 1 changed inputs
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0885963Z ##[end-action id=__self_2.__run;outcome=success;conclusion=success;duration_ms=1325]
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0889880Z ##[start-action display=Run actions/upload-artifact@v4;id=__self_2.__actions_upload-artifact]
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0949602Z ##[group]Run actions/upload-artifact@v4
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0950110Z with:
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0950475Z   name: candidate-41657125381
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0951039Z   path: /home/runner/work/_temp/candidate/candidate.json
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0951691Z   overwrite: true
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0952085Z   retention-days: 7
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0952800Z   if-no-files-found: error
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0953264Z   compression-level: 6
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0953706Z   include-hidden-files: false
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0954146Z env:
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0954596Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0955413Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0956224Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0956954Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0957677Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0958401Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.0959005Z ##[endgroup]
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.2618184Z (node:3274) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.2619090Z (Use `node --trace-deprecation ...` to show where the warning was created)
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.2665598Z With the provided path, there will be 1 file uploaded
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.5325836Z Artifact name is valid!
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.5326712Z Root directory input is valid!
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:21.7650037Z Beginning upload of artifact content to blob storage
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:22.4004695Z (node:3274) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:23.3387604Z Uploaded bytes 8388608
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:23.5914717Z Uploaded bytes 13425257
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:23.6710672Z Finished uploading artifact content to blob storage!
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:23.6711781Z SHA256 digest of uploaded artifact zip is 65ab259f2f5ebe9a6f7d3b6542c292d477ef85d880374d89340928e20472cb36
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:23.6713637Z Finalizing artifact upload
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:24.1855392Z Artifact candidate-41657125381.zip successfully finalized. Artifact ID 13239064280
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:24.1856948Z Artifact candidate-41657125381 has been successfully uploaded! Final size is 13425257 bytes. Artifact ID is 13239064280
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:24.1862420Z Artifact download URL: https://github.com/null-object-0000/goodsdex/actions/runs/41657125381/artifacts/13239064280
+collect	Run ./.github/actions/upload-candidate	2026-11-03T14:49:24.2021770Z ##[end-action id=__self_2.__actions_upload-artifact;outcome=success;conclusion=success;duration_ms=3113]
+collect	Post Run ./.github/actions/collect-base	﻿2026-11-03T14:49:24.2090803Z Post job cleanup.
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.2095270Z ##[start-action display=Run actions/checkout@v4;id=__f137d710-cf80-42a3-8a70-5944e2c8980e.__actions_checkout]
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.2149738Z Post job cleanup.
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.3035944Z [command]/usr/bin/git version
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.3086082Z git version 2.56.0
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.3131913Z Temporarily overriding HOME='/home/runner/work/_temp/ad442b92-e232-43c9-8794-ff73839dc508' before making global git config changes
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.3133538Z Adding repository directory to the temporary git global config as a safe directory
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.3138339Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex/_data
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.3184876Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.3224984Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.3555341Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.3606331Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.3958941Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.4000376Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.4411570Z ##[end-action id=__f137d710-cf80-42a3-8a70-5944e2c8980e.__actions_checkout;outcome=success;conclusion=success;duration_ms=231]
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.4415748Z ##[start-action display=Run actions/setup-python@v5;id=__f137d710-cf80-42a3-8a70-5944e2c8980e.__actions_setup-python]
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.4484535Z Post job cleanup.
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.5758193Z (node:3381) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.5759213Z (Use `node --trace-deprecation ...` to show where the warning was created)
+collect	Post Run ./.github/actions/collect-base	2026-11-03T14:49:24.5835637Z ##[end-action id=__f137d710-cf80-42a3-8a70-5944e2c8980e.__actions_setup-python;outcome=success;conclusion=success;duration_ms=141]
+collect	Post Run actions/checkout@v4	﻿2026-11-03T14:49:24.5904536Z Post job cleanup.
+collect	Post Run actions/checkout@v4	2026-11-03T14:49:24.6839839Z [command]/usr/bin/git version
+collect	Post Run actions/checkout@v4	2026-11-03T14:49:24.6893706Z git version 2.56.0
+collect	Post Run actions/checkout@v4	2026-11-03T14:49:24.6941238Z Temporarily overriding HOME='/home/runner/work/_temp/f51b819b-a514-4e64-a81a-85b47231da5e' before making global git config changes
+collect	Post Run actions/checkout@v4	2026-11-03T14:49:24.6943591Z Adding repository directory to the temporary git global config as a safe directory
+collect	Post Run actions/checkout@v4	2026-11-03T14:49:24.6948084Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+collect	Post Run actions/checkout@v4	2026-11-03T14:49:24.7012725Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+collect	Post Run actions/checkout@v4	2026-11-03T14:49:24.7062698Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+collect	Post Run actions/checkout@v4	2026-11-03T14:49:24.7398960Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+collect	Post Run actions/checkout@v4	2026-11-03T14:49:24.7433802Z http.https://github.com/.extraheader
+collect	Post Run actions/checkout@v4	2026-11-03T14:49:24.7466953Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+collect	Post Run actions/checkout@v4	2026-11-03T14:49:24.7493367Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+collect	Post Run actions/checkout@v4	2026-11-03T14:49:24.7822944Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+collect	Post Run actions/checkout@v4	2026-11-03T14:49:24.7864996Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+collect	Complete job	﻿2026-11-03T14:49:24.8316147Z Cleaning up orphan processes
+collect	Complete job	2026-11-03T14:49:24.8825834Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+publish / publish	UNKNOWN STEP	﻿2026-11-03T14:51:31.7043539Z Current runner version: '2.338.2'
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7069720Z ##[group]Runner Image Provisioner
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7070682Z Hosted Compute Agent
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7071402Z Version: 20261021.618
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7072069Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7072833Z Build Date: 2026-10-21T00:45:21Z
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7073570Z Worker ID: {634a630f-9d2b-4e96-890e-d830178ba45a}
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7074266Z Region: westus
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7074890Z Cloud: Azure
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7075470Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7076995Z ##[group]Operating System
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7077699Z Ubuntu
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7078639Z 26.04.1
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7079707Z LTS
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7080235Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7080894Z ##[group]Runner Image
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7081519Z Image: ubuntu-26.04
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7082083Z Version: 20261025.179.1
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7083456Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7085109Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7086120Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7087509Z ##[group]GITHUB_TOKEN Permissions
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7090130Z Actions: read
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7090814Z Checks: read
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7091383Z Contents: write
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7092063Z Metadata: read
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7092713Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7094861Z Secret source: Actions
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7095903Z Cache mode: write
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7096602Z Prepare workflow directory
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7513180Z Prepare all required actions
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:31.7562311Z Getting action download info
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.1206733Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.2393642Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.3004664Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.8396718Z Uses: null-object-0000/goodsdex/.github/workflows/publish-release.yml@refs/heads/main (ae1dc8854d232796ea2c07fb136cf0044f48d064)
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.8401986Z ##[group] Inputs
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.8402546Z   scope: cars
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.8403028Z   reviewed_accessory_sha256:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.8403961Z   verified_only: false
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.8404482Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.8404969Z Complete job name: publish / publish
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9381103Z ##[group]Run actions/checkout@v4
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9382089Z with:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9382572Z   repository: null-object-0000/goodsdex
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9386638Z   token: ***
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9387104Z   ssh-strict: true
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9387736Z   ssh-user: git
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9388207Z   persist-credentials: true
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9388897Z   clean: true
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9389386Z   sparse-checkout-cone-mode: true
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9389968Z   fetch-depth: 1
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9390421Z   fetch-tags: false
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9390885Z   show-progress: true
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9391345Z   lfs: false
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9391775Z   submodules: false
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9392242Z   set-safe-directory: true
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9392758Z   allow-unsafe-pr-checkout: false
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:32.9393597Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2620325Z Syncing repository: null-object-0000/goodsdex
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2623674Z ##[group]Getting Git version info
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2625218Z Working directory is '/home/runner/work/goodsdex/goodsdex'
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2626514Z [command]/usr/bin/git version
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2633278Z git version 2.56.0
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2655754Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2673980Z Temporarily overriding HOME='/home/runner/work/_temp/e20f715a-d06c-4e10-9551-10f8b6aa318a' before making global git config changes
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2676368Z Adding repository directory to the temporary git global config as a safe directory
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2680095Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2760303Z Deleting the contents of '/home/runner/work/goodsdex/goodsdex'
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2763668Z ##[group]Initializing the repository
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2769293Z [command]/usr/bin/git init /home/runner/work/goodsdex/goodsdex
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2915964Z hint: Using 'master' as the name for the initial branch. This default branch name
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2917848Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2919691Z hint: to use in all of your new repositories, which will suppress this warning,
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2920942Z hint: call:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2921613Z hint:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2922481Z hint: 	git config --global init.defaultBranch <name>
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2923512Z hint:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2924479Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2926066Z hint: 'development'. The just-created branch can be renamed via this command:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2927319Z hint:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2928198Z hint: 	git branch -m <name>
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2929018Z hint:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2930080Z hint: Disable this message with "git config set advice.defaultBranchName false"
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2931879Z Initialized empty Git repository in /home/runner/work/goodsdex/goodsdex/.git/
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.2945816Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/goodsdex
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.3005325Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.3006760Z ##[group]Disabling automatic garbage collection
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.3010133Z [command]/usr/bin/git config --local gc.auto 0
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.3049072Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.3050576Z ##[group]Setting up auth
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.3057263Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.3096807Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.3633045Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.3668951Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.3946426Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.3982624Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.4264421Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.4305664Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.4306615Z ##[group]Fetching the repository
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:33.4316106Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ae1dc8854d232796ea2c07fb136cf0044f48d064:refs/remotes/origin/main
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:37.2953874Z From https://github.com/null-object-0000/goodsdex
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:37.2956631Z  * [new ref]         ae1dc8854d232796ea2c07fb136cf0044f48d064 -> origin/main
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:37.2961900Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:37.2964136Z ##[group]Determining the checkout info
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:37.2966672Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:37.2970873Z [command]/usr/bin/git sparse-checkout disable
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:37.3029215Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:37.3064679Z ##[group]Checking out the ref
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:37.3069960Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0142136Z Switched to a new branch 'main'
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0146141Z branch 'main' set up to track 'origin/main'.
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0189593Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0239146Z [command]/usr/bin/git log -1 --format=%H
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0265180Z ae1dc8854d232796ea2c07fb136cf0044f48d064
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0567912Z ##[group]Run actions/setup-python@v5
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0568528Z with:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0568745Z   python-version: 3.12
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0569003Z   check-latest: false
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0571494Z   token: ***
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0571745Z   update-environment: true
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0572006Z   allow-prereleases: false
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0572248Z   freethreaded: false
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.0572479Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2018345Z ##[group]Installed versions
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2150224Z (node:2399) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2151602Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2152413Z Successfully set up CPython (3.12.15)
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2153318Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2363430Z ##[group]Run test -n "$OSS_ACCESS_KEY_ID" && test -n "$OSS_ACCESS_KEY_SECRET" || {
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2364541Z ^[[36;1mtest -n "$OSS_ACCESS_KEY_ID" && test -n "$OSS_ACCESS_KEY_SECRET" || {^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2365325Z ^[[36;1m  echo '::error::缺少 OSS 密钥，拒绝发布'; exit 1;^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2365815Z ^[[36;1m}^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2440893Z shell: /usr/bin/bash -e {0}
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2441395Z env:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2441894Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2442704Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2443496Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2444247Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2444954Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2445773Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2446756Z   OSS_ACCESS_KEY_ID: ***
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2447323Z   OSS_ACCESS_KEY_SECRET: ***
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2447769Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2707820Z ##[group]Run actions/checkout@v4
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2708513Z with:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2708725Z   ref: data
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2708933Z   path: _data
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2709148Z   fetch-depth: 1
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2709390Z   repository: null-object-0000/goodsdex
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2711974Z   token: ***
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2712194Z   ssh-strict: true
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2712413Z   ssh-user: git
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2712638Z   persist-credentials: true
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2712884Z   clean: true
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2713114Z   sparse-checkout-cone-mode: true
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2713382Z   fetch-tags: false
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2713605Z   show-progress: true
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2713820Z   lfs: false
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2714033Z   submodules: false
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2714259Z   set-safe-directory: true
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2714543Z   allow-unsafe-pr-checkout: false
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2714800Z env:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2715112Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2715566Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2716011Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2716416Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2716822Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2717224Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.2717559Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3608572Z Syncing repository: null-object-0000/goodsdex
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3622719Z ##[group]Getting Git version info
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3624249Z Working directory is '/home/runner/work/goodsdex/goodsdex/_data'
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3661285Z [command]/usr/bin/git version
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3708809Z git version 2.56.0
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3739386Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3746335Z Temporarily overriding HOME='/home/runner/work/_temp/74598228-1e58-466d-b2a2-5f1ad514c257' before making global git config changes
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3747902Z Adding repository directory to the temporary git global config as a safe directory
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3751527Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex/_data
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3792320Z ##[group]Initializing the repository
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3797366Z [command]/usr/bin/git init /home/runner/work/goodsdex/goodsdex/_data
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3849561Z hint: Using 'master' as the name for the initial branch. This default branch name
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3852068Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3853502Z hint: to use in all of your new repositories, which will suppress this warning,
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3854445Z hint: call:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3854963Z hint:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3855589Z hint: 	git config --global init.defaultBranch <name>
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3856380Z hint:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3857121Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3858437Z hint: 'development'. The just-created branch can be renamed via this command:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3859347Z hint:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3859889Z hint: 	git branch -m <name>
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3860475Z hint:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3862085Z hint: Disable this message with "git config set advice.defaultBranchName false"
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3863386Z Initialized empty Git repository in /home/runner/work/goodsdex/goodsdex/_data/.git/
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3865751Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/goodsdex
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3903061Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3903795Z ##[group]Disabling automatic garbage collection
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3908899Z [command]/usr/bin/git config --local gc.auto 0
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3952494Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3953306Z ##[group]Setting up auth
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.3961277Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.4008301Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.4339672Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.4384495Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.4714701Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.4753814Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.5046028Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.5089919Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.5090623Z ##[group]Fetching the repository
+publish / publish	UNKNOWN STEP	2026-11-03T14:51:38.5099889Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/data*:refs/remotes/origin/data* +refs/tags/data*:refs/tags/data*
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:08.7599193Z From https://github.com/null-object-0000/goodsdex
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:08.7599926Z  * [new branch]      data       -> origin/data
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:08.7604586Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:08.7605003Z ##[group]Determining the checkout info
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:08.7614202Z [command]/usr/bin/git branch --list --remote origin/data
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:08.7642277Z   origin/data
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:08.7646842Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:08.7652298Z [command]/usr/bin/git sparse-checkout disable
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:08.7695152Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:08.7731429Z ##[group]Checking out the ref
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:08.7732071Z [command]/usr/bin/git checkout --progress --force -B data refs/remotes/origin/data
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:09.8423190Z Updating files:  21% (143/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:10.3610851Z Updating files:  22% (144/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:10.5894609Z Updating files:  23% (151/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:10.7269091Z Updating files:  24% (157/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:10.7549613Z Updating files:  25% (164/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:10.7797029Z Updating files:  26% (170/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:10.8250697Z Updating files:  26% (172/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:11.0942784Z Updating files:  27% (177/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:11.5206626Z Updating files:  28% (183/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:11.7831284Z Updating files:  29% (190/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:12.4349321Z Updating files:  30% (196/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:12.5327070Z Updating files:  31% (203/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:12.7813373Z Updating files:  32% (209/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:12.9620558Z Updating files:  32% (215/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:12.9938462Z Updating files:  33% (216/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:12.9947755Z Updating files:  34% (223/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:12.9961421Z Updating files:  35% (229/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:12.9981127Z Updating files:  36% (236/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0109161Z Updating files:  37% (242/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0124771Z Updating files:  38% (249/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0138714Z Updating files:  39% (255/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0162215Z Updating files:  40% (262/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0172451Z Updating files:  41% (268/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0178390Z Updating files:  42% (275/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0183182Z Updating files:  43% (281/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0186823Z Updating files:  44% (288/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0191877Z Updating files:  45% (294/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0195735Z Updating files:  46% (301/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0201355Z Updating files:  47% (307/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0221665Z Updating files:  48% (314/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0222184Z Updating files:  49% (320/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0222706Z Updating files:  50% (327/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0226273Z Updating files:  51% (334/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0233104Z Updating files:  52% (340/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0237072Z Updating files:  53% (347/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0241932Z Updating files:  54% (353/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0245355Z Updating files:  55% (360/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0287064Z Updating files:  56% (366/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0325738Z Updating files:  57% (373/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0367228Z Updating files:  58% (379/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0435710Z Updating files:  59% (386/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0438864Z Updating files:  60% (392/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0859569Z Updating files:  61% (399/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.0925329Z Updating files:  62% (405/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.1127496Z Updating files:  63% (412/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3097010Z Updating files:  64% (418/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3121985Z Updating files:  65% (425/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3130110Z Updating files:  66% (431/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3137683Z Updating files:  67% (438/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3154088Z Updating files:  68% (445/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3159920Z Updating files:  69% (451/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3164819Z Updating files:  70% (458/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3169158Z Updating files:  71% (464/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3188900Z Updating files:  72% (471/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3189362Z Updating files:  73% (477/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3194209Z Updating files:  74% (484/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3200405Z Updating files:  75% (490/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3206299Z Updating files:  76% (497/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3214251Z Updating files:  77% (503/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3219348Z Updating files:  78% (510/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3226359Z Updating files:  79% (516/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3233691Z Updating files:  80% (523/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3252684Z Updating files:  81% (529/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3377988Z Updating files:  82% (536/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3397339Z Updating files:  83% (542/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3411182Z Updating files:  84% (549/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3434912Z Updating files:  85% (556/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3444719Z Updating files:  86% (562/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3543129Z Updating files:  87% (569/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3588477Z Updating files:  88% (575/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3618745Z Updating files:  89% (582/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3665118Z Updating files:  90% (588/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3691544Z Updating files:  91% (595/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3722643Z Updating files:  92% (601/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3753949Z Updating files:  93% (608/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3795051Z Updating files:  94% (614/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3840934Z Updating files:  95% (621/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.3877737Z Updating files:  96% (627/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.4378907Z Updating files:  97% (634/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.4704770Z Updating files:  98% (640/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.4784853Z Updating files:  99% (647/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.4785363Z Updating files: 100% (653/653)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.4785850Z Updating files: 100% (653/653), done.
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.4805953Z Switched to a new branch 'data'
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.4812030Z branch 'data' set up to track 'origin/data'.
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.4869206Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.4913090Z [command]/usr/bin/git log -1 --format=%H
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.4941157Z 5e7b0971f124dc80b185c29f9e6cdd14faa61ef0
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5129769Z ##[group]Run actions/download-artifact@v4
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5130092Z with:
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5130295Z   name: candidate-41657125381
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5130578Z   path: /home/runner/work/_temp/candidate
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5130864Z   merge-multiple: false
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5131110Z   repository: null-object-0000/goodsdex
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5131378Z   run-id: 41657125381
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5131591Z env:
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5131850Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5132283Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5132726Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5133126Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5133505Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5133889Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.5134246Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.6704225Z Downloading single artifact
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.6934441Z (node:2529) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:13.6935966Z (Use `node --trace-deprecation ...` to show where the warning was created)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:14.0252242Z Preparing to download the following artifacts:
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:14.0253552Z - candidate-41657125381 (ID: 13239064280, Size: 13425257, Expected Digest: sha256:65ab259f2f5ebe9a6f7d3b6542c292d477ef85d880374d89340928e20472cb36)
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:14.2931531Z Redirecting to blob download url: https://productionresultssa18.blob.core.windows.net/actions-results/f7774197-a400-4a10-98fc-2d0776c82056/workflow-job-run-0a92bf9b-91fc-5636-aa1d-1d8f2c94cfb0/artifacts/96f3bf1e0d7fff4bb6034e81f1b839b4243e950f317cc848e4cc1ff46101bbad.zip
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:14.2934127Z Starting download of artifact to: /home/runner/work/_temp/candidate
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:14.6707555Z (node:2529) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0002958Z SHA256 digest of downloaded artifact is 65ab259f2f5ebe9a6f7d3b6542c292d477ef85d880374d89340928e20472cb36
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0003957Z Artifact download completed successfully.
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0004506Z Total of 1 artifact(s) downloaded
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0010535Z Download artifact has finished successfully
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0185390Z ##[group]Run cp _data/public/goods.json "$RUNNER_TEMP/goods-before.json"
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0185966Z ^[[36;1mcp _data/public/goods.json "$RUNNER_TEMP/goods-before.json"^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0186533Z ^[[36;1mpython3 - <<'PY'^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0186790Z ^[[36;1mimport json, os^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0187048Z ^[[36;1mfrom pathlib import Path^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0187530Z ^[[36;1mbundle = json.loads((Path(os.environ['RUNNER_TEMP']) / 'candidate/candidate.json').read_text())^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0188661Z ^[[36;1massert bundle['scope'] == os.environ['EXPECTED_SCOPE'], 'Candidate scope mismatch'^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0189286Z ^[[36;1mPY^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0189772Z ^[[36;1mpython3 scripts/release_candidate.py merge --root _data --candidate "$RUNNER_TEMP/candidate/candidate.json"^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0220327Z shell: /usr/bin/bash -e {0}
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0220586Z env:
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0220869Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0221363Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0221798Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0222201Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0222585Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0222974Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0223309Z   EXPECTED_SCOPE: cars
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:16.0223533Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:17.5132634Z Merged cars candidate from c5edd060914b2f4ebb0bd970d015c8a3a1303b68: 1 files
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:17.5314116Z ##[group]Run python3 -m pip install --quiet pytest
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:17.5314862Z ^[[36;1mpython3 -m pip install --quiet pytest^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:17.5318294Z ^[[36;1mPYTHONPATH=src:scripts python3 -m pytest -q tests/test_accessories.py tests/test_release_policy.py tests/test_release_dates.py tests/test_series_release.py tests/test_series_release_rollout.py tests/test_date_enrichment.py tests/test_release_crosschecks.py tests/test_supplement_publish.py tests/test_dedupe.py tests/test_shards.py tests/test_release_candidate.py tests/test_mirror_public.py tests/test_sources_status.py tests/test_car_structure.py^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:17.5367131Z shell: /usr/bin/bash -e {0}
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:17.5367594Z env:
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:17.5368396Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:17.5369226Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:17.5370063Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:17.5370841Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:17.5371596Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:17.5372448Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:17.5373071Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:19.8731946Z
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:19.8732612Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:19.8733166Z [notice] To update, run: pip install --upgrade pip
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:21.0585187Z ........................................................................ [ 36%]
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:46.8546907Z ........................................................................ [ 72%]
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.0655863Z .......................................................                  [100%]
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.0656516Z 199 passed in 27.69s
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1082380Z ##[group]Run PYTHONPATH=src python3 - <<'PY'
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1082803Z ^[[36;1mPYTHONPATH=src python3 - <<'PY'^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1083092Z ^[[36;1mimport json, os^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1083349Z ^[[36;1mfrom pathlib import Path^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1083699Z ^[[36;1mfrom goodsdex.release_policy import assert_no_lost_ids^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1084097Z ^[[36;1mfrom goodsdex.supplements import publish^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1084426Z ^[[36;1mpublic = Path('_data/public')^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1084882Z ^[[36;1mprevious = json.loads((Path(os.environ['RUNNER_TEMP']) / 'goods-before.json').read_text())^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1085608Z ^[[36;1mcurrent = json.loads((public / 'goods.json').read_text())^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1085997Z ^[[36;1massert_no_lost_ids(previous, current)^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1086373Z ^[[36;1mpublish(current, public, previous, apply_backfills=False)^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1086733Z ^[[36;1mPY^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1086928Z ^[[36;1mEXTRA=()^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1087260Z ^[[36;1mif [ "$RELEASE_SCOPE" = cars ]; then EXTRA+=(--car-refresh); fi^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1087920Z ^[[36;1mpython3 scripts/verify_goods_release.py --public _data/public --previous "$RUNNER_TEMP/goods-before.json" "${EXTRA[@]}"^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1117787Z shell: /usr/bin/bash -e {0}
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1118176Z env:
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1118469Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1118922Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1119365Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1119766Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1120169Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1120565Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1120897Z   RELEASE_SCOPE: cars
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.1121116Z ##[endgroup]
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5468939Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000023
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5470000Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000024
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5470653Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000032
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5471582Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000057
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5472456Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000059
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5473368Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000060
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5474368Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000063
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5475332Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000066
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5476336Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000067
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5477251Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000070
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5478276Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000071
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5479096Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000079
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5479887Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000080
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5480657Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000082
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5481430Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000083
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5482207Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000084
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5482977Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000085
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5483757Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000091
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5484531Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000097
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5485308Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000099
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5485940Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000100
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5486434Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000101
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5487318Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000108
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5487822Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000113
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5488540Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000115
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5488955Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000117
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5489344Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000118
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5489735Z supplement conflict (keep rebuilt): CN:mi_cn:product:18426
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5490127Z supplement conflict (keep rebuilt): CN:mi_cn:product:19027
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5490512Z supplement conflict (keep rebuilt): CN:mi_cn:product:1945
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5490894Z supplement conflict (keep rebuilt): CN:mi_cn:product:20063
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5491448Z supplement conflict (keep rebuilt): CN:mi_cn:product:20064
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5491824Z supplement conflict (keep rebuilt): CN:mi_cn:product:20195
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5492202Z supplement conflict (keep rebuilt): CN:mi_cn:product:20293
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5492587Z supplement conflict (keep rebuilt): CN:mi_cn:product:20443
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5492968Z supplement conflict (keep rebuilt): CN:mi_cn:product:20833
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5493342Z supplement conflict (keep rebuilt): CN:mi_cn:product:20876
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5493712Z supplement conflict (keep rebuilt): CN:mi_cn:product:20996
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5494091Z supplement conflict (keep rebuilt): CN:mi_cn:product:21270
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5494466Z supplement conflict (keep rebuilt): CN:mi_cn:product:21272
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5494842Z supplement conflict (keep rebuilt): CN:mi_cn:product:21312
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5495222Z supplement conflict (keep rebuilt): CN:mi_cn:product:21630
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5495606Z supplement conflict (keep rebuilt): CN:mi_cn:product:21774
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5495986Z supplement conflict (keep rebuilt): CN:mi_cn:product:21938
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5496365Z supplement conflict (keep rebuilt): CN:mi_cn:product:23410
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5496745Z supplement conflict (keep rebuilt): CN:mi_cn:product:24632
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5497128Z supplement conflict (keep rebuilt): CN:mi_cn:product:24998
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5497507Z supplement conflict (keep rebuilt): CN:mi_cn:product:25270
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5497878Z supplement conflict (keep rebuilt): CN:mi_cn:product:2665
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5498552Z supplement conflict (keep rebuilt): CN:mi_cn:product:2785
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5498939Z supplement conflict (keep rebuilt): CN:mi_cn:product:2806
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5499323Z supplement conflict (keep rebuilt): CN:mi_cn:product:3331
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5499692Z supplement conflict (keep rebuilt): CN:mi_cn:product:3556
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5500065Z supplement conflict (keep rebuilt): CN:mi_cn:product:3674
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5500449Z supplement conflict (keep rebuilt): CN:mi_cn:product:3806
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5500816Z supplement conflict (keep rebuilt): CN:mi_cn:product:3922
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5501192Z supplement conflict (keep rebuilt): CN:mi_cn:product:3943
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5501569Z supplement conflict (keep rebuilt): CN:mi_cn:product:4072
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5501940Z supplement conflict (keep rebuilt): CN:mi_cn:product:4086
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5502311Z supplement conflict (keep rebuilt): CN:mi_cn:product:4230
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5502698Z supplement conflict (keep rebuilt): CN:mi_cn:product:4348
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5503077Z supplement conflict (keep rebuilt): CN:mi_cn:product:4374
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5503491Z supplement conflict (keep rebuilt): CN:mi_cn:product:4375
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5503863Z supplement conflict (keep rebuilt): CN:mi_cn:product:4479
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5504237Z supplement conflict (keep rebuilt): CN:mi_cn:product:4565
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5504678Z supplement conflict (keep rebuilt): CN:mi_cn:product:4674
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5505088Z supplement conflict (keep rebuilt): CN:mi_cn:product:4679
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5505458Z supplement conflict (keep rebuilt): CN:mi_cn:product:4792
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5505825Z supplement conflict (keep rebuilt): CN:mi_cn:product:4803
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5506853Z supplement conflict (keep rebuilt): CN:mi_cn:product:4830
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5507298Z supplement conflict (keep rebuilt): CN:mi_cn:product:4893
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5507698Z supplement conflict (keep rebuilt): CN:mi_cn:product:4910
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5508420Z supplement conflict (keep rebuilt): CN:mi_cn:product:4942
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5508801Z supplement conflict (keep rebuilt): CN:mi_cn:product:5023
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5509177Z supplement conflict (keep rebuilt): CN:mi_cn:product:5024
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5509546Z supplement conflict (keep rebuilt): CN:mi_cn:product:5145
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5509916Z supplement conflict (keep rebuilt): CN:mi_cn:product:5353
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5510289Z supplement conflict (keep rebuilt): CN:mi_cn:product:5434
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5511337Z supplement conflict (keep rebuilt): CN:mi_cn:product:5456
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5511797Z supplement conflict (keep rebuilt): CN:mi_cn:product:5469
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5512188Z supplement conflict (keep rebuilt): CN:mi_cn:product:5481
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5512571Z supplement conflict (keep rebuilt): CN:mi_cn:product:5501
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5512946Z supplement conflict (keep rebuilt): CN:mi_cn:product:5516
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5513312Z supplement conflict (keep rebuilt): CN:mi_cn:product:5606
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5513687Z supplement conflict (keep rebuilt): CN:mi_cn:product:5677
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5514061Z supplement conflict (keep rebuilt): CN:mi_cn:product:5678
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5514429Z supplement conflict (keep rebuilt): CN:mi_cn:product:5780
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5514801Z supplement conflict (keep rebuilt): CN:mi_cn:product:5781
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5515192Z supplement conflict (keep rebuilt): CN:mi_cn:product:5815
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5515581Z supplement conflict (keep rebuilt): CN:mi_cn:product:5817
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5515956Z supplement conflict (keep rebuilt): CN:mi_cn:product:5825
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5516332Z supplement conflict (keep rebuilt): CN:mi_cn:product:5892
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5516701Z supplement conflict (keep rebuilt): CN:mi_cn:product:5911
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5517090Z supplement conflict (keep rebuilt): CN:mi_cn:product:5990
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5517459Z supplement conflict (keep rebuilt): CN:mi_cn:product:6007
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5517832Z supplement conflict (keep rebuilt): CN:mi_cn:product:6010
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5518513Z supplement conflict (keep rebuilt): CN:mi_cn:product:6067
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5518883Z supplement conflict (keep rebuilt): CN:mi_cn:product:6103
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5519268Z supplement conflict (keep rebuilt): CN:mi_cn:product:6105
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5519645Z supplement conflict (keep rebuilt): CN:mi_cn:product:6158
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5520026Z supplement conflict (keep rebuilt): CN:mi_cn:product:6222
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5520403Z supplement conflict (keep rebuilt): CN:mi_cn:product:6271
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5520770Z supplement conflict (keep rebuilt): CN:mi_cn:product:6334
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5521147Z supplement conflict (keep rebuilt): CN:mi_cn:product:6377
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5521523Z supplement conflict (keep rebuilt): CN:mi_cn:product:6419
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5521895Z supplement conflict (keep rebuilt): CN:mi_cn:product:6443
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5522272Z supplement conflict (keep rebuilt): CN:mi_cn:product:6518
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5522644Z supplement conflict (keep rebuilt): CN:mi_cn:product:6526
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5523024Z supplement conflict (keep rebuilt): CN:mi_cn:product:6527
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5523394Z supplement conflict (keep rebuilt): CN:mi_cn:product:6621
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5523762Z supplement conflict (keep rebuilt): CN:mi_cn:product:6632
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5524143Z supplement conflict (keep rebuilt): CN:mi_cn:product:6633
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5524516Z supplement conflict (keep rebuilt): CN:mi_cn:product:6634
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5524892Z supplement conflict (keep rebuilt): CN:mi_cn:product:6802
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5525272Z supplement conflict (keep rebuilt): CN:mi_cn:product:6820
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5525642Z supplement conflict (keep rebuilt): CN:mi_cn:product:6846
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5526178Z supplement conflict (keep rebuilt): CN:mi_cn:product:6847
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5526555Z supplement conflict (keep rebuilt): CN:mi_cn:product:7095
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5526923Z supplement conflict (keep rebuilt): CN:mi_cn:product:7128
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5527293Z supplement conflict (keep rebuilt): CN:mi_cn:product:7129
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5527659Z supplement conflict (keep rebuilt): CN:mi_cn:product:7152
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5528294Z supplement conflict (keep rebuilt): CN:mi_cn:product:7154
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5528675Z supplement conflict (keep rebuilt): CN:mi_cn:product:7157
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5529074Z supplement conflict (keep rebuilt): CN:mi_cn:product:7160
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5529578Z supplement conflict (keep rebuilt): CN:mi_cn:product:7163
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5530268Z supplement conflict (keep rebuilt): CN:mi_cn:product:7209
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5530868Z supplement conflict (keep rebuilt): CN:mi_cn:product:7210
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5531329Z supplement conflict (keep rebuilt): CN:mi_cn:product:7303
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5531892Z supplement conflict (keep rebuilt): CN:mi_cn:product:7440
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5532393Z supplement conflict (keep rebuilt): CN:mi_cn:product:7452
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5532837Z supplement conflict (keep rebuilt): CN:mi_cn:product:7457
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5533396Z supplement conflict (keep rebuilt): CN:mi_cn:product:7463
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5533860Z supplement conflict (keep rebuilt): CN:mi_cn:product:7522
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5534409Z supplement conflict (keep rebuilt): CN:mi_cn:product:7574
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5534909Z supplement conflict (keep rebuilt): CN:mi_cn:product:7575
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5547343Z supplement conflict (keep rebuilt): CN:mi_cn:product:7591
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5548303Z supplement conflict (keep rebuilt): CN:mi_cn:product:7599
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5548960Z supplement conflict (keep rebuilt): CN:mi_cn:product:7601
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5549542Z supplement conflict (keep rebuilt): CN:mi_cn:product:7689
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5550208Z supplement conflict (keep rebuilt): CN:mi_cn:product:7716
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5550850Z supplement conflict (keep rebuilt): CN:mi_cn:product:7769
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5551520Z supplement conflict (keep rebuilt): CN:mi_cn:product:7797
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5552203Z supplement conflict (keep rebuilt): CN:mi_cn:product:7799
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5552921Z supplement conflict (keep rebuilt): CN:mi_cn:product:7807
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5553621Z supplement conflict (keep rebuilt): CN:mi_cn:product:7808
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5554332Z supplement conflict (keep rebuilt): CN:mi_cn:product:7809
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5555051Z supplement conflict (keep rebuilt): CN:mi_cn:product:7817
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5555730Z supplement conflict (keep rebuilt): CN:mi_cn:product:7840
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5556137Z supplement conflict (keep rebuilt): CN:mi_cn:product:7851
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5556540Z supplement conflict (keep rebuilt): CN:mi_cn:product:7852
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5556925Z supplement conflict (keep rebuilt): CN:mi_cn:product:7911
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5557307Z supplement conflict (keep rebuilt): CN:mi_cn:product:7919
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5557686Z supplement conflict (keep rebuilt): CN:mi_cn:product:8037
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5558353Z supplement conflict (keep rebuilt): CN:mi_cn:product:8038
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5558746Z supplement conflict (keep rebuilt): CN:mi_cn:product:8039
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5559120Z supplement conflict (keep rebuilt): CN:mi_cn:product:8041
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5559491Z supplement conflict (keep rebuilt): CN:mi_cn:product:8106
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5559866Z supplement conflict (keep rebuilt): CN:mi_cn:product:8107
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5560236Z supplement conflict (keep rebuilt): CN:mi_cn:product:8108
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5560615Z supplement conflict (keep rebuilt): CN:mi_cn:product:8109
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5560997Z supplement conflict (keep rebuilt): CN:mi_cn:product:8111
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5561367Z supplement conflict (keep rebuilt): CN:mi_cn:product:8125
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5561745Z supplement conflict (keep rebuilt): CN:mi_cn:product:8129
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5562310Z supplement conflict (keep rebuilt): CN:mi_cn:product:8134
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5562709Z supplement conflict (keep rebuilt): CN:mi_cn:product:8202
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5563087Z supplement conflict (keep rebuilt): CN:mi_cn:product:8321
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5563460Z supplement conflict (keep rebuilt): CN:mi_cn:product:8382
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5563837Z supplement conflict (keep rebuilt): CN:mi_cn:product:8385
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5564217Z supplement conflict (keep rebuilt): CN:mi_cn:product:8387
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5564591Z supplement conflict (keep rebuilt): CN:mi_cn:product:8388
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5564969Z supplement conflict (keep rebuilt): CN:mi_cn:product:8625
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5565345Z supplement conflict (keep rebuilt): CN:mi_cn:product:8634
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5565863Z supplement conflict (keep rebuilt): CN:mi_cn:product:8790
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5566235Z supplement conflict (keep rebuilt): CN:mi_cn:product:8810
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5566606Z supplement conflict (keep rebuilt): CN:mi_cn:product:8878
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5566990Z supplement conflict (keep rebuilt): CN:mi_cn:product:8881
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5567363Z supplement conflict (keep rebuilt): CN:mi_cn:product:8907
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5567734Z supplement conflict (keep rebuilt): CN:mi_cn:product:8908
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5568419Z supplement conflict (keep rebuilt): CN:mi_cn:product:8911
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5568803Z supplement conflict (keep rebuilt): CN:mi_cn:product:8912
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5569186Z supplement conflict (keep rebuilt): CN:mi_cn:product:9884
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5569559Z supplement conflict (keep rebuilt): CN:mi_cn:product:2392
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5569935Z supplement conflict (keep rebuilt): CN:mi_cn:product:2774
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5570318Z supplement conflict (keep rebuilt): CN:mi_cn:product:2839
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5570692Z supplement conflict (keep rebuilt): CN:mi_cn:product:2924
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5571064Z supplement conflict (keep rebuilt): CN:mi_cn:product:3377
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5571454Z supplement conflict (keep rebuilt): CN:mi_cn:product:3452
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5571843Z supplement conflict (keep rebuilt): CN:mi_cn:product:3460
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5572227Z supplement conflict (keep rebuilt): CN:mi_cn:product:3488
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5572598Z supplement conflict (keep rebuilt): CN:mi_cn:product:3807
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5572974Z supplement conflict (keep rebuilt): CN:mi_cn:product:3938
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5573350Z supplement conflict (keep rebuilt): CN:mi_cn:product:4053
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5573723Z supplement conflict (keep rebuilt): CN:mi_cn:product:4738
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5574120Z supplement conflict (keep rebuilt): CN:mi_cn:product:4802
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5574493Z supplement conflict (keep rebuilt): CN:mi_cn:product:4814
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5574881Z supplement conflict (keep rebuilt): CN:mi_cn:product:4815
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5575253Z supplement conflict (keep rebuilt): CN:mi_cn:product:4817
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5575630Z supplement conflict (keep rebuilt): CN:mi_cn:product:4888
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5576003Z supplement conflict (keep rebuilt): CN:mi_cn:product:4913
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5576379Z supplement conflict (keep rebuilt): CN:mi_cn:product:4917
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5576758Z supplement conflict (keep rebuilt): CN:mi_cn:product:4918
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5577137Z supplement conflict (keep rebuilt): CN:mi_cn:product:4943
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5577510Z supplement conflict (keep rebuilt): CN:mi_cn:product:4949
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5577895Z supplement conflict (keep rebuilt): CN:mi_cn:product:4984
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5578554Z supplement conflict (keep rebuilt): CN:mi_cn:product:4998
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5578938Z supplement conflict (keep rebuilt): CN:mi_cn:product:5005
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5579310Z supplement conflict (keep rebuilt): CN:mi_cn:product:5008
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5579686Z supplement conflict (keep rebuilt): CN:mi_cn:product:5010
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5580062Z supplement conflict (keep rebuilt): CN:mi_cn:product:5184
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5580433Z supplement conflict (keep rebuilt): CN:mi_cn:product:5297
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5580948Z supplement conflict (keep rebuilt): CN:mi_cn:product:5306
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5581334Z supplement conflict (keep rebuilt): CN:mi_cn:product:5468
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5581713Z supplement conflict (keep rebuilt): CN:mi_cn:product:5500
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5582095Z supplement conflict (keep rebuilt): CN:mi_cn:product:5663
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5582469Z supplement conflict (keep rebuilt): CN:mi_cn:product:5673
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5582844Z supplement conflict (keep rebuilt): CN:mi_cn:product:5729
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5583225Z supplement conflict (keep rebuilt): CN:mi_cn:product:5857
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5583601Z supplement conflict (keep rebuilt): CN:mi_cn:product:5952
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5583978Z supplement conflict (keep rebuilt): CN:mi_cn:product:6009
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5584495Z supplement conflict (keep rebuilt): CN:mi_cn:product:6079
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5584864Z supplement conflict (keep rebuilt): CN:mi_cn:product:6124
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5585241Z supplement conflict (keep rebuilt): CN:mi_cn:product:6312
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5585619Z supplement conflict (keep rebuilt): CN:mi_cn:product:6512
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5585989Z supplement conflict (keep rebuilt): CN:mi_cn:product:6628
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5586374Z supplement conflict (keep rebuilt): CN:mi_cn:product:6783
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5586749Z supplement conflict (keep rebuilt): CN:mi_cn:product:6850
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5587121Z supplement conflict (keep rebuilt): CN:mi_cn:product:7132
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5587493Z supplement conflict (keep rebuilt): CN:mi_cn:product:7140
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5587865Z supplement conflict (keep rebuilt): CN:mi_cn:product:7186
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5588517Z supplement conflict (keep rebuilt): CN:mi_cn:product:7229
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5588890Z supplement conflict (keep rebuilt): CN:mi_cn:product:7237
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5589266Z supplement conflict (keep rebuilt): CN:mi_cn:product:7309
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5589644Z supplement conflict (keep rebuilt): CN:mi_cn:product:7354
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5590022Z supplement conflict (keep rebuilt): CN:mi_cn:product:7355
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5590405Z supplement conflict (keep rebuilt): CN:mi_cn:product:7357
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5590779Z supplement conflict (keep rebuilt): CN:mi_cn:product:7359
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5591156Z supplement conflict (keep rebuilt): CN:mi_cn:product:7403
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5591536Z supplement conflict (keep rebuilt): CN:mi_cn:product:7410
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5591909Z supplement conflict (keep rebuilt): CN:mi_cn:product:7438
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5592287Z supplement conflict (keep rebuilt): CN:mi_cn:product:7528
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5592661Z supplement conflict (keep rebuilt): CN:mi_cn:product:7532
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5593036Z supplement conflict (keep rebuilt): CN:mi_cn:product:7565
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5593422Z supplement conflict (keep rebuilt): CN:mi_cn:product:7607
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5593801Z supplement conflict (keep rebuilt): CN:mi_cn:product:7621
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5594178Z supplement conflict (keep rebuilt): CN:mi_cn:product:7627
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5594559Z supplement conflict (keep rebuilt): CN:mi_cn:product:7688
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5594937Z supplement conflict (keep rebuilt): CN:mi_cn:product:7721
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5595313Z supplement conflict (keep rebuilt): CN:mi_cn:product:7753
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5595685Z supplement conflict (keep rebuilt): CN:mi_cn:product:7763
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5596059Z supplement conflict (keep rebuilt): CN:mi_cn:product:7765
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5596436Z supplement conflict (keep rebuilt): CN:mi_cn:product:7773
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5596807Z supplement conflict (keep rebuilt): CN:mi_cn:product:7790
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5597179Z supplement conflict (keep rebuilt): CN:mi_cn:product:7792
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5597559Z supplement conflict (keep rebuilt): CN:mi_cn:product:7795
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5598168Z supplement conflict (keep rebuilt): CN:mi_cn:product:7805
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5598615Z supplement conflict (keep rebuilt): CN:mi_cn:product:7813
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5598991Z supplement conflict (keep rebuilt): CN:mi_cn:product:7841
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5599500Z supplement conflict (keep rebuilt): CN:mi_cn:product:7850
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5599880Z supplement conflict (keep rebuilt): CN:mi_cn:product:7861
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5600251Z supplement conflict (keep rebuilt): CN:mi_cn:product:7864
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5600630Z supplement conflict (keep rebuilt): CN:mi_cn:product:7866
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5601002Z supplement conflict (keep rebuilt): CN:mi_cn:product:7867
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5601372Z supplement conflict (keep rebuilt): CN:mi_cn:product:7868
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5601746Z supplement conflict (keep rebuilt): CN:mi_cn:product:7895
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5602116Z supplement conflict (keep rebuilt): CN:mi_cn:product:7897
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5602488Z supplement conflict (keep rebuilt): CN:mi_cn:product:7899
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5602986Z supplement conflict (keep rebuilt): CN:mi_cn:product:7912
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5603399Z supplement conflict (keep rebuilt): CN:mi_cn:product:8026
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5603780Z supplement conflict (keep rebuilt): CN:mi_cn:product:8045
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5604158Z supplement conflict (keep rebuilt): CN:mi_cn:product:8104
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5604529Z supplement conflict (keep rebuilt): CN:mi_cn:product:8105
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5604909Z supplement conflict (keep rebuilt): CN:mi_cn:product:8130
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5605281Z supplement conflict (keep rebuilt): CN:mi_cn:product:8131
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5605654Z supplement conflict (keep rebuilt): CN:mi_cn:product:8136
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5606031Z supplement conflict (keep rebuilt): CN:mi_cn:product:8152
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5606407Z supplement conflict (keep rebuilt): CN:mi_cn:product:8154
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5606796Z supplement conflict (keep rebuilt): CN:mi_cn:product:8263
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5607169Z supplement conflict (keep rebuilt): CN:mi_cn:product:8264
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5607547Z supplement conflict (keep rebuilt): CN:mi_cn:product:8274
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5608130Z supplement conflict (keep rebuilt): CN:mi_cn:product:8311
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5608551Z supplement conflict (keep rebuilt): CN:mi_cn:product:8357
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5608935Z supplement conflict (keep rebuilt): CN:mi_cn:product:8389
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5609313Z supplement conflict (keep rebuilt): CN:mi_cn:product:8390
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5609684Z supplement conflict (keep rebuilt): CN:mi_cn:product:8397
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5610063Z supplement conflict (keep rebuilt): CN:mi_cn:product:8581
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5610434Z supplement conflict (keep rebuilt): CN:mi_cn:product:8585
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5610805Z supplement conflict (keep rebuilt): CN:mi_cn:product:8601
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5611186Z supplement conflict (keep rebuilt): CN:mi_cn:product:8602
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5611559Z supplement conflict (keep rebuilt): CN:mi_cn:product:8605
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5611935Z supplement conflict (keep rebuilt): CN:mi_cn:product:8621
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5612303Z supplement conflict (keep rebuilt): CN:mi_cn:product:8638
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5612681Z supplement conflict (keep rebuilt): CN:mi_cn:product:8645
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5613058Z supplement conflict (keep rebuilt): CN:mi_cn:product:8648
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5613426Z supplement conflict (keep rebuilt): CN:mi_cn:product:8655
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5613797Z supplement conflict (keep rebuilt): CN:mi_cn:product:8656
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5614177Z supplement conflict (keep rebuilt): CN:mi_cn:product:8699
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5614554Z supplement conflict (keep rebuilt): CN:mi_cn:product:8757
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5614933Z supplement conflict (keep rebuilt): CN:mi_cn:product:8758
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5615305Z supplement conflict (keep rebuilt): CN:mi_cn:product:8759
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5615679Z supplement conflict (keep rebuilt): CN:mi_cn:product:8784
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5616059Z supplement conflict (keep rebuilt): CN:mi_cn:product:8803
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5616437Z supplement conflict (keep rebuilt): CN:mi_cn:product:8806
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5616811Z supplement conflict (keep rebuilt): CN:mi_cn:product:8811
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5617197Z supplement conflict (keep rebuilt): CN:mi_cn:product:8828
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5617570Z supplement conflict (keep rebuilt): CN:mi_cn:product:8830
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5618269Z supplement conflict (keep rebuilt): CN:mi_cn:product:8835
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5618700Z supplement conflict (keep rebuilt): CN:mi_cn:product:8845
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5619084Z supplement conflict (keep rebuilt): CN:mi_cn:product:8871
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5619468Z supplement conflict (keep rebuilt): CN:mi_cn:product:8909
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5619841Z supplement conflict (keep rebuilt): CN:mi_cn:product:8914
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5620212Z supplement conflict (keep rebuilt): CN:mi_cn:product:8915
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5620623Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000081
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5621047Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000102
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5621588Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000103
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5621992Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000105
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5622389Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000107
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5622800Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000110
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5623197Z supplement conflict (keep rebuilt): CN:mi_cn:product:10000111
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5623617Z supplement conflict (keep rebuilt): CN:mi_cn:product:1164800008
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5624041Z supplement conflict (keep rebuilt): CN:mi_cn:product:1164900032
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5624451Z supplement conflict (keep rebuilt): CN:mi_cn:product:1171700022
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5624866Z supplement conflict (keep rebuilt): CN:mi_cn:product:1172800047
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5625281Z supplement conflict (keep rebuilt): CN:mi_cn:product:1182700039
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5625689Z supplement conflict (keep rebuilt): CN:byd:car:han:2023:dmi
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5626101Z supplement conflict (keep rebuilt): CN:byd:car:han:2023:dmp
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5626498Z supplement conflict (keep rebuilt): CN:byd:car:han:2023:ev
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5626898Z supplement conflict (keep rebuilt): CN:byd:car:han:2024:dmi
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5627300Z supplement conflict (keep rebuilt): CN:byd:car:han:2024:dmp
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.5627692Z supplement conflict (keep rebuilt): CN:byd:car:han:2024:ev
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:48.8981992Z {"previous_count": 2909, "rebuilt_count": 2909, "added_count": 51, "count": 2960, "missing_ids": [], "added_ids": ["CN:mi_cn:product:12795", "CN:mi_cn:product:16030", "CN:mi_cn:product:19941", "CN:mi_cn:product:20861", "CN:mi_cn:product:21234", "CN:mi_cn:product:22727", "CN:mi_cn:product:25301", "CN:mi_cn:product:25423", "CN:mi_cn:product:3459", "CN:mi_cn:product:4653", "CN:mi_cn:product:5051", "CN:mi_cn:product:5499", "CN:mi_cn:product:5770", "CN:mi_cn:product:6135", "CN:mi_cn:product:8133", "CN:mi_cn:product:722", "CN:mi_cn:product:2997", "CN:mi_cn:product:3751", "CN:mi_cn:product:3754", "CN:mi_cn:product:4117", "CN:mi_cn:product:4816", "CN:mi_cn:product:4828", "CN:mi_cn:product:4833", "CN:mi_cn:product:4944", "CN:mi_cn:product:5220", "CN:mi_cn:product:5287", "CN:mi_cn:product:5471", "CN:mi_cn:product:5942", "CN:mi_cn:product:6313", "CN:mi_cn:product:6373", "CN:mi_cn:product:6487", "CN:mi_cn:product:6815", "CN:mi_cn:product:6825", "CN:mi_cn:product:6826", "CN:mi_cn:product:7092", "CN:mi_cn:product:7676", "CN:mi_cn:product:7713", "CN:mi_cn:product:7740", "CN:mi_cn:product:7909", "CN:mi_cn:product:7910", "CN:mi_cn:product:8132", "CN:mi_cn:product:8247", "CN:mi_cn:product:8248", "CN:mi_cn:product:8249", "CN:mi_cn:product:8250", "CN:mi_cn:product:8652", "CN:mi_cn:product:8760", "CN:mi_cn:product:8814", "CN:mi_cn:product:1170700024", "CN:mi_cn:product:1174100030", "CN:mi_cn:product:1180500019"], "conflicts": ["CN:byd:car:han:2023:dmi", "CN:byd:car:han:2023:dmp", "CN:byd:car:han:2023:ev", "CN:byd:car:han:2024:dmi", "CN:byd:car:han:2024:dmp", "CN:byd:car:han:2024:ev", "CN:mi_cn:product:10000023", "CN:mi_cn:product:10000024", "CN:mi_cn:product:10000032", "CN:mi_cn:product:10000057", "CN:mi_cn:product:10000059", "CN:mi_cn:product:10000060", "CN:mi_cn:product:10000063", "CN:mi_cn:product:10000066", "CN:mi_cn:product:10000067", "CN:mi_cn:product:10000070", "CN:mi_cn:product:10000071", "CN:mi_cn:product:10000079", "CN:mi_cn:product:10000080", "CN:mi_cn:product:10000081", "CN:mi_cn:product:10000082", "CN:mi_cn:product:10000083", "CN:mi_cn:product:10000084", "CN:mi_cn:product:10000085", "CN:mi_cn:product:10000091", "CN:mi_cn:product:10000097", "CN:mi_cn:product:10000099", "CN:mi_cn:product:10000100", "CN:mi_cn:product:10000101", "CN:mi_cn:product:10000102", "CN:mi_cn:product:10000103", "CN:mi_cn:product:10000105", "CN:mi_cn:product:10000107", "CN:mi_cn:product:10000108", "CN:mi_cn:product:10000110", "CN:mi_cn:product:10000111", "CN:mi_cn:product:10000113", "CN:mi_cn:product:10000115", "CN:mi_cn:product:10000117", "CN:mi_cn:product:10000118", "CN:mi_cn:product:1164800008", "CN:mi_cn:product:1164900032", "CN:mi_cn:product:1171700022", "CN:mi_cn:product:1172800047", "CN:mi_cn:product:1182700039", "CN:mi_cn:product:18426", "CN:mi_cn:product:19027", "CN:mi_cn:product:1945", "CN:mi_cn:product:20063", "CN:mi_cn:product:20064", "CN:mi_cn:product:20195", "CN:mi_cn:product:20293", "CN:mi_cn:product:20443", "CN:mi_cn:product:20833", "CN:mi_cn:product:20876", "CN:mi_cn:product:20996", "CN:mi_cn:product:21270", "CN:mi_cn:product:21272", "CN:mi_cn:product:21312", "CN:mi_cn:product:21630", "CN:mi_cn:product:21774", "CN:mi_cn:product:21938", "CN:mi_cn:product:23410", "CN:mi_cn:product:2392", "CN:mi_cn:product:24632", "CN:mi_cn:product:24998", "CN:mi_cn:product:25270", "CN:mi_cn:product:2665", "CN:mi_cn:product:2774", "CN:mi_cn:product:2785", "CN:mi_cn:product:2806", "CN:mi_cn:product:2839", "CN:mi_cn:product:2924", "CN:mi_cn:product:3331", "CN:mi_cn:product:3377", "CN:mi_cn:product:3452", "CN:mi_cn:product:3460", "CN:mi_cn:product:3488", "CN:mi_cn:product:3556", "CN:mi_cn:product:3674", "CN:mi_cn:product:3806", "CN:mi_cn:product:3807", "CN:mi_cn:product:3922", "CN:mi_cn:product:3938", "CN:mi_cn:product:3943", "CN:mi_cn:product:4053", "CN:mi_cn:product:4072", "CN:mi_cn:product:4086", "CN:mi_cn:product:4230", "CN:mi_cn:product:4348", "CN:mi_cn:product:4374", "CN:mi_cn:product:4375", "CN:mi_cn:product:4479", "CN:mi_cn:product:4565", "CN:mi_cn:product:4674", "CN:mi_cn:product:4679", "CN:mi_cn:product:4738", "CN:mi_cn:product:4792", "CN:mi_cn:product:4802", "CN:mi_cn:product:4803", "CN:mi_cn:product:4814", "CN:mi_cn:product:4815", "CN:mi_cn:product:4817", "CN:mi_cn:product:4830", "CN:mi_cn:product:4888", "CN:mi_cn:product:4893", "CN:mi_cn:product:4910", "CN:mi_cn:product:4913", "CN:mi_cn:product:4917", "CN:mi_cn:product:4918", "CN:mi_cn:product:4942", "CN:mi_cn:product:4943", "CN:mi_cn:product:4949", "CN:mi_cn:product:4984", "CN:mi_cn:product:4998", "CN:mi_cn:product:5005", "CN:mi_cn:product:5008", "CN:mi_cn:product:5010", "CN:mi_cn:product:5023", "CN:mi_cn:product:5024", "CN:mi_cn:product:5145", "CN:mi_cn:product:5184", "CN:mi_cn:product:5297", "CN:mi_cn:product:5306", "CN:mi_cn:product:5353", "CN:mi_cn:product:5434", "CN:mi_cn:product:5456", "CN:mi_cn:product:5468", "CN:mi_cn:product:5469", "CN:mi_cn:product:5481", "CN:mi_cn:product:5500", "CN:mi_cn:product:5501", "CN:mi_cn:product:5516", "CN:mi_cn:product:5606", "CN:mi_cn:product:5663", "CN:mi_cn:product:5673", "CN:mi_cn:product:5677", "CN:mi_cn:product:5678", "CN:mi_cn:product:5729", "CN:mi_cn:product:5780", "CN:mi_cn:product:5781", "CN:mi_cn:product:5815", "CN:mi_cn:product:5817", "CN:mi_cn:product:5825", "CN:mi_cn:product:5857", "CN:mi_cn:product:5892", "CN:mi_cn:product:5911", "CN:mi_cn:product:5952", "CN:mi_cn:product:5990", "CN:mi_cn:product:6007", "CN:mi_cn:product:6009", "CN:mi_cn:product:6010", "CN:mi_cn:product:6067", "CN:mi_cn:product:6079", "CN:mi_cn:product:6103", "CN:mi_cn:product:6105", "CN:mi_cn:product:6124", "CN:mi_cn:product:6158", "CN:mi_cn:product:6222", "CN:mi_cn:product:6271", "CN:mi_cn:product:6312", "CN:mi_cn:product:6334", "CN:mi_cn:product:6377", "CN:mi_cn:product:6419", "CN:mi_cn:product:6443", "CN:mi_cn:product:6512", "CN:mi_cn:product:6518", "CN:mi_cn:product:6526", "CN:mi_cn:product:6527", "CN:mi_cn:product:6621", "CN:mi_cn:product:6628", "CN:mi_cn:product:6632", "CN:mi_cn:product:6633", "CN:mi_cn:product:6634", "CN:mi_cn:product:6783", "CN:mi_cn:product:6802", "CN:mi_cn:product:6820", "CN:mi_cn:product:6846", "CN:mi_cn:product:6847", "CN:mi_cn:product:6850", "CN:mi_cn:product:7095", "CN:mi_cn:product:7128", "CN:mi_cn:product:7129", "CN:mi_cn:product:7132", "CN:mi_cn:product:7140", "CN:mi_cn:product:7152", "CN:mi_cn:product:7154", "CN:mi_cn:product:7157", "CN:mi_cn:product:7160", "CN:mi_cn:product:7163", "CN:mi_cn:product:7186", "CN:mi_cn:product:7209", "CN:mi_cn:product:7210", "CN:mi_cn:product:7229", "CN:mi_cn:product:7237", "CN:mi_cn:product:7303", "CN:mi_cn:product:7309", "CN:mi_cn:product:7354", "CN:mi_cn:product:7355", "CN:mi_cn:product:7357", "CN:mi_cn:product:7359", "CN:mi_cn:product:7403", "CN:mi_cn:product:7410", "CN:mi_cn:product:7438", "CN:mi_cn:product:7440", "CN:mi_cn:product:7452", "CN:mi_cn:product:7457", "CN:mi_cn:product:7463", "CN:mi_cn:product:7522", "CN:mi_cn:product:7528", "CN:mi_cn:product:7532", "CN:mi_cn:product:7565", "CN:mi_cn:product:7574", "CN:mi_cn:product:7575", "CN:mi_cn:product:7591", "CN:mi_cn:product:7599", "CN:mi_cn:product:7601", "CN:mi_cn:product:7607", "CN:mi_cn:product:7621", "CN:mi_cn:product:7627", "CN:mi_cn:product:7688", "CN:mi_cn:product:7689", "CN:mi_cn:product:7716", "CN:mi_cn:product:7721", "CN:mi_cn:product:7753", "CN:mi_cn:product:7763", "CN:mi_cn:product:7765", "CN:mi_cn:product:7769", "CN:mi_cn:product:7773", "CN:mi_cn:product:7790", "CN:mi_cn:product:7792", "CN:mi_cn:product:7795", "CN:mi_cn:product:7797", "CN:mi_cn:product:7799", "CN:mi_cn:product:7805", "CN:mi_cn:product:7807", "CN:mi_cn:product:7808", "CN:mi_cn:product:7809", "CN:mi_cn:product:7813", "CN:mi_cn:product:7817", "CN:mi_cn:product:7840", "CN:mi_cn:product:7841", "CN:mi_cn:product:7850", "CN:mi_cn:product:7851", "CN:mi_cn:product:7852", "CN:mi_cn:product:7861", "CN:mi_cn:product:7864", "CN:mi_cn:product:7866", "CN:mi_cn:product:7867", "CN:mi_cn:product:7868", "CN:mi_cn:product:7895", "CN:mi_cn:product:7897", "CN:mi_cn:product:7899", "CN:mi_cn:product:7911", "CN:mi_cn:product:7912", "CN:mi_cn:product:7919", "CN:mi_cn:product:8026", "CN:mi_cn:product:8037", "CN:mi_cn:product:8038", "CN:mi_cn:product:8039", "CN:mi_cn:product:8041", "CN:mi_cn:product:8045", "CN:mi_cn:product:8104", "CN:mi_cn:product:8105", "CN:mi_cn:product:8106", "CN:mi_cn:product:8107", "CN:mi_cn:product:8108", "CN:mi_cn:product:8109", "CN:mi_cn:product:8111", "CN:mi_cn:product:8125", "CN:mi_cn:product:8129", "CN:mi_cn:product:8130", "CN:mi_cn:product:8131", "CN:mi_cn:product:8134", "CN:mi_cn:product:8136", "CN:mi_cn:product:8152", "CN:mi_cn:product:8154", "CN:mi_cn:product:8202", "CN:mi_cn:product:8263", "CN:mi_cn:product:8264", "CN:mi_cn:product:8274", "CN:mi_cn:product:8311", "CN:mi_cn:product:8321", "CN:mi_cn:product:8357", "CN:mi_cn:product:8382", "CN:mi_cn:product:8385", "CN:mi_cn:product:8387", "CN:mi_cn:product:8388", "CN:mi_cn:product:8389", "CN:mi_cn:product:8390", "CN:mi_cn:product:8397", "CN:mi_cn:product:8581", "CN:mi_cn:product:8585", "CN:mi_cn:product:8601", "CN:mi_cn:product:8602", "CN:mi_cn:product:8605", "CN:mi_cn:product:8621", "CN:mi_cn:product:8625", "CN:mi_cn:product:8634", "CN:mi_cn:product:8638", "CN:mi_cn:product:8645", "CN:mi_cn:product:8648", "CN:mi_cn:product:8655", "CN:mi_cn:product:8656", "CN:mi_cn:product:8699", "CN:mi_cn:product:8757", "CN:mi_cn:product:8758", "CN:mi_cn:product:8759", "CN:mi_cn:product:8784", "CN:mi_cn:product:8790", "CN:mi_cn:product:8803", "CN:mi_cn:product:8806", "CN:mi_cn:product:8810", "CN:mi_cn:product:8811", "CN:mi_cn:product:8828", "CN:mi_cn:product:8830", "CN:mi_cn:product:8835", "CN:mi_cn:product:8845", "CN:mi_cn:product:8871", "CN:mi_cn:product:8878", "CN:mi_cn:product:8881", "CN:mi_cn:product:8907", "CN:mi_cn:product:8908", "CN:mi_cn:product:8909", "CN:mi_cn:product:8911", "CN:mi_cn:product:8912", "CN:mi_cn:product:8914", "CN:mi_cn:product:8915", "CN:mi_cn:product:9884"], "allowed_deletions": {}, "backfill": {"applied": [], "skipped": [], "unchanged": []}}
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.3939732Z Traceback (most recent call last):
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.3947830Z   File "/home/runner/work/goodsdex/goodsdex/scripts/verify_goods_release.py", line 56, in <module>
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.3949125Z     main()
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.3949921Z   File "/home/runner/work/goodsdex/goodsdex/scripts/verify_goods_release.py", line 32, in main
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.3950653Z     raise ValueError("Car refresh changed non-car objects")
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.3951118Z ValueError: Car refresh changed non-car objects
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.4719715Z ##[error]Process completed with exit code 1.
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.4855507Z Post job cleanup.
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.5748474Z [command]/usr/bin/git version
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.5799588Z git version 2.56.0
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.5846924Z Temporarily overriding HOME='/home/runner/work/_temp/7cb892ce-77ab-4035-97af-81452d422d93' before making global git config changes
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.5848555Z Adding repository directory to the temporary git global config as a safe directory
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.5853534Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex/_data
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.5902167Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.5944244Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.6389110Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.6427393Z http.https://github.com/.extraheader
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.6440619Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.6501292Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.6838874Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.6881850Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.7364720Z Post job cleanup.
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.8292577Z [command]/usr/bin/git version
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.8343389Z git version 2.56.0
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.8385979Z Temporarily overriding HOME='/home/runner/work/_temp/8ea49345-0cc7-4c2f-bd5f-6bec2c6e183e' before making global git config changes
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.8387377Z Adding repository directory to the temporary git global config as a safe directory
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.8393379Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.8469314Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.8503068Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.8824231Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.8853865Z http.https://github.com/.extraheader
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.8866737Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.8922965Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.9264283Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.9303259Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:49.9776521Z Cleaning up orphan processes
+publish / publish	UNKNOWN STEP	2026-11-03T14:52:50.0140888Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

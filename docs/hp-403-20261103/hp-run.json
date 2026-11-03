@@ -1,0 +1,271 @@
+{
+  "conclusion": "success",
+  "databaseId": 41655447640,
+  "headSha": "7380a1d7aca3aa0bdf9ac213694cd88e9c83e1ea",
+  "jobs": [
+    {
+      "completedAt": "2026-11-03T14:48:53Z",
+      "conclusion": "success",
+      "databaseId": 125984406507,
+      "name": "collect",
+      "startedAt": "2026-11-03T14:37:04Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-03T14:37:05Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-03T14:37:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:37:10Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-03T14:37:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:37:48Z",
+          "conclusion": "success",
+          "name": "Run ./.github/actions/collect-base",
+          "number": 3,
+          "startedAt": "2026-11-03T14:37:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:37:48Z",
+          "conclusion": "skipped",
+          "name": "Inject explicit collection failure for isolation acceptance",
+          "number": 4,
+          "startedAt": "2026-11-03T14:37:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:37:49Z",
+          "conclusion": "success",
+          "name": "Run python3 -m pip install --quiet Pillow",
+          "number": 5,
+          "startedAt": "2026-11-03T14:37:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:39:07Z",
+          "conclusion": "success",
+          "name": "Probe HP availability from the Actions egress",
+          "number": 6,
+          "startedAt": "2026-11-03T14:37:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:48:43Z",
+          "conclusion": "success",
+          "name": "Refresh HP configurations (known SKUs; reuse verified images; serial rate limit)",
+          "number": 7,
+          "startedAt": "2026-11-03T14:39:07Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:48:46Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 8,
+          "startedAt": "2026-11-03T14:48:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:48:50Z",
+          "conclusion": "success",
+          "name": "Run ./.github/actions/upload-candidate",
+          "number": 9,
+          "startedAt": "2026-11-03T14:48:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:48:50Z",
+          "conclusion": "success",
+          "name": "Post Run ./.github/actions/collect-base",
+          "number": 17,
+          "startedAt": "2026-11-03T14:48:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:48:50Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 18,
+          "startedAt": "2026-11-03T14:48:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:48:51Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 19,
+          "startedAt": "2026-11-03T14:48:50Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/null-object-0000/goodsdex/actions/runs/41655447640/job/125984406507"
+    },
+    {
+      "completedAt": "2026-11-03T14:51:18Z",
+      "conclusion": "success",
+      "databaseId": 125991265972,
+      "name": "publish / publish",
+      "startedAt": "2026-11-03T14:48:56Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-03T14:48:58Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-03T14:48:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:49:04Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-03T14:48:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:49:05Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "startedAt": "2026-11-03T14:49:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:49:05Z",
+          "conclusion": "success",
+          "name": "Require OSS credentials before publishing",
+          "number": 4,
+          "startedAt": "2026-11-03T14:49:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:49:42Z",
+          "conclusion": "success",
+          "name": "Read latest data while holding publication lock",
+          "number": 5,
+          "startedAt": "2026-11-03T14:49:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:49:44Z",
+          "conclusion": "success",
+          "name": "Run actions/download-artifact@v4",
+          "number": 6,
+          "startedAt": "2026-11-03T14:49:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:49:46Z",
+          "conclusion": "success",
+          "name": "Merge candidate onto latest release",
+          "number": 7,
+          "startedAt": "2026-11-03T14:49:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:50:16Z",
+          "conclusion": "success",
+          "name": "Test publication invariants",
+          "number": 8,
+          "startedAt": "2026-11-03T14:49:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:50:18Z",
+          "conclusion": "success",
+          "name": "Verify final release (no lost IDs and responsibility invariants)",
+          "number": 9,
+          "startedAt": "2026-11-03T14:50:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:50:26Z",
+          "conclusion": "success",
+          "name": "Snapshot collection and publication liveness",
+          "number": 10,
+          "startedAt": "2026-11-03T14:50:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:50:32Z",
+          "conclusion": "success",
+          "name": "Finalize once (dedupe, tombstones, normalization, shards)",
+          "number": 11,
+          "startedAt": "2026-11-03T14:50:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:50:37Z",
+          "conclusion": "success",
+          "name": "Push one complete release to data",
+          "number": 12,
+          "startedAt": "2026-11-03T14:50:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:51:12Z",
+          "conclusion": "success",
+          "name": "Mirror and verify OSS (immutable blobs first, manifest last)",
+          "number": 13,
+          "startedAt": "2026-11-03T14:50:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:51:12Z",
+          "conclusion": "success",
+          "name": "Record release summary",
+          "number": 14,
+          "startedAt": "2026-11-03T14:51:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:51:12Z",
+          "conclusion": "success",
+          "name": "Post Read latest data while holding publication lock",
+          "number": 26,
+          "startedAt": "2026-11-03T14:51:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:51:13Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@v5",
+          "number": 27,
+          "startedAt": "2026-11-03T14:51:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:51:13Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 28,
+          "startedAt": "2026-11-03T14:51:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-03T14:51:13Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 29,
+          "startedAt": "2026-11-03T14:51:13Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/null-object-0000/goodsdex/actions/runs/41655447640/job/125991265972"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/null-object-0000/goodsdex/actions/runs/41655447640"
+}
