@@ -1,0 +1,152 @@
+{
+  "ok": true,
+  "service": "spendgood-api",
+  "gitCommit": "91304e8f54cc6bed304fbc27e942029fe0e9df1e",
+  "buildTime": "2026-10-31T02:32:23.416Z",
+  "now": 1793703050860,
+  "uptimeSec": 223237,
+  "data": {
+    "revision": null,
+    "generatedAt": "2026-11-03T10:43:50.810215+00:00",
+    "count": 2909,
+    "lastSyncAt": 1793703017140,
+    "staleMinutes": 1,
+    "lastError": null,
+    "attempts": 1352,
+    "files": {
+      "index/hp_cn.json": {
+        "bytes": 440368,
+        "sha256": "b808363dda729f46ff0f81f49a57dd3b0d31a3b46b59a0e74d71096cd9a5f6be",
+        "fetchedAt": 1793703015900,
+        "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+      },
+      "index/mi_cn.json": {
+        "bytes": 69429,
+        "sha256": "07ad8926c24a71db091d011f097f0b84049fe20e54ff12cab0649699453b6d22",
+        "fetchedAt": 1793703015956,
+        "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+      },
+      "index/apple_cn.json": {
+        "bytes": 3289543,
+        "sha256": "1f3ebb2ae9d71f9e904552d0349ed04c45972adb29ecd065c028ac24cabada4a",
+        "fetchedAt": 1793703016192,
+        "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+      },
+      "index/dji.json": {
+        "bytes": 613521,
+        "sha256": "bd0c4d72df7c30860981ec83da09de88e6198a58ba2c62c8d4bb9f413cf3e7f8",
+        "fetchedAt": 1793703016225,
+        "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+      },
+      "index/fuji.json": {
+        "bytes": 152984,
+        "sha256": "7156bd9ba9776aaba8c4e142eca20f7c97f25ff7dd9e8ff0a6195e05413588ec",
+        "fetchedAt": 1793703016236,
+        "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+      },
+      "index/byd.json": {
+        "bytes": 70458,
+        "sha256": "dd2188ef3430088fb6ab5739f92f0beedc19ccb20fe73356b0f818b676733960",
+        "fetchedAt": 1793703016250,
+        "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+      },
+      "index/xiaomi_ev.json": {
+        "bytes": 27826,
+        "sha256": "b8b812d369fe6bb7c96a2d0fa8c0f56bff536ecf7820a83defbef8eb33b8726c",
+        "fetchedAt": 1793703016255,
+        "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+      },
+      "index/other.json": {
+        "bytes": 1166121,
+        "sha256": "edf034dbb73f555f7d13be90e51383af1ac5f78b76ab0b0e23b63026829770f2",
+        "fetchedAt": 1793703016405,
+        "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+      },
+      "prices/latest.json": {
+        "bytes": 188518,
+        "sha256": "fbec6b0e8dccb57689eb6a4580035cae3ce4bb8a912bda3b8821408c9e8a274c",
+        "fetchedAt": 1793703017140,
+        "source": "https://cdn.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/latest.json"
+      },
+      "meta.json": {
+        "bytes": 11319,
+        "sha256": "8a016336ad082db2ee1867c42691f35606162823a1e16b3d94d40ad5b996ee74",
+        "fetchedAt": 1793703017140,
+        "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+      }
+    },
+    "history": {
+      "months": {
+        "2026-10": {
+          "validators": {
+            "https://cdn.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-10.jsonl": "W/\"1164156-62ef621263e37620\"",
+            "https://fastly.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-10.jsonl": "W/\"1164156-62ef621263e37620\""
+          },
+          "lastAttemptAt": 1793691317526,
+          "bytes": 18235734,
+          "parsedLines": 122,
+          "insertedPoints": 0,
+          "observationPoints": 207589,
+          "uniqueGids": 1909,
+          "sha256": "57933720477abcef38193a7afd54bf4b76d8c49d1b2107eb2ca4b3fae42a093f",
+          "goodsMatchedRows": 2041,
+          "sourceUrl": "https://fastly.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-10.jsonl",
+          "lastCheckedAt": 1793691331725,
+          "lastError": null,
+          "notModified": false
+        },
+        "2026-11": {
+          "validators": {
+            "https://cdn.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-11.jsonl": "W/\"79bca2-5c7cd704544fedf9\""
+          },
+          "lastAttemptAt": 1793682316933,
+          "lastError": null,
+          "bytes": 7978146,
+          "parsedLines": 51,
+          "insertedPoints": 8905,
+          "observationPoints": 90831,
+          "uniqueGids": 1781,
+          "sha256": "6759d2a8077e375fbf2df49f0b505aeb248dd900e3109c791a4dea9ad575f932",
+          "goodsMatchedRows": 2036,
+          "sourceUrl": "https://cdn.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-11.jsonl",
+          "lastCheckedAt": 1793682327428,
+          "notModified": false
+        }
+      },
+      "lastError": null,
+      "maintenance": {
+        "lastAttemptAt": 1793644516622,
+        "plan": {
+          "dryRun": true,
+          "days": 90,
+          "cutoff": "2026-08-05T00:00:00.000Z",
+          "deleteRows": 0,
+          "aggregateInputRows": 0,
+          "aggregateRows": 0,
+          "archiveFiles": 25,
+          "archiveBytes": 30871098
+        },
+        "lastError": null,
+        "lastSuccessAt": 1793644517287
+      }
+    }
+  },
+  "db": {
+    "orders": 0,
+    "entitlements": 0,
+    "pending": 0
+  },
+  "pay": {
+    "ready": true,
+    "missing": [],
+    "offerId": "1450682436",
+    "env": 1,
+    "queryFallback": true,
+    "purchaseEnabled": true,
+    "iosEnabled": false
+  },
+  "subscribe": {
+    "ready": false,
+    "templateId": null
+  }
+}
