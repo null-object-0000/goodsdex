@@ -1,9 +1,8 @@
-"""Bounded round-five model-family proposals. Never writes official inputs.
+"""Bounded model-family pilot proposals. Never writes official inputs.
 
-Plan first, then one request per family; persistent sent markers prohibit retries.
+Plan first, then one request per family; persistent sent markers prohibit resending on resume; only explicit HTTP 429s retry.
 """
 import argparse
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -12,6 +11,9 @@ from pathlib import Path
 import re
 import sys
 import threading
+import time
+import os
+from dataclasses import dataclass
 import urllib.request
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
@@ -19,14 +21,32 @@ from goodsdex.vision_extract import GATEWAY, _api_key
 
 BRANDS = ('小米', '大疆', '惠普', '富士')
 MODEL = 'flowlet-flash'
-MAX_OUTPUT = 650
+MAX_OUTPUT = 4096
+
+
+@dataclass(frozen=True)
+class Config:
+    # Hidden reasoning can consume the entire budget below 4000, even without an error.
+    max_tokens: int = 4096
+    # Backends supporting these flags must explicitly disable hidden reasoning.
+    disable_reasoning: bool = True
+    retries: int = 4
+    consecutive_429: int = 3
+
+    def __post_init__(self):
+        if self.max_tokens < 4000 or not 0 <= self.retries <= 4 or self.consecutive_429 < 1:
+            raise ValueError("Unsafe token budget or retry/circuit configuration")
+
 SEED = 20261105
 STOP = threading.Event()
+CONSECUTIVE_429 = 0
 
 
 def write(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+    temp = path.with_suffix('.tmp')
+    temp.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+    os.replace(temp, path)
 
 
 def family_model(row, by_id):
@@ -81,12 +101,15 @@ def prompt(f):
 ''' + json.dumps({k: f[k] for k in ('brand', 'category', 'model')}, ensure_ascii=False)
 
 
-def run_one(f, root):
+def run_one(f, root, config=None):
+    global CONSECUTIVE_429
+    config = config or Config()
     if STOP.is_set():
         return 'circuit_open_not_sent'
     key = hashlib.sha256(f['family'].encode()).hexdigest()[:24]
     out = root / 'responses' / (key + '.json')
     marker = root / 'sent' / (key + '.json')
+    state = root / 'states' / (key + '.json')
     marker.parent.mkdir(parents=True, exist_ok=True)
     try:
         marker_file = marker.open('x')
@@ -96,46 +119,89 @@ def run_one(f, root):
     with marker_file:
         json.dump(dict(family=f['family'], started_at=datetime.now(timezone.utc).isoformat(),
                        prompt_sha256=hashlib.sha256(p.encode()).hexdigest()), marker_file, ensure_ascii=False)
+        marker_file.flush()
+        os.fsync(marker_file.fileno())
+    write(state, dict(family=f['family'], status='sent'))
     body = dict(model=MODEL, messages=[dict(role='user', content=p)],
-                temperature=0, max_tokens=MAX_OUTPUT, reasoning_effort='none',
-                enable_thinking=False, thinking={'type': 'disabled'})
-    try:
-        req = urllib.request.Request(GATEWAY.rstrip('/') + '/v1/chat/completions',
-            data=json.dumps(body).encode(), headers={'Authorization': 'Bearer ' + (_api_key() or ''), 'Content-Type': 'application/json'})
-        opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
-        with opener.open(req, timeout=150) as response:
-            result = json.load(response)
-        write(out, dict(family=f['family'], captured_at=datetime.now(timezone.utc).isoformat(), response=result))
-        return 'completed'
-    except Exception as exc:
-        if getattr(exc, 'code', None) == 429:
-            STOP.set()
-        write(out, dict(family=f['family'], error=str(exc), http_status=getattr(exc, 'code', None),
-            captured_at=datetime.now(timezone.utc).isoformat(),
-            retry_after=getattr(exc, 'headers', {}).get('Retry-After')))
-        return 'failed'
+                temperature=0, max_tokens=config.max_tokens)
+    if config.disable_reasoning:
+        body.update(reasoning_effort='none', enable_thinking=False, thinking={'type': 'disabled'})
+    attempts = []
+    # Sequential dispatch makes consecutive 429s batch-wide and prevents queued bursts.
+    for attempt in range(config.retries + 1):
+        started = time.monotonic()
+        entry = dict(attempt=attempt + 1, started_at=datetime.now(timezone.utc).isoformat())
+        attempts.append(entry)
+        write(out, dict(family=f['family'], attempts=attempts))
+        try:
+            req = urllib.request.Request(GATEWAY.rstrip('/') + '/v1/chat/completions',
+                data=json.dumps(body).encode(), headers={'Authorization': 'Bearer ' + (_api_key() or ''), 'Content-Type': 'application/json'})
+            opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+            with opener.open(req, timeout=150) as response:
+                result = json.load(response)
+            CONSECUTIVE_429 = 0
+            entry.update(http_status=200, elapsed_seconds=time.monotonic()-started, usage=result.get('usage'))
+            content = result.get('choices', [{}])[0].get('message', {}).get('content')
+            write(out, dict(family=f['family'], captured_at=datetime.now(timezone.utc).isoformat(), response=result, attempts=attempts))
+            write(state, dict(family=f['family'], status='ok' if content else 'failed', reason=None if content else 'empty_response'))
+            return 'completed' if content else 'failed'
+        except Exception as exc:
+            code = getattr(exc, 'code', None)
+            retry_after = getattr(exc, 'headers', {}).get('Retry-After')
+            entry.update(http_status=code, error=str(exc), retry_after=retry_after, elapsed_seconds=time.monotonic()-started)
+            CONSECUTIVE_429 = CONSECUTIVE_429 + 1 if code == 429 else 0
+            if code == 429 and CONSECUTIVE_429 >= config.consecutive_429:
+                STOP.set()
+                write(root / 'circuit.json', dict(reason='consecutive_429', count=CONSECUTIVE_429, family=f['family']))
+            retry = code == 429 and attempt < config.retries and not STOP.is_set()
+            if retry:
+                # Respect long server cooldowns by stopping, never by retrying early.
+                delay = 2 ** attempt
+                try:
+                    delay = max(delay, float(retry_after or 0))
+                except ValueError:
+                    STOP.set()  # HTTP-date cooldown: require a later explicit resume.
+                if delay > 60:
+                    STOP.set()
+                retry = not STOP.is_set()
+                if retry:
+                    entry['backoff_seconds'] = delay
+            write(out, dict(family=f['family'], error=str(exc), http_status=code,
+                            retry_after=retry_after, attempts=attempts))
+            if not retry:
+                write(state, dict(family=f['family'], status='failed', reason='request_failed', http_status=code))
+                return 'failed'
+            time.sleep(delay)
 
 
 def main():
+    global CONSECUTIVE_429
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--rows', type=Path, required=True)
     ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--run', action='store_true')
-    ap.add_argument('--limit', type=int, default=0)
+    ap.add_argument('--limit', type=int, default=20)
+    ap.add_argument('--max-tokens', type=int, default=4096)
+    ap.add_argument('--enable-reasoning', action='store_true')
+    ap.add_argument('--429-threshold', type=int, default=3, dest='threshold')
+    ap.add_argument('--retries', type=int, default=4)
     args = ap.parse_args()
+    config = Config(args.max_tokens, not args.enable_reasoning, args.retries, args.threshold)
+    if not 1 <= args.limit <= 20:
+        raise ValueError("This pilot is capped at 20 families")
     if not args.run:
         if (args.out / 'sent').exists() or (args.out / 'run-closed.json').exists():
             raise ValueError('Cannot overwrite the frozen plan of an attempted run')
         rows = json.loads(args.rows.read_text())
-        fs = aggregate(rows)
+        fs = aggregate(rows)[:args.limit]
         tokens = sum(math.ceil(len(prompt(f)) / 1.5) + 32 for f in fs)
         plan = dict(schema=1, seed=SEED, model=MODEL, families=len(fs),
             brands={b: dict(families=sum(f['brand'] == b for f in fs), rows=sum(len(f['variants']) for f in fs if f['brand'] == b)) for b in BRANDS},
-            expected_calls=len(fs), max_calls=len(fs), automatic_retries=0,
+            expected_calls=len(fs), max_calls=len(fs), automatic_retries=config.retries,
             estimated_input_tokens=tokens, estimated_output_tokens=180 * len(fs),
-            max_output_tokens_per_call=MAX_OUTPUT,
+            max_output_tokens_per_call=config.max_tokens,
             input_utf8_byte_upper_bound=sum(len(prompt(f).encode()) + 128 for f in fs),
-            max_output_tokens=MAX_OUTPUT * len(fs),
+            max_output_tokens=config.max_tokens * len(fs),
             tariff='Gateway /v1/models exposes no tariff. Currency cost unavailable; not claimed zero. Cost = input_tokens*input_rate + output_tokens*output_rate (per-token rates).',
             rows_sha256=hashlib.sha256(args.rows.read_bytes()).hexdigest(),
             sample_policy='Per brand: sorted nonempty candidate families in blocks of 100; seeded sample min(10, ceil(block_size/10)) per block; abstentions reported separately.')
@@ -147,16 +213,22 @@ def main():
         raise ValueError('This bounded run is closed; no more requests are authorized by its plan')
     fs = json.loads((args.out / 'families.json').read_text())
     plan = json.loads((args.out / 'plan.json').read_text())
-    assert len(fs) == plan['max_calls']
+    if len(fs) != plan['max_calls'] or len(fs) > 20:
+        raise ValueError('Frozen pilot plan must contain at most 20 families')
     fs = [f for f in fs if not (args.out / 'sent' / (hashlib.sha256(f['family'].encode()).hexdigest()[:24] + '.json')).exists()]
     if args.limit:
         fs = fs[:args.limit]
-    with ThreadPoolExecutor(max_workers=8) as pool:
-        futures = [pool.submit(run_one, f, args.out) for f in fs]
-        for i, future in enumerate(as_completed(futures), 1):
-            status = future.result()
-            if i % 25 == 0 or status == 'failed':
-                print(i, '/', len(fs), status, flush=True)
+    STOP.clear()
+    CONSECUTIVE_429 = 0
+    for f in fs:
+        key = hashlib.sha256(f['family'].encode()).hexdigest()[:24]
+        state = args.out / 'states' / (key + '.json')
+        if not state.exists():
+            write(state, dict(family=f['family'], status='pending'))
+    for i, f in enumerate(fs, 1):
+        if STOP.is_set():
+            break
+        print(i, '/', len(fs), f['model'], run_one(f, args.out, config), flush=True)
 
 
 if __name__ == '__main__':

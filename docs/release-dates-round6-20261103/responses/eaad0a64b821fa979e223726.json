@@ -1,0 +1,52 @@
+{
+  "family": "富士|相机|fujifilmx-t5",
+  "captured_at": "2026-11-03T07:24:36.820343+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"FUJIFILM X-T5\",\"date\":\"2022-11\",\"evidence\":{\"url\":\"https://fujifilm-x.com/global/products/cameras/x-t5/\",\"quote\":null,\"reason\":\"富士官方X-T5产品页可确认该型号族存在；X-T5于2022年11月发布，按机身世代取发布年月，不涉及具体SKU/套机国行开售日。\"},\"confidence\":\"high\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690676,
+    "id": "0217936906751086cb63cadb26a6eb1a5dd8bb71cce3d7f4d4a3c",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 118,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 278,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 396
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:35.069556+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.750781757000368,
+      "usage": {
+        "completion_tokens": 118,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 278,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 396
+      }
+    }
+  ]
+}

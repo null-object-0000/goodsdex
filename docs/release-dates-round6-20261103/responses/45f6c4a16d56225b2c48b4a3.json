@@ -1,0 +1,50 @@
+{
+  "family": "小米|旧款机型|红米5",
+  "captured_at": "2026-11-03T07:24:11.844024+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"红米5\",\"date\":\"2017-12\",\"evidence\":{\"url\":\"https://www.mi.com/redmi5\",\"quote\":null,\"reason\":\"红米5于2017年12月7日在中国发布，属于红米5这一代机型；按机身世代取发布月份2017-12，不涉及具体SKU或开售日。\"},\"confidence\":\"medium\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690651,
+    "id": "00f798ad-1327-49c2-a741-38bc94b13bd2",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 102,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 275,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 377
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:10.095882+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.748136833004537,
+      "usage": {
+        "completion_tokens": 102,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 275,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 377
+      }
+    }
+  ]
+}

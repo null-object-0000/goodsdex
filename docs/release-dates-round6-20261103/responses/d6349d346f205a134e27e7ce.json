@@ -1,0 +1,52 @@
+{
+  "family": "惠普|笔记本|惠普战99air14英寸ai笔记本电脑|amd锐龙™ai7pro450处理器|amdradeon™",
+  "captured_at": "2026-11-03T07:24:42.262924+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"惠普 战99 Air 14英寸 AI笔记本电脑（AMD 锐龙 AI 7 PRO 450）\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为惠普战99 Air 14英寸搭载AMD锐龙AI 7 PRO 450的配置。锐龙AI 7 PRO 450属于AMD 2025年发布的锐龙AI PRO 400系列（Gorgon Point），但无法据此推断该整机型号族的首次推出年月；且惠普战99 Air存在多个平台/世代版本，不得混同。未联网检索到可回指的官网或媒体发布页，故date与evidence留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690682,
+    "id": "021793690679883ab257ece25bd0fea81c82ca5c15ec8fdcf64eb",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 158,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 301,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 459
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:39.844845+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.4180741899908753,
+      "usage": {
+        "completion_tokens": 158,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 301,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 459
+      }
+    }
+  ]
+}

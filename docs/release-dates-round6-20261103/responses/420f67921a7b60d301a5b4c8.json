@@ -1,0 +1,52 @@
+{
+  "family": "小米|落地风扇|米家手持风扇",
+  "captured_at": "2026-11-03T07:24:21.450376+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"米家手持风扇\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为小米米家手持风扇，属于配件/小家电类，非手机等有明确世代发布节奏的型号族；且“米家手持风扇”可能涵盖多个版本（如普通版/Pro等），无法确认具体型号族的首次推出年月，资料不足故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690661,
+    "id": "0217936906598444f170dda172df2cc79a65077ac74d40486cab1",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 99,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 275,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 374
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:19.804216+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.6461552900000243,
+      "usage": {
+        "completion_tokens": 99,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 275,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 374
+      }
+    }
+  ]
+}

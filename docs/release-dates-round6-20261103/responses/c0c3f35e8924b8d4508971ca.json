@@ -1,0 +1,50 @@
+{
+  "family": "小米|旧款机型|小米max2",
+  "captured_at": "2026-11-03T07:24:10.091898+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"小米Max 2\",\"date\":\"2017-05\",\"evidence\":{\"url\":\"https://www.mi.com/max2/\",\"quote\":null,\"reason\":\"小米Max 2于2017年5月25日在北京发布，官网产品页可回指该型号族；按发布月份记为2017-05，仅作世代估算，不作为国行开售事实。\"},\"confidence\":\"high\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690649,
+    "id": "b766ae2b-5603-4534-a569-923f80ebd2b2",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 106,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 276,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 382
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:08.222967+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.8689257619989803,
+      "usage": {
+        "completion_tokens": 106,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 276,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 382
+      }
+    }
+  ]
+}

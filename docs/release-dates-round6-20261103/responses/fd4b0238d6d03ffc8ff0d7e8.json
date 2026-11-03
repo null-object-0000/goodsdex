@@ -1,0 +1,50 @@
+{
+  "family": "大疆|运动相机|osmonano",
+  "captured_at": "2026-11-03T07:24:25.537035+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"Osmo Nano\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"无法确认大疆Osmo Nano这一型号族的首次推出年月；已知资料不足以支持具体月份，且不能仅凭型号或发布时间推断，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690664,
+    "id": "2f21bdb0-bf00-4ce8-9ac6-89b713fa2086",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 70,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 275,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 345
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:23.333608+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.2034234409948112,
+      "usage": {
+        "completion_tokens": 70,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 275,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 345
+      }
+    }
+  ]
+}

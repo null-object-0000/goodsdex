@@ -1,0 +1,52 @@
+{
+  "family": "小米|旧款机型|红米note5",
+  "captured_at": "2026-11-03T07:24:15.988800+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"红米Note 5\",\"date\":\"2018-03\",\"evidence\":{\"url\":null,\"quote\":null,\"reason\":\"红米Note 5 对应全球版 Redmi Note 5 Pro，于2018年2月在印度发布；国行红米Note 5于2018年3月16日发布。按型号族首次推出年月，全球首发为2018-02，国行首发为2018-03。因无法提供可回指的具体网页链接或确知原文，按规则将 evidence 置为 null，日期仅作世代估算。\"},\"confidence\":\"medium\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690655,
+    "id": "021793690653932ab257ece25bd0fea81c82ca5c15ec8fdeba982",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 147,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 277,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 424
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:13.884932+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.103859629991348,
+      "usage": {
+        "completion_tokens": 147,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 277,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 424
+      }
+    }
+  ]
+}

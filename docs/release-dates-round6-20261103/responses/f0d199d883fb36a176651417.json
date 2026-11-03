@@ -1,0 +1,52 @@
+{
+  "family": "小米|洗地机|米家扫拖机器人6max",
+  "captured_at": "2026-11-03T07:24:17.552279+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"米家扫拖机器人 6 Max\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号属于扫拖机器人（扫地机器人）而非洗地机，且无法确认其首次发布年月；不具备联网检索条件，已知资料不足以给出可回指的具体网页或原文，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690657,
+    "id": "0217936906561155c7f85291e6ad850e47f0b8bb356de2f951445",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 85,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 280,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 365
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:15.992539+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.559735503004049,
+      "usage": {
+        "completion_tokens": 85,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 280,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 365
+      }
+    }
+  ]
+}

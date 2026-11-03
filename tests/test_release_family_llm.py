@@ -91,9 +91,10 @@ def test_rate_limit_opens_circuit_without_sending_or_retrying_other_families(tmp
     monkeypatch.setattr(runner.urllib.request, 'build_opener', lambda *args: Limited())
     monkeypatch.setattr(runner, '_api_key', lambda: 'fixture')
     f = dict(family='小米|相机|H501', brand='小米', category='相机', model='H501')
+    monkeypatch.setattr(runner, 'CONSECUTIVE_429', 0)
     runner.STOP.clear()
     try:
-        assert runner.run_one(f, tmp_path) == 'failed'
+        assert runner.run_one(f, tmp_path, runner.Config(consecutive_429=1)) == 'failed'
         assert runner.run_one({**f, 'family': '小米|相机|H501 SE'}, tmp_path) == 'circuit_open_not_sent'
         assert len(calls) == 1 and len(list((tmp_path / 'sent').glob('*.json'))) == 1
         failure = json.loads(next((tmp_path / 'responses').glob('*.json')).read_text())
@@ -103,3 +104,33 @@ def test_rate_limit_opens_circuit_without_sending_or_retrying_other_families(tmp
         assert len(calls) == 1
     finally:
         runner.STOP.clear()
+
+
+def test_budget_floor():
+    with pytest.raises(ValueError):
+        runner.Config(max_tokens=650)
+
+
+def test_429_backoff_and_resume(tmp_path, monkeypatch):
+    from urllib.error import HTTPError
+    import io
+    calls, sleeps = [], []
+    class Backend:
+        def open(self, request, timeout):
+            body = json.loads(request.data)
+            assert body['max_tokens'] >= 4000 and body['enable_thinking'] is False
+            calls.append(body)
+            if len(calls) < 3:
+                raise HTTPError(request.full_url, 429, 'limited', {}, None)
+            return io.StringIO(json.dumps({'choices': [{'message': {'content': '{}'}}], 'usage': {'prompt_tokens': 12, 'completion_tokens': 4}}))
+    monkeypatch.setattr(runner.urllib.request, 'build_opener', lambda *args: Backend())
+    monkeypatch.setattr(runner, '_api_key', lambda: 'fixture')
+    monkeypatch.setattr(runner.time, 'sleep', sleeps.append)
+    monkeypatch.setattr(runner, 'CONSECUTIVE_429', 0)
+    f = dict(family='test', brand='小米', category='相机', model='test')
+    runner.STOP.clear()
+    assert runner.run_one(f, tmp_path) == 'completed'
+    assert sleeps == [1, 2]
+    assert runner.run_one(f, tmp_path) == 'already_sent'
+    assert len(calls) == 3
+    assert json.loads(next((tmp_path/'states').glob('*.json')).read_text())['status'] == 'ok'

@@ -1,0 +1,50 @@
+{
+  "family": "小米|旧款机型|红米5plus",
+  "captured_at": "2026-11-03T07:24:13.878059+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"红米5 Plus\",\"date\":\"2017-12\",\"evidence\":{\"url\":\"https://www.mi.com/redmi5plus\",\"quote\":null,\"reason\":\"小米于2017年12月7日发布红米5/红米5 Plus，红米5 Plus为该型号族首次推出；官网原页现可能已下线，故不引用具体原句，仅以已知发布月份作为型号世代估算。\"},\"confidence\":\"medium\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690652,
+    "id": "640c84e0-3a52-4a3c-a975-050d0510195c",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 115,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 276,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 391
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:11.846157+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.031897829991067,
+      "usage": {
+        "completion_tokens": 115,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 276,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 391
+      }
+    }
+  ]
+}

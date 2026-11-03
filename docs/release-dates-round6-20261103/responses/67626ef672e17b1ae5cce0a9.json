@@ -1,0 +1,50 @@
+{
+  "family": "小米|旧款机型|小米6x",
+  "captured_at": "2026-11-03T07:24:05.868774+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"小米6X\",\"date\":\"2018-04\",\"evidence\":{\"url\":\"https://www.mi.com/global/mi-6x/\",\"quote\":null,\"reason\":\"小米6X于2018年4月25日在武汉发布；官网产品页可回指该型号族，但未引用具体原句，月份依据为已知发布会时间，仅作世代估算。\"},\"confidence\":\"medium\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690644,
+    "id": "3973dae2-bdab-4029-94f4-9d9fd4b598f8",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 106,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 275,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 381
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:03.736985+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.1317830420011887,
+      "usage": {
+        "completion_tokens": 106,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 275,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 381
+      }
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "family": "小米|REDMI路由器|xiaomi全屋路由be3600pro",
+  "captured_at": "2026-11-03T07:24:23.329187+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"Xiaomi全屋路由 BE3600Pro\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"无法确认该型号族首次推出年月；已知资料不足以提供可回指的具体网页或原文，且不得仅由型号年份或平台世代推断月份。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690662,
+    "id": "bb41c194-ac80-4d5b-bb33-7a5e5bfb0057",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 76,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 282,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 358
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:21.454127+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.8750562490022276,
+      "usage": {
+        "completion_tokens": 76,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 282,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 358
+      }
+    }
+  ]
+}

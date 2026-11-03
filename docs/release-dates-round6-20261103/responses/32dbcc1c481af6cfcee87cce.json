@@ -1,0 +1,50 @@
+{
+  "family": "小米|电饭煲|米家智能变压ih电饭煲4l",
+  "captured_at": "2026-11-03T07:24:19.802004+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"米家智能变压IH电饭煲 4L\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号属于小米米家电饭煲产品线，但无法从已知资料中确认其型号族的首次推出年月；不具备联网检索条件，且不能仅凭型号或品类推断月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690658,
+    "id": "f366ab1c-20b1-47f9-b093-0ad409acd098",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 88,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 283,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 371
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:17.554648+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.247350400008145,
+      "usage": {
+        "completion_tokens": 88,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 283,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 371
+      }
+    }
+  ]
+}

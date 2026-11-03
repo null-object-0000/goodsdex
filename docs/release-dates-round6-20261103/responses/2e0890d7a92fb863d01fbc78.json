@@ -1,0 +1,52 @@
+{
+  "family": "大疆|运动相机|osmoaction4",
+  "captured_at": "2026-11-03T07:24:30.428909+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"Osmo Action 4\",\"date\":\"2023-08\",\"evidence\":{\"url\":\"https://www.dji.com/cn/osmo-action-4\",\"quote\":null,\"reason\":\"大疆于2023年8月发布Osmo Action 4，官网产品页及同期媒体发布报道可回指该型号族的首次推出年月；未采用具体SKU/套机国行开售日。\"},\"confidence\":\"high\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690670,
+    "id": "0217936906687216cb63cadb26a6eb1a5dd8bb71cce3d7f38a8e0",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 111,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 277,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 388
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:28.682232+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.7466730050073238,
+      "usage": {
+        "completion_tokens": 111,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 277,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 388
+      }
+    }
+  ]
+}

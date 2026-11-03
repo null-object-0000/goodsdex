@@ -1,0 +1,50 @@
+{
+  "family": "小米|吹风机|米家高速水离子吹风机pro",
+  "captured_at": "2026-11-03T07:24:08.219325+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"model\":\"米家高速水离子吹风机 Pro\",\"date\":null,\"evidence\":null,\"confidence\":\"low\",\"market\":\"CN\",\"event\":\"announcement\",\"abstention_reason\":\"该型号为较新的米家吹风机衍生型号，我无法确知其首次发布年月；不掌握可回指的官网或媒体原文，且不能仅凭品牌/品类或型号命名推断月份，故留空。\"}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690646,
+    "id": "e63e388f-c0a4-49cb-973b-dcb423f4e318",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 88,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 279,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 367
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:05.872102+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 2.3472153640032047,
+      "usage": {
+        "completion_tokens": 88,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 279,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 367
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "family": "大疆|运动相机|osmo360",
+  "captured_at": "2026-11-03T07:24:28.680232+00:00",
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "content": "{\"model\":\"Osmo 360\",\"date\":\"2025-07\",\"evidence\":{\"url\":\"https://www.dji.com/osmo-360\",\"quote\":null,\"reason\":\"DJI Osmo 360 于2025年7月发布，属该型号族首次推出；官网产品页可回指型号族，但未引用具体原句，月份依据已知发布资料。\"},\"confidence\":\"medium\",\"market\":\"global\",\"event\":\"announcement\",\"abstention_reason\":null}",
+          "role": "assistant"
+        }
+      }
+    ],
+    "created": 1793690668,
+    "id": "0217936906674144f170dda172df2cc79a65077ac74d4047e3df4",
+    "model": "deepseek-v4.1-flash-1017",
+    "object": "chat.completion",
+    "service_tier": "default",
+    "usage": {
+      "completion_tokens": 104,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 276,
+      "prompt_tokens_details": {
+        "cached_tokens": 256
+      },
+      "total_tokens": 380
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-11-03T07:24:27.375022+00:00",
+      "http_status": 200,
+      "elapsed_seconds": 1.305206475997693,
+      "usage": {
+        "completion_tokens": 104,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 276,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "total_tokens": 380
+      }
+    }
+  ]
+}
