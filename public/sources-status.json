@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-03T14:12:11Z",
+  "generatedAt": "2026-11-03T14:23:50Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-03T14:08:39Z",
-      "lastSuccessAt": "2026-11-03T13:12:23Z",
+      "lastAttemptAt": "2026-11-03T14:22:11Z",
+      "lastSuccessAt": "2026-11-03T14:15:06Z",
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41650786852",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41652101033",
       "error": null,
       "stale": false,
       "staleReason": null
@@ -31,9 +31,9 @@
       "expectedIntervalMinutes": 60,
       "lastAttemptAt": "2026-11-03T14:07:16Z",
       "lastSuccessAt": "2026-11-03T13:18:10Z",
-      "conclusion": "in_progress",
+      "conclusion": "failure",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41650568393",
-      "error": null,
+      "error": "Process completed with exit code 1.",
       "stale": false,
       "staleReason": null
     },
@@ -47,16 +47,16 @@
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41631619345",
       "error": "raise ValueError('Ambiguous trim columns')",
       "stale": true,
-      "staleReason": "已 86.8 小时无成功运行（预期每 1440 分钟）"
+      "staleReason": "已 87.0 小时无成功运行（预期每 1440 分钟）"
     },
     {
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-03T14:11:01Z",
+      "lastAttemptAt": "2026-11-03T14:22:16Z",
       "lastSuccessAt": null,
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41650786852",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41652101033",
       "error": null,
       "stale": false,
       "staleReason": null
