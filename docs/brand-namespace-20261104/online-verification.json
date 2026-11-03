@@ -1,0 +1,21 @@
+{
+  "data_commit": "163549785bcc56081d521d5279d723e8bd073b2b",
+  "revision": "f6278029f82344fb9dfda12ff46aafed",
+  "goods_equal_normalized_baseline": true,
+  "excluded_equal_except_publication_timestamp": true,
+  "api_meta_equals_published_meta": true,
+  "checks": {
+    "goods.json": {
+      "url": "https://spend.snewbie.site/api/goods",
+      "sha256": "07484be0b6fbe5d67766f77ae2167e32342b46a1c149d968e16a50d13218125b",
+      "bytes": 20945074,
+      "matches_published_manifest": true
+    },
+    "goods-excluded.json": {
+      "url": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/goods-excluded.json",
+      "sha256": "c534b365e34d7b68624374cae4f689933b5d29299d2f29433c7c1a7127a15c32",
+      "bytes": 1314124,
+      "matches_published_manifest": true
+    }
+  }
+}
