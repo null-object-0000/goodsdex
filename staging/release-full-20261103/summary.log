@@ -1,0 +1,106 @@
+{
+  "total_families": 3285,
+  "skipped_official": 266,
+  "planned_run_families": 3019,
+  "actually_requested": 3019,
+  "successful_returns": 3019,
+  "results": {
+    "date": 443,
+    "abstention": 2559,
+    "invalid_format": 17
+  },
+  "actual_response_models": {
+    "deepseek-v4.1-flash-1017": 3019
+  },
+  "cost": {
+    "requests": 3053,
+    "http_429": 34,
+    "backoff_scheduled_seconds": 44,
+    "backoff_elapsed_seconds": 20.457874712024932,
+    "prompt_tokens": 855666,
+    "completion_tokens": 306308,
+    "total_tokens": 1161974
+  },
+  "wall_seconds": 1639.8730919361115,
+  "active_session_seconds": 1059.4270849099994,
+  "sessions": 5,
+  "circuit_events": 4,
+  "baseline_rows": 694,
+  "total_rows": 3968,
+  "candidate_new_rows": 429,
+  "hypothetical_date_rows": 1123,
+  "brands": {
+    "小米": {
+      "total": 2191,
+      "official": 78,
+      "planned": 2113,
+      "requested": 2113,
+      "success": 2113,
+      "abstention": 1900,
+      "date": 197,
+      "invalid_format": 16
+    },
+    "大疆": {
+      "total": 567,
+      "official": 62,
+      "planned": 505,
+      "requested": 505,
+      "success": 505,
+      "date": 14,
+      "abstention": 490,
+      "invalid_format": 1
+    },
+    "惠普": {
+      "total": 157,
+      "official": 0,
+      "planned": 157,
+      "requested": 157,
+      "success": 157,
+      "abstention": 157
+    },
+    "富士": {
+      "total": 50,
+      "official": 11,
+      "planned": 39,
+      "requested": 39,
+      "success": 39,
+      "date": 39
+    },
+    "Apple": {
+      "total": 303,
+      "official": 112,
+      "planned": 191,
+      "requested": 191,
+      "success": 191,
+      "date": 185,
+      "abstention": 6
+    },
+    "比亚迪": {
+      "total": 14,
+      "official": 0,
+      "planned": 14,
+      "requested": 14,
+      "success": 14,
+      "abstention": 6,
+      "date": 8
+    },
+    "小米汽车": {
+      "total": 3,
+      "official": 3,
+      "planned": 0,
+      "requested": 0,
+      "success": 0
+    }
+  },
+  "date_without_evidence": {
+    "Apple": 1,
+    "小米": 136,
+    "比亚迪": 5
+  },
+  "date_with_abstention_reason": {
+    "Apple": 2,
+    "富士": 1,
+    "小米": 80,
+    "比亚迪": 2
+  }
+}

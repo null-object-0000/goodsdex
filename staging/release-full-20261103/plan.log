@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "created_at": "2026-11-03T08:35:17.866473+00:00",
+  "rows": 3968,
+  "total_families": 3285,
+  "skipped_official": 266,
+  "run_families": 3019,
+  "initial_requests": 3019,
+  "maximum_requests_with_retries": 15095,
+  "concurrency": 6,
+  "qps": 4,
+  "consecutive_429": 3,
+  "retries": 4,
+  "max_tokens": 4096,
+  "estimated_wall_seconds": 1157.09213,
+  "baseline_date_rows": 694,
+  "baseline_sha256": "ca0adfdc0878111dff24a261f7bc13dbb694845adeb2f236e3fc77d454a84397",
+  "baseline_origin": "Read-only apply_release_dates(_data/public/goods.json) with current committed official/LLM/crosscheck inputs; API fetch attempted separately. No production files written.",
+  "grouping": "Existing family_model over ALL rows, seven brands, brand/category/normalized model key; any member with an official date skips the whole family. HP CPU/GPU retained. body_id inherited. Existing third_party and llm dates do not skip.",
+  "brands": {
+    "小米": {
+      "total": 2191,
+      "official": 78,
+      "run": 2113
+    },
+    "大疆": {
+      "total": 567,
+      "official": 62,
+      "run": 505
+    },
+    "惠普": {
+      "total": 157,
+      "official": 0,
+      "run": 157
+    },
+    "富士": {
+      "total": 50,
+      "official": 11,
+      "run": 39
+    },
+    "Apple": {
+      "total": 303,
+      "official": 112,
+      "run": 191
+    },
+    "比亚迪": {
+      "total": 14,
+      "official": 0,
+      "run": 14
+    },
+    "小米汽车": {
+      "total": 3,
+      "official": 3,
+      "run": 0
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "code_commit": "312ab36072f25fb22ac6654c73423b185c2b3a7d",
+  "data_worktree_commit": "f8a9aca41ec0abf6f952464477aaefc9a7341333",
+  "dependencies": {
+    "scripts/release_family_llm.py": "8616f8458c4efd07cf9978c0bbfda33a1c6ec94b457ac5a2b89dd7e4662eca89",
+    "src/goodsdex/release_dates.py": "753c768e46754761e70180005937143e360b85781d46ac14588deb8850a2d770",
+    "src/goodsdex/release_crosschecks.py": "3f2956be9bbb3ce3c7eb0cf32b0e62be7aed1a1882d140d99d676f0831b4d4a2"
+  },
+  "sampling": "For each brand, after all its responses are terminal, sorted date candidates, Random(20261103).sample(min(10,n)); if fewer than ten dates, fill remaining positions with a separately seeded sample of remaining outcomes. Freeze review queue before independent source lookup. No response correction or re-query."
+}
