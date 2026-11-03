@@ -183,3 +183,21 @@ def test_direct_refresh_cli_also_preserves_skipped_skus(tmp_path, monkeypatch):
     audit = json.loads((tmp_path/'car-refresh-audit.json').read_text())
     assert audit['approved_count'] == len(approved)-1
     assert audit['skipped'][0]['id'] == approved[0]['id']
+
+
+def test_unavailable_reviewed_image_skips_whole_sku_instead_of_publishing_null(monkeypatch):
+    import json
+    from copy import deepcopy
+    import ci_refresh_cars as ci
+    seed = next(r for r in json.loads(ci.CATALOG.read_text())['rows'] if r['brand'] == '小米汽车')
+    catalog = dict(rows=[seed], images={seed['series']: dict(page='https://example.com/page', url='https://example.com/image', sha256='reviewed')})
+    monkeypatch.setattr(ci, 'xiaomi_candidates', lambda payload: [deepcopy(seed)])
+    class Capture:
+        def get(self, url, *args):
+            if 'paramComparison' in url:
+                return b'{}'
+            raise TimeoutError('source page timed out')
+    rows, gaps = ci.refresh(Capture(), catalog)
+    assert rows == []
+    assert gaps == [dict(id=seed['id'], series=seed['series'],
+                         skipped_reason='reviewed_image_unavailable', detail='source page timed out')]

@@ -66,6 +66,11 @@ def refresh(capture, catalog):
     result = []
     for fresh in rows:
         seed = seeds[fresh['id']]
+        if fresh['brand'] == '小米汽车' and images[fresh['series']] is None:
+            gap = next(g for g in gaps if g['series'] == fresh['series'])
+            skipped.append(dict(id=fresh['id'], series=fresh['series'],
+                                skipped_reason='reviewed_image_unavailable', detail=gap['reason']))
+            continue
         if (fresh['name'], fresh['brand'], fresh['series'], fresh['trim']) != (seed['name'], seed['brand'], seed['series'], seed['trim']):
             raise ValueError('Reviewed car identity changed')
         row = {**seed, **fresh, 'review_status': 'approved', 'fetched_at': now}
@@ -76,7 +81,7 @@ def refresh(capture, catalog):
             else:
                 row['image_missing_reason'] = 'Reviewed official whole-vehicle image unavailable; see car-refresh-audit.json'
         result.append(row)
-    return result, gaps + skipped
+    return result, [g for g in gaps if not any(s.get('series') == g['series'] for s in skipped)] + skipped
 
 
 def main():
