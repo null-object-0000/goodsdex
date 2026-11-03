@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "seed": 20261105,
+  "model": "flowlet-flash",
+  "families": 2813,
+  "brands": {
+    "小米": {
+      "families": 2080,
+      "rows": 2136
+    },
+    "大疆": {
+      "families": 536,
+      "rows": 676
+    },
+    "惠普": {
+      "families": 157,
+      "rows": 218
+    },
+    "富士": {
+      "families": 40,
+      "rows": 49
+    }
+  },
+  "expected_calls": 2813,
+  "max_calls": 2813,
+  "automatic_retries": 0,
+  "estimated_input_tokens": 1204688,
+  "estimated_output_tokens": 506340,
+  "max_output_tokens_per_call": 650,
+  "input_utf8_byte_upper_bound": 3645421,
+  "max_output_tokens": 1828450,
+  "tariff": "Gateway /v1/models exposes no tariff. Currency cost unavailable; not claimed zero. Cost = input_tokens*input_rate + output_tokens*output_rate (per-token rates).",
+  "rows_sha256": "d0b7db583c6a4108b960890da4e82e9caa3337929ef545990e91971236cd183a",
+  "sample_policy": "Per brand: sorted nonempty candidate families in blocks of 100; seeded sample min(10, ceil(block_size/10)) per block; abstentions reported separately."
+}

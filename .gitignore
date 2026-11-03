@@ -19,6 +19,12 @@ data/_progress.json
 # 曾因一次误删彻底丢失（未入 git 无从恢复），只能重新从官方页面采集。
 !data/official/
 !data/official/**
+!data/llm/
+!data/llm/**
+# Round-five raw files are preserved byte-for-byte in raw-call-artifacts.tar.gz.
+docs/release-dates-round5-20261103/responses/
+docs/release-dates-round5-20261103/sent/
+docs/release-dates-round5-20261103/client-before/
 
 # 凭证（必须在仓库外，这里再兜一层）
 *.env

@@ -1,0 +1,40 @@
+{
+  "totals": {
+    "calls": 2813,
+    "completion_tokens": 75857,
+    "prompt_tokens": 179668,
+    "total_tokens": 255525,
+    "prompt_cache_hit_tokens": 4864,
+    "prompt_cache_miss_tokens": 8225
+  },
+  "brands": {
+    "小米": {
+      "calls": 2080,
+      "completion_tokens": 6390,
+      "prompt_tokens": 18325,
+      "total_tokens": 24715,
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 747
+    },
+    "大疆": {
+      "calls": 536,
+      "completion_tokens": 63748,
+      "prompt_tokens": 150093,
+      "total_tokens": 213841,
+      "prompt_cache_hit_tokens": 4480,
+      "prompt_cache_miss_tokens": 7198
+    },
+    "惠普": {
+      "calls": 157
+    },
+    "富士": {
+      "calls": 40,
+      "completion_tokens": 5719,
+      "prompt_tokens": 11250,
+      "total_tokens": 16969,
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 280
+    }
+  },
+  "caveat": "Sent requests lacking a response have unknown usage; totals cover recorded responses only. No charged retries."
+}

@@ -1,0 +1,47 @@
+--- a/apps/miniprogram/utils/renewal-catalog.js
++++ b/apps/miniprogram/utils/renewal-catalog.js
+@@ -12,6 +12,7 @@
+ function sections(p){const raw=rawParams(p);return Array.isArray(raw.specs_sections)?raw.specs_sections:[];}
+ function lines(p,key){const s=sections(p).filter(x=>x.heading?.includes(key)).flatMap(x=>x.lines||[]);return s.length?s:Object.entries(rawParams(p)).filter(([k])=>k.includes(key)).map(([,v])=>text(v)).filter(Boolean);}
+ function release(p={}){
++ const structured=require('./release-view').structuredRelease(p);if(structured)return structured;
+  const r=rawParams(p),raw=p.release_date||p.releaseDate||r['release.date']||r['上市时间']||r['发布时间']||r['机型年份']||r.model_year||p.year||lines(p,'概览').find(x=>/推出年份/.test(x));
+  const m=String(raw||'').match(/(20\d{2})(?:[-年\/.]\s*(\d{1,2}))?/);
+  return m?{year:+m[1],month:m[2]?+m[2]:null,order:+m[1]*12+(m[2]?+m[2]:0),raw:String(raw)}:{year:null,month:null,order:null,raw:''};
+@@ -21,7 +22,7 @@
+ function facts(p={}){
+  const r=rawParams(p),name=p.name||'',air=/^AirPods|^无线充电盒款 AirPods/.test(name),audio=lines(p,'音频技术'),battery=lines(p,'电池'),charging=lines(p,'充电盒'),weights=lines(p,'重量');
+  const rows=[];const add=(k,l,v,opt)=>rows.push(fact(k,l,v,opt));
+- const date=release(p);add('release','推出时间',date.year?date.year+' 年'+(date.month?' '+date.month+' 月':''):null,{raw:date.raw});
++ const date=release(p);add('release',date.label||'推出时间',date.year&&!date.internal&&date.displayAllowed!==false?date.year+' 年'+(date.month?' '+date.month+' 月':''):null,{raw:date.raw});
+  if(!earphones(p)){for(const [k,v] of Object.entries(r))if((typeof v==='string'||typeof v==='number')&&/[\u3400-\u9fff]/.test(k)&&!/来源|上市|发布|机型年份/.test(k)&&String(v).length<=160)rows.push(fact('param:'+k,k,String(v)));return rows;}
+  let form=r.form||r['佩戴方式']||r['佩戴形态'];
+  if(!form&&air)form=/Max/.test(name)?'头戴式':/Pro/.test(name)?'入耳式':'无耳塞式';
+@@ -50,7 +51,7 @@
+  return norm(n);
+ }
+ function normalise(row,index=0,reference){
+- const r=reference||row,p={...row,name:reference?.name||row.name,params:r.params,year:release(r).year};
++ const r=reference||row,p={...row,name:reference?.name||row.name,params:r.params,release:r.release,year:release(r).year};
+  const identity=row.id||row.identity||row.key;
+  const params=rawParams(r),connection=/^AirPods|^无线充电盒款 AirPods/.test(p.name)||Object.keys(params).some(k=>/^bt\./.test(k))?'wireless':null;
+  const allFacts=facts(p),get=k=>allFacts.find(f=>f.key===k);
+@@ -114,6 +115,6 @@
+   return Number(b.brand===old.brand)-Number(a.brand===old.brand)||Number(b.form===old.form)-Number(a.form===old.form)||Number(b.facts.find(f=>f.key==='wireless')?.value==='支持')-Number(a.facts.find(f=>f.key==='wireless')?.value==='支持')||b.release.order-a.release.order||a.price-b.price;
+  });
+ }
+-function card(old,p,saved=false){const d=changes(old,p);const single=p.facts.find(f=>f.key==='single'),weight=p.facts.find(f=>f.key==='weight');return {...p,route:classify(old,p),priceText:p.price===null?'现价待核':'¥'+p.price.toLocaleString('zh-CN'),yearText:p.release.year?p.release.year+' 年':'发售时间待核',saved,metrics:p.earphones?[single?.n!=null?single.n+'h 单次':null,weight?.n!=null?weight.n+'g / 只':null,p.form].filter(Boolean):p.facts.filter(f=>f.key!=='release'&&f.value!==null&&String(f.value).length<=24).slice(0,3).map(f=>f.label+' '+f.value),gains:d.gains.slice(0,2),losses:d.losses.slice(0,2)};}
++function card(old,p,saved=false){const d=changes(old,p);const single=p.facts.find(f=>f.key==='single'),weight=p.facts.find(f=>f.key==='weight');return {...p,route:classify(old,p),priceText:p.price===null?'现价待核':'¥'+p.price.toLocaleString('zh-CN'),yearText:p.release.internal?'按型号世代估算':p.release.year?p.release.year+' 年':'推出时间待核',saved,metrics:p.earphones?[single?.n!=null?single.n+'h 单次':null,weight?.n!=null?weight.n+'g / 只':null,p.form].filter(Boolean):p.facts.filter(f=>f.key!=='release'&&f.value!==null&&String(f.value).length<=24).slice(0,3).map(f=>f.label+' '+f.value),gains:d.gains.slice(0,2),losses:d.losses.slice(0,2)};}
+ function comparison(old,p){const keys=[...new Set([...old.facts,...p.facts].map(f=>f.key))],different=[],common=[];for(const k of keys){const l=old.facts.find(f=>f.key===k),r=p.facts.find(f=>f.key===k),row={key:k,label:l?.label||r.label,left:l?.value??'？未核实',right:r?.value??'？未核实',note:k==='single'?'标称数据，按各自测试条件':''};(l?.value!=null&&r?.value!=null&&l.value===r.value&&(!['single','total'].includes(k)||l.mode&&l.mode===r.mode)?common:different).push(row);}return {different,common};}
+ module.exports={release,facts,catalog,fromOwned,classify,changes,rank,card,comparison};
+--- a/apps/miniprogram/pages/renewal/renewal.js
++++ b/apps/miniprogram/pages/renewal/renewal.js
+@@ -44,7 +44,7 @@
+   if(this.data.screen==='compare'&&!ids.length&&this._pool.length)this._compareIds=[this._pool.find(p=>p.id===this._activeId)?.id||top[0]?.id||this._pool[0].id];
+   if(!this._compareIds.includes(this._activeId))this._activeId=this._compareIds[0];
+   const active=this._pool.find(p=>p.id===this._activeId),rows=active?engine.comparison(this._baseline,active):{different:[],common:[]};
+-  this.setData({candidates:top.map(p=>this.view(p)),tabs:this._compareIds.map(id=>this.view(this._pool.find(p=>p.id===id))),active:active?this.view(active):null,comparison:rows.different,common:rows.common,baselineName:this._baseline.displayName,baselineImage:this._baseline.image,savedRows:store.wishes.list().filter(w=>w.oldId===this._id&&w.renewal).map(w=>({id:w.id,name:w.name,image:w.product?.image||'',priceText:w.price===null?'保存时无报价':'保存时 ¥'+w.price.toLocaleString('zh-CN')})),emptyText:this._baseline.release.year?'当前资料没有可确认的换新候选':'缺发售时间，暂不能确认新旧关系'});
++  this.setData({candidates:top.map(p=>this.view(p)),tabs:this._compareIds.map(id=>this.view(this._pool.find(p=>p.id===id))),active:active?this.view(active):null,comparison:rows.different,common:rows.common,baselineName:this._baseline.displayName,baselineImage:this._baseline.image,savedRows:store.wishes.list().filter(w=>w.oldId===this._id&&w.renewal).map(w=>({id:w.id,name:w.name,image:w.product?.image||'',priceText:w.price===null?'保存时无报价':'保存时 ¥'+w.price.toLocaleString('zh-CN')})),emptyText:this._baseline.release.year?'当前资料没有可确认的换新候选':'缺推出时间，暂不能确认新旧关系',notice:[this._baseline,...top,...(active?[active]:[])].some(p=>p.release.internal)?'新旧关系按型号世代估算，供换新路线参考':this.data.notice});
+  },
+  choosePreference(e){if(!PREFERENCES.some(p=>p.key===e.currentTarget.dataset.key))return;this.setData({preference:e.currentTarget.dataset.key});this.present();},
+  compare(e){const id=e.currentTarget.dataset.id;if(!this._pool?.some(p=>p.id===id))return;this._compareIds=[id,...this.data.candidates.map(p=>p.id)].filter((x,i,a)=>a.indexOf(x)===i).slice(0,4);this._activeId=id;this.setData({screen:'compare',navTitle:'功能对比',showCommon:false});this.present();wx.pageScrollTo?.({scrollTop:0,duration:0});},

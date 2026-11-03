@@ -13,6 +13,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 DEFAULT_INPUT = Path(__file__).resolve().parents[2] / 'data/official/release-dates.json'
+LLM_INPUT = Path(__file__).resolve().parents[2] / 'data/llm/release-dates.json'
 
 
 def digest(value):
@@ -34,7 +35,10 @@ def validate(candidate):
         raise ValueError('Release event must distinguish announcement and sale')
     e = r.get('evidence') or {}
     url = urlparse(e.get('url', ''))
-    if url.scheme not in ('https', 'http') or not url.hostname or not e.get('quote') or not e.get('locator'):
+    model_citation = r['source'] == 'llm' and e.get('capture_type') == 'model_output'
+    valid_url = url.scheme in ('https', 'http') and bool(url.hostname)
+    if (not e.get('locator') or
+            (not (valid_url or e.get('quote')) if model_citation else not (valid_url and e.get('quote')))):
         raise ValueError('Release date requires retrievable evidence and locator')
     if not re.fullmatch('[a-f0-9]{64}', e.get('sha256', '')) or not e.get('captured_at'):
         raise ValueError('Release evidence requires capture hash/time')
@@ -122,7 +126,50 @@ def llm_gate(candidates, review):
                 universe_sha256=review['universe_sha256'])
 
 
-def apply_release_dates(rows, path=DEFAULT_INPUT):
+def brand_sample(families, seed):
+    """Ten per full 100; ceil(10%) of the last block, independently per brand."""
+    import random
+    import math
+    rng = random.Random(seed)
+    ordered = sorted(families)
+    return [f for i in range(0, len(ordered), 100)
+            for f in rng.sample(ordered[i:i+100], math.ceil(len(ordered[i:i+100])/10))]
+
+
+def brand_llm_gate(candidates, reviews):
+    gates = {}
+    for brand in sorted({c['brand'] for c in candidates}):
+        cs = [c for c in candidates if c['brand'] == brand]
+        r = reviews.get(brand, {})
+        if r.get('universe_sha256') != digest(cs):
+            raise ValueError('Brand LLM review does not cover this candidate universe')
+        by_family = {c['family']: c for c in cs}
+        if len(by_family) != len(cs):
+            raise ValueError('Duplicate brand LLM family')
+        expected = brand_sample(by_family, r['seed'])
+        samples = r.get('samples', [])
+        if [s['family'] for s in samples] != expected:
+            raise ValueError('Brand review is not the reproducible 10% sample')
+        for s in samples:
+            c = by_family[s['family']]
+            if (s.get('candidate_sha256') != digest(c) or not isinstance(s.get('correct'), bool)
+                    or not s.get('checked_at') or not s.get('verification_url')
+                    or not s.get('verification_quote') or not s.get('verdict_reason')):
+                raise ValueError('Incomplete brand LLM review')
+            # A date match alone is insufficient: model, event, market and evidence
+            # must also be checked. Unverifiable sources count as failures.
+            matched = s.get('correct_date') == c['release']['date']
+            if s['correct'] and not (matched and s.get('identity_match') is True
+                                     and s.get('evidence_supported') is True):
+                raise ValueError('Brand LLM sample does not support its verdict')
+        accuracy = sum(s['correct'] for s in samples) / len(samples)
+        gates[brand] = dict(usage='disabled' if accuracy < .90 else 'reference',
+            confidence='high' if accuracy >= .97 else 'medium' if accuracy >= .90 else 'low',
+            sample_size=len(samples), accuracy=accuracy, universe_sha256=digest(cs))
+    return gates
+
+
+def apply_release_dates(rows, path=DEFAULT_INPUT, llm_path=None):
     path = Path(path)
     if not path.exists():
         raise ValueError(f'Missing reviewed release input: {path}')
@@ -130,6 +177,18 @@ def apply_release_dates(rows, path=DEFAULT_INPUT):
     if bundle.get('schema') != 1:
         raise ValueError('Unsupported release input schema')
     candidates = bundle['candidates']
+    # A separate, removable sidecar: never merges candidates into official inputs.
+    extra_path = Path(llm_path) if llm_path is not None else LLM_INPUT if path == DEFAULT_INPUT else None
+    extra = json.loads(extra_path.read_text()) if extra_path and extra_path.exists() else {}
+    extra_cs = extra.get('candidates', []) if extra.get('enabled', False) else []
+    if extra and extra.get('schema') != 1:
+        raise ValueError('Unsupported LLM sidecar schema')
+    extra_ids = [key for c in extra_cs for key in c['ids']]
+    if len(extra_ids) != len(set(extra_ids)):
+        raise ValueError('Conflicting LLM sidecar IDs')
+    if any(c['release']['source'] != 'llm' for c in extra_cs):
+        raise ValueError('LLM sidecar may only contain LLM candidates')
+    brand_gates = brand_llm_gate(extra_cs, extra.get('reviews', {}))
     withdrawn = bundle.get('withdrawn_release_ids', {})
     for c in candidates:
         validate(c)
@@ -145,6 +204,17 @@ def apply_release_dates(rows, path=DEFAULT_INPUT):
             if key in by_id:
                 raise ValueError(f'Conflicting release candidates for {key}')
             by_id[key] = c
+    for c in extra_cs:
+        validate(c)
+        for key in c['ids']:
+            if key in withdrawn:
+                continue
+            if key in by_id:
+                # Existing reviewed data always wins, especially official evidence.
+                continue
+            by_id[key] = c
+    extra_families = {c['family'] for c in extra_cs}
+    managed_ids = set(extra.get('managed_ids', []))
     output = deepcopy(rows)
     for row in output:
         if row['id'] in withdrawn:
@@ -152,6 +222,8 @@ def apply_release_dates(rows, path=DEFAULT_INPUT):
             continue
         c = by_id.get(row['id'])
         if not c:
+            if row['id'] in managed_ids and (row.get('release') or {}).get('source') == 'llm':
+                row.pop('release', None)
             # Existing dates must still satisfy the provenance contract.
             if row.get('release'):
                 validate(dict(family=row['id'], ids=[row['id']], release=row['release']))
@@ -162,15 +234,18 @@ def apply_release_dates(rows, path=DEFAULT_INPUT):
             raise ValueError(f'Release family identity changed: {row["id"]}')
         r = deepcopy(c['release'])
         inferred = r['source'] == 'llm'
+        if inferred and (row.get('release') or {}).get('source') in ('official', 'third_party', 'official_hidden'):
+            continue
+        current_gate = brand_gates[c['brand']] if c['family'] in extra_families else gate
         is_hidden = r['source'] == 'official_hidden'
         if is_hidden and hidden.get(c['category'], {}).get('usage') != 'reference':
             row.pop('release', None)
             continue
-        if inferred and gate['usage'] == 'disabled':
+        if inferred and current_gate['usage'] == 'disabled':
             row.pop('release', None)
             continue
         planned = r['event'] == 'planned_availability'
-        r['usage'] = 'reference' if planned or is_hidden else gate['usage'] if inferred else 'fact'
+        r['usage'] = 'reference' if planned or is_hidden or inferred else 'fact'
         r['inferred'] = inferred
         r['family'] = c['family']
         year, month = map(int, r['date'].split('-'))
@@ -183,7 +258,11 @@ def apply_release_dates(rows, path=DEFAULT_INPUT):
             r['display'] = f'{year} 年 {month} 月（参考）'
             r['validation'] = hidden[c['category']]
         if inferred:
-            r['validation'] = gate
+            r['validation'] = current_gate
+            r['confidence'] = current_gate.get('confidence') or ('high' if current_gate['accuracy'] >= .97 else 'medium')
+            r['display_allowed'] = False
+            r['internal_only'] = True
+            r['estimate_notice'] = '按型号世代估算'
         row['release'] = r
     return output
 

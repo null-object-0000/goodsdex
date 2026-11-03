@@ -1,0 +1,334 @@
+{
+  "小米": {
+    "seed": 20261105,
+    "universe_sha256": "087ce50fb8a84de59941881875f062977331188f3e129d7aa35388d03df32c1f",
+    "samples": [
+      {
+        "family": "小米|REDMI路由器|xiaomi路由器be6500pro",
+        "candidate_sha256": "c6767fe0503f0b171874ed3a8b86004a0c1f076cac1652163f58a1b4e421a244",
+        "candidate": {
+          "family": "小米|REDMI路由器|xiaomi路由器be6500pro",
+          "brand": "小米",
+          "category": "REDMI路由器",
+          "ids": [
+            "CN:mi_cn:product:19332"
+          ],
+          "method": "model_family_generation_estimate",
+          "release": {
+            "date": "2023-09",
+            "source": "llm",
+            "confidence": "low",
+            "granularity": "month",
+            "event": "announcement",
+            "market": "CN",
+            "model": "deepseek-v4.1-flash-1017",
+            "scope": "model_family_generation",
+            "evidence": {
+              "url": "https://www.mi.com/be6500pro",
+              "quote": "",
+              "reason": "该型号属于小米路由器BE6500 Pro型号族，公开资料显示其于2023年9月随小米新品发布活动亮相；此处仅作型号世代首次推出年月候选，不视为国行开售事实。",
+              "capture_type": "model_output",
+              "locator": "choices[0].message.content.evidence",
+              "source_type": "third_party",
+              "sha256": "f1c05dc1e273a53daa52557548a8c877efed809ebce84e44e8494fb8434292e1",
+              "captured_at": "2026-11-03T06:59:42.629967+00:00",
+              "artifact": "responses/4167ad3bd92e600fe3a0ea89.json",
+              "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+            }
+          }
+        }
+      }
+    ]
+  },
+  "大疆": {
+    "seed": 20261105,
+    "universe_sha256": "6256ad961962d75b2c7b541f76bb2136034514efb9b9de7edd420fca0cc908ef",
+    "samples": [
+      {
+        "family": "大疆|摄影器材配件|djilidar焦点测距器",
+        "candidate_sha256": "5c0e2db66d619e9827984239b8b8b8e2d6807c5f96c67556a5818bc93679d9dc",
+        "candidate": {
+          "family": "大疆|摄影器材配件|djilidar焦点测距器",
+          "brand": "大疆",
+          "category": "摄影器材配件",
+          "ids": [
+            "CN:dji:sku:111651"
+          ],
+          "method": "model_family_generation_estimate",
+          "release": {
+            "date": "2021-10",
+            "source": "llm",
+            "confidence": "low",
+            "granularity": "month",
+            "event": "announcement",
+            "market": "CN",
+            "model": "deepseek-v4.1-flash-1017",
+            "scope": "model_family_generation",
+            "evidence": {
+              "url": "https://www.dji.com/cn/ronin-4d",
+              "quote": "",
+              "reason": "DJI LiDAR 焦点测距器是随 DJI Ronin 4D 一同发布的配件；DJI 于 2021 年 10 月发布 Ronin 4D，官方页面将 LiDAR 焦点测距器列为该系统的组成部分。该日期用于按配件所属产品世代估算，并非该配件单独开售日。",
+              "capture_type": "model_output",
+              "locator": "choices[0].message.content.evidence",
+              "source_type": "third_party",
+              "sha256": "7dedc1e03bbe8a66821dfe86346c6b1dce47996aa626cb11108f22ad5657f397",
+              "captured_at": "2026-11-03T06:57:59.056514+00:00",
+              "artifact": "responses/cccd112c6e2aa128a2903c1f.json",
+              "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+            }
+          }
+        }
+      },
+      {
+        "family": "大疆|运动相机|osmoaction5pro",
+        "candidate_sha256": "0e9de95b530df593cc6292c92fd5d31dd0b918941bb7e2e0896afcd41f829b49",
+        "candidate": {
+          "family": "大疆|运动相机|osmoaction5pro",
+          "brand": "大疆",
+          "category": "运动相机",
+          "ids": [
+            "CN:dji:sku:170541",
+            "CN:dji:sku:170571",
+            "CN:dji:sku:170601",
+            "CN:dji:sku:170631",
+            "CN:dji:sku:170661",
+            "CN:dji:sku:170691",
+            "CN:dji:sku:170721",
+            "CN:dji:sku:187851",
+            "CN:dji:sku:198021",
+            "CN:dji:sku:211731",
+            "CN:dji:sku:240951",
+            "CN:dji:sku:240981",
+            "CN:dji:sku:241371",
+            "CN:dji:sku:259611",
+            "CN:dji:sku:265041"
+          ],
+          "method": "model_family_generation_estimate",
+          "release": {
+            "date": "2024-09",
+            "source": "llm",
+            "confidence": "low",
+            "granularity": "month",
+            "event": "announcement",
+            "market": "CN",
+            "model": "deepseek-v4.1-flash-1017",
+            "scope": "model_family_generation",
+            "evidence": {
+              "url": "https://www.dji.com/cn/osmo-action-5-pro",
+              "quote": "",
+              "reason": "大疆于2024年9月发布Osmo Action 5 Pro，官网产品页及同期媒体发布报道可回指该型号族的首次推出月份；未采用具体SKU/套机国行开售日。",
+              "capture_type": "model_output",
+              "locator": "choices[0].message.content.evidence",
+              "source_type": "third_party",
+              "sha256": "ed31f96ba50255cf3d7f9adb391f567b4644f3cc9fffeee32bd561385c6a543e",
+              "captured_at": "2026-11-03T06:58:57.347238+00:00",
+              "artifact": "responses/9214a2b6360f40c53ca04d6b.json",
+              "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+            }
+          }
+        }
+      },
+      {
+        "family": "大疆|运动相机|osmo360",
+        "candidate_sha256": "c1b836d7f04189daaca9f806f6ba2c82e1ccca2fc6bcf7c1345044363d928818",
+        "candidate": {
+          "family": "大疆|运动相机|osmo360",
+          "brand": "大疆",
+          "category": "运动相机",
+          "ids": [
+            "CN:dji:sku:194541",
+            "CN:dji:sku:194661",
+            "CN:dji:sku:194811",
+            "CN:dji:sku:194841",
+            "CN:dji:sku:194991",
+            "CN:dji:sku:201831",
+            "CN:dji:sku:201891",
+            "CN:dji:sku:206001",
+            "CN:dji:sku:206031",
+            "CN:dji:sku:214641",
+            "CN:dji:sku:241522",
+            "CN:dji:sku:255231",
+            "CN:dji:sku:265461",
+            "CN:dji:sku:269451"
+          ],
+          "method": "model_family_generation_estimate",
+          "release": {
+            "date": "2025-07",
+            "source": "llm",
+            "confidence": "low",
+            "granularity": "month",
+            "event": "announcement",
+            "market": "global",
+            "model": "deepseek-flash",
+            "scope": "model_family_generation",
+            "evidence": {
+              "url": "https://www.dji.com/osmo-360",
+              "quote": "",
+              "reason": "DJI Osmo 360 于2025年7月发布，官网产品页可回指该型号族；具体日期仅按发布月份估算，不视为国行开售事实。",
+              "capture_type": "model_output",
+              "locator": "choices[0].message.content.evidence",
+              "source_type": "third_party",
+              "sha256": "f5791fd8ff78c961c2e9f41b294edd228f48874bf609273b786e7a74c5ca52c2",
+              "captured_at": "2026-11-03T06:58:56.098685+00:00",
+              "artifact": "responses/8b1898316a3e49f751a361e4.json",
+              "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+            }
+          }
+        }
+      }
+    ]
+  },
+  "惠普": {
+    "seed": 20261105,
+    "universe_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "samples": []
+  },
+  "富士": {
+    "seed": 20261105,
+    "universe_sha256": "f210e1284552ef4fd9ecfeade876dad1a99d7c2c2ee8df7d0ce06c85022481a2",
+    "samples": [
+      {
+        "family": "富士|相机镜头|xc35mmf2",
+        "candidate_sha256": "de6292aa34810aea9ae0d6d03444c6e10a4d04aa996a01ef1f2bf198ece76b01",
+        "candidate": {
+          "family": "富士|相机镜头|xc35mmf2",
+          "brand": "富士",
+          "category": "相机镜头",
+          "ids": [
+            "CN:fuji:lens:xc35mmf2"
+          ],
+          "method": "model_family_generation_estimate",
+          "release": {
+            "date": "2020-02",
+            "source": "llm",
+            "confidence": "low",
+            "granularity": "month",
+            "event": "announcement",
+            "market": "global",
+            "model": "deepseek-v4.1-flash-1017",
+            "scope": "model_family_generation",
+            "evidence": {
+              "url": "https://fujifilm-x.com/global/products/lenses/xc35mmf2/",
+              "quote": "",
+              "reason": "富士官方产品页可确认 XC35mmF2 属于 XC 系列镜头；该镜头于2020年2月随 X-T200 一同发布，官方新闻稿与多家媒体（如 DPReview 2020-02-04）均有报道。此处按已知资料给出发布月份候选，未引用具体原文句。",
+              "capture_type": "model_output",
+              "locator": "choices[0].message.content.evidence",
+              "source_type": "third_party",
+              "sha256": "bf16dff26380bdafbdcb4326a26762cfb96cf9a682bc3a36ab199e36c8218aa7",
+              "captured_at": "2026-11-03T06:59:24.727617+00:00",
+              "artifact": "responses/78e1e7933104a9ed217f80b2.json",
+              "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+            }
+          }
+        }
+      },
+      {
+        "family": "富士|相机镜头|xc50-230mmf4.5-6.7oisii",
+        "candidate_sha256": "e1f9e2a2ee4c2ffdba72eeb6ce4b5d0859b376a3ded28b58de5182de1ad462ae",
+        "candidate": {
+          "family": "富士|相机镜头|xc50-230mmf4.5-6.7oisii",
+          "brand": "富士",
+          "category": "相机镜头",
+          "ids": [
+            "CN:fuji:lens:xc50-230mmf45-67-ois-2"
+          ],
+          "method": "model_family_generation_estimate",
+          "release": {
+            "date": "2015-01",
+            "source": "llm",
+            "confidence": "low",
+            "granularity": "month",
+            "event": "announcement",
+            "market": "global",
+            "model": "deepseek-v4.1-flash-1017",
+            "scope": "model_family_generation",
+            "evidence": {
+              "url": "https://fujifilm-x.com/global/products/lenses/xc50-230mmf45-67-ois-ii/",
+              "quote": "",
+              "reason": "富士官网该镜头产品页存在，但未提供可确知的首发年月原句；已知该II代随X-A2于2015年1月发布，但无法给出可回指的原文链接与引句，故按规则留空日期。",
+              "capture_type": "model_output",
+              "locator": "choices[0].message.content.evidence",
+              "source_type": "third_party",
+              "sha256": "1477030ee91f9aeef5f321957f0130aae01fc46cc4fde2ab5c08379fb1ba05e1",
+              "captured_at": "2026-11-03T06:59:24.747314+00:00",
+              "artifact": "responses/03bd1025f15be24a30a4c966.json",
+              "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+            }
+          }
+        }
+      },
+      {
+        "family": "富士|相机镜头|xf8mmf3.5rwr",
+        "candidate_sha256": "5b18278b8816162194a273bb277536ee70ebfcbe85a96c12ff4c53017b89f9c4",
+        "candidate": {
+          "family": "富士|相机镜头|xf8mmf3.5rwr",
+          "brand": "富士",
+          "category": "相机镜头",
+          "ids": [
+            "CN:fuji:lens:xf8mmf35-r-wr"
+          ],
+          "method": "model_family_generation_estimate",
+          "release": {
+            "date": "2023-05",
+            "source": "llm",
+            "confidence": "low",
+            "granularity": "month",
+            "event": "announcement",
+            "market": "global",
+            "model": "deepseek-v4.1-flash-1017",
+            "scope": "model_family_generation",
+            "evidence": {
+              "url": "https://fujifilm-x.com/global/products/lenses/xf8mmf35-r-wr/",
+              "quote": "",
+              "reason": "富士官方产品页存在该镜头，但未引用到可确知的首发公告原句；已知该镜头于2023年5月随X-S20一同发布，故按型号族给出2023-05候选，仅作世代估算。",
+              "capture_type": "model_output",
+              "locator": "choices[0].message.content.evidence",
+              "source_type": "third_party",
+              "sha256": "51fabd4cad706cecd539fef5c95e1db7e875f580988ec26688599ae721855027",
+              "captured_at": "2026-11-03T06:59:33.033434+00:00",
+              "artifact": "responses/70c178b1fbcdfcb224d0297c.json",
+              "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+            }
+          }
+        }
+      },
+      {
+        "family": "富士|相机|fujifilmx-t50",
+        "candidate_sha256": "0cdf3c5da19f7efd24f5e1a31f44b054d5174b794590dcee8d66103dacd21e0c",
+        "candidate": {
+          "family": "富士|相机|fujifilmx-t50",
+          "brand": "富士",
+          "category": "相机",
+          "ids": [
+            "CN:fuji:kit:x-t50-xc15-45mm",
+            "CN:fuji:kit:x-t50-xc35mmf2",
+            "CN:fuji:kit:x-t50-xf16-50mm"
+          ],
+          "method": "model_family_generation_estimate",
+          "release": {
+            "date": "2024-05",
+            "source": "llm",
+            "confidence": "low",
+            "granularity": "month",
+            "event": "announcement",
+            "market": "global",
+            "model": "deepseek-v4.1-flash-1017",
+            "scope": "model_family_generation",
+            "evidence": {
+              "url": "https://fujifilm-x.com/global/products/cameras/x-t50/",
+              "quote": "",
+              "reason": "富士官方X-T50产品页可确认该型号族存在；已知该机型于2024年5月发布，但当前无法回指具体含发布月份的原句，故quote留空，日期仅作世代估算。",
+              "capture_type": "model_output",
+              "locator": "choices[0].message.content.evidence",
+              "source_type": "third_party",
+              "sha256": "930f35142769ce276115f7405c275df4d84792f24e675c4c581b85c514a80926",
+              "captured_at": "2026-11-03T06:59:23.395258+00:00",
+              "artifact": "responses/a978b2cd0d64aafb0e68ab44.json",
+              "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+            }
+          }
+        }
+      }
+    ]
+  }
+}
