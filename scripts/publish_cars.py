@@ -39,10 +39,18 @@ def prepare(previous, input_dir=INPUT, append_only=False):
         return migrate(result), audit
     gaps = json.loads((input_dir / 'parameter-gaps.json').read_text())
     excluded = {r['id'] for r in gaps}
+    skip_path = input_dir / 'refresh-skipped.json'
+    skipped = json.loads(skip_path.read_text()) if skip_path.exists() else []
+    skipped_ids = {r['id'] for r in skipped}
+    if len(skipped_ids) != len(skipped) or any(not r.get('skipped_reason') for r in skipped):
+        raise ValueError('Invalid refresh skip evidence')
+    catalog = json.loads((ROOT / 'data/official/car-catalog.json').read_text())
+    if not skipped_ids <= {r['id'] for r in catalog['rows']}:
+        raise ValueError('Skipped IDs differ from reviewed allowlist')
     incoming = []
     for filename, brand, prefix, host, expected in SOURCES:
         rows = json.loads((input_dir / filename).read_text())
-        if len(rows) != expected:
+        if len(rows) + sum(r['id'].startswith(prefix) for r in skipped) != expected:
             raise ValueError(f'{filename}: expected {expected} reviewed configurations, got {len(rows)}')
         for original in rows:
             if original.get('id') in excluded:
@@ -71,7 +79,11 @@ def prepare(previous, input_dir=INPUT, append_only=False):
     old = unique(previous, 'previous', preserve_legacy=True)
     # Approved identities are a separate, checked allowlist, including for daily captures.
     catalog = json.loads((ROOT / 'data/official/car-catalog.json').read_text())
-    allowed = {r['id'] for r in catalog['rows']} - excluded
+    allowed = {r['id'] for r in catalog['rows']} - excluded - skipped_ids
+    if skipped_ids & fresh.keys():
+        raise ValueError('Skipped SKU cannot also be refreshed')
+    if not skipped_ids <= old.keys():
+        raise ValueError('Skipped SKU has no previous published record')
     if fresh.keys() != allowed:
         raise ValueError('Incoming IDs differ from reviewed allowlist')
     result = [{**row, **fresh[row['id']]} if row['id'] in fresh and not append_only else deepcopy(row) for row in previous]

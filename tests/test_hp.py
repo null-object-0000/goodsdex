@@ -199,3 +199,33 @@ class DelistingTests(unittest.TestCase):
         self.assertEqual(audit['delisted_count'], 1)
         self.assertTrue(any('missing' in e['error'] for e in audit['errors']))
         self.assertEqual(saved, old)
+
+
+class BlockedSourceTests(unittest.TestCase):
+    def test_three_http_403_preserve_archive_public_meta_and_image_audit(self):
+        import tempfile, sys
+        from urllib.error import HTTPError
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / 'hp'; out.mkdir()
+            public = Path(tmp) / 'public'; public.mkdir()
+            row, image = hp.parse_product(FIXTURE, URL, 'before')
+            rows = [dict(row, id=row['id']+str(i), source_url=URL+'?i='+str(i)) for i in range(5)]
+            (out/'goods.json').write_text(json.dumps(rows))
+            (out/'audit.json').write_text(json.dumps({'images': [{'url': image, 'ok': True}]}))
+            (public/'goods.json').write_text(json.dumps(rows))
+            (public/'meta.json').write_text('{"generated_at":"before"}')
+            paths = [out/'goods.json', out/'audit.json', public/'goods.json', public/'meta.json']
+            before = [p.read_bytes() for p in paths]
+            calls = []
+            class Blocked:
+                requests = []
+                def get(self, url):
+                    calls.append(url)
+                    raise HTTPError(url, 403, 'Forbidden', {}, None)
+            with patch.object(sys, 'argv', ['crawl_hp', '--out', str(out), '--public', str(public), '--known-only']), patch.object(hp, 'Client', return_value=Blocked()):
+                self.assertEqual(hp.main(), 0)
+            self.assertEqual(len(calls), 3)
+            self.assertEqual([p.read_bytes() for p in paths], before)
+            status = json.loads((out/'collection-status.json').read_text())
+            self.assertEqual(status['conclusion'], 'degraded')
+            self.assertEqual(status['error'], 'blocked: 403 from hpstore.cn')

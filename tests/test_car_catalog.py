@@ -112,3 +112,53 @@ def test_full_rebuild_carries_cars_without_replacing_fields():
     car = {'id': 'CN:byd:car:1', 'product_type': 'car', 'opaque': {'all': ['fields']}}
     rows, _ = merge([], [], [car])
     assert rows == [car]
+
+
+def test_real_byd_empty_configs_skips_with_reason():
+    import json
+    from car_catalog import verify_byd_parameters
+    payload = json.loads((Path(__file__).parent / 'fixtures/cars/byd-empty-configs.json').read_text())
+    rows = [{'trim': '506KM尊贵型'}]
+    assert verify_byd_parameters(rows, payload) == []
+    assert rows[0]['skipped_reason'] == 'missing_trim_columns'
+
+
+def test_byd_duplicate_aliases_require_a_unique_column():
+    from car_catalog import verify_byd_parameters
+    def payload(headers, values):
+        return dict(code=200, success=True, data=dict(configs=[dict(name='身份', value=[
+            dict(name=name, value=titles) for name, titles in headers] +
+            [dict(name='续航', value=values)])]))
+    row = dict(id='CN:byd:car:goods-131:unknown:attr-1', trim='标准')
+    equal = [('车型', ['标准', '高配']), ('销售宣传名称', ['标准', '高配'])]
+    assert len(verify_byd_parameters([dict(row)], payload(equal, ['506', '705']))) == 1
+    for headers, values in [
+        ([('车型', ['标准', '标准'])], ['506', '705']),
+        ([('车型', ['标准', '高配']), ('销售宣传名称', ['高配', '标准'])], ['506', '705']),
+        (equal, ['1', '2', '3']),
+        ([('车型', ['标准']), ('销售宣传名称', ['别名', '高配'])], ['1'])]:
+        rows = [dict(row)]
+        assert verify_byd_parameters(rows, payload(headers, values)) == []
+        assert rows[0]['skipped_reason']
+
+
+def test_daily_skips_preserve_published_sku_without_fresh_timestamp(tmp_path):
+    import json
+    from copy import deepcopy
+    from publish_cars import INPUT, SOURCES, prepare
+    import shutil
+    for filename in [*(s[0] for s in SOURCES), 'parameter-gaps.json']:
+        shutil.copyfile(INPUT / filename, tmp_path / filename)
+    previous, _ = prepare([])
+    original = deepcopy(previous)
+    filename = tmp_path / 'byd-verified.json'
+    incoming = json.loads(filename.read_text())
+    skipped = incoming.pop(0)
+    filename.write_text(json.dumps(incoming))
+    (tmp_path / 'refresh-skipped.json').write_text(json.dumps([
+        dict(id=skipped['id'], skipped_reason='missing_trim_columns')]))
+    result, _ = prepare(previous, tmp_path)
+    assert next(r for r in result if r['id'] == skipped['id']) == next(r for r in original if r['id'] == skipped['id'])
+    import pytest
+    with pytest.raises(ValueError, match='no previous'):
+        prepare([], tmp_path)

@@ -108,13 +108,24 @@ def verify_byd_parameters(rows, payload):
         raise ValueError('Official parameters failed')
     groups = payload['data']['configs']
     headings = [r for g in groups for r in g['value'] if r['name'] in ('车型', '销售宣传名称')]
-    if len(headings) != 1:
-        raise ValueError('Ambiguous trim columns')
-    titles = headings[0]['value']
+    verified = []
     for row in rows:
-        if titles.count(row['trim']) != 1:
-            raise ValueError('Trim must match exactly: ' + row['trim'])
-        index = titles.index(row['trim'])
+        # Multiple header aliases are acceptable only when they identify the
+        # same exact column. Never select the first SKU or guess an alignment.
+        matches = {(len(h['value']), i) for h in headings
+                   for i, title in enumerate(h['value']) if title == row['trim']}
+        if len(matches) != 1:
+            row['skipped_reason'] = ('missing_trim_columns' if not headings else
+                                     'ambiguous_or_missing_exact_trim')
+            continue
+        width, index = matches.pop()
+        if any(len(h['value']) != width for h in headings):
+            row['skipped_reason'] = 'inconsistent_trim_column_counts'
+            continue
+        titles = [None] * width
+        if any(len(c['value']) not in (1, width) for g in groups for c in g['value']):
+            row['skipped_reason'] = 'unexplained_merged_parameter_columns'
+            continue
         params = {}
         for group in groups:
             for cell in group['value']:
@@ -125,7 +136,7 @@ def verify_byd_parameters(rows, payload):
                     params[group['name'] + '/' + cell['name']] = values[0]
                 else:
                     raise ValueError('Unexplained merged parameter columns')
-        prices = [r['value'][index] for g in groups for r in g['value'] if re.fullmatch(r'建议零售价\s*[（(]元[）)]', r['name'])]
+        prices = [r['value'][index if len(r['value']) > 1 else 0] for g in groups for r in g['value'] if re.fullmatch(r'建议零售价\s*[（(]元[）)]', r['name'])]
         if len(prices) == 1 and re.fullmatch(r'[\d,]+\s*', prices[0]):
             amount = int(prices[0].replace(',', '').strip())
             if amount != row['official_config_amount']:
@@ -135,7 +146,8 @@ def verify_byd_parameters(rows, payload):
         row['params'] = params
         row.pop('params_missing_reason', None)
         row['spec_source_url'] = 'https://site-api.byd.com/domestic-official-api/goods/goodsParams?goodsId=' + row['id'].split(':goods-')[1].split(':')[0]
-    return rows
+        verified.append(row)
+    return verified
 
 def xiaomi_candidates(payload):
     """Join specification columns by SSU ID, never by column order."""
@@ -197,11 +209,17 @@ def main():
         else:
             from ci_refresh_cars import refresh, CATALOG
             rows, gaps = refresh(Capture(out / 'captures'), json.loads(CATALOG.read_text()))
-            if gaps:
+            image_gaps = [g for g in gaps if 'skipped_reason' not in g]
+            if image_gaps:
                 raise ValueError('Daily capture has image gaps; preserve published release')
+            (out / 'car-refresh-audit.json').write_text(json.dumps(
+                {'count': len(rows), 'skipped': gaps}, ensure_ascii=False, indent=2) + '\n')
+            print(json.dumps({'count': len(rows), 'skipped': gaps}, ensure_ascii=False))
             for filename, brand, *_ in SOURCES:
                 (out / filename).write_text(json.dumps([r for r in rows if r['brand'] == brand], ensure_ascii=False, indent=2) + '\n')
             (out / 'parameter-gaps.json').write_text((INPUT / 'parameter-gaps.json').read_text())
+            (out / 'refresh-skipped.json').write_text(json.dumps(
+                [g for g in gaps if 'skipped_reason' in g], ensure_ascii=False, indent=2) + '\n')
         return
     out = Path(args.out)
     capture = Capture(out / 'captures')

@@ -1,9 +1,9 @@
-# 惠普笔记本／台式机配置与价格；每小时 :43，目标总耗时 <15 分钟。
+# 惠普源封锁期间每天北京时间 12:43 探测一次；恢复后仍每日采集。
 # 产出候选差量 artifact；共享 publish-release 负责合并、门禁、分片和 OSS。
 name: refresh-hp
 on:
   schedule:
-    - cron: '43 * * * *'
+    - cron: '43 4 * * *'
   workflow_dispatch:
     inputs:
       inject_failure:
@@ -22,6 +22,8 @@ jobs:
     timeout-minutes: 15
     permissions:
       contents: read
+    outputs:
+      conclusion: ${{ steps.hp.outputs.conclusion }}
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/collect-base
@@ -31,11 +33,24 @@ jobs:
           echo '::error::Intentional HP collection failure; no candidate and no publication'
           exit 1
       - run: python3 -m pip install --quiet Pillow
-      - name: Refresh HP configurations (known SKUs; reuse verified images; serial rate limit)
+      - name: Probe HP availability from the Actions egress
+        env:
+          HP_PROBE_OUT: _data/data/hp/probe
+        run: python3 docs/hp-403-20261103/probe.py
+      - id: hp
+        name: Refresh HP configurations (known SKUs; reuse verified images; serial rate limit)
         # Bound collection separately so evidence/candidate upload and cleanup
         # have time before the enclosing job deadline. Failure still skips publish.
         timeout-minutes: 13
-        run: python3 scripts/crawl_hp.py --out _data/data/hp --public _data/public --reuse-images --known-only --interval-from-start
+        run: |
+          python3 scripts/crawl_hp.py --out _data/data/hp --public _data/public --reuse-images --known-only --interval-from-start
+          python3 - <<'PYCODE'
+          import json, os
+          from pathlib import Path
+          status = json.loads(Path('_data/data/hp/collection-status.json').read_text())
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write('conclusion=' + status['conclusion'] + '\n')
+          PYCODE
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -45,9 +60,11 @@ jobs:
             data/hp/raw/
           retention-days: 7
       - uses: ./.github/actions/upload-candidate
+        if: steps.hp.outputs.conclusion == 'success'
         with:
           scope: hp
   publish:
+    if: needs.collect.outputs.conclusion == 'success'
     needs: collect
     uses: ./.github/workflows/publish-release.yml
     with:

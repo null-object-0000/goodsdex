@@ -20,7 +20,7 @@ CATALOG = ROOT / 'data/official/car-catalog.json'
 
 def refresh(capture, catalog):
     approved = catalog['rows']
-    rows = []
+    rows, skipped = [], []
     for goods_id in sorted({r['id'].split(':goods-')[1].split(':')[0] for r in approved if r['brand'] == '比亚迪'}):
         info = capture.json(BYD + 'getGoodsInfoById?goodsId=' + goods_id)
         configs = capture.json(BYD + 'getGoodsAttrListForCompareByGoodsId?goodsId=' + goods_id)
@@ -38,6 +38,8 @@ def refresh(capture, catalog):
         headers.update({'X-HMAC-SIGNATURE': signature['data'], 'X-HMAC-TIMESTAMP': stamp,
                         'X-HMAC-SIGNKEY': '4a3688a5gcd88g443fga6b7fcb'})
         rows.extend(verify_byd_parameters(group, json.loads(capture.get(url, headers=headers))))
+        skipped.extend({'id': r['id'], 'skipped_reason': r['skipped_reason']}
+                       for r in group if r.get('skipped_reason'))
 
     payload = json.loads(capture.get('https://website-api.xiaomiev.com/mtop/guidemarketing/product/pc/paramComparison',
                                    b'[{}]', {'Content-Type': 'application/json',
@@ -74,7 +76,7 @@ def refresh(capture, catalog):
             else:
                 row['image_missing_reason'] = 'Reviewed official whole-vehicle image unavailable; see car-refresh-audit.json'
         result.append(row)
-    return result, gaps
+    return result, gaps + skipped
 
 
 def main():

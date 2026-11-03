@@ -9,7 +9,7 @@ import re
 from urllib.error import HTTPError
 from urllib.request import Request, build_opener, HTTPRedirectHandler, urlopen
 
-SOURCES = [('refresh-prices', 60), ('refresh-apple', 60), ('refresh-hp', 60),
+SOURCES = [('refresh-prices', 60), ('refresh-apple', 60), ('refresh-hp', 1440),
            ('refresh-cars', 1440), ('publish-release', None)]
 
 
@@ -102,6 +102,22 @@ def first_error(api, run, jobs=None):
     return '无法读取失败日志/注解，请查看 runUrl' if unavailable else None
 
 
+def hp_collection_status(api, run):
+    """Read the run's explicit collector outcome, not GitHub's exit-zero status."""
+    for job in api.pages(f"actions/runs/{run['id']}/jobs?filter=latest", 'jobs'):
+        if job['name'] != 'collect':
+            continue
+        log = api.get(f"actions/jobs/{job['id']}/logs", raw=True).decode('utf-8', errors='replace')
+        for line in reversed(log.splitlines()):
+            marker = 'GOODSDEX_SOURCE_STATUS='
+            if marker in line:
+                payload = json.loads(line.split(marker, 1)[1])
+                if payload['conclusion'] not in ('success', 'degraded', 'failure'):
+                    raise RuntimeError('Invalid HP collector outcome')
+                return payload
+    return {'conclusion': 'success', 'error': None}  # legacy successful runs
+
+
 def reusable_publish(api):
     """Reusable workflow runs live under callers; use the actual publish job."""
     for run in api.pages('actions/runs?exclude_pull_requests=true', 'workflow_runs'):
@@ -151,7 +167,16 @@ def generate(repository, token, now=None, api=None):
                            conclusion=conclusion(latest), runUrl=latest['html_url'])
                 if interval is not None:
                     successful = api.get(path + '&status=success')['workflow_runs']
-                    if successful:
+                    if source == 'refresh-hp':
+                        if row['conclusion'] == 'success':
+                            outcome = hp_collection_status(api, latest)
+                            row.update(conclusion=outcome['conclusion'], error=outcome.get('error'))
+                        # An exit-zero degraded run must never advance lastSuccessAt.
+                        for candidate in api.pages(f'actions/workflows/{source}.yml/runs?status=success', 'workflow_runs'):
+                            if hp_collection_status(api, candidate)['conclusion'] == 'success':
+                                row['lastSuccessAt'] = candidate['updated_at']
+                                break
+                    elif successful:
                         row['lastSuccessAt'] = successful[0]['updated_at']
                 elif row['conclusion'] == 'success':
                     row['lastSuccessAt'] = latest['updated_at']

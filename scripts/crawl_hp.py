@@ -15,6 +15,7 @@ import re
 import sys
 import time
 import urllib.request
+from urllib.error import HTTPError
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -74,6 +75,16 @@ class Client:
         self.raw = raw
         self.requests = []
     def get(self, url):
+        for attempt in range(3):
+            try:
+                return self._get_once(url, attempt)
+            except HTTPError as exc:
+                if exc.code not in (403, 429, 500, 502, 503, 504) or attempt == 2:
+                    raise
+                # Bounded serial retries; a browser UA checks simple UA rejection.
+                time.sleep(5 * (2 ** attempt))
+
+    def _get_once(self, url, attempt=0):
         host = urlparse(url).netloc
         time.sleep(max(0, 2.1 - (time.monotonic() - self.last.get(host, -100))))
         # Requests remain serial. Hourly mode overlaps the spacing interval
@@ -82,11 +93,18 @@ class Client:
             self.last[host] = time.monotonic()
         try:
             redirects = RedirectEvidence()
-            with urllib.request.build_opener(redirects).open(urllib.request.Request(url, headers={'User-Agent':'GoodsDex/1.0 (public computer catalogue; daily)'}), timeout=45) as r:
+            with urllib.request.build_opener(redirects).open(urllib.request.Request(url, headers={'User-Agent': ('GoodsDex/1.0 (public computer catalogue; daily)' if attempt == 0 else 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36')}), timeout=45) as r:
                 data = r.read()
                 info = dict(url=url, final_url=r.url, status=r.status, redirects=redirects.redirects,
                             content_type=r.headers.get('Content-Type',''), bytes=len(data),
                             sha256=hashlib.sha256(data).hexdigest(), fetched_at=datetime.now(timezone.utc).isoformat())
+        except HTTPError as exc:
+            self.requests.append(dict(
+                url=url, status=exc.code, fetched_at=datetime.now(timezone.utc).isoformat(),
+                headers={k: v for k, v in exc.headers.items()
+                         if k.lower() in ('server', 'cf-ray', 'date', 'retry-after')
+                         or k.lower().startswith('x-')}))
+            raise
         finally:
             if not self.interval_from_start:
                 self.last[host] = time.monotonic()
@@ -307,6 +325,12 @@ def main():
                     if images[candidate]: row['image']=images[candidate];break
             rows.append(row)
             print(row['id'],row['name'],flush=True)
+        except HTTPError as e:
+            errors.append(dict(url=url, error=str(e), status=e.code))
+            # Three independent serial SKU requests all blocked: stop the batch.
+            # Parser errors and partial batches retain the existing failure gate.
+            if len(errors) == 3 and not rows and not delisted and all(x.get('status') == 403 for x in errors):
+                break
         except Exception as e: errors.append(dict(url=url,error=str(e)))
     ratio = len(delisted) / len(selected) if selected else 0
     if ratio > MAX_NEW_DELISTED_RATIO:
@@ -331,6 +355,21 @@ def main():
                images=list(checks.values()),requests=client.requests)
     if args.dry_run:
         print(json.dumps(dict(rows=rows,audit=audit),ensure_ascii=False,indent=1));return bool(errors)
+    blocked = (len([e for e in errors if e.get('status') == 403]) == 3
+               and not rows and not delisted
+               and all(e.get('status') == 403 or e.get('error') == 'No successful SKU observations'
+                       for e in errors))
+    status = dict(conclusion='degraded' if blocked else ('failure' if errors else 'success'),
+                  error='blocked: 403 from hpstore.cn' if blocked else None,
+                  checked_at=audit['fetched_at'], count=len(rows), requests=client.requests,
+                  retry_policy='daily at 04:43 UTC (12:43 Asia/Shanghai)')
+    write_json(args.out/'collection-status.json', status)
+    print('GOODSDEX_SOURCE_STATUS=' + json.dumps(status, ensure_ascii=False), flush=True)
+    # Workflow success means an unavailable source was handled; never freshness.
+    # Keep both the SKU archive and successful image audit byte-for-byte intact.
+    if blocked:
+        print(json.dumps(dict(retained_count=len(previous), **status), ensure_ascii=False))
+        return 0
     # Archive successful SKU observations; missing/failed pages never delete old data.
     write_json(args.out/'audit.json',audit)
     # A failed batch may retain its evidence, but must not checkpoint delistings:
