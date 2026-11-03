@@ -62,3 +62,48 @@ def test_finalize_brand_is_in_export_manifest_index_detail_and_replay(tmp_path):
     (tmp_path / 'goods.json').write_text(json.dumps(rows))
     finalize_public(tmp_path)
     assert json.loads((tmp_path / 'goods.json').read_text()) == goods
+
+
+# Every reviewed namespace, including those only present in archived exclusions.
+from goodsdex.brands import NAMESPACE_ALIASES, id_namespace, namespace_brand
+
+
+@pytest.mark.parametrize('scope,alias,brand', [
+    (scope, alias, brand)
+    for scope, brands in NAMESPACE_ALIASES.items()
+    for brand, aliases in brands.items() for alias in aliases
+])
+@pytest.mark.parametrize('separator', ['_', '-', '.', ':', '-_.:'])
+def test_complete_normalized_namespaces(scope, alias, brand, separator):
+    variant = alias.replace('_', separator).swapcase()
+    key = f'{scope.upper()}:{variant}:product:10000292'
+    # Conflicting evidence must never turn Apple (or any other brand) into Xiaomi.
+    assert infer_brand(dict(id=key, brand='小米', source='mi_cn', name='小米设备')) == (brand, 'id_prefix')
+    assert id_namespace(key) == (scope.upper(), variant)
+
+
+@pytest.mark.parametrize('namespace', [
+    'mi_cn_fake', 'mi:cn:fake', 'apple_fake', 'apple:cn:fake', 'applepie',
+    'dji_fake', 'hp_fake', 'hp:cn:fake', 'fujifake', 'byd_fake', 'xiaomi_ev_fake',
+])
+def test_unreviewed_namespace_does_not_inherit_brand(namespace):
+    row = dict(id=f'CN:{namespace}:product:1', name='适用于小米或Apple的第三方配件')
+    assert namespace_brand(row['id']) is None
+    assert infer_brand(row) == (None, None)
+
+
+@pytest.mark.parametrize('key', ['US:mi_cn:product:1', 'GLOBAL:mi_cn:model:1',
+                                     'CN:unknown:mi_cn:product:1', 'mi_cn', 'CN:mi_cn'])
+def test_scope_and_namespace_boundaries(key):
+    assert infer_brand(dict(id=key, name='设备')) == (None, None)
+
+
+def test_colon_sticker_and_original_identity_are_preserved():
+    from goodsdex.exclusions import build_excluded
+    row = dict(id='CN:mi:cn:product:10000292', name='「新秀无畏」系列笔记本定制贴纸',
+               category='笔记本', params={})
+    excluded = build_excluded([row], [], [], [], [], '2026-11-04T00:00:00Z', 'test')
+    item = excluded['items'][0]
+    assert item['id'] == row['id']
+    assert item['brand'] == '小米' and item['brand_source'] == 'id_prefix'
+    assert item['excluded_reason'] == 'accessory:sticker'

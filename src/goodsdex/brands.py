@@ -21,16 +21,58 @@ BRAND_ALIASES = {
     '联想': ('联想', 'Lenovo'),
 }
 ALIASES = {alias.casefold(): brand for brand, aliases in BRAND_ALIASES.items() for alias in aliases}
-# The trailing namespace separator prevents e.g. CN:mi_cn_fake from matching.
-ID_RULES = (
-    (r'^cn:(?:mi_ev|xiaomi_ev|小米汽车):', '小米汽车'),
-    (r'^cn:mi_cn:', '小米'),
-    (r'^(?:cn:apple[^:]*:|global:apple_support:)', 'Apple'),
-    (r'^cn:dji[^:]*:', '大疆'),
-    (r'^cn:(?:hp[^:]*|\.hp_cn):', '惠普'),
-    (r'^cn:fuji[^:]*:', '富士'),
-    (r'^cn:byd[^:]*:', '比亚迪'),
-)
+# Only separators and case are normalized; never use a manufacturer substring.
+# Scope remains part of the key so foreign/unknown regions cannot inherit CN rules.
+NAMESPACE_ALIASES = {
+    'cn': {
+        '小米': ('mi_cn',),
+        '小米汽车': ('mi_ev', 'xiaomi_ev', '小米汽车'),
+        'Apple': ('apple', 'apple_cn', 'apple_support'),
+        '大疆': ('dji', 'dji_cn', 'dji_mall_json'),
+        '惠普': ('hp', 'hp_cn'),
+        '富士': ('fuji', 'fuji_cn', 'fujifilm', 'fujifilm_cn', 'fujinon'),
+        '比亚迪': ('byd', 'byd_cn'),
+    },
+    'global': {'Apple': ('apple_support',)},
+}
+# Record kinds terminate the namespace, even when it contains colon separators.
+RECORD_KINDS = frozenset(('product', 'reference', 'commodity', 'sku', 'model',
+                          'lens', 'kit', 'car'))
+
+
+def normalize_namespace(namespace):
+    return re.sub(r'[-_.:]+', '', namespace.casefold())
+
+
+NAMESPACE_BRANDS = {
+    (scope, normalize_namespace(alias)): brand
+    for scope, brands in NAMESPACE_ALIASES.items()
+    for brand, aliases in brands.items() for alias in aliases
+}
+
+
+def id_namespace(key):
+    """Return the complete raw scope/namespace, excluding record kind and ID.
+
+    Legacy short IDs (CN:apple:123) have no record kind: their final token is
+    the identifier. Unknown namespaces are retained in full for audit/review.
+    """
+    parts = key.split(':')
+    if len(parts) < 3:
+        return None
+    end = next((i for i in range(1, len(parts) - 1)
+                if parts[i].casefold() in RECORD_KINDS), len(parts) - 1)
+    return parts[0], ':'.join(parts[1:end])
+
+
+def namespace_brand(key):
+    namespace = id_namespace(key)
+    if namespace is None:
+        return None
+    scope, name = namespace
+    return NAMESPACE_BRANDS.get((scope.casefold(), normalize_namespace(name)))
+
+
 # Anchored manufacturer names only: no inference from specs/compatibility text.
 NAME_RULES = (
     (r'^(?:小米汽车|Xiaomi\s+EV\b)', '小米汽车'),
@@ -50,9 +92,8 @@ def canonical(value):
 
 def infer_brand(row):
     key = str(row.get('id') or '')
-    for pattern, brand in ID_RULES:
-        if re.search(pattern, key, re.I):
-            return brand, 'id_prefix'
+    if brand := namespace_brand(key):
+        return brand, 'id_prefix'
     source = row.get('source')
     # Some collectors carry the manufacturer explicitly inside source.
     if isinstance(source, dict):
