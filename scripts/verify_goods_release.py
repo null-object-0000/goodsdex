@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from goodsdex.cars import assert_cars_unchanged
-from goodsdex.supplements import DEFAULT_SUPPLEMENTS, merge, metadata
+from goodsdex.supplements import DEFAULT_SUPPLEMENTS, merge, metadata, car_refresh_supplements
 from goodsdex.release_policy import remove_reviewed_non_goods
 
 
@@ -33,6 +33,8 @@ def main():
     else:
         assert_cars_unchanged(previous, current)
     supplements = json.loads(args.supplements.read_text())
+    if args.car_refresh:
+        supplements = car_refresh_supplements(supplements, previous)
     checked, verification = merge(current, supplements, previous)
     if Counter(r["id"] for r in checked) != Counter(r["id"] for r in current):
         restored = Counter(r["id"] for r in checked) - Counter(r["id"] for r in current)

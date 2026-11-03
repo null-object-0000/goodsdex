@@ -82,7 +82,8 @@ jobs:
           previous = json.loads((Path(os.environ['RUNNER_TEMP']) / 'goods-before.json').read_text())
           current = json.loads((public / 'goods.json').read_text())
           assert_no_lost_ids(previous, current)
-          publish(current, public, previous, apply_backfills=False)
+          publish(current, public, previous, apply_backfills=False,
+                  car_refresh=os.environ['RELEASE_SCOPE'] == 'cars')
           PY
           EXTRA=()
           if [ "$RELEASE_SCOPE" = cars ]; then EXTRA+=(--car-refresh); fi

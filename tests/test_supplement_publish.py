@@ -148,3 +148,30 @@ class RebuildEntryPointTests(unittest.TestCase):
             self.assertEqual(result[0]["name"], "updated")
             self.assertEqual(result[0]["price"], 9)
             self.assertEqual({r["id"] for r in previous} - {r["id"] for r in result}, set())
+
+
+class CarRefreshScopeTests(unittest.TestCase):
+    def test_car_publication_does_not_replay_unrelated_supplements(self):
+        import subprocess, sys
+        root = Path(__file__).resolve().parents[1]
+        car = json.loads((root/'data/official/car-catalog.json').read_text())['rows'][0]
+        other = dict(id='other', name='其他商品', opaque={'keep': ['all', None]})
+        previous = [other, car]
+        extras = [dict(id='CN:mi_cn:product:unrelated', name='其他补充商品', source='supplement', catalog_identity='s')]
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp)
+            extra = out/'extras.json'; extra.write_text(json.dumps(extras))
+            prior = out/'previous.json'; prior.write_text(json.dumps(previous))
+            publish(previous, out, previous, extra, apply_backfills=False, car_refresh=True)
+            self.assertEqual(json.loads((out/'goods.json').read_text()), previous)
+            subprocess.run([sys.executable, str(root/'scripts/verify_goods_release.py'), '--public', tmp,
+                            '--previous', str(prior), '--supplements', str(extra), '--car-refresh'],
+                           check=True, capture_output=True)
+            self.assertEqual(json.loads((out/'goods.json').read_text()), previous)
+            # The normal publisher still owns adding these supplemental products.
+            self.assertEqual(len(merge(previous, extras, previous, apply_backfills=False)[0]), 3)
+            before = (out/'goods.json').read_bytes()
+            with self.assertRaisesRegex(ValueError, 'non-car objects'):
+                publish([dict(other, name='越权更新'), car], out, previous, extra,
+                        apply_backfills=False, car_refresh=True)
+            self.assertEqual((out/'goods.json').read_bytes(), before)

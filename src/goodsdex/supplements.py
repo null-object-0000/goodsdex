@@ -60,9 +60,24 @@ def merge(rebuilt, supplements, previous, include_new_cars=False, *, apply_backf
     return result, audit
 
 
-def publish(rebuilt, out_dir, previous, supplements=DEFAULT_SUPPLEMENTS, include_new_cars=False, *, apply_backfills=True):
+def car_refresh_supplements(supplements, previous):
+    """Car refresh cannot introduce unrelated supplemental products.
+
+    Archived accessories may remain in the supplemental bundle. Replaying them
+    here would change non-car rows before the final archive stage removes them.
+    """
+    existing = {r['id'] for r in previous}
+    return [r for r in supplements if is_car(r) or r['id'] in existing]
+
+
+def publish(rebuilt, out_dir, previous, supplements=DEFAULT_SUPPLEMENTS, include_new_cars=False, *, apply_backfills=True, car_refresh=False):
     # Validate before writing either release file. Missing supplements fail closed.
-    result, audit = merge(rebuilt, json.loads(Path(supplements).read_text(encoding="utf-8")), previous, include_new_cars, apply_backfills=apply_backfills)
+    extras = json.loads(Path(supplements).read_text(encoding="utf-8"))
+    if car_refresh:
+        extras = car_refresh_supplements(extras, previous)
+    result, audit = merge(rebuilt, extras, previous, include_new_cars, apply_backfills=apply_backfills)
+    if car_refresh and [r for r in previous if not is_car(r)] != [r for r in result if not is_car(r)]:
+        raise ValueError('Car refresh changed non-car objects')
     out_dir = Path(out_dir)
     meta_path = out_dir / "meta.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8")) if meta_path.exists() else {}
