@@ -1,0 +1,605 @@
+[
+  {
+    "id": "CN:apple_cn:commodity:MFE94CH/A",
+    "model": "AirTag",
+    "brand": "Apple",
+    "category": "配件",
+    "categories": [
+      "配件"
+    ],
+    "decision": "配件",
+    "basis": {
+      "accessory": true,
+      "basis": "category",
+      "matched": "配件"
+    },
+    "expected": "配件",
+    "correct": true,
+    "review_note": "AirTag 属配件类",
+    "source_url": "https://www.apple.com.cn/shop/buy-airtag/airtag"
+  },
+  {
+    "id": "GLOBAL:apple_support:model:118469",
+    "model": "Pro Display XDR VESA 支架转换器",
+    "brand": "Apple",
+    "category": "显示器",
+    "categories": [
+      "显示器"
+    ],
+    "decision": "配件",
+    "basis": {
+      "accessory": true,
+      "basis": "name",
+      "matched": [
+        "支架"
+      ]
+    },
+    "expected": "配件",
+    "correct": true,
+    "review_note": "VESA 支架转换器，非显示器本体",
+    "source_url": "https://support.apple.com/zh-cn/118469"
+  },
+  {
+    "id": "GLOBAL:apple_support:model:111834",
+    "model": "AirPods Pro 2 配 MagSafe 充电盒 (USB-C)",
+    "brand": "Apple",
+    "category": "耳机",
+    "categories": [
+      "耳机"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "AirPods"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "AirPods 整套耳机，MagSafe 为随附充电盒",
+    "source_url": "https://support.apple.com/zh-cn/111834"
+  },
+  {
+    "id": "GLOBAL:apple_support:model:111861",
+    "model": "AirPods Pro 1 配无线充电盒",
+    "brand": "Apple",
+    "category": "耳机",
+    "categories": [
+      "耳机"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "AirPods"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "AirPods 整套耳机，配无线充电盒",
+    "source_url": "https://support.apple.com/zh-cn/111861"
+  },
+  {
+    "id": "CN:dji:sku:101241",
+    "model": "御 Mavic 2 行业版智能飞行电池",
+    "brand": "大疆",
+    "category": "无人机配件",
+    "categories": [
+      "无人机配件"
+    ],
+    "decision": "配件",
+    "basis": {
+      "accessory": true,
+      "basis": "category",
+      "matched": "无人机配件"
+    },
+    "expected": "配件",
+    "correct": true,
+    "review_note": "Mavic 智能飞行电池，非无人机",
+    "source_url": "https://store.dji.com/cn/product/mavic-2-enterprise-battery?vid=101241"
+  },
+  {
+    "id": "CN:dji:sku:129711",
+    "model": "Osmo Action 快拆转接件",
+    "brand": "大疆",
+    "category": "运动相机配件",
+    "categories": [
+      "运动相机配件"
+    ],
+    "decision": "配件",
+    "basis": {
+      "accessory": true,
+      "basis": "category",
+      "matched": "运动相机配件"
+    },
+    "expected": "配件",
+    "correct": true,
+    "review_note": "Action 快拆转接件，非运动相机",
+    "source_url": "https://store.dji.com/cn/product/osmo-action-quick-release-adapter-mount?vid=129711"
+  },
+  {
+    "id": "CN:dji:sku:136791",
+    "model": "DJI Inspire 3 折叠快拆桨（对）",
+    "brand": "大疆",
+    "category": "无人机配件",
+    "categories": [
+      "无人机配件"
+    ],
+    "decision": "配件",
+    "basis": {
+      "accessory": true,
+      "basis": "category",
+      "matched": "无人机配件"
+    },
+    "expected": "配件",
+    "correct": true,
+    "review_note": "Inspire 折叠快拆桨，非无人机",
+    "source_url": "https://store.dji.com/cn/product/dji-inspire-3-propellers?vid=136791"
+  },
+  {
+    "id": "CN:dji:sku:164721",
+    "model": "DJI Avata 2 畅飞套装（单电池版）",
+    "brand": "大疆",
+    "category": "无人机",
+    "categories": [
+      "无人机"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "DJI Avata 2 畅飞套装"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "Avata 畅飞套装含无人机；单电池版是套装配置",
+    "source_url": "https://store.dji.com/cn/product/dji-avata-2?vid=164721"
+  },
+  {
+    "id": "CN:dji:sku:134691",
+    "model": "DJI DL PZ 17-28 mm T3.0 ASPH 镜头",
+    "brand": "大疆",
+    "category": "摄影器材配件",
+    "categories": [
+      "摄影器材配件"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "镜头"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "完整可换镜头，按要求保留",
+    "source_url": "https://store.dji.com/cn/product/dji-dl-17-28mm-lens?vid=134691"
+  },
+  {
+    "id": "CN:dji:sku:158331",
+    "model": "禅思 X9-8K 云台相机",
+    "brand": "大疆",
+    "category": "摄影器材配件",
+    "categories": [
+      "摄影器材配件"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "云台相机"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "禅思云台相机整机，虽误归配件类仍保留",
+    "source_url": "https://store.dji.com/cn/product/zenmuse-x9-8k-gimbal-camera?vid=158331"
+  },
+  {
+    "id": "CN:dji:sku:177861",
+    "model": "DJI Mic Mini（两发一收，含充电盒）",
+    "brand": "大疆",
+    "category": "麦克风",
+    "categories": [
+      "麦克风"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "DJI Mic Mini"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "两发一收的完整麦克风套装，充电盒为随附",
+    "source_url": "https://store.dji.com/cn/product/dji-mic-mini?vid=177861"
+  },
+  {
+    "id": "CN:dji:sku:109131",
+    "model": "DJI Action 2 防水壳",
+    "brand": "大疆",
+    "category": "运动相机配件",
+    "categories": [
+      "运动相机配件"
+    ],
+    "decision": "配件",
+    "basis": {
+      "accessory": true,
+      "basis": "category",
+      "matched": "运动相机配件"
+    },
+    "expected": "配件",
+    "correct": true,
+    "review_note": "Action 防水壳",
+    "source_url": "https://store.dji.com/cn/product/dji-action-2-waterproof-case?vid=109131"
+  },
+  {
+    "id": "CN:mi_cn:product:10050015",
+    "model": "米家净水器1000G、1000G Pro/Plus滤芯",
+    "brand": "小米",
+    "category": "净水器",
+    "categories": [
+      "净水器",
+      "家电"
+    ],
+    "decision": "配件",
+    "basis": {
+      "accessory": true,
+      "basis": "name",
+      "matched": [
+        "滤芯"
+      ]
+    },
+    "expected": "配件",
+    "correct": true,
+    "review_note": "净水器滤芯耗材，型号数字不构成整机",
+    "source_url": null
+  },
+  {
+    "id": "CN:mi_cn:product:16549",
+    "model": "米家净水器1600G",
+    "brand": "小米",
+    "category": "净水器",
+    "categories": [
+      "净水器",
+      "家电"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "净水器"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "1600G 净水器整机",
+    "source_url": null
+  },
+  {
+    "id": "CN:mi_cn:product:13143",
+    "model": "巨省电 1.5匹新一级能效 小米空调",
+    "brand": "小米",
+    "category": "中央空调Pro",
+    "categories": [
+      "中央空调Pro",
+      "壁挂空调",
+      "立式空调",
+      "家电"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "空调"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "1.5 匹空调整机",
+    "source_url": null
+  },
+  {
+    "id": "CN:mi_cn:product:14038",
+    "model": "米家新风空调滤芯 （挂机）",
+    "brand": "小米",
+    "category": "中央空调Pro",
+    "categories": [
+      "中央空调Pro",
+      "壁挂空调",
+      "立式空调",
+      "家电"
+    ],
+    "decision": "配件",
+    "basis": {
+      "accessory": true,
+      "basis": "name",
+      "matched": [
+        "滤芯"
+      ]
+    },
+    "expected": "配件",
+    "correct": true,
+    "review_note": "新风空调滤芯，非空调整机",
+    "source_url": null
+  },
+  {
+    "id": "CN:mi_cn:product:10050050",
+    "model": "小米电视S Pro Mini LED 2025",
+    "brand": "小米",
+    "category": "电视",
+    "categories": [
+      "电视"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "电视"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "电视整机",
+    "source_url": null
+  },
+  {
+    "id": "CN:mi_cn:product:15323",
+    "model": "小米电视移动支架 单机",
+    "brand": "小米",
+    "category": "电视",
+    "categories": [
+      "电视",
+      "平板配件",
+      "其他配件",
+      "配件"
+    ],
+    "decision": "配件",
+    "basis": {
+      "accessory": true,
+      "basis": "category",
+      "matched": "平板配件"
+    },
+    "expected": "配件",
+    "correct": true,
+    "review_note": "电视移动支架，单机字样不能推翻支架主体",
+    "source_url": null
+  },
+  {
+    "id": "CN:mi_cn:product:11374",
+    "model": "米家扫拖机器人",
+    "brand": "小米",
+    "category": "吸尘器",
+    "categories": [
+      "吸尘器",
+      "洗地机",
+      "扫地机器人",
+      "配件",
+      "家电"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "扫拖机器人"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "扫拖机器人整机，误归配件类仍保留",
+    "source_url": null
+  },
+  {
+    "id": "CN:mi_cn:product:12308",
+    "model": "米家扫拖机器人G1 配件",
+    "brand": "小米",
+    "category": "洗地机",
+    "categories": [
+      "洗地机",
+      "扫地机器人",
+      "平板配件",
+      "其他配件",
+      "配件",
+      "家电"
+    ],
+    "decision": "配件",
+    "basis": {
+      "accessory": true,
+      "basis": "category",
+      "matched": "平板配件"
+    },
+    "expected": "配件",
+    "correct": true,
+    "review_note": "扫拖机器人 G1 配件",
+    "source_url": null
+  },
+  {
+    "id": "CN:mi_cn:product:20585",
+    "model": "REDMI显示器A27Q 多功能支架版 2025款",
+    "brand": "小米",
+    "category": "办公娱乐显示器",
+    "categories": [
+      "办公娱乐显示器",
+      "游戏电竞显示器"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "显示器"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "显示器的多功能支架版，商品主体是显示器",
+    "source_url": null
+  },
+  {
+    "id": "CN:mi_cn:product:25306",
+    "model": "小米手环11 标准版",
+    "brand": "小米",
+    "category": "穿戴配件",
+    "categories": [
+      "穿戴配件",
+      "穿戴"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "手环"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "手环 11 整机，误归穿戴配件类仍保留",
+    "source_url": null
+  },
+  {
+    "id": "CN:mi_cn:product:22458",
+    "model": "Xiaomi 17 Ultra 专业影像套装",
+    "brand": "小米",
+    "category": "平板配件",
+    "categories": [
+      "平板配件",
+      "其他配件",
+      "配件"
+    ],
+    "decision": "配件",
+    "basis": {
+      "accessory": true,
+      "basis": "category",
+      "matched": "平板配件"
+    },
+    "expected": "配件",
+    "correct": true,
+    "review_note": "手机专业影像套装为外接配件，非手机套机",
+    "source_url": null
+  },
+  {
+    "id": "CN:mi_cn:product:19813",
+    "model": "Redmi Pad Pro 钢化保护膜",
+    "brand": "小米",
+    "category": "平板",
+    "categories": [
+      "平板"
+    ],
+    "decision": "配件",
+    "basis": {
+      "accessory": true,
+      "basis": "name",
+      "matched": [
+        "保护膜"
+      ]
+    },
+    "expected": "配件",
+    "correct": true,
+    "review_note": "Pad 钢化保护膜，非平板",
+    "source_url": null
+  },
+  {
+    "id": "CN:mi_cn:product:10000108",
+    "model": "小米平板4",
+    "brand": "小米",
+    "category": "平板",
+    "categories": [
+      "平板"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "平板"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "小米平板 4 整机",
+    "source_url": null
+  },
+  {
+    "id": "CN:apple_cn:commodity:MG314CH/A",
+    "model": "iPhone Air",
+    "brand": "Apple",
+    "category": "手机",
+    "categories": [
+      "手机"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "iPhone"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "iPhone Air 手机整机",
+    "source_url": "https://www.apple.com.cn/shop/buy-iphone/iphone-air"
+  },
+  {
+    "id": "CN:hp_cn:sku:7Y0Y4PC",
+    "model": "惠普 锐14 14英寸商务笔记本电脑 AMD 锐龙™ 5 7530U 处理器 8GB+512GB AMD Radeon™",
+    "brand": "惠普",
+    "category": "笔记本",
+    "categories": [
+      "笔记本"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "笔记本"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "惠普商务笔记本完整电脑",
+    "source_url": "https://www.hpstore.cn/hp-245-14-inch-notebook-pc-7y0y4pc.html"
+  },
+  {
+    "id": "CN:fuji:kit:x-e5-xf23mmf28-r-wr",
+    "model": "FUJIFILM X-E5 + XF23mmF2.8 R WR 套机",
+    "brand": "富士",
+    "category": "相机",
+    "categories": [
+      "相机"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "no_accessory_match",
+      "matched": null
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "富士机身和镜头套机",
+    "source_url": "https://item.m.jd.com/product/10170879177338.html"
+  },
+  {
+    "id": "CN:fuji:lens:xc13-33mmf35-63-ois",
+    "model": "FUJINON XC13-33mmF3.5-6.3 OIS",
+    "brand": "富士",
+    "category": "相机镜头",
+    "categories": [
+      "相机镜头"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "no_accessory_match",
+      "matched": null
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "富士完整镜头，非镜头盖/遮光罩",
+    "source_url": "http://www.fujifilm-x.com/zh-cn/products/lenses/xc13-33mmf35-63-ois/"
+  },
+  {
+    "id": "CN:mi_cn:product:21660",
+    "model": "小米磁吸支架充电宝10000 7.5W",
+    "brand": "小米",
+    "category": "移动电源",
+    "categories": [
+      "移动电源",
+      "无线充电器"
+    ],
+    "decision": "整机",
+    "basis": {
+      "accessory": false,
+      "basis": "whole_device",
+      "matched": "充电宝"
+    },
+    "expected": "整机",
+    "correct": true,
+    "review_note": "磁吸支架充电宝，商品主体为充电宝",
+    "source_url": null
+  }
+]

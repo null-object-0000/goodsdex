@@ -1,0 +1,15 @@
+accessory gate: {"excluded_count": 1029, "newly_excluded_count": 1029, "denominator": 3946, "newly_excluded_ratio": 0.2607704004054739, "threshold": 0.05, "gate": "red", "review_sha256": "9b8fafafb1d7d9b3bde97b1a93ab0fb85d656a569ec49ecb64f3f95ca205388b", "reviewed": false}
+Traceback (most recent call last):
+  File "/home/nichangen/代码/self-code/goodsdex/scripts/finalize_public.py", line 22, in <module>
+    print(json.dumps(finalize_public(args.public, previous, retained, reviewed_accessory_sha256=args.reviewed_accessory_sha256), ensure_ascii=False))
+                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nichangen/代码/self-code/goodsdex/src/goodsdex/dedupe.py", line 732, in finalize_public
+    output, accessory_archive, accessory_audit = plan(
+                                                 ~~~~^
+        output, previous if previous is not None else rows, accessory_archive,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        reviewed_accessory_sha256)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nichangen/代码/self-code/goodsdex/src/goodsdex/accessories.py", line 93, in plan
+    raise ValueError('Accessory exclusion exceeds 5%; review this exact batch: ' + json.dumps(audit))
+ValueError: Accessory exclusion exceeds 5%; review this exact batch: {"excluded_count": 1029, "newly_excluded_count": 1029, "denominator": 3946, "newly_excluded_ratio": 0.2607704004054739, "threshold": 0.05, "gate": "red", "review_sha256": "9b8fafafb1d7d9b3bde97b1a93ab0fb85d656a569ec49ecb64f3f95ca205388b", "reviewed": false}

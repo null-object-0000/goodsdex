@@ -710,7 +710,7 @@ def dedupe_rows(rows):
     return output, audit
 
 
-def finalize_public(public, previous=None, retained_ids=()):
+def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessory_sha256=None):
     """Run after all brand publishers and guards, before push/OSS upload."""
     from goodsdex.supplements import metadata
     public = Path(public)
@@ -726,6 +726,13 @@ def finalize_public(public, previous=None, retained_ids=()):
     from goodsdex.series_release import apply_series_releases
     output = apply_series_releases(output)
     assert_public_fields(output)
+    from goodsdex.accessories import plan
+    archive_path = public / 'archive' / 'accessories.json'
+    accessory_archive = json.loads(archive_path.read_text()) if archive_path.exists() else []
+    output, accessory_archive, accessory_audit = plan(
+        output, previous if previous is not None else rows, accessory_archive,
+        reviewed_accessory_sha256)
+    retained_ids = set(retained_ids) | {r['id'] for r in accessory_archive}
     if previous is not None:
         from goodsdex.release_policy import assert_no_lost_ids
         assert_no_lost_ids(previous, output, retained_ids)
@@ -740,11 +747,18 @@ def finalize_public(public, previous=None, retained_ids=()):
     combined["conflicts"] = audit["conflicts"]
     combined["deduplication"] = audit
     combined["published_count"] = len(output)
+    combined["accessories"] = accessory_audit
     meta_path = public / "meta.json"
     meta = metadata(output, json.loads(meta_path.read_text()) if meta_path.exists() else {})
     from goodsdex.release_dates import coverage
     meta['release_dates'] = coverage(output)
+    from goodsdex.accessories import classify
+    meta['accessories'] = accessory_audit
+    meta['release_dates_other_brands'] = coverage([r for r in output if classify(r)['basis'] != 'car'])
+    meta['release_dates_cars'] = coverage([r for r in output if classify(r)['basis'] == 'car'])
     # All checks finish before the first release file is replaced.
+    archive_path.parent.mkdir(parents=True, exist_ok=True)
+    atomic_write(archive_path, accessory_archive)
     for name, value in (("goods.json", output), ("meta.json", meta), ("merge-audit.json", combined)):
         atomic_write(public / name, value)
     return audit
