@@ -49,6 +49,16 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
     manifest = json.loads((DOC / 'batches.json').read_text())
     expected = {key: b for b in manifest for key in b['ids']}
     assert len(expected) == sum(b['members'] for b in manifest) == 149
+    # Retain the historical manifest checks and independently add the reviewed
+    # expansion manifest. Only memberships present in this old snapshot apply.
+    present = {r['id'] for r in before}
+    expansion = json.loads((ROOT / 'docs/xiaomi-series-expansion-20261104/reviewed-new-batches.json').read_text())
+    for b in expansion:
+        r = b['series_release']
+        for m in b['members']:
+            if m['id'] in present:
+                assert m['id'] not in expected
+                expected[m['id']] = dict(date=r['date'],batch_id=b['id'],url=r['evidence']['url'],granularity=r['granularity'])
     command = [sys.executable, str(ROOT / 'scripts/finalize_public.py'), '--public', str(tmp_path)]
     subprocess.run(command, check=True)
     result = json.loads((tmp_path / 'goods.json').read_text())
@@ -64,7 +74,7 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
         row = by_id[key]
         series = row['release_series']
         assert (series['date'], series['batch_id'], series['evidence']['url']) == (batch['date'], batch['batch_id'], batch['url'])
-        assert series['granularity'] == 'month' and series['level'] == 'series'
+        assert series['granularity'] == batch.get('granularity','month') and series['level'] == 'series'
         assert series['inherited'] is (not bool((row.get('release') or {}).get('date')))
         assert series['evidence']['quote'] and len(series['evidence']['sha256']) == 64
         detail = json.loads((tmp_path / f'detail/{shard_for(key):02x}.json').read_text())

@@ -55,7 +55,8 @@ def test_finalizer_replays_and_details_only(tmp_path):
     command=[sys.executable,str(ROOT/'scripts/finalize_public.py'),'--public',str(tmp_path)]
     subprocess.run(command,check=True,capture_output=True)
     result=json.loads((tmp_path/'goods.json').read_bytes())
-    expected=apply_date_enrichment(json.loads(baseline))
+    from goodsdex.series_release import apply_series_releases
+    expected=apply_date_enrichment(apply_series_releases(json.loads(baseline)))
     # Other finalizer policies now backfill brands and archive 11 observed
     # accessories. Enrichment itself and every remaining field stay identical.
     archived=json.loads((tmp_path/'archive/accessories.json').read_text())

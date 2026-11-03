@@ -40,7 +40,7 @@ def test_pilot_preserves_product_dates_and_is_idempotent(rows):
 def test_product_priority_even_when_series_is_official(rows, source):
     row = deepcopy(rows[0])
     row['release'] = dict(date='2020-01', source=source)
-    row['release_series']['source'] = 'official'
+    row['release_series'].update(source='official', usage='reference', display_allowed=True)
     r = effective_release(row)
     assert r['date'] == '2020-01' and r['level'] == 'product'
     row['release']['source'] = 'llm'
@@ -81,7 +81,8 @@ def test_conflicts_rollback_and_year_precision(tmp_path, rows, bundle):
     path.write_text(json.dumps(bundle))
     out=apply_series_releases(rows,path)
     r=next(r['release_series'] for r in out if r['release_series']['batch_id']==bundle['batches'][0]['id'])
-    assert r['display']=='该系列 2025 年发布'
+    assert r['date']=='2025' and r['display'] is None
+    assert r['crosscheck_status']=='unverified' and r['usage']=='disabled'
 
 
 def test_series_cannot_enter_product_release(bundle):
