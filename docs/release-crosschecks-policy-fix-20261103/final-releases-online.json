@@ -1,0 +1,601 @@
+{
+  "checked_at": "2026-11-03T08:32:15.809991+00:00",
+  "expected_catalog_sha256": "7870aac56864a2012e74e8274662f2a3b18db3a9170db1c5ee86d502ecde6a3b",
+  "all_39_release_objects_equal": true,
+  "original_third_party_evidence_unchanged": true,
+  "all_5_detail_endpoints_equal": true,
+  "samples": [
+    {
+      "id": "CN:mi_cn:product:18520",
+      "name": "米家高速吹风机 H501",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A18520?evidence_policy=2026-11-03T08%3A32%3A15.809991%2B00%3A00",
+      "release": {
+        "date": "2023-05",
+        "granularity": "month",
+        "source": "third_party",
+        "confidence": "medium",
+        "event": "availability",
+        "market": "CN",
+        "evidence": {
+          "url": "https://www.ithome.com/0/695/691.htm",
+          "quote": "2023/5/27 18:30:41 来源： IT之家 作者： 一乖 责编： 一乖 评论： 小米 米家高速吹风机 H501 今年 5 月上市，官方售价 299 元。 ",
+          "locator": "article date + first paragraph",
+          "sha256": "cf81ffe69b4041e3d255d445ad7f1c92f76ea729f6c83c8033ae5ef4f9d613d0",
+          "captured_at": "2026-11-03T04:30:00.814548+00:00",
+          "source_type": "third_party"
+        },
+        "usage": "disabled",
+        "inferred": false,
+        "family": "CN:mi_cn:product:18520",
+        "display": null,
+        "label": "发售时间",
+        "checks": [
+          {
+            "source": "third_party",
+            "date": "2023-05",
+            "delta_days": 0,
+            "verdict": "original",
+            "evidence": {
+              "url": "https://www.ithome.com/0/695/691.htm",
+              "quote": "2023/5/27 18:30:41 来源： IT之家 作者： 一乖 责编： 一乖 评论： 小米 米家高速吹风机 H501 今年 5 月上市，官方售价 299 元。 ",
+              "locator": "article date + first paragraph",
+              "sha256": "cf81ffe69b4041e3d255d445ad7f1c92f76ea729f6c83c8033ae5ef4f9d613d0",
+              "captured_at": "2026-11-03T04:30:00.814548+00:00",
+              "source_type": "third_party"
+            },
+            "effective_verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": "2023-08",
+            "reason": "米家高速吹风机 H501 于2023年8月小米发布会亮相，并在中国大陆小米商城等渠道同期开售；公开资料通常记为2023年8月上市/开售。未混淆为后续 H501 SE 等衍生型号。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:28:02.459899+00:00",
+            "original_sha256": "720826950dd00ec255236ebae0d9d515b6958e8d07f67d974c3899e60669e7c6",
+            "prompt_sha256": "9818e59d05b8ef84a706ffb7ee7c909516714cd1b8a44e83a913cfb02efeebf1",
+            "response_sha256": "fa012c6c4f7540e503568dd22a19c8cc90b8db648805002fde6d4d19b4beea16",
+            "artifact": "docs/release-crosschecks-20261103/responses/505306672873b865a6067952.json",
+            "independent": true,
+            "delta_days": 90,
+            "verdict": "conflict",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2023-05"
+            },
+            "effective_verdict": "unverified",
+            "decision_reason": "unsupported_model_dissent_ignored"
+          },
+          {
+            "source": "llm",
+            "date": "2023-08",
+            "reason": "米家高速吹风机 H501 于2023年8月小米发布会亮相，并在中国大陆小米商城等渠道同期开售；公开资料通常记为2023年8月上市/开售。未混淆为后续 H501 SE 等衍生型号。",
+            "evidence": {
+              "url": null,
+              "quote": null
+            },
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:28:02.459899+00:00",
+            "original_sha256": "720826950dd00ec255236ebae0d9d515b6958e8d07f67d974c3899e60669e7c6",
+            "prompt_sha256": "9818e59d05b8ef84a706ffb7ee7c909516714cd1b8a44e83a913cfb02efeebf1",
+            "response_sha256": "fa012c6c4f7540e503568dd22a19c8cc90b8db648805002fde6d4d19b4beea16",
+            "artifact": "docs/release-crosschecks-20261103/responses/505306672873b865a6067952.json",
+            "independent": true,
+            "delta_days": 90,
+            "verdict": "conflict",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2023-05"
+            },
+            "effective_verdict": "unverified",
+            "decision_reason": "unsupported_model_dissent_ignored"
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "unverified",
+        "manual_review_required": false,
+        "display_allowed": false,
+        "internal_only": true
+      },
+      "release_equal": true
+    },
+    {
+      "id": "CN:mi_cn:product:23472",
+      "name": "Xiaomi Book Pro 14",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A23472?evidence_policy=2026-11-03T08%3A32%3A15.809991%2B00%3A00",
+      "release": {
+        "date": "2026-03",
+        "granularity": "month",
+        "source": "third_party",
+        "confidence": "high",
+        "event": "announcement",
+        "market": "CN",
+        "evidence": {
+          "url": "https://www.ithome.com/0/930/804.htm",
+          "quote": "02. 小米笔记本 Pro 14；小米品牌笔记本时隔四年重磅回归 。小米笔记本 Pro 14 采用流线楔形设计 + 丝绒镁合金机身，配备高强度碳纤维底盖、钛合金键盘支撑板、石墨烯铝合金散热鳍片。 机身厚度仅 14.95mm， 轻达 1.08kg ，官方称之为“公斤本”，提供柔雾蓝、雅灰、奶霜白及新增的柔光粉四款配色。 新笔记本至高搭载 第三代英特尔酷睿 Ultra X7 358H 处理器 （Intel 18A 2nm 级制程工艺），能效大幅提升，配备 10000mm² VC 散热模组，采用双风扇、三风道散热，持久性能释放可达 50W，宣称综合性能比肩 M5 芯片；可流畅运行 8B 本地大模型、3A 游戏和复杂渲染任务。 小米笔记本 Pro 14 配备 14.6 英寸 OLED 专业原色触控屏（3.1K / 120Hz / 1600nits 峰值亮度），拥有 129cm² 压感触控板；预留 M.2 2280 硬盘位，最高支持",
+          "locator": "article #paragraph / 02. 小米笔记本 Pro 14; article timestamp; explicitly dated launch event",
+          "sha256": "e04508442c3de4bac6c8aadc20ee78b2c4e5e8130855384524d0769835cceb63",
+          "captured_at": "2026-11-03T05:20:02.939005+00:00",
+          "source_type": "third_party"
+        },
+        "usage": "disabled",
+        "inferred": false,
+        "family": "round2:CN:mi_cn:product:23472",
+        "display": null,
+        "label": "发布时间",
+        "checks": [
+          {
+            "source": "third_party",
+            "date": "2026-03",
+            "delta_days": 0,
+            "verdict": "original",
+            "evidence": {
+              "url": "https://www.ithome.com/0/930/804.htm",
+              "quote": "02. 小米笔记本 Pro 14；小米品牌笔记本时隔四年重磅回归 。小米笔记本 Pro 14 采用流线楔形设计 + 丝绒镁合金机身，配备高强度碳纤维底盖、钛合金键盘支撑板、石墨烯铝合金散热鳍片。 机身厚度仅 14.95mm， 轻达 1.08kg ，官方称之为“公斤本”，提供柔雾蓝、雅灰、奶霜白及新增的柔光粉四款配色。 新笔记本至高搭载 第三代英特尔酷睿 Ultra X7 358H 处理器 （Intel 18A 2nm 级制程工艺），能效大幅提升，配备 10000mm² VC 散热模组，采用双风扇、三风道散热，持久性能释放可达 50W，宣称综合性能比肩 M5 芯片；可流畅运行 8B 本地大模型、3A 游戏和复杂渲染任务。 小米笔记本 Pro 14 配备 14.6 英寸 OLED 专业原色触控屏（3.1K / 120Hz / 1600nits 峰值亮度），拥有 129cm² 压感触控板；预留 M.2 2280 硬盘位，最高支持",
+              "locator": "article #paragraph / 02. 小米笔记本 Pro 14; article timestamp; explicitly dated launch event",
+              "sha256": "e04508442c3de4bac6c8aadc20ee78b2c4e5e8130855384524d0769835cceb63",
+              "captured_at": "2026-11-03T05:20:02.939005+00:00",
+              "source_type": "third_party"
+            },
+            "effective_verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": "2022-07",
+            "reason": "小米于2022年7月4日在中国发布Xiaomi Book Pro 14（2022款，12代酷睿），属于该型号在中国市场的首次正式发布。未将其与后续2024款或全球其他市场发布混淆。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:30:05.946385+00:00",
+            "original_sha256": "230cb1b3364a7c0a988f7917d73ba11e8e434f23981d35b159a14475029a3c1b",
+            "prompt_sha256": "0178f28b1bf1982af6792058e1571f2fef42a91d6480983df78c88a48423c4ae",
+            "response_sha256": "e05af8b7f3dc69a7bbb2041247da96e77a3e07795c12647b864ef69bdc7e7869",
+            "artifact": "docs/release-crosschecks-20261103/responses/23551b4ffea3e4a5a7a102d7.json",
+            "independent": true,
+            "delta_days": 1320,
+            "verdict": "conflict",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2026-03"
+            },
+            "effective_verdict": "unverified",
+            "decision_reason": "unsupported_model_dissent_ignored"
+          },
+          {
+            "source": "llm",
+            "date": "2022-07",
+            "reason": "小米于2022年7月4日在中国发布Xiaomi Book Pro 14（2022款，12代酷睿），属于该型号在中国市场的首次正式发布。未将其与后续2024款或全球其他市场发布混淆。",
+            "evidence": {
+              "url": null,
+              "quote": null
+            },
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:30:05.946385+00:00",
+            "original_sha256": "230cb1b3364a7c0a988f7917d73ba11e8e434f23981d35b159a14475029a3c1b",
+            "prompt_sha256": "0178f28b1bf1982af6792058e1571f2fef42a91d6480983df78c88a48423c4ae",
+            "response_sha256": "e05af8b7f3dc69a7bbb2041247da96e77a3e07795c12647b864ef69bdc7e7869",
+            "artifact": "docs/release-crosschecks-20261103/responses/23551b4ffea3e4a5a7a102d7.json",
+            "independent": true,
+            "delta_days": 1320,
+            "verdict": "conflict",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2026-03"
+            },
+            "effective_verdict": "unverified",
+            "decision_reason": "unsupported_model_dissent_ignored"
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "unverified",
+        "manual_review_required": false,
+        "display_allowed": false,
+        "internal_only": true
+      },
+      "release_equal": true
+    },
+    {
+      "id": "CN:mi_cn:product:25445",
+      "name": "Xiaomi Pad 9 Pro",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A25445?evidence_policy=2026-11-03T08%3A32%3A15.809991%2B00%3A00",
+      "release": {
+        "date": "2026-09",
+        "granularity": "month",
+        "source": "third_party",
+        "confidence": "high",
+        "event": "announcement",
+        "market": "CN",
+        "evidence": {
+          "url": "https://www.ithome.com/1/006/476.htm",
+          "quote": "三、小米平板 9 系列；在小米 18 Pro 系列发布完毕后，紧接着登场的是小米平板 9 系列。 具体来看，小米平板 9 配备 11.2 英寸的屏幕，提供冰桃粉、云杉绿、黑、银四种配色；搭载第四代骁龙 8s 芯片、内置 9720mAh 大电池。 小米平板 9 Pro 则采用 12.5 英寸大屏，提供云杉绿、黑、银三种配色； 配备第五代骁龙 8 ，内置 11000mAh 大电池。 全系搭载小米澎湃 OS 4，适配 PC 级专业应用，升级 AI 笔记。 价格方面： 小米平板 9 8GB+128GB ：2999 元 8GB+256GB ：3299 元 8GB+256GB 柔光版：3499 元 12GB+256GB ：3799 元 小米平板 9 Pro 8GB+128GB ：3799 元 8GB+256GB ：4099 元 12GB+256GB ：4599 元 12GB+256GB 柔光版：4799 元 16GB+256",
+          "locator": "article #paragraph / 三、小米平板 9 系列; article timestamp; explicitly dated launch event",
+          "sha256": "4dae9419fd031e8157dd101447048a4e8b2a9d2076860093eabf72bc2d0836a5",
+          "captured_at": "2026-11-03T05:20:02.781033+00:00",
+          "source_type": "third_party"
+        },
+        "usage": "disabled",
+        "inferred": false,
+        "family": "round2:CN:mi_cn:product:25445",
+        "display": null,
+        "label": "发布时间",
+        "checks": [
+          {
+            "source": "third_party",
+            "date": "2026-09",
+            "delta_days": 0,
+            "verdict": "original",
+            "evidence": {
+              "url": "https://www.ithome.com/1/006/476.htm",
+              "quote": "三、小米平板 9 系列；在小米 18 Pro 系列发布完毕后，紧接着登场的是小米平板 9 系列。 具体来看，小米平板 9 配备 11.2 英寸的屏幕，提供冰桃粉、云杉绿、黑、银四种配色；搭载第四代骁龙 8s 芯片、内置 9720mAh 大电池。 小米平板 9 Pro 则采用 12.5 英寸大屏，提供云杉绿、黑、银三种配色； 配备第五代骁龙 8 ，内置 11000mAh 大电池。 全系搭载小米澎湃 OS 4，适配 PC 级专业应用，升级 AI 笔记。 价格方面： 小米平板 9 8GB+128GB ：2999 元 8GB+256GB ：3299 元 8GB+256GB 柔光版：3499 元 12GB+256GB ：3799 元 小米平板 9 Pro 8GB+128GB ：3799 元 8GB+256GB ：4099 元 12GB+256GB ：4599 元 12GB+256GB 柔光版：4799 元 16GB+256",
+              "locator": "article #paragraph / 三、小米平板 9 系列; article timestamp; explicitly dated launch event",
+              "sha256": "4dae9419fd031e8157dd101447048a4e8b2a9d2076860093eabf72bc2d0836a5",
+              "captured_at": "2026-11-03T05:20:02.781033+00:00",
+              "source_type": "third_party"
+            },
+            "effective_verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": "2024-02-22",
+            "reason": "小米于2024年2月22日在中国发布Xiaomi Pad 6S Pro 12.4；但所给型号“Xiaomi Pad 9 Pro”并非已知的小米平板型号，无法确认该型号在中国市场的首次正式发布，故弃答。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:30:21.458266+00:00",
+            "original_sha256": "f8d348e2868ff2db4d56915b5ed0ccf9f097a98c1494048a2453597f7e46fc1a",
+            "prompt_sha256": "ead61b86d14972fc8a7257fa7645fa83439d4a73eac08c6653073365667d279d",
+            "response_sha256": "1c7e3e13479e5619ef60361d614e64ef232fa92d59f80ea53ad553f6b0efd44f",
+            "artifact": "docs/release-crosschecks-20261103/responses/4c113d35e926fc8a4ac97769.json",
+            "independent": true,
+            "delta_days": 930,
+            "verdict": "conflict",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2026-09"
+            },
+            "effective_verdict": "unverified",
+            "decision_reason": "unsupported_model_dissent_ignored"
+          },
+          {
+            "source": "llm",
+            "date": "2024-02-22",
+            "reason": "小米于2024年2月22日在中国发布Xiaomi Pad 6S Pro 12.4；但所给型号“Xiaomi Pad 9 Pro”并非已知的小米平板型号，无法确认该型号在中国市场的首次正式发布，故弃答。",
+            "evidence": null,
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:30:21.458266+00:00",
+            "original_sha256": "f8d348e2868ff2db4d56915b5ed0ccf9f097a98c1494048a2453597f7e46fc1a",
+            "prompt_sha256": "ead61b86d14972fc8a7257fa7645fa83439d4a73eac08c6653073365667d279d",
+            "response_sha256": "1c7e3e13479e5619ef60361d614e64ef232fa92d59f80ea53ad553f6b0efd44f",
+            "artifact": "docs/release-crosschecks-20261103/responses/4c113d35e926fc8a4ac97769.json",
+            "independent": true,
+            "delta_days": 930,
+            "verdict": "conflict",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2026-09"
+            },
+            "effective_verdict": "unverified",
+            "decision_reason": "unsupported_model_dissent_ignored"
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "unverified",
+        "manual_review_required": false,
+        "display_allowed": false,
+        "internal_only": true
+      },
+      "release_equal": true
+    },
+    {
+      "id": "CN:mi_cn:product:25446",
+      "name": "Xiaomi Pad 9",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A25446?evidence_policy=2026-11-03T08%3A32%3A15.809991%2B00%3A00",
+      "release": {
+        "date": "2026-09",
+        "granularity": "month",
+        "source": "third_party",
+        "confidence": "high",
+        "event": "announcement",
+        "market": "CN",
+        "evidence": {
+          "url": "https://www.ithome.com/1/006/476.htm",
+          "quote": "三、小米平板 9 系列；在小米 18 Pro 系列发布完毕后，紧接着登场的是小米平板 9 系列。 具体来看，小米平板 9 配备 11.2 英寸的屏幕，提供冰桃粉、云杉绿、黑、银四种配色；搭载第四代骁龙 8s 芯片、内置 9720mAh 大电池。 小米平板 9 Pro 则采用 12.5 英寸大屏，提供云杉绿、黑、银三种配色； 配备第五代骁龙 8 ，内置 11000mAh 大电池。 全系搭载小米澎湃 OS 4，适配 PC 级专业应用，升级 AI 笔记。 价格方面： 小米平板 9 8GB+128GB ：2999 元 8GB+256GB ：3299 元 8GB+256GB 柔光版：3499 元 12GB+256GB ：3799 元 小米平板 9 Pro 8GB+128GB ：3799 元 8GB+256GB ：4099 元 12GB+256GB ：4599 元 12GB+256GB 柔光版：4799 元 16GB+256",
+          "locator": "article #paragraph / 三、小米平板 9 系列; article timestamp; explicitly dated launch event",
+          "sha256": "4dae9419fd031e8157dd101447048a4e8b2a9d2076860093eabf72bc2d0836a5",
+          "captured_at": "2026-11-03T05:20:02.781033+00:00",
+          "source_type": "third_party"
+        },
+        "usage": "disabled",
+        "inferred": false,
+        "family": "round2:CN:mi_cn:product:25446",
+        "display": null,
+        "label": "发布时间",
+        "checks": [
+          {
+            "source": "third_party",
+            "date": "2026-09",
+            "delta_days": 0,
+            "verdict": "original",
+            "evidence": {
+              "url": "https://www.ithome.com/1/006/476.htm",
+              "quote": "三、小米平板 9 系列；在小米 18 Pro 系列发布完毕后，紧接着登场的是小米平板 9 系列。 具体来看，小米平板 9 配备 11.2 英寸的屏幕，提供冰桃粉、云杉绿、黑、银四种配色；搭载第四代骁龙 8s 芯片、内置 9720mAh 大电池。 小米平板 9 Pro 则采用 12.5 英寸大屏，提供云杉绿、黑、银三种配色； 配备第五代骁龙 8 ，内置 11000mAh 大电池。 全系搭载小米澎湃 OS 4，适配 PC 级专业应用，升级 AI 笔记。 价格方面： 小米平板 9 8GB+128GB ：2999 元 8GB+256GB ：3299 元 8GB+256GB 柔光版：3499 元 12GB+256GB ：3799 元 小米平板 9 Pro 8GB+128GB ：3799 元 8GB+256GB ：4099 元 12GB+256GB ：4599 元 12GB+256GB 柔光版：4799 元 16GB+256",
+              "locator": "article #paragraph / 三、小米平板 9 系列; article timestamp; explicitly dated launch event",
+              "sha256": "4dae9419fd031e8157dd101447048a4e8b2a9d2076860093eabf72bc2d0836a5",
+              "captured_at": "2026-11-03T05:20:02.781033+00:00",
+              "source_type": "third_party"
+            },
+            "effective_verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": "2023-11-29",
+            "reason": "小米于2023年11月29日在中国举行的Redmi十周年暨K70系列发布会上正式发布Xiaomi Pad 9（小米平板9），该日期为发布会当日，属首次正式发布而非开售。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:30:22.815552+00:00",
+            "original_sha256": "f8d348e2868ff2db4d56915b5ed0ccf9f097a98c1494048a2453597f7e46fc1a",
+            "prompt_sha256": "5a8394d1feed17b6adabc08bd8a115921b9ba7c567f33f86caae1188d6daee0f",
+            "response_sha256": "59aae694c41d19a08101d347987475ceacc18793f5a02df7730bb52ec2b1a4b1",
+            "artifact": "docs/release-crosschecks-20261103/responses/3e04f2bc2b15629b49d12d0c.json",
+            "independent": true,
+            "delta_days": 1020,
+            "verdict": "conflict",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2026-09"
+            },
+            "effective_verdict": "unverified",
+            "decision_reason": "unsupported_model_dissent_ignored"
+          },
+          {
+            "source": "llm",
+            "date": "2023-11-29",
+            "reason": "小米于2023年11月29日在中国举行的Redmi十周年暨K70系列发布会上正式发布Xiaomi Pad 9（小米平板9），该日期为发布会当日，属首次正式发布而非开售。",
+            "evidence": {
+              "url": null,
+              "quote": null
+            },
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:30:22.815552+00:00",
+            "original_sha256": "f8d348e2868ff2db4d56915b5ed0ccf9f097a98c1494048a2453597f7e46fc1a",
+            "prompt_sha256": "5a8394d1feed17b6adabc08bd8a115921b9ba7c567f33f86caae1188d6daee0f",
+            "response_sha256": "59aae694c41d19a08101d347987475ceacc18793f5a02df7730bb52ec2b1a4b1",
+            "artifact": "docs/release-crosschecks-20261103/responses/3e04f2bc2b15629b49d12d0c.json",
+            "independent": true,
+            "delta_days": 1020,
+            "verdict": "conflict",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2026-09"
+            },
+            "effective_verdict": "unverified",
+            "decision_reason": "unsupported_model_dissent_ignored"
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "unverified",
+        "manual_review_required": false,
+        "display_allowed": false,
+        "internal_only": true
+      },
+      "release_equal": true
+    },
+    {
+      "id": "CN:mi_cn:product:5059",
+      "name": "小米活塞耳机",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A5059?evidence_policy=2026-11-03T08%3A32%3A15.809991%2B00%3A00",
+      "release": {
+        "date": "2013-06",
+        "granularity": "month",
+        "source": "third_party",
+        "confidence": "high",
+        "event": "availability",
+        "market": "CN",
+        "evidence": {
+          "url": "https://www.ithome.com/0/047/461.htm",
+          "quote": "2013/6/24 20:47:27 来源： IT之家 作者： 子非 责编： 子非 评论： 6月24日晚间消息，小米活塞耳机价格正式公布：99元。",
+          "locator": "article timestamp + opening explicit release sentence",
+          "sha256": "4fa35fcb8455031847fcf763fa566b8eba27f444ecf4cc10b0d64a8e994510b1",
+          "captured_at": "2026-11-03T05:19:36.433014+00:00",
+          "source_type": "third_party"
+        },
+        "usage": "disabled",
+        "inferred": false,
+        "family": "round2:CN:mi_cn:product:5059",
+        "display": null,
+        "label": "发售时间",
+        "checks": [
+          {
+            "source": "third_party",
+            "date": "2013-06",
+            "delta_days": 0,
+            "verdict": "original",
+            "evidence": {
+              "url": "https://www.ithome.com/0/047/461.htm",
+              "quote": "2013/6/24 20:47:27 来源： IT之家 作者： 子非 责编： 子非 评论： 6月24日晚间消息，小米活塞耳机价格正式公布：99元。",
+              "locator": "article timestamp + opening explicit release sentence",
+              "sha256": "4fa35fcb8455031847fcf763fa566b8eba27f444ecf4cc10b0d64a8e994510b1",
+              "captured_at": "2026-11-03T05:19:36.433014+00:00",
+              "source_type": "third_party"
+            },
+            "effective_verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": "2013-09",
+            "reason": "小米活塞耳机（第一代）于2013年9月随小米3发布会推出，并在小米官网正式开售；公开资料通常记为2013年9月上市。具体开售日无法独立确证到日，故仅给到月。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:30:28.521630+00:00",
+            "original_sha256": "0326b0a9c1250ce51560263fdcdfa03993fa70b918e11fc9f33ee452b17b3700",
+            "prompt_sha256": "2c27943adb8853c1ab426065ff37d7bbaf52e656b9f4064475d02bccbeb29876",
+            "response_sha256": "2325c8dc7e768da4d4b798989b8c9cb25aecfeb5f07395c7e4455a4147e426b0",
+            "artifact": "docs/release-crosschecks-20261103/responses/a267650478af0bc43244c24d.json",
+            "independent": true,
+            "delta_days": 90,
+            "verdict": "conflict",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2013-06"
+            },
+            "effective_verdict": "unverified",
+            "decision_reason": "unsupported_model_dissent_ignored"
+          },
+          {
+            "source": "llm",
+            "date": "2013-09",
+            "reason": "小米活塞耳机（第一代）于2013年9月随小米3发布会推出，并在小米官网正式开售；公开资料通常记为2013年9月上市。具体开售日无法独立确证到日，故仅给到月。",
+            "evidence": {
+              "url": null,
+              "quote": null
+            },
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:30:28.521630+00:00",
+            "original_sha256": "0326b0a9c1250ce51560263fdcdfa03993fa70b918e11fc9f33ee452b17b3700",
+            "prompt_sha256": "2c27943adb8853c1ab426065ff37d7bbaf52e656b9f4064475d02bccbeb29876",
+            "response_sha256": "2325c8dc7e768da4d4b798989b8c9cb25aecfeb5f07395c7e4455a4147e426b0",
+            "artifact": "docs/release-crosschecks-20261103/responses/a267650478af0bc43244c24d.json",
+            "independent": true,
+            "delta_days": 90,
+            "verdict": "conflict",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2013-06"
+            },
+            "effective_verdict": "unverified",
+            "decision_reason": "unsupported_model_dissent_ignored"
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "unverified",
+        "manual_review_required": false,
+        "display_allowed": false,
+        "internal_only": true
+      },
+      "release_equal": true
+    }
+  ],
+  "health": {
+    "now": 1793694741752,
+    "gitCommit": "91304e8f54cc6bed304fbc27e942029fe0e9df1e",
+    "data": {
+      "revision": null,
+      "generatedAt": "2026-11-03T08:14:07.976869+00:00",
+      "count": 3968,
+      "lastSyncAt": 1793694018740,
+      "staleMinutes": 12,
+      "lastError": null,
+      "attempts": 1342,
+      "files": {
+        "index/hp_cn.json": {
+          "bytes": 439552,
+          "sha256": "6e04f14ede162c6f5ca2a67d1632db7a646a7eac29ec1b85219549726498bb50",
+          "fetchedAt": 1793694015916,
+          "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+        },
+        "index/mi_cn.json": {
+          "bytes": 78131,
+          "sha256": "b4d7fb6bbdcd3eb7623a74770265e9cf1755a9ae324f6f02570dc095a6a239a9",
+          "fetchedAt": 1793694015987,
+          "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+        },
+        "index/apple_cn.json": {
+          "bytes": 3339610,
+          "sha256": "6f3ee4cb282a79aa254510fc04c8919f6c3e3b0b4be409cacaef5a5856b9f3ab",
+          "fetchedAt": 1793694016274,
+          "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+        },
+        "index/dji.json": {
+          "bytes": 952666,
+          "sha256": "e01a37de51b6b3ad09954f3996951dc4060e1802dd00e3b3b6e2a829eda08931",
+          "fetchedAt": 1793694016464,
+          "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+        },
+        "index/fuji.json": {
+          "bytes": 152984,
+          "sha256": "7caaeb7da0c0bc9e326883835ba057f0f06557043210ee1e597e6e57d12d5bd8",
+          "fetchedAt": 1793694016517,
+          "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+        },
+        "index/byd.json": {
+          "bytes": 70458,
+          "sha256": "086ee45cc5480c317716424004a91fe27c317587c1a76d3f4160ba7c5e91241b",
+          "fetchedAt": 1793694016525,
+          "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+        },
+        "index/xiaomi_ev.json": {
+          "bytes": 27826,
+          "sha256": "4a3ba22e9046bee2c12e6783bbfce194d2b58a48fe81da805cfee4292546437f",
+          "fetchedAt": 1793694016575,
+          "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+        },
+        "index/other.json": {
+          "bytes": 1077195,
+          "sha256": "5a35266eedf10354620c29539c369736fb816a0eb90fb1c86304b22501929d24",
+          "fetchedAt": 1793694016682,
+          "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+        },
+        "prices/latest.json": {
+          "bytes": 188518,
+          "sha256": "fbec6b0e8dccb57689eb6a4580035cae3ce4bb8a912bda3b8821408c9e8a274c",
+          "fetchedAt": 1793694018740,
+          "source": "https://cdn.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/latest.json"
+        },
+        "meta.json": {
+          "bytes": 10175,
+          "sha256": "ff98c0883b70841064f913fac7d7bc8239cc3878f993033c8a66ba50533bbbe2",
+          "fetchedAt": 1793694018740,
+          "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+        }
+      },
+      "history": {
+        "months": {
+          "2026-10": {
+            "validators": {
+              "https://cdn.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-10.jsonl": "W/\"1164156-62ef621263e37620\"",
+              "https://fastly.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-10.jsonl": "W/\"1164156-62ef621263e37620\""
+            },
+            "lastAttemptAt": 1793691317526,
+            "bytes": 18235734,
+            "parsedLines": 122,
+            "insertedPoints": 0,
+            "observationPoints": 207589,
+            "uniqueGids": 1909,
+            "sha256": "57933720477abcef38193a7afd54bf4b76d8c49d1b2107eb2ca4b3fae42a093f",
+            "goodsMatchedRows": 2041,
+            "sourceUrl": "https://fastly.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-10.jsonl",
+            "lastCheckedAt": 1793691331725,
+            "lastError": null,
+            "notModified": false
+          },
+          "2026-11": {
+            "validators": {
+              "https://cdn.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-11.jsonl": "W/\"79bca2-5c7cd704544fedf9\""
+            },
+            "lastAttemptAt": 1793682316933,
+            "lastError": null,
+            "bytes": 7978146,
+            "parsedLines": 51,
+            "insertedPoints": 8905,
+            "observationPoints": 90831,
+            "uniqueGids": 1781,
+            "sha256": "6759d2a8077e375fbf2df49f0b505aeb248dd900e3109c791a4dea9ad575f932",
+            "goodsMatchedRows": 2036,
+            "sourceUrl": "https://cdn.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/2026-11.jsonl",
+            "lastCheckedAt": 1793682327428,
+            "notModified": false
+          }
+        },
+        "lastError": null,
+        "maintenance": {
+          "lastAttemptAt": 1793644516622,
+          "plan": {
+            "dryRun": true,
+            "days": 90,
+            "cutoff": "2026-08-05T00:00:00.000Z",
+            "deleteRows": 0,
+            "aggregateInputRows": 0,
+            "aggregateRows": 0,
+            "archiveFiles": 25,
+            "archiveBytes": 30871098
+          },
+          "lastError": null,
+          "lastSuccessAt": 1793644517287
+        }
+      }
+    }
+  }
+}

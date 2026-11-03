@@ -42,4 +42,37 @@ PYTHONPATH=src:scripts python3 -m pytest -q
 
 最新数据分支的 3968 条本地重建：全部非 release 字段逐值不变，39 条原证据逐值不变，重建幂等。基线全量 395 passed；修改后全量 402 passed。离线 394 passed / 8 deselected。保留原有第三方证据和原始响应存档；仅补齐组装时丢弃的 evidence 字段。
 
-线上发布结果与真实接口摘录在发布完成后记录于本目录。
+## 发布与线上验收
+
+修复提交 `5c137ecb`，补充“佐证必须直接匹配原日期”的边界检查提交 `084086d1`。首次[发布任务](https://github.com/null-object-0000/goodsdex/actions/runs/41601563634)成功；[首次线上验收](online-verification.json)确认 3968 条整库与 data 提交 `11912936` 逐值相等，11 个真实详情接口逐字段相等。
+
+修复前启动的惠普任务（代码 `e2df5d48`）随后发布了旧规则，又将 5 条日期置空；[实际数据证据](inflight-old-publication.json)指向 data 提交 `556a9037`。因此在它之后执行[最终重建任务](https://github.com/null-object-0000/goodsdex/actions/runs/41602363224)，任务最终 success，OSS 上传及读回校验通过。data 提交 `668faa2b` 恢复这 5 条，同时保留惠普更新，没有撤销其他采集结果。最终发布状态见 [publication.json](publication.json)，数据提交及哈希见 [published-data.json](published-data.json)。
+
+[最终线上验收](final-releases-online.json)直接读取 `/api/goods` 的 39 个 release 对象及这 5 个真实详情接口，与最终 data 提交 `668faa2b` 的 release 对象逐字段相等；所有原 third_party 证据保持一致。服务同步周期为 15 分钟，首次发布后等待了实际 API 更新；最终验收比较的是日期对象，并未把不同轮次的非日期字段冒充相等。[客户端验证](client-verification.json)确认这 25 条内部日期不产生年份/月回退展示。
+
+可复现最终接口验证：
+
+```bash
+python3 docs/release-crosschecks-policy-fix-20261103/verify_online.py --expected /path/to/final/goods.json
+```
+
+H501 实际 `/api/goods/CN:mi_cn:product:18520` 返回摘录（仅省略旁支字段；完整对象见最终线上验收文件）：
+
+
+```json
+{
+  "id": "CN:mi_cn:product:18520",
+  "release": {
+    "date": "2023-05",
+    "source": "third_party",
+    "display_allowed": false,
+    "internal_only": true,
+    "crosscheck_status": "unverified",
+    "manual_review_required": false,
+    "evidence": {
+      "url": "https://www.ithome.com/0/695/691.htm",
+      "quote": "2023/5/27 18:30:41 来源： IT之家 作者： 一乖 责编： 一乖 评论： 小米 米家高速吹风机 H501 今年 5 月上市，官方售价 299 元。 "
+    }
+  }
+}
+```
