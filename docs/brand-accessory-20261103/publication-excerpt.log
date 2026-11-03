@@ -1,0 +1,4 @@
+publish / publish	UNKNOWN STEP	2026-11-03T15:21:53.2465984Z 238 passed in 18.75s
+publish / publish	UNKNOWN STEP	2026-11-03T15:22:08.8140539Z accessory gate: {"excluded_count": 62, "newly_excluded_count": 11, "denominator": 2887, "newly_excluded_ratio": 0.0038101835815725666, "threshold": 0.05, "gate": "green", "review_sha256": "d79c1b3b256163081571bedc3056c553765494ea5c627af6f2fcae3c4bead8b1", "reviewed": false}
+publish / publish	UNKNOWN STEP	2026-11-03T15:22:15.6511356Z    b07660b..47cfd50  HEAD -> data
+publish / publish	UNKNOWN STEP	2026-11-03T15:23:28.7356158Z ^[[36;1mprint(f"Accessory exclusions: new={accessory.get('newly_excluded_count')}, ratio={accessory.get('newly_excluded_ratio')}, gate={accessory.get('gate')}, exact batch reviewed={accessory.get('reviewed')}")^[[0m

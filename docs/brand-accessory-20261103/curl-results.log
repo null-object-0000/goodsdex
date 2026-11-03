@@ -1,0 +1,30 @@
++ jq '{count,brands,xiaomi_index_count:.files["index/mi_cn.json"].count,unknown_index_count:.files["index/other.json"].count}'
++ curl --noproxy '*' --compressed --connect-timeout 10 --max-time 30 -fsS https://spend.snewbie.site/api/meta
+{
+  "count": 2898,
+  "brands": {
+    "Apple": 635,
+    "比亚迪": 14,
+    "大疆": 281,
+    "富士": 63,
+    "惠普": 218,
+    "小米": 1684,
+    "小米汽车": 3
+  },
+  "xiaomi_index_count": 1684,
+  "unknown_index_count": 0
+}
++ curl --noproxy '*' --compressed --connect-timeout 10 --max-time 30 -fsSG https://spend.snewbie.site/api/goods/search --data-urlencode brand=小米 --data-urlencode limit=1
++ jq '{total,productTotal,facets_version}'
+{
+  "total": 1457,
+  "productTotal": 1457,
+  "facets_version": 2
+}
++ jq '{total,productTotal,facets_version}'
++ curl --noproxy '*' --compressed --connect-timeout 10 --max-time 30 -fsSG https://spend.snewbie.site/api/goods/search --data-urlencode brand=小米 --data-urlencode limit=1 --data-urlencode facets_version=1
+{
+  "total": 1681,
+  "productTotal": 1681,
+  "facets_version": 1
+}
