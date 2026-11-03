@@ -12,6 +12,8 @@ on:
         default: false
 permissions:
   contents: write
+  actions: read
+  checks: read
 jobs:
   collect:
     runs-on: ubuntu-latest

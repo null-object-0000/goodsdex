@@ -20,7 +20,7 @@ import oss2
 ENDPOINT = 'https://oss-cn-shanghai.aliyuncs.com'
 BUCKET = 'spend-good'
 PREFIX = 'data/public/'
-FILES = ('goods.json', 'meta.json', 'merge-audit.json')
+FILES = ('goods.json', 'meta.json', 'merge-audit.json', 'sources-status.json')
 
 
 def upload_release(public, uploads, make_bucket, workers=4):

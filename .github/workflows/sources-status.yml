@@ -1,0 +1,56 @@
+# Independent heartbeat: report failed/stopped collectors even if no candidate publishes.
+name: sources-status
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+  checks: read
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: goodsdex-data-publication
+      cancel-in-progress: false
+      queue: max
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/checkout@v4
+        with:
+          ref: data
+          path: _data
+          fetch-depth: 1
+      - name: Test liveness contract
+        run: |
+          python3 -m pip install --quiet pytest oss2
+          PYTHONPATH=src:scripts python3 -m pytest -q tests/test_sources_status.py tests/test_mirror_public.py tests/test_shards.py
+      - name: Snapshot status and update only its manifest descriptor
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/generate_sources_status.py --public _data/public
+      - name: Publish status under the shared publication lock
+        run: |
+          cd _data
+          git config user.name goodsdex-bot
+          git config user.email goodsdex-bot@users.noreply.github.com
+          git add -f public/sources-status.json public/meta.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Sources status $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push origin HEAD:data
+      - name: Mirror and verify OSS (manifest last)
+        env:
+          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+        run: python3 scripts/mirror_public_to_oss.py --public _data/public
+      - name: Record status evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sources-status-${{ github.run_id }}
+          path: _data/public/sources-status.json

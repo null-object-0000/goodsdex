@@ -71,6 +71,11 @@ def build_shards(public):
         write(f'detail/{n:02x}.json', bucket, len(bucket))
     raw = (public / 'goods.json').read_bytes()
     files['goods.json'] = dict(sha256=hashlib.sha256(raw).hexdigest(), count=len(rows), bytes=len(raw), usage='full export; do not use for clients')
+    status_path = public / 'sources-status.json'
+    if status_path.exists():
+        raw = status_path.read_bytes()
+        files['sources-status.json'] = dict(sha256=hashlib.sha256(raw).hexdigest(),
+            bytes=len(raw), count=len(json.loads(raw)['sources']))
     meta_path = public / 'meta.json'
     meta = json.loads(meta_path.read_bytes()) if meta_path.exists() else {}
     meta.update(schema=SCHEMA, count=len(rows), files=files,
