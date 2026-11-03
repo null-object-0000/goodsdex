@@ -13,3 +13,22 @@ stale 严格采用 `now - lastSuccessAt > interval * 2`；没有可确认成功�
 凭证仅从环境读取，下载签名日志 URL 不转发 GitHub Authorization。所有复用调用方已授予 actions:read、checks:read，采集 job 原有 contents:read 权限保持。
 
 本地示例：`python3 scripts/generate_sources_status.py --public /tmp/sources-status --repository null-object-0000/goodsdex`。不设置 GITHUB_TOKEN 时，五项均为 unknown，error 为“缺少 GITHUB_TOKEN”。
+
+## 线上验收过程
+
+- 代码提交：`3ffc89c59ac23adad81c567feff9e21f97463408`。
+- 完整离线测试：基线 474 passed / 8 deselected；修改后 491 passed / 8 deselected。线上 tests run `41650759210` 同样 491 passed / 8 deselected；没有新增失败测试。
+- 独立状态 workflow `41650792200` 成功，首次发布已核实 HTTP 200，data/OSS/meta.files SHA256 三方一致。
+- 为额外覆盖普通发布入口，手动运行 refresh-prices。首次 run `41650786852` 与恰好已在执行的定时 prices 候选重叠，被现有 `data/prices/latest.json.fetched_at` 并发门禁拒绝；尚未运行测试或新增状态生成步骤。
+- 重新采集的 run `41652101033` 第一次发布尝试遇 GitHub ArtifactService/ListArtifacts 超时，actions/download-artifact 自动重试五次仍失败，同样尚未运行新增逻辑；只重跑该 run 的失败发布 job。
+- 并行的旧代码 HP run `41650568393` 采集失败，真实状态应如实呈现；未修改 HP 采集器或绕过门禁。
+
+## 最终结果
+
+- 普通采集 + 统一发布：[41652101033](https://github.com/null-object-0000/goodsdex/actions/runs/41652101033)，重跑失败 job 后成功；发布门禁 198 passed。状态生成、finalize 收录及 OSS alias 回读证据见 `normal-publish-excerpt.log`。
+- 最后一轮独立巡检：[41653377310](https://github.com/null-object-0000/goodsdex/actions/runs/41653377310)，成功；快照生成于 `2026-11-03T14:25:38Z`。
+- data 提交：`c5edd060914b2f4ebb0bd970d015c8a3a1303b68`。实际确认该状态提交仅修改状态文件及 meta 中它的描述，其他 meta 字段和所有商品描述符完全相同。
+- `curl https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/sources-status.json`：HTTP **200**。
+- data 文件 / OSS 文件 / meta.files SHA256 均为 `f8cf8fe369ebb60a0688b2df8ca88ccb7d8b29300a34677b64c2b362d568cfdd`。
+- 五条记录的 GitHub 成功时间逐一核对一致。`github-run-comparison.json` 记录最近尝试 run、最近成功 run，发布另记实际 job id `125975817195`。完整发布 JSON 见 `sources-status.json`，OSS 回读原文见 `oss-sources-status.json`，自动核对脚本为 `verify.py`，汇总为 `verification.json`。
+- 真实异常：HP 最新采集失败；汽车最新采集失败且已 87.0 小时无成功运行，stale=true。均如实发布，未将失败改为成功。

@@ -1,0 +1,25 @@
+status	Set up job	2026-11-03T14:11:22.8039935Z ##[group]GITHUB_TOKEN Permissions
+status	Set up job	2026-11-03T14:11:22.8041446Z Actions: read
+status	Set up job	2026-11-03T14:11:22.8041849Z Checks: read
+status	Set up job	2026-11-03T14:11:22.8042248Z Contents: write
+status	Test liveness contract	2026-11-03T14:12:04.8659301Z ^[[36;1mPYTHONPATH=src:scripts python3 -m pytest -q tests/test_sources_status.py tests/test_mirror_public.py tests/test_shards.py^[[0m
+status	Test liveness contract	2026-11-03T14:12:11.8543100Z 20 passed in 0.12s
+status	Snapshot status and update only its manifest descriptor	﻿2026-11-03T14:12:11.8866965Z ##[group]Run python3 scripts/generate_sources_status.py --public _data/public
+status	Snapshot status and update only its manifest descriptor	2026-11-03T14:12:11.8867326Z ^[[36;1mpython3 scripts/generate_sources_status.py --public _data/public^[[0m
+status	Snapshot status and update only its manifest descriptor	2026-11-03T14:12:11.8894015Z shell: /usr/bin/bash -e {0}
+status	Snapshot status and update only its manifest descriptor	2026-11-03T14:12:11.8894285Z env:
+status	Snapshot status and update only its manifest descriptor	2026-11-03T14:12:11.8894445Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Snapshot status and update only its manifest descriptor	2026-11-03T14:12:11.8894697Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+status	Snapshot status and update only its manifest descriptor	2026-11-03T14:12:11.8894944Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Snapshot status and update only its manifest descriptor	2026-11-03T14:12:11.8895164Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Snapshot status and update only its manifest descriptor	2026-11-03T14:12:11.8895383Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+status	Snapshot status and update only its manifest descriptor	2026-11-03T14:12:11.8895610Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+status	Snapshot status and update only its manifest descriptor	2026-11-03T14:12:11.8897436Z ##[endgroup]
+status	Publish status under the shared publication lock	2026-11-03T14:12:18.5459517Z ^[[36;1mgit add -f public/sources-status.json public/meta.json^[[0m
+status	Publish status under the shared publication lock	2026-11-03T14:12:18.5460059Z ^[[36;1mgit commit -m "Sources status $(date -u +%Y-%m-%dT%H:%MZ)"^[[0m
+status	Publish status under the shared publication lock	2026-11-03T14:12:18.5460307Z ^[[36;1mgit push origin HEAD:data^[[0m
+status	Publish status under the shared publication lock	2026-11-03T14:12:18.8323379Z [data 1988bf3] Sources status 2026-11-03T14:12Z
+status	Publish status under the shared publication lock	2026-11-03T14:12:18.8324063Z  create mode 100644 public/sources-status.json
+status	Publish status under the shared publication lock	2026-11-03T14:12:20.0241303Z    f9ffc5a..1988bf3  HEAD -> data
+status	Mirror and verify OSS (manifest last)	2026-11-03T14:12:43.5495139Z OSS GET verified sources-status.json: bytes=2278 sha256=710305a335221cc1ed6e1feeee2970234b5ce9e3f10cb859554a6e01e9be9bff
+status	Record status evidence	2026-11-03T14:12:43.5866418Z   path: _data/public/sources-status.json

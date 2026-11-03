@@ -1,0 +1,20 @@
+tests	Set up job	2026-11-03T14:08:31.9566548Z ##[group]GITHUB_TOKEN Permissions
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	﻿2026-11-03T14:08:42.6649244Z ##[group]Run PYTHONPATH=src python -m pytest -q -m "not live"
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:42.6649640Z ^[[36;1mPYTHONPATH=src python -m pytest -q -m "not live"^[[0m
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:42.6678121Z shell: /usr/bin/bash -e {0}
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:42.6678365Z env:
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:42.6678594Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:42.6678938Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:42.6679309Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:42.6679619Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:42.6680083Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:42.6680380Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:42.6680636Z ##[endgroup]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:44.6055712Z ........................................................................ [ 14%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:44.8005359Z ........................................................................ [ 29%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:57.8781498Z ........................................................................ [ 43%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:08:58.0123341Z ........................................................................ [ 58%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:09:00.1374502Z ........................................................................ [ 73%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:09:05.2640351Z ........................................................................ [ 87%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:09:16.1000017Z ...........................................................              [100%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-03T14:09:16.1000428Z 491 passed, 8 deselected in 32.99s

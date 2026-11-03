@@ -1,0 +1,3 @@
+publish / publish	UNKNOWN STEP	2026-11-03T14:15:54.2798837Z     raise ValueError(f'Concurrent change at {label}; re-run this collector against latest data')
+publish / publish	UNKNOWN STEP	2026-11-03T14:15:54.2799587Z ValueError: Concurrent change at data/prices/latest.json.fetched_at; re-run this collector against latest data
+publish / publish	UNKNOWN STEP	2026-11-03T14:15:54.2909920Z ##[error]Process completed with exit code 1.
