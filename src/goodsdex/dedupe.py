@@ -725,6 +725,9 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     output = apply_release_dates(output)
     from goodsdex.series_release import apply_series_releases
     output = apply_series_releases(output)
+    # release > release_series > release_llm; page existence is independent.
+    from goodsdex.date_enrichment import apply_date_enrichment
+    output = apply_date_enrichment(output)
     assert_public_fields(output)
     from goodsdex.accessories import plan
     archive_path = public / 'archive' / 'accessories.json'
@@ -757,6 +760,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
         'inherited_without_product': sum(bool((r.get('release_series') or {}).get('inherited')) for r in output),
         'batch_count': len({r['release_series']['batch_id'] for r in output if r.get('release_series')}),
     }
+    from goodsdex.date_enrichment import coverage as enrichment_coverage
+    meta.update(enrichment_coverage(output))
     from goodsdex.accessories import classify
     meta['accessories'] = accessory_audit
     meta['release_dates_other_brands'] = coverage([r for r in output if classify(r)['basis'] != 'car'])

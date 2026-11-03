@@ -1,0 +1,587 @@
+{
+  "verified_at": "2026-11-03T13:25:35.565109+00:00",
+  "rows": 2909,
+  "counts": {
+    "release": {
+      "before": 671,
+      "after": 671
+    },
+    "release_series": {
+      "before": 149,
+      "after": 149
+    },
+    "page_first_archived": {
+      "before": 0,
+      "after": 1262
+    },
+    "release_llm": {
+      "before": 0,
+      "after": 233
+    }
+  },
+  "coverage": {
+    "page_first_archived": {
+      "count": 1262,
+      "by_brand": {
+        "Apple": 623,
+        "大疆": 79,
+        "富士": 11,
+        "惠普": 38,
+        "小米": 511
+      }
+    },
+    "release_llm": {
+      "count": 233,
+      "by_brand": {
+        "Apple": 185,
+        "富士": 48
+      }
+    }
+  },
+  "original_fields_equal": true,
+  "wayback_pages": {
+    "archived": 1084,
+    "not_archived": 2254,
+    "error": 0
+  },
+  "wayback_records": {
+    "archived": 1875,
+    "not_archived": 3680,
+    "error": 0
+  },
+  "wayback_published_statuses": {
+    "archived": 1262,
+    "not_archived": 1376,
+    "error": 0
+  },
+  "coexists_with_product": {
+    "page_first_archived": 548,
+    "release_llm": 43
+  },
+  "samples": {
+    "page_first_archived": [
+      {
+        "id": "CN:apple_cn:commodity:MD3Y4CH/A",
+        "name": "iPad",
+        "brand": "Apple",
+        "date": "2022-10-18",
+        "evidence_url": "https://web.archive.org/web/20221018150759/https://www.apple.com.cn/shop/buy-ipad/ipad",
+        "release": {
+          "date": "2025-03",
+          "granularity": "month",
+          "source": "official",
+          "evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2025/03/apple-introduces-ipad-air-with-powerful-m3-chip-new-magic-keyboard/",
+            "quote": "2025 年 3 月 4 日 | 搭载 A16 芯片的新款 iPad，并于 3 月 12 日起在 Apple Store 零售店和 Apple 授权经销商处正式发售。 新款 iPad 起步存储容量为 128GB，同时提供 256GB 和新的 5",
+            "locator": "Newsroom: publication header + product pricing/availability paragraph",
+            "sha256": "033ceeb22ffd81fc26a5ebab62b8ffb50a70f70ba164fc7120a9b5ecfff5083f",
+            "captured_at": "2026-11-03T04:26:44.689069+00:00",
+            "source_type": "official"
+          },
+          "confidence": "high",
+          "event": "availability",
+          "market": "CN",
+          "usage": "fact",
+          "inferred": false,
+          "family": "CN:apple_cn:product:ipada16_2025",
+          "display": "2025 年 3 月",
+          "label": "发售时间",
+          "checks": [
+            {
+              "source": "official",
+              "date": "2025-03",
+              "evidence": {
+                "url": "https://www.apple.com.cn/newsroom/2025/03/apple-introduces-ipad-air-with-powerful-m3-chip-new-magic-keyboard/",
+                "quote": "2025 年 3 月 4 日 | 搭载 A16 芯片的新款 iPad，并于 3 月 12 日起在 Apple Store 零售店和 Apple 授权经销商处正式发售。 新款 iPad 起步存储容量为 128GB，同时提供 256GB 和新的 5",
+                "locator": "Newsroom: publication header + product pricing/availability paragraph",
+                "sha256": "033ceeb22ffd81fc26a5ebab62b8ffb50a70f70ba164fc7120a9b5ecfff5083f",
+                "captured_at": "2026-11-03T04:26:44.689069+00:00",
+                "source_type": "official"
+              },
+              "delta_days": 0,
+              "verdict": "original",
+              "effective_verdict": "original"
+            }
+          ],
+          "corroborated": false,
+          "crosscheck_status": "official"
+        },
+        "release_series": null,
+        "assertion": {
+          "date": "2022-10-18",
+          "evidence_url": "https://web.archive.org/web/20221018150759/https://www.apple.com.cn/shop/buy-ipad/ipad",
+          "count_200": 544,
+          "captured_at": "2026-11-03T13:23:21.707905+00:00"
+        },
+        "api": "https://spend.snewbie.site/api/goods/CN%3Aapple_cn%3Acommodity%3AMD3Y4CH%2FA"
+      },
+      {
+        "id": "CN:apple_cn:commodity:MD4A4CH/A",
+        "name": "iPad",
+        "brand": "Apple",
+        "date": "2022-10-18",
+        "evidence_url": "https://web.archive.org/web/20221018150759/https://www.apple.com.cn/shop/buy-ipad/ipad",
+        "release": {
+          "date": "2025-03",
+          "granularity": "month",
+          "source": "official",
+          "evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2025/03/apple-introduces-ipad-air-with-powerful-m3-chip-new-magic-keyboard/",
+            "quote": "2025 年 3 月 4 日 | 搭载 A16 芯片的新款 iPad，并于 3 月 12 日起在 Apple Store 零售店和 Apple 授权经销商处正式发售。 新款 iPad 起步存储容量为 128GB，同时提供 256GB 和新的 5",
+            "locator": "Newsroom: publication header + product pricing/availability paragraph",
+            "sha256": "033ceeb22ffd81fc26a5ebab62b8ffb50a70f70ba164fc7120a9b5ecfff5083f",
+            "captured_at": "2026-11-03T04:26:44.689069+00:00",
+            "source_type": "official"
+          },
+          "confidence": "high",
+          "event": "availability",
+          "market": "CN",
+          "usage": "fact",
+          "inferred": false,
+          "family": "CN:apple_cn:product:ipada16_2025",
+          "display": "2025 年 3 月",
+          "label": "发售时间",
+          "checks": [
+            {
+              "source": "official",
+              "date": "2025-03",
+              "evidence": {
+                "url": "https://www.apple.com.cn/newsroom/2025/03/apple-introduces-ipad-air-with-powerful-m3-chip-new-magic-keyboard/",
+                "quote": "2025 年 3 月 4 日 | 搭载 A16 芯片的新款 iPad，并于 3 月 12 日起在 Apple Store 零售店和 Apple 授权经销商处正式发售。 新款 iPad 起步存储容量为 128GB，同时提供 256GB 和新的 5",
+                "locator": "Newsroom: publication header + product pricing/availability paragraph",
+                "sha256": "033ceeb22ffd81fc26a5ebab62b8ffb50a70f70ba164fc7120a9b5ecfff5083f",
+                "captured_at": "2026-11-03T04:26:44.689069+00:00",
+                "source_type": "official"
+              },
+              "delta_days": 0,
+              "verdict": "original",
+              "effective_verdict": "original"
+            }
+          ],
+          "corroborated": false,
+          "crosscheck_status": "official"
+        },
+        "release_series": null,
+        "assertion": {
+          "date": "2022-10-18",
+          "evidence_url": "https://web.archive.org/web/20221018150759/https://www.apple.com.cn/shop/buy-ipad/ipad",
+          "count_200": 544,
+          "captured_at": "2026-11-03T13:23:21.707905+00:00"
+        },
+        "api": "https://spend.snewbie.site/api/goods/CN%3Aapple_cn%3Acommodity%3AMD4A4CH%2FA"
+      },
+      {
+        "id": "CN:dji:sku:107481",
+        "name": "DJI Ronin 4D-6K",
+        "brand": "大疆",
+        "date": "2022-06-15",
+        "evidence_url": "https://web.archive.org/web/20220615192053/https://store.dji.com/cn/product/dji-ronin-4d?vid=107571&set_region=CN&from=store-nav",
+        "release": null,
+        "release_series": null,
+        "assertion": {
+          "date": "2022-06-15",
+          "evidence_url": "https://web.archive.org/web/20220615192053/https://store.dji.com/cn/product/dji-ronin-4d?vid=107571&set_region=CN&from=store-nav",
+          "count_200": null,
+          "captured_at": "2026-11-03T13:23:21.707905+00:00"
+        },
+        "api": "https://spend.snewbie.site/api/goods/CN%3Adji%3Asku%3A107481"
+      },
+      {
+        "id": "CN:fuji:model:x-e5",
+        "name": "FUJIFILM X-E5",
+        "brand": "富士",
+        "date": "2025-06-17",
+        "evidence_url": "https://web.archive.org/web/20250617023226/https://www.fujifilm-x.com/zh-cn/products/cameras/x-e5/",
+        "release": {
+          "date": "2025-06",
+          "granularity": "month",
+          "source": "official",
+          "confidence": "high",
+          "event": "announcement",
+          "market": "CN",
+          "evidence": {
+            "url": "https://www.fujifilm.com.cn/cn/zh-hans/news/detail/3976",
+            "quote": "新闻稿 2025年6月12日 X系列中首次采用纯机械加工铝材制作顶罩 富士胶片推出无反数码相机“FUJIFILM X-E5” 通过沉浸式直观操作，提升摄影乐趣 2025年6月12日——富士胶片公司荣誉宣布预计将在2025年8月初起在全球范围内推出“富士胶片X-E5”（X-E5）无反数码相机。X-E5将是富士胶片X系列中的最新机型，具有出色的图像质量，紧凑轻便的机身。 X-E5是一款小巧轻盈的无反数码相机，机身仅重445克 *1 ，搭载背照式结构4020万像素“X-Trans™ CMOS 5 HR” *2 传感器和“X-Processor 5”高速图像处理器。本次X-E5中提升了五轴IBIS（图像稳定系统）防抖，中心区域实现7.0档的防抖效能，边缘区域达成6.0档稳定补偿 *3 ，成就其轻盈便携的性能，能够轻松驾驭各类严苛拍摄场景。X-E5是X系列中首款采用由机械加工铝材制成顶罩的相机。顶罩棱角分明与流线曲面精妙交融，呈现出温润的金属光泽以及高强度的性能，赋予用户更舒适的握持体验。相机搭载的全新“Classic Display经典视图-胶片机取景模式” *4 可在取景器中提供通透的图像画面，并在画面底部状态栏显示核心参数信息。同时，仅单手即可操作拨盘和拨杆的机身设计，使您可以全情投入创作瞬间。 传承X系列经典设计语言，注入现代美学革新理念，X-E5搭载了激发摄影乐趣的多种功能和便捷操作性，能够满足从资深摄影发烧",
+            "locator": "China press release header date and exact new product announcement; no CN sale claim",
+            "sha256": "b977a50b5194762d38e8e223db678bba1caadaa70b706502969401e235c09ccf",
+            "captured_at": "2026-11-03T05:53:05.601446+00:00",
+            "source_type": "official"
+          },
+          "usage": "fact",
+          "inferred": false,
+          "family": "round3:CN:fuji:model:x-e5",
+          "display": "2025 年 6 月",
+          "label": "发布时间",
+          "checks": [
+            {
+              "source": "official",
+              "date": "2025-06",
+              "delta_days": 0,
+              "verdict": "original",
+              "evidence": {
+                "url": "https://www.fujifilm.com.cn/cn/zh-hans/news/detail/3976",
+                "quote": "新闻稿 2025年6月12日 X系列中首次采用纯机械加工铝材制作顶罩 富士胶片推出无反数码相机“FUJIFILM X-E5” 通过沉浸式直观操作，提升摄影乐趣 2025年6月12日——富士胶片公司荣誉宣布预计将在2025年8月初起在全球范围内推出“富士胶片X-E5”（X-E5）无反数码相机。X-E5将是富士胶片X系列中的最新机型，具有出色的图像质量，紧凑轻便的机身。 X-E5是一款小巧轻盈的无反数码相机，机身仅重445克 *1 ，搭载背照式结构4020万像素“X-Trans™ CMOS 5 HR” *2 传感器和“X-Processor 5”高速图像处理器。本次X-E5中提升了五轴IBIS（图像稳定系统）防抖，中心区域实现7.0档的防抖效能，边缘区域达成6.0档稳定补偿 *3 ，成就其轻盈便携的性能，能够轻松驾驭各类严苛拍摄场景。X-E5是X系列中首款采用由机械加工铝材制成顶罩的相机。顶罩棱角分明与流线曲面精妙交融，呈现出温润的金属光泽以及高强度的性能，赋予用户更舒适的握持体验。相机搭载的全新“Classic Display经典视图-胶片机取景模式” *4 可在取景器中提供通透的图像画面，并在画面底部状态栏显示核心参数信息。同时，仅单手即可操作拨盘和拨杆的机身设计，使您可以全情投入创作瞬间。 传承X系列经典设计语言，注入现代美学革新理念，X-E5搭载了激发摄影乐趣的多种功能和便捷操作性，能够满足从资深摄影发烧",
+                "locator": "China press release header date and exact new product announcement; no CN sale claim",
+                "sha256": "b977a50b5194762d38e8e223db678bba1caadaa70b706502969401e235c09ccf",
+                "captured_at": "2026-11-03T05:53:05.601446+00:00",
+                "source_type": "official"
+              },
+              "effective_verdict": "original"
+            }
+          ],
+          "corroborated": false,
+          "crosscheck_status": "official"
+        },
+        "release_series": null,
+        "assertion": {
+          "date": "2025-06-17",
+          "evidence_url": "https://web.archive.org/web/20250617023226/https://www.fujifilm-x.com/zh-cn/products/cameras/x-e5/",
+          "count_200": 7,
+          "captured_at": "2026-11-03T13:23:21.707905+00:00"
+        },
+        "api": "https://spend.snewbie.site/api/goods/CN%3Afuji%3Amodel%3Ax-e5"
+      },
+      {
+        "id": "CN:mi_cn:product:10000023",
+        "name": "红米4",
+        "brand": "小米",
+        "date": "2024-05-26",
+        "evidence_url": "https://web.archive.org/web/20240526221159/https://www.mi.com/shop/buy/detail?product_id=10000023",
+        "release": null,
+        "release_series": null,
+        "assertion": {
+          "date": "2024-05-26",
+          "evidence_url": "https://web.archive.org/web/20240526221159/https://www.mi.com/shop/buy/detail?product_id=10000023",
+          "count_200": null,
+          "captured_at": "2026-11-03T13:23:21.707905+00:00"
+        },
+        "api": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A10000023"
+      }
+    ],
+    "release_llm": [
+      {
+        "id": "CN:fuji:model:x-h2",
+        "name": "FUJIFILM X-H2",
+        "brand": "富士",
+        "date": "2022-09",
+        "evidence_url": "https://fujifilm-x.com/global/products/cameras/x-h2/",
+        "release": {
+          "date": "2022-09",
+          "granularity": "month",
+          "source": "third_party",
+          "confidence": "high",
+          "event": "availability",
+          "market": "CN",
+          "evidence": {
+            "url": "https://www.ithome.com/0/640/150.htm",
+            "quote": "富士公布新款旗舰相机 X-H2 国行价格，单机身 13390 元，9 月 29 日上市。",
+            "locator": "article date + explicit 国行 / single body",
+            "sha256": "307f959bf38c32dbfa7554e088decab96cb88b408624d94a502ff166c43394c8",
+            "captured_at": "2026-11-03T05:19:35.922222+00:00",
+            "source_type": "third_party"
+          },
+          "usage": "fact",
+          "inferred": false,
+          "family": "round2:CN:fuji:model:x-h2",
+          "display": "2022 年 9 月",
+          "label": "发售时间",
+          "checks": [
+            {
+              "source": "third_party",
+              "date": "2022-09",
+              "delta_days": 0,
+              "verdict": "original",
+              "evidence": {
+                "url": "https://www.ithome.com/0/640/150.htm",
+                "quote": "富士公布新款旗舰相机 X-H2 国行价格，单机身 13390 元，9 月 29 日上市。",
+                "locator": "article date + explicit 国行 / single body",
+                "sha256": "307f959bf38c32dbfa7554e088decab96cb88b408624d94a502ff166c43394c8",
+                "captured_at": "2026-11-03T05:19:35.922222+00:00",
+                "source_type": "third_party"
+              },
+              "effective_verdict": "original"
+            },
+            {
+              "source": "llm",
+              "date": "2022-09-29",
+              "reason": "富士X-H2于2022年9月8日全球发布，中国大陆市场于2022年9月29日正式开售。该日期为中国市场首销日，非发布会日期。",
+              "model": "deepseek-v4.1-flash-1017",
+              "checked_at": "2026-11-03T07:29:31.291289+00:00",
+              "original_sha256": "1027e2045c8ebcec84e088fb02a9c4160029a20acafe3b7066ee3fd08e28a255",
+              "prompt_sha256": "c6b8c482fbe5b1b62858dd311d48dce11f655e8bc88a19c32f48c3cac82f8e16",
+              "response_sha256": "3b205c07cdfcfd1478c14a021f7fa7d81bc8cffcac03439678e1716531a90c16",
+              "artifact": "docs/release-crosschecks-20261103/responses/0ce8612565f8c982a9f47733.json",
+              "independent": true,
+              "delta_days": 0,
+              "verdict": "corroborated",
+              "compared_to": {
+                "source": "third_party",
+                "date": "2022-09"
+              },
+              "effective_verdict": "corroborated"
+            },
+            {
+              "source": "llm",
+              "date": "2022-09-29",
+              "reason": "富士X-H2于2022年9月8日全球发布，中国大陆市场于2022年9月29日正式开售。该日期为中国市场首销日，非发布会日期。",
+              "evidence": {
+                "url": null,
+                "quote": null
+              },
+              "model": "deepseek-v4.1-flash-1017",
+              "checked_at": "2026-11-03T07:29:31.291289+00:00",
+              "original_sha256": "1027e2045c8ebcec84e088fb02a9c4160029a20acafe3b7066ee3fd08e28a255",
+              "prompt_sha256": "c6b8c482fbe5b1b62858dd311d48dce11f655e8bc88a19c32f48c3cac82f8e16",
+              "response_sha256": "3b205c07cdfcfd1478c14a021f7fa7d81bc8cffcac03439678e1716531a90c16",
+              "artifact": "docs/release-crosschecks-20261103/responses/0ce8612565f8c982a9f47733.json",
+              "independent": true,
+              "delta_days": 0,
+              "verdict": "corroborated",
+              "compared_to": {
+                "source": "third_party",
+                "date": "2022-09"
+              },
+              "effective_verdict": "corroborated"
+            }
+          ],
+          "corroborated": true,
+          "crosscheck_status": "corroborated",
+          "manual_review_required": false
+        },
+        "release_series": null,
+        "assertion": {
+          "date": "2022-09",
+          "granularity": "month",
+          "source": "llm",
+          "model": "deepseek-v4.1-flash-1017",
+          "confidence": "medium",
+          "evidence": {
+            "quote": null,
+            "reason": "富士官方X-H2产品页可确认该型号族存在；已知官方于2022年9月发布X-H2，故按机身世代给出2022-09候选。未引用具体原句，因无法在当前环境核验页面原文。",
+            "url": "https://fujifilm-x.com/global/products/cameras/x-h2/",
+            "capture_type": "model_output",
+            "family": "富士|相机|fujifilmx-h2",
+            "response_file": "staging/release-full-20261103/responses/61bb9eafd534dc17a5d9b493.json",
+            "response_sha256": "60d752900335afca6320ef9bacb35e5527bbaf36bcb8011e7c984f6ec642c263",
+            "captured_at": "2026-11-03T08:39:49.655268+00:00"
+          },
+          "brand_accuracy": 0.9
+        },
+        "api": "https://spend.snewbie.site/api/goods/CN%3Afuji%3Amodel%3Ax-h2"
+      },
+      {
+        "id": "CN:apple_cn:commodity:MDEX4CH/A",
+        "name": "HomePod",
+        "brand": "Apple",
+        "date": "2017-06",
+        "evidence_url": "https://www.apple.com/newsroom/2017/06/apple-unveils-homepod-a-breakthrough-wireless-speaker/",
+        "release": null,
+        "release_series": null,
+        "assertion": {
+          "date": "2017-06",
+          "granularity": "month",
+          "source": "llm",
+          "model": "deepseek-v4.1-flash-1017",
+          "confidence": "high",
+          "evidence": {
+            "quote": "Apple today introduced HomePod, a breakthrough wireless speaker for the home",
+            "reason": "Apple Newsroom 2017年6月发布稿首次推出初代 HomePod，支持该型号族首次推出年月；仅作世代估算，不作发售事实",
+            "url": "https://www.apple.com/newsroom/2017/06/apple-unveils-homepod-a-breakthrough-wireless-speaker/",
+            "capture_type": "model_output",
+            "family": "Apple|音箱|homepod",
+            "response_file": "staging/release-full-20261103/responses/e1a272cbf7bada96a5a45d01.json",
+            "response_sha256": "e04a7b62c0ebd046b18a8da0376c88d1577cce3a5314f8e79a05deb6d18d3f96",
+            "captured_at": "2026-11-03T08:36:57.072895+00:00"
+          },
+          "brand_accuracy": 1.0
+        },
+        "api": "https://spend.snewbie.site/api/goods/CN%3Aapple_cn%3Acommodity%3AMDEX4CH%2FA"
+      },
+      {
+        "id": "CN:fuji:kit:x-h2-16-80mm",
+        "name": "FUJIFILM X-H2 1680套机",
+        "brand": "富士",
+        "date": "2022-09",
+        "evidence_url": "https://fujifilm-x.com/global/products/cameras/x-h2/",
+        "release": null,
+        "release_series": null,
+        "assertion": {
+          "date": "2022-09",
+          "granularity": "month",
+          "source": "llm",
+          "model": "deepseek-v4.1-flash-1017",
+          "confidence": "medium",
+          "evidence": {
+            "quote": null,
+            "reason": "富士官方X-H2产品页可确认该型号族存在；已知官方于2022年9月发布X-H2，故按机身世代给出2022-09候选。未引用具体原句，因无法在当前环境核验页面原文。",
+            "url": "https://fujifilm-x.com/global/products/cameras/x-h2/",
+            "capture_type": "model_output",
+            "family": "富士|相机|fujifilmx-h2",
+            "response_file": "staging/release-full-20261103/responses/61bb9eafd534dc17a5d9b493.json",
+            "response_sha256": "60d752900335afca6320ef9bacb35e5527bbaf36bcb8011e7c984f6ec642c263",
+            "captured_at": "2026-11-03T08:39:49.655268+00:00"
+          },
+          "brand_accuracy": 0.9
+        },
+        "api": "https://spend.snewbie.site/api/goods/CN%3Afuji%3Akit%3Ax-h2-16-80mm"
+      },
+      {
+        "id": "CN:apple_cn:commodity:MDF04CH/A",
+        "name": "HomePod",
+        "brand": "Apple",
+        "date": "2017-06",
+        "evidence_url": "https://www.apple.com/newsroom/2017/06/apple-unveils-homepod-a-breakthrough-wireless-speaker/",
+        "release": null,
+        "release_series": null,
+        "assertion": {
+          "date": "2017-06",
+          "granularity": "month",
+          "source": "llm",
+          "model": "deepseek-v4.1-flash-1017",
+          "confidence": "high",
+          "evidence": {
+            "quote": "Apple today introduced HomePod, a breakthrough wireless speaker for the home",
+            "reason": "Apple Newsroom 2017年6月发布稿首次推出初代 HomePod，支持该型号族首次推出年月；仅作世代估算，不作发售事实",
+            "url": "https://www.apple.com/newsroom/2017/06/apple-unveils-homepod-a-breakthrough-wireless-speaker/",
+            "capture_type": "model_output",
+            "family": "Apple|音箱|homepod",
+            "response_file": "staging/release-full-20261103/responses/e1a272cbf7bada96a5a45d01.json",
+            "response_sha256": "e04a7b62c0ebd046b18a8da0376c88d1577cce3a5314f8e79a05deb6d18d3f96",
+            "captured_at": "2026-11-03T08:36:57.072895+00:00"
+          },
+          "brand_accuracy": 1.0
+        },
+        "api": "https://spend.snewbie.site/api/goods/CN%3Aapple_cn%3Acommodity%3AMDF04CH%2FA"
+      },
+      {
+        "id": "CN:fuji:kit:x-s20-15-45mm",
+        "name": "FUJIFILM X-S20 15-45套机",
+        "brand": "富士",
+        "date": "2023-05",
+        "evidence_url": "https://fujifilm-x.com/global/products/cameras/x-s20/",
+        "release": null,
+        "release_series": null,
+        "assertion": {
+          "date": "2023-05",
+          "granularity": "month",
+          "source": "llm",
+          "model": "deepseek-v4.1-flash-1017",
+          "confidence": "medium",
+          "evidence": {
+            "quote": null,
+            "reason": "富士官方X-S20产品页存在，但未引用可确知原句；已知该型号于2023年5月发布，按机身世代给出首次推出年月候选。",
+            "url": "https://fujifilm-x.com/global/products/cameras/x-s20/",
+            "capture_type": "model_output",
+            "family": "富士|相机|fujifilmx-s20",
+            "response_file": "staging/release-full-20261103/responses/a486da424d218a0b0fdd28ed.json",
+            "response_sha256": "48e7590f7687589358ad043620fdc58c112a09626850eb7828a3a6db45b85468",
+            "captured_at": "2026-11-03T08:39:50.148877+00:00"
+          },
+          "brand_accuracy": 0.9
+        },
+        "api": "https://spend.snewbie.site/api/goods/CN%3Afuji%3Akit%3Ax-s20-15-45mm"
+      }
+    ]
+  },
+  "brand_accuracy": {
+    "Apple": {
+      "abstention_samples": 0,
+      "date_accuracy": 1.0,
+      "date_accuracy_evaluable": 10,
+      "date_correct": 10,
+      "date_samples": 10,
+      "missing_raw_evidence": 0,
+      "missing_raw_evidence_date_matches": 0,
+      "original_evidence_supported": 1,
+      "original_evidence_unverified": 3,
+      "raw_evidence_present": 10,
+      "samples": 10,
+      "usable_correct": 1
+    },
+    "大疆": {
+      "abstention_samples": 0,
+      "date_accuracy": 0.8,
+      "date_accuracy_evaluable": 10,
+      "date_correct": 8,
+      "date_samples": 10,
+      "missing_raw_evidence": 0,
+      "missing_raw_evidence_date_matches": 0,
+      "original_evidence_supported": 0,
+      "original_evidence_unverified": 6,
+      "raw_evidence_present": 10,
+      "samples": 10,
+      "usable_correct": 0
+    },
+    "富士": {
+      "abstention_samples": 0,
+      "date_accuracy": 0.9,
+      "date_accuracy_evaluable": 10,
+      "date_correct": 9,
+      "date_samples": 10,
+      "missing_raw_evidence": 0,
+      "missing_raw_evidence_date_matches": 0,
+      "original_evidence_supported": 0,
+      "original_evidence_unverified": 8,
+      "raw_evidence_present": 10,
+      "samples": 10,
+      "usable_correct": 0
+    },
+    "小米": {
+      "abstention_samples": 0,
+      "date_accuracy": 0.6666666666666666,
+      "date_accuracy_evaluable": 3,
+      "date_correct": 2,
+      "date_samples": 10,
+      "missing_raw_evidence": 7,
+      "missing_raw_evidence_date_matches": 2,
+      "original_evidence_supported": 0,
+      "original_evidence_unverified": 2,
+      "raw_evidence_present": 3,
+      "samples": 10,
+      "usable_correct": 0
+    },
+    "小米汽车": {
+      "abstention_samples": 0,
+      "date_accuracy": null,
+      "date_accuracy_evaluable": 0,
+      "date_correct": 0,
+      "date_samples": 0,
+      "missing_raw_evidence": 0,
+      "missing_raw_evidence_date_matches": 0,
+      "original_evidence_supported": 0,
+      "original_evidence_unverified": 0,
+      "raw_evidence_present": 0,
+      "samples": 0,
+      "usable_correct": 0
+    },
+    "惠普": {
+      "abstention_samples": 10,
+      "date_accuracy": null,
+      "date_accuracy_evaluable": 0,
+      "date_correct": 0,
+      "date_samples": 0,
+      "missing_raw_evidence": 0,
+      "missing_raw_evidence_date_matches": 0,
+      "original_evidence_supported": 0,
+      "original_evidence_unverified": 0,
+      "raw_evidence_present": 0,
+      "samples": 10,
+      "usable_correct": 0
+    },
+    "比亚迪": {
+      "abstention_samples": 2,
+      "date_accuracy": 0.6666666666666666,
+      "date_accuracy_evaluable": 3,
+      "date_correct": 2,
+      "date_samples": 8,
+      "missing_raw_evidence": 5,
+      "missing_raw_evidence_date_matches": 4,
+      "original_evidence_supported": 0,
+      "original_evidence_unverified": 1,
+      "raw_evidence_present": 3,
+      "samples": 10,
+      "usable_correct": 0
+    }
+  },
+  "goods_sha256": "5e927238d68150d7a1541dc6641262e7155c0a86d4b09161d3d8a10ad9f99f13"
+}

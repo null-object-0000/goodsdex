@@ -9,7 +9,8 @@ from pathlib import Path
 
 SCHEMA = 1
 SHARDS = 64
-# Series evidence is detail-only: do not repeat quotes in paginated indexes.
+# release_series, release_llm and page_first_archived are detail-only.
+# Do not repeat evidence in paginated indexes.
 INDEX_FIELDS = 'release name_source captured_at historical_price price_source price_source_url price_basis image_source image_source_type image_source_url image_captured_at image_note schema display_name official_name powertrain edition generation model_year_source model_year_confidence model_year_source_url image_status image_scope legacy_ids id name category categories price price_kind image brand product_id record_level product_type series trim model_year kind gid model image_url lookup_keys discontinued camera_role body_id lens_id aliases variant_hint bundle source_url'.split()
 BRANDS = {'惠普': 'hp_cn', '小米': 'mi_cn', 'Apple': 'apple_cn', '大疆': 'dji', '富士': 'fuji', '比亚迪': 'byd', '小米汽车': 'xiaomi_ev'}
 # Same literal fields consumed by the API list-facts projection; never copy raw sections.
