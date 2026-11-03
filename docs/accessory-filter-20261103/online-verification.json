@@ -1,0 +1,139 @@
+{
+  "checked_at": "2026-11-03T10:24:47.195297+00:00",
+  "meta_count": 2909,
+  "goods_count": 2909,
+  "brands": {
+    "Apple": 635,
+    "比亚迪": 14,
+    "大疆": 281,
+    "富士": 63,
+    "惠普": 218,
+    "小米": 1695,
+    "小米汽车": 3
+  },
+  "release_dates_other_brands": {
+    "total": 2892,
+    "covered": 668,
+    "coverage": 0.23098201936376211,
+    "sources": {
+      "official": 590,
+      "official_hidden": 0,
+      "third_party": 39,
+      "llm": 39
+    },
+    "brands": {
+      "Apple": {
+        "total": 635,
+        "true_source": 418,
+        "official_hidden": 0,
+        "llm": 39,
+        "missing": 178
+      },
+      "大疆": {
+        "total": 281,
+        "true_source": 86,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 195
+      },
+      "富士": {
+        "total": 63,
+        "true_source": 14,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 49
+      },
+      "惠普": {
+        "total": 218,
+        "true_source": 0,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 218
+      },
+      "小米": {
+        "total": 1695,
+        "true_source": 111,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 1584
+      }
+    }
+  },
+  "release_dates_cars": {
+    "total": 17,
+    "covered": 3,
+    "coverage": 0.17647058823529413,
+    "sources": {
+      "official": 3,
+      "official_hidden": 0,
+      "third_party": 0,
+      "llm": 0
+    },
+    "brands": {
+      "比亚迪": {
+        "total": 14,
+        "true_source": 0,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 14
+      },
+      "小米汽车": {
+        "total": 3,
+        "true_source": 3,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 0
+      }
+    }
+  },
+  "accessories": {
+    "excluded_count": 51,
+    "newly_excluded_count": 0,
+    "denominator": 2887,
+    "newly_excluded_ratio": 0.0,
+    "threshold": 0.05,
+    "gate": "green",
+    "review_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "reviewed": false
+  },
+  "ids_match": true,
+  "no_accessories": true,
+  "cars_unchanged": true,
+  "goods_sha256": "3d232e25f5d2dace417bea8cfbcd3cf27d9e1e0083b07dbf7ab0d23672471707",
+  "goods_match_manifest": true,
+  "sample_30_presence_correct": true,
+  "detail_checks": [
+    {
+      "id": "CN:mi_cn:product:16549",
+      "status": 200,
+      "name": "米家净水器1600G"
+    },
+    {
+      "id": "CN:mi_cn:product:13143",
+      "status": 200,
+      "name": "巨省电 1.5匹新一级能效 小米空调"
+    },
+    {
+      "id": "CN:mi_cn:product:10050050",
+      "status": 200,
+      "name": "小米电视S Pro Mini LED 2025"
+    },
+    {
+      "id": "CN:mi_cn:product:11374",
+      "status": 200,
+      "name": "米家扫拖机器人"
+    },
+    {
+      "id": "CN:dji:sku:101241",
+      "status": 404
+    },
+    {
+      "id": "CN:mi_cn:product:10050015",
+      "status": 404
+    },
+    {
+      "id": "CN:mi_cn:product:16684",
+      "status": 404
+    }
+  ]
+}

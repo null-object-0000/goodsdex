@@ -14,7 +14,7 @@ SAMPLE = [
  ('CN:apple_cn:commodity:MFE94CH/A', 1, 'AirTag 属配件类'),
  ('GLOBAL:apple_support:model:118469', 1, 'VESA 支架转换器，非显示器本体'),
  ('GLOBAL:apple_support:model:111834', 0, 'AirPods 整套耳机，MagSafe 为随附充电盒'),
- ('GLOBAL:apple_support:model:111861', 0, 'AirPods 整套耳机，配无线充电盒'),
+ ('CN:mi_cn:product:16684', 1, 'Pro+ 是型号的一部分，商品主体仍为保护壳'),
  ('CN:dji:sku:101241', 1, 'Mavic 智能飞行电池，非无人机'),
  ('CN:dji:sku:129711', 1, 'Action 快拆转接件，非运动相机'),
  ('CN:dji:sku:136791', 1, 'Inspire 折叠快拆桨，非无人机'),
@@ -92,10 +92,11 @@ def main():
  '这里只改变发布范围；不修改 raw、采集档案与价格历史。完整被排除记录保存于 data 分支 `public/archive/accessories.json`，含 `excluded_reason: "accessory"` 与判定依据；现有来源档案继续保留。',
  '', '## 口径与规则', '',
  '汽车按 product_type/汽车 ID 或比亚迪、小米汽车品牌识别，完全跳过配件判定，单列表。其余品牌共用同一规则：整机主体白名单优先，然后品类（含 categories 并集）以“配件”结尾，或名称耗材词命中。数字本身不决定去留。相机机身、完整镜头、套机保留；明确的兼容机型名称不把滤芯/保护壳变成整机。',
- '整机随附充电盒、单/三电池版套装、显示器多功能支架版均保留。曾发现这些边界并修正规则后重跑；新增反例测试还覆盖“净水器（H1000G）滤芯”。',
- '覆盖率仅指 release.date 非空（含内部参考日期），不表示可公开展示或日期已证实。分子使用各自集合中实际有日期的条数；过滤不会新增日期。',
+ '整机随附充电盒、单/三电池版套装、显示器多功能支架版、电动牙刷四刷头装均保留；Pro+ 中的加号不作为套装分隔符。曾发现这些边界并修正规则后重跑；新增反例测试还覆盖“净水器（H1000G）滤芯”。',
+ '原始 kind 不参与过滤（如完整镜头、显示器曾被标成 accessory）；保留原字段供溯源。覆盖率仅指 release.date 非空（含内部参考日期），不表示可公开展示或日期已证实。分子使用各自集合中实际有日期的条数；过滤不会新增日期。',
  '', '## 其它品牌（本次配件过滤的分母）', '', table(report['other_brands']), '',
  f"合计：{len(bo)} → {len(ao)}；日期 {stats(bo)['release_date']} → {stats(ao)['release_date']}；覆盖率 {stats(bo)['coverage']:.4%} → {stats(ao)['coverage']:.4%}。", '',
+ f"固定过滤后的日期分子，仅比较分母：{stats(ao)['release_date']}/{len(bo)}={stats(ao)['release_date']/len(bo):.4%} → {stats(ao)['release_date']}/{len(ao)}={stats(ao)['release_date']/len(ao):.4%}。被排除记录中有 {stats(bo)['release_date']-stats(ao)['release_date']} 条原先带日期。", '',
  '## 整车（汽车，完全独立于上述覆盖率）', '',table(report['cars']), '',
  f"发布文件总行数（含单列汽车）：{len(before)} → {len(after)}。总文件日期覆盖率 {stats(before)['release_date']}/{len(before)}={stats(before)['coverage']:.4%} → {stats(after)['release_date']}/{len(after)}={stats(after)['coverage']:.4%}；此口径仅供核对文件，不作为非汽车覆盖率。", '',
  '## 被排除记录按主品类分布', '', '|主品类|排除条数|','|---|---:|']
@@ -106,10 +107,10 @@ def main():
  '|型号|判定|依据|结论对错 / 复核理由|','|---|---|---|---|']
  for s in samples:
   lines.append(f"|{s['model']}|{s['decision']}|{s['basis']['basis']}: {s['basis']['matched']}|正确：{s['review_note']}|")
- lines += ['', '每条完整 ID、原品类、分类并集和预期结论见 sample-30.json。', '', '## 门禁与复现', '',
+ lines += ['', '每条完整 ID、原品类、分类并集和预期结论见 sample-30.json。留档复跑发现的旧补充缓存覆盖问题已修正：首次排除快照不覆盖，恢复前的旧缓存观测嵌入 subsequent_observations 保留。', '', '## 门禁与复现', '',
  '统一 finalize 执行过滤；默认新增排除身份数 / 本轮非汽车身份分母 >5% 判红，恰好5%通过。缓存重放中已归档且不在上一轮发布集的配件不重复计新增，也不能稀释分母。已归档却重新进入上一轮发布集的记录再次排除会计为新增。',
- '首次迁移超过门禁，gate-red.log 记录真实阻断；首次仅通过人工可复核批次的精确 SHA-256 放行。校验值绑定 ID/名称/判定；任意新增不同记录使该校验值失效。后续采集默认无放行参数。门禁失败不更新发布文件或排除档案。',
- '本轮门禁按唯一身份计算，报表/API 按发布行数计算；原库有 3 组冲突 ID、8 行，保留原状，故非汽车门禁分母为 3946、报表分母为 3951。', '',
+ '首批迁移 1029 条超过门禁，gate-red.log 记录真实阻断；首次仅通过可复核批次的精确 SHA-256 放行。剩余记录复核补齐 30 条耗材与 Pro+ 手机壳，由正常门禁通过；合计 1059 条。校验值绑定 ID/名称/判定；任意新增不同记录使该校验值失效。后续采集默认无放行参数。门禁失败不更新发布文件或排除档案。',
+ '门禁按唯一身份计算，报表/API 按发布行数计算；原库有 3 组冲突 ID、8 行，保留原状。首批门禁分母为 3946、报表分母为 3951；补排 30 条的门禁分母为 2917（排除了既有配件缓存），比率 1.03%，正常绿灯通过。', '',
  '```sh', 'PYTHONPATH=src python3 docs/accessory-filter-20261103/report.py --before /tmp/accessory-before.json --after /path/to/public/goods.json', 'PYTHONPATH=src:scripts python3 -m pytest -q', '```', '',
  '上线结果、提交号、测试与 API 实际返回见 publication.md 和 online-verification.json。']
  (OUT/'README.md').write_text('\n'.join(lines)+'\n')

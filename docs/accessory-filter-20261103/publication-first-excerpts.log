@@ -1,0 +1,7 @@
+publish / publish	UNKNOWN STEP	2026-11-03T10:07:20.6469620Z 149 passed in 1.80s
+publish / publish	UNKNOWN STEP	2026-11-03T10:07:27.9624520Z accessory gate: {"excluded_count": 1029, "newly_excluded_count": 1029, "denominator": 3946, "newly_excluded_ratio": 0.2607704004054739, "threshold": 0.05, "gate": "red", "review_sha256": "9b8fafafb1d7d9b3bde97b1a93ab0fb85d656a569ec49ecb64f3f95ca205388b", "reviewed": true}
+publish / publish	UNKNOWN STEP	2026-11-03T10:07:28.0479925Z ^[[36;1mgit commit -m "$RELEASE_SCOPE publication $(date -u +%Y-%m-%dT%H:%MZ)"^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T10:07:29.2300853Z [data 4f799a6] all publication 2026-11-03T10:07Z
+publish / publish	UNKNOWN STEP	2026-11-03T10:08:11.8018933Z OSS GET verified meta.json: bytes=11335 sha256=ac312c06501f5212984230320da92cc4f311f19437782c04f9568a91045ed9d7
+publish / publish	UNKNOWN STEP	2026-11-03T10:08:11.8533764Z ^[[36;1mprint(f"Accessory exclusions: new={accessory.get('newly_excluded_count')}, ratio={accessory.get('newly_excluded_ratio')}, gate={accessory.get('gate')}, exact batch reviewed={accessory.get('reviewed')}")^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T10:08:11.8534899Z ^[[36;1mprint(f"Published {meta['count']} rows; {len(meta['files'])} verified files; one finalize under goodsdex-data-publication lock.")^[[0m

@@ -59,23 +59,25 @@
     "source_url": "https://support.apple.com/zh-cn/111834"
   },
   {
-    "id": "GLOBAL:apple_support:model:111861",
-    "model": "AirPods Pro 1 配无线充电盒",
-    "brand": "Apple",
-    "category": "耳机",
+    "id": "CN:mi_cn:product:16684",
+    "model": "Redmi Note 12 Pro+ 液态硅胶保护壳",
+    "brand": "小米",
+    "category": "手机壳",
     "categories": [
-      "耳机"
+      "手机壳"
     ],
-    "decision": "整机",
+    "decision": "配件",
     "basis": {
-      "accessory": false,
-      "basis": "whole_device",
-      "matched": "AirPods"
+      "accessory": true,
+      "basis": "name",
+      "matched": [
+        "保护壳"
+      ]
     },
-    "expected": "整机",
+    "expected": "配件",
     "correct": true,
-    "review_note": "AirPods 整套耳机，配无线充电盒",
-    "source_url": "https://support.apple.com/zh-cn/111861"
+    "review_note": "Pro+ 是型号的一部分，商品主体仍为保护壳",
+    "source_url": null
   },
   {
     "id": "CN:dji:sku:101241",
