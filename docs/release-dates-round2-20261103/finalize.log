@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/nichangen/代码/self-code/goodsdex/scripts/finalize_public.py", line 15, in <module>
+    migrate_public(args.public)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/nichangen/代码/self-code/goodsdex/scripts/migrate_car_structure.py", line 14, in migrate_public
+    after = migrate(before)
+  File "/home/nichangen/代码/self-code/goodsdex/src/goodsdex/car_structure.py", line 51, in migrate
+    raise ValueError('Canonical car product differs from source evidence')
+ValueError: Canonical car product differs from source evidence

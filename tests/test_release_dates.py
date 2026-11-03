@@ -4,7 +4,7 @@ import random
 
 import pytest
 
-from goodsdex.release_dates import apply_release_dates, coverage, digest, llm_gate, validate
+from goodsdex.release_dates import apply_release_dates, coverage, digest, hidden_gate, llm_gate, validate
 
 
 def candidate(i, source='llm'):
@@ -132,3 +132,59 @@ def test_official_interface_date_requires_page_visibility():
         validate(c)
     c['release']['evidence']['isPageShow'] = True
     validate(c)
+
+
+def hidden_candidates():
+    cs = [candidate(i, 'official_hidden') for i in range(40)]
+    for i, c in enumerate(cs):
+        c.update(category='耳机' if i < 30 else '家电', method='hidden_official_parameter')
+        c['release']['evidence']['isPageShow'] = False
+    return cs
+
+
+def test_hidden_requires_30_independent_products_and_exact_review_universe():
+    cs = hidden_candidates()
+    r = review(cs)
+    for s in r['samples']:
+        s['verification_url'] = 'https://item.jd.com/123.html'
+    assert hidden_gate(cs, r)['耳机']['usage'] == 'reference'
+    r['samples'].pop()
+    with pytest.raises(ValueError, match='30 distinct'):
+        hidden_gate(cs, r)
+    r = review(cs)
+    r['samples'][0]['verification_url'] = cs[0]['release']['evidence']['url']
+    with pytest.raises(ValueError, match='independent'):
+        hidden_gate(cs, r)
+    cs[0]['release']['date'] = '2024-01'
+    with pytest.raises(ValueError, match='universe'):
+        hidden_gate(cs, r)
+
+
+def test_hidden_category_accuracy_cannot_unlock_another_category(tmp_path):
+    cs = hidden_candidates()
+    r = review(cs)
+    by_family = {c['family']: c for c in cs}
+    for s in r['samples']:
+        if by_family[s['family']]['category'] == '家电':
+            s.update(correct=False, correct_date='2023-06')
+    gate = hidden_gate(cs, r)
+    assert gate['耳机']['usage'] == 'reference'
+    assert gate['家电']['usage'] == 'disabled'
+    p = tmp_path/'dates.json'
+    p.write_text(json.dumps(dict(schema=1, candidates=cs, hidden_review=r)))
+    out = apply_release_dates([dict(id='id-0'), dict(id='id-39')], p)
+    assert out[0]['release']['source'] == 'official_hidden'
+    assert out[0]['release']['usage'] == 'reference'
+    assert out[0]['release']['label'] == '推出月份（参考）'
+    assert '参考' in out[0]['release']['display']
+    assert 'release' not in out[1]
+    assert coverage(out)['brands']['其他']['official_hidden'] == 1
+
+
+def test_hidden_cannot_be_marked_visible_or_official_fact():
+    c = hidden_candidates()[0]
+    validate(c)
+    c['release']['source'] = 'official'
+    c['method'] = 'explicit_official_parameter'
+    with pytest.raises(ValueError, match='Hidden official'):
+        validate(c)

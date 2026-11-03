@@ -18,6 +18,8 @@ def main():
     ap.add_argument('--public',type=Path,required=True)
     ap.add_argument('--out',type=Path,required=True)
     ap.add_argument('--base',default='https://spend.snewbie.site')
+    ap.add_argument('--sample-id',action='append',default=[],
+                    help='Additional exact IDs to verify through real detail endpoints')
     args = ap.parse_args()
     rows = json.loads((args.public/'goods.json').read_text())
     stamp = datetime.now(timezone.utc).isoformat()
@@ -34,6 +36,7 @@ def main():
     examples += [next(r['id'] for r in rows if (r.get('release') or {}).get('event') == 'planned_availability')]
     examples += [next(r['id'] for r in rows if r.get('source') == 'apple_cn' and
                      (r.get('release') or {}).get('event') == 'availability')]
+    examples = list(dict.fromkeys(examples + args.sample_id))
     samples = []
     for key in examples:
         path = '/api/goods/'+quote(key,safe='')+'?release_check='+quote(stamp,safe='')
