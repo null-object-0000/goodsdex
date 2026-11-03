@@ -1,0 +1,38 @@
+{
+  "code_commit": "9d4ac1875f8835d5f11863646b1a8fedf7fee77b",
+  "data_commit": "e4f2076a8f12855827335b8c4217b0dd8310bae5",
+  "workflow_url": "https://github.com/null-object-0000/goodsdex/actions/runs/41584990471",
+  "workflow_status": "completed",
+  "first_successful_publication": "https://github.com/null-object-0000/goodsdex/actions/runs/41584263119",
+  "intermediate_failed_publication": {
+    "url": "https://github.com/null-object-0000/goodsdex/actions/runs/41584559535",
+    "cause": "Canonical car product differs from source evidence: product-level release enrichment was compared against reconstructed trim structure",
+    "fix_commit": "9d4ac1875f8835d5f11863646b1a8fedf7fee77b",
+    "regression_test": "test_release_enrichment_survives_republication_without_weakening_source_checks"
+  },
+  "online": {
+    "checked_at": "2026-11-03T05:39:58.808877+00:00",
+    "full_catalog_equal": true,
+    "details_equal": 63,
+    "includes_all_53_new_ids": true,
+    "goods_sha256": "e0a472545de01eb10aaba4949d4129d67695695a3348a375441d5b6dd67c9359",
+    "sources": {
+      "official": 375,
+      "official_hidden": 0,
+      "third_party": 39,
+      "llm": 40
+    }
+  },
+  "rollout": {
+    "initial_check": "API still returned the previous 401-date catalogue after first successful data publication; verification was not marked passed",
+    "eventual_check": "Full 3968-row catalogue and 63 detail release objects equal published data",
+    "sync_health": "online-sync-health.json"
+  },
+  "tests": {
+    "passed": 365,
+    "failed": 0,
+    "log": "tests-full.log"
+  },
+  "workflow_conclusion": "success",
+  "workflow_updated_at": "2026-11-03T05:43:08Z"
+}

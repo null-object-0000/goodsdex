@@ -123,9 +123,9 @@ Avata 2 单飞行器、智能飞行电池、螺旋桨、后续智选套装／140
 
 ## 9. 测试、发布与验收状态
 
-全量（含 live）**364 passed**，上一轮 361 passed，新增 3 项、无新增失败。只有既有 pytest 插件弃用 warning。最新 data 分支回放前后 3968 行、3963 个唯一 ID，所有非 release 字段逐值相同：[tests-full.log](tests-full.log)、[identity-invariants.json](identity-invariants.json)、[finalize.log](finalize.log)。
+全量（含 live）**365 passed**，上一轮 361 passed，新增 4 项、无新增失败。只有既有 pytest 插件弃用 warning。最新 data 分支回放前后 3968 行、3963 个唯一 ID，所有非 release 字段逐值相同：[tests-full.log](tests-full.log)、[identity-invariants.json](identity-invariants.json)、[finalize.log](finalize.log)。
 
-发布沿用 `refresh-release-dates.yml` → 共享 publication lock → merge/门禁/finalize/分片 → data → OSS。发布完成后证据写入 [publication.json](publication.json)、[online-verification.json](online-verification.json)。不能以本地回放代替线上验证。
+发布沿用 `refresh-release-dates.yml` → 共享 publication lock → merge/门禁/finalize/分片 → data → OSS。首轮发布成功并完成线上检查：[online-verification.json](online-verification.json)，3968 行全量相等，63 个详情逐字段相等（包含全部 53 个新增 ID）。发布记录见 [publication.json](publication.json)。重复发布曾因汽车结构校验把顶层 release 当作原始配置证据而失败，已补回归测试：仅排除顶层 release，继续严格校验其余字段及嵌套 source_record；原始证据不改动。[失败片段](republish-failure-excerpt.log)、[修复后重复 finalize 回放](finalize-replay.log)。最终修复版本 `9d4ac1875f8835d5f11863646b1a8fedf7fee77b` 的[正式发布](https://github.com/null-object-0000/goodsdex/actions/runs/41584990471)已成功，data 提交 `e4f2076a8f12855827335b8c4217b0dd8310bae5`；对应 goods.json 与线上验证的 SHA-256 完全相同。
 
 离线重放已审输入（不重新调用模型或来源）：
 
@@ -136,4 +136,4 @@ python3 scripts/finalize_public.py --public <最新data工作树>/public --previ
 
 来源全清单的状态、hash、错误和片段：[source-inventory.json](source-inventory.json)（2496 个采集记录，包含重试与失败，不当成独立成功源数量）。使用过的公开正文 / PDF、16 个隐藏节点保留在 evidence/；其余完整 HTTP 字节归档于本地忽略目录 `data/release-dates/round2/raw/`，inventory 同时保留审阅所需失败片段与状态。候选发现队列不是自动导入结果。
 
-**验收结论：覆盖表、真实源证据、全量测试及代码提交可以核对；发布与线上检查以完成后的 JSON 为准；“30 条指定来源 hidden 核验”仍不满足，不能声称六项全部完成。**
+**验收结论：覆盖表、真实源证据、全量测试、发布、63 个线上详情及代码提交均可核对；“30 条指定来源 hidden 核验”仍不满足，不能声称六项全部完成。**

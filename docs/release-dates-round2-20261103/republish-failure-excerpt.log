@@ -1,0 +1,9 @@
+publish / publish	UNKNOWN STEP	2026-11-03T05:34:40.9024600Z ^[[36;1mPYTHONPATH=src:scripts python3 -m pytest -q tests/test_release_policy.py tests/test_release_dates.py tests/test_supplement_publish.py tests/test_dedupe.py tests/test_shards.py tests/test_release_candidate.py tests/test_mirror_public.py tests/test_car_structure.py^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T05:34:47.0690329Z ##[group]Run python3 scripts/finalize_public.py --public _data/public --previous "$RUNNER_TEMP/goods-before.json"
+publish / publish	UNKNOWN STEP	2026-11-03T05:34:47.0691187Z ^[[36;1mpython3 scripts/finalize_public.py --public _data/public --previous "$RUNNER_TEMP/goods-before.json"^[[0m
+publish / publish	UNKNOWN STEP	2026-11-03T05:34:47.4846182Z Traceback (most recent call last):
+publish / publish	UNKNOWN STEP	2026-11-03T05:34:47.4854919Z   File "/home/runner/work/goodsdex/goodsdex/scripts/finalize_public.py", line 15, in <module>
+publish / publish	UNKNOWN STEP	2026-11-03T05:34:47.4856375Z   File "/home/runner/work/goodsdex/goodsdex/scripts/migrate_car_structure.py", line 14, in migrate_public
+publish / publish	UNKNOWN STEP	2026-11-03T05:34:47.4858393Z   File "/home/runner/work/goodsdex/goodsdex/src/goodsdex/car_structure.py", line 51, in migrate
+publish / publish	UNKNOWN STEP	2026-11-03T05:34:47.4881895Z ##[error]    raise ValueError('Canonical car product differs from source evidence')
+publish / publish	UNKNOWN STEP	2026-11-03T05:34:47.4890623Z ValueError: Canonical car product differs from source evidence
