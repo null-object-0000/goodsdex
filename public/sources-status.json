@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T14:53:47Z",
+  "generatedAt": "2026-11-03T14:59:26Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -41,23 +41,23 @@
       "sourceId": "refresh-cars",
       "workflow": ".github/workflows/refresh-cars.yml",
       "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-03T14:47:13Z",
+      "lastAttemptAt": "2026-11-03T14:55:33Z",
       "lastSuccessAt": "2026-10-30T23:23:10Z",
-      "conclusion": "failure",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41657125381",
-      "error": "Process completed with exit code 1.",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41658518208",
+      "error": null,
       "stale": true,
-      "staleReason": "已 87.5 小时无成功运行（预期每 1440 分钟）"
+      "staleReason": "已 87.6 小时无成功运行（预期每 1440 分钟）"
     },
     {
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-03T14:51:30Z",
+      "lastAttemptAt": "2026-11-03T14:58:03Z",
       "lastSuccessAt": null,
-      "conclusion": "failure",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41657125381",
-      "error": "Process completed with exit code 1.",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41658518208",
+      "error": null,
       "stale": false,
       "staleReason": null
     }
