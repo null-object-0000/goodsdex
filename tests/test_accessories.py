@@ -99,3 +99,21 @@ def test_known_cached_accessories_do_not_dilute_new_exclusion_ratio():
     new = [dict(id='new', name='滤芯')]
     with pytest.raises(ValueError, match='exceeds 5%'):
         plan(kept + cached + new, kept, cached)
+
+
+def test_stale_supplement_cannot_overwrite_first_exclusion_evidence():
+    first = dict(id='a', name='滤芯', price=99, image='original', params={'spec': 'full'}, excluded_reason='accessory')
+    stale = dict(id='a', name='滤芯', price=None)
+    _, archive, audit = plan([stale], [], [first])
+    assert archive == [first]
+    assert audit['newly_excluded_count'] == 0
+
+
+def test_archive_repair_preserves_displaced_observation_and_extra_identities():
+    from scripts.restore_accessory_archive import restore
+    first = dict(id='a', name='滤芯', price=99, excluded_reason='accessory')
+    stale = dict(id='a', name='滤芯', price=None, excluded_reason='accessory')
+    extra = dict(id='b', name='充电器', excluded_reason='accessory')
+    result = restore([stale, extra], [first])
+    assert result == [{**first, 'subsequent_observations': [stale]}, extra]
+    assert stale['price'] is None and first['price'] == 99

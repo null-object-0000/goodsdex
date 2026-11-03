@@ -6,6 +6,10 @@ on:
         description: 'Exact reviewed batch fingerprint; empty keeps the 5% gate fail-closed'
         type: string
         default: ''
+      restore_archive_commit:
+        description: 'Optional reviewed data commit containing first-exclusion snapshots'
+        type: string
+        default: ''
 permissions:
   contents: write
 jobs:
@@ -16,6 +20,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/collect-base
+      - name: Restore reviewed first-exclusion archive if requested
+        if: inputs.restore_archive_commit != ''
+        env:
+          RESTORE_ARCHIVE_COMMIT: ${{ inputs.restore_archive_commit }}
+        run: |
+          [[ "$RESTORE_ARCHIVE_COMMIT" =~ ^[0-9a-f]{40}$ ]]
+          git -C _data fetch --depth=1 origin "$RESTORE_ARCHIVE_COMMIT"
+          python3 scripts/restore_accessory_archive.py --root _data --commit "$RESTORE_ARCHIVE_COMMIT"
       - uses: ./.github/actions/upload-candidate
         with:
           scope: all

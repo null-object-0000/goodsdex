@@ -95,5 +95,7 @@ def plan(rows, previous, archive=(), reviewed_sha256=None):
     for row in excluded:
         entry = deepcopy(row)
         entry.update(excluded_reason='accessory', exclusion=classify(row))
-        archived[row['id']] = entry
+        # Preserve the first excluded snapshot. Replayed supplements may be
+        # older and less complete than the record removed from the release.
+        archived.setdefault(row['id'], entry)
     return kept, list(archived.values()), audit
