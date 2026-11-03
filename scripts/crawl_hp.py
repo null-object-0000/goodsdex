@@ -6,6 +6,7 @@ Requires Pillow for decoding/validating images (python3 -m pip install Pillow).
 """
 from __future__ import annotations
 import argparse
+from copy import deepcopy
 import hashlib
 import html
 import io
@@ -27,6 +28,35 @@ from goodsdex.public_fields import normalize_public_row
 SEEDS = ['https://www.hpstore.cn/laptops-tablets.html',
          'https://www.hpstore.cn/desktops.html']
 CORE = ['CPU型号', '运行内存', '存储容量', '显卡']
+PRODUCT_MARKER = 'magentoStorefrontEvents.context.setProduct('
+MAX_NEW_DELISTED_RATIO = 0.10
+# Only observed official catalogue destinations are evidence; arbitrary non-PDP
+# paths (login, challenges, maintenance) must continue to fail closed.
+CATALOGUE_PATHS = {'/laptops.html', '/laptops-tablets.html', '/desktops.html'}
+
+class RedirectEvidence(urllib.request.HTTPRedirectHandler):
+    def __init__(self):
+        self.redirects = []
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        self.redirects.append(dict(url=req.full_url, status=code, location=newurl))
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+def delisting_evidence(text, info):
+    final = urlparse(info.get('final_url', ''))
+    if (info.get('status') == 200 and final.scheme == 'https'
+            and final.hostname == 'www.hpstore.cn' and final.path in CATALOGUE_PATHS
+            and PRODUCT_MARKER not in text
+            and listing(text, info['final_url'])[0]):
+        return dict(reason='sku_redirected_to_catalogue', **info)
+    return None
+
+def mark_delisted(row, evidence):
+    result = deepcopy(row)
+    result.update(sale_status='delisted',
+                  delisted_at=row.get('delisted_at') or evidence['fetched_at'],
+                  delisted_evidence=row.get('delisted_evidence') or evidence)
+    return result
+
 
 def clean(s):
     return re.sub(r'\s+', ' ', html.unescape(re.sub('<[^>]+>', ' ', s))).strip()
@@ -51,9 +81,10 @@ class Client:
         if self.interval_from_start:
             self.last[host] = time.monotonic()
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent':'GoodsDex/1.0 (public computer catalogue; daily)'}), timeout=45) as r:
+            redirects = RedirectEvidence()
+            with urllib.request.build_opener(redirects).open(urllib.request.Request(url, headers={'User-Agent':'GoodsDex/1.0 (public computer catalogue; daily)'}), timeout=45) as r:
                 data = r.read()
-                info = dict(url=url, final_url=r.url, status=r.status,
+                info = dict(url=url, final_url=r.url, status=r.status, redirects=redirects.redirects,
                             content_type=r.headers.get('Content-Type',''), bytes=len(data),
                             sha256=hashlib.sha256(data).hexdigest(), fetched_at=datetime.now(timezone.utc).isoformat())
         finally:
@@ -207,12 +238,20 @@ def main():
             client.requests.append(info)
             return data,info
         return client.get(url)
+    path = args.out/'goods.json'
+    previous = json.loads(path.read_text()) if path.exists() else []
+    prior_by_url = {}
+    for row in previous:
+        prior_by_url.setdefault(row['source_url'], []).append(row)
+    archived_delisted = {u for u, records in prior_by_url.items()
+                         if all(r.get('sale_status') == 'delisted' and r.get('delisted_evidence')
+                                for r in records)}
     errors=[];urls=[];seen=set();pages=list(SEEDS)+(args.seed or [])
     known_ids = None
     if args.known_only:
         if args.seed:
             ap.error('--known-only cannot be combined with discovery seeds')
-        known = json.loads((args.out/'goods.json').read_text())
+        known = previous
         if not known or any(r.get('source') != 'hp_cn' or not r.get('source_url') for r in known):
             raise ValueError('Known-only refresh requires a complete prior HP SKU archive')
         known_ids = {r['id'] for r in known}
@@ -234,11 +273,26 @@ def main():
         image_audit = json.loads((args.out/'audit.json').read_text())
     rows=[];checks={i['url']:i for i in image_audit['images'] if i['ok']} if image_audit else {}
     images={u:u if i['ok'] else None for u,i in checks.items()}
-    for url in urls[:args.limit] if args.limit else urls:
+    selected = urls[:args.limit] if args.limit else urls
+    skipped = [u for u in selected if u in archived_delisted]
+    selected = [u for u in selected if u not in archived_delisted]
+    delisted = []
+    delisted_rows = []
+    for url in selected:
         try:
             if urlparse(url).hostname!='www.hpstore.cn': raise ValueError('Unexpected product host')
             data,info=page_get(url)
-            row,img=parse_product(data.decode(),url,info['fetched_at'])
+            text = data.decode()
+            delisted_info = delisting_evidence(text, info)
+            if delisted_info:
+                if url not in prior_by_url:
+                    raise ValueError('Catalogue redirect without prior SKU archive; cannot mark delisted')
+                delisted.append(delisted_info)
+                delisted_rows.extend(mark_delisted(r, delisted_info) for r in prior_by_url[url])
+                continue
+            if info.get('final_url', url) != url and PRODUCT_MARKER not in text:
+                raise ValueError('Unexpected non-product destination: ' + info.get('final_url', url))
+            row,img=parse_product(text,url,info['fetched_at'])
             if known_ids is not None and row['id'] not in known_ids:
                 raise ValueError('Archived URL changed SKU identity; daily discovery must review it')
             if img not in checks: images[img],checks[img]=image_check(client,img)
@@ -254,8 +308,12 @@ def main():
             rows.append(row)
             print(row['id'],row['name'],flush=True)
         except Exception as e: errors.append(dict(url=url,error=str(e)))
-    if not rows:
-        print(json.dumps(dict(errors=errors),ensure_ascii=False));return 1
+    ratio = len(delisted) / len(selected) if selected else 0
+    if ratio > MAX_NEW_DELISTED_RATIO:
+        errors.append(dict(error='New delisting ratio exceeds 10% safety threshold',
+                           ratio=ratio, attempted=len(selected), newly_delisted=len(delisted)))
+    if not rows and selected and not delisted:
+        errors.append(dict(error='No successful SKU observations'))
     if replay:
         client.requests=list({r['url']:r for r in [*replay['requests'],*client.requests]}.values())
     rows=list({r['id']:r for r in rows}.values())
@@ -265,13 +323,22 @@ def main():
                configuration_complete=sum(all(r['params'].get(k) for k in CORE) for r in rows),
                fields={k:sum(bool(r['params'].get(k)) for r in rows) for k in [*CORE,'屏幕尺寸','重量','上市时间']},
                with_image=sum(bool(r['image']) for r in rows),with_price=sum(r['price'] is not None for r in rows),
-               errors=errors,images=list(checks.values()),requests=client.requests)
+               errors=errors,error_count=len(errors),delisted=delisted,
+               delisted_count=len(delisted),delisted_skipped_count=len(skipped),
+               delisted_total_count=len(archived_delisted | {d['url'] for d in delisted}),
+               attempted_count=len(selected),new_delisted_ratio=ratio,
+               max_new_delisted_ratio=MAX_NEW_DELISTED_RATIO,
+               images=list(checks.values()),requests=client.requests)
     if args.dry_run:
         print(json.dumps(dict(rows=rows,audit=audit),ensure_ascii=False,indent=1));return bool(errors)
     # Archive successful SKU observations; missing/failed pages never delete old data.
-    path=args.out/'goods.json'
-    previous=json.loads(path.read_text()) if path.exists() else []
-    write_json(path,merge_hp(previous,rows));write_json(args.out/'audit.json',audit)
+    write_json(args.out/'audit.json',audit)
+    # A failed batch may retain its evidence, but must not checkpoint delistings:
+    # otherwise a retry could skip them and bypass the ratio circuit breaker.
+    if errors:
+        print(json.dumps({k:v for k,v in audit.items() if k not in ['images','requests']},ensure_ascii=False))
+        return 1
+    write_json(path,merge_hp(previous,rows + delisted_rows))
     if args.public:
         from goodsdex.supplements import metadata
         previous=json.loads((args.public/'goods.json').read_text())

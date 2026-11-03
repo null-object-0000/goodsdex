@@ -103,7 +103,8 @@ class HourlyImageReuseTests(unittest.TestCase):
         client = hp.Client(interval_from_start=True)
         with patch.object(hp.time, 'monotonic', side_effect=[0.0, 0.0, 1.0, 2.1]), \
              patch.object(hp.time, 'sleep') as sleep, \
-             patch.object(hp.urllib.request, 'urlopen') as open_url:
+             patch.object(hp.urllib.request, 'build_opener') as opener:
+            open_url = opener.return_value.open
             response = open_url.return_value.__enter__.return_value
             response.read.return_value = b'fresh response'
             response.url = URL
@@ -114,3 +115,87 @@ class HourlyImageReuseTests(unittest.TestCase):
             self.assertAlmostEqual(sleep.call_args_list[0].args[0], 0)
             self.assertAlmostEqual(sleep.call_args_list[1].args[0], 1.1)
             self.assertEqual(client.last['www.hpstore.cn'], 2.1)
+
+
+class DelistingTests(unittest.TestCase):
+    def evidence(self, final='https://www.hpstore.cn/laptops-tablets.html'):
+        return dict(url=URL, final_url=final, status=200, fetched_at='2026-11-03T01:00:00Z',
+                    redirects=[dict(url=URL, status=301, location=final)])
+
+    def test_only_verified_catalogue_is_delisting(self):
+        catalogue = '<a class="product-item-link" href="https://www.hpstore.cn/other.html">other</a>'
+        self.assertIsNotNone(hp.delisting_evidence(catalogue, self.evidence()))
+        for final in [URL, 'https://www.hpstore.cn/customer/account/login/',
+                      'https://evil.example/laptops-tablets.html']:
+            self.assertIsNone(hp.delisting_evidence(catalogue, self.evidence(final)))
+        self.assertIsNone(hp.delisting_evidence('challenge', self.evidence()))
+        self.assertIsNone(hp.delisting_evidence(FIXTURE, self.evidence()))
+        with self.assertRaisesRegex(ValueError, 'missing'):
+            hp.parse_product(catalogue, URL, 'now')
+
+    def run_batch(self, count, removed=1, broken=False, repeat=False):
+        import tempfile
+        import sys
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp)
+            row, image = hp.parse_product(FIXTURE, URL, 'before')
+            rows = []
+            for n in range(count):
+                r = copy.deepcopy(row)
+                r.update(id='CN:hp_cn:sku:SKU'+str(n), part_number='SKU'+str(n),
+                         source_url=URL+'?n='+str(n))
+                rows.append(r)
+            (out/'goods.json').write_text(json.dumps(rows))
+            (out/'audit.json').write_text(json.dumps({'images': [{'url': image, 'ok': True}]}))
+            calls = []
+            class FakeClient:
+                def __init__(self): self.requests = []
+                def get(self, url):
+                    calls.append(url)
+                    n = int(url.split('=')[-1])
+                    info = dict(url=url, final_url=url, status=200, fetched_at='now')
+                    if n < removed:
+                        info.update(final_url='https://www.hpstore.cn/laptops-tablets.html',
+                                    redirects=[dict(status=301, location='https://www.hpstore.cn/laptops-tablets.html')])
+                        return b'<a class="product-item-link" href="https://www.hpstore.cn/other.html">other</a>', info
+                    return (b'broken PDP' if broken else FIXTURE.replace('DC0F0PA', 'SKU'+str(n)).encode()), info
+            argv = ['crawl_hp.py', '--out', tmp, '--reuse-images', '--known-only']
+            with patch.object(sys, 'argv', argv), patch.object(hp, 'Client', side_effect=lambda *a, **kw: FakeClient()):
+                status = hp.main()
+                audit = json.loads((out/'audit.json').read_text())
+                saved = json.loads((out/'goods.json').read_text())
+                if repeat:
+                    first = copy.deepcopy(saved)
+                    calls.clear()
+                    self.assertEqual(hp.main(), 0)
+                    self.assertEqual(len(calls), count-removed)
+                    saved = json.loads((out/'goods.json').read_text())
+                    self.assertEqual(saved[:removed], first[:removed])
+                    audit = json.loads((out/'audit.json').read_text())
+            return status, audit, saved, rows
+
+    def test_archives_and_skips_confirmed_delistings(self):
+        status, audit, saved, old = self.run_batch(20, repeat=True)
+        self.assertEqual(status, 0)
+        self.assertEqual(audit['errors'], [])
+        self.assertEqual(audit['delisted_count'], 0)
+        self.assertEqual(audit['delisted_skipped_count'], 1)
+        self.assertEqual(len(saved), len(old))
+        expected = hp.mark_delisted(old[0], saved[0]['delisted_evidence'])
+        self.assertEqual(saved[0], expected)
+        self.assertEqual(saved[0]['delisted_at'], 'now')
+
+    def test_threshold_fails_without_checkpoint_bypass(self):
+        status, audit, saved, old = self.run_batch(9)
+        self.assertEqual(status, 1)
+        self.assertEqual(audit['delisted_count'], 1)
+        self.assertIn('10%', audit['errors'][0]['error'])
+        self.assertEqual(saved, old)
+        self.assertEqual(self.run_batch(10)[0], 0)  # exactly 10% allowed
+
+    def test_live_pdp_parse_failure_still_fails(self):
+        status, audit, saved, old = self.run_batch(20, broken=True)
+        self.assertEqual(status, 1)
+        self.assertEqual(audit['delisted_count'], 1)
+        self.assertTrue(any('missing' in e['error'] for e in audit['errors']))
+        self.assertEqual(saved, old)

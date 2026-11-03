@@ -254,3 +254,20 @@ python3 scripts/should_i_upgrade.py --device "Xiaomi 15 Pro" \
    故视觉源标 `mi_cn_pc_vision`，**不覆盖**接口值，冲突时接口优先。
 2. 官方仅给到月时就用月，不靠第三方猜日。
 3. 换机模型只算钱，不判断"新机是否带来你在意的能力提升"。
+
+HP 下架留档：`crawl_hp.py` 仅把官方 SKU URL 落到已知官方电脑列表页
+（`laptops.html`、`laptops-tablets.html`、`desktops.html`），且最终 HTTP 200、
+存在商品列表链接、缺少 `setProduct` 上下文的响应归为 `delisted`。
+未知跳转（登录/验证码/维护）、网络错误、原详情页缺少上下文或 SKU 冲突仍进入 `errors`，退出非零。
+下架记录保留全部既有配置、历史价格及其时间、图片和身份，增加 `sale_status=delisted`、
+首次发现时间 `delisted_at` 和 `delisted_evidence`（原始/最终 URL、重定向链、时间及响应 SHA-256）。
+这表示官方商品详情页撤下，不推断硬件停产。后续采集默认跳过已留证的下架 URL；
+若需复核上架，人工清除该记录的下架状态后重新采集。
+
+每轮新增下架 URL 数 / 本轮实际待检查 URL 数 **>10%** 时 collect 判红；
+恰好 10% 允许。已确认并跳过的下架 URL 不稀释分母。本次 9/218≈4.13%，
+10% 容纳小批撤页，同时阻断批量重定向造成的假成功。任何真实抓取/解析错误仍判红。
+失败轮只保存 audit/raw 证据，不更新商品档案，防止重跑跳过下架而绕过比例门禁。
+审计将 `errors`/`error_count` 与 `delisted`/`delisted_count` 分开，
+并提供 `delisted_skipped_count`、`delisted_total_count`、`attempted_count` 和比例。
+`count` 仍指本轮成功解析的详情数，历史下架记录继续保存在 goods.json，发布依赖与超时不变。
