@@ -6,7 +6,7 @@ from pathlib import Path
 import tarfile
 P=Path(__file__).resolve().parent
 DIRS=('responses','states','sent','sessions','circuit-history')
-FILES=('baseline-goods.json','baseline-response.json','run.log','dispatch.json')
+FILES=('baseline-goods.json','baseline-response.json','run.log','resume-check.log','dispatch.json')
 def main():
     paths=sorted([p for d in DIRS for p in (P/d).glob('*.json')]+[P/f for f in FILES if (P/f).exists()])
     if (P/'circuit.json').exists():paths.append(P/'circuit.json')
