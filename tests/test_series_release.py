@@ -92,6 +92,9 @@ def test_series_cannot_enter_product_release(bundle):
 
 def test_evidence_and_membership_are_frozen(bundle, rows):
     by_id={r['id']:r for r in rows}
+    rollout = ROOT / 'docs/series-release-rollout-20261103/baseline-goods.json.gz'
+    if rollout.exists():
+        by_id.update({r['id']: r for r in json.loads(gzip.decompress(rollout.read_bytes()))})
     for b in bundle['batches']:
         validate_batch(b)
         e=b['series_release']['evidence']

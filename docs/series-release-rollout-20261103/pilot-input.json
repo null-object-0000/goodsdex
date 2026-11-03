@@ -1,0 +1,217 @@
+{
+  "schema": 1,
+  "scope": "pilot",
+  "enabled": true,
+  "batches": [
+    {
+      "id": "mi-ac-double-202512",
+      "series": "米家空调（巨省电）",
+      "generation": "双排挂机 2025-12 发布批次",
+      "series_release": {
+        "date": "2025-12",
+        "granularity": "month",
+        "source": "third_party",
+        "level": "series",
+        "market": "CN",
+        "event": "announcement",
+        "evidence": {
+          "url": "https://www.ithome.com/0/902/637.htm",
+          "sha256": "468c6d58f8fb798e02077bc61870b46c30b383415bc2ef1b0cfddc7b637be311",
+          "captured_at": "2026-11-03T09:45:03.439760+00:00",
+          "quote": "小米官方今日宣布，米家空调巨省电挂机系列迎来重磅升级，全新升级双排冷凝器。",
+          "locator": "div.post_content 首段与大1.5/2/3匹清单",
+          "source_type": "third_party",
+          "capture_type": "http_response",
+          "capture_file": "docs/series-release-pilot-20261103/evidence/902637.html"
+        }
+      },
+      "members": [
+        {
+          "id": "CN:mi_cn:product:22339",
+          "identity_sha256": "dbf11256f938e84cf7e6bf1e880dcbf4f705e35955db41b4e8d11fb8402c528e",
+          "identity_reason": "同名巨省电双排挂机；产品系列=巨省电 双排版，壁挂式，容量分别大1.5/2/3匹；不包含立式、柔风、Pro或风管机"
+        },
+        {
+          "id": "CN:mi_cn:product:22350",
+          "identity_sha256": "8354cd7633b75ca5eb2fd0edb42cf36ccc1aab1c6ed0d630e160ee7515a1e919",
+          "identity_reason": "同名巨省电双排挂机；产品系列=巨省电 双排版，壁挂式，容量分别大1.5/2/3匹；不包含立式、柔风、Pro或风管机"
+        },
+        {
+          "id": "CN:mi_cn:product:22351",
+          "identity_sha256": "e19266fdfcf658bd6f5bdb145b504f45075563f24d490fe38f84a38f22bbb2c2",
+          "identity_reason": "同名巨省电双排挂机；产品系列=巨省电 双排版，壁挂式，容量分别大1.5/2/3匹；不包含立式、柔风、Pro或风管机"
+        }
+      ]
+    },
+    {
+      "id": "mi-ac-pro-202602",
+      "series": "米家空调（巨省电）",
+      "generation": "2026 Pro 挂机 2026-02 发布批次",
+      "series_release": {
+        "date": "2026-02",
+        "granularity": "month",
+        "source": "third_party",
+        "level": "series",
+        "market": "CN",
+        "event": "announcement",
+        "evidence": {
+          "url": "https://www.ithome.com/0/924/464.htm",
+          "sha256": "26e82d512142dcbf9be3994a05b8f0835c53ef0771a71969126f1d3677641945",
+          "captured_at": "2026-11-03T09:45:03.459522+00:00",
+          "quote": "小米今日发布了全新 2026 款米家空调巨省电 Pro 系列",
+          "locator": "div.post_content 首段及挂机规格段",
+          "source_type": "third_party",
+          "capture_type": "http_response",
+          "capture_file": "docs/series-release-pilot-20261103/evidence/924464.html"
+        }
+      },
+      "members": [
+        {
+          "id": "CN:mi_cn:product:23270",
+          "identity_sha256": "0c39cf01a750ab3e491c46c642dc2696c154fa8ccc664993991b172904ad4b1e",
+          "identity_reason": "Pro挂机大1/1.5匹；APF分别6/6.3，1.5匹最大制冷5750W、制热7500W与报道一致；排除2025 Pro、柔风及柜机"
+        },
+        {
+          "id": "CN:mi_cn:product:23271",
+          "identity_sha256": "0b205eade5bffa21be3e15dc23fcd8c5e89d17ebc3bebf0f7bb4814f82d3e9e0",
+          "identity_reason": "Pro挂机大1/1.5匹；APF分别6/6.3，1.5匹最大制冷5750W、制热7500W与报道一致；排除2025 Pro、柔风及柜机"
+        }
+      ]
+    },
+    {
+      "id": "mi-tv-s-mini-led-202505",
+      "series": "小米电视 S 系列",
+      "generation": "S Mini LED 2025 中国大陆发布批次",
+      "series_release": {
+        "date": "2025-05",
+        "granularity": "month",
+        "source": "third_party",
+        "level": "series",
+        "market": "CN",
+        "event": "announcement",
+        "evidence": {
+          "url": "https://www.ithome.com/0/855/247.htm",
+          "sha256": "f5af6f1e1e9da43d2367c1ef96ac44ce7da9378be11ff21feee53e6c17d7769f",
+          "captured_at": "2026-11-03T09:45:03.421502+00:00",
+          "quote": "雷军介绍了小米电视 S Mini LED 2025 系列产品",
+          "locator": "div.post_content 首段及55/65/75/85/98英寸清单",
+          "source_type": "third_party",
+          "capture_type": "http_response",
+          "capture_file": "docs/series-release-pilot-20261103/evidence/855247.html"
+        }
+      },
+      "members": [
+        {
+          "id": "CN:mi_cn:product:10050111",
+          "identity_sha256": "efa83d1b64123ce6a52852a56954cab54defbd8ad31f62298f0c1a50faab9ce7",
+          "identity_reason": "名称/参数系列=S Mini LED 2025，55/65/75/85/98英寸；排除S Pro、2026、2027及海外同名产品"
+        },
+        {
+          "id": "CN:mi_cn:product:21236",
+          "identity_sha256": "8f8c8e9b9efcab31d43a2df57f9bae3f49571209a9443d4f23899a74195d7f0e",
+          "identity_reason": "名称/参数系列=S Mini LED 2025，55/65/75/85/98英寸；排除S Pro、2026、2027及海外同名产品"
+        },
+        {
+          "id": "CN:mi_cn:product:21244",
+          "identity_sha256": "efd4652f23e855aaab5447b5bdf9f61f4890dec35f607fb513651cc6c816a827",
+          "identity_reason": "名称/参数系列=S Mini LED 2025，55/65/75/85/98英寸；排除S Pro、2026、2027及海外同名产品"
+        },
+        {
+          "id": "CN:mi_cn:product:21260",
+          "identity_sha256": "d37a1e82c840b6f7c99053742fc8b56dc6196fd84ebf86a18d2df89e36df4584",
+          "identity_reason": "名称/参数系列=S Mini LED 2025，55/65/75/85/98英寸；排除S Pro、2026、2027及海外同名产品"
+        },
+        {
+          "id": "CN:mi_cn:product:21259",
+          "identity_sha256": "7884b693fac2759869d7e2f5d784267b0de5cdf013aaa295b111b0b1e819767d",
+          "identity_reason": "名称/参数系列=S Mini LED 2025，55/65/75/85/98英寸；排除S Pro、2026、2027及海外同名产品"
+        },
+        {
+          "id": "CN:mi_cn:product:21351",
+          "identity_sha256": "78959e8821a0642497233dc63327bfef7ca1c55c8dbec99eeac8d63c65fef67b",
+          "identity_reason": "名称/参数系列=S Mini LED 2025，55/65/75/85/98英寸；排除S Pro、2026、2027及海外同名产品"
+        }
+      ]
+    },
+    {
+      "id": "mi-robot-m40s-202505",
+      "series": "米家扫地机器人",
+      "generation": "M40 S 2025-05 上架发布批次",
+      "series_release": {
+        "date": "2025-05",
+        "granularity": "month",
+        "source": "third_party",
+        "level": "series",
+        "market": "CN",
+        "event": "announcement",
+        "evidence": {
+          "url": "https://www.ithome.com/0/851/952.htm",
+          "sha256": "25c30b3846701636d851a4a12773f0b3617457d3daa29c03c226e90740af8390",
+          "captured_at": "2026-11-03T09:45:03.819498+00:00",
+          "quote": "米家扫拖机器人 M40S 今日上架京东平台并开启预约",
+          "locator": "div.post_content 首段与水箱/上下水清单",
+          "source_type": "third_party",
+          "capture_type": "http_response",
+          "capture_file": "docs/series-release-pilot-20261103/evidence/851952.html"
+        }
+      },
+      "members": [
+        {
+          "id": "CN:mi_cn:product:10050110",
+          "identity_sha256": "d093d4c6d11ecda06a6d3d42d163ba3c990402d75d69bba339b36bd9650431c0",
+          "identity_reason": "M40 S 双版本；23000Pa，水箱版与薄嵌上下水版；排除M40、M30 S、配件及独立上下水装置"
+        },
+        {
+          "id": "CN:mi_cn:product:21264",
+          "identity_sha256": "5de5d31935176f481bb104d05f3b3369406c78d84547c827042c2e055a0eea3a",
+          "identity_reason": "M40 S 双版本；23000Pa，水箱版与薄嵌上下水版；排除M40、M30 S、配件及独立上下水装置"
+        },
+        {
+          "id": "CN:mi_cn:product:21282",
+          "identity_sha256": "4fdd46fa145f4e4829538df8441d479c3b1c7787d79340d48dfe8ab2eebf8de0",
+          "identity_reason": "M40 S 双版本；23000Pa，水箱版与薄嵌上下水版；排除M40、M30 S、配件及独立上下水装置"
+        }
+      ]
+    },
+    {
+      "id": "mi-robot-5pro-202508",
+      "series": "米家扫地机器人",
+      "generation": "5 Pro 2025-08 开售批次",
+      "series_release": {
+        "date": "2025-08",
+        "granularity": "month",
+        "source": "third_party",
+        "level": "series",
+        "market": "CN",
+        "event": "availability",
+        "evidence": {
+          "url": "https://www.ithome.com/0/873/956.htm",
+          "sha256": "d74995986ae59f9367189566f41c48ad71a5d1b8a83fa0108cdb76b43238460e",
+          "captured_at": "2026-11-03T09:45:03.464045+00:00",
+          "quote": "小米米家扫拖机器人 5 Pro 今日正式开售",
+          "locator": "div.post_content 首段及双版本价格",
+          "source_type": "third_party",
+          "capture_type": "http_response",
+          "capture_file": "docs/series-release-pilot-20261103/evidence/873956.html"
+        }
+      },
+      "members": [
+        {
+          "id": "CN:mi_cn:product:10050123",
+          "identity_sha256": "5727cdb2a2859607829f4e54dff58436e1cdb7fd92d9407437ccd46e6812bd78",
+          "identity_reason": "5 Pro AI三摄、23000Pa；经典水箱与薄嵌上下水同期开售；排除5、5C、6系列、配件及海外版"
+        },
+        {
+          "id": "CN:mi_cn:product:21645",
+          "identity_sha256": "c9f21dddd1c028bf6aaff25d922ddac3af1533afd55c5505ec542a26f61ef774",
+          "identity_reason": "5 Pro AI三摄、23000Pa；经典水箱与薄嵌上下水同期开售；排除5、5C、6系列、配件及海外版"
+        },
+        {
+          "id": "CN:mi_cn:product:21650",
+          "identity_sha256": "417cd45baeb7ac17a23c9aff2fa039557463fa871531210e260c9c50fdce9178",
+          "identity_reason": "5 Pro AI三摄、23000Pa；经典水箱与薄嵌上下水同期开售；排除5、5C、6系列、配件及海外版"
+        }
+      ]
+    }
+  ]
+}

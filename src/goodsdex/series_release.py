@@ -57,8 +57,8 @@ def validate_batch(batch):
 
 def apply_series_releases(rows, path=DEFAULT_INPUT):
     bundle = json.loads(Path(path).read_text())
-    if bundle.get('schema') != 1 or bundle.get('scope') != 'pilot':
-        raise ValueError('Only reviewed pilot batches are enabled')
+    if bundle.get('schema') != 1 or bundle.get('scope') not in ('pilot', 'reviewed_rollout'):
+        raise ValueError('Only explicitly reviewed series batches are enabled')
     by_id, batches = {}, set()
     for batch in bundle['batches']:
         validate_batch(batch)
