@@ -1,0 +1,80 @@
+[
+  {
+    "id": "CN:mi_cn:product:18520",
+    "name": "米家高速吹风机 H501",
+    "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A18520?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+    "release": {
+      "date": null,
+      "source": "third_party",
+      "corroborated": false,
+      "crosscheck_status": "conflict",
+      "display_allowed": false,
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2023-05",
+          "delta_days": 0,
+          "verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2023-08",
+          "delta_days": 90,
+          "verdict": "conflict"
+        }
+      ]
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:21298",
+    "name": "Xiaomi Civi 5 Pro",
+    "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A21298?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+    "release": {
+      "date": "2025-05",
+      "source": "third_party",
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "display_allowed": true,
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-05",
+          "delta_days": 0,
+          "verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-05-22",
+          "delta_days": 0,
+          "verdict": "corroborated"
+        }
+      ]
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:25524",
+    "name": "Xiaomi 18 Pro",
+    "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A25524?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+    "release": {
+      "date": "2026-09",
+      "source": "third_party",
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "display_allowed": false,
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2026-09",
+          "delta_days": 0,
+          "verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": null,
+          "delta_days": null,
+          "verdict": "unverified"
+        }
+      ]
+    }
+  }
+]

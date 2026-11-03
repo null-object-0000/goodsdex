@@ -14,6 +14,9 @@ disagreement 和 unverified 保留原日期给内部参考，但 display_allowed
 |大疆|2|2|0|0|0|
 |富士|3|3|0|0|0|
 |小米|33|8|0|5|20|
+|小米汽车|0|0|0|0|0|
+|惠普|0|0|0|0|0|
+|比亚迪|0|0|0|0|0|
 
 ## 对照明细（全部 39 条；另附 comparison-30.csv）
 
@@ -101,3 +104,92 @@ disagreement 和 unverified 保留原日期给内部参考，但 display_allowed
 `PYTHONPATH=src:scripts python3 docs/release-crosschecks-20261103/make_report.py` 可重建报告；运行 prepare/run 需要新的目录，已有 sent 标记禁止重发。数据发布在统一 finalize 中重放，发布门禁含新测试；不改变商品 ID、参数、价格、图片等非 release 字段。
 
 原始调用包：[raw-call-artifacts.tar.gz](raw-call-artifacts.tar.gz)，解包后即为上述 prompts/responses/sent/states 目录。完整商品基线可按 [baseline-manifest.json](baseline-manifest.json) 的 data commit 重取；商品日期/身份的独立基线直接保存在 [baseline-dates.json](baseline-dates.json)。 [audit.json](audit.json) 记录 151 次 HTTP 200、151 个响应哈希与提示词哈希验证，以及 token usage 总计 50,067。
+
+## 发布与线上验收
+
+代码提交 `c8eee496374b1b3efb32adc4d5915e411d1362ff`。本地全量测试 **387 passed**（基线 371 passed）；GitHub 离线 **379 passed / 8 deselected**；发布门禁 **94 passed**。[真实发布任务](https://github.com/null-object-0000/goodsdex/actions/runs/41597569806)：success。 [published-data.json](published-data.json) 记录 data 提交和 SHA-256，3968 条与本地预期逐值相等，非 release 字段逐值不变。 [client-verification.json](client-verification.json) 用现有客户端日期展示函数检查 30 条受影响记录，均不产生年份/月显示。
+
+[线上完整验证](online-verification.json)：整库与真实发布集逐值相等，10 个真实详情接口 release 对象逐值相等。下列是 3 个真实 ID 的 `/api/goods/<id>` 返回摘录（只省略旁支字段）。
+
+```json
+[
+  {
+    "id": "CN:mi_cn:product:18520",
+    "name": "米家高速吹风机 H501",
+    "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A18520?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+    "release": {
+      "date": null,
+      "source": "third_party",
+      "corroborated": false,
+      "crosscheck_status": "conflict",
+      "display_allowed": false,
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2023-05",
+          "delta_days": 0,
+          "verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2023-08",
+          "delta_days": 90,
+          "verdict": "conflict"
+        }
+      ]
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:21298",
+    "name": "Xiaomi Civi 5 Pro",
+    "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A21298?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+    "release": {
+      "date": "2025-05",
+      "source": "third_party",
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "display_allowed": true,
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-05",
+          "delta_days": 0,
+          "verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-05-22",
+          "delta_days": 0,
+          "verdict": "corroborated"
+        }
+      ]
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:25524",
+    "name": "Xiaomi 18 Pro",
+    "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A25524?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+    "release": {
+      "date": "2026-09",
+      "source": "third_party",
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "display_allowed": false,
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2026-09",
+          "delta_days": 0,
+          "verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": null,
+          "delta_days": null,
+          "verdict": "unverified"
+        }
+      ]
+    }
+  }
+]
+```

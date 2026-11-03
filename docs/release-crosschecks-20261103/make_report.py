@@ -15,6 +15,8 @@ rows = apply_release_dates(json.loads((ROOT/'baseline.json').read_text()))
 idx = {r['id']: r for r in rows}
 details, internal = [], []
 stats = defaultdict(Counter)
+for row in rows:
+    stats[row.get('brand') or '小米']
 for item in baseline:
     check = checks[item['family']]
     r = reconcile(item['release'], [check])
@@ -46,7 +48,7 @@ third = [d for d in details if d['source'] == 'third_party']
 fields = ['brand','model','id','original_date','source','source_url','llm_date','delta_days','verdict','reason']
 for filename, items in [('all-third-party.csv', third), ('comparison-30.csv', third[:30])]:
     with (ROOT/filename).open('w') as f:
-        writer = csv.DictWriter(f, fieldnames=fields, extrasaction='ignore')
+        writer = csv.DictWriter(f, fieldnames=fields, extrasaction='ignore', lineterminator='\n')
         writer.writeheader();writer.writerows(items)
 
 text = '''# 全库第三方日期独立核验
@@ -83,4 +85,27 @@ with (ROOT/'README.md').open('a') as f:
     f.write('\n原始调用包：[raw-call-artifacts.tar.gz](raw-call-artifacts.tar.gz)，解包后即为上述 prompts/responses/sent/states 目录。'
             '完整商品基线可按 [baseline-manifest.json](baseline-manifest.json) 的 data commit 重取；商品日期/身份的独立基线直接保存在 [baseline-dates.json](baseline-dates.json)。'
             ' [audit.json](audit.json) 记录 151 次 HTTP 200、151 个响应哈希与提示词哈希验证，以及 token usage 总计 50,067。\n')
+    if (ROOT/'publication.json').exists():
+        publication = json.loads((ROOT/'publication.json').read_text())
+        f.write('\n## 发布与线上验收\n\n'
+                '代码提交 `c8eee496374b1b3efb32adc4d5915e411d1362ff`。本地全量测试 **387 passed**（基线 371 passed）；'
+                'GitHub 离线 **379 passed / 8 deselected**；发布门禁 **94 passed**。'
+                f"[真实发布任务]({publication['url']})：{publication['conclusion']}。"
+                ' [published-data.json](published-data.json) 记录 data 提交和 SHA-256，3968 条与本地预期逐值相等，非 release 字段逐值不变。'
+                ' [client-verification.json](client-verification.json) 用现有客户端日期展示函数检查 30 条受影响记录，均不产生年份/月显示。\n')
+    if (ROOT/'online-verification.json').exists():
+        online = json.loads((ROOT/'online-verification.json').read_text())
+        f.write('\n[线上完整验证](online-verification.json)：整库与真实发布集逐值相等，'
+                f"{len(online['samples'])} 个真实详情接口 release 对象逐值相等。"
+                '下列是 3 个真实 ID 的 `/api/goods/<id>` 返回摘录（只省略旁支字段）。\n\n```json\n')
+        examples = []
+        for key in ('CN:mi_cn:product:18520', 'CN:mi_cn:product:21298', 'CN:mi_cn:product:25524'):
+            s = next(s for s in online['samples'] if s['id'] == key)
+            r = s['release']
+            examples.append(dict(id=key, name=s['name'], url=s['url'], release=dict(
+                date=r['date'], source=r['source'], corroborated=r['corroborated'],
+                crosscheck_status=r['crosscheck_status'], display_allowed=r.get('display_allowed', True),
+                checks=[{k:c[k] for k in ('source','date','delta_days','verdict')} for c in r['checks']])))
+        write('api-excerpts.json', examples)
+        f.write(json.dumps(examples, ensure_ascii=False, indent=2)+'\n```\n')
 print(json.dumps(dict(stats), ensure_ascii=False))

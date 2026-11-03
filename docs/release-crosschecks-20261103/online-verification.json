@@ -1,0 +1,555 @@
+{
+  "checked_at": "2026-11-03T07:50:40.003316+00:00",
+  "full_catalog_equal": true,
+  "coverage": {
+    "total": 3968,
+    "covered": 688,
+    "coverage": 0.17338709677419356,
+    "sources": {
+      "official": 615,
+      "official_hidden": 0,
+      "third_party": 34,
+      "llm": 39
+    },
+    "brands": {
+      "Apple": {
+        "total": 640,
+        "true_source": 419,
+        "official_hidden": 0,
+        "llm": 39,
+        "missing": 182
+      },
+      "比亚迪": {
+        "total": 14,
+        "true_source": 0,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 14
+      },
+      "大疆": {
+        "total": 783,
+        "true_source": 107,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 676
+      },
+      "富士": {
+        "total": 63,
+        "true_source": 14,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 49
+      },
+      "惠普": {
+        "total": 218,
+        "true_source": 0,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 218
+      },
+      "小米": {
+        "total": 2247,
+        "true_source": 106,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 2141
+      },
+      "小米汽车": {
+        "total": 3,
+        "true_source": 3,
+        "official_hidden": 0,
+        "llm": 0,
+        "missing": 0
+      }
+    }
+  },
+  "release_sha256": "f9ded678997f90b35ef8ed71546b9f9fde6e0315a6158edcdec7b9cc37cdaf6a",
+  "samples": [
+    {
+      "id": "CN:mi_cn:product:18520",
+      "name": "米家高速吹风机 H501",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A18520?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+      "release": {
+        "date": null,
+        "granularity": "month",
+        "source": "third_party",
+        "confidence": "medium",
+        "event": "availability",
+        "market": "CN",
+        "evidence": {
+          "url": "https://www.ithome.com/0/695/691.htm",
+          "quote": "2023/5/27 18:30:41 来源： IT之家 作者： 一乖 责编： 一乖 评论： 小米 米家高速吹风机 H501 今年 5 月上市，官方售价 299 元。 ",
+          "locator": "article date + first paragraph",
+          "sha256": "cf81ffe69b4041e3d255d445ad7f1c92f76ea729f6c83c8033ae5ef4f9d613d0",
+          "captured_at": "2026-11-03T04:30:00.814548+00:00",
+          "source_type": "third_party"
+        },
+        "usage": "disabled",
+        "inferred": false,
+        "family": "CN:mi_cn:product:18520",
+        "display": null,
+        "label": "发售时间",
+        "checks": [
+          {
+            "source": "third_party",
+            "date": "2023-05",
+            "delta_days": 0,
+            "verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": "2023-08",
+            "reason": "米家高速吹风机 H501 于2023年8月小米发布会亮相，并在中国大陆小米商城等渠道同期开售；公开资料通常记为2023年8月上市/开售。未混淆为后续 H501 SE 等衍生型号。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:28:02.459899+00:00",
+            "original_sha256": "720826950dd00ec255236ebae0d9d515b6958e8d07f67d974c3899e60669e7c6",
+            "prompt_sha256": "9818e59d05b8ef84a706ffb7ee7c909516714cd1b8a44e83a913cfb02efeebf1",
+            "response_sha256": "fa012c6c4f7540e503568dd22a19c8cc90b8db648805002fde6d4d19b4beea16",
+            "artifact": "docs/release-crosschecks-20261103/responses/505306672873b865a6067952.json",
+            "independent": true,
+            "delta_days": 90,
+            "verdict": "conflict",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2023-05"
+            }
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "conflict",
+        "display_allowed": false,
+        "internal_only": true,
+        "manual_review_required": true
+      },
+      "release_equal": true
+    },
+    {
+      "id": "CN:mi_cn:product:20543",
+      "name": "小米电视 S Pro 85 Mini LED 2025",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A20543?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+      "release": {
+        "date": "2024-10",
+        "granularity": "month",
+        "source": "official",
+        "evidence": {
+          "url": "https://m.mi.com/commodity/detail/20543",
+          "quote": "发布时间：2024年 10月",
+          "locator": "$.data.goodsInfo.goodsList[0].classParameters.list[11]",
+          "sha256": "5230aa918d80f288dc913b20df28d51c203cba3a4d71891b4985edcbe371f5a5",
+          "captured_at": "2026-11-03T04:26:44.396419+00:00",
+          "source_type": "official",
+          "capture_url": "https://m.mi.com/mtop/xiaomishop/product/info",
+          "request": {
+            "method": "POST",
+            "productId": "20543"
+          },
+          "isPageShow": true
+        },
+        "confidence": "high",
+        "event": "announcement",
+        "market": "CN",
+        "usage": "fact",
+        "inferred": false,
+        "family": "CN:mi_cn:product:20543",
+        "display": "2024 年 10 月",
+        "label": "发布时间",
+        "checks": [
+          {
+            "source": "official",
+            "date": "2024-10",
+            "delta_days": 0,
+            "verdict": "original"
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "official"
+      },
+      "release_equal": true
+    },
+    {
+      "id": "GLOBAL:apple_support:model:111843",
+      "name": "HomePod (第二代)",
+      "url": "https://spend.snewbie.site/api/goods/GLOBAL%3Aapple_support%3Amodel%3A111843?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+      "release": {
+        "date": "2023-02",
+        "granularity": "month",
+        "source": "llm",
+        "confidence": "high",
+        "event": "availability",
+        "market": "CN",
+        "model": "codex-interactive-session",
+        "prompt_version": "release-month-v1",
+        "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2023/01/apple-introduces-the-new-homepod-with-breakthrough-sound-and-intelligence/",
+          "quote": "2023 年 1 月 18 日 | ，支持播放沉浸式空间音频曲目，呈现前所未有的聆听体验。HomePod 带来管理日常任务、控制智能家居的便利新方式，用户可以使用 Siri 创建智能家居自动化功能，在家中触发烟雾或一氧化碳警报时获得通知，或者查看房间的温度与湿度——以上操作不必动手就能完成。 新款 HomePod 从今日起可在线或通过 Apple Store app 订购，2 月 3 日（周五）起正式发售。 “利用我们的专业音频技术和创新，新款 HomePod 可呈现醇厚深沉的低音、自然的中音和清澈细腻的高音。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“随着 HomePod mini 大受欢迎，我们看到用户对体积更大、声学",
+          "locator": "Newsroom publication header + verbatim availability sentence",
+          "source_type": "official",
+          "sha256": "af543228cc70cfca5d6f1266c933032d60591840c1f6518a91409e15ff254532",
+          "captured_at": "2026-11-03T04:26:58.414389+00:00"
+        },
+        "usage": "disabled",
+        "inferred": true,
+        "family": "GLOBAL:apple_support:model:111843",
+        "display": null,
+        "label": "推出月份（推断）",
+        "validation": {
+          "usage": "fact",
+          "sample_size": 30,
+          "accuracy": 1,
+          "universe_sha256": "a80ddcebd26b5e442ec3a798a3d0afce43275ed3039a920b55d8d945c669e9eb"
+        },
+        "display_allowed": false,
+        "internal_only": true,
+        "estimate_notice": "按型号世代估算",
+        "checks": [
+          {
+            "source": "llm",
+            "date": "2023-02",
+            "delta_days": 0,
+            "verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": "2023-01-18",
+            "reason": "Apple 于 2023 年 1 月 18 日发布第二代 HomePod，并宣布中国大陆为首发市场之一，同日开启订购；中国大陆官网显示当日可订购、2 月 3 日起发货。按“首次正式开售（可下单购买）”口径，中国市场的 availability 为 2023-01-18；若将“开售”严格理解为到货/发货日，则为 2023-02-03，存在口径歧义。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:28:15.295766+00:00",
+            "original_sha256": "d66f2f1d07773e72c1ec26a0be51552b983f1f3f405299bc5085edfbc123207b",
+            "prompt_sha256": "1857eff1186a3f3612163d585fdfb45c603e0d7892aa0fcbe5ef82b368654450",
+            "response_sha256": "43ecec0f5b75a65660e6f7b9ce3d73029ec0ff231efc4c6479fa23aab5c82077",
+            "artifact": "docs/release-crosschecks-20261103/responses/3d597bc1505cc0075fe5ad70.json",
+            "independent": true,
+            "delta_days": 30,
+            "verdict": "disagreement",
+            "compared_to": {
+              "source": "llm",
+              "date": "2023-02"
+            }
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "disagreement"
+      },
+      "release_equal": true
+    },
+    {
+      "id": "CN:hp_cn:sku:7Y0Y4PC",
+      "name": "惠普 锐14 14英寸商务笔记本电脑 AMD 锐龙™ 5 7530U 处理器 8GB+512GB AMD Radeon™",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Ahp_cn%3Asku%3A7Y0Y4PC?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+      "release": null,
+      "release_equal": true
+    },
+    {
+      "id": "CN:mi_cn:product:23261",
+      "name": "REDMI Buds 8 活力版",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A23261?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+      "release": {
+        "date": "2026-03",
+        "granularity": "month",
+        "source": "third_party",
+        "confidence": "high",
+        "event": "availability",
+        "market": "CN",
+        "evidence": {
+          "url": "https://www.ithome.com/0/926/051.htm",
+          "quote": "2026/3/5 10:03:32 来源： IT之家 作者： 浩渺 责编： 浩渺 评论： 感谢IT之家网友 不一样的体验 、 斯文当不了饭吃 、 風見暉一 的线索投递！ IT之家 3 月 5 日消息，小米 REDMI Buds 8 活力版耳机今日开售，搭载 14.2mm 超大镀钛单元、双麦 AI 通话降噪、37 小时续航，到手价 119 元。",
+          "locator": "article timestamp + opening explicit release sentence",
+          "sha256": "3735e6dc98e575a405f30917e81ec5af07dad48f929d284c090885dff71bdd7f",
+          "captured_at": "2026-11-03T05:19:36.334191+00:00",
+          "source_type": "third_party"
+        },
+        "usage": "disabled",
+        "inferred": false,
+        "family": "round2:CN:mi_cn:product:23261",
+        "display": null,
+        "label": "发售时间",
+        "checks": [
+          {
+            "source": "third_party",
+            "date": "2026-03",
+            "delta_days": 0,
+            "verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": null,
+            "reason": "无法独立确认 REDMI Buds 8 活力版在中国大陆的首次正式开售日期；该型号发布信息不足，不能由型号年份或同系列其他产品推算，故弃答。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:30:04.660628+00:00",
+            "original_sha256": "e50c4c362f07e30ea4fb726eec05d33486e296062d80629da678719ae710a40a",
+            "prompt_sha256": "1f7e44755b35044cc9aa828c64cbf06dc62b6458b0dbce09624eea386474d17c",
+            "response_sha256": "8b352ed5db5c33897f264181c3da9430b345683feacbe1be59a2c0116cb0b7fa",
+            "artifact": "docs/release-crosschecks-20261103/responses/3b4ebd7a349d13d1a0c5236c.json",
+            "independent": true,
+            "delta_days": null,
+            "verdict": "unverified",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2026-03"
+            }
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "unverified",
+        "display_allowed": false,
+        "internal_only": true
+      },
+      "release_equal": true
+    },
+    {
+      "id": "CN:apple_cn:commodity:MH064CH/A",
+      "name": "iMac",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Aapple_cn%3Acommodity%3AMH064CH%2FA?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+      "release": {
+        "date": "2026-11",
+        "granularity": "month",
+        "source": "official",
+        "confidence": "high",
+        "market": "CN",
+        "event": "planned_availability",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2026/10/apple-unveils-new-imac-with-m6/",
+          "quote": "2026 年 10 月 27 日 |  视网膜显示屏，行业领先的摄像头、扬声器和麦克风，最多四个雷雳 4 端口，同色系配件以及功能强大的 macOS 27——种种卓越特性共同构成了完整的 iMac 体验。新款 iMac 提供蓝色、绿色、粉色、黄色、紫色、橙色和银色共七种缤纷色彩，是现有用户的绝佳升级选择，也是新用户开启 Mac 体验的理想之选。新款 iMac 将于 10 月 29 日起接受订购，11 月 6 日（星期五）起正式发售。 “作为一贯领先全球的一体机，iMac 在今天再次树立新的标杆。”Apple 硬件工程副总裁 Shelly Goldberg 表示，“M6 芯片的卓越性能和 AI 能力为各类工作流提供强劲动力，再加上绚丽的 24 英寸",
+          "locator": "Newsroom publication header + explicit sale/schedule sentence",
+          "source_type": "official",
+          "sha256": "d2c553bdf5933fe40b155b8dd6cac36bb5b03de8fd9b63ae1313949914535e87",
+          "captured_at": "2026-11-03T04:26:31.487476+00:00"
+        },
+        "usage": "reference",
+        "inferred": false,
+        "family": "CN:apple_cn:product:RO_IMAC_M6_24INCH_STAND_SILVER_GOO_2026",
+        "display": "预计 2026 年 11 月（官方计划）",
+        "label": "预计发售",
+        "checks": [
+          {
+            "source": "official",
+            "date": "2026-11",
+            "delta_days": 0,
+            "verdict": "original"
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "official"
+      },
+      "release_equal": true
+    },
+    {
+      "id": "CN:apple_cn:commodity:MD3Y4CH/A",
+      "name": "iPad",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Aapple_cn%3Acommodity%3AMD3Y4CH%2FA?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+      "release": {
+        "date": "2025-03",
+        "granularity": "month",
+        "source": "official",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2025/03/apple-introduces-ipad-air-with-powerful-m3-chip-new-magic-keyboard/",
+          "quote": "2025 年 3 月 4 日 | 搭载 A16 芯片的新款 iPad，并于 3 月 12 日起在 Apple Store 零售店和 Apple 授权经销商处正式发售。 新款 iPad 起步存储容量为 128GB，同时提供 256GB 和新的 5",
+          "locator": "Newsroom: publication header + product pricing/availability paragraph",
+          "sha256": "033ceeb22ffd81fc26a5ebab62b8ffb50a70f70ba164fc7120a9b5ecfff5083f",
+          "captured_at": "2026-11-03T04:26:44.689069+00:00",
+          "source_type": "official"
+        },
+        "confidence": "high",
+        "event": "availability",
+        "market": "CN",
+        "usage": "fact",
+        "inferred": false,
+        "family": "CN:apple_cn:product:ipada16_2025",
+        "display": "2025 年 3 月",
+        "label": "发售时间",
+        "checks": [
+          {
+            "source": "official",
+            "date": "2025-03",
+            "delta_days": 0,
+            "verdict": "original"
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "official"
+      },
+      "release_equal": true
+    },
+    {
+      "id": "CN:mi_cn:product:21298",
+      "name": "Xiaomi Civi 5 Pro",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A21298?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+      "release": {
+        "date": "2025-05",
+        "granularity": "month",
+        "source": "third_party",
+        "confidence": "high",
+        "event": "announcement",
+        "market": "CN",
+        "evidence": {
+          "url": "https://www.ithome.com/0/855/282.htm",
+          "quote": "七、小米 Civi 5 Pro；本场发布会还有一款手机大家也别忘了，就是小米 Civi 5 Pro，这款手机之前已经有过介绍，在传承了前代特质的同时， 在影像和性能两方面重点发力 。 设计方面，小米 Civi 5 Pro 全面向小米 15 系列看齐，拥有四大同款： 紧凑机身、四窄边屏幕、包裹式金属中框、顶部无孔化设计。 Deco 用独立式“悬浮镜组”替代上代平面黑圆台，提供星云紫、樱花粉、黑色、白色四色可选，另外这次发布会还带来了一款新配色：冰美式。 影像方面，小米 Civi 5 Pro 承袭徕卡 Summilux 光学系统 ，搭载全焦段徕卡三摄，其中搭载了小米 15 同款徕卡浮动长焦镜头。前置的 5000 万像素超感光镜头，首发 NanoPrism 超透纳米棱镜，让前置人像也具备“夜深”的体验。 内置全新一代人像大模型，带来“AI 肌肤再生”、“AI 面部微整形”、“AI 写真风格”功能，并提供五套写真风格套装可选。 ",
+          "locator": "article #paragraph / 七、小米 Civi 5 Pro; article timestamp; explicitly dated launch event",
+          "sha256": "f9bb69ac2015df2ffe35fc10cfa0016ca366343687a57edbb733439e6b8d4255",
+          "captured_at": "2026-11-03T05:20:02.785255+00:00",
+          "source_type": "third_party"
+        },
+        "usage": "fact",
+        "inferred": false,
+        "family": "round2:CN:mi_cn:product:21298",
+        "display": "2025 年 5 月",
+        "label": "发布时间",
+        "checks": [
+          {
+            "source": "third_party",
+            "date": "2025-05",
+            "delta_days": 0,
+            "verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": "2025-05-22",
+            "reason": "小米于2025年5月22日在中国举行发布会，正式发布Xiaomi Civi 5 Pro；该日期为官方发布会（announcement），非开售日期。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:29:44.673997+00:00",
+            "original_sha256": "af687a0fd3188983940e96df34ea6a4ca75a1b937b3a2d13293f5bfa70640359",
+            "prompt_sha256": "2edd1f8174533dbb1a305796b7ddf98ba9dec09eea827b310e5bf1773f2a715b",
+            "response_sha256": "e1e3c728c6595c0836ba331e9d99f59dc469cdfbfb5655de5e9f5149d98b841d",
+            "artifact": "docs/release-crosschecks-20261103/responses/ae1ccfa8c26f50f76aa43881.json",
+            "independent": true,
+            "delta_days": 0,
+            "verdict": "corroborated",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2025-05"
+            }
+          }
+        ],
+        "corroborated": true,
+        "crosscheck_status": "corroborated"
+      },
+      "release_equal": true
+    },
+    {
+      "id": "CN:mi_cn:product:25524",
+      "name": "Xiaomi 18 Pro",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Ami_cn%3Aproduct%3A25524?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+      "release": {
+        "date": "2026-09",
+        "granularity": "month",
+        "source": "third_party",
+        "confidence": "high",
+        "event": "announcement",
+        "market": "CN",
+        "evidence": {
+          "url": "https://www.ithome.com/1/006/476.htm",
+          "quote": "一、小米 18 Pro 系列；先把目光拉回小米 18 Pro 系列。还是熟悉的双尺寸，但这一代从里到外，升级幅度可不小。 设计上，新一代自研屏幕封装工艺安排上了， 极窄四等边框直接压到 0.99mm ；中框采用大微弧四曲设计，R 角弧面宽度较上代至高增加 37.7%；背屏也还在，并且升级成了一体式纯平。 配色一共四款，除了主打的“星河蓝”，还带来冰桃粉和经典黑白双色。 性能的全面升级这次是重头戏，卢伟冰直接放话： “牙膏挤爆了。” 小米 18 Pro 系列全球首发高通新一代骁龙旗舰移动平台。 其中，小米 18 Pro 首发第六代骁龙 8 至尊版，小米 18 Pro Max 首发第六代骁龙 8 超级至尊版，两颗芯片均基于最新一代 2nm 旗舰制程。 具体来看，第六代骁龙 8 至尊版的 CPU 主频直接拉到 5GHz，移动平台历史最高；GPU 性能提升 35% 的同时，功耗降低 40%；NPU 推理性能提升 80% 之余，",
+          "locator": "article #paragraph / 一、小米 18 Pro 系列; article timestamp; explicitly dated launch event",
+          "sha256": "4dae9419fd031e8157dd101447048a4e8b2a9d2076860093eabf72bc2d0836a5",
+          "captured_at": "2026-11-03T05:20:02.781033+00:00",
+          "source_type": "third_party"
+        },
+        "usage": "disabled",
+        "inferred": false,
+        "family": "round2:CN:mi_cn:product:25524",
+        "display": null,
+        "label": "发布时间",
+        "checks": [
+          {
+            "source": "third_party",
+            "date": "2026-09",
+            "delta_days": 0,
+            "verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": null,
+            "reason": "截至我的知识截止时间，小米尚未发布 Xiaomi 18 Pro，也没有该型号在中国市场首次正式发布的独立可核实日期；无法从型号年份或前代发布时间推算，故弃答。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:30:24.629855+00:00",
+            "original_sha256": "cd1dc6dd0faa9b68905c930b7a4cee89cea6d101c4aa4a0d8f4e5e8fc72ab11c",
+            "prompt_sha256": "bc5cc512d0c3a6b7451841b37da9f5418ec6dfbcbc5861a4ef767212293d7d8b",
+            "response_sha256": "25ad9fcc461c00042b80d10d8123afda143dd9f5a4e6aa6d49a23391a6eeb6b1",
+            "artifact": "docs/release-crosschecks-20261103/responses/abdc8f1b55512cb5591a76c7.json",
+            "independent": true,
+            "delta_days": null,
+            "verdict": "unverified",
+            "compared_to": {
+              "source": "third_party",
+              "date": "2026-09"
+            }
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "unverified",
+        "display_allowed": false,
+        "internal_only": true
+      },
+      "release_equal": true
+    },
+    {
+      "id": "GLOBAL:apple_support:model:111974",
+      "name": "iPad Pro 11 英寸 (第 1 代)",
+      "url": "https://spend.snewbie.site/api/goods/GLOBAL%3Aapple_support%3Amodel%3A111974?release_check=2026-11-03T07%3A50%3A40.003316%2B00%3A00",
+      "release": {
+        "date": null,
+        "granularity": "month",
+        "source": "llm",
+        "confidence": "high",
+        "event": "availability",
+        "market": "CN",
+        "model": "codex-interactive-session",
+        "prompt_version": "release-month-v1",
+        "reasoning": "对照规格页型号/尺寸/代次与官网公告；取正文开售月，非预购或新闻稿月份。",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2018/10/new-ipad-pro-with-all-screen-design-is-most-advanced-powerful-ipad-ever/",
+          "quote": "2018 年 10 月 30 日 | Pad Pro 上，同时进行无线充电。Apple Pencil 内置全新的触控传感器，可检测手指的触碰，让你能以全新方式在 app 中进行交互。全新的键盘式智能双面夹拥有简洁的一体式设计，可调式操作让它更加灵活多用。新一代 iPad Pro、Apple Pencil 和键盘式智能双面夹将于今日接受订购，并于 11 月 7 日星期三开始在零售店发售。 新一代 iPad Pro 搭配 Apple Pencil 和键盘式智能双面夹，各种事务，随时随地轻松搞定。 “新一代 iPad Pro 在高性能电脑领域、创意电脑领域、移动电脑领域都是一次巨大的飞跃。它拥有全新的设计，更加纤薄轻巧；超快的",
+          "locator": "Newsroom publication header + verbatim availability sentence",
+          "source_type": "official",
+          "sha256": "f333d1ee80dc3981d4b8b1e63e3b67c1d2999fd8616d1d694c03247b27cf2ddc",
+          "captured_at": "2026-11-03T04:27:56.572264+00:00"
+        },
+        "usage": "disabled",
+        "inferred": true,
+        "family": "GLOBAL:apple_support:model:111974",
+        "display": null,
+        "label": "推出月份（推断）",
+        "validation": {
+          "usage": "fact",
+          "sample_size": 30,
+          "accuracy": 1,
+          "universe_sha256": "a80ddcebd26b5e442ec3a798a3d0afce43275ed3039a920b55d8d945c669e9eb"
+        },
+        "display_allowed": false,
+        "internal_only": true,
+        "estimate_notice": "按型号世代估算",
+        "checks": [
+          {
+            "source": "llm",
+            "date": "2018-11",
+            "delta_days": 0,
+            "verdict": "original"
+          },
+          {
+            "source": "llm",
+            "date": "2020-03-25",
+            "reason": "iPad Pro 11 英寸（第1代）于2018年10月30日发布，2018年11月7日在美国等首批市场开售；中国大陆行货的首次正式开售日期为2020年3月25日（与2020款iPad Pro同批在中国大陆上市，但该日期对应的是2018款11英寸iPad Pro在中国大陆的首次正式开售）。需注意：2018款11英寸iPad Pro在中国大陆的上市时间晚于全球首发，且与2020款同月开售，存在型号代际混淆风险；此处依据为中国大陆苹果官网当时公布的上市信息。",
+            "model": "deepseek-v4.1-flash-1017",
+            "checked_at": "2026-11-03T07:29:12.657336+00:00",
+            "original_sha256": "fcdc9212e66c7665bbbf914e4cba22ce18ead976472e4a5c4581cb4afeb635bd",
+            "prompt_sha256": "814d563929219bbf1073dd82f790d5be1e2b1451002f189e2bed4d7285785142",
+            "response_sha256": "08816a3ade2062af3ddd4e90d78817b353441349eadbadab20f5c6a4b54a148f",
+            "artifact": "docs/release-crosschecks-20261103/responses/78653c8be000f296e87ca112.json",
+            "independent": true,
+            "delta_days": 480,
+            "verdict": "conflict",
+            "compared_to": {
+              "source": "llm",
+              "date": "2018-11"
+            }
+          }
+        ],
+        "corroborated": false,
+        "crosscheck_status": "conflict",
+        "manual_review_required": true
+      },
+      "release_equal": true
+    }
+  ]
+}
