@@ -728,6 +728,10 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     # release > release_series > release_llm; page existence is independent.
     from goodsdex.date_enrichment import apply_date_enrichment
     output = apply_date_enrichment(output)
+    from goodsdex.brands import normalize_brands, audit_brands
+    brand_before = output
+    output = normalize_brands(output)
+    brand_audit = audit_brands(brand_before, output)
     assert_public_fields(output)
     from goodsdex.accessories import plan
     archive_path = public / 'archive' / 'accessories.json'
@@ -751,6 +755,7 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     combined["deduplication"] = audit
     combined["published_count"] = len(output)
     combined["accessories"] = accessory_audit
+    combined["brands"] = brand_audit
     meta_path = public / "meta.json"
     meta = metadata(output, json.loads(meta_path.read_text()) if meta_path.exists() else {})
     from goodsdex.release_dates import coverage
@@ -769,6 +774,7 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     # All checks finish before the first release file is replaced.
     archive_path.parent.mkdir(parents=True, exist_ok=True)
     atomic_write(archive_path, accessory_archive)
+    atomic_write(public / "archive" / "brand-review.json", brand_audit["manual_review"])
     for name, value in (("goods.json", output), ("meta.json", meta), ("merge-audit.json", combined)):
         atomic_write(public / name, value)
     return audit

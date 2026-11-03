@@ -56,7 +56,13 @@ def test_finalizer_replays_and_details_only(tmp_path):
     subprocess.run(command,check=True,capture_output=True)
     result=json.loads((tmp_path/'goods.json').read_bytes())
     expected=apply_date_enrichment(json.loads(baseline))
-    assert result==expected
+    # Other finalizer policies now backfill brands and archive 11 observed
+    # accessories. Enrichment itself and every remaining field stay identical.
+    archived=json.loads((tmp_path/'archive/accessories.json').read_text())
+    excluded={r['id'] for r in archived}
+    assert len(excluded)==11 and all(not r.get('release') for r in archived)
+    assert [{k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in result] == [
+        {k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in expected if r['id'] not in excluded]
     for field in ('page_first_archived','release_llm','release_series'):
         sample=next(r for r in result if r.get(field))
         detail=json.loads((tmp_path/f"detail/{shard_for(sample['id']):02x}.json").read_bytes())

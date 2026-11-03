@@ -49,7 +49,11 @@ def migrate(rows):
             expected = migrate([t['source_record'] for t in original['trims']])
             # Release is a separately validated product-level enrichment. It
             # must survive replay without becoming immutable trim evidence.
-            structural = {k: v for k, v in original.items() if k != 'release'}
+            if 'brand_source' in original:
+                from goodsdex.brands import infer_brand
+                if (original.get('brand'), original['brand_source']) != infer_brand(original):
+                    raise ValueError('Canonical car brand attribution differs from rules')
+            structural = {k: v for k, v in original.items() if k not in ('release', 'brand_source')}
             if len(expected) != 1 or expected[0] != structural:
                 raise ValueError('Canonical car product differs from source evidence')
         if not is_car(original) or original.get('trims') is not None:

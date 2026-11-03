@@ -61,7 +61,7 @@ def test_gate_boundary_new_records_repeat_and_exact_review():
         plan(rows, rows, reviewed_sha256=fingerprint([rows[0]]))
     kept, archive, audit = plan(rows, rows, reviewed_sha256=fingerprint(rows[:2]))
     assert audit['gate'] == 'red' and audit['reviewed']
-    assert all(r['excluded_reason'] == 'accessory' for r in archive)
+    assert all(r['excluded_reason'].startswith('accessory:') for r in archive)
     _, _, audit = plan(rows, kept, archive)
     assert audit['newly_excluded_count'] == 0
     # Already archived but actually restored in a release: count it again.
@@ -89,7 +89,7 @@ def test_finalize_fails_before_writes_and_preserves_archive_and_sources(tmp_path
     finalize_public(tmp_path, rows, reviewed_accessory_sha256=fingerprint(rows[1:]))
     assert [r['id'] for r in json.loads(path.read_text())] == ['device']
     archived = json.loads((tmp_path / 'archive/accessories.json').read_text())
-    assert {k: v for k, v in archived[0].items() if k not in ('exclusion', 'excluded_reason', 'categories')} == rows[1]
+    assert {k: v for k, v in archived[0].items() if k not in ('exclusion', 'excluded_reason', 'categories', 'brand', 'brand_source')} == rows[1]
     assert raw.read_text() == 'original raw'
     finalize_public(tmp_path)
     assert json.loads((tmp_path / 'archive/accessories.json').read_text()) == archived
@@ -119,3 +119,39 @@ def test_archive_repair_preserves_displaced_observation_and_extra_identities():
     result = restore([stale, extra], [first])
     assert result == [{**first, 'subsequent_observations': [stale]}, extra]
     assert stale['price'] is None and first['price'] == 99
+
+
+@pytest.mark.parametrize('name', [
+    '「新秀无畏」系列笔记本定制贴纸',
+    '【定制】小米笔记本Pro 15 OLED 机车女孩款贴纸',
+    '小米笔记本Pro 15 OLED 宇航员款贴纸',
+    '【定制】RedmiBook Pro 15 机车女孩款贴纸',
+    '【定制】RedmiBook Pro 15 宇航员款贴纸',
+    'Redmi Pad Pro 类纸膜 透明色', '小米MIX 2S 标准高透膜',
+    '小米8 标准钢化玻璃膜', '日常元素地面清洁剂（自动添加版）',
+])
+def test_observed_missing_accessories(name):
+    assert classify(dict(name=name, category='笔记本'))['accessory']
+
+
+@pytest.mark.parametrize('name', [
+    'RedmiBook Pro 15', '小米笔记本Pro 15 OLED', '米家扫拖机器人',
+    '米家洗地机', '空调清洁保养套装服务 挂机', '洗衣机清洁保养服务',
+    '小米笔记本Pro 15 OLED（赠贴纸）', 'Redmi Pad Pro（含保护膜）',
+    'FUJIFILM X-E5 + XF23mmF2.8 R WR 套机', 'XF 35mm F1.4 镜头',
+])
+def test_missing_accessory_rules_preserve_products_and_services(name):
+    assert not classify(dict(name=name, category='家电'))['accessory']
+
+
+def test_sticker_reason_and_shared_finalizer(tmp_path):
+    from goodsdex.accessories import exclusion_reason
+    rows = [dict(id=f'CN:mi_cn:product:keep{i}', name='小米笔记本Pro 15 OLED', category='笔记本') for i in range(20)]
+    sticker = dict(id='CN:mi_cn:product:10000292', name='「新秀无畏」系列笔记本定制贴纸', category='笔记本', price=99)
+    assert exclusion_reason(sticker) == 'accessory:sticker'
+    (tmp_path / 'goods.json').write_text(json.dumps(rows + [sticker]))
+    finalize_public(tmp_path, rows + [sticker])
+    assert len(json.loads((tmp_path / 'goods.json').read_text())) == 20
+    archived = json.loads((tmp_path / 'archive/accessories.json').read_text())
+    assert archived[0]['id'] == sticker['id'] and archived[0]['price'] == 99
+    assert archived[0]['excluded_reason'] == 'accessory:sticker'

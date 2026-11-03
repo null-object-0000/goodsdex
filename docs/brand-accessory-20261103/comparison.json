@@ -1,0 +1,1107 @@
+{
+  "before_count": 2909,
+  "after_count": 2898,
+  "brand": {
+    "before": {
+      "Apple": 635,
+      "大疆": 281,
+      "富士": 63,
+      "小米": 143,
+      "小米汽车": 3,
+      "惠普": 218,
+      "未知": 1552,
+      "比亚迪": 14
+    },
+    "after": {
+      "Apple": 635,
+      "大疆": 281,
+      "富士": 63,
+      "小米": 1695,
+      "小米汽车": 3,
+      "惠普": 218,
+      "比亚迪": 14
+    },
+    "unknown_ratio": 0.0,
+    "unknown_prefix_top10": [],
+    "manual_review": [],
+    "after_filter": {
+      "Apple": 635,
+      "大疆": 281,
+      "富士": 63,
+      "小米": 1684,
+      "小米汽车": 3,
+      "惠普": 218,
+      "比亚迪": 14
+    },
+    "before_unknown_ratio": 0.5335166723960124
+  },
+  "newly_excluded_count": 11,
+  "historical_excluded_count": 1059,
+  "total_archived": 1070,
+  "excluded_samples20": [
+    {
+      "id": "CN:mi_cn:product:10000292",
+      "name": "「新秀无畏」系列笔记本定制贴纸",
+      "category": "笔记本",
+      "excluded_reason": "accessory:sticker",
+      "batch": "new"
+    },
+    {
+      "id": "CN:mi_cn:product:13929",
+      "name": "【定制】小米笔记本Pro 15 OLED 机车女孩款贴纸",
+      "category": "笔记本",
+      "excluded_reason": "accessory:sticker",
+      "batch": "new"
+    },
+    {
+      "id": "CN:mi_cn:product:13930",
+      "name": "小米笔记本Pro 15 OLED 宇航员款贴纸",
+      "category": "笔记本",
+      "excluded_reason": "accessory:sticker",
+      "batch": "new"
+    },
+    {
+      "id": "CN:mi_cn:product:13931",
+      "name": "【定制】RedmiBook Pro 15 机车女孩款贴纸",
+      "category": "笔记本",
+      "excluded_reason": "accessory:sticker",
+      "batch": "new"
+    },
+    {
+      "id": "CN:mi_cn:product:13932",
+      "name": "【定制】RedmiBook Pro 15 宇航员款贴纸",
+      "category": "笔记本",
+      "excluded_reason": "accessory:sticker",
+      "batch": "new"
+    },
+    {
+      "id": "CN:mi_cn:product:16422",
+      "name": "日常元素地面清洁剂 1L",
+      "category": "家电",
+      "excluded_reason": "accessory:cleaning_consumable",
+      "batch": "new"
+    },
+    {
+      "id": "CN:mi_cn:product:18012",
+      "name": "日常元素地面清洁剂 200ml",
+      "category": "家电",
+      "excluded_reason": "accessory:cleaning_consumable",
+      "batch": "new"
+    },
+    {
+      "id": "CN:mi_cn:product:18029",
+      "name": "日常元素地面清洁剂（自动添加版）",
+      "category": "扫地机器人",
+      "excluded_reason": "accessory:cleaning_consumable",
+      "batch": "new"
+    },
+    {
+      "id": "CN:mi_cn:product:20218",
+      "name": "Redmi Pad Pro 类纸膜 透明色",
+      "category": "平板",
+      "excluded_reason": "accessory:screen_film",
+      "batch": "new"
+    },
+    {
+      "id": "CN:mi_cn:product:7790",
+      "name": "小米MIX 2S 标准高透膜",
+      "category": "旧款机型",
+      "excluded_reason": "accessory:screen_film",
+      "batch": "new"
+    },
+    {
+      "id": "CN:mi_cn:product:8136",
+      "name": "小米8 标准钢化玻璃膜",
+      "category": "旧款机型",
+      "excluded_reason": "accessory:screen_film",
+      "batch": "new"
+    },
+    {
+      "id": "CN:mi_cn:product:19186",
+      "name": "Redmi Pad SE 钢化保护膜 透明",
+      "category": "平板",
+      "excluded_reason": "accessory",
+      "batch": "historical"
+    },
+    {
+      "id": "CN:dji:sku:109971",
+      "name": "DJI 65W 车载充电器",
+      "category": "摄影器材配件",
+      "excluded_reason": "accessory",
+      "batch": "historical"
+    },
+    {
+      "id": "CN:mi_cn:product:11859",
+      "name": "小米Type-C转Lightning数据线 1m",
+      "category": "数据线",
+      "excluded_reason": "accessory",
+      "batch": "historical"
+    },
+    {
+      "id": "CN:dji:sku:101241",
+      "name": "御 Mavic 2 行业版智能飞行电池",
+      "category": "无人机配件",
+      "excluded_reason": "accessory",
+      "batch": "historical"
+    },
+    {
+      "id": "CN:dji:sku:117771",
+      "name": "DJI Pocket 2 保护壳",
+      "category": "相机配件",
+      "excluded_reason": "accessory",
+      "batch": "historical"
+    },
+    {
+      "id": "CN:mi_cn:product:10000275",
+      "name": "米家净水器800G、小米净水器H800G/H800G Pro滤芯",
+      "category": "净水器",
+      "excluded_reason": "accessory",
+      "batch": "historical"
+    },
+    {
+      "id": "CN:dji:sku:191541",
+      "name": "ROMO 拖布",
+      "category": "扫地机器人配件",
+      "excluded_reason": "accessory",
+      "batch": "historical"
+    },
+    {
+      "id": "CN:dji:sku:128241",
+      "name": "DJI Mini 3 系列全向桨叶保护罩",
+      "category": "无人机配件",
+      "excluded_reason": "accessory",
+      "batch": "historical"
+    },
+    {
+      "id": "CN:dji:sku:117801",
+      "name": "DJI RS 2 便携收纳包",
+      "category": "云台配件",
+      "excluded_reason": "accessory",
+      "batch": "historical"
+    }
+  ],
+  "new_exclusions": [
+    {
+      "id": "CN:mi_cn:product:10000292",
+      "name": "「新秀无畏」系列笔记本定制贴纸",
+      "kind": "unknown",
+      "category": "笔记本",
+      "categories": [
+        "笔记本"
+      ],
+      "price": 99,
+      "market_price": 99,
+      "gid": 2211400006,
+      "image": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1617960972.44878121.png",
+      "fetched_at": "2026-10-27T08:06:30+08:00",
+      "params": {},
+      "is_container": true,
+      "brand": "小米",
+      "brand_source": "id_prefix",
+      "excluded_reason": "accessory:sticker",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "贴纸"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13929",
+      "name": "【定制】小米笔记本Pro 15 OLED 机车女孩款贴纸",
+      "kind": "machine",
+      "category": "笔记本",
+      "categories": [
+        "笔记本"
+      ],
+      "price": 99,
+      "market_price": 99,
+      "gid": 2211400005,
+      "image": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1617960972.44878121.png",
+      "fetched_at": "2026-10-27T08:06:37+08:00",
+      "params": {},
+      "from_container": true,
+      "brand": "小米",
+      "brand_source": "id_prefix",
+      "excluded_reason": "accessory:sticker",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "贴纸"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13930",
+      "name": "小米笔记本Pro 15 OLED 宇航员款贴纸",
+      "kind": "machine",
+      "category": "笔记本",
+      "categories": [
+        "笔记本"
+      ],
+      "price": 99,
+      "market_price": 99,
+      "gid": 2211400006,
+      "image": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1617961911.45243885.png",
+      "fetched_at": "2026-10-27T08:06:30+08:00",
+      "params": {},
+      "brand": "小米",
+      "brand_source": "id_prefix",
+      "excluded_reason": "accessory:sticker",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "贴纸"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13931",
+      "name": "【定制】RedmiBook Pro 15 机车女孩款贴纸",
+      "kind": "machine",
+      "category": "笔记本",
+      "categories": [
+        "笔记本"
+      ],
+      "price": 99,
+      "market_price": 99,
+      "gid": 2211400007,
+      "image": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1617962343.85751172.png",
+      "fetched_at": "2026-10-27T08:06:37+08:00",
+      "params": {},
+      "from_container": true,
+      "brand": "小米",
+      "brand_source": "id_prefix",
+      "excluded_reason": "accessory:sticker",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "贴纸"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:13932",
+      "name": "【定制】RedmiBook Pro 15 宇航员款贴纸",
+      "kind": "machine",
+      "category": "笔记本",
+      "categories": [
+        "笔记本"
+      ],
+      "price": 99,
+      "market_price": 99,
+      "gid": 2211400008,
+      "image": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1617962920.37329035.png",
+      "fetched_at": "2026-10-27T08:06:37+08:00",
+      "params": {},
+      "from_container": true,
+      "brand": "小米",
+      "brand_source": "id_prefix",
+      "excluded_reason": "accessory:sticker",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "贴纸"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:16422",
+      "name": "日常元素地面清洁剂 1L",
+      "kind": "service",
+      "category": "家电",
+      "categories": [
+        "家电"
+      ],
+      "price": 99,
+      "market_price": 99,
+      "gid": 2221500853,
+      "image": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208191914_5c3dc5a48f9e9d5b79d22bc5c02ebb20.png",
+      "fetched_at": "2026-10-27T08:14:31+08:00",
+      "params": {},
+      "brand": "小米",
+      "brand_source": "id_prefix",
+      "excluded_reason": "accessory:cleaning_consumable",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "清洁剂"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18012",
+      "name": "日常元素地面清洁剂 200ml",
+      "kind": "service",
+      "category": "家电",
+      "categories": [
+        "家电"
+      ],
+      "price": 49,
+      "market_price": 49,
+      "gid": 2221501470,
+      "image": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202211282033_9c4c55dc03778745293d34c4c6d0ad0a.png",
+      "fetched_at": "2026-10-27T08:16:53+08:00",
+      "params": {},
+      "brand": "小米",
+      "brand_source": "id_prefix",
+      "excluded_reason": "accessory:cleaning_consumable",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "清洁剂"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:18029",
+      "name": "日常元素地面清洁剂（自动添加版）",
+      "kind": "service",
+      "category": "扫地机器人",
+      "categories": [
+        "扫地机器人",
+        "家电"
+      ],
+      "price": 99,
+      "market_price": 99,
+      "gid": 2221501489,
+      "image": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202211292327_b965e2d0405771e8a4eb1a9bfb39dcc3.png",
+      "fetched_at": "2026-10-27T08:18:47+08:00",
+      "params": {},
+      "brand": "小米",
+      "brand_source": "id_prefix",
+      "excluded_reason": "accessory:cleaning_consumable",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "清洁剂"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:20218",
+      "name": "Redmi Pad Pro 类纸膜 透明色",
+      "kind": "machine",
+      "category": "平板",
+      "categories": [
+        "平板"
+      ],
+      "price": 149,
+      "market_price": 149,
+      "gid": 2230002122,
+      "image": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202407231034_c7d2355d83cc0a3d7626be4402967b8e.png",
+      "fetched_at": "2026-10-27T08:07:32+08:00",
+      "params": {},
+      "brand": "小米",
+      "brand_source": "id_prefix",
+      "excluded_reason": "accessory:screen_film",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "类纸膜"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:7790",
+      "name": "小米MIX 2S 标准高透膜",
+      "name_source": "wayback_item_page",
+      "source_url": "https://web.archive.org/web/20190730080750id_/https://item.mi.com/product/7790.html?selected=1181100006&pClass=c",
+      "captured_at": "2019-07-30T08:07:50Z",
+      "source": "xiaomi_archive_history",
+      "catalog_identity": "verified_backfill_20261030",
+      "brand": "小米",
+      "kind": "unknown",
+      "category": "旧款机型",
+      "categories": [
+        "旧款机型"
+      ],
+      "record_level": "model_reference",
+      "discontinued": true,
+      "price": null,
+      "image": null,
+      "params": {},
+      "brand_source": "id_prefix",
+      "excluded_reason": "accessory:screen_film",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "高透膜"
+        ]
+      }
+    },
+    {
+      "id": "CN:mi_cn:product:8136",
+      "name": "小米8 标准钢化玻璃膜",
+      "name_source": "wayback_item_page",
+      "source_url": "https://web.archive.org/web/20190730080457id_/https://item.mi.com/product/8136.html?selected=1182100019&pClass=c",
+      "captured_at": "2019-07-30T08:04:57Z",
+      "source": "xiaomi_archive_history",
+      "catalog_identity": "verified_backfill_20261030",
+      "brand": "小米",
+      "kind": "unknown",
+      "category": "旧款机型",
+      "categories": [
+        "旧款机型"
+      ],
+      "record_level": "model_reference",
+      "discontinued": true,
+      "price": null,
+      "image": null,
+      "params": {},
+      "brand_source": "id_prefix",
+      "excluded_reason": "accessory:screen_film",
+      "exclusion": {
+        "accessory": true,
+        "basis": "name",
+        "matched": [
+          "钢化玻璃膜"
+        ]
+      }
+    }
+  ],
+  "categories": [
+    {
+      "category": "REDMI K系列",
+      "before": 6,
+      "excluded": 0,
+      "after": 6
+    },
+    {
+      "category": "REDMI Note系列",
+      "before": 10,
+      "excluded": 0,
+      "after": 10
+    },
+    {
+      "category": "REDMI Turbo系列",
+      "before": 7,
+      "excluded": 0,
+      "after": 7
+    },
+    {
+      "category": "REDMI 数字系列",
+      "before": 4,
+      "excluded": 0,
+      "after": 4
+    },
+    {
+      "category": "REDMI路由器",
+      "before": 22,
+      "excluded": 0,
+      "after": 22
+    },
+    {
+      "category": "Xiaomi Civi系列",
+      "before": 3,
+      "excluded": 0,
+      "after": 3
+    },
+    {
+      "category": "Xiaomi MIX系列",
+      "before": 5,
+      "excluded": 0,
+      "after": 5
+    },
+    {
+      "category": "Xiaomi 数字旗舰",
+      "before": 11,
+      "excluded": 0,
+      "after": 11
+    },
+    {
+      "category": "中央空调Pro",
+      "before": 75,
+      "excluded": 0,
+      "after": 75
+    },
+    {
+      "category": "云台",
+      "before": 44,
+      "excluded": 0,
+      "after": 44
+    },
+    {
+      "category": "体脂秤",
+      "before": 5,
+      "excluded": 0,
+      "after": 5
+    },
+    {
+      "category": "体重秤",
+      "before": 1,
+      "excluded": 0,
+      "after": 1
+    },
+    {
+      "category": "修剪器",
+      "before": 4,
+      "excluded": 0,
+      "after": 4
+    },
+    {
+      "category": "儿童手表",
+      "before": 10,
+      "excluded": 0,
+      "after": 10
+    },
+    {
+      "category": "其他配件",
+      "before": 2,
+      "excluded": 0,
+      "after": 2
+    },
+    {
+      "category": "冰箱",
+      "before": 81,
+      "excluded": 0,
+      "after": 81
+    },
+    {
+      "category": "净水器",
+      "before": 50,
+      "excluded": 0,
+      "after": 50
+    },
+    {
+      "category": "剃须刀",
+      "before": 20,
+      "excluded": 0,
+      "after": 20
+    },
+    {
+      "category": "办公娱乐显示器",
+      "before": 61,
+      "excluded": 0,
+      "after": 61
+    },
+    {
+      "category": "加湿器",
+      "before": 12,
+      "excluded": 0,
+      "after": 12
+    },
+    {
+      "category": "双肩包",
+      "before": 12,
+      "excluded": 0,
+      "after": 12
+    },
+    {
+      "category": "台式机",
+      "before": 44,
+      "excluded": 0,
+      "after": 44
+    },
+    {
+      "category": "台灯",
+      "before": 2,
+      "excluded": 0,
+      "after": 2
+    },
+    {
+      "category": "吸尘器",
+      "before": 21,
+      "excluded": 0,
+      "after": 21
+    },
+    {
+      "category": "吹风机",
+      "before": 14,
+      "excluded": 0,
+      "after": 14
+    },
+    {
+      "category": "婴儿推车",
+      "before": 1,
+      "excluded": 0,
+      "after": 1
+    },
+    {
+      "category": "宠物饮水机",
+      "before": 3,
+      "excluded": 0,
+      "after": 3
+    },
+    {
+      "category": "家庭屏",
+      "before": 12,
+      "excluded": 0,
+      "after": 12
+    },
+    {
+      "category": "家电",
+      "before": 78,
+      "excluded": 2,
+      "after": 76
+    },
+    {
+      "category": "对讲机",
+      "before": 10,
+      "excluded": 0,
+      "after": 10
+    },
+    {
+      "category": "小爱音箱",
+      "before": 33,
+      "excluded": 0,
+      "after": 33
+    },
+    {
+      "category": "平板",
+      "before": 213,
+      "excluded": 1,
+      "after": 212
+    },
+    {
+      "category": "平板配件",
+      "before": 2,
+      "excluded": 0,
+      "after": 2
+    },
+    {
+      "category": "床垫",
+      "before": 7,
+      "excluded": 0,
+      "after": 7
+    },
+    {
+      "category": "影像传输与控制设备",
+      "before": 7,
+      "excluded": 0,
+      "after": 7
+    },
+    {
+      "category": "微蒸烤",
+      "before": 1,
+      "excluded": 0,
+      "after": 1
+    },
+    {
+      "category": "户外电源",
+      "before": 32,
+      "excluded": 0,
+      "after": 32
+    },
+    {
+      "category": "手机",
+      "before": 136,
+      "excluded": 0,
+      "after": 136
+    },
+    {
+      "category": "手环",
+      "before": 3,
+      "excluded": 0,
+      "after": 3
+    },
+    {
+      "category": "手表",
+      "before": 64,
+      "excluded": 0,
+      "after": 64
+    },
+    {
+      "category": "打印机",
+      "before": 17,
+      "excluded": 0,
+      "after": 17
+    },
+    {
+      "category": "扫地机器人",
+      "before": 12,
+      "excluded": 1,
+      "after": 11
+    },
+    {
+      "category": "投影仪",
+      "before": 25,
+      "excluded": 0,
+      "after": 25
+    },
+    {
+      "category": "插座",
+      "before": 1,
+      "excluded": 0,
+      "after": 1
+    },
+    {
+      "category": "插座插排",
+      "before": 16,
+      "excluded": 0,
+      "after": 16
+    },
+    {
+      "category": "摄像机",
+      "before": 22,
+      "excluded": 0,
+      "after": 22
+    },
+    {
+      "category": "摄影器材配件",
+      "before": 6,
+      "excluded": 0,
+      "after": 6
+    },
+    {
+      "category": "数据线",
+      "before": 2,
+      "excluded": 0,
+      "after": 2
+    },
+    {
+      "category": "料理机",
+      "before": 7,
+      "excluded": 0,
+      "after": 7
+    },
+    {
+      "category": "旅行箱",
+      "before": 11,
+      "excluded": 0,
+      "after": 11
+    },
+    {
+      "category": "无人机",
+      "before": 51,
+      "excluded": 0,
+      "after": 51
+    },
+    {
+      "category": "无线充电器",
+      "before": 6,
+      "excluded": 0,
+      "after": 6
+    },
+    {
+      "category": "旧款机型",
+      "before": 226,
+      "excluded": 2,
+      "after": 224
+    },
+    {
+      "category": "显示器",
+      "before": 9,
+      "excluded": 0,
+      "after": 9
+    },
+    {
+      "category": "智能家庭",
+      "before": 2,
+      "excluded": 0,
+      "after": 2
+    },
+    {
+      "category": "智能门锁",
+      "before": 23,
+      "excluded": 0,
+      "after": 23
+    },
+    {
+      "category": "服饰",
+      "before": 6,
+      "excluded": 0,
+      "after": 6
+    },
+    {
+      "category": "枕头",
+      "before": 10,
+      "excluded": 0,
+      "after": 10
+    },
+    {
+      "category": "水壶",
+      "before": 17,
+      "excluded": 0,
+      "after": 17
+    },
+    {
+      "category": "水杯",
+      "before": 15,
+      "excluded": 0,
+      "after": 15
+    },
+    {
+      "category": "汽车",
+      "before": 17,
+      "excluded": 0,
+      "after": 17
+    },
+    {
+      "category": "波轮洗衣机",
+      "before": 63,
+      "excluded": 0,
+      "after": 63
+    },
+    {
+      "category": "洗地机",
+      "before": 34,
+      "excluded": 0,
+      "after": 34
+    },
+    {
+      "category": "洗手机",
+      "before": 7,
+      "excluded": 0,
+      "after": 7
+    },
+    {
+      "category": "洗碗机",
+      "before": 17,
+      "excluded": 0,
+      "after": 17
+    },
+    {
+      "category": "滚筒洗衣机",
+      "before": 9,
+      "excluded": 0,
+      "after": 9
+    },
+    {
+      "category": "灯具",
+      "before": 68,
+      "excluded": 0,
+      "after": 68
+    },
+    {
+      "category": "烟灶",
+      "before": 67,
+      "excluded": 0,
+      "after": 67
+    },
+    {
+      "category": "牙刷",
+      "before": 19,
+      "excluded": 0,
+      "after": 19
+    },
+    {
+      "category": "理发器",
+      "before": 1,
+      "excluded": 0,
+      "after": 1
+    },
+    {
+      "category": "电动牙刷",
+      "before": 2,
+      "excluded": 0,
+      "after": 2
+    },
+    {
+      "category": "电暖器",
+      "before": 15,
+      "excluded": 0,
+      "after": 15
+    },
+    {
+      "category": "电水壶",
+      "before": 2,
+      "excluded": 0,
+      "after": 2
+    },
+    {
+      "category": "电磁炉",
+      "before": 11,
+      "excluded": 0,
+      "after": 11
+    },
+    {
+      "category": "电脑",
+      "before": 210,
+      "excluded": 0,
+      "after": 210
+    },
+    {
+      "category": "电视",
+      "before": 100,
+      "excluded": 0,
+      "after": 100
+    },
+    {
+      "category": "电饭煲",
+      "before": 28,
+      "excluded": 0,
+      "after": 28
+    },
+    {
+      "category": "益智积木",
+      "before": 3,
+      "excluded": 0,
+      "after": 3
+    },
+    {
+      "category": "相机",
+      "before": 41,
+      "excluded": 0,
+      "after": 41
+    },
+    {
+      "category": "相机镜头",
+      "before": 39,
+      "excluded": 0,
+      "after": 39
+    },
+    {
+      "category": "眼镜",
+      "before": 15,
+      "excluded": 0,
+      "after": 15
+    },
+    {
+      "category": "移动电源",
+      "before": 24,
+      "excluded": 0,
+      "after": 24
+    },
+    {
+      "category": "空气净化器",
+      "before": 15,
+      "excluded": 0,
+      "after": 15
+    },
+    {
+      "category": "空调",
+      "before": 2,
+      "excluded": 0,
+      "after": 2
+    },
+    {
+      "category": "空间计算设备",
+      "before": 5,
+      "excluded": 0,
+      "after": 5
+    },
+    {
+      "category": "穿戴",
+      "before": 4,
+      "excluded": 0,
+      "after": 4
+    },
+    {
+      "category": "穿戴配件",
+      "before": 8,
+      "excluded": 0,
+      "after": 8
+    },
+    {
+      "category": "笔",
+      "before": 9,
+      "excluded": 0,
+      "after": 9
+    },
+    {
+      "category": "笔记本",
+      "before": 201,
+      "excluded": 5,
+      "after": 196
+    },
+    {
+      "category": "箱包",
+      "before": 1,
+      "excluded": 0,
+      "after": 1
+    },
+    {
+      "category": "耳机",
+      "before": 58,
+      "excluded": 0,
+      "after": 58
+    },
+    {
+      "category": "胸包",
+      "before": 5,
+      "excluded": 0,
+      "after": 5
+    },
+    {
+      "category": "自拍杆",
+      "before": 1,
+      "excluded": 0,
+      "after": 1
+    },
+    {
+      "category": "落地风扇",
+      "before": 16,
+      "excluded": 0,
+      "after": 16
+    },
+    {
+      "category": "螺丝刀",
+      "before": 6,
+      "excluded": 0,
+      "after": 6
+    },
+    {
+      "category": "走步机",
+      "before": 2,
+      "excluded": 0,
+      "after": 2
+    },
+    {
+      "category": "路由器",
+      "before": 4,
+      "excluded": 0,
+      "after": 4
+    },
+    {
+      "category": "运动相机",
+      "before": 94,
+      "excluded": 0,
+      "after": 94
+    },
+    {
+      "category": "运动鞋",
+      "before": 2,
+      "excluded": 0,
+      "after": 2
+    },
+    {
+      "category": "键鼠套装",
+      "before": 12,
+      "excluded": 0,
+      "after": 12
+    },
+    {
+      "category": "门铃/猫眼",
+      "before": 14,
+      "excluded": 0,
+      "after": 14
+    },
+    {
+      "category": "除湿机",
+      "before": 5,
+      "excluded": 0,
+      "after": 5
+    },
+    {
+      "category": "除螨仪",
+      "before": 5,
+      "excluded": 0,
+      "after": 5
+    },
+    {
+      "category": "音箱",
+      "before": 16,
+      "excluded": 0,
+      "after": 16
+    },
+    {
+      "category": "麦克风",
+      "before": 20,
+      "excluded": 0,
+      "after": 20
+    }
+  ],
+  "retained_fields_unchanged": true,
+  "historical_archive_unchanged": true
+}

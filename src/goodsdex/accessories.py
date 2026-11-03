@@ -9,6 +9,9 @@ from goodsdex.cars import is_car
 
 # Product nouns in compatibility prefixes do not establish a complete device.
 ACCESSORY_WORDS = (
+    # Observed in the release: notebook stickers, Pad paper-like film, legacy
+    # phone films and floor detergent. Do not match generic 清洁 (services).
+    '贴纸', '类纸膜', '高透膜', '钢化玻璃膜', '清洁剂',
     '配件', '滤芯', '滤网', '替换装', '替换芯', '耗材', '充电器', '数据线', '充电线',
     '保护壳', '手机壳', '贴膜', '支架', '底座', '转接头', '转接线', '转接器',
     '收纳包', '收纳保护包', '清洁液', '镜头盖', '遮光罩', '相机包', '电脑包',
@@ -67,6 +70,25 @@ def classify(row):
     return dict(accessory=False, basis='no_accessory_match', matched=None)
 
 
+# Stable audit codes for observed accessory nouns; category decisions remain
+# traceable through exclusion.matched, including previously supported rules.
+REASON_WORDS = {
+    '贴纸': 'sticker', '类纸膜': 'screen_film', '高透膜': 'screen_film',
+    '钢化玻璃膜': 'screen_film', '保护膜': 'screen_film', '贴膜': 'screen_film',
+    '钢化膜': 'screen_film', '清洁剂': 'cleaning_consumable',
+}
+
+
+def exclusion_reason(row):
+    decision = classify(row)
+    if not decision['accessory']:
+        return None
+    for word, code in REASON_WORDS.items():
+        if word in str(row.get('name') or ''):
+            return 'accessory:' + code
+    return 'accessory:' + decision['basis']
+
+
 def fingerprint(rows):
     # Review approval is bound to identities, names and exact rule decisions.
     evidence = sorted((dict(id=r['id'], name=r.get('name'), decision=classify(r)) for r in rows), key=lambda r: (r['id'], str(r['name'])))
@@ -96,7 +118,7 @@ def plan(rows, previous, archive=(), reviewed_sha256=None):
     archived = {r['id']: deepcopy(r) for r in archive}
     for row in excluded:
         entry = deepcopy(row)
-        entry.update(excluded_reason='accessory', exclusion=classify(row))
+        entry.update(excluded_reason=exclusion_reason(row), exclusion=classify(row))
         # Preserve the first excluded snapshot. Replayed supplements may be
         # older and less complete than the record removed from the release.
         archived.setdefault(row['id'], entry)

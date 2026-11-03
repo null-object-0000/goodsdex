@@ -204,3 +204,14 @@ def test_duplicate_product_or_trim_ids_are_release_errors():
     rows[0]['trims'].append(deepcopy(rows[0]['trims'][0]))
     with pytest.raises(ValueError, match='Duplicate car trim'):
         assert_unique_car_ids(rows)
+
+
+def test_brand_attribution_replays_without_touching_immutable_car_sources():
+    from goodsdex.brands import normalize_brands
+    original = migrate(sources())
+    normalized = normalize_brands(original)
+    assert migrate(normalized) == normalized
+    assert expand_sources(normalized) == expand_sources(original)
+    normalized[0]['brand_source'] = 'name'
+    with pytest.raises(ValueError, match='brand attribution'):
+        migrate(normalized)
