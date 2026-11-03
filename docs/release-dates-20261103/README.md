@@ -27,7 +27,9 @@
 
 | 品类/来源 | 验证范围与观察 | 本轮覆盖行数 | 证据形态 |
 |---|---|---:|---|
-| 小米手机/生态链/电视：商城移动接口 | 88 个商品族请求；86 个响应含日期节点；16 个只有 isPageShow=false，明确撤销；4 个不能唯一归一月份。最终 66 个可展示且可唯一归一 | 66 | `name=发布时间`、`value=2024年 10月`；保留具体 JSON path、POST productId、商品链接 |
+| 小米电视：商城移动接口 | 70 个电视族请求；66 个日期可展示且能唯一归一；4 个多值/格式无法唯一确定，留空 | 66 | `isPageShow=true`、`name=发布时间`、`value=2024年 10月`；保留 JSON path、POST productId、商品链接 |
+| 小米手机：商城移动接口 | 1 个型号请求成功，未得到明确月份节点 | 0 | 保留商品身份和参数摘要，不从型号代数推月份 |
+| 小米生态链耳机：商城移动接口 | 16 个型号均只有 `isPageShow=false` 的日期节点；不满足“页面明确写出”的标准 | 0 | 显示标记与原文值均保留；不把既有 params 别名直接搬成 release |
 | 小米手机：mi.com 规格页 | Xiaomi 14 页面取到规格，无明确发售日期命中 | 0（该源） | `Xiaomi 14` 页面文本，非页面更新时间/测试时间 |
 | 小米家电：H501 官方接口 | `productId=18520` 成功，未取得结构化日期；不对图文内容宣称无日期 | 0（官网） | 商品身份与参数节点摘要；[mi-18520.json](evidence/mi-18520.json) |
 | 小米家电：IT之家 H501 | 原文“2023/5/27 … H501 今年 5 月上市” | 1（third_party） | [文章](https://www.ithome.com/0/695/691.htm)；用文章年份解释“今年”，未用促销/礼盒时间代替原机上市 |
@@ -126,3 +128,7 @@ python3 scripts/finalize_public.py --public <data工作树>/public --previous <�
 网关计划与原始输入/输出在 [llm/](llm/)；源试采/会话候选整理脚本在 [pilot/](pilot/)。默认 `collect_release_candidates.py` 只输出计划，显式 `--run` 才调用；不应照搬失败的大批配置全量运行。
 
 线上发布及 API 验证见后续 [publication.json](publication.json) 和 [online-verification.json](online-verification.json)。
+
+最终发布：[success](https://github.com/null-object-0000/goodsdex/actions/runs/41580056352)，代码 `2285ce313a91a7d727086d54711014bddfa25a68`，data `3cfce28f6a4e450fb378e3bacf99871a74337ea3`。
+
+线上整库与此 data 发布集逐值相等；7 个真实详情接口的 release 对象逐值相等，包括 H501、官方、LLM、未来计划、HP 未知和隐藏耳机撤销。16 个隐藏日期全部缺省，其他字段与发布前逐值一致。完整证据见 [online-verification.json](online-verification.json)、[publication.json](publication.json)、[publish-excerpts.log](publish-excerpts.log)。

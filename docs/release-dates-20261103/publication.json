@@ -1,0 +1,69 @@
+{
+  "code_sha": "2285ce313a91a7d727086d54711014bddfa25a68",
+  "data_sha": "3cfce28f6a4e450fb378e3bacf99871a74337ea3",
+  "run_url": "https://github.com/null-object-0000/goodsdex/actions/runs/41580056352",
+  "status": "completed",
+  "conclusion": "success",
+  "previous_attempt": {
+    "run_url": "https://github.com/null-object-0000/goodsdex/actions/runs/41579536954",
+    "conclusion": "cancelled",
+    "reason": "Exclude 16 isPageShow=false dates before final acceptance"
+  },
+  "online_full_catalog_equal": true,
+  "online_details_checked": 7,
+  "online_coverage": {
+    "total": 3968,
+    "covered": 401,
+    "coverage": 0.10105846774193548,
+    "sources": {
+      "official": 359,
+      "third_party": 2,
+      "llm": 40
+    },
+    "brands": {
+      "Apple": {
+        "total": 640,
+        "true_source": 294,
+        "llm": 40,
+        "missing": 306
+      },
+      "比亚迪": {
+        "total": 14,
+        "true_source": 0,
+        "llm": 0,
+        "missing": 14
+      },
+      "大疆": {
+        "total": 783,
+        "true_source": 0,
+        "llm": 0,
+        "missing": 783
+      },
+      "富士": {
+        "total": 63,
+        "true_source": 0,
+        "llm": 0,
+        "missing": 63
+      },
+      "惠普": {
+        "total": 218,
+        "true_source": 0,
+        "llm": 0,
+        "missing": 218
+      },
+      "小米": {
+        "total": 2247,
+        "true_source": 67,
+        "llm": 0,
+        "missing": 2180
+      },
+      "小米汽车": {
+        "total": 3,
+        "true_source": 0,
+        "llm": 0,
+        "missing": 3
+      }
+    }
+  },
+  "test_run_url": "https://github.com/null-object-0000/goodsdex/actions/runs/41580010517"
+}

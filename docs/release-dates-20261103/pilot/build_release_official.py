@@ -22,7 +22,7 @@ for p in sorted(root.glob('mi-*.json')):
   m=re.fullmatch(r'\s*(20\d{2})年\s*(\d{1,2})月\s*(?:\d{1,2}日)?\s*',v)
   if m and 1<=int(m[2])<=12:vals.append((f'{m[1]}-{int(m[2]):02d}',loc,k,v))
  if not vals or len({x[0] for x in vals})!=1:continue
- date,loc,k,v=vals[0];e=evidence(p,o,f'{k}：{v}',loc);e['url']='https://m.mi.com/commodity/detail/'+o['id'].split(':')[-1];e['capture_url']=o['url'];e['request']=o['request']
+ date,loc,k,v=vals[0];e=evidence(p,o,f'{k}：{v}',loc);e['url']='https://m.mi.com/commodity/detail/'+o['id'].split(':')[-1];e['capture_url']=o['url'];e['request']=o['request'];e['isPageShow']=True
  candidates.append(dict(family=o['id'],ids=[o['id']],method='explicit_official_parameter',release=release(date,e,'announcement' if k=='发布时间' else 'availability')))
 # Reviewed exact product IDs. No generation/year/colour suffix becomes a date.
 recipes=[

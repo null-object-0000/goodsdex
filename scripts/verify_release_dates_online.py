@@ -30,7 +30,7 @@ def main():
     actual = fetch('/api/goods?release_check='+quote(stamp,safe=''))
     assert actual == rows, 'Online catalogue does not match this data release yet'
     examples = ['CN:mi_cn:product:18520', 'CN:mi_cn:product:20543',
-                'GLOBAL:apple_support:model:111843', 'CN:hp_cn:sku:7Y0Y4PC']
+                'GLOBAL:apple_support:model:111843', 'CN:hp_cn:sku:7Y0Y4PC', 'CN:mi_cn:product:23261']
     examples += [next(r['id'] for r in rows if (r.get('release') or {}).get('event') == 'planned_availability')]
     examples += [next(r['id'] for r in rows if r.get('source') == 'apple_cn' and
                      (r.get('release') or {}).get('event') == 'availability')]
