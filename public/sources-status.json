@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T14:59:26Z",
+  "generatedAt": "2026-11-03T15:03:06Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -42,20 +42,20 @@
       "workflow": ".github/workflows/refresh-cars.yml",
       "expectedIntervalMinutes": 1440,
       "lastAttemptAt": "2026-11-03T14:55:33Z",
-      "lastSuccessAt": "2026-10-30T23:23:10Z",
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-03T15:00:18Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41658518208",
       "error": null,
-      "stale": true,
-      "staleReason": "已 87.6 小时无成功运行（预期每 1440 分钟）"
+      "stale": false,
+      "staleReason": null
     },
     {
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
       "lastAttemptAt": "2026-11-03T14:58:03Z",
-      "lastSuccessAt": null,
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-03T15:00:17Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41658518208",
       "error": null,
       "stale": false,
