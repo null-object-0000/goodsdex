@@ -40,6 +40,6 @@ python3 docs/release-crosschecks-policy-fix-20261103/replay.py --catalog /path/t
 PYTHONPATH=src:scripts python3 -m pytest -q
 ```
 
-最新数据分支的 3968 条本地重建：全部非 release 字段逐值不变，39 条原证据逐值不变，重建幂等。基线全量 395 passed；修改后全量 401 passed。离线 393 passed / 8 deselected。保留原有第三方证据和原始响应存档；仅补齐组装时丢弃的 evidence 字段。
+最新数据分支的 3968 条本地重建：全部非 release 字段逐值不变，39 条原证据逐值不变，重建幂等。基线全量 395 passed；修改后全量 402 passed。离线 394 passed / 8 deselected。保留原有第三方证据和原始响应存档；仅补齐组装时丢弃的 evidence 字段。
 
 线上发布结果与真实接口摘录在发布完成后记录于本目录。

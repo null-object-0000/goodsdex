@@ -118,7 +118,8 @@ def reconcile(release, observations=(), previous_checks=()):
     worst = max((severity.get(c['effective_verdict'], -1) for c in checks), default=-1)
     official = r['source'] in ('official', 'official_hidden')
     has_independent = any(c['source'] == 'llm' and c.get('independent') is True
-                          and c.get('date') and c['verdict'] == 'corroborated' for c in checks)
+                          and c.get('date') and c['verdict'] == 'corroborated'
+                          and c.get('compared_to') == original for c in checks)
     # Abstentions and unsupported dissent cannot subtract an existing agreement.
     r['corroborated'] = has_independent and worst < 2
     if official:

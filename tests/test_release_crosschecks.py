@@ -179,3 +179,12 @@ def test_rebuild_restores_old_null_outside_managed_candidates(tmp_path):
     assert out[0]['release']['evidence'] == original['evidence']
     assert not out[0]['release']['manual_review_required']
     assert apply_release_dates(out, p, crosscheck_path=checks) == out
+
+
+def test_models_agreeing_with_each_other_cannot_corroborate_a_different_primary_date():
+    base = dict(source='third_party', date='2023-05')
+    r = reconcile(base, [dict(source='llm', date='2023-08-01', independent=True, model='a'),
+                         dict(source='llm', date='2023-08-02', independent=True, model='b')])
+    assert any(c['verdict'] == 'corroborated' and c['compared_to']['source'] == 'llm' for c in r['checks'])
+    assert r['date'] == '2023-05' and not r['corroborated']
+    assert r['crosscheck_status'] == 'unverified' and not r['display_allowed']
