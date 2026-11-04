@@ -1,0 +1,55 @@
+{
+  "before": {
+    "rows": 1684,
+    "assertion_union": 267,
+    "display_allowed_union": 141,
+    "product": 111,
+    "series": 204
+  },
+  "after": {
+    "rows": 1684,
+    "assertion_union": 274,
+    "display_allowed_union": 178,
+    "product": 111,
+    "series": 211
+  },
+  "baseline_full_rows": 2902,
+  "baseline_unresolved_families": 1385,
+  "baseline_unresolved_rows": 1417,
+  "new_matched_rows": 7,
+  "new_unique_ids": 7,
+  "matched_unresolved_families": 7,
+  "remaining_unresolved_families": 1378,
+  "remaining_unresolved_rows": 1410,
+  "legacy_repaired": 57,
+  "legacy_still_disabled": 92,
+  "dictionary_raw_reviewed_entries": 258,
+  "dictionary_dedup_entries": 256,
+  "dictionary_official_entries": 229,
+  "fetch_requests": 212,
+  "successful_responses": 200,
+  "failed_or_redirects": 12,
+  "newsroom_index_items": 249,
+  "newsroom_body_items": 145,
+  "minimum_request_spacing_seconds": 2.1000382900238037,
+  "goals_met": {
+    "dictionary_300": false,
+    "new_rows_400": false,
+    "display_25pct": false
+  },
+  "invariants": {
+    "non_series_fields_unchanged": true,
+    "product_dates_unchanged": true,
+    "other_brands_unchanged": true,
+    "row_count_unchanged": true,
+    "idempotent": true,
+    "gate_code_unchanged": true,
+    "no_fuzzy_matching": true
+  },
+  "sample": {
+    "seed": 20261104,
+    "pool": "all_new_matches_plus_sampled_legacy_repairs",
+    "pool_size": 64,
+    "size": 30
+  }
+}

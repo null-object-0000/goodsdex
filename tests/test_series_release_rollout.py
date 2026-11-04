@@ -59,6 +59,19 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
             if m['id'] in present:
                 assert m['id'] not in expected
                 expected[m['id']] = dict(date=r['date'],batch_id=b['id'],url=r['evidence']['url'],granularity=r['granularity'])
+    # Add independently frozen dictionary additions; split legacy batches retain
+    # their original assertion, evidence and explicit lineage.
+    audit = ROOT / 'docs/xiaomi-release-dictionary-20261104'
+    for m in json.loads((audit / 'new-memberships.json').read_text()):
+        if m['id'] in present:
+            assert m['id'] not in expected
+            expected[m['id']] = dict(date=m['date'], batch_id=m['batch_id'],
+                                    url=m['evidence']['url'], granularity='day')
+    for repair in json.loads((audit / 'legacy-repairs.json').read_text()):
+        for key in repair['ids']:
+            if key in present:
+                assert expected[key]['batch_id'] == repair['original_batch_id']
+                expected[key] = dict(expected[key], batch_id=repair['batch_id'])
     command = [sys.executable, str(ROOT / 'scripts/finalize_public.py'), '--public', str(tmp_path)]
     subprocess.run(command, check=True)
     result = json.loads((tmp_path / 'goods.json').read_text())

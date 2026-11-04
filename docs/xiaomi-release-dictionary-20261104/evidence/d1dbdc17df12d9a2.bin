@@ -1,0 +1,89 @@
+
+<!doctype html>
+<html lang="zh-CN" xml:lang="zh-CN">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="UTF-8" />
+
+    <title>小米商城</title>
+    <meta name="description" content="小米手机官网正品推荐，小米手机最新价格，有多种颜色可选，另有详细介绍及图片，还有用户评价，售前咨询等。" />
+    <meta name="keywords" content="小米商城" />
+
+
+<meta name="viewport" content="width=1226" />
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="//s01.mifile.cn" />
+<link rel="dns-prefetch" href="//c1.mifile.cn" />
+<link rel="dns-prefetch" href="//i3.mifile.cn" />
+<link rel="dns-prefetch" href="//i2.mifile.cn" />
+<link rel="dns-prefetch" href="//i1.mifile.cn" />
+<link rel="dns-prefetch" href="//i8.mifile.cn" />
+<link rel="dns-prefetch" href="//v.mifile.cn" />
+<link rel="dns-prefetch" href="//a.huodong.mi.cn" />
+<link rel="shortcut icon" href="//s01.mifile.cn/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="//s01.mifile.cn/favicon.ico" type="image/x-icon" />
+<meta http-equiv="Cache-Control" content="no-transform " />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+<script>
+    var $m_url = "//m.mi.com/";
+    
+    
+    var UA = navigator.userAgent;
+    if(UA.match(/Android/i)||(UA.indexOf('iPhone') != -1) || (UA.indexOf('iPod') != -1) || (UA.indexOf('iPad') != -1)) {
+        window.location = $m_url;
+    }
+    document.domian = 'mi.com';
+</script>
+
+<link href="//cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/pro/css/activity.86ccc83a.css" rel="preload" as="style"><link href="//cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/pro/js/activity.04344a32.js" rel="preload" as="script"><link href="//cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/pro/js/chunk-vendors.12e78aac.js" rel="preload" as="script"><link href="//cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/pro/css/activity.86ccc83a.css" rel="stylesheet"></head>
+
+<body>
+    <div id="app">
+        
+        
+
+        <components :componentsdata="componentsdata" v-if="componentsdata" :is-show-back-top="false"></components>
+
+        
+        
+
+    </div>
+    <script type="text/javascript">
+        var GLOBAL_ACTIVITY = {
+            data :{},
+            barData: [{"id":24,"type":"image","button_title":"手机APP","button_img":"https://i8.mifile.cn/b2c-mimall-media/98a23aae70f25798192693f21c4d4039.png","button_hover_img":"https://i8.mifile.cn/b2c-mimall-media/74c4fcb4475af8308e9a670db9c01fdf.png","qrcode_img":"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/78c30d4f259ed43ab20e810a522a6249.png","qrcode_title":"扫码领取新人百元礼包","jump_url":"","jump_type":1,"weight":40,"start_time":"","end_time":"","is_enabled":"Y","block_id":3343648,"type_name":"图片类型","special_mark":""},{"id":20,"type":"common","button_title":"个人中心","button_img":"https://i8.mifile.cn/b2c-mimall-media/55cad219421bee03a801775e7309b920.png","button_hover_img":"https://i8.mifile.cn/b2c-mimall-media/41f858550f42eb1770b97faf219ae215.png","qrcode_img":"","qrcode_title":"","jump_url":"https://www.mi.com/user/portal","jump_type":1,"weight":30,"start_time":"","end_time":"","is_enabled":"Y","block_id":3213221,"type_name":"通用类型","special_mark":""},{"id":23,"type":"common","button_title":"售后服务","button_img":"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/12eb0965ab33dc8e05870911b90f3f13.png","button_hover_img":"https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/95fbf0081a06eec7be4d35e277faeca0.png","qrcode_img":"","qrcode_title":"","jump_url":"https://www.mi.com/service/aftersale/front","jump_type":1,"weight":25,"start_time":"","end_time":"","is_enabled":"Y","block_id":3213225,"type_name":"通用类型","special_mark":""},{"id":21,"type":"common","button_title":"人工客服","button_img":"https://i8.mifile.cn/b2c-mimall-media/4f036ae4d45002b2a6fb6756cedebf02.png","button_hover_img":"https://i8.mifile.cn/b2c-mimall-media/5e9f2b1b0da09ac3b3961378284ef2d4.png","qrcode_img":"","qrcode_title":"","jump_url":"https://chat.kefu.mi.com/page/index/v2?tag=cn\u0026token=Y24jMTAwMSNjbi53ZWIubWkuaHR0cHMjZGVmYXVsdCNnb29kc0RldGFpbA==\u0026groupId=P0\u0026closedshow=1","jump_type":2,"weight":20,"start_time":"","end_time":"","is_enabled":"Y","block_id":3213222,"type_name":"通用类型","special_mark":"contact"},{"id":22,"type":"cart","button_title":"购物车","button_img":"https://i8.mifile.cn/b2c-mimall-media/d7db56d1d850113f016c95e289e36efa.png","button_hover_img":"https://i8.mifile.cn/b2c-mimall-media/692a6c3b0a93a24f74a29c0f9d68ec71.png","qrcode_img":"","qrcode_title":"","jump_url":"https://www.mi.com/buy/cart","jump_type":1,"weight":10,"start_time":"","end_time":"","is_enabled":"Y","block_id":3213223,"type_name":"购物车类型","special_mark":""}]
+        };
+    </script>
+<script type="text/javascript" src="//cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/pro/js/chunk-vendors.12e78aac.js"></script><script type="text/javascript" src="//cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/pro/js/activity.04344a32.js"></script>
+<script>
+window._msq = window._msq || [];
+_msq.push(['setDomainId', 100]);
+_msq.push(['trackPageView']);
+(function () {
+    var ms = document.createElement('script');
+    ms.type = 'text/javascript';
+    ms.async = true;
+    ms.src = '//s1.mi.com/stat/20/xmst.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ms, s);
+
+    window.statInit = function () {
+        if (window.xmstLittle && xmstLittle.isFunction(xmstLittle.fn.linkSign)) {
+            xmstLittle('body').linkSign();
+        }
+    }
+})();
+
+
+var _hmt = _hmt || [];
+(function () {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?c3e3e8b3ea48955284516b186acf0f4e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
