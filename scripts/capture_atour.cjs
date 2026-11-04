@@ -3,6 +3,13 @@ const fs = require('node:fs');
 const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const out = process.argv[2];
 if (!out) throw Error('Output JSON required');
+function saveBusiness(value) {
+ const check=x=>{if(Array.isArray(x))x.forEach(check);else if(x&&typeof x==='object')for(const [k,v] of Object.entries(x)){
+  if(/cookie|token|authorization|unionid/i.test(k))throw Error('Credential-bearing payload must not be stored');
+  check(v);
+ }};
+ check(value);fs.writeFileSync(out,JSON.stringify(value,null,2)+'\n');
+}
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH || undefined,headless:true,args:['--no-sandbox']});
  try {
@@ -50,8 +57,8 @@ if (!out) throw Error('Output JSON required');
    entries.push({listing:p,panel,detail,captured_at:new Date().toISOString()});
    console.log(p.id,p.spuName,panel.skuVOS.length);
    // Persist business objects only; no request/response envelopes or browser state.
-   fs.writeFileSync(out,JSON.stringify({complete:false,pages,entries,requests},null,2)+'\n');
+   saveBusiness({complete:false,pages,entries,requests});
   }
-  fs.writeFileSync(out,JSON.stringify({complete:true,pages,entries,requests,captured_at:new Date().toISOString()},null,2)+'\n');
+  saveBusiness({complete:true,pages,entries,requests,captured_at:new Date().toISOString()});
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

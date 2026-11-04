@@ -16,7 +16,7 @@ def verify(rows,capture,samples):
     ids={r['id']:r for r in actual}
     assert len(actual)==len(ids)==len(expected)
     for r in expected:
-        for field in ('name','official_name','sku_name','brand','category','price','promo_price','image','source_url','sku_no','spu_id','specs','bundle','bundle_contents','package_quantity'):
+        for field in ('name','official_name','sku_name','brand','category','price','promo_price','image','source_url','sku_no','spu_id','specs','bundle','bundle_contents','package_quantity','captured_at','official_sku_status','stock_num','price_status','sale_status'):
             assert ids[r['id']][field]==r[field],(r['id'],field)
     comparisons=[]
     for sample in samples:
@@ -38,8 +38,9 @@ if __name__=='__main__':
     capture=json.loads(args.capture.read_text());samples=json.loads(args.h5_samples.read_text())
     if args.online:
         oss='https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/'
-        raw=fetch(oss+'goods.json');rows=json.loads(raw);meta=json.loads(fetch(oss+'meta.json'))
+        meta=json.loads(fetch(oss+'meta.json'));raw=fetch(oss+'blobs/'+meta['files']['goods.json']['sha256']+'.json');rows=json.loads(raw)
         assert hashlib.sha256(raw).hexdigest()==meta['files']['goods.json']['sha256']
+        api_meta=json.loads(fetch('https://spend.snewbie.site/api/meta'));assert api_meta['revision']==meta['revision'],('API synchronization pending',api_meta['revision'],meta['revision'])
         api=json.loads(fetch('https://spend.snewbie.site/api/goods?'+urlencode(dict(q='亚朵星球'))))
         args.out.parent.mkdir(parents=True,exist_ok=True);(args.out.parent/'api-atour.json').write_text(json.dumps(api,ensure_ascii=False,indent=1)+'\n')
         # API supports paginated response with items/total; full array is legacy.

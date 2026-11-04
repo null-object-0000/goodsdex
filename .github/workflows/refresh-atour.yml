@@ -4,6 +4,10 @@ on:
     - cron: '17 21 * * *'
   workflow_dispatch:
     inputs:
+      probe_only:
+        type: boolean
+        default: false
+        description: 'Collect and validate live source with evidence only; do not publish'
       verified_snapshot:
         type: boolean
         default: false
@@ -51,9 +55,11 @@ jobs:
           path: ${{ runner.temp }}/atour-evidence/
           retention-days: 7
       - uses: ./.github/actions/upload-candidate
+        if: ${{ !inputs.probe_only }}
         with:
           scope: atour
   publish:
+    if: ${{ !inputs.probe_only }}
     needs: collect
     uses: ./.github/workflows/publish-release.yml
     with:
