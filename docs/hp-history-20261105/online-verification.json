@@ -1,0 +1,77 @@
+{
+  "checked_at": "2026-11-04T18:08:30.511821+00:00",
+  "revision": "a76e0d07e13c44eea2ad3cccf4f242f4",
+  "goods_sha256": "5b1a5b4c9eb046d9aec5c6397175712f72f949cf1cfe71839f0bad1cf2cea890",
+  "total": 3414,
+  "hp_count": 790,
+  "hp_before": 218,
+  "hp_retired": 578,
+  "retired_count": 578,
+  "retired_by_brand": {
+    "惠普": 578
+  },
+  "no_lost_hp_ids": true,
+  "api_equal_release": true,
+  "samples_verified": 30,
+  "queries": [
+    {
+      "url": "https://spend.snewbie.site/api/goods?q=%E6%88%9866",
+      "response_count": 3414,
+      "matching_hp_count": 52,
+      "query_ignored_by_legacy_export_endpoint": true,
+      "target": {
+        "id": "CN:hp_cn:family:zhan66-generation6-14",
+        "name": "战66 六代 14英寸商务笔记本电脑",
+        "part_number": null,
+        "part_number_missing": "official_marketing_page_describes_configurable_family_without_orderable_part_number",
+        "series": "战66",
+        "generation": "六代",
+        "category": "笔记本",
+        "source_url": "https://www.hpstore.cn/laptops-tablets.html",
+        "status": "unknown"
+      },
+      "detail_equal": true
+    },
+    {
+      "url": "https://spend.snewbie.site/api/goods?q=%E6%9A%97%E5%BD%B1%E7%B2%BE%E7%81%B5",
+      "response_count": 3414,
+      "matching_hp_count": 23,
+      "query_ignored_by_legacy_export_endpoint": true,
+      "target": {
+        "id": "CN:hp_cn:family:omen-generation10-25l",
+        "name": "暗影精灵 10 全面版游戏台式电脑",
+        "part_number": null,
+        "part_number_missing": "official_marketing_page_describes_configurable_family_without_orderable_part_number",
+        "series": "暗影精灵",
+        "generation": "10",
+        "category": "台式机",
+        "source_url": "https://www.hp.com/cn-zh/gaming-pc/desktops.html",
+        "status": "unknown"
+      },
+      "detail_equal": true
+    }
+  ],
+  "retired_samples": [
+    {
+      "id": "CN:hp_cn:sku:D89WLPC",
+      "name": "惠普 战66 八代 14英寸商务笔记本电脑 AMD 锐龙™ 7 H 255 处理器 16GB+512GB AMD Radeon™",
+      "status": "retired",
+      "retired_at": "2026-11-03T01:18:37.317329+00:00",
+      "source_url": "https://www.hpstore.cn/hp-probook-4-g1a-14-inch-notebook-ai-pc-d89wlpc.html"
+    },
+    {
+      "id": "CN:hp_cn:sku:D7MU8PC",
+      "name": "惠普 战66 八代 16英寸商务笔记本电脑 AMD 锐龙™ 7 H 255 处理器 16GB+1TB AMD Radeon™",
+      "status": "retired",
+      "retired_at": "2026-11-03T01:19:32.024625+00:00",
+      "source_url": "https://www.hpstore.cn/hp-probook-4-g1ah-16-inch-notebook-pc-d7mu8pc.html"
+    },
+    {
+      "id": "CN:hp_cn:sku:D8JR2PC",
+      "name": "惠普 战66 八代 14英寸商务笔记本电脑 AMD 锐龙™ 5 220 处理器 8GB+512GB AMD Radeon™",
+      "status": "retired",
+      "retired_at": "2026-11-03T01:19:35.522274+00:00",
+      "source_url": "https://www.hpstore.cn/hp-probook-4-g1a-14-inch-notebook-ai-pc-d8jr2pc.html"
+    }
+  ]
+}

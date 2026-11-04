@@ -116,3 +116,39 @@ def test_newer_sighting_in_another_category_prevents_false_retirement(tmp_path):
     # A fresh SKU observation also prevents replaying an older absence event.
     (archive/'b.json').unlink()
     assert archive_observations(tmp_path, [dict(old, fetched_at='2026-11-02T00:00:00Z')]) == []
+
+
+def test_rebuild_consumes_fresh_complete_archive_before_lost_id_gate(tmp_path):
+    import json, subprocess, sys
+    from pathlib import Path
+    from goodsdex.archive import merge_archive
+    from goodsdex.publish import build
+    public = tmp_path/'public'
+    public.mkdir()
+    cats = tmp_path/'categories'
+    cats.mkdir()
+    archive = tmp_path/'source-archive'
+    previous = dict(id='test-retired-product', name='测试整机', brand='测试',
+                    kind='machine', source='test_official', price=99,
+                    image='https://official.example/photo.png',
+                    source_url='https://official.example/product',
+                    params={'容量': '1TB'}, fetched_at='2026-11-01T00:00:00Z')
+    (public/'goods.json').write_text(json.dumps([previous]))
+    extras = tmp_path/'extras.json'
+    extras.write_text('[]')
+    records = [dict(product={'product_id': previous['id'], 'name': previous['name']},
+                    view={'values': {}})]
+    merge_archive('测试', records, archive_dir=archive, now_iso='2026-11-01T00:00:00Z')
+    merge_archive('测试', [], archive_dir=archive, now_iso='2026-11-05T00:00:00Z',
+                  discovery={'completeness': 'complete', 'stop_reason': 'empty_page',
+                             'total_reported': 0, 'found': 0})
+    script = Path(__file__).resolve().parents[1]/'scripts/ci_publish_archive.py'
+    subprocess.run([sys.executable, str(script), '--archive', str(archive),
+                    '--out', str(public/'archive')], check=True, capture_output=True)
+    meta = build(cats, public, extras)
+    rows = json.loads((public/'goods.json').read_text())
+    assert len(rows) == 1
+    assert {k: rows[0][k] for k in previous} == previous
+    assert rows[0]['status'] == 'retired'
+    assert rows[0]['retired_at'] == '2026-11-05T00:00:00Z'
+    assert meta['retired_count'] == 1

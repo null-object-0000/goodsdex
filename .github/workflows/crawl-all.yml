@@ -105,10 +105,11 @@ jobs:
       - name: Rebuild public dataset
         run: |
           export PYTHONPATH=src
-          python3 -m goodsdex.publish --cats data/categories --out _data/public
-          # 档案（累积历史）也要发布 —— 这是"下架也留档"的对外可见部分
+          # Install this round's completeness/absence evidence before the
+          # publisher's no-lost-ID gate reconciles the previous full records.
           python3 scripts/ci_publish_archive.py --archive data/archive \
             --out _data/public/archive
+          python3 -m goodsdex.publish --cats data/categories --out _data/public
           # 快照与档案保留在产物里，供下次运行恢复累积上下文
           mkdir -p _data/data
           cp -r data/categories _data/data/ 2>/dev/null || true

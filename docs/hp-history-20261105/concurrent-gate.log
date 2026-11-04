@@ -1,0 +1,4 @@
+2026-11-04T17:55:49.9582332Z Traceback (most recent call last):
+2026-11-04T17:55:49.9598501Z     raise ValueError(f'Concurrent change at {label}; re-run this collector against latest data')
+2026-11-04T17:55:49.9599280Z ValueError: Concurrent change at data/hp/collection-status.json.checked_at; re-run this collector against latest data
+2026-11-04T17:55:49.9667610Z ##[error]Process completed with exit code 1.

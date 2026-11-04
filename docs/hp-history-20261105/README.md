@@ -95,7 +95,7 @@
 ]
 ```
 
-跨惠普/Apple/小米三品牌的缺失模拟、首次时间幂等、完整/部分采集边界、重新出现和旧下架迁移已纳入test_retirement.py。另实测共享finalizer对真实完整基线保留所有ID并生成留档，见verify-release.log。
+跨惠普/Apple/小米三品牌的缺失模拟、首次时间幂等、完整/部分采集边界、重复ID多个配置、已知SKU 404/410、重新出现和旧下架迁移已纳入test_retirement.py。另实测共享finalizer对真实完整基线保留所有ID并生成留档，见verify-release.log。
 
 ## 30条对照与发布
 

@@ -1,0 +1,37 @@
+{
+  "implementation_commit": "aa7bea9654ab47357856b74492d9af8e05da6a85",
+  "published_code_commit": "d430955773642a6460ec96a90315857ee2e35bf9",
+  "publication_run_id": 41883103308,
+  "publication_conclusion": "success",
+  "data_commit": "f16a874",
+  "publication_tests_passed": 553,
+  "cloud_full_tests": {
+    "run_id": 41881365183,
+    "passed": 850,
+    "deselected_existing_live": 8
+  },
+  "local_full_tests": {
+    "passed": 851,
+    "deselected_existing_live": 8
+  },
+  "rejected_stale_candidate": {
+    "run_id": 41881333830,
+    "reason": "Concurrent change at data/hp/collection-status.json.checked_at; fresh collection rerun succeeded; no force merge"
+  },
+  "online": {
+    "checked_at": "2026-11-04T18:08:30.511821+00:00",
+    "revision": "a76e0d07e13c44eea2ad3cccf4f242f4",
+    "goods_sha256": "5b1a5b4c9eb046d9aec5c6397175712f72f949cf1cfe71839f0bad1cf2cea890",
+    "total": 3414,
+    "hp_count": 790,
+    "hp_before": 218,
+    "hp_retired": 578,
+    "retired_count": 578,
+    "retired_by_brand": {
+      "惠普": 578
+    },
+    "no_lost_hp_ids": true,
+    "api_equal_release": true,
+    "samples_verified": 30
+  }
+}
