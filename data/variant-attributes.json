@@ -11882,35 +11882,39 @@
      "id": "CN:mi_cn:product:20425",
      "name": "Redmi Note 14 Pro+",
      "price": 1899,
-     "attrs": {
-      "name": "Redmi Note 14 Pro+ 12GB+512GB 镜瓷白",
-      "color": "镜瓷白",
-      "memory": "12GB",
-      "storage": "512GB"
-     },
      "evidence": {
       "url": "https://api2.order.mi.com/product/view?product_id=20425&version=2",
       "quote": "Redmi Note 14 Pro+ 12GB+512GB 镜瓷白，价格 ¥1899（goods_id=2230002455）",
       "captured_at": "2026-11-04T22:40:48+08:00"
      },
-     "gid": 2230002455
+     "gid": 2230002455,
+     "withheld_attrs": {
+      "name": "Redmi Note 14 Pro+ 12GB+512GB 镜瓷白",
+      "color": "镜瓷白",
+      "memory": "12GB",
+      "storage": "512GB"
+     },
+     "annotation_status": "pending_manual_review",
+     "annotation_reason": "同一 product_id 对应两个不同 goods_id，内存分别为 12GB 和 16GB；当前商品 id 未区分 SKU，无法唯一归属，整条暂不标注。"
     },
     {
      "id": "CN:mi_cn:product:20425",
      "name": "Redmi Note 14 Pro+",
      "price": 1999,
-     "attrs": {
-      "name": "Redmi Note 14 Pro+ 16GB+512GB 镜瓷白",
-      "color": "镜瓷白",
-      "memory": "16GB",
-      "storage": "512GB"
-     },
      "evidence": {
       "url": "https://api2.order.mi.com/product/view?product_id=20425&version=2",
       "quote": "Redmi Note 14 Pro+ 16GB+512GB 镜瓷白，价格 ¥1999（goods_id=2230002458）",
       "captured_at": "2026-11-04T22:40:48+08:00"
      },
-     "gid": 2230002458
+     "gid": 2230002458,
+     "withheld_attrs": {
+      "name": "Redmi Note 14 Pro+ 16GB+512GB 镜瓷白",
+      "color": "镜瓷白",
+      "memory": "16GB",
+      "storage": "512GB"
+     },
+     "annotation_status": "pending_manual_review",
+     "annotation_reason": "同一 product_id 对应两个不同 goods_id，内存分别为 12GB 和 16GB；当前商品 id 未区分 SKU，无法唯一归属，整条暂不标注。"
     }
    ]
   },

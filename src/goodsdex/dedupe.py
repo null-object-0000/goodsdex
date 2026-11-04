@@ -751,6 +751,9 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
         output, previous if previous is not None else rows, accessory_archive,
         reviewed_accessory_sha256)
     retained_ids = set(retained_ids) | {r['id'] for r in accessory_archive}
+    # Count attributes on the final inventory and preserve them after collectors.
+    from goodsdex.variant_attributes import apply_variant_attributes
+    output, variant_stats = apply_variant_attributes(output)
     if previous is not None:
         from goodsdex.release_policy import assert_no_lost_ids
         assert_no_lost_ids(previous, output, retained_ids)
@@ -769,6 +772,7 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     combined["brands"] = brand_audit
     meta_path = public / "meta.json"
     meta = metadata(output, json.loads(meta_path.read_text()) if meta_path.exists() else {})
+    meta['variant_attrs'] = variant_stats
     from goodsdex.release_dates import coverage
     meta['release_dates'] = coverage(output)
     from goodsdex.release_scope import scope_coverage

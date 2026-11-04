@@ -62,6 +62,8 @@ def test_finalizer_replays_and_details_only(tmp_path):
     expected=apply_date_enrichment(apply_series_releases(apply_release_dates(json.loads(baseline))))
     from goodsdex.source_urls import apply_source_urls
     expected=apply_source_urls(expected)
+    from goodsdex.variant_attributes import apply_variant_attributes
+    expected, _ = apply_variant_attributes(expected)
     # Other finalizer policies now backfill brands and archive 11 observed
     # accessories. Enrichment itself and every remaining field stay identical.
     archived=json.loads((tmp_path/'archive/accessories.json').read_text())
