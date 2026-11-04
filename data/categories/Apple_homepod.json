@@ -15,7 +15,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-11-05T00:08:58+08:00",
+   "price_fetched_at": "2026-11-05T00:30:09+08:00",
    "variant_attrs": {
     "dimensionColor": {
      "value": "midnight",
@@ -37,16 +37,16 @@
     "img_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/homepod-select-midnight-202610?wid=940&hei=1112&fmt=png-alpha&.v=N0JQcmtNWnVWeGozUXcxK2ZBcC9vU0F1VmRWYitjZnU1L09YZjhqT1dkaDdKMGdNUjJ3Q0dzSU9tc2pOeGwxbW15d1FhSDJ0bkR0ZGZtUjZJNmFveFlWbkZkTUpiWmR1d1VTcTFZYmVSWTQ"
    },
    "selected_from": {
-    "name": "f51accfd00da4f62",
-    "part_number": "1b80f19164f15966",
-    "dimensionColor": "ce3046700bfd23da",
-    "price": "6562112cbbec1244",
-    "img_url": "c90267f6d55aad43"
+    "name": "81c0955034d32eeb",
+    "part_number": "d0fe874d8c5a2038",
+    "dimensionColor": "f0d91823573dab3c",
+    "price": "011005d0a7ddad75",
+    "img_url": "447cd3a462f3b072"
    }
   },
   "captures": [
    {
-    "capture_id": "bfa7ebcb3f32",
+    "capture_id": "54556f2598c7",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-homepod/homepod",
     "method": "GET",
@@ -55,19 +55,19 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:9c0e24f77811d35bb0781bf890883227b728d8482973ff95fd3d5a76161b0938>",
-    "response_hash": "9c0e24f77811d35b",
-    "raw_ref": "data/apple/raw/9c0e24f77811d35bb0781bf890883227b728d8482973ff95fd3d5a76161b0938.html",
+    "response_raw": "<externalized:1dd24f6becbaf8a4e9dfd4ba641c74d61b99490acb64ca30bcd4d3c27d109b1c>",
+    "response_hash": "1dd24f6becbaf8a4",
+    "raw_ref": "data/apple/raw/1dd24f6becbaf8a4e9dfd4ba641c74d61b99490acb64ca30bcd4d3c27d109b1c.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-11-05T00:08:58+08:00",
+    "fetched_at": "2026-11-05T00:30:09+08:00",
     "declared_at": ""
    }
   ],
   "assertions": [
    {
-    "assertion_id": "f51accfd00da4f62",
+    "assertion_id": "81c0955034d32eeb",
     "subject_id": "CN:apple_cn:commodity:MDEX4CH/A",
-    "capture_id": "bfa7ebcb3f32",
+    "capture_id": "54556f2598c7",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 HomePod - Apple (中国大陆)",
@@ -83,9 +83,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "1b80f19164f15966",
+    "assertion_id": "d0fe874d8c5a2038",
     "subject_id": "CN:apple_cn:commodity:MDEX4CH/A",
-    "capture_id": "bfa7ebcb3f32",
+    "capture_id": "54556f2598c7",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MDEX4CH/A",
@@ -101,9 +101,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "ce3046700bfd23da",
+    "assertion_id": "f0d91823573dab3c",
     "subject_id": "CN:apple_cn:commodity:MDEX4CH/A",
-    "capture_id": "bfa7ebcb3f32",
+    "capture_id": "54556f2598c7",
     "source": "apple_cn",
     "attribute": "dimensionColor",
     "raw_value": "midnight",
@@ -119,9 +119,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "6562112cbbec1244",
+    "assertion_id": "011005d0a7ddad75",
     "subject_id": "CN:apple_cn:commodity:MDEX4CH/A",
-    "capture_id": "bfa7ebcb3f32",
+    "capture_id": "54556f2598c7",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "2699.00",
@@ -142,9 +142,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "c90267f6d55aad43",
+    "assertion_id": "447cd3a462f3b072",
     "subject_id": "CN:apple_cn:commodity:MDEX4CH/A",
-    "capture_id": "bfa7ebcb3f32",
+    "capture_id": "54556f2598c7",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/homepod-select-midnight-202610?wid=940&hei=1112&fmt=png-alpha&.v=N0JQcmtNWnVWeGozUXcxK2ZBcC9vU0F1VmRWYitjZnU1L09YZjhqT1dkaDdKMGdNUjJ3Q0dzSU9tc2pOeGwxbW15d1FhSDJ0bkR0ZGZtUjZJNmFveFlWbkZkTUpiWmR1d1VTcTFZYmVSWTQ",
@@ -160,7 +160,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-11-05T00:08:58+08:00",
+  "fetched_at": "2026-11-05T00:30:09+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -188,7 +188,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-11-05T00:08:58+08:00",
+   "price_fetched_at": "2026-11-05T00:30:09+08:00",
    "variant_attrs": {
     "dimensionColor": {
      "value": "white",
@@ -210,16 +210,16 @@
     "img_url": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/homepod-select-white-202610?wid=940&hei=1112&fmt=png-alpha&.v=M2ZJQ1JEdTZVMVdoSy9OYURZL0UwS3ZBRmRMV29lU1Y4TlBINTBwcXdxc0cvVUdZSjVwcUlDeFRXWEVzclZJSHg2bitObzZwQzk4cEorV1dZdzhIays2VmR4ZXRwWWc3eEkvMDBqcmJDYzg"
    },
    "selected_from": {
-    "name": "4e42a1aea492c145",
-    "part_number": "412706931109ba62",
-    "dimensionColor": "268b210806601cf3",
-    "price": "b43b1b7611e699f8",
-    "img_url": "63461ad48f287688"
+    "name": "a78d6494c2247219",
+    "part_number": "9cc8c77fbda90ccb",
+    "dimensionColor": "037b2593b8451837",
+    "price": "4ddd613d72c3f608",
+    "img_url": "624cb1e207b8a0f5"
    }
   },
   "captures": [
    {
-    "capture_id": "bfa7ebcb3f32",
+    "capture_id": "54556f2598c7",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-homepod/homepod",
     "method": "GET",
@@ -228,19 +228,19 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:9c0e24f77811d35bb0781bf890883227b728d8482973ff95fd3d5a76161b0938>",
-    "response_hash": "9c0e24f77811d35b",
-    "raw_ref": "data/apple/raw/9c0e24f77811d35bb0781bf890883227b728d8482973ff95fd3d5a76161b0938.html",
+    "response_raw": "<externalized:1dd24f6becbaf8a4e9dfd4ba641c74d61b99490acb64ca30bcd4d3c27d109b1c>",
+    "response_hash": "1dd24f6becbaf8a4",
+    "raw_ref": "data/apple/raw/1dd24f6becbaf8a4e9dfd4ba641c74d61b99490acb64ca30bcd4d3c27d109b1c.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-11-05T00:08:58+08:00",
+    "fetched_at": "2026-11-05T00:30:09+08:00",
     "declared_at": ""
    }
   ],
   "assertions": [
    {
-    "assertion_id": "4e42a1aea492c145",
+    "assertion_id": "a78d6494c2247219",
     "subject_id": "CN:apple_cn:commodity:MDF04CH/A",
-    "capture_id": "bfa7ebcb3f32",
+    "capture_id": "54556f2598c7",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 HomePod - Apple (中国大陆)",
@@ -256,9 +256,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "412706931109ba62",
+    "assertion_id": "9cc8c77fbda90ccb",
     "subject_id": "CN:apple_cn:commodity:MDF04CH/A",
-    "capture_id": "bfa7ebcb3f32",
+    "capture_id": "54556f2598c7",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MDF04CH/A",
@@ -274,9 +274,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "268b210806601cf3",
+    "assertion_id": "037b2593b8451837",
     "subject_id": "CN:apple_cn:commodity:MDF04CH/A",
-    "capture_id": "bfa7ebcb3f32",
+    "capture_id": "54556f2598c7",
     "source": "apple_cn",
     "attribute": "dimensionColor",
     "raw_value": "white",
@@ -292,9 +292,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "b43b1b7611e699f8",
+    "assertion_id": "4ddd613d72c3f608",
     "subject_id": "CN:apple_cn:commodity:MDF04CH/A",
-    "capture_id": "bfa7ebcb3f32",
+    "capture_id": "54556f2598c7",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "2699.00",
@@ -315,9 +315,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "63461ad48f287688",
+    "assertion_id": "624cb1e207b8a0f5",
     "subject_id": "CN:apple_cn:commodity:MDF04CH/A",
-    "capture_id": "bfa7ebcb3f32",
+    "capture_id": "54556f2598c7",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/homepod-select-white-202610?wid=940&hei=1112&fmt=png-alpha&.v=M2ZJQ1JEdTZVMVdoSy9OYURZL0UwS3ZBRmRMV29lU1Y4TlBINTBwcXdxc0cvVUdZSjVwcUlDeFRXWEVzclZJSHg2bitObzZwQzk4cEorV1dZdzhIays2VmR4ZXRwWWc3eEkvMDBqcmJDYzg",
@@ -333,7 +333,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-11-05T00:08:58+08:00",
+  "fetched_at": "2026-11-05T00:30:09+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -361,7 +361,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-11-05T00:08:58+08:00",
+   "price_fetched_at": "2026-11-05T00:30:10+08:00",
    "variant_attrs": {
     "dimensionColor": {
      "value": "white",
@@ -449,17 +449,17 @@
     }
    },
    "selected_from": {
-    "name": "b2a87e17bebb6848",
-    "part_number": "434692ab6ca10e30",
-    "dimensionColor": "b570abfac7bfb048",
-    "price": "fcdd1e04318793da",
-    "img_url": "408e38ec36b96c89",
+    "name": "fcd4426d67e854e9",
+    "part_number": "ee2e832dda6356f1",
+    "dimensionColor": "2167f3cc6b2972c7",
+    "price": "81ac442371b067c7",
+    "img_url": "783ae473a72107f5",
     "specs_table": "898c63ec06144b61"
    }
   },
   "captures": [
    {
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-homepod/homepod-mini",
     "method": "GET",
@@ -468,11 +468,11 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:351e9ec3c404a2e141e952f9d7fcf8e988cbe737ee9161b6ce6551714c9842b0>",
-    "response_hash": "351e9ec3c404a2e1",
-    "raw_ref": "data/apple/raw/351e9ec3c404a2e141e952f9d7fcf8e988cbe737ee9161b6ce6551714c9842b0.html",
+    "response_raw": "<externalized:a3fb3f47f5bb97d849719e0eca57b7ed49cfaa0b08ccf110fb20b6435d349e03>",
+    "response_hash": "a3fb3f47f5bb97d8",
+    "raw_ref": "data/apple/raw/a3fb3f47f5bb97d849719e0eca57b7ed49cfaa0b08ccf110fb20b6435d349e03.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-11-05T00:08:58+08:00",
+    "fetched_at": "2026-11-05T00:30:10+08:00",
     "declared_at": ""
    },
    {
@@ -495,9 +495,9 @@
   ],
   "assertions": [
    {
-    "assertion_id": "b2a87e17bebb6848",
+    "assertion_id": "fcd4426d67e854e9",
     "subject_id": "CN:apple_cn:commodity:MGHK4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 HomePod mini 2 - Apple (中国大陆)",
@@ -513,9 +513,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "434692ab6ca10e30",
+    "assertion_id": "ee2e832dda6356f1",
     "subject_id": "CN:apple_cn:commodity:MGHK4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MGHK4CH/A",
@@ -531,9 +531,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "b570abfac7bfb048",
+    "assertion_id": "2167f3cc6b2972c7",
     "subject_id": "CN:apple_cn:commodity:MGHK4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "dimensionColor",
     "raw_value": "white",
@@ -549,9 +549,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "fcdd1e04318793da",
+    "assertion_id": "81ac442371b067c7",
     "subject_id": "CN:apple_cn:commodity:MGHK4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "1099.00",
@@ -572,9 +572,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "408e38ec36b96c89",
+    "assertion_id": "783ae473a72107f5",
     "subject_id": "CN:apple_cn:commodity:MGHK4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/homepod-mini-select-white-202610_FV1?wid=1868&hei=880&fmt=jpeg&qlt=90&.v=K2c3bEwyaWVDeDZkdHpLbHkwcGVScUNNeFgzb01NZmZpZzZSMGM2UHlLYkxCM1gvWjZsdy9IamM4SVJ5RVlRQWk3aEZ4ZFFGenkvaGw2NzRqZXFWbnd0QXVzNitnN1V2S2Y5d3JYSkZKdmE1N1BYU0VVSUxkRXBtTThsd0FWQWE",
@@ -675,7 +675,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-11-05T00:08:58+08:00",
+  "fetched_at": "2026-11-05T00:30:10+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -703,7 +703,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-11-05T00:08:58+08:00",
+   "price_fetched_at": "2026-11-05T00:30:10+08:00",
    "variant_attrs": {
     "dimensionColor": {
      "value": "pink",
@@ -791,17 +791,17 @@
     }
    },
    "selected_from": {
-    "name": "269f8502bde9f978",
-    "part_number": "a28cef085938c6e0",
-    "dimensionColor": "387b67698979973b",
-    "price": "554a6f4ec24e655e",
-    "img_url": "0a4740a4ebc8bb25",
+    "name": "9a5025a6dccd33ca",
+    "part_number": "76a175c204a3eb7a",
+    "dimensionColor": "4e7819e75aeab091",
+    "price": "c0080f22e16ca18f",
+    "img_url": "7dae3535cd029e0d",
     "specs_table": "64828618200b733d"
    }
   },
   "captures": [
    {
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-homepod/homepod-mini",
     "method": "GET",
@@ -810,11 +810,11 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:351e9ec3c404a2e141e952f9d7fcf8e988cbe737ee9161b6ce6551714c9842b0>",
-    "response_hash": "351e9ec3c404a2e1",
-    "raw_ref": "data/apple/raw/351e9ec3c404a2e141e952f9d7fcf8e988cbe737ee9161b6ce6551714c9842b0.html",
+    "response_raw": "<externalized:a3fb3f47f5bb97d849719e0eca57b7ed49cfaa0b08ccf110fb20b6435d349e03>",
+    "response_hash": "a3fb3f47f5bb97d8",
+    "raw_ref": "data/apple/raw/a3fb3f47f5bb97d849719e0eca57b7ed49cfaa0b08ccf110fb20b6435d349e03.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-11-05T00:08:58+08:00",
+    "fetched_at": "2026-11-05T00:30:10+08:00",
     "declared_at": ""
    },
    {
@@ -837,9 +837,9 @@
   ],
   "assertions": [
    {
-    "assertion_id": "269f8502bde9f978",
+    "assertion_id": "9a5025a6dccd33ca",
     "subject_id": "CN:apple_cn:commodity:MGKR4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 HomePod mini 2 - Apple (中国大陆)",
@@ -855,9 +855,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "a28cef085938c6e0",
+    "assertion_id": "76a175c204a3eb7a",
     "subject_id": "CN:apple_cn:commodity:MGKR4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MGKR4CH/A",
@@ -873,9 +873,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "387b67698979973b",
+    "assertion_id": "4e7819e75aeab091",
     "subject_id": "CN:apple_cn:commodity:MGKR4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "dimensionColor",
     "raw_value": "pink",
@@ -891,9 +891,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "554a6f4ec24e655e",
+    "assertion_id": "c0080f22e16ca18f",
     "subject_id": "CN:apple_cn:commodity:MGKR4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "1099.00",
@@ -914,9 +914,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "0a4740a4ebc8bb25",
+    "assertion_id": "7dae3535cd029e0d",
     "subject_id": "CN:apple_cn:commodity:MGKR4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/homepod-mini-select-pink-202610_FV1?wid=1868&hei=880&fmt=jpeg&qlt=90&.v=K2c3bEwyaWVDeDZkdHpLbHkwcGVScXRRVlBBbThId3VGVjV5R0VkY1BOTmg5UEh1YlAveUJWditPbXN3blRmVi91YlVrZnFCSWZSZ3JZTTVzMlVYL29lZWZNakozTlo4c2tlc21wdGxDT3REUUplZW5Qelh1U3BrZStreHk1SEY",
@@ -1017,7 +1017,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-11-05T00:08:58+08:00",
+  "fetched_at": "2026-11-05T00:30:10+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -1045,7 +1045,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-11-05T00:08:58+08:00",
+   "price_fetched_at": "2026-11-05T00:30:10+08:00",
    "variant_attrs": {
     "dimensionColor": {
      "value": "blue",
@@ -1133,17 +1133,17 @@
     }
    },
    "selected_from": {
-    "name": "137163f40630befe",
-    "part_number": "3fdbca83bf85966c",
-    "dimensionColor": "39678ba08b9e9f9f",
-    "price": "fa4688b84943be06",
-    "img_url": "2fcf91a74d100747",
+    "name": "b5c6d4064aba5ebe",
+    "part_number": "e7e1bd5e92bca6f7",
+    "dimensionColor": "0ec77af5a7abaac7",
+    "price": "ea727aabab4627a3",
+    "img_url": "e5671309a8780bc6",
     "specs_table": "8c5c9c69aa69bbad"
    }
   },
   "captures": [
    {
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-homepod/homepod-mini",
     "method": "GET",
@@ -1152,11 +1152,11 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:351e9ec3c404a2e141e952f9d7fcf8e988cbe737ee9161b6ce6551714c9842b0>",
-    "response_hash": "351e9ec3c404a2e1",
-    "raw_ref": "data/apple/raw/351e9ec3c404a2e141e952f9d7fcf8e988cbe737ee9161b6ce6551714c9842b0.html",
+    "response_raw": "<externalized:a3fb3f47f5bb97d849719e0eca57b7ed49cfaa0b08ccf110fb20b6435d349e03>",
+    "response_hash": "a3fb3f47f5bb97d8",
+    "raw_ref": "data/apple/raw/a3fb3f47f5bb97d849719e0eca57b7ed49cfaa0b08ccf110fb20b6435d349e03.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-11-05T00:08:58+08:00",
+    "fetched_at": "2026-11-05T00:30:10+08:00",
     "declared_at": ""
    },
    {
@@ -1179,9 +1179,9 @@
   ],
   "assertions": [
    {
-    "assertion_id": "137163f40630befe",
+    "assertion_id": "b5c6d4064aba5ebe",
     "subject_id": "CN:apple_cn:commodity:MGHM4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 HomePod mini 2 - Apple (中国大陆)",
@@ -1197,9 +1197,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "3fdbca83bf85966c",
+    "assertion_id": "e7e1bd5e92bca6f7",
     "subject_id": "CN:apple_cn:commodity:MGHM4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MGHM4CH/A",
@@ -1215,9 +1215,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "39678ba08b9e9f9f",
+    "assertion_id": "0ec77af5a7abaac7",
     "subject_id": "CN:apple_cn:commodity:MGHM4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "dimensionColor",
     "raw_value": "blue",
@@ -1233,9 +1233,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "fa4688b84943be06",
+    "assertion_id": "ea727aabab4627a3",
     "subject_id": "CN:apple_cn:commodity:MGHM4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "1099.00",
@@ -1256,9 +1256,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "2fcf91a74d100747",
+    "assertion_id": "e5671309a8780bc6",
     "subject_id": "CN:apple_cn:commodity:MGHM4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/homepod-mini-select-blue-202610_FV1?wid=1868&hei=880&fmt=jpeg&qlt=90&.v=K2c3bEwyaWVDeDZkdHpLbHkwcGVScXc1YnoxZGlJcWhmYnNWOWJuYkpDUmg5UEh1YlAveUJWditPbXN3blRmVi91YlVrZnFCSWZSZ3JZTTVzMlVYL29lZWZNakozTlo4c2tlc21wdGxDT3RLYXh2a0FSeEQ0SHoxUWtrbWl6dVA",
@@ -1359,7 +1359,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-11-05T00:08:58+08:00",
+  "fetched_at": "2026-11-05T00:30:10+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -1387,7 +1387,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-11-05T00:08:58+08:00",
+   "price_fetched_at": "2026-11-05T00:30:10+08:00",
    "variant_attrs": {
     "dimensionColor": {
      "value": "green",
@@ -1475,17 +1475,17 @@
     }
    },
    "selected_from": {
-    "name": "1f04222d777938b3",
-    "part_number": "6feb297c42f5af85",
-    "dimensionColor": "a82330eb43c1a812",
-    "price": "d6334430254ebfc0",
-    "img_url": "cdd012fb3b548d72",
+    "name": "93f4f76db0a9f25f",
+    "part_number": "8102e8059dc46923",
+    "dimensionColor": "f4be8754d607fb42",
+    "price": "b6d299d452b28193",
+    "img_url": "c7f8fe46196499c1",
     "specs_table": "6f3c00ae4abc9567"
    }
   },
   "captures": [
    {
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-homepod/homepod-mini",
     "method": "GET",
@@ -1494,11 +1494,11 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:351e9ec3c404a2e141e952f9d7fcf8e988cbe737ee9161b6ce6551714c9842b0>",
-    "response_hash": "351e9ec3c404a2e1",
-    "raw_ref": "data/apple/raw/351e9ec3c404a2e141e952f9d7fcf8e988cbe737ee9161b6ce6551714c9842b0.html",
+    "response_raw": "<externalized:a3fb3f47f5bb97d849719e0eca57b7ed49cfaa0b08ccf110fb20b6435d349e03>",
+    "response_hash": "a3fb3f47f5bb97d8",
+    "raw_ref": "data/apple/raw/a3fb3f47f5bb97d849719e0eca57b7ed49cfaa0b08ccf110fb20b6435d349e03.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-11-05T00:08:58+08:00",
+    "fetched_at": "2026-11-05T00:30:10+08:00",
     "declared_at": ""
    },
    {
@@ -1521,9 +1521,9 @@
   ],
   "assertions": [
    {
-    "assertion_id": "1f04222d777938b3",
+    "assertion_id": "93f4f76db0a9f25f",
     "subject_id": "CN:apple_cn:commodity:MGHL4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 HomePod mini 2 - Apple (中国大陆)",
@@ -1539,9 +1539,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "6feb297c42f5af85",
+    "assertion_id": "8102e8059dc46923",
     "subject_id": "CN:apple_cn:commodity:MGHL4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MGHL4CH/A",
@@ -1557,9 +1557,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "a82330eb43c1a812",
+    "assertion_id": "f4be8754d607fb42",
     "subject_id": "CN:apple_cn:commodity:MGHL4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "dimensionColor",
     "raw_value": "green",
@@ -1575,9 +1575,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "d6334430254ebfc0",
+    "assertion_id": "b6d299d452b28193",
     "subject_id": "CN:apple_cn:commodity:MGHL4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "1099.00",
@@ -1598,9 +1598,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "cdd012fb3b548d72",
+    "assertion_id": "c7f8fe46196499c1",
     "subject_id": "CN:apple_cn:commodity:MGHL4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/homepod-mini-select-green-202610_FV1?wid=1868&hei=880&fmt=jpeg&qlt=90&.v=K2c3bEwyaWVDeDZkdHpLbHkwcGVSazBhY04wdUIvdlZUQk1GWGNzZHR6ekxCM1gvWjZsdy9IamM4SVJ5RVlRQWk3aEZ4ZFFGenkvaGw2NzRqZXFWbnd0QXVzNitnN1V2S2Y5d3JYSkZKdmJRUGVPZFluN3czQ0VSZldlM2VsWnA",
@@ -1701,7 +1701,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-11-05T00:08:58+08:00",
+  "fetched_at": "2026-11-05T00:30:10+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
@@ -1729,7 +1729,7 @@
    "currency": "CNY",
    "price_kind": "sku",
    "price_status": "provided",
-   "price_fetched_at": "2026-11-05T00:08:58+08:00",
+   "price_fetched_at": "2026-11-05T00:30:10+08:00",
    "variant_attrs": {
     "dimensionColor": {
      "value": "midnight",
@@ -1817,17 +1817,17 @@
     }
    },
    "selected_from": {
-    "name": "eb43db442e64affd",
-    "part_number": "4a9223b6f141ee2e",
-    "dimensionColor": "ed57ad3220ed52cb",
-    "price": "fcb444e74c33f642",
-    "img_url": "c0c7f4aea5bea932",
+    "name": "dfe3c35e38c37544",
+    "part_number": "1043d40870a7684b",
+    "dimensionColor": "e2ee644057f9164e",
+    "price": "63feca200b06af7c",
+    "img_url": "d3861bc3ed1ac373",
     "specs_table": "07e7d3164d5a0684"
    }
   },
   "captures": [
    {
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "url": "https://www.apple.com.cn/shop/buy-homepod/homepod-mini",
     "method": "GET",
@@ -1836,11 +1836,11 @@
     "status": "success",
     "http_status": 200,
     "error": "",
-    "response_raw": "<externalized:351e9ec3c404a2e141e952f9d7fcf8e988cbe737ee9161b6ce6551714c9842b0>",
-    "response_hash": "351e9ec3c404a2e1",
-    "raw_ref": "data/apple/raw/351e9ec3c404a2e141e952f9d7fcf8e988cbe737ee9161b6ce6551714c9842b0.html",
+    "response_raw": "<externalized:a3fb3f47f5bb97d849719e0eca57b7ed49cfaa0b08ccf110fb20b6435d349e03>",
+    "response_hash": "a3fb3f47f5bb97d8",
+    "raw_ref": "data/apple/raw/a3fb3f47f5bb97d849719e0eca57b7ed49cfaa0b08ccf110fb20b6435d349e03.html",
     "parser_version": "apple-cn-v1",
-    "fetched_at": "2026-11-05T00:08:58+08:00",
+    "fetched_at": "2026-11-05T00:30:10+08:00",
     "declared_at": ""
    },
    {
@@ -1863,9 +1863,9 @@
   ],
   "assertions": [
    {
-    "assertion_id": "eb43db442e64affd",
+    "assertion_id": "dfe3c35e38c37544",
     "subject_id": "CN:apple_cn:commodity:MGHJ4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "name",
     "raw_value": "购买 HomePod mini 2 - Apple (中国大陆)",
@@ -1881,9 +1881,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "4a9223b6f141ee2e",
+    "assertion_id": "1043d40870a7684b",
     "subject_id": "CN:apple_cn:commodity:MGHJ4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "part_number",
     "raw_value": "MGHJ4CH/A",
@@ -1899,9 +1899,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "ed57ad3220ed52cb",
+    "assertion_id": "e2ee644057f9164e",
     "subject_id": "CN:apple_cn:commodity:MGHJ4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "dimensionColor",
     "raw_value": "midnight",
@@ -1917,9 +1917,9 @@
     "normalization_rule_version": ""
    },
    {
-    "assertion_id": "fcb444e74c33f642",
+    "assertion_id": "63feca200b06af7c",
     "subject_id": "CN:apple_cn:commodity:MGHJ4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "price",
     "raw_value": "1099.00",
@@ -1940,9 +1940,9 @@
     "normalization_rule_version": "apple-cn-v1"
    },
    {
-    "assertion_id": "c0c7f4aea5bea932",
+    "assertion_id": "d3861bc3ed1ac373",
     "subject_id": "CN:apple_cn:commodity:MGHJ4CH/A",
-    "capture_id": "a686327dd633",
+    "capture_id": "2ba0cff4834b",
     "source": "apple_cn",
     "attribute": "img_url",
     "raw_value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/homepod-mini-select-midnight-202610_FV1?wid=1868&hei=880&fmt=jpeg&qlt=90&.v=K2c3bEwyaWVDeDZkdHpLbHkwcGVSaFRaZXZublY0K2p0Ri9sOWcwbVh6amwzc0hqbklCSmJHNTA2MnByUFJuSTN6WWY5a1JiR3h2V2h5Mis1dmgwRVRnQ1lhSmZUdzRUK1crYTlZTFpSRDlhblNYU3dVRzd1b3FleHZaelNicXk",
@@ -2043,7 +2043,7 @@
     "normalization_rule_version": ""
    }
   ],
-  "fetched_at": "2026-11-05T00:08:58+08:00",
+  "fetched_at": "2026-11-05T00:30:10+08:00",
   "discovery": {
    "scope": "official_CN_preconfigured_SKUs",
    "completeness": "partial",
