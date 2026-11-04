@@ -736,6 +736,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     brand_before = output
     output = normalize_brands(output)
     brand_audit = audit_brands(brand_before, output)
+    from goodsdex.source_urls import apply_source_urls
+    output = apply_source_urls(output)
     assert_public_fields(output)
     from goodsdex.services import plan_services
     service_path = public / 'archive/services.json'

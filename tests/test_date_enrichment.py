@@ -60,6 +60,8 @@ def test_finalizer_replays_and_details_only(tmp_path):
     # The ordinary finalizer also replays reviewed product dates, which may
     # legitimately grow after this historical snapshot was frozen.
     expected=apply_date_enrichment(apply_series_releases(apply_release_dates(json.loads(baseline))))
+    from goodsdex.source_urls import apply_source_urls
+    expected=apply_source_urls(expected)
     # Other finalizer policies now backfill brands and archive 11 observed
     # accessories. Enrichment itself and every remaining field stay identical.
     archived=json.loads((tmp_path/'archive/accessories.json').read_text())

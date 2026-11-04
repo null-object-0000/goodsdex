@@ -97,4 +97,6 @@ def metadata(result, meta=None):
                 brands=dict(Counter(r.get("brand") or ("小米" if r["id"].startswith("CN:mi_cn:") else "未知") for r in result)),
                 with_price=sum(r.get("price") is not None for r in result),
                 by_kind=dict(Counter(r.get("kind") or "unknown" for r in result)))
+    from goodsdex.source_urls import coverage as source_url_coverage
+    meta['source_url_coverage'] = source_url_coverage(result)
     return meta
