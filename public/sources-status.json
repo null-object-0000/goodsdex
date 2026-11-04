@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T23:51:02Z",
+  "generatedAt": "2026-11-04T00:09:52Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -17,10 +17,10 @@
       "sourceId": "refresh-apple",
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-03T23:07:12Z",
+      "lastAttemptAt": "2026-11-04T00:07:10Z",
       "lastSuccessAt": "2026-11-03T23:11:06Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41736559869",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41744396795",
       "error": null,
       "stale": false,
       "staleReason": null
@@ -29,11 +29,11 @@
       "sourceId": "refresh-hp",
       "workflow": ".github/workflows/refresh-hp.yml",
       "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-03T23:07:14Z",
+      "lastAttemptAt": "2026-11-04T00:07:12Z",
       "lastSuccessAt": "2026-11-03T22:21:53Z",
-      "conclusion": "degraded",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41736565556",
-      "error": "blocked: 403 from hpstore.cn",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41744402495",
+      "error": null,
       "stale": false,
       "staleReason": null
     },
@@ -53,10 +53,10 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-03T23:49:38Z",
+      "lastAttemptAt": "2026-11-04T00:08:36Z",
       "lastSuccessAt": null,
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41742051476",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41744396795",
       "error": null,
       "stale": false,
       "staleReason": null
