@@ -88,3 +88,14 @@ def test_completed_discovery_archive_drives_public_retirement(tmp_path):
     # A later partial discovery preserves the last complete missing event.
     merge_archive('手机', [], archive_dir=archive, now_iso='2026-11-04T00:00:00Z')
     assert archive_observations(tmp_path, previous) == observations
+
+
+def test_retiring_duplicate_id_variants_retains_every_configuration():
+    previous = [dict(id='shared', name='容量A', params={'容量': '128GB'}),
+                dict(id='shared', name='容量B', params={'容量': '256GB'})]
+    observation = dict(id='shared', state='missing', observed_at='first',
+                       source_url='https://official.example/product', reason='http_410')
+    rows = reconcile(previous, [], [observation])
+    assert len(rows) == 2
+    assert [r['params'] for r in rows] == [r['params'] for r in previous]
+    assert all(r['status'] == 'retired' for r in rows)

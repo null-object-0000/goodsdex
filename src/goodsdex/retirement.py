@@ -72,7 +72,8 @@ def reconcile(previous, current, observations=()):
         if row['id'] not in present and (row.get('status') == 'retired' or
                                         obs.get('state') == 'missing'):
             rows.append(deepcopy(row))
-            present.add(row['id'])
+            # Keep all legitimate variants of an absent ID. The existing
+            # publication contract permits protected duplicate-ID variants.
     old = {r['id']: r for r in previous}
     for row in rows:
         prior = old.get(row['id'], {})

@@ -725,7 +725,9 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     retirement_path = public / 'archive/retirement-observations.json'
     retirement_observations = archive_observations(public, previous or [])
     retirement_observations += json.loads(retirement_path.read_text()) if retirement_path.exists() else []
-    retained = reconcile(remove_reviewed_non_goods([*retired_archive, *(previous or [])]),
+    previous_ids = {r['id'] for r in previous or []}
+    prior_retired = [r for r in retired_archive if r['id'] not in previous_ids]
+    retained = reconcile(remove_reviewed_non_goods([*prior_retired, *(previous or [])]),
                          retained, retirement_observations)
     # Restored history belongs to the input inventory for exclusion arithmetic.
     input_ids = {r['id'] for r in rows}
