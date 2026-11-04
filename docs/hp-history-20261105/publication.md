@@ -8,7 +8,7 @@
 
 曾有一轮旧候选因 `collection-status.json.checked_at` 并发变化被门禁拦截（41881333830），未覆盖线上商品；以上最终任务从最新data重新采集后成功。没有绕过发布锁或强行合并冲突。
 
-最终revision：`a76e0d07e13c44eea2ad3cccf4f242f4`；整库SHA256：`5b1a5b4c9eb046d9aec5c6397175712f72f949cf1cfe71839f0bad1cf2cea890`。部署端既有同步器返回 `{"ok":true,"count":3414,"succeeded":9,"errors":[]}`，未部署API代码。
+最新读回revision（共享库在本轮发布后也有其他任务更新，HP790及30条样本再次全部通过）：`0b5acd61bdc34995bb8d7fb2618eaa8e`；整库SHA256：`2473613f259cff31eee3d48e57389126cef437c1220176d7a892c0f23039de5c`。部署端既有同步器返回 `{"ok":true,"count":3414,"succeeded":9,"errors":[]}`，未部署API代码。
 
 线上共3414行，HP790行；`retired_count=578`，`retired_by_brand={"惠普": 578}`。原有9个HP下架记录的首次时间保留；抽查3条旧记录的原字段全部逐值保留。30条对照样本再次在正式线上核验通过。`/api/goods` 与不可变OSS blob逐值相等，详见online-verification.json。
 
@@ -56,7 +56,7 @@ HTTP200；返回3414行，其中惠普名称含关键字的记录23条。
 
 ## 测试与边界
 
-本地完整基线828 passed / 8 deselected；最终851 passed / 8 deselected。云端已发布源码完整测试：[41881365183](https://github.com/null-object-0000/goodsdex/actions/runs/41881365183)，850 passed / 8 deselected；额外1项端到端回归验证全量采集先安装新档案再重建的入口顺序。原有8项live未新增跳过。
+本地完整基线828 passed / 8 deselected；最终851 passed / 8 deselected。最终提交77ec42e8云端完整测试：[41888746881](https://github.com/null-object-0000/goodsdex/actions/runs/41888746881)，851 passed / 8 deselected；包含端到端回归验证全量采集先安装新档案再重建的入口顺序。原有8项live未新增跳过。
 
 历史支持目录的较旧分类缺席事件，不能覆盖另一分类的较新在场记录，也不能覆盖更晚的商品观察；新增回归防止先误下架再复活。冻结基线重放时非HP对象逐值不变，见local-invariants.json。
 
