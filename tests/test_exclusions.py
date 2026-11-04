@@ -143,23 +143,18 @@ def test_non_goods_replay_and_future_collection_preserve_source_facts(tmp_path):
         finalize_public(tmp_path)
         meta = build_shards(tmp_path)
         excluded = read(tmp_path, 'goods-excluded.json')
-        assert (meta['total_all'], meta['total_published'], meta['total_excluded']) == (2, 1, 1)
-        assert meta['excluded_by_rule']['preorder_deposit'] == 1
-        assert meta['excluded_by_rule']['service'] == 0
-        offer = excluded['items'][0]
-        assert all(offer[k] == v for k, v in rows[1].items())
-        assert offer['matched_rule'] == offer['exclusion']['matched_rule'] == 'preorder_deposit'
-        assert offer['matched_text'] == offer['exclusion']['matched_text'] == '权益'
-        archived = read(tmp_path, 'archive/services.json')
-        assert len(archived) == 1
-        assert all(archived[0][k] == v for k, v in rows[1].items())
-    # A newly collected identity is filtered by the same finalizer, without a list edit.
+        assert (meta['total_all'], meta['total_published'], meta['total_excluded']) == (2, 2, 0)
+        offer = next(r for r in read(tmp_path, 'goods.json') if r['id']=='offer')
+        assert offer['price_kind']=='deposit' and offer['price'] is None
+        assert offer['source_price']==1 and not offer['price_comparable']
+        assert offer['name']==rows[1]['name']
     fresh = dict(id='new-identity', name='新品订金', category='耳机', price=10)
     (tmp_path / 'goods.json').write_text(json.dumps([rows[0], fresh]))
     finalize_public(tmp_path)
     meta = build_shards(tmp_path)
-    assert (meta['total_all'], meta['total_published'], meta['total_excluded']) == (3, 1, 2)
-    assert meta['excluded_by_rule']['preorder_deposit'] == 2
-    meta['excluded_by_rule']['preorder_deposit'] = 0
-    with pytest.raises(ValueError, match='rule counts'):
+    assert meta['total_published']==2 and meta['total_excluded']==0
+    offer=next(r for r in read(tmp_path, 'goods.json') if r['id']=='new-identity')
+    assert offer['price_kind']=='deposit' and offer['source_price']==10 and offer['price'] is None
+    meta['total_excluded'] = 1
+    with pytest.raises(ValueError):
         validate_excluded(meta, read(tmp_path, 'goods-excluded.json'), read(tmp_path, 'goods.json'))

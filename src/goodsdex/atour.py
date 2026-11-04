@@ -125,7 +125,8 @@ def build_rows(capture, images=None, categories=None):
                 captured_at=e['captured_at'],fetched_at=e['captured_at'],price_fetched_at=e['captured_at'],
                 record_level='sku',kind='whole',status='available',official_sku_status=s.get('spuStatus'),
                 stock_num=s.get('stockNum'),catalog_scope='official_h5_brand_current_sku_options')
-            result.append(row)
+            from goodsdex.price_semantics import normalize
+            result.append(normalize(row))
     return result
 
 

@@ -67,6 +67,8 @@ def test_finalizer_replays_and_details_only(tmp_path):
     expected=apply_source_urls(expected)
     from goodsdex.variant_attributes import apply_variant_attributes
     expected, _ = apply_variant_attributes(expected)
+    from goodsdex.price_semantics import apply as apply_prices
+    expected=apply_prices(expected)
     # Independently frozen expected exclusions include the title repair.
     # Enrichment and every retained field must still be identical.
     archived=json.loads((tmp_path/'archive/accessories.json').read_text())

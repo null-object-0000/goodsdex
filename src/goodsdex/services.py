@@ -55,7 +55,9 @@ def plan_services(rows, archive):
     kept = []
     archived = {r['id']: deepcopy(r) for r in archive}
     for row in rows:
-        decision = classify_non_goods(row)
+        from goodsdex.price_semantics import name_kind
+        partial = row.get('price_kind') in ('deposit', 'upgrade_diff', 'bundle_extra') or name_kind(row)[0]
+        decision = None if partial else classify_non_goods(row)
         if decision:
             archived.setdefault(row['id'], deepcopy(row))
         else:
