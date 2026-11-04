@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T19:20:38Z",
+  "generatedAt": "2026-11-04T19:50:22Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -30,12 +30,24 @@
       "workflow": ".github/workflows/refresh-hp.yml",
       "expectedIntervalMinutes": 1440,
       "lastAttemptAt": "2026-11-04T19:08:09Z",
-      "lastSuccessAt": "2026-11-04T18:06:52Z",
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-04T19:22:02Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41893983443",
       "error": null,
       "stale": false,
       "staleReason": null
+    },
+    {
+      "sourceId": "refresh-atour",
+      "workflow": ".github/workflows/refresh-atour.yml",
+      "expectedIntervalMinutes": 1440,
+      "lastAttemptAt": "2026-11-04T19:46:44Z",
+      "lastSuccessAt": null,
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41900226785",
+      "error": null,
+      "stale": true,
+      "staleReason": "无可确认的成功运行（预期每 1440 分钟）"
     },
     {
       "sourceId": "refresh-cars",
@@ -53,10 +65,10 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-04T19:18:50Z",
+      "lastAttemptAt": "2026-11-04T19:48:09Z",
       "lastSuccessAt": null,
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41893983443",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41900226785",
       "error": null,
       "stale": false,
       "staleReason": null
