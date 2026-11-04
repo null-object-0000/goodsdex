@@ -22,3 +22,139 @@ python3 scripts/verify_atour_release.py --capture docs/atour-catalog-20261105/ev
 ```
 
 渲染页面的10条独立对照证据见[evidence/h5-samples.json](evidence/h5-samples.json)，并非拿同一接口对象与自身比较。完整发布结果、线上total、3条真实记录、5条随机枕芯及10条逐字对照见下方发布验收。
+
+## 发布验收
+
+发布 run：[41900226785](https://github.com/null-object-0000/goodsdex/actions/runs/41900226785)。代码已推main；共享发布作业已推data并完成OSS镜像。本轮使用verified_snapshot=true导入同日国内匿名已审校快照，全部走正常collector与共享发布门禁。首轮41898936180因runner升级至26.04与固定Playwright不兼容，在安装浏览器时失败；已固定24.04。随后41899314683及只读探测41901313408仍在H5初始导航超时，均未发布。
+
+线上查询：[亚朵星球](https://spend.snewbie.site/api/goods?q=%E4%BA%9A%E6%9C%B5%E6%98%9F%E7%90%83)，`total=267`；OSS `meta.sources.atour.spu_count=38`、`sku_count=267`、`meta.brands.亚朵星球=267`，与官方本轮38/267完全一致，无差1。发布revision：`561a11960b45452bb4702d47572eff7d`。
+
+云端实时采集限制：[41901313408](https://github.com/null-object-0000/goodsdex/actions/runs/41901313408)在等待H5初始页面domcontentloaded时60秒超时，尚未取得HTTP业务响应，不能声称已验证GitHub出口的自动实时刷新。每天05:17的live采集仍失败即停止并保留旧库存；可访问官网的采集端生成新完整快照后，可再走verified_snapshot正常发布、对比退档。本机修正模块等待与定时余量后另重读38/267成功，全部200、最小2.105秒，名称/价/规格/图片及包装与本轮快照无差异，见[独立复核](readiness-recheck.json)。
+
+校验：共享发布门禁573项通过；data提交`0075b8cf532604ffb0fff662adbab16706df17cf`，3414→3681，新增267；旧ID零丢失，其它品牌全对象多重集合相等，见[发布校验](publication.json)。
+
+### 3条真实线上记录
+
+```json
+[
+  {
+    "id": "CN:atour:spu:2099:sku:010020101010411-001",
+    "name": "亚朵星球 深睡枕 Pro4.0（深睡稳压枕） / 单只装(枕芯*1+岩溪蓝 外枕套*1)",
+    "brand": "亚朵星球",
+    "category": "枕芯",
+    "price": 435,
+    "promo_price": 435,
+    "image": "https://xbu-qiniu.yaduo.com/QN/chain/67da8787-5853-42a7-8884-290e3b47927d.jpg?imageMogr2/crop/!720x280a40a250/format/webp",
+    "source_url": "https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2099",
+    "sku_no": "010020101010411-001",
+    "spu_id": 2099,
+    "specs": {
+      "official_text": "单只装(枕芯*1+岩溪蓝 外枕套*1)",
+      "dimensions": null,
+      "height": null,
+      "filling": null
+    },
+    "specs_missing": [
+      "dimensions",
+      "height",
+      "filling"
+    ],
+    "bundle": true,
+    "package_quantity": 2,
+    "bundle_contents": [
+      {
+        "name": "深睡枕 Pro4.0 枕芯",
+        "quantity": 1
+      },
+      {
+        "name": "岩溪蓝 外枕套",
+        "quantity": 1
+      }
+    ],
+    "captured_at": "2026-11-04T19:12:57.176Z"
+  },
+  {
+    "id": "CN:atour:spu:1987:sku:010210005724052",
+    "name": "亚朵星球 慢回弹记忆绵枕 / 单只装70*42*6cm",
+    "brand": "亚朵星球",
+    "category": "枕芯",
+    "price": 139,
+    "promo_price": null,
+    "image": "https://xbu-qiniu.yaduo.com/QN/chain/1668ee76-845e-43e5-8e33-d4b4d030347b.jpg?imageMogr2/crop/!720x285a40a230/format/webp",
+    "source_url": "https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=1987",
+    "sku_no": "010210005724052",
+    "spu_id": 1987,
+    "specs": {
+      "official_text": "单只装70*42*6cm",
+      "dimensions": "70*42*6cm",
+      "height": "6cm",
+      "filling": null
+    },
+    "specs_missing": [
+      "filling"
+    ],
+    "bundle": false,
+    "package_quantity": 1,
+    "bundle_contents": null,
+    "captured_at": "2026-11-04T19:13:18.161Z"
+  },
+  {
+    "id": "CN:atour:spu:2006:sku:0102000038-l",
+    "name": "亚朵星球 90鹅绒复合枕 / 单只装中枕",
+    "brand": "亚朵星球",
+    "category": "枕芯",
+    "price": 299,
+    "promo_price": null,
+    "image": "https://xbu-qiniu.yaduo.com/QN/chain/b9adfb33-9839-4ee2-becd-7a17ae9bf30c.jpg?imageMogr2/crop/!720x280a40a245/format/webp",
+    "source_url": "https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2006",
+    "sku_no": "0102000038-l",
+    "spu_id": 2006,
+    "specs": {
+      "official_text": "单只装中枕",
+      "dimensions": null,
+      "height": null,
+      "filling": null
+    },
+    "specs_missing": [
+      "dimensions",
+      "height",
+      "filling"
+    ],
+    "bundle": false,
+    "package_quantity": 1,
+    "bundle_contents": null,
+    "captured_at": "2026-11-04T19:14:50.733Z"
+  }
+]
+```
+
+### 枕芯随机5条（固定种子20261105，可复现）
+
+|名称（库中完整原文）|销售价 CNY|规格原文|主图 URL|官方详情页 URL|
+|---|---:|---|---|---|
+|亚朵星球 深睡枕 Pro4.0（深睡稳压枕） / 单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(夜云紫)*1|534|单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(夜云紫)*1|[官方白底商品图](https://xbu-qiniu.yaduo.com/QN/chain/aa214ab9-759d-4ed0-8911-769d1c59f846.jpg?imageMogr2/crop/!720x215a40a250/format/webp)|[SPU 2099](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2099)|
+|亚朵星球 深睡枕 Pro1.0 / 70*42*10cm（两只装）|600|70*42*10cm（两只装）|[官方白底商品图](https://xbu-qiniu.yaduo.com/QN/chain/23715661-e5f5-4d4f-9a80-40b1f77f0c9d.jpg?imageMogr2/crop/!720x215a40a250/format/webp)|[SPU 1977](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=1977)|
+|亚朵星球 深睡儿童枕 / 星砂蓝两只装(立减10元)|568|星砂蓝两只装(立减10元)|[官方白底商品图](https://xbu-qiniu.yaduo.com/QN/chain/d33f51be-8593-419c-906a-80195888fa1a.jpg?imageMogr2/crop/!720x215a40a250/format/webp)|[SPU 2048](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2048)|
+|亚朵星球 90鹅绒复合枕 / 单只装中枕|299|单只装中枕|[官方白底商品图](https://xbu-qiniu.yaduo.com/QN/chain/b9adfb33-9839-4ee2-becd-7a17ae9bf30c.jpg?imageMogr2/crop/!720x280a40a245/format/webp)|[SPU 2006](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2006)|
+|亚朵星球 深睡随行枕 / 深睡随行枕+深睡眼罩2.0 青空灰|258|深睡随行枕+深睡眼罩2.0 青空灰|[官方白底商品图](https://xbu-qiniu.yaduo.com/QN/chain/9246a33d-2f4f-4cc5-9185-4d800d9be878.jpg?imageMogr2/crop/!720x215a40a250/format/webp)|[SPU 2044](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2044)|
+
+尺寸/高度/填充等字段与null缺口见[线上机器验收](online-verification.json)，其中不会把多只装价格当单只价。
+
+### 10条H5渲染页面与库逐字对照
+
+页面名、库中`official_name`逐字相同；页面已选规格、库中`sku_name`逐字相同。库中`name`是两者按` / `连接，避免仅存SPU名或仅存颜色。表中两侧名称/规格写在各自列，价格为页面“活动价”显示值与该SKU销售价；本10条两者数值恰好相等，不外推其它规格的优惠口径。
+
+|H5页面商品名|库商品原名|H5已选规格|库SKU原文|H5价格|库销售价|结果|
+|---|---|---|---|---:|---:|---|
+|[亚朵星球 慢回弹记忆绵枕](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=1987)|亚朵星球 慢回弹记忆绵枕|单只装70*42*6cm|单只装70*42*6cm|139|139|逐字/数值一致|
+|[亚朵星球 深睡随行枕](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2044)|亚朵星球 深睡随行枕|50*30*10cm（单只装）|50*30*10cm（单只装）|169|169|逐字/数值一致|
+|[亚朵星球 深睡儿童枕](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2048)|亚朵星球 深睡儿童枕|绮光粉单只装|绮光粉单只装|289|289|逐字/数值一致|
+|[亚朵星球 深睡枕 Pro1.0](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=1977)|亚朵星球 深睡枕 Pro1.0|70*42*10cm（单只装）|70*42*10cm（单只装）|300|300|逐字/数值一致|
+|[亚朵星球 90鹅绒复合枕](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2006)|亚朵星球 90鹅绒复合枕|单只装中枕|单只装中枕|299|299|逐字/数值一致|
+|[亚朵星球 深睡枕 Pro4.0（深睡稳压枕）](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2099)|亚朵星球 深睡枕 Pro4.0（深睡稳压枕）|单只装(枕芯*1+岩溪蓝 外枕套*1)|单只装(枕芯*1+岩溪蓝 外枕套*1)|435|435|逐字/数值一致|
+|[亚朵星球 深睡枕套 Pro4.0](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2113)|亚朵星球 深睡枕套 Pro4.0|深睡蓝|深睡蓝|99|99|逐字/数值一致|
+|[亚朵星球 深睡双感眼罩2.0](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2034)|亚朵星球 深睡双感眼罩2.0|深睡蓝|深睡蓝|89|89|逐字/数值一致|
+|[亚朵星球 深睡抱枕](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=1965)|亚朵星球 深睡抱枕|浅灰蓝-105*30cm|浅灰蓝-105*30cm|219|219|逐字/数值一致|
+|[亚朵星球 深睡儿童枕套](https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2049)|亚朵星球 深睡儿童枕套|星砂蓝|星砂蓝|79|79|逐字/数值一致|
+
+原始渲染正文与采集时间见[evidence/h5-samples.json](evidence/h5-samples.json)；完整线上响应见[api-atour.json](api-atour.json)。接口返回前20条，`total=267`；三条完整详情又逐条与OSS整库做了全对象相等校验。

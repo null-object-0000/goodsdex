@@ -6,8 +6,10 @@ RUN_ID=sys.argv[1]
 r=json.loads((ROOT/'online-verification.json').read_text())
 p=ROOT/'README.md';text=p.read_text().split('\n## 发布验收\n')[0]
 text+='\n## 发布验收\n\n'
-text+=f'发布 run：[{RUN_ID}](https://github.com/null-object-0000/goodsdex/actions/runs/{RUN_ID})。代码已推main；共享发布作业已推data并完成OSS镜像。首轮41898936180在安装浏览器时因ubuntu-latest升级至26.04、Playwright 1.56.1不支持而失败，未执行采集/发布；已将采集runner固定为受支持的ubuntu-24.04。\n\n'
+text+=f'发布 run：[{RUN_ID}](https://github.com/null-object-0000/goodsdex/actions/runs/{RUN_ID})。代码已推main；共享发布作业已推data并完成OSS镜像。本轮使用verified_snapshot=true导入同日国内匿名已审校快照，全部走正常collector与共享发布门禁。首轮41898936180因runner升级至26.04与固定Playwright不兼容，在安装浏览器时失败；已固定24.04。随后41899314683及只读探测41901313408仍在H5初始导航超时，均未发布。\n\n'
 text+=f"线上查询：[亚朵星球]({r['api_url']})，`total={r['api_total']}`；OSS `meta.sources.atour.spu_count=38`、`sku_count=267`、`meta.brands.亚朵星球=267`，与官方本轮38/267完全一致，无差1。发布revision：`{r['revision']}`。\n\n"
+text+='云端实时采集限制：[41901313408](https://github.com/null-object-0000/goodsdex/actions/runs/41901313408)在等待H5初始页面domcontentloaded时60秒超时，尚未取得HTTP业务响应，不能声称已验证GitHub出口的自动实时刷新。每天05:17的live采集仍失败即停止并保留旧库存；可访问官网的采集端生成新完整快照后，可再走verified_snapshot正常发布、对比退档。本机修正模块等待与定时余量后另重读38/267成功，全部200、最小2.105秒，名称/价/规格/图片及包装与本轮快照无差异，见[独立复核](readiness-recheck.json)。\n\n'
+text+='校验：共享发布门禁573项通过；data提交`0075b8cf532604ffb0fff662adbab16706df17cf`，3414→3681，新增267；旧ID零丢失，其它品牌全对象多重集合相等，见[发布校验](publication.json)。\n\n'
 text+='### 3条真实线上记录\n\n```json\n'+json.dumps(r['api_examples'],ensure_ascii=False,indent=2)+'\n```\n\n'
 text+='### 枕芯随机5条（固定种子20261105，可复现）\n\n'
 text+='|名称（库中完整原文）|销售价 CNY|规格原文|主图 URL|官方详情页 URL|\n|---|---:|---|---|---|\n'

@@ -30,7 +30,7 @@ def verify(rows,capture,samples):
         comparisons.append(dict(id=key,url=sample['url'],page_name=title,database_official_name=r['official_name'],page_selected_sku=sku,database_sku_name=r['sku_name'],page_price=price_text,database_price=r['price'],equal=True))
     pillows=[r for r in actual if r['category']=='枕芯']
     chosen=random.Random(20261105).sample(pillows,5)
-    return dict(counts=coverage(actual),page_comparisons=comparisons,pillow_samples=[{k:r[k] for k in ('id','name','price','promo_price','specs','image','source_url')} for r in chosen],api_examples=[{k:actual[i][k] for k in ('id','name','price','promo_price','sku_no','spu_id','source_url')} for i in (0,45,207)])
+    return dict(counts=coverage(actual),page_comparisons=comparisons,pillow_samples=[{k:r[k] for k in ('id','name','price','promo_price','specs','image','source_url')} for r in chosen],api_examples=[{k:actual[i][k] for k in ('id','name','brand','category','price','promo_price','image','source_url','sku_no','spu_id','specs','specs_missing','bundle','package_quantity','bundle_contents','captured_at')} for i in (0,45,207)])
 
 
 if __name__=='__main__':
