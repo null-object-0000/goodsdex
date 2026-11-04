@@ -1,0 +1,169 @@
+# 真实线上 /api/meta 与三个详情摘录
+
+核验时间：2026-11-04T13:37:29.405033+00:00。下面均为实际HTTP返回，不是本地重建。三个canonical ID的gid均按实际响应保留；不虚构数值gid。
+
+```json
+{
+  "meta": {
+    "revision": "c31f94772e2c4df9a94fc6a61f952a96",
+    "total_all": 3982,
+    "total_published": 2856,
+    "total_excluded": 1126,
+    "release_scope": {
+      "policy": "machine-release-v1",
+      "label": "整机口径覆盖率",
+      "denominator": "machine",
+      "counting_unit": "published_rows",
+      "total": 2856,
+      "tiers": {
+        "machine": 2554,
+        "accessory": 210,
+        "third_party_selection": 92
+      },
+      "brands": {
+        "Apple": {
+          "total": 639,
+          "machine": 639,
+          "accessory": 0,
+          "third_party_selection": 0,
+          "product_covered": 535,
+          "series_only_covered": 0,
+          "covered": 535,
+          "missing": 104,
+          "coverage": 0.837245696400626,
+          "product_coverage": 0.837245696400626
+        },
+        "比亚迪": {
+          "total": 14,
+          "machine": 14,
+          "accessory": 0,
+          "third_party_selection": 0,
+          "product_covered": 3,
+          "series_only_covered": 0,
+          "covered": 3,
+          "missing": 11,
+          "coverage": 0.21428571428571427,
+          "product_coverage": 0.21428571428571427
+        },
+        "大疆": {
+          "total": 281,
+          "machine": 275,
+          "accessory": 6,
+          "third_party_selection": 0,
+          "product_covered": 96,
+          "series_only_covered": 0,
+          "covered": 96,
+          "missing": 179,
+          "coverage": 0.3490909090909091,
+          "product_coverage": 0.3490909090909091
+        },
+        "富士": {
+          "total": 63,
+          "machine": 24,
+          "accessory": 39,
+          "third_party_selection": 0,
+          "product_covered": 13,
+          "series_only_covered": 0,
+          "covered": 13,
+          "missing": 11,
+          "coverage": 0.5416666666666666,
+          "product_coverage": 0.5416666666666666
+        },
+        "惠普": {
+          "total": 218,
+          "machine": 218,
+          "accessory": 0,
+          "third_party_selection": 0,
+          "product_covered": 0,
+          "series_only_covered": 0,
+          "covered": 0,
+          "missing": 218,
+          "coverage": 0.0,
+          "product_coverage": 0.0
+        },
+        "小米": {
+          "total": 1638,
+          "machine": 1381,
+          "accessory": 165,
+          "third_party_selection": 92,
+          "product_covered": 82,
+          "series_only_covered": 96,
+          "covered": 178,
+          "missing": 1203,
+          "coverage": 0.12889210716871832,
+          "product_coverage": 0.05937726285300507
+        },
+        "小米汽车": {
+          "total": 3,
+          "machine": 3,
+          "accessory": 0,
+          "third_party_selection": 0,
+          "product_covered": 3,
+          "series_only_covered": 0,
+          "covered": 3,
+          "missing": 0,
+          "coverage": 1.0,
+          "product_coverage": 1.0
+        }
+      },
+      "note": "对外只报整机口径覆盖率；同时披露配件周边和第三方精选条数。单品与系列分列，LLM和页面首存不计入。"
+    }
+  },
+  "samples": [
+    {
+      "id": "CN:fuji:model:x-s20",
+      "gid": null,
+      "name": "FUJIFILM X-S20",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Afuji%3Amodel%3Ax-s20",
+      "release": {
+        "date": "2023-06",
+        "event": "announcement",
+        "market": "GLOBAL_REPORTED_BY_CN_OFFICIAL",
+        "source": "official",
+        "label": "全球推出月份（官方回溯）",
+        "crosscheck_status": "official_preserved",
+        "evidence": {
+          "url": "https://www.fujifilm.com.cn/cn/zh-hans/news/detail/3880",
+          "quote": "2023年6月推出的X-S20"
+        }
+      }
+    },
+    {
+      "id": "CN:fuji:kit:x-e5-xf23mmf28-r-wr",
+      "gid": null,
+      "name": "FUJIFILM X-E5 + XF23mmF2.8 R WR 套机",
+      "url": "https://spend.snewbie.site/api/goods/CN%3Afuji%3Akit%3Ax-e5-xf23mmf28-r-wr",
+      "release": {
+        "date": "2025-08",
+        "event": "availability",
+        "market": "JP",
+        "source": "official",
+        "label": "日本发售时间",
+        "crosscheck_status": "official_preserved",
+        "evidence": {
+          "url": "https://mall-jp.fujifilm.com/shop/g/g16949818/",
+          "quote": "発売日\n2025年8月28日"
+        }
+      }
+    },
+    {
+      "id": "GLOBAL:apple_support:model:111940",
+      "gid": null,
+      "name": "iPhone 6 Plus",
+      "url": "https://spend.snewbie.site/api/goods/GLOBAL%3Aapple_support%3Amodel%3A111940",
+      "release": {
+        "date": "2014-10",
+        "event": "availability",
+        "market": "CN",
+        "source": "official",
+        "label": "发售时间",
+        "crosscheck_status": "official",
+        "evidence": {
+          "url": "https://www.apple.com/newsroom/2014/09/30iPhone-6-iPhone-6-Plus-Available-in-China-on-Friday-October-17/",
+          "quote": "BEIJING—September 30, 2014—Apple® today announced that iPhone® 6 and iPhone 6 Plus, the biggest advancements in iPhone history, will be available in China beginning Friday, October 17 from the Apple Online Store ( www.apple.com ), Apple’s retail stores, and an expansive network of retail stores through all three major carriers and Apple Authorized Resellers. With support for TD-LTE and FDD-LTE, iPhone 6 and iPhone 6 Plus provide customers access to 4G/LTE networks from China Mobile, China Telecom and China Unicom across mainland China. Customers can pre-order iPhone 6 and iPhone 6 Plus from the Apple Online Store beginning Friday, October 10. Beginning Tuesday, October 14, customers can reserve the new iPhones for in-store pick-up starting Friday, October 17."
+        }
+      }
+    }
+  ]
+}
+```
