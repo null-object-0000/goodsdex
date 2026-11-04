@@ -333,6 +333,22 @@ def main():
             rows.append(row)
             print(row['id'],row['name'],flush=True)
         except HTTPError as e:
+            # Only a previously observed exact SKU URL can be a confirmed gone
+            # product. Discovery failures/unknown IDs and challenge redirects
+            # remain errors; 403/429/transport failures never imply retirement.
+            if e.code in (404, 410) and url in prior_by_url and e.url == url:
+                body = e.read()
+                gone = dict(url=url, final_url=url, status=e.code,
+                            fetched_at=datetime.now(timezone.utc).isoformat(),
+                            bytes=len(body), sha256=hashlib.sha256(body).hexdigest(),
+                            reason='previously_observed_sku_http_' + str(e.code))
+                client.requests.append(gone)
+                if not args.dry_run:
+                    args.raw.mkdir(parents=True, exist_ok=True)
+                    (args.raw / (gone['sha256'] + '.bin')).write_bytes(body)
+                delisted.append(gone)
+                delisted_rows.extend(mark_delisted(r, gone) for r in prior_by_url[url])
+                continue
             errors.append(dict(url=url, error=str(e), status=e.code))
             # Three independent serial SKU requests all blocked: stop the batch.
             # Parser errors and partial batches retain the existing failure gate.

@@ -158,7 +158,7 @@ class DelistingTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'missing'):
             hp.parse_product(catalogue, URL, 'now')
 
-    def run_batch(self, count, removed=1, broken=False, repeat=False):
+    def run_batch(self, count, removed=1, broken=False, repeat=False, gone_status=None):
         import tempfile
         import sys
         with tempfile.TemporaryDirectory() as tmp:
@@ -180,11 +180,14 @@ class DelistingTests(unittest.TestCase):
                     n = int(url.split('=')[-1])
                     info = dict(url=url, final_url=url, status=200, fetched_at='now')
                     if n < removed:
+                        if gone_status:
+                            from urllib.error import HTTPError
+                            raise HTTPError(url, gone_status, 'Gone', {}, io.BytesIO(b'Official page removed'))
                         info.update(final_url='https://www.hpstore.cn/laptops-tablets.html',
                                     redirects=[dict(status=301, location='https://www.hpstore.cn/laptops-tablets.html')])
                         return b'<a class="product-item-link" href="https://www.hpstore.cn/other.html">other</a>', info
                     return (b'broken PDP' if broken else FIXTURE.replace('DC0F0PA', 'SKU'+str(n)).encode()), info
-            argv = ['crawl_hp.py', '--out', tmp, '--reuse-images', '--known-only']
+            argv = ['crawl_hp.py', '--out', tmp, '--raw', str(out/'raw'), '--reuse-images', '--known-only']
             with patch.object(sys, 'argv', argv), patch.object(hp, 'Client', side_effect=lambda *a, **kw: FakeClient()):
                 status = hp.main()
                 audit = json.loads((out/'audit.json').read_text())
@@ -224,6 +227,16 @@ class DelistingTests(unittest.TestCase):
         self.assertEqual(audit['delisted_count'], 1)
         self.assertTrue(any('missing' in e['error'] for e in audit['errors']))
         self.assertEqual(saved, old)
+
+    def test_known_http_404_and_410_retire_without_losing_configuration(self):
+        for code in (404, 410):
+            status, audit, saved, old = self.run_batch(10, gone_status=code)
+            self.assertEqual(status, 0)
+            self.assertEqual(audit['error_count'], 0)
+            self.assertEqual(saved[0]['status'], 'retired')
+            self.assertEqual(saved[0]['retirement_evidence']['status'], code)
+            self.assertEqual(saved[0]['params'], old[0]['params'])
+            self.assertEqual(saved[0]['image'], old[0]['image'])
 
 
 class BlockedSourceTests(unittest.TestCase):
