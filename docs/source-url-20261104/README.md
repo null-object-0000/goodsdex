@@ -43,7 +43,7 @@ meta增加 `source_url_coverage: {total, with_source_url, by_brand: {品牌: {to
 
 共享finalizer在品牌规范化后重放冻结审核清单 `data/official/source-url-backfill.json`。仅补空值，保留原有URL；商品ID或名称变化不继承旧授权。门槛由代码重新计算；低于80%只允许实际验证通过的样本，明确失败的样本即使整体达标仍禁止写入。覆盖率在共享metadata生成，索引及详情仍使用原有source_url字段。
 
-新增7项回归覆盖门槛边界、403/低分/首页跳转/第三方假成功、失败样本排除、已有值和其它字段保护、范围冻结及品牌统计。既有日期finalizer测试预期增加同一正式URL重放步骤，保留其逐字段全等断言和重复finalize幂等断言，没有删断言或降低日期门禁。修前759 passed / 8 deselected；修后结果见 tests-final.log。首次发现的旧finalizer预期差异保留于 tests-first-attempt.log。
+新增7项回归覆盖门槛边界、403/低分/首页跳转/第三方假成功、失败样本排除、已有值和其它字段保护、范围冻结及品牌统计。既有日期finalizer测试预期增加同一正式URL重放步骤，保留其逐字段全等断言和重复finalize幂等断言，没有删断言或降低日期门禁。修前759 passed / 8 deselected；修后766 passed / 8 deselected，见 tests-final.log。首次发现的旧finalizer预期差异保留于 tests-first-attempt.log。
 
 复现：
 
