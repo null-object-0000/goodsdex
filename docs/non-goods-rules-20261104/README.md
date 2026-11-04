@@ -31,3 +31,28 @@
 本地全量离线基线 771 passed / 8 deselected。新增测试覆盖全部请求词、赠品/功能/否定反例、重复 finalize、源字段保留、新采集身份自动排除和 meta 统计篡改拒绝；最终结果见 tests-final.log。首次新增测试对 archive 的全等预期未考虑已有规范化补充字段，改为逐一断言所有源字段保留，仍保留排除计数和回放断言，首次日志也保留。
 
 复现：`python3 docs/non-goods-rules-20261104/build_audit.py`；`PYTHONPATH=src:scripts ~/.cache/goodsdex-testenv/bin/python -m pytest -q -m 'not live'`。
+
+## 正式发布与回读
+
+- 规则代码提交：`1fd376f4287e26cd1f9bb41307d72330aa4ae98d`。
+- [发布 run 41860377743](https://github.com/null-object-0000/goodsdex/actions/runs/41860377743)，实际 data 提交 `2ced45e7d11fc8b816110e32da712e8428e9eb20`；父提交即上述基线 `a73c25ed`。
+- [云端测试 run 41860355020](https://github.com/null-object-0000/goodsdex/actions/runs/41860355020) 成功。本地最终 **801 passed / 8 deselected**，没有新增失败。
+- OSS revision：`a1d09d831f53466d9974a277baff60e4`。`verify_online.py` 回读同一 meta 的不可变 goods/excluded blobs，校验 SHA-256、字节数、revision、明细与汇总、原 ID 集合仅少定金身份，以及再次读取 meta 未变。
+- 修前后 goods SHA-256 与本地预演完全相同，正式发布其余 2,855 行逐字段不变，排除源事实可在 goods-excluded 和 archive/services.json 查回。
+- [线上 meta](https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json) 的实际片段：
+
+```json
+"excluded_by_rule": {
+  "accessory": 1070,
+  "preorder_deposit": 1,
+  "service": 46,
+  "container": 0,
+  "duplicate": 0,
+  "invalid": 6,
+  "manual": 4
+}
+```
+
+三个反例是明确标注的合成边界样例；真实发布库没有可诚实列出的三条同词保留商品，不造 ID、不捏造价格。
+
+发布数据与 OSS 镜像已完成，发布 job 的所有步骤（包括 Complete job）在 `2026-11-04T15:50:14Z` 均报告 success；验收记录保存时 GitHub 的 job/run 总状态仍为 in_progress，未把这个状态伪报成 completed。详见 publication.json。这个状态不影响已经完成并回读验证的线上数据发布。
