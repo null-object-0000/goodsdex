@@ -12,6 +12,23 @@
 
 价格类型与可售状态分开；full表示完整商品报价，是否为当前可比价格另查price_comparable；原SKU面板9条不可用选项不会被comparable统计计入。未知类型不猜价。仅升级先保守unknown；3079元的已核对整件选项按精确ID、金额、可用状态放行，源金额改变须重新核查。
 
+发布代码：`a27de1abe4993fd9f6b4eefe402afb01dd53fa3c`；[发布run 41906365207](https://github.com/null-object-0000/goodsdex/actions/runs/41906365207)，结果 `success`。线上meta revision：`6cd65b97a8ac4e2d8635b3996e1717e0`。
+
+线上price_kind分布：`{"full": 2444, "unknown": 1237}`；其他枚举本次为0。总数3681。
+
+修正后的真实字段：
+
+```json
+{
+  "id": "CN:atour:spu:1984:sku:0899000039-C2C-b",
+  "price": null,
+  "price_kind": "unknown",
+  "price_missing": true,
+  "price_comparable": false,
+  "source_price": 10
+}
+```
+
 ## 亚朵price<100逐条核查
 
 入库前基准：data分支`0075b8cf`，goods sha256 `f822981ff832d062dc623f3d679a9a9fa4259c9e73b1a58b7968ef6cc5dc24cf`；OSS及线上API另取快照逐条对账，30条金额全相等。data/OSS/API列按此顺序。工作目录旧public和_data中没有亚朵，不以其作为已发布事实。官方核查实际时间见每条captured_at；匿名读取、仅打开规格面板，未提交购物车、订单或支付。H5有时产生“登录失败”提示，但匿名详情及规格价格仍可读。
@@ -83,3 +100,5 @@
 ## 验证
 
 [完整离线测试日志](evidence/tests.txt)：877 passed，8项live测试未执行；基线870 passed，无新红，原有1条pytest弃用警告。增加了部分支付不能当最低价、全价低价不误伤、预售交期非定金、unknown不回填、source_price留档、轻索引字段与共享finalizer重放、价格历史不回灌部分金额的测试。完整发布集本地finalize连续运行两次通过，3681条ID无丢失，price_kind full=2444、unknown=1237。最终线上值以publication.json及meta-after.json为准。
+
+线上API同步通过现有primeCatalog完成，无重启、无API代码部署；后台数据库health确认revisionMatches=true，见[admin-db-health](evidence/admin-db-health.json)。[线上核对结果](online-verification.json)与[发布回执](publication.json)保留同版SHA和目标字段。代码CI [41906339999](https://github.com/null-object-0000/goodsdex/actions/runs/41906339999)和正式发布 [41906365207](https://github.com/null-object-0000/goodsdex/actions/runs/41906365207)均success。一次误触发旧提交的run 41906260769已在collect取消，publish未执行。
