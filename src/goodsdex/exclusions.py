@@ -10,7 +10,7 @@ from goodsdex.release_policy import ALLOWED_DELETIONS
 # Closed enumeration: additions require updating README and the contract document.
 REASONS = (
     'accessory:sticker', 'accessory:screen_film', 'accessory:cleaning_consumable',
-    'accessory:category', 'accessory:name', 'container', 'duplicate', 'invalid', 'manual',
+    'accessory:category', 'accessory:name', 'service:installation', 'service:other', 'container', 'duplicate', 'invalid', 'manual',
 )
 # Reviewed identities, not inference from the human-readable deletion text.
 DELETION_REASONS = {key: ('invalid' if key.startswith('CN:mi_cn:') else 'manual')
@@ -65,10 +65,12 @@ def build_excluded(rows, published, accessory_archive, reviewed, duplicate_rows,
         if key in DELETION_REASONS:
             append(row, DELETION_REASONS[key], dict(basis='reviewed_id', matched=ALLOWED_DELETIONS[key]))
         else:
-            reason = exclusion_reason(row)
+            from goodsdex.services import classify_service
+            service = classify_service(row)
+            reason = service['reason'] if service else exclusion_reason(row)
             if reason is None:
                 raise ValueError(f'Archived exclusion no longer justified; review identity: {key}')
-            append(row, reason, classify(row))
+            append(row, reason, service or classify(row))
     for row in duplicate_rows:
         append(row, 'duplicate', dict(basis='safe_merge', matched=row['id']))
     items = normalize_brands(items)

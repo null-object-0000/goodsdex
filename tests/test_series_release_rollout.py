@@ -97,6 +97,7 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
     excluded=json.loads((tmp_path / 'archive/accessories.json').read_text())
     assert len(excluded)==11 and all(not r.get('release') for r in excluded)
     excluded_ids={r['id'] for r in excluded}
+    excluded_ids.update(r['id'] for r in json.loads((tmp_path / 'archive/services.json').read_text()))
     assert {r['id']: r.get('release') for r in result} == {r['id']: r.get('release') for r in product_expected if r['id'] not in excluded_ids}
     assert {r['id'] for r in result if r.get('release_series')} == expected.keys()
     assert all('series_release' not in r for r in result)

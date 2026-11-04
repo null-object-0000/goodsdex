@@ -737,6 +737,11 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     output = normalize_brands(output)
     brand_audit = audit_brands(brand_before, output)
     assert_public_fields(output)
+    from goodsdex.services import plan_services
+    service_path = public / 'archive/services.json'
+    services = json.loads(service_path.read_text()) if service_path.exists() else []
+    output, services = plan_services(output, services)
+    retained_ids = set(retained_ids) | {r['id'] for r in services}
     from goodsdex.accessories import plan
     archive_path = public / 'archive' / 'accessories.json'
     accessory_archive = json.loads(archive_path.read_text()) if archive_path.exists() else []
@@ -780,7 +785,7 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     from uuid import uuid4
     revision = uuid4().hex
     generated_at = datetime.now(timezone.utc).isoformat()
-    excluded = build_excluded(rows, output, accessory_archive, reviewed, duplicate_rows, generated_at, revision)
+    excluded = build_excluded(rows, output, [*accessory_archive, *services], reviewed, duplicate_rows, generated_at, revision)
     input_ids = {r["id"] for r in rows}
     historical_ids = {r["id"] for r in excluded["items"]} - input_ids
     meta.update(revision=revision, generated_at=generated_at, total_all=len(rows) + len(historical_ids),
@@ -788,6 +793,7 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     validate_excluded(meta, excluded, output)
     # All checks finish before the first release file is replaced.
     archive_path.parent.mkdir(parents=True, exist_ok=True)
+    atomic_write(service_path, services)
     atomic_write(archive_path, accessory_archive)
     atomic_write(public / "archive/non-goods.json", reviewed)
     atomic_write(public / "goods-excluded.json", excluded)

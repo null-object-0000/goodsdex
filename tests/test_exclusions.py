@@ -70,3 +70,34 @@ def test_old_reviewed_shell_recovered_from_source_snapshot(tmp_path):
     meta = build_shards(root)
     assert meta['total_all'] == meta['total_excluded'] == 1
     assert read(root, 'goods-excluded.json')['items'][0]['excluded_reason'] == 'invalid'
+
+
+@pytest.mark.parametrize('name', ['吸顶灯安装服务', '路由器安装调试 安装服务', '上门安装', '客厅吸顶灯安装', '吸顶灯三室一厅套装安装', '筒射灯（不含开孔）安装服务-7个'])
+def test_installation_service(name):
+    from goodsdex.services import classify_service
+    assert classify_service({'name': name})['reason'] == 'service:installation'
+
+
+@pytest.mark.parametrize('name', ['免安装折叠衣架', '灯具安装尺寸', 'DJI 模块安装套件', '电机安装组件', '米家空调 Pro 3 安装', '空调含安装服务', '空调赠安装服务', '以旧换新手机', '小米手机', '小米电视'])
+def test_service_keeps_products_and_uncertain_names(name):
+    from goodsdex.services import classify_service
+    assert classify_service({'name': name}) is None
+
+
+def test_services_same_release_and_replay(tmp_path):
+    rows = [dict(id='lamp', name='米家吸顶灯', category='灯具'), dict(id='service', name='吸顶灯安装服务', category='灯具', price=45), dict(id='inspection', name='空调检测服务', category='空调', price=50)]
+    (tmp_path / 'goods.json').write_text(json.dumps(rows))
+    for _ in range(2):
+        finalize_public(tmp_path, previous=rows)
+        meta = build_shards(tmp_path)
+        excluded = read(tmp_path, 'goods-excluded.json')
+        assert (meta['total_all'], meta['total_published'], meta['total_excluded']) == (3, 1, 2)
+        assert excluded['reasons']['service:installation'] == 1
+        assert excluded['reasons']['service:other'] == 1
+        assert read(tmp_path, 'goods.json')[0]['id'] == 'lamp'
+
+
+@pytest.mark.parametrize('name', ['延保服务', '上门清洗', '空调检测服务', '拆旧费', '米家中央空调上门勘测服务', '手机上门维修', '空调清洁保养服务', '空调清洁保养套装服务 挂机', '屏幕换新服务 Redmi K', '后盖换新服务', '家用净水器勘测服务'])
+def test_confirmed_other_services(name):
+    from goodsdex.services import classify_service
+    assert classify_service({'name': name})['reason'] == 'service:other'

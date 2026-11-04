@@ -65,6 +65,7 @@ def test_finalizer_replays_and_details_only(tmp_path):
     archived=json.loads((tmp_path/'archive/accessories.json').read_text())
     excluded={r['id'] for r in archived}
     assert len(excluded)==11 and all(not r.get('release') for r in archived)
+    excluded.update(r['id'] for r in json.loads((tmp_path/'archive/services.json').read_text()))
     assert [{k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in result] == [
         {k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in expected if r['id'] not in excluded]
     for field in ('page_first_archived','release_llm','release_series'):
