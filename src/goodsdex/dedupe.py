@@ -719,6 +719,17 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     from goodsdex.exclusions import reviewed_observations, build_excluded, validate_excluded, excluded_by_rule
     reviewed = reviewed_observations(public, rows, previous)
     retained = remove_reviewed_non_goods(rows)
+    from goodsdex.retirement import reconcile, archive_observations
+    retired_path = public / 'archive/retired.json'
+    retired_archive = json.loads(retired_path.read_text()) if retired_path.exists() else []
+    retirement_path = public / 'archive/retirement-observations.json'
+    retirement_observations = archive_observations(public, previous or [])
+    retirement_observations += json.loads(retirement_path.read_text()) if retirement_path.exists() else []
+    retained = reconcile(remove_reviewed_non_goods([*retired_archive, *(previous or [])]),
+                         retained, retirement_observations)
+    # Restored history belongs to the input inventory for exclusion arithmetic.
+    input_ids = {r['id'] for r in rows}
+    rows += [r for r in retained if r['id'] not in input_ids]
     assert_no_empty_shells(retained)
     from goodsdex.mi_names import apply_page_names
     retained = apply_page_names(retained)
@@ -805,6 +816,7 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     archive_path.parent.mkdir(parents=True, exist_ok=True)
     atomic_write(service_path, services)
     atomic_write(archive_path, accessory_archive)
+    atomic_write(retired_path, [r for r in output if r.get('status') == 'retired'])
     atomic_write(public / "archive/non-goods.json", reviewed)
     atomic_write(public / "goods-excluded.json", excluded)
     atomic_write(public / "archive" / "brand-review.json", brand_audit["manual_review"])

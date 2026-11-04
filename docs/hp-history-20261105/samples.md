@@ -1,0 +1,36 @@
+# 30 条官方逐项对照
+
+固定种子 20261105，先覆盖系列×代际，再补足 30 个不同货号。官方页的名称来自其产品上下文接口；每行保存实际 POST、HTTP 状态、产品 OID、时间及原响应 SHA256。表内名称为官方原文，配置缩写保留，不推测未明示的存储单位或显卡。
+
+|库里名称|官方产品上下文名称（链接为官方产品页）|货号|系列 / 代际|HTTP / 一致|
+|---|---|---|---|---|
+|HP CBXEntG3 Cel5205U 8GB/64 PC (7C633PC)|[HP CBXEntG3 Cel5205U 8GB/64 PC (7C633PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-chromebox-enterprise-g3/model/2100183300?sku=7C633PC)|7C633PC|Chromebox / G3|200 / 是|
+|HP Chromebox Enterprise G4 (9H0C9PC)|[HP Chromebox Enterprise G4 (9H0C9PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-chromebox-enterprise-g4/model/2101671911?sku=9H0C9PC)|9H0C9PC|Chromebox / G4|200 / 是|
+|HP DragonflyG4 i7-1365U 13 16GB/512 PC (954G8PC)|[HP DragonflyG4 i7-1365U 13 16GB/512 PC (954G8PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-dragonfly-13.5-inch-g4-notebook-pc/model/2101595431?sku=954G8PC)|954G8PC|Dragonfly / G4|200 / 是|
+|HP Ex360830G10 i7-1365U 13 16GB/512 PC (890Q2PC)|[HP Ex360830G10 i7-1365U 13 16GB/512 PC (890Q2PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-elite-x360-830-13-inch-g10-2-in-1-notebook-pc/model/2101554913?sku=890Q2PC)|890Q2PC|Elite / G10|200 / 是|
+|HP DragonflyG2 i5-1145G71316GB/256LTEAPC (3W1S9PC)|[HP DragonflyG2 i5-1145G71316GB/256LTEAPC (3W1S9PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-elite-dragonfly-g2-notebook-pc/model/2100173216?sku=3W1S9PC)|3W1S9PC|Elite / G2|200 / 是|
+|HP DragonflyG3 i7-1265U 13 16GB/512 PC (6Y5Z0PC)|[HP DragonflyG3 i7-1265U 13 16GB/512 PC (6Y5Z0PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-elite-dragonfly-13.5-inch-g3-notebook-pc/model/2101012774?sku=6Y5Z0PC)|6Y5Z0PC|Elite / G3|200 / 是|
+|HP Elite x2 G4 Tablet (240R3PC)|[HP Elite x2 G4 Tablet (240R3PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-elite-x2-g4/model/38352678?sku=240R3PC)|240R3PC|Elite / G4|200 / 是|
+|HP Elitex2G8 i5-1145G7 13 16GB/512 PC (4K1D9PC)|[HP Elitex2G8 i5-1145G7 13 16GB/512 PC (4K1D9PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-elite-x2-g8-tablet/model/2100627664?sku=4K1D9PC)|4K1D9PC|Elite / G8|200 / 是|
+|HP Elite Mini 800 G9 Desktop PC (6K2G6PC)|[HP Elite Mini 800 G9 Desktop PC (6K2G6PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-elite-mini-800-g9-desktop-pc/model/2101012754?sku=6K2G6PC)|6K2G6PC|Elite / G9|200 / 是|
+|HP Elite Dragonfly Notebook PC (24X59PC)|[HP Elite Dragonfly Notebook PC (24X59PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-elite-dragonfly-notebook-pc/model/37935922?sku=24X59PC)|24X59PC|Elite / 未明示|200 / 是|
+|HP EB840G10 i5-1345U 14 16GB/512 PC (7Z5D2PC)|[HP EB840G10 i5-1345U 14 16GB/512 PC (7Z5D2PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-elitebook-840-14-inch-g10-notebook-pc/model/2101554991?sku=7Z5D2PC)|7Z5D2PC|EliteBook / G10|200 / 是|
+|HP EliteBook x360 1030 G4 PC 笔记本电脑|[HP EliteBook x360 1030 G4 PC 笔记本电脑](https://support.hp.com/cn-zh/product/troubleshooting/hp-elitebook-x360-1030-g4-notebook-pc/model/26938574?sku=151P2PC)|151P2PC|EliteBook / G4|200 / 是|
+|HP EBx360830G7 i5-10310U 13 16GB/512 PC (22J80PC)|[HP EBx360830G7 i5-10310U 13 16GB/512 PC (22J80PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-elitebook-x360-830-g7-notebook-pc/model/2100018257?sku=22J80PC)|22J80PC|EliteBook / G7|200 / 是|
+|HP EBx3601040G8i7-1185G71432GB/256LTEAPC (3Z8F2PC)|[HP EBx3601040G8i7-1185G71432GB/256LTEAPC (3Z8F2PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-elitebook-x360-1040-g8-notebook-pc/model/38455720?sku=3Z8F2PC)|3Z8F2PC|EliteBook / G8|200 / 是|
+|HP EB840G9 i5-1245U 14 16GB/512 PC (6D8T1PC)|[HP EB840G9 i5-1245U 14 16GB/512 PC (6D8T1PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-elitebook-840-14-inch-g9-notebook-pc/model/2101000809?sku=6D8T1PC)|6D8T1PC|EliteBook / G9|200 / 是|
+|HP EliteDesk 705 G5 Small Form Factor PC (1W3H8PC)|[HP EliteDesk 705 G5 Small Form Factor PC (1W3H8PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-elitedesk-705-g5-small-form-factor-pc/model/38296087?sku=1W3H8PC)|1W3H8PC|EliteDesk / G5|200 / 是|
+|HP EliteDesk 800G6 DMi7-10700T16GB/256PC (2Y0L5PC)|[HP EliteDesk 800G6 DMi7-10700T16GB/256PC (2Y0L5PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-elitedesk-800-g6-desktop-mini-pc/model/2100000003?sku=2Y0L5PC)|2Y0L5PC|EliteDesk / G6|200 / 是|
+|HP 800G5EOT AiO i59500 16GB/512 PC (2H0K0PC)|[HP 800G5EOT AiO i59500 16GB/512 PC (2H0K0PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-eliteone-800-g5-23.8-inch-all-in-one/model/38228635?sku=2H0K0PC)|2H0K0PC|EliteOne / G5|200 / 是|
+|HP EliteOne 840 23.8 英寸 G9 多功能一体台式电脑 (4F0Z9AV)|[HP EliteOne 840 23.8 英寸 G9 多功能一体台式电脑 (4F0Z9AV)](https://support.hp.com/cn-zh/product/troubleshooting/hp-eliteone-840-23.8-inch-g9-all-in-one-desktop-pc/model/2101132395?sku=7X6K3PC)|7X6K3PC|EliteOne / G9|200 / 是|
+|HP K12 Px360435G10 R5-7530U 13 8GB/256PC (8A9G0PC)|[HP K12 Px360435G10 R5-7530U 13 8GB/256PC (8A9G0PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-pro-x360-435-13.3-inch-g10-notebook-pc/model/2101554803?sku=8A9G0PC)|8A9G0PC|Pro / G10|200 / 是|
+|HP Desktop Pro A G3 MT R3P3200G8GB/1TBPC (195F3PC)|[HP Desktop Pro A G3 MT R3P3200G8GB/1TBPC (195F3PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-desktop-pro-a-g3/model/2100019166?sku=195F3PC)|195F3PC|Pro / G3|200 / 是|
+|HP PB445G10 R5-7530U 14 16GB/512 PC (7M644PC)|[HP PB445G10 R5-7530U 14 16GB/512 PC (7M644PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-probook-445-14-inch-g10-notebook-pc/model/2101515954?sku=7M644PC)|7M644PC|ProBook / G10|200 / 是|
+|HP ProBook 645 G4笔记本电脑|[HP ProBook 645 G4笔记本电脑](https://support.hp.com/cn-zh/product/troubleshooting/hp-probook-645-g4-notebook-pc/model/18602177?sku=5KN40PC)|5KN40PC|ProBook / G4|200 / 是|
+|HP ProBook 640 G5笔记本电脑|[HP ProBook 640 G5笔记本电脑](https://support.hp.com/cn-zh/product/troubleshooting/hp-probook-640-g5-notebook-pc/model/27391189?sku=8DX21PC)|8DX21PC|ProBook / G5|200 / 是|
+|HP ProBook 440 G6 Notebook PC|[HP ProBook 440 G6 Notebook PC](https://support.hp.com/cn-zh/product/troubleshooting/hp-probook-440-g6-notebook-pc/model/23201163?sku=16H05PC)|16H05PC|ProBook / G6|200 / 是|
+|HP PB455G8 R5-5600U 15 8GB/256 PC (35L80PC)|[HP PB455G8 R5-5600U 15 8GB/256 PC (35L80PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-probook-455-g8-notebook-pc/model/38455632?sku=35L80PC)|35L80PC|ProBook / G8|200 / 是|
+|HP PB455G9 R7-5825U 15 16GB/512 PC (641N8PC)|[HP PB455G9 R7-5825U 15 16GB/512 PC (641N8PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-probook-455-15.6-inch-g9-notebook-pc/model/2101000046?sku=641N8PC)|641N8PC|ProBook / G9|200 / 是|
+|HP ProDesk 400 G6小型立式电脑|[HP ProDesk 400 G6小型立式电脑](https://support.hp.com/cn-zh/product/troubleshooting/hp-prodesk-400-g6-microtower-pc/model/27733966?sku=151P9PC)|151P9PC|ProDesk / G6|200 / 是|
+|HP 600G5PO AiO NT i59500 16GB/1TB PC (1K4K0PC)|[HP 600G5PO AiO NT i59500 16GB/1TB PC (1K4K0PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-proone-600-g5-21.5-in-all-in-one-business-pc/model/38013560?sku=1K4K0PC)|1K4K0PC|ProOne / G5|200 / 是|
+|HP ZB17G7 W-10885M 17 128GB/2T PC (34A65PC)|[HP ZB17G7 W-10885M 17 128GB/2T PC (34A65PC)](https://support.hp.com/cn-zh/product/troubleshooting/hp-zbook-fury-17-g7-mobile-workstation/model/38352692?sku=34A65PC)|34A65PC|ZBook / G7|200 / 是|

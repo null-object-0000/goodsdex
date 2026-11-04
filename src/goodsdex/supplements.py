@@ -73,6 +73,8 @@ def car_refresh_supplements(supplements, previous):
 def publish(rebuilt, out_dir, previous, supplements=DEFAULT_SUPPLEMENTS, include_new_cars=False, *, apply_backfills=True, car_refresh=False):
     # Validate before writing either release file. Missing supplements fail closed.
     extras = json.loads(Path(supplements).read_text(encoding="utf-8"))
+    from goodsdex.retirement import reconcile, archive_observations
+    rebuilt = reconcile(previous, rebuilt, archive_observations(out_dir, previous))
     if car_refresh:
         extras = car_refresh_supplements(extras, previous)
     result, audit = merge(rebuilt, extras, previous, include_new_cars, apply_backfills=apply_backfills)
@@ -99,4 +101,6 @@ def metadata(result, meta=None):
                 by_kind=dict(Counter(r.get("kind") or "unknown" for r in result)))
     from goodsdex.source_urls import coverage as source_url_coverage
     meta['source_url_coverage'] = source_url_coverage(result)
+    from goodsdex.retirement import counts
+    meta.update(counts(result))
     return meta

@@ -1,0 +1,30 @@
+{
+ "url": "https://support.hp.com/wcc-services/profile/devices/warranty/specs?cache=true",
+ "method": "POST",
+ "payload": {
+  "cc": "cn",
+  "lc": "zh",
+  "utcOffset": "P0800",
+  "devices": [
+   {
+    "seriesOid": null,
+    "modelOid": null,
+    "serialNumber": null,
+    "productNumber": "35L83PC",
+    "displayProductNumber": null,
+    "countryOfPurchase": "cn"
+   }
+  ]
+ },
+ "observed_at": "2026-11-04T16:53:49.115Z",
+ "discovery": {
+  "discovery_name": "HP ProBook 455 G8 Notebook PC",
+  "part_number": "35L83PC",
+  "file": "docs/hp-history-20261105/responses/fetch-compat.raw"
+ },
+ "status": 200,
+ "body": "{\"code\":200,\"data\":{\"devices\":[{\"productSpecs\":{\"code\":200,\"data\":{\"audience\":\"N/A\",\"chatbot\":false,\"customHierarchySet\":[\"19539216537429048012118866320194\",\"437575962482695163335048007531742\",\"760446840730688445142427190297881\",\"38228735\"],\"customResourceOids\":[38455632,38228735],\"hpOnePCEligible\":false,\"hpOnePrintEligible\":false,\"hpPlusEligible\":false,\"hpPlusSkuType\":null,\"imageUri\":\"/wcc-assets/content/dam/hp-wcc/fe-assets/images/pdp/fallback_product.png\",\"modelContext\":true,\"modelLevelActiveWebSupport\":true,\"modelLevelAudienceFlag\":\"N/A\",\"modelLevelHistorical\":false,\"nonSerializedFlag\":null,\"origin\":\"productData\",\"printSetupEligible\":false,\"prodCategory\":\"laptop\",\"productBigSeriesOid\":38228734,\"productLineCode\":\"6U\",\"productName\":\"HP PB455G8 R5-5600U 15 16GB/512 PC (35L83PC)\",\"productNameOid\":38455632,\"productNumber\":\"35L83PC\",\"productNumberOid\":2100606226,\"productPlatform\":\"Peconic 1.0\",\"productSeriesName\":\"HP ProBook 455 G8 笔记本电脑\",\"productSeriesOid\":38228735,\"productSeriesSEOName\":\"hp-probook-455-g8-notebook-pc\",\"productType\":\"Laptops and Hybrids\",\"redirectUrl\":\"/product/troubleshooting/hp-probook-455-g8-notebook-pc/model/38455632?sku=35L83PC\",\"seriesContext\":false,\"seriesLevelActiveWebSupport\":true,\"seriesLevelAudienceFlag\":\"Commercial\",\"seriesLevelHistorical\":false,\"standardHierarchySet\":[321957,64295,3955552,38228734,38228735,38455632],\"supportSubcategoryOid\":3955552,\"thumbnailUri\":null,\"webFirstPublishingDate\":\"20210129T00:00:00\",\"webReleaseDate\":\"20210225T00:00:00\"},\"message\":\"Success\",\"status\":\"OK\",\"timeElapsedInMS\":206},\"warranty\":null}],\"subscriptionIcons\":{\"hpplus\":\"/wcc-assets/content/dam/hp-wcc/headless-assets/images/contact/hp%2b.png\",\"instantInk\":\"/wcc-assets/content/dam/hp-wcc/headless-assets/images/contact/instantInk.png\"}},\"message\":\"Success\",\"status\":\"OK\",\"timeElapsedInMS\":753}",
+ "final_url": "https://support.hp.com/wcc-services/profile/devices/warranty/specs?cache=true",
+ "sha256": "379471bc0a2089ebe5fe8449d295b0915ef7929606ca9a260dade9630f635fc5",
+ "validated": true
+}

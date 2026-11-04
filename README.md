@@ -289,3 +289,9 @@ HP 下架留档：`crawl_hp.py` 仅把官方 SKU URL 落到已知官方电脑列
 ## 小米商品名称保真
 
 小米商品的 `name` 优先使用官方购买页 `<title>`，只去掉精确的 `立即购买-小米商城` 后缀；型号、Pro/Max、配件名、双支装、套装及颜色等官方原文完整保留。短名或公共前缀不得覆盖真名。已核对的历史名称通过 `data/official/mi-page-names.json` 在共享finalizer重放；更晚的官网采集结果优先。`is_accessory` 按完整名称判定，独立配件排除并保留完整档案，含整机的配件套装和双支整机保留。抽样、根因及逐条处置见[名称保真审计](docs/name-fidelity-20261104/README.md)。
+
+## 惠普官方历史商品与通用下架留档
+
+惠普历史扩充使用官方兼容目录发现货号，再逐号核验官方支持站的产品上下文；数据与30条对照见[历史补库验收](docs/hp-history-20261105/README.md)。`refresh-hp` 的 `history_only` 模式导入已核验历史，普通模式另刷新商城；均走原发布锁与门禁。系列页未给货号时明确标 `part_number_missing`，不制造SKU或非官方图。
+
+所有品牌共享发布流程把完整采集目录中的缺席事件转为 `status=retired`、`retired_at`，保留完整记录及 `archive/retired.json`；失败/部分采集不推断下架。`meta.retired_count` / `retired_by_brand` 汇总留档；退出现行目录不等于停产或停止支持。

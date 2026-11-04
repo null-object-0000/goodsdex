@@ -1,0 +1,114 @@
+# 惠普官方历史商品补库与下架留档（2026-11-05）
+
+惠普 **218 → 790**。新增 **569 个精确货号 + 3 条明确缺货号原因的系列记录**；原有 ID 全保留。新增货号均经 HP 官方支持接口实采核验，均不在完整中国商城 sitemap 的当前商品目录。没有从第三方电商取名称、货号、规格或图片。
+
+## 入口实测
+
+保留用户已有 curl/Wayback 结论，没有重复执行这些失败的首页/sitemap curl 或 CDX 探针。下面是本轮换入口/浏览器后的实际结果。HTTP 状态、字节数和原文在 browser-fetch.json、probes.json、proxy-probes.json、support-evidence.json.gz、responses/ 中。
+
+|候选|实际请求|状态|拿到什么 / 结论|
+|---|---|---|---|
+|a 商城真实浏览器|Chromium 首页；浏览器会话 GET `https://www.hpstore.cn/sitemap-1-{1,2,3}.xml`|200；10,523,689 / 10,517,635 / 1,371,329 字节|72,229 唯一链接，234 个 PC/PA 电脑货号；原有在场 209 条中 207 条仍在。现行目录可读，历史发现仍需支持站。首页渲染后约128万字符，已不是空响应。|
+|b 官方支持站|浏览器 GET `https://support.hp.com/cn-zh/products`；POST `https://support.hp.com/wcc-services/profile/devices/warranty/specs?cache=true`，body 示例见下|200；570 个不同候选均返回精确 productNumber 和官方名称|可拿型号、货号、系列、CPU/内存等官方配置标识和产品图。最终纳入569个国行货号；1个全球列表中的PA货号区域证据不足，留证不入库。这是本轮有效历史路径。|
+|c hp.com 中国产品页|GET `https://www.hp.com/cn-zh/gaming-pc/desktops.html` 与 `/cn-zh/desktops-and-all-in-ones.html`|均200；428,583 / 684,109字节|可拿暗影精灵10系列名、规格选项、官方图；没有可订购货号，保留为 model_family，不能伪装SKU。两次出口实测均读到相同正文哈希。|
+|d 官方PDF|GET `https://h20195.www2.hp.com/v2/getpdf.aspx/c05110447.pdf`|证书链校验失败；探索下载加 `-k` 后200，52,647字节|日本PC绿色标签清单，含G1～G6等老型号；无货号和完整规格，且非国行市场证明。只验证入口，未据此入库。|
+|e 第三方历史sitemap镜像线索|搜索 `"hpstore.cn/sitemap-1-1.xml"`、`"hpstore.cn" "sitemap" "2023"`、`"hpstore.cn" "sitemap" "archive"`|搜索无结果；工具不提供镜像源站HTTP状态|没有发现可核对镜像，不算成功路径；没有把搜索摘要当官方事实。|
+
+支持站目录 POST `prodcategory/getProductCategoriesBySeoName` 也已实测：笔记本分类、ProBook、EliteBook、OMEN 和台式机目录有200响应，含历史产品OID。`isCallForRetiredProducts=true` 测试返回500，部分更深目录超时，未把该参数说成已跑通。稳定补库改走官方兼容清单发现货号，再用上述 SKU 产品上下文接口逐条核验。兼容清单本身不提供固定配置，不能直接导入。
+
+```json
+{"cc":"cn","lc":"zh","utcOffset":"P0800","devices":[{"seriesOid":null,"modelOid":null,"serialNumber":null,"productNumber":"7P2D5PC","displayProductNumber":null,"countryOfPurchase":"cn"}]}
+```
+
+官方返回 `productNumber=7P2D5PC`、`productName=HP PB450G10 i7-1360P 15 32GB/1T PC (7P2D5PC)`、系列 `HP ProBook 450 15.6 英寸 G10 笔记本电脑`。所有实际请求均无序列号、无账户授权操作，起始间隔至少2.15秒。首轮3个Chromebox返回HP字面分类 `pc`，旧允许列表误拒；已修复分类并从原始200响应重放验证，未编造新响应。
+
+## 字段、数量和边界
+
+当前分类：{"笔记本": 663, "台式机": 125, "工作站": 2}。状态：{"available": 209, "retired": 578, "unknown": 3}。图片非空688条，缺图102条均有 image_missing。787条有part_number；3条缺号均有明确原因。
+
+按系列/代际分布（G代际为官方平台标识，中文“六代/八代”为营销标识，不擅自互换；未明示保留原因）：
+
+|系列|总数|代际分布|
+|---|---:|---|
+|Chromebox|2|G3: 1；G4: 1|
+|Dragonfly|11|G4: 11|
+|Elite|93|G10: 20；G4: 2；未明示: 3；G2: 5；G8: 1；G9: 58；G3: 4|
+|EliteBook|246|G7: 21；G8: 15；G9: 5；G10: 204；G4: 1|
+|EliteDesk|4|G5: 2；G6: 2|
+|EliteOne|9|G5: 1；G9: 8|
+|Pro|5|G9: 2；G10: 2；G3: 1|
+|ProBook|195|G2i: 3；G6: 5；G8: 32；G4: 4；G9: 38；G10: 111；G5: 2|
+|ProDesk|6|G6: 6|
+|ProOne|1|G5: 1|
+|ZBook|2|G7: 1；G9: 1|
+|战66|48|G1i: 3；G9: 6；八代: 9；G2i: 14；G2a: 12；未明示: 3；六代: 1|
+|战66+|4|G2i: 2；G2a: 2|
+|战99|79|G1i: 8；未明示: 19；G1a: 4；G9: 2；G2i: 32；G2a: 14|
+|战X|25|G1i: 9；未明示: 2；G2i: 13；G1ak: 1|
+|星Book|31|未明示: 31|
+|星Desk|4|未明示: 4|
+|星Studio|1|未明示: 1|
+|暗影精灵|23|未明示: 21；10: 2|
+|锐14|1|未明示: 1|
+
+历史来源范围主要为 ProBook、EliteBook、Elite/EliteDesk/EliteOne、ProDesk/ProOne 与 ZBook，包含G2～G10的多个代际。**未声称穷尽星Book、光影精灵等所有旧代及所有配置**；它们仍有覆盖缺口。新星Book没有用来充本轮历史货号数。
+
+3条系列记录：战66 六代14英寸；暗影精灵10全面版台式；暗影精灵10旗舰版台式。官方页不提供唯一订购货号，字段 `part_number_missing=official_marketing_page_describes_configurable_family_without_orderable_part_number`。销售状态未明示，故为 `unknown`；不按机龄硬判停售。规格选项/上限注明系列范围，未冒充单SKU配置。它们可用于查找该设备系列，不能替代用户机身货号的配置识别。
+
+新SKU完整保留官方 `productName`，包括缩写、套装或基础AV型号；货号取精确 `productNumber`。少量官方产品名内含基础AV号，而购买货号另在productNumber中，二者同时保留。没有推测未标单位的 `/512` 存储标识或未提供的GPU。`specs_scope` 明示是官方SKU配置标识；`specs_missing` 说明规格缺口。支持页默认通用占位图被剔除；仅保留官方产品图URL。
+
+全球兼容列表中的 `DB4V4PA` 虽有200精确支持记录，但不能仅凭中文支持上下文认定国行销售区域，最终未导入；其原文仍在证据包。
+
+## 下架语义和所有品牌的留档
+
+`retired` 表示退出已完整核验的官方在售目录，**不是硬件停产或停止技术支持**。历史SKU的 `retired_at` 是2026-11-05首次发现不在当前目录的时刻，不是追溯出来的停售日期。证据带三张sitemap URL、SHA256与capture_id；原有9条官网详情跳转留证迁移时保留2026-11-03的首次时间。
+
+`retirement.archive_observations` 接入原有 archive.merge_archive 的完整性判断：只有 completeness=complete、found达到官方total且stop_reason合规才产生missing_since；失败、限页、挑战和不完整轮次不能新增下架事件。共享publish在丢ID门禁前恢复这些商品，finalizer再次归并长期archive/retired.json；整个旧记录含规格、图、来源与原观察价格均保留。明确复现可重新设为available并保留retirement_history。任何未获完整性证明的丢失仍由原门禁拒绝，不以“下架”掩盖失败。
+
+`meta.json` 增加 retired_count / retired_by_brand；索引也保留part_number、缺号原因、status、retired_at与缺图原因。当前旧商品仍保留过去观察到的价格及时间；新历史货号不伪造现价。
+
+真实3条下架记录（不是模拟删除）：
+
+```json
+[
+ {
+  "id": "CN:hp_cn:sku:D89WLPC",
+  "name": "惠普 战66 八代 14英寸商务笔记本电脑 AMD 锐龙™ 7 H 255 处理器 16GB+512GB AMD Radeon™",
+  "status": "retired",
+  "retired_at": "2026-11-03T01:18:37.317329+00:00",
+  "source_url": "https://www.hpstore.cn/hp-probook-4-g1a-14-inch-notebook-ai-pc-d89wlpc.html"
+ },
+ {
+  "id": "CN:hp_cn:sku:D7MU8PC",
+  "name": "惠普 战66 八代 16英寸商务笔记本电脑 AMD 锐龙™ 7 H 255 处理器 16GB+1TB AMD Radeon™",
+  "status": "retired",
+  "retired_at": "2026-11-03T01:19:32.024625+00:00",
+  "source_url": "https://www.hpstore.cn/hp-probook-4-g1ah-16-inch-notebook-pc-d7mu8pc.html"
+ },
+ {
+  "id": "CN:hp_cn:sku:D8JR2PC",
+  "name": "惠普 战66 八代 14英寸商务笔记本电脑 AMD 锐龙™ 5 220 处理器 8GB+512GB AMD Radeon™",
+  "status": "retired",
+  "retired_at": "2026-11-03T01:19:35.522274+00:00",
+  "source_url": "https://www.hpstore.cn/hp-probook-4-g1a-14-inch-notebook-ai-pc-d8jr2pc.html"
+ }
+]
+```
+
+跨惠普/Apple/小米三品牌的缺失模拟、首次时间幂等、完整/部分采集边界、重新出现和旧下架迁移已纳入test_retirement.py。另实测共享finalizer对真实完整基线保留所有ID并生成留档，见verify-release.log。
+
+## 30条对照与发布
+
+[30条逐项表](samples.md) / [结构化请求及哈希](samples.json)。可逐行打开官方产品页，核对名称、货号和系列；表的名称来自该官方页面使用的产品上下文接口。原始570个响应、请求体和时间保存在support-evidence.json.gz，逐条哈希验证。
+
+本地完整非联网测试基线828 passed / 8 deselected；最终结果见tests-final.log。8个live为原有选择器，未新增跳过。发布门禁增加HP历史与通用留档测试。发布提交、Actions测试与发布run、正式数据revision及线上API实测见 [publication.md](publication.md)。
+
+## 复现
+
+```bash
+python3 scripts/build_hp_history.py --captures docs/hp-history-20261105/support-evidence.json.gz --catalogue docs/hp-history-20261105/catalogue.json --families docs/hp-history-20261105/families.json
+python3 docs/hp-history-20261105/report.py
+PYTHONPATH=src python3 -m pytest -q -m "not live"
+```
+
+重新联网：安装playwright及Chromium后，设置HP_PLAYWRIGHT_MODULE、HP_CHROMIUM_PATH（按需）和HP_BROWSER_PROXY（按出口需要）；用scripts/capture_hp_support.cjs读取sku-candidates.json / extra-candidates.json，再经build_hp_history.py核验导入。生产refresh-hp新增history_only手动模式，仍走原候选合并、发布锁、数据门禁及OSS哈希读回；正常刷新只请求商城详情，绝不把支持页交给商城解析器。

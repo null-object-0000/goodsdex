@@ -54,6 +54,9 @@ def delisting_evidence(text, info):
 def mark_delisted(row, evidence):
     result = deepcopy(row)
     result.update(sale_status='delisted',
+                  status='retired',
+                  retired_at=row.get('retired_at') or evidence['fetched_at'],
+                  retirement_evidence=row.get('retirement_evidence') or evidence,
                   delisted_at=row.get('delisted_at') or evidence['fetched_at'],
                   delisted_evidence=row.get('delisted_evidence') or evidence)
     return result
@@ -273,7 +276,11 @@ def main():
         if not known or any(r.get('source') != 'hp_cn' or not r.get('source_url') for r in known):
             raise ValueError('Known-only refresh requires a complete prior HP SKU archive')
         known_ids = {r['id'] for r in known}
-        urls = list(dict.fromkeys(r['source_url'] for r in known))
+        # Historical support/PDF records share the HP archive but have their own
+        # collector. Refresh only actual store SKU detail URLs here.
+        urls = list(dict.fromkeys(r['source_url'] for r in known
+                    if urlparse(r['source_url']).hostname == 'www.hpstore.cn'
+                    and r.get('record_level') != 'model_family'))
         pages = []
     while pages:
         url=pages.pop(0)

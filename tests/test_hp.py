@@ -58,6 +58,31 @@ class HPTests(unittest.TestCase):
         with self.assertRaises(ValueError):merge([],[],[dict(id='CN:mi_cn:product:1')])
 
 class HourlyImageReuseTests(unittest.TestCase):
+    def test_known_store_refresh_retains_historical_support_skus_without_fetching_them(self):
+        import tempfile, sys
+        sys.path.insert(0, str(ROOT/'scripts'))
+        from build_hp_history import parse_capture
+        capture = json.loads((ROOT/'tests/fixtures/hp/support-35L83PC.json').read_text())
+        history = parse_capture(capture, dict(part_numbers=[], urls=[], capture_id='test', observed_at='first'))
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp)
+            row, image = hp.parse_product(FIXTURE, URL, 'before')
+            (out/'goods.json').write_text(json.dumps([row, history]))
+            (out/'audit.json').write_text(json.dumps({'images': [{'url': image, 'ok': True}]}))
+            calls = []
+            class Client:
+                requests = []
+                def get(self, url):
+                    calls.append(url)
+                    assert url == URL
+                    return FIXTURE.encode(), {'fetched_at': 'now'}
+            with patch.object(sys, 'argv', ['crawl_hp', '--out', tmp, '--known-only', '--reuse-images']), \
+                 patch.object(hp, 'Client', return_value=Client()):
+                self.assertEqual(hp.main(), 0)
+            saved = json.loads((out/'goods.json').read_text())
+            self.assertEqual(calls, [URL])
+            self.assertEqual(saved[1], history)
+
     def test_reuse_verified_image_still_fetches_fresh_sku_and_price(self):
         import tempfile
         import sys

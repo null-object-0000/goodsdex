@@ -60,7 +60,9 @@ def test_finalizer_replays_and_details_only(tmp_path):
     # The ordinary finalizer also replays reviewed product dates, which may
     # legitimately grow after this historical snapshot was frozen.
     from goodsdex.mi_names import apply_page_names
-    expected=apply_date_enrichment(apply_series_releases(apply_release_dates(apply_page_names(json.loads(baseline)))))
+    from goodsdex.retirement import reconcile
+    history = reconcile([], json.loads(baseline))
+    expected=apply_date_enrichment(apply_series_releases(apply_release_dates(apply_page_names(history))))
     from goodsdex.source_urls import apply_source_urls
     expected=apply_source_urls(expected)
     from goodsdex.variant_attributes import apply_variant_attributes

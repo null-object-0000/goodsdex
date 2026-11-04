@@ -6,6 +6,10 @@ on:
     - cron: '43 4 * * *'
   workflow_dispatch:
     inputs:
+      history_only:
+        description: 'Import verified official historical SKUs without refreshing live store pages'
+        type: boolean
+        default: false
       inject_failure:
         description: '验收专用：采集开始前明确失败，不生成候选、不触碰发布集'
         type: boolean
@@ -33,7 +37,10 @@ jobs:
           echo '::error::Intentional HP collection failure; no candidate and no publication'
           exit 1
       - run: python3 -m pip install --quiet Pillow
+      - name: Import verified official historical configurations
+        run: python3 scripts/import_hp_history.py --out _data/data/hp --public _data/public
       - name: Probe HP availability from the Actions egress
+        if: ${{ !inputs.history_only }}
         env:
           HP_PROBE_OUT: _data/data/hp/probe
         run: python3 docs/hp-403-20261103/probe.py
@@ -43,7 +50,9 @@ jobs:
         # have time before the enclosing job deadline. Failure still skips publish.
         timeout-minutes: 13
         run: |
-          python3 scripts/crawl_hp.py --out _data/data/hp --public _data/public --reuse-images --known-only --interval-from-start
+          if [ '${{ inputs.history_only }}' != 'true' ]; then
+            python3 scripts/crawl_hp.py --out _data/data/hp --public _data/public --reuse-images --known-only --interval-from-start
+          fi
           python3 - <<'PYCODE'
           import json, os
           from pathlib import Path
