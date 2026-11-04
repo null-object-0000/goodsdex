@@ -1,0 +1,69 @@
+{
+  "observation_count": 104011,
+  "gid_count": 4038,
+  "observations_per_gid": {
+    "1": 1560,
+    "2": 207,
+    "3": 609,
+    "4": 557,
+    "5": 199,
+    "6": 121,
+    "7": 14,
+    "8": 1,
+    "10": 4,
+    "11": 5,
+    "12": 11,
+    "41": 9,
+    "63": 1,
+    "64": 208,
+    "102": 2,
+    "115": 4,
+    "124": 11,
+    "125": 320,
+    "150": 36,
+    "171": 2,
+    "217": 1,
+    "219": 145,
+    "222": 11
+  },
+  "gids_with_at_least_3": 2271,
+  "earliest": "2026-10-13T09:45:44+08:00",
+  "latest": "2026-11-04T17:11:05+08:00",
+  "existing": 5687,
+  "snapshot_rows": 995176,
+  "duplicates": 896852,
+  "conflicts": 18588,
+  "suspicious_count": 1182,
+  "time_sources": {
+    "fetched_at": 63692,
+    "commit": 40319
+  },
+  "legacy_added": 98383,
+  "git_backfill": {
+    "ref": "origin/data",
+    "tip": "3136366cc89d7831dfe34c45eff335229b47310f",
+    "commit_count": 259,
+    "first_commit": "c61a4f8e545509ea6836d4ea00ae6b4ecb4e8f37 2026-10-27T08:01:34Z",
+    "last_commit": "3136366cc89d7831dfe34c45eff335229b47310f 2026-11-04T09:11:05Z"
+  },
+  "index_sha256": "fff18bdef8146b2aaac5b0d517883b3a64d16917664258c9e262e09ce3003ffc",
+  "sample_gids": [
+    "CN:mi_cn:product:19203",
+    "CN:mi_cn:product:19226",
+    "CN:mi_cn:product:19917",
+    "CN:mi_cn:product:20212",
+    "CN:mi_cn:product:21163",
+    "CN:mi_cn:product:24770",
+    "CN:mi_cn:product:24772",
+    "CN:mi_cn:product:20626",
+    "CN:mi_cn:product:21971",
+    "CN:mi_cn:product:22365"
+  ],
+  "repeat_run": {
+    "observation_count": 104011,
+    "legacy_added": 0,
+    "duplicates": 995176,
+    "existing": 104011
+  },
+  "conflicting_keys": 282
+}

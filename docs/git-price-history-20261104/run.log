@@ -1,0 +1,75 @@
+20/259 snapshots; 108342 rows
+40/259 snapshots; 199647 rows
+60/259 snapshots; 279101 rows
+80/259 snapshots; 358461 rows
+100/259 snapshots; 437821 rows
+120/259 snapshots; 517181 rows
+140/259 snapshots; 596541 rows
+160/259 snapshots; 675901 rows
+180/259 snapshots; 755261 rows
+200/259 snapshots; 824061 rows
+220/259 snapshots; 882142 rows
+240/259 snapshots; 940130 rows
+259/259 snapshots; 995176 rows
+{
+  "observation_count": 104011,
+  "gid_count": 4038,
+  "observations_per_gid": {
+    "1": 1560,
+    "2": 207,
+    "3": 609,
+    "4": 557,
+    "5": 199,
+    "6": 121,
+    "7": 14,
+    "8": 1,
+    "10": 4,
+    "11": 5,
+    "12": 11,
+    "41": 9,
+    "63": 1,
+    "64": 208,
+    "102": 2,
+    "115": 4,
+    "124": 11,
+    "125": 320,
+    "150": 36,
+    "171": 2,
+    "217": 1,
+    "219": 145,
+    "222": 11
+  },
+  "gids_with_at_least_3": 2271,
+  "earliest": "2026-10-13T09:45:44+08:00",
+  "latest": "2026-11-04T17:11:05+08:00",
+  "existing": 5687,
+  "snapshot_rows": 995176,
+  "duplicates": 896852,
+  "conflicts": 18588,
+  "suspicious_count": 1182,
+  "time_sources": {
+    "fetched_at": 63692,
+    "commit": 40319
+  },
+  "legacy_added": 98383,
+  "git_backfill": {
+    "ref": "origin/data",
+    "tip": "3136366cc89d7831dfe34c45eff335229b47310f",
+    "commit_count": 259,
+    "first_commit": "c61a4f8e545509ea6836d4ea00ae6b4ecb4e8f37 2026-10-27T08:01:34Z",
+    "last_commit": "3136366cc89d7831dfe34c45eff335229b47310f 2026-11-04T09:11:05Z"
+  },
+  "index_sha256": "628d5aa23f895ce77f33b7ce7c2d27b799ef76790dd38adbe6063cec04b521eb",
+  "sample_gids": [
+    "CN:byd:car:goods-159:current:ev",
+    "CN:hp_cn:sku:D3SE7PC",
+    "CN:hp_cn:sku:D71MQPC",
+    "CN:hp_cn:sku:D71MRPC",
+    "CN:hp_cn:sku:D71MWPC",
+    "CN:hp_cn:sku:D73L1PC",
+    "CN:hp_cn:sku:D73L3PC",
+    "CN:hp_cn:sku:D74WMPC",
+    "CN:hp_cn:sku:D74WNPC",
+    "CN:hp_cn:sku:D74WXPC"
+  ]
+}
