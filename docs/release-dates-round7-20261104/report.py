@@ -16,6 +16,8 @@ cs=json.loads(Path('data/third-party/release-dates.json').read_text())['candidat
 rej=json.loads((ROOT/'rejected-reviewed.json').read_text())
 # Bound each reviewed rejection's date semantics explicitly.
 for c in rej:
+ if '唯一' in c['reason']:
+  for a in c['assertions']:a['evidence']['identity_verified']=False
  if c['id'].startswith('CN:hp_cn'):
   c['assertions'][1]['evidence']['event_verified']=False
   c['assertions'][1]['date_semantics']='article_report_day_only_not_verified_launch'
@@ -61,7 +63,7 @@ lines=['# 20条审核抽样（不是20条新增通过）','',f'种子20261104，
 for i,c in enumerate(sample,1):
  lines += [f"## {i}. {c['name']}",'',f"`{c.get('id')}` — {c['decision']}",'']
  for j,a in enumerate(c['assertions'],1):
-  e=a['evidence'];lines += [f"来源{j}：[原文]({e['url']})，{a['date']}，`{a['event']}`。",'',f"> {e['quote']}",'',f"版本原句：{e['identity_quote']}",'']
+  e=a['evidence'];lines += [f"来源{j}：[原文]({e['url']})，{a['date']}，`{a['event']}`"+('（报道当日已在售/预告，未证首次事件日）' if a.get('date_semantics') else '')+'。','',f"> {e['quote']}",'',f"版本原句：{e['identity_quote']}",'']
 (ROOT/'sample-20.md').write_text('\n'.join(lines))
 lines=['# 分母分层与第三方交叉（第七轮）','','**以后对外只说「整机口径覆盖率」，不再说全库覆盖率。** `meta.release_scope` 是公开口径；旧 `release_dates` 为兼容字段，标记deprecated/not_for_external_reporting，不用于对外报告。','',
 '固定data基线 ee076d95a1ab3bbbeec524d582d65a2bd9f131ca；与本轮线上meta-before相同revision。统计单位为发布行，2902行/2897唯一ID。冲突多投影行保留，分母不随日期命中率改变。分类不删除商品、不改brand/kind/category、不碰原有排除门禁。','',
