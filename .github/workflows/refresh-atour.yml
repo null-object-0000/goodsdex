@@ -1,0 +1,47 @@
+name: refresh-atour
+on:
+  schedule:
+    - cron: '17 21 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+  checks: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/collect-base
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated browser reader
+        run: |
+          npm install --prefix "$RUNNER_TEMP/atour-browser" playwright@1.56.1
+          "$RUNNER_TEMP/atour-browser/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Capture anonymous official catalogue (serial, at least 2.1s)
+        env:
+          PLAYWRIGHT_MODULE: ${{ runner.temp }}/atour-browser/node_modules/playwright
+        run: |
+          mkdir -p "$RUNNER_TEMP/atour-evidence"
+          node scripts/capture_atour.cjs "$RUNNER_TEMP/atour-evidence/capture.json"
+          python3 scripts/crawl_atour.py --capture "$RUNNER_TEMP/atour-evidence/capture.json" --public _data/public
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: atour-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/atour-evidence/
+          retention-days: 7
+      - uses: ./.github/actions/upload-candidate
+        with:
+          scope: atour
+  publish:
+    needs: collect
+    uses: ./.github/workflows/publish-release.yml
+    with:
+      scope: atour
+    secrets: inherit

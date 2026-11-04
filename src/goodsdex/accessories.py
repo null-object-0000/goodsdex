@@ -64,7 +64,7 @@ def classify(row):
     # "机身拓展板"/"镜头保护盖" is still a part.
     if (device or lens or body) and not PARTS.search(principal) and not any(w.casefold() in principal.casefold() for w in ACCESSORY_WORDS):
         return dict(accessory=False, basis='whole_device', matched=(device or lens or body).group())
-    accessory_category = next((c for c in categories if c.strip().endswith('配件')), None)
+    accessory_category = next((c for c in categories if c.strip().endswith('配件') and c.strip() != '床品配件'), None)
     if accessory_category:
         return dict(accessory=True, basis='category', matched=accessory_category)
     if words:

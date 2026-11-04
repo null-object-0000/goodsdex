@@ -9,7 +9,7 @@ import re
 from urllib.error import HTTPError
 from urllib.request import Request, build_opener, HTTPRedirectHandler, urlopen
 
-SOURCES = [('refresh-prices', 60), ('refresh-apple', 60), ('refresh-hp', 1440),
+SOURCES = [('refresh-prices', 60), ('refresh-apple', 60), ('refresh-hp', 1440), ('refresh-atour', 1440),
            ('refresh-cars', 1440), ('publish-release', None)]
 
 

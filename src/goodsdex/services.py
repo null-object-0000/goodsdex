@@ -22,6 +22,9 @@ def evidence(reason, word, basis='name'):
 
 def classify_non_goods(row):
     name = DESCRIPTIONS.sub('', str(row.get('name') or '').strip())
+    # A concrete delivery lead time on a physical SKU is not a deposit offer.
+    if row.get('record_level') == 'sku' and row.get('sku_no') and row.get('specs'):
+        name = re.sub(r'预售\s*\d+\s*天', '', name)
     match = PREORDER.search(name)
     if match:
         return evidence('preorder_deposit', match.group())

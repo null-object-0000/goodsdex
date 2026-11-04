@@ -41,7 +41,7 @@ class API:
 def test_without_token_is_explicit_unknown_for_all_sources():
     api = API()
     payload = generate('o/r', '', NOW, api)
-    assert len(payload['sources']) == 5
+    assert len(payload['sources']) == len(SOURCES)
     assert [s['sourceId'] for s in payload['sources']] == [s[0] for s in SOURCES]
     assert all(s['conclusion'] == 'unknown' and s['error'] == '缺少 GITHUB_TOKEN'
                and s['lastSuccessAt'] is None for s in payload['sources'])
@@ -60,7 +60,7 @@ def test_latest_failure_retains_real_previous_success_and_first_error():
     assert row['stale'] is True
     assert row['staleReason'] == '已 5.0 小时无成功运行（预期每 60 分钟）'
     assert rows[3]['stale'] is False  # daily cars, not hourly
-    assert rows[4]['expectedIntervalMinutes'] is None
+    assert rows[-1]['expectedIntervalMinutes'] is None
 
 
 @pytest.mark.parametrize('status,result,expected', [
@@ -144,7 +144,7 @@ def test_status_descriptor_survives_finalize_and_preserves_goods_meta(tmp_path):
     assert {k: v for k, v in meta.items() if k != 'files'} == {k: v for k, v in old_meta.items() if k != 'files'}
     assert all(meta['files'][k] == v for k, v in old_meta['files'].items())
     raw = (tmp_path / 'sources-status.json').read_bytes()
-    descriptor = dict(sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw), count=5)
+    descriptor = dict(sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw), count=len(SOURCES))
     assert meta['files']['sources-status.json'] == descriptor
     assert build_shards(tmp_path)['files']['sources-status.json'] == descriptor
     assert (tmp_path / 'goods.json').read_bytes() == goods

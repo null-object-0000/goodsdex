@@ -8,6 +8,7 @@ from copy import deepcopy
 import re
 
 BRAND_ALIASES = {
+    '亚朵星球': ('亚朵星球', 'atour'),
     '小米': ('小米', '米家', '红米', 'xiaomi', 'mijia', 'redmi', 'mi_cn',
              'xiaomi_archive_history', 'goods_supplements:xiaomi_mobile_official'),
     '小米汽车': ('小米汽车', 'xiaomi ev', 'xiaomi_ev', 'mi_ev'),
@@ -25,6 +26,7 @@ ALIASES = {alias.casefold(): brand for brand, aliases in BRAND_ALIASES.items() f
 # Scope remains part of the key so foreign/unknown regions cannot inherit CN rules.
 NAMESPACE_ALIASES = {
     'cn': {
+        '亚朵星球': ('atour',),
         '小米': ('mi_cn',),
         '小米汽车': ('mi_ev', 'xiaomi_ev', '小米汽车'),
         'Apple': ('apple', 'apple_cn', 'apple_support'),
@@ -37,7 +39,7 @@ NAMESPACE_ALIASES = {
 }
 # Record kinds terminate the namespace, even when it contains colon separators.
 RECORD_KINDS = frozenset(('product', 'reference', 'commodity', 'sku', 'model',
-                          'lens', 'kit', 'car'))
+                          'lens', 'kit', 'car', 'spu'))
 
 
 def normalize_namespace(namespace):

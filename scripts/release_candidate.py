@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
 from goodsdex.release_policy import assert_no_lost_ids
 
 MISSING = object()
-SCOPES = ('prices', 'apple', 'hp', 'cars', 'legacy', 'all')
+SCOPES = ('prices', 'apple', 'hp', 'atour', 'cars', 'legacy', 'all')
 
 
 def git(root, *args):
@@ -66,11 +66,13 @@ def owns(row, scope):
         return is_car(row)
     if scope == 'apple':
         return source in ('apple_cn', 'apple_support') or key.startswith(('CN:apple_cn:', 'GLOBAL:apple_support:'))
+    if scope == 'atour':
+        return source == 'atour' and key.startswith('CN:atour:spu:')
     if scope == 'hp':
         return source == 'hp_cn'
     if scope == 'legacy':
         return key.startswith('CN:mi_cn:') and not is_car(row)
-    return not is_car(row) and source not in ('apple_cn', 'apple_support', 'hp_cn') and row.get('brand') != 'Apple' and not key.startswith(('CN:apple_cn:', 'GLOBAL:apple_support:'))
+    return not is_car(row) and source not in ('apple_cn', 'apple_support', 'hp_cn', 'atour') and row.get('brand') != 'Apple' and not key.startswith(('CN:apple_cn:', 'GLOBAL:apple_support:'))
 
 
 def merge_goods(before, after, latest, scope):
