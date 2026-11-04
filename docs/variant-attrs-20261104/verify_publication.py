@@ -17,9 +17,9 @@ BASE = 'https://spend.snewbie.site'
 CONFLICT = 'CN:mi_cn:product:20425'
 SAMPLES = ['CN:mi_cn:product:10050230', 'CN:mi_cn:product:24248', 'CN:apple_cn:commodity:MD3Y4CH/A']
 
-def fetch(path):
+def fetch(path, base=BASE):
     return subprocess.check_output(['curl', '--noproxy', '*', '--compressed', '-fsSL',
-        '--connect-timeout', '10', '--max-time', '120', BASE + path])
+        '--connect-timeout', '10', '--max-time', '120', base + path])
 
 def write(name, value):
     (ROOT / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
@@ -32,6 +32,10 @@ if __name__ == '__main__':
     expected_raw = (args.public / 'goods.json').read_bytes()
     expected = json.loads(expected_raw)
     published_meta = json.loads((args.public / 'meta.json').read_bytes())
+    oss = 'https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public'
+    oss_meta = json.loads(fetch('/meta.json', oss))
+    assert oss_meta == published_meta, 'OSS manifest differs from data branch'
+    assert fetch('/goods.json', oss) == expected_raw, 'OSS goods differ from data branch'
     meta = json.loads(fetch('/api/meta'))
     actual_raw = fetch('/api/goods')
     actual = json.loads(actual_raw)
@@ -55,10 +59,12 @@ if __name__ == '__main__':
         details.append({k: detail[k] for k in ('id', 'name', 'attrs', 'attrs_source', 'attrs_confidence')})
     (ROOT / 'online-goods.json.gz').write_bytes(gzip.compress(actual_raw, mtime=0))
     write('online-meta.json', meta)
+    write('oss-meta.json', oss_meta)
     write('api-samples.json', details)
     result = dict(run_id=args.run_id, revision=meta['revision'], variant_attrs=stats,
         actual_rows_with_attrs=len(tagged), conflict_id=CONFLICT, conflict_rows_without_attrs=len(conflicts),
-        all_goods_equal=True, manifest_equal=True, goods_sha256=meta['files']['goods.json']['sha256'],
+        all_goods_equal=True, manifest_equal=True, oss_meta_equal=True, oss_goods_bytes_equal=True,
+        goods_sha256=meta['files']['goods.json']['sha256'],
         annotated_by_brand=dict(Counter(r['brand'] for r in tagged)), samples=details)
     write('online-verification.json', result)
     print(json.dumps(result, ensure_ascii=False, indent=2))
