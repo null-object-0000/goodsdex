@@ -26,7 +26,7 @@
 | `accessory:category` | 配件类目命中，原始类目见 exclusion.matched |
 | `accessory:name` | 配件名称词命中，原始词见 exclusion.matched |
 | `service:installation` | 安装/上门服务 |
-| `service:other` | 名称确认的延保、清洗、检测、拆旧、勘测、维修服务 |
+| `service:other` | 名称确认的延保、清洗、检测、拆旧、勘测、维修、换屏换盖服务 |
 | `container` | 系列容器（保留枚举，当前未启用新增过滤） |
 | `duplicate` | 无冲突安全合并的额外输入行，原字段完整保存 |
 | `invalid` | 已审核的六条空壳身份 |

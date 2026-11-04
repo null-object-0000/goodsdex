@@ -89,3 +89,11 @@ total_published 是发布库（含历史下架），沿用原验收 2902 条口�
 - 上门维修：1 条；手机上门维修 ¥None
 
 拿不准或实物描述保留：[]
+
+## 发布与线上回读
+
+- 代码提交：`be4bc5764c81666f84990b33c6293d5269a1a2a0`；实际数据提交：`03ebb5df`，前一提交 `7fbb8f13`。
+- [发布成功](https://github.com/null-object-0000/goodsdex/actions/runs/41798580189)。以上审计已针对实际发布前后两个 data 提交重跑通过。
+- 全量测试：736 passed（见 tests.log）。
+- [线上排除文件](https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/goods-excluded.json) 已回读；安装服务 17、其它服务 29，明细与 reasons 一致；总量 3982 = 2856 + 1126。
+- revision：`cbc9df5e7c824682a998bc8cceda7588`；排除文件与 goods 文件均通过 meta SHA-256 校验，详见 online.json。
