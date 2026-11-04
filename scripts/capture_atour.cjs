@@ -31,8 +31,13 @@ if (!out) throw Error('Output JSON required');
     if(record)record.status=response.status();
    }
   });
-  await page.goto('https://h5mall.yaduo.com/',{waitUntil:'networkidle',timeout:120000});
-  await page.evaluate(()=>{window.webpackJsonp.push([[991239],{},r=>window.atourRequire=r]);window.atourApi=window.atourRequire(5251);});
+  await page.goto('https://h5mall.yaduo.com/',{waitUntil:'domcontentloaded',timeout:60000});
+  // Analytics/images can keep networkidle pending forever; wait for the actual reader.
+  await page.waitForFunction(()=>{
+   if(!window.webpackJsonp)return false;
+   if(!window.atourRequire)window.webpackJsonp.push([[991239],{},r=>window.atourRequire=r]);
+   try{window.atourApi=window.atourRequire(5251);return typeof window.atourApi.pg==='function';}catch{return false;}
+  },null,{timeout:60000});
   const call=async(method,args)=>page.evaluate(async({method,args})=>await window.atourApi[method](args),{method,args});
   const pages=[];
   const first=await call('pg',{pageNo:1,pageSize:20});pages.push(first);
