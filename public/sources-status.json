@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-11-04T18:05:50Z",
+  "generatedAt": "2026-11-04T18:11:25Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-04T15:29:33Z",
+      "lastAttemptAt": "2026-11-04T18:07:54Z",
       "lastSuccessAt": "2026-11-04T15:16:53Z",
-      "conclusion": "cancelled",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41858286563",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41884026126",
       "error": null,
       "stale": true,
-      "staleReason": "已 2.8 小时无成功运行（预期每 60 分钟）"
+      "staleReason": "已 2.9 小时无成功运行（预期每 60 分钟）"
     },
     {
       "sourceId": "refresh-apple",
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-04T17:08:08Z",
+      "lastAttemptAt": "2026-11-04T18:07:56Z",
       "lastSuccessAt": "2026-11-04T17:13:29Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41874552029",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41884034221",
       "error": null,
       "stale": false,
       "staleReason": null
@@ -30,8 +30,8 @@
       "workflow": ".github/workflows/refresh-hp.yml",
       "expectedIntervalMinutes": 1440,
       "lastAttemptAt": "2026-11-04T18:02:47Z",
-      "lastSuccessAt": "2026-11-04T17:54:52Z",
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-04T18:06:52Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41883103308",
       "error": null,
       "stale": false,
@@ -53,10 +53,10 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-04T18:04:05Z",
+      "lastAttemptAt": "2026-11-04T18:09:35Z",
       "lastSuccessAt": null,
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41883103308",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41884034221",
       "error": null,
       "stale": false,
       "staleReason": null
