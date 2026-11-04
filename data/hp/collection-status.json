@@ -1,89 +1,2410 @@
 {
- "conclusion": "degraded",
- "error": "blocked: 403 from hpstore.cn",
- "checked_at": "2026-11-04T21:11:30.425525+00:00",
- "count": 0,
+ "conclusion": "success",
+ "error": null,
+ "checked_at": "2026-11-04T22:18:02.254941+00:00",
+ "count": 209,
  "requests": [
   {
    "url": "https://www.hpstore.cn/hp-omen-16-inch-gaming-laptop-ap1025ax-dc0f0pa.html",
-   "status": 403,
-   "fetched_at": "2026-11-04T21:10:34.507559+00:00",
-   "headers": {
-    "Server": "awselb/2.0",
-    "Date": "Wed, 04 Nov 2026 21:10:33 GMT"
-   }
-  },
-  {
-   "url": "https://www.hpstore.cn/hp-omen-16-inch-gaming-laptop-ap1025ax-dc0f0pa.html",
-   "status": 403,
-   "fetched_at": "2026-11-04T21:10:40.237352+00:00",
-   "headers": {
-    "Server": "awselb/2.0",
-    "Date": "Wed, 04 Nov 2026 21:10:39 GMT"
-   }
-  },
-  {
-   "url": "https://www.hpstore.cn/hp-omen-16-inch-gaming-laptop-ap1025ax-dc0f0pa.html",
-   "status": 403,
-   "fetched_at": "2026-11-04T21:10:51.425051+00:00",
-   "headers": {
-    "Server": "awselb/2.0",
-    "Date": "Wed, 04 Nov 2026 21:10:50 GMT"
-   }
+   "final_url": "https://www.hpstore.cn/hp-omen-16-inch-gaming-laptop-ap1025ax-dc0f0pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 956253,
+   "sha256": "da1fa4e68468e0fc946a72cb5e24eb5b8d41172b77f497cc764eea3c9560b12e",
+   "fetched_at": "2026-11-04T22:09:56.774194+00:00"
   },
   {
    "url": "https://www.hpstore.cn/book-3-laptop-16-bw0272au-d42cbpa.html",
-   "status": 403,
-   "fetched_at": "2026-11-04T21:10:53.117170+00:00",
-   "headers": {
-    "Server": "awselb/2.0",
-    "Date": "Wed, 04 Nov 2026 21:10:52 GMT"
-   }
-  },
-  {
-   "url": "https://www.hpstore.cn/book-3-laptop-16-bw0272au-d42cbpa.html",
-   "status": 403,
-   "fetched_at": "2026-11-04T21:10:59.303411+00:00",
-   "headers": {
-    "Server": "awselb/2.0",
-    "Date": "Wed, 04 Nov 2026 21:10:58 GMT"
-   }
-  },
-  {
-   "url": "https://www.hpstore.cn/book-3-laptop-16-bw0272au-d42cbpa.html",
-   "status": 403,
-   "fetched_at": "2026-11-04T21:11:10.381966+00:00",
-   "headers": {
-    "Server": "awselb/2.0",
-    "Date": "Wed, 04 Nov 2026 21:11:09 GMT"
-   }
+   "final_url": "https://www.hpstore.cn/book-3-laptop-16-bw0272au-d42cbpa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 886052,
+   "sha256": "5ce7141f6c199447d2e68eb354649f5f2af2cad4059f2282c72c90fc94f2d510",
+   "fetched_at": "2026-11-04T22:09:58.917061+00:00"
   },
   {
    "url": "https://www.hpstore.cn/hyperx-16-16-am2129tx-dp3v8pa.html",
+   "final_url": "https://www.hpstore.cn/hyperx-omen-16-inch-16-am2129tx-dp3v8pa.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/hyperx-16-16-am2129tx-dp3v8pa.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/hyperx-omen-16-inch-16-am2129tx-dp3v8pa.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 948289,
+   "sha256": "a5a13d3d294ff6f36c41282924d626381991ff77514c59efd6bc3e9ec4ad008a",
+   "fetched_at": "2026-11-04T22:10:01.849195+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-omen-16-inch-gaming-laptop-am2073tx-dc0e9pa.html",
+   "final_url": "https://www.hpstore.cn/hp-omen-16-inch-gaming-laptop-am2073tx-dc0e9pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 961716,
+   "sha256": "b39c542d8bb3c6c47b98dc2c489e2340330163605c75e036c35f379ccbcd9b38",
+   "fetched_at": "2026-11-04T22:10:03.197277+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hyperx-15-15-ga0280tx-e33wqpa.html",
+   "final_url": "https://www.hpstore.cn/hyperx-15-15-ga0280tx-e33wqpa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 990115,
+   "sha256": "0a4b6f0a6535ab54252b625c1ee29e3fb5dcda349cd6aaeae187f47e05cfe003",
+   "fetched_at": "2026-11-04T22:10:05.204265+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-omnibook-7-laptop-ai-14-ku0023tu-dk8g8pa.html",
+   "final_url": "https://www.hpstore.cn/hp-omnibook-7-laptop-ai-14-ku0023tu-dk8g8pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 852082,
+   "sha256": "008bd715fc0c1ac437ad509989fced6d2bd3ba95c899bd54e3c9cf9ac78bab39",
+   "fetched_at": "2026-11-04T22:10:07.214064+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hyperx-omen-15-inch-gaming-laptop-pc-15-ga0143tx-dc2k1pa.html",
+   "final_url": "https://www.hpstore.cn/hyperx-omen-15-inch-gaming-laptop-pc-15-ga0143tx-dc2k1pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 965862,
+   "sha256": "f6b7c3610b1cb65bf2b6a9d50d17f9daf959e4345f3c2b6df16d8db77f06cf17",
+   "fetched_at": "2026-11-04T22:10:09.265190+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-omnibook-7-14-inch-laptop-ai-pc-ai-kk0045au-d9ty6pa.html",
+   "final_url": "https://www.hpstore.cn/hp-omnibook-7-14-inch-laptop-ai-pc-ai-kk0045au-d9ty6pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 893035,
+   "sha256": "faf18997a876024ed6b608bf02b2ec07675ab234974b0c7c7b95d413a95de9cc",
+   "fetched_at": "2026-11-04T22:10:11.369183+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hyperx-omen-15-inch-gaming-laptop-pc-15-ga0144tx-dc2k2pa.html",
+   "final_url": "https://www.hpstore.cn/hyperx-omen-15-inch-gaming-laptop-pc-15-ga0144tx-dc2k2pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 965905,
+   "sha256": "767bb295520e6889caebee56abf87058d6d1daa2e56bad54e822eb419ca62764",
+   "fetched_at": "2026-11-04T22:10:13.553433+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-7-ai-16-bh0091tu-d3rf1pa.html",
+   "final_url": "https://www.hpstore.cn/book-7-ai-16-bh0091tu-d3rf1pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 899920,
+   "sha256": "b7872c245c18c5844810ddee5c984e0b3be4fe3ebb08d78648178b3492389943",
+   "fetched_at": "2026-11-04T22:10:15.668181+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/xing-book-pro-ai-16-bh0093tu-d44p6pa.html",
+   "final_url": "https://www.hpstore.cn/xing-book-pro-ai-16-bh0093tu-d44p6pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 909543,
+   "sha256": "2d482c2f08bed0f14c8f7c6be18e3c0111a9c47d6ede5ffdce32e4ee38e2f842",
+   "fetched_at": "2026-11-04T22:10:17.639825+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-omen-16-inch-gaming-laptop-am2071tx-db9q7pa.html",
+   "final_url": "https://www.hpstore.cn/hp-omen-16-inch-gaming-laptop-am2071tx-db9q7pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 961349,
+   "sha256": "2a6935b534b29b78e7645dfa7677030d13d470ccc905b262c5bb099c6ceddbbb",
+   "fetched_at": "2026-11-04T22:10:19.858357+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hyperx-omen-15-inch-gaming-laptop-pc-15-ga0145tx-dc2n1pa.html",
+   "final_url": "https://www.hpstore.cn/hyperx-omen-15-inch-gaming-laptop-pc-15-ga0145tx-dc2n1pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 959180,
+   "sha256": "c5e2c524ca66ddec0b7ee98240d64d12123d5cce191bb1183ccf94b77d7e0175",
+   "fetched_at": "2026-11-04T22:10:22.039405+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-pro-aero-ai-14-ku0031tu-e5hr5pa.html",
+   "final_url": "https://www.hpstore.cn/book-pro-aero-ai-14-ku0031tu-e5hr5pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 884199,
+   "sha256": "5c1289fbd14eb5bc87624383173dc80306649c66ceb87f52d3226b9739e5413b",
+   "fetched_at": "2026-11-04T22:10:24.116006+00:00"
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/h/p/hp-cn-only-omnibook-7-yaoming-front_4_2.png",
+   "final_url": "https://media.hpstore.cn/catalog/product/h/p/hp-cn-only-omnibook-7-yaoming-front_4_2.png",
+   "status": 200,
+   "redirects": [],
+   "content_type": "image/png",
+   "bytes": 69661,
+   "sha256": "b65c29fc3eb3b7678a142be1e06fe2c998f52c1a38661fe73da9927d0c49a1d6",
+   "fetched_at": "2026-11-04T22:10:25.744787+00:00",
+   "width": 700,
+   "height": 525,
+   "format": "PNG",
+   "ok": false,
+   "reason": "image fails status/type/bytes/width policy"
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/h/p/hp-cn-only-omnibook-7-yaoming-front_4_2.png",
+   "final_url": "https://media.hpstore.cn/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/h/p/hp-cn-only-omnibook-7-yaoming-front_4_2.png",
+   "status": 200,
+   "redirects": [],
+   "content_type": "image/png",
+   "bytes": 69661,
+   "sha256": "b65c29fc3eb3b7678a142be1e06fe2c998f52c1a38661fe73da9927d0c49a1d6",
+   "fetched_at": "2026-11-04T22:10:27.510954+00:00",
+   "width": 700,
+   "height": 525,
+   "format": "PNG",
+   "ok": false,
+   "reason": "image fails status/type/bytes/width policy"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-pro-aero-ai-14-ku0033tu-e6ea7pa.html",
+   "final_url": "https://www.hpstore.cn/book-pro-aero-ai-14-ku0033tu-e6ea7pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 883096,
+   "sha256": "080c5e1db6fd629d297d104acae6dcb23293ad396df40097476038e081b56d46",
+   "fetched_at": "2026-11-04T22:10:28.614995+00:00"
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/h/p/hp-cn-only-omnibook-7-yaoming-front_4_2_1.png",
+   "final_url": "https://media.hpstore.cn/catalog/product/h/p/hp-cn-only-omnibook-7-yaoming-front_4_2_1.png",
+   "status": 200,
+   "redirects": [],
+   "content_type": "image/png",
+   "bytes": 69661,
+   "sha256": "b65c29fc3eb3b7678a142be1e06fe2c998f52c1a38661fe73da9927d0c49a1d6",
+   "fetched_at": "2026-11-04T22:10:29.674848+00:00",
+   "width": 700,
+   "height": 525,
+   "format": "PNG",
+   "ok": false,
+   "reason": "image fails status/type/bytes/width policy"
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/h/p/hp-cn-only-omnibook-7-yaoming-front_4_2_1.png",
+   "final_url": "https://media.hpstore.cn/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/h/p/hp-cn-only-omnibook-7-yaoming-front_4_2_1.png",
+   "status": 200,
+   "redirects": [],
+   "content_type": "image/png",
+   "bytes": 69661,
+   "sha256": "b65c29fc3eb3b7678a142be1e06fe2c998f52c1a38661fe73da9927d0c49a1d6",
+   "fetched_at": "2026-11-04T22:10:31.920384+00:00",
+   "width": 700,
+   "height": 525,
+   "format": "PNG",
+   "ok": false,
+   "reason": "image fails status/type/bytes/width policy"
+  },
+  {
+   "url": "https://www.hpstore.cn/omen-16l-gaming-desktop-tg03-120bcn-pc-d53w6pa.html",
+   "final_url": "https://www.hpstore.cn/omen-16l-gaming-desktop-tg03-120bcn-pc-d53w6pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 938553,
+   "sha256": "667a4ff560344bc669f7f8af3b010efdb0a65975888529f4fed06b35d3716060",
+   "fetched_at": "2026-11-04T22:10:33.019411+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/desk-s03-020rcn-dw0p2pa.html",
+   "final_url": "https://www.hpstore.cn/desk-s03-020rcn-dw0p2pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 863758,
+   "sha256": "5d8a446c5192d8252fd13154645d90e9253abdf2ad35f183b01de415bc3fc3d2",
+   "fetched_at": "2026-11-04T22:10:35.095812+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/desktops/hp-omnidesk-slim-desktop-s03-050rcn-pc-bz8y6pa.html",
+   "final_url": "https://www.hpstore.cn/hp-omnidesk-slim-desktop-s03-050rcn-pc-bz8y6pa.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/desktops/hp-omnidesk-slim-desktop-s03-050rcn-pc-bz8y6pa.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/hp-omnidesk-slim-desktop-s03-050rcn-pc-bz8y6pa.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 822165,
+   "sha256": "cbb448d2a9aecb24364af0b04a756f2de84ae96d11dcbc1f13d9e8fb8835ce49",
+   "fetched_at": "2026-11-04T22:10:37.842449+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d3se7pc.html",
+   "final_url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d3se7pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 843665,
+   "sha256": "1e59ff263bf197403f5415e34a6e34512406f3dd03c48f56b1e74c7a96eccc7c",
+   "fetched_at": "2026-11-04T22:10:39.413552+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zhan-99-pro-tower-desktop-pc-d93d1pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zhan-99-pro-tower-desktop-pc-d93d1pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 843302,
+   "sha256": "205a34aedb2229bd1c0dcc18ba5fc2fd0fcdebd7956e1717fee101acd24e1713",
+   "fetched_at": "2026-11-04T22:10:41.384143+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hyperx-35l-gt18-041ucn-pc-dk4b6pa.html",
+   "final_url": "https://www.hpstore.cn/hyperx-35l-gt18-041ucn-pc-dk4b6pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 948061,
+   "sha256": "7af6d04ffb2eeafa5e6f7d8d77543c964031cad87c3702139332952d7496ad7c",
+   "fetched_at": "2026-11-04T22:10:43.409526+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zhan-99-pro-tower-desktop-pc-d74xvpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zhan-99-pro-tower-desktop-pc-d74xvpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 846871,
+   "sha256": "a3dd9461829a3767c9c2da3102959d46132143f0c5fc76e5ab6532d76b77a6b7",
+   "fetched_at": "2026-11-04T22:10:45.546857+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zhan-99-pro-tower-desktop-pc-d74wnpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zhan-99-pro-tower-desktop-pc-d74wnpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 845316,
+   "sha256": "7ed9b3e5b500ba7817d2f6db9ad92e76cb3dbc09e1fbc1bab515c7b5011d863c",
+   "fetched_at": "2026-11-04T22:10:47.702768+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-prodesk-2-sff-g1i-desktop-pc-d8bq5pc.html",
+   "final_url": "https://www.hpstore.cn/hp-prodesk-2-sff-g1i-desktop-pc-d8bq5pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 841388,
+   "sha256": "f659435c952959c6c559bf4bc820acc101fe900ab7b31d87a90405c10d184f39",
+   "fetched_at": "2026-11-04T22:10:49.790537+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-prodesk-2-sff-g1i-desktop-pc-d74wtpc.html",
+   "final_url": "https://www.hpstore.cn/hp-prodesk-2-sff-g1i-desktop-pc-d74wtpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 841629,
+   "sha256": "7389ecb456df498c514e2798dfee85994eb3b1d37f314df80e4ed4076190f61a",
+   "fetched_at": "2026-11-04T22:10:51.868743+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-pro-sff-280-g9-pc-dl7b0pc.html",
+   "final_url": "https://www.hpstore.cn/hp-pro-sff-280-g9-pc-dl7b0pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 849223,
+   "sha256": "3de80aefb755a86b33770311f403e0b0f22bdb28a01e15b78b44cf882fc636fe",
+   "fetched_at": "2026-11-04T22:10:53.938370+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-prodesk-2-sff-g1i-desktop-pc-d8bm3pc.html",
+   "final_url": "https://www.hpstore.cn/hp-prodesk-2-sff-g1i-desktop-pc-d8bm3pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 841841,
+   "sha256": "c9877b02bb6aee0646280c8a7f2c975f861e199f40f24325550945525b1f998d",
+   "fetched_at": "2026-11-04T22:10:56.084774+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/desktops/omen-16l-gaming-desktop-tg03-110bcn-pc-d15fjpa.html",
+   "final_url": "https://www.hpstore.cn/omen-16l-gaming-desktop-tg03-110bcn-pc-d15fjpa.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/desktops/omen-16l-gaming-desktop-tg03-110bcn-pc-d15fjpa.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/omen-16l-gaming-desktop-tg03-110bcn-pc-d15fjpa.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 936461,
+   "sha256": "8aa88b7c1d1af5d7ccfface1d438c52f237b33557fd983b2edbb17e26b9fdf91",
+   "fetched_at": "2026-11-04T22:10:58.953008+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-7-ai-14-hg0004tu-d5xl8pa.html",
+   "final_url": "https://www.hpstore.cn/book-7-ai-14-hg0004tu-d5xl8pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 895606,
+   "sha256": "c3a868faba8ad82e6c8946730255373844543cdd5d281e8c384e7c6586174d0b",
+   "fetched_at": "2026-11-04T22:11:00.245432+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-pro-aero-ai-14-ku0030tu-e24c5pa.html",
+   "final_url": "https://www.hpstore.cn/book-pro-aero-ai-14-ku0030tu-e24c5pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 878981,
+   "sha256": "4e686e7cba94250d730edbd0addc1c50a0b8e6480f619235e053b8aa03774e55",
+   "fetched_at": "2026-11-04T22:11:02.394988+00:00"
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/h/p/hp-cn-only-omnibook-7-yaoming-front_4_1_1.png",
+   "final_url": "https://media.hpstore.cn/catalog/product/h/p/hp-cn-only-omnibook-7-yaoming-front_4_1_1.png",
+   "status": 200,
+   "redirects": [],
+   "content_type": "image/png",
+   "bytes": 69661,
+   "sha256": "b65c29fc3eb3b7678a142be1e06fe2c998f52c1a38661fe73da9927d0c49a1d6",
+   "fetched_at": "2026-11-04T22:11:03.590926+00:00",
+   "width": 700,
+   "height": 525,
+   "format": "PNG",
+   "ok": false,
+   "reason": "image fails status/type/bytes/width policy"
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/h/p/hp-cn-only-omnibook-7-yaoming-front_4_1_1.png",
+   "final_url": "https://media.hpstore.cn/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/h/p/hp-cn-only-omnibook-7-yaoming-front_4_1_1.png",
+   "status": 200,
+   "redirects": [],
+   "content_type": "image/png",
+   "bytes": 69661,
+   "sha256": "b65c29fc3eb3b7678a142be1e06fe2c998f52c1a38661fe73da9927d0c49a1d6",
+   "fetched_at": "2026-11-04T22:11:05.724597+00:00",
+   "width": 700,
+   "height": 525,
+   "format": "PNG",
+   "ok": false,
+   "reason": "image fails status/type/bytes/width policy"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-omnibook-3-laptop-14-hu0052tu-d61d1pa.html",
+   "final_url": "https://www.hpstore.cn/hp-omnibook-3-laptop-14-hu0052tu-d61d1pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 881214,
+   "sha256": "49d1759fa470d403b1336e97e6db849ea9b201551841841e2207c035bfcf447d",
+   "fetched_at": "2026-11-04T22:11:06.777553+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-7-ai-14-hg0013tu-d78c2pa.html",
+   "final_url": "https://www.hpstore.cn/book-7-ai-14-hg0013tu-d78c2pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 906142,
+   "sha256": "abe8a32499a5df36fef530b88f66a8421b3334163b612052de3399456d9adad2",
+   "fetched_at": "2026-11-04T22:11:08.861326+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-7-aero-ai-14-ku0032tu-e6ea6pa.html",
+   "final_url": "https://www.hpstore.cn/book-7-aero-ai-14-ku0032tu-e6ea6pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 870392,
+   "sha256": "9d56632afbc5cc8edb83067ee47b6516d45fc363ea7b7c53f1adf695d2741025",
+   "fetched_at": "2026-11-04T22:11:10.961915+00:00"
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/h/p/hp-cn-only-omnibook-7-yaoming-front_4_1_1_1.png",
+   "final_url": "https://media.hpstore.cn/catalog/product/h/p/hp-cn-only-omnibook-7-yaoming-front_4_1_1_1.png",
+   "status": 200,
+   "redirects": [],
+   "content_type": "image/png",
+   "bytes": 69661,
+   "sha256": "b65c29fc3eb3b7678a142be1e06fe2c998f52c1a38661fe73da9927d0c49a1d6",
+   "fetched_at": "2026-11-04T22:11:11.989135+00:00",
+   "width": 700,
+   "height": 525,
+   "format": "PNG",
+   "ok": false,
+   "reason": "image fails status/type/bytes/width policy"
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/h/p/hp-cn-only-omnibook-7-yaoming-front_4_1_1_1.png",
+   "final_url": "https://media.hpstore.cn/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/h/p/hp-cn-only-omnibook-7-yaoming-front_4_1_1_1.png",
+   "status": 200,
+   "redirects": [],
+   "content_type": "image/png",
+   "bytes": 69661,
+   "sha256": "b65c29fc3eb3b7678a142be1e06fe2c998f52c1a38661fe73da9927d0c49a1d6",
+   "fetched_at": "2026-11-04T22:11:14.343812+00:00",
+   "width": 700,
+   "height": 525,
+   "format": "PNG",
+   "ok": false,
+   "reason": "image fails status/type/bytes/width policy"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-omnibook-7-14-inch-laptop-next-gen-ai-pc-d9ul7pa.html",
+   "final_url": "https://www.hpstore.cn/hp-omnibook-7-14-inch-laptop-next-gen-ai-pc-kh0049au-d9ul7pa.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/hp-omnibook-7-14-inch-laptop-next-gen-ai-pc-d9ul7pa.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/hp-omnibook-7-14-inch-laptop-next-gen-ai-pc-kh0049au-d9ul7pa.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 880662,
+   "sha256": "34b1d5c368a19ae2da76d2eff6d54777fdf31d207ab62614c7e58acbec88e2ba",
+   "fetched_at": "2026-11-04T22:11:16.027147+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-5-ai-14-mh0914tu-e7td9pa.html",
+   "final_url": "https://www.hpstore.cn/book-5-ai-14-mh0914tu-e7td9pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 856271,
+   "sha256": "f8b61f4b3726613cb83116314a424e2c41a058469718c502be6e316c209f02a4",
+   "fetched_at": "2026-11-04T22:11:17.474164+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-ultra-ai-14-kd0266tu-d5ek1pa.html",
+   "final_url": "https://www.hpstore.cn/book-ultra-ai-14-kd0266tu-d5ek1pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 887280,
+   "sha256": "6e7ee49a334e919e1732cdd2ce1e5add9cf3a7a2b717a609b770ac7004db8499",
+   "fetched_at": "2026-11-04T22:11:19.620267+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-5-ai-14-mh0913tu-e7td7pa.html",
+   "final_url": "https://www.hpstore.cn/book-5-ai-14-mh0913tu-e7td7pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 856661,
+   "sha256": "85abdaf4340f0b8fc1ade05d22f0f24d438f858a1c82a31e21c719650cd1a713",
+   "fetched_at": "2026-11-04T22:11:21.706793+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-5-ai-14-mh0912tu-e7td6pa.html",
+   "final_url": "https://www.hpstore.cn/book-5-ai-14-mh0912tu-e7td6pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 870454,
+   "sha256": "e0dc137260d8b11e5098f206c931a0235c4b89340c229fb7937d76663b4b8555",
+   "fetched_at": "2026-11-04T22:11:23.826052+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-5-ai-14-mh0911tu-e7td5pa.html",
+   "final_url": "https://www.hpstore.cn/book-5-ai-14-mh0911tu-e7td5pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 870487,
+   "sha256": "9640779c40a02760158e97e302f87a921657f76f8d67edcdb91015e494f390e4",
+   "fetched_at": "2026-11-04T22:11:25.927934+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-5-ai-14-mh0904tu-e7td4pa.html",
+   "final_url": "https://www.hpstore.cn/book-5-ai-14-mh0904tu-e7td4pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 862379,
+   "sha256": "0228f87b6210f823168d9198d24394ff188288454aab31e2730a21a215e0fe7f",
+   "fetched_at": "2026-11-04T22:11:27.935685+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-x-ai-14-ka0005tu-d44qgpa.html",
+   "final_url": "https://www.hpstore.cn/book-x-ai-14-ka0005tu-d44qgpa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 897256,
+   "sha256": "c9e817ec20dde8870f28b351f88f5bed32a1092e2facf36f33e61ebec8286ac4",
+   "fetched_at": "2026-11-04T22:11:30.064147+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-5-ai-14-mh0901tu-e7td1pa.html",
+   "final_url": "https://www.hpstore.cn/book-5-ai-14-mh0901tu-e7td1pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 868219,
+   "sha256": "4a304ee928c2dec2f1ab91144f8fb49e5c9edd95a5fbed6b0f539fc69122d807",
+   "fetched_at": "2026-11-04T22:11:32.176633+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-x-flip-ai-14-kc0004au-d48tppa.html",
+   "final_url": "https://www.hpstore.cn/book-x-flip-ai-14-kc0004au-d48tppa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 893265,
+   "sha256": "a01ff84859b966c364a38139eebea1bb2df2bc13d4f6e2e5d7def9e139e5b187",
+   "fetched_at": "2026-11-04T22:11:34.391824+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-x-flip-ai-14-kb0008tu-d44phpa.html",
+   "final_url": "https://www.hpstore.cn/book-x-flip-ai-14-kb0008tu-d44phpa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 892080,
+   "sha256": "b9004cf2796075ad6bc4f9f78259b5b8ca6f4a1b838adf84410ff059c89396ef",
+   "fetched_at": "2026-11-04T22:11:36.393940+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-x-flip-ai-14-kb0004tu-d44qqpa.html",
+   "final_url": "https://www.hpstore.cn/book-x-flip-ai-14-kb0004tu-d44qqpa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 863960,
+   "sha256": "d0b7db7126f9b0ca5a789c870b7ee38ed57739b45b68c7f9ae8261d1ad431103",
+   "fetched_at": "2026-11-04T22:11:38.514254+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hyperx-omen-15-inch-gaming-laptop-pc-15-ga0150tx-dc2k4pa.html",
+   "final_url": "https://www.hpstore.cn/hyperx-omen-15-inch-gaming-laptop-pc-15-ga0150tx-dc2k4pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 966912,
+   "sha256": "031b04e60a1a84cdf5cbf3665aa3d3cb4b2ac572f48bfb4f53d309a3f71eccf0",
+   "fetched_at": "2026-11-04T22:11:40.669701+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hyperx-16-16-am2131tx-dn9s5pa.html",
+   "final_url": "https://www.hpstore.cn/hyperx-omen-16-inch-gaming-laptop-16-am2131tx-dn9s5pa.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/hyperx-16-16-am2131tx-dn9s5pa.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/hyperx-omen-16-inch-gaming-laptop-16-am2131tx-dn9s5pa.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 980329,
+   "sha256": "b045dee88e674bfbd1d09ee386d568790fdfa3ee6b51ee4b0b3621d99905acba",
+   "fetched_at": "2026-11-04T22:11:43.350316+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/desktops/desk-s03-070rcn-bz8y8pa.html",
+   "final_url": "https://www.hpstore.cn/desk-s03-070rcn-bz8y8pa.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/desktops/desk-s03-070rcn-bz8y8pa.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/desk-s03-070rcn-bz8y8pa.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 860068,
+   "sha256": "2b2ef0496f98ea021428f7d07a07c0a5dc291662cb9a6c21b72b7ef2410e7d62",
+   "fetched_at": "2026-11-04T22:11:45.530885+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-prodesk-2-tower-desktop-pc-d3mu4pc.html",
+   "final_url": "https://www.hpstore.cn/hp-prodesk-2-tower-desktop-pc-d3mu4pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 841883,
+   "sha256": "d13238e1b3a90253b920d719057d16e1f66433d99f98f46657ae364c7389d697",
+   "fetched_at": "2026-11-04T22:11:46.932705+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74x7pc.html",
+   "final_url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74x7pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 845250,
+   "sha256": "5b1af6239646602f51f37a6bac7d3a6bfcafe8da2e290bce5bf045739ff91ce1",
+   "fetched_at": "2026-11-04T22:11:49.051999+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zhan-99-pro-tower-desktop-pc-d74wzpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zhan-99-pro-tower-desktop-pc-d74wzpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 846728,
+   "sha256": "dc85bfdaafeb56d9d49586979aa8d97def45d99d614e2c913f6e383fb4bd0319",
+   "fetched_at": "2026-11-04T22:11:51.091365+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74xkpc.html",
+   "final_url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74xkpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 845149,
+   "sha256": "ba50f2d6b6249f33bfd0e26ce290fd29148fe107675a9d906f0dd553aa15ccf8",
+   "fetched_at": "2026-11-04T22:11:53.162842+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1a-desktop-pc-d8jt6pc.html",
+   "final_url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1a-desktop-pc-d8jt6pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 844016,
+   "sha256": "7b3f7b925605300ad15610257749607fabaae6800335f48b289905647832b64f",
+   "fetched_at": "2026-11-04T22:11:55.271782+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-pro-one-440-23-8-inch-g9-all-in-one-desktop-pc-d74wvpc-1.html",
+   "final_url": "https://www.hpstore.cn/hp-pro-one-440-23-8-inch-g9-all-in-one-desktop-pc-d74wlpc.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/hp-pro-one-440-23-8-inch-g9-all-in-one-desktop-pc-d74wvpc-1.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/hp-pro-one-440-23-8-inch-g9-all-in-one-desktop-pc-d74wlpc.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 860850,
+   "sha256": "cf820ee7f20c39ece94d17c9e480737f900c01dd9ff73330c94b12f4c4fdbc05",
+   "fetched_at": "2026-11-04T22:11:58.078210+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-pro-sff-280-g9-pc-dl7b5pc.html",
+   "final_url": "https://www.hpstore.cn/hp-pro-sff-280-g9-pc-dl7b5pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 848635,
+   "sha256": "7d724d63c7f6eda31f4ca956335b0468526844e1c8a8a9abfaf19cdfc5ab6d79",
+   "fetched_at": "2026-11-04T22:11:59.455586+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-pro-one-440-23-8-inch-g9-all-in-one-desktop-pc-d74wvpc.html",
+   "final_url": "https://www.hpstore.cn/hp-pro-one-440-23-8-inch-g9-all-in-one-desktop-pc-d74wvpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 857509,
+   "sha256": "02bdc60b6df4c251914004c8b0e3758d8951cee123a2b7e1dc73eb6aa56cc773",
+   "fetched_at": "2026-11-04T22:12:01.607102+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-pro-sff-280-g9-pc-dl7b2pc.html",
+   "final_url": "https://www.hpstore.cn/hp-pro-sff-280-g9-pc-dl7b2pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 848697,
+   "sha256": "5d02da7f11d031cdea712a792679d2db8a851faa4f203c2e5caa94ed506949bd",
+   "fetched_at": "2026-11-04T22:12:03.692577+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74wxpc.html",
+   "final_url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74wxpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 843795,
+   "sha256": "8b5d456ac1021519cbcbfad33bf46d50d0e8610aacd0fd26763458227e16e0b4",
+   "fetched_at": "2026-11-04T22:12:05.821524+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zhan-99-pro-tower-desktop-pc-d74z1pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zhan-99-pro-tower-desktop-pc-d74z1pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 846595,
+   "sha256": "63085a55e76d538dc380809f4fbbfaced17c0e9904a870f8694b8082afed1dd2",
+   "fetched_at": "2026-11-04T22:12:07.882124+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74wmpc.html",
+   "final_url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74wmpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 844193,
+   "sha256": "1904184afcbed15c7dfea4cff4e4d58ae518ed7b1e50da2311210215aa6c87b6",
+   "fetched_at": "2026-11-04T22:12:10.018471+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zhan-99-pro-tower-desktop-pc-d74xjpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zhan-99-pro-tower-desktop-pc-d74xjpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 846691,
+   "sha256": "adbab6395512844570f7632d9b49d3f8f8ddf316b7c48a94f23d246704eb5d92",
+   "fetched_at": "2026-11-04T22:12:12.104567+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74xspc.html",
+   "final_url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74xspc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 843303,
+   "sha256": "fcb411d68b43ba320748a9283a08a3cee8ef850407e042a73702e6eb4f90ee6c",
+   "fetched_at": "2026-11-04T22:12:14.180388+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g1ah-16-inch-notebook-pc-d89wspc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g1ah-16-inch-notebook-pc-d89wspc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 858351,
+   "sha256": "f8f71612a6e3f084232994460804e4fe8e9a9bbc852de8bfcf840c7ade22b3aa",
+   "fetched_at": "2026-11-04T22:12:16.297665+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g1ah-16-inch-notebook-pc-d89wqpc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g1ah-16-inch-notebook-pc-d89wqpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 860466,
+   "sha256": "91595383207c03445c78d22d78238c8e1f5feeaea930c95ce737f9b792140f2c",
+   "fetched_at": "2026-11-04T22:12:18.385059+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-next-gen-ai-pc-d73l3pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-next-gen-ai-pc-d73l3pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 864320,
+   "sha256": "5d1950a468f680c6ea4fab82b1ae6f603702a2b6e0348f6981d2e3a2e2d08dae",
+   "fetched_at": "2026-11-04T22:12:20.517447+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g1a-14-inch-notebook-ai-pc-d7yy4pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g1a-14-inch-notebook-ai-pc-d7yy4pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 859357,
+   "sha256": "36fddd851656d976da56881806c9962addf588b90c586b2bf312d68f7b713ef4",
+   "fetched_at": "2026-11-04T22:12:22.605305+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d71mrpc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d71mrpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 865807,
+   "sha256": "947be06ad909488c90c1543c74042ebad1774e475748d3d2ebb455767cb30f16",
+   "fetched_at": "2026-11-04T22:12:24.725152+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-elitebook-8-g1i-16-inch-notebook-ai-pc-d8ju6pc.html",
+   "final_url": "https://www.hpstore.cn/hp-elitebook-8-g1i-16-inch-notebook-ai-pc-d8ju6pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 857675,
+   "sha256": "f4186d5a19b8bd9e78bc76e00fc7eb26e1b9e076aed34ead48a7083851f35853",
+   "fetched_at": "2026-11-04T22:12:26.775161+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-omen-max-16-inch-gaming-laptop-ah1026tx-db2q1pa.html",
+   "final_url": "https://www.hpstore.cn/hp-omen-max-16-inch-gaming-laptop-ah1026tx-db2q1pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 941616,
+   "sha256": "2b43a8fe1f7f6194b348ac4e092c053dfc3d3a9f4d6e78253b3f0f03885885b9",
+   "fetched_at": "2026-11-04T22:12:28.899079+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d70dnpc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d70dnpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 864683,
+   "sha256": "54403be392f8383afb3cf03891a2e4ffb361d0b6856a801d276e8e40fb657750",
+   "fetched_at": "2026-11-04T22:12:31.008327+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-elitebook-8-g1i-16-inch-notebook-ai-pc-d8jt5pc.html",
+   "final_url": "https://www.hpstore.cn/hp-elitebook-8-g1i-16-inch-notebook-ai-pc-d8jt5pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 859265,
+   "sha256": "7b36af310373b81fe1ab19efe0aa50581839310d8603006faf0d1666c3c3fca7",
+   "fetched_at": "2026-11-04T22:12:33.086650+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-omen-max-16-inch-gaming-laptop-ah1028tx-db2q3pa.html",
+   "final_url": "https://www.hpstore.cn/hp-omen-max-16-inch-gaming-laptop-ah1028tx-db2q3pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 969255,
+   "sha256": "6d9b588d9c3967987ef74c18c9d7a49c897543ad78bf726f93104f900606f232",
+   "fetched_at": "2026-11-04T22:12:35.255144+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-ai-pc-e84pbpc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-ai-pc-e84pbpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 860292,
+   "sha256": "a990140c8c051532e041a9fbc5922bb20f09c610ab4373f5d55c34d1a4219ef4",
+   "fetched_at": "2026-11-04T22:12:37.275112+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2a-14-inch-notebook-ai-pc-da7d9pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2a-14-inch-notebook-ai-pc-da7d9pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 860740,
+   "sha256": "7377af1deddfd19ae3a51c556666fc678d06c5aa2a1357e9c777c1958877b5f1",
+   "fetched_at": "2026-11-04T22:12:39.403639+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-ai-pc-e87gtpc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-ai-pc-e87gtpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 860758,
+   "sha256": "4c017ed3b89cbda171ef654ed2040be89bfbc92305d64662f4d7445401d14789",
+   "fetched_at": "2026-11-04T22:12:41.514412+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74x0pc.html",
+   "final_url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74x0pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 844227,
+   "sha256": "65ac45962a5c98820468ff7eda5acc2cc63b6d8315722cc4809198eaec76e005",
+   "fetched_at": "2026-11-04T22:12:43.640269+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/omen-16l-gaming-desktop-tg03-111bcn-pc-d09hkpa.html",
+   "final_url": "https://www.hpstore.cn/omen-16l-gaming-desktop-tg03-111bcn-pc-d09hkpa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 935840,
+   "sha256": "0185ba92c2324651b174b3fd5c7e9e3add22a067909556237db448b33c597f16",
+   "fetched_at": "2026-11-04T22:12:45.724141+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-pro-sff-280-g9-pc-dl7b8pc.html",
+   "final_url": "https://www.hpstore.cn/hp-pro-sff-280-g9-pc-dl7b8pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 825987,
+   "sha256": "f3fd874087486cb7b8e429e902268d3949095df6f3dcea96705b33d37048a440",
+   "fetched_at": "2026-11-04T22:12:47.784062+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-pro-sff-280-g9-pc-d92dqpc.html",
+   "final_url": "https://www.hpstore.cn/hp-pro-sff-280-g9-pc-d92dqpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 816282,
+   "sha256": "eb7a2ef1eda3a0331f8bbdf307c3a98dc86fbaef7bc2092bdb7efc6e83e3f7a0",
+   "fetched_at": "2026-11-04T22:12:49.901030+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-pro-sff-280-g9-pc-d92dhpc.html",
+   "final_url": "https://www.hpstore.cn/hp-pro-sff-280-g9-pc-d92dhpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 820501,
+   "sha256": "abba4cd22844c545883ab17473376ca9b7c540ac30a482a2cd225a87f9ddf610",
+   "fetched_at": "2026-11-04T22:12:51.992288+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/desktops/66-mini-desktops-915d1pc.html",
+   "final_url": "https://www.hpstore.cn/66-mini-desktops-915d1pc.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/desktops/66-mini-desktops-915d1pc.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/66-mini-desktops-915d1pc.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 815504,
+   "sha256": "dbd9c4ec8893c7c1fe782e7f2a889a151045617b212796502bb65af7f2517524",
+   "fetched_at": "2026-11-04T22:12:54.798820+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/desktops/zhan-99-desktops-7z5s1pc.html",
+   "final_url": "https://www.hpstore.cn/zhan-99-desktops-7z5s1pc.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/desktops/zhan-99-desktops-7z5s1pc.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/zhan-99-desktops-7z5s1pc.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 799630,
+   "sha256": "695ad8bd69204ce0dbe0537321f416894efc394a2c7cddeb8ba96fc123440b1d",
+   "fetched_at": "2026-11-04T22:12:56.995584+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/desktops/zhan-99-desktops-9x2y9pc.html",
+   "final_url": "https://www.hpstore.cn/zhan-99-desktops-9x2y9pc.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/desktops/zhan-99-desktops-9x2y9pc.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/zhan-99-desktops-9x2y9pc.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 795629,
+   "sha256": "5a179fa021bda4bf7f59afac1e5496bf3fdedcadd38561bf785c5b15cdbb6559",
+   "fetched_at": "2026-11-04T22:12:59.097298+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/zhan-99-desktops-a93szpc.html",
+   "final_url": "https://www.hpstore.cn/zhan-99-desktops-a93szpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 805998,
+   "sha256": "0672a2d330ee3a5cdc9a84368aba5e96f1a384955cc6fff52758040096d7731b",
+   "fetched_at": "2026-11-04T22:13:00.392886+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74xmpc.html",
+   "final_url": "https://www.hpstore.cn/hp-prodesk-2-tower-g1i-desktop-pc-d74xmpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 821421,
+   "sha256": "7ddf48e8c927ea0c59fd82c6751991639b6564c11feb82e14707fcd5bd822935",
+   "fetched_at": "2026-11-04T22:13:02.497590+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-5-ai-14-mh0903tu-e7td3pa.html",
+   "final_url": "https://www.hpstore.cn/book-5-ai-14-mh0903tu-e7td3pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 853881,
+   "sha256": "3d16955653bb2e6cae54c10fe2c01351311a69b3eeb42f6a06c92fe8b7cf6803",
+   "fetched_at": "2026-11-04T22:13:04.627445+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2a-16-inch-notebook-ai-pc-d9zd6pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2a-16-inch-notebook-ai-pc-d9zd6pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 860764,
+   "sha256": "bc4461891dd653ea507dfeafa16560fdc4cae63a6820e8c8b9963bd5c0544eb0",
+   "fetched_at": "2026-11-04T22:13:06.708934+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-ai-pc-e87gkpc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-ai-pc-e87gkpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 860223,
+   "sha256": "ab36b916799046c26071b1e0c934a165f96b808ec8bd7528d995b541da5b40be",
+   "fetched_at": "2026-11-04T22:13:08.835969+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-omnibook-3-laptop-14-hu0053tu-d61d2pa.html",
+   "final_url": "https://www.hpstore.cn/hp-omnibook-3-laptop-14-hu0053tu-d61d2pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 874343,
+   "sha256": "f5b85f8d3fe671f072cf1cb651947acdc4f914d23d8af2a20b44216f9d46e8a4",
+   "fetched_at": "2026-11-04T22:13:10.925579+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2a-16-inch-notebook-ai-pc-d9ze3pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2a-16-inch-notebook-ai-pc-d9ze3pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 861256,
+   "sha256": "057027f52cd27477511e6ca14509b7f44b933b75c09f6bf3040ccc1dc996b49d",
+   "fetched_at": "2026-11-04T22:13:12.992563+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-x-flip-ai-14-kc0001au-d48tlpa.html",
+   "final_url": "https://www.hpstore.cn/book-x-flip-ai-14-kc0001au-d48tlpa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 892661,
+   "sha256": "fce2dc8962f8bb248dc82eb1f15e838cdf86aa96d888baf15e4905534af47846",
+   "fetched_at": "2026-11-04T22:13:15.055874+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-elitebook-8-g1i-14-inch-notebook-ai-pc-d89wdpc.html",
+   "final_url": "https://www.hpstore.cn/hp-elitebook-8-g1i-14-inch-notebook-ai-pc-d89wdpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 859860,
+   "sha256": "b683634901147283bd87bd132e986b5f8e8629b7e98982142c74b6cac5c27f51",
+   "fetched_at": "2026-11-04T22:13:17.244143+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-elitebook-ultra-14-inch-notebook-ai-pc-d89w6pc.html",
+   "final_url": "https://www.hpstore.cn/hp-elitebook-ultra-14-inch-notebook-ai-pc-d89w6pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 862286,
+   "sha256": "c0d031fac6c6ce5716aa811cbb48cfb6ae91599f27b9979cda7acbf769e48bfb",
+   "fetched_at": "2026-11-04T22:13:19.343450+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hyperx-omen-16-inch-gaming-laptop-16-ap1101ax-dz5g5pa.html",
+   "final_url": "https://www.hpstore.cn/hyperx-omen-16-inch-gaming-laptop-16-ap1101ax-dz5g5pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 954493,
+   "sha256": "9373945bc1da06108144d4144cb462ffe4e36b64dc50462e22be1b53b4f2bbda",
+   "fetched_at": "2026-11-04T22:13:21.453785+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-elitebook-8-g2i-14-inch-notebook-next-gen-ai-pc-d78w6pc.html",
+   "final_url": "https://www.hpstore.cn/hp-elitebook-8-g2i-14-inch-notebook-next-gen-ai-pc-d78w6pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 866947,
+   "sha256": "af15e01b7a0332c2ba2f9412750fdbd6e7d624aabadfaf6c0b5004089c5c9c88",
+   "fetched_at": "2026-11-04T22:13:23.551700+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-x-flip-ai-14-kc0003au-d48tnpa.html",
+   "final_url": "https://www.hpstore.cn/book-x-flip-ai-14-kc0003au-d48tnpa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 894347,
+   "sha256": "139343a647a0c2cc8d5e540d30c02c85c0c8af19a7ad6ae27fd7004bad6aec7e",
+   "fetched_at": "2026-11-04T22:13:25.624797+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-x-flip-ai-16-cb0006tu-d43mrpa.html",
+   "final_url": "https://www.hpstore.cn/book-x-flip-ai-16-cb0006tu-d43mrpa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 893101,
+   "sha256": "97d418efcc1fc9b9fb010ddb8303451711992b8b6ee9acad5c1caed646dec85d",
+   "fetched_at": "2026-11-04T22:13:27.719142+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hyperx-omen-16-inch-gaming-laptop-16-ap1098ax-dz5g2pa.html",
+   "final_url": "https://www.hpstore.cn/hyperx-omen-16-inch-gaming-laptop-16-ap1098ax-dz5g2pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 952579,
+   "sha256": "f78eb08236ba409d80d62c45a1517128e4e64b8f69c3d5ba4203d5261e530eb5",
+   "fetched_at": "2026-11-04T22:13:29.804609+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2ir-14-inch-notebook-next-gen-ai-pc-db1r4pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2ir-14-inch-notebook-next-gen-ai-pc-db1r4pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 857465,
+   "sha256": "78b0c1cb02f3548adc2ebdec91a26e2abc1633b9b6f29bcad1b9e139b3bb20ab",
+   "fetched_at": "2026-11-04T22:13:31.936624+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-ai-pc-e87gqpc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-ai-pc-e87gqpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 849678,
+   "sha256": "46977249147941f9935baca5e6577933e583377048f7f3121bd472f5c7e1e679",
+   "fetched_at": "2026-11-04T22:13:34.011969+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2a-16-inch-notebook-ai-pc-da7g7pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2a-16-inch-notebook-ai-pc-da7g7pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 863910,
+   "sha256": "c55abf9868073241c6ace62157aac4db8bf775556773f433d0f5897f1d35b809",
+   "fetched_at": "2026-11-04T22:13:36.089690+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-elitebook-8-g1i-14-inch-notebook-ai-pc-d7mr7pc.html",
+   "final_url": "https://www.hpstore.cn/hp-elitebook-8-g1i-14-inch-notebook-ai-pc-d7mr7pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 859778,
+   "sha256": "9138875bede50fe8a1372f7eee8766b52b5d669339582f84c5181ed631f853a7",
+   "fetched_at": "2026-11-04T22:13:38.229195+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2a-14-inch-notebook-ai-pc-da7d8pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2a-14-inch-notebook-ai-pc-da7d8pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 863336,
+   "sha256": "4d122be60d43e5fbfe6ac483e02859c6e24632a39168c12aae77065440d07423",
+   "fetched_at": "2026-11-04T22:13:40.195265+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-ai-pc-e87gppc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-ai-pc-e87gppc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 849734,
+   "sha256": "a4ea1b94b83c676fd00614f2c686fafd9e1b9cc354a23ef0c267b2e57593bb1a",
+   "fetched_at": "2026-11-04T22:13:42.582022+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-5-ai-14-mh0902tu-e7td2pa.html",
+   "final_url": "https://www.hpstore.cn/book-5-ai-14-mh0902tu-e7td2pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 867686,
+   "sha256": "a29addc149ce2f581e85a76148f9e0aa141a78935b4f3beb0db2c575f5b35c41",
+   "fetched_at": "2026-11-04T22:13:44.500613+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2a-16-inch-notebook-ai-pc-d9ze2pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2a-16-inch-notebook-ai-pc-d9ze2pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 854153,
+   "sha256": "6bfa7b0a1d9f58d949d0904dc4a1ade2644dab65499fa85c4736ed5b0d9aa03e",
+   "fetched_at": "2026-11-04T22:13:46.646207+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-next-gen-ai-pc-d8qm4pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-next-gen-ai-pc-d8qm4pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 865488,
+   "sha256": "9443a7dd372a41533e11ec7c50119711b3829eb20863cab3a53cc5d3eaf4e5a0",
+   "fetched_at": "2026-11-04T22:13:48.749983+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d8ct2pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d8ct2pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 866428,
+   "sha256": "fb9a7f2d76296b55bcd4ec2eff7c5feaaaf8ef4d7bcbe3b9d5045cc8ec011cae",
+   "fetched_at": "2026-11-04T22:13:50.798866+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-elitebook-8-g1i-16-inch-notebook-ai-pc-d88rspc.html",
+   "final_url": "https://www.hpstore.cn/hp-elitebook-8-g1i-16-inch-notebook-ai-pc-d88rspc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 858676,
+   "sha256": "3eebfb82a76fbf243ba5d43948cc85a827648db2e0a78a8f28572b4481bd6fef",
+   "fetched_at": "2026-11-04T22:13:52.923184+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-ai-pc-e87gnpc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-ai-pc-e87gnpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 849787,
+   "sha256": "cdab01835a79a05c0a667801e61b5fa6d9c6be2380c4081026f34ac6e0d7e8e3",
+   "fetched_at": "2026-11-04T22:13:55.038438+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-elitebook-6-g2i-14-inch-notebook-next-gen-ai-pc-d85lhpc.html",
+   "final_url": "https://www.hpstore.cn/hp-elitebook-6-g2i-14-inch-notebook-next-gen-ai-pc-d85lhpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 861051,
+   "sha256": "251d55dff5f1f8edb72aeec9826ad15a86ed2b9378305b685a52546dbe5aec94",
+   "fetched_at": "2026-11-04T22:13:57.117069+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2a-14-inch-notebook-next-gen-ai-pc-db4x9pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2a-14-inch-notebook-next-gen-ai-pc-db4x9pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 865025,
+   "sha256": "6c33678bafff834a6f64a9ccc6fb9b96a1d335eba8812fc25a58049d5b9d6cc5",
+   "fetched_at": "2026-11-04T22:13:59.232807+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2a-16-inch-notebook-next-gen-ai-pc-dc0r0pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2a-16-inch-notebook-next-gen-ai-pc-dc0r0pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 865134,
+   "sha256": "2cf0c8f44ebf89a0363eb0cfcc5855ab6eb1eacb830ca67cbff9485b777133e2",
+   "fetched_at": "2026-11-04T22:14:01.296847+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-elitebook-ultra-14-inch-notebook-ai-pc-d89y1pc.html",
+   "final_url": "https://www.hpstore.cn/hp-elitebook-ultra-14-inch-notebook-ai-pc-d89y1pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 863774,
+   "sha256": "0b50e84c3d59bf653a8e4b33a1ea435966b2255ba0a95d2b3b1e3cce0075f7ef",
+   "fetched_at": "2026-11-04T22:14:03.396632+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-elitebook-6-g2a-14-inch-notebook-next-gen-ai-pc-da3p5pc.html",
+   "final_url": "https://www.hpstore.cn/hp-elitebook-6-g2a-14-inch-notebook-next-gen-ai-pc-da3p5pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 859899,
+   "sha256": "86c1b9ab9c8032a8880722a495d5d6057f024189d547d47d5cd03f3656167e0d",
+   "fetched_at": "2026-11-04T22:14:05.528107+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-elitebook-8-g2i-16-inch-notebook-next-gen-ai-pc-d76zbpc.html",
+   "final_url": "https://www.hpstore.cn/hp-elitebook-8-g2i-16-inch-notebook-next-gen-ai-pc-d76zbpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 867366,
+   "sha256": "de07dd37260374c838862220aa6b85619e3bff902b94af661a24287a13093ff9",
+   "fetched_at": "2026-11-04T22:14:07.530060+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/book-7-aero-ai-14-ku0027tu-dp9l1pa.html",
+   "final_url": "https://www.hpstore.cn/book-7-aero-ai-14-ku0027tu-dp9l1pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 854923,
+   "sha256": "6798e1e1e36dcded24fb35f2491752ed29c1389b366d07bb1a7c2d663bdbe4f0",
+   "fetched_at": "2026-11-04T22:14:09.741805+00:00"
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/h/p/hp-cn-only-omnibook-7-yaoming-front_4.png",
+   "final_url": "https://media.hpstore.cn/catalog/product/h/p/hp-cn-only-omnibook-7-yaoming-front_4.png",
+   "status": 200,
+   "redirects": [],
+   "content_type": "image/png",
+   "bytes": 69661,
+   "sha256": "b65c29fc3eb3b7678a142be1e06fe2c998f52c1a38661fe73da9927d0c49a1d6",
+   "fetched_at": "2026-11-04T22:14:11.030813+00:00",
+   "width": 700,
+   "height": 525,
+   "format": "PNG",
+   "ok": false,
+   "reason": "image fails status/type/bytes/width policy"
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/h/p/hp-cn-only-omnibook-7-yaoming-front_4.png",
+   "final_url": "https://media.hpstore.cn/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/h/p/hp-cn-only-omnibook-7-yaoming-front_4.png",
+   "status": 200,
+   "redirects": [],
+   "content_type": "image/png",
+   "bytes": 69661,
+   "sha256": "b65c29fc3eb3b7678a142be1e06fe2c998f52c1a38661fe73da9927d0c49a1d6",
+   "fetched_at": "2026-11-04T22:14:13.453341+00:00",
+   "width": 700,
+   "height": 525,
+   "format": "PNG",
+   "ok": false,
+   "reason": "image fails status/type/bytes/width policy"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2a-14-inch-notebook-ai-pc-d9pm5pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2a-14-inch-notebook-ai-pc-d9pm5pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 863721,
+   "sha256": "1687868bb2cfab165fa823736a8f42d018d999b39010372e4c92f08e9bcd6e87",
+   "fetched_at": "2026-11-04T22:14:14.549091+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-245-14-inch-notebook-pc-7y0y4pc.html",
+   "final_url": "https://www.hpstore.cn/hp-245-14-inch-notebook-pc-7y0y4pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 810875,
+   "sha256": "2819440338f23cda02f03396696e7dc0ecd762d6b98415f43248fb7d84646796",
+   "fetched_at": "2026-11-04T22:14:16.695080+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2a-14-inch-notebook-ai-pc-d9pm7pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2a-14-inch-notebook-ai-pc-d9pm7pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 835863,
+   "sha256": "536f52b54c27f8a9ab90494b08214ade4577f30494e88c69dee77e78dab5b9c3",
+   "fetched_at": "2026-11-04T22:14:18.706803+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-next-gen-ai-pc-d71xdpc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-next-gen-ai-pc-d71xdpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 835828,
+   "sha256": "25a67dbe428b67ef131383891bf01bfcc6c5b045e703c70f4496dc3b6182c9ad",
+   "fetched_at": "2026-11-04T22:14:20.801969+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/probook4-g1ah-16-inch-g8a-notebook-bl9c1pc.html",
+   "final_url": "https://www.hpstore.cn/probook4-g1ah-16-inch-g8a-notebook-bl9c1pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 809698,
+   "sha256": "7206dc7f4b3ce06494c485754bae9c62e94be24f22714c9f944a024083a06872",
+   "fetched_at": "2026-11-04T22:14:22.901985+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g1ir-14-inch-notebook-ai-pc-cf7v8pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g1ir-14-inch-notebook-ai-pc-cf7v8pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 803358,
+   "sha256": "92a17f6782d81700db73bd1590011a79d10a1c90cba93bab31f6fb10a335273d",
+   "fetched_at": "2026-11-04T22:14:24.989087+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-elitebook-6-g2i-14-inch-notebook-next-gen-ai-pc-d85lgpc.html",
+   "final_url": "https://www.hpstore.cn/hp-elitebook-6-g2i-14-inch-notebook-next-gen-ai-pc-d85lgpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 833067,
+   "sha256": "56244b0b482e1609e78a271f31b2456c55fd83b909c5c1165435516ef490dd44",
+   "fetched_at": "2026-11-04T22:14:27.139664+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-next-gen-ai-pc-d73l3pc-1.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-next-gen-ai-pc-d73l1pc.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-next-gen-ai-pc-d73l3pc-1.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/hp-probook-4-g2i-14-inch-notebook-next-gen-ai-pc-d73l1pc.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 822723,
+   "sha256": "099ca262f79136486b94a9cde40f032cbb0d25ce568ef9bf4c414925ff4b87f6",
+   "fetched_at": "2026-11-04T22:14:29.774025+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d71mrpc-1.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d71mqpc.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d71mrpc-1.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d71mqpc.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 824335,
+   "sha256": "3ffb4f65f7a8a565abba8ebfa0a6514be4f0570cc9ead4fa7c04414e3234805d",
+   "fetched_at": "2026-11-04T22:14:32.133178+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d71mqpc-1.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d71mwpc.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d71mqpc-1.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/hp-probook-4-g2i-16-inch-notebook-next-gen-ai-pc-d71mwpc.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 820175,
+   "sha256": "7b34df98d5db3e7f8d3d515d2cb39bc7e9529716e5489e80cf8d52c3e661d4a2",
+   "fetched_at": "2026-11-04T22:14:34.030970+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2a-14-inch-notebook-next-gen-ai-pc-db4y1pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2a-14-inch-notebook-next-gen-ai-pc-db4y1pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 836821,
+   "sha256": "5293f1d125dc67125fc1249c2840386fe46c1f3c3e7aab518b1e930ebed71236",
+   "fetched_at": "2026-11-04T22:14:35.550368+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-probook-4-g2a-16-inch-notebook-next-gen-ai-pc-dc0q7pc.html",
+   "final_url": "https://www.hpstore.cn/hp-probook-4-g2a-16-inch-notebook-next-gen-ai-pc-dc0q7pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 837305,
+   "sha256": "093f1cfa7e4c3e2dbe8ec1e3cd5816cefbdf0e87fbffdabd207bb68dbf9bdd6a",
+   "fetched_at": "2026-11-04T22:14:37.594897+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-elitebook-6-g2a-16-inch-notebook-next-gen-ai-pc-da3f4pc.html",
+   "final_url": "https://www.hpstore.cn/hp-elitebook-6-g2a-16-inch-notebook-next-gen-ai-pc-da3f4pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 832058,
+   "sha256": "d1210e46d20060b2c2230f598591b2fe1ec12c747d22696c6af26ebc337cbbc2",
+   "fetched_at": "2026-11-04T22:14:39.671198+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-omen-max-16-inch-gaming-laptop-ah1027tx-db2q2pa.html",
+   "final_url": "https://www.hpstore.cn/hp-omen-max-16-inch-gaming-laptop-ah1027tx-db2q2pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 968454,
+   "sha256": "815c150d853ffb748ae13dc6059ae221412c0a778a83ae6efa1e8aaccdaea3d4",
+   "fetched_at": "2026-11-04T22:14:41.814414+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/desk-mini-m05-0007cn-pc-e3ev0pa.html",
+   "final_url": "https://www.hpstore.cn/desk-mini-m05-0007cn-pc-e3ev0pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 858236,
+   "sha256": "d6a5336033d012b9081b768c7412c31bac6d4a625797b971b5181d53379612f3",
+   "fetched_at": "2026-11-04T22:14:43.908819+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/studio-24-cu012wcn-d2mf6pa.html",
+   "final_url": "https://www.hpstore.cn/studio-24-cu012wcn-d2mf6pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 898400,
+   "sha256": "c07ea105c18292e7d99f79dabe80a2b7353e3aa0d93ae30cebbc08d31cdd307c",
+   "fetched_at": "2026-11-04T22:14:46.020444+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5m9pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5m9pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 877343,
+   "sha256": "3b4b5de22886b161aef786e810204966dfa0395cf4b4b4833be78bb7a0a1ba86",
+   "fetched_at": "2026-11-04T22:14:48.012633+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g1i-14-inch-mobile-workstation-ai-pc-d7mv7pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g1i-14-inch-mobile-workstation-ai-pc-d7mv7pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 838158,
+   "sha256": "693300690221e36b6b790210082cd90bad4d7e259029f19a01b4485a9bba1be6",
+   "fetched_at": "2026-11-04T22:14:50.246642+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2a-14-inch-mobile-workstation-df5l6pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2a-14-inch-mobile-workstation-df5l6pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 866737,
+   "sha256": "64f83cdfd8fc5e14f69ddfc1823a710cd80f91f119938b865e774e4c65eaf524",
+   "fetched_at": "2026-11-04T22:14:52.359375+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2a-16-inch-mobile-workstation-df8n9pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2a-16-inch-mobile-workstation-df8n9pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 867695,
+   "sha256": "5844575fa7a401c9ea5353fea90b394e8d90e0a46ee15d5d0616b2bfc46b0ce0",
+   "fetched_at": "2026-11-04T22:14:54.435455+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2a-16-inch-mobile-workstation-df8p5pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2a-16-inch-mobile-workstation-df8p5pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 867726,
+   "sha256": "28666a0d43fad973f62273d6691d5a97488c907aa629177fd175938d2ff3fab1",
+   "fetched_at": "2026-11-04T22:14:56.545981+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-16-inch-mobile-workstation-d7yu5pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-16-inch-mobile-workstation-d7yu5pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 869962,
+   "sha256": "59ef601303dbac71480b9f0439842d447d1793eaa6e7d31a7da10820829e0a0f",
+   "fetched_at": "2026-11-04T22:14:58.622180+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-16-inch-mobile-workstation-d7yv3pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-16-inch-mobile-workstation-d7yv3pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 869945,
+   "sha256": "8c167ad5cd4f852ab7acf75febe3d2d7dc71177452a928c07c859e263094ef85",
+   "fetched_at": "2026-11-04T22:15:00.701613+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-6-g2a-16-inch-mobile-workstation-pc-e70wnpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-6-g2a-16-inch-mobile-workstation-pc-e70wnpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 865147,
+   "sha256": "1afa73076de2873ec6dde4cecadb5bf8c08051ed869d7b5ccfd90ecbac8ef55d",
+   "fetched_at": "2026-11-04T22:15:02.781547+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/zhan-66-desktops-b0rc4pc.html",
+   "final_url": "https://www.hpstore.cn/zhan-66-desktops-b0rc4pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 798221,
+   "sha256": "c369f69fb8004ed15ff7c43b0766bc136a98e7ae07e035c0857cc01ad4763240",
+   "fetched_at": "2026-11-04T22:15:04.928687+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-pro-tower-280-g9-desktops-cto-tower280i-1.html",
+   "final_url": "https://www.hpstore.cn/hp-pro-tower-280-g9-desktops-cto-tower280ii.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/hp-pro-tower-280-g9-desktops-cto-tower280i-1.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/hp-pro-tower-280-g9-desktops-cto-tower280ii.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 764941,
+   "sha256": "f55575b53256da5307a6e98eb4058b88557cc88e7853790643561e216821174e",
+   "fetched_at": "2026-11-04T22:15:07.662686+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-pro-tower-280-g9-desktops-cto-tower280i.html",
+   "final_url": "https://www.hpstore.cn/hp-pro-tower-280-g9-desktops-cto-tower280i.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 764816,
+   "sha256": "7e0cbe8bb8be9bd11f6e6683b00eef68d459f4f1d72f4a28ef175678699ab13d",
+   "fetched_at": "2026-11-04T22:15:09.170370+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hyperx-max-45l-gt24-011ucn-d99bhpa.html",
+   "final_url": "https://www.hpstore.cn/hyperx-omen-max-45l-desktops-gt24-011ucn-d99bhpa.html",
+   "status": 200,
+   "redirects": [
+    {
+     "url": "https://www.hpstore.cn/hyperx-max-45l-gt24-011ucn-d99bhpa.html",
+     "status": 301,
+     "location": "https://www.hpstore.cn/hyperx-omen-max-45l-desktops-gt24-011ucn-d99bhpa.html"
+    }
+   ],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 925099,
+   "sha256": "a4fdaec2032cf5e0dd8569e5b46c66bdcb75244e542ab5f6983d511a780f4484",
+   "fetched_at": "2026-11-04T22:15:12.020829+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-6-g2a-16-inch-mobile-workstation-pc-e71hfpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-6-g2a-16-inch-mobile-workstation-pc-e71hfpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 865169,
+   "sha256": "202c73518531cf67353dc737e9adac1ab9c438dabd6eda072e1ecc7eb8b22967",
+   "fetched_at": "2026-11-04T22:15:13.345551+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-6-g2a-16-inch-mobile-workstation-pc-e70xbpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-6-g2a-16-inch-mobile-workstation-pc-e70xbpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 865183,
+   "sha256": "cde43cdf555bd704a07c3367890be0ae8dee3fb8a03b5ede71bcab6b92cb700e",
+   "fetched_at": "2026-11-04T22:15:15.423770+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-6-g2a-16-inch-mobile-workstation-pc-e70x8pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-6-g2a-16-inch-mobile-workstation-pc-e70x8pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 865106,
+   "sha256": "ec1244d522a6e7e8c8c84e7e3a75f0ebcd345bc01a1d8ca59dee39820ae2d9f1",
+   "fetched_at": "2026-11-04T22:15:17.500702+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dy4e6pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dy4e6pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 877919,
+   "sha256": "61f105cf852c93346aca9d233637376e4597560dc6f826828eb5e750f12e5a02",
+   "fetched_at": "2026-11-04T22:15:19.616408+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-16-inch-ai-pc-mobile-workstation-d84f6pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-16-inch-ai-pc-mobile-workstation-d84f6pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 849064,
+   "sha256": "a9010756a84c8041163ba2b6545451f927c3ebc4fc888b3558dd3810f072a384",
+   "fetched_at": "2026-11-04T22:15:21.707932+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-16-inch-mobile-workstation-d7yv0pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-16-inch-mobile-workstation-d7yv0pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 866823,
+   "sha256": "28d15f4d53d841d3526d39f7f783cbfa1028ef2462ac98da942c4a70a4c8fe43",
+   "fetched_at": "2026-11-04T22:15:23.806162+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2a-16-inch-mobile-workstation-df8p0pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2a-16-inch-mobile-workstation-df8p0pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 866748,
+   "sha256": "c101536d1b7d7ef6e2c5ab9b6f567ff3e968a4d9c7b5bb760ea9d0aa0e08f393",
+   "fetched_at": "2026-11-04T22:15:25.973652+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g1i-14-inch-mobile-workstation-ai-pc-d7vb3pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g1i-14-inch-mobile-workstation-ai-pc-d7vb3pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 866639,
+   "sha256": "ee4fca21f9b96f531c133840f44cc13b08fd5dd43994571f8fa1a2a8ffb85793",
+   "fetched_at": "2026-11-04T22:15:28.020665+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d93rtpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d93rtpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 877014,
+   "sha256": "05aee18e4c67ca35c3a42ecb4c9af10da489adb24aae9a7d101c42018b37f347",
+   "fetched_at": "2026-11-04T22:15:30.191938+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5n0pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5n0pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 877344,
+   "sha256": "4a98d09d6422cbcc82e24c21dfa146f8ca8fab15ec8636cf9a07128e7ac0305b",
+   "fetched_at": "2026-11-04T22:15:32.129849+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2a-16-inch-mobile-workstation-df8l7pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2a-16-inch-mobile-workstation-df8l7pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 866967,
+   "sha256": "60b8f1df69986f838efc74136ba3fb42dfc4824bb7a793200695b2f225a117f0",
+   "fetched_at": "2026-11-04T22:15:34.242302+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2a-14-inch-mobile-workstation-df5l4pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2a-14-inch-mobile-workstation-df5l4pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 870613,
+   "sha256": "e2dc6e5fcb9c2f6a433b72ac785c17995109ba0d0f0c82733cbb8ddfe16926dd",
+   "fetched_at": "2026-11-04T22:15:36.407959+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2a-14-inch-mobile-workstation-de9r0pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2a-14-inch-mobile-workstation-de9r0pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 870877,
+   "sha256": "4d8f19165d57f12e6001ecd33557cb1aa3f6993d0647373e12f8fbc02da42e7d",
+   "fetched_at": "2026-11-04T22:15:38.489874+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-dc5v5pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-dc5v5pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 875932,
+   "sha256": "f87ba91d376794dda65241d839dfc17b250d5e74c8ad12ad44b6efe9610927f6",
+   "fetched_at": "2026-11-04T22:15:40.658131+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-16-inch-mobile-workstation-d80lqpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-16-inch-mobile-workstation-d80lqpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 873529,
+   "sha256": "13cc5c5113b481c1abf8b7889e84cabf700301e9adaf5ae6c66db1a4fa2e687e",
+   "fetched_at": "2026-11-04T22:15:42.740946+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-dc4v2pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-dc4v2pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 877054,
+   "sha256": "c1f8ca33645ad9388eda964e4da218d435d7895605453422b428e06261cc086e",
+   "fetched_at": "2026-11-04T22:15:44.843376+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d93rqpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d93rqpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 875834,
+   "sha256": "10277a93b8f092264eb243e950103e05300012256446bfbdc6450aacee39e549",
+   "fetched_at": "2026-11-04T22:15:46.936669+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g1i-14-inch-mobile-workstation-ai-pc-d7yy5pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g1i-14-inch-mobile-workstation-ai-pc-d7yy5pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 868854,
+   "sha256": "78089010fb912177cab12d6d127f659fe56eeb1754e7695a068fdb97ae691f47",
+   "fetched_at": "2026-11-04T22:15:49.020151+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-dh3w4pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-dh3w4pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 878322,
+   "sha256": "6bb870d37a9daf3df41cbe8a8a6795e1dcea6809e490574d298edc0f95624e93",
+   "fetched_at": "2026-11-04T22:15:51.162774+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2a-14-inch-mobile-workstation-df5l7pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2a-14-inch-mobile-workstation-df5l7pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 866439,
+   "sha256": "2ec1adfb89209ba21c16e377037ff5b7e9841dcbe129b846739466aa10d7d8a5",
+   "fetched_at": "2026-11-04T22:15:53.192986+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-dh3w3pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-dh3w3pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 878335,
+   "sha256": "9a53e856729b2c0fb0cc7f057574fdae6ec6ba0fd62c46d078469d525b094107",
+   "fetched_at": "2026-11-04T22:15:55.325719+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5p5pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5p5pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 872817,
+   "sha256": "9dd639cf7357c6389de4eb76e3cf99af335b8be6e102c3aef28ed88f19be3c37",
+   "fetched_at": "2026-11-04T22:15:57.418031+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-de3t0pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-de3t0pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 878142,
+   "sha256": "84984c4e46f837f88b0577217cdac49adc62c2f2162583afd2efd6c0966587a6",
+   "fetched_at": "2026-11-04T22:15:59.533015+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg7k7pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg7k7pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 874468,
+   "sha256": "cf37a981cc58a59843e77478bd0c6eff66a6327b3ab9b9e5c2f160224a64a090",
+   "fetched_at": "2026-11-04T22:16:01.626724+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-dg7k9pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-dg7k9pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 872279,
+   "sha256": "930e51f428013f6c4a3f6057e8e51a605cc2134d5beb874805802ff25733da7a",
+   "fetched_at": "2026-11-04T22:16:03.611095+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-dh3w6pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-dh3w6pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 872150,
+   "sha256": "b8a94387f38173beff46f430a2f6eab6192126ba04cca7ba1de0f14f45e55174",
+   "fetched_at": "2026-11-04T22:16:05.846617+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5p7pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5p7pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 870407,
+   "sha256": "d7d2ae2ce2da9273064305b65f5a338ecea27c46ce1899e713c72438e164884e",
+   "fetched_at": "2026-11-04T22:16:07.898293+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5n9pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5n9pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 871575,
+   "sha256": "ab46e2f8478bfcb745a0bdbb300a024d4f9474f92198bb59f666ef92dbdfe1c5",
+   "fetched_at": "2026-11-04T22:16:10.047149+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5p3pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5p3pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 870775,
+   "sha256": "df66e62903c0cadc02d2bfc09bc7338363571c1ae749f1ba97f97b4c203f0d69",
+   "fetched_at": "2026-11-04T22:16:12.173980+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-16-inch-ai-pc-mobile-workstation-d7xj8pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-16-inch-ai-pc-mobile-workstation-d7xj8pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 853630,
+   "sha256": "4345f5465905f01029a0ee368577a92fe64141579476f8ed2a2d4f5e3e463151",
+   "fetched_at": "2026-11-04T22:16:14.192402+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5l6pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5l6pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 872788,
+   "sha256": "d8c52ddb6c2d7b0d0dc833652a4b89e27b9d5ef228406745a05b9ddfc596ad5e",
+   "fetched_at": "2026-11-04T22:16:16.355632+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dx8h0pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dx8h0pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 872663,
+   "sha256": "d94d3b36ec40ae99c2f8796576e684b2978cc2ab301bf416048372d78f3e7bdf",
+   "fetched_at": "2026-11-04T22:16:18.406821+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dy2u4pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dy2u4pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 872672,
+   "sha256": "f6f7710322c842910c6103dd54be485452b0b078f6b24e0999b4549e69815c36",
+   "fetched_at": "2026-11-04T22:16:20.537546+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-6-g2a-16-inch-mobile-workstation-pc-e70wmpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-6-g2a-16-inch-mobile-workstation-pc-e70wmpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 865154,
+   "sha256": "1dc3b38aeada94a2d276f2dfd93a6fb91f31c9cd249391221bebbc8b1b3f2d87",
+   "fetched_at": "2026-11-04T22:16:22.542599+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dy4e8pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dy4e8pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 872673,
+   "sha256": "9e91efd5b3ec64e38e0d278da9828a76333d7ee32832ec7fc83e419472d73423",
+   "fetched_at": "2026-11-04T22:16:24.741756+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dx8g9pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dx8g9pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 877898,
+   "sha256": "720aaee164d54157f2348bc2d68d6da12e63e4d15a66ceb0ae6bff072946abe4",
+   "fetched_at": "2026-11-04T22:16:26.839841+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dy4f0pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dy4f0pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 876540,
+   "sha256": "2f129a45bd74ddf4c7a335bb458567d674aefe177423f00512bca12d76cb9353",
+   "fetched_at": "2026-11-04T22:16:28.919025+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dy4f3pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dy4f3pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 871333,
+   "sha256": "d5b1e6c141e9ba313d9caa8996264cb17d471d13a4c4abed7a0983d272830069",
+   "fetched_at": "2026-11-04T22:16:31.060641+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dx8h5pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dx8h5pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 871287,
+   "sha256": "36f1fa2e7024853e05a45f3d49a261d8bee4e98e45f26a03cb12dc76821750e5",
+   "fetched_at": "2026-11-04T22:16:33.133364+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5m7pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5m7pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 848479,
+   "sha256": "00718c07de5d545ce5c75e4dd125666a793c3e82e4ad64634a2aa06d074185ca",
+   "fetched_at": "2026-11-04T22:16:35.242992+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5p4pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5p4pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 850859,
+   "sha256": "f7a0fd376bba2c741f55a4a634fee1b4d766495cbb9ca796d78a3dced5bd626b",
+   "fetched_at": "2026-11-04T22:16:37.347142+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g1i-14-inch-mobile-workstation-ai-pc-d7zj8pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g1i-14-inch-mobile-workstation-ai-pc-d7zj8pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 835676,
+   "sha256": "2233744b9063adee28ef492c99f804b140e61bb54109ad4993c9c0523f69dc46",
+   "fetched_at": "2026-11-04T22:16:39.386916+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d93rxpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d93rxpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 848692,
+   "sha256": "c3d56c93b8f06c6164b0f1ebea6470bbcbcf34ec5bcb25bb61d2f7729e6f6bfe",
+   "fetched_at": "2026-11-04T22:16:41.519463+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-16-inch-mobile-workstation-d7xk0pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-16-inch-mobile-workstation-d7xk0pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 847759,
+   "sha256": "2e10e3f10f3944d38f5011344718e29ee32b3154544cc07a5340b0b0f6de0916",
+   "fetched_at": "2026-11-04T22:16:43.668242+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g1ak-14-inch-mobile-workstation-ai-pc-d80lvpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g1ak-14-inch-mobile-workstation-ai-pc-d80lvpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 841618,
+   "sha256": "db99a74cf20d3628a6c7bd54d226d0e6bc9593c9f7b064647af4510fe55e9a13",
+   "fetched_at": "2026-11-04T22:16:45.735892+00:00"
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/h/p/hp-zbook-8-g1ak-14-inch-mobile-workstation-lapazw14n-front_1.png",
    "status": 403,
-   "fetched_at": "2026-11-04T21:11:12.540240+00:00",
+   "fetched_at": "2026-11-04T22:16:46.873831+00:00",
    "headers": {
-    "Server": "awselb/2.0",
-    "Date": "Wed, 04 Nov 2026 21:11:11 GMT"
+    "Date": "Wed, 04 Nov 2026 22:16:46 GMT",
+    "Server": "AmazonS3",
+    "X-Cache": "Error from cloudfront",
+    "X-Amz-Cf-Pop": "BJS9-E1",
+    "X-Amz-Cf-Id": "BJIo81A5_ONc9XYx4XrThC0Updi2zAlbvlmN616CdbayD7pBxgR-qw=="
    }
   },
   {
-   "url": "https://www.hpstore.cn/hyperx-16-16-am2129tx-dp3v8pa.html",
+   "url": "https://media.hpstore.cn/catalog/product/h/p/hp-zbook-8-g1ak-14-inch-mobile-workstation-lapazw14n-front_1.png",
    "status": 403,
-   "fetched_at": "2026-11-04T21:11:19.660146+00:00",
+   "fetched_at": "2026-11-04T22:16:53.159572+00:00",
    "headers": {
-    "Server": "awselb/2.0",
-    "Date": "Wed, 04 Nov 2026 21:11:17 GMT"
+    "Date": "Wed, 04 Nov 2026 22:16:52 GMT",
+    "Server": "AmazonS3",
+    "X-Cache": "Error from cloudfront",
+    "X-Amz-Cf-Pop": "BJS9-E1",
+    "X-Amz-Cf-Id": "uyH2LDtfQKtPxiC75Nfzck_4GZWBLC-KSMEAhmOV3gEkFuxhSzcPdg=="
    }
   },
   {
-   "url": "https://www.hpstore.cn/hyperx-16-16-am2129tx-dp3v8pa.html",
+   "url": "https://media.hpstore.cn/catalog/product/h/p/hp-zbook-8-g1ak-14-inch-mobile-workstation-lapazw14n-front_1.png",
    "status": 403,
-   "fetched_at": "2026-11-04T21:11:30.425272+00:00",
+   "fetched_at": "2026-11-04T22:17:04.143058+00:00",
    "headers": {
-    "Server": "awselb/2.0",
-    "Date": "Wed, 04 Nov 2026 21:11:30 GMT"
+    "Date": "Wed, 04 Nov 2026 22:17:03 GMT",
+    "Server": "AmazonS3",
+    "X-Cache": "Error from cloudfront",
+    "X-Amz-Cf-Pop": "BJS9-E1",
+    "X-Amz-Cf-Id": "TTbdj9VRJDQ4ue2zx2L2FegL51KUKWNWlIlJB58U6FusUMz7ROL5Wg=="
    }
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/h/p/hp-zbook-8-g1ak-14-inch-mobile-workstation-lapazw14n-front_1.png",
+   "status": 403,
+   "fetched_at": "2026-11-04T22:17:06.260132+00:00",
+   "headers": {
+    "Date": "Wed, 04 Nov 2026 22:17:05 GMT",
+    "Server": "AmazonS3",
+    "X-Cache": "Error from cloudfront",
+    "X-Amz-Cf-Pop": "BJS9-E1",
+    "X-Amz-Cf-Id": "J3sIPEMkmwvLZn-Gd6i11pufrBGWQ4yhfF0d3jLjUHqNyvZNofJbng=="
+   }
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/h/p/hp-zbook-8-g1ak-14-inch-mobile-workstation-lapazw14n-front_1.png",
+   "status": 403,
+   "fetched_at": "2026-11-04T22:17:12.454251+00:00",
+   "headers": {
+    "Date": "Wed, 04 Nov 2026 22:17:11 GMT",
+    "Server": "AmazonS3",
+    "X-Cache": "Error from cloudfront",
+    "X-Amz-Cf-Pop": "BJS9-E1",
+    "X-Amz-Cf-Id": "N305cXWyafLwyVK91NxI6a8FmWY316tooyFRrd0SVFh7tmPcVke8Qw=="
+   }
+  },
+  {
+   "url": "https://media.hpstore.cn/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/h/p/hp-zbook-8-g1ak-14-inch-mobile-workstation-lapazw14n-front_1.png",
+   "status": 403,
+   "fetched_at": "2026-11-04T22:17:23.350889+00:00",
+   "headers": {
+    "Date": "Wed, 04 Nov 2026 22:17:22 GMT",
+    "Server": "AmazonS3",
+    "X-Cache": "Error from cloudfront",
+    "X-Amz-Cf-Pop": "BJS9-E1",
+    "X-Amz-Cf-Id": "jk4xlJ5vw_HWu8_pjGFHb4TweLwp7q5mAku7mkSNl_M4_fzfyYFsnw=="
+   }
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2a-14-inch-mobile-workstation-df5f7pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2a-14-inch-mobile-workstation-df5f7pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 842036,
+   "sha256": "d7f723dfef19f567c9ed69900c0c9d1b0de2b50f08ed39d5121eaa85cf9b79e3",
+   "fetched_at": "2026-11-04T22:17:24.332867+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d93rypc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d93rypc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 849933,
+   "sha256": "2424bac287cd01c783e93bf5872b01bf0aae6caa933a7a4bf3bd5227662db4c2",
+   "fetched_at": "2026-11-04T22:17:26.607162+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-d93rspc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-d93rspc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 861123,
+   "sha256": "3ab4bef19104550cb389ca5f999af8a68592eb239e1336973bb89c024f2236bb",
+   "fetched_at": "2026-11-04T22:17:28.583807+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d91p1pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d91p1pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 849909,
+   "sha256": "de00300d7ea18e2581a262cf65190926aa84808d7e8b0a6394877fd7ac807571",
+   "fetched_at": "2026-11-04T22:17:30.940551+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d93rwpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d93rwpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 851209,
+   "sha256": "54998eba05f1a14bee17f1808d566f198e50639b7fe9504cf7b8be3b68a440a2",
+   "fetched_at": "2026-11-04T22:17:32.833552+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-dv5d8pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-dv5d8pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 863377,
+   "sha256": "528b1ba6bf483d6c888c067d7232ca6ecfb2379b1196e0b2ded08997c6b1dbf0",
+   "fetched_at": "2026-11-04T22:17:34.978976+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-d93rvpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-d93rvpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 849696,
+   "sha256": "9411cad4e62a6b94fbc95d0f11a7c4f467c896ab165d663013a08cb1c6add1a7",
+   "fetched_at": "2026-11-04T22:17:37.016227+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d91vkpc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d91vkpc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 848760,
+   "sha256": "d48161cacd8892b6e4c2c9441816e15fa644b41eecfc72604e2ec5f50d7f325a",
+   "fetched_at": "2026-11-04T22:17:39.024546+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-16-inch-mobile-workstation-d7yu4pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-16-inch-mobile-workstation-d7yu4pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 839946,
+   "sha256": "9d41ed75a539d4c6ae5dbf4fda7093345ce841d9301d99567d57343a7262ff71",
+   "fetched_at": "2026-11-04T22:17:41.254881+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-de2y9pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-de2y9pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 863331,
+   "sha256": "58cf0682696872d21b34dabbd5d2add4e227583ff0cf9a2149b59d24c25c4a45",
+   "fetched_at": "2026-11-04T22:17:43.336886+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-dh3w5pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-dh3w5pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 849917,
+   "sha256": "7580543c076349ac8a64b79ea97bd6deb3869a77e730a0eb68bf523e1211386d",
+   "fetched_at": "2026-11-04T22:17:45.404314+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d92tppc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-14-inch-mobile-workstation-pc-d92tppc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 849929,
+   "sha256": "36a90c3cb83dae33f42b0f89a4bc9f8b8bc62061a9ef2f730539dd1b082a13da",
+   "fetched_at": "2026-11-04T22:17:47.531721+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5p2pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-g2i-16-inch-mobile-workstation-pc-dg5p2pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 847041,
+   "sha256": "40ee7086f34770d3a04874622735458c23801695e7bdac8d0373c1823ea1431b",
+   "fetched_at": "2026-11-04T22:17:49.537376+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-de7g9pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-8-g2i-16-inch-mobile-workstation-pc-de7g9pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 862775,
+   "sha256": "5d4ca71d1ccd37c3df8532ae5a02b62a029788de940d495b57ef8305776cf2e5",
+   "fetched_at": "2026-11-04T22:17:51.729024+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-ultra-g1a-14-inch-mobile-workstation-pc-d7va9pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-ultra-g1a-14-inch-mobile-workstation-pc-d7va9pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 843215,
+   "sha256": "d41ac74f16682d796c87b636387140c66ae4616deeebe0267ba09adce52a700d",
+   "fetched_at": "2026-11-04T22:17:53.799292+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-ultra-g1a-14-inch-mobile-workstation-pc-d7yu9pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-ultra-g1a-14-inch-mobile-workstation-pc-d7yu9pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 840780,
+   "sha256": "c6da9fa5925e7410df11175b0b3e2110366c8bd247a5035e352567667a946132",
+   "fetched_at": "2026-11-04T22:17:55.980178+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-ultra-g1a-14-inch-mobile-workstation-pc-d84f5pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-ultra-g1a-14-inch-mobile-workstation-pc-d84f5pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 840958,
+   "sha256": "20022fde7f2712a6d0047bbb719301b5fd10e54818be3e17fce87fcfa5ad4101",
+   "fetched_at": "2026-11-04T22:17:58.121638+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hp-zbook-x-16-inch-ai-pc-mobile-workstation-d7xk4pc.html",
+   "final_url": "https://www.hpstore.cn/hp-zbook-x-16-inch-ai-pc-mobile-workstation-d7xk4pc.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 825358,
+   "sha256": "cf6737347316b8d66bb700f37af9977a9f98763f94076b5b38b629bf04f5c887",
+   "fetched_at": "2026-11-04T22:18:00.083195+00:00"
+  },
+  {
+   "url": "https://www.hpstore.cn/hyperx-omen-16-inch-gaming-laptop-16-ap1094ax-dn9s7pa.html",
+   "final_url": "https://www.hpstore.cn/hyperx-omen-16-inch-gaming-laptop-16-ap1094ax-dn9s7pa.html",
+   "status": 200,
+   "redirects": [],
+   "content_type": "text/html; charset=UTF-8",
+   "bytes": 982805,
+   "sha256": "6b3ce282a823a1e5fecbb1c2af05c8e8ce0d210631d58b346b6be614c1a0733c",
+   "fetched_at": "2026-11-04T22:18:02.241128+00:00"
   }
  ],
  "retry_policy": "daily at 04:43 UTC (12:43 Asia/Shanghai)"
