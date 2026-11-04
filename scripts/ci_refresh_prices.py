@@ -50,7 +50,14 @@ def main() -> int:
         gids = gids[:a.limit]
     print(f"从发布集读到 {len(gids)} 个 gid")
 
-    res = ({"offline": True} if a.offline else refresh(gids, Path(a.public).parent / "data"))
+    res = ({"offline": True} if a.offline else refresh(gids, Path(a.public).parent / "data", identities={str(it.get("gid")): it["id"] for it in items if str(it.get("gid")) in gids}))
+    if not a.offline:
+        from goodsdex.price_history import observation, stage
+        latest_snapshot = json.loads((Path(a.public).parent / 'data/prices/latest.json').read_text())
+        observed = latest_snapshot['prices']
+        stage(Path(a.public), (observation(dict(it, price=(observed.get(str(it.get('gid'))) or {}).get('price')),
+                  at=res['fetched_at'], status=(observed.get(str(it.get('gid'))) or {}).get('missing_status'))
+              for it in items if str(it.get('gid')) in gids))
     print(json.dumps(res, ensure_ascii=False, indent=1))
     if res.get("errors"):
         print(f"::warning::价格采集有缺口，保留旧价格：{res['errors']}")

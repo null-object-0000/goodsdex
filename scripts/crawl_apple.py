@@ -40,6 +40,7 @@ def main():
         a.limit,
         pause=a.pause,
         prices_only=a.prices_only,
+        history_public=a.public,
     )
     if a.public:
         print(

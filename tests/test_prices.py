@@ -37,7 +37,7 @@ def test_failures_reported_not_silently_empty():
             json.dumps(fake).encode()
         out = prices.fetch_prices(["123"])
     assert "__error__" in out, "失败必须留痕"
-    assert "123" not in out
+    assert out["123"] == {"price": None, "missing_status": "unavailable"}
 
 
 # --------------------------------------------------------------- 发布集

@@ -100,7 +100,7 @@ def test_hourly_refresh_preserves_entire_car_even_with_colliding_mi_gid(tmp_path
     (prices / 'latest.json').write_text(json.dumps({'prices': {'123': {'price': 1, 'market_price': 2}}}))
     extra = tmp_path / 'extras.json'; extra.write_text('[]')
     called = []
-    monkeypatch.setattr(ci_refresh_prices, 'refresh', lambda gids, out: called.append(gids) or {})
+    monkeypatch.setattr(ci_refresh_prices, 'refresh', lambda gids, out, **kwargs: called.append(gids) or {})
     monkeypatch.setattr(sys, 'argv', ['ci_refresh_prices', '--public', str(public), '--supplements', str(extra)])
     assert ci_refresh_prices.main() == 0
     assert called == [[]]

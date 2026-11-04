@@ -368,6 +368,11 @@ def main():
     # Workflow success means an unavailable source was handled; never freshness.
     # Keep both the SKU archive and successful image audit byte-for-byte intact.
     if blocked:
+        if args.public:
+            from goodsdex.price_history import observation, stage
+            failed_urls = {e.get('url') for e in errors}
+            stage(args.public, (observation(r, at=audit['fetched_at'], status='unavailable')
+                  for r in previous if r.get('source_url') in failed_urls))
         print(json.dumps(dict(retained_count=len(previous), **status), ensure_ascii=False))
         return 0
     # Archive successful SKU observations; missing/failed pages never delete old data.
@@ -377,6 +382,10 @@ def main():
     if errors:
         print(json.dumps({k:v for k,v in audit.items() if k not in ['images','requests']},ensure_ascii=False))
         return 1
+    if args.public:
+        from goodsdex.price_history import observation, stage
+        stage(args.public, [*(observation(r) for r in rows),
+              *(observation(r, at=r['delisted_evidence']['fetched_at'], status='unavailable') for r in delisted_rows)])
     write_json(path,merge_hp(previous,rows + delisted_rows))
     if args.public:
         from goodsdex.supplements import metadata

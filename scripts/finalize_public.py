@@ -20,4 +20,7 @@ if __name__ == "__main__":
     assert_unique_car_ids(current)
     retained = {m['old_id'] for m in mappings(current)}
     print(json.dumps(finalize_public(args.public, previous, retained, reviewed_accessory_sha256=args.reviewed_accessory_sha256), ensure_ascii=False))
+    from goodsdex.price_history import finalize
+    meta = json.loads((args.public / 'meta.json').read_text())
+    print(json.dumps({'price_history': finalize(args.public, meta['revision'], previous)}, ensure_ascii=False))
     build_shards(args.public)

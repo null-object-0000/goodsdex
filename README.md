@@ -31,7 +31,9 @@ PYTHONPATH=src python3 scripts/crawl_apple_history.py --public public
 | `public/goods.json` | 保留的约 14 MB 整库导出；不要给客户端使用 |
 | `public/meta.json` | schema、统计、生成时间、每文件 sha256/count/bytes |
 | `public/prices/latest.json` | 最新价格快照 |
-| `public/prices/<月>.jsonl` | **价格时间序列**（按小时追加，不覆盖历史） |
+| `public/prices/<月>.jsonl` | 旧版批量快照兼容投影（不覆盖历史） |
+| `public/price-history/<月>[-a/-b].jsonl.gz` | 逐商品价格观测，独立产物，包含缺价状态 |
+| `public/price-history/index.json` | 热读月份、冷档案清单、sha256/行数/时间范围及发布 revision |
 
 **为什么数据不在 main**：代码与数据混在一个分支时，每次数据提交都在推进
 该分支的 tip，本地开发与 Actions 会互相 non-fast-forward（实测反复冲突）。
@@ -281,3 +283,5 @@ HP 下架留档：`crawl_hp.py` 仅把官方 SKU URL 落到已知官方电脑列
 
 服务排除理由：`service:installation`（安装/上门服务）、`service:other`（已确认的延保、清洗、检测、拆旧、勘测、维修、换屏换盖服务）。仅名称明确服务或无型号词且以安装结尾时排除；免安装、安装尺寸、安装套件及附赠安装保留。以旧换新等不明确条目须人工复核。服务原始事实存入 `archive/services.json`，与其它排除项同次发布。
 服务复核全清单及前后类目计数见 [服务排除验收](docs/services-20261104/README.md)。
+
+价格观测、90 天明细策略与线上导入兼容说明见 [价格历史](docs/price-history-20261104/README.md)。

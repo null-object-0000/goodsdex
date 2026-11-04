@@ -283,9 +283,13 @@ def test_hourly_mi_refresh_never_sends_apple_sku_to_mi(tmp_path, monkeypatch):
     )
     requested = []
 
-    def refresh(gids, store):
+    def refresh(gids, store, identities=None):
         requested.extend(gids)
-        return {"updated": 0, "errors": []}
+        assert identities == {'123': 'CN:mi_cn:product:1'}
+        (store / 'prices').mkdir(parents=True)
+        stamp = '2026-11-04T09:00:00+08:00'
+        (store / 'prices/latest.json').write_text(json.dumps({'fetched_at': stamp, 'prices': {}}))
+        return {"updated": 0, "errors": [], 'fetched_at': stamp}
 
     module = runpy.run_path(
         str(Path(__file__).resolve().parents[1] / "scripts" / "ci_refresh_prices.py")

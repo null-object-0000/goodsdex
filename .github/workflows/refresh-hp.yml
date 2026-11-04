@@ -60,11 +60,11 @@ jobs:
             data/hp/raw/
           retention-days: 7
       - uses: ./.github/actions/upload-candidate
-        if: steps.hp.outputs.conclusion == 'success'
+        if: steps.hp.outputs.conclusion == 'success' || steps.hp.outputs.conclusion == 'degraded'
         with:
           scope: hp
   publish:
-    if: needs.collect.outputs.conclusion == 'success'
+    if: needs.collect.outputs.conclusion == 'success' || needs.collect.outputs.conclusion == 'degraded'
     needs: collect
     uses: ./.github/workflows/publish-release.yml
     with:

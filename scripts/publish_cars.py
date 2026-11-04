@@ -174,6 +174,12 @@ def main():
             tmp = target.with_suffix('.json.tmp')
             tmp.write_text(json.dumps(value, ensure_ascii=False, indent=1) + '\n')
             tmp.replace(target)
+        if not args.historical_only and not args.append_only:
+            from goodsdex.price_history import observation, stage
+            gaps = {r['id'] for r in json.loads((args.input / 'parameter-gaps.json').read_text())}
+            fresh = [r for filename, *_ in SOURCES for r in json.loads((args.input / filename).read_text())
+                     if r['id'] not in gaps and r.get('fetched_at')]
+            stage(args.public, (observation(r) for r in fresh))
         print(json.dumps(audit, ensure_ascii=False))
         return 0
     except (ValueError, KeyError, OSError, TypeError) as exc:

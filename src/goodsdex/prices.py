@@ -20,6 +20,7 @@ import urllib.request
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Iterable, Optional
+from .price_history import numeric
 
 CST = timezone(timedelta(hours=8))
 DYNAMIC_URL = "https://api2.order.mi.com/product/dynamicv2"
@@ -54,13 +55,19 @@ def fetch_prices(gids: Iterable[str], timeout: int = 20) -> dict:
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 d = json.loads(r.read().decode("utf-8", "ignore"))
         except Exception as e:
+            for gid in chunk:
+                out[gid] = dict(price=None, missing_status='unavailable')
             errors.append(f"batch@{i}: {type(e).__name__}: {e}")
             continue
         if d.get("code") != 200:
+            for gid in chunk:
+                out[gid] = dict(price=None, missing_status='unavailable')
             errors.append(f"batch@{i}: code={d.get('code')} {d.get('msg')}")
             continue
         data = d.get("data") or {}
-        for gid, entry in data.items():
+        for gid in chunk:
+            entry = data.get(gid) or {}
+            out[gid] = dict(price=None, missing_status='no_price')
             if not isinstance(entry, dict):
                 continue
             # 结构：{gid: {"first": {"price": {"price": {...}}}}}
@@ -68,7 +75,7 @@ def fetch_prices(gids: Iterable[str], timeout: int = 20) -> dict:
             pinfo = (first.get("price") or {}).get("price") or {}
             if pinfo:
                 out[str(gid)] = {
-                    "price": pinfo.get("price"),
+                    "price": numeric(pinfo.get("price")),
                     "market_price": pinfo.get("market_price"),
                     "min_price": pinfo.get("min_price"),
                     "max_price": pinfo.get("max_price"),
@@ -84,7 +91,7 @@ def now_iso() -> str:
     return datetime.now(CST).isoformat(timespec="seconds")
 
 
-def refresh(gids: list[str], store: Path, stamp: Optional[str] = None) -> dict:
+def refresh(gids: list[str], store: Path, stamp: Optional[str] = None, identities=None) -> dict:
     """刷新价格并按时间追加观测（不覆盖历史）。
 
     产出：
@@ -114,7 +121,11 @@ def refresh(gids: list[str], store: Path, stamp: Optional[str] = None) -> dict:
             except Exception:
                 pass
     if hour not in seen:
-        line = json.dumps({"fetched_at": stamp, "prices": prices},
+        history_prices = dict(prices)
+        for raw_gid, canonical in (identities or {}).items():
+            if raw_gid in prices:
+                history_prices[canonical] = prices[raw_gid]
+        line = json.dumps({"fetched_at": stamp, "prices": history_prices},
                           ensure_ascii=False)
         with fp.open("a", encoding="utf-8") as f:
             f.write(line + "\n")

@@ -29,6 +29,7 @@ def crawl(
     transport=source.fetch,
     pause=0.15,
     prices_only=False,
+    history_public=None,
 ):
     out = Path(out)
     raw = Path(raw)
@@ -228,6 +229,21 @@ def crawl(
             archive_dir=Path(archive),
             discovery={"completeness": "partial", "stop_reason": "scope_limited"},
         )
+    # Record fresh parser output before stale-price preservation can masquerade as a quote.
+    from .price_history import observation, stage
+    events = []
+    for records in fresh.values():
+        for rec in records:
+            events.append(observation(to_public(rec)))
+    # Failed known pages have an observation of unavailability, never their retained price.
+    for page in report['pages']:
+        if page['status'] != 'success':
+            path = out / f"Apple_{page['family']}.json"
+            for rec in json.loads(path.read_text()) if path.exists() else []:
+                if rec['product'].get('source_url') == page['url']:
+                    events.append(observation(to_public(rec), at=report['fetched_at'], status='unavailable'))
+    if history_public is not None:
+        stage(history_public, events)
     write_json(raw.parent / "report.json", report)
     return report
 

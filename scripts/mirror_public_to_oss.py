@@ -46,7 +46,7 @@ def upload_release(public, uploads, make_bucket, workers=4):
             except oss2.exceptions.NoSuchKey:
                 pass
         result = bucket.put_object_from_file(PREFIX + destination, str(path),
-            headers={'Content-Type': 'application/json', 'x-oss-meta-sha256': expected})
+            headers={'Content-Type': 'application/gzip' if name.endswith('.gz') else 'application/json', 'x-oss-meta-sha256': expected})
         if result.status != 200:
             raise RuntimeError(f'OSS upload failed: {destination} HTTP {result.status}')
         remote = bucket.get_object(PREFIX + destination).read()
@@ -54,12 +54,15 @@ def upload_release(public, uploads, make_bucket, workers=4):
             raise RuntimeError(f'OSS readback mismatch: {destination}')
         print(f'OSS GET verified {destination}: bytes={len(local)} sha256={expected}')
         return 1
-    objects = [(name, destination) for name, destination in uploads if destination != 'meta.json']
+    objects = [(name, destination) for name, destination in uploads if destination not in ('meta.json', 'price-history/index.json')]
     manifest = [(name, destination) for name, destination in uploads if destination == 'meta.json']
     if len(manifest) != 1:
         raise ValueError('Exactly one final manifest is required')
     with ThreadPoolExecutor(max_workers=workers) as pool:
         uploaded = sum(pool.map(upload, objects))
+    for entry in uploads:
+        if entry[1] == 'price-history/index.json':
+            uploaded += upload(entry)
     # No worker can still be uploading, and every readback has passed.
     return uploaded + upload(manifest[0])
 
