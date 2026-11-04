@@ -1,4 +1,6 @@
-import copy
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import pytest
 from goodsdex.atour import build_rows, merge_snapshot, coverage
 from goodsdex.brands import infer_brand
