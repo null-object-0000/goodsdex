@@ -10,7 +10,7 @@ from goodsdex.release_policy import ALLOWED_DELETIONS
 # Closed enumeration: additions require updating README and the contract document.
 REASONS = (
     'accessory:sticker', 'accessory:screen_film', 'accessory:cleaning_consumable',
-    'accessory:category', 'accessory:name', 'service:installation', 'service:other', 'container', 'duplicate', 'invalid', 'manual',
+    'accessory:category', 'accessory:name', 'preorder_deposit', 'service:installation', 'service:other', 'container', 'duplicate', 'invalid', 'manual',
 )
 # Reviewed identities, not inference from the human-readable deletion text.
 DELETION_REASONS = {key: ('invalid' if key.startswith('CN:mi_cn:') else 'manual')
@@ -52,7 +52,9 @@ def build_excluded(rows, published, accessory_archive, reviewed, duplicate_rows,
         if reason not in REASONS:
             raise ValueError(f'Unknown exclusion reason: {reason}')
         entry = deepcopy(row)
-        entry.update(excluded_reason=reason, excluded_at=generated_at, exclusion=evidence)
+        entry.update(excluded_reason=reason, excluded_at=generated_at, exclusion=evidence,
+                     matched_rule=evidence.get('matched_rule', reason.split(':')[0]),
+                     matched_text=evidence.get('matched_text', evidence.get('matched')))
         # Categories are source labels, not inferred from a rule or a name.
         entry['category_l1'] = row.get('category_l1')
         entry['category_l2'] = row.get('category_l2', row.get('category'))
@@ -65,8 +67,8 @@ def build_excluded(rows, published, accessory_archive, reviewed, duplicate_rows,
         if key in DELETION_REASONS:
             append(row, DELETION_REASONS[key], dict(basis='reviewed_id', matched=ALLOWED_DELETIONS[key]))
         else:
-            from goodsdex.services import classify_service
-            service = classify_service(row)
+            from goodsdex.services import classify_non_goods
+            service = classify_non_goods(row)
             reason = service['reason'] if service else exclusion_reason(row)
             if reason is None:
                 raise ValueError(f'Archived exclusion no longer justified; review identity: {key}')
@@ -77,6 +79,11 @@ def build_excluded(rows, published, accessory_archive, reviewed, duplicate_rows,
     counts = Counter(r['excluded_reason'] for r in items)
     return dict(generatedAt=generated_at, revision=revision, total=len(items),
                 reasons={r: counts[r] for r in REASONS}, items=items)
+
+
+def excluded_by_rule(excluded):
+    counts = Counter(r['matched_rule'] for r in excluded['items'])
+    return {rule: counts[rule] for rule in dict.fromkeys(r.split(':')[0] for r in REASONS)}
 
 
 def validate_excluded(meta, excluded, published):
@@ -90,6 +97,8 @@ def validate_excluded(meta, excluded, published):
         raise ValueError('Unknown exclusion reason')
     if excluded['reasons'] != {r: counts[r] for r in REASONS}:
         raise ValueError('Exclusion reason counts mismatch')
+    if meta['excluded_by_rule'] != excluded_by_rule(excluded):
+        raise ValueError('Exclusion rule counts mismatch')
     if meta['total_published'] != len(published) or meta['total_all'] != len(published) + len(items):
         raise ValueError('Release total mismatch')
     ids = {r['id'] for r in published}

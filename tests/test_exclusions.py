@@ -101,3 +101,65 @@ def test_services_same_release_and_replay(tmp_path):
 def test_confirmed_other_services(name):
     from goodsdex.services import classify_service
     assert classify_service({'name': name})['reason'] == 'service:other'
+
+
+@pytest.mark.parametrize('name,word', [
+    ('耳机新品1元权益定金（不发货）', '权益'),
+    *[(f'新品{word}链接', word) for word in ('定金', '订金', '权益', '预约', '盲约', '预售', '占位', '不发货')],
+])
+def test_preorder_semantics(name, word):
+    from goodsdex.services import classify_non_goods
+    decision = classify_non_goods({'name': name})
+    assert decision['reason'] == decision['matched_rule'] == 'preorder_deposit'
+    assert decision['matched_text'] == word
+    assert word in name
+
+
+@pytest.mark.parametrize('word', ['安装服务', '延保', '上门', '以旧换新补贴', '充值卡', '贴膜服务'])
+def test_non_physical_service_terms(word):
+    from goodsdex.services import classify_non_goods
+    decision = classify_non_goods({'name': word})
+    assert decision['matched_rule'] == 'service'
+    assert decision['matched_text'] == word
+
+
+@pytest.mark.parametrize('name', [
+    '空调含安装服务', '小米电视（赠延保服务）', '手机套装（含贴膜服务）',
+    '电饭煲24小时预约', '智能插座预约功能', '手机含权益', '扫地机无需预约',
+    '手机非预售', '音箱无需支付定金', '手机送货上门', '手机赠充值卡',
+    '手机含以旧换新补贴', '车位占位传感器', '手机权益保障',
+])
+def test_non_goods_terms_in_product_descriptions_are_kept(name):
+    from goodsdex.services import classify_non_goods
+    assert classify_non_goods({'name': name}) is None
+
+
+def test_non_goods_replay_and_future_collection_preserve_source_facts(tmp_path):
+    from goodsdex.exclusions import validate_excluded
+    rows = [dict(id='device', name='空调含安装服务', category='空调', price=1999),
+            dict(id='offer', name='耳机新品1元权益定金（不发货）', category='耳机', price=1)]
+    (tmp_path / 'goods.json').write_text(json.dumps(rows))
+    for _ in range(2):
+        finalize_public(tmp_path)
+        meta = build_shards(tmp_path)
+        excluded = read(tmp_path, 'goods-excluded.json')
+        assert (meta['total_all'], meta['total_published'], meta['total_excluded']) == (2, 1, 1)
+        assert meta['excluded_by_rule']['preorder_deposit'] == 1
+        assert meta['excluded_by_rule']['service'] == 0
+        offer = excluded['items'][0]
+        assert all(offer[k] == v for k, v in rows[1].items())
+        assert offer['matched_rule'] == offer['exclusion']['matched_rule'] == 'preorder_deposit'
+        assert offer['matched_text'] == offer['exclusion']['matched_text'] == '权益'
+        archived = read(tmp_path, 'archive/services.json')
+        assert len(archived) == 1
+        assert all(archived[0][k] == v for k, v in rows[1].items())
+    # A newly collected identity is filtered by the same finalizer, without a list edit.
+    fresh = dict(id='new-identity', name='新品订金', category='耳机', price=10)
+    (tmp_path / 'goods.json').write_text(json.dumps([rows[0], fresh]))
+    finalize_public(tmp_path)
+    meta = build_shards(tmp_path)
+    assert (meta['total_all'], meta['total_published'], meta['total_excluded']) == (3, 1, 2)
+    assert meta['excluded_by_rule']['preorder_deposit'] == 2
+    meta['excluded_by_rule']['preorder_deposit'] = 0
+    with pytest.raises(ValueError, match='rule counts'):
+        validate_excluded(meta, read(tmp_path, 'goods-excluded.json'), read(tmp_path, 'goods.json'))

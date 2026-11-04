@@ -281,7 +281,7 @@ HP 下架留档：`crawl_hp.py` 仅把官方 SKU URL 落到已知官方电脑列
 
 发布日期对外只报告「整机口径覆盖率」，使用 `meta.release_scope`，同时披露配件周边与第三方精选条数；单品与仅系列覆盖分列。旧 `release_dates` 是已弃用的全发布行统计，不用于对外报告。第三方单品日期需精确版本与两份独立原文、同市场同事件交叉；LLM 和页面首存不作为第二来源。见 [第七轮分层与双源审计](docs/release-dates-round7-20261104/README.md)。
 
-服务排除理由：`service:installation`（安装/上门服务）、`service:other`（已确认的延保、清洗、检测、拆旧、勘测、维修、换屏换盖服务）。仅名称明确服务或无型号词且以安装结尾时排除；免安装、安装尺寸、安装套件及附赠安装保留。以旧换新等不明确条目须人工复核。服务原始事实存入 `archive/services.json`，与其它排除项同次发布。
+非实物排除理由：`preorder_deposit`（定金、订金、权益、预约、盲约、预售、占位、不发货的独立语义）、`service:installation`（安装/上门安装服务）、`service:other`（延保、上门、以旧换新补贴、充值卡、贴膜及既有清洗、检测、拆旧、勘测、维修、换屏换盖服务）。免安装、安装尺寸、安装套件、含/赠服务描述、无需预约/非预售等否定描述、家电预约功能和定时描述保留；仅“以旧换新”不构成服务。源事实沿用 `archive/services.json` 保存，共享 finalizer 每次重放并写入 `goods-excluded.json`，新采集身份自动适用。每条排除提供 `matched_rule` / `matched_text`（顶层与 `exclusion` 内），`meta.excluded_by_rule` 按主规则汇总（服务子理由合并为 `service`），总和等于 `total_excluded`。详见 [规则与全库审计](docs/non-goods-rules-20261104/README.md)。
 服务复核全清单及前后类目计数见 [服务排除验收](docs/services-20261104/README.md)。
 
 价格观测、90 天明细策略与线上导入兼容说明见 [价格历史](docs/price-history-20261104/README.md)。

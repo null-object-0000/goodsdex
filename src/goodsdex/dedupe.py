@@ -716,7 +716,7 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     public = Path(public)
     rows, digest = load_rows(public / "goods.json")
     from goodsdex.release_policy import remove_reviewed_non_goods, assert_no_empty_shells, allowed_deletions
-    from goodsdex.exclusions import reviewed_observations, build_excluded, validate_excluded
+    from goodsdex.exclusions import reviewed_observations, build_excluded, validate_excluded, excluded_by_rule
     reviewed = reviewed_observations(public, rows, previous)
     retained = remove_reviewed_non_goods(rows)
     assert_no_empty_shells(retained)
@@ -795,7 +795,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     input_ids = {r["id"] for r in rows}
     historical_ids = {r["id"] for r in excluded["items"]} - input_ids
     meta.update(revision=revision, generated_at=generated_at, total_all=len(rows) + len(historical_ids),
-                total_published=len(output), total_excluded=excluded["total"])
+                total_published=len(output), total_excluded=excluded["total"],
+                excluded_by_rule=excluded_by_rule(excluded))
     validate_excluded(meta, excluded, output)
     # All checks finish before the first release file is replaced.
     archive_path.parent.mkdir(parents=True, exist_ok=True)

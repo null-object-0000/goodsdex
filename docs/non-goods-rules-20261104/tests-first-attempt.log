@@ -1,0 +1,45 @@
+........................................................................ [  8%]
+........................................................................ [ 17%]
+........................................................................ [ 26%]
+........................................................................ [ 35%]
+........................................................................ [ 44%]
+........................................................................ [ 53%]
+....F................................................................... [ 62%]
+........................................................................ [ 71%]
+........................................................................ [ 80%]
+........................................................................ [ 89%]
+........................................................................ [ 98%]
+.........                                                                [100%]
+=================================== FAILURES ===================================
+______ test_non_goods_replay_and_future_collection_preserve_source_facts _______
+
+tmp_path = PosixPath('/home/nichangen/.hermes/profiles/spendpoint/cache/scratch/pytest-of-nichangen/pytest-202/test_non_goods_replay_and_futu0')
+
+    def test_non_goods_replay_and_future_collection_preserve_source_facts(tmp_path):
+        from goodsdex.exclusions import validate_excluded
+        rows = [dict(id='device', name='空调含安装服务', category='空调', price=1999),
+                dict(id='offer', name='耳机新品1元权益定金（不发货）', category='耳机', price=1)]
+        (tmp_path / 'goods.json').write_text(json.dumps(rows))
+        for _ in range(2):
+            finalize_public(tmp_path)
+            meta = build_shards(tmp_path)
+            excluded = read(tmp_path, 'goods-excluded.json')
+            assert (meta['total_all'], meta['total_published'], meta['total_excluded']) == (2, 1, 1)
+            assert meta['excluded_by_rule']['preorder_deposit'] == 1
+            assert meta['excluded_by_rule']['service'] == 0
+            offer = excluded['items'][0]
+            assert all(offer[k] == v for k, v in rows[1].items())
+            assert offer['matched_rule'] == offer['exclusion']['matched_rule'] == 'preorder_deposit'
+            assert offer['matched_text'] == offer['exclusion']['matched_text'] == '权益'
+>           assert read(tmp_path, 'archive/services.json') == [rows[1]]
+E           AssertionError: assert [{'id': 'offe... ['耳机'], ...}] == [{'id': 'offe..., 'price': 1}]
+E             
+E             At index 0 diff: {'id': 'offer', 'name': '耳机新品1元权益定金（不发货）', 'category': '耳机', 'categories': ['耳机'], 'price': 1, 'brand': None, 'brand_source': None} != {'id': 'offer', 'name': '耳机新品1元权益定金（不发货）', 'category': '耳机', 'price': 1}
+E             Use -v to get more diff
+
+tests/test_exclusions.py:153: AssertionError
+----------------------------- Captured stdout call -----------------------------
+accessory gate: {"excluded_count": 0, "newly_excluded_count": 0, "denominator": 2, "newly_excluded_ratio": 0.0, "threshold": 0.05, "gate": "green", "review_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945", "reviewed": false}
+=========================== short test summary info ============================
+FAILED tests/test_exclusions.py::test_non_goods_replay_and_future_collection_preserve_source_facts
+1 failed, 800 passed, 8 deselected in 35.96s
