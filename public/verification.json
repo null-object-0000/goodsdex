@@ -1,8 +1,8 @@
 {
  "previous_count": 2856,
- "rebuilt_count": 2915,
+ "rebuilt_count": 2910,
  "added_count": 0,
- "count": 2915,
+ "count": 2910,
  "missing_ids": [],
  "added_ids": [],
  "conflicts": [
@@ -456,10 +456,6 @@
    },
    {
     "id": "GLOBAL:apple_support:model:111846",
-    "field": "historical_price"
-   },
-   {
-    "id": "GLOBAL:apple_support:model:111847",
     "field": "historical_price"
    },
    {
@@ -1123,10 +1119,6 @@
     "field": "historical_price"
    },
    {
-    "id": "GLOBAL:apple_support:model:126203",
-    "field": "historical_price"
-   },
-   {
     "id": "GLOBAL:apple_support:model:126318",
     "field": "historical_price"
    },
@@ -1219,7 +1211,18 @@
     "field": "image"
    }
   ],
-  "skipped": [],
+  "skipped": [
+   {
+    "id": "GLOBAL:apple_support:model:111847",
+    "reason": "target_absent",
+    "field": "historical_price"
+   },
+   {
+    "id": "GLOBAL:apple_support:model:126203",
+    "reason": "target_absent",
+    "field": "historical_price"
+   }
+  ],
   "unchanged": [
    {
     "id": "CN:mi_cn:product:722",
