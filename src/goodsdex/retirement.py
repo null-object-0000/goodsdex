@@ -3,6 +3,14 @@ from copy import deepcopy
 from collections import Counter
 import json
 from pathlib import Path
+from datetime import datetime
+
+
+def event_time(value):
+    try:
+        return datetime.fromisoformat(value.replace('Z', '+00:00')).timestamp()
+    except (ValueError, AttributeError):
+        return float('-inf')
 
 
 def archive_observations(public, previous):
@@ -29,14 +37,24 @@ def archive_observations(public, previous):
                            source_url=row['source_url'],
                            reason='absent_from_completed_official_catalogue',
                            archive_path='archive/' + path.name)
-            elif last_seen and row.get('status') == 'retired' and last_seen > row.get('retired_at', ''):
+            elif last_seen:
                 obs = dict(id=key, state='available', observed_at=last_seen,
                            source_url=row['source_url'])
             else:
                 continue
-            if obs['observed_at'] > result.get(key, {}).get('observed_at', ''):
+            old = result.get(key, {})
+            rank = (event_time(obs['observed_at']), obs['state'] == 'available')
+            old_rank = (event_time(old.get('observed_at')), old.get('state') == 'available')
+            if rank > old_rank:
                 result[key] = obs
-    return list(result.values())
+    # Seeing a product in any newer category overrides an older category's
+    # absence. Consider those sightings even before it has ever been retired;
+    # otherwise the first finalize falsely retires it and the next revives it.
+    return [obs for key, obs in result.items()
+            if (obs['state'] == 'available' and known[key].get('status') == 'retired'
+                and event_time(obs['observed_at']) >= event_time(known[key].get('retired_at')))
+            or (obs['state'] == 'missing' and
+                event_time(obs['observed_at']) >= event_time(known[key].get('fetched_at')))]
 
 
 def completed_snapshot(previous, current, *, brands, observed_at, snapshot_url):

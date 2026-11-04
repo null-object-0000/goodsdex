@@ -99,3 +99,20 @@ def test_retiring_duplicate_id_variants_retains_every_configuration():
     assert len(rows) == 2
     assert [r['params'] for r in rows] == [r['params'] for r in previous]
     assert all(r['status'] == 'retired' for r in rows)
+
+
+def test_newer_sighting_in_another_category_prevents_false_retirement(tmp_path):
+    import json
+    from goodsdex.retirement import archive_observations
+    archive = tmp_path/'archive'
+    archive.mkdir()
+    old = dict(id='x', source_url='https://official.example/product')
+    (archive/'a.json').write_text(json.dumps({'items': {'x': {
+        'missing_since': '2026-11-01T00:00:00Z', 'last_seen_at': '2026-10-31T00:00:00Z'}}}))
+    (archive/'b.json').write_text(json.dumps({'items': {'x': {
+        'last_seen_at': '2026-11-02T08:00:00+08:00'}}}))
+    assert archive_observations(tmp_path, [old]) == []
+    assert archive_observations(tmp_path, [dict(old, status='retired', retired_at='2026-11-03T00:00:00Z')]) == []
+    # A fresh SKU observation also prevents replaying an older absence event.
+    (archive/'b.json').unlink()
+    assert archive_observations(tmp_path, [dict(old, fetched_at='2026-11-02T00:00:00Z')]) == []
