@@ -44,12 +44,14 @@ def main():
         grouped[e['gid']].append(e)
     eligible = {gid: sorted(rows, key=lambda e:e['at']) for gid, rows in grouped.items()
                 if len(rows) >= 3 and any(e.get('backfilled') for e in rows) and all(e['price'] is not None for e in rows)}
-    gid, trend = next(iter(eligible.items()))
+    gid = 'CN:mi_cn:product:10015'
+    trend = eligible[gid]
     result = dict(data_commit=revision, revision=index['revision'], http_status=status,
                   data_sha256=data_sha, oss_sha256=oss_sha, index=index,
                   today_added_count=sum(e['at'].startswith('2026-11-04') for e in fresh),
                   collection_rounds=dict(collections.Counter(e['at'] for e in fresh)),
-                  fresh_samples=fresh[:3], missing_count=len(missing), missing_samples=missing[:3],
+                  fresh_samples=fresh[:3], missing_count=len(missing),
+                  missing_samples=[next(e for e in missing if e['missing_status']==status) for status in ('no_price','unavailable')],
                   backfilled_count=sum(bool(e.get('backfilled')) for e in events),
                   backfilled_priced_count=sum(bool(e.get('backfilled')) and e['price'] is not None for e in events),
                   gid=gid, trend=trend)

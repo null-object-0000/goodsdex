@@ -1,0 +1,10 @@
+collect	Refresh prices (only this responsibility)	2026-11-04T08:46:13.4680046Z 从发布集读到 1324 个 gid
+collect	Refresh prices (only this responsibility)	2026-11-04T08:46:13.4680711Z  "fetched_at": "2026-11-04T16:44:53+08:00",
+collect	Refresh prices (only this responsibility)	2026-11-04T08:46:13.4681133Z  "updated": 1266,
+collect	Refresh prices (only this responsibility)	2026-11-04T08:46:13.4681453Z  "requested": 1324,
+collect	Refresh prices (only this responsibility)	2026-11-04T08:46:13.4681747Z  "errors": []
+publish / publish	UNKNOWN STEP	2026-11-04T08:48:04.8849137Z {"price_history": {"added": 1325, "backfilled": 0, "months": 2, "observation_count": 5350, "earliest": "2026-10-13T09:45:55+08:00", "latest": "2026-11-04T16:44:53+08:00"}}
+publish / publish	UNKNOWN STEP	2026-11-04T08:50:37.1303384Z OSS GET verified price-history/2026-10.jsonl.gz: bytes=18635 sha256=702616cb147d59b44a80ff1de8a8bff3ef6772771d940aee975ced65cd467859
+publish / publish	UNKNOWN STEP	2026-11-04T08:50:37.1304594Z OSS GET verified price-history/2026-11.jsonl.gz: bytes=19812 sha256=73146e5067253cc581df56ed2a9b60d5d2ce39fa40ecb8574b523f318958713d
+publish / publish	UNKNOWN STEP	2026-11-04T08:50:37.1312974Z OSS GET verified price-history/index.json: bytes=795 sha256=dd1c5fe6f4ee6b2238509b90d032536f40dd7e96586d931477a6b165e764ddd5
+publish / publish	UNKNOWN STEP	2026-11-04T08:50:37.1784648Z ^[[36;1mprint(f"Inventory: {meta['total_all']} = {meta['total_published']} published + {meta['total_excluded']} excluded; revision={meta['revision']}; excluded sha256={meta['files']['goods-excluded.json']['sha256']}")^[[0m

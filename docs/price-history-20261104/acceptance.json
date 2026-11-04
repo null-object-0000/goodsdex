@@ -1,0 +1,138 @@
+{
+  "data_commit": "93d7d90cec4ed4402c1ae43ccaf1682567654001",
+  "revision": "6bb90a62c4984428bb496b42a3e24bf5",
+  "http_status": 200,
+  "data_sha256": "2da8e86c65110b258d8daa95a2074d14633d046a4364f7447227fb17c0ba7c23",
+  "oss_sha256": "2da8e86c65110b258d8daa95a2074d14633d046a4364f7447227fb17c0ba7c23",
+  "index": {
+    "schema": 1,
+    "revision": "6bb90a62c4984428bb496b42a3e24bf5",
+    "retention_days": 90,
+    "detail_cutoff": "2026-08-06T08:57:56.894380+00:00",
+    "backfill_completed": true,
+    "backfilled_count": 2700,
+    "files": [
+      {
+        "month": "2026-10",
+        "path": "price-history/2026-10.jsonl.gz",
+        "sha256": "702616cb147d59b44a80ff1de8a8bff3ef6772771d940aee975ced65cd467859",
+        "count": 2143,
+        "bytes": 18635,
+        "start": "2026-10-13T09:45:55+08:00",
+        "end": "2026-10-28T21:08:49+08:00"
+      },
+      {
+        "month": "2026-11",
+        "path": "price-history/2026-11.jsonl.gz",
+        "sha256": "73146e5067253cc581df56ed2a9b60d5d2ce39fa40ecb8574b523f318958713d",
+        "count": 3207,
+        "bytes": 19812,
+        "start": "2026-11-02T13:11:41.239830+08:00",
+        "end": "2026-11-04T16:44:53+08:00"
+      }
+    ],
+    "archived_files": [],
+    "months": 2,
+    "observation_count": 5350,
+    "earliest": "2026-10-13T09:45:55+08:00",
+    "latest": "2026-11-04T16:44:53+08:00"
+  },
+  "today_added_count": 2650,
+  "collection_rounds": {
+    "2026-11-04T16:40:13+08:00": 1325,
+    "2026-11-04T16:44:53+08:00": 1325
+  },
+  "fresh_samples": [
+    {
+      "gid": "CN:mi_cn:product:10000353",
+      "at": "2026-11-04T16:40:13+08:00",
+      "price": 467,
+      "price_type": "price",
+      "currency": "CNY",
+      "missing_status": "ok",
+      "source": "mi_cn",
+      "revision": "89fe88ec34a347e5a85013bab0e72ede"
+    },
+    {
+      "gid": "CN:mi_cn:product:10000407",
+      "at": "2026-11-04T16:40:13+08:00",
+      "price": 799,
+      "price_type": "price",
+      "currency": "CNY",
+      "missing_status": "ok",
+      "source": "mi_cn",
+      "revision": "89fe88ec34a347e5a85013bab0e72ede"
+    },
+    {
+      "gid": "CN:mi_cn:product:10015",
+      "at": "2026-11-04T16:40:13+08:00",
+      "price": 99,
+      "price_type": "price",
+      "currency": "CNY",
+      "missing_status": "ok",
+      "source": "mi_cn",
+      "revision": "89fe88ec34a347e5a85013bab0e72ede"
+    }
+  ],
+  "missing_count": 527,
+  "missing_samples": [
+    {
+      "gid": "CN:fuji:kit:x-e5-xf23mmf28-r-wr",
+      "at": "2026-10-27T23:30:05.645638+08:00",
+      "price": null,
+      "price_type": "price",
+      "currency": "CNY",
+      "missing_status": "no_price",
+      "source": "fuji",
+      "backfilled": true,
+      "revision": "89fe88ec34a347e5a85013bab0e72ede"
+    },
+    {
+      "gid": "CN:hp_cn:sku:D3RU2PC",
+      "at": "2026-11-02T13:13:08.438673+08:00",
+      "price": null,
+      "price_type": "price",
+      "currency": "CNY",
+      "missing_status": "unavailable",
+      "source": "hp_cn",
+      "backfilled": true,
+      "revision": "89fe88ec34a347e5a85013bab0e72ede"
+    }
+  ],
+  "backfilled_count": 2700,
+  "backfilled_priced_count": 2173,
+  "gid": "CN:mi_cn:product:10015",
+  "trend": [
+    {
+      "gid": "CN:mi_cn:product:10015",
+      "at": "2026-10-27T08:23:21+08:00",
+      "price": 99,
+      "price_type": "price",
+      "currency": "CNY",
+      "missing_status": "ok",
+      "source": "mi_cn",
+      "backfilled": true,
+      "revision": "89fe88ec34a347e5a85013bab0e72ede"
+    },
+    {
+      "gid": "CN:mi_cn:product:10015",
+      "at": "2026-11-04T16:40:13+08:00",
+      "price": 99,
+      "price_type": "price",
+      "currency": "CNY",
+      "missing_status": "ok",
+      "source": "mi_cn",
+      "revision": "89fe88ec34a347e5a85013bab0e72ede"
+    },
+    {
+      "gid": "CN:mi_cn:product:10015",
+      "at": "2026-11-04T16:44:53+08:00",
+      "price": 99,
+      "price_type": "price",
+      "currency": "CNY",
+      "missing_status": "ok",
+      "source": "mi_cn",
+      "revision": "3a09c70ef6e24a9e9fdbc5ceb4c00105"
+    }
+  ]
+}
