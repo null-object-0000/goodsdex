@@ -1,0 +1,79 @@
+{
+  "product_search_queries": 10,
+  "news_search_queries": 10,
+  "product_http_operations": 4,
+  "news_http_operations": 2,
+  "threshold": 0.6,
+  "product_hits": 0,
+  "news_hits": 0,
+  "expanded": false,
+  "conclusion": "惠普日期暂无可靠源",
+  "samples": [
+    {
+      "id": "CN:hp_cn:sku:7Y0Y4PC",
+      "unique_eligible_product_date": false,
+      "unique_eligible_news_date": false,
+      "reason": "无精确国行SKU上市证据；服务兼容列表/驱动/论坛帖日期不采"
+    },
+    {
+      "id": "CN:hp_cn:sku:7Z5S1PC",
+      "unique_eligible_product_date": false,
+      "unique_eligible_news_date": false,
+      "reason": "无精确国行SKU上市证据；服务兼容列表/驱动/论坛帖日期不采"
+    },
+    {
+      "id": "CN:hp_cn:sku:915D1PC",
+      "unique_eligible_product_date": false,
+      "unique_eligible_news_date": false,
+      "reason": "无精确国行SKU上市证据；服务兼容列表/驱动/论坛帖日期不采"
+    },
+    {
+      "id": "CN:hp_cn:sku:9X2Y9PC",
+      "unique_eligible_product_date": false,
+      "unique_eligible_news_date": false,
+      "reason": "无精确国行SKU上市证据；服务兼容列表/驱动/论坛帖日期不采"
+    },
+    {
+      "id": "CN:hp_cn:sku:A93SZPC",
+      "unique_eligible_product_date": false,
+      "unique_eligible_news_date": false,
+      "reason": "无精确国行SKU上市证据；服务兼容列表/驱动/论坛帖日期不采"
+    },
+    {
+      "id": "CN:hp_cn:sku:B0RC4PC",
+      "unique_eligible_product_date": false,
+      "unique_eligible_news_date": false,
+      "reason": "无精确国行SKU上市证据；服务兼容列表/驱动/论坛帖日期不采"
+    },
+    {
+      "id": "CN:hp_cn:sku:BL9C1PC",
+      "unique_eligible_product_date": false,
+      "unique_eligible_news_date": false,
+      "reason": "无精确国行SKU上市证据；服务兼容列表/驱动/论坛帖日期不采"
+    },
+    {
+      "id": "CN:hp_cn:sku:BZ8Y6PA",
+      "unique_eligible_product_date": false,
+      "unique_eligible_news_date": false,
+      "reason": "无精确国行SKU上市证据；服务兼容列表/驱动/论坛帖日期不采"
+    },
+    {
+      "id": "CN:hp_cn:sku:BZ8Y8PA",
+      "unique_eligible_product_date": false,
+      "unique_eligible_news_date": false,
+      "reason": "无精确国行SKU上市证据；服务兼容列表/驱动/论坛帖日期不采"
+    },
+    {
+      "id": "CN:hp_cn:sku:CF7V8PC",
+      "unique_eligible_product_date": false,
+      "unique_eligible_news_date": false,
+      "reason": "无精确国行SKU上市证据；服务兼容列表/驱动/论坛帖日期不采"
+    }
+  ],
+  "notes": [
+    "搜索请求与源站HTTP操作分开统计；搜索引擎不返回源站状态码，不伪造为200。",
+    "产品HTTP4次为hp.com.cn入口、最终中国首页、OmniBook 7产品页、桌面工作站产品入口；新闻HTTP2次为中国关于页及其指向的美国newsroom。",
+    "10条探针为10个精确SKU检索案例，未找到10个可取日期的独立产品页；不会用无关页面充数。",
+    "京东/天猫/hpstore.cn请求数均为0；源站重定向由curl跟随，状态码记最终响应。"
+  ]
+}

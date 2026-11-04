@@ -62,6 +62,7 @@ def reconcile(release, observations=(), previous_checks=()):
     hard sources may erase a date; all other conflicts retain an internal value.
     """
     r = deepcopy(release)
+    observations = list(observations)
     original = dict(source=r['source'], date=r['date'])
     primary = dict(original, evidence=deepcopy(r.get('evidence')))
     checks = []
@@ -78,9 +79,13 @@ def reconcile(release, observations=(), previous_checks=()):
         add(item)
     add(dict(primary, delta_days=0, verdict='original'))
     known = [original]
+    # Incoming assertions are replayed in their original order below. Seeding
+    # them from history would compare the first assertion to later assertions
+    # only on the second build, adding reverse audit pairs on every replay.
+    incoming = [dict(source=o['source'], date=o.get('date')) for o in observations]
     for check in previous_checks:
         value = dict(source=check['source'], date=check.get('date'))
-        if value['date'] and value not in known:
+        if value['date'] and value not in known and value not in incoming:
             known.append(value)
     for observation in observations:
         obs = deepcopy(observation)

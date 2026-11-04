@@ -63,11 +63,18 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
     subprocess.run(command, check=True)
     result = json.loads((tmp_path / 'goods.json').read_text())
     by_id = {r['id']: r for r in result}
-    assert sum(bool(r.get('release')) for r in result) == sum(bool(r.get('release')) for r in before) == 671
+    from goodsdex.release_dates import apply_release_dates
+    product_expected = apply_release_dates(before)
+    assert sum(bool(r.get('release')) for r in before) == 671
+    # New reviewed product assertions are a separate finalizer stage; series
+    # rollout must preserve its output, including every pre-existing release.
+    for old, updated in zip(before, product_expected, strict=True):
+        if old.get('release'):
+            assert updated['release'] == old['release']
     excluded=json.loads((tmp_path / 'archive/accessories.json').read_text())
     assert len(excluded)==11 and all(not r.get('release') for r in excluded)
     excluded_ids={r['id'] for r in excluded}
-    assert {r['id']: r.get('release') for r in result} == {r['id']: r.get('release') for r in before if r['id'] not in excluded_ids}
+    assert {r['id']: r.get('release') for r in result} == {r['id']: r.get('release') for r in product_expected if r['id'] not in excluded_ids}
     assert {r['id'] for r in result if r.get('release_series')} == expected.keys()
     assert all('series_release' not in r for r in result)
     for key, batch in expected.items():

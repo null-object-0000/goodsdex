@@ -34,6 +34,18 @@ def test_official_keeps_value_and_records_both_sources_and_delta():
     assert r['checks'][-1]['compared_to'] == dict(source='official', date='2023-05')
 
 
+def test_official_upgrade_with_two_model_observations_replays_without_reverse_pairs():
+    base = dict(source='official', date='2021-10')
+    observations = [dict(source='llm', date='2021-10', family='old-estimate'),
+                    dict(source='llm', date='2021-10-20', independent=True)]
+    first = reconcile(base, observations)
+    assert first['source'] == 'official' and first['date'] == '2021-10'
+    assert len(first['checks']) == 4  # original, two primary checks, one model pair
+    replay = reconcile(base, observations, first['checks'])
+    assert replay == first
+    assert reconcile(base, observations, replay['checks']) == first
+
+
 def test_unsupported_llm_pairs_cannot_erase_primary():
     base = dict(source='third_party', date='2023-05')
     r = reconcile(base, [dict(source='llm', date='2023-04', independent=True),

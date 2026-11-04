@@ -1,0 +1,99 @@
+{
+  "baseline_sha256": "1977d863ec6c6258eba19a4efba268196cccffa90101d5b3fee4e5910d21101d",
+  "before": {
+    "惠普": {
+      "total": 218,
+      "direct_release": 0,
+      "release_including_legacy_llm": 0,
+      "release_or_release_llm": 0,
+      "direct_coverage": 0.0,
+      "combined_coverage": 0.0
+    },
+    "比亚迪": {
+      "total": 14,
+      "direct_release": 0,
+      "release_including_legacy_llm": 0,
+      "release_or_release_llm": 0,
+      "direct_coverage": 0.0,
+      "combined_coverage": 0.0
+    },
+    "大疆": {
+      "total": 281,
+      "direct_release": 86,
+      "release_including_legacy_llm": 86,
+      "release_or_release_llm": 86,
+      "direct_coverage": 0.30604982206405695,
+      "combined_coverage": 0.30604982206405695
+    },
+    "Apple": {
+      "total": 635,
+      "direct_release": 418,
+      "release_including_legacy_llm": 457,
+      "release_or_release_llm": 602,
+      "direct_coverage": 0.658267716535433,
+      "combined_coverage": 0.9480314960629921
+    },
+    "富士": {
+      "total": 63,
+      "direct_release": 14,
+      "release_including_legacy_llm": 14,
+      "release_or_release_llm": 59,
+      "direct_coverage": 0.2222222222222222,
+      "combined_coverage": 0.9365079365079365
+    }
+  },
+  "after": {
+    "惠普": {
+      "total": 218,
+      "direct_release": 0,
+      "release_including_legacy_llm": 0,
+      "release_or_release_llm": 0,
+      "direct_coverage": 0.0,
+      "combined_coverage": 0.0
+    },
+    "比亚迪": {
+      "total": 14,
+      "direct_release": 1,
+      "release_including_legacy_llm": 1,
+      "release_or_release_llm": 1,
+      "direct_coverage": 0.07142857142857142,
+      "combined_coverage": 0.07142857142857142
+    },
+    "大疆": {
+      "total": 281,
+      "direct_release": 89,
+      "release_including_legacy_llm": 89,
+      "release_or_release_llm": 89,
+      "direct_coverage": 0.3167259786476868,
+      "combined_coverage": 0.3167259786476868
+    },
+    "Apple": {
+      "total": 635,
+      "direct_release": 418,
+      "release_including_legacy_llm": 457,
+      "release_or_release_llm": 602,
+      "direct_coverage": 0.658267716535433,
+      "combined_coverage": 0.9480314960629921
+    },
+    "富士": {
+      "total": 63,
+      "direct_release": 14,
+      "release_including_legacy_llm": 14,
+      "release_or_release_llm": 59,
+      "direct_coverage": 0.2222222222222222,
+      "combined_coverage": 0.9365079365079365
+    }
+  },
+  "new_ids": [
+    "CN:byd:car:goods-151:2026:dmi",
+    "CN:dji:sku:107481",
+    "CN:dji:sku:121851",
+    "CN:dji:sku:275601"
+  ],
+  "invariants": {
+    "non_release_fields_equal": true,
+    "old_release_objects_equal": true,
+    "new_rows": 4,
+    "replay_idempotent": true
+  }
+}
