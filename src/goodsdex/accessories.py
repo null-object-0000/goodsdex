@@ -11,7 +11,7 @@ from goodsdex.cars import is_car
 ACCESSORY_WORDS = (
     # Observed in the release: notebook stickers, Pad paper-like film, legacy
     # phone films and floor detergent. Do not match generic 清洁 (services).
-    '贴纸', '类纸膜', '高透膜', '钢化玻璃膜', '清洁剂',
+    '面板', '连接器', '挂架', '线缆', '贴纸', '类纸膜', '高透膜', '钢化玻璃膜', '清洁剂',
     '配件', '滤芯', '滤网', '替换装', '替换芯', '耗材', '充电器', '数据线', '充电线',
     '保护壳', '手机壳', '贴膜', '支架', '底座', '转接头', '转接线', '转接器',
     '收纳包', '收纳保护包', '清洁液', '镜头盖', '遮光罩', '相机包', '电脑包',
@@ -26,7 +26,7 @@ ACCESSORY_WORDS = (
 DEVICE = re.compile(
     r'(?:净水器|净饮机|空调|电视|扫(?:地|拖)机器人|机器人|显示器|充电宝|对讲机|'
     r'笔记本|平板|手机|无人机|运动相机|手环|手表|云台相机|相机机身|套机|'
-    r'电动牙刷|蓝牙音箱|电动剃须刀|手动剃须刀|口袋吉他|断电保护电源|行车记录仪|'
+    r'家庭屏|面板灯|全屋照明|灯具|电动牙刷|蓝牙音箱|电动剃须刀|手动剃须刀|口袋吉他|断电保护电源|行车记录仪|'
     r'\bXiaomi\s+Sound\b|'
     r'\biPhone\b|\biPad\b|\bMac(?:Book)?\b|\bAirPods\b|\bWatch\b|'
     r'\b(?:Xiaomi|REDMI)\s+(?:Pad|Book|Note|MIX|\d)|'
@@ -49,6 +49,10 @@ def classify(row):
     principal = re.sub(r'[（(][^）)]*$', '', principal)
     # An integrated adjustable stand is a monitor feature, not a loose stand.
     principal = re.sub(r'多功能支架(?:版)?', '', principal)
+    # 面板灯 is a complete luminaire, not an interchangeable panel.
+    principal = principal.replace('面板灯', '灯具')
+    # A household control screen is a complete controller, not a loose faceplate.
+    principal = principal.replace('智能家庭面板', '家庭屏')
     principal = re.sub(r'磁吸支架(?=充电宝)', '', principal)
     principal = re.sub(r'^无线充电盒款(?=\s*AirPods)', '', principal, flags=re.I)
     if '电动牙刷' in principal:

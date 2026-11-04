@@ -1,0 +1,65 @@
+[
+  {
+    "stage": "枚举商品/搜索commodity",
+    "before": null,
+    "after": "Xiaomi Sound 2 Max 金属面板 金属面板",
+    "evidence": "保存于22105-source.json / product.identity_evidence.variant_names[0]"
+  },
+  {
+    "stage": "identity.product_name 第1次尾词剥离",
+    "before": "Xiaomi Sound 2 Max 金属面板 金属面板",
+    "after": "Xiaomi Sound 2 Max 金属面板",
+    "reason": "2–6字纯中文且包含COLOR_WORDS的“金”"
+  },
+  {
+    "stage": "identity.product_name 第2次尾词剥离",
+    "before": "Xiaomi Sound 2 Max 金属面板",
+    "after": "Xiaomi Sound 2 Max",
+    "reason": "while循环继续删除；不是只删最后一段"
+  },
+  {
+    "stage": "identity.build_identity",
+    "before": [
+      "Xiaomi Sound 2 Max"
+    ],
+    "after": "Xiaomi Sound 2 Max",
+    "reason": "单变体使用清洗名；多变体还有按字符取公共前缀的另一风险"
+  },
+  {
+    "stage": "移动官网API name断言",
+    "before": null,
+    "after": "Xiaomi Sound 2 Max 金属面板",
+    "locator": "$.data.product.name",
+    "capture_id": "76f1558b2755"
+  },
+  {
+    "stage": "pipeline.collect_one",
+    "before": "prod.name=Xiaomi Sound 2 Max；subject.name=Xiaomi Sound 2 Max 金属面板",
+    "after": "prod.name仍为Xiaomi Sound 2 Max",
+    "reason": "旧代码 if not prod.name，非空旧短名不能被完整断言覆盖"
+  },
+  {
+    "stage": "resolve.build_view",
+    "before": "name断言=Xiaomi Sound 2 Max 金属面板",
+    "after": "Xiaomi Sound 2 Max 金属面板",
+    "reason": "完整名其实一直存在于view.values.name"
+  },
+  {
+    "stage": "publish.to_public",
+    "before": "product.name=Xiaomi Sound 2 Max；view.values.name=Xiaomi Sound 2 Max 金属面板",
+    "after": "Xiaomi Sound 2 Max",
+    "reason": "旧代码只读取p.get(\"name\")，并将name排除出params"
+  },
+  {
+    "stage": "normalize/dedupe/发布过滤",
+    "before": "Xiaomi Sound 2 Max",
+    "after": "Xiaomi Sound 2 Max",
+    "reason": "这些环节未恢复后缀；DEVICE匹配Sound，导致整机优先于配件分类，299元记录保留"
+  },
+  {
+    "stage": "修复后官网HTML",
+    "before": "Xiaomi Sound 2 Max 金属面板立即购买-小米商城",
+    "after": "Xiaomi Sound 2 Max 金属面板",
+    "reason": "只删除精确商城后缀；is_accessory=true，发布排除并留档"
+  }
+]

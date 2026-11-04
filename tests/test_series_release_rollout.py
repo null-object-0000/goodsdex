@@ -113,7 +113,9 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
             else:
                 assert updated['release'] == prior
     excluded=json.loads((tmp_path / 'archive/accessories.json').read_text())
-    assert len(excluded)==11 and all(not r.get('release') for r in excluded)
+    reviewed=json.loads((ROOT/'docs/name-fidelity-20261104/historical-exclusion-expectations.json').read_text())['docs/series-release-rollout-20261103/baseline-goods.json.gz']
+    assert {r['id'] for r in excluded} == {r['id'] for r in reviewed}
+    assert all(not r.get('release') for r in excluded)
     excluded_ids={r['id'] for r in excluded}
     excluded_ids.update(r['id'] for r in json.loads((tmp_path / 'archive/services.json').read_text()))
     assert {r['id']: r.get('release') for r in result} == {r['id']: r.get('release') for r in product_expected if r['id'] not in excluded_ids}

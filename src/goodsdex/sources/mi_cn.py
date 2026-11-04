@@ -608,3 +608,25 @@ def fetch_pc_legacy(pid: str) -> dict:
     caps, assertions = fetch_pc(pid)
     return _assertions_to_legacy(assertions, "www.mi.com",
                                  "GET api2.order.mi.com/product/view")
+
+
+SRC_TITLE = "mi_cn_page_title"
+
+
+def fetch_page_title(pid: str) -> tuple[list[Capture], list[Assertion]]:
+    """Official HTML title is authoritative, even if API model names are shorter."""
+    from ..mi_names import page_name
+    url = f"https://www.mi.com/shop/buy/detail?product_id={pid}"
+    try:
+        raw = _get(url)
+    except Exception as exc:
+        return [Capture.make(SRC_TITLE, url, "", status=CaptureStatus.TRANSPORT_ERROR,
+                             http_status=getattr(exc, "code", 0), error=str(exc))], []
+    try:
+        name = page_name(raw)
+    except ValueError as exc:
+        return [Capture.make(SRC_TITLE, url, raw, status=CaptureStatus.PARSE_ERROR, error=str(exc))], []
+    cap = Capture.make(SRC_TITLE, url, raw, http_status=200, parser_version="mi-title-v1")
+    return [cap], [Assertion(assertion_id=f"{cap.capture_id}:name", subject_id=pid,
+        capture_id=cap.capture_id, source=SRC_TITLE, attribute="name", raw_value=name,
+        locator="title", page="官方购买页", parser_version="mi-title-v1")]

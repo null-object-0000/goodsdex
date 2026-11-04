@@ -1,0 +1,270 @@
+{
+  "total_count": 2,
+  "jobs": [
+    {
+      "id": 126680255711,
+      "run_id": 41860377743,
+      "workflow_name": "filter-accessories",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/null-object-0000/goodsdex/actions/runs/41860377743",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVCfLDM8AAAAdfrtM3w",
+      "head_sha": "1fd376f4287e26cd1f9bb41307d72330aa4ae98d",
+      "url": "https://api.github.com/repos/null-object-0000/goodsdex/actions/jobs/126680255711",
+      "html_url": "https://github.com/null-object-0000/goodsdex/actions/runs/41860377743/job/126680255711",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-04T15:41:40Z",
+      "started_at": "2026-11-04T15:41:42Z",
+      "completed_at": "2026-11-04T15:42:40Z",
+      "name": "collect",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-04T15:41:43Z",
+          "completed_at": "2026-11-04T15:41:43Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-04T15:41:43Z",
+          "completed_at": "2026-11-04T15:41:56Z"
+        },
+        {
+          "name": "Run ./.github/actions/collect-base",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-04T15:41:56Z",
+          "completed_at": "2026-11-04T15:42:34Z"
+        },
+        {
+          "name": "Restore reviewed first-exclusion archive if requested",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 4,
+          "started_at": "2026-11-04T15:42:34Z",
+          "completed_at": "2026-11-04T15:42:34Z"
+        },
+        {
+          "name": "Run ./.github/actions/upload-candidate",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-04T15:42:34Z",
+          "completed_at": "2026-11-04T15:42:37Z"
+        },
+        {
+          "name": "Post Run ./.github/actions/collect-base",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-04T15:42:37Z",
+          "completed_at": "2026-11-04T15:42:37Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-11-04T15:42:37Z",
+          "completed_at": "2026-11-04T15:42:38Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-11-04T15:42:38Z",
+          "completed_at": "2026-11-04T15:42:38Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/null-object-0000/goodsdex/check-runs/126680255711",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000007194,
+      "runner_name": "GitHub Actions 1000007194",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 126680867435,
+      "run_id": 41860377743,
+      "workflow_name": "filter-accessories",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/null-object-0000/goodsdex/actions/runs/41860377743",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVCfLDM8AAAAdfsSiaw",
+      "head_sha": "1fd376f4287e26cd1f9bb41307d72330aa4ae98d",
+      "url": "https://api.github.com/repos/null-object-0000/goodsdex/actions/jobs/126680867435",
+      "html_url": "https://github.com/null-object-0000/goodsdex/actions/runs/41860377743/job/126680867435",
+      "status": "in_progress",
+      "conclusion": null,
+      "created_at": "2026-11-04T15:42:40Z",
+      "started_at": "2026-11-04T15:47:24Z",
+      "completed_at": null,
+      "name": "publish / publish",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-04T15:47:24Z",
+          "completed_at": "2026-11-04T15:47:25Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-04T15:47:25Z",
+          "completed_at": "2026-11-04T15:47:37Z"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-04T15:47:37Z",
+          "completed_at": "2026-11-04T15:47:37Z"
+        },
+        {
+          "name": "Require OSS credentials before publishing",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-04T15:47:37Z",
+          "completed_at": "2026-11-04T15:47:37Z"
+        },
+        {
+          "name": "Read latest data while holding publication lock",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-04T15:47:37Z",
+          "completed_at": "2026-11-04T15:48:21Z"
+        },
+        {
+          "name": "Run actions/download-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-04T15:48:21Z",
+          "completed_at": "2026-11-04T15:48:22Z"
+        },
+        {
+          "name": "Merge candidate onto latest release",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-11-04T15:48:22Z",
+          "completed_at": "2026-11-04T15:48:22Z"
+        },
+        {
+          "name": "Test publication invariants",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-11-04T15:48:22Z",
+          "completed_at": "2026-11-04T15:49:04Z"
+        },
+        {
+          "name": "Verify final release (no lost IDs and responsibility invariants)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-04T15:49:04Z",
+          "completed_at": "2026-11-04T15:49:07Z"
+        },
+        {
+          "name": "Snapshot collection and publication liveness",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-11-04T15:49:07Z",
+          "completed_at": "2026-11-04T15:49:16Z"
+        },
+        {
+          "name": "Finalize once (dedupe, tombstones, normalization, shards)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-11-04T15:49:16Z",
+          "completed_at": "2026-11-04T15:49:32Z"
+        },
+        {
+          "name": "Push one complete release to data",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-11-04T15:49:32Z",
+          "completed_at": "2026-11-04T15:49:38Z"
+        },
+        {
+          "name": "Mirror and verify OSS (immutable blobs first, manifest last)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-11-04T15:49:38Z",
+          "completed_at": "2026-11-04T15:50:13Z"
+        },
+        {
+          "name": "Record release summary",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14,
+          "started_at": "2026-11-04T15:50:13Z",
+          "completed_at": "2026-11-04T15:50:13Z"
+        },
+        {
+          "name": "Post Read latest data while holding publication lock",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 26,
+          "started_at": "2026-11-04T15:50:13Z",
+          "completed_at": "2026-11-04T15:50:14Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 27,
+          "started_at": "2026-11-04T15:50:14Z",
+          "completed_at": "2026-11-04T15:50:14Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 28,
+          "started_at": "2026-11-04T15:50:14Z",
+          "completed_at": "2026-11-04T15:50:14Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 29,
+          "started_at": "2026-11-04T15:50:14Z",
+          "completed_at": "2026-11-04T15:50:14Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/null-object-0000/goodsdex/check-runs/126680867435",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000007197,
+      "runner_name": "GitHub Actions 1000007197",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}
+

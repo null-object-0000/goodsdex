@@ -59,16 +59,19 @@ def test_finalizer_replays_and_details_only(tmp_path):
     from goodsdex.release_dates import apply_release_dates
     # The ordinary finalizer also replays reviewed product dates, which may
     # legitimately grow after this historical snapshot was frozen.
-    expected=apply_date_enrichment(apply_series_releases(apply_release_dates(json.loads(baseline))))
+    from goodsdex.mi_names import apply_page_names
+    expected=apply_date_enrichment(apply_series_releases(apply_release_dates(apply_page_names(json.loads(baseline)))))
     from goodsdex.source_urls import apply_source_urls
     expected=apply_source_urls(expected)
     from goodsdex.variant_attributes import apply_variant_attributes
     expected, _ = apply_variant_attributes(expected)
-    # Other finalizer policies now backfill brands and archive 11 observed
-    # accessories. Enrichment itself and every remaining field stay identical.
+    # Independently frozen expected exclusions include the title repair.
+    # Enrichment and every retained field must still be identical.
     archived=json.loads((tmp_path/'archive/accessories.json').read_text())
     excluded={r['id'] for r in archived}
-    assert len(excluded)==11 and all(not r.get('release') for r in archived)
+    reviewed=json.loads((ROOT/'docs/name-fidelity-20261104/historical-exclusion-expectations.json').read_text())['docs/independent-dates-20261103/baseline-goods.json.gz']
+    assert excluded == {r['id'] for r in reviewed}
+    assert all(not r.get('release') for r in archived)
     excluded.update(r['id'] for r in json.loads((tmp_path/'archive/services.json').read_text()))
     assert [{k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in result] == [
         {k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in expected if r['id'] not in excluded]

@@ -720,6 +720,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     reviewed = reviewed_observations(public, rows, previous)
     retained = remove_reviewed_non_goods(rows)
     assert_no_empty_shells(retained)
+    from goodsdex.mi_names import apply_page_names
+    retained = apply_page_names(retained)
     output, audit = dedupe_rows(retained)
     merge_plan = analyze(group_by_id(retained), len(retained))
     duplicate_rows = [r for group in merge_plan["safe"] for r in group["rows"][1:]]
@@ -747,6 +749,7 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     from goodsdex.accessories import plan
     archive_path = public / 'archive' / 'accessories.json'
     accessory_archive = json.loads(archive_path.read_text()) if archive_path.exists() else []
+    accessory_archive = apply_page_names(accessory_archive)
     output, accessory_archive, accessory_audit = plan(
         output, previous if previous is not None else rows, accessory_archive,
         reviewed_accessory_sha256)
@@ -791,7 +794,7 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     from uuid import uuid4
     revision = uuid4().hex
     generated_at = datetime.now(timezone.utc).isoformat()
-    excluded = build_excluded(rows, output, [*accessory_archive, *services], reviewed, duplicate_rows, generated_at, revision)
+    excluded = build_excluded(apply_page_names(rows), output, [*accessory_archive, *services], reviewed, duplicate_rows, generated_at, revision)
     input_ids = {r["id"] for r in rows}
     historical_ids = {r["id"] for r in excluded["items"]} - input_ids
     meta.update(revision=revision, generated_at=generated_at, total_all=len(rows) + len(historical_ids),

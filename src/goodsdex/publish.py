@@ -66,6 +66,18 @@ def to_public(rec: dict) -> dict:
         item.update({key:p.get(key) for key in ("source", "brand", "market", "record_level", "catalog_scope", "sale_status", "source_url", "model", "lookup_keys") if p.get(key) is not None})
         item["price"] = None
         item["market_price"] = None
+    if str(item.get("id") or "").startswith("CN:mi_cn:product:"):
+        # Cached source records already have full names in their resolved view.
+        source = p.get("name_source") or {}
+        item["name"] = p.get("name") if isinstance(source, dict) and source.get("kind") == "official_page_title" else v.get("name") or p.get("name")
+        if p.get("name_source"):
+            item["name_source"] = p["name_source"]
+            if isinstance(source, dict) and source.get("kind") == "official_page_title":
+                item["source_url"] = source["url"]
+        from goodsdex.accessories import classify
+        item["is_accessory"] = classify(item)["accessory"]
+        if item["is_accessory"]:
+            item["kind"] = "accessory"
     # 溯源标记：容器展开来的、或本身是容器
     if p.get("is_container"):
         item["is_container"] = True

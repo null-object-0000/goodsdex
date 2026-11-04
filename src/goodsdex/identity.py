@@ -65,7 +65,7 @@ def parse_variant_attrs(name: str) -> dict:
     color = ""
     for t in reversed(tokens):
         # 纯中文、2-6 字，且不是产品名的一部分
-        if re.fullmatch(r"[\u4e00-\u9fff]{2,6}", t):
+        if _is_color_token(t):
             color = t
             break
     # 回退：整串里出现的最长颜色词
@@ -90,7 +90,9 @@ def _is_color_token(tok: str) -> bool:
         return False
     if any(w in tok for w in EDITION_WORDS):
         return False
-    return any(c in tok for c in COLOR_WORDS)
+    # A colour must end in a colour word. 金属面板/无线连接器/青春版
+    # contain colour-like characters but describe identity, never a colour.
+    return bool(re.search(r"(?:[黑白蓝绿紫灰金粉青红银钛]|[黑白蓝绿紫灰金粉青红银]色)$", tok))
 
 
 def product_name(name: str) -> str:
@@ -185,10 +187,11 @@ def build_identity(source_product_id: str, variants_raw: list[dict],
             external_ids={f"{source}.commodity_id": str(cid),
                           **({f"{source}.sku": str(v["sku"])} if v.get("sku") else {})},
         ))
-    # 产品名：取所有变体名的公共前缀（去掉变体后缀后最长的一个）
-    cleaned = [product_name(n) for n in names if n]
-    if cleaned:
-        p.name = max(cleaned, key=len) if len(set(cleaned)) == 1 else _common_prefix(cleaned)
+    # Full first variant is a lossless fallback until the official title is fetched.
+    if names:
+        # This is an unverified fallback, not an official product title. Do not
+        # create a name from a character prefix shared by unrelated variants.
+        p.name = names[0]
     # 身份判定依据
     p.identity_evidence = {
         "variant_count": len(p.variants),

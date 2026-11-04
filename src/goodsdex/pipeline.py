@@ -83,7 +83,7 @@ def collect_one(pid: str, name_hint: str = "", category: str = "",
                                     external_ids=prod.external_ids),
                     discovery=discovery or {})
 
-    for fn in (mi_cn.fetch_mobile, mi_cn.fetch_pc):
+    for fn in (mi_cn.fetch_mobile, mi_cn.fetch_pc, mi_cn.fetch_page_title):
         try:
             caps, assertions = fn(pid)
         except Exception as e:
@@ -100,16 +100,12 @@ def collect_one(pid: str, name_hint: str = "", category: str = "",
             bundle.add_capture(c)
         bundle.add_assertions(assertions)
 
-    # subject 名称以官方产品名为准
-    for a in bundle.assertions:
-        if a.attribute == "name" and a.raw_value:
-            bundle.subject.name = str(a.raw_value)
-            # **必须同时写回 prod.name** —— pd = prod.to_dict() 取的是它。
-            # 曾只更新 bundle.subject，导致容器展开来的子商品 name 为空
-            # （name_hint 为空、identity 也推不出名字时）。
-            if not prod.name:
-                prod.name = str(a.raw_value)
-            break
+    # Prefer the literal page title; a mobile API name is an explicit fallback.
+    names = [a for a in bundle.assertions if a.attribute == "name" and a.raw_value]
+    names.sort(key=lambda a: a.source != mi_cn.SRC_TITLE)
+    if names:
+        chosen = names[0]
+        bundle.subject.name = prod.name = str(chosen.raw_value)
 
     cat = category or guess_category(bundle.subject.name)
     prod.category = prod.category or cat
@@ -130,6 +126,19 @@ def collect_one(pid: str, name_hint: str = "", category: str = "",
 
     pd = prod.to_dict()
     pd["kind"] = prod_kind
+    if names:
+        chosen = names[0]
+        capture = next(c for c in bundle.captures if c.capture_id == chosen.capture_id)
+        pd["name_source"] = dict(kind="official_page_title" if chosen.source == mi_cn.SRC_TITLE else "mobile_api",
+                                 url=capture.url, capture_id=capture.capture_id,
+                                 requested_at=capture.fetched_at, sha256=capture.response_hash)
+        if chosen.source == mi_cn.SRC_TITLE:
+            from .mi_names import SUFFIX
+            pd["name_source"]["title"] = prod.name + SUFFIX
+    from .accessories import classify
+    pd["is_accessory"] = classify(dict(name=prod.name, category=cat))["accessory"]
+    if pd["is_accessory"]:
+        pd["kind"] = "accessory"
 
     # **容器展开**：若本商品是"系列容器"（goodsList[0] 不是自己），
     # 则把 goodsList 里的子商品也各自采成独立记录。

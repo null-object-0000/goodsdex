@@ -49,6 +49,15 @@ def classify_product_kind(name: str, category: str = "") -> str:
                 continue
             return "service"
 
+    # Share the release rule, so a device+stand bundle remains a device while
+    # a standalone Sound metal panel is recognised before the Xiaomi family.
+    from .accessories import classify
+    decision = classify(dict(name=n, category=category))
+    if decision['accessory']:
+        return "accessory"
+    if decision['basis'] == 'whole_device':
+        return "machine"
+
     for w in ACCESSORY_WORDS:
         if w in n:
             return "accessory"
