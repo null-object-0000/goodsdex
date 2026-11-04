@@ -1,0 +1,190 @@
+{
+  "page": {
+    "id": "kctbh9vrtdwd",
+    "name": "GitHub",
+    "url": "https://www.githubstatus.com",
+    "time_zone": "Etc/UTC",
+    "updated_at": "2026-11-04T16:17:29.721Z"
+  },
+  "incidents": [
+    {
+      "id": "xr3myzj7ms51",
+      "name": "Incident with Actions and Pages",
+      "status": "investigating",
+      "created_at": "2026-11-04T16:05:31.580Z",
+      "updated_at": "2026-11-04T16:17:29.703Z",
+      "monitoring_at": null,
+      "resolved_at": null,
+      "impact": "major",
+      "shortlink": "https://stspg.io/pjgptg3cfc6n",
+      "started_at": "2026-11-04T16:05:31.572Z",
+      "page_id": "kctbh9vrtdwd",
+      "incident_updates": [
+        {
+          "id": "z3jqjs429kwk",
+          "status": "investigating",
+          "body": "Actions is experiencing degraded availability. We are continuing to investigate.",
+          "incident_id": "xr3myzj7ms51",
+          "created_at": "2026-11-04T16:17:29.701Z",
+          "updated_at": "2026-11-04T16:17:29.701Z",
+          "display_at": "2026-11-04T16:17:29.701Z",
+          "affected_components": [
+            {
+              "code": "vg70hn9s2tyj",
+              "name": "Pages",
+              "old_status": "degraded_performance",
+              "new_status": "degraded_performance"
+            },
+            {
+              "code": "4230lsnqdsld",
+              "name": "Webhooks",
+              "old_status": "degraded_performance",
+              "new_status": "degraded_performance"
+            },
+            {
+              "code": "br0l2tvcx85d",
+              "name": "Actions",
+              "old_status": "degraded_performance",
+              "new_status": "partial_outage"
+            }
+          ],
+          "deliver_notifications": true,
+          "custom_tweet": null,
+          "tweet_id": null
+        },
+        {
+          "id": "6h2rcf15tcy1",
+          "status": "investigating",
+          "body": "Webhooks is experiencing degraded performance. We are continuing to investigate.",
+          "incident_id": "xr3myzj7ms51",
+          "created_at": "2026-11-04T16:12:55.586Z",
+          "updated_at": "2026-11-04T16:12:55.586Z",
+          "display_at": "2026-11-04T16:12:55.586Z",
+          "affected_components": [
+            {
+              "code": "vg70hn9s2tyj",
+              "name": "Pages",
+              "old_status": "degraded_performance",
+              "new_status": "degraded_performance"
+            },
+            {
+              "code": "4230lsnqdsld",
+              "name": "Webhooks",
+              "old_status": "operational",
+              "new_status": "degraded_performance"
+            },
+            {
+              "code": "br0l2tvcx85d",
+              "name": "Actions",
+              "old_status": "degraded_performance",
+              "new_status": "degraded_performance"
+            }
+          ],
+          "deliver_notifications": true,
+          "custom_tweet": null,
+          "tweet_id": null
+        },
+        {
+          "id": "qddx4mq7wqyx",
+          "status": "investigating",
+          "body": "We are investigating reports of issues with Actions and Pages. We will continue to keep users updated on progress towards mitigation.",
+          "incident_id": "xr3myzj7ms51",
+          "created_at": "2026-11-04T16:11:38.174Z",
+          "updated_at": "2026-11-04T16:11:38.174Z",
+          "display_at": "2026-11-04T16:11:38.174Z",
+          "affected_components": [
+            {
+              "code": "vg70hn9s2tyj",
+              "name": "Pages",
+              "old_status": "degraded_performance",
+              "new_status": "degraded_performance"
+            },
+            {
+              "code": "br0l2tvcx85d",
+              "name": "Actions",
+              "old_status": "degraded_performance",
+              "new_status": "degraded_performance"
+            }
+          ],
+          "deliver_notifications": true,
+          "custom_tweet": null,
+          "tweet_id": null
+        },
+        {
+          "id": "0snhmntgvgj8",
+          "status": "investigating",
+          "body": "We are investigating reports of degraded performance for Actions and Pages",
+          "incident_id": "xr3myzj7ms51",
+          "created_at": "2026-11-04T16:05:31.696Z",
+          "updated_at": "2026-11-04T16:05:31.696Z",
+          "display_at": "2026-11-04T16:05:31.696Z",
+          "affected_components": [
+            {
+              "code": "vg70hn9s2tyj",
+              "name": "Pages",
+              "old_status": "operational",
+              "new_status": "degraded_performance"
+            },
+            {
+              "code": "br0l2tvcx85d",
+              "name": "Actions",
+              "old_status": "operational",
+              "new_status": "degraded_performance"
+            }
+          ],
+          "deliver_notifications": true,
+          "custom_tweet": null,
+          "tweet_id": null
+        }
+      ],
+      "components": [
+        {
+          "id": "4230lsnqdsld",
+          "name": "Webhooks",
+          "status": "degraded_performance",
+          "created_at": "2019-11-13T18:00:24.256Z",
+          "updated_at": "2026-11-04T16:12:55.537Z",
+          "position": 2,
+          "description": "Real time HTTP callbacks of user-generated and system events",
+          "showcase": true,
+          "start_date": null,
+          "group_id": null,
+          "page_id": "kctbh9vrtdwd",
+          "group": false,
+          "only_show_if_degraded": false
+        },
+        {
+          "id": "br0l2tvcx85d",
+          "name": "Actions",
+          "status": "partial_outage",
+          "created_at": "2019-11-13T18:02:19.432Z",
+          "updated_at": "2026-11-04T16:17:29.662Z",
+          "position": 7,
+          "description": "Workflows, Compute and Orchestration for GitHub Actions",
+          "showcase": true,
+          "start_date": null,
+          "group_id": null,
+          "page_id": "kctbh9vrtdwd",
+          "group": false,
+          "only_show_if_degraded": false
+        },
+        {
+          "id": "vg70hn9s2tyj",
+          "name": "Pages",
+          "status": "degraded_performance",
+          "created_at": "2017-01-31T20:04:33.923Z",
+          "updated_at": "2026-11-04T16:05:31.655Z",
+          "position": 9,
+          "description": "Frontend application and API servers for Pages builds",
+          "showcase": true,
+          "start_date": null,
+          "group_id": null,
+          "page_id": "kctbh9vrtdwd",
+          "group": false,
+          "only_show_if_degraded": false
+        }
+      ],
+      "reminder_intervals": null
+    }
+  ]
+}

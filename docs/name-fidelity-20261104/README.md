@@ -32,6 +32,10 @@
 
 定点补查另外找到5条区别性词缺失：22105/22107/22544（配件）、19703/21957（不同蓝牙音箱型号）；这些偏置样本不混入随机比例。全部13条少字（含通用系列/颜色）均逐条列在[少字完整清单](missing-words.md)。[200条逐行比对](sample-200.md)、[统计JSON](sample-statistics.json)、[原始请求记录](titles.jsonl)、[全257条结构化记录](title-observations.json)。
 
+## 离线补充诊断
+
+将当前发布ID对应的已保存采集view完整名与线上name比较，筛查“支架/面板/连接器/底座/挂架/保护套/贴膜/线缆”出现在前者而从后者消失的情形，只发现22105、22107、22544三个ID，均已用实时title核实并修复。明细见[离线名称差异](offline-accessory-name-drift.json)。这是历史采集数据的辅助诊断，不能发现官方采集源本身就少字的情况，也不能替代未请求页面的官网标题核实。
+
 ## 修复规则与范围
 
 `mi_names.page_name`只剥精确商城后缀`立即购买-小米商城`，保留型号、颜色、系列、数量及配件后缀。新增官方HTML标题Capture/Assertion；采集将完整名称无条件写回product，发布优先官方title，缓存回放也可从完整view恢复。公共前缀不再用作name；没有新增短名，也没有用short_name掩盖缺失。
@@ -40,7 +44,7 @@
 
 配件按完整title判断，新增明确面板/连接器/挂架/线缆词，`is_accessory=true`与kind=accessory，沿用现有排除、档案和5%门禁。整机加配件、双支整机、显示器多功能支架版、集成支架充电宝及面板灯保留；独立智能家庭控制屏也保留。所有保留的本轮已核标题商品明确`is_accessory=false`。索引和详情都带标记。
 
-预演新增排除13条：22105/22107/22544及10条独立空调/新风面板。2855→2842；新增排除率13/2833=0.459%，门禁绿，无放行参数。13条被排除记录仍在`archive/accessories.json`和`goods-excluded.json`，完整官方名、原价格、图片、来源均保留。[原22条逐条处置](accessory-22-decisions.md)：10排除、12保留（其中去掉非官方附加词的同时改名）。未修改任何价格；其它品牌、汽车和既有受保护冲突不变，见[预演不变量](preview-invariants.json)。
+正式发布及线上核验新增排除13条：22105/22107/22544及10条独立空调/新风面板。2855→2842；新增排除率13/2833=0.459%，门禁绿，无放行参数。13条被排除记录仍在`archive/accessories.json`和`goods-excluded.json`，完整官方名、原价格、图片、来源均保留。[原22条逐条处置](accessory-22-decisions.md)：10排除、12保留（其中去掉非官方附加词的同时改名）。未修改任何价格；其它品牌、汽车和既有受保护冲突不变，见[预演不变量](preview-invariants.json)。
 
 ## Sound四条
 
@@ -73,4 +77,4 @@ python3 docs/name-fidelity-20261104/build_report.py /path/to/public/goods.json
 PYTHONPATH=src:scripts ~/.cache/goodsdex-testenv/bin/python -m pytest -q -m 'not live'
 ```
 
-正式提交、发布run与线上API验收见[publication.md](publication.md)。
+默认API已确认2842条与当前OSS和数据提交完全一致，234个官方标题、配件排除及套装保留全部通过。正式提交、发布run与线上API验收见[publication.md](publication.md)。

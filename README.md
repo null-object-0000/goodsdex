@@ -285,3 +285,7 @@ HP 下架留档：`crawl_hp.py` 仅把官方 SKU URL 落到已知官方电脑列
 服务复核全清单及前后类目计数见 [服务排除验收](docs/services-20261104/README.md)。
 
 价格观测、90 天明细策略与线上导入兼容说明见 [价格历史](docs/price-history-20261104/README.md)。
+
+## 小米商品名称保真
+
+小米商品的 `name` 优先使用官方购买页 `<title>`，只去掉精确的 `立即购买-小米商城` 后缀；型号、Pro/Max、配件名、双支装、套装及颜色等官方原文完整保留。短名或公共前缀不得覆盖真名。已核对的历史名称通过 `data/official/mi-page-names.json` 在共享finalizer重放；更晚的官网采集结果优先。`is_accessory` 按完整名称判定，独立配件排除并保留完整档案，含整机的配件套装和双支整机保留。抽样、根因及逐条处置见[名称保真审计](docs/name-fidelity-20261104/README.md)。
