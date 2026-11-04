@@ -42,8 +42,8 @@ def validate_capture(capture):
             if not isinstance(s['salesPrice'],(int,float)) or isinstance(s['salesPrice'],bool) or s['salesPrice'] < 0:
                 raise ValueError('Invalid SKU sales price')
     # Log contains URL/method/time only. Page session/authentication is never saved.
-    stamps=[datetime.fromisoformat(x['started_at']).timestamp() for x in capture.get('requests',[])]
-    if any(b-a < 2.099 for a,b in zip(stamps,stamps[1:])):
+    stamps=[datetime.fromisoformat(x['started_at']) for x in capture.get('requests',[])]
+    if any((b-a).total_seconds() < 2.1 for a,b in zip(stamps,stamps[1:])):
         raise ValueError('Atour request interval below 2.1 seconds')
     return brand
 

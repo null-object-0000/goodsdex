@@ -15,7 +15,7 @@ if (!out) throw Error('Output JSON required');
    const previous=chain; let done; chain=new Promise(r=>done=r);
    await previous;
    try {
-    await new Promise(r=>setTimeout(r,Math.max(0,last+2100-Date.now())));
+    await new Promise(r=>setTimeout(r,Math.max(0,last+2105-Date.now())));
     last=Date.now();
     const headers={...req.headers()};
     for(const k of Object.keys(headers)) if(/cookie|token|authorization|unionid/i.test(k)) delete headers[k];

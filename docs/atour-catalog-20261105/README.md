@@ -8,7 +8,7 @@
 
 所有主图URL来自亚朵自有CDN。官方轮播图包含大量人物/海报，完整SKU规格图也带文案和表格，均不直接当主图。使用官方CDN对对应SKU原图进行矩形裁剪，只显示白底/近白底商品区域；原URL、裁剪坐标、原图与CDN返回图SHA-256逐SKU留档。没有生成、补绘、换色或借用其它型号图。18条长袖睡衣采用上衣主体局部，`image_scope=sku_primary_garment`，规格名仍完整保留长袖长裤套装；组合/多只装的图示与件数以官方来源为准，图示单个成员不改变整包价格。裁剪接口语法见[七牛官方文档](https://developer.qiniu.com/dora/8256/tailoring)。
 
-采集全新匿名浏览器上下文，只允许官方公开读取端点；全程≥2.1秒。记录中无Cookie、token、Authorization、unionid、localStorage或登录状态。没有访问微信小程序或任何第三方商城。采集中的业务对象与时间见[evidence/capture.json](evidence/capture.json)，本轮最小接口间隔实测2.100秒。
+采集全新匿名浏览器上下文，只允许官方公开读取端点；业务API请求串行且相邻启动时间≥2.1秒；图片审校下载另行串行限速≥2.1秒。记录中无Cookie、token、Authorization、unionid、localStorage或登录状态。没有访问微信小程序或任何第三方商城。采集中的业务对象与时间见[evidence/capture.json](evidence/capture.json)，本轮最小接口间隔实测2.100秒。
 
 自动化：[refresh-atour](../../.github/workflows/refresh-atour.yml)每天北京时间05:17运行。完整分页、SPU/面板覆盖、唯一SKU、价格、图片审校任一验证失败即停止，不生成发布候选，不据此下架。成功后走共享`publish-release`锁、候选合并、既有门禁、finalize、data分支与OSS镜像；其它品牌重建会保留亚朵记录。
 
