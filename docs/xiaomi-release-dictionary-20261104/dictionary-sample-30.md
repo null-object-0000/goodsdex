@@ -241,4 +241,3 @@
 > Xiaomi品牌方面，2025年5月，我們在中國大陸地區發佈旗艦手機產品Xiaomi15SPro
 
 存档定位：PDF page 4 / explicit dated statement / mi-25q1-release.txt；原存档 SHA256：`7f1333f8d6706bf70940edb0fadaaf2869154572664f09f8a44d482415336aa8`。
-

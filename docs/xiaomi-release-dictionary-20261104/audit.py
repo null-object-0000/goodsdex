@@ -7,6 +7,7 @@ import requests
 import sys
 OUT=Path(__file__).resolve().parent;ROOT=OUT.parents[1];sys.path.insert(0,str(ROOT/'src'))
 from goodsdex.series_release import apply_series_releases,is_accessory,reconcile_series
+from goodsdex.release_dates import apply_release_dates
 
 def read(p):return json.loads(Path(p).read_text())
 def write(p,v):p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
@@ -32,6 +33,11 @@ def main():
  assert len(D)==256 and len({e['id'] for e in D})==256
  assert all(e.get('product_name') and e.get('date') and e.get('evidence',{}).get('quote') and urlparse(e['evidence']['url']).scheme in ('http','https') for e in D)
  result=dict(dictionary_entries=len(D),required_fields_valid=256,sources=dict(collections.Counter(category(e) for e in D)),nonofficial=[dict(id=e['id'],name=e['product_name'],url=e['evidence']['url']) for e in D if e['evidence']['source_type']!='official'],coverage=dict(before=count(before),after=count(after)))
+ full=apply_series_releases(apply_release_dates(before))
+ result['coverage_isolated']=result['coverage']
+ result['coverage_published']=dict(before=count(before),after=count(full))
+ result['previous_commit_replayed_dates']=[dict(id=b['id'],name=b['name'],old_release=a.get('release'),release=b.get('release')) for a,b in zip(after,full) if a!=b]
+ (OUT/'expected-finalizer.json.gz').write_bytes(gzip.compress(json.dumps(full,ensure_ascii=False).encode(),mtime=0))
  write(OUT/'audit-summary.json',result)
  rng=random.Random(20261104)
  # Fixed stratification, all 30 from the 229 official entries. Third-party seeds listed separately.

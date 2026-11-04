@@ -1,0 +1,8 @@
+collect	Run ./.github/actions/upload-candidate	2026-11-04T01:37:11.0579346Z SHA256 digest of uploaded artifact zip is 6c78b4652c74d5b14d1cdaa66b49ff8ae00d099b33700b48fe2ac8ab3338ddff
+publish / publish	UNKNOWN STEP	2026-11-04T01:38:04.9199795Z SHA256 digest of downloaded artifact is 6c78b4652c74d5b14d1cdaa66b49ff8ae00d099b33700b48fe2ac8ab3338ddff
+publish / publish	UNKNOWN STEP	2026-11-04T01:38:39.5644112Z 360 passed in 29.75s
+publish / publish	UNKNOWN STEP	2026-11-04T01:38:52.1223009Z ##[group]Run python3 scripts/finalize_public.py --public _data/public --previous "$RUNNER_TEMP/goods-before.json" --reviewed-accessory-sha256 "$REVIEWED_ACCESSORY_SHA256"
+publish / publish	UNKNOWN STEP	2026-11-04T01:38:52.1224743Z ^[[36;1mpython3 scripts/finalize_public.py --public _data/public --previous "$RUNNER_TEMP/goods-before.json" --reviewed-accessory-sha256 "$REVIEWED_ACCESSORY_SHA256"^[[0m
+publish / publish	UNKNOWN STEP	2026-11-04T01:38:52.1257832Z   REVIEWED_ACCESSORY_SHA256: 
+publish / publish	UNKNOWN STEP	2026-11-04T01:39:02.9757588Z ^[[36;1m# No force push or automatic conflict resolution. A failed mirror is rerunnable.^[[0m
+publish / publish	UNKNOWN STEP	2026-11-04T01:39:49.6915375Z ^[[36;1mprint(f"Inventory: {meta['total_all']} = {meta['total_published']} published + {meta['total_excluded']} excluded; revision={meta['revision']}; excluded sha256={meta['files']['goods-excluded.json']['sha256']}")^[[0m
