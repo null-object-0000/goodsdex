@@ -72,6 +72,16 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
             if key in present:
                 assert expected[key]['batch_id'] == repair['original_batch_id']
                 expected[key] = dict(expected[key], batch_id=repair['batch_id'])
+    retrospective = ROOT / 'docs/release-dates-round10-20261104'
+    for batch in json.loads((retrospective / 'new-series-batches.json').read_text()):
+        for member in batch['members']:
+            if member['id'] in present:
+                assert member['id'] not in expected
+                r = batch['series_release']
+                expected[member['id']] = dict(date=r['date'], batch_id=batch['id'],
+                                              url=r['evidence']['url'], granularity=r['granularity'])
+    replacements = {key for c in json.loads((retrospective / 'replaced-candidates.json').read_text())
+                    for key in c['ids']}
     command = [sys.executable, str(ROOT / 'scripts/finalize_public.py'), '--public', str(tmp_path)]
     subprocess.run(command, check=True)
     result = json.loads((tmp_path / 'goods.json').read_text())
@@ -84,7 +94,15 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
     for old, updated in zip(before, product_expected, strict=True):
         if old.get('release'):
             prior = old['release']
-            if prior.get('source') == 'third_party':
+            if old['id'] in replacements:
+                assert prior['source'] == 'third_party'
+                assert updated['release']['source'] == 'official'
+                # The reviewed official assertion replaces an internal media value;
+                # retain the original statement even when market/event differ.
+                assert any(c.get('source') == prior['source'] and c.get('date') == prior['date']
+                           and c.get('evidence') == prior['evidence']
+                           for c in updated['release']['checks'])
+            elif prior.get('source') == 'third_party':
                 # Round 7 requires two captured real sources; LLM agreement is
                 # retained as audit evidence but no longer unlocks display.
                 assert updated['release']['date'] == prior['date']

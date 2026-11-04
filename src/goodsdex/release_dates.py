@@ -283,6 +283,10 @@ def apply_release_dates(rows, path=DEFAULT_INPUT, llm_path=None, crosscheck_path
                         f'预计 {year} 年 {month} 月（官方计划）' if planned else f'{year} 年 {month} 月')
         r['label'] = ('推出月份（推断）' if inferred else '预计发售' if planned else
                       '发布时间' if r['event'] == 'announcement' else '发售时间')
+        if r.get('retrospective') and r['source'] == 'official':
+            market_label = {'JP': '日本', 'US': '美国',
+                            'GLOBAL_REPORTED_BY_CN_OFFICIAL': '全球'}.get(r.get('market'), '')
+            r['label'] = market_label + ('推出月份（官方回溯）' if r['event'] == 'announcement' else '发售时间')
         if is_hidden:
             r['label'] = '推出月份（参考）'
             r['display'] = f'{year} 年 {month} 月（参考）'
