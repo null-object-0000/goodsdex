@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T21:13:14Z",
+  "generatedAt": "2026-11-04T21:24:57Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -31,9 +31,9 @@
       "expectedIntervalMinutes": 1440,
       "lastAttemptAt": "2026-11-04T21:08:18Z",
       "lastSuccessAt": "2026-11-04T20:22:01Z",
-      "conclusion": "in_progress",
+      "conclusion": "degraded",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41913221527",
-      "error": null,
+      "error": "blocked: 403 from hpstore.cn",
       "stale": false,
       "staleReason": null
     },
@@ -66,8 +66,8 @@
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
       "lastAttemptAt": "2026-11-04T21:11:40Z",
-      "lastSuccessAt": null,
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-04T21:14:28Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41913221527",
       "error": null,
       "stale": false,
