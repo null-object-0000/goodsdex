@@ -159,11 +159,17 @@ def merge_candidate(root, candidate):
                 stamp = str(event.get('fetched_at'))
                 return (event['id'], stamp) if 'id' in event else stamp[:13]
             hours = {observation_key(line) for line in lines}
+            observations = {observation_key(line): json.loads(line) for line in lines}
             for line in new_lines[len(old_lines):]:
                 hour = observation_key(line)
+                if name.startswith('data/price-observations/') and hour in observations:
+                    from goodsdex.price_history import signature
+                    if signature(observations[hour]) != signature(json.loads(line)):
+                        raise ValueError(f'Conflicting candidate observation: {hour}')
                 if hour not in hours:
                     lines.append(line)
                     hours.add(hour)
+                    observations[hour] = json.loads(line)
             value = b'\n'.join(lines) + (b'\n' if lines else b'')
         elif name.endswith('.json'):
             def decode(raw):

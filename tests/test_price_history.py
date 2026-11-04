@@ -6,6 +6,8 @@ from pathlib import Path
 
 import pytest
 from goodsdex.price_history import observation, stage, finalize, encode
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from release_candidate import merge_candidate
 import base64
 
@@ -115,3 +117,23 @@ def test_compatibility_projection_uses_actual_observation_times(tmp_path):
     finalize(public, 'r', now=NOW)
     snapshots = [json.loads(line) for line in (public / 'prices/2026-11.jsonl').read_bytes().splitlines()]
     assert snapshots == [dict(fetched_at='2026-11-04T09:00:00+08:00', prices={row()['id']: dict(price=99, missing_status='ok')})]
+
+
+def test_same_gid_same_time_conflict_is_rejected_before_persist(tmp_path):
+    public = setup(tmp_path, [])
+    stage(public, [observation(row(99)), observation(row(100))])
+    with pytest.raises(ValueError, match='Conflicting'):
+        finalize(public, 'r', now=NOW)
+    assert not (public / 'price-history/index.json').exists()
+    assert list((tmp_path / 'data/price-observations').glob('*.jsonl'))
+
+
+def test_candidate_does_not_silently_drop_conflicting_duplicate(tmp_path):
+    setup(tmp_path, [])
+    raw = b''.join(encode(observation(row(price))) for price in (99, 100))
+    candidate = tmp_path / 'candidate.json'
+    candidate.write_text(json.dumps(dict(schema=1, scope='prices', base='r', files={
+        'data/price-observations/run.jsonl': dict(before=None, after=base64.b64encode(raw).decode())})))
+    with pytest.raises(ValueError, match='Conflicting candidate'):
+        merge_candidate(tmp_path, candidate)
+    assert not (tmp_path / 'data/price-observations/run.jsonl').exists()
