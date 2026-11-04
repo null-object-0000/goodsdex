@@ -81,20 +81,23 @@ def build_shards(public):
         raw = status_path.read_bytes()
         files['sources-status.json'] = dict(sha256=hashlib.sha256(raw).hexdigest(),
             bytes=len(raw), count=len(json.loads(raw)['sources']))
+    history_files = {}
     history = public / 'price-history'
     if (history / 'index.json').exists():
         manifest = json.loads((history / 'index.json').read_bytes())
-        history_files = [('price-history/index.json', None)] + [(d['path'], d['count']) for d in manifest['files'] + manifest['archived_files']]
-        for name, count in history_files:
+        history_entries = [('price-history/index.json', manifest['observation_count'])] + [(d['path'], d['count']) for d in manifest['files'] + manifest['archived_files']]
+        for name, count in history_entries:
             raw = (public / name).read_bytes()
-            files[name] = dict(sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw), count=count)
+            history_files[name] = dict(sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw), count=count)
     for path in sorted((public / 'prices').glob('*.jsonl')):
         raw = path.read_bytes()
-        files[path.relative_to(public).as_posix()] = dict(sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw), count=len(raw.splitlines()))
+        history_files[path.relative_to(public).as_posix()] = dict(sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw), count=len(raw.splitlines()))
     meta_path = public / 'meta.json'
     meta = json.loads(meta_path.read_bytes()) if meta_path.exists() else {}
     if history.exists() and (history / 'index.json').exists() and manifest['revision'] != meta.get('revision'):
         raise ValueError('History index belongs to another release')
+    if history_files:
+        meta.setdefault('price_history', {})['files'] = history_files
     if 'revision' in meta:
         from goodsdex.exclusions import validate_excluded
         validate_excluded(meta, json.loads(excluded_path.read_bytes()), rows)

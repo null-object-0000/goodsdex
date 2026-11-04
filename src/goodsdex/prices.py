@@ -124,7 +124,8 @@ def refresh(gids: list[str], store: Path, stamp: Optional[str] = None, identitie
         history_prices = dict(prices)
         for raw_gid, canonical in (identities or {}).items():
             if raw_gid in prices:
-                history_prices[canonical] = prices[raw_gid]
+                for alias in canonical if isinstance(canonical, list) else [canonical]:
+                    history_prices[alias] = prices[raw_gid]
         line = json.dumps({"fetched_at": stamp, "prices": history_prices},
                           ensure_ascii=False)
         with fp.open("a", encoding="utf-8") as f:

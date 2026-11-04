@@ -8,7 +8,7 @@ import subprocess
 import urllib.request
 
 OUT = Path(__file__).resolve().parent
-ROOT = Path('/tmp/goodsdex-price-published')
+ROOT = Path.home() / '.cache/goodsdex-price-published'
 OSS = 'https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/'
 
 
@@ -50,7 +50,9 @@ def main():
                   today_added_count=sum(e['at'].startswith('2026-11-04') for e in fresh),
                   collection_rounds=dict(collections.Counter(e['at'] for e in fresh)),
                   fresh_samples=fresh[:3], missing_count=len(missing), missing_samples=missing[:3],
-                  backfilled_count=sum(bool(e.get('backfilled')) for e in events), gid=gid, trend=trend)
+                  backfilled_count=sum(bool(e.get('backfilled')) for e in events),
+                  backfilled_priced_count=sum(bool(e.get('backfilled')) and e['price'] is not None for e in events),
+                  gid=gid, trend=trend)
     (OUT / 'acceptance.json').write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     (OUT / 'published-index.json').write_bytes(remote)
     print(json.dumps({k:v for k,v in result.items() if k not in ('index','trend','fresh_samples','missing_samples','collection_rounds')}, ensure_ascii=False, indent=2))

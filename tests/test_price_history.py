@@ -137,3 +137,26 @@ def test_candidate_does_not_silently_drop_conflicting_duplicate(tmp_path):
     with pytest.raises(ValueError, match='Conflicting candidate'):
         merge_candidate(tmp_path, candidate)
     assert not (tmp_path / 'data/price-observations/run.jsonl').exists()
+
+
+def test_history_descriptors_do_not_extend_catalog_file_allowlist(tmp_path):
+    from goodsdex.dedupe import finalize_public
+    from goodsdex.shards import build_shards
+    public = setup(tmp_path, [])
+    finalize_public(public)
+    revision = json.loads((public/'meta.json').read_text())['revision']
+    stage(public, [observation(row())])
+    finalize(public, revision, now=NOW)
+    meta = build_shards(public)
+    assert 'price-history/index.json' not in meta['files']
+    assert not any(name.startswith('prices/') for name in meta['files'])
+    assert meta['price_history']['files']['price-history/index.json']['count'] == 1
+    assert 'prices/2026-11.jsonl' in meta['price_history']['files']
+
+
+def test_shared_raw_gid_projects_every_canonical_identity(tmp_path, monkeypatch):
+    from goodsdex import prices
+    monkeypatch.setattr(prices, 'fetch_prices', lambda gids: {'1': {'price': 99}})
+    prices.refresh(['1'], tmp_path, stamp='2026-11-04T09:00:00+08:00', identities={'1': ['CN:mi_cn:product:a', 'CN:mi_cn:product:b']})
+    snapshot = json.loads((tmp_path/'prices/2026-11.jsonl').read_text())
+    assert set(snapshot['prices']) == {'1', 'CN:mi_cn:product:a', 'CN:mi_cn:product:b'}

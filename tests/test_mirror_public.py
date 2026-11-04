@@ -110,3 +110,43 @@ def test_exclusion_file_is_mirrored_and_stale_release_fails_before_upload(tmp_pa
     with pytest.raises(ValueError, match='another release'):
         mirror.main()
     assert not uploads_seen
+
+
+def test_history_index_follows_month_readback_and_precedes_meta(tmp_path, mirror):
+    names = ['price-history/2026-11.jsonl.gz', 'price-history/index.json', 'meta.json']
+    store, events = {}, []
+    for name in names:
+        path = tmp_path/name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(name.encode())
+    class Bucket:
+        def put_object_from_file(self, destination, path, headers):
+            store[destination] = Path(path).read_bytes()
+            events.append(('put', destination))
+            if destination.endswith('.gz'):
+                assert headers['Content-Type'] == 'application/gzip'
+            return types.SimpleNamespace(status=200)
+        def get_object(self, destination):
+            events.append(('verified', destination))
+            return io.BytesIO(store[destination])
+    assert mirror.upload_release(tmp_path, [(n,n) for n in reversed(names)], Bucket) == 3
+    assert events == [(action, mirror.PREFIX+name) for name in names for action in ('put','verified')]
+
+
+def test_separate_history_descriptors_are_mirrored(tmp_path, mirror, monkeypatch):
+    import hashlib
+    import json
+    raw = {'goods.json': b'[]', 'price-history/index.json': b'{}', 'price-history/2026-11.jsonl.gz': b'gzip bytes'}
+    descriptors = {}
+    for name, content in raw.items():
+        path=tmp_path/name; path.parent.mkdir(parents=True,exist_ok=True); path.write_bytes(content)
+        descriptors[name] = dict(sha256=hashlib.sha256(content).hexdigest(),bytes=len(content),count=1)
+    (tmp_path/'meta.json').write_text(json.dumps(dict(schema=1,files={'goods.json':descriptors.pop('goods.json')},price_history={'files':descriptors})))
+    (tmp_path/'merge-audit.json').write_text(json.dumps({'deduplication':{'output_sha256':hashlib.sha256(raw['goods.json']).hexdigest()}}))
+    captured=[]
+    monkeypatch.setattr(mirror,'upload_release',lambda public,uploads,make_bucket:captured.extend(uploads) or len(uploads))
+    monkeypatch.setenv('OSS_ACCESS_KEY_ID','test'); monkeypatch.setenv('OSS_ACCESS_KEY_SECRET','test')
+    monkeypatch.setattr(sys,'argv',['mirror','--public',str(tmp_path)])
+    assert mirror.main()==0
+    assert ('price-history/index.json','price-history/index.json') in captured
+    assert ('price-history/2026-11.jsonl.gz','price-history/2026-11.jsonl.gz') in captured

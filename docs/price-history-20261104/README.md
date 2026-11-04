@@ -8,8 +8,10 @@
 
 回填只读取本次采集前 goods 的实际 fetched_at，不插值、不将当前价复制到任意过去时间。回填包括显式缺价，标 backfilled:true；累计条数见 index.backfilled_count 和 meta.price_history。离线重放、汽车 verified-only/historical-only 不构造新的当前观测。Apple stale 与 HP 下架/本轮确认封锁记 unavailable/null；HTTP 成功但无报价记 no_price/null；有效正价格记 ok，零值不会变成观测价格。
 
-线上核查发现现有 syncHistory 实际仍只读 prices/<月>.jsonl，未实现新 index 读取。为了让现有服务端立即导入，发布器在旧月快照后追加真实逐商品观测的兼容投影，并将旧价格月文件纳入 SHA 清单与 OSS 镜像。兼容投影不改已有快照，不改 goods/meta 既有字段含义。服务端旧 parser 将状态映射为 observed/price_missing；新 gzip 中保留完整 ok/no_price/unavailable。新 index 的 revision 自动新鲜度与严格热读需服务端后续消费此契约；生产端已提供文件与截止时间。
+线上核查发现现有 syncHistory 实际仍只读 prices/<月>.jsonl，未实现新 index 读取。为了让现有服务端立即导入，发布器在旧月快照后追加真实逐商品观测的兼容投影，并将旧价格月文件纳入 meta.price_history.files 的 SHA 清单与 OSS 镜像。兼容投影不改已有快照，不改 goods/meta 既有字段含义。服务端旧 parser 将状态映射为 observed/price_missing；新 gzip 中保留完整 ok/no_price/unavailable。新 index 的 revision 自动新鲜度与严格热读需服务端后续消费此契约；生产端已提供文件与截止时间。
 
 OSS 发布顺序：全部文件与不可变 blob 上传并 GET 验证 → history/index 别名 → meta，任一内容校验失败不写最终 meta。
 
 验证基线：728 passed / 8 deselected。结果、真实观测样本、data/OSS SHA 比对及在线 API 摘要见本目录后续验收文件。
+
+首次同步验证发现旧服务端对 meta.files 有严格的商品路径白名单。已把价格历史全部描述符隔离到新增的 meta.price_history.files，保留原 meta.files 的商品清单语义，OSS 镜像读取两份描述符。用现有服务端 validDescriptor 对修复后的全部商品描述符验证通过；增补分离清单、共享 raw gid 的多个规范 ID 和 OSS index 发布顺序回归。最终本地 747 passed / 8 deselected。

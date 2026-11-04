@@ -50,7 +50,12 @@ def main() -> int:
         gids = gids[:a.limit]
     print(f"从发布集读到 {len(gids)} 个 gid")
 
-    res = ({"offline": True} if a.offline else refresh(gids, Path(a.public).parent / "data", identities={str(it.get("gid")): it["id"] for it in items if str(it.get("gid")) in gids}))
+    identities = {}
+    for it in items:
+        raw_gid = str(it.get('gid'))
+        if raw_gid in gids:
+            identities.setdefault(raw_gid, []).append(it['id'])
+    res = ({"offline": True} if a.offline else refresh(gids, Path(a.public).parent / "data", identities=identities))
     if not a.offline:
         from goodsdex.price_history import observation, stage
         latest_snapshot = json.loads((Path(a.public).parent / 'data/prices/latest.json').read_text())

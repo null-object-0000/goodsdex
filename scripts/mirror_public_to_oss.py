@@ -88,7 +88,7 @@ def main():
     from pathlib import Path
     public = Path(args.public)
     meta = json.loads((public / 'meta.json').read_bytes())
-    descriptors = meta.get('files', {})
+    descriptors = {**meta.get('files', {}), **meta.get('price_history', {}).get('files', {})}
     if meta.get('schema') != 1 or not descriptors:
         raise ValueError('Run finalize_public.py to generate sharded release first')
     if 'revision' in meta:
