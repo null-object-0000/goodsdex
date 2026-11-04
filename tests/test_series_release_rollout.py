@@ -83,7 +83,17 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
     # rollout must preserve its output, including every pre-existing release.
     for old, updated in zip(before, product_expected, strict=True):
         if old.get('release'):
-            assert updated['release'] == old['release']
+            prior = old['release']
+            if prior.get('source') == 'third_party':
+                # Round 7 requires two captured real sources; LLM agreement is
+                # retained as audit evidence but no longer unlocks display.
+                assert updated['release']['date'] == prior['date']
+                assert updated['release']['evidence'] == prior['evidence']
+                assert updated['release']['checks'] == prior['checks']
+                assert updated['release']['display_allowed'] is False
+                assert updated['release']['display'] is None
+            else:
+                assert updated['release'] == prior
     excluded=json.loads((tmp_path / 'archive/accessories.json').read_text())
     assert len(excluded)==11 and all(not r.get('release') for r in excluded)
     excluded_ids={r['id'] for r in excluded}

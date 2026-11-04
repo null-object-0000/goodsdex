@@ -1,0 +1,2442 @@
+[
+  {
+    "id": "CN:dji:sku:153291",
+    "brand": "大疆",
+    "name": "Osmo Pocket 3",
+    "date": "2023-10",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2023-10",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://info.xitek.com/allpage/news/202310/25-365451.html",
+        "quote": "售价与服务 Osmo Pocket 3 标准版官方售价3499元，全能套装版4499元。即日起，Osmo Pocket 3标准版及全能套装版在中国地区大陆正式发售。DJI 大疆官方商城、京东、天猫、苏宁易购及北京、上海、深圳、南京、杭州旗舰店和线下授权体验店等渠道现货发售。",
+        "locator": "2023-10-25 launch; 售价与服务 / standard and creator bundles explicitly listed",
+        "sha256": "254fce149eaa43933efc6b49d81352b2dff606534df5757ea2f416e635414ede",
+        "captured_at": "2026-11-03T05:19:36.483139+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "round2:CN:dji:sku:153291",
+      "display": "2023 年 10 月",
+      "label": "发售时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2023-10",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://info.xitek.com/allpage/news/202310/25-365451.html",
+            "quote": "售价与服务 Osmo Pocket 3 标准版官方售价3499元，全能套装版4499元。即日起，Osmo Pocket 3标准版及全能套装版在中国地区大陆正式发售。DJI 大疆官方商城、京东、天猫、苏宁易购及北京、上海、深圳、南京、杭州旗舰店和线下授权体验店等渠道现货发售。",
+            "locator": "2023-10-25 launch; 售价与服务 / standard and creator bundles explicitly listed",
+            "sha256": "254fce149eaa43933efc6b49d81352b2dff606534df5757ea2f416e635414ede",
+            "captured_at": "2026-11-03T05:19:36.483139+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2023-10-26",
+          "reason": "大疆于2023年10月25日在中国举行Osmo Pocket 3发布会，次日（10月26日）在中国市场正式开售。该日期为大疆官方公布的中国市场首销日，非全球发布日或预售日。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:27.871865+00:00",
+          "original_sha256": "aa294bb211da95c744e3606ff052d9d18c6983c0e250f70c48e0d83a9e1c0315",
+          "prompt_sha256": "1b396fb9112f19d5c6e6c1dc72f00d266599bda18d1e66fd2b9b9ec57647137c",
+          "response_sha256": "aa6a918c09a49ca4e9f372ae52e928a8faffbc51196715b66f824400bf325446",
+          "artifact": "docs/release-crosschecks-20261103/responses/206ed76a5bb683e2deb0a4cb.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2023-10"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2023-10-26",
+          "reason": "大疆于2023年10月25日在中国举行Osmo Pocket 3发布会，次日（10月26日）在中国市场正式开售。该日期为大疆官方公布的中国市场首销日，非全球发布日或预售日。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:27.871865+00:00",
+          "original_sha256": "aa294bb211da95c744e3606ff052d9d18c6983c0e250f70c48e0d83a9e1c0315",
+          "prompt_sha256": "1b396fb9112f19d5c6e6c1dc72f00d266599bda18d1e66fd2b9b9ec57647137c",
+          "response_sha256": "aa6a918c09a49ca4e9f372ae52e928a8faffbc51196715b66f824400bf325446",
+          "artifact": "docs/release-crosschecks-20261103/responses/206ed76a5bb683e2deb0a4cb.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2023-10"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2023-10",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://info.xitek.com/allpage/news/202310/25-365451.html",
+        "quote": "售价与服务 Osmo Pocket 3 标准版官方售价3499元，全能套装版4499元。即日起，Osmo Pocket 3标准版及全能套装版在中国地区大陆正式发售。DJI 大疆官方商城、京东、天猫、苏宁易购及北京、上海、深圳、南京、杭州旗舰店和线下授权体验店等渠道现货发售。",
+        "locator": "2023-10-25 launch; 售价与服务 / standard and creator bundles explicitly listed",
+        "sha256": "254fce149eaa43933efc6b49d81352b2dff606534df5757ea2f416e635414ede",
+        "captured_at": "2026-11-03T05:19:36.483139+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "round2:CN:dji:sku:153291",
+      "display": null,
+      "label": "发售时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2023-10",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://info.xitek.com/allpage/news/202310/25-365451.html",
+            "quote": "售价与服务 Osmo Pocket 3 标准版官方售价3499元，全能套装版4499元。即日起，Osmo Pocket 3标准版及全能套装版在中国地区大陆正式发售。DJI 大疆官方商城、京东、天猫、苏宁易购及北京、上海、深圳、南京、杭州旗舰店和线下授权体验店等渠道现货发售。",
+            "locator": "2023-10-25 launch; 售价与服务 / standard and creator bundles explicitly listed",
+            "sha256": "254fce149eaa43933efc6b49d81352b2dff606534df5757ea2f416e635414ede",
+            "captured_at": "2026-11-03T05:19:36.483139+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2023-10-26",
+          "reason": "大疆于2023年10月25日在中国举行Osmo Pocket 3发布会，次日（10月26日）在中国市场正式开售。该日期为大疆官方公布的中国市场首销日，非全球发布日或预售日。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:27.871865+00:00",
+          "original_sha256": "aa294bb211da95c744e3606ff052d9d18c6983c0e250f70c48e0d83a9e1c0315",
+          "prompt_sha256": "1b396fb9112f19d5c6e6c1dc72f00d266599bda18d1e66fd2b9b9ec57647137c",
+          "response_sha256": "aa6a918c09a49ca4e9f372ae52e928a8faffbc51196715b66f824400bf325446",
+          "artifact": "docs/release-crosschecks-20261103/responses/206ed76a5bb683e2deb0a4cb.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2023-10"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2023-10-26",
+          "reason": "大疆于2023年10月25日在中国举行Osmo Pocket 3发布会，次日（10月26日）在中国市场正式开售。该日期为大疆官方公布的中国市场首销日，非全球发布日或预售日。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:27.871865+00:00",
+          "original_sha256": "aa294bb211da95c744e3606ff052d9d18c6983c0e250f70c48e0d83a9e1c0315",
+          "prompt_sha256": "1b396fb9112f19d5c6e6c1dc72f00d266599bda18d1e66fd2b9b9ec57647137c",
+          "response_sha256": "aa6a918c09a49ca4e9f372ae52e928a8faffbc51196715b66f824400bf325446",
+          "artifact": "docs/release-crosschecks-20261103/responses/206ed76a5bb683e2deb0a4cb.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2023-10"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  },
+  {
+    "id": "CN:dji:sku:153321",
+    "brand": "大疆",
+    "name": "Osmo Pocket 3 全能套装",
+    "date": "2023-10",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2023-10",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://info.xitek.com/allpage/news/202310/25-365451.html",
+        "quote": "售价与服务 Osmo Pocket 3 标准版官方售价3499元，全能套装版4499元。即日起，Osmo Pocket 3标准版及全能套装版在中国地区大陆正式发售。DJI 大疆官方商城、京东、天猫、苏宁易购及北京、上海、深圳、南京、杭州旗舰店和线下授权体验店等渠道现货发售。",
+        "locator": "2023-10-25 launch; 售价与服务 / standard and creator bundles explicitly listed",
+        "sha256": "254fce149eaa43933efc6b49d81352b2dff606534df5757ea2f416e635414ede",
+        "captured_at": "2026-11-03T05:19:36.483139+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "round2:CN:dji:sku:153321",
+      "display": "2023 年 10 月",
+      "label": "发售时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2023-10",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://info.xitek.com/allpage/news/202310/25-365451.html",
+            "quote": "售价与服务 Osmo Pocket 3 标准版官方售价3499元，全能套装版4499元。即日起，Osmo Pocket 3标准版及全能套装版在中国地区大陆正式发售。DJI 大疆官方商城、京东、天猫、苏宁易购及北京、上海、深圳、南京、杭州旗舰店和线下授权体验店等渠道现货发售。",
+            "locator": "2023-10-25 launch; 售价与服务 / standard and creator bundles explicitly listed",
+            "sha256": "254fce149eaa43933efc6b49d81352b2dff606534df5757ea2f416e635414ede",
+            "captured_at": "2026-11-03T05:19:36.483139+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2023-10-26",
+          "reason": "大疆于2023年10月25日发布Osmo Pocket 3系列，全能套装于2023年10月26日在中国市场正式开售。该日期为独立已知的产品上市信息，非由型号年份或CPU年份推算。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:29.362218+00:00",
+          "original_sha256": "aa294bb211da95c744e3606ff052d9d18c6983c0e250f70c48e0d83a9e1c0315",
+          "prompt_sha256": "1d11e5718643caa65842fb0c6370bfec6c9bcdd7a46c86a2c6ed377459469ea9",
+          "response_sha256": "d4f25e9e46a5578f62550e51e5ab063d98f79fb748e43437a6813cf8e5958716",
+          "artifact": "docs/release-crosschecks-20261103/responses/b196a6b9b88e6714aacc3570.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2023-10"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2023-10-26",
+          "reason": "大疆于2023年10月25日发布Osmo Pocket 3系列，全能套装于2023年10月26日在中国市场正式开售。该日期为独立已知的产品上市信息，非由型号年份或CPU年份推算。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:29.362218+00:00",
+          "original_sha256": "aa294bb211da95c744e3606ff052d9d18c6983c0e250f70c48e0d83a9e1c0315",
+          "prompt_sha256": "1d11e5718643caa65842fb0c6370bfec6c9bcdd7a46c86a2c6ed377459469ea9",
+          "response_sha256": "d4f25e9e46a5578f62550e51e5ab063d98f79fb748e43437a6813cf8e5958716",
+          "artifact": "docs/release-crosschecks-20261103/responses/b196a6b9b88e6714aacc3570.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2023-10"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2023-10",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://info.xitek.com/allpage/news/202310/25-365451.html",
+        "quote": "售价与服务 Osmo Pocket 3 标准版官方售价3499元，全能套装版4499元。即日起，Osmo Pocket 3标准版及全能套装版在中国地区大陆正式发售。DJI 大疆官方商城、京东、天猫、苏宁易购及北京、上海、深圳、南京、杭州旗舰店和线下授权体验店等渠道现货发售。",
+        "locator": "2023-10-25 launch; 售价与服务 / standard and creator bundles explicitly listed",
+        "sha256": "254fce149eaa43933efc6b49d81352b2dff606534df5757ea2f416e635414ede",
+        "captured_at": "2026-11-03T05:19:36.483139+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "round2:CN:dji:sku:153321",
+      "display": null,
+      "label": "发售时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2023-10",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://info.xitek.com/allpage/news/202310/25-365451.html",
+            "quote": "售价与服务 Osmo Pocket 3 标准版官方售价3499元，全能套装版4499元。即日起，Osmo Pocket 3标准版及全能套装版在中国地区大陆正式发售。DJI 大疆官方商城、京东、天猫、苏宁易购及北京、上海、深圳、南京、杭州旗舰店和线下授权体验店等渠道现货发售。",
+            "locator": "2023-10-25 launch; 售价与服务 / standard and creator bundles explicitly listed",
+            "sha256": "254fce149eaa43933efc6b49d81352b2dff606534df5757ea2f416e635414ede",
+            "captured_at": "2026-11-03T05:19:36.483139+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2023-10-26",
+          "reason": "大疆于2023年10月25日发布Osmo Pocket 3系列，全能套装于2023年10月26日在中国市场正式开售。该日期为独立已知的产品上市信息，非由型号年份或CPU年份推算。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:29.362218+00:00",
+          "original_sha256": "aa294bb211da95c744e3606ff052d9d18c6983c0e250f70c48e0d83a9e1c0315",
+          "prompt_sha256": "1d11e5718643caa65842fb0c6370bfec6c9bcdd7a46c86a2c6ed377459469ea9",
+          "response_sha256": "d4f25e9e46a5578f62550e51e5ab063d98f79fb748e43437a6813cf8e5958716",
+          "artifact": "docs/release-crosschecks-20261103/responses/b196a6b9b88e6714aacc3570.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2023-10"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2023-10-26",
+          "reason": "大疆于2023年10月25日发布Osmo Pocket 3系列，全能套装于2023年10月26日在中国市场正式开售。该日期为独立已知的产品上市信息，非由型号年份或CPU年份推算。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:29.362218+00:00",
+          "original_sha256": "aa294bb211da95c744e3606ff052d9d18c6983c0e250f70c48e0d83a9e1c0315",
+          "prompt_sha256": "1d11e5718643caa65842fb0c6370bfec6c9bcdd7a46c86a2c6ed377459469ea9",
+          "response_sha256": "d4f25e9e46a5578f62550e51e5ab063d98f79fb748e43437a6813cf8e5958716",
+          "artifact": "docs/release-crosschecks-20261103/responses/b196a6b9b88e6714aacc3570.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2023-10"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  },
+  {
+    "id": "CN:fuji:model:x-h2",
+    "brand": "富士",
+    "name": "FUJIFILM X-H2",
+    "date": "2022-09",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2022-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/640/150.htm",
+        "quote": "富士公布新款旗舰相机 X-H2 国行价格，单机身 13390 元，9 月 29 日上市。",
+        "locator": "article date + explicit 国行 / single body",
+        "sha256": "307f959bf38c32dbfa7554e088decab96cb88b408624d94a502ff166c43394c8",
+        "captured_at": "2026-11-03T05:19:35.922222+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "round2:CN:fuji:model:x-h2",
+      "display": "2022 年 9 月",
+      "label": "发售时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2022-09",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/640/150.htm",
+            "quote": "富士公布新款旗舰相机 X-H2 国行价格，单机身 13390 元，9 月 29 日上市。",
+            "locator": "article date + explicit 国行 / single body",
+            "sha256": "307f959bf38c32dbfa7554e088decab96cb88b408624d94a502ff166c43394c8",
+            "captured_at": "2026-11-03T05:19:35.922222+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2022-09-29",
+          "reason": "富士X-H2于2022年9月8日全球发布，中国大陆市场于2022年9月29日正式开售。该日期为中国市场首销日，非发布会日期。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:31.291289+00:00",
+          "original_sha256": "1027e2045c8ebcec84e088fb02a9c4160029a20acafe3b7066ee3fd08e28a255",
+          "prompt_sha256": "c6b8c482fbe5b1b62858dd311d48dce11f655e8bc88a19c32f48c3cac82f8e16",
+          "response_sha256": "3b205c07cdfcfd1478c14a021f7fa7d81bc8cffcac03439678e1716531a90c16",
+          "artifact": "docs/release-crosschecks-20261103/responses/0ce8612565f8c982a9f47733.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2022-09"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2022-09-29",
+          "reason": "富士X-H2于2022年9月8日全球发布，中国大陆市场于2022年9月29日正式开售。该日期为中国市场首销日，非发布会日期。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:31.291289+00:00",
+          "original_sha256": "1027e2045c8ebcec84e088fb02a9c4160029a20acafe3b7066ee3fd08e28a255",
+          "prompt_sha256": "c6b8c482fbe5b1b62858dd311d48dce11f655e8bc88a19c32f48c3cac82f8e16",
+          "response_sha256": "3b205c07cdfcfd1478c14a021f7fa7d81bc8cffcac03439678e1716531a90c16",
+          "artifact": "docs/release-crosschecks-20261103/responses/0ce8612565f8c982a9f47733.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2022-09"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2022-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/640/150.htm",
+        "quote": "富士公布新款旗舰相机 X-H2 国行价格，单机身 13390 元，9 月 29 日上市。",
+        "locator": "article date + explicit 国行 / single body",
+        "sha256": "307f959bf38c32dbfa7554e088decab96cb88b408624d94a502ff166c43394c8",
+        "captured_at": "2026-11-03T05:19:35.922222+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "round2:CN:fuji:model:x-h2",
+      "display": null,
+      "label": "发售时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2022-09",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/640/150.htm",
+            "quote": "富士公布新款旗舰相机 X-H2 国行价格，单机身 13390 元，9 月 29 日上市。",
+            "locator": "article date + explicit 国行 / single body",
+            "sha256": "307f959bf38c32dbfa7554e088decab96cb88b408624d94a502ff166c43394c8",
+            "captured_at": "2026-11-03T05:19:35.922222+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2022-09-29",
+          "reason": "富士X-H2于2022年9月8日全球发布，中国大陆市场于2022年9月29日正式开售。该日期为中国市场首销日，非发布会日期。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:31.291289+00:00",
+          "original_sha256": "1027e2045c8ebcec84e088fb02a9c4160029a20acafe3b7066ee3fd08e28a255",
+          "prompt_sha256": "c6b8c482fbe5b1b62858dd311d48dce11f655e8bc88a19c32f48c3cac82f8e16",
+          "response_sha256": "3b205c07cdfcfd1478c14a021f7fa7d81bc8cffcac03439678e1716531a90c16",
+          "artifact": "docs/release-crosschecks-20261103/responses/0ce8612565f8c982a9f47733.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2022-09"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2022-09-29",
+          "reason": "富士X-H2于2022年9月8日全球发布，中国大陆市场于2022年9月29日正式开售。该日期为中国市场首销日，非发布会日期。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:31.291289+00:00",
+          "original_sha256": "1027e2045c8ebcec84e088fb02a9c4160029a20acafe3b7066ee3fd08e28a255",
+          "prompt_sha256": "c6b8c482fbe5b1b62858dd311d48dce11f655e8bc88a19c32f48c3cac82f8e16",
+          "response_sha256": "3b205c07cdfcfd1478c14a021f7fa7d81bc8cffcac03439678e1716531a90c16",
+          "artifact": "docs/release-crosschecks-20261103/responses/0ce8612565f8c982a9f47733.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2022-09"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  },
+  {
+    "id": "CN:fuji:model:x-t5",
+    "brand": "富士",
+    "name": "FUJIFILM X-T5",
+    "date": "2022-11",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2022-11",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ea360.com/contents/150/13460.html",
+        "quote": "富士X-T5相机国行售价11,990元，MHG-XT5小手柄国行售价890元，11月11日上市销售。",
+        "locator": "article date + explicit 国行 / single body",
+        "sha256": "ac70a18e153e0f5185731de1953cd95c36c950793ee129acb83bbba1ced60967",
+        "captured_at": "2026-11-03T05:19:27.611881+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "round2:CN:fuji:model:x-t5",
+      "display": "2022 年 11 月",
+      "label": "发售时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2022-11",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ea360.com/contents/150/13460.html",
+            "quote": "富士X-T5相机国行售价11,990元，MHG-XT5小手柄国行售价890元，11月11日上市销售。",
+            "locator": "article date + explicit 国行 / single body",
+            "sha256": "ac70a18e153e0f5185731de1953cd95c36c950793ee129acb83bbba1ced60967",
+            "captured_at": "2026-11-03T05:19:27.611881+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2022-11",
+          "reason": "富士X-T5于2022年11月2日全球发布，中国大陆市场于2022年11月同步正式开售。依据富士中国官方发布信息及当时电商上架记录，国行X-T5在2022年11月上市销售。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:33.137967+00:00",
+          "original_sha256": "ba194ba219f7fb6cf44cb1e18b3e66b365716becd0dca8a544fec4af5ea30d28",
+          "prompt_sha256": "3038116b7f267d2c7d1f63f960bb1d2024cace5f8fc793d5cb85272406677b91",
+          "response_sha256": "2a4d042e3c0166f5d2df1bdf533222d7ec67fd7f7fdd443115e58bc4b4a99385",
+          "artifact": "docs/release-crosschecks-20261103/responses/28ec95500d9a3dd661b0f3f2.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2022-11"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2022-11",
+          "reason": "富士X-T5于2022年11月2日全球发布，中国大陆市场于2022年11月同步正式开售。依据富士中国官方发布信息及当时电商上架记录，国行X-T5在2022年11月上市销售。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:33.137967+00:00",
+          "original_sha256": "ba194ba219f7fb6cf44cb1e18b3e66b365716becd0dca8a544fec4af5ea30d28",
+          "prompt_sha256": "3038116b7f267d2c7d1f63f960bb1d2024cace5f8fc793d5cb85272406677b91",
+          "response_sha256": "2a4d042e3c0166f5d2df1bdf533222d7ec67fd7f7fdd443115e58bc4b4a99385",
+          "artifact": "docs/release-crosschecks-20261103/responses/28ec95500d9a3dd661b0f3f2.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2022-11"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2022-11",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ea360.com/contents/150/13460.html",
+        "quote": "富士X-T5相机国行售价11,990元，MHG-XT5小手柄国行售价890元，11月11日上市销售。",
+        "locator": "article date + explicit 国行 / single body",
+        "sha256": "ac70a18e153e0f5185731de1953cd95c36c950793ee129acb83bbba1ced60967",
+        "captured_at": "2026-11-03T05:19:27.611881+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "round2:CN:fuji:model:x-t5",
+      "display": null,
+      "label": "发售时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2022-11",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ea360.com/contents/150/13460.html",
+            "quote": "富士X-T5相机国行售价11,990元，MHG-XT5小手柄国行售价890元，11月11日上市销售。",
+            "locator": "article date + explicit 国行 / single body",
+            "sha256": "ac70a18e153e0f5185731de1953cd95c36c950793ee129acb83bbba1ced60967",
+            "captured_at": "2026-11-03T05:19:27.611881+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2022-11",
+          "reason": "富士X-T5于2022年11月2日全球发布，中国大陆市场于2022年11月同步正式开售。依据富士中国官方发布信息及当时电商上架记录，国行X-T5在2022年11月上市销售。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:33.137967+00:00",
+          "original_sha256": "ba194ba219f7fb6cf44cb1e18b3e66b365716becd0dca8a544fec4af5ea30d28",
+          "prompt_sha256": "3038116b7f267d2c7d1f63f960bb1d2024cace5f8fc793d5cb85272406677b91",
+          "response_sha256": "2a4d042e3c0166f5d2df1bdf533222d7ec67fd7f7fdd443115e58bc4b4a99385",
+          "artifact": "docs/release-crosschecks-20261103/responses/28ec95500d9a3dd661b0f3f2.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2022-11"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2022-11",
+          "reason": "富士X-T5于2022年11月2日全球发布，中国大陆市场于2022年11月同步正式开售。依据富士中国官方发布信息及当时电商上架记录，国行X-T5在2022年11月上市销售。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:33.137967+00:00",
+          "original_sha256": "ba194ba219f7fb6cf44cb1e18b3e66b365716becd0dca8a544fec4af5ea30d28",
+          "prompt_sha256": "3038116b7f267d2c7d1f63f960bb1d2024cace5f8fc793d5cb85272406677b91",
+          "response_sha256": "2a4d042e3c0166f5d2df1bdf533222d7ec67fd7f7fdd443115e58bc4b4a99385",
+          "artifact": "docs/release-crosschecks-20261103/responses/28ec95500d9a3dd661b0f3f2.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2022-11"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  },
+  {
+    "id": "CN:fuji:model:x100vi",
+    "brand": "富士",
+    "name": "FUJIFILM X100VI",
+    "date": "2024-03",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2024-03",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/751/018.htm",
+        "quote": "国行定价 11390 元 ，3 月 1 日上市。",
+        "locator": "article date + explicit 国行 / single body",
+        "sha256": "e3efddaaab1b926a0a218e4a06d05a24e38bd2323984404f7e53817b6ca86caf",
+        "captured_at": "2026-11-03T05:19:27.608077+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "round2:CN:fuji:model:x100vi",
+      "display": "2024 年 3 月",
+      "label": "发售时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2024-03",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/751/018.htm",
+            "quote": "国行定价 11390 元 ，3 月 1 日上市。",
+            "locator": "article date + explicit 国行 / single body",
+            "sha256": "e3efddaaab1b926a0a218e4a06d05a24e38bd2323984404f7e53817b6ca86caf",
+            "captured_at": "2026-11-03T05:19:27.608077+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2024-03",
+          "reason": "富士X100VI于2024年2月20日全球发布；中国大陆市场于2024年3月正式开售（国行上市）。独立资料显示中国区发售时间为2024年3月，具体日期未能确证，故仅给到月份。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:34.630110+00:00",
+          "original_sha256": "6a2b56a7fb2a3cc3b9575113e2e4a432d2f6d3d331f851ecc64f4a7dd9191854",
+          "prompt_sha256": "64634b622ca0172991806047590b443e4e63bf085eba6e9055753c4f0164ca61",
+          "response_sha256": "8ee2719747b8bc1229dfa7c59eb3ff2a2235b59b688960e8280c6a7b36f65214",
+          "artifact": "docs/release-crosschecks-20261103/responses/d7f817a4fd9591a0ef9bbc1b.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2024-03"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2024-03",
+          "reason": "富士X100VI于2024年2月20日全球发布；中国大陆市场于2024年3月正式开售（国行上市）。独立资料显示中国区发售时间为2024年3月，具体日期未能确证，故仅给到月份。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:34.630110+00:00",
+          "original_sha256": "6a2b56a7fb2a3cc3b9575113e2e4a432d2f6d3d331f851ecc64f4a7dd9191854",
+          "prompt_sha256": "64634b622ca0172991806047590b443e4e63bf085eba6e9055753c4f0164ca61",
+          "response_sha256": "8ee2719747b8bc1229dfa7c59eb3ff2a2235b59b688960e8280c6a7b36f65214",
+          "artifact": "docs/release-crosschecks-20261103/responses/d7f817a4fd9591a0ef9bbc1b.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2024-03"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2024-03",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "availability",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/751/018.htm",
+        "quote": "国行定价 11390 元 ，3 月 1 日上市。",
+        "locator": "article date + explicit 国行 / single body",
+        "sha256": "e3efddaaab1b926a0a218e4a06d05a24e38bd2323984404f7e53817b6ca86caf",
+        "captured_at": "2026-11-03T05:19:27.608077+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "round2:CN:fuji:model:x100vi",
+      "display": null,
+      "label": "发售时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2024-03",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/751/018.htm",
+            "quote": "国行定价 11390 元 ，3 月 1 日上市。",
+            "locator": "article date + explicit 国行 / single body",
+            "sha256": "e3efddaaab1b926a0a218e4a06d05a24e38bd2323984404f7e53817b6ca86caf",
+            "captured_at": "2026-11-03T05:19:27.608077+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2024-03",
+          "reason": "富士X100VI于2024年2月20日全球发布；中国大陆市场于2024年3月正式开售（国行上市）。独立资料显示中国区发售时间为2024年3月，具体日期未能确证，故仅给到月份。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:34.630110+00:00",
+          "original_sha256": "6a2b56a7fb2a3cc3b9575113e2e4a432d2f6d3d331f851ecc64f4a7dd9191854",
+          "prompt_sha256": "64634b622ca0172991806047590b443e4e63bf085eba6e9055753c4f0164ca61",
+          "response_sha256": "8ee2719747b8bc1229dfa7c59eb3ff2a2235b59b688960e8280c6a7b36f65214",
+          "artifact": "docs/release-crosschecks-20261103/responses/d7f817a4fd9591a0ef9bbc1b.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2024-03"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2024-03",
+          "reason": "富士X100VI于2024年2月20日全球发布；中国大陆市场于2024年3月正式开售（国行上市）。独立资料显示中国区发售时间为2024年3月，具体日期未能确证，故仅给到月份。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:34.630110+00:00",
+          "original_sha256": "6a2b56a7fb2a3cc3b9575113e2e4a432d2f6d3d331f851ecc64f4a7dd9191854",
+          "prompt_sha256": "64634b622ca0172991806047590b443e4e63bf085eba6e9055753c4f0164ca61",
+          "response_sha256": "8ee2719747b8bc1229dfa7c59eb3ff2a2235b59b688960e8280c6a7b36f65214",
+          "artifact": "docs/release-crosschecks-20261103/responses/d7f817a4fd9591a0ef9bbc1b.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2024-03"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:20426",
+    "brand": "小米",
+    "name": "REDMI Buds 6",
+    "date": "2024-09",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2024-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/798/668.htm",
+        "quote": "2024/9/26 19:36:21 来源： IT之家 作者： 归泷（实习） 责编： 归泷 评论： IT之家 9 月 26 日消息，小米 Redmi Buds 6 耳机今日正式发布，该耳机配备“圈瓷双单元”，至高续航 42 小时， 售价 199 元 。",
+        "locator": "article timestamp + opening explicit release sentence",
+        "sha256": "394d293f79340e75b1083f6b587dc5219107298a7a8a99b485696ec0b97a5b74",
+        "captured_at": "2026-11-03T05:19:36.119164+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:20426",
+      "display": "2024 年 9 月",
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2024-09",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/798/668.htm",
+            "quote": "2024/9/26 19:36:21 来源： IT之家 作者： 归泷（实习） 责编： 归泷 评论： IT之家 9 月 26 日消息，小米 Redmi Buds 6 耳机今日正式发布，该耳机配备“圈瓷双单元”，至高续航 42 小时， 售价 199 元 。",
+            "locator": "article timestamp + opening explicit release sentence",
+            "sha256": "394d293f79340e75b1083f6b587dc5219107298a7a8a99b485696ec0b97a5b74",
+            "captured_at": "2026-11-03T05:19:36.119164+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2024-09-26",
+          "reason": "REDMI Buds 6 于2024年9月26日在中国小米新品发布会上首次正式发布，与 Redmi Note 14 系列同场亮相；该日期为发布会（announcement），非开售日期。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:41.052033+00:00",
+          "original_sha256": "d7cedc070b9ee50a18f86caea31e6ea12fee0b695486f9531effd3e53a16a3bf",
+          "prompt_sha256": "cff74c83edbb566aef68bb6a5db95bc4860f9f3ffcb12f615ddf451579d2997b",
+          "response_sha256": "15143382210c935589e4d9957db0c8f061a9e16bc9096481227d67601bd07397",
+          "artifact": "docs/release-crosschecks-20261103/responses/9344c8009d5296c1559aeecb.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2024-09"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2024-09-26",
+          "reason": "REDMI Buds 6 于2024年9月26日在中国小米新品发布会上首次正式发布，与 Redmi Note 14 系列同场亮相；该日期为发布会（announcement），非开售日期。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:41.052033+00:00",
+          "original_sha256": "d7cedc070b9ee50a18f86caea31e6ea12fee0b695486f9531effd3e53a16a3bf",
+          "prompt_sha256": "cff74c83edbb566aef68bb6a5db95bc4860f9f3ffcb12f615ddf451579d2997b",
+          "response_sha256": "15143382210c935589e4d9957db0c8f061a9e16bc9096481227d67601bd07397",
+          "artifact": "docs/release-crosschecks-20261103/responses/9344c8009d5296c1559aeecb.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2024-09"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2024-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/798/668.htm",
+        "quote": "2024/9/26 19:36:21 来源： IT之家 作者： 归泷（实习） 责编： 归泷 评论： IT之家 9 月 26 日消息，小米 Redmi Buds 6 耳机今日正式发布，该耳机配备“圈瓷双单元”，至高续航 42 小时， 售价 199 元 。",
+        "locator": "article timestamp + opening explicit release sentence",
+        "sha256": "394d293f79340e75b1083f6b587dc5219107298a7a8a99b485696ec0b97a5b74",
+        "captured_at": "2026-11-03T05:19:36.119164+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:20426",
+      "display": null,
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2024-09",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/798/668.htm",
+            "quote": "2024/9/26 19:36:21 来源： IT之家 作者： 归泷（实习） 责编： 归泷 评论： IT之家 9 月 26 日消息，小米 Redmi Buds 6 耳机今日正式发布，该耳机配备“圈瓷双单元”，至高续航 42 小时， 售价 199 元 。",
+            "locator": "article timestamp + opening explicit release sentence",
+            "sha256": "394d293f79340e75b1083f6b587dc5219107298a7a8a99b485696ec0b97a5b74",
+            "captured_at": "2026-11-03T05:19:36.119164+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2024-09-26",
+          "reason": "REDMI Buds 6 于2024年9月26日在中国小米新品发布会上首次正式发布，与 Redmi Note 14 系列同场亮相；该日期为发布会（announcement），非开售日期。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:41.052033+00:00",
+          "original_sha256": "d7cedc070b9ee50a18f86caea31e6ea12fee0b695486f9531effd3e53a16a3bf",
+          "prompt_sha256": "cff74c83edbb566aef68bb6a5db95bc4860f9f3ffcb12f615ddf451579d2997b",
+          "response_sha256": "15143382210c935589e4d9957db0c8f061a9e16bc9096481227d67601bd07397",
+          "artifact": "docs/release-crosschecks-20261103/responses/9344c8009d5296c1559aeecb.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2024-09"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2024-09-26",
+          "reason": "REDMI Buds 6 于2024年9月26日在中国小米新品发布会上首次正式发布，与 Redmi Note 14 系列同场亮相；该日期为发布会（announcement），非开售日期。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:41.052033+00:00",
+          "original_sha256": "d7cedc070b9ee50a18f86caea31e6ea12fee0b695486f9531effd3e53a16a3bf",
+          "prompt_sha256": "cff74c83edbb566aef68bb6a5db95bc4860f9f3ffcb12f615ddf451579d2997b",
+          "response_sha256": "15143382210c935589e4d9957db0c8f061a9e16bc9096481227d67601bd07397",
+          "artifact": "docs/release-crosschecks-20261103/responses/9344c8009d5296c1559aeecb.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2024-09"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:21298",
+    "brand": "小米",
+    "name": "Xiaomi Civi 5 Pro",
+    "date": "2025-05",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2025-05",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/855/282.htm",
+        "quote": "七、小米 Civi 5 Pro；本场发布会还有一款手机大家也别忘了，就是小米 Civi 5 Pro，这款手机之前已经有过介绍，在传承了前代特质的同时， 在影像和性能两方面重点发力 。 设计方面，小米 Civi 5 Pro 全面向小米 15 系列看齐，拥有四大同款： 紧凑机身、四窄边屏幕、包裹式金属中框、顶部无孔化设计。 Deco 用独立式“悬浮镜组”替代上代平面黑圆台，提供星云紫、樱花粉、黑色、白色四色可选，另外这次发布会还带来了一款新配色：冰美式。 影像方面，小米 Civi 5 Pro 承袭徕卡 Summilux 光学系统 ，搭载全焦段徕卡三摄，其中搭载了小米 15 同款徕卡浮动长焦镜头。前置的 5000 万像素超感光镜头，首发 NanoPrism 超透纳米棱镜，让前置人像也具备“夜深”的体验。 内置全新一代人像大模型，带来“AI 肌肤再生”、“AI 面部微整形”、“AI 写真风格”功能，并提供五套写真风格套装可选。 ",
+        "locator": "article #paragraph / 七、小米 Civi 5 Pro; article timestamp; explicitly dated launch event",
+        "sha256": "f9bb69ac2015df2ffe35fc10cfa0016ca366343687a57edbb733439e6b8d4255",
+        "captured_at": "2026-11-03T05:20:02.785255+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:21298",
+      "display": "2025 年 5 月",
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-05",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/855/282.htm",
+            "quote": "七、小米 Civi 5 Pro；本场发布会还有一款手机大家也别忘了，就是小米 Civi 5 Pro，这款手机之前已经有过介绍，在传承了前代特质的同时， 在影像和性能两方面重点发力 。 设计方面，小米 Civi 5 Pro 全面向小米 15 系列看齐，拥有四大同款： 紧凑机身、四窄边屏幕、包裹式金属中框、顶部无孔化设计。 Deco 用独立式“悬浮镜组”替代上代平面黑圆台，提供星云紫、樱花粉、黑色、白色四色可选，另外这次发布会还带来了一款新配色：冰美式。 影像方面，小米 Civi 5 Pro 承袭徕卡 Summilux 光学系统 ，搭载全焦段徕卡三摄，其中搭载了小米 15 同款徕卡浮动长焦镜头。前置的 5000 万像素超感光镜头，首发 NanoPrism 超透纳米棱镜，让前置人像也具备“夜深”的体验。 内置全新一代人像大模型，带来“AI 肌肤再生”、“AI 面部微整形”、“AI 写真风格”功能，并提供五套写真风格套装可选。 ",
+            "locator": "article #paragraph / 七、小米 Civi 5 Pro; article timestamp; explicitly dated launch event",
+            "sha256": "f9bb69ac2015df2ffe35fc10cfa0016ca366343687a57edbb733439e6b8d4255",
+            "captured_at": "2026-11-03T05:20:02.785255+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-05-22",
+          "reason": "小米于2025年5月22日在中国举行发布会，正式发布Xiaomi Civi 5 Pro；该日期为官方发布会（announcement），非开售日期。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:44.673997+00:00",
+          "original_sha256": "af687a0fd3188983940e96df34ea6a4ca75a1b937b3a2d13293f5bfa70640359",
+          "prompt_sha256": "2edd1f8174533dbb1a305796b7ddf98ba9dec09eea827b310e5bf1773f2a715b",
+          "response_sha256": "e1e3c728c6595c0836ba331e9d99f59dc469cdfbfb5655de5e9f5149d98b841d",
+          "artifact": "docs/release-crosschecks-20261103/responses/ae1ccfa8c26f50f76aa43881.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-05"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-05-22",
+          "reason": "小米于2025年5月22日在中国举行发布会，正式发布Xiaomi Civi 5 Pro；该日期为官方发布会（announcement），非开售日期。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:44.673997+00:00",
+          "original_sha256": "af687a0fd3188983940e96df34ea6a4ca75a1b937b3a2d13293f5bfa70640359",
+          "prompt_sha256": "2edd1f8174533dbb1a305796b7ddf98ba9dec09eea827b310e5bf1773f2a715b",
+          "response_sha256": "e1e3c728c6595c0836ba331e9d99f59dc469cdfbfb5655de5e9f5149d98b841d",
+          "artifact": "docs/release-crosschecks-20261103/responses/ae1ccfa8c26f50f76aa43881.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-05"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2025-05",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/855/282.htm",
+        "quote": "七、小米 Civi 5 Pro；本场发布会还有一款手机大家也别忘了，就是小米 Civi 5 Pro，这款手机之前已经有过介绍，在传承了前代特质的同时， 在影像和性能两方面重点发力 。 设计方面，小米 Civi 5 Pro 全面向小米 15 系列看齐，拥有四大同款： 紧凑机身、四窄边屏幕、包裹式金属中框、顶部无孔化设计。 Deco 用独立式“悬浮镜组”替代上代平面黑圆台，提供星云紫、樱花粉、黑色、白色四色可选，另外这次发布会还带来了一款新配色：冰美式。 影像方面，小米 Civi 5 Pro 承袭徕卡 Summilux 光学系统 ，搭载全焦段徕卡三摄，其中搭载了小米 15 同款徕卡浮动长焦镜头。前置的 5000 万像素超感光镜头，首发 NanoPrism 超透纳米棱镜，让前置人像也具备“夜深”的体验。 内置全新一代人像大模型，带来“AI 肌肤再生”、“AI 面部微整形”、“AI 写真风格”功能，并提供五套写真风格套装可选。 ",
+        "locator": "article #paragraph / 七、小米 Civi 5 Pro; article timestamp; explicitly dated launch event",
+        "sha256": "f9bb69ac2015df2ffe35fc10cfa0016ca366343687a57edbb733439e6b8d4255",
+        "captured_at": "2026-11-03T05:20:02.785255+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:21298",
+      "display": null,
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-05",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/855/282.htm",
+            "quote": "七、小米 Civi 5 Pro；本场发布会还有一款手机大家也别忘了，就是小米 Civi 5 Pro，这款手机之前已经有过介绍，在传承了前代特质的同时， 在影像和性能两方面重点发力 。 设计方面，小米 Civi 5 Pro 全面向小米 15 系列看齐，拥有四大同款： 紧凑机身、四窄边屏幕、包裹式金属中框、顶部无孔化设计。 Deco 用独立式“悬浮镜组”替代上代平面黑圆台，提供星云紫、樱花粉、黑色、白色四色可选，另外这次发布会还带来了一款新配色：冰美式。 影像方面，小米 Civi 5 Pro 承袭徕卡 Summilux 光学系统 ，搭载全焦段徕卡三摄，其中搭载了小米 15 同款徕卡浮动长焦镜头。前置的 5000 万像素超感光镜头，首发 NanoPrism 超透纳米棱镜，让前置人像也具备“夜深”的体验。 内置全新一代人像大模型，带来“AI 肌肤再生”、“AI 面部微整形”、“AI 写真风格”功能，并提供五套写真风格套装可选。 ",
+            "locator": "article #paragraph / 七、小米 Civi 5 Pro; article timestamp; explicitly dated launch event",
+            "sha256": "f9bb69ac2015df2ffe35fc10cfa0016ca366343687a57edbb733439e6b8d4255",
+            "captured_at": "2026-11-03T05:20:02.785255+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-05-22",
+          "reason": "小米于2025年5月22日在中国举行发布会，正式发布Xiaomi Civi 5 Pro；该日期为官方发布会（announcement），非开售日期。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:44.673997+00:00",
+          "original_sha256": "af687a0fd3188983940e96df34ea6a4ca75a1b937b3a2d13293f5bfa70640359",
+          "prompt_sha256": "2edd1f8174533dbb1a305796b7ddf98ba9dec09eea827b310e5bf1773f2a715b",
+          "response_sha256": "e1e3c728c6595c0836ba331e9d99f59dc469cdfbfb5655de5e9f5149d98b841d",
+          "artifact": "docs/release-crosschecks-20261103/responses/ae1ccfa8c26f50f76aa43881.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-05"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-05-22",
+          "reason": "小米于2025年5月22日在中国举行发布会，正式发布Xiaomi Civi 5 Pro；该日期为官方发布会（announcement），非开售日期。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:44.673997+00:00",
+          "original_sha256": "af687a0fd3188983940e96df34ea6a4ca75a1b937b3a2d13293f5bfa70640359",
+          "prompt_sha256": "2edd1f8174533dbb1a305796b7ddf98ba9dec09eea827b310e5bf1773f2a715b",
+          "response_sha256": "e1e3c728c6595c0836ba331e9d99f59dc469cdfbfb5655de5e9f5149d98b841d",
+          "artifact": "docs/release-crosschecks-20261103/responses/ae1ccfa8c26f50f76aa43881.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-05"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:21399",
+    "brand": "小米",
+    "name": "小米AI眼镜",
+    "date": "2025-06",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "九、小米首款 AI 眼镜；在发布最为重磅的 YU7 前，雷军先带来了小米首款 AI 眼镜，重量仅 40g。 这款眼镜可选黑色、玳瑁棕半透明、鹦鹉绿半透明三种镜框，支持线上和线下配镜。 功能方面，支持第一人称相机 ，搭载 12MP 镜头；配有 独立 Type-C 接口 ，支持边用边充电；搭载开放式耳机，配有立体声双单元、五麦克风系统；内置超级小爱。 典型续航时间达到 8.6 小时，单次充满 45 分钟。 价格方面，小米 AI 眼镜定价 1999 元起，电致变色版本 2699 元，彩色版本 2999 元。",
+        "locator": "article #paragraph / 九、小米首款 AI 眼镜; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:21399",
+      "display": "2025 年 6 月",
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-06",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/863/991.htm",
+            "quote": "九、小米首款 AI 眼镜；在发布最为重磅的 YU7 前，雷军先带来了小米首款 AI 眼镜，重量仅 40g。 这款眼镜可选黑色、玳瑁棕半透明、鹦鹉绿半透明三种镜框，支持线上和线下配镜。 功能方面，支持第一人称相机 ，搭载 12MP 镜头；配有 独立 Type-C 接口 ，支持边用边充电；搭载开放式耳机，配有立体声双单元、五麦克风系统；内置超级小爱。 典型续航时间达到 8.6 小时，单次充满 45 分钟。 价格方面，小米 AI 眼镜定价 1999 元起，电致变色版本 2699 元，彩色版本 2999 元。",
+            "locator": "article #paragraph / 九、小米首款 AI 眼镜; article timestamp; explicitly dated launch event",
+            "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+            "captured_at": "2026-11-03T05:20:02.993149+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "小米于2025年6月26日在中国举行的新品发布会上首次正式发布小米AI眼镜，属于中国市场的首次公告。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:46.608181+00:00",
+          "original_sha256": "770797cd49ad402fc301f0c714d27faf54cb51095de7fcec613018935bc7b969",
+          "prompt_sha256": "452c7268e466ddb588f134b3251dbcbe2e44aa44de6054ec5b7b122bbf000c4f",
+          "response_sha256": "6ddcddd5496933e4ae0bf6b25aae01f263e5b3434b647c3b24aba2295648938d",
+          "artifact": "docs/release-crosschecks-20261103/responses/bccb9a8e53257f435cb71eab.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "小米于2025年6月26日在中国举行的新品发布会上首次正式发布小米AI眼镜，属于中国市场的首次公告。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:46.608181+00:00",
+          "original_sha256": "770797cd49ad402fc301f0c714d27faf54cb51095de7fcec613018935bc7b969",
+          "prompt_sha256": "452c7268e466ddb588f134b3251dbcbe2e44aa44de6054ec5b7b122bbf000c4f",
+          "response_sha256": "6ddcddd5496933e4ae0bf6b25aae01f263e5b3434b647c3b24aba2295648938d",
+          "artifact": "docs/release-crosschecks-20261103/responses/bccb9a8e53257f435cb71eab.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "九、小米首款 AI 眼镜；在发布最为重磅的 YU7 前，雷军先带来了小米首款 AI 眼镜，重量仅 40g。 这款眼镜可选黑色、玳瑁棕半透明、鹦鹉绿半透明三种镜框，支持线上和线下配镜。 功能方面，支持第一人称相机 ，搭载 12MP 镜头；配有 独立 Type-C 接口 ，支持边用边充电；搭载开放式耳机，配有立体声双单元、五麦克风系统；内置超级小爱。 典型续航时间达到 8.6 小时，单次充满 45 分钟。 价格方面，小米 AI 眼镜定价 1999 元起，电致变色版本 2699 元，彩色版本 2999 元。",
+        "locator": "article #paragraph / 九、小米首款 AI 眼镜; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:21399",
+      "display": null,
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-06",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/863/991.htm",
+            "quote": "九、小米首款 AI 眼镜；在发布最为重磅的 YU7 前，雷军先带来了小米首款 AI 眼镜，重量仅 40g。 这款眼镜可选黑色、玳瑁棕半透明、鹦鹉绿半透明三种镜框，支持线上和线下配镜。 功能方面，支持第一人称相机 ，搭载 12MP 镜头；配有 独立 Type-C 接口 ，支持边用边充电；搭载开放式耳机，配有立体声双单元、五麦克风系统；内置超级小爱。 典型续航时间达到 8.6 小时，单次充满 45 分钟。 价格方面，小米 AI 眼镜定价 1999 元起，电致变色版本 2699 元，彩色版本 2999 元。",
+            "locator": "article #paragraph / 九、小米首款 AI 眼镜; article timestamp; explicitly dated launch event",
+            "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+            "captured_at": "2026-11-03T05:20:02.993149+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "小米于2025年6月26日在中国举行的新品发布会上首次正式发布小米AI眼镜，属于中国市场的首次公告。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:46.608181+00:00",
+          "original_sha256": "770797cd49ad402fc301f0c714d27faf54cb51095de7fcec613018935bc7b969",
+          "prompt_sha256": "452c7268e466ddb588f134b3251dbcbe2e44aa44de6054ec5b7b122bbf000c4f",
+          "response_sha256": "6ddcddd5496933e4ae0bf6b25aae01f263e5b3434b647c3b24aba2295648938d",
+          "artifact": "docs/release-crosschecks-20261103/responses/bccb9a8e53257f435cb71eab.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "小米于2025年6月26日在中国举行的新品发布会上首次正式发布小米AI眼镜，属于中国市场的首次公告。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:46.608181+00:00",
+          "original_sha256": "770797cd49ad402fc301f0c714d27faf54cb51095de7fcec613018935bc7b969",
+          "prompt_sha256": "452c7268e466ddb588f134b3251dbcbe2e44aa44de6054ec5b7b122bbf000c4f",
+          "response_sha256": "6ddcddd5496933e4ae0bf6b25aae01f263e5b3434b647c3b24aba2295648938d",
+          "artifact": "docs/release-crosschecks-20261103/responses/bccb9a8e53257f435cb71eab.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:21405",
+    "brand": "小米",
+    "name": "Xiaomi Watch S4 41mm",
+    "date": "2025-06",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "六、小米 Watch S4 41mm；除了手机、平板上新，小米的穿戴产品也迎来三个新成员，第一款为 Watch S4 41mm， 售价 999 元起 。 小米 Watch S4 41mm 轻至 32g，薄至 9.5mm；1.32 英寸的 AMOLED 屏幕，支持 60Hz 刷新率、1500nits 全局亮度。 配色多彩，包括白色、流沙金、薄荷绿、经典黑色等，其中流沙金配色采用金色米兰尼斯表带，表冠镶嵌六分培育钻石。 功能丰富，支持多维健康管理、高精度温度传感器、150+ 运动模式、蓝牙心率广播。 320mAh 容量的电池，能实现最长 8 天的续航。",
+        "locator": "article #paragraph / 六、小米 Watch S4 41mm; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:21405",
+      "display": "2025 年 6 月",
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-06",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/863/991.htm",
+            "quote": "六、小米 Watch S4 41mm；除了手机、平板上新，小米的穿戴产品也迎来三个新成员，第一款为 Watch S4 41mm， 售价 999 元起 。 小米 Watch S4 41mm 轻至 32g，薄至 9.5mm；1.32 英寸的 AMOLED 屏幕，支持 60Hz 刷新率、1500nits 全局亮度。 配色多彩，包括白色、流沙金、薄荷绿、经典黑色等，其中流沙金配色采用金色米兰尼斯表带，表冠镶嵌六分培育钻石。 功能丰富，支持多维健康管理、高精度温度传感器、150+ 运动模式、蓝牙心率广播。 320mAh 容量的电池，能实现最长 8 天的续航。",
+            "locator": "article #paragraph / 六、小米 Watch S4 41mm; article timestamp; explicitly dated launch event",
+            "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+            "captured_at": "2026-11-03T05:20:02.993149+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06",
+          "reason": "Xiaomi Watch S4 41mm 于2025年6月26日小米人车家全生态发布会随 Xiaomi Watch S4 41mm 一同在中国正式发布；该型号为41mm版本，区别于此前发布的46mm Xiaomi Watch S4。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:48.585304+00:00",
+          "original_sha256": "df57c026ccfe873b70584bfc647816148b9d8450adba90e26c72429126ac8c20",
+          "prompt_sha256": "26772e67ba31da7fa3fb0e894ea81c9a19499ebe6d25045b6a11009e7de12e00",
+          "response_sha256": "464b8bb6f87b4b03147332566d75d9f2e1a666e54d14d77db8db525d3ab29db0",
+          "artifact": "docs/release-crosschecks-20261103/responses/30fdb7d7ab6aea1f6c0fee11.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06",
+          "reason": "Xiaomi Watch S4 41mm 于2025年6月26日小米人车家全生态发布会随 Xiaomi Watch S4 41mm 一同在中国正式发布；该型号为41mm版本，区别于此前发布的46mm Xiaomi Watch S4。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:48.585304+00:00",
+          "original_sha256": "df57c026ccfe873b70584bfc647816148b9d8450adba90e26c72429126ac8c20",
+          "prompt_sha256": "26772e67ba31da7fa3fb0e894ea81c9a19499ebe6d25045b6a11009e7de12e00",
+          "response_sha256": "464b8bb6f87b4b03147332566d75d9f2e1a666e54d14d77db8db525d3ab29db0",
+          "artifact": "docs/release-crosschecks-20261103/responses/30fdb7d7ab6aea1f6c0fee11.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "六、小米 Watch S4 41mm；除了手机、平板上新，小米的穿戴产品也迎来三个新成员，第一款为 Watch S4 41mm， 售价 999 元起 。 小米 Watch S4 41mm 轻至 32g，薄至 9.5mm；1.32 英寸的 AMOLED 屏幕，支持 60Hz 刷新率、1500nits 全局亮度。 配色多彩，包括白色、流沙金、薄荷绿、经典黑色等，其中流沙金配色采用金色米兰尼斯表带，表冠镶嵌六分培育钻石。 功能丰富，支持多维健康管理、高精度温度传感器、150+ 运动模式、蓝牙心率广播。 320mAh 容量的电池，能实现最长 8 天的续航。",
+        "locator": "article #paragraph / 六、小米 Watch S4 41mm; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:21405",
+      "display": null,
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-06",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/863/991.htm",
+            "quote": "六、小米 Watch S4 41mm；除了手机、平板上新，小米的穿戴产品也迎来三个新成员，第一款为 Watch S4 41mm， 售价 999 元起 。 小米 Watch S4 41mm 轻至 32g，薄至 9.5mm；1.32 英寸的 AMOLED 屏幕，支持 60Hz 刷新率、1500nits 全局亮度。 配色多彩，包括白色、流沙金、薄荷绿、经典黑色等，其中流沙金配色采用金色米兰尼斯表带，表冠镶嵌六分培育钻石。 功能丰富，支持多维健康管理、高精度温度传感器、150+ 运动模式、蓝牙心率广播。 320mAh 容量的电池，能实现最长 8 天的续航。",
+            "locator": "article #paragraph / 六、小米 Watch S4 41mm; article timestamp; explicitly dated launch event",
+            "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+            "captured_at": "2026-11-03T05:20:02.993149+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06",
+          "reason": "Xiaomi Watch S4 41mm 于2025年6月26日小米人车家全生态发布会随 Xiaomi Watch S4 41mm 一同在中国正式发布；该型号为41mm版本，区别于此前发布的46mm Xiaomi Watch S4。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:48.585304+00:00",
+          "original_sha256": "df57c026ccfe873b70584bfc647816148b9d8450adba90e26c72429126ac8c20",
+          "prompt_sha256": "26772e67ba31da7fa3fb0e894ea81c9a19499ebe6d25045b6a11009e7de12e00",
+          "response_sha256": "464b8bb6f87b4b03147332566d75d9f2e1a666e54d14d77db8db525d3ab29db0",
+          "artifact": "docs/release-crosschecks-20261103/responses/30fdb7d7ab6aea1f6c0fee11.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06",
+          "reason": "Xiaomi Watch S4 41mm 于2025年6月26日小米人车家全生态发布会随 Xiaomi Watch S4 41mm 一同在中国正式发布；该型号为41mm版本，区别于此前发布的46mm Xiaomi Watch S4。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:48.585304+00:00",
+          "original_sha256": "df57c026ccfe873b70584bfc647816148b9d8450adba90e26c72429126ac8c20",
+          "prompt_sha256": "26772e67ba31da7fa3fb0e894ea81c9a19499ebe6d25045b6a11009e7de12e00",
+          "response_sha256": "464b8bb6f87b4b03147332566d75d9f2e1a666e54d14d77db8db525d3ab29db0",
+          "artifact": "docs/release-crosschecks-20261103/responses/30fdb7d7ab6aea1f6c0fee11.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:21413",
+    "brand": "小米",
+    "name": "REDMI K Pad",
+    "date": "2025-06",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "四、REDMI K Pad；K80 至尊版退场后，REDMI 另一款新品接棒登场：首款旗舰小平板 K Pad。 根据卢伟冰的介绍，K Pad 配备 8.8 英寸的屏幕，为定制的 3K LCD， 支持 165Hz 刷新率。 机身采用全金属一体化设计，可选云杉绿、烟霞紫、深邃黑三种配色。 性能方面，K Pad 搭载天玑 9400+ 芯片 、配合超大铝合金液冷 VC，采用芯片居中架构。 内置 7500mAh 电池， 升级小米首款双 USB-C 接口 、旁路充电 Plus。 配备全新定制超薄“四音圈对称双扬”、双 X 轴线性马达，并升级小米首款三天线并发架构。 价格方面，IT之家小编整理 REDMI K Pad 售价如下： 8GB + 256GB 售价 2799 元 ； 12GB + 256GB 售价 3099 元； 12GB + 512GB 售价 3399 元； 16GB + 512GB 售价 3599 元； 16GB +",
+        "locator": "article #paragraph / 四、REDMI K Pad; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:21413",
+      "display": "2025 年 6 月",
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-06",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/863/991.htm",
+            "quote": "四、REDMI K Pad；K80 至尊版退场后，REDMI 另一款新品接棒登场：首款旗舰小平板 K Pad。 根据卢伟冰的介绍，K Pad 配备 8.8 英寸的屏幕，为定制的 3K LCD， 支持 165Hz 刷新率。 机身采用全金属一体化设计，可选云杉绿、烟霞紫、深邃黑三种配色。 性能方面，K Pad 搭载天玑 9400+ 芯片 、配合超大铝合金液冷 VC，采用芯片居中架构。 内置 7500mAh 电池， 升级小米首款双 USB-C 接口 、旁路充电 Plus。 配备全新定制超薄“四音圈对称双扬”、双 X 轴线性马达，并升级小米首款三天线并发架构。 价格方面，IT之家小编整理 REDMI K Pad 售价如下： 8GB + 256GB 售价 2799 元 ； 12GB + 256GB 售价 3099 元； 12GB + 512GB 售价 3399 元； 16GB + 512GB 售价 3599 元； 16GB +",
+            "locator": "article #paragraph / 四、REDMI K Pad; article timestamp; explicitly dated launch event",
+            "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+            "captured_at": "2026-11-03T05:20:02.993149+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "REDMI K Pad 于2025年6月26日在中国小米新品发布会上首次正式发布，与REDMI K80至尊版等产品同场亮相；该日期为发布会宣布日，非开售日。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:49.937175+00:00",
+          "original_sha256": "7746a21893a4667e17d3b7635e39391efdbd52e9c6f9832a86b86492281810d3",
+          "prompt_sha256": "6389dddd9fa0abdf02ec2e7766f0b0ecf1b42d910711ff142a3372270179e84b",
+          "response_sha256": "0b3e725de80f67f9d2695e491038e47dd4eb57177dbf2605154870b5333b56ee",
+          "artifact": "docs/release-crosschecks-20261103/responses/8f01b5e0b43ad406b5e26da8.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "REDMI K Pad 于2025年6月26日在中国小米新品发布会上首次正式发布，与REDMI K80至尊版等产品同场亮相；该日期为发布会宣布日，非开售日。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:49.937175+00:00",
+          "original_sha256": "7746a21893a4667e17d3b7635e39391efdbd52e9c6f9832a86b86492281810d3",
+          "prompt_sha256": "6389dddd9fa0abdf02ec2e7766f0b0ecf1b42d910711ff142a3372270179e84b",
+          "response_sha256": "0b3e725de80f67f9d2695e491038e47dd4eb57177dbf2605154870b5333b56ee",
+          "artifact": "docs/release-crosschecks-20261103/responses/8f01b5e0b43ad406b5e26da8.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "四、REDMI K Pad；K80 至尊版退场后，REDMI 另一款新品接棒登场：首款旗舰小平板 K Pad。 根据卢伟冰的介绍，K Pad 配备 8.8 英寸的屏幕，为定制的 3K LCD， 支持 165Hz 刷新率。 机身采用全金属一体化设计，可选云杉绿、烟霞紫、深邃黑三种配色。 性能方面，K Pad 搭载天玑 9400+ 芯片 、配合超大铝合金液冷 VC，采用芯片居中架构。 内置 7500mAh 电池， 升级小米首款双 USB-C 接口 、旁路充电 Plus。 配备全新定制超薄“四音圈对称双扬”、双 X 轴线性马达，并升级小米首款三天线并发架构。 价格方面，IT之家小编整理 REDMI K Pad 售价如下： 8GB + 256GB 售价 2799 元 ； 12GB + 256GB 售价 3099 元； 12GB + 512GB 售价 3399 元； 16GB + 512GB 售价 3599 元； 16GB +",
+        "locator": "article #paragraph / 四、REDMI K Pad; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:21413",
+      "display": null,
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-06",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/863/991.htm",
+            "quote": "四、REDMI K Pad；K80 至尊版退场后，REDMI 另一款新品接棒登场：首款旗舰小平板 K Pad。 根据卢伟冰的介绍，K Pad 配备 8.8 英寸的屏幕，为定制的 3K LCD， 支持 165Hz 刷新率。 机身采用全金属一体化设计，可选云杉绿、烟霞紫、深邃黑三种配色。 性能方面，K Pad 搭载天玑 9400+ 芯片 、配合超大铝合金液冷 VC，采用芯片居中架构。 内置 7500mAh 电池， 升级小米首款双 USB-C 接口 、旁路充电 Plus。 配备全新定制超薄“四音圈对称双扬”、双 X 轴线性马达，并升级小米首款三天线并发架构。 价格方面，IT之家小编整理 REDMI K Pad 售价如下： 8GB + 256GB 售价 2799 元 ； 12GB + 256GB 售价 3099 元； 12GB + 512GB 售价 3399 元； 16GB + 512GB 售价 3599 元； 16GB +",
+            "locator": "article #paragraph / 四、REDMI K Pad; article timestamp; explicitly dated launch event",
+            "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+            "captured_at": "2026-11-03T05:20:02.993149+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "REDMI K Pad 于2025年6月26日在中国小米新品发布会上首次正式发布，与REDMI K80至尊版等产品同场亮相；该日期为发布会宣布日，非开售日。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:49.937175+00:00",
+          "original_sha256": "7746a21893a4667e17d3b7635e39391efdbd52e9c6f9832a86b86492281810d3",
+          "prompt_sha256": "6389dddd9fa0abdf02ec2e7766f0b0ecf1b42d910711ff142a3372270179e84b",
+          "response_sha256": "0b3e725de80f67f9d2695e491038e47dd4eb57177dbf2605154870b5333b56ee",
+          "artifact": "docs/release-crosschecks-20261103/responses/8f01b5e0b43ad406b5e26da8.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "REDMI K Pad 于2025年6月26日在中国小米新品发布会上首次正式发布，与REDMI K80至尊版等产品同场亮相；该日期为发布会宣布日，非开售日。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:49.937175+00:00",
+          "original_sha256": "7746a21893a4667e17d3b7635e39391efdbd52e9c6f9832a86b86492281810d3",
+          "prompt_sha256": "6389dddd9fa0abdf02ec2e7766f0b0ecf1b42d910711ff142a3372270179e84b",
+          "response_sha256": "0b3e725de80f67f9d2695e491038e47dd4eb57177dbf2605154870b5333b56ee",
+          "artifact": "docs/release-crosschecks-20261103/responses/8f01b5e0b43ad406b5e26da8.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:21418",
+    "brand": "小米",
+    "name": "Xiaomi 开放式耳机 Pro",
+    "date": "2025-06",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "八、小米开放式耳机 Pro；最后一款穿戴产品为小米开放式耳机 Pro，售价 999 元。 据官方介绍，小米开放式耳机 Pro 为 仿生耳廓造型的三点支撑 ，采用 0.6mm 超纤细航空级记忆钛丝。 行业首发开放式五单元声学系统，哈曼金耳朵联合调音，支持独立空间音频。 在搭载主动防漏音系统之余，还升级耳机独立录音 2.0，连续播放时长达 8.5 小时。",
+        "locator": "article #paragraph / 八、小米开放式耳机 Pro; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:21418",
+      "display": "2025 年 6 月",
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-06",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/863/991.htm",
+            "quote": "八、小米开放式耳机 Pro；最后一款穿戴产品为小米开放式耳机 Pro，售价 999 元。 据官方介绍，小米开放式耳机 Pro 为 仿生耳廓造型的三点支撑 ，采用 0.6mm 超纤细航空级记忆钛丝。 行业首发开放式五单元声学系统，哈曼金耳朵联合调音，支持独立空间音频。 在搭载主动防漏音系统之余，还升级耳机独立录音 2.0，连续播放时长达 8.5 小时。",
+            "locator": "article #paragraph / 八、小米开放式耳机 Pro; article timestamp; explicitly dated launch event",
+            "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+            "captured_at": "2026-11-03T05:20:02.993149+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "小米于2025年6月26日在中国举行的新品发布会上正式发布Xiaomi开放式耳机Pro，属于首次正式发布（announcement），非开售事件。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:51.870824+00:00",
+          "original_sha256": "d3c4ff7c45a5a3a611350c4287437eb72b090533c6f5abd3da69fc0471be5930",
+          "prompt_sha256": "6b751dbdb7ae7106e9e8420fd74bbce6e17347615c74375958ebac4c934d00aa",
+          "response_sha256": "cfabe689b84d221afa5818bb75f1839797ca59420f2164208c14f52c05dbe23a",
+          "artifact": "docs/release-crosschecks-20261103/responses/0f440b74376d0d431b9b0159.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "小米于2025年6月26日在中国举行的新品发布会上正式发布Xiaomi开放式耳机Pro，属于首次正式发布（announcement），非开售事件。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:51.870824+00:00",
+          "original_sha256": "d3c4ff7c45a5a3a611350c4287437eb72b090533c6f5abd3da69fc0471be5930",
+          "prompt_sha256": "6b751dbdb7ae7106e9e8420fd74bbce6e17347615c74375958ebac4c934d00aa",
+          "response_sha256": "cfabe689b84d221afa5818bb75f1839797ca59420f2164208c14f52c05dbe23a",
+          "artifact": "docs/release-crosschecks-20261103/responses/0f440b74376d0d431b9b0159.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "八、小米开放式耳机 Pro；最后一款穿戴产品为小米开放式耳机 Pro，售价 999 元。 据官方介绍，小米开放式耳机 Pro 为 仿生耳廓造型的三点支撑 ，采用 0.6mm 超纤细航空级记忆钛丝。 行业首发开放式五单元声学系统，哈曼金耳朵联合调音，支持独立空间音频。 在搭载主动防漏音系统之余，还升级耳机独立录音 2.0，连续播放时长达 8.5 小时。",
+        "locator": "article #paragraph / 八、小米开放式耳机 Pro; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:21418",
+      "display": null,
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-06",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/863/991.htm",
+            "quote": "八、小米开放式耳机 Pro；最后一款穿戴产品为小米开放式耳机 Pro，售价 999 元。 据官方介绍，小米开放式耳机 Pro 为 仿生耳廓造型的三点支撑 ，采用 0.6mm 超纤细航空级记忆钛丝。 行业首发开放式五单元声学系统，哈曼金耳朵联合调音，支持独立空间音频。 在搭载主动防漏音系统之余，还升级耳机独立录音 2.0，连续播放时长达 8.5 小时。",
+            "locator": "article #paragraph / 八、小米开放式耳机 Pro; article timestamp; explicitly dated launch event",
+            "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+            "captured_at": "2026-11-03T05:20:02.993149+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "小米于2025年6月26日在中国举行的新品发布会上正式发布Xiaomi开放式耳机Pro，属于首次正式发布（announcement），非开售事件。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:51.870824+00:00",
+          "original_sha256": "d3c4ff7c45a5a3a611350c4287437eb72b090533c6f5abd3da69fc0471be5930",
+          "prompt_sha256": "6b751dbdb7ae7106e9e8420fd74bbce6e17347615c74375958ebac4c934d00aa",
+          "response_sha256": "cfabe689b84d221afa5818bb75f1839797ca59420f2164208c14f52c05dbe23a",
+          "artifact": "docs/release-crosschecks-20261103/responses/0f440b74376d0d431b9b0159.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "小米于2025年6月26日在中国举行的新品发布会上正式发布Xiaomi开放式耳机Pro，属于首次正式发布（announcement），非开售事件。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:51.870824+00:00",
+          "original_sha256": "d3c4ff7c45a5a3a611350c4287437eb72b090533c6f5abd3da69fc0471be5930",
+          "prompt_sha256": "6b751dbdb7ae7106e9e8420fd74bbce6e17347615c74375958ebac4c934d00aa",
+          "response_sha256": "cfabe689b84d221afa5818bb75f1839797ca59420f2164208c14f52c05dbe23a",
+          "artifact": "docs/release-crosschecks-20261103/responses/0f440b74376d0d431b9b0159.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:21432",
+    "brand": "小米",
+    "name": "REDMI K80 至尊版",
+    "date": "2025-06",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "三、REDMI K80 至尊版；第三款登场的新品来自 REDMI，K80 至尊版正式来袭。 一向看重性能的 REDMI，为 K80 至尊版安排了联发科天玑 9400+ 芯片，并 首发 AI 独显芯片 D2 。 在芯片强悍的同时，还辅以 REDMI 史上最大 3D 冰封循环冷泵。 在设计方面，K80 至尊版提供云杉绿、冰峰蓝、月岩白、砂岩灰四款配色，采用四曲包裹式金属中框 + 旗舰玻纤背板 + 金属相机 Deco 设计。 屏幕为 6.83 英寸直屏，1.5K+144Hz LTPS 的参数，采用 M9 发光材料，配备龙晶玻璃盖板，支持 DC 全亮度调光、圆偏振光、全场景低蓝光。 电池容量达到 7410 mAh， 升级旁路充电 Plus ，支持 100W 闪充。 影像拥有光影猎人 800 高动态主摄，辅以一颗 800 万像素副摄。 在发布会中，卢伟冰重点介绍了 K80 至尊版的马达和音质。 马达配备 定制的 0916C ，号称",
+        "locator": "article #paragraph / 三、REDMI K80 至尊版; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:21432",
+      "display": "2025 年 6 月",
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-06",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/863/991.htm",
+            "quote": "三、REDMI K80 至尊版；第三款登场的新品来自 REDMI，K80 至尊版正式来袭。 一向看重性能的 REDMI，为 K80 至尊版安排了联发科天玑 9400+ 芯片，并 首发 AI 独显芯片 D2 。 在芯片强悍的同时，还辅以 REDMI 史上最大 3D 冰封循环冷泵。 在设计方面，K80 至尊版提供云杉绿、冰峰蓝、月岩白、砂岩灰四款配色，采用四曲包裹式金属中框 + 旗舰玻纤背板 + 金属相机 Deco 设计。 屏幕为 6.83 英寸直屏，1.5K+144Hz LTPS 的参数，采用 M9 发光材料，配备龙晶玻璃盖板，支持 DC 全亮度调光、圆偏振光、全场景低蓝光。 电池容量达到 7410 mAh， 升级旁路充电 Plus ，支持 100W 闪充。 影像拥有光影猎人 800 高动态主摄，辅以一颗 800 万像素副摄。 在发布会中，卢伟冰重点介绍了 K80 至尊版的马达和音质。 马达配备 定制的 0916C ，号称",
+            "locator": "article #paragraph / 三、REDMI K80 至尊版; article timestamp; explicitly dated launch event",
+            "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+            "captured_at": "2026-11-03T05:20:02.993149+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "REDMI K80 至尊版于2025年6月26日在中国小米新品发布会上首次正式发布；该日期为发布会宣布日，非开售日。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:53.297463+00:00",
+          "original_sha256": "806d8bd2e566e02f7d966ce58a13e6a51d9c7dadfc69dac624f6e8a8e748b3f0",
+          "prompt_sha256": "7b5af02238d67c646f20f3ef0a4d4ddb869c6d4a8878771600998180d5614b85",
+          "response_sha256": "a3633adc9ced13bbef40b5ed3631259619b8f753289b2a8e81d12b1eb4970595",
+          "artifact": "docs/release-crosschecks-20261103/responses/de27204a136ea4b56b42e92e.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "REDMI K80 至尊版于2025年6月26日在中国小米新品发布会上首次正式发布；该日期为发布会宣布日，非开售日。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:53.297463+00:00",
+          "original_sha256": "806d8bd2e566e02f7d966ce58a13e6a51d9c7dadfc69dac624f6e8a8e748b3f0",
+          "prompt_sha256": "7b5af02238d67c646f20f3ef0a4d4ddb869c6d4a8878771600998180d5614b85",
+          "response_sha256": "a3633adc9ced13bbef40b5ed3631259619b8f753289b2a8e81d12b1eb4970595",
+          "artifact": "docs/release-crosschecks-20261103/responses/de27204a136ea4b56b42e92e.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2025-06",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/863/991.htm",
+        "quote": "三、REDMI K80 至尊版；第三款登场的新品来自 REDMI，K80 至尊版正式来袭。 一向看重性能的 REDMI，为 K80 至尊版安排了联发科天玑 9400+ 芯片，并 首发 AI 独显芯片 D2 。 在芯片强悍的同时，还辅以 REDMI 史上最大 3D 冰封循环冷泵。 在设计方面，K80 至尊版提供云杉绿、冰峰蓝、月岩白、砂岩灰四款配色，采用四曲包裹式金属中框 + 旗舰玻纤背板 + 金属相机 Deco 设计。 屏幕为 6.83 英寸直屏，1.5K+144Hz LTPS 的参数，采用 M9 发光材料，配备龙晶玻璃盖板，支持 DC 全亮度调光、圆偏振光、全场景低蓝光。 电池容量达到 7410 mAh， 升级旁路充电 Plus ，支持 100W 闪充。 影像拥有光影猎人 800 高动态主摄，辅以一颗 800 万像素副摄。 在发布会中，卢伟冰重点介绍了 K80 至尊版的马达和音质。 马达配备 定制的 0916C ，号称",
+        "locator": "article #paragraph / 三、REDMI K80 至尊版; article timestamp; explicitly dated launch event",
+        "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+        "captured_at": "2026-11-03T05:20:02.993149+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:21432",
+      "display": null,
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-06",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/863/991.htm",
+            "quote": "三、REDMI K80 至尊版；第三款登场的新品来自 REDMI，K80 至尊版正式来袭。 一向看重性能的 REDMI，为 K80 至尊版安排了联发科天玑 9400+ 芯片，并 首发 AI 独显芯片 D2 。 在芯片强悍的同时，还辅以 REDMI 史上最大 3D 冰封循环冷泵。 在设计方面，K80 至尊版提供云杉绿、冰峰蓝、月岩白、砂岩灰四款配色，采用四曲包裹式金属中框 + 旗舰玻纤背板 + 金属相机 Deco 设计。 屏幕为 6.83 英寸直屏，1.5K+144Hz LTPS 的参数，采用 M9 发光材料，配备龙晶玻璃盖板，支持 DC 全亮度调光、圆偏振光、全场景低蓝光。 电池容量达到 7410 mAh， 升级旁路充电 Plus ，支持 100W 闪充。 影像拥有光影猎人 800 高动态主摄，辅以一颗 800 万像素副摄。 在发布会中，卢伟冰重点介绍了 K80 至尊版的马达和音质。 马达配备 定制的 0916C ，号称",
+            "locator": "article #paragraph / 三、REDMI K80 至尊版; article timestamp; explicitly dated launch event",
+            "sha256": "4ba21eb0b379fddfeab42655ac85394d3919c0b0f64e2abdd8a09fc1d77f6827",
+            "captured_at": "2026-11-03T05:20:02.993149+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "REDMI K80 至尊版于2025年6月26日在中国小米新品发布会上首次正式发布；该日期为发布会宣布日，非开售日。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:53.297463+00:00",
+          "original_sha256": "806d8bd2e566e02f7d966ce58a13e6a51d9c7dadfc69dac624f6e8a8e748b3f0",
+          "prompt_sha256": "7b5af02238d67c646f20f3ef0a4d4ddb869c6d4a8878771600998180d5614b85",
+          "response_sha256": "a3633adc9ced13bbef40b5ed3631259619b8f753289b2a8e81d12b1eb4970595",
+          "artifact": "docs/release-crosschecks-20261103/responses/de27204a136ea4b56b42e92e.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-06-26",
+          "reason": "REDMI K80 至尊版于2025年6月26日在中国小米新品发布会上首次正式发布；该日期为发布会宣布日，非开售日。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:29:53.297463+00:00",
+          "original_sha256": "806d8bd2e566e02f7d966ce58a13e6a51d9c7dadfc69dac624f6e8a8e748b3f0",
+          "prompt_sha256": "7b5af02238d67c646f20f3ef0a4d4ddb869c6d4a8878771600998180d5614b85",
+          "response_sha256": "a3633adc9ced13bbef40b5ed3631259619b8f753289b2a8e81d12b1eb4970595",
+          "artifact": "docs/release-crosschecks-20261103/responses/de27204a136ea4b56b42e92e.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-06"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:22423",
+    "brand": "小米",
+    "name": "Xiaomi 17 Ultra 徕卡版",
+    "date": "2025-12",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2025-12",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/908/038.htm",
+        "quote": "二、小米 17 Ultra 徕卡版；在小米 17 Ultra 发布完毕后，紧接着登场的是 17 Ultra 徕卡版，号称“方方面面尽徕卡”。 外观方面，小米 17 Ultra 徕卡版多处细节有别于普通版， 最显眼的是徕卡经典红标。 机身为经典黑色、米白色双拼设计，源自徕卡 M 系列荔枝纹双拼；中框有精雕滚花，源自徕卡相机镜头设计语言；镌刻徕卡铭文，是专属徕卡感身份象征。 正如此前预热的那般，小米 17 Ultra 配有“大师变焦环”，与后置镜头模组圆环融为一体。 转动可调节焦距 ，还可自定义调节曝光补偿、白平衡等。 独享“徕卡一瞬”模式：徕卡 M9 画质，还原传奇 CCD 质感，色彩浓郁；徕卡 M3 + MONOPAN 50 画质，黑白胶片质感；更有经典 3:2 全画幅，源自徕卡第一代胶片比例。 总的来说，小米 17 Ultra 徕卡版有五大专享：徕卡经典红标设计、大师变焦环、徕卡专属画质、北斗 + 天通双卫星通信、安全隐私",
+        "locator": "article #paragraph / 二、小米 17 Ultra 徕卡版; article timestamp; explicitly dated launch event",
+        "sha256": "e75815d01685d5e0695bf8965c763c2e4c09bfe26c4e035c9f16354644879642",
+        "captured_at": "2026-11-03T05:20:02.986053+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:22423",
+      "display": "2025 年 12 月",
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-12",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/908/038.htm",
+            "quote": "二、小米 17 Ultra 徕卡版；在小米 17 Ultra 发布完毕后，紧接着登场的是 17 Ultra 徕卡版，号称“方方面面尽徕卡”。 外观方面，小米 17 Ultra 徕卡版多处细节有别于普通版， 最显眼的是徕卡经典红标。 机身为经典黑色、米白色双拼设计，源自徕卡 M 系列荔枝纹双拼；中框有精雕滚花，源自徕卡相机镜头设计语言；镌刻徕卡铭文，是专属徕卡感身份象征。 正如此前预热的那般，小米 17 Ultra 配有“大师变焦环”，与后置镜头模组圆环融为一体。 转动可调节焦距 ，还可自定义调节曝光补偿、白平衡等。 独享“徕卡一瞬”模式：徕卡 M9 画质，还原传奇 CCD 质感，色彩浓郁；徕卡 M3 + MONOPAN 50 画质，黑白胶片质感；更有经典 3:2 全画幅，源自徕卡第一代胶片比例。 总的来说，小米 17 Ultra 徕卡版有五大专享：徕卡经典红标设计、大师变焦环、徕卡专属画质、北斗 + 天通双卫星通信、安全隐私",
+            "locator": "article #paragraph / 二、小米 17 Ultra 徕卡版; article timestamp; explicitly dated launch event",
+            "sha256": "e75815d01685d5e0695bf8965c763c2e4c09bfe26c4e035c9f16354644879642",
+            "captured_at": "2026-11-03T05:20:02.986053+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-12-25",
+          "reason": "小米于2025年12月25日在中国举行Xiaomi 17 Ultra系列发布会，正式发布Xiaomi 17 Ultra及其徕卡版（Leica Edition）。该日期为发布会/首次正式发布日，非开售日。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:30:01.022012+00:00",
+          "original_sha256": "ef4ad6f7f683563aca83fc2409d54862306da22e9b0317bf08f919cb3076b90c",
+          "prompt_sha256": "d5ab84852eea9318f08de4fbbb8e792636a610da5ee6db6780b053ced23ddb2a",
+          "response_sha256": "9d3ffb2830ad328b008e2bbd2590cfa2f06a9ee79a4ad0a703b8a9e556cefba9",
+          "artifact": "docs/release-crosschecks-20261103/responses/ebec329ee4b0d27da83143cc.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-12"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-12-25",
+          "reason": "小米于2025年12月25日在中国举行Xiaomi 17 Ultra系列发布会，正式发布Xiaomi 17 Ultra及其徕卡版（Leica Edition）。该日期为发布会/首次正式发布日，非开售日。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:30:01.022012+00:00",
+          "original_sha256": "ef4ad6f7f683563aca83fc2409d54862306da22e9b0317bf08f919cb3076b90c",
+          "prompt_sha256": "d5ab84852eea9318f08de4fbbb8e792636a610da5ee6db6780b053ced23ddb2a",
+          "response_sha256": "9d3ffb2830ad328b008e2bbd2590cfa2f06a9ee79a4ad0a703b8a9e556cefba9",
+          "artifact": "docs/release-crosschecks-20261103/responses/ebec329ee4b0d27da83143cc.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-12"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2025-12",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "high",
+      "event": "announcement",
+      "market": "CN",
+      "evidence": {
+        "url": "https://www.ithome.com/0/908/038.htm",
+        "quote": "二、小米 17 Ultra 徕卡版；在小米 17 Ultra 发布完毕后，紧接着登场的是 17 Ultra 徕卡版，号称“方方面面尽徕卡”。 外观方面，小米 17 Ultra 徕卡版多处细节有别于普通版， 最显眼的是徕卡经典红标。 机身为经典黑色、米白色双拼设计，源自徕卡 M 系列荔枝纹双拼；中框有精雕滚花，源自徕卡相机镜头设计语言；镌刻徕卡铭文，是专属徕卡感身份象征。 正如此前预热的那般，小米 17 Ultra 配有“大师变焦环”，与后置镜头模组圆环融为一体。 转动可调节焦距 ，还可自定义调节曝光补偿、白平衡等。 独享“徕卡一瞬”模式：徕卡 M9 画质，还原传奇 CCD 质感，色彩浓郁；徕卡 M3 + MONOPAN 50 画质，黑白胶片质感；更有经典 3:2 全画幅，源自徕卡第一代胶片比例。 总的来说，小米 17 Ultra 徕卡版有五大专享：徕卡经典红标设计、大师变焦环、徕卡专属画质、北斗 + 天通双卫星通信、安全隐私",
+        "locator": "article #paragraph / 二、小米 17 Ultra 徕卡版; article timestamp; explicitly dated launch event",
+        "sha256": "e75815d01685d5e0695bf8965c763c2e4c09bfe26c4e035c9f16354644879642",
+        "captured_at": "2026-11-03T05:20:02.986053+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "round2:CN:mi_cn:product:22423",
+      "display": null,
+      "label": "发布时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2025-12",
+          "delta_days": 0,
+          "verdict": "original",
+          "evidence": {
+            "url": "https://www.ithome.com/0/908/038.htm",
+            "quote": "二、小米 17 Ultra 徕卡版；在小米 17 Ultra 发布完毕后，紧接着登场的是 17 Ultra 徕卡版，号称“方方面面尽徕卡”。 外观方面，小米 17 Ultra 徕卡版多处细节有别于普通版， 最显眼的是徕卡经典红标。 机身为经典黑色、米白色双拼设计，源自徕卡 M 系列荔枝纹双拼；中框有精雕滚花，源自徕卡相机镜头设计语言；镌刻徕卡铭文，是专属徕卡感身份象征。 正如此前预热的那般，小米 17 Ultra 配有“大师变焦环”，与后置镜头模组圆环融为一体。 转动可调节焦距 ，还可自定义调节曝光补偿、白平衡等。 独享“徕卡一瞬”模式：徕卡 M9 画质，还原传奇 CCD 质感，色彩浓郁；徕卡 M3 + MONOPAN 50 画质，黑白胶片质感；更有经典 3:2 全画幅，源自徕卡第一代胶片比例。 总的来说，小米 17 Ultra 徕卡版有五大专享：徕卡经典红标设计、大师变焦环、徕卡专属画质、北斗 + 天通双卫星通信、安全隐私",
+            "locator": "article #paragraph / 二、小米 17 Ultra 徕卡版; article timestamp; explicitly dated launch event",
+            "sha256": "e75815d01685d5e0695bf8965c763c2e4c09bfe26c4e035c9f16354644879642",
+            "captured_at": "2026-11-03T05:20:02.986053+00:00",
+            "source_type": "third_party"
+          },
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2025-12-25",
+          "reason": "小米于2025年12月25日在中国举行Xiaomi 17 Ultra系列发布会，正式发布Xiaomi 17 Ultra及其徕卡版（Leica Edition）。该日期为发布会/首次正式发布日，非开售日。",
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:30:01.022012+00:00",
+          "original_sha256": "ef4ad6f7f683563aca83fc2409d54862306da22e9b0317bf08f919cb3076b90c",
+          "prompt_sha256": "d5ab84852eea9318f08de4fbbb8e792636a610da5ee6db6780b053ced23ddb2a",
+          "response_sha256": "9d3ffb2830ad328b008e2bbd2590cfa2f06a9ee79a4ad0a703b8a9e556cefba9",
+          "artifact": "docs/release-crosschecks-20261103/responses/ebec329ee4b0d27da83143cc.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-12"
+          },
+          "effective_verdict": "corroborated"
+        },
+        {
+          "source": "llm",
+          "date": "2025-12-25",
+          "reason": "小米于2025年12月25日在中国举行Xiaomi 17 Ultra系列发布会，正式发布Xiaomi 17 Ultra及其徕卡版（Leica Edition）。该日期为发布会/首次正式发布日，非开售日。",
+          "evidence": {
+            "url": null,
+            "quote": null
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:30:01.022012+00:00",
+          "original_sha256": "ef4ad6f7f683563aca83fc2409d54862306da22e9b0317bf08f919cb3076b90c",
+          "prompt_sha256": "d5ab84852eea9318f08de4fbbb8e792636a610da5ee6db6780b053ced23ddb2a",
+          "response_sha256": "9d3ffb2830ad328b008e2bbd2590cfa2f06a9ee79a4ad0a703b8a9e556cefba9",
+          "artifact": "docs/release-crosschecks-20261103/responses/ebec329ee4b0d27da83143cc.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2025-12"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  },
+  {
+    "id": "GLOBAL:apple_support:model:111850",
+    "brand": "Apple",
+    "name": "iPhone 14",
+    "date": "2022-09",
+    "reason": "既有第三方+LLM核对不满足两份独立原文",
+    "before": {
+      "date": "2022-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "medium",
+      "event": "availability",
+      "market": "GLOBAL",
+      "evidence": {
+        "url": "https://www.gsmarena.com/apple_iphone_14-11861.php",
+        "quote": "Released 2022, September 16",
+        "locator": "Launch / Status / Released",
+        "sha256": "b066e18aa3ec16e9c1d24bba5c401232d981049e0bfb0b65631ba62ea40550fb",
+        "captured_at": "2026-11-03T04:30:02.102947+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "fact",
+      "inferred": false,
+      "family": "GLOBAL:apple_support:model:111850",
+      "display": "2022 年 9 月",
+      "label": "发售时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2022-09",
+          "evidence": {
+            "url": "https://www.gsmarena.com/apple_iphone_14-11861.php",
+            "quote": "Released 2022, September 16",
+            "locator": "Launch / Status / Released",
+            "sha256": "b066e18aa3ec16e9c1d24bba5c401232d981049e0bfb0b65631ba62ea40550fb",
+            "captured_at": "2026-11-03T04:30:02.102947+00:00",
+            "source_type": "third_party"
+          },
+          "delta_days": 0,
+          "verdict": "original",
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2022-09-16",
+          "reason": "Apple 于 2022 年 9 月 7 日发布 iPhone 14 系列，iPhone 14 于 2022 年 9 月 16 日在首批市场正式开售；GLOBAL 作为泛指市场，采用首批上市日期。",
+          "evidence": {
+            "url": "https://www.apple.com/newsroom/2022/09/apple-debuts-iphone-14-and-iphone-14-plus/",
+            "quote": "iPhone 14 and iPhone 14 Plus will be available beginning Friday, September 16."
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:28:19.439863+00:00",
+          "original_sha256": "d233cbf3293ebcd4eaa1be50e8e5aadb72efd2108a2bc9d870eb276a7e424c22",
+          "prompt_sha256": "b38fbc0abbee8728edff898ef61c0a8c3058b8c4b9d60960a13db47ac0a87c4c",
+          "response_sha256": "5042e93d35b4a151e481be7b196e4e7b1ef5b68817106c2644100116fe743965",
+          "artifact": "docs/release-crosschecks-20261103/responses/f340e61c6841fe1ece7d2fb4.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2022-09"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": true,
+      "crosscheck_status": "corroborated",
+      "manual_review_required": false
+    },
+    "after": {
+      "date": "2022-09",
+      "granularity": "month",
+      "source": "third_party",
+      "confidence": "medium",
+      "event": "availability",
+      "market": "GLOBAL",
+      "evidence": {
+        "url": "https://www.gsmarena.com/apple_iphone_14-11861.php",
+        "quote": "Released 2022, September 16",
+        "locator": "Launch / Status / Released",
+        "sha256": "b066e18aa3ec16e9c1d24bba5c401232d981049e0bfb0b65631ba62ea40550fb",
+        "captured_at": "2026-11-03T04:30:02.102947+00:00",
+        "source_type": "third_party"
+      },
+      "usage": "disabled",
+      "inferred": false,
+      "family": "GLOBAL:apple_support:model:111850",
+      "display": null,
+      "label": "发售时间",
+      "checks": [
+        {
+          "source": "third_party",
+          "date": "2022-09",
+          "evidence": {
+            "url": "https://www.gsmarena.com/apple_iphone_14-11861.php",
+            "quote": "Released 2022, September 16",
+            "locator": "Launch / Status / Released",
+            "sha256": "b066e18aa3ec16e9c1d24bba5c401232d981049e0bfb0b65631ba62ea40550fb",
+            "captured_at": "2026-11-03T04:30:02.102947+00:00",
+            "source_type": "third_party"
+          },
+          "delta_days": 0,
+          "verdict": "original",
+          "effective_verdict": "original"
+        },
+        {
+          "source": "llm",
+          "date": "2022-09-16",
+          "reason": "Apple 于 2022 年 9 月 7 日发布 iPhone 14 系列，iPhone 14 于 2022 年 9 月 16 日在首批市场正式开售；GLOBAL 作为泛指市场，采用首批上市日期。",
+          "evidence": {
+            "url": "https://www.apple.com/newsroom/2022/09/apple-debuts-iphone-14-and-iphone-14-plus/",
+            "quote": "iPhone 14 and iPhone 14 Plus will be available beginning Friday, September 16."
+          },
+          "model": "deepseek-v4.1-flash-1017",
+          "checked_at": "2026-11-03T07:28:19.439863+00:00",
+          "original_sha256": "d233cbf3293ebcd4eaa1be50e8e5aadb72efd2108a2bc9d870eb276a7e424c22",
+          "prompt_sha256": "b38fbc0abbee8728edff898ef61c0a8c3058b8c4b9d60960a13db47ac0a87c4c",
+          "response_sha256": "5042e93d35b4a151e481be7b196e4e7b1ef5b68817106c2644100116fe743965",
+          "artifact": "docs/release-crosschecks-20261103/responses/f340e61c6841fe1ece7d2fb4.json",
+          "independent": true,
+          "delta_days": 0,
+          "verdict": "corroborated",
+          "compared_to": {
+            "source": "third_party",
+            "date": "2022-09"
+          },
+          "effective_verdict": "corroborated"
+        }
+      ],
+      "corroborated": false,
+      "crosscheck_status": "unverified",
+      "manual_review_required": false,
+      "display_allowed": false,
+      "internal_only": true,
+      "crosscheck_delta_days": null,
+      "policy_reason": "two_independent_original_sources_required"
+    }
+  }
+]

@@ -764,6 +764,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     meta = metadata(output, json.loads(meta_path.read_text()) if meta_path.exists() else {})
     from goodsdex.release_dates import coverage
     meta['release_dates'] = coverage(output)
+    from goodsdex.release_scope import scope_coverage
+    meta['release_scope'] = scope_coverage(output)
     meta['release_series'] = {
         'count': sum(bool(r.get('release_series')) for r in output),
         'inherited_without_product': sum(bool((r.get('release_series') or {}).get('inherited')) for r in output),

@@ -276,3 +276,5 @@ HP 下架留档：`crawl_hp.py` 仅把官方 SKU URL 落到已知官方电脑列
 审计将 `errors`/`error_count` 与 `delisted`/`delisted_count` 分开，
 并提供 `delisted_skipped_count`、`delisted_total_count`、`attempted_count` 和比例。
 `count` 仍指本轮成功解析的详情数，历史下架记录继续保存在 goods.json，发布依赖与超时不变。
+
+发布日期对外只报告「整机口径覆盖率」，使用 `meta.release_scope`，同时披露配件周边与第三方精选条数；单品与仅系列覆盖分列。旧 `release_dates` 是已弃用的全发布行统计，不用于对外报告。第三方单品日期需精确版本与两份独立原文、同市场同事件交叉；LLM 和页面首存不作为第二来源。见 [第七轮分层与双源审计](docs/release-dates-round7-20261104/README.md)。

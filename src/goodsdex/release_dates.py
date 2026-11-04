@@ -316,6 +316,9 @@ def apply_release_dates(rows, path=DEFAULT_INPUT, llm_path=None, crosscheck_path
                         raise ValueError('Stale independent sidecar check')
                     observations.append(alt_check)
         row['release'] = reconcile(r, observations, old.get('checks', []))
+    if path == DEFAULT_INPUT:
+        from goodsdex.third_party_release import apply_third_party
+        output = apply_third_party(output)
     return output
 
 
@@ -333,5 +336,6 @@ def coverage(rows):
         else:
             counts['missing'] += 1
     count = sum(sources.values())
-    return dict(total=len(rows), covered=count, coverage=count / len(rows) if rows else 0,
+    return dict(deprecated=True, scope='legacy_all_published_rows', not_for_external_reporting=True,
+                total=len(rows), covered=count, coverage=count / len(rows) if rows else 0,
                 sources=sources, brands=brands)
