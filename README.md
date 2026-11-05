@@ -297,3 +297,5 @@ HP 下架留档：`crawl_hp.py` 仅把官方 SKU URL 落到已知官方电脑列
 所有品牌共享发布流程把完整采集目录中的缺席事件转为 `status=retired`、`retired_at`，保留完整记录及 `archive/retired.json`；失败/部分采集不推断下架。`meta.retired_count` / `retired_by_brand` 汇总留档；退出现行目录不等于停产或停止支持。
 
 服饰/鞋包沿用共享 finalizer 排除契约，原始事实保存在 `archive/apparel.json`。`excluded_reason=apparel`，`matched_rule=category|name`、`matched_text` 保留具体证据，`meta.excluded_by_rule.apparel` 按理由汇总。明确家电/数码及非服饰品类冲突、含/赠睡衣套装保留；规则与逐条验收见 [服饰排除](docs/apparel-filter-20261105/README.md)。
+
+小米旧款笔记本通过官方旧活动页的精确 `data-stat-productid` 与官方参数页联合还原名称；保留 `is_historical` / `status=retired` / `price_missing`。官方历史活动标价单列 `historical_price`，不作现价，也不把归档月份当作发布日期。12条逐项原文及全库扫描见[旧款名称验收](docs/xiaomi-legacy-names-20261105/README.md)。
