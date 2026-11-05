@@ -53,3 +53,9 @@ def test_duplicate_id_projections_all_receive_append_only_date(tmp_path):
     out=apply_priority_dates(rows,[path])
     assert all(r['release']['date']=='2025-03-04' for r in out)
     assert [r['name'] for r in out]==['one','two']
+
+
+def test_lane_diagnostics_do_not_mutate_out_of_scope_rows(tmp_path):
+    rows=[dict(id='a',category='打印机',name='打印机')]
+    path=tmp_path/'lane.json';path.write_text(json.dumps({'observations':[{'id':'a','reason':'no_release_field'}]}))
+    assert apply_priority_dates(rows,[path])==rows

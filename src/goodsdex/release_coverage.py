@@ -101,7 +101,7 @@ def apply_priority_dates(rows, lane_files=None):
                         row['release_source'] = 'series_inherit'
         for obs in bundle.get('observations', []):
             for row in by_id.get(obs.get('id'), []):
-                if not effective(row):
+                if priority_group(row) and not effective(row):
                     row['release_missing'] = dict(reason='not_obtained', lane=bundle.get('lane'),
                         detail=obs.get('reason') or obs.get('status') or 'not_collected',
                         url=obs.get('url'), checked_at=obs.get('captured_at') or bundle.get('captured_at'))
