@@ -8088,11 +8088,33 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "archived_at": "2017-05-24T02:35:06Z",
   "archived_source_url": "https://web.archive.org/web/20170524023506id_/http://item.mi.com:80/product/3488.html",
   "captured_at_unknown": true,
   "captured_at_basis": "unknown",
+  "mihome_model": "chunmi.cooker.press1",
+  "mihome_pd_id": 66,
+  "mihome_catalog_evidence": {
+   "method": "exact_name",
+   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
+   "category": "电饭煲",
+   "classifications": [
+    {
+     "brand_id": 1520,
+     "id": 3,
+     "name": "厨房电器"
+    }
+   ]
+  },
+  "image_source": "mihome_icon",
+  "image_source_type": "official",
+  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+  "image_scope": "device_icon",
+  "image_width": 168,
+  "image_height": 168,
+  "image_sha256": "558f441e839548052fc9f1a4c8d4d1f5a528b758730b2f614df1ce22a0014c01",
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
   "release_series": {
    "date": "2016-03",
    "granularity": "month",
@@ -8256,29 +8278,7 @@
    ],
    "level": "product"
   },
-  "mihome_model": "chunmi.cooker.press1",
-  "mihome_pd_id": 66,
-  "mihome_catalog_evidence": {
-   "method": "exact_name",
-   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
-   "category": "电饭煲",
-   "classifications": [
-    {
-     "brand_id": 1520,
-     "id": 3,
-     "name": "厨房电器"
-    }
-   ]
-  },
-  "image_source": "mihome_icon",
-  "image_source_type": "official",
-  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-  "image_scope": "device_icon",
-  "image_width": 168,
-  "image_height": 168,
-  "image_sha256": "558f441e839548052fc9f1a4c8d4d1f5a528b758730b2f614df1ce22a0014c01",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:3674",
@@ -8382,18 +8382,10 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "archived_at": "2017-05-12T16:24:29Z",
   "archived_source_url": "https://web.archive.org/web/20170512162429id_/http://item.mi.com:80/product/3807.html",
   "captured_at_unknown": true,
   "captured_at_basis": "unknown",
-  "release_decision": {
-   "date": null,
-   "precision": null,
-   "source": null,
-   "display": null,
-   "usage": []
-  },
   "mihome_model": "jiqid.mistory.v1",
   "mihome_pd_id": 186,
   "mihome_catalog_evidence": {
@@ -8416,7 +8408,15 @@
   "image_width": 168,
   "image_height": 168,
   "image_sha256": "b61259c36118ae5a8d0b2e80b242426b37243cd22daa6a3aed83351a7124e90a",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
+  "release_decision": {
+   "date": null,
+   "precision": null,
+   "source": null,
+   "display": null,
+   "usage": []
+  },
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:3922",
@@ -9127,7 +9127,6 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "archived_at": "2017-05-24T01:16:54Z",
   "archived_source_url": "https://web.archive.org/web/20170524011654id_/http://item.mi.com:80/product/4802.html",
   "captured_at_unknown": true,
@@ -9151,6 +9150,29 @@
    "image_missing": true
   },
   "miio_model": "zhimi.airpurifier.v6",
+  "mihome_model": "zhimi.airpurifier.v6",
+  "mihome_pd_id": 322,
+  "mihome_catalog_evidence": {
+   "method": "exact_name",
+   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
+   "category": "空气净化器",
+   "classifications": [
+    {
+     "brand_id": 1520,
+     "id": 7,
+     "name": "环境电器"
+    }
+   ]
+  },
+  "image_source": "mihome_icon",
+  "image_source_type": "official",
+  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+  "image_scope": "device_icon",
+  "image_width": 168,
+  "image_height": 168,
+  "image_sha256": "af143265ed87a6779d80e23615afef47399ad412f33231ea4fc4358ba6c252fb",
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
   "release_effective": {
    "date": "2016-11",
    "source": "llm_verified",
@@ -9190,29 +9212,7 @@
    ],
    "level": "product"
   },
-  "mihome_model": "zhimi.airpurifier.v6",
-  "mihome_pd_id": 322,
-  "mihome_catalog_evidence": {
-   "method": "exact_name",
-   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
-   "category": "空气净化器",
-   "classifications": [
-    {
-     "brand_id": 1520,
-     "id": 7,
-     "name": "环境电器"
-    }
-   ]
-  },
-  "image_source": "mihome_icon",
-  "image_source_type": "official",
-  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-  "image_scope": "device_icon",
-  "image_width": 168,
-  "image_height": 168,
-  "image_sha256": "af143265ed87a6779d80e23615afef47399ad412f33231ea4fc4358ba6c252fb",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:4803",
@@ -9315,6 +9315,21 @@
    "image_missing": true
   },
   "miio_model": "zhimi.airmonitor.v1",
+  "mihome_model": "zhimi.airmonitor.v1",
+  "mihome_pd_id": 193,
+  "mihome_catalog_evidence": {
+   "method": "exact_name",
+   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
+   "category": "空气检测仪",
+   "classifications": [
+    {
+     "brand_id": 1520,
+     "id": 7,
+     "name": "环境电器"
+    }
+   ]
+  },
   "page_first_archived": {
    "date": "2022-07-07",
    "evidence_url": "https://web.archive.org/web/20220707162029/https://www.mi.com/shop/buy/detail?product_id=4803",
@@ -9359,21 +9374,6 @@
     "age"
    ],
    "level": "product"
-  },
-  "mihome_model": "zhimi.airmonitor.v1",
-  "mihome_pd_id": 193,
-  "mihome_catalog_evidence": {
-   "method": "exact_name",
-   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
-   "category": "空气检测仪",
-   "classifications": [
-    {
-     "brand_id": 1520,
-     "id": 7,
-     "name": "环境电器"
-    }
-   ]
   }
  },
  {
@@ -9988,7 +9988,6 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "archived_at": "2020-04-24T17:11:00Z",
   "archived_source_url": "https://web.archive.org/web/20200424171100id_/https://item.mi.com/product/5005.html?cfrom=search&selected=1164900028&pClass=c",
   "captured_at_unknown": true,
@@ -10012,13 +10011,6 @@
    "image_missing": true
   },
   "miio_model": "lumi.sensor_motion.v2",
-  "release_decision": {
-   "date": null,
-   "precision": null,
-   "source": null,
-   "display": null,
-   "usage": []
-  },
   "mihome_model": "lumi.sensor_motion.v2",
   "mihome_pd_id": 63,
   "mihome_catalog_evidence": {
@@ -10046,7 +10038,15 @@
   "image_width": 168,
   "image_height": 168,
   "image_sha256": "66e1efac6e05afc62f3e8e224f1d740fe199f193b3c7913674c9900f67973f52",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
+  "release_decision": {
+   "date": null,
+   "precision": null,
+   "source": null,
+   "display": null,
+   "usage": []
+  },
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:5008",
@@ -10083,7 +10083,6 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "archived_at": "2019-12-08T12:13:24Z",
   "archived_source_url": "https://web.archive.org/web/20191208121324id_/http://item.mi.com:80/product/5008.html",
   "captured_at_unknown": true,
@@ -10107,13 +10106,6 @@
    "image_missing": true
   },
   "miio_model": "lumi.plug.v1",
-  "release_decision": {
-   "date": null,
-   "precision": null,
-   "source": null,
-   "display": null,
-   "usage": []
-  },
   "mihome_model": "lumi.plug.v1",
   "mihome_pd_id": 136,
   "mihome_catalog_evidence": {
@@ -10141,7 +10133,15 @@
   "image_width": 168,
   "image_height": 168,
   "image_sha256": "ac9c4caefe7d098ac4dc24cc11311edcb43bba73c988ff66e691495a84d7b496",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
+  "release_decision": {
+   "date": null,
+   "precision": null,
+   "source": null,
+   "display": null,
+   "usage": []
+  },
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:5010",
@@ -10178,7 +10178,6 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "archived_at": "2020-04-24T12:48:27Z",
   "archived_source_url": "https://web.archive.org/web/20200424124827id_/https://item.mi.com/product/5010.html?cfrom=search&selected=1164900032&pClass=c",
   "captured_at_unknown": true,
@@ -10202,13 +10201,6 @@
    "image_missing": true
   },
   "miio_model": "lumi.sensor_magnet.v2",
-  "release_decision": {
-   "date": null,
-   "precision": null,
-   "source": null,
-   "display": null,
-   "usage": []
-  },
   "mihome_model": "lumi.sensor_magnet.v2",
   "mihome_pd_id": 64,
   "mihome_catalog_evidence": {
@@ -10236,7 +10228,15 @@
   "image_width": 168,
   "image_height": 168,
   "image_sha256": "f6040f9fec30e0394ba0c455c2bdd2dad7166a2f03fc75ef3ad0e04f11942b42",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
+  "release_decision": {
+   "date": null,
+   "precision": null,
+   "source": null,
+   "display": null,
+   "usage": []
+  },
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:5145",
@@ -10438,7 +10438,6 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "archived_at": "2020-04-24T11:19:24Z",
   "archived_source_url": "https://web.archive.org/web/20200424111924id_/https://item.mi.com/product/5306.html?cfrom=search&selected=1170800026&pClass=c",
   "captured_at_unknown": true,
@@ -10462,13 +10461,6 @@
    "image_missing": true
   },
   "miio_model": "lumi.sensor_smoke.v1",
-  "release_decision": {
-   "date": null,
-   "precision": null,
-   "source": null,
-   "display": null,
-   "usage": []
-  },
   "mihome_model": "lumi.sensor_smoke.v1",
   "mihome_pd_id": 217,
   "mihome_catalog_evidence": {
@@ -10496,7 +10488,15 @@
   "image_width": 168,
   "image_height": 168,
   "image_sha256": "4af80042266ad7bcde15275e5c5bf33f705ff126a8dcd50133f5d642a539c968",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
+  "release_decision": {
+   "date": null,
+   "precision": null,
+   "source": null,
+   "display": null,
+   "usage": []
+  },
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:5434",
@@ -10810,18 +10810,10 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "archived_at": "2018-04-11T06:12:40Z",
   "archived_source_url": "https://web.archive.org/web/20180411061240id_/http://item.mi.com/product/5500.html",
   "captured_at_unknown": true,
   "captured_at_basis": "unknown",
-  "release_decision": {
-   "date": null,
-   "precision": null,
-   "source": null,
-   "display": null,
-   "usage": []
-  },
   "mihome_model": "chunmi.cooker.normalcd2",
   "mihome_pd_id": 68329,
   "mihome_catalog_evidence": {
@@ -10845,7 +10837,15 @@
   "image_width": 168,
   "image_height": 168,
   "image_sha256": "6d17ebfb2448cecbbeb41de6a01d0727c11d90e29830ee11dac239edc23489ab",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
+  "release_decision": {
+   "date": null,
+   "precision": null,
+   "source": null,
+   "display": null,
+   "usage": []
+  },
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:5663",
@@ -11861,7 +11861,6 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "archived_at": "2019-07-30T22:38:15Z",
   "archived_source_url": "https://web.archive.org/web/20190730223815id_/https://item.mi.com/product/5952.html?selected=1172100033&pClass=c",
   "captured_at_unknown": true,
@@ -11885,13 +11884,6 @@
    "image_missing": true
   },
   "miio_model": "philips.light.bulb",
-  "release_decision": {
-   "date": null,
-   "precision": null,
-   "source": null,
-   "display": null,
-   "usage": []
-  },
   "mihome_model": "philips.light.bulb",
   "mihome_pd_id": 431,
   "mihome_catalog_evidence": {
@@ -11919,7 +11911,15 @@
   "image_width": 168,
   "image_height": 168,
   "image_sha256": "aceb2bd0d6b91f0a9b579d7b25e2e3c534323a6cc145bdf284b19fe661f88c38",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
+  "release_decision": {
+   "date": null,
+   "precision": null,
+   "source": null,
+   "display": null,
+   "usage": []
+  },
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:5990",
@@ -12641,13 +12641,6 @@
   "captured_at": "2026-10-26T17:53:51.880182+00:00",
   "captured_at_unknown": false,
   "captured_at_basis": "source_record.fetched_at",
-  "release_decision": {
-   "date": null,
-   "precision": null,
-   "source": null,
-   "display": null,
-   "usage": []
-  },
   "mihome_model": "fimi.camera.c1",
   "mihome_pd_id": 429,
   "mihome_catalog_evidence": {
@@ -12662,6 +12655,13 @@
      "name": "安防"
     }
    ]
+  },
+  "release_decision": {
+   "date": null,
+   "precision": null,
+   "source": null,
+   "display": null,
+   "usage": []
   }
  },
  {
@@ -13105,7 +13105,6 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "captured_at": "2026-10-26T18:00:46.568308+00:00",
   "captured_at_unknown": false,
   "captured_at_basis": "source_record.fetched_at",
@@ -13128,6 +13127,34 @@
    "image_missing": true
   },
   "miio_model": "yeelink.light.bslamp1",
+  "mihome_model": "yeelink.light.bslamp1",
+  "mihome_pd_id": 274,
+  "mihome_catalog_evidence": {
+   "method": "exact_name",
+   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
+   "category": "床头灯",
+   "classifications": [
+    {
+     "brand_id": 1520,
+     "id": 12,
+     "name": "照明"
+    }
+   ]
+  },
+  "category_raw": "智能家居",
+  "categories_raw": [
+   "智能家居"
+  ],
+  "category_source": "mihome_catalog",
+  "image_source": "mihome_icon",
+  "image_source_type": "official",
+  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+  "image_scope": "device_icon",
+  "image_width": 168,
+  "image_height": 168,
+  "image_sha256": "8c153b603496101dd18ae6c2de1e50008c943cc63f529efb638da19afda5b5ae",
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
   "release_effective": {
    "date": "2017-10",
    "source": "llm_verified",
@@ -13167,34 +13194,7 @@
    ],
    "level": "product"
   },
-  "mihome_model": "yeelink.light.bslamp1",
-  "mihome_pd_id": 274,
-  "mihome_catalog_evidence": {
-   "method": "exact_name",
-   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
-   "category": "床头灯",
-   "classifications": [
-    {
-     "brand_id": 1520,
-     "id": 12,
-     "name": "照明"
-    }
-   ]
-  },
-  "category_raw": "智能家居",
-  "categories_raw": [
-   "智能家居"
-  ],
-  "category_source": "mihome_catalog",
-  "image_source": "mihome_icon",
-  "image_source_type": "official",
-  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-  "image_scope": "device_icon",
-  "image_width": 168,
-  "image_height": 168,
-  "image_sha256": "8c153b603496101dd18ae6c2de1e50008c943cc63f529efb638da19afda5b5ae",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:7152",
@@ -13660,18 +13660,10 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "archived_at": "2017-11-13T12:29:50Z",
   "archived_source_url": "https://web.archive.org/web/20171113122950id_/http://item.mi.com:80/product/7229.html",
   "captured_at_unknown": true,
   "captured_at_basis": "unknown",
-  "release_decision": {
-   "date": null,
-   "precision": null,
-   "source": null,
-   "display": null,
-   "usage": []
-  },
   "mihome_model": "zhimi.airpurifier.ma1",
   "mihome_pd_id": 423,
   "mihome_catalog_evidence": {
@@ -13695,7 +13687,15 @@
   "image_width": 168,
   "image_height": 168,
   "image_sha256": "7b6932ae196685271c4eddd86fc90cee0e98e7dbe16509c3daf0c2e9295eecc2",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
+  "release_decision": {
+   "date": null,
+   "precision": null,
+   "source": null,
+   "display": null,
+   "usage": []
+  },
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:7237",
@@ -13849,6 +13849,26 @@
    "image_missing": true
   },
   "miio_model": "cleargrass.sensor_ht.dk1",
+  "mihome_model": "cleargrass.sensor_ht.dk1",
+  "mihome_pd_id": 426,
+  "mihome_catalog_evidence": {
+   "method": "exact_name",
+   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
+   "category": "温湿度传感器",
+   "classifications": [
+    {
+     "brand_id": 1520,
+     "id": 13,
+     "name": "传感器"
+    }
+   ]
+  },
+  "category_raw": "智能家居",
+  "categories_raw": [
+   "智能家居"
+  ],
+  "category_source": "mihome_catalog",
   "release_effective": {
    "date": "2017-11",
    "source": "llm_verified",
@@ -13887,27 +13907,7 @@
     "age"
    ],
    "level": "product"
-  },
-  "mihome_model": "cleargrass.sensor_ht.dk1",
-  "mihome_pd_id": 426,
-  "mihome_catalog_evidence": {
-   "method": "exact_name",
-   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
-   "category": "温湿度传感器",
-   "classifications": [
-    {
-     "brand_id": 1520,
-     "id": 13,
-     "name": "传感器"
-    }
-   ]
-  },
-  "category_raw": "智能家居",
-  "categories_raw": [
-   "智能家居"
-  ],
-  "category_source": "mihome_catalog"
+  }
  },
  {
   "id": "CN:mi_cn:product:7354",
@@ -15766,11 +15766,33 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "archived_at": "2018-04-18T10:33:25Z",
   "archived_source_url": "https://web.archive.org/web/20180418103325id_/https://item.mi.com/product/7528.html",
   "captured_at_unknown": true,
   "captured_at_basis": "unknown",
+  "mihome_model": "chunmi.ihcooker.v1",
+  "mihome_pd_id": 538,
+  "mihome_catalog_evidence": {
+   "method": "exact_name",
+   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
+   "category": "电磁炉",
+   "classifications": [
+    {
+     "brand_id": 1520,
+     "id": 3,
+     "name": "厨房电器"
+    }
+   ]
+  },
+  "image_source": "mihome_icon",
+  "image_source_type": "official",
+  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+  "image_scope": "device_icon",
+  "image_width": 168,
+  "image_height": 168,
+  "image_sha256": "a7be01438ff1e6d60ebc30ce5ab5b7df1d6742b9061527f9099b7d182a2877ff",
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
   "release_effective": {
    "date": "2017-12",
    "source": "llm_verified",
@@ -15810,29 +15832,7 @@
    ],
    "level": "product"
   },
-  "mihome_model": "chunmi.ihcooker.v1",
-  "mihome_pd_id": 538,
-  "mihome_catalog_evidence": {
-   "method": "exact_name",
-   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
-   "category": "电磁炉",
-   "classifications": [
-    {
-     "brand_id": 1520,
-     "id": 3,
-     "name": "厨房电器"
-    }
-   ]
-  },
-  "image_source": "mihome_icon",
-  "image_source_type": "official",
-  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-  "image_scope": "device_icon",
-  "image_width": 168,
-  "image_height": 168,
-  "image_sha256": "a7be01438ff1e6d60ebc30ce5ab5b7df1d6742b9061527f9099b7d182a2877ff",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:7565",
@@ -19251,7 +19251,6 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "captured_at": "2026-10-26T04:54:06.929283+00:00",
   "captured_at_unknown": false,
   "captured_at_basis": "source_record.fetched_at",
@@ -19274,13 +19273,6 @@
    "image_missing": true
   },
   "miio_model": "philips.light.moonlight",
-  "release_decision": {
-   "date": null,
-   "precision": null,
-   "source": null,
-   "display": null,
-   "usage": []
-  },
   "mihome_model": "philips.light.moonlight",
   "mihome_pd_id": 706,
   "mihome_catalog_evidence": {
@@ -19308,7 +19300,15 @@
   "image_width": 168,
   "image_height": 168,
   "image_sha256": "5e989ca183ca2250ad6e3ed0ae7d9a2953893c883ff59abcd0a2126ed6b98f71",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
+  "release_decision": {
+   "date": null,
+   "precision": null,
+   "source": null,
+   "display": null,
+   "usage": []
+  },
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:8107",
@@ -19421,7 +19421,6 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "captured_at": "2026-10-26T17:55:41.916198+00:00",
   "captured_at_unknown": false,
   "captured_at_basis": "source_record.fetched_at",
@@ -19444,13 +19443,6 @@
    "image_missing": true
   },
   "miio_model": "jiqid.mistudy.v2",
-  "release_decision": {
-   "date": null,
-   "precision": null,
-   "source": null,
-   "display": null,
-   "usage": []
-  },
   "mihome_model": "jiqid.mistudy.v2",
   "mihome_pd_id": 500,
   "mihome_catalog_evidence": {
@@ -19473,7 +19465,15 @@
   "image_width": 168,
   "image_height": 168,
   "image_sha256": "38ebccc96f943e8ff0a1e97830b5749f7534aea4cfa6beeaa3d09f3ab6ed3f1c",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
+  "release_decision": {
+   "date": null,
+   "precision": null,
+   "source": null,
+   "display": null,
+   "usage": []
+  },
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:8109",
@@ -19807,7 +19807,6 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "archived_at": "2018-06-07T21:54:06Z",
   "archived_source_url": "https://web.archive.org/web/20180607215406id_/https://item.mi.com/product/8131.html",
   "captured_at_unknown": true,
@@ -19831,6 +19830,29 @@
    "image_missing": true
   },
   "miio_model": "zhimi.fan.sa1",
+  "mihome_model": "zhimi.fan.sa1",
+  "mihome_pd_id": 740,
+  "mihome_catalog_evidence": {
+   "method": "exact_name",
+   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
+   "category": "风扇",
+   "classifications": [
+    {
+     "brand_id": 1520,
+     "id": 7,
+     "name": "环境电器"
+    }
+   ]
+  },
+  "image_source": "mihome_icon",
+  "image_source_type": "official",
+  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+  "image_scope": "device_icon",
+  "image_width": 168,
+  "image_height": 168,
+  "image_sha256": "618a51e39d32b331c74bbce323148af4a44d124093315a9bf0c84d6a3f9a9832",
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
   "release_effective": {
    "date": "2018-06",
    "source": "llm_verified",
@@ -19870,29 +19892,7 @@
    ],
    "level": "product"
   },
-  "mihome_model": "zhimi.fan.sa1",
-  "mihome_pd_id": 740,
-  "mihome_catalog_evidence": {
-   "method": "exact_name",
-   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
-   "category": "风扇",
-   "classifications": [
-    {
-     "brand_id": 1520,
-     "id": 7,
-     "name": "环境电器"
-    }
-   ]
-  },
-  "image_source": "mihome_icon",
-  "image_source_type": "official",
-  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-  "image_scope": "device_icon",
-  "image_width": 168,
-  "image_height": 168,
-  "image_sha256": "618a51e39d32b331c74bbce323148af4a44d124093315a9bf0c84d6a3f9a9832",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:8152",
@@ -21192,7 +21192,6 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "archived_at": "2018-07-17T19:56:46Z",
   "archived_source_url": "https://web.archive.org/web/20180717195646id_/https://item.mi.com/product/8390.html",
   "captured_at_unknown": true,
@@ -21216,6 +21215,29 @@
    "image_missing": true
   },
   "miio_model": "mijia.camera.v3",
+  "mihome_model": "mijia.camera.v3",
+  "mihome_pd_id": 685,
+  "mihome_catalog_evidence": {
+   "method": "exact_name",
+   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
+   "category": "摄像机",
+   "classifications": [
+    {
+     "brand_id": 1520,
+     "id": 5,
+     "name": "安防"
+    }
+   ]
+  },
+  "image_source": "mihome_icon",
+  "image_source_type": "official",
+  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+  "image_scope": "device_icon",
+  "image_width": 168,
+  "image_height": 168,
+  "image_sha256": "611ba3c72b437ee7488e79034d93ff716ce7a48b0fa185aadc344b76261a926a",
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
   "release_effective": {
    "date": "2018-07",
    "source": "llm_verified",
@@ -21255,29 +21277,7 @@
    ],
    "level": "product"
   },
-  "mihome_model": "mijia.camera.v3",
-  "mihome_pd_id": 685,
-  "mihome_catalog_evidence": {
-   "method": "exact_name",
-   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
-   "category": "摄像机",
-   "classifications": [
-    {
-     "brand_id": 1520,
-     "id": 5,
-     "name": "安防"
-    }
-   ]
-  },
-  "image_source": "mihome_icon",
-  "image_source_type": "official",
-  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-  "image_scope": "device_icon",
-  "image_width": 168,
-  "image_height": 168,
-  "image_sha256": "611ba3c72b437ee7488e79034d93ff716ce7a48b0fa185aadc344b76261a926a",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:8397",
@@ -21561,7 +21561,6 @@
   "category_review_source": "mi-legacy-categories-v1",
   "status": "retired",
   "is_historical": true,
-  "image_missing": false,
   "captured_at": "2026-10-26T04:51:20.262549+00:00",
   "captured_at_unknown": false,
   "captured_at_basis": "source_record.fetched_at",
@@ -21584,6 +21583,29 @@
    "image_missing": true
   },
   "miio_model": "inshow.watch.w1",
+  "mihome_model": "inshow.watch.w1",
+  "mihome_pd_id": 428,
+  "mihome_catalog_evidence": {
+   "method": "exact_name",
+   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
+   "category": "手表",
+   "classifications": [
+    {
+     "brand_id": 1520,
+     "id": 8,
+     "name": "运动健康"
+    }
+   ]
+  },
+  "image_source": "mihome_icon",
+  "image_source_type": "official",
+  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
+  "image_scope": "device_icon",
+  "image_width": 168,
+  "image_height": 168,
+  "image_sha256": "f19e8d6d144cd979ef5f9dced739bb83741496d72cdffdb8f995ea69c5762d1a",
+  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图",
   "page_first_archived": {
    "date": "2024-12-04",
    "evidence_url": "https://web.archive.org/web/20241204130027/https://www.mi.com/shop/buy/detail?product_id=8625",
@@ -21629,29 +21651,7 @@
    ],
    "level": "product"
   },
-  "mihome_model": "inshow.watch.w1",
-  "mihome_pd_id": 428,
-  "mihome_catalog_evidence": {
-   "method": "exact_name",
-   "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-   "source_sha256": "b78886888417629fb32534de664f8a76ecc223e7d44a1326f070caca84d911c8",
-   "category": "手表",
-   "classifications": [
-    {
-     "brand_id": 1520,
-     "id": 8,
-     "name": "运动健康"
-    }
-   ]
-  },
-  "image_source": "mihome_icon",
-  "image_source_type": "official",
-  "image_source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1558575633&lastPdId=931",
-  "image_scope": "device_icon",
-  "image_width": 168,
-  "image_height": 168,
-  "image_sha256": "f19e8d6d144cd979ef5f9dced739bb83741496d72cdffdb8f995ea69c5762d1a",
-  "image_note": "米家官方设备图标，168×168 像素；非商城商品高清主图"
+  "image_missing": false
  },
  {
   "id": "CN:mi_cn:product:8638",
@@ -22429,19 +22429,6 @@
    "image_missing": true
   },
   "miio_model": "zimi.clock.myk01",
-  "page_first_archived": {
-   "date": "2022-09-29",
-   "evidence_url": "https://web.archive.org/web/20220929132739/https://www.mi.com/shop/buy/detail?product_id=8790",
-   "count_200": null,
-   "captured_at": "2026-11-03T13:23:21.707905+00:00"
-  },
-  "release_decision": {
-   "date": null,
-   "precision": null,
-   "source": null,
-   "display": null,
-   "usage": []
-  },
   "mihome_model": "zimi.clock.myk01",
   "mihome_pd_id": 723,
   "mihome_catalog_evidence": {
@@ -22461,7 +22448,20 @@
   "categories_raw": [
    "智能家居"
   ],
-  "category_source": "mihome_catalog"
+  "category_source": "mihome_catalog",
+  "page_first_archived": {
+   "date": "2022-09-29",
+   "evidence_url": "https://web.archive.org/web/20220929132739/https://www.mi.com/shop/buy/detail?product_id=8790",
+   "count_200": null,
+   "captured_at": "2026-11-03T13:23:21.707905+00:00"
+  },
+  "release_decision": {
+   "date": null,
+   "precision": null,
+   "source": null,
+   "display": null,
+   "usage": []
+  }
  },
  {
   "id": "CN:mi_cn:product:8803",
