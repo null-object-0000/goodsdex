@@ -737,6 +737,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     retained = apply_page_names(retained)
     from goodsdex.mi_legacy_names import apply_legacy_names
     retained = apply_legacy_names(retained)
+    from goodsdex.youpin import apply_youpin
+    retained = apply_youpin(retained)
     output, audit = dedupe_rows(retained)
     merge_plan = analyze(group_by_id(retained), len(retained))
     duplicate_rows = [r for group in merge_plan["safe"] for r in group["rows"][1:]]

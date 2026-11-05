@@ -67,6 +67,8 @@ def test_finalizer_replays_and_details_only(tmp_path):
     expected=apply_priority_dates(expected)
     from goodsdex.mi_legacy_names import apply_legacy_names
     expected=apply_legacy_names(expected)
+    from goodsdex.youpin import apply_youpin
+    expected=apply_youpin(expected)
     from goodsdex.source_urls import apply_source_urls
     expected=apply_source_urls(expected)
     from goodsdex.variant_attributes import apply_variant_attributes
