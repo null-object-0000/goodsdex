@@ -1,0 +1,35 @@
+.................................................F...................... [ 64%]
+.......................................                                  [100%]
+=================================== FAILURES ===================================
+__________________ test_apparel_archive_replay_and_future_ids __________________
+
+tmp_path = PosixPath('/home/nichangen/.hermes/profiles/spendpoint/cache/scratch/pytest-of-nichangen/pytest-334/test_apparel_archive_replay_an0')
+
+    def test_apparel_archive_replay_and_future_ids(tmp_path):
+        rows = [dict(id='new-shirt', name='新款T恤', category='服装', price=99),
+                dict(id='washer', name='米家内衣物洗烘一体机', category='滚筒洗衣机')]
+        (tmp_path / 'goods.json').write_text(json.dumps(rows))
+        for _ in range(2):
+            finalize_public(tmp_path, previous=rows)
+            meta = build_shards(tmp_path)
+            excluded = json.loads((tmp_path / 'goods-excluded.json').read_text())
+            assert meta['total_all'] == 2
+            assert meta['total_published'] == meta['total_excluded'] == 1
+            assert meta['excluded_by_rule']['apparel'] == 1
+            hit = excluded['items'][0]
+            assert hit['excluded_reason'] == 'apparel'
+            assert hit['matched_rule'] == hit['exclusion']['matched_rule'] == 'category'
+            assert hit['matched_text'] == hit['exclusion']['matched_text'] == '服装'
+            assert all(hit[k] == v for k, v in rows[0].items())
+>           assert json.loads((tmp_path / 'archive/apparel.json').read_text()) == [rows[0]]
+E           AssertionError: assert [{'id': 'new-... ['服装'], ...}] == [{'id': 'new-... 'price': 99}]
+E             
+E             At index 0 diff: {'id': 'new-shirt', 'name': '新款T恤', 'category': '服装', 'categories': ['服装'], 'price': 99, 'brand': None, 'brand_source': None} != {'id': 'new-shirt', 'name': '新款T恤', 'category': '服装', 'price': 99}
+E             Use -v to get more diff
+
+tests/test_apparel.py:60: AssertionError
+----------------------------- Captured stdout call -----------------------------
+accessory gate: {"excluded_count": 0, "newly_excluded_count": 0, "denominator": 2, "newly_excluded_ratio": 0.0, "threshold": 0.05, "gate": "green", "review_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945", "reviewed": false}
+=========================== short test summary info ============================
+FAILED tests/test_apparel.py::test_apparel_archive_replay_and_future_ids - As...
+1 failed, 110 passed in 0.90s

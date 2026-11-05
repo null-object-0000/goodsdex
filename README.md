@@ -41,7 +41,7 @@ PYTHONPATH=src python3 scripts/crawl_apple_history.py --public public
 
 排除发布契约见 [被排除商品清单](docs/goods-excluded-20261103/README.md)。meta 提供 `total_all = total_published + total_excluded`，并在 `files["goods-excluded.json"]` 记录 sha256/count/bytes；排除文件与 meta 的 revision、生成时间必须一致。后台默认展示已发布记录，通过独立排除清单查看全量。原始类目不改写，未采集的两级分类及来源 URL 为 null。
 
-固定主理由枚举：`accessory:sticker`、`accessory:screen_film`、`accessory:cleaning_consumable`、`accessory:category`、`accessory:name`、`container`、`duplicate`、`invalid`、`manual`。每条一个主理由；新增枚举必须同时更新 README 与上述契约文件。配件的匹配词/类目、审核删除依据和去重身份保存在 `exclusion`；`container` 暂无新增过滤规则。每次共享 finalize 从当前输入和源档案重新判定，不读取上一次生成的排除清单。
+固定主理由枚举：`accessory:sticker`、`accessory:screen_film`、`accessory:cleaning_consumable`、`accessory:category`、`accessory:name`、`apparel`、`container`、`duplicate`、`invalid`、`manual`。每条一个主理由；新增枚举必须同时更新 README 与上述契约文件。配件的匹配词/类目、审核删除依据和去重身份保存在 `exclusion`；`container` 暂无新增过滤规则。每次共享 finalize 从当前输入和源档案重新判定，不读取上一次生成的排除清单。
 
 客户端使用服务端 `search` / `goods/<id>`；数据同步先取 meta，再按 sha256 拉变化索引。新结构、实测和回滚说明见 [商品库分片](docs/商品库分片-20261029.md)。
 
@@ -295,3 +295,5 @@ HP 下架留档：`crawl_hp.py` 仅把官方 SKU URL 落到已知官方电脑列
 惠普历史扩充使用官方兼容目录发现货号，再逐号核验官方支持站的产品上下文；数据与30条对照见[历史补库验收](docs/hp-history-20261105/README.md)。`refresh-hp` 的 `history_only` 模式导入已核验历史，普通模式另刷新商城；均走原发布锁与门禁。系列页未给货号时明确标 `part_number_missing`，不制造SKU或非官方图。
 
 所有品牌共享发布流程把完整采集目录中的缺席事件转为 `status=retired`、`retired_at`，保留完整记录及 `archive/retired.json`；失败/部分采集不推断下架。`meta.retired_count` / `retired_by_brand` 汇总留档；退出现行目录不等于停产或停止支持。
+
+服饰/鞋包沿用共享 finalizer 排除契约，原始事实保存在 `archive/apparel.json`。`excluded_reason=apparel`，`matched_rule=category|name`、`matched_text` 保留具体证据，`meta.excluded_by_rule.apparel` 按理由汇总。明确家电/数码及非服饰品类冲突、含/赠睡衣套装保留；规则与逐条验收见 [服饰排除](docs/apparel-filter-20261105/README.md)。

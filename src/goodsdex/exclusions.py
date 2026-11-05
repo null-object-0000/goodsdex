@@ -10,7 +10,7 @@ from goodsdex.release_policy import ALLOWED_DELETIONS
 # Closed enumeration: additions require updating README and the contract document.
 REASONS = (
     'accessory:sticker', 'accessory:screen_film', 'accessory:cleaning_consumable',
-    'accessory:category', 'accessory:name', 'preorder_deposit', 'service:installation', 'service:other', 'container', 'duplicate', 'invalid', 'manual',
+    'accessory:category', 'accessory:name', 'apparel', 'preorder_deposit', 'service:installation', 'service:other', 'container', 'duplicate', 'invalid', 'manual',
 )
 # Reviewed identities, not inference from the human-readable deletion text.
 DELETION_REASONS = {key: ('invalid' if key.startswith('CN:mi_cn:') else 'manual')
@@ -68,7 +68,8 @@ def build_excluded(rows, published, accessory_archive, reviewed, duplicate_rows,
             append(row, DELETION_REASONS[key], dict(basis='reviewed_id', matched=ALLOWED_DELETIONS[key]))
         else:
             from goodsdex.services import classify_non_goods
-            service = classify_non_goods(row)
+            from goodsdex.apparel import classify_apparel
+            service = classify_non_goods(row) or classify_apparel(row)
             reason = service['reason'] if service else exclusion_reason(row)
             if reason is None:
                 raise ValueError(f'Archived exclusion no longer justified; review identity: {key}')
@@ -82,7 +83,8 @@ def build_excluded(rows, published, accessory_archive, reviewed, duplicate_rows,
 
 
 def excluded_by_rule(excluded):
-    counts = Counter(r['matched_rule'] for r in excluded['items'])
+    counts = Counter('apparel' if r['excluded_reason'] == 'apparel' else r['matched_rule']
+                     for r in excluded['items'])
     return {rule: counts[rule] for rule in dict.fromkeys(r.split(':')[0] for r in REASONS)}
 
 

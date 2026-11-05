@@ -761,6 +761,11 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     services = json.loads(service_path.read_text()) if service_path.exists() else []
     output, services = plan_services(output, services)
     retained_ids = set(retained_ids) | {r['id'] for r in services}
+    from goodsdex.apparel import plan_apparel
+    apparel_path = public / 'archive/apparel.json'
+    apparel = json.loads(apparel_path.read_text()) if apparel_path.exists() else []
+    output, apparel = plan_apparel(output, apparel)
+    retained_ids = set(retained_ids) | {r['id'] for r in apparel}
     from goodsdex.accessories import plan
     archive_path = public / 'archive' / 'accessories.json'
     accessory_archive = json.loads(archive_path.read_text()) if archive_path.exists() else []
@@ -815,7 +820,7 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     from uuid import uuid4
     revision = uuid4().hex
     generated_at = datetime.now(timezone.utc).isoformat()
-    excluded = build_excluded(apply_page_names(rows), output, [*accessory_archive, *services], reviewed, duplicate_rows, generated_at, revision)
+    excluded = build_excluded(apply_page_names(rows), output, [*accessory_archive, *services, *apparel], reviewed, duplicate_rows, generated_at, revision)
     input_ids = {r["id"] for r in rows}
     historical_ids = {r["id"] for r in excluded["items"]} - input_ids
     meta.update(revision=revision, generated_at=generated_at, total_all=len(rows) + len(historical_ids),
@@ -824,6 +829,7 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     validate_excluded(meta, excluded, output)
     # All checks finish before the first release file is replaced.
     archive_path.parent.mkdir(parents=True, exist_ok=True)
+    atomic_write(apparel_path, apparel)
     atomic_write(service_path, services)
     atomic_write(archive_path, accessory_archive)
     atomic_write(retired_path, [r for r in output if r.get('status') == 'retired'])

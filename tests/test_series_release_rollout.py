@@ -118,11 +118,13 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
     assert all(not r.get('release') for r in excluded)
     excluded_ids={r['id'] for r in excluded}
     excluded_ids.update(r['id'] for r in json.loads((tmp_path / 'archive/services.json').read_text()))
+    excluded_ids.update(r['id'] for r in json.loads((tmp_path / 'archive/apparel.json').read_text()))
     # The L1-L4 stage independently replays exact official product statements,
     # including reviewed month-to-day upgrades, after the legacy date stage.
     from goodsdex.release_coverage import apply_priority_dates
     product_expected = apply_priority_dates(product_expected)
     assert {r['id']: r.get('release') for r in result} == {r['id']: r.get('release') for r in product_expected if r['id'] not in excluded_ids}
+    expected = {key: value for key, value in expected.items() if key not in excluded_ids}
     assert {r['id'] for r in result if r.get('release_series')} == expected.keys()
     assert all('series_release' not in r for r in result)
     for key, batch in expected.items():
