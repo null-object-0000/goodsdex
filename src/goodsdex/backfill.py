@@ -9,13 +9,25 @@ from urllib.parse import urlsplit
 DEFAULT = Path(__file__).resolve().parents[2] / 'data/supplements/verified-backfill-20261030.json'
 
 
+def has_observation_time(evidence):
+    if evidence.get('captured_at'):
+        return True
+    if (evidence.get('archived_at') and evidence.get('captured_at_unknown') is True
+            and urlsplit(str(evidence.get('archived_source_url') or evidence.get('source_url'))).hostname == 'web.archive.org'):
+        datetime.fromisoformat(evidence['archived_at'].replace('Z', '+00:00'))
+        return True
+    return False
+
+
 def apply(rows, patches):
     rows = deepcopy(rows)
     audit = {'applied': [], 'skipped': [], 'unchanged': []}
     for patch in patches:
-        for key in ('source', 'source_url', 'captured_at'):
+        for key in ('source', 'source_url'):
             if not patch.get(key):
                 raise ValueError('Backfill missing provenance: ' + key)
+        if not has_observation_time(patch):
+            raise ValueError('Backfill missing provenance: captured_at / archived_at')
         fields = patch['fields']
         if 'historical_price' in fields:
             if fields.get('price_kind') != 'msrp_historical' or 'price' in fields:
@@ -71,7 +83,7 @@ def validate_row(row):
     if row.get('catalog_identity') != 'verified_backfill_20261030':
         return
     for evidence in [row] + [t['source_record'] for t in row.get('trims', [])]:
-        if not all(evidence.get(k) for k in ('source', 'source_url', 'captured_at')):
+        if not all(evidence.get(k) for k in ('source', 'source_url')) or not has_observation_time(evidence):
             raise ValueError('Verified supplement missing provenance: ' + row['id'])
     if row.get('schema') == 'car-product-v2':
         if row.get('model_year_source') != 'pcauto' or row.get('model_year_confidence') != 'third_party':

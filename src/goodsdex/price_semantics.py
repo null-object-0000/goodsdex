@@ -64,7 +64,7 @@ def normalize(row):
         row['price'] = None
         if 'promo_price' in row:
             row['promo_price'] = None
-    row['price_missing'] = not amount(row.get('price'))
+    row['price_missing'] = ('page_no_price' if row.get('price_missing') == 'page_no_price' and not amount(row.get('price')) else not amount(row.get('price')))
     row['price_comparable'] = comparable(row)
     if 'trims' in row:
         row['trims'] = [normalize(t) for t in row['trims']]
@@ -101,7 +101,7 @@ def coverage(rows):
     validate(rows)
     return dict(price_kind=dict(sorted(Counter(r['price_kind'] for r in rows).items())),
                 price_comparable_count=sum(comparable(r) for r in rows),
-                price_missing_count=sum(r['price_missing'] for r in rows))
+                price_missing_count=sum(bool(r['price_missing']) for r in rows))
 
 
 def candidates(rows):

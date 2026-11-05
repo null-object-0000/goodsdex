@@ -74,17 +74,24 @@ def test_finalizer_replays_and_details_only(tmp_path):
     from goodsdex.variant_attributes import apply_variant_attributes
     expected, _ = apply_variant_attributes(expected)
     from goodsdex.price_semantics import apply as apply_prices
-    expected=apply_prices(expected)
+    from goodsdex.legacy_catalog import apply_legacy_catalog
+    expected=apply_legacy_catalog(apply_prices(apply_legacy_catalog(expected)))
     # Independently frozen expected exclusions include the title repair.
     # Enrichment and every retained field must still be identical.
     archived=json.loads((tmp_path/'archive/accessories.json').read_text())
     excluded={r['id'] for r in archived}
     reviewed=json.loads((ROOT/'docs/name-fidelity-20261104/historical-exclusion-expectations.json').read_text())['docs/independent-dates-20261103/baseline-goods.json.gz']
-    assert excluded == {r['id'] for r in reviewed}
-    assert all(not r.get('release') for r in archived)
+    legacy_review=json.loads((ROOT/'docs/legacy-catalog-20261105/reviewed-accessory-ids.json').read_text())
+    legacy_ids={r['id'] for r in legacy_review} & {r['id'] for r in json.loads(baseline)}
+    assert excluded == {r['id'] for r in reviewed} | legacy_ids
+    assert all(not r.get('release') for r in archived if r['id'] not in legacy_ids)
+    # Reclassified accessories retain their already reviewed date evidence.
+    from goodsdex.release_dates import apply_release_dates as reviewed_dates
+    legacy_expected = {r['id']:r for r in reviewed_dates(archived)}
+    assert all(r.get('release') == legacy_expected[r['id']].get('release') for r in archived if r['id'] in legacy_ids)
     excluded.update(r['id'] for r in json.loads((tmp_path/'archive/services.json').read_text()))
     apparel = json.loads((tmp_path/'archive/apparel.json').read_text())
-    assert len(apparel) == 41  # Frozen snapshot: reviewed clothing and luggage only.
+    assert len(apparel) == 54  # Frozen snapshot: reviewed clothing and luggage only.
     excluded.update(r['id'] for r in apparel)
     assert [{k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in result] == [
         {k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in expected if r['id'] not in excluded]

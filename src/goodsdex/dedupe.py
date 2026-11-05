@@ -737,6 +737,9 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     retained = apply_page_names(retained)
     from goodsdex.mi_legacy_names import apply_legacy_names
     retained = apply_legacy_names(retained)
+    from goodsdex.legacy_catalog import apply_legacy_catalog
+    retained = apply_legacy_catalog(retained)
+    rows = apply_legacy_catalog(rows)
     from goodsdex.youpin import apply_youpin
     retained = apply_youpin(retained)
     output, audit = dedupe_rows(retained)
@@ -762,18 +765,18 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     assert_public_fields(output)
     from goodsdex.services import plan_services
     service_path = public / 'archive/services.json'
-    services = json.loads(service_path.read_text()) if service_path.exists() else []
+    services = apply_legacy_catalog(json.loads(service_path.read_text())) if service_path.exists() else []
     output, services = plan_services(output, services)
     retained_ids = set(retained_ids) | {r['id'] for r in services}
     from goodsdex.apparel import plan_apparel
     apparel_path = public / 'archive/apparel.json'
-    apparel = json.loads(apparel_path.read_text()) if apparel_path.exists() else []
+    apparel = apply_legacy_catalog(json.loads(apparel_path.read_text())) if apparel_path.exists() else []
     output, apparel = plan_apparel(output, apparel)
     retained_ids = set(retained_ids) | {r['id'] for r in apparel}
     from goodsdex.accessories import plan
     archive_path = public / 'archive' / 'accessories.json'
     accessory_archive = json.loads(archive_path.read_text()) if archive_path.exists() else []
-    accessory_archive = apply_page_names(accessory_archive)
+    accessory_archive = apply_legacy_catalog(apply_page_names(accessory_archive))
     output, accessory_archive, accessory_audit = plan(
         output, previous if previous is not None else rows, accessory_archive,
         reviewed_accessory_sha256)
@@ -782,7 +785,7 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     from goodsdex.variant_attributes import apply_variant_attributes
     output, variant_stats = apply_variant_attributes(output)
     from goodsdex.price_semantics import apply as apply_price_semantics
-    output = apply_price_semantics(output)
+    output = apply_legacy_catalog(apply_price_semantics(output))
     if previous is not None:
         from goodsdex.release_policy import assert_no_lost_ids
         assert_no_lost_ids(previous, output, retained_ids)

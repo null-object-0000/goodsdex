@@ -1,6 +1,7 @@
 """Offline conversion of reviewed candidates; no collection and no public writes."""
 import json
 from pathlib import Path
+from goodsdex.legacy_catalog import category_of
 ROOT = Path(__file__).resolve().parents[1]
 D = ROOT / 'data'
 def read(p): return json.loads((D / p).read_text())
@@ -13,9 +14,13 @@ def main():
         if c['confidence'] != 'high': pending.append(c); continue
         if not valid(c): skipped.append(dict(candidate=c,reason='missing_provenance')); continue
         key = 'CN:mi_cn:product:'+c['pid']
-        fields = dict(name=c['name'], name_source=c['source'], source_url=c['source_url'], captured_at=c['captured_at'])
-        patches.append(dict(id=key,field='name',fields=fields,**{k:c[k] for k in ('source','source_url','captured_at')}))
-        added.append(dict(id=key, **fields, source='xiaomi_archive_history', catalog_identity='verified_backfill_20261030', brand='小米', kind='unknown', category='旧款机型', categories=['旧款机型'], record_level='model_reference', discontinued=True, price=None, image=None, params={}))
+        fields = dict(name=c['name'], name_source=c['source'], source_url=c['source_url'],
+                      captured_at=None if c['source']=='wayback_item_page' else c['captured_at'])
+        if c['source']=='wayback_item_page':
+            fields.update(archived_at=c['captured_at'], archived_source_url=c['source_url'], captured_at_unknown=True)
+        patches.append(dict(id=key,field='name',fields=fields,source=c['source'],
+                            **{k:fields[k] for k in ('source_url','captured_at','archived_at','archived_source_url','captured_at_unknown') if k in fields}))
+        added.append(dict(id=key, **fields, source='xiaomi_archive_history', catalog_identity='verified_backfill_20261030', brand='小米', kind='unknown', category=category_of(c['name']) or '待人工', categories=[category_of(c['name']) or '待人工'], category_review_required=category_of(c['name']) is None, record_level='model_reference', discontinued=True, price=None, image=None, params={}))
     for c in read('research/apple-backfill-20261030/images.json'):
         if not valid(c): skipped.append(dict(candidate=c,reason='missing_provenance',missing=[k for k in ('source','source_url','captured_at') if not c.get(k)])); continue
         fields=dict(image=c['image_url'],image_source='apple_support' if 'support' in c['source'] else 'apple_store',image_source_url=c['source_url'],image_scope=c['image_scope'],image_captured_at=c['captured_at'])

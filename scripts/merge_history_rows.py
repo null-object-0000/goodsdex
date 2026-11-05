@@ -5,23 +5,7 @@
 """
 import argparse, glob, json, os, re
 
-# 名称 → 分类。命中不到就给「旧款机型」，不硬猜。
-CATEGORY_HINTS = [
-    ("显示器", "显示器"), ("电视", "电视"), ("空调", "空调"), ("冰箱", "冰箱"), ("洗衣机", "洗衣机"),
-    ("扫地", "扫地机器人"), ("扫拖", "扫地机器人"), ("吸尘", "吸尘器"), ("净化器", "空气净化器"),
-    ("路由器", "路由器"), ("音箱", "音箱"), ("耳机", "耳机"), ("手环", "手环"), ("手表", "手表"),
-    ("平板", "平板"), ("笔记本", "笔记本"), ("手机", "手机"), ("电饭煲", "电饭煲"), ("电水壶", "电水壶"),
-    ("台灯", "台灯"), ("插座", "插座"), ("摄像头", "摄像头"), ("门锁", "门锁"), ("体重秤", "体重秤"),
-    ("体脂秤", "体重秤"), ("风扇", "风扇"), ("加湿器", "加湿器"), ("微波炉", "微波炉"), ("烤箱", "烤箱"),
-    ("电磁炉", "电磁炉"), ("剃须刀", "剃须刀"), ("吹风机", "吹风机"), ("牙刷", "电动牙刷"), ("净水", "净水器"),
-    ("电蚊", "驱蚊"), ("被子", "床品"), ("枕头", "床品"), ("背包", "箱包"), ("旅行箱", "箱包"),
-]
-
-def category_of(name):
-    for key, cat in CATEGORY_HINTS:
-        if key in name:
-            return cat
-    return "旧款机型"
+from goodsdex.legacy_catalog import category_of
 
 def params_of(rec):
     out = {}
@@ -41,7 +25,13 @@ def to_row(rec):
         "id": f"CN:mi_cn:product:{pid}",
         "name": name,
         "kind": "machine" if rec.get("params_count") else "unknown",
-        "category": category_of(name),
+        "category": category_of(name) or "待人工",
+        "category_review_required": category_of(name) is None,
+        "status": "retired",
+        "price_missing": "page_no_price",
+        "image_missing": "page_no_image",
+        "captured_at": (rec.get("source") or {}).get("fetched_at"),
+        "captured_at_unknown": not bool((rec.get("source") or {}).get("fetched_at")),
         "price": None,
         "market_price": None,
         "gid": None,

@@ -114,12 +114,18 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
                 assert updated['release'] == prior
     excluded=json.loads((tmp_path / 'archive/accessories.json').read_text())
     reviewed=json.loads((ROOT/'docs/name-fidelity-20261104/historical-exclusion-expectations.json').read_text())['docs/series-release-rollout-20261103/baseline-goods.json.gz']
-    assert {r['id'] for r in excluded} == {r['id'] for r in reviewed}
-    assert all(not r.get('release') for r in excluded)
+    legacy_review=json.loads((ROOT/'docs/legacy-catalog-20261105/reviewed-accessory-ids.json').read_text())
+    legacy_ids={r['id'] for r in legacy_review} & present
+    assert {r['id'] for r in excluded} == {r['id'] for r in reviewed} | legacy_ids
+    assert all(not r.get('release') for r in excluded if r['id'] not in legacy_ids)
+    # Reclassified accessories retain their already reviewed date evidence.
+    from goodsdex.release_dates import apply_release_dates as reviewed_dates
+    legacy_expected = {r['id']:r for r in reviewed_dates(excluded)}
+    assert all(r.get('release') == legacy_expected[r['id']].get('release') for r in excluded if r['id'] in legacy_ids)
     excluded_ids={r['id'] for r in excluded}
     excluded_ids.update(r['id'] for r in json.loads((tmp_path / 'archive/services.json').read_text()))
     apparel = json.loads((tmp_path / 'archive/apparel.json').read_text())
-    assert len(apparel) == 41  # Frozen snapshot predates the Atour collection.
+    assert len(apparel) == 54  # Frozen snapshot predates the Atour collection.
     excluded_ids.update(r['id'] for r in apparel)
     # The L1-L4 stage independently replays exact official product statements,
     # including reviewed month-to-day upgrades, after the legacy date stage.
