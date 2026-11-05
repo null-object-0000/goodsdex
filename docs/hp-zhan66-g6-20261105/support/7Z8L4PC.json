@@ -1,0 +1,30 @@
+{
+ "url": "https://support.hp.com/wcc-services/profile/devices/warranty/specs?cache=true",
+ "method": "POST",
+ "payload": {
+  "cc": "cn",
+  "lc": "zh",
+  "utcOffset": "P0800",
+  "devices": [
+   {
+    "seriesOid": null,
+    "modelOid": null,
+    "serialNumber": null,
+    "productNumber": "7Z8L4PC",
+    "displayProductNumber": null,
+    "countryOfPurchase": "cn"
+   }
+  ]
+ },
+ "observed_at": "2026-11-05T00:22:08.404Z",
+ "discovery": {
+  "part_number": "7Z8L4PC",
+  "discovery_url": "https://partsurfer.hpcloud.hp.com/bff/proxy/get?input=/Product/GetProduct/7Z8L4PC/country/US/usertype/EXT",
+  "discovery_name": "HP ProBook 450 15.6 inch G10 Notebook PC (71H54AV)"
+ },
+ "status": 200,
+ "body": "{\"code\":200,\"data\":{\"devices\":[{\"productSpecs\":{\"code\":200,\"data\":{\"audience\":\"LARGE\",\"chatbot\":false,\"customHierarchySet\":[\"19539216537429048012118866320194\",\"437575962482695163335048007531742\",\"760446840730688445142427190297881\",\"2101593792\"],\"customResourceOids\":[2101593796,2101593792],\"hpOnePCEligible\":false,\"hpOnePrintEligible\":false,\"hpPlusEligible\":false,\"hpPlusSkuType\":null,\"imageUri\":\"/wcc-assets/content/dam/hp-wcc/fe-assets/images/pdp/fallback_product.png\",\"modelContext\":true,\"modelLevelActiveWebSupport\":true,\"modelLevelAudienceFlag\":\"LARGE\",\"modelLevelHistorical\":false,\"nonSerializedFlag\":null,\"origin\":\"productData\",\"printSetupEligible\":false,\"prodCategory\":\"laptop\",\"productBigSeriesOid\":2101593791,\"productLineCode\":\"6U\",\"productName\":\"HP PB450G10 i5-1335U 15 32GB/1T PC (7Z8L4PC)\",\"productNameOid\":2101593796,\"productNumber\":\"7Z8L4PC\",\"productNumberOid\":2101695287,\"productPlatform\":\"Roc15\",\"productSeriesName\":\"HP ProBook 450 15.6 英寸 G10 笔记本电脑\",\"productSeriesOid\":2101593792,\"productSeriesSEOName\":\"hp-probook-450-15.6-inch-g10-notebook-pc\",\"productType\":\"Laptops and Hybrids\",\"redirectUrl\":\"/product/troubleshooting/hp-probook-450-15.6-inch-g10-notebook-pc/model/2101593796?sku=7Z8L4PC\",\"seriesContext\":false,\"seriesLevelActiveWebSupport\":true,\"seriesLevelAudienceFlag\":\"Commercial\",\"seriesLevelHistorical\":false,\"standardHierarchySet\":[321957,64295,3955552,2101593791,2101593792,2101593796],\"supportSubcategoryOid\":3955552,\"thumbnailUri\":null,\"webFirstPublishingDate\":\"20230324T00:00:00\",\"webReleaseDate\":\"20230324T00:00:00\"},\"message\":\"Success\",\"status\":\"OK\",\"timeElapsedInMS\":178},\"warranty\":null}],\"subscriptionIcons\":{\"hpplus\":\"/wcc-assets/content/dam/hp-wcc/headless-assets/images/contact/hp%2b.png\",\"instantInk\":\"/wcc-assets/content/dam/hp-wcc/headless-assets/images/contact/instantInk.png\"}},\"message\":\"Success\",\"status\":\"OK\",\"timeElapsedInMS\":657}",
+ "final_url": "https://support.hp.com/wcc-services/profile/devices/warranty/specs?cache=true",
+ "sha256": "de2a21aeb019fb90e5d0d1ff81585ca227632833dccb18deb627e690692f3cc1",
+ "validated": true
+}

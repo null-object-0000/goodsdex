@@ -22,6 +22,9 @@ def evidence(reason, word, basis='name'):
 
 def classify_non_goods(row):
     name = DESCRIPTIONS.sub('', str(row.get('name') or '').strip())
+    # A concrete delivery lead time on a physical SKU is not a deposit offer.
+    if row.get('record_level') == 'sku' and row.get('sku_no') and row.get('specs'):
+        name = re.sub(r'预售\s*\d+\s*天', '', name)
     match = PREORDER.search(name)
     if match:
         return evidence('preorder_deposit', match.group())
@@ -52,7 +55,9 @@ def plan_services(rows, archive):
     kept = []
     archived = {r['id']: deepcopy(r) for r in archive}
     for row in rows:
-        decision = classify_non_goods(row)
+        from goodsdex.price_semantics import name_kind
+        partial = row.get('price_kind') in ('deposit', 'upgrade_diff', 'bundle_extra') or name_kind(row)[0]
+        decision = None if partial else classify_non_goods(row)
         if decision:
             archived.setdefault(row['id'], deepcopy(row))
         else:

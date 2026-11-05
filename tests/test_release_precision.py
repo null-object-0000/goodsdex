@@ -65,3 +65,17 @@ def test_l3_primary_source_cannot_be_replaced_by_media(tmp_path):
     path=tmp_path/'l3.json';path.write_text(json.dumps(dict(lane='L3',candidates=[dict(family='a',ids=['a'],release=r)])))
     with pytest.raises(ValueError,match='official primary'):
         apply_priority_dates([dict(id='a',category='手机')],[path])
+
+
+def test_duplicate_id_projections_all_receive_append_only_date(tmp_path):
+    rows=[dict(id='b',category='笔记本',name='one'),dict(id='b',category='笔记本',name='two')]
+    path=tmp_path/'lane.json';path.write_text(json.dumps({'candidates':[{'family':'b','ids':['b'],'release':release()}]}))
+    out=apply_priority_dates(rows,[path])
+    assert all(r['release']['date']=='2025-03-04' for r in out)
+    assert [r['name'] for r in out]==['one','two']
+
+
+def test_lane_diagnostics_do_not_mutate_out_of_scope_rows(tmp_path):
+    rows=[dict(id='a',category='打印机',name='打印机')]
+    path=tmp_path/'lane.json';path.write_text(json.dumps({'observations':[{'id':'a','reason':'no_release_field'}]}))
+    assert apply_priority_dates(rows,[path])==rows

@@ -1,0 +1,585 @@
+{
+ "published_count": 3681,
+ "published_unique_count": 3676,
+ "goods_sha256": "f822981ff832d062dc623f3d679a9a9fa4259c9e73b1a58b7968ef6cc5dc24cf",
+ "rule": "name contains 定金/订金/补差/差价/加购/仅升级 OR positive price < 10% of primary-category median; no minimum cohort size; exclude null/zero/negative from median; independent published/archive cohorts",
+ "candidate_count": 17,
+ "candidates": [
+  {
+   "id": "CN:atour:spu:1984:sku:0105100044-2.0-JD28",
+   "sku_no": "0105100044-2.0-JD28",
+   "name": "亚朵星球 普兰特床垫 / 酒店升级款28cm200cm*200cm（仅升级款）",
+   "price": 3079,
+   "category": "床垫",
+   "category_median": 2099,
+   "category_sample_count": 25,
+   "ratio": 1.466889,
+   "reasons": [
+    "name:仅升级"
+   ],
+   "suggested_price_kind": "full",
+   "suggestion": "已核官方整件规格，full；仅升级为型号限制"
+  },
+  {
+   "id": "CN:atour:spu:1984:sku:0899000039-C2C-b",
+   "sku_no": "0899000039-C2C-b",
+   "name": "亚朵星球 普兰特床垫 / 酒店升级家庭款22cm200cm*200cm（仅升级款）",
+   "price": 10,
+   "category": "床垫",
+   "category_median": 2099,
+   "category_sample_count": 25,
+   "ratio": 0.004764,
+   "reasons": [
+    "name:仅升级",
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "核验官方部分支付规则"
+  },
+  {
+   "id": "CN:mi_cn:product:11374",
+   "sku_no": null,
+   "name": "米家扫拖机器人",
+   "price": 29,
+   "category": "吸尘器",
+   "category_median": 649,
+   "category_sample_count": 21,
+   "ratio": 0.044684,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:11507",
+   "sku_no": null,
+   "name": "米家LED灯泡 蓝牙MESH版",
+   "price": 29.9,
+   "category": "灯具",
+   "category_median": 904.5,
+   "category_sample_count": 54,
+   "ratio": 0.033057,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:12894",
+   "sku_no": null,
+   "name": "米家无线吸尘器 拖地附件套装",
+   "price": 49,
+   "category": "吸尘器",
+   "category_median": 649,
+   "category_sample_count": 21,
+   "ratio": 0.075501,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:14785",
+   "sku_no": null,
+   "name": "MIJIA K歌麦克风",
+   "price": 299,
+   "category": "电视",
+   "category_median": 3999.0,
+   "category_sample_count": 74,
+   "ratio": 0.074769,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:19124",
+   "sku_no": null,
+   "name": "米家磁吸阅读灯",
+   "price": 69,
+   "category": "灯具",
+   "category_median": 904.5,
+   "category_sample_count": 54,
+   "ratio": 0.076285,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:19525",
+   "sku_no": null,
+   "name": "米家即热饮水机抽水软管",
+   "price": 19.9,
+   "category": "净水器",
+   "category_median": 2098.5,
+   "category_sample_count": 44,
+   "ratio": 0.009483,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:19857",
+   "sku_no": null,
+   "name": "米家龙头净水器2 龙头净水器2",
+   "price": 119,
+   "category": "净水器",
+   "category_median": 2098.5,
+   "category_sample_count": 44,
+   "ratio": 0.056707,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:19927",
+   "sku_no": null,
+   "name": "米家台灯2 Lite",
+   "price": 79,
+   "category": "灯具",
+   "category_median": 904.5,
+   "category_sample_count": 54,
+   "ratio": 0.087341,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:19942",
+   "sku_no": null,
+   "name": "米家夜灯3",
+   "price": 59,
+   "category": "灯具",
+   "category_median": 904.5,
+   "category_sample_count": 54,
+   "ratio": 0.065229,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:20351",
+   "sku_no": null,
+   "name": "小米智能门锁NFC卡",
+   "price": 49,
+   "category": "智能门锁",
+   "category_median": 1599,
+   "category_sample_count": 23,
+   "ratio": 0.030644,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:21261",
+   "sku_no": null,
+   "name": "米家筒射灯2 蓝牙Mesh版",
+   "price": 47,
+   "category": "灯具",
+   "category_median": 904.5,
+   "category_sample_count": 54,
+   "ratio": 0.051962,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:21563",
+   "sku_no": null,
+   "name": "REDMI 儿童手表挂绳",
+   "price": 49,
+   "category": "儿童手表",
+   "category_median": 524.0,
+   "category_sample_count": 10,
+   "ratio": 0.093511,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:25436",
+   "sku_no": null,
+   "name": "米家夜灯4",
+   "price": 69,
+   "category": "灯具",
+   "category_median": 904.5,
+   "category_sample_count": 54,
+   "ratio": 0.076285,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:5059",
+   "sku_no": null,
+   "name": "小米活塞耳机",
+   "price": 29,
+   "category": "耳机",
+   "category_median": 384.0,
+   "category_sample_count": 32,
+   "ratio": 0.075521,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:7598",
+   "sku_no": null,
+   "name": "小米盒子4c",
+   "price": 229,
+   "category": "电视",
+   "category_median": 3999.0,
+   "category_sample_count": 74,
+   "ratio": 0.057264,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  }
+ ],
+ "excluded_archive_count": 1140,
+ "excluded_candidate_count": 21,
+ "excluded_candidates": [
+  {
+   "id": "CN:mi_cn:product:19045",
+   "sku_no": null,
+   "name": "耳机新品1元权益定金（不发货）",
+   "price": 1,
+   "category": "耳机",
+   "category_median": 20.0,
+   "category_sample_count": 2,
+   "ratio": 0.05,
+   "reasons": [
+    "name:定金",
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "deposit",
+   "suggestion": "核验官方部分支付规则"
+  },
+  {
+   "id": "CN:dji:sku:117621",
+   "sku_no": null,
+   "name": "DJI Pocket 2 无线麦克风发射端防风毛套",
+   "price": 19,
+   "category": "相机配件",
+   "category_median": 279.0,
+   "category_sample_count": 34,
+   "ratio": 0.0681,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:117741",
+   "sku_no": null,
+   "name": "半月环相机固定螺丝 1/4''-20",
+   "price": 19,
+   "category": "摄影器材配件",
+   "category_median": 249,
+   "category_sample_count": 151,
+   "ratio": 0.076305,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:117771",
+   "sku_no": null,
+   "name": "DJI Pocket 2 保护壳",
+   "price": 25,
+   "category": "相机配件",
+   "category_median": 279.0,
+   "category_sample_count": 34,
+   "ratio": 0.089606,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:117861",
+   "sku_no": null,
+   "name": "DJI Pocket 2 三脚架转接件",
+   "price": 19,
+   "category": "相机配件",
+   "category_median": 279.0,
+   "category_sample_count": 34,
+   "ratio": 0.0681,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:118581",
+   "sku_no": null,
+   "name": "麦轮辊子",
+   "price": 4,
+   "category": "摄影器材配件",
+   "category_median": 249,
+   "category_sample_count": 151,
+   "ratio": 0.016064,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:142461",
+   "sku_no": null,
+   "name": "OM5 手绳（雅典灰）",
+   "price": 12,
+   "category": "摄影器材配件",
+   "category_median": 249,
+   "category_sample_count": 151,
+   "ratio": 0.048193,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:169971",
+   "sku_no": null,
+   "name": "DJI Neo 螺旋桨",
+   "price": 29,
+   "category": "无人机配件",
+   "category_median": 299,
+   "category_sample_count": 83,
+   "ratio": 0.09699,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:180621",
+   "sku_no": null,
+   "name": "DJI Air Unit 系列三合一连接线",
+   "price": 29,
+   "category": "无人机配件",
+   "category_median": 299,
+   "category_sample_count": 83,
+   "ratio": 0.09699,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:185211",
+   "sku_no": null,
+   "name": "Osmo Pocket 3 手绳",
+   "price": 12,
+   "category": "相机配件",
+   "category_median": 279.0,
+   "category_sample_count": 34,
+   "ratio": 0.043011,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:185241",
+   "sku_no": null,
+   "name": "Osmo Pocket 3 摇杆帽",
+   "price": 19,
+   "category": "相机配件",
+   "category_median": 279.0,
+   "category_sample_count": 34,
+   "ratio": 0.0681,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:185541",
+   "sku_no": null,
+   "name": "拆桨螺丝刀",
+   "price": 19,
+   "category": "摄影器材配件",
+   "category_median": 249,
+   "category_sample_count": 151,
+   "ratio": 0.076305,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:185901",
+   "sku_no": null,
+   "name": "防风毛套（黑底黑色）",
+   "price": 19,
+   "category": "摄影器材配件",
+   "category_median": 249,
+   "category_sample_count": 151,
+   "ratio": 0.076305,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:185931",
+   "sku_no": null,
+   "name": "防风毛套（黑底黑灰）",
+   "price": 19,
+   "category": "摄影器材配件",
+   "category_median": 249,
+   "category_sample_count": 151,
+   "ratio": 0.076305,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:185961",
+   "sku_no": null,
+   "name": "防风毛套（白底灰色）",
+   "price": 19,
+   "category": "摄影器材配件",
+   "category_median": 249,
+   "category_sample_count": 151,
+   "ratio": 0.076305,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:dji:sku:204981",
+   "sku_no": null,
+   "name": "DJI Neo 2 螺旋桨",
+   "price": 18,
+   "category": "无人机配件",
+   "category_median": 299,
+   "category_sample_count": 83,
+   "ratio": 0.060201,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:18012",
+   "sku_no": null,
+   "name": "日常元素地面清洁剂 200ml",
+   "price": 49,
+   "category": "家电",
+   "category_median": 499.0,
+   "category_sample_count": 16,
+   "ratio": 0.098196,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:20882",
+   "sku_no": null,
+   "name": "米家冲牙器 云感喷嘴",
+   "price": 39,
+   "category": "家电",
+   "category_median": 499.0,
+   "category_sample_count": 16,
+   "ratio": 0.078156,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:20954",
+   "sku_no": null,
+   "name": "米家中央空调（多联机）上门勘测服务",
+   "price": 0.01,
+   "category": "中央空调Pro",
+   "category_median": 299.0,
+   "category_sample_count": 24,
+   "ratio": 3.3e-05,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:24569",
+   "sku_no": null,
+   "name": "家用净水器勘测服务 通用",
+   "price": 0.01,
+   "category": "净水器",
+   "category_median": 219.0,
+   "category_sample_count": 68,
+   "ratio": 4.6e-05,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  },
+  {
+   "id": "CN:mi_cn:product:6018",
+   "sku_no": null,
+   "name": "小米 Type-C to AUDIO转接线",
+   "price": 9.9,
+   "category": "平板配件",
+   "category_median": 349,
+   "category_sample_count": 15,
+   "ratio": 0.028367,
+   "reasons": [
+    "price_below_category_median_10pct"
+   ],
+   "suggested_price_kind": "unknown",
+   "suggestion": "待核页面；低价、配件、容量、组合数量可造成正常价差，不自动改价"
+  }
+ ]
+}

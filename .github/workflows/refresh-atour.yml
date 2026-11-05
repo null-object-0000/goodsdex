@@ -1,0 +1,67 @@
+name: refresh-atour
+on:
+  schedule:
+    - cron: '17 21 * * *'
+  workflow_dispatch:
+    inputs:
+      probe_only:
+        type: boolean
+        default: false
+        description: 'Collect and validate live source with evidence only; do not publish'
+      verified_snapshot:
+        type: boolean
+        default: false
+        description: 'Import the complete locally collected and reviewed official snapshot; scheduled runs always fetch live'
+permissions:
+  contents: write
+  actions: read
+  checks: read
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/collect-base
+      - uses: actions/setup-node@v4
+        if: ${{ !inputs.verified_snapshot }}
+        with:
+          node-version: '22'
+      - name: Install isolated browser reader
+        if: ${{ !inputs.verified_snapshot }}
+        run: |
+          npm install --prefix "$RUNNER_TEMP/atour-browser" playwright@1.56.1
+          "$RUNNER_TEMP/atour-browser/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Capture anonymous official catalogue (serial, at least 2.1s)
+        if: ${{ !inputs.verified_snapshot }}
+        env:
+          PLAYWRIGHT_MODULE: ${{ runner.temp }}/atour-browser/node_modules/playwright
+        run: |
+          mkdir -p "$RUNNER_TEMP/atour-evidence"
+          node scripts/capture_atour.cjs "$RUNNER_TEMP/atour-evidence/capture.json"
+          python3 scripts/crawl_atour.py --capture "$RUNNER_TEMP/atour-evidence/capture.json" --public _data/public
+      - name: Import reviewed anonymous official snapshot through the same collector gates
+        if: ${{ inputs.verified_snapshot }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/atour-evidence"
+          cp docs/atour-catalog-20261105/evidence/capture.json "$RUNNER_TEMP/atour-evidence/capture.json"
+          python3 scripts/crawl_atour.py --capture "$RUNNER_TEMP/atour-evidence/capture.json" --public _data/public
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: atour-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/atour-evidence/
+          retention-days: 7
+      - uses: ./.github/actions/upload-candidate
+        if: ${{ !inputs.probe_only }}
+        with:
+          scope: atour
+  publish:
+    if: ${{ !inputs.probe_only }}
+    needs: collect
+    uses: ./.github/workflows/publish-release.yml
+    with:
+      scope: atour
+    secrets: inherit

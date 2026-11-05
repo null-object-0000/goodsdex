@@ -1,0 +1,115 @@
+{
+ "ok": true,
+ "match": null,
+ "candidates": [
+  {
+   "product_id": "CN:hp_cn:sku:7P211PC",
+   "sku_id": "CN:hp_cn:sku:7P211PC",
+   "part_number": "7P211PC",
+   "display_name": "HP PB450G10 i7-1355U 15 32GB/1T PC (7P211PC)",
+   "price_from": null,
+   "image": null,
+   "score": 0.9,
+   "rules": [
+    {
+     "field": "part_number",
+     "value": "7P211PC",
+     "source": "HP Support productNumber",
+     "exact": false
+    },
+    {
+     "field": "size",
+     "value": 15.6,
+     "source": "HP Support productSeriesName"
+    },
+    {
+     "field": "cpu",
+     "value": "i7-1355U",
+     "source": "HP Support productName"
+    },
+    {
+     "field": "memory_gb",
+     "value": 32,
+     "source": "HP Support productName"
+    },
+    {
+     "field": "storage",
+     "value": "1TB",
+     "source": "HP PartSurfer exact ProductNumber"
+    },
+    {
+     "field": "display",
+     "value": "QHD",
+     "source": "HP PartSurfer exact ProductNumber"
+    }
+   ],
+   "unresolved": [
+    "战66六代营销名称与该货号的官方映射未取得",
+    "120Hz未在官方SKU配置或零件清单中明示"
+   ],
+   "source_url": "https://support.hp.com/cn-zh/product/troubleshooting/hp-probook-450-15.6-inch-g10-notebook-pc/model/2101593797?sku=7P211PC",
+   "evidence": {
+    "support_url": "https://support.hp.com/wcc-services/profile/devices/warranty/specs?cache=true",
+    "support_sha256": "4393a05fc537c9ba814bb18eb71f9b29e8fa2271434127258c61f8eef244ad40",
+    "parts_url": "https://partsurfer.hpcloud.hp.com/bff/proxy/get?input=/Product/GetProduct/7P211PC/country/US/usertype/EXT",
+    "parts_sha256": "7a54425c9e4f87d588ce3c67f483b5984f3d124b4f2d84ffb060c77f9c77d579"
+   }
+  },
+  {
+   "product_id": "CN:hp_cn:sku:7P2D5PC",
+   "sku_id": "CN:hp_cn:sku:7P2D5PC",
+   "part_number": "7P2D5PC",
+   "display_name": "HP PB450G10 i7-1360P 15 32GB/1T PC (7P2D5PC)",
+   "price_from": null,
+   "image": null,
+   "score": 0.9,
+   "rules": [
+    {
+     "field": "part_number",
+     "value": "7P2D5PC",
+     "source": "HP Support productNumber",
+     "exact": false
+    },
+    {
+     "field": "size",
+     "value": 15.6,
+     "source": "HP Support productSeriesName"
+    },
+    {
+     "field": "cpu",
+     "value": "i7-1360P",
+     "source": "HP Support productName"
+    },
+    {
+     "field": "memory_gb",
+     "value": 32,
+     "source": "HP Support productName"
+    },
+    {
+     "field": "storage",
+     "value": "1TB",
+     "source": "HP PartSurfer exact ProductNumber"
+    },
+    {
+     "field": "display",
+     "value": "QHD",
+     "source": "HP PartSurfer exact ProductNumber"
+    }
+   ],
+   "unresolved": [
+    "战66六代营销名称与该货号的官方映射未取得",
+    "120Hz未在官方SKU配置或零件清单中明示"
+   ],
+   "source_url": "https://support.hp.com/cn-zh/product/troubleshooting/hp-probook-450-15.6-inch-g10-notebook-pc/model/2101593804?sku=7P2D5PC",
+   "evidence": {
+    "support_url": "https://support.hp.com/wcc-services/profile/devices/warranty/specs?cache=true",
+    "support_sha256": "47236ff9848b92337acbc2ae691bbc0fbdb969bef6a7fe029c9ff497340480cb",
+    "parts_url": "https://partsurfer.hpcloud.hp.com/bff/proxy/get?input=/Product/GetProduct/7P2D5PC/country/US/usertype/EXT",
+    "parts_sha256": "76848a3c760f220fcddfc20c7df01a2a0ef86c98d255c4bdbc6a5726f41ec864"
+   }
+  }
+ ],
+ "candidateCount": 2,
+ "candidatesTruncated": false,
+ "matchReason": "官方平台配置候选；缺少战66六代货号映射，不能唯一确认，请按机身货号选择"
+}

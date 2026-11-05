@@ -1,0 +1,37 @@
+✔ 默认模板字数含按钮与折叠区仍在预算内 (4.422136ms)
+✔ 日均口径收进弹层仍只出现一次，未知日期及下一步动作不能被删 (1.095344ms)
+✔ 说明必须由点击打开，逐字核对弹层与全部支持范围 (1.595966ms)
+✔ share extraction accepts surrounding copy and rejects missing, lookalike or non-JD URL (1.755583ms)
+✔ share prefill uses order date, clears a previous price, keeps spec/quantity, and chooses one item (1.852565ms)
+✔ share errors are explicit and missing URL never sends a request (2.299721ms)
+✔ spec and qty survive existing item save validation; blank price remains null (1.602642ms)
+✔ request service encodes entire share URL and retains HTTP status for failure copy (0.641224ms)
+✔ matched share uses selection path, preserves full title/spec/date and never uses reference price (1.88886ms)
+✔ unmatched or failed match stays name-only; long names get a sixty-character cap (1.043104ms)
+✔ HP candidates require explicit choice, hydrate exact SKU and preserve paid/listing price separation (1.168909ms)
+✔ HP candidate detail must return the same official SKU, and late selection cannot overwrite a newer share (0.694813ms)
+✔ a late match cannot overwrite a newer share selection (0.702603ms)
+✔ goodsMatch requests encode share name and spec as independent query fields (0.266114ms)
+✔ a family match binds the family without inventing a SKU capacity or part number (0.848473ms)
+✔ product URL extraction covers item and listing pages in share copy (0.136741ms)
+✔ product import keeps listing price separate from paid price, preserves match identity, persists source and excludes listing from paid price (5.371573ms)
+✔ MI share extracts all forms, binds only server identity and persists current price/source (1.287633ms)
+✔ manual rename survives reimport and matching in JD and Xiaomi paths (1.14511ms)
+✔ matched display name survives missing or failed detail hydration (1.062686ms)
+✔ JD server matched name is used directly without a second matching request (0.543288ms)
+✔ search-box import shows loading notice until failure and always releases busy (1.741929ms)
+✔ 数字显示保留零、负值、分组和单位；未知、日期、型号不冒充金额 (1.221865ms)
+✔ 排版门禁拒绝第六档字号和独立手调间距 (30.95981ms)
+✔ 对比度脚本实际拒绝白底浅灰，并给出WCAG计算值与源位置 (22.493042ms)
+✔ 深色门禁解析媒体覆盖和颜色token；仅深色注入低对比必须判红，浅色仍通过 (114.706179ms)
+✔ 原生主题配置完整；两套导航文字保持4.5，单套tab图标在深浅背景均达到3 (4.411693ms)
+✔ 首页标题严格使用token，随意扩张字号必须报红 (13.838991ms)
+✔ 每个输入框的 value 绑定都带空值兜底，界面不会显示 undefined (6.292243ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 388.484023

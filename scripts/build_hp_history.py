@@ -48,7 +48,7 @@ def parse_capture(capture, catalogue):
     if 'ZBook' in series_name or 'Workstation' in series_name or '工作站' in series_name:
         category = '工作站'
     cpu = re.search(r'\b(?:i[3579]-[0-9A-Za-z]+|R[3579]-[0-9A-Za-z]+)\b', name, re.I)
-    ram = re.search(r'\b(\d+GB)/', name)
+    ram = re.search(r'\b(\d+)GB/', name)
     # An unlabelled '/512' is left verbatim; do not guess its unit or drive type.
     config = re.search(r'\b\d+GB/[0-9A-Za-z+]+', name)
     params = {'产品编号': sku, '型号': series_name,

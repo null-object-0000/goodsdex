@@ -27,7 +27,7 @@ def merge(rebuilt, supplements, previous, include_new_cars=False, *, apply_backf
     supplements = remove_reviewed_non_goods(supplements)
     # Other publishers cannot drop cars; only the separate daily job refreshes them.
     present = {r['id'] for r in rebuilt}
-    rebuilt = rebuilt + [r for r in previous if (is_car(r) or r.get('source') == 'hp_cn') and r['id'] not in present]
+    rebuilt = rebuilt + [r for r in previous if (is_car(r) or r.get('source') in ('hp_cn', 'atour')) and r['id'] not in present]
     existing = indexed(rebuilt, "rebuilt")
     extra = indexed(supplements, "supplements", unique=True)
     old = indexed(previous, "previous")
@@ -103,4 +103,6 @@ def metadata(result, meta=None):
     meta['source_url_coverage'] = source_url_coverage(result)
     from goodsdex.retirement import counts
     meta.update(counts(result))
+    from goodsdex.atour import coverage as atour_coverage
+    meta['sources'] = dict(meta.get('sources') or {}, atour=atour_coverage(result))
     return meta

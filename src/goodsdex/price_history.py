@@ -41,6 +41,8 @@ def observation(row, *, at=None, status=None, backfilled=False):
     if not gid or not at:
         raise ValueError('Observation requires identity and actual collection time')
     at = instant(at).astimezone(CST).isoformat()
+    from goodsdex.price_semantics import normalize
+    row = normalize(row)
     price = numeric(row.get('price'))
     unavailable = row.get('price_status') == 'stale' or row.get('sale_status') in ('delisted', 'unavailable')
     status = status or ('unavailable' if unavailable else ('ok' if price is not None else 'no_price'))
