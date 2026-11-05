@@ -114,3 +114,17 @@ PYTHONPATH=src python -m pytest -q -m "not live"
 ```
 
 原始匿名响应与图标字节在 evidence.tar.gz；requests.json 记录游标请求原 URL 与原始字节 SHA-256。离线核验会验证 330 条映射的名称/model/pdId 确实同时出现在相应官方响应，并校验原始响应与图标哈希。复跑采集应使用新目录，以免复用当前固定快照缓存；品牌种子路径仅作发现证据，不承诺存在全平台品牌范围。
+
+## 发布与线上读回结果
+
+代码提交 `836a2f6452ed05c15f9456ecc207440e1eb2e600`。
+
+- [发布 run 42072841042](https://github.com/null-object-0000/goodsdex/actions/runs/42072841042)：**success**；发布门禁 **658 passed**。
+- [CI run 42072805067](https://github.com/null-object-0000/goodsdex/actions/runs/42072805067)：**success，1,048 passed、8 deselected**。
+- 数据提交 `36f4ec430959b56c7a7ab8347e57ace8cf21a56b`；父提交 `daadd38f9b0da0fc2a04e2a5002e6ad96894444c`；OSS revision `ae3a62fad13a4f4b8fbf0a840b9c5771`。
+
+排队期间另有价格/惠普任务发布，因此线上核验使用本次发布数据提交的**真实父版本**，而不是研究开始时的旧快照。父子关系已核对，父版本原件和 URL/哈希见 publication-before.json.gz、publication-baseline.json。
+
+[线上读回](online-verification.json)校验了整库和分片的 SHA-256。3,572 行逐字段等于 `apply_catalog(真实父版本)`；**330 条 model/pdId、58 次官方名称格式修正、18 张 168×168 设备图标、28 次品类修正**均已生效。五条对照的完整详情逐字段相同，小米列表索引也保留了 model、pdId 和图标宽高。所有日期字段及无关字段均无本次增量；严格有效日期仍为 **1,580/3,572 = 44.23% → 44.23%，无变化，+0.00 个百分点**。
+
+复核入口：`python docs/mihome-catalog-20261106/verify_online.py`；完整机器结果见 publication.json、online-verification.json，CI 与发布日志同目录。

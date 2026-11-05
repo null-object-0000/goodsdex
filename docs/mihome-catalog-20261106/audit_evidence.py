@@ -14,6 +14,20 @@ with tarfile.open(root/'evidence.tar.gz') as archive:
         if icon:
             raw=archive.extractfile('raw/icon-'+entry['model']+'.bin').read()
             assert hashlib.sha256(raw).hexdigest()==icon['sha256']
+    observed=set()
+    membership=set()
+    for member in archive.getmembers():
+        if not member.name.startswith('raw/list-') or not member.name.endswith('.json'): continue
+        _,bid,cid,page=Path(member.name).stem.split('-')
+        for device in json.loads(archive.extractfile(member).read())['data']['productList']:
+            observed.add((device['model'],device['pdId'],device['name']))
+            if int(cid): membership.add((device['model'],int(bid),int(cid)))
+    devices=json.loads((root/'devices.json').read_text())
+    assert len(devices)==len({d['model'] for d in devices})==1928
+    for device in devices:
+        assert (device['model'],device['pdId'],device['name']) in observed
+        for c in device['classifications']:
+            assert (device['model'],c['brand_id'],c['id']) in membership
     index={x['file']:x for x in json.loads((root/'requests.json').read_text())}
     for f,record in index.items():
         raw=archive.extractfile(f).read()
