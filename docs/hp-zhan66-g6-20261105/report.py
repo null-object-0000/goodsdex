@@ -16,7 +16,7 @@ for size,cpu,ram,disk,display in itertools.product(('14','15.6','16'),('i5','i7'
 (P/'coverage-and-missing.json').write_text(json.dumps(coverage,ensure_ascii=False,indent=1)+'\n')
 stats=dict(official_platform='HP ProBook 440/445/450/455 G10; marketing identity not asserted',total=len(rows),new_part_numbers=[r['part_number'] for r in new],by_size=dict(collections.Counter(r['params']['屏幕尺寸'] for r in rows)),by_panel=dict(collections.Counter(r['params']['屏幕规格'] for r in rows)),requested_combinations=len(coverage),combinations_with_platform_candidates=sum(bool(r['official_platform_candidate_part_numbers']) for r in coverage),confirmed_marketing_combinations=0,by_configuration=[dict(size=s,cpu=c,memory=m,storage=d,display=v,count=n) for (s,c,m,d,v),n in sorted(groups.items())])
 (P/'statistics.json').write_text(json.dumps(stats,ensure_ascii=False,indent=1)+'\n')
-old=json.loads((P/'match-before.json').read_text());after=json.loads((P/'match-after-local.json').read_text())
+old=json.loads((P/'match-before.json').read_text());after_path=P/'match-after-online.json';after=json.loads((after_path if after_path.exists() else P/'match-after-local.json').read_text())
 lines=['# 战66六代检索：官方配置补充与候选验收','',
 '本轮完成官方货号和配置补证、候选筛选及发布；**没有宣称完成战66六代全部营销SKU的确认**。HP公开支持站/零件库只明示ProBook平台与G10代际，未取得这些货号与“战66六代”的SKU级官方映射，亦未明示120Hz。不能把ProBook G10批量改名成战66六代。','',
 '## 实际数据变更','',
@@ -37,13 +37,17 @@ lines=['# 战66六代检索：官方配置补充与候选验收','',
 '|尺寸|CPU|内存|存储|屏幕|货号条数|','|---|---|---|---|---|---:|']
 lines += ['|'+'|'.join(map(str,(s,c,m,d,v,n)))+'|' for (s,c,m,d,v),n in sorted(groups.items())]
 lines += ['', '## 原文标题的真实匹配入口','',
-'原文：`惠普（HP）战66 六代酷睿 15.6 英寸 i7-13代 32G 1T 2.5K 120Hz`。服务已有入口是GET /api/goods/match（并未提供POST）；按请求许可使用后台既有匹配入口。修前是正式服务原始响应，修后本地实际HTTP请求使用完整3682条候选库；发布后另留match-after-online.json。','',
+'原文：`惠普（HP）战66 六代酷睿 15.6 英寸 i7-13代 32G 1T 2.5K 120Hz`。服务已有入口是GET /api/goods/match（并未提供POST）；按请求许可使用后台既有匹配入口。修前和修后均为正式服务原始响应；修后原文另存match-after-online.json。本地完整3682条整库、生产分片与实际浏览器选择也分别验证通过。','',
 '修前（完整JSON）：','```json',json.dumps(old,ensure_ascii=False,indent=1),'```','',
-'修后（完整JSON，含规则输出）：','```json',json.dumps(after,ensure_ascii=False,indent=1),'```','',
+'修后（最终线上完整JSON，含规则输出）：','```json',json.dumps(after,ensure_ascii=False,indent=1),'```','',
 '两候选：7P211PC是i7-1355U，零件清单主板含RTX2050；7P2D5PC是i7-1360P、UMA主板。原文仅i7-13代，不能从这一点排除任一。两条均32GB、1TB、15.6英寸、QHD；用户应核对机身货号选择。','',
 '分数是规则得分，不是概率：官方品牌/货号记录基础0.10 + 尺寸0.20 + CPU级别/代际0.20 + 内存0.15 + 存储0.15 + 屏幕0.10 = **0.90**。输入未给货号，所以货号exact=false；只用货号验证候选来源，未假称货号命中。营销映射及120Hz缺证独立阻止自动命中，即使配置筛到一条也保留match=null。全程不修改身份一致阈值。','',
 '## 验证与发布','',
 '测试、提交号、构建/发布run和线上读回见publication.md。原工作区与独立发布工作树均验证；原有live/集成跳过保持不变。','',
 '```bash','python3 scripts/build_hp_configurations.py --captures docs/hp-zhan66-g6-20261105/parts-evidence.json.gz','PYTHONPATH=src python3 -m pytest -q -m "not live"','node docs/hp-zhan66-g6-20261105/match-local.mjs /path/to/spend-good/services/api /path/to/goods.json','```','']
+lines += ['', '## 小程序选择入口与分片回归', '',
+'分享识别后，未自动确认时展示两个官方货号。点击“机身货号一致，选这台”才按该SKU详情绑定；晚到的请求不能覆盖新导入。京东6799始终是listingPrice，实付price保持空白。UI证据：ui/hp-candidates.png、ui/hp-selected.png、tests-ui.log。小程序全部132个测试文件逐文件复跑：883 passed / 0 skipped / 0 failed。微信编译与预览也成功，二维码保存在本地，未提交到公共仓库。', '',
+'生产轻索引有意不含支持站证据和完整配置。首次线上读回安全返回空候选后，已增加按需读取112条合资格HP详情和每发布版本缓存；没有扩大轻索引或降低身份要求。新增生产分片HTTP回归覆盖轻索引省略source、证据和完整params的真实条件，整库/分片均返回相同两候选且不修改公共索引。最终后端全套362 passed / 4 skipped / 0 failed。', '',
+'营销映射和120Hz仍是未证实项，选择由用户依据机身货号确认，不记录成厂家已证明的营销身份。', '']
 (P/'README.md').write_text('\n'.join(lines))
 print(json.dumps({k:v for k,v in stats.items() if k!='by_configuration'},ensure_ascii=False))

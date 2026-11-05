@@ -137,7 +137,7 @@ HP 790 → 791；新增货号 **7Z8L4PC**。目标 **7P2D5PC** 原已存在，�
 
 ## 原文标题的真实匹配入口
 
-原文：`惠普（HP）战66 六代酷睿 15.6 英寸 i7-13代 32G 1T 2.5K 120Hz`。服务已有入口是GET /api/goods/match（并未提供POST）；按请求许可使用后台既有匹配入口。修前是正式服务原始响应，修后本地实际HTTP请求使用完整3682条候选库；发布后另留match-after-online.json。
+原文：`惠普（HP）战66 六代酷睿 15.6 英寸 i7-13代 32G 1T 2.5K 120Hz`。服务已有入口是GET /api/goods/match（并未提供POST）；按请求许可使用后台既有匹配入口。修前和修后均为正式服务原始响应；修后原文另存match-after-online.json。本地完整3682条整库、生产分片与实际浏览器选择也分别验证通过。
 
 修前（完整JSON）：
 ```json
@@ -171,7 +171,7 @@ HP 790 → 791；新增货号 **7Z8L4PC**。目标 **7P2D5PC** 原已存在，�
 }
 ```
 
-修后（完整JSON，含规则输出）：
+修后（最终线上完整JSON，含规则输出）：
 ```json
 {
  "ok": true,
@@ -208,8 +208,8 @@ HP 790 → 791；新增货号 **7Z8L4PC**。目标 **7P2D5PC** 原已存在，�
      "source": "HP Support productName"
     },
     {
-     "field": "storage_gb",
-     "value": 1024,
+     "field": "storage",
+     "value": "1TB",
      "source": "HP PartSurfer exact ProductNumber"
     },
     {
@@ -261,8 +261,8 @@ HP 790 → 791；新增货号 **7Z8L4PC**。目标 **7P2D5PC** 原已存在，�
      "source": "HP Support productName"
     },
     {
-     "field": "storage_gb",
-     "value": 1024,
+     "field": "storage",
+     "value": "1TB",
      "source": "HP PartSurfer exact ProductNumber"
     },
     {
@@ -303,3 +303,12 @@ python3 scripts/build_hp_configurations.py --captures docs/hp-zhan66-g6-20261105
 PYTHONPATH=src python3 -m pytest -q -m "not live"
 node docs/hp-zhan66-g6-20261105/match-local.mjs /path/to/spend-good/services/api /path/to/goods.json
 ```
+
+
+## 小程序选择入口与分片回归
+
+分享识别后，未自动确认时展示两个官方货号。点击“机身货号一致，选这台”才按该SKU详情绑定；晚到的请求不能覆盖新导入。京东6799始终是listingPrice，实付price保持空白。UI证据：ui/hp-candidates.png、ui/hp-selected.png、tests-ui.log。小程序全部132个测试文件逐文件复跑：883 passed / 0 skipped / 0 failed。微信编译与预览也成功，二维码保存在本地，未提交到公共仓库。
+
+生产轻索引有意不含支持站证据和完整配置。首次线上读回安全返回空候选后，已增加按需读取112条合资格HP详情和每发布版本缓存；没有扩大轻索引或降低身份要求。新增生产分片HTTP回归覆盖轻索引省略source、证据和完整params的真实条件，整库/分片均返回相同两候选且不修改公共索引。最终后端全套362 passed / 4 skipped / 0 failed。
+
+营销映射和120Hz仍是未证实项，选择由用户依据机身货号确认，不记录成厂家已证明的营销身份。
