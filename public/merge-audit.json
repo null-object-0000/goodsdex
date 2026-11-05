@@ -1,8 +1,8 @@
 {
  "previous_count": 3682,
- "rebuilt_count": 3682,
+ "rebuilt_count": 3687,
  "added_count": 54,
- "count": 3736,
+ "count": 3741,
  "missing_ids": [],
  "added_ids": [
   "CN:mi_cn:product:12795",
@@ -81,13 +81,22 @@
     "gid",
     "market_price",
     "params",
-    "price"
+    "price",
+    "release",
+    "release_confidence",
+    "release_decision",
+    "release_effective",
+    "release_evidence",
+    "release_precision",
+    "release_quote",
+    "release_source",
+    "release_tolerance_days"
    ],
    "row_count": 2,
    "problems": [
     "Protected group: true_variant"
    ],
-   "rows_sha256": "bdaa4de7dc985172023db838c9052df3c43d329eaa83b232a2bb34b90cd73ac5"
+   "rows_sha256": "ca3beabc46e4ea0f67f46f65cb1535daad92101887c446c93d639e08cbcf5e4f"
   },
   {
    "id": "CN:mi_cn:product:22172",
@@ -438,17 +447,17 @@
   "CN:mi_cn:product:9884"
  ],
  "deduplication": {
-  "before_rows": 3736,
-  "after_rows": 3736,
-  "before_unique_ids": 3731,
-  "after_unique_ids": 3731,
+  "before_rows": 3741,
+  "after_rows": 3741,
+  "before_unique_ids": 3736,
+  "after_unique_ids": 3736,
   "merged_groups": 0,
   "removed_rows": 0,
   "conflict_groups": 3,
   "conflict_rows": 8,
   "conflicts_unchanged": true,
   "brands_before": {
-   "Apple": 639,
+   "Apple": 644,
    "亚朵星球": 267,
    "大疆": 281,
    "富士": 63,
@@ -458,7 +467,7 @@
    "比亚迪": 14
   },
   "brands_after": {
-   "Apple": 639,
+   "Apple": 644,
    "亚朵星球": 267,
    "大疆": 281,
    "富士": 63,
@@ -533,7 +542,7 @@
    "无人机": 51,
    "无线充电器": 13,
    "旧款机型": 269,
-   "显示器": 9,
+   "显示器": 10,
    "智能家庭": 2,
    "智能门锁": 23,
    "服饰": 5,
@@ -592,7 +601,7 @@
    "路由器": 25,
    "运动相机": 94,
    "运动鞋": 2,
-   "配件": 6,
+   "配件": 10,
    "键鼠套装": 16,
    "门铃/猫眼": 14,
    "除湿机": 5,
@@ -666,7 +675,7 @@
    "无人机": 51,
    "无线充电器": 13,
    "旧款机型": 269,
-   "显示器": 9,
+   "显示器": 10,
    "智能家庭": 2,
    "智能门锁": 23,
    "服饰": 5,
@@ -725,7 +734,7 @@
    "路由器": 25,
    "运动相机": 94,
    "运动鞋": 2,
-   "配件": 6,
+   "配件": 10,
    "键鼠套装": 16,
    "门铃/猫眼": 14,
    "除湿机": 5,
@@ -782,13 +791,22 @@
      "gid",
      "market_price",
      "params",
-     "price"
+     "price",
+     "release",
+     "release_confidence",
+     "release_decision",
+     "release_effective",
+     "release_evidence",
+     "release_precision",
+     "release_quote",
+     "release_source",
+     "release_tolerance_days"
     ],
     "row_count": 2,
     "problems": [
      "Protected group: true_variant"
     ],
-    "rows_sha256": "bdaa4de7dc985172023db838c9052df3c43d329eaa83b232a2bb34b90cd73ac5"
+    "rows_sha256": "ca3beabc46e4ea0f67f46f65cb1535daad92101887c446c93d639e08cbcf5e4f"
    },
    {
     "id": "CN:mi_cn:product:22172",
@@ -804,12 +822,12 @@
     "rows_sha256": "417d1bdc9c1a6da521960a9de19e5c6e25f800d4232533a82b14249feaeef597"
    }
   ],
-  "input_sha256": "efc6af7a54192f99bf89808a3c4dd0a8c06087fb182453e94a658679ec48bd21",
-  "output_sha256": "dafb8e74646dff5fb5a55f9a0fac5c5119f7ffd7320b6f7a67d914a8dac83bc4"
+  "input_sha256": "b133a9b08337240c6bef8ff976ffc74dca6243e6ed56d9f4db32463c3bc98ce2",
+  "output_sha256": "df032d4412795cdc52039c214996442259f3a5c4f0022c86bf124c26ef63d7e1"
  },
  "published_count": 3682,
  "accessories": {
-  "excluded_count": 53,
+  "excluded_count": 58,
   "newly_excluded_count": 0,
   "denominator": 3660,
   "newly_excluded_ratio": 0.0,
@@ -820,7 +838,7 @@
  },
  "brands": {
   "before": {
-   "Apple": 639,
+   "Apple": 644,
    "亚朵星球": 267,
    "大疆": 281,
    "富士": 63,
@@ -831,7 +849,7 @@
    "比亚迪": 14
   },
   "after": {
-   "Apple": 639,
+   "Apple": 644,
    "亚朵星球": 267,
    "大疆": 281,
    "富士": 63,
