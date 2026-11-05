@@ -40,6 +40,8 @@ def normalize(r):
     if not precision(r) or not captured(r):
         return None
     source = r.get('source')
+    if source == 'llm': return None
+    if source == 'series_inherit' and r.get('level') != 'series': return None
     if source == 'official_hidden': source = 'official'
     if r.get('level') == 'series':
         source = 'series_inherit'
@@ -96,6 +98,10 @@ def apply(rows):
         if not candidates:
             for k in ('release_source','release_precision','release_evidence','release_quote','release_tolerance_days','release_delta_days','release_decision','release_effective'):
                 row.pop(k,None)
+            # An explicit abstention also stops C-end legacy model-year fallbacks.
+            from .series_release import is_accessory
+            if not is_accessory(row) and row.get('kind') != 'service':
+                row['release_decision']=dict(date=None, precision=None, source=None, display=None, usage=[])
             continue
         # Unknown deviation ranks after verified agreement. Then prefer precision.
         candidates.sort(key=lambda pair:(pair[1].get('release_delta_days') if pair[1].get('release_delta_days') is not None else 0 if pair[1]['release_source']=='official' else 46,

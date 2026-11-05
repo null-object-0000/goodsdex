@@ -58,3 +58,11 @@ def test_conflicting_inheritance_cannot_fall_back_to_another_product_date():
     row=apply(rows)[0]
     assert effective(row) is None and row['release']['date'] is None
     assert apply([row])==[row]
+
+
+def test_unknown_date_explicitly_blocks_legacy_model_year_and_series_masquerade():
+    row=apply([dict(id='x',params={'上市时间':'2025-05-22','model_year':'2025'})])[0]
+    assert row['release_decision']['date'] is None
+    assert row['release_decision']['usage']==[]
+    assert normalize(assertion(source='llm',level='series')) is None
+    assert normalize(assertion(source='series_inherit',level='product')) is None
