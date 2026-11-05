@@ -14,7 +14,7 @@ permissions:
   checks: read
 jobs:
   collect:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     permissions:
       contents: read
@@ -27,7 +27,7 @@ jobs:
       - name: Install bounded collectors
         run: |
           python3 -m pip install requests beautifulsoup4
-          npm install --prefix /tmp/release-browser playwright
+          npm install --prefix /tmp/release-browser playwright@1.56.1
           /tmp/release-browser/node_modules/.bin/playwright install --with-deps chromium
       - name: Collect independent lanes and append verified dates only
         env:
