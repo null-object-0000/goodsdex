@@ -64,4 +64,10 @@ python3 scripts/build_mijia_baike.py --goods /path/goods.json --output docs/miji
 PYTHONPATH=src python3 -m pytest -q -m "not live"
 ```
 
-结论：这条线能提供官方设备名、说明书和粗品类证据，但商城 ID 到设备 model 的覆盖仍有限，且多规格身份需要进一步核验；**本轮不能宣称已解决名称或品类修正，实际覆盖率提升为 0**。日期路线无增益。发布提交与 run id 见 publication.json（发布后补记）。
+结论：这条线能提供官方设备名、说明书和粗品类证据，但商城 ID 到设备 model 的覆盖仍有限，且多规格身份需要进一步核验；**本轮不能宣称已解决名称或品类修正，实际覆盖率提升为 0**。日期路线无增益。发布提交与 run id 见 [publication.json](publication.json)。
+
+## 发布与线上核验
+
+代码提交 `c3c3e360`（功能提交 `9dd29f05`）；[发布 run 42064779520](https://github.com/null-object-0000/goodsdex/actions/runs/42064779520) **success**，发布门禁 **651 passed**；[CI run 42064779025](https://github.com/null-object-0000/goodsdex/actions/runs/42064779025) **success，1041 passed、8 deselected**。数据提交 `223eb14bbd3cdc8dd06077b98be22c2f002799eb`，OSS revision `ff6d996a7e8843ecbe17fd1ac77b6a41`。
+
+[线上读回结果](online-verification.json)：经 SHA-256 验证的整库包含 **362 条 mijia_baike、314 条 miio_model**，缺失预期元数据 **0**；5 个不可变详情分片逐字段核对通过。对全量公共 ID 的 name/category/categories/release/release_date/release_upper_bound 比较，变化均为空。发布总行数仍为 3572。完整运行日志与验证脚本同目录留存。
