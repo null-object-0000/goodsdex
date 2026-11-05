@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T12:17:37Z",
+  "generatedAt": "2026-11-05T12:29:31Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -31,9 +31,9 @@
       "expectedIntervalMinutes": 1440,
       "lastAttemptAt": "2026-11-05T12:07:50Z",
       "lastSuccessAt": "2026-11-05T10:23:52Z",
-      "conclusion": "in_progress",
+      "conclusion": "degraded",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42024532615",
-      "error": null,
+      "error": "blocked: 403 from hpstore.cn",
       "stale": false,
       "staleReason": null
     },
@@ -53,11 +53,11 @@
       "sourceId": "refresh-cars",
       "workflow": ".github/workflows/refresh-cars.yml",
       "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-04T12:10:01Z",
+      "lastAttemptAt": "2026-11-05T12:23:32Z",
       "lastSuccessAt": "2026-11-03T15:00:18Z",
-      "conclusion": "failure",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41826914214",
-      "error": "raise ValueError('Official parameters failed')",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42026721542",
+      "error": null,
       "stale": false,
       "staleReason": null
     },
@@ -65,10 +65,10 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-05T12:14:54Z",
+      "lastAttemptAt": "2026-11-05T12:26:39Z",
       "lastSuccessAt": null,
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42024532615",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42026721542",
       "error": null,
       "stale": false,
       "staleReason": null
