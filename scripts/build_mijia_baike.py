@@ -137,7 +137,7 @@ def build(root, goods, destination):
     (root/'collected-models.json').write_text(json.dumps(model_rows,ensure_ascii=False,indent=2)+'\n')
     with (root/'collected-models.tsv').open('w') as stream:
         fields=['model','productName','hardware_models','manual_url','manual_status','parameter_count','attribute_status','category_clue','image_missing']
-        writer=csv.DictWriter(stream,fieldnames=fields,delimiter='\t',extrasaction='ignore')
+        writer=csv.DictWriter(stream,fieldnames=fields,delimiter='\t',lineterminator='\n',extrasaction='ignore')
         writer.writeheader()
         for item in model_rows:
             writer.writerow({**item,'hardware_models':';'.join(item['hardware_models'])})
