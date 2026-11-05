@@ -30,6 +30,7 @@ def test_official_history_exact_identity_and_no_placeholder_image():
     assert row['status'] == 'retired'
     assert row['retired_at'] == catalogue()['observed_at']
     assert row['price'] is None
+    assert row['params']['运行内存'] == '16GB'
     assert row['support_evidence']['product_number'] == row['part_number']
     # Unitless storage labels must not turn into an invented SSD capacity.
     assert '存储容量' not in row['params']

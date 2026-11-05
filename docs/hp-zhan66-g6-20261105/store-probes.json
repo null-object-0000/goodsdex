@@ -1,0 +1,26 @@
+[
+ {
+  "url": "https://www.hpstore.cn/hp-probook-450-15-6-inch-g10-notebook-pc-7p2d5pc.html",
+  "status": 200,
+  "final_url": "https://www.hpstore.cn/",
+  "bytes": 1130226,
+  "sha256": "05068e113b06732745e7ee6324802bd676bb8372e264f3d2e9bdde1e11f6a8f6",
+  "file": "docs/hp-zhan66-g6-20261105/store-probe-0.txt"
+ },
+ {
+  "url": "https://www.hpstore.cn/rest/V1/products/7P2D5PC",
+  "error": "HTTP Error 401: Authorization Required"
+ },
+ {
+  "url": "https://www.hpstore.cn/graphql?query=%7Bproducts%28filter%3A%7Bsku%3A%7Beq%3A%227P2D5PC%22%7D%7D%29%7Bitems%7Bsku+name+description%7Bhtml%7D+short_description%7Bhtml%7D%7D%7D%7D",
+  "error": "HTTP Error 403: Forbidden"
+ },
+ {
+  "url": "https://www.hpstore.cn/catalogsearch/result/?q=7P2D5PC",
+  "status": 200,
+  "final_url": "https://www.hpstore.cn/catalogsearch/result/?q=7P2D5PC",
+  "bytes": 766478,
+  "sha256": "6a54a63ed797b564d57677c62caf97b2f0d2bd499612acddbd1ee610a3c2e81f",
+  "file": "docs/hp-zhan66-g6-20261105/store-probe-3.txt"
+ }
+]

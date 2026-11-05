@@ -4,6 +4,7 @@ import re
 from copy import deepcopy
 from pathlib import Path
 from urllib.parse import urlparse
+from .hp_configurations import apply_configurations
 
 DEFAULT = Path(__file__).resolve().parents[2] / 'data/official/hp-history.json'
 
@@ -79,7 +80,7 @@ def apply_history(rows, path=DEFAULT):
                     row[key] = deepcopy(prior[key])
         result.append(row)
     result.extend(deepcopy(list(by_id.values())))
-    return result
+    return apply_configurations(result)
 
 
 def enrich_store_fields(row):
