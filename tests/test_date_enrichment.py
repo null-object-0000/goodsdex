@@ -76,6 +76,8 @@ def test_finalizer_replays_and_details_only(tmp_path):
     from goodsdex.price_semantics import apply as apply_prices
     from goodsdex.legacy_catalog import apply_legacy_catalog
     expected=apply_legacy_catalog(apply_prices(apply_legacy_catalog(expected)))
+    from goodsdex.mijia_baike import apply_baike
+    expected=apply_baike(expected)
     # Independently frozen expected exclusions include the title repair.
     # Enrichment and every retained field must still be identical.
     archived=json.loads((tmp_path/'archive/accessories.json').read_text())
@@ -95,7 +97,7 @@ def test_finalizer_replays_and_details_only(tmp_path):
     excluded.update(r['id'] for r in apparel)
     assert [{k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in result] == [
         {k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in expected if r['id'] not in excluded]
-    for field in ('page_first_archived','release_llm','release_series'):
+    for field in ('page_first_archived','release_llm','release_series','mijia_baike'):
         sample=next(r for r in result if r.get(field))
         detail=json.loads((tmp_path/f"detail/{shard_for(sample['id']):02x}.json").read_bytes())
         assert detail[sample['id']][field]==sample[field]

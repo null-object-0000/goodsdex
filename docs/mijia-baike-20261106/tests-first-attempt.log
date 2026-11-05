@@ -1,0 +1,88 @@
+........................................................................ [  6%]
+........................................................................ [ 13%]
+........................................................................ [ 20%]
+........................................................................ [ 27%]
+........................................................................ [ 34%]
+................................................F....................... [ 41%]
+........................................................................ [ 48%]
+........................................................................ [ 55%]
+........................................................................ [ 62%]
+........................................................................ [ 69%]
+........................................................................ [ 76%]
+........................................................................ [ 82%]
+........................................................................ [ 89%]
+........................................................................ [ 96%]
+.................................                                        [100%]
+=================================== FAILURES ===================================
+___________________ test_finalizer_replays_and_details_only ____________________
+
+tmp_path = PosixPath('/home/nichangen/.hermes/profiles/spendpoint/cache/scratch/pytest-of-nichangen/pytest-454/test_finalizer_replays_and_det0')
+
+    def test_finalizer_replays_and_details_only(tmp_path):
+        from goodsdex.shards import shard_for
+        baseline=gzip.decompress((ROOT/'docs/independent-dates-20261103/baseline-goods.json.gz').read_bytes())
+        (tmp_path/'goods.json').write_bytes(baseline)
+        (tmp_path/'meta.json').write_text('{}')
+        (tmp_path/'prices.json').write_text('{}')
+        command=[sys.executable,str(ROOT/'scripts/finalize_public.py'),'--public',str(tmp_path)]
+        subprocess.run(command,check=True,capture_output=True)
+        result=json.loads((tmp_path/'goods.json').read_bytes())
+        from goodsdex.series_release import apply_series_releases
+        from goodsdex.release_dates import apply_release_dates
+        # The ordinary finalizer also replays reviewed product dates, which may
+        # legitimately grow after this historical snapshot was frozen.
+        from goodsdex.mi_names import apply_page_names
+        from goodsdex.retirement import reconcile
+        history = reconcile([], json.loads(baseline))
+        expected=apply_date_enrichment(apply_series_releases(apply_release_dates(apply_page_names(history))))
+        from goodsdex.release_coverage import apply_priority_dates
+        expected=apply_priority_dates(expected)
+        from goodsdex.mi_legacy_names import apply_legacy_names
+        expected=apply_legacy_names(expected)
+        from goodsdex.youpin import apply_youpin
+        expected=apply_youpin(expected)
+        from goodsdex.source_urls import apply_source_urls
+        expected=apply_source_urls(expected)
+        from goodsdex.variant_attributes import apply_variant_attributes
+        expected, _ = apply_variant_attributes(expected)
+        from goodsdex.price_semantics import apply as apply_prices
+        from goodsdex.legacy_catalog import apply_legacy_catalog
+        expected=apply_legacy_catalog(apply_prices(apply_legacy_catalog(expected)))
+        # Independently frozen expected exclusions include the title repair.
+        # Enrichment and every retained field must still be identical.
+        archived=json.loads((tmp_path/'archive/accessories.json').read_text())
+        excluded={r['id'] for r in archived}
+        reviewed=json.loads((ROOT/'docs/name-fidelity-20261104/historical-exclusion-expectations.json').read_text())['docs/independent-dates-20261103/baseline-goods.json.gz']
+        legacy_review=json.loads((ROOT/'docs/legacy-catalog-20261105/reviewed-accessory-ids.json').read_text())
+        legacy_ids={r['id'] for r in legacy_review} & {r['id'] for r in json.loads(baseline)}
+        assert excluded == {r['id'] for r in reviewed} | legacy_ids
+        assert all(not r.get('release') for r in archived if r['id'] not in legacy_ids)
+        # Reclassified accessories retain their already reviewed date evidence.
+        from goodsdex.release_dates import apply_release_dates as reviewed_dates
+        legacy_expected = {r['id']:r for r in reviewed_dates(archived)}
+        assert all(r.get('release') == legacy_expected[r['id']].get('release') for r in archived if r['id'] in legacy_ids)
+        excluded.update(r['id'] for r in json.loads((tmp_path/'archive/services.json').read_text()))
+        apparel = json.loads((tmp_path/'archive/apparel.json').read_text())
+        assert len(apparel) == 54  # Frozen snapshot: reviewed clothing and luggage only.
+        excluded.update(r['id'] for r in apparel)
+>       assert [{k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in result] == [
+            {k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in expected if r['id'] not in excluded]
+E       AssertionError: assert [{'id': 'CN:a...板', ...}, ...] == [{'id': 'CN:a...板', ...}, ...]
+E         
+E         At index 1020 diff: {'id': 'CN:mi_cn:product:10722', 'name': '小米口袋照片打印机', 'kind': 'machine', 'category': '打印机', 'categories': ['打印机'], 'price': 369, 'market_price': 369, 'gid': 2193600008, 'image': 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f7bd12cf70be3e7ac8bf4c36e43acd17.jpg', 'fetched_at': '2026-10-27T07:50:08+08:00', 'params': {'打印技术': 'zink无墨打印技术', '打印分辨率': '300DPI', '进纸盘容量（相片纸）': '<=10张', '无边距打印': '支持', '无线打印': '支持', 'USB打印': '不支持'}, 'mijia_baike': {'model': 'hannto.printer.basil', 'productName': '小米口袋照片打印机', 'product_url': 'https://home.mi.com/cgi-op/api/v1/ba...
+E         
+E         ...Full output truncated, use '-vv' to show
+
+tests/test_date_enrichment.py:96: AssertionError
+=============================== warnings summary ===============================
+../../.hermes/installs/25640cc6d09ce8d9/environments/002ef3e13926420f8f93facca4403bee/venv/lib/python3.14/site-packages/anyio/pytest_plugin.py:14
+  /home/nichangen/.hermes/installs/25640cc6d09ce8d9/environments/002ef3e13926420f8f93facca4403bee/venv/lib/python3.14/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_date_enrichment.py::test_finalizer_replays_and_details_only
+1 failed, 1040 passed, 8 deselected, 1 warning in 60.59s (0:01:00)

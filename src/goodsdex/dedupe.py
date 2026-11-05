@@ -739,6 +739,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     retained = apply_legacy_names(retained)
     from goodsdex.legacy_catalog import apply_legacy_catalog
     retained = apply_legacy_catalog(retained)
+    from goodsdex.mijia_baike import apply_baike
+    retained = apply_baike(retained)
     rows = apply_legacy_catalog(rows)
     from goodsdex.youpin import apply_youpin
     retained = apply_youpin(retained)

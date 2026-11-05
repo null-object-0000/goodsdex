@@ -302,3 +302,9 @@ HP 下架留档：`crawl_hp.py` 仅把官方 SKU URL 落到已知官方电脑列
 
 
 小米历史来源桶不再作为品类。223个已复核身份在共享finalizer按真实品类重放，旧款用discontinued/status表示；Wayback快照日期写archived_at，真实采集日期无法恢复时captured_at=null且captured_at_unknown=true。下架无现价/主图分别为page_no_price/page_no_image；系列参考图独立保存在reference_image，不作型号主图。系列父组保留每个源ID，series_key保留尺寸/代际子键，名称明确的配置进attrs。[逐项分类、排除前清单和验收证据](docs/legacy-catalog-20261105/README.md)。
+
+## 米家设备百科与说明书
+
+匿名 baike 采集与 APK 添加设备目录可补充 `mijia_baike` 详情证据（官方名称、miio model、说明书、第一页机型编号、参数和品类线索）。唯一完整名称匹配才写 `miio_model`；商城链接可能指向多规格商品，仅保存关联线索。显示名修改还须匹配既有物理机型编号，不能把颜色/尺寸款直接覆盖到整组商品。共享 finalizer 重放审核清单 `data/official/mijia-baike.json`。
+
+目录、说明书、接口创建/更新时间均不作发布日期，不修改旧款桶结构。50 条抽样、逐 model 字段及实际零改名/零品类修改的限制见[米家 baike 验收](docs/mijia-baike-20261106/README.md)。
