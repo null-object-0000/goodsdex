@@ -1,0 +1,680 @@
+{
+ "revision": "17783ab1e02e136a67cebbe13aee5e98a09030cfd2ca463360ed1631752be90f",
+ "statsStatus": "complete",
+ "computedAt": "2026-11-05T05:03:23.117Z",
+ "total": 3677,
+ "publishedCount": 3682,
+ "duplicateRecords": 5,
+ "anomalies": [
+  "来源发布列表含同 id 多行；商品总数按 id 去重，日期覆盖率按发布行计算"
+ ],
+ "sourceRuns": [
+  {
+   "name": "apple_cn",
+   "status": "未知",
+   "reason": "来源记录存在；未接入任务心跳，无法判断采集线运行状态"
+  },
+  {
+   "name": "apple_support",
+   "status": "未知",
+   "reason": "来源记录存在；未接入任务心跳，无法判断采集线运行状态"
+  },
+  {
+   "name": "atour",
+   "status": "未知",
+   "reason": "来源记录存在；未接入任务心跳，无法判断采集线运行状态"
+  },
+  {
+   "name": "byd",
+   "status": "未知",
+   "reason": "来源记录存在；未接入任务心跳，无法判断采集线运行状态"
+  },
+  {
+   "name": "dji",
+   "status": "未知",
+   "reason": "来源记录存在；未接入任务心跳，无法判断采集线运行状态"
+  },
+  {
+   "name": "fuji",
+   "status": "未知",
+   "reason": "来源记录存在；未接入任务心跳，无法判断采集线运行状态"
+  },
+  {
+   "name": "hp_cn",
+   "status": "未知",
+   "reason": "来源记录存在；未接入任务心跳，无法判断采集线运行状态"
+  },
+  {
+   "name": "mi_cn",
+   "status": "未知",
+   "reason": "来源记录存在；未接入任务心跳，无法判断采集线运行状态"
+  },
+  {
+   "name": "xiaomi_ev",
+   "status": "未知",
+   "reason": "来源记录存在；未接入任务心跳，无法判断采集线运行状态"
+  }
+ ],
+ "byBrand": [
+  {
+   "name": "小米",
+   "count": 1619
+  },
+  {
+   "name": "惠普",
+   "count": 791
+  },
+  {
+   "name": "Apple",
+   "count": 639
+  },
+  {
+   "name": "大疆",
+   "count": 281
+  },
+  {
+   "name": "亚朵星球",
+   "count": 267
+  },
+  {
+   "name": "富士",
+   "count": 63
+  },
+  {
+   "name": "比亚迪",
+   "count": 14
+  },
+  {
+   "name": "小米汽车",
+   "count": 3
+  }
+ ],
+ "byCategory": [
+  {
+   "name": "笔记本",
+   "count": 812
+  },
+  {
+   "name": "旧款机型",
+   "count": 223
+  },
+  {
+   "name": "平板",
+   "count": 212
+  },
+  {
+   "name": "台式机与一体机",
+   "count": 206
+  },
+  {
+   "name": "手机",
+   "count": 174
+  },
+  {
+   "name": "电视",
+   "count": 100
+  },
+  {
+   "name": "床品",
+   "count": 98
+  },
+  {
+   "name": "运动相机",
+   "count": 94
+  },
+  {
+   "name": "冰箱",
+   "count": 82
+  },
+  {
+   "name": "相机与镜头",
+   "count": 80
+  },
+  {
+   "name": "烟灶",
+   "count": 77
+  },
+  {
+   "name": "智能手表",
+   "count": 70
+  },
+  {
+   "name": "显示器",
+   "count": 66
+  },
+  {
+   "name": "波轮洗衣机",
+   "count": 62
+  },
+  {
+   "name": "耳机",
+   "count": 57
+  },
+  {
+   "name": "灯具",
+   "count": 56
+  },
+  {
+   "name": "无人机",
+   "count": 51
+  },
+  {
+   "name": "立式空调",
+   "count": 46
+  },
+  {
+   "name": "音箱",
+   "count": 46
+  },
+  {
+   "name": "云台",
+   "count": 44
+  },
+  {
+   "name": "组合装",
+   "count": 40
+  },
+  {
+   "name": "扫地机器人",
+   "count": 39
+  },
+  {
+   "name": "水壶与水杯",
+   "count": 38
+  },
+  {
+   "name": "睡衣",
+   "count": 36
+  },
+  {
+   "name": "床垫与枕头",
+   "count": 35
+  },
+  {
+   "name": "净水器",
+   "count": 33
+  },
+  {
+   "name": "户外电源",
+   "count": 32
+  },
+  {
+   "name": "电饭煲",
+   "count": 31
+  },
+  {
+   "name": "枕芯",
+   "count": 30
+  },
+  {
+   "name": "投影仪",
+   "count": 25
+  },
+  {
+   "name": "路由器",
+   "count": 25
+  },
+  {
+   "name": "移动电源",
+   "count": 24
+  },
+  {
+   "name": "被芯",
+   "count": 24
+  },
+  {
+   "name": "智能门锁",
+   "count": 23
+  },
+  {
+   "name": "中央空调",
+   "count": 21
+  },
+  {
+   "name": "剃须刀",
+   "count": 21
+  },
+  {
+   "name": "摄像机",
+   "count": 21
+  },
+  {
+   "name": "电动牙刷",
+   "count": 21
+  },
+  {
+   "name": "键鼠与手写笔",
+   "count": 21
+  },
+  {
+   "name": "麦克风",
+   "count": 20
+  },
+  {
+   "name": "吹风机",
+   "count": 17
+  },
+  {
+   "name": "打印机",
+   "count": 17
+  },
+  {
+   "name": "插座插排",
+   "count": 17
+  },
+  {
+   "name": "汽车",
+   "count": 17
+  },
+  {
+   "name": "洗碗机",
+   "count": 17
+  },
+  {
+   "name": "风扇",
+   "count": 17
+  },
+  {
+   "name": "净水器配件",
+   "count": 16
+  },
+  {
+   "name": "厨房小电",
+   "count": 15
+  },
+  {
+   "name": "电暖器",
+   "count": 15
+  },
+  {
+   "name": "眼镜",
+   "count": 15
+  },
+  {
+   "name": "空气净化器",
+   "count": 15
+  },
+  {
+   "name": "吸尘器",
+   "count": 14
+  },
+  {
+   "name": "门铃与猫眼",
+   "count": 14
+  },
+  {
+   "name": "加湿器",
+   "count": 12
+  },
+  {
+   "name": "双肩包",
+   "count": 12
+  },
+  {
+   "name": "巾类",
+   "count": 12
+  },
+  {
+   "name": "旅行箱",
+   "count": 12
+  },
+  {
+   "name": "生活小电",
+   "count": 12
+  },
+  {
+   "name": "家庭屏",
+   "count": 11
+  },
+  {
+   "name": "微蒸烤",
+   "count": 11
+  },
+  {
+   "name": "洗地机",
+   "count": 11
+  },
+  {
+   "name": "电磁炉",
+   "count": 11
+  },
+  {
+   "name": "儿童手表",
+   "count": 10
+  },
+  {
+   "name": "对讲机",
+   "count": 10
+  },
+  {
+   "name": "手环",
+   "count": 9
+  },
+  {
+   "name": "滚筒洗衣机",
+   "count": 9
+  },
+  {
+   "name": "图传与跟焦",
+   "count": 7
+  },
+  {
+   "name": "料理机",
+   "count": 7
+  },
+  {
+   "name": "洗手机",
+   "count": 7
+  },
+  {
+   "name": "体重体脂秤",
+   "count": 6
+  },
+  {
+   "name": "充电器与无线充",
+   "count": 6
+  },
+  {
+   "name": "工具",
+   "count": 6
+  },
+  {
+   "name": "摄影器材配件",
+   "count": 6
+  },
+  {
+   "name": "服饰",
+   "count": 5
+  },
+  {
+   "name": "理发器与修剪器",
+   "count": 5
+  },
+  {
+   "name": "空间计算设备",
+   "count": 5
+  },
+  {
+   "name": "胸包与单肩包",
+   "count": 5
+  },
+  {
+   "name": "除湿机",
+   "count": 5
+  },
+  {
+   "name": "除螨仪",
+   "count": 5
+  },
+  {
+   "name": "冲牙器与口腔护理",
+   "count": 4
+  },
+  {
+   "name": "抱枕",
+   "count": 4
+  },
+  {
+   "name": "宠物饮水机",
+   "count": 3
+  },
+  {
+   "name": "智能网关与传感器",
+   "count": 3
+  },
+  {
+   "name": "益智积木",
+   "count": 3
+  },
+  {
+   "name": "盖毯",
+   "count": 3
+  },
+  {
+   "name": "壁挂空调",
+   "count": 2
+  },
+  {
+   "name": "工作站",
+   "count": 2
+  },
+  {
+   "name": "数据线",
+   "count": 2
+  },
+  {
+   "name": "清洁电器配件",
+   "count": 2
+  },
+  {
+   "name": "眼罩",
+   "count": 2
+  },
+  {
+   "name": "运动健身",
+   "count": 2
+  },
+  {
+   "name": "运动鞋",
+   "count": 2
+  },
+  {
+   "name": "其他数码配件",
+   "count": 1
+  },
+  {
+   "name": "婴儿推车",
+   "count": 1
+  },
+  {
+   "name": "自拍杆",
+   "count": 1
+  },
+  {
+   "name": "车载配件",
+   "count": 1
+  }
+ ],
+ "releasePrecision": {
+  "policy": "day-preferred-month-minimum-v1",
+  "counting_unit": "published_rows",
+  "total": {
+   "total": 3682,
+   "day": 33,
+   "month": 1000,
+   "none": 2649,
+   "not_obtained": 2649,
+   "official_absent": 0,
+   "series_inherit": 174,
+   "official": 779,
+   "third_party": 80,
+   "covered": 1033,
+   "ratio": 0.2805540467137425
+  },
+  "brands": [
+   {
+    "brand": "小米",
+    "total": 1624,
+    "day": 33,
+    "month": 195,
+    "none": 1396,
+    "not_obtained": 1396,
+    "official_absent": 0,
+    "series_inherit": 62,
+    "official": 101,
+    "third_party": 65,
+    "covered": 228,
+    "ratio": 0.14039408866995073
+   },
+   {
+    "brand": "惠普",
+    "total": 791,
+    "day": 0,
+    "month": 112,
+    "none": 679,
+    "not_obtained": 679,
+    "official_absent": 0,
+    "series_inherit": 112,
+    "official": 0,
+    "third_party": 0,
+    "covered": 112,
+    "ratio": 0.1415929203539823
+   },
+   {
+    "brand": "Apple",
+    "total": 639,
+    "day": 0,
+    "month": 535,
+    "none": 104,
+    "not_obtained": 104,
+    "official_absent": 0,
+    "series_inherit": 0,
+    "official": 535,
+    "third_party": 0,
+    "covered": 535,
+    "ratio": 0.837245696400626
+   },
+   {
+    "brand": "大疆",
+    "total": 281,
+    "day": 0,
+    "month": 100,
+    "none": 181,
+    "not_obtained": 181,
+    "official_absent": 0,
+    "series_inherit": 0,
+    "official": 87,
+    "third_party": 13,
+    "covered": 100,
+    "ratio": 0.35587188612099646
+   },
+   {
+    "brand": "亚朵星球",
+    "total": 267,
+    "day": 0,
+    "month": 0,
+    "none": 267,
+    "not_obtained": 267,
+    "official_absent": 0,
+    "series_inherit": 0,
+    "official": 0,
+    "third_party": 0,
+    "covered": 0,
+    "ratio": 0
+   },
+   {
+    "brand": "富士",
+    "total": 63,
+    "day": 0,
+    "month": 52,
+    "none": 11,
+    "not_obtained": 11,
+    "official_absent": 0,
+    "series_inherit": 0,
+    "official": 52,
+    "third_party": 0,
+    "covered": 52,
+    "ratio": 0.8253968253968254
+   },
+   {
+    "brand": "比亚迪",
+    "total": 14,
+    "day": 0,
+    "month": 3,
+    "none": 11,
+    "not_obtained": 11,
+    "official_absent": 0,
+    "series_inherit": 0,
+    "official": 1,
+    "third_party": 2,
+    "covered": 3,
+    "ratio": 0.21428571428571427
+   },
+   {
+    "brand": "小米汽车",
+    "total": 3,
+    "day": 0,
+    "month": 3,
+    "none": 0,
+    "not_obtained": 0,
+    "official_absent": 0,
+    "series_inherit": 0,
+    "official": 3,
+    "third_party": 0,
+    "covered": 3,
+    "ratio": 1
+   }
+  ]
+ },
+ "releaseCoverage": {
+  "dated": 1033,
+  "missing": 2649,
+  "ratio": 0.2805540467137425
+ },
+ "repair": [
+  {
+   "brand": "惠普",
+   "category": "笔记本",
+   "count": 552
+  },
+  {
+   "brand": "小米",
+   "category": "旧款机型",
+   "count": 192
+  },
+  {
+   "brand": "惠普",
+   "category": "台式机",
+   "count": 125
+  },
+  {
+   "brand": "亚朵星球",
+   "category": "床品",
+   "count": 98
+  },
+  {
+   "brand": "大疆",
+   "category": "运动相机",
+   "count": 82
+  },
+  {
+   "brand": "小米",
+   "category": "冰箱",
+   "count": 76
+  },
+  {
+   "brand": "小米",
+   "category": "家电",
+   "count": 66
+  },
+  {
+   "brand": "小米",
+   "category": "中央空调Pro",
+   "count": 65
+  },
+  {
+   "brand": "小米",
+   "category": "烟灶",
+   "count": 65
+  },
+  {
+   "brand": "小米",
+   "category": "波轮洗衣机",
+   "count": 56
+  }
+ ],
+ "sync": {
+  "status": "未知",
+  "lastSyncAt": null,
+  "generatedAt": null,
+  "lastError": null,
+  "files": []
+ },
+ "totalGroups": 3196,
+ "totalAll": 3677,
+ "totalPublished": 3677,
+ "totalExcluded": 0,
+ "excludedList": {
+  "available": true
+ }
+}

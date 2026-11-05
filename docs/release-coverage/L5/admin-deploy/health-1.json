@@ -1,0 +1,188 @@
+{
+ "ok": true,
+ "service": "spendgood-api",
+ "gitCommit": "ff84e8644a5e5d9c9151ed8abbbe6f6cc9c4dfc9",
+ "buildTime": "2026-11-05T05:07:27.920839+00:00",
+ "now": 1793855359019,
+ "uptimeSec": 20,
+ "data": {
+  "revision": null,
+  "generatedAt": "2026-11-05T04:21:47.811788+00:00",
+  "count": 3682,
+  "lastSyncAt": 1793855343517,
+  "staleMinutes": 0,
+  "lastError": null,
+  "attempts": 100,
+  "files": {
+   "index/atour.json": {
+    "bytes": 388897,
+    "sha256": "7743159ae804f14e1deb82a0a4cb31702a4cca552fe54e585fcb233cdec99fdd",
+    "fetchedAt": 1793855340489,
+    "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+   },
+   "index/hp_cn.json": {
+    "bytes": 1114809,
+    "sha256": "d14c53de8fbdbc8e4fb725799349c9454fd42e0503d11c6ba7d1c6fe90338d43",
+    "fetchedAt": 1793855340539,
+    "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+   },
+   "index/mi_cn.json": {
+    "bytes": 1358391,
+    "sha256": "8b2ef5f6a23871cf71100aee8d3ff45f656cf0b319a2edb8555a325434361bef",
+    "fetchedAt": 1793855340568,
+    "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+   },
+   "index/apple_cn.json": {
+    "bytes": 5262963,
+    "sha256": "4df8ec65bbc343b92f01bbcf0389a8028cc86dfbb558099919a550393fd327e9",
+    "fetchedAt": 1793855340641,
+    "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+   },
+   "index/dji.json": {
+    "bytes": 699181,
+    "sha256": "8f4f58454e0ca337152bc89430d569dfb0517ae87c5465f185f197792365b599",
+    "fetchedAt": 1793855340665,
+    "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+   },
+   "index/fuji.json": {
+    "bytes": 332620,
+    "sha256": "20beebafcd1ab43cad4f1a3d334c815c23809a327a26ffae727948d3b5d4b9aa",
+    "fetchedAt": 1793855340676,
+    "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+   },
+   "index/byd.json": {
+    "bytes": 83399,
+    "sha256": "2c6a6072eb7b60ae0f5b9b44bd4f6a916960a8c70218c3969b877e1ec02da55f",
+    "fetchedAt": 1793855340689,
+    "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+   },
+   "index/xiaomi_ev.json": {
+    "bytes": 28373,
+    "sha256": "2e02c55bb025d68f8e171a619235db0113b88d2099688103ccf8a27cf35a9caf",
+    "fetchedAt": 1793855340700,
+    "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+   },
+   "index/other.json": {
+    "bytes": 61,
+    "sha256": "897f27d0e95f63b17c242535101ec7e606317084100630d05dfd216f79019157",
+    "fetchedAt": 1793855340707,
+    "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+   },
+   "prices/latest.json": {
+    "bytes": 134033,
+    "sha256": "ec07e7280879b1d974f81a71bef13cb03109ccf8dec85f1510a886bcce524bfb",
+    "fetchedAt": 1793855343517,
+    "source": "https://fastly.jsdelivr.net/gh/null-object-0000/goodsdex@data/public/prices/latest.json"
+   },
+   "meta.json": {
+    "bytes": 19374,
+    "sha256": "ce67ddfd7c7271165d67d60158ffd50cb8d72ea827fb5213ad7c344ee529f79b",
+    "fetchedAt": 1793855343517,
+    "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json"
+   },
+   "goods-excluded.json": {
+    "bytes": 1455560,
+    "sha256": "c0a06a4e5f2be2e1513fcdceb7f1607d52461a5926541f1ee3fd909bd06a4abb",
+    "fetchedAt": 1793855343700,
+    "source": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/goods-excluded.json"
+   }
+  },
+  "history": {
+   "months": {
+    "2026-11": {
+     "validators": {},
+     "lastAttemptAt": 1793786062487,
+     "bytes": 34884527,
+     "parsedLines": 100569,
+     "insertedPoints": 209,
+     "observationPoints": 100569,
+     "uniqueGids": 2346,
+     "sha256": "ba39a4bd3a92644fcee2656e83c269538d82d486d1fea06f945228b3b1e17cff",
+     "goodsMatchedRows": null,
+     "sourceUrl": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/price-history/2026-11.jsonl.gz",
+     "lastCheckedAt": 1793853089097,
+     "lastError": null,
+     "notModified": false,
+     "skipped": true,
+     "compressedBytes": 817700
+    },
+    "2026-10": {
+     "sha256": "a8dc9fd8c06aab954b41ca0297537c1a54976c1bc0edacdf3071f138d491fe7e",
+     "parsedLines": 30585,
+     "sourceUrl": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/price-history/2026-10.jsonl.gz",
+     "skipped": true,
+     "lastError": null
+    }
+   },
+   "lastError": null,
+   "maintenance": {
+    "lastAttemptAt": 1793786068364,
+    "plan": {
+     "dryRun": true,
+     "days": 90,
+     "cutoff": "2026-08-07T00:00:00.000Z",
+     "deleteRows": 0,
+     "aggregateInputRows": 0,
+     "aggregateRows": 0,
+     "archiveFiles": 0,
+     "archiveBytes": 0
+    },
+    "lastError": null,
+    "lastSuccessAt": 1793786068484
+   },
+   "indexUrl": "https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/price-history/index.json",
+   "stats": {
+    "files": 35,
+    "observations": 131154,
+    "earliest": "2026-10-13T01:45:44.000Z",
+    "latest": "2026-11-05T04:19:32.415Z",
+    "lastImportedAt": "2026-11-05T04:31:15.932Z"
+   }
+  }
+ },
+ "priceHistory": {
+  "files": 35,
+  "observations": 131154,
+  "earliest": "2026-10-13T01:45:44.000Z",
+  "latest": "2026-11-05T04:19:32.415Z",
+  "lastImportedAt": "2026-11-05T04:31:15.932Z"
+ },
+ "db": {
+  "orders": 0,
+  "entitlements": 0,
+  "pending": 0,
+  "sourceCounts": {
+   "published": 3682,
+   "uniquePublished": 3677,
+   "duplicateRows": 5,
+   "duplicateGroups": 3
+  },
+  "driver": "mysql",
+  "revision": "0f6adcb1adf7435da24130f909eaf3e9",
+  "rowCount": 4817,
+  "published": 3677,
+  "excluded": 1140,
+  "syncedAt": "2026-11-05T04:31:14.403Z",
+  "revisionMatches": true,
+  "syncGate": "explained_duplicates",
+  "publishedPosted": 3682,
+  "publishedUnique": 3677,
+  "duplicates": 5,
+  "readOnly": false,
+  "writesAvailable": true,
+  "message": null
+ },
+ "pay": {
+  "ready": true,
+  "missing": [],
+  "offerId": "1450682436",
+  "env": 1,
+  "queryFallback": true,
+  "purchaseEnabled": true,
+  "iosEnabled": false
+ },
+ "subscribe": {
+  "ready": false,
+  "templateId": null
+ }
+}
