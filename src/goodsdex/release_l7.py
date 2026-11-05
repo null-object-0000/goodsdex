@@ -53,6 +53,8 @@ def has_month(text,value):
 
 def fingerprint(row):
     identity={k:v for k,v in row.items() if k in ('id','name','brand','model','sku','params','attributes','variant_attributes')}
+    if row.get('id', '').startswith('CN:mi_cn:') and not identity.get('brand'):
+        identity['brand'] = '小米'  # Same deterministic brand normalization as finalizer.
     return hashlib.sha256(json.dumps(identity,ensure_ascii=False,sort_keys=True).encode()).hexdigest()
 
 def check(entry,row):
