@@ -1,0 +1,26 @@
+
+> @spendgood/admin-pro@6.0.3 test
+> node --test scripts/*.test.mjs
+
+(node:704015) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///tmp/spendgood-mi-legacy-20261105/services/admin-pro/src/goods-presentation.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /tmp/spendgood-mi-legacy-20261105/services/admin-pro/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ name differences preserve unique fragments, including multiple interior changes (1.179485ms)
+✔ price delta uses group minimum and rounds decimal prices (0.696245ms)
+✔ JSON and links remove nested secrets and internal fields (0.651059ms)
+✔ A/B/C classification ignores cosmetic differences without changing grouping (1.047157ms)
+✔ attribute labels tolerate legacy and malformed records, and only display supported nonempty values (5.592908ms)
+✔ brand display resolves legacy paths, localized names and aliases without a whitelist (0.702869ms)
+✔ quantity tags and filtered representative prices never substitute kit totals for depreciation (0.311668ms)
+✔ retired models show no current offer and label their historical price (0.220406ms)
+✔ Missing statuses preserve their timestamp and produce null even when a stale numeric price is present (0.83805ms)
+✔ A single observation stays single; market price is never a main-series observation (0.131707ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 89.553939

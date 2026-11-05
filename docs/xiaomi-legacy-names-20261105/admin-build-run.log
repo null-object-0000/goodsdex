@@ -1,0 +1,1040 @@
+api-tests	Set up job	﻿2026-11-05T13:12:37.8200323Z Current runner version: '2.338.2'
+api-tests	Set up job	2026-11-05T13:12:37.8279403Z ##[group]Runner Image Provisioner
+api-tests	Set up job	2026-11-05T13:12:37.8281020Z Hosted Compute Agent
+api-tests	Set up job	2026-11-05T13:12:37.8282179Z Version: 20261028.624
+api-tests	Set up job	2026-11-05T13:12:37.8283377Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+api-tests	Set up job	2026-11-05T13:12:37.8284943Z Build Date: 2026-10-28T21:51:42Z
+api-tests	Set up job	2026-11-05T13:12:37.8286179Z Worker ID: {266d1a45-cf04-48b6-82d2-4d604dd8a9c2}
+api-tests	Set up job	2026-11-05T13:12:37.8287685Z Region: eastus
+api-tests	Set up job	2026-11-05T13:12:37.8288748Z Cloud: Azure
+api-tests	Set up job	2026-11-05T13:12:37.8289855Z ##[endgroup]
+api-tests	Set up job	2026-11-05T13:12:37.8292446Z ##[group]Operating System
+api-tests	Set up job	2026-11-05T13:12:37.8293563Z Ubuntu
+api-tests	Set up job	2026-11-05T13:12:37.8314894Z 26.04.1
+api-tests	Set up job	2026-11-05T13:12:37.8315969Z LTS
+api-tests	Set up job	2026-11-05T13:12:37.8317031Z ##[endgroup]
+api-tests	Set up job	2026-11-05T13:12:37.8318050Z ##[group]Runner Image
+api-tests	Set up job	2026-11-05T13:12:37.8319224Z Image: ubuntu-26.04
+api-tests	Set up job	2026-11-05T13:12:37.8320280Z Version: 20261101.186.1
+api-tests	Set up job	2026-11-05T13:12:37.8322358Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+api-tests	Set up job	2026-11-05T13:12:37.8325650Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+api-tests	Set up job	2026-11-05T13:12:37.8327665Z ##[endgroup]
+api-tests	Set up job	2026-11-05T13:12:37.8329651Z ##[group]GITHUB_TOKEN Permissions
+api-tests	Set up job	2026-11-05T13:12:37.8332823Z Contents: read
+api-tests	Set up job	2026-11-05T13:12:37.8354145Z Metadata: read
+api-tests	Set up job	2026-11-05T13:12:37.8355467Z ##[endgroup]
+api-tests	Set up job	2026-11-05T13:12:37.8358576Z Secret source: Actions
+api-tests	Set up job	2026-11-05T13:12:37.8360311Z Cache mode: write
+api-tests	Set up job	2026-11-05T13:12:37.8361465Z Prepare workflow directory
+api-tests	Set up job	2026-11-05T13:12:37.9357252Z Prepare all required actions
+api-tests	Set up job	2026-11-05T13:12:37.9472006Z Getting action download info
+api-tests	Set up job	2026-11-05T13:12:38.1659439Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+api-tests	Set up job	2026-11-05T13:12:38.2819718Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+api-tests	Set up job	2026-11-05T13:12:38.5049828Z Complete job name: api-tests
+api-tests	Run actions/checkout@v4	﻿2026-11-05T13:12:38.6331893Z ##[group]Run actions/checkout@v4
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6333214Z with:
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6334277Z   repository: null-object-0000/spend-good
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6341518Z   token: ***
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6342254Z   ssh-strict: true
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6343015Z   ssh-user: git
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6343916Z   persist-credentials: true
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6344818Z   clean: true
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6345599Z   sparse-checkout-cone-mode: true
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6346511Z   fetch-depth: 1
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6347262Z   fetch-tags: false
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6348035Z   show-progress: true
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6348811Z   lfs: false
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6349525Z   submodules: false
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6350311Z   set-safe-directory: true
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6351192Z   allow-unsafe-pr-checkout: false
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:38.6352539Z ##[endgroup]
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.0158170Z Syncing repository: null-object-0000/spend-good
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.0161108Z ##[group]Getting Git version info
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.0164437Z Working directory is '/home/runner/work/spend-good/spend-good'
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.0181560Z [command]/usr/bin/git version
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.0245654Z git version 2.56.0
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.0497579Z ##[endgroup]
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.0645246Z Temporarily overriding HOME='/home/runner/work/_temp/9ed69270-f457-4e63-b8c6-5463bd0b0cf9' before making global git config changes
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.0749549Z Adding repository directory to the temporary git global config as a safe directory
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.0797200Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/spend-good/spend-good
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.0994893Z Deleting the contents of '/home/runner/work/spend-good/spend-good'
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1035606Z ##[group]Initializing the repository
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1066881Z [command]/usr/bin/git init /home/runner/work/spend-good/spend-good
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1207160Z hint: Using 'master' as the name for the initial branch. This default branch name
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1285368Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1316645Z hint: to use in all of your new repositories, which will suppress this warning,
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1347165Z hint: call:
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1378736Z hint:
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1414981Z hint: 	git config --global init.defaultBranch <name>
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1448935Z hint:
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1450412Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1452417Z hint: 'development'. The just-created branch can be renamed via this command:
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1456777Z hint:
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1462895Z hint: 	git branch -m <name>
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1464296Z hint:
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1465660Z hint: Disable this message with "git config set advice.defaultBranchName false"
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1469918Z Initialized empty Git repository in /home/runner/work/spend-good/spend-good/.git/
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1476552Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/spend-good
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1480275Z ##[endgroup]
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1481892Z ##[group]Disabling automatic garbage collection
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1497449Z [command]/usr/bin/git config --local gc.auto 0
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1612648Z ##[endgroup]
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1614158Z ##[group]Setting up auth
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1615785Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.1666702Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.2413244Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.2446716Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.2939919Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.3029097Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.3449391Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.3498754Z ##[endgroup]
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.3502428Z ##[group]Fetching the repository
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:39.3513198Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b3f16000af88832b1ef38989708b1c98179a9d4e:refs/remotes/origin/master
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:48.6822210Z From https://github.com/null-object-0000/spend-good
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:48.6823590Z  * [new ref]         b3f16000af88832b1ef38989708b1c98179a9d4e -> origin/master
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:48.6837993Z ##[endgroup]
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:48.6839543Z ##[group]Determining the checkout info
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:48.6840906Z ##[endgroup]
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:48.6841858Z [command]/usr/bin/git sparse-checkout disable
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:48.6895050Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:48.6928981Z ##[group]Checking out the ref
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:48.6933631Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:49.7062343Z Updating files:  40% (3120/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:49.7322253Z Updating files:  41% (3121/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:49.7898714Z Updating files:  42% (3197/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:49.8583698Z Updating files:  43% (3273/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:49.8885760Z Updating files:  44% (3349/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:49.9087991Z Updating files:  45% (3425/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:49.9324572Z Updating files:  46% (3501/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:49.9414612Z Updating files:  47% (3577/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:49.9541891Z Updating files:  48% (3653/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:49.9737748Z Updating files:  49% (3729/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:49.9952200Z Updating files:  50% (3805/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.0019160Z Updating files:  51% (3882/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.0074587Z Updating files:  52% (3958/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.0114616Z Updating files:  53% (4034/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.0342443Z Updating files:  54% (4110/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.0606450Z Updating files:  55% (4186/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.0869614Z Updating files:  56% (4262/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.1050944Z Updating files:  57% (4338/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.1246323Z Updating files:  58% (4414/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.2101525Z Updating files:  59% (4490/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.2480914Z Updating files:  60% (4566/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.2824096Z Updating files:  61% (4643/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.3159663Z Updating files:  62% (4719/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.3408260Z Updating files:  63% (4795/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.3658035Z Updating files:  64% (4871/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.3986154Z Updating files:  65% (4947/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.4101631Z Updating files:  66% (5023/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.4175096Z Updating files:  67% (5099/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.4244628Z Updating files:  68% (5175/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.4358530Z Updating files:  69% (5251/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.5051573Z Updating files:  70% (5327/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.5372960Z Updating files:  71% (5404/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.5541809Z Updating files:  72% (5480/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.5804416Z Updating files:  73% (5556/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.5940287Z Updating files:  74% (5632/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.6079352Z Updating files:  75% (5708/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.6312768Z Updating files:  76% (5784/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.6509809Z Updating files:  77% (5860/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.6676570Z Updating files:  78% (5936/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.6880741Z Updating files:  79% (6012/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.7048540Z Updating files:  80% (6088/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.7166303Z Updating files:  80% (6127/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.7337093Z Updating files:  81% (6165/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.7568653Z Updating files:  82% (6241/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.7709117Z Updating files:  83% (6317/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.8040447Z Updating files:  84% (6393/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.8267675Z Updating files:  85% (6469/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.8484706Z Updating files:  86% (6545/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.8632864Z Updating files:  87% (6621/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.8809358Z Updating files:  88% (6697/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.8958833Z Updating files:  89% (6773/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.9304758Z Updating files:  90% (6849/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.9389626Z Updating files:  91% (6926/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.9502677Z Updating files:  92% (7002/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.9562858Z Updating files:  93% (7078/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.9707595Z Updating files:  94% (7154/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.9796091Z Updating files:  95% (7230/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.9863163Z Updating files:  96% (7306/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.9931915Z Updating files:  97% (7382/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:50.9990359Z Updating files:  98% (7458/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:51.0045927Z Updating files:  99% (7534/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:51.0051682Z Updating files: 100% (7610/7610)
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:51.0052861Z Updating files: 100% (7610/7610), done.
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:51.0128713Z Reset branch 'master'
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:51.0134705Z branch 'master' set up to track 'origin/master'.
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:51.0244105Z ##[endgroup]
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:51.0314897Z [command]/usr/bin/git log -1 --format=%H
+api-tests	Run actions/checkout@v4	2026-11-05T13:12:51.0370192Z b3f16000af88832b1ef38989708b1c98179a9d4e
+api-tests	Run actions/setup-node@v4	﻿2026-11-05T13:12:51.0655091Z ##[group]Run actions/setup-node@v4
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.0655400Z with:
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.0655608Z   node-version: 24
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.0655823Z   cache: npm
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.0656100Z   cache-dependency-path: services/api/package-lock.json
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.0656437Z   always-auth: false
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.0656654Z   check-latest: false
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.0658972Z   token: ***
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.0659176Z ##[endgroup]
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.2245031Z (node:2172) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.2248571Z Found in cache @ /opt/hostedtoolcache/node/24.22.2/x64
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.2250415Z ##[group]Environment details
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.2254668Z (Use `node --trace-deprecation ...` to show where the warning was created)
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.7564740Z node: v24.22.2
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.7572397Z npm: 11.19.1
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.7690278Z yarn: 1.22.22
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.7691753Z ##[endgroup]
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.7693025Z [command]/opt/hostedtoolcache/node/24.22.2/x64/bin/npm config get cache
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.8791830Z /home/runner/.npm
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.9633009Z Cache hit for: node-cache-Linux-x64-npm-f7470450b3111eaf8c2aeedd0165f5d8c2e4246bb8d3a41e152b458d4e7dee39
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:51.9757812Z (node:2172) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:52.2378234Z Received 16855956 of 16855956 (100.0%), 67.0 MBs/sec
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:52.2380490Z Cache Size: ~16 MB (16855956 B)
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:52.2413076Z [command]/usr/bin/tar -xf /home/runner/work/_temp/f070f985-fdbf-4fdd-abfd-fb560f79c1d3/cache.tzst -P -C /home/runner/work/spend-good/spend-good --use-compress-program unzstd
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:52.3094177Z Cache restored successfully
+api-tests	Run actions/setup-node@v4	2026-11-05T13:12:52.3098071Z Cache restored from key: node-cache-Linux-x64-npm-f7470450b3111eaf8c2aeedd0165f5d8c2e4246bb8d3a41e152b458d4e7dee39
+api-tests	Test API including release precision and full-export coverage	﻿2026-11-05T13:12:52.3299912Z ##[group]Run npm ci --no-audit --no-fund
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:52.3300327Z ^[[36;1mnpm ci --no-audit --no-fund^[[0m
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:52.3301037Z ^[[36;1mnode -e "require('node:fs').writeFileSync('build-info.json', JSON.stringify({gitCommit:process.env.GITHUB_SHA,buildTime:new Date().toISOString()}))"^[[0m
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:52.3301730Z ^[[36;1mnpm test^[[0m
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:52.3363731Z shell: /usr/bin/bash -e {0}
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:52.3364351Z ##[endgroup]
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:54.6814708Z 
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:54.6833600Z added 133 packages in 2s
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:54.8639707Z 
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:54.8655352Z > @spendgood/api@0.1.0 test
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:54.8660434Z > node --test
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:54.8662226Z 
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:55.2670234Z ✔ 已有三列账号表可重复安全迁移，旧账号ID与会话不变 (14.646496ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:55.2902831Z ✔ 真实解码、MIME一致性、300KB上限、损坏图片和格式白名单 (27.115493ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:55.2991898Z ✔ 本地适配器无需密钥，限定哈希路径并忽略历史OSS key/外站URL (5.815503ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:55.3073429Z ✔ 资料保存与清空、隔离他人、账号及内容哈希命名、替换删除、删除失败持久化重试 (9.434038ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:55.3297715Z ✔ 并发替换串行化，上传失败保留原资料；崩溃遗留上传任务可由新实例清理 (8.689881ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:55.4962262Z ✔ HTTP两独立token同微信读回一致；GET/PUT鉴权、错误码、注销文件清理与对外接口隔离 (154.628137ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:55.5410099Z ✔ 真实HTTP本地文件：匿名只读、缓存、替换后旧URL/文件失效、历史key为空及拒绝用例 (73.459555ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:55.6252651Z ✔ 同步先授权，跨账号隔离；按提交顺序LWW，重复请求不能覆盖后来修改 (7.18225ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:55.6276404Z ✔ 删除胜过修改、长期保留墓碑；撤回更换代次；删除账号清全部同步数据 (5.205254ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:55.6286766Z ✔ 整批字段校验、容量、无效条目失败不部分写入；没有授权不得传物品 (3.335138ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:55.9377680Z ✔ 账号 token 随机、服务端仅保存摘要，导出不泄漏身份及会话；续期/退出/七天过期 (6.97259ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:55.9381709Z ✔ 删除清除本人账号、所有设备、订单、权益、关联审计，隔离他人；再登录不复活 (4.114962ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.0223480Z ✔ HTTP 账号接口鉴权、删除撤销全部会话、微信故障和敏感日志隔离 (98.889683ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.0371063Z ✔ 后台登录恢复不得重建已删除账号，主动登录才能重新建立 (22.706513ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.4085731Z ✔ 未配置或缺任一变量：隐藏按钮、OAuth 404（包括 SPA） (214.082318ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.4328720Z OAuth Location 前120字: https://open.feishu.cn/open-apis/authen/v1/index?app_id=cli_aa1aa2596cb89cde&redirect_uri=https%3A%2F%2Fspend.snewbie.si
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.4638024Z ✔ 授权跳转参数、登录页重定向、SPA 路由优先、GET 限制 (55.158636ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.5072444Z ✔ 签名、十分钟期限、nonce 绑定、清 Cookie 和三秒跳转 (43.503928ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.5336760Z ✔ 授权中重建 handler 后回调 303，落库会话再次重建后仍 200 (26.384397ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.5598204Z ✔ 重复授权码由上游一次性校验拒绝，失败清 Cookie (25.997633ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.6770764Z ✔ 白名单外拒绝、上游错误不泄露且失败清 Cookie (117.039164ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.7037036Z ✔ token / user_info 请求与白名单成功复用会话 Cookie、CSRF、退出 (26.734409ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.7281418Z ✔ 会话存储失败也显示重试入口并清除 OAuth Cookie (23.12161ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8158524Z ✔ 归一化：前缀标签，至少三正一反 (2.383734ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8174385Z ✔ 归一化：纯规格括号，至少三正一反 (0.70271ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8220672Z ✔ 归一化：容量与尺寸，至少三正一反 (0.425513ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8224136Z ✔ 归一化：内存组合，至少三正一反 (0.299399ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8249730Z ✔ 归一化：容器容量列表，至少三正一反 (0.181138ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8250580Z ✔ 归一化：颜色，至少三正一反 (0.169395ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8251540Z ✔ 归一化：后缀保留代年，至少三正一反 (0.11286ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8252398Z ✔ 归一化：空格，至少三正一反 (0.17183ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8260177Z ✔ 保留 Pro/Max/Ultra、代次、年份、非规格括号；型号近似拒绝合并 (2.801874ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8261265Z ✔ 同品牌二级品类及严格归一化才合，缺失身份不合；价格跨度仅否决 (4.919341ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8262238Z ✔ 显式产品身份拒绝同名不同代，不把无身份记录混进已知产品 (1.262974ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8263238Z ✔ 规格抽取为空不占位，容量颜色尺寸与参数去重且不改源记录 (1.094421ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8545977Z ✔ 筛选后聚合分页、三档、已排除提示、逐条及CSV条数；价差否决不可被筛选绕过 (34.780126ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8556331Z ✔ 第二轮容量：洗衣容量、毫升及原有存储组合，保留流量与型号 (0.849303ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8602175Z ✔ 颜色进键：冰晶白及远峰蓝、钛金属配色隔离，保留颜色词型号 (1.214664ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8603952Z ✔ 第二轮标点与同义词：仅等值键折叠空格、括号、全角与大小写 (1.143392ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8615843Z ✔ 第二轮护栏：标签括号也不能吃掉版本、套装；价格及显式身份仍否决 (1.919279ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8617160Z ✔ Apple 源身份中的颜色可折叠；芯片、年份、配置、尺寸、来源仍保留 (0.591473ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8644772Z ✔ 双机套装容量整体抽取，套装件数不能被容量归一化吃掉 (0.502537ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8650682Z ✔ 通用标题下 SKU 芯片 Max/Ultra 仍隔离，不读系列可选芯片描述 (1.336241ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8665696Z ✔ HP Edition 为本条 SKU 编号时不误判为版本，真实 Pro 版本仍隔离 (0.332319ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8666550Z ✔ 规格接口明确空抽取状态，不把没有抽到当成没有规格 (0.58967ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8667299Z ✔ 同型号同色单机、云台套装、礼盒聚合，Lite 版等值且单机代表价与顺序无关 (0.802727ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8668084Z ✔ Sound Max 三组合 >3倍可聚合；双支装标2，不以总价或折算价代替单机价 (0.375931ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8668851Z ✔ 新聚合护栏：不同代、版本、颜色、配件仍分开；组合内异常价仍否决 (1.707744ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.8669476Z ✔ 服务端筛选后重新选择代表价，只有套装时明确禁止摊折旧 (9.11479ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.9519345Z ✔ admin batch: missing stays null, range and daily summaries preserve real counts/extrema (13.196584ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.9582577Z ✔ admin batch: exactly two reads for 30 gids; shared five-minute cache across ranges, eviction stays safe (8.284305ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:56.9584269Z ✔ admin status: unavailable is preserved; latest missing never falls back to an older price (2.247721ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:57.2248613Z ✔ admin sessions sqlite: OAuth login, restart, sliding expiry, devices, revoke and logout (157.202353ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:57.2258825Z ﹣ admin sessions mysql: OAuth login, restart, sliding expiry, devices, revoke and logout (1.971195ms) # SKIP
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:57.2355813Z ✔ session TTL config validates and defaults to thirty days (0.684827ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:57.8068445Z ✔ tasks API: script CSRF scope, browser CSRF, filters, timeline, evidence and durable audited writes (301.057595ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:57.8166097Z ✔ task transaction rolls back task and event when audit fails, concurrent events remain intact (9.059076ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:57.8167510Z ﹣ admin tasks MySQL integration (0.318695ms) # SKIP
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:58.6650269Z ✔ task CLI executes add, update, event and get from a Unicode repository path (848.60678ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:59.1920084Z ✔ 后台逐路由鉴权、登录 Origin/CSRF、限流、无 CORS 或凭据泄漏 (238.724798ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:59.3190125Z ✔ 去重来源统计、覆盖率、待修组合、服务端补充不污染统计、分页筛选与 raw 比对 (130.400679ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:59.3831492Z ✔ 备注事务版本冲突、持久化与公开构建隔离；退出、过期、轮换撤销 (60.896435ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:59.3836548Z ✔ 配置兼容与敏感来源字段脱敏 (0.799501ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:59.4061787Z ✔ 分片统计读取完整详情而非列表投影，校验失败显式失败、重试后恢复 (25.354763ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:59.4505414Z ✔ SPA theme bootstrap receives a unique CSP nonce without allowing arbitrary inline scripts (43.777672ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:59.5313428Z ✔ SPA shell / assets, JSON auth and server pagination preserve API boundaries (80.8104ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:59.5564241Z GET /admin/login: 302; Location 前80字: /admin/auth/feishu; SPA=false
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:59.6031271Z GET /admin/login: 302; Location 前80字: /admin/auth/feishu; SPA=true
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:59.6292933Z ✔ 默认飞书跳转与应急表单互斥；两条登录 POST 默认 404；脚本 token 保留 (97.938352ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:59.7474704Z ✔ 商品筛选四日期统一、全量导出、编辑安全校验、原子批量与审计 (117.168395ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:59.8948266Z ✔ archive 下架记录保留、可详情查看与恢复；分类编辑保持路径一致 (147.592146ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:12:59.9038023Z ✔ 四类日期优先级、模型搜索、多品牌联动筛选及排序 (9.536461ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:01.0293499Z ✔ 公开排除清单三档、CSV、规则详情、人工覆盖优先级、重开数据库与缺失容错 (1125.512218ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:01.6755517Z ✔ 后台价格批量 GET 支持 token / 会话，拒绝未授权与无效参数，C 端契约不变 (645.456274ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:01.7807205Z ✔ 汽车搜索跨 trim 名称，完整商品含年款动力与所有配置，旧 ID 精确追溯 (21.372837ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:01.7874321Z ✔ 汽车 facets 计数按商品；动力系列筛选与分页游标绑定 (6.225585ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:01.7996046Z ✔ 小米使用新一代 SU7；没有年款也可选；共享图片标为 series (2.19718ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:01.8209051Z ✔ 分片索引不覆盖 hydrated trims：参数、历史价来源与旧 ID 查询和完整导出一致 (30.015499ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:01.8297353Z ✔ 2022 官方存档图：搜索与配置详情保留完整来源和车系范围 (7.680529ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:02.3970741Z ✔ sharded sync transfers only changed indexes, keeps lazy details and immutable generations (492.469791ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:02.4944624Z ✔ unsupported schema fails closed without fetching full catalog (94.90851ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:02.5044974Z ✔ 分片清单允许公开排除与来源状态 sidecar，排除清单缺失仍正常发布索引 (12.261979ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:02.6353491Z ✔ 定稿源文逐字保留，127 映射与 5913 分面计数可对账 (7.54153ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:02.6381258Z ✔ 11 个一级、102 个二级，二级归属唯一且没有泛其他一级 (0.537041ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:02.6383320Z ✔ 泛标签不决定分面；名称拆分配件、清洗误标机型，legacy 保留但不进树 (2.624877ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:02.6396127Z ✔ 发布补路径、父级；错误父级、空名未知分类阻断发布，不静默兜底 (7.332842ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:02.6397405Z ✔ 先按 id 去重再按型号折叠，颜色容量 SKU 不占型号位置 (0.876085ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:02.6412932Z ✔ 无锚点首屏入门主流高端各两条；参数完整度优先，缺价最后，排序稳定 (32.556886ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:02.6450907Z ✔ 有锚点仅同价段、锚点居首，同参数优先，过贵排除 (0.716843ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:02.6587874Z ✔ 两级搜索按主分类去重计数、legacy 名称可搜、默认不展开其他一级；旧 v1 明示 deprecated (25.37861ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:02.8851936Z ✔ 对比 API 首屏六型号，品牌有价过滤和翻页保持稳定，不重复型号 (9.116736ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:02.9480591Z ✔ 公开 HTTP 默认只返回两级一级分面；显式 v1 才可取 deprecated 扁平分面 (279.000482ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:03.3539511Z ✔ SQLite migrations, upsert, revision skip, deletion, dry run and raw field fidelity (69.314333ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:03.3927817Z ✔ SQL filters, sort, pagination, facets and grouping match JSON (39.528589ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:03.4399297Z ✔ Restore, batch rollback, optimistic conflict, audit, editing and restart persistence (47.000989ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:03.4569098Z ✔ Failed snapshot transaction cannot expose partial revision (14.224895ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:03.4571099Z ﹣ MySQL integration: sync, raw fields, filter, grouping, override and audit (0.218067ms) # MYSQL_HOST is not set; run npm run test:mysql with credentials and CREATE/DROP test database permission
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:03.6566014Z ✔ Wrong connection returns snapshot/banner and refuses authenticated writes (181.433071ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:03.7158617Z ✔ Legacy overrides and audit migrate once, SQLite driver health and preview note audit persist (78.59675ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:04.7997077Z ✔ DB layer recovers after connection failure without accepting writes during failure (1084.425771ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:04.8127946Z ✔ Bad excluded revision/hash refuses whole import and leaves prior revision intact (13.093255ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:04.8928040Z ✔ Injected SQL HTTP routes expose DB health, grouping and audit without changing public goods contract (79.580143ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:04.9900203Z ✔ Production sharded snapshot imports immutable details/sidecars with published revision (97.010979ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:05.0179167Z ✔ Snapshot staging deduplicates first-wins, repairs same revision and clears every old partition (28.233941ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:05.0357597Z ✔ Bad meta counts and published/excluded collisions reject atomically, including verify on a skipped revision (17.834314ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:05.0534133Z ✔ Published sidecar replaces archives; known duplicate rows are counted without rewriting meta (17.580327ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:05.0665934Z ✔ Failure after live table merge rolls back all rows, revision and history (13.278393ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:05.0788265Z ✔ Health compares all persisted row revisions against the current publication (12.166554ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:05.1110053Z ✔ Default sync rejects meta mismatch and health still reports persisted SQL counts (32.05201ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:05.2045910Z ✔ CLI rejects unexplained meta mismatch and exits nonzero (93.363412ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:05.2360395Z ✔ Admin distributions use SQL inventory without filtering by snapshot ids (29.55818ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:07.5097783Z ✔ Parity gate preserves OAuth sessions, overrides and audit (cold start=false) (2275.454027ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:08.5227981Z ✔ Parity gate preserves OAuth sessions, overrides and audit (cold start=true) (1013.050559ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:08.5414509Z ✔ SQL persisted model/color grouping chooses standalone price, filters kits safely and repairs old projection (18.666022ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:08.8538855Z ✔ DJI only permits a single HTTPS home.php space profile, never search/member or arbitrary proxy (2.628471ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:08.8552345Z ✔ DJI certified list only, complete kit titles, entity decoding and dedup; real div wrapper supported (5.959731ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:08.8870887Z ✔ DJI 24 hour durable cache, in-flight coalescing, explicit UA, redirect refusal; request 6 limited per IP and account (34.062297ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:16.9007441Z ✔ DJI failures are cached, redirects not followed, network and timeout reported (8001.779553ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:16.9385714Z ✔ DJI anonymous POST HTTP returns contract, invalid inputs 400 and sixth call 429 (48.853065ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:16.9503664Z ✔ DJI saved real profile responses parse 1 and 5 complete equipment titles (8.478157ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:16.9557016Z ✔ DJI catalogue source matches only one complete title, kit variants never guessed (9.419633ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:17.3072400Z ✔ EAN input: length, alphabet and incorrect checksum are explicitly rejected (1.062901ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:17.3088966Z ✔ builder rejects duplicate EAN, exposes both identities and keeps existing index untouched (0.607185ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:17.3090974Z ✔ shipped index validates every EAN and satisfies size / field bounds (6.34531ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:17.3935783Z ✔ real HTTP: found, unindexed, invalid, CORS and local lookup latency (101.138531ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:17.8846289Z ✔ HTTP strict identity, suffix, category, unknown/ambiguous identity and ten-minute cache (169.812822ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:17.9035316Z ✔ 中文型号（门锁2、手环8）靠严格包含配对，不许配到 Pro/猫眼版 (20.520467ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:17.9251601Z ✔ 品牌词插在中间、型号只在京东名里时，仍按严格包含对上（除湿机那单） (18.202625ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0755237Z ✔ 京东标题里的修饰词（变频/轻音/一级能效）不能挡住配对 (8.899232ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0761702Z ✔ 相机严格身份：富士（FUJIFILM）X-S20 微单相机 16-50mm套机 AI智能对焦 750张续航增强 全新Vlog模式 高便携高性能 (25.25026ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0791313Z ✔ 相机严格身份：富士（FUJIFILM）X-S20 微单相机 16-50mm套机 AI智能对焦 750张续航增强… (11.206192ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0801640Z ✔ 相机严格身份：富士 X-S20 微单机身（单机身） (6.398939ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0810053Z ✔ 相机严格身份：富士X-S20 15-45套机 (8.108995ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0862363Z ✔ 相机严格身份：富士 X-T5 1650套机 (6.730973ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0874769Z ✔ 相机严格身份：富士 X-S10 机身 (4.896515ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0875837Z ✔ 相机严格身份：FUJINON XF16-50mmF2.8-4.8 R LM WR 镜头 (10.778683ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0876913Z ✔ 相机严格身份：Fujifilm XS20 1650 kit (6.927573ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0877813Z ✔ 相机严格身份：FUJIFILM X-S 20 16-50套机 (2.196234ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0878770Z ✔ 相机严格身份：富士 X-S20 16-50mm (2.147906ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0879671Z ✔ 相机严格身份：富士 X-T50 XF16-50mm套机 (3.312564ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0892405Z ✔ 相机严格身份：富士 X-S20 body (2.103868ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0894142Z ✔ 相机严格身份：富士 X-S20 Pro body (2.084749ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0895153Z ✔ 相机严格身份：富士 X-S20 (2.975569ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0896107Z ✔ 相机严格身份：富士 X-S20 kit (3.528674ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0897244Z ✔ 相机严格身份：富士 X-S200 机身 (3.898876ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0898553Z ✔ 相机严格身份：富士 X-S10 16-50套机 (4.152331ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0899625Z ✔ 相机严格身份：富士 X-S20 X-T50 16-50套机 (4.206372ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0900708Z ✔ 相机严格身份：富士 X-S20 16-50套机 单机身 (3.966163ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0901758Z ✔ 相机严格身份：富士 X-S20 16-50 15-45套机 (3.995974ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0902903Z ✔ 相机严格身份：富士 X-S20 XF16-50mmF2.8-4.8 R LM WR 套机 (4.482232ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0904699Z ✔ 相机严格身份：FUJINON XC16-50mmF2.8-4.8 R LM WR 镜头 (4.585492ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0906082Z ✔ 相机严格身份：FUJINON XF16-50mmF2.8-4.8 R LM WR II 镜头 (3.042115ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0907265Z ✔ 相机严格身份：富士 XF16-50mm 镜头 (2.270656ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0908299Z ✔ 相机严格身份：相机 X-S20 机身 (2.373044ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0909748Z ✔ 相机严格身份：索尼 X-S20 机身 (1.794799ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0911137Z ✔ 相机严格身份：富士 X-H2S 机身 (1.911496ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0913300Z ✔ 相机严格身份：富士 X-T30 III body (2.217247ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.0914466Z ✔ 相机严格身份：富士 X-T30 body (1.895233ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.1073468Z ✔ 京东分享原链接经 HTTP 匹配真实目录身份并解释；失败不写入商品库 (31.586564ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:18.1076769Z ✔ 非相机的 X 数字型号仍走原有严格匹配 (0.481429ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:19.4348375Z ✔ 20条真实HTTP列表瘦身与完整详情相互鉴别；UTF-8/gzip上限、缓存/CORS/304、导出护栏 (1052.016183ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:19.4401690Z ✔ listen后主动预热一次；构建中请求共享promise，首次与后续HTTP不再构建 (6.806492ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:19.4460407Z ✔ 预热同步抛错或异步拒绝均只记一行；服务器仍listen且请求返回500 (6.492857ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:19.7602152Z ✔ substring fields, case/space folding, literal matching and empty q echo (3.571891ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:19.7615278Z ✔ relevance tiers precede price, then source ordinal; filter totals precede pagination (3.791972ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:19.7695702Z ✔ independent filters and sorting; invalid arguments fail instead of silently returning everything (1.546654ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:19.8931635Z ✔ HTTP export compatibility, filtered queries, ETag isolation, duplicate positions and atomic revision refresh (135.62984ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:19.9066967Z ✔ snapshot pointer changes invalidate postings and preserve the published generation (13.878398ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:20.2187066Z ✔ 真实HTTP：分页完整无重复、边界、查询、批量上限、详情、gzip与ETag、换代失效 (210.153495ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:20.2266183Z ✔ 同 id 多分类在分页、搜索、批量和详情仅占一条，所有分类仍可命中 (8.360531ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:20.9972118Z ✔ 线上索引兼容四个验收查询，补充型号只带官方身份与来源，不伪造价格 (769.156574ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:21.0060363Z ✔ 年份证据排序在分页之前：新年优先、同产品容量升序、无证据保序；不随价格变化 (9.90257ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:21.2948038Z ✔ 产品批量详情返回全部SKU，独立于搜索容量、分页；不同产品不混入 (288.584418ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:21.2979900Z ✔ 产品分页只按product_id：名称与世代修订不分裂；复合维度中文且未知兜底 (3.32452ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:21.4709899Z ✔ 规格筛选按芯片/CPU/GPU 独立归属，返回完整源记录 (3.830814ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:21.4908706Z ✔ 目录里自带 brand 的记录（大疆/富士）必须按品牌分面，不许并进「其他」 (188.5133ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:21.4997270Z ✔ 单行分类数组：两类各计一次且可筛选；数组优先，主分类原样保留 (8.132536ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:21.5134632Z ✔ 旧单分类与显式单元素数组双向等价：列表、分面、筛选、分页、详情和批量 (14.304907ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:21.5170452Z ✔ compact仅多分类输出数组：零项、单项和旧记录省略；详情不受列表投影影响 (3.809083ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:21.9506182Z ✔ history repository sqlite: OSS backfill, HTTP, checksum, rollback, retention and restart (118.61155ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:21.9546840Z ﹣ history repository mysql: OSS backfill, HTTP, checksum, rollback, retention and restart (0.358148ms) # SKIP
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:22.3267733Z ✔ 30/90 天切换：明细最低上升且 UI 覆盖天数同步，日汇总低点仍在；干跑无变化 (17.82472ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:22.3270366Z ✔ 聚合失败整体回滚，不丢明细；UTC 边界、零价和无效配置 (2.049802ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:22.3870199Z ✔ HTTP 新增汇总字段与参数校验，旧 points/极值/计数仍只代表明细 (78.947463ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:22.4108389Z ✔ 归档干跑只列出可清理版本；只保留未封存月最新版本，未知文件不处理 (24.853401ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:22.5589948Z ✔ HP official SKU fixtures: brand facets count configurations; star14 groups before pagination (14.228675ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:22.5620117Z ✔ HP source SKU detail retains evidence, store price semantics and full configuration (3.295807ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:22.8677677Z ✔ HP official configuration candidates stay unresolved without marketing alias and refresh evidence (13.139984ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:22.8690323Z ✔ same CPU/RAM/storage FHD SKU and 14-inch SKU cannot satisfy 15.6 QHD title (1.450365ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:22.8695528Z ✔ HP mismatches, incomplete/conflicting inputs and unknown official evidence stay unresolved (4.460428ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:22.9307324Z ✔ live HTTP match entry returns exact official SKU candidates with score and evidence (63.934716ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:22.9809898Z ✔ production lightweight shards hydrate HP evidence before matching and cache without mutating index rows (51.990294ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:23.4223280Z ✔ health.json 报告数据新鲜度、库内计数与密钥缺口 (77.042319ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:23.4714419Z ✔ 未同步时 /api/goods 返回 404 而不是空数组 (46.740838ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:23.5276290Z ✔ 下单返回可校验的 signData / paySig / signature，并落一条 created 订单 (49.363306ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:23.5652051Z ✔ 未登录下单被拒 401 (52.235892ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:23.6029497Z ✔ 发货推送：一条单只发一次货，重复推送返回 0 且不重复建权益 (39.430482ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:23.6274226Z ✔ 发货推送找不到订单时回非 0，让微信重试 (26.231765ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:23.6631609Z ✔ 查单兜底：query_order 说已支付就补发货 (30.568506ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.0298730Z ✔ 未付款关闭后可重新下单；其余非到账状态跨设备仍拦截且不发权益 (372.755297ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.3223945Z ✔ 查单失败、退款单、环境/订单/金额不匹配或关闭但有付款迹象，不解除阻塞 (290.331736ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.3517376Z ✔ 订阅消息发送要 admin token (26.076767ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.3786949Z ✔ 缺密钥时下单返回 503 并列出缺哪几项 (30.27556ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.4219459Z ✔ 数据出口 gzip、内容哈希 ETag、弱匹配 304 与同长度变更 (43.051969ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.4500324Z ✔ healthz 缺数据 503、完整且新鲜 200、过期 503；缺密钥登录 503 (28.427661ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.4792018Z ✔ 管理员补发鉴权、查微信、重复及异交易号通知幂等 (28.209787ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.5038586Z ✔ 管理员补发拒绝未支付及微信失败的结果，不造权益 (26.980088ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.5318624Z ✔ 微信 URL 握手逐字返回 echostr，拒绝缺参、篡改、重复参数与加密模式 (28.743062ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.5775924Z ✔ 回调未配置或配置不合法时 GET/POST 均关闭，不影响公开接口 (44.509223ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.6054744Z ✔ 未验签推送不发货，加密消息拒绝；按外部单号兜底及重复推送仍成功 (25.734438ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.6075655Z ✔ 环境隔离不回退密钥；非法环境拒绝启动 (0.511434ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.6308473Z ✔ 购买开关关闭时不能下单，密钥 ready 不代表可购买 (28.377573ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.6587842Z ✔ 同一购买请求超时重试只建一单；客户端金额不能覆盖目录分值，权益取订单快照 (26.276219ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.6844691Z ✔ 遗留订单目录缺失不得发永久；查询拒绝他人订单和退款状态 (26.667951ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.7075501Z ✔ 退款与其他非发货事件不能误走发货路径 (23.270175ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.7469528Z ✔ 真实 seed 的展示目录、订单快照、签名金额一致，/data 旧价不可覆盖 (39.39735ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.7754904Z ✔ 展示 800 分但 seed 1200 分或缺少展示价时拒绝，不能建单签名 (27.98454ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.8362672Z ✔ 切换环境后旧未付款关闭单按订单环境签名核查，新单仍使用当前环境 (56.493469ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.9185697Z ✔ 历史环境缺 key 或查单失败时明确提示原环境核查，保留 pending 且不发权益 (85.278826ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.9186924Z ✔ 沙箱 key 兼容旧名，新名非空时优先且不影响现网 key (0.285142ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:24.9974345Z ✔ 权益 API 只展示当前环境；跨环境查单补发沿用订单环境，重复推送/查单/补发不翻倍 (78.403221ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:25.1520290Z ✔ 已发货退款回归：5/9/10 立即回收，8 完成；重复查单、管理员补发及迟到推送不复活 (155.489032ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:25.1865397Z ✔ 官方退款通知字段 MchOrderId/WxOrderId，XML/JSON 响应、验签、重复通知及查单失败重试 (29.338946ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:25.2060688Z ✔ 启动自动回收存量 env=1 的指定退款单，补发与购买关闭、当前 env=0 也生效 (25.813796ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:25.2380764Z ✔ 进入会员页核查已到账订单，返回新权益与可解释的订单状态；五分钟节流 (27.689862ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:25.2575300Z ✔ 后台定时检查已发货订单，不要求用户打开会员页或打开补发开关 (22.719108ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:25.3566450Z ✔ 退款查单缺原环境密钥或订单/环境/金额不一致，不误作废；失败不删除原权益 (94.579134ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:25.3982960Z ✔ 并发旧支付查询迟于退款完成返回，也不能把已退款订单恢复为到账 (42.423436ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:25.4495612Z ✔ 按需商品路由保持旧全量格式，单条完整、gids 只返回指定项且超限拒绝 (52.850397ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:25.5433555Z ✔ 商品新接口合并分类，旧全量接口仍逐字返回源行 (40.679116ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:26.2847019Z ✔ 容量作为规格的HTTP验收：iPad Air一行、Neo一行，product_ids取完整规格与SKU (813.407114ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:26.5964279Z ✔ missing, malformed, empty and non-JD cookies return share needLogin without launch (3.524208ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:26.6175591Z ✔ timeout kills browser, cleanup permits retry; upstream failures redact secrets (23.505733ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:26.6193640Z ✔ concurrent busy cannot clear the first slot; immediate failure releases for a real next run (2.31294ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:26.6402685Z ✔ context cleanup timeout restarts browser and releases task slot (21.120093ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:27.0409005Z ✔ upload config prefers dedicated token and falls back to admin; cookie parser preserves equals and deduplicates (3.341294ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:27.2305592Z ✔ HTTP upload enforces dedicated token, atomically replaces 0600 file, returns only names and never logs values (181.01305ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:27.2574971Z ✔ HTTP upload fallback, disabled token, malformed/oversized bodies, and write failures remain redacted (47.391073ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:27.3682438Z ✔ atomic save writes 0600 and rename; interrupted partial write preserves the previous file (14.756708ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:27.8018787Z ✔ retired account-order and PC login routes return 404 without acquiring a browser (79.608518ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:39.9970206Z ✔ visible share DOM: expand first, parse fields; absent details never invent dates; injected money stays null (11857.471758ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:39.9972239Z ✔ validation rejects non-JD, credentials, ports, scripts and arbitrary JD pages (0.977535ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:39.9974383Z ✔ cache lasts ten minutes, IP request 61 is limited even on cache hits, windows reset (1.603325ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:40.1031143Z ✔ timeout resets slot while late launch cannot replace a newer browser (20.645065ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:40.2822148Z ✔ HTTP rejects invalid links, limits 61st request; login, busy and timeout are normal JSON (263.610467ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:40.2918678Z ✔ successive share tasks reuse one browser with fresh contexts (3.911058ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:40.2927232Z ✔ IP forwarding is ignored by default; configured proxies walk chain from the right (2.989951ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:42.5025346Z ✔ HTTP share uses extracted pool and actual browser DOM across requests, preserving all fields and price contract (2202.420103ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:42.5051705Z ✔ share retries one non-login failure and caches success; login/busy never retry (9.078197ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:42.5088621Z ✔ 没有规格行的虚拟商品：不许把「共计 1 件商品」当成商品名 (0.447624ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:45.8146323Z ✔ product share HTTP: clean contexts never read cookies, short/item redirects and multi SKU use listing prices; orders require cookies (3301.031236ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:45.8176522Z ✔ SKU extraction covers direct pages and URL parameters without accepting arbitrary text (5.027074ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:45.8648485Z ✔ 带管理员令牌的请求不受每小时额度限制 (59.432662ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3267008Z ✔ 真实目录：明确3L展开记录优先于聚合记录，不选起价2L或旧代 (32.083689ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3271915Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲2 2L (6.525591ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3279961Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲2 4L (12.094998ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3285026Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲2 5L (2.643286ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3288967Z ✔ 电饭煲容量/代际/身份：米家 IH 电饭煲 3L (3.161705ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3292785Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲2 6L (3.812082ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3299781Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲3 3L (4.639704ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3304891Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲20 3L (2.937622ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3308613Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲2S 3L (4.44209ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3313969Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲2Pro 3L (5.809411ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3317520Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲2 30L (4.630746ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3321353Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲2 (3.501746ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3328948Z ✔ 电饭煲容量/代际/身份：IH电饭煲2 3L (2.12564ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3345527Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲2 3L 4L (1.923389ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3346857Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲2 3L Pro (2.600135ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3350339Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲2 3L IH电饭煲3 (2.273599ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3356517Z ✔ 电饭煲容量/代际/身份：米家电饭煲2 3L (1.990445ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3359821Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲2 3L 替换内胆 (3.757299ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3363592Z ✔ 电饭煲容量/代际/身份：米家IH电饭煲2 C1 3L (1.989704ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3366620Z ✔ 容量不从继承的聚合params倒灌到4L；重复明确身份保持null (11.839636ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3369970Z ✔ 未知长料号保留匹配，短身份不能冒充料号；C1自身仍可匹配 (11.733116ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3372795Z ✔ 已知厂商料号约束候选，不能用另一记录的料号放行 (0.959491ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3407038Z ✔ 仅聚合params不能替无明确容量的名称提供身份 (0.606955ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3444250Z ✔ 跨品类京东标题：手机 (4.575922ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3447846Z ✔ 跨品类京东标题：耳机 (4.480904ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3455112Z ✔ 跨品类京东标题：电视 (4.403267ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3456086Z ✔ 跨品类京东标题：空净 (4.554793ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3456924Z ✔ 跨品类京东标题：扫地机 (4.996075ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3457748Z ✔ 跨品类京东标题：手机未知型号 (3.936156ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3458555Z ✔ 跨品类京东标题：耳机不同代 (3.956605ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3459397Z ✔ 跨品类京东标题：电视不同年 (3.587408ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3460293Z ✔ 跨品类京东标题：空净不同代 (2.344894ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.3461221Z ✔ 跨品类京东标题：扫地机未知型号 (2.169122ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.4495399Z ✔ 原链接HTTP：真实读取结果交给匹配器；京东标价399及提示保留；不写库 (106.825573ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.4496365Z ✔ 京东索引原始标题：手机 (4.032527ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.4525895Z ✔ 京东索引原始标题：耳机 (3.807053ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.4535019Z ✔ 京东索引原始标题：电视 (3.419982ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.4543003Z ✔ 京东索引原始标题：空净 (3.423679ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.4547617Z ✔ 京东索引原始标题：扫地机 (4.60671ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.5780084Z ✔ params capacity reaches the actual client row; fallback and contract mutations fail (15.6629ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.5785295Z ✔ clean values, combine real family values, retain literal units and bound Unicode length (1.680852ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.8073294Z ✔ sanitized detail shell and mtop response preserve product name, SKU suffix, current price and empty parameters (17.368687ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.8076625Z ✔ all MI forms use anonymous POST with four custom headers; redirect checks every destination, invalid IDs are normal JSON (8.106273ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.8079099Z ✔ missing cookie throws: MI succeeds without reading or launching, only order returns needLogin (1.533974ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.8268704Z ✔ MI identity only binds exact pid/gid; similar name or foreign gid cannot match (17.278918ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.8274874Z ✔ shortlink browser fallback stays anonymous, uses pool slot and rejects external redirects before fetch (1.551627ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.8286131Z ✔ MI success shares the ten-minute cache and hourly quota, without launching browser (1.799165ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:46.8289390Z ✔ 短链中间跳转页 /p?commodityId=… 也要能取出商品 id (0.273206ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:47.1715278Z ✔ 公开空状态；缺少或错误口令禁止写入 (73.199356ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:47.2235679Z ✔ 写入、同 commit 多次发布、倒序持久化、重读、PNG 与 XSS 转义 (50.424671ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:47.2410101Z ✔ 到期边界：少 1ms 可用，恰好 25 分钟及以后隐藏最新二维码，历史仍保留 (18.968395ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:47.3169221Z ✔ 输入校验与 body 上限均返回 400，不写入坏记录 (75.726955ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:47.3727845Z ✔ 并发追加无丢记录 (52.476825ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:47.3734998Z ✔ 页面停留期间到期和返回前台：更新状态并移除最新码，保留历史码 (4.999609ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:47.7009172Z ✔ price 区间极值、原始时间、缺测、幂等和事务回滚；不补小时点 (51.056131ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:47.7495796Z ✔ 6 小时持久节流、ETag/304、镜像回退、幂等与跨月保留 (48.752513ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:47.7685400Z ✔ 历史坏行/镜像失败与三份最新文件同步双向隔离 (19.145072ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:47.8570387Z ✔ 只读 HTTP 返回全部稀疏点、限定措辞、空结果与参数校验 (84.341037ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:47.9245401Z ✔ 保留维护每天一次、默认干跑；启用后先打印计划，失败记录且次日重试 (68.993041ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:48.2490105Z ✔ 清除匿名分享缓存也阻止删除期间的在途解析重新写入缓存 (1.466086ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:48.2995750Z ✔ 真实HTTP账号删除清空数据库与匿名订单分享缓存，旧会话不能导出 (73.366944ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:48.4938278Z ✔ 产品线矩阵及实际身份代码变异：尺寸/芯片回身份、Air/Pro合并必须报红 (39.780189ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:48.4949600Z ✔ 规格稀疏矩阵：不存在组合禁选、全SKU可达、无预选；取消禁选变异必红 (18.379254ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:48.4957525Z ✔ 摘要写芯片的取值而不是数量，且不重复标题已有的芯片 (1.734606ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:48.4962446Z ✔ 同产品线里没价没规格的孤立条目不许单独占一行 (3.179008ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:48.8946298Z ✔ 真实全库：产品标题唯一、摘要4项/12字、中文维度与复合拆分 (5.322741ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:48.8955081Z ✔ 鉴别性检查：重复标题、营销文案、五项摘要、三种原始维度、GPU混CPU逐项必红 (30.5843ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:48.8958051Z ✔ 无规格、未知标签、首标点截断、label优先、价格与完整SKU计数 (2.016835ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:48.8961757Z ✔ 独立源产品按尺寸、容量、芯片区分标题；无可区分规格时使用稳定款式编号 (1.467548ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:49.7262745Z ✔ 真实HTTP：完整聚合、筛选/跨页不变、旧响应字段不变、服务端更新可见 (832.690443ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:49.7263611Z ✔ 真实Neo：同型号单容量或两种容量各四色均为一行 (1.832958ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:49.9021015Z ✔ 实际代码变异：改回颜色ID商品键、标题重新带颜色均必须报红 (11.902325ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:49.9029234Z ✔ 真实全库：每族关键规格恒定、SKU无丢失无重复、非苹果身份不跨源合并 (160.007486ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:49.9036764Z ✔ 未知代号不解码；已知产品线与年份合并尺寸、芯片、核心 (2.256617ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:49.9037648Z ✔ 名称颜色去除及营销句截断；多容量摘要用明确名称 (1.576695ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:50.1415765Z ✔ 列表到完整SKU链路：同一族ID贯穿ids、familyCounts、product_ids与前端规格选择 (235.242054ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:50.1620754Z ✔ 鉴别性矩阵：4容量×4颜色一行；容量身份键与名称容量身份变异必红 (18.311316ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:50.1652885Z ✔ 同产品线M5与M5 Pro为一族；容量、存储、内存和连接方式均留在族内 (4.532531ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:50.1664825Z ✔ 真实验收：iPad Air/Neo/Air同代各一行；尺寸芯片是规格 (1.873475ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:50.1675281Z ✔ physical tank capacities use existing fields without creating selectable dimensions (0.527865ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:50.2724393Z ✔ day/month matrix rejects invalid days, model-only dates and archive timestamps, includes retired records (2.488615ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:50.2739374Z ✔ series inheritance downgrades day to month; third-party requires corroboration; empty official field is not absence (1.101438ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:50.2915749Z ✔ sharded coverage reads the hashed full export and counts same-id published configuration rows (24.707993ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:50.2920804Z ✔ admin edits reject year-only dates and mismatched precision (4.593857ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:50.2925246Z ✔ L5 single reviewed first report counts by source; legacy unverified stays excluded (0.526423ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:50.6629350Z ✔ 线上真实两条记录 HTTP：完整 goods.json，短名和京东链接必须命中23627 (89.578226ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:50.7075471Z ✔ 线上真实两条记录 HTTP：分片索引省略容器标记，短名和京东链接必须命中23627 (47.045726ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:51.0354547Z ✔ 词表每条有依据，值为可扩展数组；不把泛称饮水机映射到宠物 (1.761573ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:51.8229162Z ✔ 真实4231行目录：口语词命中足浴器/宠物饮水机；展示、摘要逐字等于标准词查询 (791.075919ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:51.8620902Z ✔ 原词优先于新年份与源顺序；聚合/非聚合、分页、AND筛选及游标隔离 (39.365766ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:51.8734756Z ✔ 宠物叫法不命中人用饮水机；详情及源记录不被词表改写 (11.446948ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.4157091Z ✔ 真实规模HTTP：泡脚桶20条聚合 <200ms/≤20KB；每次仅遍历索引候选一次 (541.863295ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.4162745Z ℹ {"sourceRows":5031,"indexRows":3036,"measurements":[{"ms":20.75,"bytes":2299},{"ms":9.24,"bytes":2299},{"ms":8.62,"bytes":2299},{"ms":12.05,"bytes":2299},{"ms":9.39,"bytes":2299}]}
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.4284740Z ✔ 空格不敏感：商品名里有空格，搜索词没有也能命中 (11.988283ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.4414821Z ✔ 中文品牌词「富士」能命中官方名里的 FUJIFILM (13.532821ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.5718548Z ✔ paySig 对 C 端 uri 的拼法正确 (1.464813ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.5736176Z ✔ paySig 对 B 端接口路径的拼法正确 (0.179669ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.5744679Z ✔ signature 用 session_key 签 signData (0.181843ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.5745687Z ✔ paySig 缺 appKey 直接报错，不静默返回空串 (0.432687ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.5746626Z ✔ outTradeNo 满足 8-32 位、字母数字、不以 _ 开头，且不重复 (33.245089ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.5747471Z ✔ isValidOutTradeNo 拒绝超长、下划线开头与非字母数字 (0.181352ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.5748210Z ✔ signData 字段与顺序固定，同输入同输出 (0.906079ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.5750518Z ✔ hmacSha256Hex 是 HS256 十六进制 (0.195468ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8879626Z ✔ 发货幂等：同一 deliveryKey 只产生一条权益 (13.674401ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8892713Z ✔ 永久权益 expires_at 为 null，限期权益按天数算到期 (13.540004ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8906008Z ✔ 过期权益不再出现在有效列表里 (11.647534ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8924864Z ✔ 对账用：created/paid 状态的单能被 pendingOlderThan 捞出 (14.308481ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8925784Z ✔ 会话过期后 getSession 返回 null (10.752338ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8926520Z ✔ 续购顺延，换交易号重推也不能加天数；到期边界精确 (11.874038ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8927164Z ✔ 非法金额分及跨单复用交易号必须拒绝 (11.920602ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8927841Z ✔ 沙箱权益不进入现网，续购也不能继承另一环境的有效期 (11.533048ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8928473Z ✔ 老权益启动迁移按订单回填，孤立行保持未知，重启可重试且不改原有数据 (21.419049ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8944697Z ✔ 退款整笔回收限期及永久权益，保留原始记录与审计，旧单不能复活，新单独立发放 (20.956636ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8945533Z ✔ 退款失败单独出现不作废；已回收后的失败不恢复或重复发货 (12.276437ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8946207Z ✔ 退款移除整笔顺延时长，保留其他订单天数和原到期日；后续续购按重算结果顺延 (15.1584ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8964891Z ✔ 对账排序持久化轮转，失败旧单不饿死后续单；历史已发货不被排除 (53.189525ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.8966202Z ✔ 退款列自动迁移：旧累计有效期还原独立时长，回收后重启不复原、不删原始数据 (22.760507ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:52.9852410Z ✔ 部分同步保留整份上次资料及观察时间，三份文件一致后才更新 (27.061934ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:53.0081126Z ✔ 固定上游 commit 取三份文件，拒绝版本查询失败和数量不符，成功回退不冒充同步失败 (23.173088ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:53.0200823Z ✔ 独立缓存排除清单；未发布或结构无效不阻塞商品同步，失败保留已有缓存 (11.611869ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:53.0381285Z ✔ 下载后的数据库校验失败传播到同步状态，重跑仍主动同步且成功后清除错误 (18.46762ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:53.1233240Z ✔ historical MSRP stays out of current price and retains provenance in search and detail (18.427976ms)
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:53.1317022Z ℹ tests 371
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:53.1317948Z ℹ suites 0
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:53.1318623Z ℹ pass 367
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:53.1319339Z ℹ fail 0
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:53.1320094Z ℹ cancelled 0
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:53.1320819Z ℹ skipped 4
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:53.1321512Z ℹ todo 0
+api-tests	Test API including release precision and full-export coverage	2026-11-05T13:13:53.1322262Z ℹ duration_ms 58228.306444
+api-tests	Post Run actions/setup-node@v4	﻿2026-11-05T13:13:53.1589248Z Post job cleanup.
+api-tests	Post Run actions/setup-node@v4	2026-11-05T13:13:53.2958223Z (node:3449) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+api-tests	Post Run actions/setup-node@v4	2026-11-05T13:13:53.2960050Z (Use `node --trace-deprecation ...` to show where the warning was created)
+api-tests	Post Run actions/setup-node@v4	2026-11-05T13:13:53.2963676Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-f7470450b3111eaf8c2aeedd0165f5d8c2e4246bb8d3a41e152b458d4e7dee39, not saving cache.
+api-tests	Post Run actions/checkout@v4	﻿2026-11-05T13:13:53.3128022Z Post job cleanup.
+api-tests	Post Run actions/checkout@v4	2026-11-05T13:13:53.4094668Z [command]/usr/bin/git version
+api-tests	Post Run actions/checkout@v4	2026-11-05T13:13:53.4176445Z git version 2.56.0
+api-tests	Post Run actions/checkout@v4	2026-11-05T13:13:53.4265351Z Temporarily overriding HOME='/home/runner/work/_temp/7b910d34-84b4-4d9e-9c81-535c24d40c19' before making global git config changes
+api-tests	Post Run actions/checkout@v4	2026-11-05T13:13:53.4284806Z Adding repository directory to the temporary git global config as a safe directory
+api-tests	Post Run actions/checkout@v4	2026-11-05T13:13:53.4303013Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/spend-good/spend-good
+api-tests	Post Run actions/checkout@v4	2026-11-05T13:13:53.4355565Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+api-tests	Post Run actions/checkout@v4	2026-11-05T13:13:53.4445787Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+api-tests	Post Run actions/checkout@v4	2026-11-05T13:13:53.5094089Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+api-tests	Post Run actions/checkout@v4	2026-11-05T13:13:53.5146758Z http.https://github.com/.extraheader
+api-tests	Post Run actions/checkout@v4	2026-11-05T13:13:53.5227202Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+api-tests	Post Run actions/checkout@v4	2026-11-05T13:13:53.5296114Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+api-tests	Post Run actions/checkout@v4	2026-11-05T13:13:53.6211356Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+api-tests	Post Run actions/checkout@v4	2026-11-05T13:13:53.6251874Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+api-tests	Complete job	﻿2026-11-05T13:13:53.6879609Z Cleaning up orphan processes
+api-tests	Complete job	2026-11-05T13:13:53.7345329Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+build	UNKNOWN STEP	﻿2026-11-05T13:09:25.3608984Z Current runner version: '2.338.2'
+build	UNKNOWN STEP	2026-11-05T13:09:25.3645497Z ##[group]Runner Image Provisioner
+build	UNKNOWN STEP	2026-11-05T13:09:25.3647265Z Hosted Compute Agent
+build	UNKNOWN STEP	2026-11-05T13:09:25.3648314Z Version: 20261021.618
+build	UNKNOWN STEP	2026-11-05T13:09:25.3649617Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+build	UNKNOWN STEP	2026-11-05T13:09:25.3651036Z Build Date: 2026-10-21T00:45:21Z
+build	UNKNOWN STEP	2026-11-05T13:09:25.3652582Z Worker ID: {a7272835-5b35-4f67-9c7f-08ab1213d70e}
+build	UNKNOWN STEP	2026-11-05T13:09:25.3653915Z Region: centralus
+build	UNKNOWN STEP	2026-11-05T13:09:25.3654890Z Cloud: Azure
+build	UNKNOWN STEP	2026-11-05T13:09:25.3656042Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:25.3658803Z ##[group]Operating System
+build	UNKNOWN STEP	2026-11-05T13:09:25.3660086Z Ubuntu
+build	UNKNOWN STEP	2026-11-05T13:09:25.3661071Z 26.04.1
+build	UNKNOWN STEP	2026-11-05T13:09:25.3661948Z LTS
+build	UNKNOWN STEP	2026-11-05T13:09:25.3662931Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:25.3663929Z ##[group]Runner Image
+build	UNKNOWN STEP	2026-11-05T13:09:25.3665217Z Image: ubuntu-26.04
+build	UNKNOWN STEP	2026-11-05T13:09:25.3666603Z Version: 20261025.179.1
+build	UNKNOWN STEP	2026-11-05T13:09:25.3669519Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+build	UNKNOWN STEP	2026-11-05T13:09:25.3672451Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+build	UNKNOWN STEP	2026-11-05T13:09:25.3674364Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:25.3676728Z ##[group]GITHUB_TOKEN Permissions
+build	UNKNOWN STEP	2026-11-05T13:09:25.3679699Z Contents: read
+build	UNKNOWN STEP	2026-11-05T13:09:25.3680867Z Metadata: read
+build	UNKNOWN STEP	2026-11-05T13:09:25.3681979Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:25.3685330Z Secret source: Actions
+build	UNKNOWN STEP	2026-11-05T13:09:25.3687302Z Cache mode: write
+build	UNKNOWN STEP	2026-11-05T13:09:25.3688580Z Prepare workflow directory
+build	UNKNOWN STEP	2026-11-05T13:09:25.4576071Z Prepare all required actions
+build	UNKNOWN STEP	2026-11-05T13:09:25.4650743Z Getting action download info
+build	UNKNOWN STEP	2026-11-05T13:09:25.7824522Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+build	UNKNOWN STEP	2026-11-05T13:09:25.8832121Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+build	UNKNOWN STEP	2026-11-05T13:09:25.9583852Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+build	UNKNOWN STEP	2026-11-05T13:09:26.1695079Z Complete job name: build
+build	UNKNOWN STEP	2026-11-05T13:09:26.2621762Z ##[group]Run actions/checkout@v4
+build	UNKNOWN STEP	2026-11-05T13:09:26.2622752Z with:
+build	UNKNOWN STEP	2026-11-05T13:09:26.2623291Z   repository: null-object-0000/spend-good
+build	UNKNOWN STEP	2026-11-05T13:09:26.2628030Z   token: ***
+build	UNKNOWN STEP	2026-11-05T13:09:26.2628560Z   ssh-strict: true
+build	UNKNOWN STEP	2026-11-05T13:09:26.2629083Z   ssh-user: git
+build	UNKNOWN STEP	2026-11-05T13:09:26.2629622Z   persist-credentials: true
+build	UNKNOWN STEP	2026-11-05T13:09:26.2630196Z   clean: true
+build	UNKNOWN STEP	2026-11-05T13:09:26.2630728Z   sparse-checkout-cone-mode: true
+build	UNKNOWN STEP	2026-11-05T13:09:26.2631353Z   fetch-depth: 1
+build	UNKNOWN STEP	2026-11-05T13:09:26.2631870Z   fetch-tags: false
+build	UNKNOWN STEP	2026-11-05T13:09:26.2632417Z   show-progress: true
+build	UNKNOWN STEP	2026-11-05T13:09:26.2632958Z   lfs: false
+build	UNKNOWN STEP	2026-11-05T13:09:26.2633456Z   submodules: false
+build	UNKNOWN STEP	2026-11-05T13:09:26.2633997Z   set-safe-directory: true
+build	UNKNOWN STEP	2026-11-05T13:09:26.2634603Z   allow-unsafe-pr-checkout: false
+build	UNKNOWN STEP	2026-11-05T13:09:26.2635515Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:26.5914288Z Syncing repository: null-object-0000/spend-good
+build	UNKNOWN STEP	2026-11-05T13:09:26.5917905Z ##[group]Getting Git version info
+build	UNKNOWN STEP	2026-11-05T13:09:26.5919563Z Working directory is '/home/runner/work/spend-good/spend-good'
+build	UNKNOWN STEP	2026-11-05T13:09:26.5932235Z [command]/usr/bin/git version
+build	UNKNOWN STEP	2026-11-05T13:09:26.5991044Z git version 2.56.0
+build	UNKNOWN STEP	2026-11-05T13:09:26.6039942Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:26.6072050Z Temporarily overriding HOME='/home/runner/work/_temp/621c370e-b0ba-4641-ae43-033a84f15c7c' before making global git config changes
+build	UNKNOWN STEP	2026-11-05T13:09:26.6074883Z Adding repository directory to the temporary git global config as a safe directory
+build	UNKNOWN STEP	2026-11-05T13:09:26.6077678Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/spend-good/spend-good
+build	UNKNOWN STEP	2026-11-05T13:09:26.6150648Z Deleting the contents of '/home/runner/work/spend-good/spend-good'
+build	UNKNOWN STEP	2026-11-05T13:09:26.6165440Z ##[group]Initializing the repository
+build	UNKNOWN STEP	2026-11-05T13:09:26.6169299Z [command]/usr/bin/git init /home/runner/work/spend-good/spend-good
+build	UNKNOWN STEP	2026-11-05T13:09:26.6308747Z hint: Using 'master' as the name for the initial branch. This default branch name
+build	UNKNOWN STEP	2026-11-05T13:09:26.6313908Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+build	UNKNOWN STEP	2026-11-05T13:09:26.6315932Z hint: to use in all of your new repositories, which will suppress this warning,
+build	UNKNOWN STEP	2026-11-05T13:09:26.6317839Z hint: call:
+build	UNKNOWN STEP	2026-11-05T13:09:26.6318736Z hint:
+build	UNKNOWN STEP	2026-11-05T13:09:26.6319905Z hint: 	git config --global init.defaultBranch <name>
+build	UNKNOWN STEP	2026-11-05T13:09:26.6321146Z hint:
+build	UNKNOWN STEP	2026-11-05T13:09:26.6322524Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build	UNKNOWN STEP	2026-11-05T13:09:26.6324766Z hint: 'development'. The just-created branch can be renamed via this command:
+build	UNKNOWN STEP	2026-11-05T13:09:26.6326719Z hint:
+build	UNKNOWN STEP	2026-11-05T13:09:26.6327907Z hint: 	git branch -m <name>
+build	UNKNOWN STEP	2026-11-05T13:09:26.6330379Z hint:
+build	UNKNOWN STEP	2026-11-05T13:09:26.6332834Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build	UNKNOWN STEP	2026-11-05T13:09:26.6335010Z Initialized empty Git repository in /home/runner/work/spend-good/spend-good/.git/
+build	UNKNOWN STEP	2026-11-05T13:09:26.6348226Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/spend-good
+build	UNKNOWN STEP	2026-11-05T13:09:26.6418187Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:26.6419997Z ##[group]Disabling automatic garbage collection
+build	UNKNOWN STEP	2026-11-05T13:09:26.6425586Z [command]/usr/bin/git config --local gc.auto 0
+build	UNKNOWN STEP	2026-11-05T13:09:26.6506525Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:26.6508263Z ##[group]Setting up auth
+build	UNKNOWN STEP	2026-11-05T13:09:26.6509834Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	UNKNOWN STEP	2026-11-05T13:09:26.6557468Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	UNKNOWN STEP	2026-11-05T13:09:26.7278601Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	UNKNOWN STEP	2026-11-05T13:09:26.7338015Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	UNKNOWN STEP	2026-11-05T13:09:26.7639817Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	UNKNOWN STEP	2026-11-05T13:09:26.7676132Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	UNKNOWN STEP	2026-11-05T13:09:26.7968208Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build	UNKNOWN STEP	2026-11-05T13:09:26.8011492Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:26.8013981Z ##[group]Fetching the repository
+build	UNKNOWN STEP	2026-11-05T13:09:26.8024137Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b3f16000af88832b1ef38989708b1c98179a9d4e:refs/remotes/origin/master
+build	UNKNOWN STEP	2026-11-05T13:09:36.3630151Z From https://github.com/null-object-0000/spend-good
+build	UNKNOWN STEP	2026-11-05T13:09:36.3637622Z  * [new ref]         b3f16000af88832b1ef38989708b1c98179a9d4e -> origin/master
+build	UNKNOWN STEP	2026-11-05T13:09:36.3642359Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:36.3643849Z ##[group]Determining the checkout info
+build	UNKNOWN STEP	2026-11-05T13:09:36.3645440Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:36.3648994Z [command]/usr/bin/git sparse-checkout disable
+build	UNKNOWN STEP	2026-11-05T13:09:36.3707163Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+build	UNKNOWN STEP	2026-11-05T13:09:36.3742212Z ##[group]Checking out the ref
+build	UNKNOWN STEP	2026-11-05T13:09:36.3747725Z [command]/usr/bin/git checkout --progress --force -B master refs/remotes/origin/master
+build	UNKNOWN STEP	2026-11-05T13:09:37.4015503Z Updating files:  40% (3086/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.4277072Z Updating files:  41% (3121/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.4861159Z Updating files:  42% (3197/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.5512426Z Updating files:  43% (3273/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.5822735Z Updating files:  44% (3349/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.6030307Z Updating files:  45% (3425/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.6265188Z Updating files:  46% (3501/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.6359612Z Updating files:  47% (3577/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.6491481Z Updating files:  48% (3653/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.6641426Z Updating files:  49% (3729/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.6835964Z Updating files:  50% (3805/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.6902829Z Updating files:  51% (3882/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.6943510Z Updating files:  52% (3958/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.6986653Z Updating files:  53% (4034/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.7201295Z Updating files:  54% (4110/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.7446477Z Updating files:  55% (4186/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.7792800Z Updating files:  56% (4262/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.7999938Z Updating files:  57% (4338/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.8194914Z Updating files:  58% (4414/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.9056619Z Updating files:  59% (4490/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.9443693Z Updating files:  60% (4566/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:37.9802296Z Updating files:  61% (4643/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.0138243Z Updating files:  62% (4719/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.0402336Z Updating files:  63% (4795/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.0655366Z Updating files:  64% (4871/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.0995820Z Updating files:  65% (4947/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.1111185Z Updating files:  66% (5023/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.1174029Z Updating files:  67% (5099/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.1233394Z Updating files:  68% (5175/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.1321792Z Updating files:  69% (5251/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.2014005Z Updating files:  70% (5327/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.2343796Z Updating files:  71% (5404/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.2510251Z Updating files:  72% (5480/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.2695807Z Updating files:  73% (5556/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.2829813Z Updating files:  74% (5632/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.2969529Z Updating files:  75% (5708/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.3191801Z Updating files:  76% (5784/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.3393268Z Updating files:  77% (5860/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.3563173Z Updating files:  78% (5936/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.3758919Z Updating files:  79% (6012/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.3910389Z Updating files:  80% (6088/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.4027287Z Updating files:  80% (6127/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.4192225Z Updating files:  81% (6165/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.4427353Z Updating files:  82% (6241/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.4587401Z Updating files:  83% (6317/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.4936498Z Updating files:  84% (6393/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.5222527Z Updating files:  85% (6469/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.5455103Z Updating files:  86% (6545/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.5606559Z Updating files:  87% (6621/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.5785473Z Updating files:  88% (6697/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.5948091Z Updating files:  89% (6773/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.6298434Z Updating files:  90% (6849/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.6384635Z Updating files:  91% (6926/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.6501187Z Updating files:  92% (7002/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.6563475Z Updating files:  93% (7078/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.6660829Z Updating files:  94% (7154/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.6761089Z Updating files:  95% (7230/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.6828402Z Updating files:  96% (7306/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.6898921Z Updating files:  97% (7382/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.6960103Z Updating files:  98% (7458/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.7017187Z Updating files:  99% (7534/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.7019218Z Updating files: 100% (7610/7610)
+build	UNKNOWN STEP	2026-11-05T13:09:38.7020119Z Updating files: 100% (7610/7610), done.
+build	UNKNOWN STEP	2026-11-05T13:09:38.7205756Z Reset branch 'master'
+build	UNKNOWN STEP	2026-11-05T13:09:38.7206731Z branch 'master' set up to track 'origin/master'.
+build	UNKNOWN STEP	2026-11-05T13:09:38.7266674Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:38.7311483Z [command]/usr/bin/git log -1 --format=%H
+build	UNKNOWN STEP	2026-11-05T13:09:38.7347658Z b3f16000af88832b1ef38989708b1c98179a9d4e
+build	UNKNOWN STEP	2026-11-05T13:09:38.7658527Z ##[group]Run actions/setup-node@v4
+build	UNKNOWN STEP	2026-11-05T13:09:38.7659000Z with:
+build	UNKNOWN STEP	2026-11-05T13:09:38.7659340Z   node-version: 24
+build	UNKNOWN STEP	2026-11-05T13:09:38.7659693Z   cache: npm
+build	UNKNOWN STEP	2026-11-05T13:09:38.7660412Z   cache-dependency-path: services/admin-pro/package-lock.json
+build	UNKNOWN STEP	services/api/package-lock.json
+build	UNKNOWN STEP	
+build	UNKNOWN STEP	2026-11-05T13:09:38.7661307Z   always-auth: false
+build	UNKNOWN STEP	2026-11-05T13:09:38.7661697Z   check-latest: false
+build	UNKNOWN STEP	2026-11-05T13:09:38.7667307Z   token: ***
+build	UNKNOWN STEP	2026-11-05T13:09:38.7668071Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:38.9347365Z (node:2121) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+build	UNKNOWN STEP	2026-11-05T13:09:38.9356909Z Found in cache @ /opt/hostedtoolcache/node/24.22.1/x64
+build	UNKNOWN STEP	2026-11-05T13:09:38.9358622Z ##[group]Environment details
+build	UNKNOWN STEP	2026-11-05T13:09:38.9359287Z (Use `node --trace-deprecation ...` to show where the warning was created)
+build	UNKNOWN STEP	2026-11-05T13:09:39.5375655Z node: v24.22.1
+build	UNKNOWN STEP	2026-11-05T13:09:39.5376147Z npm: 11.19.1
+build	UNKNOWN STEP	2026-11-05T13:09:39.5376747Z yarn: 1.22.22
+build	UNKNOWN STEP	2026-11-05T13:09:39.5388954Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:39.5425883Z [command]/opt/hostedtoolcache/node/24.22.1/x64/bin/npm config get cache
+build	UNKNOWN STEP	2026-11-05T13:09:39.6672052Z /home/runner/.npm
+build	UNKNOWN STEP	2026-11-05T13:09:39.8191558Z Cache hit for: node-cache-Linux-x64-npm-aff92465be8cd3b28b889dacb9c7eb73ddcc2cbd473374dfbdd184293ae61deb
+build	UNKNOWN STEP	2026-11-05T13:09:39.8376597Z (node:2121) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+build	UNKNOWN STEP	2026-11-05T13:09:40.9676610Z Received 62914560 of 244265378 (25.8%), 60.1 MBs/sec
+build	UNKNOWN STEP	2026-11-05T13:09:41.9684908Z Received 201326592 of 244265378 (82.4%), 96.0 MBs/sec
+build	UNKNOWN STEP	2026-11-05T13:09:42.2267502Z Received 244265378 of 244265378 (100.0%), 103.2 MBs/sec
+build	UNKNOWN STEP	2026-11-05T13:09:42.2273061Z Cache Size: ~233 MB (244265378 B)
+build	UNKNOWN STEP	2026-11-05T13:09:42.2447571Z [command]/usr/bin/tar -xf /home/runner/work/_temp/f22aac7e-626c-44f1-ba93-6e15cb4d559e/cache.tzst -P -C /home/runner/work/spend-good/spend-good --use-compress-program unzstd
+build	UNKNOWN STEP	2026-11-05T13:09:43.0967334Z Cache restored successfully
+build	UNKNOWN STEP	2026-11-05T13:09:43.1117766Z Cache restored from key: node-cache-Linux-x64-npm-aff92465be8cd3b28b889dacb9c7eb73ddcc2cbd473374dfbdd184293ae61deb
+build	UNKNOWN STEP	2026-11-05T13:09:43.1511145Z ##[group]Run npm ci --no-audit --no-fund && npm run build
+build	UNKNOWN STEP	2026-11-05T13:09:43.1511716Z ^[[36;1mnpm ci --no-audit --no-fund && npm run build^[[0m
+build	UNKNOWN STEP	2026-11-05T13:09:43.1559362Z shell: /usr/bin/bash -e {0}
+build	UNKNOWN STEP	2026-11-05T13:09:43.1559730Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:09:51.9035249Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+build	UNKNOWN STEP	2026-11-05T13:09:51.9340493Z npm warn deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+build	UNKNOWN STEP	2026-11-05T13:09:51.9567542Z npm warn deprecated flatten@1.0.3: flatten is deprecated in favor of utility frameworks such as lodash.
+build	UNKNOWN STEP	2026-11-05T13:09:51.9778223Z npm warn deprecated @esbuild-kit/cjs-loader@2.4.4: Merged into tsx: https://tsx.hirok.io
+build	UNKNOWN STEP	2026-11-05T13:09:51.9838146Z npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.hirok.io
+build	UNKNOWN STEP	2026-11-05T13:09:52.0753575Z npm warn deprecated @humanwhocodes/config-array@0.11.14: Use @eslint/config-array instead
+build	UNKNOWN STEP	2026-11-05T13:09:52.1181837Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+build	UNKNOWN STEP	2026-11-05T13:09:52.2542881Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+build	UNKNOWN STEP	2026-11-05T13:09:52.3047337Z npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.hirok.io
+build	UNKNOWN STEP	2026-11-05T13:09:52.4415534Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+build	UNKNOWN STEP	2026-11-05T13:09:52.6358813Z npm warn deprecated @stylelint/postcss-css-in-js@0.38.0: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+build	UNKNOWN STEP	2026-11-05T13:09:53.8675583Z npm warn deprecated @stagewise/toolbar@0.6.2: This package is deprecated and has been replaced by the stagewise CLI. Get started with the CLI here: https://stagewise.io/docs
+build	UNKNOWN STEP	2026-11-05T13:09:54.0231291Z npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+build	UNKNOWN STEP	2026-11-05T13:09:54.2465006Z npm warn deprecated @floating-ui/react-dom-interactions@0.3.1: Package renamed to @floating-ui/react
+build	UNKNOWN STEP	2026-11-05T13:09:54.7406648Z npm warn deprecated intl-messageformat-parser@3.6.4: We've written a new parser that's 6x faster and is backwards compatible. Please use @formatjs/icu-messageformat-parser
+build	UNKNOWN STEP	2026-11-05T13:09:55.8639662Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+build	UNKNOWN STEP	2026-11-05T13:09:56.3854670Z npm warn deprecated @formatjs/intl-utils@2.3.0: the package is rather renamed to @formatjs/ecma-abstract with some changes in functionality (primarily selectUnit is removed and we don't plan to make any further changes to this package
+build	UNKNOWN STEP	2026-11-05T13:10:01.0348579Z npm warn deprecated eslint@8.35.0: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+build	UNKNOWN STEP	2026-11-05T13:10:04.8968002Z npm warn deprecated @formatjs/intl-unified-numberformat@3.3.7: We have renamed the package to @formatjs/intl-numberformat
+build	UNKNOWN STEP	2026-11-05T13:10:09.0897123Z 
+build	UNKNOWN STEP	2026-11-05T13:10:09.0898250Z > @spendgood/admin-pro@6.0.3 prepare
+build	UNKNOWN STEP	2026-11-05T13:10:09.0899513Z > max setup
+build	UNKNOWN STEP	2026-11-05T13:10:09.0900255Z 
+build	UNKNOWN STEP	2026-11-05T13:10:10.6218280Z info  - [你知道吗？] dev 模式下访问 /__umi 路由，可以发现很多有用的内部信息。
+build	UNKNOWN STEP	2026-11-05T13:10:10.6270680Z info  - generate files
+build	UNKNOWN STEP	2026-11-05T13:10:11.4997801Z info  - Preparing...
+build	UNKNOWN STEP	2026-11-05T13:10:12.6547476Z 
+build	UNKNOWN STEP	2026-11-05T13:10:12.6556879Z npm warn install-scripts 5 packages have install scripts not yet covered by allowScripts:
+build	UNKNOWN STEP	2026-11-05T13:10:12.6558055Z added 1438 packages in 29s
+build	UNKNOWN STEP	2026-11-05T13:10:12.6559538Z npm warn install-scripts   esbuild@0.18.20 (postinstall: node install.js)
+build	UNKNOWN STEP	2026-11-05T13:10:12.6561411Z npm warn install-scripts   core-js@3.34.0 (postinstall: node -e "try{require('./postinstall')}catch(e){}")
+build	UNKNOWN STEP	2026-11-05T13:10:12.6577692Z npm warn install-scripts   core-js-pure@3.51.0 (postinstall: node -e "try{require('./postinstall')}catch(e){}")
+build	UNKNOWN STEP	2026-11-05T13:10:12.6586784Z npm warn install-scripts   es5-ext@0.10.64 (postinstall:  node -e "try{require('./_postinstall')}catch(e){}" || exit 0)
+build	UNKNOWN STEP	2026-11-05T13:10:12.6603968Z npm warn install-scripts   esbuild@0.28.2 (postinstall: node install.js)
+build	UNKNOWN STEP	2026-11-05T13:10:12.6604911Z npm warn install-scripts
+build	UNKNOWN STEP	2026-11-05T13:10:12.6606486Z npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+build	UNKNOWN STEP	2026-11-05T13:10:12.9142457Z 
+build	UNKNOWN STEP	2026-11-05T13:10:12.9147691Z > @spendgood/admin-pro@6.0.3 build
+build	UNKNOWN STEP	2026-11-05T13:10:12.9167205Z > max build
+build	UNKNOWN STEP	2026-11-05T13:10:12.9177427Z 
+build	UNKNOWN STEP	2026-11-05T13:10:14.3778692Z info  - [你知道吗？] father 4 正式发布了，详见 https://zhuanlan.zhihu.com/p/558192063
+build	UNKNOWN STEP	2026-11-05T13:10:14.3802579Z info  - Umi v4.7.30
+build	UNKNOWN STEP	2026-11-05T13:10:15.2747754Z info  - Preparing...
+build	UNKNOWN STEP	2026-11-05T13:10:15.7543461Z [info] [webpackbar] Compiling Webpack
+build	UNKNOWN STEP	2026-11-05T13:10:15.8694489Z Browserslist: caniuse-lite is outdated. Please run:
+build	UNKNOWN STEP	2026-11-05T13:10:15.8695615Z   npx update-browserslist-db@latest
+build	UNKNOWN STEP	2026-11-05T13:10:15.8697003Z   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+build	UNKNOWN STEP	2026-11-05T13:11:01.0212346Z [success] [webpackbar] Webpack: Compiled successfully in 45.27s
+build	UNKNOWN STEP	2026-11-05T13:11:01.0222469Z info  - Memory Usage: 451.12 MB (RSS: 1283.23 MB)
+build	UNKNOWN STEP	2026-11-05T13:11:01.1572188Z 
+build	UNKNOWN STEP	2026-11-05T13:11:01.1573227Z info  - File sizes after gzip:
+build	UNKNOWN STEP	2026-11-05T13:11:01.1573823Z 
+build	UNKNOWN STEP	2026-11-05T13:11:01.2966032Z   434.22 kB  dist/assets/8447.b9ff6095.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.2983085Z   258.57 kB  dist/assets/umi.1e8c9198.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.2984486Z   43.48 kB   dist/assets/763.d0908296.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.2986934Z   42.95 kB   dist/assets/8843.bcdd602f.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.2993243Z   35.59 kB   dist/assets/9624.489b37da.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.2994620Z   35.39 kB   dist/assets/7554.73301406.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.2995906Z   30.49 kB   dist/assets/8676.2f8b8a0b.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.2997200Z   26.08 kB   dist/assets/9158.4562319a.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.2998463Z   25.65 kB   dist/assets/7856.680390c6.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.2999746Z   23.96 kB   dist/assets/2899.ef87920e.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3001032Z   21.99 kB   dist/assets/9522.0151b6fd.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3002362Z   21.66 kB   dist/assets/8266.42e2482f.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3003744Z   20.26 kB   dist/assets/6220.19966879.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3005155Z   17.19 kB   dist/assets/147.cbe15458.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3023392Z   12.23 kB   dist/assets/3371.e7b35158.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3024835Z   11.69 kB   dist/assets/6495.cf386c02.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3030406Z   10.75 kB   dist/assets/20.75d95f5c.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3031560Z   10.28 kB   dist/assets/3310.f1634458.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3032746Z   9.73 kB    dist/assets/6865.37947ef7.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3033924Z   9.36 kB    dist/assets/4602.ca004314.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3035118Z   9.21 kB    dist/assets/6162.7d91554a.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3036464Z   8.65 kB    dist/assets/2200.6fb2b18b.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3037794Z   8.37 kB    dist/assets/936.1295bf6c.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3057107Z   8.31 kB    dist/assets/2501.595e5a1b.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3062561Z   7.47 kB    dist/assets/p__dashboard__analysis__index.63d66e8d.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3070012Z   6.53 kB    dist/assets/2659.21dca3ca.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3071408Z   6.27 kB    dist/assets/6856.bdeb7e3d.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3073536Z   5.8 kB     dist/assets/629.8fa8343f.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3075063Z   4.8 kB     dist/assets/p__tasks__index.c15494bc.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3076537Z   4.76 kB    dist/assets/221.d4b1068e.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3087443Z   4.63 kB    dist/assets/9008.edc657f8.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3088477Z   4.61 kB    dist/assets/4497.641d573e.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3089467Z   4.57 kB    dist/assets/9052.d6caa9c8.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3090450Z   4.28 kB    dist/assets/648.f1c7ceb8.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3091374Z   4.1 kB     dist/assets/umi.c3868c46.css
+build	UNKNOWN STEP	2026-11-05T13:11:01.3092298Z   3.82 kB    dist/assets/5487.87a12cb6.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3093267Z   3.58 kB    dist/assets/5451.b975b0c8.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3094208Z   3.52 kB    dist/assets/1720.d0c0aed1.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3096467Z   3.38 kB    dist/assets/6421.4b01380f.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3097613Z   3.28 kB    dist/assets/t__plugin-layout__Layout.21ed29bb.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3098707Z   3.24 kB    dist/assets/8912.815da3fe.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3099674Z   3.12 kB    dist/assets/1738.30b1dda0.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3102895Z   3.1 kB     dist/assets/9869.401c15e8.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3103892Z   3.06 kB    dist/assets/login-form.8ee87dab.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3105681Z   2.83 kB    dist/assets/3239.620ed7bd.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3106892Z   2.73 kB    dist/assets/7558.1f8834e9.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3107836Z   2.34 kB    dist/assets/9744.20206ec6.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3108880Z   2.22 kB    dist/assets/p__list__basic-list__index.01ad5a81.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3110051Z   2.02 kB    dist/assets/p__account__index.2bb90011.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3111085Z   1.88 kB    dist/assets/6357.3be4e1cc.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3112050Z   1.2 kB     dist/assets/8387.dd9dc5de.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3113008Z   990 B      dist/assets/9878.98d31aec.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3113956Z   922 B      dist/assets/4966.431affef.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3114923Z   875 B      dist/assets/1200.d974db53.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3115855Z   817 B      dist/assets/6304.cc8fbcf3.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3117328Z   701 B      dist/assets/8758.80402928.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3118183Z   657 B      dist/assets/9951.5bc0b3ac.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3119054Z   656 B      dist/assets/7776.216f8ab4.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3119957Z   632 B      dist/assets/2349.9b040d28.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3120864Z   621 B      dist/assets/9816.43fd7544.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3121778Z   587 B      dist/assets/5737.ea20ad13.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3122696Z   538 B      dist/assets/5270.9dc161d7.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3123795Z   508 B      dist/assets/distribution-chart.771beb70.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3124964Z   394 B      dist/assets/1067.abdf639e.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3126054Z   372 B      dist/assets/t__plugin-layout__Layout.e2ec6e92.chunk.css
+build	UNKNOWN STEP	2026-11-05T13:11:01.3127422Z   322 B      dist/assets/p__404.ed47871d.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3128535Z   243 B      dist/assets/p__audit__index.3b20dfa3.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3129651Z   234 B      dist/assets/p__list__search__index.94c1a198.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3130980Z   185 B      dist/assets/p__profile__index.8c91e694.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3133164Z   180 B      dist/assets/overview-repair-table.8d3c9117.async.js
+build	UNKNOWN STEP	2026-11-05T13:11:01.3133964Z 
+build	UNKNOWN STEP	2026-11-05T13:11:01.3152932Z event - Build index.html
+build	UNKNOWN STEP	2026-11-05T13:11:01.7839556Z ##[group]Run test -s services/admin-pro/dist/index.html
+build	UNKNOWN STEP	2026-11-05T13:11:01.7840128Z ^[[36;1mtest -s services/admin-pro/dist/index.html^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:01.7840667Z ^[[36;1mtar czf admin-dist.tgz -C services/admin-pro/dist .^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:01.7841145Z ^[[36;1mpython3 - <<'PY'^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:01.7841479Z ^[[36;1mimport gzip, pathlib^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:01.7842050Z ^[[36;1mfiles = [p for p in pathlib.Path('services/admin-pro/dist').rglob('*') if p.is_file()]^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:01.7843036Z ^[[36;1mprint(f'dist files={len(files)} gzip total bytes={sum(len(gzip.compress(p.read_bytes(), mtime=0)) for p in files)}')^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:01.7843776Z ^[[36;1mPY^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:01.7844129Z ^[[36;1msha256sum admin-dist.tgz > admin-dist.sha256^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:01.7844769Z ^[[36;1mfind services/admin-pro/dist -type f | wc -l > admin-dist.count^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:01.7845304Z ^[[36;1mwc -c admin-dist.tgz^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:01.7876964Z shell: /usr/bin/bash -e {0}
+build	UNKNOWN STEP	2026-11-05T13:11:01.7877347Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:11:02.1107097Z dist files=83 gzip total bytes=1268219
+build	UNKNOWN STEP	2026-11-05T13:11:02.1317137Z 1243819 admin-dist.tgz
+build	UNKNOWN STEP	2026-11-05T13:11:02.1421462Z ##[group]Run actions/upload-artifact@v4
+build	UNKNOWN STEP	2026-11-05T13:11:02.1421771Z with:
+build	UNKNOWN STEP	2026-11-05T13:11:02.1421979Z   name: admin-dist
+build	UNKNOWN STEP	2026-11-05T13:11:02.1422279Z   path: admin-dist.tgz
+build	UNKNOWN STEP	admin-dist.sha256
+build	UNKNOWN STEP	admin-dist.count
+build	UNKNOWN STEP	
+build	UNKNOWN STEP	2026-11-05T13:11:02.1422634Z   retention-days: 14
+build	UNKNOWN STEP	2026-11-05T13:11:02.1422867Z   if-no-files-found: error
+build	UNKNOWN STEP	2026-11-05T13:11:02.1423111Z   compression-level: 6
+build	UNKNOWN STEP	2026-11-05T13:11:02.1423333Z   overwrite: false
+build	UNKNOWN STEP	2026-11-05T13:11:02.1423570Z   include-hidden-files: false
+build	UNKNOWN STEP	2026-11-05T13:11:02.1423822Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:11:02.3357558Z (node:2373) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+build	UNKNOWN STEP	2026-11-05T13:11:02.3359433Z (Use `node --trace-deprecation ...` to show where the warning was created)
+build	UNKNOWN STEP	2026-11-05T13:11:02.3568426Z Multiple search paths detected. Calculating the least common ancestor of all paths
+build	UNKNOWN STEP	2026-11-05T13:11:02.3655598Z The least common ancestor is /home/runner/work/spend-good/spend-good. This will be the root directory of the artifact
+build	UNKNOWN STEP	2026-11-05T13:11:02.3676973Z With the provided path, there will be 3 files uploaded
+build	UNKNOWN STEP	2026-11-05T13:11:02.3696718Z Artifact name is valid!
+build	UNKNOWN STEP	2026-11-05T13:11:02.3736754Z Root directory input is valid!
+build	UNKNOWN STEP	2026-11-05T13:11:02.6750146Z Beginning upload of artifact content to blob storage
+build	UNKNOWN STEP	2026-11-05T13:11:02.7483021Z (node:2373) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+build	UNKNOWN STEP	2026-11-05T13:11:03.1395712Z Uploaded bytes 1244641
+build	UNKNOWN STEP	2026-11-05T13:11:03.1902847Z Finished uploading artifact content to blob storage!
+build	UNKNOWN STEP	2026-11-05T13:11:03.1904682Z SHA256 digest of uploaded artifact zip is b5e57b611a079b1d5da4fb13a3da5204cda3be92d7a21e89144656ca6403cc6e
+build	UNKNOWN STEP	2026-11-05T13:11:03.1906616Z Finalizing artifact upload
+build	UNKNOWN STEP	2026-11-05T13:11:03.9682111Z Artifact admin-dist.zip successfully finalized. Artifact ID 13417566088
+build	UNKNOWN STEP	2026-11-05T13:11:03.9684602Z Artifact admin-dist has been successfully uploaded! Final size is 1244641 bytes. Artifact ID is 13417566088
+build	UNKNOWN STEP	2026-11-05T13:11:03.9692126Z Artifact download URL: https://github.com/null-object-0000/spend-good/actions/runs/42033251496/artifacts/13417566088
+build	UNKNOWN STEP	2026-11-05T13:11:03.9915974Z ##[group]Run npm ci --omit=dev --os=linux --cpu=x64 --libc=musl --no-audit --no-fund
+build	UNKNOWN STEP	2026-11-05T13:11:03.9917354Z ^[[36;1mnpm ci --omit=dev --os=linux --cpu=x64 --libc=musl --no-audit --no-fund^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:03.9918198Z ^[[36;1mtar czf ../../api-deps.tgz node_modules^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:03.9918766Z ^[[36;1mcd ../..^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:03.9919261Z ^[[36;1msha256sum api-deps.tgz > api-deps.sha256^[[0m
+build	UNKNOWN STEP	2026-11-05T13:11:03.9964448Z shell: /usr/bin/bash -e {0}
+build	UNKNOWN STEP	2026-11-05T13:11:03.9964948Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:11:06.0628911Z 
+build	UNKNOWN STEP	2026-11-05T13:11:06.0629852Z added 133 packages in 2s
+build	UNKNOWN STEP	2026-11-05T13:11:08.0810546Z ##[group]Run actions/upload-artifact@v4
+build	UNKNOWN STEP	2026-11-05T13:11:08.0811120Z with:
+build	UNKNOWN STEP	2026-11-05T13:11:08.0811507Z   name: api-deps
+build	UNKNOWN STEP	2026-11-05T13:11:08.0812016Z   path: api-deps.tgz
+build	UNKNOWN STEP	api-deps.sha256
+build	UNKNOWN STEP	
+build	UNKNOWN STEP	2026-11-05T13:11:08.0812527Z   retention-days: 14
+build	UNKNOWN STEP	2026-11-05T13:11:08.0812972Z   if-no-files-found: error
+build	UNKNOWN STEP	2026-11-05T13:11:08.0813446Z   compression-level: 6
+build	UNKNOWN STEP	2026-11-05T13:11:08.0813886Z   overwrite: false
+build	UNKNOWN STEP	2026-11-05T13:11:08.0814317Z   include-hidden-files: false
+build	UNKNOWN STEP	2026-11-05T13:11:08.0814792Z ##[endgroup]
+build	UNKNOWN STEP	2026-11-05T13:11:08.2790531Z (node:2402) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+build	UNKNOWN STEP	2026-11-05T13:11:08.2792432Z (Use `node --trace-deprecation ...` to show where the warning was created)
+build	UNKNOWN STEP	2026-11-05T13:11:08.2887782Z Multiple search paths detected. Calculating the least common ancestor of all paths
+build	UNKNOWN STEP	2026-11-05T13:11:08.2928262Z The least common ancestor is /home/runner/work/spend-good/spend-good. This will be the root directory of the artifact
+build	UNKNOWN STEP	2026-11-05T13:11:08.2947053Z With the provided path, there will be 2 files uploaded
+build	UNKNOWN STEP	2026-11-05T13:11:08.2986764Z Artifact name is valid!
+build	UNKNOWN STEP	2026-11-05T13:11:08.3006925Z Root directory input is valid!
+build	UNKNOWN STEP	2026-11-05T13:11:08.5782691Z Beginning upload of artifact content to blob storage
+build	UNKNOWN STEP	2026-11-05T13:11:08.9100834Z (node:2402) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+build	UNKNOWN STEP	2026-11-05T13:11:09.4090651Z Uploaded bytes 8388608
+build	UNKNOWN STEP	2026-11-05T13:11:09.6682748Z Uploaded bytes 16711782
+build	UNKNOWN STEP	2026-11-05T13:11:09.7135296Z Finished uploading artifact content to blob storage!
+build	UNKNOWN STEP	2026-11-05T13:11:09.7137437Z SHA256 digest of uploaded artifact zip is c8b948d8a25cf7065784239d2e62e950c3ce6e07024dc6f501434b51ba4e7908
+build	UNKNOWN STEP	2026-11-05T13:11:09.7138792Z Finalizing artifact upload
+build	UNKNOWN STEP	2026-11-05T13:11:10.1422834Z Artifact api-deps.zip successfully finalized. Artifact ID 13416654205
+build	UNKNOWN STEP	2026-11-05T13:11:10.1426019Z Artifact api-deps has been successfully uploaded! Final size is 16711782 bytes. Artifact ID is 13416654205
+build	UNKNOWN STEP	2026-11-05T13:11:10.1437854Z Artifact download URL: https://github.com/null-object-0000/spend-good/actions/runs/42033251496/artifacts/13416654205
+build	UNKNOWN STEP	2026-11-05T13:11:10.1670144Z Post job cleanup.
+build	UNKNOWN STEP	2026-11-05T13:11:10.3003574Z (node:2415) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+build	UNKNOWN STEP	2026-11-05T13:11:10.3005614Z (Use `node --trace-deprecation ...` to show where the warning was created)
+build	UNKNOWN STEP	2026-11-05T13:11:10.3008594Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-aff92465be8cd3b28b889dacb9c7eb73ddcc2cbd473374dfbdd184293ae61deb, not saving cache.
+build	UNKNOWN STEP	2026-11-05T13:11:10.3162036Z Post job cleanup.
+build	UNKNOWN STEP	2026-11-05T13:11:10.4188732Z [command]/usr/bin/git version
+build	UNKNOWN STEP	2026-11-05T13:11:10.4236998Z git version 2.56.0
+build	UNKNOWN STEP	2026-11-05T13:11:10.4298442Z Temporarily overriding HOME='/home/runner/work/_temp/f0df3dd8-4a60-4388-9bb5-9b481eb906a0' before making global git config changes
+build	UNKNOWN STEP	2026-11-05T13:11:10.4300229Z Adding repository directory to the temporary git global config as a safe directory
+build	UNKNOWN STEP	2026-11-05T13:11:10.4312508Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/spend-good/spend-good
+build	UNKNOWN STEP	2026-11-05T13:11:10.4363521Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	UNKNOWN STEP	2026-11-05T13:11:10.4467332Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	UNKNOWN STEP	2026-11-05T13:11:10.5284453Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	UNKNOWN STEP	2026-11-05T13:11:10.5388887Z http.https://github.com/.extraheader
+build	UNKNOWN STEP	2026-11-05T13:11:10.5454698Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+build	UNKNOWN STEP	2026-11-05T13:11:10.5562373Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	UNKNOWN STEP	2026-11-05T13:11:10.6043016Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	UNKNOWN STEP	2026-11-05T13:11:10.6107308Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	UNKNOWN STEP	2026-11-05T13:11:10.6623915Z Cleaning up orphan processes
+build	UNKNOWN STEP	2026-11-05T13:11:10.7102071Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

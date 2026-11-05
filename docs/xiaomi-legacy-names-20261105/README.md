@@ -23,7 +23,7 @@
 
 ## 无法还原与缺字段
 
-完整型号前缀无法还原：**0 条**。四条 8757 / 8758 / 8759 / 8915 的官方名称就是“小米笔记本 15.6”，没有 Air / Pro / RedmiBook 前缀，不强加系列名。原尺寸、CPU、内存、MX110 全保留；这四条的精确存储容量、颜色、CPU代际仍缺官方逐 ID 对应，见 unrestored_fields，未猜补。8758 与 8915 名称相同但 ID / 历史标价不同，不合并成一个商品。
+完整型号前缀无法还原：**0 条**。[无法还原及缺字段逐ID清单](unresolved.json)。四条 8757 / 8758 / 8759 / 8915 的官方名称就是“小米笔记本 15.6”，没有 Air / Pro / RedmiBook 前缀，不强加系列名。原尺寸、CPU、内存、MX110 全保留；这四条的精确存储容量、颜色、CPU代际仍缺官方逐 ID 对应，见 unrestored_fields，未猜补。8758 与 8915 名称相同但 ID / 历史标价不同，不合并成一个商品。
 
 12条均有官方“该产品已下架”原始响应，写 is_historical=true、status=retired、price=null、price_missing=true。历史价是官方旧活动卡片标价，写 historical_price + historical_campaign，**不是现价，不宣称首发 MSRP**；页面现在可读，但未核实活动生效日期。抓取时间与历史价格生效时间明确区分。
 
