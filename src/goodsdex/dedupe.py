@@ -710,11 +710,13 @@ def dedupe_rows(rows):
     return output, audit
 
 
-def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessory_sha256=None):
+def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessory_sha256=None, mihome_catalog_only=False):
     """Run after all brand publishers and guards, before push/OSS upload."""
     from goodsdex.supplements import metadata
     public = Path(public)
     rows, digest = load_rows(public / "goods.json")
+    from goodsdex.mihome_catalog import restore_catalog_identity
+    rows = restore_catalog_identity(rows)
     from goodsdex.release_policy import remove_reviewed_non_goods, assert_no_empty_shells, allowed_deletions
     from goodsdex.exclusions import reviewed_observations, build_excluded, validate_excluded, excluded_by_rule
     reviewed = reviewed_observations(public, rows, previous)
@@ -749,6 +751,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     duplicate_rows = [r for group in merge_plan["safe"] for r in group["rows"][1:]]
     # Replay reviewed date evidence after every brand collector, under the same
     # publication lock. Daily rebuilds must not erase the enrichment.
+    from goodsdex.mihome_catalog import restore_catalog_identity
+    output = restore_catalog_identity(output)
     from goodsdex.release_dates import apply_release_dates
     output = apply_release_dates(output)
     from goodsdex.series_release import apply_series_releases
@@ -788,6 +792,14 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     output, variant_stats = apply_variant_attributes(output)
     from goodsdex.price_semantics import apply as apply_price_semantics
     output = apply_legacy_catalog(apply_price_semantics(output))
+    from goodsdex.mihome_catalog import apply_catalog
+    output = apply_catalog(output)
+    if mihome_catalog_only:
+        if previous is None:
+            raise ValueError('Mi Home metadata publication requires latest previous snapshot')
+        # This manual metadata publication owns only the reviewed catalog patch.
+        # Other lanes may have unpublished changes; do not roll those out here.
+        output = apply_catalog(previous)
     if previous is not None:
         from goodsdex.release_policy import assert_no_lost_ids
         assert_no_lost_ids(previous, output, retained_ids)

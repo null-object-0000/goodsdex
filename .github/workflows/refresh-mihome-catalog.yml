@@ -1,0 +1,27 @@
+name: refresh-mihome-catalog
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+  checks: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/collect-base
+      # Frozen anonymous directory evidence is replayed by the shared finalizer.
+      - uses: ./.github/actions/upload-candidate
+        with:
+          scope: all
+  publish:
+    needs: collect
+    uses: ./.github/workflows/publish-release.yml
+    with:
+      scope: all
+      mihome_catalog_only: true
+    secrets: inherit

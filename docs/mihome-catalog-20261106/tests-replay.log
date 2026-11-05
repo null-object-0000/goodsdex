@@ -1,0 +1,235 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+___________________ test_finalizer_replays_and_details_only ____________________
+
+tmp_path = PosixPath('/home/nichangen/.hermes/profiles/spendpoint/cache/scratch/pytest-of-nichangen/pytest-477/test_finalizer_replays_and_det0')
+
+    def test_finalizer_replays_and_details_only(tmp_path):
+        from goodsdex.shards import shard_for
+        baseline=gzip.decompress((ROOT/'docs/independent-dates-20261103/baseline-goods.json.gz').read_bytes())
+        (tmp_path/'goods.json').write_bytes(baseline)
+        (tmp_path/'meta.json').write_text('{}')
+        (tmp_path/'prices.json').write_text('{}')
+        command=[sys.executable,str(ROOT/'scripts/finalize_public.py'),'--public',str(tmp_path)]
+        subprocess.run(command,check=True,capture_output=True)
+        result=json.loads((tmp_path/'goods.json').read_bytes())
+        from goodsdex.series_release import apply_series_releases
+        from goodsdex.release_dates import apply_release_dates
+        # The ordinary finalizer also replays reviewed product dates, which may
+        # legitimately grow after this historical snapshot was frozen.
+        from goodsdex.mi_names import apply_page_names
+        from goodsdex.retirement import reconcile
+        history = reconcile([], json.loads(baseline))
+        expected=apply_date_enrichment(apply_series_releases(apply_release_dates(apply_page_names(history))))
+        from goodsdex.release_coverage import apply_priority_dates
+        expected=apply_priority_dates(expected)
+        from goodsdex.mi_legacy_names import apply_legacy_names
+        expected=apply_legacy_names(expected)
+        from goodsdex.youpin import apply_youpin
+        expected=apply_youpin(expected)
+        from goodsdex.source_urls import apply_source_urls
+        expected=apply_source_urls(expected)
+        from goodsdex.variant_attributes import apply_variant_attributes
+        expected, _ = apply_variant_attributes(expected)
+        from goodsdex.price_semantics import apply as apply_prices
+        from goodsdex.legacy_catalog import apply_legacy_catalog
+        expected=apply_legacy_catalog(apply_prices(apply_legacy_catalog(expected)))
+        from goodsdex.mijia_baike import apply_baike
+        expected=apply_baike(expected)
+        # Independently frozen expected exclusions include the title repair.
+        # Enrichment and every retained field must still be identical.
+        archived=json.loads((tmp_path/'archive/accessories.json').read_text())
+        excluded={r['id'] for r in archived}
+        reviewed=json.loads((ROOT/'docs/name-fidelity-20261104/historical-exclusion-expectations.json').read_text())['docs/independent-dates-20261103/baseline-goods.json.gz']
+        legacy_review=json.loads((ROOT/'docs/legacy-catalog-20261105/reviewed-accessory-ids.json').read_text())
+        legacy_ids={r['id'] for r in legacy_review} & {r['id'] for r in json.loads(baseline)}
+        assert excluded == {r['id'] for r in reviewed} | legacy_ids
+        assert all(not r.get('release') for r in archived if r['id'] not in legacy_ids)
+        # Reclassified accessories retain their already reviewed date evidence.
+        from goodsdex.release_dates import apply_release_dates as reviewed_dates
+        legacy_expected = {r['id']:r for r in reviewed_dates(archived)}
+        assert all(r.get('release') == legacy_expected[r['id']].get('release') for r in archived if r['id'] in legacy_ids)
+        excluded.update(r['id'] for r in json.loads((tmp_path/'archive/services.json').read_text()))
+        apparel = json.loads((tmp_path/'archive/apparel.json').read_text())
+        assert len(apparel) == 54  # Frozen snapshot: reviewed clothing and luggage only.
+        excluded.update(r['id'] for r in apparel)
+>       assert [{k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in result] == [
+            {k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in expected if r['id'] not in excluded]
+E       AssertionError: assert [{'id': 'CN:a...板', ...}, ...] == [{'id': 'CN:a...板', ...}, ...]
+E         
+E         At index 1018 diff: {'id': 'CN:mi_cn:product:10330', 'name': '米家智能微波炉 20L', 'kind': 'unknown', 'category': '微波炉', 'categories': ['微波炉'], 'price': 399, 'market_price': 499, 'gid': 2230015233, 'image': 'https://cdn.cnbj1.fds.api.mi-img.com/nr-upload-outer/3AFECBC6DC480465CDB7511D35EAE695_1789627282756.png', 'fetched_at': '2026-10-27T08:16:25+08:00', 'params': {}, 'page_first_archived': {'date': '2022-07-07', 'evidence_url': 'https://web.archive.org/web/20220707155458/https://www.mi.com/shop/buy/detail?product_id=10330', 'count_200': None, 'captured_at': '2026-11-03T13:23:...
+E         
+E         ...Full output truncated, use '-vv' to show
+
+tests/test_date_enrichment.py:98: AssertionError
+__ test_actual_finalizer_preserves_links_and_model_images_in_excluded_sidecar __
+
+tmp_path = PosixPath('/home/nichangen/.hermes/profiles/spendpoint/cache/scratch/pytest-of-nichangen/pytest-477/test_actual_finalizer_preserve0')
+
+    def test_actual_finalizer_preserves_links_and_model_images_in_excluded_sidecar(tmp_path):
+        from goodsdex.dedupe import finalize_public
+        from goodsdex.accessories import fingerprint
+        cold=[dict(r,source_url=None,image=None) for r in frozen()]
+        reviewed=apply_legacy_catalog(cold)
+        digest=fingerprint([r for r in reviewed if r['category']=='配件'])
+        (tmp_path/'goods.json').write_text(json.dumps(cold))
+        (tmp_path/'meta.json').write_text('{}')
+        finalize_public(tmp_path,reviewed_accessory_sha256=digest)
+        published=json.loads((tmp_path/'goods.json').read_text())
+        excluded=json.loads((tmp_path/'goods-excluded.json').read_text())['items']
+        all_rows=published+excluded
+        assert len(published)==182 and len(excluded)==41 and len(all_rows)==223
+        assert all(r.get('source_url') for r in all_rows)
+>       assert sum(bool(r['image']) for r in all_rows)==50
+E       assert 67 == 50
+E        +  where 67 = sum(<generator object test_actual_finalizer_preserves_links_and_model_images_in_excluded_sidecar.<locals>.<genexpr> at 0x784de84298c0>)
+
+tests/test_legacy_catalog.py:101: AssertionError
+----------------------------- Captured stdout call -----------------------------
+accessory gate: {"excluded_count": 20, "newly_excluded_count": 20, "denominator": 223, "newly_excluded_ratio": 0.08968609865470852, "threshold": 0.05, "gate": "red", "review_sha256": "c6132baf4cf32e71c7e3d3e72c21403c2fb18b13a38a185d26c6efda6f23ab33", "reviewed": true}
+_____ test_real_finalizer_publishes_exact_reviewed_memberships_and_replays _____
+
+tmp_path = PosixPath('/home/nichangen/.hermes/profiles/spendpoint/cache/scratch/pytest-of-nichangen/pytest-477/test_real_finalizer_publishes_0')
+
+    def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_path):
+        import subprocess
+        import sys
+        from goodsdex.shards import shard_for
+    
+        before = json.loads(gzip.decompress((DOC / 'baseline-goods.json.gz').read_bytes()))
+        (tmp_path / 'goods.json').write_text(json.dumps(before))
+        (tmp_path / 'meta.json').write_text('{}')
+        (tmp_path / 'prices.json').write_text('{}')
+        manifest = json.loads((DOC / 'batches.json').read_text())
+        expected = {key: b for b in manifest for key in b['ids']}
+        assert len(expected) == sum(b['members'] for b in manifest) == 149
+        # Retain the historical manifest checks and independently add the reviewed
+        # expansion manifest. Only memberships present in this old snapshot apply.
+        present = {r['id'] for r in before}
+        expansion = json.loads((ROOT / 'docs/xiaomi-series-expansion-20261104/reviewed-new-batches.json').read_text())
+        for b in expansion:
+            r = b['series_release']
+            for m in b['members']:
+                if m['id'] in present:
+                    assert m['id'] not in expected
+                    expected[m['id']] = dict(date=r['date'],batch_id=b['id'],url=r['evidence']['url'],granularity=r['granularity'])
+        # Add independently frozen dictionary additions; split legacy batches retain
+        # their original assertion, evidence and explicit lineage.
+        audit = ROOT / 'docs/xiaomi-release-dictionary-20261104'
+        for m in json.loads((audit / 'new-memberships.json').read_text()):
+            if m['id'] in present:
+                assert m['id'] not in expected
+                expected[m['id']] = dict(date=m['date'], batch_id=m['batch_id'],
+                                        url=m['evidence']['url'], granularity='day')
+        for repair in json.loads((audit / 'legacy-repairs.json').read_text()):
+            for key in repair['ids']:
+                if key in present:
+                    assert expected[key]['batch_id'] == repair['original_batch_id']
+                    expected[key] = dict(expected[key], batch_id=repair['batch_id'])
+        retrospective = ROOT / 'docs/release-dates-round10-20261104'
+        for batch in json.loads((retrospective / 'new-series-batches.json').read_text()):
+            for member in batch['members']:
+                if member['id'] in present:
+                    assert member['id'] not in expected
+                    r = batch['series_release']
+                    expected[member['id']] = dict(date=r['date'], batch_id=batch['id'],
+                                                  url=r['evidence']['url'], granularity=r['granularity'])
+        replacements = {key for c in json.loads((retrospective / 'replaced-candidates.json').read_text())
+                        for key in c['ids']}
+        command = [sys.executable, str(ROOT / 'scripts/finalize_public.py'), '--public', str(tmp_path)]
+        subprocess.run(command, check=True)
+        result = json.loads((tmp_path / 'goods.json').read_text())
+        by_id = {r['id']: r for r in result}
+        from goodsdex.release_dates import apply_release_dates
+        product_expected = apply_release_dates(before)
+        assert sum(bool(r.get('release')) for r in before) == 671
+        # New reviewed product assertions are a separate finalizer stage; series
+        # rollout must preserve its output, including every pre-existing release.
+        for old, updated in zip(before, product_expected, strict=True):
+            if old.get('release'):
+                prior = old['release']
+                if old['id'] in replacements:
+                    assert prior['source'] == 'third_party'
+                    assert updated['release']['source'] == 'official'
+                    # The reviewed official assertion replaces an internal media value;
+                    # retain the original statement even when market/event differ.
+                    assert any(c.get('source') == prior['source'] and c.get('date') == prior['date']
+                               and c.get('evidence') == prior['evidence']
+                               for c in updated['release']['checks'])
+                elif prior.get('source') == 'third_party':
+                    # Round 7 requires two captured real sources; LLM agreement is
+                    # retained as audit evidence but no longer unlocks display.
+                    assert updated['release']['date'] == prior['date']
+                    assert updated['release']['evidence'] == prior['evidence']
+                    assert updated['release']['checks'] == prior['checks']
+                    assert updated['release']['display_allowed'] is False
+                    assert updated['release']['display'] is None
+                else:
+                    assert updated['release'] == prior
+        excluded=json.loads((tmp_path / 'archive/accessories.json').read_text())
+        reviewed=json.loads((ROOT/'docs/name-fidelity-20261104/historical-exclusion-expectations.json').read_text())['docs/series-release-rollout-20261103/baseline-goods.json.gz']
+        legacy_review=json.loads((ROOT/'docs/legacy-catalog-20261105/reviewed-accessory-ids.json').read_text())
+        legacy_ids={r['id'] for r in legacy_review} & present
+        assert {r['id'] for r in excluded} == {r['id'] for r in reviewed} | legacy_ids
+        assert all(not r.get('release') for r in excluded if r['id'] not in legacy_ids)
+        # Reclassified accessories retain their already reviewed date evidence.
+        from goodsdex.release_dates import apply_release_dates as reviewed_dates
+        legacy_expected = {r['id']:r for r in reviewed_dates(excluded)}
+        assert all(r.get('release') == legacy_expected[r['id']].get('release') for r in excluded if r['id'] in legacy_ids)
+        excluded_ids={r['id'] for r in excluded}
+        excluded_ids.update(r['id'] for r in json.loads((tmp_path / 'archive/services.json').read_text()))
+        apparel = json.loads((tmp_path / 'archive/apparel.json').read_text())
+        assert len(apparel) == 54  # Frozen snapshot predates the Atour collection.
+        excluded_ids.update(r['id'] for r in apparel)
+        # The L1-L4 stage independently replays exact official product statements,
+        # including reviewed month-to-day upgrades, after the legacy date stage.
+        from goodsdex.release_coverage import apply_priority_dates
+        product_expected = apply_priority_dates(product_expected)
+        assert {r['id']: r.get('release') for r in result} == {r['id']: r.get('release') for r in product_expected if r['id'] not in excluded_ids}
+        expected = {key: value for key, value in expected.items() if key not in excluded_ids}
+        assert {r['id'] for r in result if r.get('release_series')} == expected.keys()
+        assert all('series_release' not in r for r in result)
+        for key, batch in expected.items():
+            row = by_id[key]
+            series = row['release_series']
+            assert (series['date'], series['batch_id'], series['evidence']['url']) == (batch['date'], batch['batch_id'], batch['url'])
+            assert series['granularity'] == batch.get('granularity','month') and series['level'] == 'series'
+            assert series['inherited'] is (not bool((row.get('release') or {}).get('date')))
+            assert series['evidence']['quote'] and len(series['evidence']['sha256']) == 64
+            detail = json.loads((tmp_path / f'detail/{shard_for(key):02x}.json').read_text())
+            assert detail[key]['release_series'] == series
+        for filename in (tmp_path / 'index').glob('*.json'):
+            assert all('release_series' not in row for row in json.loads(filename.read_text())['items'])
+        # A collector may replace all rows; the next ordinary finalize restores the field.
+        stripped = [{k: v for k, v in r.items() if k != 'release_series'} for r in result]
+        (tmp_path / 'goods.json').write_text(json.dumps(stripped))
+        subprocess.run(command, check=True)
+>       assert json.loads((tmp_path / 'goods.json').read_text()) == result
+E       AssertionError: assert [{'id': 'CN:a...板', ...}, ...] == [{'id': 'CN:a...板', ...}, ...]
+E         
+E         At index 1133 diff: {'id': 'CN:mi_cn:product:16735', 'name': '米家恒温电水壶2 Pro', 'kind': 'machine', 'category': '水壶', 'categories': ['水壶', '家电'], 'price': 189, 'market_price': 249, 'gid': 2221501331, 'image': 'https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202211071527_d832c12f71a0d8b28862ea355c541c03.png', 'fetched_at': '2026-10-27T08:15:48+08:00', 'params': {}, 'source_url': 'https://www.mi.com/shop/buy/detail?product_id=16735', 'name_source': {'kind': 'official_mihome_catalog', 'url': 'https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&chang...
+E         
+E         ...Full output truncated, use '-vv' to show
+
+tests/test_series_release_rollout.py:153: AssertionError
+----------------------------- Captured stdout call -----------------------------
+accessory gate: {"excluded_count": 44, "newly_excluded_count": 44, "denominator": 2887, "newly_excluded_ratio": 0.015240734326290266, "threshold": 0.05, "gate": "green", "review_sha256": "4a2760bee0ddf56b162402578e0486c42dcf3aa73c223ea73f4ce5dd79e2ea49", "reviewed": false}
+{"before_rows": 2909, "after_rows": 2909, "before_unique_ids": 2904, "after_unique_ids": 2904, "merged_groups": 0, "removed_rows": 0, "conflict_groups": 3, "conflict_rows": 8, "conflicts_unchanged": true, "brands_before": {"Apple": 635, "大疆": 281, "富士": 63, "小米": 1690, "小米汽车": 3, "惠普": 218, "比亚迪": 14}, "brands_after": {"Apple": 635, "大疆": 281, "富士": 63, "小米": 1690, "小米汽车": 3, "惠普": 218, "比亚迪": 14}, "facets_before": {"REDMI K系列": 8, "REDMI Note系列": 10, "REDMI Turbo系列": 7, "REDMI 数字系列": 4, "REDMI路由器": 22, "VR设备": 3, "Xiaomi Civi系列": 3, "Xiaomi MIX系列": 8, "Xiaomi 数字旗舰": 15, "中央空调Pro": 76, "乐器": 1, "云台": 44, "体脂秤": 5, "体重秤": 6, "修剪器": 4, "健康测量": 4, "儿童定位设备": 1, "儿童手表": 10, "充电器": 12, "充电宝": 4, "其他配件": 9, "冰箱": 81, "净水器": 53, "出行": 5, "剃须刀": 22, "办公娱乐显示器": 63, "加湿器": 12, "双肩包": 13, "台式机": 44, "台灯": 2, "吸尘器": 26, "吹风机": 14, "壁挂空调": 76, "婴儿推车": 1, "学习机": 1, "宠物饮水机": 3, "家庭屏": 12, "家电": 583, "家纺家具": 12, "对讲机": 11, "小爱音箱": 40, "小米路由器": 22, "小背包": 17, "平板": 216, "平板配件": 7, "床垫": 7, "影像传输与控制设备": 7, "微蒸烤": 1, "户外电源": 32, "手机": 209, "手环": 4, "手表": 66, "打印机": 17, "扫地机器人": 59, "投影仪": 26, "插座": 1, "插座插排": 17, "摄像机": 46, "摄影器材配件": 6, "数据线": 2, "料理机": 8, "旅行箱": 11, "无人机": 53, "无线充电器": 13, "显示器": 9, "智能家居": 16, "智能家庭": 2, "智能门锁": 23, "服务": 2, "服饰": 13, "枕头": 10, "查看全部小米路由器": 22, "水壶": 17, "水杯": 17, "汽车": 17, "波轮洗衣机": 72, "洗地机": 41, "洗手机": 7, "洗碗机": 17, "游戏电竞显示器": 63, "滚筒洗衣机": 64, "灯具": 72, "烟灶": 67, "牙刷": 19, "玩具": 7, "理发器": 1, "生活用品": 8, "电动牙刷": 3, "电暖器": 15, "电水壶": 2, "电磁炉": 12, "电脑": 210, "电视": 118, "电视盒子": 3, "电饭煲": 32, "益智积木": 3, "相机": 47, "相机镜头": 39, "眼镜": 21, "移动电源": 24, "空气净化器": 18, "空调": 2, "空间计算设备": 5, "穿戴": 26, "穿戴配件": 8, "立式空调": 76, "笔": 9, "笔记本": 214, "箱包": 15, "耳机": 63, "胸包": 16, "自拍杆": 1, "落地风扇": 16, "螺丝刀": 6, "走步机": 2, "路由器": 32, "车载设备": 5, "运动相机": 94, "运动鞋": 2, "配件": 31, "键鼠套装": 12, "门铃/猫眼": 14, "除湿机": 5, "除螨仪": 5, "音箱": 59, "风扇": 1, "首饰": 2, "麦克风": 20, "鼠标": 4}, "facets_after": {"REDMI K系列": 8, "REDMI Note系列": 10, "REDMI Turbo系列": 7, "REDMI 数字系列": 4, "REDMI路由器": 22, "VR设备": 3, "Xiaomi Civi系列": 3, "Xiaomi MIX系列": 8, "Xiaomi 数字旗舰": 15, "中央空调Pro": 76, "乐器": 1, "云台": 44, "体脂秤": 5, "体重秤": 6, "修剪器": 4, "健康测量": 4, "儿童定位设备": 1, "儿童手表": 10, "充电器": 12, "充电宝": 4, "其他配件": 9, "冰箱": 81, "净水器": 53, "出行": 5, "剃须刀": 22, "办公娱乐显示器": 63, "加湿器": 12, "双肩包": 13, "台式机": 44, "台灯": 2, "吸尘器": 26, "吹风机": 14, "壁挂空调": 76, "婴儿推车": 1, "学习机": 1, "宠物饮水机": 3, "家庭屏": 12, "家电": 583, "家纺家具": 12, "对讲机": 11, "小爱音箱": 40, "小米路由器": 22, "小背包": 17, "平板": 216, "平板配件": 7, "床垫": 7, "影像传输与控制设备": 7, "微蒸烤": 1, "户外电源": 32, "手机": 209, "手环": 4, "手表": 66, "打印机": 17, "扫地机器人": 59, "投影仪": 26, "插座": 1, "插座插排": 17, "摄像机": 46, "摄影器材配件": 6, "数据线": 2, "料理机": 8, "旅行箱": 11, "无人机": 53, "无线充电器": 13, "显示器": 9, "智能家居": 16, "智能家庭": 2, "智能门锁": 23, "服务": 2, "服饰": 13, "枕头": 10, "查看全部小米路由器": 22, "水壶": 17, "水杯": 17, "汽车": 17, "波轮洗衣机": 72, "洗地机": 41, "洗手机": 7, "洗碗机": 17, "游戏电竞显示器": 63, "滚筒洗衣机": 64, "灯具": 72, "烟灶": 67, "牙刷": 19, "玩具": 7, "理发器": 1, "生活用品": 8, "电动牙刷": 3, "电暖器": 15, "电水壶": 2, "电磁炉": 12, "电脑": 210, "电视": 118, "电视盒子": 3, "电饭煲": 32, "益智积木": 3, "相机": 47, "相机镜头": 39, "眼镜": 21, "移动电源": 24, "空气净化器": 18, "空调": 2, "空间计算设备": 5, "穿戴": 26, "穿戴配件": 8, "立式空调": 76, "笔": 9, "笔记本": 214, "箱包": 15, "耳机": 63, "胸包": 16, "自拍杆": 1, "落地风扇": 16, "螺丝刀": 6, "走步机": 2, "路由器": 32, "车载设备": 5, "运动相机": 94, "运动鞋": 2, "配件": 31, "键鼠套装": 12, "门铃/猫眼": 14, "除湿机": 5, "除螨仪": 5, "音箱": 59, "风扇": 1, "首饰": 2, "麦克风": 20, "鼠标": 4}, "category_queries": [{"category": "螺丝刀", "before": 6, "after": 6}, {"category": "摄像机", "before": 46, "after": 46}, {"category": "电水壶", "before": 2, "after": 2}, {"category": "运动相机", "before": 94, "after": 94}, {"category": "水壶", "before": 17, "after": 17}], "merged_ids": [], "conflicts": [{"id": "CN:mi_cn:product:10050186", "type": "source_drift", "fields": ["image", "params"], "row_count": 3, "problems": ["Protected group: source_drift"], "rows_sha256": "640f06cd49e4d517bfd48f1106d6cbc97858bbde0cbc09c90362701dd0ed2731"}, {"id": "CN:mi_cn:product:20425", "type": "true_variant", "fields": ["gid", "market_price", "params", "price"], "row_count": 2, "problems": ["Protected group: true_variant"], "rows_sha256": "e30e1c973fac16ec4d052302b00c09fcd0f7ae4c92d74768b2dc29bd38af6b95"}, {"id": "CN:mi_cn:product:22172", "type": "true_variant", "fields": ["gid", "params"], "row_count": 3, "problems": ["Protected group: true_variant"], "rows_sha256": "58c6733857005b7c9a3e6b5441e6a2808ebfd2de7a38f0f2e3f47cd5c1a74836"}], "input_sha256": "3d232e25f5d2dace417bea8cfbcd3cf27d9e1e0083b07dbf7ab0d23672471707", "output_sha256": "109d3eee76edc694c594d559cff6fb81494797b380d5244dcc798738ab6f4319"}
+{"price_history": {"added": 2640, "backfilled": 2640, "months": 2, "observation_count": 2640, "earliest": "2026-10-13T09:45:55+08:00", "latest": "2026-11-03T18:16:12.095982+08:00"}}
+accessory gate: {"excluded_count": 0, "newly_excluded_count": 0, "denominator": 2743, "newly_excluded_ratio": 0.0, "threshold": 0.05, "gate": "green", "review_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945", "reviewed": false}
+{"before_rows": 2765, "after_rows": 2765, "before_unique_ids": 2760, "after_unique_ids": 2760, "merged_groups": 0, "removed_rows": 0, "conflict_groups": 3, "conflict_rows": 8, "conflicts_unchanged": true, "brands_before": {"Apple": 635, "大疆": 281, "富士": 63, "小米": 1546, "小米汽车": 3, "惠普": 218, "比亚迪": 14}, "brands_after": {"Apple": 635, "大疆": 281, "富士": 63, "小米": 1546, "小米汽车": 3, "惠普": 218, "比亚迪": 14}, "facets_before": {"REDMI K系列": 8, "REDMI Note系列": 10, "REDMI Turbo系列": 2, "REDMI 数字系列": 4, "REDMI路由器": 21, "VR设备": 3, "Xiaomi Civi系列": 3, "Xiaomi MIX系列": 8, "Xiaomi 数字旗舰": 15, "中央空调Pro": 67, "乐器": 1, "云台": 44, "体脂秤": 5, "体重秤": 6, "修剪器": 4, "健康测量": 4, "儿童定位设备": 1, "儿童手表": 10, "充电器": 12, "充电宝": 4, "其他配件": 6, "冰箱": 81, "冲牙器": 1, "净水器": 52, "出行": 5, "剃须刀": 22, "办公娱乐显示器": 49, "加湿器": 12, "台式机": 44, "台灯": 2, "吸尘器": 26, "吹风机": 14, "壁挂空调": 67, "婴儿推车": 1, "学习机": 1, "宠物饮水机": 3, "家庭屏": 11, "家电": 552, "家纺家具": 12, "对讲机": 11, "小爱音箱": 37, "小米路由器": 21, "平板": 215, "平板配件": 4, "床垫": 7, "影像传输与控制设备": 7, "微波炉": 3, "微蒸烤": 1, "户外电源": 32, "手机": 209, "手环": 4, "手表": 66, "打印机": 17, "扫地机器人": 58, "投影仪": 26, "抽油烟机": 2, "插座": 1, "插座插排": 16, "摄像机": 45, "摄影器材配件": 6, "数据线": 2, "料理机": 8, "无人机": 53, "无线充电器": 13, "显示器": 9, "智能家居": 16, "智能家庭": 1, "智能门锁": 23, "服务": 1, "服饰": 1, "枕头": 10, "查看全部小米路由器": 21, "水壶": 17, "水杯": 17, "汽车": 17, "波轮洗衣机": 71, "洗地机": 41, "洗手机": 7, "洗碗机": 17, "洗衣/烘干机": 2, "游戏电竞显示器": 49, "滚筒洗衣机": 64, "灯具": 58, "烟灶": 67, "牙刷": 19, "玩具": 7, "理发器": 1, "生活用品": 8, "电动牙刷": 3, "电暖器": 15, "电水壶": 2, "电热水壶": 2, "电磁炉": 12, "电脑": 210, "电蒸锅": 1, "电视": 118, "电视盒子": 3, "电饭煲": 32, "益智积木": 3, "相机": 47, "相机镜头": 39, "眼镜": 21, "移动电源": 24, "空气净化器": 18, "空气炸锅": 1, "空调": 2, "空调插座": 1, "空间计算设备": 5, "穿戴": 26, "穿戴配件": 8, "立式空调": 67, "笔": 9, "笔记本": 209, "耳机": 63, "自拍杆": 1, "茶吧机": 2, "落地风扇": 16, "蒸烤箱": 1, "螺丝刀": 6, "走步机": 2, "足浴器": 2, "路由器": 31, "车载设备": 5, "运动相机": 94, "运动鞋": 2, "配件": 6, "键鼠套装": 12, "门铃/猫眼": 14, "除湿机": 5, "除螨仪": 5, "音箱": 56, "风扇": 1, "饮水机": 1, "首饰": 2, "麦克风": 20, "鼠标": 4}, "facets_after": {"REDMI K系列": 8, "REDMI Note系列": 10, "REDMI Turbo系列": 2, "REDMI 数字系列": 4, "REDMI路由器": 21, "VR设备": 3, "Xiaomi Civi系列": 3, "Xiaomi MIX系列": 8, "Xiaomi 数字旗舰": 15, "中央空调Pro": 67, "乐器": 1, "云台": 44, "体脂秤": 5, "体重秤": 6, "修剪器": 4, "健康测量": 4, "儿童定位设备": 1, "儿童手表": 10, "充电器": 12, "充电宝": 4, "其他配件": 6, "冰箱": 81, "冲牙器": 1, "净水器": 52, "出行": 5, "剃须刀": 22, "办公娱乐显示器": 49, "加湿器": 12, "台式机": 44, "台灯": 2, "吸尘器": 26, "吹风机": 14, "壁挂空调": 67, "婴儿推车": 1, "学习机": 1, "宠物饮水机": 3, "家庭屏": 11, "家电": 552, "家纺家具": 12, "对讲机": 11, "小爱音箱": 37, "小米路由器": 21, "平板": 215, "平板配件": 4, "床垫": 7, "影像传输与控制设备": 7, "微波炉": 3, "微蒸烤": 1, "户外电源": 32, "手机": 209, "手环": 4, "手表": 66, "打印机": 17, "扫地机器人": 58, "投影仪": 26, "抽油烟机": 2, "插座": 1, "插座插排": 16, "摄像机": 45, "摄影器材配件": 6, "数据线": 2, "料理机": 8, "无人机": 53, "无线充电器": 13, "显示器": 9, "智能家居": 16, "智能家庭": 1, "智能门锁": 23, "服务": 1, "服饰": 1, "枕头": 10, "查看全部小米路由器": 21, "水壶": 17, "水杯": 17, "汽车": 17, "波轮洗衣机": 71, "洗地机": 41, "洗手机": 7, "洗碗机": 17, "洗衣/烘干机": 2, "游戏电竞显示器": 49, "滚筒洗衣机": 64, "灯具": 58, "烟灶": 67, "牙刷": 19, "玩具": 7, "理发器": 1, "生活用品": 8, "电动牙刷": 3, "电暖器": 15, "电水壶": 2, "电热水壶": 2, "电磁炉": 12, "电脑": 210, "电蒸锅": 1, "电视": 118, "电视盒子": 3, "电饭煲": 32, "益智积木": 3, "相机": 47, "相机镜头": 39, "眼镜": 21, "移动电源": 24, "空气净化器": 18, "空气炸锅": 1, "空调": 2, "空调插座": 1, "空间计算设备": 5, "穿戴": 26, "穿戴配件": 8, "立式空调": 67, "笔": 9, "笔记本": 209, "耳机": 63, "自拍杆": 1, "茶吧机": 2, "落地风扇": 16, "蒸烤箱": 1, "螺丝刀": 6, "走步机": 2, "足浴器": 2, "路由器": 31, "车载设备": 5, "运动相机": 94, "运动鞋": 2, "配件": 6, "键鼠套装": 12, "门铃/猫眼": 14, "除湿机": 5, "除螨仪": 5, "音箱": 56, "风扇": 1, "饮水机": 1, "首饰": 2, "麦克风": 20, "鼠标": 4}, "category_queries": [{"category": "耳机", "before": 63, "after": 63}, {"category": "插座插排", "before": 16, "after": 16}, {"category": "电暖器", "before": 15, "after": 15}, {"category": "蒸烤箱", "before": 1, "after": 1}, {"category": "水壶", "before": 17, "after": 17}], "merged_ids": [], "conflicts": [{"id": "CN:mi_cn:product:10050186", "type": "source_drift", "fields": ["image", "params"], "row_count": 3, "problems": ["Protected group: source_drift"], "rows_sha256": "f1c9825551baf37af987622e4b2e476f5a41efbe248e6d75562933a6c8cb0a1f"}, {"id": "CN:mi_cn:product:20425", "type": "true_variant", "fields": ["gid", "market_price", "params", "price", "release", "release_confidence", "release_decision", "release_effective", "release_evidence", "release_precision", "release_quote", "release_source", "release_tolerance_days"], "row_count": 2, "problems": ["Protected group: true_variant"], "rows_sha256": "ca3beabc46e4ea0f67f46f65cb1535daad92101887c446c93d639e08cbcf5e4f"}, {"id": "CN:mi_cn:product:22172", "type": "true_variant", "fields": ["gid", "params"], "row_count": 3, "problems": ["Protected group: true_variant"], "rows_sha256": "2a16e8336b9411c9029cccb133711cc30df3e65de75951c6b16e9e096ce97e6e"}], "input_sha256": "b835374123b6e3fd05f291169fc3628290006aed11673e5c27ec4870ddd07460", "output_sha256": "580c406989b9458a2804c76d124a4e3c2787a33902debf347d050cea9fa7b95a"}
+{"price_history": {"added": 0, "backfilled": 0, "months": 2, "observation_count": 2640, "earliest": "2026-10-13T09:45:55+08:00", "latest": "2026-11-03T18:16:12.095982+08:00"}}
+=============================== warnings summary ===============================
+../../.hermes/installs/25640cc6d09ce8d9/environments/002ef3e13926420f8f93facca4403bee/venv/lib/python3.14/site-packages/anyio/pytest_plugin.py:14
+  /home/nichangen/.hermes/installs/25640cc6d09ce8d9/environments/002ef3e13926420f8f93facca4403bee/venv/lib/python3.14/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_date_enrichment.py::test_finalizer_replays_and_details_only
+FAILED tests/test_legacy_catalog.py::test_actual_finalizer_preserves_links_and_model_images_in_excluded_sidecar
+FAILED tests/test_series_release_rollout.py::test_real_finalizer_publishes_exact_reviewed_memberships_and_replays
+3 failed, 1 warning in 28.07s

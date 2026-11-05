@@ -1,0 +1,45 @@
+.F.......                                                                [100%]
+=================================== FAILURES ===================================
+__ test_actual_finalizer_preserves_links_and_model_images_in_excluded_sidecar __
+
+tmp_path = PosixPath('/home/nichangen/.hermes/profiles/spendpoint/cache/scratch/pytest-of-nichangen/pytest-480/test_actual_finalizer_preserve0')
+
+    def test_actual_finalizer_preserves_links_and_model_images_in_excluded_sidecar(tmp_path):
+        from goodsdex.dedupe import finalize_public
+        from goodsdex.accessories import fingerprint
+        cold=[dict(r,source_url=None,image=None) for r in frozen()]
+        reviewed=apply_legacy_catalog(cold)
+        digest=fingerprint([r for r in reviewed if r['category']=='配件'])
+        (tmp_path/'goods.json').write_text(json.dumps(cold))
+        (tmp_path/'meta.json').write_text('{}')
+        finalize_public(tmp_path,reviewed_accessory_sha256=digest)
+        published=json.loads((tmp_path/'goods.json').read_text())
+        excluded=json.loads((tmp_path/'goods-excluded.json').read_text())['items']
+        all_rows=published+excluded
+        assert len(published)==182 and len(excluded)==41 and len(all_rows)==223
+        assert all(r.get('source_url') for r in all_rows)
+        # The frozen 50 images are retained; 17 missing devices now have audited icons.
+        assert sum(bool(r['image']) for r in all_rows)==67
+        icons=[r for r in all_rows if r.get('image_source')=='mihome_icon']
+        assert len(icons)==17
+        assert all(r['image_width']==r['image_height']==168 and r['image_scope']=='device_icon' for r in icons)
+        expected={r['id']:r for r in reviewed}
+>       assert all(r['source_url']==expected[r['id']]['source_url'] and r['image']==expected[r['id']]['image'] for r in all_rows)
+E       assert False
+E        +  where False = all(<generator object test_actual_finalizer_preserves_links_and_model_images_in_excluded_sidecar.<locals>.<genexpr> at 0x791c202b8310>)
+
+tests/test_legacy_catalog.py:107: AssertionError
+----------------------------- Captured stdout call -----------------------------
+accessory gate: {"excluded_count": 20, "newly_excluded_count": 20, "denominator": 223, "newly_excluded_ratio": 0.08968609865470852, "threshold": 0.05, "gate": "red", "review_sha256": "c6132baf4cf32e71c7e3d3e72c21403c2fb18b13a38a185d26c6efda6f23ab33", "reviewed": true}
+=============================== warnings summary ===============================
+../../.hermes/installs/25640cc6d09ce8d9/environments/002ef3e13926420f8f93facca4403bee/venv/lib/python3.14/site-packages/anyio/pytest_plugin.py:14
+  /home/nichangen/.hermes/installs/25640cc6d09ce8d9/environments/002ef3e13926420f8f93facca4403bee/venv/lib/python3.14/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_legacy_catalog.py::test_actual_finalizer_preserves_links_and_model_images_in_excluded_sidecar
+1 failed, 8 passed, 1 warning in 36.95s
