@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T01:33:37Z",
+  "generatedAt": "2026-11-05T01:37:23Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -42,8 +42,8 @@
       "workflow": ".github/workflows/refresh-atour.yml",
       "expectedIntervalMinutes": 1440,
       "lastAttemptAt": "2026-11-05T01:27:11Z",
-      "lastSuccessAt": "2026-11-04T19:51:50Z",
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-05T01:34:59Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41948614931",
       "error": null,
       "stale": false,
@@ -65,11 +65,11 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-05T01:32:10Z",
+      "lastAttemptAt": "2026-11-05T01:35:00Z",
       "lastSuccessAt": null,
-      "conclusion": "in_progress",
+      "conclusion": "failure",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/41948834923",
-      "error": null,
+      "error": "Process completed with exit code 1.",
       "stale": false,
       "staleReason": null
     }
