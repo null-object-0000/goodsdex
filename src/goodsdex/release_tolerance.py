@@ -87,6 +87,8 @@ def apply(rows):
                     row[field]=dict(date=None,source=raw.get('source'),usage='disabled',manual_review_required=True)
         if conflicts:
             row['release_conflicts']=conflicts
+            prior=row.get('release') or {}
+            row['release']=dict(date=None, source=prior.get('source','third_party'), usage='disabled', manual_review_required=True)
             candidates=[]
             row.pop('release_effective',None)
             for key in ('release_inherited','release_series','release_crossed'):

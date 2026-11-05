@@ -50,3 +50,11 @@ def test_source_ranking_alternates_and_replay():
     assert len(effective(out[0])['alternates'])==1
     assert apply(out)==out
     assert rows[0]['release']['date']=='2025-05-22'
+
+
+def test_conflicting_inheritance_cannot_fall_back_to_another_product_date():
+    rows=[dict(id='x',release=assertion(0,source='official'),
+               release_inherited=assertion(46,source='series_inherit',level='series'))]
+    row=apply(rows)[0]
+    assert effective(row) is None and row['release']['date'] is None
+    assert apply([row])==[row]
