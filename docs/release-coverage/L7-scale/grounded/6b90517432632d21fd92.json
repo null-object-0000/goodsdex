@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:6158\",\n    \"name\": \"激光投影电视 150英寸\",\n    \"url\": \"https://www.ithome.com/0/315/323.htm\",\n    \"date\": \"2017-07\",\n    \"quote\": \"以米家App当中的米家激光投影电视150英寸版本来看，在开启众筹的前20分钟已经完成众筹目标\",\n    \"reason\": \"原文明确为米家激光投影电视150英寸版本，报道时间为2017-07-04，文中称众筹已开启20分钟，事件与报道同月，故首次众筹/发布候选为2017-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:2774\",\n    \"name\": \"九号平衡车\",\n    \"url\": \"https://www.ithome.com/0/315/206.htm\",\n    \"date\": null,\n    \"quote\": \"6月28日下午，小米在北京正式发布了米家九号平衡车Plus和售价9999元的“米家激光投影电视150英寸”等产品\",\n    \"reason\": \"原文发布的是“九号平衡车Plus”，与输入型号“九号平衡车”不是同一型号，仅前缀包含不能证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6079\",\n    \"name\": \"九号平衡车 Plus\",\n    \"url\": \"https://www.ithome.com/0/315/206.htm\",\n    \"date\": \"2017-06\",\n    \"quote\": \"6月28日下午，小米在北京正式发布了米家九号平衡车Plus和售价9999元的“米家激光投影电视150英寸”等产品\",\n    \"reason\": \"原文明确为米家九号平衡车Plus，且称6月28日下午正式发布；报道时间为2017-07-03，事件发生在6月，故首次发布候选为2017-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6158\",\n    \"name\": \"激光投影电视 150英寸\",\n    \"url\": \"https://www.ithome.com/0/315/206.htm\",\n    \"date\": \"2017-06\",\n    \"quote\": \"6月28日下午，小米在北京正式发布了米家九号平衡车Plus和售价9999元的“米家激光投影电视150英寸”等产品\",\n    \"reason\": \"原文明确为米家激光投影电视150英寸，且称6月28日下午正式发布；报道时间为2017-07-03，事件发生在6月，故首次发布候选为2017-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:2774\",\n    \"name\": \"九号平衡车\",\n    \"url\": \"https://www.ithome.com/0/314/638.htm\",\n    \"date\": null,\n    \"quote\": \"米家发布了九号平衡车Plus、米家激光投影电视150英寸版、米家声波电动牙刷\",\n    \"reason\": \"原文发布的是“九号平衡车Plus”，与输入型号“九号平衡车”不是同一型号，仅前缀包含不能证明身份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871432,
+  "id": "021793871428440ab257ece25bd0fea81c82ca5c15ec8fde1cc2c",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 715,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1485,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2200
+  }
+}

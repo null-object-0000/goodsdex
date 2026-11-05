@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25139\",\n    \"name\": \"米家智能吸油烟机 3 欧式\",\n    \"url\": \"https://www.ithome.com/0/989/495.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"米家智能吸油烟机 3 欧式今日在小米有品上架并开启预约\",\n    \"reason\": \"原文明确该型号今日上架并开启预约，报道日期为2026-08-14，事件与报道同月，可确定首次发布年月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/988/589.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI K100 Pro Max 手机昨晚正式发布\",\n    \"reason\": \"输入型号名为“Redmi”，原文事件主体为REDMI K100 Pro Max，型号名仅为品牌前缀，不能证明与输入型号身份一致，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/988/527.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI K100 Pro 系列手机今日正式发布，首批带来了 Pro Max 和 Pro 两款新机\",\n    \"reason\": \"输入型号名为“Redmi”，原文事件主体为REDMI K100 Pro系列（Pro Max和Pro），型号名仅为品牌前缀，不能证明与输入型号身份一致，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050229\",\n    \"name\": \"小米充电宝 自带线 20000\",\n    \"url\": \"https://www.ithome.com/0/988/458.htm\",\n    \"date\": null,\n    \"quote\": \"小米旗下新国标版本“小米充电宝自带线 20000 45W”和“小米充电宝自带线 20000 67W”将于今晚 7 点在有品开启首销\",\n    \"reason\": \"输入型号名为“小米充电宝 自带线 20000”，原文涉及的是45W和67W两个具体型号，输入型号缺少功率后缀，不能证明与任一具体型号身份一致，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25210\",\n    \"name\": \"小米充电宝 自带线 20000 45W\",\n    \"url\": \"https://www.ithome.com/0/988/458.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米旗下新国标版本“小米充电宝自带线 20000 45W”和“小米充电宝自带线 20000 67W”将于今晚 7 点在有品开启首销\",\n    \"reason\": \"原文明确“小米充电宝自带线 20000 45W”将于今晚7点开启首销，报道日期为2026-08-11，“今晚”有原文锚点，可确定首次发布年月为2026-08。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871486,
+  "id": "f58f23ce-9ca4-4bfb-a5e3-18bbed832cd1",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 727,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2497,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3224
+  }
+}

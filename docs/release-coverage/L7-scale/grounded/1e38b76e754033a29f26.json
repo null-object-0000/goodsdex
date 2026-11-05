@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:11507\",\n    \"name\": \"米家LED灯泡 蓝牙MESH版\",\n    \"url\": \"https://www.ithome.com/0/996/420.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在京东上架米家 LED 灯泡蓝牙 Mesh 版\",\n    \"reason\": \"原文仅称“现已在京东上架”，属于目前上架状态，未给出首次发布/首发/众筹等公告事件，无法确定首发年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050113\",\n    \"name\": \"米家洗衣机Pro\",\n    \"url\": \"https://www.ithome.com/0/996/360.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米今日宣布米家洗衣机 Pro 超电解新风系列预售开启\",\n    \"reason\": \"型号为“米家洗衣机 Pro 超电解新风系列”，与输入“米家洗衣机Pro”前缀一致且为同一产品线；原文事件为“今日宣布预售开启”，报道日期2026-08-31，事件同月，故取2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25332\",\n    \"name\": \"米家洗衣机 迷你双筒 洗烘5kg\",\n    \"url\": \"https://www.ithome.com/0/996/324.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米今日宣布米家洗衣机迷你双筒洗烘 5kg 开启预售\",\n    \"reason\": \"型号“米家洗衣机迷你双筒洗烘 5kg”与输入完全对应；原文事件为“今日宣布开启预售”，报道日期2026-08-31，事件同月，故取2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25159\",\n    \"name\": \"米家制冰机\",\n    \"url\": \"https://www.ithome.com/0/996/258.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米米家制冰机将于今日 10 点在京东发售，首发价 399 元\",\n    \"reason\": \"型号“米家制冰机”与输入一致；原文事件为“将于今日10点发售”，报道日期2026-08-31提供同月锚点，故取2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25143\",\n    \"name\": \"米家智能吸油烟机 3 顶侧双吸\",\n    \"url\": \"https://www.ithome.com/0/995/249.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米“米家智能吸油烟机 3 顶侧双吸”将于今日 20:00 正式开售，首发价 1999 元\",\n    \"reason\": \"型号与输入完全对应；原文事件为“将于今日20:00正式开售”，报道日期2026-08-27提供同月锚点，故取2026-08。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870494,
+  "id": "611685dc-6ade-458c-bee1-a9daa3697472",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 713,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2205,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2918
+  }
+}

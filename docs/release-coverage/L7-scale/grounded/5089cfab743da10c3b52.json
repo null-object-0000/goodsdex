@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:21090\",\n    \"name\": \"MIJIA智能音频眼镜 2\",\n    \"url\": \"https://www.ithome.com/0/840/111.htm\",\n    \"date\": \"2025-03\",\n    \"quote\": \"小米 3 月 21 日晚在众筹平台悄悄上架了 MIJIA 智能音频眼镜 2\",\n    \"reason\": \"原文明确提到该型号于3月21日晚在众筹平台上架，属于首次众筹/上架事件，报道发布于2025-03-23，事件与报道同月，可确定首发月为2025-03。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21039\",\n    \"name\": \"米家直流变频台式循环扇\",\n    \"url\": \"https://www.ithome.com/0/835/726.htm\",\n    \"date\": \"2025-03\",\n    \"quote\": \"小米米家直流变频台式循环扇现已在京东平台上市\",\n    \"reason\": \"原文称该产品“现已在京东平台上市”，报道发布于2025-03-06，上市事件与报道同月，可确定首发月为2025-03。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20995\",\n    \"name\": \"米家胶囊咖啡机S1\",\n    \"url\": \"https://www.ithome.com/0/834/208.htm\",\n    \"date\": \"2025-02\",\n    \"quote\": \"小米米家胶囊咖啡机 S1 今日开售\",\n    \"reason\": \"原文明确该型号“今日开售”，报道发布于2025-02-27，开售事件与报道同日同月，可确定首发月为2025-02。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20807\",\n    \"name\": \"米家智能变频除湿机 30L\",\n    \"url\": \"https://www.ithome.com/0/834/167.htm\",\n    \"date\": \"2025-02\",\n    \"quote\": \"小米还带来了米家首款变频除湿机 —— 米家智能变频除湿机 30L，售价 1999 元，国补到手价至低 1699.15 元，现已开售\",\n    \"reason\": \"原文明确该型号为米家首款变频除湿机并“现已开售”，报道发布于2025-02-27，发布/开售事件与报道同月，可确定首发月为2025-02。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/834/037.htm\",\n    \"date\": null,\n    \"quote\": \"目前今晚发布会上确定会出现的产品包括小米 15 Ultra（含影像套装）、小米 SU7 Ultra、REDMI Book Pro 2025、小米 Buds 5 Pro 耳机。\",\n    \"reason\": \"输入型号名为“Redmi”，原文中仅出现“REDMI Book Pro 2025”，属于后代/不同型号，不能证明“Redmi”本身身份；且无该型号独立发布事件，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871353,
+  "id": "021793871348707ab257ece25bd0fea81c82ca5c15ec8fd3e19fb",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 734,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1805,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2539
+  }
+}

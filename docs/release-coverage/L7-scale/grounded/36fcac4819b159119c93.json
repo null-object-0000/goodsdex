@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:18426\",\n    \"name\": \"米家电子厨房秤\",\n    \"url\": \"https://www.ithome.com/0/646/070.htm\",\n    \"date\": \"2022-10\",\n    \"quote\": \"今日上午 10:00，小米米家厨房工具套装正式开启众筹，包括智能计时器、电子厨房秤、电动红酒开瓶器三款工具\",\n    \"reason\": \"原文明确米家电子厨房秤作为套装组成部分于2022年10月12日开启众筹，属首次众筹公告，可确定首发月为2022-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:18426\",\n    \"name\": \"米家电子厨房秤\",\n    \"url\": \"https://www.ithome.com/0/645/751.htm\",\n    \"date\": \"2022-10\",\n    \"quote\": \"小米今日发布了米家厨房工具套装，包含三款工具……将于 10 月 12 日开启众筹\",\n    \"reason\": \"原文报道2022年10月10日发布套装，并明确电子厨房秤为套装之一，将于10月12日开启众筹，事件与报道同月，可确定首发月为2022-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:16594\",\n    \"name\": \"米家无线吸尘器2 Lite\",\n    \"url\": \"https://www.ithome.com/0/644/378.htm\",\n    \"date\": \"2022-09\",\n    \"quote\": \"今天，小米上架无线吸尘器 2 Lite 上架，首发售价 479 元。\",\n    \"reason\": \"原文明确米家无线吸尘器2 Lite于报道当日（2022年9月30日）上架并首发，属新品首发公告，可确定首发月为2022-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/643/289.htm\",\n    \"date\": null,\n    \"quote\": \"今日上午 10 点，小米全能米家扫拖机器人 1S 开启预售。\",\n    \"reason\": \"原文发布/预售的是“米家全能扫拖机器人 1S”，与输入型号“米家扫拖机器人”名称不同，后代型号不证明同一身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050151\",\n    \"name\": \"米家冰箱 对开门\",\n    \"url\": \"https://www.ithome.com/0/641/386.htm\",\n    \"date\": null,\n    \"quote\": \"今天，小米推出了米家冰箱十字对开门 430L，首发 2199 元，今晚 8 点开售。\",\n    \"reason\": \"原文发布的是“米家冰箱十字对开门 430L”，与输入型号“米家冰箱 对开门”不同，且文中其他对开门型号仅为链接回顾，不能证明该输入型号首发，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871390,
+  "id": "42f38686-ce7a-423f-a34c-4c08464845d8",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 716,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2285,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3001
+  }
+}

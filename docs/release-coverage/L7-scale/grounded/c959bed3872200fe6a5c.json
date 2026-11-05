@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:24607\",\n    \"name\": \"米家恒温电水壶\",\n    \"url\": \"https://www.ithome.com/0/232/606.htm\",\n    \"date\": \"2016-06\",\n    \"quote\": \"米家恒温电水壶将于6月14日早10点在小米网、京东、天猫现货首发，线下同步开售。\",\n    \"reason\": \"原文明确型号为米家恒温电水壶，事件为6月14日现货首发，报道发布于2016年6月12日，同月锚点可确定首发月为2016-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:3556\",\n    \"name\": \"米家恒温电水壶\",\n    \"url\": \"https://www.ithome.com/0/232/606.htm\",\n    \"date\": \"2016-06\",\n    \"quote\": \"米家恒温电水壶将于6月14日早10点在小米网、京东、天猫现货首发，线下同步开售。\",\n    \"reason\": \"原文明确型号为米家恒温电水壶，事件为6月14日现货首发，报道发布于2016年6月12日，同月锚点可确定首发月为2016-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:3806\",\n    \"name\": \"米家 LED 智能台灯\",\n    \"url\": \"https://www.ithome.com/0/232/606.htm\",\n    \"date\": null,\n    \"quote\": \"继米家电饭煲、米家LED智能台灯后，这次又推出了米家恒温电水壶\",\n    \"reason\": \"原文仅提及米家LED智能台灯为已有产品，未给出该型号的首次发布或首发时间，无法确定首发月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/1/020/740.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家扫拖机器人 7C 今年 8 月 27 日开售，京东首发国补到手价 2068 元。\",\n    \"reason\": \"原文首发信息明确指向米家扫拖机器人7C，而非泛称“米家扫拖机器人”，不能证明该输入型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25228\",\n    \"name\": \"米家扫拖机器人7C\",\n    \"url\": \"https://www.ithome.com/1/020/740.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米米家扫拖机器人 7C 今年 8 月 27 日开售，京东首发国补到手价 2068 元。\",\n    \"reason\": \"原文明确型号为米家扫拖机器人7C，事件为今年8月27日开售/首发，报道发布于2026年11月1日，结合“今年”锚点可确定首发月为2026-08。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871435,
+  "id": "3adc2a54-9638-4824-8fe2-d116c3335b49",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 724,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2330,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3054
+  }
+}

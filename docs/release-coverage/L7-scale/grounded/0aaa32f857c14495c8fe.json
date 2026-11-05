@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:15311\",\n    \"name\": \"米家直流变频两季扇\",\n    \"url\": \"https://www.ithome.com/0/588/942.htm\",\n    \"date\": null,\n    \"quote\": \"今日，小米米家直流变频两季扇正式开启全渠道预售\",\n    \"reason\": \"该文为全渠道预售开启，非首次发布/众筹；另一篇2021-11-10报道众筹开启，但众筹不等于首次发布，且无更早首发公告，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:15311\",\n    \"name\": \"米家直流变频两季扇\",\n    \"url\": \"https://www.ithome.com/0/585/802.htm\",\n    \"date\": \"2021-11\",\n    \"quote\": \"今日，米家直流变频两季扇在小米商城开启众筹\",\n    \"reason\": \"原文明确该型号于2021年11月10日开启众筹，属首次众筹公告，可确定首次发布年月为2021-11。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/566/109.htm\",\n    \"date\": null,\n    \"quote\": \"米家扫拖机器人 2 已在今日正式开售\",\n    \"reason\": \"输入型号为“米家扫拖机器人”，原文事件为“米家扫拖机器人 2”开售，型号名含后代“2”，不证明同一型号；且为开售非首发，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/565/345.htm\",\n    \"date\": null,\n    \"quote\": \"米家扫拖机器人 2 将于 7 月 30 日全渠道开售\",\n    \"reason\": \"输入型号为“米家扫拖机器人”，原文事件为“米家扫拖机器人 2”开售，型号名含后代“2”，不证明同一型号；且为开售非首发，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:9726\",\n    \"name\": \"米家空调伴侣2\",\n    \"brand\": \"小米\",\n    \"url\": \"https://www.ithome.com/0/556/856.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方昨日推出了最新的米家空调伴侣 Pro 万能遥控版，该设备除了具有米家空调伴侣 2 原有的功能外\",\n    \"reason\": \"原文发布的是“米家空调伴侣 Pro 万能遥控版”，输入型号“米家空调伴侣2”仅作为旧品被提及，Pro为不同型号，不能确定其首发月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871394,
+  "id": "0217938713894374f170dda172df2cc79a65077ac74d404cc60ee",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 676,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2217,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2893
+  }
+}

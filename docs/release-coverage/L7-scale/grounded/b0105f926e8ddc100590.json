@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20547\",\n    \"name\": \"米家多功能电火锅6L\",\n    \"url\": \"https://www.ithome.com/0/800/509.htm\",\n    \"date\": \"2024-10\",\n    \"quote\": \"小米今天推出了米家多功能电火锅 6L，其将于 10 月 9 日 10 时众筹开售\",\n    \"reason\": \"原文明确“今天推出了米家多功能电火锅 6L”，报道日期为2024-10-07，事件与报道同月，故首次发布年月为2024-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20539\",\n    \"name\": \"米家折叠暖菜板\",\n    \"url\": \"https://www.ithome.com/0/800/504.htm\",\n    \"date\": \"2024-10\",\n    \"quote\": \"小米今天发布了米家折叠暖菜板，其将于 10 月 9 日 10 时众筹开售\",\n    \"reason\": \"原文明确“今天发布了米家折叠暖菜板”，报道日期为2024-10-07，事件与报道同月，故首次发布年月为2024-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050183\",\n    \"name\": \"米家洗衣机 超净洗洗烘\",\n    \"url\": \"https://www.ithome.com/0/799/652.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家智投洗 10kg 智能洗烘套装（IT之家注：含 10kg 洗衣机 + 10kg 烘干机）将在今晚 8 时正式开售，新品首发价 4999 元\",\n    \"reason\": \"原文主体为“米家智投洗 10kg 智能洗烘套装”，并非“米家洗衣机 超净洗洗烘”这一精确型号；相关阅读中提及“小米米家洗衣机超净洗洗烘 10kg 银灰发布”，但未给出该型号的首次发布年月，无法确定，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20461\",\n    \"name\": \"米家洗衣机 超净洗 洗烘10kg 银灰\",\n    \"url\": \"https://www.ithome.com/0/799/652.htm\",\n    \"date\": null,\n    \"quote\": \"《 小米米家洗衣机超净洗洗烘 10kg 银灰发布：DD 直驱电机、洗净比 1.1，首发 1799 元 》\",\n    \"reason\": \"原文相关阅读标题提及“小米米家洗衣机超净洗洗烘 10kg 银灰发布”，但未给出具体发布年月；正文主事件为套装开售，不能确定该精确型号的首发月份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21002\",\n    \"name\": \"米家热泵烘干机10kg\",\n    \"url\": \"https://www.ithome.com/0/799/652.htm\",\n    \"date\": null,\n    \"quote\": \"《 小米推出全新米家热泵烘干机 10kg，3599 元 》\",\n    \"reason\": \"原文相关阅读标题提及“小米推出全新米家热泵烘干机 10kg”，但未给出具体发布年月；正文主事件为套装开售，不能确定该精确型号的首发月份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870151,
+  "id": "bd9c692a-ecf5-45b8-9f3a-8ec08d7eaeb2",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 797,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2472,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3269
+  }
+}

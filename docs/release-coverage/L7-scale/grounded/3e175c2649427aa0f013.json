@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:4348\",\n    \"name\": \"米家扫地机器人\",\n    \"url\": \"https://www.ithome.com/0/338/772.htm\",\n    \"date\": null,\n    \"quote\": \"外观造型方面依然延续了米家的精简简约造型设计，圆形外观下，第一眼甚至有米家扫地机器人的错觉。\",\n    \"reason\": \"原文仅以米家扫地机器人作外观类比，未提及该型号的发布、推出或开售事件，无法确定中国大陆首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7528\",\n    \"name\": \"米家电磁炉\",\n    \"url\": \"https://www.ithome.com/0/338/772.htm\",\n    \"date\": null,\n    \"quote\": \"今天，网上又曝光“米家电磁炉”，年轻人的第一台电磁炉也要来？ 微博网友@憨熊TheTime日前就放出了一张米家电磁炉的照片，包装盒上印有小米的Logo和电磁炉的轮廓图。 小米官方目前暂时还未透露电磁炉的消息。\",\n    \"reason\": \"原文为网络曝光与传闻，明确称小米官方尚未透露消息，无新品推出/正式发布/首发/众筹公告，不能确定首发年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7303\",\n    \"name\": \"米家蓝牙温湿度计\",\n    \"url\": \"https://www.ithome.com/0/336/262.htm\",\n    \"date\": \"2017-11\",\n    \"quote\": \"IT之家 11月28日消息 在今天小米举行的首届小米IoT开发者大会（MIDC）上，米家带来了一款蓝牙温湿度计产品，售价69元。……米家蓝牙温湿度计售价69元，将于12月5日上午10点在小米商城、有品APP、小米之家、天猫等平台正式开售。\",\n    \"reason\": \"原文明确该型号在2017年11月28日小米IoT开发者大会上发布（带来产品），报道事件与发布同月，故首次发布年月为2017-11；12月5日为开售时间，不取。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7128\",\n    \"name\": \"米家床头灯\",\n    \"url\": \"https://www.ithome.com/0/331/359.htm\",\n    \"date\": \"2017-10\",\n    \"quote\": \"IT之家 10月24日消息 小米生态链今天发布了米家床头灯产品，由Yeelight企业负责研发和生产。……米家床头灯售价249元，今天上午已经开卖。\",\n    \"reason\": \"原文明确“今天发布了米家床头灯产品”，报道日期为10月24日，事件与报道同月，型号身份为米家床头灯，故首次发布年月为2017-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6621\",\n    \"name\": \"90分金属登机箱\",\n    \"url\": \"https://www.ithome.com/0/325/368.htm\",\n    \"date\": \"2017-09\",\n    \"quote\": \"IT之家 9月12日消息 今天上午，米家官方宣布在9月15日上午十点发售90分金属登机箱，价格为999元。\",\n    \"reason\": \"原文明确米家官方于9月12日宣布90分金属登机箱发售，报道事件与宣布同月，型号身份为90分金属登机箱，故首次发布年月为2017-09；9月15日为发售时间。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870454,
+  "id": "0217938704501525c7f85291e6ad850e47f0b8bb356de2f9a3bad",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 817,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1582,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2399
+  }
+}

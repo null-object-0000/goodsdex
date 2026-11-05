@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25001\",\n    \"name\": \"米家洗衣机Pro 超电解智投 滚筒10kg\",\n    \"url\": \"https://www.ithome.com/0/976/213.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米米家洗衣机 Pro 超电解智投滚筒 10kg 今晚开售，新品首发价 2699 元\",\n    \"reason\": \"原文明确该型号今晚开售且为新品首发，报道时间为2026-07-13，事件同月，故首次发布年月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25073\",\n    \"name\": \"米家智能冲牙器 Pro\",\n    \"url\": \"https://www.ithome.com/0/976/182.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米现已在有品上架“米家智能冲牙器 Pro”（ 点此访问 ），定价为 399 元。\",\n    \"reason\": \"原文明确该型号现已在有品上架，标题为“小米推出”，报道时间为2026-07-13，事件同月，故首次发布年月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25048\",\n    \"name\": \"米家智能茶吧机 Pro 立式\",\n    \"url\": \"https://www.ithome.com/0/975/953.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米现已在有品上架米家智能茶吧机 Pro 立式（ 点此访问 ），该机主打分区出水，即热、煮茶、消毒一机多能，将于 7 月 20 日开启众筹，定价 1099 元。\",\n    \"reason\": \"原文明确该型号已上架并将于7月20日开启众筹，报道时间为2026-07-13，相对月份有原文锚点（7月），故首次发布年月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25036\",\n    \"name\": \"米家桌面照片打印机 2\",\n    \"url\": \"https://www.ithome.com/0/975/872.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米旗下米家桌面照片打印机 2 将于今天 10 点在有品开启众筹（ 点此访问 ），其中机器本体定价为 699 元\",\n    \"reason\": \"原文明确该型号将于今天10点开启众筹，报道时间为2026-07-13，事件同月，故首次发布年月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/974/631.htm\",\n    \"date\": null,\n    \"quote\": \"REDMI 红米手机宣布，REDMI 和中国银联在行业率先推出 NFC 全链路反诈功能， 全新 Note 17 系列也将搭载 。\",\n    \"reason\": \"输入型号名为“Redmi”，原文仅提及REDMI品牌及Note 17系列将搭载该功能，未明确“Redmi”作为独立型号的首次发布年月，且Note 17系列与输入型号名不同，无法确定身份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871504,
+  "id": "as-x6qubmm9vh",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 785,
+    "prompt_tokens": 2488,
+    "total_tokens": 3273
+  }
+}

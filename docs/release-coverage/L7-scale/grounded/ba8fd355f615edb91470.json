@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:24811\",\n    \"name\": \"米家即热饮水机 Max 制冰版\",\n    \"url\": \"https://www.ithome.com/0/961/262.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家即热饮水机 Max 制冰版现已在小米有品开启首销\",\n    \"reason\": \"该文仅报道首销（开售），未提供首次发布/众筹/正式发布事件；首销不等于首次发布，且无发布月份锚点，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/958/098.htm\",\n    \"date\": null,\n    \"quote\": \"某厂子系耳夹式耳机，暂定 Q3 和子系新旗舰一起上。结合该博主此前的爆料习惯，预计该产品为小米 REDMI 新品。\",\n    \"reason\": \"原文为爆料/预计，非正式发布公告；型号身份仅为推测，且无具体发布月份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24811\",\n    \"name\": \"米家即热饮水机 Max 制冰版\",\n    \"url\": \"https://www.ithome.com/0/957/997.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"小米米家即热饮水机 Max 制冰版今日开启众筹，建议零售价 1999 元，众筹价 1799 元，活动时间为 6 月 1 日 10:00-6 月 8 日 10:00\",\n    \"reason\": \"原文明确该型号今日（6月1日）开启众筹，属首次众筹公告；报道发布于2026-06-01，事件同月，故取2026-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050113\",\n    \"name\": \"米家洗衣机Pro\",\n    \"url\": \"https://www.ithome.com/0/957/924.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家洗衣机 Pro 至尊 版 超 电解智 投 洗 烘 13kg 现已在小米有品（ 点此购买 ）开售，新品首发价 3499 元\",\n    \"reason\": \"输入型号为“米家洗衣机Pro”，原文型号为“米家洗衣机 Pro 至尊版 超电解智投洗烘 13kg”，至尊版/容量等为后代限定，前缀包含不证明同一型号；且事件为开售非首次发布，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24792\",\n    \"name\": \"米家洗衣机Pro 至尊版 超电解智投 洗烘13kg\",\n    \"url\": \"https://www.ithome.com/0/957/924.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家洗衣机 Pro 至尊 版 超 电解智 投 洗 烘 13kg 现已在小米有品（ 点此购买 ）开售，新品首发价 3499 元\",\n    \"reason\": \"原文型号与输入一致，但事件为“开售”，非首次发布/众筹/正式发布公告；无首次发布月份锚点，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871515,
+  "id": "0217938715088334f170dda172df2cc79a65077ac74d4041a7ae5",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 790,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1919,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2709
+  }
+}

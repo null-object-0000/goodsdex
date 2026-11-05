@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25222\",\n    \"name\": \"小米智能摄像机 视频通话版2\",\n    \"url\": \"https://www.ithome.com/0/994/402.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"IT之家 8 月 26 日消息，小米智能摄像机视频通话版 2 单机现已在小米有品开启众筹（ 点击前往 ），首发价 429 元。\",\n    \"reason\": \"原文明确型号为“小米智能摄像机视频通话版 2 单机”，事件为“现已在小米有品开启众筹”，属新品首次众筹；报道日期为2026-08-26，事件与报道同月，故取2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/994/263.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 17C 5G 手机现已在海外市场发布。新机定位入门，顾名思义是 REDMI 17C 的 5G 版本。\",\n    \"reason\": \"输入型号仅为“Redmi”，原文发布对象是“REDMI 17C 5G”，并非同一型号；且为海外发布，非中国大陆首次发布，无法确定中国大陆首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24895\",\n    \"name\": \"REDMI 17C\",\n    \"url\": \"https://www.ithome.com/0/994/263.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 17C 5G 手机现已在海外市场发布。新机定位入门，顾名思义是 REDMI 17C 的 5G 版本。\",\n    \"reason\": \"原文发布的是“REDMI 17C 5G”，输入型号“REDMI 17C”仅作为其非5G版本被提及，并非发布对象；且为海外发布，非中国大陆首发，无法确定中国大陆首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19263\",\n    \"name\": \"米家立式学习灯\",\n    \"url\": \"https://www.ithome.com/0/993/956.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在京东上架米家立式学习灯 2C，定价为 1199 元\",\n    \"reason\": \"原文上架/推出的是“米家立式学习灯 2C”，输入型号“米家立式学习灯”缺少“2C”后缀，属不同型号，仅前缀包含不证明身份；且事件为“上架”，无法确定该型号中国大陆首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:23518\",\n    \"name\": \"米家立式学习灯2\",\n    \"url\": \"https://www.ithome.com/0/993/956.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在京东上架米家立式学习灯 2C，定价为 1199 元\",\n    \"reason\": \"原文上架的是“米家立式学习灯 2C”，输入型号“米家立式学习灯2”缺少“C”后缀，属不同型号，仅前缀包含不证明身份；无法确定该型号中国大陆首发月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871469,
+  "id": "as-sx5xwvx25s",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 795,
+    "prompt_tokens": 2142,
+    "total_tokens": 2937
+  }
+}

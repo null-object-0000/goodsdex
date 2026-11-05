@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:22416\",\n    \"name\": \"米家电动剃须刀 Pro\",\n    \"url\": \"https://www.ithome.com/0/941/537.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方宣布，米家电动剃须刀 Pro 套装版今日 18:00 开售。\",\n    \"reason\": \"原文仅提及“米家电动剃须刀 Pro 套装版”今日开售，套装版与输入型号“米家电动剃须刀 Pro”不是同一型号（套装不是同一型号），且原文未给出该非套装型号的首次发布/开售时间，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/941/537.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方宣布，米家电动剃须刀 Pro 套装版今日 18:00 开售。\",\n    \"reason\": \"原文只出现“米家电动剃须刀 Pro 套装版”，输入型号“米家电动剃须刀”仅为前缀包含，不能证明是同一型号；且无该型号首次发布/开售时间，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/941/455.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Buds 8 耳机今日发布并开售\",\n    \"reason\": \"原文发布的是“REDMI Buds 8 耳机”，输入型号“Redmi”仅为品牌/前缀，不能证明是同一型号；无“Redmi”这一型号的首次发布时间，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:23884\",\n    \"name\": \"米家智能吸油烟机 3C 侧吸\",\n    \"url\": \"https://www.ithome.com/0/941/074.htm\",\n    \"date\": \"2026-04\",\n    \"quote\": \"今日，米家智能吸油烟机 3C 侧吸在小米有品开启众筹，众筹价为 999 元，活动时间为 4 月 20 日 10:00:00-4 月 27 日 10:00:00。\",\n    \"reason\": \"原文明确“米家智能吸油烟机 3C 侧吸”于4月20日开启众筹，型号完全一致；众筹可视为首次发布公告，报道时间为2026-04-20，事件同月，故取2026-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/941/070.htm\",\n    \"date\": null,\n    \"quote\": \"小米将推出基于 \\\"Wildcat Lake\\\" 平台的 REDMI Book 笔记本电脑\",\n    \"reason\": \"原文仅称小米将推出 REDMI Book 笔记本电脑，输入型号“Redmi”不是具体型号，且“将推出”无原文锚点确定月份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871530,
+  "id": "0217938715258086cb63cadb26a6eb1a5dd8bb71cce3d7f75a67b",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 748,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2410,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3158
+  }
+}

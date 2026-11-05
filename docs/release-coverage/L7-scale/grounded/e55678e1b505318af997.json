@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:21401\",\n    \"name\": \"米家前开盖旅行箱\",\n    \"url\": \"https://www.ithome.com/0/859/429.htm\",\n    \"date\": \"2025-06\",\n    \"quote\": \"小米现已在有品众筹上架一款“米家前开盖旅行箱 18 英寸”……将于 6 月 16 日开启众筹\",\n    \"reason\": \"原文明确该型号为“米家前开盖旅行箱 18 英寸”，事件为众筹上架并给出6月16日开启众筹；报道发布于2025-06-09，事件同月，故首次发布候选为2025-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21384\",\n    \"name\": \"米家高速吹风机 Pro\",\n    \"url\": \"https://www.ithome.com/0/856/688.htm\",\n    \"date\": \"2025-05\",\n    \"quote\": \"小米智能生态官微今晚宣布，米家高速吹风机 Pro 现已开启预售\",\n    \"reason\": \"原文明确型号为“米家高速吹风机 Pro”，事件为“现已开启预售”；报道发布于2025-05-28，事件同月，故首次发布候选为2025-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21680\",\n    \"name\": \"米家高速吹风机\",\n    \"url\": \"https://www.ithome.com/0/856/688.htm\",\n    \"date\": null,\n    \"quote\": \"米家高速吹风机 Pro 现已开启预售\",\n    \"reason\": \"原文仅出现“米家高速吹风机 Pro”，未出现不带 Pro 的“米家高速吹风机”型号；Pro 为后代型号，不能证明基础型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050113\",\n    \"name\": \"米家洗衣机Pro\",\n    \"url\": \"https://www.ithome.com/0/854/398.htm\",\n    \"date\": \"2025-05\",\n    \"quote\": \"小米今天宣布推出米家洗衣机 Pro 蓝氧 10kg 新品\",\n    \"reason\": \"原文明确“米家洗衣机 Pro 蓝氧 10kg 新品”并称“今天宣布推出”；报道发布于2025-05-20，事件同月，故首次发布候选为2025-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050150\",\n    \"name\": \"米家冰箱Pro 双系统\",\n    \"url\": \"https://www.ithome.com/0/853/647.htm\",\n    \"date\": \"2025-04\",\n    \"quote\": \"小米上个月推出米家冰箱 Pro 双系统法式平嵌 508L（冰晶白）\",\n    \"reason\": \"原文称“上个月推出米家冰箱 Pro 双系统法式平嵌 508L（冰晶白）”；报道发布于2025-05-16，“上个月”锚点为2025-04，且型号前缀与双系统身份匹配，故首次发布候选为2025-04。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871334,
+  "id": "as-86c2xhbekd",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 728,
+    "prompt_tokens": 2023,
+    "total_tokens": 2751
+  }
+}

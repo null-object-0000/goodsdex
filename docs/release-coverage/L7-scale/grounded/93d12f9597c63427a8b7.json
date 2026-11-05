@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/976/371.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"IT之家 7 月 14 日消息，小米官方今日宣布推出 REDMI 儿童电话手表 Pro，官方定价为 1199 元，首发 1045 元起\",\n    \"reason\": \"输入型号名为“Redmi”，但原文事件是推出“REDMI 儿童电话手表 Pro”，属于不同具体型号（Pro 为后代型号，非同一型号），仅品牌前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25073\",\n    \"name\": \"米家智能冲牙器 Pro\",\n    \"url\": \"https://www.ithome.com/0/976/182.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"IT之家 7 月 13 日消息，小米现已在有品上架“米家智能冲牙器 Pro”（ 点此访问 ），定价为 399 元。\",\n    \"reason\": \"原文明确为“米家智能冲牙器 Pro”上架，型号完全一致；报道日期为2026-07-13，事件同月，故首次发布年月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25048\",\n    \"name\": \"米家智能茶吧机 Pro 立式\",\n    \"url\": \"https://www.ithome.com/0/975/953.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"IT之家 7 月 13 日消息，小米现已在有品上架米家智能茶吧机 Pro 立式（ 点此访问 ），该机主打分区出水，即热、煮茶、消毒一机多能，将于 7 月 20 日开启众筹，定价 1099 元。\",\n    \"reason\": \"原文明确为“米家智能茶吧机 Pro 立式”上架并将于7月20日众筹，型号完全一致；报道日期2026-07-13，事件同月且有原文锚点，故首次发布年月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25036\",\n    \"name\": \"米家桌面照片打印机 2\",\n    \"url\": \"https://www.ithome.com/0/975/872.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"IT之家 7 月 13 日消息，小米旗下米家桌面照片打印机 2 将于今天 10 点在有品开启众筹（ 点此访问 ），其中机器本体定价为 699 元\",\n    \"reason\": \"原文明确为“米家桌面照片打印机 2”于今天10点开启众筹，型号完全一致；报道日期2026-07-13，事件同月且有“今天”锚点，故首次发布年月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/974/631.htm\",\n    \"date\": null,\n    \"quote\": \"随后 REDMI 红米手机宣布，REDMI 和中国银联在行业率先推出 NFC 全链路反诈功能， 全新 Note 17 系列也将搭载 。\",\n    \"reason\": \"输入型号名为“Redmi”，原文事件是REDMI Note 17系列将搭载NFC反诈功能，属于不同具体型号（Note 17系列为后代型号，非同一型号），仅品牌前缀包含不证明身份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870681,
+  "id": "as-y5w0kk86j2",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 863,
+    "prompt_tokens": 2244,
+    "total_tokens": 3107
+  }
+}

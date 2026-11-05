@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25159\",\n    \"name\": \"米家制冰机\",\n    \"url\": \"https://www.ithome.com/0/987/714.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"米家制冰机今日在小米有品开启众筹预约，8 月 17 日 10 点开售，众筹价 359 元\",\n    \"reason\": \"原文明确“米家制冰机今日在小米有品开启众筹预约”，报道日期为2026-08-10，事件与报道同月，众筹预约可视为首次发布公告，故取2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/987/676.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日公布 REDMI K100 Pro Max 全新配色「追风蓝」，新机将于 8 月 11 日 19:00 发布。\",\n    \"reason\": \"输入型号名为“Redmi”，原文事件主体为“REDMI K100 Pro Max”，型号名仅为品牌前缀，不能证明与输入型号同一身份；且原文为配色公布及未来发布预告，非该型号首次发布公告，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/986/323.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日公布 REDMI K100 Pro Max 手机“流金白”配色官图，新机将于 8 月 11 日发布。\",\n    \"reason\": \"输入型号名为“Redmi”，原文事件主体为“REDMI K100 Pro Max”，型号名仅为品牌前缀，不能证明同一身份；且为配色公布及未来发布预告，非首次发布公告，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/985/219.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日推出 REDMI 投影仪 5 和 REDMI 投影仪 5 Pro， 到手价分别为 999 元和 1899 元 。\",\n    \"reason\": \"原文事件主体为“REDMI 投影仪 5 / 5 Pro”，与输入型号“Redmi”仅为品牌前缀关系，不能证明同一身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/984/881.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI K100 Pro 系列手机将于 8 月 11 日晚 7 点发布，官方今日继续对新机进行预热。\",\n    \"reason\": \"输入型号名为“Redmi”，原文事件主体为“REDMI K100 Pro 系列”，型号名仅为品牌前缀，不能证明同一身份；且为未来发布预告，非首次发布公告，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870672,
+  "id": "d9f30934-afc2-4380-ba45-68c500a4b040",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 750,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2192,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2942
+  }
+}

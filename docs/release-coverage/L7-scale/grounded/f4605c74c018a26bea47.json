@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:10050233\",\n    \"name\": \"米家无线洗地机 5 Pro\",\n    \"url\": \"https://www.ithome.com/0/937/905.htm\",\n    \"date\": \"2026-04\",\n    \"quote\": \"IT之家 4 月 10 日消息，小米新推出了一款米家无线洗地机 5 Pro，京东显示为 2499 元，首发价 2149 元，叠加国补后 1934 元，将于 4 月 19 日开售。\",\n    \"reason\": \"原文明确“小米新推出了一款米家无线洗地机 5 Pro”，型号完全匹配；报道日期为2026-04-10，事件同月，故首次发布年月为2026-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24246\",\n    \"name\": \"米家无线洗地机 5 Pro\",\n    \"url\": \"https://www.ithome.com/0/937/905.htm\",\n    \"date\": \"2026-04\",\n    \"quote\": \"IT之家 4 月 10 日消息，小米新推出了一款米家无线洗地机 5 Pro，京东显示为 2499 元，首发价 2149 元，叠加国补后 1934 元，将于 4 月 19 日开售。\",\n    \"reason\": \"原文明确“小米新推出了一款米家无线洗地机 5 Pro”，型号完全匹配；报道日期为2026-04-10，事件同月，故首次发布年月为2026-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25000\",\n    \"name\": \"米家无线洗地机 5\",\n    \"url\": \"https://www.ithome.com/0/937/905.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 4 月 10 日消息，小米新推出了一款米家无线洗地机 5 Pro，京东显示为 2499 元，首发价 2149 元，叠加国补后 1934 元，将于 4 月 19 日开售。\",\n    \"reason\": \"原文仅提及“米家无线洗地机 5 Pro”，未单独提及“米家无线洗地机 5”；Pro为不同型号，前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/937/855.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 4 月 10 日消息，今天“小米食堂发布小米冰淇淋”话题在社交媒体上引起热议，IT之家参考热搜获悉，小米 REDMI 产品经理“笋寸”晒出了小米近期举行的“2026 价值观大会”现场照片\",\n    \"reason\": \"原文中“REDMI”仅作为产品经理头衔出现，并非发布Redmi品牌或产品；无对应型号发布事件，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/937/802.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 4 月 10 日消息，小米今日官宣全新 REDMI Pad 2 SE 本月发布，号称“高刷高亮屏，千元好品质”。\",\n    \"reason\": \"原文发布的是“REDMI Pad 2 SE”，并非“Redmi”品牌本身；输入型号为Redmi，与具体产品型号不匹配，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871542,
+  "id": "0787465c-998d-48d0-b8e2-fecafd1b007d",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 857,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1846,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2703
+  }
+}

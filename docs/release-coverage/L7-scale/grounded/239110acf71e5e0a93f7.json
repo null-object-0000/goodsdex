@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:21591\",\n    \"name\": \"REDMI Pad 2\",\n    \"url\": \"https://www.ithome.com/0/937/802.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日官宣全新 REDMI Pad 2 SE 本月发布\",\n    \"reason\": \"原文仅提及 REDMI Pad 2 SE 本月发布，SE 为不同型号，不能证明 REDMI Pad 2 的身份与首发时间，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/937/624.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日官宣 REDMI Book Pro 2026 本月发布\",\n    \"reason\": \"输入型号为泛称 Redmi，原文事件为 REDMI Book Pro 2026 本月发布，无法确认该泛称型号身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/986/954.htm\",\n    \"date\": null,\n    \"quote\": \"REDMI K100 Pro 系列，满血满配，满分旗舰，定档 8 月 11 日 19:00 直播发布。\",\n    \"reason\": \"原文事件为 REDMI K100 Pro 系列定档 8 月 11 日发布，与泛称型号 Redmi 身份不符，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/986/393.htm\",\n    \"date\": null,\n    \"quote\": \"REDMI 已上架发售旗下新款入门级 5G 智能手机 REDMI 17 5G\",\n    \"reason\": \"原文事件为 REDMI 17 5G 上架开售，与泛称型号 Redmi 身份不符，且开售非首发公告，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24884\",\n    \"name\": \"REDMI 17 5G\",\n    \"url\": \"https://www.ithome.com/0/986/393.htm\",\n    \"date\": null,\n    \"quote\": \"REDMI 已上架发售旗下新款入门级 5G 智能手机 REDMI 17 5G\",\n    \"reason\": \"原文仅报道上架开售，未给出首次发布/首发公告及对应月份，无法确定首发月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871541,
+  "id": "as-aw4n1j730n",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 619,
+    "prompt_tokens": 2283,
+    "total_tokens": 2902
+  }
+}

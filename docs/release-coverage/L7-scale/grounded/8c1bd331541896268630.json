@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20240\",\n    \"name\": \"米家户外休闲双肩包\",\n    \"url\": \"https://www.ithome.com/0/785/708.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家户外休闲双肩包现已在京东等电商平台开售\",\n    \"reason\": \"原文仅称“现已开售”，未提供首次发布/上市的具体月份；报道时间为2024-08-01，但“现已开售”不能证明首发即为该月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20172\",\n    \"name\": \"米家口袋照片打印机1S\",\n    \"url\": \"https://www.ithome.com/0/781/837.htm\",\n    \"date\": \"2024-07\",\n    \"quote\": \"小米米家口袋照片打印机 1S 今日在京东等平台上架，预售价 399 元，7 月 19 日 20 点开售。\",\n    \"reason\": \"型号精确匹配“米家口袋照片打印机 1S”；原文事件为“今日上架/预售”，报道日期为2024-07-15，同月锚点明确，故首次发布年月为2024-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20082\",\n    \"name\": \"小米智能摄像机C300双摄版\",\n    \"url\": \"https://www.ithome.com/0/779/036.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能摄像机室内双摄系列新品 ——C300、C500 目前已经在京东现货开售。\",\n    \"reason\": \"原文称“目前已经……现货开售”，未给出首次发布/开售的具体月份；报道时间为2024-07-02，但“目前已经开售”不能确定首发即为该月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20024\",\n    \"name\": \"米家前开盖登机箱\",\n    \"url\": \"https://www.ithome.com/0/769/987.htm\",\n    \"date\": null,\n    \"quote\": \"日前，小米米家前开盖登机箱 20 英寸上架京东等电商平台并开售\",\n    \"reason\": \"原文仅称“日前……上架并开售”，未提供可锚定的首次发布月份；报道时间为2024-05-23，但“日前”不能确定首发即为该月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19962\",\n    \"name\": \"米家风扇灯\",\n    \"url\": \"https://www.ithome.com/0/769/194.htm\",\n    \"date\": null,\n    \"quote\": \"此前在小米有品众筹的米家风扇灯 42 英寸将于今晚 8 点在京东平台开售\",\n    \"reason\": \"原文提到“此前在小米有品众筹”，但未给出众筹/首次发布的具体月份；今晚开售为再次开售，报道时间2024-05-20不能证明首发月份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871372,
+  "id": "0217938713677765c7f85291e6ad850e47f0b8bb356de2ff0c7cf",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 721,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2403,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3124
+  }
+}

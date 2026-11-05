@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:15863\",\n    \"name\": \"米家智能直流变频循环扇 落地式\",\n    \"url\": \"https://www.ithome.com/0/612/320.htm\",\n    \"date\": \"2022-04\",\n    \"quote\": \"今天，小米发布了米家智能直流变频循环扇落地式，4 月 13 日开启众筹\",\n    \"reason\": \"原文明确该型号于报道当日（4月11日）发布，事件为新品发布，月份可确定为2022-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:15841\",\n    \"name\": \"米家智能冷热饮水机\",\n    \"url\": \"https://www.ithome.com/0/611/284.htm\",\n    \"date\": \"2022-04\",\n    \"quote\": \"小米方面今日宣布，米家智能冷热饮水机将于 4 月 6 日上午 10:00 在小米商城、小米之家众筹开启\",\n    \"reason\": \"原文于4月4日报道当日宣布该型号将于4月6日众筹，属新品众筹公告，月份锚定为2022-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/608/416.htm\",\n    \"date\": null,\n    \"quote\": \"今日，小米正式宣布推出米家扫拖机器人 3C\",\n    \"reason\": \"原文发布/推出的型号为“米家扫拖机器人 3C”，输入型号“米家扫拖机器人”缺少3C后缀，不能证明为同一型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21680\",\n    \"name\": \"米家高速吹风机\",\n    \"url\": \"https://www.ithome.com/0/592/434.htm\",\n    \"date\": null,\n    \"quote\": \"小米上周推出了米家高速吹风机 H700，原价 799 元，众筹价 699 元，将于 12 月 15 日上午 10:00 开启众筹\",\n    \"reason\": \"原文型号为“米家高速吹风机 H700”，输入型号“米家高速吹风机”缺少H700后缀，不能证明为同一型号；且“上周推出”无明确月份锚点，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:15311\",\n    \"name\": \"米家直流变频两季扇\",\n    \"url\": \"https://www.ithome.com/0/588/942.htm\",\n    \"date\": \"2021-11\",\n    \"quote\": \"今日，小米米家直流变频两季扇正式开启全渠道预售\",\n    \"reason\": \"原文明确该型号于报道当日（11月26日）开启全渠道预售，属新品预售，月份可确定为2021-11。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870427,
+  "id": "0217938704231016cb63cadb26a6eb1a5dd8bb71cce3d7f77bbcf",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 680,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1908,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2588
+  }
+}

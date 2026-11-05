@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:10050151\",\n    \"name\": \"米家冰箱 对开门\",\n    \"url\": \"https://www.ithome.com/0/641/386.htm\",\n    \"date\": null,\n    \"quote\": \"今天，小米推出了米家冰箱十字对开门 430L，首发 2199 元，今晚 8 点开售。\",\n    \"reason\": \"原文发布的是“米家冰箱十字对开门 430L”，与输入型号“米家冰箱 对开门”不是同一型号（十字对开门 vs 对开门），仅前缀包含不证明身份；文中其他对开门型号均为往期新品回顾，非本次发布，无法确定该型号首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:16456\",\n    \"name\": \"米家智能快煮电饭煲5L\",\n    \"url\": \"https://www.ithome.com/0/638/331.htm\",\n    \"date\": \"2022-09\",\n    \"quote\": \"IT之家 9 月 1 日消息，米家烹饪机器人以及米家智能快煮电饭煲 5L 今日 10 点正式开售。\",\n    \"reason\": \"原文明确“米家智能快煮电饭煲 5L 今日 10 点正式开售”，型号完全匹配；报道日期为2022-09-01，事件“今日开售”与报道同月，可确定首次开售月为2022-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/634/338.htm\",\n    \"date\": null,\n    \"quote\": \"除了已经官宣的 Redmi K50 至尊版、小米 MIX FOLD 2、小米手表 S1 Pro，小米也将在活动中发布两款米家产品\",\n    \"reason\": \"输入型号仅为品牌名“Redmi”，原文提及的是“Redmi K50 至尊版”，属于后代/具体型号，不能证明与输入型号同一身份；且该产品为“将于 8 月 11 日发布”的预告，无同月原文锚点确认实际发布，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24607\",\n    \"name\": \"米家恒温电水壶\",\n    \"url\": \"https://www.ithome.com/0/631/428.htm\",\n    \"date\": null,\n    \"quote\": \"小米之家今日宣布米家恒温电水壶 2 发布，该电水壶支持 LED 数显，售价 169 元并且已于今日零点开售。\",\n    \"reason\": \"原文发布的是“米家恒温电水壶 2”，与输入型号“米家恒温电水壶”不是同一型号（后代型号不视为同一），仅前缀包含不证明身份，无法确定该型号首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:3556\",\n    \"name\": \"米家恒温电水壶\",\n    \"url\": \"https://www.ithome.com/0/631/428.htm\",\n    \"date\": null,\n    \"quote\": \"小米之家今日宣布米家恒温电水壶 2 发布，该电水壶支持 LED 数显，售价 169 元并且已于今日零点开售。\",\n    \"reason\": \"原文发布的是“米家恒温电水壶 2”，与输入型号“米家恒温电水壶”不是同一型号（后代型号不视为同一），仅前缀包含不证明身份，无法确定该型号首发月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870424,
+  "id": "144ba862-f81b-4635-b545-103b6fb3677f",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 844,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2553,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3397
+  }
+}

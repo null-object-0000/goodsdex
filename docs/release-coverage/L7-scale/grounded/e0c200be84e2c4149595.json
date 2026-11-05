@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:19145\",\n    \"name\": \"米家暖风机\",\n    \"url\": \"https://www.ithome.com/0/716/033.htm\",\n    \"date\": \"2023-08\",\n    \"quote\": \"小米智能生态官微今日宣布，米家一系列电暖新品即日起正式开售。这 4 款新品分别为 米家踢脚线电暖器 2 / 米家石墨烯踢脚线电暖器 2、米家暖风机 / 米家石墨烯暖风机 ，售价分别为 299/399 元和 199/299 元。\",\n    \"reason\": \"原文明确列出“米家暖风机”为4款新品之一，且“今日宣布……即日起正式开售”，报道日期为2023-08-31，事件与报道同月，故首次发布年月为2023-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/714/794.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家扫拖机器人 3 今日上架小米商城，目前处于预售状态，用户可支付定金 100 元抵 300 元，预售价为 1599 元，到手价 1399 元。\",\n    \"reason\": \"原文型号为“米家扫拖机器人 3”，输入型号为“米家扫拖机器人”，后代型号不证明同一身份；且原文事件为“上架/预售”，非明确“首次发布/首发”，无法确定输入型号的首发月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:18523\",\n    \"name\": \"米家智能微蒸烤一体机\",\n    \"url\": \"https://www.ithome.com/0/694/472.htm\",\n    \"date\": \"2023-05\",\n    \"quote\": \"小米赶在 618 之前推出了大量新品，例如这款米家智能微蒸烤一体机，目前预售显示为 1999 元。\",\n    \"reason\": \"原文明确“推出了”该型号新品，报道日期为2023-05-23，事件与报道同月，故首次发布年月为2023-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/694/426.htm\",\n    \"date\": null,\n    \"quote\": \"小米赶在 618 之前又推出了多款新品，例如 Redmi  K60 的 16G+1T 版本，还有这款米家冰箱十字对开门 606L 墨青岩版本。\",\n    \"reason\": \"输入型号名为“Redmi”，原文中“Redmi K60 的 16G+1T 版本”是具体后代/版本，不能证明与输入“Redmi”为同一型号；且文章主体为米家冰箱，无法确定“Redmi”本身的首发月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:18388\",\n    \"name\": \"米家手持蒸汽熨烫机\",\n    \"url\": \"https://www.ithome.com/0/687/276.htm\",\n    \"date\": null,\n    \"quote\": \"小米商城近期上架了一款米家手持蒸汽熨烫机，首发价 279 元。\",\n    \"reason\": \"原文称“近期上架”并给出“首发价”，但“近期”不是明确发布事件锚点，无法确定首次发布年月；报道日期2023-04-18不能单独作为首发月依据，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870417,
+  "id": "021793870412394ab257ece25bd0fea81c82ca5c15ec8fd8885f8",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 854,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2360,
+    "prompt_tokens_details": {
+      "cached_tokens": 1152
+    },
+    "total_tokens": 3214
+  }
+}

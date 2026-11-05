@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:21002\",\n    \"name\": \"米家热泵烘干机10kg\",\n    \"url\": \"https://www.ithome.com/0/799/652.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家智投洗 10kg 智能洗烘套装（IT之家注：含 10kg 洗衣机 + 10kg 烘干机）将在今晚 8 时正式开售，新品首发价 4999 元。\",\n    \"reason\": \"原文仅提及10kg烘干机作为套装组成部分随套装开售，未单独公告“米家热泵烘干机10kg”这一独立型号的首次发布；相关阅读链接指向另一篇报道，不能作为本型号首发依据。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050183\",\n    \"name\": \"米家洗衣机 超净洗洗烘\",\n    \"url\": \"https://www.ithome.com/0/797/630.htm\",\n    \"date\": \"2024-09\",\n    \"quote\": \"IT之家 9 月 23 日消息，小米今日发布米家洗衣机超净洗洗烘 10kg 银灰，该款洗衣机配备 DD 直驱电机、洗净比 1.1， 首发 1799 元\",\n    \"reason\": \"原文明确“今日发布”米家洗衣机超净洗洗烘10kg银灰，报道日期为2024-09-23，事件与报道同月，可确定首次发布年月为2024-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20461\",\n    \"name\": \"米家洗衣机 超净洗 洗烘10kg 银灰\",\n    \"url\": \"https://www.ithome.com/0/797/630.htm\",\n    \"date\": \"2024-09\",\n    \"quote\": \"IT之家 9 月 23 日消息，小米今日发布米家洗衣机超净洗洗烘 10kg 银灰，该款洗衣机配备 DD 直驱电机、洗净比 1.1， 首发 1799 元\",\n    \"reason\": \"原文明确“今日发布”米家洗衣机超净洗洗烘10kg银灰，报道日期为2024-09-23，事件与报道同月，可确定首次发布年月为2024-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20399\",\n    \"name\": \"米家净化加湿器 3 Max\",\n    \"url\": \"https://www.ithome.com/0/796/789.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 9 月 19 日消息，小米米家净化加湿器 3 Max 今日正式开售。\",\n    \"reason\": \"原文仅公告“今日正式开售”，属于开售事件而非首次发布/新品推出公告；无法据此确定首次发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/796/707.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 9 月 19 日消息，小米米家扫拖机器人 H40 今日 9:30 首销。\",\n    \"reason\": \"输入型号为“米家扫拖机器人”，原文事件主体为“米家扫拖机器人 H40”，H40为具体型号后缀，不能仅凭前缀包含认定同一型号；且原文为“首销”而非首次发布公告，无法确定该输入型号的首发年月，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871362,
+  "id": "021793871358042ab257ece25bd0fea81c82ca5c15ec8fdbf859d",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 833,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2408,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3241
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:8109\",\n    \"name\": \"米家投影仪\",\n    \"url\": \"https://www.ithome.com/0/528/177.htm\",\n    \"date\": null,\n    \"quote\": \"年度众筹新锐之星则包括米家互联网洗碗机、小米净水器、米家投影仪青春版等 17 件产品。\",\n    \"reason\": \"原文仅提及“米家投影仪青春版”为年度众筹新锐之星，未提及“米家投影仪”本身，且青春版为后代型号，不能证明米家投影仪身份；无首次发布事件与日期，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7528\",\n    \"name\": \"米家电磁炉\",\n    \"url\": \"https://www.ithome.com/0/524/963.htm\",\n    \"date\": null,\n    \"quote\": \"小米早在 2017 年就曾推出米家电磁炉，售价仅为 299 元\",\n    \"reason\": \"原文提及米家电磁炉于2017年推出，但仅到年无月；同文主体为米家双口电磁炉众筹，非米家电磁炉首发，无法确定月份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7528\",\n    \"name\": \"米家电磁炉\",\n    \"url\": \"https://www.ithome.com/0/524/559.htm\",\n    \"date\": null,\n    \"quote\": \"小米早在 2017 年就曾推出米家电磁炉，售价仅为 299 元\",\n    \"reason\": \"原文提及米家电磁炉于2017年推出，但仅到年无月；同文主体为米家双口电磁炉将于12月16日众筹，非米家电磁炉首发，无法确定月份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21680\",\n    \"name\": \"米家高速吹风机\",\n    \"url\": \"https://www.ithome.com/0/518/646.htm\",\n    \"date\": \"2020-11\",\n    \"quote\": \"小米米家高速吹风机将于明日正式开售\",\n    \"reason\": \"原文标题与正文明确“米家高速吹风机”将于明日（报道日2020-11-10的次日）正式开售，属新品开售公告；型号为米家高速吹风机（H900），与输入型号一致，日期锚定到月为2020-11。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:12580\",\n    \"name\": \"米家运动心电T恤\",\n    \"url\": \"https://www.ithome.com/0/507/722.htm\",\n    \"date\": null,\n    \"quote\": \"自 8 月 5 日起，米家运动心电 T 恤在小米商城开启众筹\",\n    \"reason\": \"原文明确米家运动心电T恤于8月5日开启众筹，但报道发布于2020-09-08，原文未标明年份，无法确定具体年份月份，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871394,
+  "id": "61d370d5-7dd8-4dc2-94c7-e5e4ad36669e",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 720,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2133,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2853
+  }
+}

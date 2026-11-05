@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25101\",\n    \"name\": \"小米充电宝 自带线 20000 22.5W\",\n    \"url\": \"https://www.ithome.com/0/977/041.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米官方今日宣布，小米首款新国标移动电源小米充电宝自带线 20000 22.5W 将于 7 月 22 日全渠道开售\",\n    \"reason\": \"原文明确该型号为小米首款新国标移动电源，官方今日（报道日7月15日）宣布将于7月22日开售，属新品发布公告，锚点为7月，故首次发布年月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/976/714.htm\",\n    \"date\": null,\n    \"quote\": \"小米今天宣布推出 REDMI Note 17 标准版手机\",\n    \"reason\": \"输入型号名为'Redmi'，仅为品牌名，原文发布的是REDMI Note 17标准版，型号名不构成同一型号身份，无法确认该输入型号的首发，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/976/707.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Note 17 Pro 手机正式发布\",\n    \"reason\": \"输入型号名为'Redmi'，仅为品牌名，原文发布的是REDMI Note 17 Pro，Pro为不同型号，无法确认输入型号身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/976/371.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日宣布推出 REDMI 儿童电话手表 Pro\",\n    \"reason\": \"输入型号名为'Redmi'，仅为品牌名，原文推出的是REDMI儿童电话手表Pro，属不同产品，无法确认输入型号身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050113\",\n    \"name\": \"米家洗衣机Pro\",\n    \"url\": \"https://www.ithome.com/0/976/213.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米米家洗衣机 Pro 超电解智投滚筒 10kg 今晚开售，新品首发价 2699 元\",\n    \"reason\": \"原文标题与正文均指米家洗衣机Pro超电解智投滚筒10kg，与输入型号'米家洗衣机Pro'前缀一致且为同一产品线，报道日7月13日称'今晚开售'，属新品首发，锚点为7月，故为2026-07。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871500,
+  "id": "as-gm5epbrhpp",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 693,
+    "prompt_tokens": 2952,
+    "total_tokens": 3645
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25134\",\n    \"name\": \"Xiaomi 智能存储断电保护电源\",\n    \"url\": \"https://www.ithome.com/0/982/861.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米官方今日宣布推出 Xiaomi 智能存储断电保护电源并开售，首发价 349 元。\",\n    \"reason\": \"原文明确为Xiaomi 智能存储断电保护电源的推出并开售，报道日期为2026-07-29，事件与报道同月，故首次发布年月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20086\",\n    \"name\": \"米家大容量商务双肩包\",\n    \"url\": \"https://www.ithome.com/0/982/683.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在有品上架米家大容量商务双肩包 2（ 点此访问 ），将于明天开启众筹，标准价 599 元， 首发价 449 元 。\",\n    \"reason\": \"原文仅涉及“米家大容量商务双肩包 2”，未提及无“2”后缀的“米家大容量商务双肩包”，型号身份不匹配，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25089\",\n    \"name\": \"米家大容量商务双肩包 2\",\n    \"url\": \"https://www.ithome.com/0/982/683.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米现已在有品上架米家大容量商务双肩包 2（ 点此访问 ），将于明天开启众筹，标准价 599 元， 首发价 449 元 。\",\n    \"reason\": \"原文明确为米家大容量商务双肩包 2 上架并将于明天开启众筹，报道日期2026-07-28，“明天”相对月份锚定在2026-07，故首次发布年月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20809\",\n    \"name\": \"米家无线洗地机4C\",\n    \"url\": \"https://www.ithome.com/0/982/306.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家注意到，小米上一次推出米家无线洗地机 4C 还是在 2024 年。\",\n    \"reason\": \"原文仅回顾米家无线洗地机 4C 于2024年推出，未给出具体月份，无法确定首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21625\",\n    \"name\": \"米家无线洗地机4\",\n    \"url\": \"https://www.ithome.com/0/982/306.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家注意到，小米上一次推出米家无线洗地机 4C 还是在 2024 年。\",\n    \"reason\": \"原文仅提及米家无线洗地机 4C，未提及无“C”后缀的“米家无线洗地机4”，型号身份不匹配，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870676,
+  "id": "0217938706725646cb63cadb26a6eb1a5dd8bb71cce3d7f404aaa",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 741,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1679,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2420
+  }
+}

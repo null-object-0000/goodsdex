@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25134\",\n    \"name\": \"Xiaomi 智能存储断电保护电源\",\n    \"url\": \"https://www.ithome.com/0/982/861.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米官方今日宣布推出 Xiaomi 智能存储断电保护电源并开售，首发价 349 元。\",\n    \"reason\": \"原文明确该型号为 Xiaomi 智能存储断电保护电源，今日（报道日 2026-07-29）宣布推出并开售，属新品发布事件，报道时间与事件同月，故取 2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20086\",\n    \"name\": \"米家大容量商务双肩包\",\n    \"url\": \"https://www.ithome.com/0/982/683.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在有品上架米家大容量商务双肩包 2（ 点此访问 ），将于明天开启众筹\",\n    \"reason\": \"原文仅出现“米家大容量商务双肩包 2”，未出现无“2”后缀的“米家大容量商务双肩包”；后代型号不证明同一身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25089\",\n    \"name\": \"米家大容量商务双肩包 2\",\n    \"url\": \"https://www.ithome.com/0/982/683.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米现已在有品上架米家大容量商务双肩包 2（ 点此访问 ），将于明天开启众筹\",\n    \"reason\": \"原文明确型号为米家大容量商务双肩包 2，报道日 2026-07-28 称“明天开启众筹”，相对月份锚定报道月，故取 2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/982/360.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米新款米家电动剃须刀今日正式开售\",\n    \"reason\": \"原文明确型号为米家电动剃须刀，今日（报道日 2026-07-28）正式开售，属新品开售事件，报道时间与事件同月，故取 2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20809\",\n    \"name\": \"米家无线洗地机4C\",\n    \"url\": \"https://www.ithome.com/0/982/306.htm\",\n    \"date\": null,\n    \"quote\": \"小米上一次推出米家无线洗地机 4C 还是在 2024 年。\",\n    \"reason\": \"原文仅回顾 4C 于 2024 年推出，无具体月份；正文主体为 5C 预售，4C 非本次发布对象，无法确定首发月，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871491,
+  "id": "052c574a-53e2-489f-9578-3ec1375f5312",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 722,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1587,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2309
+  }
+}

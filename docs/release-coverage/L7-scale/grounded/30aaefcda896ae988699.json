@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:19858\",\n    \"name\": \"米家台灯2\",\n    \"url\": \"https://www.ithome.com/1/005/510.htm\",\n    \"date\": null,\n    \"quote\": \"小米旗下米家台灯 2 清视版将于今天 10:00 在京东开启首销\",\n    \"reason\": \"原文仅提及“米家台灯 2 清视版”首销，清视版为米家台灯2的后代/变体，不能等同于“米家台灯2”本身；且“今天”需原文锚点，报道时间为9月22日，但事件主体是清视版而非米家台灯2，故无法确定米家台灯2的首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/005/232.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Buds 8S 耳机将于 9 月 22 日 10 点上市\",\n    \"reason\": \"输入型号名为“Redmi”，仅为品牌前缀，原文事件主体是“REDMI Buds 8S”耳机，前缀包含不证明身份，无法确定“Redmi”作为独立型号的首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25431\",\n    \"name\": \"REDMI Buds 8S\",\n    \"url\": \"https://www.ithome.com/1/005/232.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"小米 REDMI Buds 8S 耳机将于 9 月 22 日 10 点上市\",\n    \"reason\": \"原文明确型号“REDMI Buds 8S”，事件为新品上市，报道时间为2026年9月21日，事件“9月22日”与报道同月，可锚定到2026年9月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/1/005/104.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今天在微博预热米家石墨烯暖风机 Pro，新品支持 2 米远距离环抱式送暖\",\n    \"reason\": \"原文事件主体为“米家石墨烯暖风机 Pro”，Pro为后代型号，不能等同于“米家石墨烯暖风机”；且原文未提及非Pro型号的发布事件，无法确定其首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25618\",\n    \"name\": \"米家石墨烯暖风机 Pro\",\n    \"url\": \"https://www.ithome.com/1/005/104.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"目前该产品已在小米有品上架，9 月 28 日开启众筹\",\n    \"reason\": \"原文明确型号“米家石墨烯暖风机 Pro”，事件为新品众筹开启，报道时间为2026年9月21日，事件“9月28日”与报道同月，可锚定到2026年9月。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870489,
+  "id": "as-b97kh1nrd0",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 766,
+    "prompt_tokens": 1894,
+    "total_tokens": 2660
+  }
+}

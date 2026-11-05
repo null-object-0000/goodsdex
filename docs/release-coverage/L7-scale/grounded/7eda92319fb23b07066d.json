@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/989/720.htm\",\n    \"date\": null,\n    \"quote\": \"对 K100 Pro 系列来说，一方面，新品刚刚上市， 本身会面临比较集中的新品反馈 。尤其是首月内，需要重点分配资源，保障绝大部分用户的稳定体验。\",\n    \"reason\": \"输入型号为“Redmi”，原文仅出现 REDMI K100 Pro / K100 Pro Max 等具体型号，未出现单独以“Redmi”为型号名的产品；且原文只说“新品刚刚上市”，未给出首次发布年月，无法确定，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050230\",\n    \"name\": \"米家高速水离子吹风机 Pro\",\n    \"url\": \"https://www.ithome.com/0/989/580.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能生态今日宣布，米家高速水离子吹风机 Pro 单机版现已开售。\",\n    \"reason\": \"原文事件是“米家高速水离子吹风机 Pro 单机版现已开售”，属于单机版开售，不是“米家高速水离子吹风机 Pro”这一型号的首次发布；且“今日”仅能锚定报道日 2026-08-14，不能证明该型号中国大陆首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21049\",\n    \"name\": \"米家高速水离子吹风机\",\n    \"url\": \"https://www.ithome.com/0/989/580.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能生态今日宣布，米家高速水离子吹风机 Pro 单机版现已开售。\",\n    \"reason\": \"输入型号为“米家高速水离子吹风机”，原文仅出现“米家高速水离子吹风机 Pro 单机版”，Pro/单机版为后代限定，不能证明与无 Pro 的基础型号同一身份；且事件为单机版开售，非该型号首次发布，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24248\",\n    \"name\": \"米家高速水离子吹风机Pro\",\n    \"url\": \"https://www.ithome.com/0/989/580.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能生态今日宣布，米家高速水离子吹风机 Pro 单机版现已开售。\",\n    \"reason\": \"原文事件为“米家高速水离子吹风机 Pro 单机版现已开售”，属于单机版开售，不是“米家高速水离子吹风机Pro”这一型号的首次发布；原文未给出首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25168\",\n    \"name\": \"米家高速水离子吹风机 Pro 单机\",\n    \"url\": \"https://www.ithome.com/0/989/580.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能生态今日宣布，米家高速水离子吹风机 Pro 单机版现已开售。\",\n    \"reason\": \"原文事件是“米家高速水离子吹风机 Pro 单机版现已开售”，为开售而非首次发布；原文未给出该型号首次发布年月，无法确定，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871485,
+  "id": "as-zw1ntvzp6b",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 786,
+    "prompt_tokens": 3079,
+    "total_tokens": 3865
+  }
+}

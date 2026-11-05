@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 INPUT = ROOT/'data/third-party/l7-release-evidence.json'
 POLICY = 'l7-exact-model-captured-month-v1'
 DOMAINS = ('mi.com','xiaomi.com','ithome.com','news.mydrivers.com','tech.sina.com.cn',
-           'finance.sina.com.cn','zol.com.cn','pconline.com.cn','wikipedia.org','yaduo.com')
+           'finance.sina.com.cn','zol.com.cn','pconline.com.cn','wikipedia.org','yaduo.com','xiaomi.cn','byd.com')
 
 def publisher(url, brand=None):
     u=urlparse(url)
@@ -25,6 +25,8 @@ def publisher(url, brand=None):
         if d in ('zol.com.cn','pconline.com.cn'): allowed|={'detail.'+d,'product.'+d,'news.'+d}
         if d=='wikipedia.org': allowed|={'zh.wikipedia.org','en.wikipedia.org'}
         if d in ('mi.com','xiaomi.com','yaduo.com'): allowed|={'ir.'+d}
+        if d=='xiaomi.cn': allowed.add('bbs.xiaomi.cn')
+        if d=='yaduo.com': allowed.add('h5mall.yaduo.com')
         if host in allowed: return d
     return None
 
@@ -78,6 +80,13 @@ def check(entry,row):
     if not terms or any(not normalize(t) or normalize(t) not in body for t in terms): raise ValueError('page_no_model')
     if not has_month(body,r['date']): raise ValueError('page_no_month')
     quote=e['quote']
+    # A shop archive needs explicit launch language, beyond a dated product listing.
+    for url in (e['url'], e['final_url']):
+        u=urlparse(url)
+        shop=(u.hostname=='h5mall.yaduo.com' or
+              (u.hostname in ('mi.com','www.mi.com') and u.path.startswith(('/shop/', '/buy/'))))
+        if shop and not re.search('首发|上市', quote):
+            raise ValueError('shop_no_launch_statement')
     if any(normalize(part) not in body for part in quote.split(' […] ')):
         raise ValueError('Quote missing from capture')
     if any(normalize(t) not in normalize(quote) for t in terms) or not has_month(quote,r['date']):

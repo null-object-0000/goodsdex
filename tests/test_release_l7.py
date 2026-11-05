@@ -61,3 +61,40 @@ def test_month_numeric_boundary_and_script_head_are_not_body_evidence():
     assert not l7.has_month('2024/11/20','2024-01')
     assert l7.has_month('2024/1/20','2024-01')
     assert l7.body_text(b'<head><title>Model 2024/1</title></head><body>Other</body>')=='Other'
+
+
+@pytest.mark.parametrize('url', [
+    'https://bbs.xiaomi.cn/thread/123',
+    'https://www.byd.com/cn/news/123',
+    'https://h5mall.yaduo.com/goods/detail/123',
+])
+def test_explicit_official_channels(url):
+    assert l7.publisher(url)
+
+def test_official_shop_needs_launch_language(tmp_path, monkeypatch):
+    row,e=fixture(tmp_path,monkeypatch)
+    e['release']['evidence'].update(url='https://www.mi.com/shop/buy/detail?product_id=1',
+                                  final_url='https://www.mi.com/shop/buy/detail?product_id=1')
+    with pytest.raises(ValueError, match='shop_no_launch_statement'):
+        l7.check(e,row)
+
+
+def test_car_guard_allows_only_captured_l7_replay(tmp_path, monkeypatch):
+    import json
+    from goodsdex.cars import assert_cars_unchanged
+    from goodsdex.release_tolerance import apply as select
+    row,e=fixture(tmp_path,monkeypatch)
+    row.update(id='CN:byd:car:test',price=100000,product_type='car')
+    e.update(id=row['id'],identity_sha256=l7.fingerprint(row))
+    bundle=tmp_path/'reviewed.json'
+    bundle.write_text(json.dumps(dict(policy=l7.POLICY,entries=[e])))
+    monkeypatch.setattr(l7,'INPUT',bundle)
+    result=select(l7.apply([row]))
+    assert result != [row]
+    assert_cars_unchanged([row],result)
+    altered=deepcopy(result);altered[0]['price']+=1
+    with pytest.raises(ValueError,match='car objects'):
+        assert_cars_unchanged([row],altered)
+    altered=deepcopy(result);altered[0]['release']['date']='2024-06'
+    with pytest.raises(ValueError,match='car objects'):
+        assert_cars_unchanged([row],altered)

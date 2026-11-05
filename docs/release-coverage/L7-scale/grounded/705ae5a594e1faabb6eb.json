@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/989/720.htm\",\n    \"date\": null,\n    \"quote\": \"对 K100 Pro 系列来说，一方面，新品刚刚上市， 本身会面临比较集中的新品反馈 。\",\n    \"reason\": \"输入型号名为 Redmi，原文仅提及 REDMI K100 Pro 系列新品刚上市，未给出该系列或 Redmi 品牌的具体首次发布年月；且 K100 Pro 为后代型号，不能等同于 Redmi。无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25139\",\n    \"name\": \"米家智能吸油烟机 3 欧式\",\n    \"url\": \"https://www.ithome.com/0/989/495.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"米家智能吸油烟机 3 欧式今日在小米有品上架并开启预约\",\n    \"reason\": \"原文明确该型号今日上架并开启预约，报道时间为 2026-08-14，事件与报道同月，可确定为 2026-08 首次发布/上架。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/988/589.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI K100 Pro Max 手机昨晚正式发布\",\n    \"reason\": \"原文发布的是 REDMI K100 Pro Max，属于后代型号，不能证明输入型号 Redmi 的身份；且未给出 Redmi 品牌或该型号的首次发布年月。弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/988/527.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI K100 Pro 系列手机今日正式发布，首批带来了 Pro Max 和 Pro 两款新机\",\n    \"reason\": \"原文发布的是 REDMI K100 Pro 系列（Pro Max 和 Pro），属于后代型号，不能证明输入型号 Redmi 的身份；未给出 Redmi 品牌本身的首次发布年月。弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050229\",\n    \"name\": \"小米充电宝 自带线 20000\",\n    \"url\": \"https://www.ithome.com/0/988/458.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米旗下新国标版本“小米充电宝自带线 20000 45W”和“小米充电宝自带线 20000 67W”将于今晚 7 点在有品开启首销\",\n    \"reason\": \"原文明确该系列充电宝将于今晚 7 点开启首销，报道时间为 2026-08-11，事件与报道同月，可确定为 2026-08 首次发布/首销。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870668,
+  "id": "71153f3a-8d50-4583-b30a-9bc9f75bab85",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 713,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2905,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3618
+  }
+}

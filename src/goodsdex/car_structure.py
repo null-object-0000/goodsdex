@@ -53,7 +53,7 @@ def migrate(rows):
                 from goodsdex.brands import infer_brand
                 if (original.get('brand'), original['brand_source']) != infer_brand(original):
                     raise ValueError('Canonical car brand attribution differs from rules')
-            structural = {k: v for k, v in original.items() if k not in ('release', 'brand_source', 'release_effective', 'release_decision', 'release_source', 'release_precision', 'release_evidence', 'release_quote', 'release_tolerance_days', 'release_delta_days', 'release_conflicts')}
+            structural = {k: v for k, v in original.items() if k not in ('release', 'brand_source', 'release_effective', 'release_decision', 'release_source', 'release_precision', 'release_confidence', 'release_evidence', 'release_quote', 'release_tolerance_days', 'release_delta_days', 'release_conflicts')}
             if 'price_basis_kind' in original:
                 from goodsdex.price_semantics import normalize
                 expected = [normalize(r) for r in expected]

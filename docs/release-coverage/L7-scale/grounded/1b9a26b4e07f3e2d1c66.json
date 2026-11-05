@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25672\",\n    \"name\": \"米家扫拖机器人 7 Max\",\n    \"url\": \"https://www.ithome.com/1/015/182.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米米家扫拖机器人 7 Max 今日 10:00 正式开启预售\",\n    \"reason\": \"原文明确该型号今日开启预售，报道时间为2026-10-20，事件与报道同月，故首次发布年月为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/014/664.htm\",\n    \"date\": null,\n    \"quote\": \"小米卢伟冰发布 REDMI K100 全新配色「流萤绿」官图，新机定档 10 月 27 日发布\",\n    \"reason\": \"输入型号名为“Redmi”，原文事件主体为REDMI K100，型号名仅为品牌前缀，不能证明“Redmi”即K100，身份不明确，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21680\",\n    \"name\": \"米家高速吹风机\",\n    \"url\": \"https://www.ithome.com/1/014/231.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已推出米家高速吹风机 Mini，售价 299 元，商品页面显示新品到手价 199 元起，将于 10 月 20 日 10 点在小米有品开始预售\",\n    \"reason\": \"原文发布/预售主体为“米家高速吹风机 Mini”，输入型号“米家高速吹风机”缺少Mini后缀，属于不同型号，不能确定身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25789\",\n    \"name\": \"米家高速吹风机 Mini\",\n    \"url\": \"https://www.ithome.com/1/014/231.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米现已推出米家高速吹风机 Mini，售价 299 元，商品页面显示新品到手价 199 元起，将于 10 月 20 日 10 点在小米有品开始预售\",\n    \"reason\": \"原文明确推出米家高速吹风机 Mini，并给出10月20日预售，报道时间为2026-10-17，相对月份有原文锚点，故首次发布年月为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25717\",\n    \"name\": \"米家除螨仪 3\",\n    \"url\": \"https://www.ithome.com/1/014/219.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米推出米家除螨仪 3，现已开始全款预售\",\n    \"reason\": \"原文明确推出米家除螨仪 3并已开始全款预售，报道时间为2026-10-17，事件与报道同月，故首次发布年月为2026-10。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871448,
+  "id": "d9a91225-e68b-4005-ba52-b207ffff0591",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 721,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1971,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2692
+  }
+}

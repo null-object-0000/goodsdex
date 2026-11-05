@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:6105\",\n    \"name\": \"米家感应夜灯\",\n    \"url\": \"https://www.ithome.com/0/316/836.htm\",\n    \"date\": \"2017-07\",\n    \"quote\": \"今天，小米米家再添加了一位新成员——米家感应夜灯，新品将于明天上午10点正式开卖。\",\n    \"reason\": \"原文明确“今天”发布米家感应夜灯，报道时间为2017-07-17，事件与报道同月，故首次发布年月为2017-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6158\",\n    \"name\": \"激光投影电视 150英寸\",\n    \"url\": \"https://www.ithome.com/0/315/323.htm\",\n    \"date\": null,\n    \"quote\": \"以米家App当中的米家激光投影电视150英寸版本来看，在开启众筹的前20分钟已经完成众筹目标\",\n    \"reason\": \"原文仅提及众筹进行中，未给出该型号首次发布或首次众筹的具体年月，报道时间不能直接作为首发月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:2774\",\n    \"name\": \"九号平衡车\",\n    \"url\": \"https://www.ithome.com/0/315/206.htm\",\n    \"date\": null,\n    \"quote\": \"6月28日下午，小米在北京正式发布了米家九号平衡车Plus和售价9999元的“米家激光投影电视150英寸”等产品\",\n    \"reason\": \"原文发布的是“九号平衡车Plus”，与输入型号“九号平衡车”不是同一型号，不能证明该型号首发，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6079\",\n    \"name\": \"九号平衡车 Plus\",\n    \"url\": \"https://www.ithome.com/0/315/206.htm\",\n    \"date\": \"2017-06\",\n    \"quote\": \"6月28日下午，小米在北京正式发布了米家九号平衡车Plus和售价9999元的“米家激光投影电视150英寸”等产品\",\n    \"reason\": \"原文明确“九号平衡车Plus”于6月28日正式发布，报道时间为2017-07-03，事件发生在2017年6月，故首次发布年月为2017-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6158\",\n    \"name\": \"激光投影电视 150英寸\",\n    \"url\": \"https://www.ithome.com/0/315/206.htm\",\n    \"date\": \"2017-06\",\n    \"quote\": \"6月28日下午，小米在北京正式发布了米家九号平衡车Plus和售价9999元的“米家激光投影电视150英寸”等产品\",\n    \"reason\": \"原文明确“米家激光投影电视150英寸”于6月28日正式发布，报道时间为2017-07-03，事件发生在2017年6月，故首次发布年月为2017-06。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870455,
+  "id": "b1653cc2-31b0-4c32-a3e9-b0b6fa400caf",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 705,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1482,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2187
+  }
+}

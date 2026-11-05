@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/982/315.htm\",\n    \"date\": null,\n    \"quote\": \"7 月 31 日，REDMI 将登陆 2026 ChinaJoy，届时将在展会现场揭幕 年度重磅新品\",\n    \"reason\": \"原文仅称REDMI将在2026 ChinaJoy揭幕“年度重磅新品”，未明确该新品即为输入型号“Redmi”（且“Redmi”为品牌/系列泛称，非具体型号），K100系列仅为预计/爆料，不能确认身份与首发月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:byd:car:goods-165:current:dmi\",\n    \"name\": \"比亚迪 第三代 秦PLUS DM-i\",\n    \"url\": \"https://www.ithome.com/1/018/348.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"比亚迪第三代秦 PLUS DM-i 今天（27 日）上午正式上市\",\n    \"reason\": \"原文明确“第三代秦 PLUS DM-i”于报道当日（10月27日）上午正式上市，型号身份与事件均明确，报道时间与事件同月，故取2026-10。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871542,
+  "id": "23dbf73c-9d5c-4291-88d2-081b1b9ab19d",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 303,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1211,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 1514
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25143\",\n    \"name\": \"米家智能吸油烟机 3 顶侧双吸\",\n    \"url\": \"https://www.ithome.com/0/991/401.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"IT之家 8 月 19 日消息，小米现已在京东上架“米家智能吸油烟机 3 顶侧双吸”，该产品提供至高 30 m³/min 吸力、使用防跑烟设计， 首发价 2469 元 。\",\n    \"reason\": \"原文明确该型号“现已在京东上架”并给出“首发价”，报道日期为2026-08-19，事件与报道同月，可确定首次发布月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20833\",\n    \"name\": \"米家智能宠物饮水机 2\",\n    \"url\": \"https://www.ithome.com/0/991/397.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 8 月 19 日消息，小米现已在京东上架“米家智能宠物饮水机 2 除菌版”，该产品主打 99% 除菌率，将于 8 月 25 日首销， 定价为 199 元 。\",\n    \"reason\": \"原文仅涉及“米家智能宠物饮水机 2 除菌版”，除菌版为不同型号；输入型号“米家智能宠物饮水机 2”无对应发布事件，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25270\",\n    \"name\": \"米家智能宠物饮水机 2 除菌版\",\n    \"url\": \"https://www.ithome.com/0/991/397.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"IT之家 8 月 19 日消息，小米现已在京东上架“米家智能宠物饮水机 2 除菌版”，该产品主打 99% 除菌率，将于 8 月 25 日首销， 定价为 199 元 。\",\n    \"reason\": \"原文明确该除菌版型号已上架并将于8月25日首销，报道日期2026-08-19提供月份锚点，首销月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/991/307.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 8 月 18 日消息，小米 REDMI M100 手机今日上新小米商城，其搭载第五代骁龙 4 移动平台、内置 7900mAh 电池， 定价 1799 元起 。\",\n    \"reason\": \"原文发布的是“REDMI M100”，输入型号仅为“Redmi”品牌名，无法证明为同一型号，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/990/263.htm\",\n    \"date\": null,\n    \"quote\": \"据IT之家此前报道， 小米 REDMI K100 Pro / Max 手机已于 8 月 11 日晚正式发布 ，分别搭载第五代骁龙 8 至尊版 V Series / 第五代骁龙 8 至尊版处理器，拥有 8580mAh / 9070mAh 电池 + Bose 联合调音，国补价 3199 元起。\",\n    \"reason\": \"原文涉及REDMI K100 Pro/Max，输入型号仅为“Redmi”品牌名，无法证明为同一型号，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870672,
+  "id": "0217938706676245c7f85291e6ad850e47f0b8bb356de2fec9abf",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 880,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2791,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3671
+  }
+}

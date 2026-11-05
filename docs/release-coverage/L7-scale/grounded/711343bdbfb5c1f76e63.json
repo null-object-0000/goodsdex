@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:24830\",\n    \"name\": \"米家手持风扇\",\n    \"url\": \"https://www.ithome.com/0/962/706.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"小米米家手持风扇于昨日开售\",\n    \"reason\": \"原文明确该型号于报道前一日（6月10日）开售，报道发布于2026-06-11，事件同月，可确定为2026-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19201\",\n    \"name\": \"米家即热管线机\",\n    \"url\": \"https://www.ithome.com/0/961/756.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在有品上架一款米家即热管线机制冰版\",\n    \"reason\": \"原文发布的是“制冰版”，与输入型号“米家即热管线机”非同一型号（制冰版为后代/变体），仅前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24894\",\n    \"name\": \"米家即热管线机 制冰版\",\n    \"url\": \"https://www.ithome.com/0/961/756.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"小米现已在有品上架一款米家即热管线机制冰版……6 月 15 日首销价格 2969.1 元\",\n    \"reason\": \"原文明确该制冰版已上架，并给出6月15日首销，报道发布于2026-06-09，事件同月，可确定为2026-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050224\",\n    \"name\": \"米家手持风扇\",\n    \"url\": \"https://www.ithome.com/0/959/932.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"小米米家手持风扇已开启预约，将在 6 月 10 日 10:00 正式开售\",\n    \"reason\": \"原文明确该型号将于6月10日正式开售，报道发布于2026-06-04，相对月份有原文锚点且同月，可确定为2026-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24830\",\n    \"name\": \"米家手持风扇\",\n    \"url\": \"https://www.ithome.com/0/959/932.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"小米米家手持风扇已开启预约，将在 6 月 10 日 10:00 正式开售\",\n    \"reason\": \"原文明确该型号将于6月10日正式开售，报道发布于2026-06-04，相对月份有原文锚点且同月，可确定为2026-06。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871322,
+  "id": "0217938713190795c7f85291e6ad850e47f0b8bb356de2f3ecd73",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 677,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1923,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2600
+  }
+}

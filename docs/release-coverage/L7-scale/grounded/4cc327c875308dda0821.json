@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:16456\",\n    \"name\": \"米家智能快煮电饭煲5L\",\n    \"url\": \"https://www.ithome.com/0/638/331.htm\",\n    \"date\": null,\n    \"quote\": \"米家烹饪机器人以及米家智能快煮电饭煲 5L 今日 10 点正式开售。\",\n    \"reason\": \"原文仅提及该型号今日开售，未说明首次发布或首发时间；开售不等于首次发布，且无更早发布公告，无法确定首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/634/338.htm\",\n    \"date\": null,\n    \"quote\": \"除了已经官宣的 Redmi K50 至尊版、小米 MIX FOLD 2、小米手表 S1 Pro，小米也将在活动中发布两款米家产品\",\n    \"reason\": \"输入型号名为“Redmi”，原文中仅作为 Redmi K50 至尊版的前缀出现，前缀包含不证明身份；且无该独立型号的发布信息，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24607\",\n    \"name\": \"米家恒温电水壶\",\n    \"url\": \"https://www.ithome.com/0/631/428.htm\",\n    \"date\": null,\n    \"quote\": \"小米之家今日宣布米家恒温电水壶 2 发布，该电水壶支持 LED 数显，售价 169 元并且已于今日零点开售。\",\n    \"reason\": \"原文发布的是“米家恒温电水壶 2”，输入型号为“米家恒温电水壶”，后代型号不是同一型号；原文未单独发布无后缀的米家恒温电水壶，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:3556\",\n    \"name\": \"米家恒温电水壶\",\n    \"url\": \"https://www.ithome.com/0/631/428.htm\",\n    \"date\": null,\n    \"quote\": \"小米之家今日宣布米家恒温电水壶 2 发布，该电水壶支持 LED 数显，售价 169 元并且已于今日零点开售。\",\n    \"reason\": \"原文发布的是“米家恒温电水壶 2”，输入型号为“米家恒温电水壶”，后代型号不是同一型号；原文未单独发布无后缀的米家恒温电水壶，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050151\",\n    \"name\": \"米家冰箱 对开门\",\n    \"url\": \"https://www.ithome.com/0/629/255.htm\",\n    \"date\": null,\n    \"quote\": \"今日，小米米家 536L 大容量对开门冰箱正式开售\",\n    \"reason\": \"原文仅提及米家 536L 对开门冰箱今日正式开售，未说明首次发布或首发时间；开售不等于首次发布，且无发布公告，无法确定首次发布年月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871393,
+  "id": "0217938713894204f170dda172df2cc79a65077ac74d404b8dae6",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 738,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2461,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3199
+  }
+}

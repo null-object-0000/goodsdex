@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25800\",\n    \"name\": \"米家口袋照片打印机pro 礼盒装\",\n    \"url\": \"https://www.ithome.com/1/015/258.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米米家口袋照片打印机 Pro 礼盒装今日正式开售\",\n    \"reason\": \"原文明确“礼盒装今日正式开售”，报道日期为2026-10-20，事件与报道同月，可确定为2026-10。型号为礼盒装，与普通Pro区分。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21680\",\n    \"name\": \"米家高速吹风机\",\n    \"url\": \"https://www.ithome.com/1/015/190.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家高速吹风机 Mini 今日开始预售\",\n    \"reason\": \"原文仅涉及“米家高速吹风机 Mini”的预售，未提及无后缀的“米家高速吹风机”型号；Mini为不同型号，不能证明该输入型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25789\",\n    \"name\": \"米家高速吹风机 Mini\",\n    \"url\": \"https://www.ithome.com/1/015/190.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米米家高速吹风机 Mini 今日开始预售\",\n    \"reason\": \"原文明确“米家高速吹风机 Mini 今日开始预售”，报道日期为2026-10-20，事件与报道同月，可确定为2026-10。型号完全匹配。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050243\",\n    \"name\": \"米家扫拖机器人 7 Max\",\n    \"url\": \"https://www.ithome.com/1/015/182.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米米家扫拖机器人 7 Max 今日 10:00 正式开启预售\",\n    \"reason\": \"原文明确“米家扫拖机器人 7 Max 今日 10:00 正式开启预售”，报道日期为2026-10-20，事件与报道同月，可确定为2026-10。型号完全匹配。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/1/015/182.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家扫拖机器人 7 Max 今日 10:00 正式开启预售\",\n    \"reason\": \"原文仅涉及“米家扫拖机器人 7 Max”的预售，未提及无后缀的“米家扫拖机器人”型号；7 Max为不同型号，不能证明该输入型号身份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871448,
+  "id": "f4208c1a-30d3-4134-b3fb-34a6fe14e133",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 674,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2292,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2966
+  }
+}

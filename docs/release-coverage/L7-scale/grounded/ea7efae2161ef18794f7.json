@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:21400\",\n    \"name\": \"米家口袋照片打印机 Pro\",\n    \"url\": \"https://www.ithome.com/0/917/450.htm\",\n    \"date\": null,\n    \"quote\": \"米家口袋照片打印机 Pro 纪念礼盒将于今天晚间 20 时正式开售\",\n    \"reason\": \"原文仅提及“纪念礼盒”开售，礼盒为独立型号，不能证明“米家口袋照片打印机 Pro”本体的首次发布；且开售事件针对礼盒，非该型号首发，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:22722\",\n    \"name\": \"米家口袋照片打印机 Pro 纪念礼盒\",\n    \"url\": \"https://www.ithome.com/0/917/450.htm\",\n    \"date\": \"2026-01\",\n    \"quote\": \"米家口袋照片打印机 Pro 纪念礼盒将于今天晚间 20 时正式开售\",\n    \"reason\": \"原文明确该纪念礼盒于1月29日今天晚间20时正式开售，报道发布于2026-01-29，事件同月，符合“正式开售”作为发布公告，日期锚定到月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:22620\",\n    \"name\": \"米家变频净化除湿机 Max\",\n    \"url\": \"https://www.ithome.com/0/915/375.htm\",\n    \"date\": \"2026-01\",\n    \"quote\": \"小米新上架了一款米家变频净化除湿机 Max，将于 1 月 28 日正式开售，首发价 3799 元\",\n    \"reason\": \"原文明确该型号新上架并将于1月28日正式开售，报道发布于2026-01-22，事件同月，符合新品发布公告，日期锚定到月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050113\",\n    \"name\": \"米家洗衣机Pro\",\n    \"url\": \"https://www.ithome.com/0/914/409.htm\",\n    \"date\": \"2026-01\",\n    \"quote\": \"小米米家洗衣机 Pro 超电解智投洗烘 10kg 现已上架并开启预售，预售价为 3293 元\",\n    \"reason\": \"原文明确该型号已上架并开启预售，报道发布于2026-01-19，事件同月，符合新品预售公告，日期锚定到月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19530\",\n    \"name\": \"米家智能电热毯\",\n    \"url\": \"https://www.ithome.com/0/892/409.htm\",\n    \"date\": null,\n    \"quote\": \"小米“米家智能电热毯单人款”现已在京东开售\",\n    \"reason\": \"原文仅提及“单人款”开售，单人款为独立型号，不能证明“米家智能电热毯”本体的首次发布；且为开售而非首发公告，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871329,
+  "id": "9782d789-d565-4e28-a8ce-88c03178ba83",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 709,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2139,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2848
+  }
+}

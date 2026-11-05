@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25844\",\n    \"name\": \"米家台式净饮机3\",\n    \"url\": \"https://www.ithome.com/1/018/438.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"IT之家 10 月 27 日消息，小米现已在有品上架米家台式净饮机 3（ 点此访问 ），该产品提供 2100W 功率，可实现“3 秒即热”，定价为 1499 元，目前处于支付订金状态。\",\n    \"reason\": \"原文明确为“米家台式净饮机 3”上架并支付订金，属新品推出公告；报道日期为10月27日，事件同月，故取2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21680\",\n    \"name\": \"米家高速吹风机\",\n    \"url\": \"https://www.ithome.com/1/018/256.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 10 月 27 日消息，今天（27 日）上午，小米米家高速吹风机 Mini 正式开售，建议零售价 299 元，首销到手价 199.7 元。\",\n    \"reason\": \"原文仅涉及“米家高速吹风机 Mini”，未提及无后缀的“米家高速吹风机”；Mini为不同型号，不能证明该输入型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25789\",\n    \"name\": \"米家高速吹风机 Mini\",\n    \"url\": \"https://www.ithome.com/1/018/256.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"IT之家 10 月 27 日消息，今天（27 日）上午，小米米家高速吹风机 Mini 正式开售，建议零售价 299 元，首销到手价 199.7 元。\",\n    \"reason\": \"原文明确为“米家高速吹风机 Mini”正式开售，属新品开售公告；报道日期为10月27日，事件同月，故取2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:5010\",\n    \"name\": \"小米门窗传感器\",\n    \"url\": \"https://www.ithome.com/1/017/932.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 10 月 26 日消息，小米门窗传感器 3 现已在京东开售，新品主打 3 年长续航， 相比旧款升级隧道磁阻传感器 ，但少了光照传感器， 定价 49 元 。\",\n    \"reason\": \"原文仅涉及“小米门窗传感器 3”，未提及无后缀的“小米门窗传感器”；3代为不同型号，不能证明该输入型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/017/498.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 10 月 24 日消息，小米 REDMI 显示器 G25 300Hz 2027 已经上架京东并开售，售价显示为 799 元。\",\n    \"reason\": \"原文仅涉及“REDMI 显示器 G25 2027”，输入型号名为“Redmi”，仅为品牌前缀，不能证明是同一型号，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871437,
+  "id": "2f9b9445-f8d6-4b59-b372-91727633cf96",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 812,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2027,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2839
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/995/005.htm\",\n    \"date\": null,\n    \"quote\": \"今天上午，小米在日本市场正式发布了其万级大电池手机 REDMI Note 17 Pro Max 5G\",\n    \"reason\": \"输入型号为泛称“Redmi”，原文发布的是 REDMI Note 17 Pro Max 5G（日本市场），型号名后代不证明同一身份；且为日本发布非中国大陆首发，无法确定中国大陆首次发布月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20078\",\n    \"name\": \"米家弹盖保温杯\",\n    \"url\": \"https://www.ithome.com/0/994/811.htm\",\n    \"date\": null,\n    \"quote\": \"米家弹盖保温杯 2 现已在小米有品上架，将于 9 月 2 日开启众筹\",\n    \"reason\": \"原文发布的是“米家弹盖保温杯 2”，输入型号“米家弹盖保温杯”缺少“2”，后代型号不证明同一身份；且众筹日期为相对“9 月 2 日”，原文无年份锚点，无法确定到月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25272\",\n    \"name\": \"米家弹盖保温杯2\",\n    \"url\": \"https://www.ithome.com/0/994/811.htm\",\n    \"date\": null,\n    \"quote\": \"米家弹盖保温杯 2 现已在小米有品上架，将于 9 月 2 日开启众筹\",\n    \"reason\": \"型号身份匹配“米家弹盖保温杯 2”，事件为众筹开启；但“9 月 2 日”为相对日期，原文无年份锚点，无法确定 YYYY-MM，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20854\",\n    \"name\": \"小米智能摄像机 视频通话版\",\n    \"url\": \"https://www.ithome.com/0/994/402.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能摄像机视频通话版 2 单机现已在小米有品开启众筹（ 点击前往 ），首发价 429 元。\",\n    \"reason\": \"原文发布的是“视频通话版 2”，输入型号“视频通话版”缺少“2”，后代型号不证明同一身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25222\",\n    \"name\": \"小米智能摄像机 视频通话版2\",\n    \"url\": \"https://www.ithome.com/0/994/402.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"IT之家 8 月 26 日消息，小米智能摄像机视频通话版 2 单机现已在小米有品开启众筹（ 点击前往 ），首发价 429 元。\",\n    \"reason\": \"型号身份匹配“小米智能摄像机视频通话版 2”；事件为“现已在小米有品开启众筹”，属首次众筹公告；原文报道日期为 2026-08-26，事件与报道同月，取 2026-08。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870494,
+  "id": "f751a8dc-026e-44c9-8381-bca7600c3ec8",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 768,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2318,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3086
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:8109\",\n    \"name\": \"米家投影仪\",\n    \"url\": \"https://www.ithome.com/0/507/141.htm\",\n    \"date\": null,\n    \"quote\": \"米家投影仪青春版 2 现已开启众筹\",\n    \"reason\": \"输入型号为“米家投影仪”，原文事件主体为“米家投影仪青春版 2”，属于不同型号（青春版2为后代/变体），不能证明同一型号身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:12548\",\n    \"name\": \"米家智能微烤一体机\",\n    \"url\": \"https://www.ithome.com/0/502/081.htm\",\n    \"date\": \"2020-08\",\n    \"quote\": \"周五，米家推出智能家居新品—— 米家智能微烤一体机，支持烧烤、微波一机两用 。新品将于 8 月 11 日上午 10 点开售\",\n    \"reason\": \"原文明确“米家推出”该型号新品，报道时间为2020-08-07，事件同月；开售日期8月11日有原文锚点，首次发布可确定到2020-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:12580\",\n    \"name\": \"米家运动心电T恤\",\n    \"url\": \"https://www.ithome.com/0/501/646.htm\",\n    \"date\": \"2020-08\",\n    \"quote\": \"今日上午，小米米家运动心电 T 恤开启众筹\",\n    \"reason\": \"原文明确该型号“开启众筹”，报道时间为2020-08-05，事件同月，可确定首次众筹/发布为2020-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:12580\",\n    \"name\": \"米家运动心电T恤\",\n    \"url\": \"https://www.ithome.com/0/501/358.htm\",\n    \"date\": \"2020-08\",\n    \"quote\": \"将于 8 月 5 日正式开启众筹\",\n    \"reason\": \"原文宣布该型号将于8月5日开启众筹，报道时间为2020-08-03，相对月份有原文锚点，可确定2020-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:12188\",\n    \"name\": \"米家激光投影电视 1S 4K\",\n    \"url\": \"https://www.ithome.com/0/491/658.htm\",\n    \"date\": \"2020-06\",\n    \"quote\": \"小米米家激光投影1S 4K版 6月9日正式上新，宣布米家激光投影电视1S 4K版新品14999元！预售到手价12999元\",\n    \"reason\": \"原文明确该型号“6月9日正式上新”且称“新品”，报道时间为2020-06-09，事件同月，可确定首次发布为2020-06。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871398,
+  "id": "0217938713946676cb63cadb26a6eb1a5dd8bb71cce3d7f4d9f0f",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 703,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2119,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2822
+  }
+}

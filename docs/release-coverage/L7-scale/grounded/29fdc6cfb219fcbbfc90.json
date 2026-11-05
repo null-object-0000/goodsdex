@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25483\",\n    \"name\": \"小米智能摄像机 5 Pro 全彩夜视\",\n    \"url\": \"https://www.ithome.com/1/006/785.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"小米智能摄像机 5 Pro 全彩夜视现已在小米有品开启众筹，活动时间为 9 月 23 日 10 点-9 月 30 日 10 点\",\n    \"reason\": \"原文明确该型号已开启众筹，众筹开始时间为9月23日，报道发布于2026-09-24，事件与报道同月，故首次发布年月为2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25522\",\n    \"name\": \"米家三筒洗衣机 健康洗Pro 14kg\",\n    \"url\": \"https://www.ithome.com/1/006/460.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"在今晚的小米秋季新品发布会上，米家三筒洗衣机健康洗 Pro 14kg 系列上市\",\n    \"reason\": \"原文明确该型号系列在发布会上上市，报道发布于2026-09-23，事件与报道同月，故首次发布年月为2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20571\",\n    \"name\": \"米家无线直发梳\",\n    \"url\": \"https://www.ithome.com/1/006/080.htm\",\n    \"date\": null,\n    \"quote\": \"小米新推出了一款米家无线直发梳 2\",\n    \"reason\": \"原文推出的是“米家无线直发梳 2”，与输入型号“米家无线直发梳”不是同一型号，后代型号不证明原型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25655\",\n    \"name\": \"米家杀菌足浴器2\",\n    \"url\": \"https://www.ithome.com/1/005/585.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"小米米家杀菌足浴器 2 今日正式开售\",\n    \"reason\": \"原文明确该型号今日正式开售，报道发布于2026-09-22，事件与报道同月，故首次发布年月为2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19858\",\n    \"name\": \"米家台灯2\",\n    \"url\": \"https://www.ithome.com/1/005/510.htm\",\n    \"date\": null,\n    \"quote\": \"小米旗下米家台灯 2 清视版将于今天 10:00 在京东开启首销\",\n    \"reason\": \"原文首销的是“米家台灯 2 清视版”，与输入型号“米家台灯2”不是同一型号，版本后缀不证明同一身份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871456,
+  "id": "3c79e8dd-cc2e-40d2-bf3a-f5b6a8807af3",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 690,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2543,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3233
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25139\",\n    \"name\": \"米家智能吸油烟机 3 欧式\",\n    \"url\": \"https://www.ithome.com/0/992/319.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米米家智能吸油烟机 3 欧式将于今日 20:00 开售，首发到手价 1499 元。\",\n    \"reason\": \"原文明确型号“米家智能吸油烟机 3 欧式”，事件为“今日 20:00 开售”，报道日期为 2026-08-20，故首发月为 2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25171\",\n    \"name\": \"米家轻量通勤双肩包\",\n    \"url\": \"https://www.ithome.com/0/992/092.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米现已在京东上架新款米家轻量通勤双肩包，该产品提供主仓双层收纳、整体重量约 570g， 定价为 99 元 。\",\n    \"reason\": \"原文明确型号“米家轻量通勤双肩包”，事件为“现已在京东上架新款”，报道日期为 2026-08-20，上架即发布，故首发月为 2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:18580\",\n    \"name\": \"米家多彩旅行箱\",\n    \"url\": \"https://www.ithome.com/0/991/992.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家旅行箱全新配色今日开售， 采用低饱和浅蓝色调 ，共推出三个版本： 米家多彩旅行箱到手价 219 元起\",\n    \"reason\": \"原文仅提及“米家多彩旅行箱”作为全新浅蓝配色开售的版本之一，属于旧型号新配色促销，并非该型号首次发布，无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20018\",\n    \"name\": \"⽶家大容量旅行箱\",\n    \"url\": \"https://www.ithome.com/0/991/992.htm\",\n    \"date\": null,\n    \"quote\": \"米家大容量旅行箱到手价 499 元起\",\n    \"reason\": \"原文仅提及“米家大容量旅行箱”作为全新浅蓝配色开售的版本之一，属于旧型号新配色促销，并非该型号首次发布，无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/991/945.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Watch 6 活力版智能手表今日发布并开售\",\n    \"reason\": \"输入型号名为“Redmi”，原文发布的是“REDMI Watch 6 活力版”，型号名仅为品牌前缀，不能证明身份为同一型号，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871475,
+  "id": "0fa50c2f-cdb5-4a24-ab7c-3bf9c7a80a09",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 722,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2028,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2750
+  }
+}

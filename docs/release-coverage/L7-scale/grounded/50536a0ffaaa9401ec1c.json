@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25309\",\n    \"name\": \"米家立式学习灯2C\",\n    \"url\": \"https://www.ithome.com/0/993/956.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"IT之家 8 月 25 日消息，小米现已在京东上架米家立式学习灯 2C，定价为 1199 元\",\n    \"reason\": \"原文明确型号为米家立式学习灯 2C，事件为“现已在京东上架”，报道时间为2026-08-25，事件与报道同月，可确定首次发布年月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25292\",\n    \"name\": \"小米智能门锁 5C\",\n    \"url\": \"https://www.ithome.com/0/993/869.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"IT之家 8 月 25 日消息，小米智能门锁 5C 现已在京东开启首销，新品到手价 659 元。\",\n    \"reason\": \"原文明确型号为小米智能门锁 5C，事件为“现已在京东开启首销”，报道时间为2026-08-25，事件与报道同月，可确定首次发布年月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25293\",\n    \"name\": \"米家空调 巨省电 立式5匹一级能效\",\n    \"url\": \"https://www.ithome.com/0/993/854.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"IT之家 8 月 25 日消息，小米现已在京东上架 “米家空调 巨省电 立式 5 匹 一级能效” ，定价为 7999 元\",\n    \"reason\": \"原文明确型号为米家空调 巨省电 立式 5 匹 一级能效，事件为“现已在京东上架”，报道时间为2026-08-25，事件与报道同月，可确定首次发布年月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/993/818.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 8 月 25 日消息，小米现已在京东上架米家电动剃须刀 S100 云纹刀网版， 定价为 99 元 。\",\n    \"reason\": \"输入型号为“米家电动剃须刀”，原文发布的是“米家电动剃须刀 S100 云纹刀网版”，属于不同型号（后缀限定），不能证明输入型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20833\",\n    \"name\": \"米家智能宠物饮水机 2\",\n    \"url\": \"https://www.ithome.com/0/993/766.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 8 月 25 日消息，小米“米家智能宠物饮水机 2 除菌版”将于今天 10 点开启首销，该产品主打 99% 除菌率，定价为 199 元。\",\n    \"reason\": \"输入型号为“米家智能宠物饮水机 2”，原文发布的是“米家智能宠物饮水机 2 除菌版”，属于不同型号（后缀限定），不能证明输入型号身份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871471,
+  "id": "44eed0ec-011c-4b4e-99af-1eaa71413bdc",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 838,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2454,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3292
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/993/152.htm\",\n    \"date\": null,\n    \"quote\": \"米家扫拖机器人 7C 现已在小米有品上架预约\",\n    \"reason\": \"输入型号为“米家扫拖机器人”，原文仅出现“米家扫拖机器人 7C”，7C 是具体型号后缀，不能证明“米家扫拖机器人”这一无后缀型号的身份；且原文事件为 7C 上架预约，非该输入型号首发，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25228\",\n    \"name\": \"米家扫拖机器人7C\",\n    \"url\": \"https://www.ithome.com/0/993/152.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"米家扫拖机器人 7C 现已在小米有品上架预约，官方标价 2299 元，券后到手价 2069.1 元，8 月 26 日 10 点现货开售\",\n    \"reason\": \"原文明确“米家扫拖机器人 7C”已在小米有品上架预约，属新品上架预约公告；报道发布于 2026-08-23，原文“8 月 26 日”相对月份有 8 月锚点，首发相关月份为 2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/992/400.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI K100 Pro / Max 手机已于 8 月 11 日晚正式发布\",\n    \"reason\": \"输入型号仅为“Redmi”，原文涉及的是 REDMI K100 Pro / Pro Max 等具体型号，不能证明“Redmi”这一泛品牌/系列名对应同一型号；且原文事件为 K100 Pro/Max 发布及首销成绩，非“Redmi”型号首发，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25139\",\n    \"name\": \"米家智能吸油烟机 3 欧式\",\n    \"url\": \"https://www.ithome.com/0/992/319.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米米家智能吸油烟机 3 欧式将于今日 20:00 开售，首发到手价 1499 元\",\n    \"reason\": \"原文明确“米家智能吸油烟机 3 欧式”将于今日 20:00 开售，并称“首发到手价”，属新品首发开售公告；报道发布于 2026-08-20，“今日”锚点为 2026-08-20，首发月份为 2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25171\",\n    \"name\": \"米家轻量通勤双肩包\",\n    \"url\": \"https://www.ithome.com/0/992/092.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米现已在京东上架新款米家轻量通勤双肩包，该产品提供主仓双层收纳、整体重量约 570g，定价为 99 元\",\n    \"reason\": \"原文明确“新款米家轻量通勤双肩包”现已在京东上架，属新品上架公告；报道发布于 2026-08-20，事件同月，首发月份为 2026-08。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870510,
+  "id": "021793870505008ab257ece25bd0fea81c82ca5c15ec8fd225d16",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 852,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2564,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3416
+  }
+}

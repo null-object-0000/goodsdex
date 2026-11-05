@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:23905\",\n    \"name\": \"REDMI 显示器 G27Q 240Hz 2026\",\n    \"url\": \"https://www.ithome.com/1/013/625.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米新上架了一款“REDMI 显示器 G27Q 240Hz 2026 标准版”，京东显示 10 月 21 日首发价不超过 799 元。\",\n    \"reason\": \"原文明确该型号为“REDMI 显示器 G27Q 240Hz 2026 标准版”，输入型号名省略“标准版”但指向同一产品；报道发布于2026年10月15日，原文称“新上架”且“10月21日首发”，事件与报道同月，故首次发布年月为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25784\",\n    \"name\": \"REDMI显示器 G27Q 240Hz 2026 标准版\",\n    \"url\": \"https://www.ithome.com/1/013/625.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米新上架了一款“REDMI 显示器 G27Q 240Hz 2026 标准版”，京东显示 10 月 21 日首发价不超过 799 元。\",\n    \"reason\": \"原文逐字包含“REDMI 显示器 G27Q 240Hz 2026 标准版”，与输入型号完全一致；报道发布于2026年10月15日，原文称“新上架”且“10月21日首发”，事件与报道同月，故首次发布年月为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25290\",\n    \"name\": \"小米智能门锁 5C 猫眼版\",\n    \"url\": \"https://www.ithome.com/1/013/217.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米智能门锁 5C 猫眼版现已开售，新品到手价 999 元。\",\n    \"reason\": \"原文逐字包含“小米智能门锁 5C 猫眼版”，与输入型号完全一致；报道发布于2026年10月15日，原文称“现已开售”且为“新品”，事件与报道同月，故首次发布年月为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25292\",\n    \"name\": \"小米智能门锁 5C\",\n    \"url\": \"https://www.ithome.com/1/013/217.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能门锁 5C 猫眼版现已开售，新品到手价 999 元。\",\n    \"reason\": \"原文仅出现“小米智能门锁 5C 猫眼版”，未单独出现“小米智能门锁 5C”；猫眼版是不同型号，不能证明基础版5C的身份与首发时间，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25748\",\n    \"name\": \"米家金属旅行箱\",\n    \"url\": \"https://www.ithome.com/1/012/703.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米米家金属旅行箱已经上架有品，将于 10 月 21 日开启众筹，众筹到手价为 1699 元。\",\n    \"reason\": \"原文逐字包含“米家金属旅行箱”，与输入型号一致；报道发布于2026年10月14日，原文称“已经上架”且“将于10月21日开启众筹”，事件与报道同月，故首次发布年月为2026-10。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870490,
+  "id": "0217938704865465c7f85291e6ad850e47f0b8bb356de2f722f8f",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 875,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 3511,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 4386
+  }
+}

@@ -1,0 +1,1370 @@
+{
+  "candidates": 320,
+  "accepted": 132,
+  "rejected": 188,
+  "new_rows": 116,
+  "reasons": {
+    "page_no_model": 1,
+    "event_or_identity_unproven": 167,
+    "page_no_month": 20
+  },
+  "before": {
+    "policy": "day-preferred-month-minimum-v1",
+    "counting_unit": "published_rows",
+    "total": {
+      "total": 3682,
+      "day": 33,
+      "month": 1442,
+      "none": 2207,
+      "not_obtained": 2207,
+      "official_absent": 0,
+      "series_inherit": 523,
+      "official": 779,
+      "third_party": 96,
+      "llm_crossed": 41,
+      "llm_verified": 36,
+      "covered": 1475,
+      "ratio": 0.40059750135795763
+    },
+    "brands": {
+      "Apple": {
+        "total": 639,
+        "day": 0,
+        "month": 575,
+        "none": 64,
+        "not_obtained": 64,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 535,
+        "third_party": 1,
+        "llm_crossed": 39,
+        "llm_verified": 0,
+        "covered": 575,
+        "ratio": 0.8998435054773083
+      },
+      "比亚迪": {
+        "total": 14,
+        "day": 0,
+        "month": 3,
+        "none": 11,
+        "not_obtained": 11,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 1,
+        "third_party": 2,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 3,
+        "ratio": 0.21428571428571427
+      },
+      "大疆": {
+        "total": 281,
+        "day": 0,
+        "month": 200,
+        "none": 81,
+        "not_obtained": 81,
+        "official_absent": 0,
+        "series_inherit": 98,
+        "official": 87,
+        "third_party": 13,
+        "llm_crossed": 2,
+        "llm_verified": 0,
+        "covered": 200,
+        "ratio": 0.7117437722419929
+      },
+      "富士": {
+        "total": 63,
+        "day": 0,
+        "month": 52,
+        "none": 11,
+        "not_obtained": 11,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 52,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 52,
+        "ratio": 0.8253968253968254
+      },
+      "惠普": {
+        "total": 791,
+        "day": 0,
+        "month": 318,
+        "none": 473,
+        "not_obtained": 473,
+        "official_absent": 0,
+        "series_inherit": 318,
+        "official": 0,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 318,
+        "ratio": 0.4020227560050569
+      },
+      "小米": {
+        "total": 1624,
+        "day": 33,
+        "month": 291,
+        "none": 1300,
+        "not_obtained": 1300,
+        "official_absent": 0,
+        "series_inherit": 107,
+        "official": 101,
+        "third_party": 80,
+        "llm_crossed": 0,
+        "llm_verified": 36,
+        "covered": 324,
+        "ratio": 0.19950738916256158
+      },
+      "小米汽车": {
+        "total": 3,
+        "day": 0,
+        "month": 3,
+        "none": 0,
+        "not_obtained": 0,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 3,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 3,
+        "ratio": 1.0
+      },
+      "亚朵星球": {
+        "total": 267,
+        "day": 0,
+        "month": 0,
+        "none": 267,
+        "not_obtained": 267,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 0,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 0,
+        "ratio": 0.0
+      }
+    },
+    "priority": {
+      "笔记本 / 台式机": {
+        "total": 1040,
+        "day": 0,
+        "month": 497,
+        "none": 543,
+        "not_obtained": 543,
+        "official_absent": 0,
+        "series_inherit": 320,
+        "official": 164,
+        "third_party": 1,
+        "llm_crossed": 12,
+        "llm_verified": 0,
+        "covered": 497,
+        "ratio": 0.4778846153846154
+      },
+      "汽车": {
+        "total": 17,
+        "day": 0,
+        "month": 6,
+        "none": 11,
+        "not_obtained": 11,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 4,
+        "third_party": 2,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 6,
+        "ratio": 0.35294117647058826
+      },
+      "显示器": {
+        "total": 56,
+        "day": 0,
+        "month": 5,
+        "none": 51,
+        "not_obtained": 51,
+        "official_absent": 0,
+        "series_inherit": 1,
+        "official": 2,
+        "third_party": 1,
+        "llm_crossed": 1,
+        "llm_verified": 0,
+        "covered": 5,
+        "ratio": 0.08928571428571429
+      },
+      "床品": {
+        "total": 234,
+        "day": 0,
+        "month": 0,
+        "none": 234,
+        "not_obtained": 234,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 0,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 0,
+        "ratio": 0.0
+      },
+      "电脑外设": {
+        "total": 12,
+        "day": 0,
+        "month": 0,
+        "none": 12,
+        "not_obtained": 12,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 0,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 0,
+        "ratio": 0.0
+      },
+      "宠物用品": {
+        "total": 4,
+        "day": 0,
+        "month": 0,
+        "none": 4,
+        "not_obtained": 4,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 0,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 0,
+        "ratio": 0.0
+      }
+    }
+  },
+  "after": {
+    "policy": "day-preferred-month-minimum-v1",
+    "counting_unit": "published_rows",
+    "total": {
+      "total": 3682,
+      "day": 33,
+      "month": 1558,
+      "none": 2091,
+      "not_obtained": 2091,
+      "official_absent": 0,
+      "series_inherit": 523,
+      "official": 779,
+      "third_party": 96,
+      "llm_crossed": 41,
+      "llm_verified": 152,
+      "covered": 1591,
+      "ratio": 0.4321021184139055
+    },
+    "brands": {
+      "Apple": {
+        "total": 639,
+        "day": 0,
+        "month": 575,
+        "none": 64,
+        "not_obtained": 64,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 535,
+        "third_party": 1,
+        "llm_crossed": 39,
+        "llm_verified": 0,
+        "covered": 575,
+        "ratio": 0.8998435054773083
+      },
+      "比亚迪": {
+        "total": 14,
+        "day": 0,
+        "month": 4,
+        "none": 10,
+        "not_obtained": 10,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 1,
+        "third_party": 2,
+        "llm_crossed": 0,
+        "llm_verified": 1,
+        "covered": 4,
+        "ratio": 0.2857142857142857
+      },
+      "大疆": {
+        "total": 281,
+        "day": 0,
+        "month": 200,
+        "none": 81,
+        "not_obtained": 81,
+        "official_absent": 0,
+        "series_inherit": 98,
+        "official": 87,
+        "third_party": 13,
+        "llm_crossed": 2,
+        "llm_verified": 0,
+        "covered": 200,
+        "ratio": 0.7117437722419929
+      },
+      "富士": {
+        "total": 63,
+        "day": 0,
+        "month": 52,
+        "none": 11,
+        "not_obtained": 11,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 52,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 52,
+        "ratio": 0.8253968253968254
+      },
+      "惠普": {
+        "total": 791,
+        "day": 0,
+        "month": 318,
+        "none": 473,
+        "not_obtained": 473,
+        "official_absent": 0,
+        "series_inherit": 318,
+        "official": 0,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 318,
+        "ratio": 0.4020227560050569
+      },
+      "小米": {
+        "total": 1624,
+        "day": 33,
+        "month": 406,
+        "none": 1185,
+        "not_obtained": 1185,
+        "official_absent": 0,
+        "series_inherit": 107,
+        "official": 101,
+        "third_party": 80,
+        "llm_crossed": 0,
+        "llm_verified": 151,
+        "covered": 439,
+        "ratio": 0.27032019704433496
+      },
+      "小米汽车": {
+        "total": 3,
+        "day": 0,
+        "month": 3,
+        "none": 0,
+        "not_obtained": 0,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 3,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 3,
+        "ratio": 1.0
+      },
+      "亚朵星球": {
+        "total": 267,
+        "day": 0,
+        "month": 0,
+        "none": 267,
+        "not_obtained": 267,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 0,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 0,
+        "ratio": 0.0
+      }
+    },
+    "priority": {
+      "笔记本 / 台式机": {
+        "total": 1040,
+        "day": 0,
+        "month": 497,
+        "none": 543,
+        "not_obtained": 543,
+        "official_absent": 0,
+        "series_inherit": 320,
+        "official": 164,
+        "third_party": 1,
+        "llm_crossed": 12,
+        "llm_verified": 0,
+        "covered": 497,
+        "ratio": 0.4778846153846154
+      },
+      "汽车": {
+        "total": 17,
+        "day": 0,
+        "month": 7,
+        "none": 10,
+        "not_obtained": 10,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 4,
+        "third_party": 2,
+        "llm_crossed": 0,
+        "llm_verified": 1,
+        "covered": 7,
+        "ratio": 0.4117647058823529
+      },
+      "显示器": {
+        "total": 56,
+        "day": 0,
+        "month": 6,
+        "none": 50,
+        "not_obtained": 50,
+        "official_absent": 0,
+        "series_inherit": 1,
+        "official": 2,
+        "third_party": 1,
+        "llm_crossed": 1,
+        "llm_verified": 1,
+        "covered": 6,
+        "ratio": 0.10714285714285714
+      },
+      "床品": {
+        "total": 234,
+        "day": 0,
+        "month": 0,
+        "none": 234,
+        "not_obtained": 234,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 0,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 0,
+        "ratio": 0.0
+      },
+      "电脑外设": {
+        "total": 12,
+        "day": 0,
+        "month": 0,
+        "none": 12,
+        "not_obtained": 12,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 0,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 0,
+        "covered": 0,
+        "ratio": 0.0
+      },
+      "宠物用品": {
+        "total": 4,
+        "day": 0,
+        "month": 1,
+        "none": 3,
+        "not_obtained": 3,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "official": 0,
+        "third_party": 0,
+        "llm_crossed": 0,
+        "llm_verified": 1,
+        "covered": 1,
+        "ratio": 0.25
+      }
+    }
+  },
+  "gap_to_45": 66,
+  "candidates_at_prior_72_percent": 92,
+  "candidates_at_observed_rate": 160,
+  "batches": [
+    {
+      "batch": 1,
+      "candidates": 50,
+      "accepted": 24,
+      "rejections": {
+        "page_no_model": 1,
+        "event_or_identity_unproven": 22,
+        "page_no_month": 3
+      },
+      "before": {
+        "total": 3682,
+        "day": 33,
+        "month": 1442,
+        "none": 2207,
+        "not_obtained": 2207,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 36,
+        "covered": 1475,
+        "ratio": 0.40059750135795763
+      },
+      "after": {
+        "total": 3682,
+        "day": 33,
+        "month": 1466,
+        "none": 2183,
+        "not_obtained": 2183,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 60,
+        "covered": 1499,
+        "ratio": 0.4071156979902227
+      }
+    },
+    {
+      "batch": 2,
+      "candidates": 50,
+      "accepted": 29,
+      "rejections": {
+        "event_or_identity_unproven": 21
+      },
+      "before": {
+        "total": 3682,
+        "day": 33,
+        "month": 1466,
+        "none": 2183,
+        "not_obtained": 2183,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 60,
+        "covered": 1499,
+        "ratio": 0.4071156979902227
+      },
+      "after": {
+        "total": 3682,
+        "day": 33,
+        "month": 1494,
+        "none": 2155,
+        "not_obtained": 2155,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 88,
+        "covered": 1527,
+        "ratio": 0.4147202607278653
+      }
+    },
+    {
+      "batch": 3,
+      "candidates": 50,
+      "accepted": 28,
+      "rejections": {
+        "event_or_identity_unproven": 18,
+        "page_no_month": 4
+      },
+      "before": {
+        "total": 3682,
+        "day": 33,
+        "month": 1494,
+        "none": 2155,
+        "not_obtained": 2155,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 88,
+        "covered": 1527,
+        "ratio": 0.4147202607278653
+      },
+      "after": {
+        "total": 3682,
+        "day": 33,
+        "month": 1518,
+        "none": 2131,
+        "not_obtained": 2131,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 112,
+        "covered": 1551,
+        "ratio": 0.4212384573601304
+      }
+    },
+    {
+      "batch": 4,
+      "candidates": 50,
+      "accepted": 23,
+      "rejections": {
+        "event_or_identity_unproven": 24,
+        "page_no_month": 3
+      },
+      "before": {
+        "total": 3682,
+        "day": 33,
+        "month": 1518,
+        "none": 2131,
+        "not_obtained": 2131,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 112,
+        "covered": 1551,
+        "ratio": 0.4212384573601304
+      },
+      "after": {
+        "total": 3682,
+        "day": 33,
+        "month": 1539,
+        "none": 2110,
+        "not_obtained": 2110,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 133,
+        "covered": 1572,
+        "ratio": 0.4269418794133623
+      }
+    },
+    {
+      "batch": 5,
+      "candidates": 50,
+      "accepted": 19,
+      "rejections": {
+        "event_or_identity_unproven": 30,
+        "page_no_month": 1
+      },
+      "before": {
+        "total": 3682,
+        "day": 33,
+        "month": 1539,
+        "none": 2110,
+        "not_obtained": 2110,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 133,
+        "covered": 1572,
+        "ratio": 0.4269418794133623
+      },
+      "after": {
+        "total": 3682,
+        "day": 33,
+        "month": 1552,
+        "none": 2097,
+        "not_obtained": 2097,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 146,
+        "covered": 1585,
+        "ratio": 0.4304725692558392
+      }
+    },
+    {
+      "batch": 6,
+      "candidates": 50,
+      "accepted": 4,
+      "rejections": {
+        "event_or_identity_unproven": 40,
+        "page_no_month": 6
+      },
+      "before": {
+        "total": 3682,
+        "day": 33,
+        "month": 1552,
+        "none": 2097,
+        "not_obtained": 2097,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 146,
+        "covered": 1585,
+        "ratio": 0.4304725692558392
+      },
+      "after": {
+        "total": 3682,
+        "day": 33,
+        "month": 1555,
+        "none": 2094,
+        "not_obtained": 2094,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 149,
+        "covered": 1588,
+        "ratio": 0.4312873438348723
+      }
+    },
+    {
+      "batch": 7,
+      "candidates": 20,
+      "accepted": 5,
+      "rejections": {
+        "event_or_identity_unproven": 12,
+        "page_no_month": 3
+      },
+      "before": {
+        "total": 3682,
+        "day": 33,
+        "month": 1555,
+        "none": 2094,
+        "not_obtained": 2094,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 149,
+        "covered": 1588,
+        "ratio": 0.4312873438348723
+      },
+      "after": {
+        "total": 3682,
+        "day": 33,
+        "month": 1558,
+        "none": 2091,
+        "not_obtained": 2091,
+        "official_absent": 0,
+        "series_inherit": 523,
+        "official": 779,
+        "third_party": 96,
+        "llm_crossed": 41,
+        "llm_verified": 152,
+        "covered": 1591,
+        "ratio": 0.4321021184139055
+      }
+    }
+  ],
+  "missing_categories": [
+    {
+      "brand": "惠普",
+      "category": "笔记本",
+      "count": 346
+    },
+    {
+      "brand": "小米",
+      "category": "旧款机型",
+      "count": 167
+    },
+    {
+      "brand": "惠普",
+      "category": "台式机",
+      "count": 125
+    },
+    {
+      "brand": "亚朵星球",
+      "category": "床品",
+      "count": 98
+    },
+    {
+      "brand": "小米",
+      "category": "烟灶",
+      "count": 62
+    },
+    {
+      "brand": "小米",
+      "category": "冰箱",
+      "count": 59
+    },
+    {
+      "brand": "小米",
+      "category": "中央空调Pro",
+      "count": 58
+    },
+    {
+      "brand": "小米",
+      "category": "家电",
+      "count": 54
+    },
+    {
+      "brand": "小米",
+      "category": "波轮洗衣机",
+      "count": 44
+    },
+    {
+      "brand": "小米",
+      "category": "办公娱乐显示器",
+      "count": 44
+    },
+    {
+      "brand": "小米",
+      "category": "灯具",
+      "count": 43
+    },
+    {
+      "brand": "亚朵星球",
+      "category": "组合装",
+      "count": 40
+    },
+    {
+      "brand": "Apple",
+      "category": "电脑",
+      "count": 38
+    },
+    {
+      "brand": "小米",
+      "category": "净水器",
+      "count": 36
+    },
+    {
+      "brand": "亚朵星球",
+      "category": "睡衣",
+      "count": 36
+    },
+    {
+      "brand": "亚朵星球",
+      "category": "枕芯",
+      "count": 30
+    },
+    {
+      "brand": "大疆",
+      "category": "云台",
+      "count": 27
+    },
+    {
+      "brand": "小米",
+      "category": "电视",
+      "count": 27
+    },
+    {
+      "brand": "小米",
+      "category": "小爱音箱",
+      "count": 26
+    },
+    {
+      "brand": "亚朵星球",
+      "category": "被芯",
+      "count": 24
+    },
+    {
+      "brand": "大疆",
+      "category": "运动相机",
+      "count": 23
+    },
+    {
+      "brand": "小米",
+      "category": "电饭煲",
+      "count": 23
+    },
+    {
+      "brand": "小米",
+      "category": "移动电源",
+      "count": 23
+    },
+    {
+      "brand": "小米",
+      "category": "投影仪",
+      "count": 23
+    },
+    {
+      "brand": "小米",
+      "category": "REDMI路由器",
+      "count": 20
+    },
+    {
+      "brand": "小米",
+      "category": "智能门锁",
+      "count": 20
+    },
+    {
+      "brand": "小米",
+      "category": "笔记本",
+      "count": 19
+    },
+    {
+      "brand": "小米",
+      "category": "摄像机",
+      "count": 19
+    },
+    {
+      "brand": "小米",
+      "category": "耳机",
+      "count": 19
+    },
+    {
+      "brand": "亚朵星球",
+      "category": "床垫",
+      "count": 18
+    },
+    {
+      "brand": "小米",
+      "category": "牙刷",
+      "count": 16
+    },
+    {
+      "brand": "小米",
+      "category": "吸尘器",
+      "count": 15
+    },
+    {
+      "brand": "小米",
+      "category": "水杯",
+      "count": 15
+    },
+    {
+      "brand": "小米",
+      "category": "剃须刀",
+      "count": 15
+    },
+    {
+      "brand": "小米",
+      "category": "插座插排",
+      "count": 15
+    },
+    {
+      "brand": "小米",
+      "category": "打印机",
+      "count": 14
+    },
+    {
+      "brand": "大疆",
+      "category": "无人机",
+      "count": 13
+    },
+    {
+      "brand": "小米",
+      "category": "洗碗机",
+      "count": 13
+    },
+    {
+      "brand": "小米",
+      "category": "眼镜",
+      "count": 13
+    },
+    {
+      "brand": "小米",
+      "category": "落地风扇",
+      "count": 12
+    },
+    {
+      "brand": "小米",
+      "category": "电暖器",
+      "count": 12
+    },
+    {
+      "brand": "小米",
+      "category": "键鼠套装",
+      "count": 12
+    },
+    {
+      "brand": "小米",
+      "category": "门铃/猫眼",
+      "count": 12
+    },
+    {
+      "brand": "亚朵星球",
+      "category": "巾类",
+      "count": 12
+    },
+    {
+      "brand": "富士",
+      "category": "相机",
+      "count": 11
+    },
+    {
+      "brand": "小米",
+      "category": "洗地机",
+      "count": 11
+    },
+    {
+      "brand": "比亚迪",
+      "category": "汽车",
+      "count": 10
+    },
+    {
+      "brand": "小米",
+      "category": "双肩包",
+      "count": 10
+    },
+    {
+      "brand": "小米",
+      "category": "枕头",
+      "count": 10
+    },
+    {
+      "brand": "小米",
+      "category": "水壶",
+      "count": 10
+    },
+    {
+      "brand": "大疆",
+      "category": "麦克风",
+      "count": 9
+    },
+    {
+      "brand": "小米",
+      "category": "旅行箱",
+      "count": 9
+    },
+    {
+      "brand": "小米",
+      "category": "笔",
+      "count": 9
+    },
+    {
+      "brand": "小米",
+      "category": "家庭屏",
+      "count": 9
+    },
+    {
+      "brand": "小米",
+      "category": "儿童手表",
+      "count": 9
+    },
+    {
+      "brand": "Apple",
+      "category": "手机",
+      "count": 8
+    },
+    {
+      "brand": "小米",
+      "category": "滚筒洗衣机",
+      "count": 8
+    },
+    {
+      "brand": "小米",
+      "category": "吹风机",
+      "count": 8
+    },
+    {
+      "brand": "小米",
+      "category": "加湿器",
+      "count": 8
+    },
+    {
+      "brand": "小米",
+      "category": "电磁炉",
+      "count": 8
+    },
+    {
+      "brand": "小米",
+      "category": "床垫",
+      "count": 7
+    },
+    {
+      "brand": "小米",
+      "category": "对讲机",
+      "count": 7
+    },
+    {
+      "brand": "小米",
+      "category": "洗手机",
+      "count": 6
+    },
+    {
+      "brand": "小米",
+      "category": "无线充电器",
+      "count": 6
+    },
+    {
+      "brand": "小米",
+      "category": "料理机",
+      "count": 6
+    },
+    {
+      "brand": "小米",
+      "category": "空气净化器",
+      "count": 6
+    },
+    {
+      "brand": "Apple",
+      "category": "手表",
+      "count": 5
+    },
+    {
+      "brand": "大疆",
+      "category": "户外电源",
+      "count": 5
+    },
+    {
+      "brand": "小米",
+      "category": "穿戴配件",
+      "count": 5
+    },
+    {
+      "brand": "小米",
+      "category": "胸包",
+      "count": 5
+    },
+    {
+      "brand": "小米",
+      "category": "音箱",
+      "count": 5
+    },
+    {
+      "brand": "Apple",
+      "category": "显示器",
+      "count": 5
+    },
+    {
+      "brand": "小米",
+      "category": "手机",
+      "count": 4
+    },
+    {
+      "brand": "小米",
+      "category": "服饰",
+      "count": 4
+    },
+    {
+      "brand": "小米",
+      "category": "REDMI Note系列",
+      "count": 4
+    },
+    {
+      "brand": "小米",
+      "category": "平板",
+      "count": 4
+    },
+    {
+      "brand": "小米",
+      "category": "路由器",
+      "count": 4
+    },
+    {
+      "brand": "亚朵星球",
+      "category": "抱枕",
+      "count": 4
+    },
+    {
+      "brand": "Apple",
+      "category": "空间计算设备",
+      "count": 3
+    },
+    {
+      "brand": "小米",
+      "category": "手表",
+      "count": 3
+    },
+    {
+      "brand": "小米",
+      "category": "穿戴",
+      "count": 3
+    },
+    {
+      "brand": "小米",
+      "category": "体脂秤",
+      "count": 3
+    },
+    {
+      "brand": "小米",
+      "category": "REDMI 数字系列",
+      "count": 3
+    },
+    {
+      "brand": "小米",
+      "category": "益智积木",
+      "count": 3
+    },
+    {
+      "brand": "小米",
+      "category": "手环",
+      "count": 3
+    },
+    {
+      "brand": "亚朵星球",
+      "category": "盖毯",
+      "count": 3
+    },
+    {
+      "brand": "Apple",
+      "category": "音箱",
+      "count": 2
+    },
+    {
+      "brand": "大疆",
+      "category": "相机",
+      "count": 2
+    },
+    {
+      "brand": "大疆",
+      "category": "摄影器材配件",
+      "count": 2
+    },
+    {
+      "brand": "小米",
+      "category": "数据线",
+      "count": 2
+    },
+    {
+      "brand": "小米",
+      "category": "修剪器",
+      "count": 2
+    },
+    {
+      "brand": "小米",
+      "category": "除湿机",
+      "count": 2
+    },
+    {
+      "brand": "小米",
+      "category": "平板配件",
+      "count": 2
+    },
+    {
+      "brand": "小米",
+      "category": "运动鞋",
+      "count": 2
+    },
+    {
+      "brand": "小米",
+      "category": "宠物饮水机",
+      "count": 2
+    },
+    {
+      "brand": "小米",
+      "category": "走步机",
+      "count": 2
+    },
+    {
+      "brand": "小米",
+      "category": "螺丝刀",
+      "count": 2
+    },
+    {
+      "brand": "小米",
+      "category": "电水壶",
+      "count": 2
+    },
+    {
+      "brand": "小米",
+      "category": "台灯",
+      "count": 2
+    },
+    {
+      "brand": "小米",
+      "category": "空调",
+      "count": 2
+    },
+    {
+      "brand": "Apple",
+      "category": "耳机",
+      "count": 2
+    },
+    {
+      "brand": "惠普",
+      "category": "工作站",
+      "count": 2
+    },
+    {
+      "brand": "亚朵星球",
+      "category": "眼罩",
+      "count": 2
+    },
+    {
+      "brand": "小米",
+      "category": "箱包",
+      "count": 1
+    },
+    {
+      "brand": "小米",
+      "category": "其他配件",
+      "count": 1
+    },
+    {
+      "brand": "小米",
+      "category": "婴儿推车",
+      "count": 1
+    },
+    {
+      "brand": "小米",
+      "category": "Xiaomi 数字旗舰",
+      "count": 1
+    },
+    {
+      "brand": "小米",
+      "category": "体重秤",
+      "count": 1
+    },
+    {
+      "brand": "小米",
+      "category": "Xiaomi MIX系列",
+      "count": 1
+    },
+    {
+      "brand": "小米",
+      "category": "Xiaomi Civi系列",
+      "count": 1
+    },
+    {
+      "brand": "小米",
+      "category": "除螨仪",
+      "count": 1
+    },
+    {
+      "brand": "小米",
+      "category": "显示器",
+      "count": 1
+    },
+    {
+      "brand": "小米",
+      "category": "理发器",
+      "count": 1
+    },
+    {
+      "brand": "小米",
+      "category": "插座",
+      "count": 1
+    },
+    {
+      "brand": "小米",
+      "category": "电动牙刷",
+      "count": 1
+    },
+    {
+      "brand": "小米",
+      "category": "智能家庭",
+      "count": 1
+    },
+    {
+      "brand": "Apple",
+      "category": "平板",
+      "count": 1
+    }
+  ],
+  "semantic_reasons": {
+    "首次月份或事件日期未证实": 68,
+    "预告/曝光尚非实际发布": 8,
+    "已有更早事件/非首次节点": 47,
+    "精确身份/版本未证实": 44
+  },
+  "brand_candidates": {
+    "小米": {
+      "candidates": 319,
+      "accepted": 131,
+      "rejected": 188,
+      "identity_inputs": 1298
+    },
+    "亚朵星球": {
+      "candidates": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "identity_inputs": 100
+    },
+    "比亚迪": {
+      "candidates": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "identity_inputs": 11
+    }
+  },
+  "observed_net_yield": 0.3625,
+  "candidates_at_observed_net_yield": 183
+}

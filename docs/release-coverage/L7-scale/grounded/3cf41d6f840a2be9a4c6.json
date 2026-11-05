@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/941/070.htm\",\n    \"date\": null,\n    \"quote\": \"小米将推出基于 \\\"Wildcat Lake\\\" 平台的 REDMI Book 笔记本电脑\",\n    \"reason\": \"原文仅称小米将推出基于Wildcat Lake平台的REDMI Book笔记本电脑，未给出具体发布月份；且“Redmi”为品牌名而非具体型号，无法确认身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050230\",\n    \"name\": \"米家高速水离子吹风机 Pro\",\n    \"url\": \"https://www.ithome.com/0/940/068.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"小米现已在有品上架米家高速水离子吹风机 Pro（ 点此访问 ），将于明天 10:00 开启预售\",\n    \"reason\": \"原文明确型号为米家高速水离子吹风机 Pro，报道日期为2026-04-16，文中“明天10:00开启预售”以报道日为锚点，故预售月份为2026-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21049\",\n    \"name\": \"米家高速水离子吹风机\",\n    \"url\": \"https://www.ithome.com/0/940/068.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在有品上架米家高速水离子吹风机 Pro（ 点此访问 ），将于明天 10:00 开启预售\",\n    \"reason\": \"原文仅提及“米家高速水离子吹风机 Pro”，未单独发布“米家高速水离子吹风机”（无Pro）型号，Pro为不同型号，不能证明身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24248\",\n    \"name\": \"米家高速水离子吹风机Pro\",\n    \"url\": \"https://www.ithome.com/0/940/068.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"小米现已在有品上架米家高速水离子吹风机 Pro（ 点此访问 ），将于明天 10:00 开启预售\",\n    \"reason\": \"原文明确型号为米家高速水离子吹风机 Pro，报道日期2026-04-16，“明天10:00开启预售”以报道日为锚点，预售月份为2026-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/939/952.htm\",\n    \"date\": null,\n    \"quote\": \"小米食堂新品“小米冰淇淋”走红\",\n    \"reason\": \"原文内容为小米冰淇淋，与Redmi产品无关，无法确认该型号首发信息，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870711,
+  "id": "021793870705535ab257ece25bd0fea81c82ca5c15ec8fd820fac",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 675,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1919,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2594
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:10050243\",\n    \"name\": \"米家扫拖机器人 7 Max\",\n    \"url\": \"https://www.ithome.com/1/011/775.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"IT之家 10 月 12 日消息，小米官方宣布，米家扫拖机器人 7 Max 今日 10:00 正式开启预售\",\n    \"reason\": \"原文明确型号为“米家扫拖机器人 7 Max”，事件为“今日正式开启预售”，报道日期为10月12日，故首次发布年月为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/1/011/775.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 10 月 12 日消息，小米官方宣布，米家扫拖机器人 7 Max 今日 10:00 正式开启预售\",\n    \"reason\": \"原文仅提及“米家扫拖机器人 7 Max”，未单独提及无后缀的“米家扫拖机器人”型号，无法确认该基础型号的首次发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25672\",\n    \"name\": \"米家扫拖机器人 7 Max\",\n    \"url\": \"https://www.ithome.com/1/011/775.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"IT之家 10 月 12 日消息，小米官方宣布，米家扫拖机器人 7 Max 今日 10:00 正式开启预售\",\n    \"reason\": \"原文明确型号为“米家扫拖机器人 7 Max”，事件为“今日正式开启预售”，报道日期为10月12日，故首次发布年月为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:16409\",\n    \"name\": \"米家声波电动牙刷T302\",\n    \"url\": \"https://www.ithome.com/1/011/067.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 10 月 9 日消息，小米宣布旗下米家声波电动牙刷 T302 缓震版开启首销\",\n    \"reason\": \"原文型号为“米家声波电动牙刷 T302 缓震版”，与输入型号“米家声波电动牙刷T302”存在“缓震版”后缀差异，按规则后缀版本不是同一型号，无法确认基础型号T302的首次发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6103\",\n    \"name\": \"米家声波电动牙刷\",\n    \"url\": \"https://www.ithome.com/1/011/067.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 10 月 9 日消息，小米宣布旗下米家声波电动牙刷 T302 缓震版开启首销\",\n    \"reason\": \"原文仅提及“米家声波电动牙刷 T302 缓震版”，未单独提及无后缀的“米家声波电动牙刷”型号，无法确认该基础型号的首次发布年月，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870121,
+  "id": "as-ahjk2jstyu",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 759,
+    "prompt_tokens": 2710,
+    "total_tokens": 3469
+  }
+}

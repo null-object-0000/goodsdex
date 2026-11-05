@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:6079\",\n    \"name\": \"九号平衡车 Plus\",\n    \"url\": \"https://www.ithome.com/0/314/638.htm\",\n    \"date\": \"2017-06\",\n    \"quote\": \"在今天举行的小米米家2017新品发布会上，米家发布了九号平衡车Plus、米家激光投影电视150英寸版、米家声波电动牙刷。\",\n    \"reason\": \"原文明确九号平衡车Plus在2017年6月28日发布会发布，型号为Plus与基础款九号平衡车区分，报道时间与事件同月，取2017-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6103\",\n    \"name\": \"米家声波电动牙刷\",\n    \"url\": \"https://www.ithome.com/0/314/638.htm\",\n    \"date\": \"2017-06\",\n    \"quote\": \"在今天举行的小米米家2017新品发布会上，米家发布了九号平衡车Plus、米家激光投影电视150英寸版、米家声波电动牙刷。\",\n    \"reason\": \"原文明确米家声波电动牙刷在2017年6月28日发布会发布，型号完全匹配，报道时间与事件同月，取2017-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6158\",\n    \"name\": \"激光投影电视 150英寸\",\n    \"url\": \"https://www.ithome.com/0/314/638.htm\",\n    \"date\": \"2017-06\",\n    \"quote\": \"在今天举行的小米米家2017新品发布会上，米家发布了九号平衡车Plus、米家激光投影电视150英寸版、米家声波电动牙刷。\",\n    \"reason\": \"原文明确米家激光投影电视150英寸版在2017年6月28日发布会发布，型号含150英寸版与输入匹配，报道时间与事件同月，取2017-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6103\",\n    \"name\": \"米家声波电动牙刷\",\n    \"url\": \"https://www.ithome.com/0/314/633.htm\",\n    \"date\": \"2017-06\",\n    \"quote\": \"在今天的小米米家2017发布会上，米家还发布了隐藏福袋产品，就是米家声波电动牙刷，售价199元，7月18日10点小米商城/小米之家/米家有品同步首卖。\",\n    \"reason\": \"原文明确米家声波电动牙刷在2017年6月28日发布会发布，型号完全匹配，报道时间与事件同月，取2017-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:2774\",\n    \"name\": \"九号平衡车\",\n    \"url\": \"https://www.ithome.com/0/314/627.htm\",\n    \"date\": null,\n    \"quote\": \"今天下午，小米旗下智能家居品牌米家在北京召开发布会，发布会上除了推出一款售价3499元的米家九号平衡车Plus以外（ 详情 ），此前曝光的米家激光电视也发布了。\",\n    \"reason\": \"原文仅提及九号平衡车Plus发布，未提及基础款九号平衡车发布；Plus为后代型号不证明基础款身份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871433,
+  "id": "021793871428403ab257ece25bd0fea81c82ca5c15ec8fdf1b9f9",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 766,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1466,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2232
+  }
+}

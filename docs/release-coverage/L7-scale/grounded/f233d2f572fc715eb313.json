@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25655\",\n    \"name\": \"米家杀菌足浴器2\",\n    \"url\": \"https://www.ithome.com/1/003/412.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"IT之家 9 月 17 日消息，小米今日宣布推出米家杀菌足浴器 2 并开启预售\",\n    \"reason\": \"原文明确“今日宣布推出米家杀菌足浴器 2”，报道时间为2026-09-17，事件与报道同月，型号完全匹配，故首次发布年月为2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25483\",\n    \"name\": \"小米智能摄像机 5 Pro 全彩夜视\",\n    \"url\": \"https://www.ithome.com/1/003/194.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"IT之家 9 月 16 日消息，小米智能摄像机 5 Pro 全彩夜视已发布\",\n    \"reason\": \"原文明确“小米智能摄像机 5 Pro 全彩夜视已发布”，报道时间为2026-09-16，事件与报道同月，型号完全匹配，故首次发布年月为2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20905\",\n    \"name\": \"米家富矿净水器\",\n    \"url\": \"https://www.ithome.com/1/002/518.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家富矿净水器 2 今日 20:00 正式开售\",\n    \"reason\": \"原文事件为“米家富矿净水器 2”开售，输入型号为“米家富矿净水器”，型号名不同（后代“2”不属于同一型号），且开售不等于首次发布，无法确定输入型号的首发年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19858\",\n    \"name\": \"米家台灯2\",\n    \"url\": \"https://www.ithome.com/1/002/473.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在京东上架米家台灯 2 清视版，将于 9 月 22 日 10:00 首销\",\n    \"reason\": \"原文型号为“米家台灯 2 清视版”，输入型号为“米家台灯2”，版本后缀“清视版”不属于同一型号；且原文事件为“上架/将于首销”，报道时间2026-09-15，首销日期9月22日虽可锚定到2026-09，但型号身份不匹配，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/002/146.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 显示器 A27U Type-C 120Hz 2027 今晚 20:00 首销\",\n    \"reason\": \"输入型号仅为“Redmi”，原文产品为“小米 REDMI 显示器 A27U Type-C 120Hz 2027”，仅前缀包含不证明身份，无法确认输入型号对应该产品，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870490,
+  "id": "as-exbzw29665",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 777,
+    "prompt_tokens": 3304,
+    "total_tokens": 4081
+  }
+}

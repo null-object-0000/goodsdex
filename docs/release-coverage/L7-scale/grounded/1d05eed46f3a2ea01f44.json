@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/937/624.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日官宣 REDMI Book Pro 2026 本月发布\",\n    \"reason\": \"原文仅称“本月发布”，报道时间为2026-04-10，但“本月”缺少明确月份锚点，且型号为REDMI Book Pro 2026，与输入型号Redmi身份不明确，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/986/954.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"REDMI K100 Pro 系列，满血满配，满分旗舰，定档 8 月 11 日 19:00 直播发布。\",\n    \"reason\": \"原文明确REDMI K100 Pro系列定档8月11日发布，报道时间为2026-08-07，事件同月，可确定2026-08；但型号为K100 Pro系列，与输入型号Redmi身份不明确，仅前缀包含不证明身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/982/315.htm\",\n    \"date\": null,\n    \"quote\": \"7 月 31 日，REDMI 将登陆 2026 ChinaJoy，届时将在展会现场揭幕 年度重磅新品\",\n    \"reason\": \"原文仅称7月31日揭幕“年度重磅新品”，未明确具体型号，预计为REDMI K100系列，与输入型号Redmi身份不明确，且“年度重磅新品”非精确型号发布公告，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870712,
+  "id": "79fd2413-5ab7-4f7c-92ed-9ffd0076dfa3",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 448,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1025,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 1473
+  }
+}

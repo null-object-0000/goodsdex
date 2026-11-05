@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/972/710.htm\",\n    \"date\": null,\n    \"quote\": \"小米也会出阔折叠，红米负责 7”大屏手机\",\n    \"reason\": \"原文仅为博主爆料规划，未给出具体型号或发布月份，且“红米负责7英寸大屏手机”为传闻规划，无法确定首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050213\",\n    \"name\": \"米家冰箱Pro 508L 全域离子净化4.0\",\n    \"url\": \"https://www.ithome.com/0/971/320.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"小米于 6 月 22 日推出了“米家冰箱 Pro 508L 全域离子净化 4.0”，今晚 20:00 正式开售\",\n    \"reason\": \"原文明确该型号于6月22日推出（发布），报道发布于2026-07-01，事件月份为2026年6月，型号名完全匹配。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24974\",\n    \"name\": \"米家智能电压力锅2 Pro 5L\",\n    \"url\": \"https://www.ithome.com/0/970/904.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米米家智能电压力锅 2 Pro 5L 今日开售，新品支持 2200W 猛火 IH 炖煮\",\n    \"reason\": \"原文称“今日开售”，报道发布于2026-07-01，事件与报道同月，型号名匹配，首次开售即发布月为2026年7月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/970/727.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"今晚小米 REDMI K90 至尊版手机正式发布，首销到手价 2799 元起\",\n    \"reason\": \"输入型号名为“Redmi”，原文发布的是REDMI K90 至尊版，属于Redmi品牌下具体型号，但输入name仅为品牌名“Redmi”，无法确认输入所指即为K90至尊版，身份限定不足，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/970/430.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 头戴降噪耳机现已在电商平台上架接受购买\",\n    \"reason\": \"原文为REDMI头戴降噪耳机上架销售，输入name为“Redmi”品牌名，无法确认对应此耳机型号；且“现已上架”非明确首发公告，无法确定首次发布年月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871509,
+  "id": "0217938715049114f170dda172df2cc79a65077ac74d404c1c361",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 708,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2246,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2954
+  }
+}

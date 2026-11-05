@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/994/263.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 17C 5G 手机现已在海外市场发布。\",\n    \"reason\": \"输入型号名为“Redmi”，原文仅出现“REDMI 17C 5G”和“REDMI 17C”，未出现单独“Redmi”型号；且事件为海外发布，非中国大陆首次发布，无法确定中国大陆首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24895\",\n    \"name\": \"REDMI 17C\",\n    \"url\": \"https://www.ithome.com/0/994/263.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 17C 5G 手机现已在海外市场发布。新机定位入门，顾名思义是 REDMI 17C 的 5G 版本。\",\n    \"reason\": \"原文仅提及“REDMI 17C”作为5G版本所基于的型号，未公告REDMI 17C本身在中国大陆首次发布；报道事件为海外5G版发布，不能确定中国大陆首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19263\",\n    \"name\": \"米家立式学习灯\",\n    \"url\": \"https://www.ithome.com/0/993/956.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在京东上架米家立式学习灯 2C，定价为 1199 元\",\n    \"reason\": \"原文发布/上架的是“米家立式学习灯 2C”，输入型号“米家立式学习灯”为其前缀型号，仅前缀包含不证明身份；无该型号本身首发公告，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:23518\",\n    \"name\": \"米家立式学习灯2\",\n    \"url\": \"https://www.ithome.com/0/993/956.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在京东上架米家立式学习灯 2C，定价为 1199 元\",\n    \"reason\": \"原文发布/上架的是“米家立式学习灯 2C”，输入型号“米家立式学习灯2”与2C为不同型号（后缀C不同），不能证明同一身份；无该型号首发公告，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25309\",\n    \"name\": \"米家立式学习灯2C\",\n    \"url\": \"https://www.ithome.com/0/993/956.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"IT之家 8 月 25 日消息，小米现已在京东上架米家立式学习灯 2C，定价为 1199 元\",\n    \"reason\": \"原文明确“米家立式学习灯 2C”已在京东上架，属新品上架公告；报道时间为2026年8月25日且事件为“现已上架”，同月可锚定，故中国大陆首次发布候选为2026-08。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870506,
+  "id": "e8e653c4-dac3-48e9-b032-f7c6c60a48a5",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 758,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2076,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2834
+  }
+}

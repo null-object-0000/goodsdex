@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:10000407\",\n    \"name\": \"米家波轮洗衣机\",\n    \"url\": \"https://www.ithome.com/0/952/641.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日推出了两款米家洗衣机 Pro 波轮新品并开启预售\",\n    \"reason\": \"原文发布的是“米家洗衣机 Pro 波轮”新品，输入型号“米家波轮洗衣机”缺少 Pro 限定，Pro 不是同一型号，仅前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050113\",\n    \"name\": \"米家洗衣机Pro\",\n    \"url\": \"https://www.ithome.com/0/952/641.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"IT之家 5 月 20 日消息，小米官方今日推出了两款米家洗衣机 Pro 波轮新品并开启预售\",\n    \"reason\": \"原文明确“今日推出了两款米家洗衣机 Pro 波轮新品并开启预售”，报道日期为 2026-05-20，事件与报道同月，型号“米家洗衣机Pro”与“米家洗衣机 Pro 波轮”前缀一致且为新品发布，可确定首次发布年月为 2026-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24779\",\n    \"name\": \"米家净水器 2 1600G\",\n    \"url\": \"https://www.ithome.com/0/952/566.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"IT之家 5 月 20 日消息，小米新推出了一款“米家净水器 2 1600G”，官方标价 1999 元，叠加国补后 1799.1 元，现已开售。\",\n    \"reason\": \"原文明确“小米新推出了一款‘米家净水器 2 1600G’”，型号完全匹配，报道日期为 2026-05-20，事件与报道同月，可确定首次发布年月为 2026-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050184\",\n    \"name\": \"米家智能洗碗机 Pro 嵌入式 18套\",\n    \"url\": \"https://www.ithome.com/0/950/855.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"IT之家 5 月 15 日消息，小米旗下“米家智能洗碗机 Pro 嵌入式 18 套”今晚 20:00 正式开售，首发价 6399 元\",\n    \"reason\": \"原文明确“米家智能洗碗机 Pro 嵌入式 18 套”今晚 20:00 正式开售，型号完全匹配，报道日期为 2026-05-15，事件与报道同月，可确定首次发布年月为 2026-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24606\",\n    \"name\": \"米家智能洗碗机 Pro 嵌入式 18套 银\",\n    \"url\": \"https://www.ithome.com/0/950/855.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"这款洗碗机提供银 / 白双色可选\",\n    \"reason\": \"原文明确“米家智能洗碗机 Pro 嵌入式 18 套”今晚 20:00 正式开售，且“提供银 / 白双色可选”，输入型号含“银”色限定，与原文银色版本对应，报道日期为 2026-05-15，事件与报道同月，可确定首次发布年月为 2026-05。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871525,
+  "id": "0217938715208874f170dda172df2cc79a65077ac74d4049d2d62",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 852,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2168,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3020
+  }
+}

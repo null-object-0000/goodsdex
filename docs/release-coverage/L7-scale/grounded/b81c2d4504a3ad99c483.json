@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/974/160.htm\",\n    \"date\": null,\n    \"quote\": \"REDMI Note 17 Pro 的新配色 ——「晴空蓝」外观图……Note 17 系列定档 7 月 14 日 19 时发布\",\n    \"reason\": \"输入型号为Redmi（泛指），原文事件为Note 17 Pro新配色外观公布及Note 17系列定档7月14日发布，均非Redmi品牌本身的首发；且7月14日为未来发布，报道月为7月，但型号身份不匹配，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/973/851.htm\",\n    \"date\": null,\n    \"quote\": \"国民小金刚 Note 17 系列定档 7 月 14 日 19 时\",\n    \"reason\": \"输入型号为Redmi（泛指），原文事件为Note 17系列定档7月14日发布，非Redmi品牌本身首发；型号身份不匹配，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/973/780.htm\",\n    \"date\": null,\n    \"quote\": \"Note 17 系列将于本月发布……新品发布会直播将于 7 月 14 日（星期二）19:00 进行\",\n    \"reason\": \"输入型号为Redmi（泛指），原文事件为Note 17系列发布会定档7月14日，非Redmi品牌本身首发；型号身份不匹配，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25000\",\n    \"name\": \"米家无线洗地机 5\",\n    \"brand\": \"小米\",\n    \"url\": \"https://www.ithome.com/0/973/770.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米米家无线洗地机 5 现已在京东开启预售，定价为 1645 元\",\n    \"reason\": \"型号完全匹配“米家无线洗地机 5”；原文事件为“现已在京东开启预售”，属新品预售公告，报道时间为2026-07-07，事件同月，故取2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24822\",\n    \"name\": \"小米智能太阳能摄像机 4 Pro 4G双摄版\",\n    \"brand\": \"小米\",\n    \"url\": \"https://www.ithome.com/0/972/908.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米智能太阳能摄像机 4 Pro 4G 双摄版现已在小米有品开启众筹，众筹价 579 元起\",\n    \"reason\": \"型号完全匹配“小米智能太阳能摄像机 4 Pro 4G双摄版”；原文事件为“现已在小米有品开启众筹”，属新品首次众筹公告，报道时间为2026-07-06，事件同月，故取2026-07。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870686,
+  "id": "as-mgs4kdn2rs",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 765,
+    "prompt_tokens": 2571,
+    "total_tokens": 3336
+  }
+}

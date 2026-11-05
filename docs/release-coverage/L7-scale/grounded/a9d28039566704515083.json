@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:8131\",\n    \"name\": \"米家直流变频落地扇\",\n    \"url\": \"https://www.ithome.com/0/420/556.htm\",\n    \"date\": null,\n    \"quote\": \"小米在今天的发布会上正式发布了米家直流变频落地扇1X\",\n    \"reason\": \"原文发布的是“米家直流变频落地扇1X”，与输入型号“米家直流变频落地扇”不同，1X为后代型号，不能证明同一型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:4984\",\n    \"name\": \"小米米家电动滑板车\",\n    \"url\": \"https://www.ithome.com/0/409/474.htm\",\n    \"date\": null,\n    \"quote\": \"今天，小米官网正式公布了小米米家电动滑板车Pro，这款电动滑板车是作为米家电动滑板车的升级版\",\n    \"reason\": \"原文发布的是“小米米家电动滑板车Pro”，与输入型号“小米米家电动滑板车”不同，Pro为后代型号，不能证明同一型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10000070\",\n    \"name\": \"小米MIX 2\",\n    \"url\": \"https://www.ithome.com/0/394/330.htm\",\n    \"date\": null,\n    \"quote\": \"小米MIX2S 6GB+64GB 赠无线充电板 2499元\",\n    \"reason\": \"原文仅出现“小米MIX2S”促销信息，与输入型号“小米MIX 2”不同，且为旧品促销，不能确定首发月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:4348\",\n    \"name\": \"米家扫地机器人\",\n    \"url\": \"https://www.ithome.com/0/394/330.htm\",\n    \"date\": null,\n    \"quote\": \"米家扫地机器人秒杀特惠1399元+6期免息，下单再减41元，到手仅需1358元，上市新低、库存有限。\",\n    \"reason\": \"原文为米家扫地机器人双11促销，属旧品促销，不能确定首次发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:8881\",\n    \"name\": \"米家自动洗手机套装\",\n    \"url\": \"https://www.ithome.com/0/388/064.htm\",\n    \"date\": \"2018-10\",\n    \"quote\": \"今天小米生态链发布了一个叫做米家自动洗手机套装的新品，号称可以做到伸手就能出泡泡，众筹价69元\",\n    \"reason\": \"原文明确“今天”发布新品“米家自动洗手机套装”，与输入型号完全一致；报道时间为2018-10-11，事件同月，故首次发布年月为2018-10。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871408,
+  "id": "1483c296-9d43-4f69-8256-00814bf0ee0b",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 682,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2157,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2839
+  }
+}

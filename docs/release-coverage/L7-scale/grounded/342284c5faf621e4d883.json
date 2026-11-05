@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25292\",\n    \"name\": \"小米智能门锁 5C\",\n    \"url\": \"https://www.ithome.com/0/993/869.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能门锁 5C 现已在京东开启首销，新品到手价 659 元。\",\n    \"reason\": \"原文仅说明8月25日开启首销，未给出首次发布/正式发布/首发/首次众筹的公告月份；首销不等于首次发布，且无发布事件锚点，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25293\",\n    \"name\": \"米家空调 巨省电 立式5匹一级能效\",\n    \"url\": \"https://www.ithome.com/0/993/854.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"IT之家 8 月 25 日消息，小米现已在京东上架 “米家空调 巨省电 立式 5 匹 一级能效” ，定价为 7999 元\",\n    \"reason\": \"标题明确“小米推出”该型号，正文8月25日称已上架，属新品推出公告；型号限定为立式5匹一级能效，与输入一致，报道事件同月，故取2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/993/818.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在京东上架米家电动剃须刀 S100 云纹刀网版， 定价为 99 元 。\",\n    \"reason\": \"原文推出的是“米家电动剃须刀 S100 云纹刀网版”，输入型号仅为“米家电动剃须刀”，后缀S100云纹刀网版属不同型号限定，不能证明同一身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20833\",\n    \"name\": \"米家智能宠物饮水机 2\",\n    \"url\": \"https://www.ithome.com/0/993/766.htm\",\n    \"date\": null,\n    \"quote\": \"小米“米家智能宠物饮水机 2 除菌版”将于今天 10 点开启首销\",\n    \"reason\": \"原文型号为“米家智能宠物饮水机 2 除菌版”，输入为“米家智能宠物饮水机 2”，除菌版属不同型号限定；且事件为首销而非首次发布，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25270\",\n    \"name\": \"米家智能宠物饮水机 2 除菌版\",\n    \"url\": \"https://www.ithome.com/0/993/766.htm\",\n    \"date\": null,\n    \"quote\": \"小米“米家智能宠物饮水机 2 除菌版”将于今天 10 点开启首销\",\n    \"reason\": \"型号身份匹配，但原文事件为“今天10点开启首销”，属首销而非首次发布/正式发布/首发/首次众筹公告；无发布事件锚点，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870509,
+  "id": "0217938705049796cb63cadb26a6eb1a5dd8bb71cce3d7f6cf41e",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 763,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2562,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3325
+  }
+}

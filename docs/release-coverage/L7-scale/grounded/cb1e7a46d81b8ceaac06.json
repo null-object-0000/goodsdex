@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25001\",\n    \"name\": \"米家洗衣机Pro 超电解智投 滚筒10kg\",\n    \"url\": \"https://www.ithome.com/0/974/345.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"IT之家 7 月 9 日消息，小米今日宣布推出“米家洗衣机 Pro 超电解智投 滚筒 10kg”新品，京东预售价 2699 元\",\n    \"reason\": \"原文明确“今日宣布推出”该精确型号新品，报道时间为2026-07-09，事件与报道同月，可确定首次发布年月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25036\",\n    \"name\": \"米家桌面照片打印机 2\",\n    \"url\": \"https://www.ithome.com/0/973/121.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"IT之家 7 月 6 日消息，小米现已在有品上架米家桌面照片打印机 2（ 点此访问 ），将于 7 月 13 日开启众筹\",\n    \"reason\": \"原文明确该精确型号已上架并将于7月13日开启众筹，报道时间为2026-07-06，众筹月份有原文锚点7月13日，可确定首次发布年月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24900\",\n    \"name\": \"米家便携咖啡机\",\n    \"url\": \"https://www.ithome.com/0/968/166.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"IT之家 6 月 24 日消息，小米米家便携咖啡机现已在电商平台上架，将于 6 月 25 日 0 时正式开启预售。\",\n    \"reason\": \"原文明确该精确型号已上架并将于6月25日开启预售，报道时间为2026-06-24，预售月份有原文锚点6月25日，可确定首次发布年月为2026-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24900\",\n    \"name\": \"米家便携咖啡机\",\n    \"url\": \"https://www.ithome.com/0/965/164.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"IT之家 6 月 17 日消息，小米旗下米家便携咖啡机将于今天 10 点在有品开启众筹\",\n    \"reason\": \"原文明确该精确型号将于今天10点开启众筹，报道时间为2026-06-17，“今天”锚定6月，可确定首次发布年月为2026-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19201\",\n    \"name\": \"米家即热管线机\",\n    \"url\": \"https://www.ithome.com/0/961/756.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"IT之家 6 月 9 日消息，小米现已在有品上架一款米家即热管线机制冰版（ 点此访问 ），该机可作冷热饮水机、管线机、制冰机、电热水壶、保温壶使用， 定价为 3299 元 ，6 月 15 日首销价格 2969.1 元。\",\n    \"reason\": \"原文上架型号为“米家即热管线机制冰版”，与输入型号“米家即热管线机”不完全一致，制冰版为后代/变体，不能证明同一型号身份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870131,
+  "id": "0217938701271316cb63cadb26a6eb1a5dd8bb71cce3d7fc3934f",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 845,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2594,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3439
+  }
+}

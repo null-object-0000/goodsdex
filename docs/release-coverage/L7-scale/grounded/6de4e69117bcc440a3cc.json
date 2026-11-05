@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:24056\",\n    \"name\": \"米家净水器 2 Pro 双出水 1200G\",\n    \"url\": \"https://www.ithome.com/0/964/179.htm\",\n    \"date\": \"2026-04\",\n    \"quote\": \"小米米家净水器 2 Pro 双出水 1200G 今年 4 月 8 日开售\",\n    \"reason\": \"原文明确该型号于今年4月8日开售，报道时间为2026年6月，'今年4月'锚定2026年4月，开售即首次发布事件，型号完全匹配。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24900\",\n    \"name\": \"米家便携咖啡机\",\n    \"url\": \"https://www.ithome.com/0/962/824.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"米家便携咖啡机近日上架小米有品，将于 6 月 17 日开启众筹\",\n    \"reason\": \"原文报道时间为2026年6月11日，'将于6月17日开启众筹'相对月份锚定报道当月即2026年6月，众筹开启属首次发布事件，型号完全匹配。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24842\",\n    \"name\": \"米家简约商务双肩包\",\n    \"url\": \"https://www.ithome.com/0/962/301.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"小米米家简约商务双肩包现已在有品开启众筹\",\n    \"reason\": \"原文报道时间为2026年6月10日，'现已开启众筹'表明众筹当月即报道当月2026年6月，众筹开启属首次发布事件，型号完全匹配。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24811\",\n    \"name\": \"米家即热饮水机 Max 制冰版\",\n    \"url\": \"https://www.ithome.com/0/961/262.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"小米米家即热饮水机 Max 制冰版现已在小米有品开启首销\",\n    \"reason\": \"原文报道时间为2026年6月8日，'现已开启首销'表明首销当月即报道当月2026年6月，首销属首次发布事件，型号完全匹配。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/958/098.htm\",\n    \"date\": null,\n    \"quote\": \"某厂子系耳夹式耳机，暂定 Q3 和子系新旗舰一起上\",\n    \"reason\": \"输入型号名仅为'Redmi'，原文所述为'某厂子系耳夹式耳机'，预计为REDMI新品但未确认具体型号，且仅称暂定Q3上市，无精确到月的首次发布事件，身份与日期均不能确定，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870688,
+  "id": "as-p0c5jijtua",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 726,
+    "prompt_tokens": 2028,
+    "total_tokens": 2754
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:4348\",\n    \"name\": \"米家扫地机器人\",\n    \"url\": \"https://www.ithome.com/1/020/740.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家扫拖机器人 7C 今年 8 月 27 日开售\",\n    \"reason\": \"输入型号为“米家扫地机器人”，原文事件主体为“米家扫拖机器人 7C”，型号名不同（7C为后代/具体型号），仅前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25844\",\n    \"name\": \"米家台式净饮机3\",\n    \"url\": \"https://www.ithome.com/1/020/502.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米米家台式净饮机 3 已于昨晚正式开售\",\n    \"reason\": \"原文明确“米家台式净饮机 3”正式开售，报道时间为2026-10-31，“昨晚”相对月份锚定在2026-10，符合型号身份与首发事件。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21267\",\n    \"name\": \"米家车载吸尘器\",\n    \"url\": \"https://www.ithome.com/1/019/909.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家车载吸尘器便携版已开售\",\n    \"reason\": \"输入型号为“米家车载吸尘器”，原文事件主体为“米家车载吸尘器便携版”，型号名不同（便携版为变体），仅前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/019/756.htm\",\n    \"date\": null,\n    \"quote\": \"王腾此前曾任小米中国区市场部总经理，并兼任 REDMI 品牌总经理\",\n    \"reason\": \"原文仅提及REDMI品牌及人物履历，无任何Redmi产品发布事件，无法确定型号身份与首发日期，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7128\",\n    \"name\": \"米家床头灯\",\n    \"url\": \"https://www.ithome.com/1/018/761.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家床头灯 3 已于今日上午 10 点开启众筹\",\n    \"reason\": \"输入型号为“米家床头灯”，原文事件主体为“米家床头灯 3”，型号名不同（3为后代型号），仅前缀包含不证明身份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871436,
+  "id": "e15b8717-48a3-4b26-a30d-53eacdb2d0e8",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 645,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2921,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3566
+  }
+}

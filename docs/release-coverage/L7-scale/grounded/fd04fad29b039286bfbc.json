@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:3556\",\n    \"name\": \"米家恒温电水壶\",\n    \"url\": \"https://www.ithome.com/0/864/086.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家恒温电水壶 3 现已在京东开售\",\n    \"reason\": \"原文仅提及“米家恒温电水壶 3”开售，输入型号为“米家恒温电水壶”，后缀“3”为后代型号，不证明同一型号身份；且“开售”非首次发布公告，无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21401\",\n    \"name\": \"米家前开盖旅行箱\",\n    \"url\": \"https://www.ithome.com/0/859/429.htm\",\n    \"date\": \"2025-06\",\n    \"quote\": \"小米现已在有品众筹上架一款“米家前开盖旅行箱 18 英寸”……将于 6 月 16 日开启众筹\",\n    \"reason\": \"原文明确“米家前开盖旅行箱 18 英寸”上架众筹，输入型号“米家前开盖旅行箱”为前缀包含，18英寸为规格限定，可视为同一产品线；报道时间为2025-06-09，原文锚定“6月16日开启众筹”，同月，故首次众筹公告月为2025-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21384\",\n    \"name\": \"米家高速吹风机 Pro\",\n    \"url\": \"https://www.ithome.com/0/856/688.htm\",\n    \"date\": \"2025-05\",\n    \"quote\": \"小米智能生态官微今晚宣布，米家高速吹风机 Pro 现已开启预售\",\n    \"reason\": \"原文明确“米家高速吹风机 Pro”开启预售，型号完全匹配；报道时间为2025-05-28，事件同月，故首次预售公告月为2025-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21680\",\n    \"name\": \"米家高速吹风机\",\n    \"url\": \"https://www.ithome.com/0/856/688.htm\",\n    \"date\": null,\n    \"quote\": \"米家高速吹风机 Pro 现已开启预售\",\n    \"reason\": \"原文仅提及“米家高速吹风机 Pro”，输入型号为“米家高速吹风机”，Pro为后代型号，不证明同一型号身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050113\",\n    \"name\": \"米家洗衣机Pro\",\n    \"url\": \"https://www.ithome.com/0/854/398.htm\",\n    \"date\": \"2025-05\",\n    \"quote\": \"小米今天宣布推出米家洗衣机 Pro 蓝氧 10kg 新品\",\n    \"reason\": \"原文明确“米家洗衣机 Pro 蓝氧 10kg”为新品推出，输入型号“米家洗衣机Pro”为核心型号，蓝氧10kg为规格/系列限定，可视为同一产品；报道时间为2025-05-20，事件同月，故首次发布月为2025-05。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870141,
+  "id": "as-072jwskhjq",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 752,
+    "prompt_tokens": 1901,
+    "total_tokens": 2653
+  }
+}

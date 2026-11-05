@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:15311\",\n    \"name\": \"米家直流变频两季扇\",\n    \"url\": \"https://www.ithome.com/0/585/802.htm\",\n    \"date\": \"2021-11\",\n    \"quote\": \"今日，米家直流变频两季扇在小米商城开启众筹\",\n    \"reason\": \"原文明确型号为米家直流变频两季扇，事件为今日开启众筹，报道时间为2021-11-10，事件与报道同月，可确定首次众筹/发布月份为2021-11。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:9726\",\n    \"name\": \"米家空调伴侣2\",\n    \"url\": \"https://www.ithome.com/0/556/856.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方昨日推出了最新的米家空调伴侣 Pro 万能遥控版，该设备除了具有米家空调伴侣 2 原有的功能外\",\n    \"reason\": \"原文仅提及米家空调伴侣2作为已有功能参照，发布事件对象是米家空调伴侣 Pro 万能遥控版，并非米家空调伴侣2本身，无法确定米家空调伴侣2首次发布年月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/553/203.htm\",\n    \"date\": null,\n    \"quote\": \"米家扫拖机器人 2C 今日预售\",\n    \"reason\": \"原文发布/预售事件对象为米家扫拖机器人 2C，属于带后缀的不同型号；仅前缀包含“米家扫拖机器人”不证明输入型号身份，无法确定米家扫拖机器人本身首次发布年月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:5005\",\n    \"name\": \"小米人体传感器\",\n    \"url\": \"https://www.ithome.com/0/550/584.htm\",\n    \"date\": null,\n    \"quote\": \"与小米人体传感器配合，可实现智能开关的效果\",\n    \"reason\": \"原文发布事件对象为米家智能驱蚊器 2，小米人体传感器仅作为联动配件被提及，没有其首次发布或众筹公告，无法确定首发年月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/528/177.htm\",\n    \"date\": null,\n    \"quote\": \"之后是 Redmi AirDots 2 真无线蓝牙耳机等产品\",\n    \"reason\": \"原文仅出现 Redmi AirDots 2 等具体产品名，输入型号名为泛称“Redmi”，不能证明与 Redmi AirDots 2 为同一型号；且该文为年度众筹盘点，不是该型号首次发布公告，无法确定首发年月。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870432,
+  "id": "0217938704272185c7f85291e6ad850e47f0b8bb356de2fd27b52",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 676,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2350,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3026
+  }
+}

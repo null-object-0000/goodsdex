@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:21183\",\n    \"name\": \"米家除螨仪2 Pro\",\n    \"url\": \"https://www.ithome.com/0/955/982.htm\",\n    \"date\": \"2025-04\",\n    \"quote\": \"小米米家除螨仪 2 Pro 开售于 2025 年 4 月 16 日，首发价 429 元。\",\n    \"reason\": \"原文明确写出该型号开售于2025年4月16日，且为首发，型号名完全匹配“米家除螨仪 2 Pro”，可确定首次发布年月为2025-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10000407\",\n    \"name\": \"米家波轮洗衣机\",\n    \"url\": \"https://www.ithome.com/0/955/032.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家洗衣机 Pro 波轮 12kg 今晚正式开售，建议零售价为 1299 元，首发价 1099 元。\",\n    \"reason\": \"原文发布/开售的是“米家洗衣机 Pro 波轮 12kg”，而输入型号为“米家波轮洗衣机”，缺少Pro和12kg等限定，不能证明是同一型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050113\",\n    \"name\": \"米家洗衣机Pro\",\n    \"url\": \"https://www.ithome.com/0/955/032.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家洗衣机 Pro 波轮 12kg 今晚正式开售，建议零售价为 1299 元，首发价 1099 元。\",\n    \"reason\": \"原文型号为“米家洗衣机 Pro 波轮 12kg”，输入型号“米家洗衣机Pro”缺少“波轮12kg”限定，不能证明为同一型号；且“今晚”需原文锚点，报道日期为2026-05-25，但无法确认该型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24786\",\n    \"name\": \"米家洗衣机Pro 波轮12kg\",\n    \"url\": \"https://www.ithome.com/0/955/032.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"IT之家 5 月 25 日消息，小米米家洗衣机 Pro 波轮 12kg 今晚正式开售，建议零售价为 1299 元，首发价 1099 元。\",\n    \"reason\": \"原文型号“米家洗衣机 Pro 波轮 12kg”与输入完全匹配，事件为“今晚正式开售”，报道日期为2026年5月25日，可锚定相对月份为2026-05，故首次发布年月为2026-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050113\",\n    \"name\": \"米家洗衣机Pro\",\n    \"url\": \"https://www.ithome.com/0/954/716.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日宣布，“ 米家洗衣机 Pro 至尊版 超电解智投 洗烘 13kg ”在小米有品（ 点此购买 ）开启预售，首发价 3499 元， 国补到手价 2974.2 元 。\",\n    \"reason\": \"原文型号为“米家洗衣机 Pro 至尊版 超电解智投 洗烘 13kg”，输入型号“米家洗衣机Pro”缺少“至尊版超电解智投洗烘13kg”等限定，不能证明为同一型号，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870134,
+  "id": "0217938701302356cb63cadb26a6eb1a5dd8bb71cce3d7f640388",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 848,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1959,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2807
+  }
+}

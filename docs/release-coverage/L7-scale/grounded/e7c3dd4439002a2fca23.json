@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25000\",\n    \"name\": \"米家无线洗地机 5\",\n    \"url\": \"https://www.ithome.com/0/939/478.htm\",\n    \"date\": null,\n    \"quote\": \"小米旗下米家无线洗地机 5 Pro 现已在京东发售，首发价 2599 元， 预售价 1934 元\",\n    \"reason\": \"原文仅涉及米家无线洗地机 5 Pro，Pro 为不同型号，不能证明米家无线洗地机 5 的身份；且无该型号首次发布事件，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/938/848.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI G Pro 32U 2026 32 寸 Mini LED 显示器今日起开始预售\",\n    \"reason\": \"输入型号名为 Redmi，原文事件为 REDMI G Pro 32U 2026 显示器预售，型号名过于宽泛且原文未证明该输入型号身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:23715\",\n    \"name\": \"米家熨烫机2\",\n    \"url\": \"https://www.ithome.com/0/938/835.htm\",\n    \"date\": \"2026-04\",\n    \"quote\": \"小米米家熨烫机 2 今日开启预售\",\n    \"reason\": \"原文明确米家熨烫机 2 今日开启预售，报道日期为 2026-04-14，事件与报道同月，可确定首次发布月为 2026-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:23695\",\n    \"name\": \"米家智能空气炸锅 Pro 蒸烤版 6.5L\",\n    \"url\": \"https://www.ithome.com/0/938/444.htm\",\n    \"date\": \"2026-04\",\n    \"quote\": \"小米米家智能空气炸锅 Pro 蒸烤版 6.5L 今天开启预售\",\n    \"reason\": \"原文明确该型号今天开启预售，报道日期为 2026-04-13，事件与报道同月，可确定首次发布月为 2026-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/938/346.htm\",\n    \"date\": null,\n    \"quote\": \"小米现在推出了 2026 款的 REDMI G27U 显示器，京东显示为 1499 元，4 月 17 日开售\",\n    \"reason\": \"输入型号名为 Redmi，原文事件为 REDMI G27U 2026 显示器推出，型号名过于宽泛且原文未证明该输入型号身份，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871546,
+  "id": "021793871541751ab257ece25bd0fea81c82ca5c15ec8fde800cc",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 692,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2087,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2779
+  }
+}

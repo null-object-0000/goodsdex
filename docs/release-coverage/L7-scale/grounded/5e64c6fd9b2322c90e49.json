@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:22153\",\n    \"name\": \"REDMI Watch 6\",\n    \"url\": \"https://www.ithome.com/0/991/945.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Watch 6 活力版智能手表今日发布并开售\",\n    \"reason\": \"原文仅发布 REDMI Watch 6 活力版，未发布 REDMI Watch 6 本体；活力版为不同型号，不能证明 REDMI Watch 6 首发，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25161\",\n    \"name\": \"REDMI Watch 6 活力版\",\n    \"url\": \"https://www.ithome.com/0/991/945.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米 REDMI Watch 6 活力版智能手表今日发布并开售\",\n    \"reason\": \"原文明确该型号今日发布并开售，报道日期为2026-08-20，事件同月，故为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20854\",\n    \"name\": \"小米智能摄像机 视频通话版\",\n    \"url\": \"https://www.ithome.com/0/991/501.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能摄像机视频通话版 2 单机今日上架小米有品并开启预约\",\n    \"reason\": \"原文发布的是视频通话版 2，非视频通话版；后代型号不证明本体首发，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25222\",\n    \"name\": \"小米智能摄像机 视频通话版2\",\n    \"url\": \"https://www.ithome.com/0/991/501.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能摄像机视频通话版 2 单机今日上架小米有品并开启预约，8 月 26 日 10 点新开启众筹\",\n    \"reason\": \"原文仅上架预约，众筹在8月26日，但未明确正式发布/首发事件；预约上架不等同首发公告，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25172\",\n    \"name\": \"米家轻享保温杯2\",\n    \"url\": \"https://www.ithome.com/0/991/447.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家轻享保温杯 2 开售，官方建议零售价 99 元\",\n    \"reason\": \"原文仅报道开售，未说明发布/首发事件及月份，开售不等同首发公告，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871490,
+  "id": "0217938714849844f170dda172df2cc79a65077ac74d404428179",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 629,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1887,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2516
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:22295\",\n    \"name\": \"米家洗衣机 滚筒12kg\",\n    \"url\": \"https://www.ithome.com/0/943/212.htm\",\n    \"date\": \"2026-04\",\n    \"quote\": \"IT之家 4 月 24 日消息，小米现已在有品上架“米家洗衣机滚筒 12Kg 超薄嵌入”（ 点此访问 ），该机定价为 1699 元， 首发价为 1399 元 。\",\n    \"reason\": \"原文明确“米家洗衣机滚筒 12Kg 超薄嵌入”已在有品上架并给出首发价，属新品上架/首发公告；报道时间为2026-04-24，事件同月，故取2026-04。型号名“滚筒12kg”与原文“滚筒 12Kg 超薄嵌入”对应（容量与滚筒一致，超薄嵌入为描述性后缀）。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24563\",\n    \"name\": \"米家洗衣机 滚筒 12kg\",\n    \"url\": \"https://www.ithome.com/0/943/212.htm\",\n    \"date\": \"2026-04\",\n    \"quote\": \"IT之家 4 月 24 日消息，小米现已在有品上架“米家洗衣机滚筒 12Kg 超薄嵌入”（ 点此访问 ），该机定价为 1699 元， 首发价为 1399 元 。\",\n    \"reason\": \"与上一条同源同型号（仅空格差异），原文“米家洗衣机滚筒 12Kg 超薄嵌入”上架并首发，事件同月2026-04，故取2026-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21556\",\n    \"name\": \"米家洗衣机 洗烘12kg\",\n    \"url\": \"https://www.ithome.com/0/942/783.htm\",\n    \"date\": \"2026-04\",\n    \"quote\": \"IT之家 4 月 23 日消息，小米现已在有品上架“米家洗衣机洗烘 12Kg”（ 点此访问 ），其提供 1.2 洗净比，支持 610mm 超薄嵌入，定价为 2299 元， 首发价 1899 元 。\",\n    \"reason\": \"原文明确“米家洗衣机洗烘 12Kg”已在有品上架并给出首发价，属新品上架/首发公告；报道时间2026-04-23，事件同月，故取2026-04。型号名“洗烘12kg”与原文“洗烘 12Kg”对应。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19651\",\n    \"name\": \"米家保温杯Ti 2\",\n    \"url\": \"https://www.ithome.com/0/942/157.htm\",\n    \"date\": \"2026-04\",\n    \"quote\": \"IT之家 4 月 22 日消息，小米旗下米家保温杯 Ti 2 新增的“月光银”版本目前已在有品开启众筹（ 点此访问 ），预计 4 月 30 日起发货，其中 350ml 版本 109 元，480ml 版本 159 元。\",\n    \"reason\": \"原文为“米家保温杯 Ti 2”新增“月光银”版本开启众筹，属该版本新品众筹公告；报道时间2026-04-22，事件同月，故取2026-04。注意：这是Ti 2的月光银版本众筹，非Ti 2本体首发，但输入型号为“米家保温杯Ti 2”，原文明确该型号新增版本众筹，可视为该型号相关新品公告，日期锚定2026-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/941/794.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 4 月 21 日消息，小米 REDMI K90 Max 新品发布会正在举行， REDMI K Pad 2 性能旗舰小平板正式发布。\",\n    \"reason\": \"输入型号名为“Redmi”，过于宽泛，原文发布的是“REDMI K Pad 2”平板，型号名“Redmi”仅为品牌前缀，不能证明身份对应K Pad 2；且“Redmi”非具体型号，无法确定首发月，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871526,
+  "id": "12b1807e-f604-4e6c-b933-ac4040422d7a",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 1036,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1725,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2761
+  }
+}

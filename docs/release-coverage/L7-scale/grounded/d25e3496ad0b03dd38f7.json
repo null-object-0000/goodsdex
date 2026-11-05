@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/988/020.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 投影仪 5 Pro 今晚 20:00 正式开售，到手价 1899 元\",\n    \"reason\": \"输入型号名为“Redmi”，原文事件为“REDMI 投影仪 5 Pro”开售，型号名仅为前缀包含，不能证明是同一型号；且事件为开售而非首次发布，无法确定中国大陆首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/987/999.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在海外市场推出 REDMI 17 5G 和 REDMI 17 4G 手机\",\n    \"reason\": \"输入型号名为“Redmi”，原文为海外市场推出 REDMI 17 5G/4G，型号名仅为前缀包含，且为海外发布非中国大陆首发，无法确定中国大陆首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24884\",\n    \"name\": \"REDMI 17 5G\",\n    \"url\": \"https://www.ithome.com/0/987/999.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在海外市场推出 REDMI 17 5G 和 REDMI 17 4G 手机\",\n    \"reason\": \"原文明确为海外市场推出 REDMI 17 5G，非中国大陆首次发布，无法确定中国大陆首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25149\",\n    \"name\": \"米家无雾加湿器3 1500mL/h\",\n    \"url\": \"https://www.ithome.com/0/987/731.htm\",\n    \"date\": null,\n    \"quote\": \"今日，米家无雾加湿器 3 1500mL/h 上架小米有品，众筹价 899 元，将于 8 月 17 日 10 点众筹开售\",\n    \"reason\": \"型号身份匹配（米家无雾加湿器 3 1500mL/h），但原文事件为“上架/众筹预约”，众筹开售在 8 月 17 日，报道于 8 月 10 日；上架不等于首次发布，众筹开售为相对月份需锚点，原文仅“8 月 17 日”无年份锚点，无法确定首发年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25159\",\n    \"name\": \"米家制冰机\",\n    \"url\": \"https://www.ithome.com/0/987/714.htm\",\n    \"date\": null,\n    \"quote\": \"米家制冰机今日在小米有品开启众筹预约，8 月 17 日 10 点开售，众筹价 359 元\",\n    \"reason\": \"型号身份匹配（米家制冰机），但原文事件为“众筹预约开启”，开售在 8 月 17 日，报道于 8 月 10 日；预约不等于首次发布，开售为相对月份需年份锚点，原文无年份，无法确定首发年月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871494,
+  "id": "0217938714891395c7f85291e6ad850e47f0b8bb356de2f52835a",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 808,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2349,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3157
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20565\",\n    \"name\": \"米家桌面学习灯\",\n    \"url\": \"https://www.ithome.com/1/012/187.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家桌面学习灯 Max 现已开售\",\n    \"reason\": \"原文仅涉及“米家桌面学习灯 Max”，未提及无后缀的“米家桌面学习灯”；型号名后代 Max 不是同一型号，且仅前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25627\",\n    \"name\": \"米家桌面学习灯 Max\",\n    \"url\": \"https://www.ithome.com/1/012/187.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家桌面学习灯 Max 现已开售，售价 799 元\",\n    \"reason\": \"原文事件为“现已开售”，属于旧品/新品开售而非新品推出、正式发布、首发或首次众筹公告；报道时间为2026-10-13，但开售不等于首次发布，无法确定首次发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25720\",\n    \"name\": \"米家洗衣机 健康洗 双筒1kg\",\n    \"url\": \"https://www.ithome.com/1/012/086.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米现已在京东 上架“米家洗衣机 健康洗 双筒 1KG”并开启预售，该产品 将于 10 月 20 日开启首销\",\n    \"reason\": \"原文明确该型号开启预售并将于10月20日首销，报道时间为2026-10-12，事件同月且有原文锚点“10 月 20 日”，可确定首次发布/预售月份为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/011/779.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 显示器支架臂……今日正式开售\",\n    \"reason\": \"输入型号名为“Redmi”，原文产品为“REDMI 显示器支架臂”，仅品牌前缀包含不证明身份；且事件为“今日正式开售”，非新品发布公告，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25483\",\n    \"name\": \"小米智能摄像机 5 Pro 全彩夜视\",\n    \"url\": \"https://www.ithome.com/1/011/748.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"小米 9 月推出了一款“小米智能摄像机 5 Pro 全彩夜视”，今日 10:00 正式开售\",\n    \"reason\": \"原文明确该型号于“9 月推出”，报道时间为2026-10-12，事件同月锚点为“9 月”，可确定首次发布年月为2026-09。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871452,
+  "id": "as-mzfui5zg81",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 717,
+    "prompt_tokens": 2215,
+    "total_tokens": 2932
+  }
+}

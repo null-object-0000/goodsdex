@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25504\",\n    \"name\": \"米家吸顶灯C\",\n    \"url\": \"https://www.ithome.com/1/001/968.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"小米现已在有品上架米家吸顶灯 C 系列（ 点此访问 ）众筹，提供 L90 和 D40 两款\",\n    \"reason\": \"原文明确为米家吸顶灯C系列众筹上架，报道日期2026-09-14，事件与报道同月，故取2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25436\",\n    \"name\": \"米家夜灯4\",\n    \"url\": \"https://www.ithome.com/1/001/441.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"小米米家夜灯 4 现已在小米有品开启众筹\",\n    \"reason\": \"原文明确米家夜灯4开启众筹，报道日期2026-09-11，事件与报道同月，故取2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/001/359.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日宣布，REDMI 显示器 A27U Type-C 120Hz 2027 开启预售\",\n    \"reason\": \"输入型号仅为“Redmi”，原文发布的是REDMI显示器A27U Type-C 120Hz 2027，型号名不匹配，无法确认同一型号，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/1/001/274.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日宣布，米家石墨烯暖风机 C 开启预售\",\n    \"reason\": \"输入型号为“米家石墨烯暖风机”，原文发布的是“米家石墨烯暖风机 C”，C为不同型号后缀，不能证明同一型号，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25331\",\n    \"name\": \"米家石墨烯暖风机 C\",\n    \"url\": \"https://www.ithome.com/1/001/274.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"小米官方今日宣布，米家石墨烯暖风机 C 开启预售\",\n    \"reason\": \"原文明确米家石墨烯暖风机C开启预售，报道日期2026-09-11，事件与报道同月，故取2026-09。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870495,
+  "id": "0217938704907955c7f85291e6ad850e47f0b8bb356de2f4bd0af",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 645,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2177,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2822
+  }
+}

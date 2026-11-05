@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:22653\",\n    \"name\": \"REDMI 显示器 G25\",\n    \"url\": \"https://www.ithome.com/1/017/498.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 显示器 G25 300Hz 2027 已经上架京东并开售\",\n    \"reason\": \"输入型号为“REDMI 显示器 G25”，原文实际发布/开售的是“REDMI 显示器 G25 300Hz 2027”，带 300Hz 与 2027 后缀，属于不同型号；原文未单独公告“REDMI 显示器 G25”首发，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:23907\",\n    \"name\": \"REDMI 显示器 G25 300Hz\",\n    \"url\": \"https://www.ithome.com/1/017/498.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 显示器 G25 300Hz 2027 已经上架京东并开售\",\n    \"reason\": \"原文型号为“REDMI 显示器 G25 300Hz 2027”，含 2027 后缀，与输入“REDMI 显示器 G25 300Hz”不完全一致；且原文仅称已上架开售，未给出首次发布/首发月份，报道时间为 10 月 24 日但事件未明确为同月首发，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25842\",\n    \"name\": \"米家净水器 3 1200G\",\n    \"url\": \"https://www.ithome.com/1/017/241.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米米家净水器 3 1200G 上架预售，10 月 30 日 20 点开抢，首发价 1499 元。\",\n    \"reason\": \"原文明确型号“米家净水器 3 1200G”上架预售，并给出 10 月 30 日开抢及首发价；报道发布于 2026-10-23，事件月份有原文“10 月”锚点，可确定为中国大陆首次发布/预售月份 2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/016/967.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI K100 手机将于 10 月 27 日晚 7 点发布。\",\n    \"reason\": \"输入型号仅为“Redmi”，过于宽泛，原文事件主体是“REDMI K100 手机”，不能证明“Redmi”这一泛称型号的身份；故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050057\",\n    \"name\": \"Redmi Book 14\",\n    \"url\": \"https://www.ithome.com/1/016/691.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米 REDMI Book 14 2027 笔记本“星云紫”亮相，10 月 27 日发布\",\n    \"reason\": \"原文型号为“REDMI Book 14 2027”，含 2027 后缀，与输入“Redmi Book 14”不完全一致；但标题明确“10 月 27 日发布”，报道发布于 2026-10-22，事件月份有原文“10 月”锚点，若按同系列可确定发布月为 2026-10。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871438,
+  "id": "09e11fea-eac9-4c11-9125-96402928b616",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 838,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2026,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2864
+  }
+}

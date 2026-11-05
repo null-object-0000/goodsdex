@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:24996\",\n    \"name\": \"米家养生壶2\",\n    \"url\": \"https://www.ithome.com/0/970/306.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"IT之家 6 月 30 日消息，小米官方今日宣布推出全新的米家养生壶 2 新品，并将于明天上午 10:00 开售，首发价 139 元\",\n    \"reason\": \"原文明确“今日宣布推出全新的米家养生壶 2 新品”，报道时间为2026-06-30，事件同月，故首次发布年月为2026-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/969/986.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日官宣 REDMI 首款头戴降噪耳机明晚 7 点发布，现已开启预约。\",\n    \"reason\": \"输入型号名为“Redmi”，过于宽泛，原文事件为“REDMI 首款头戴降噪耳机”，无法确认与输入型号“Redmi”为同一精确型号，身份限定不足，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24822\",\n    \"name\": \"小米智能太阳能摄像机 4 Pro 4G双摄版\",\n    \"url\": \"https://www.ithome.com/0/969/881.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"小米智能太阳能摄像机 4 Pro 4G 双摄版今日上架小米有品，众筹价 579 元起，7 月 6 日 10 点开启众筹\",\n    \"reason\": \"原文明确该精确型号“今日上架小米有品”并公布众筹，报道时间为2026-06-29，事件同月，首次发布年月为2026-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/969/756.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日公布 REDMI K90 至尊版天际蓝配色，新机将于 6 月 30 日晚 7 点发布。\",\n    \"reason\": \"输入型号名为“Redmi”，原文事件为“REDMI K90 至尊版”，无法确认与输入型号“Redmi”为同一精确型号，身份限定不足，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24974\",\n    \"name\": \"米家智能电压力锅2 Pro 5L\",\n    \"url\": \"https://www.ithome.com/0/968/408.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"小米米家智能电压力锅 2 Pro 5L 今日开启预售，7 月 1 日 10:00 开售。\",\n    \"reason\": \"原文明确该精确型号“今日开启预售”，报道时间为2026-06-25，事件同月，首次发布年月为2026-06。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871505,
+  "id": "as-g07s7ggcdf",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 748,
+    "prompt_tokens": 2257,
+    "total_tokens": 3005
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25000\",\n    \"name\": \"米家无线洗地机 5\",\n    \"url\": \"https://www.ithome.com/0/980/998.htm\",\n    \"date\": null,\n    \"quote\": \"相关阅读： 《 小米米家无线洗地机 5 开启预约：180° 躺平四重防缠绕，1399 元 》\",\n    \"reason\": \"原文仅以相关阅读链接提及“米家无线洗地机 5 开启预约”，未给出该型号的发布/预约/开售的具体年月，且正文主体介绍的是 5C 型号，无法确定 5 的首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25093\",\n    \"name\": \"米家无线洗地机 5C\",\n    \"url\": \"https://www.ithome.com/0/980/998.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"IT之家 7 月 24 日消息，小米新上架了一款米家无线洗地机 5C，官方定价 999 元……8 月 3 日正式开售。\",\n    \"reason\": \"原文明确“新上架了一款米家无线洗地机 5C”，型号精确匹配 5C（非 5 的后代），报道事件为 7 月 24 日上架，属新品推出公告，故首发月为 2026-07；8 月 3 日为开售日，非发布月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25090\",\n    \"name\": \"米家净化加湿器3 Pro\",\n    \"url\": \"https://www.ithome.com/0/980/167.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"IT之家 7 月 22 日消息，小米旗下米家净化加湿器 3 Pro 现已在有品开启众筹（ 点此访问 ），众筹价 1699 元。\",\n    \"reason\": \"原文明确“米家净化加湿器 3 Pro 现已在有品开启众筹”，型号精确匹配（Pro 为型号一部分），事件为 7 月 22 日开启众筹，属首次众筹公告，故首发月为 2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/979/629.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"IT之家 7 月 21 日消息，小米新款米家电动剃须刀现已在京东开启预售……预售首发价 199.75 元。\",\n    \"reason\": \"原文明确“小米新款米家电动剃须刀现已在京东开启预售”，型号精确匹配，事件为 7 月 21 日开启预售，属新品预售公告，故首发月为 2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25048\",\n    \"name\": \"米家智能茶吧机 Pro 立式\",\n    \"url\": \"https://www.ithome.com/0/979/142.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"IT之家 7 月 20 日消息，米家智能茶吧机 Pro 立式今日在小米有品开启众筹……活动时间为 7 月 20 日 10:00-7 月 27 日 10:00，众筹价 1099 元。\",\n    \"reason\": \"原文明确“米家智能茶吧机 Pro 立式今日在小米有品开启众筹”，型号精确匹配（Pro 立式为型号一部分），事件为 7 月 20 日开启众筹，属首次众筹公告，故首发月为 2026-07。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870682,
+  "id": "3d868c15-b1a4-4f9b-bc75-5bd313719011",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 913,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1951,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2864
+  }
+}

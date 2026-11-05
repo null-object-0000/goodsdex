@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:4802\",\n    \"name\": \"米家空气净化器Pro\",\n    \"url\": \"https://www.ithome.com/0/340/288.htm\",\n    \"date\": null,\n    \"quote\": \"比小米此前CADR值最高的米家空气净化器Pro还要高出一倍。\",\n    \"reason\": \"原文仅将米家空气净化器Pro作为旧型号对比提及，未给出其首次发布年月，无法确定首发时间，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7522\",\n    \"name\": \"米家空气净化器MAX\",\n    \"url\": \"https://www.ithome.com/0/340/288.htm\",\n    \"date\": \"2017-12\",\n    \"quote\": \"今天下午，小米旗下智米科技在北京召开发布会，正式发布了小米米家空气净化器MAX，售价1999元。\",\n    \"reason\": \"原文明确“正式发布了小米米家空气净化器MAX”，报道日期为2017-12-25，事件与报道同月，故首次发布年月为2017-12。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7528\",\n    \"name\": \"米家电磁炉\",\n    \"url\": \"https://www.ithome.com/0/339/762.htm\",\n    \"date\": \"2017-12\",\n    \"quote\": \"小米米家在今天宣布推出小米米家电磁炉，售价299元，将于12月22日上午10点在小米商城、有品以及小米之家等渠道发售\",\n    \"reason\": \"原文明确“今天宣布推出小米米家电磁炉”，报道日期为2017-12-21，宣布推出与报道同月，故首次发布年月为2017-12。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:4348\",\n    \"name\": \"米家扫地机器人\",\n    \"url\": \"https://www.ithome.com/0/339/700.htm\",\n    \"date\": null,\n    \"quote\": \"圆形外观下，第一眼甚至有米家扫地机器人的错觉。\",\n    \"reason\": \"原文仅将米家扫地机器人作为外观类比提及，未给出其首次发布年月，无法确定首发时间，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7528\",\n    \"name\": \"米家电磁炉\",\n    \"url\": \"https://www.ithome.com/0/339/700.htm\",\n    \"date\": null,\n    \"quote\": \"今天下午，小米米家官方正式宣布了这款新品，将于明天上午10点揭晓答案。\",\n    \"reason\": \"原文仅预告“明天上午10点揭晓答案”，未明确产品型号为米家电磁炉（正文为推测性描述），且无明确“发布/推出”该型号的公告，无法确定首发年月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870454,
+  "id": "0217938704495794f170dda172df2cc79a65077ac74d404e7ba9f",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 659,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2502,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3161
+  }
+}

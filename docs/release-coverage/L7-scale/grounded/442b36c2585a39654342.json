@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:23907\",\n    \"name\": \"REDMI 显示器 G25 300Hz\",\n    \"url\": \"https://www.ithome.com/1/017/498.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 显示器 G25 300Hz 2027 已经上架京东并开售\",\n    \"reason\": \"原文仅称已上架开售，未给出首次发布/首发/众筹的月份；标题中的“推出”无具体月份，报道时间10月24日不能证明首发月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25842\",\n    \"name\": \"米家净水器 3 1200G\",\n    \"url\": \"https://www.ithome.com/1/017/241.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米米家净水器 3 1200G 上架预售，10 月 30 日 20 点开抢，首发价 1499 元\",\n    \"reason\": \"型号完全匹配；原文明确“上架预售”且给出10月30日开抢，报道发布于2026年10月23日，事件同月，故首发月为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/016/967.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI K100 手机将于 10 月 27 日晚 7 点发布\",\n    \"reason\": \"输入型号仅为“Redmi”，原文事件主体为REDMI K100手机，型号身份不匹配，不能确定该输入型号的首发，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050057\",\n    \"name\": \"Redmi Book 14\",\n    \"url\": \"https://www.ithome.com/1/016/691.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米 REDMI Book 14 2027 笔记本全新「星云紫」亮相，新品采用金属材质、圆润 R 角设计。\",\n    \"reason\": \"原文主体为REDMI Book 14 2027，输入型号Redmi Book 14为其前缀但非同一型号（后代/年份款不算同一型号），身份不匹配，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/016/691.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Book 14 2027 笔记本全新「星云紫」亮相，10 月 27 日发布\",\n    \"reason\": \"输入型号仅为“Redmi”，原文事件主体为REDMI Book 14 2027笔记本，型号身份不匹配，不能确定该输入型号的首发，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870472,
+  "id": "59af19bd-beac-4663-8f24-82624c3fae65",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 704,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2006,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2710
+  }
+}

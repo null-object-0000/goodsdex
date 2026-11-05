@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:6103\",\n    \"name\": \"米家声波电动牙刷\",\n    \"url\": \"https://www.ithome.com/1/011/067.htm\",\n    \"date\": null,\n    \"quote\": \"小米宣布旗下米家声波电动牙刷 T302 缓震版开启首销\",\n    \"reason\": \"原文仅涉及T302缓震版首销，输入型号为米家声波电动牙刷，未限定为T302缓震版；型号名后代不证明身份，且首销不等于首次发布，无法确定该输入型号的首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/1/010/857.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家石墨烯暖风机 Pro 现已全渠道开售\",\n    \"reason\": \"原文事件为米家石墨烯暖风机 Pro 开售，输入型号为米家石墨烯暖风机，Pro为不同型号；仅前缀包含不证明身份，无法确定输入型号首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25618\",\n    \"name\": \"米家石墨烯暖风机 Pro\",\n    \"url\": \"https://www.ithome.com/1/010/857.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家石墨烯暖风机 Pro 现已全渠道开售。新品到手价 399 元\",\n    \"reason\": \"原文确认米家石墨烯暖风机 Pro 全渠道开售，但“开售”为销售事件，非新品推出/正式发布/首发/首次众筹公告；报道时间为2026-10-09，事件同月但不足以确定首次发布月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20571\",\n    \"name\": \"米家无线直发梳\",\n    \"url\": \"https://www.ithome.com/1/009/510.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家无线直发梳 2 现已开售，新品首发价 299.2 元\",\n    \"reason\": \"原文事件为米家无线直发梳 2 开售，输入型号为米家无线直发梳，2为后代型号；仅前缀包含不证明身份，无法确定输入型号首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25712\",\n    \"name\": \"米家洗衣机 健康洗 三筒11kg\",\n    \"url\": \"https://www.ithome.com/1/007/861.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"小米“米家洗衣机健康洗三筒 11kg”今日开启预售\",\n    \"reason\": \"原文明确型号为米家洗衣机健康洗三筒 11kg，事件为今日开启预售，属新品预售公告；报道时间2026-09-28与事件同月，可确定首发候选月为2026-09。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871315,
+  "id": "0217938713113644f170dda172df2cc79a65077ac74d4045fe69c",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 718,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1876,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2594
+  }
+}

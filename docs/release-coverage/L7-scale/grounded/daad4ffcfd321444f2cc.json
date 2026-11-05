@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:24811\",\n    \"name\": \"米家即热饮水机 Max 制冰版\",\n    \"url\": \"https://www.ithome.com/0/957/997.htm\",\n    \"date\": \"2026-06\",\n    \"quote\": \"小米米家即热饮水机 Max 制冰版今日开启众筹\",\n    \"reason\": \"原文明确该型号今日开启众筹，报道时间为2026-06-01，事件与报道同月，众筹可视为首发公告，故取2026-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050224\",\n    \"name\": \"米家手持风扇\",\n    \"url\": \"https://www.ithome.com/0/955/705.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"小米官方刚刚宣布推出米家手持风扇新品。这款风扇已在小米商城开启众筹\",\n    \"reason\": \"原文明确宣布推出米家手持风扇新品并已开启众筹，报道时间为2026-05-27，事件与报道同月，故取2026-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24830\",\n    \"name\": \"米家手持风扇\",\n    \"url\": \"https://www.ithome.com/0/955/705.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"小米官方刚刚宣布推出米家手持风扇新品。这款风扇已在小米商城开启众筹\",\n    \"reason\": \"原文明确宣布推出米家手持风扇新品并已开启众筹，报道时间为2026-05-27，事件与报道同月，故取2026-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/955/573.htm\",\n    \"date\": null,\n    \"quote\": \"小米现在已在海外市场推出一款 REDMI Headphones Neo 头戴式耳机\",\n    \"reason\": \"输入型号名为“Redmi”，原文事件为海外推出 REDMI Headphones Neo 头戴式耳机，型号名仅为前缀包含，不能证明身份；且为海外发布非中国大陆，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/955/302.htm\",\n    \"date\": null,\n    \"quote\": \"爆料称小米 时隔 4 年重返印度市场 ，在 6 月推出小米 17T 系列外， 还将推出 REDMI Turbo 5 和入门级 REDMI 17 5G\",\n    \"reason\": \"输入型号名为“Redmi”，原文涉及 REDMI Turbo 5 和 REDMI 17 5G，型号名仅为前缀包含，不能证明身份；且为印度市场爆料，非中国大陆首发，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870694,
+  "id": "0217938706906794f170dda172df2cc79a65077ac74d4049dfc89",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 684,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1810,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2494
+  }
+}

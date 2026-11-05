@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/760/178.htm\",\n    \"date\": null,\n    \"quote\": \"此前在京东平台上架的小米米家电动剃须刀 S200，将于 4 月 6 日 0 点开售，首发售价 189 元。\",\n    \"reason\": \"输入型号为“米家电动剃须刀”，原文仅提及“米家电动剃须刀 S200”，S200 是具体后缀型号，不能证明与输入型号为同一型号；且原文事件为开售而非首次发布，无法确定输入型号的首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19760\",\n    \"name\": \"米家除螨仪2\",\n    \"url\": \"https://www.ithome.com/0/757/849.htm\",\n    \"date\": null,\n    \"quote\": \"赠送米家除螨仪 2。\",\n    \"reason\": \"原文仅将“米家除螨仪 2”作为赠品提及，未涉及该型号的发布、开售或众筹事件，无法确定其中国大陆首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19466\",\n    \"name\": \"米家智能欧式吸油烟机S2\",\n    \"url\": \"https://www.ithome.com/0/753/121.htm\",\n    \"date\": null,\n    \"quote\": \"外形与上述两款产品类似的机型包括米家智能欧式吸油烟机 S2（1699 元）和米家超薄低吸油烟机 S1（1999 元），此次推出的新产品预计会有部分功能迎来升级。\",\n    \"reason\": \"原文仅将“米家智能欧式吸油烟机 S2”作为在售旧品举例，并称此次推出的是新产品，不能证明 S2 在该月首次发布，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/735/947.htm\",\n    \"date\": null,\n    \"quote\": \"Redmi 十周年暨 K70 系列手机新品发布会正在进行当中，小米米家 518L 十字超薄冰箱现已在京东平台开启预售\",\n    \"reason\": \"输入型号名为“Redmi”，原文中“Redmi”仅作为发布会名称的一部分出现，并非产品型号；原文主体产品为“小米米家 518L 十字超薄冰箱”，与输入型号不匹配，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19466\",\n    \"name\": \"米家智能欧式吸油烟机S2\",\n    \"url\": \"https://www.ithome.com/0/735/773.htm\",\n    \"date\": \"2023-11\",\n    \"quote\": \"IT之家 11 月 29 日消息，小米现推出了一款米家智能欧式吸油烟机 S2，首发价 1599 元。\",\n    \"reason\": \"原文明确型号为“米家智能欧式吸油烟机 S2”，与输入型号一致；事件为“现推出”并给出首发价，报道时间为 2023-11-29，事件与报道同月，可确定首次发布年月为 2023-11。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871368,
+  "id": "b1f7312d-7948-4fc9-aea5-4ca4ede4e596",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 787,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2099,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2886
+  }
+}

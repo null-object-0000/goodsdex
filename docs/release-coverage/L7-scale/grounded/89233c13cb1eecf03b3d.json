@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/473/787.htm\",\n    \"date\": \"2020-02\",\n    \"quote\": \"今日，小米米家首款高端剃须刀在小米商城开启众筹\",\n    \"reason\": \"原文明确为米家首款高端剃须刀，今日开启众筹，报道时间为2020-02-19，事件同月，故首次发布年月为2020-02。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/473/399.htm\",\n    \"date\": \"2020-02\",\n    \"quote\": \"米家首款高端剃须刀将于2月19日在小米商城和小米之家上午10点开启众筹\",\n    \"reason\": \"原文明确米家首款高端剃须刀将于2月19日开启众筹，报道时间为2020-02-17，有明确月份锚点，故为2020-02。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11507\",\n    \"name\": \"米家LED灯泡 蓝牙MESH版\",\n    \"url\": \"https://www.ithome.com/0/467/388.htm\",\n    \"date\": \"2020-01\",\n    \"quote\": \"今日，小米推出了米家LED灯泡蓝牙Mesh版\",\n    \"reason\": \"原文明确今日推出米家LED灯泡蓝牙Mesh版，报道时间为2020-01-08，事件同月，故为2020-01。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/467/388.htm\",\n    \"date\": null,\n    \"quote\": \"赠Redmi小爱音箱\",\n    \"reason\": \"原文仅提及Redmi小爱音箱作为赠品，未发布Redmi品牌产品或型号，无法确定身份与首发时间，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/451/293.htm\",\n    \"date\": \"2019-10\",\n    \"quote\": \"米家扫拖机器人1C将于10月22日10点首发开卖\",\n    \"reason\": \"原文明确米家扫拖机器人1C将于10月22日首发开卖，报道时间为2019-10-20，有明确月份锚点，故为2019-10。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870437,
+  "id": "0217938704324466cb63cadb26a6eb1a5dd8bb71cce3d7fc34ae3",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 628,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1642,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2270
+  }
+}

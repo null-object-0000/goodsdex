@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:24884\",\n    \"name\": \"REDMI 17 5G\",\n    \"url\": \"https://www.ithome.com/0/955/302.htm\",\n    \"date\": null,\n    \"quote\": \"爆料称小米 时隔 4 年重返印度市场 ，在 6 月推出小米 17T 系列外， 还将推出 REDMI Turbo 5 和入门级 REDMI 17 5G。\",\n    \"reason\": \"原文仅爆料REDMI 17 5G将在印度市场6月推出，属印度发布而非中国大陆首发；且为爆料未获官方确认，无法确定中国大陆首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24787\",\n    \"name\": \"米家无线吸尘器 4 Pro\",\n    \"url\": \"https://www.ithome.com/0/955/252.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"小米新上架了一款米家无线吸尘器 4 Pro，京东显示为 1499 元，将于 6 月 10 日开售\",\n    \"reason\": \"原文明确小米新上架该型号（米家无线吸尘器 4 Pro），报道于5月26日，属新品上架公告；开售为6月10日，但上架/发布事件在5月，故中国大陆首次发布年月取2026-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24811\",\n    \"name\": \"米家即热饮水机 Max 制冰版\",\n    \"url\": \"https://www.ithome.com/0/955/047.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"小米米家即热饮水机 Max 制冰版浅灰银今日在小米有品上架，官方标价 1999 元，将于近期开启众筹\",\n    \"reason\": \"原文明确该型号今日（5月25日）在小米有品上架，属新品上架公告；众筹仅称近期无具体月份，故以报道同月上架事件确定中国大陆首次发布年月为2026-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/954/245.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Note 17 系列手机已现身 GSMA 数据库，定位入门级。\",\n    \"reason\": \"输入型号名为泛称“Redmi”，原文涉及的是REDMI Note 17系列，无法确认与输入型号同一身份；且原文仅认证现身、官方未确认发布日期，无法确定首发年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10000407\",\n    \"name\": \"米家波轮洗衣机\",\n    \"url\": \"https://www.ithome.com/0/952/641.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"小米官方今日推出了两款米家洗衣机 Pro 波轮新品并开启预售，10kg 新品首发价 899 元\",\n    \"reason\": \"原文明确今日（5月20日）推出米家洗衣机 Pro 波轮新品并开启预售，属新品发布公告；输入型号“米家波轮洗衣机”为泛称，原文对应米家洗衣机 Pro 波轮新品，按发布事件确定中国大陆首次发布年月为2026-05。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870692,
+  "id": "445847d5-f59d-402c-a6b4-189e2c657a61",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 805,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2234,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3039
+  }
+}

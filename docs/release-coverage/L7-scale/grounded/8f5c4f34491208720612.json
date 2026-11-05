@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25159\",\n    \"name\": \"米家制冰机\",\n    \"url\": \"https://www.ithome.com/0/990/430.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"米家制冰机将于今日 10 点在小米有品开启众筹，具体活动时间为 8 月 17 日 10:00:00-8 月 24 日 09:59:59\",\n    \"reason\": \"原文明确米家制冰机于今日（报道日8月17日）10点开启众筹，属新品首次众筹公告，报道时间与事件同月，可确定首发月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050230\",\n    \"name\": \"米家高速水离子吹风机 Pro\",\n    \"url\": \"https://www.ithome.com/0/987/748.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米旗下米家高速水离子吹风机 Pro 现已在京东开启预售，该产品配备双恒温吹护技术，搭载 12 万转 / 分钟高速无刷马达， 首发价 705 元\",\n    \"reason\": \"原文明确米家高速水离子吹风机 Pro 已在京东开启预售并给出首发价，属新品预售公告，报道时间8月10日与事件同月，可确定首发月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21049\",\n    \"name\": \"米家高速水离子吹风机\",\n    \"url\": \"https://www.ithome.com/0/987/748.htm\",\n    \"date\": null,\n    \"quote\": \"小米旗下米家高速水离子吹风机 Pro 现已在京东开启预售\",\n    \"reason\": \"原文仅涉及米家高速水离子吹风机 Pro，未提及无 Pro 后缀的米家高速水离子吹风机，前缀包含不证明身份，无法确定该型号首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24248\",\n    \"name\": \"米家高速水离子吹风机Pro\",\n    \"url\": \"https://www.ithome.com/0/987/748.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米旗下米家高速水离子吹风机 Pro 现已在京东开启预售，该产品配备双恒温吹护技术，搭载 12 万转 / 分钟高速无刷马达， 首发价 705 元\",\n    \"reason\": \"原文明确米家高速水离子吹风机 Pro 已在京东开启预售并给出首发价，型号与输入一致（仅空格差异），属新品预售公告，报道时间8月10日与事件同月，可确定首发月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050233\",\n    \"name\": \"米家无线洗地机 5 Pro\",\n    \"url\": \"https://www.ithome.com/0/987/331.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米官方今日宣布旗下米家无线洗地机 5 Pro 泡沫版正式开售，首发价 2199 元\",\n    \"reason\": \"原文明确米家无线洗地机 5 Pro 泡沫版于今日（报道日8月8日）正式开售并给出首发价，属新品开售公告；泡沫版为同一型号的版本限定，报道时间与事件同月，可确定首发月为2026-08。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871316,
+  "id": "d1c5764b-2c15-4188-968c-9a1335f1f46b",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 825,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2471,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3296
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/016/691.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Book 14 2027 笔记本“星云紫”亮相，10 月 27 日发布\",\n    \"reason\": \"输入型号名为“Redmi”，原文事件主体为“REDMI Book 14 2027 笔记本”，型号名仅为品牌前缀，不能证明同一型号身份；且“10 月 27 日发布”为未来事件，报道时间为2026-10-22，原文未给出年份锚点，无法确定首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21267\",\n    \"name\": \"米家车载吸尘器\",\n    \"url\": \"https://www.ithome.com/1/015/788.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米米家车载吸尘器便携版今日开启众筹\",\n    \"reason\": \"原文事件主体为“米家车载吸尘器便携版”，输入型号“米家车载吸尘器”为其前缀，便携版为不同型号，身份不匹配；但若按输入型号宽泛理解，原文“今日开启众筹”为新品众筹公告，报道时间2026-10-21，事件同月，可确定2026-10。因型号名不完全一致，存在身份限定风险，但事件为新品众筹且同月，保留候选。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7128\",\n    \"name\": \"米家床头灯\",\n    \"url\": \"https://www.ithome.com/1/015/697.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米米家床头灯 3 已上架，将于 10 月 28 日上午 10 点开启众筹\",\n    \"reason\": \"原文事件主体为“米家床头灯 3”，输入型号“米家床头灯”为其前缀，3代是否为同一型号存疑；原文“将于10月28日开启众筹”为未来事件，报道时间2026-10-21，原文未给年份锚点，但报道同月且事件在当月内，可锚定到2026-10。因型号名不完全一致，身份限定存疑，但事件为新品众筹且同月，保留候选。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25717\",\n    \"name\": \"米家除螨仪 3\",\n    \"url\": \"https://www.ithome.com/1/015/528.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米米家除螨仪 3 今晚 20:00 现货开售\",\n    \"reason\": \"原文事件主体为“米家除螨仪 3”，与输入型号完全一致；原文“今晚20:00现货开售”为新品开售公告，报道时间2026-10-20，事件同月，可确定2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21400\",\n    \"name\": \"米家口袋照片打印机 Pro\",\n    \"url\": \"https://www.ithome.com/1/015/258.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家口袋照片打印机 Pro 礼盒装今日正式开售\",\n    \"reason\": \"原文事件主体为“米家口袋照片打印机 Pro 礼盒装”，礼盒装为不同套装型号，输入型号为“米家口袋照片打印机 Pro”，身份不匹配；且原文为礼盒装开售，非该型号首次发布，无法确定输入型号首发年月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871452,
+  "id": "0217938714477126cb63cadb26a6eb1a5dd8bb71cce3d7f2ce7d0",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 865,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2467,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3332
+  }
+}

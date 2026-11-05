@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20571\",\n    \"name\": \"米家无线直发梳\",\n    \"url\": \"https://www.ithome.com/1/009/510.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家无线直发梳 2 现已开售，新品首发价 299.2 元。\",\n    \"reason\": \"原文仅涉及“米家无线直发梳 2”，与输入型号“米家无线直发梳”不是同一型号（后代型号不算同一型号），无法确定输入型号的首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25712\",\n    \"name\": \"米家洗衣机 健康洗 三筒11kg\",\n    \"url\": \"https://www.ithome.com/1/007/861.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"IT之家 9 月 28 日消息，小米“米家洗衣机健康洗三筒 11kg”今日开启预售，预售价 4116 元， 国补到手价 3499 元 。\",\n    \"reason\": \"原文明确“米家洗衣机健康洗三筒 11kg”今日开启预售，型号与输入一致；报道日期为2026-09-28，事件同月，故首次发布候选为2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/1/007/636.htm\",\n    \"date\": null,\n    \"quote\": \"小米旗下米家石墨烯暖风机 Pro 将于今天 10 点在京东开启众筹\",\n    \"reason\": \"原文仅涉及“米家石墨烯暖风机 Pro”，与输入型号“米家石墨烯暖风机”不是同一型号（Pro 不算同一型号），无法确定输入型号首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25618\",\n    \"name\": \"米家石墨烯暖风机 Pro\",\n    \"url\": \"https://www.ithome.com/1/007/636.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"IT之家 9 月 28 日消息，小米旗下米家石墨烯暖风机 Pro 将于今天 10 点在京东开启众筹（ 点此访问 ），新品支持 2 米远距离环抱式送暖，支持 120° 上下送暖角度，众筹价 349 元。\",\n    \"reason\": \"原文明确“米家石墨烯暖风机 Pro”将于今天10点开启众筹，型号与输入一致；报道日期2026-09-28提供“今天”锚点，事件同月，故首次发布候选为2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25504\",\n    \"name\": \"米家吸顶灯C\",\n    \"url\": \"https://www.ithome.com/1/007/272.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在京东上架“米家吸顶灯 C 高显色”版本，提供了定价 349 元的 D40 版本（适用于 15 平方米）和定价 699 元的 L90 版本（适用于 25-45 平方米）。\",\n    \"reason\": \"原文上架的是“米家吸顶灯 C 高显色”版本，与输入型号“米家吸顶灯C”是否为同一型号无法由原文确认（高显色版本可能为不同型号/版本），且“上架”不等于新品发布，无法确定首发月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870127,
+  "id": "0217938701210944f170dda172df2cc79a65077ac74d4047650b3",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 840,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1863,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2703
+  }
+}

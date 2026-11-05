@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:21465\",\n    \"name\": \"米家恒温电水壶3\",\n    \"url\": \"https://www.ithome.com/0/873/951.htm\",\n    \"date\": \"2025-06\",\n    \"quote\": \"作为对比，小米今年 6 月推出了米家恒温电水壶 3，售价为 169 元。\",\n    \"reason\": \"原文明确“今年6月推出了米家恒温电水壶3”，型号精确匹配（无Pro后缀），报道发布于2025-08-08，故为2025-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21677\",\n    \"name\": \"米家恒温电水壶3 Pro\",\n    \"url\": \"https://www.ithome.com/0/873/951.htm\",\n    \"date\": \"2025-08\",\n    \"quote\": \"小米今天官宣电水壶新品：米家恒温电水壶 3 Pro……仅宣布将于 8 月 14 日 0 时上线、10 时开售 。\",\n    \"reason\": \"原文明确为新品“米家恒温电水壶3 Pro”，型号精确匹配；报道日期2025-08-08，原文锚点“8月14日”同月，故为2025-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24607\",\n    \"name\": \"米家恒温电水壶\",\n    \"url\": \"https://www.ithome.com/0/873/951.htm\",\n    \"date\": null,\n    \"quote\": \"作为对比，小米今年 6 月推出了米家恒温电水壶 3，售价为 169 元。\",\n    \"reason\": \"原文仅提及“米家恒温电水壶3”，无后缀的“米家恒温电水壶”未被单独发布或提及，不能证明身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:3556\",\n    \"name\": \"米家恒温电水壶\",\n    \"url\": \"https://www.ithome.com/0/873/951.htm\",\n    \"date\": null,\n    \"quote\": \"作为对比，小米今年 6 月推出了米家恒温电水壶 3，售价为 169 元。\",\n    \"reason\": \"原文仅提及“米家恒温电水壶3”，无后缀的“米家恒温电水壶”未被单独发布或提及，不能证明身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:18505\",\n    \"name\": \"米家前置过滤器\",\n    \"url\": \"https://www.ithome.com/0/873/927.htm\",\n    \"date\": null,\n    \"quote\": \"小米今天推出米家前置过滤器 Pro，同期开启新品预约\",\n    \"reason\": \"原文发布的是“米家前置过滤器 Pro”，无后缀的“米家前置过滤器”未被单独发布或提及，不能证明身份，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871337,
+  "id": "0217938713338294f170dda172df2cc79a65077ac74d40469d8f7",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 701,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1876,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2577
+  }
+}

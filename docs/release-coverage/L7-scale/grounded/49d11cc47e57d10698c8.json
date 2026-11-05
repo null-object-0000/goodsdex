@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25436\",\n    \"name\": \"米家夜灯4\",\n    \"url\": \"https://www.ithome.com/1/005/480.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"小米月初才开启众筹的米家夜灯 4 现已直接上架京东并开售\",\n    \"reason\": \"原文明确米家夜灯4月初开启众筹，报道时间为9月22日，众筹属于新品发布事件，可确定首次发布月为2026年9月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/005/232.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Buds 8S 耳机将于 9 月 22 日 10 点上市\",\n    \"reason\": \"输入型号名为“Redmi”，原文仅提及REDMI Buds 8S，未出现单独“Redmi”型号的发布信息，无法确认身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25431\",\n    \"name\": \"REDMI Buds 8S\",\n    \"url\": \"https://www.ithome.com/1/005/232.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"小米 REDMI Buds 8S 耳机将于 9 月 22 日 10 点上市\",\n    \"reason\": \"原文明确REDMI Buds 8S将于9月22日上市，报道时间为9月21日，事件同月，可确定首次发布月为2026年9月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/1/005/104.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今天在微博预热米家石墨烯暖风机 Pro\",\n    \"reason\": \"输入型号为“米家石墨烯暖风机”，原文仅提及“米家石墨烯暖风机 Pro”，Pro为不同型号，不能证明身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25618\",\n    \"name\": \"米家石墨烯暖风机 Pro\",\n    \"url\": \"https://www.ithome.com/1/005/104.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"目前该产品已在小米有品上架，9 月 28 日开启众筹\",\n    \"reason\": \"原文明确米家石墨烯暖风机 Pro将于9月28日开启众筹，众筹属于新品发布事件，报道时间为9月21日，事件同月，可确定首次发布月为2026年9月。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871460,
+  "id": "0217938714565434f170dda172df2cc79a65077ac74d4045ba293",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 665,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2125,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2790
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/948/085.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Pad 2 SE 4G 版平板将在明日 10 点开售\",\n    \"reason\": \"输入型号为 Redmi（泛指），原文事件主体是 REDMI Pad 2 SE 4G 版，属于不同型号（SE 后缀为后代/变体），不能证明 Redmi 本身首发；且事件为开售而非首次发布，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21591\",\n    \"name\": \"REDMI Pad 2\",\n    \"url\": \"https://www.ithome.com/0/948/085.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Pad 2 SE 4G 版平板将在明日 10 点开售\",\n    \"reason\": \"原文仅出现 REDMI Pad 2 SE 4G 版，SE 为不同型号，不能仅因前缀包含 REDMI Pad 2 就认定同一型号；且事件为开售非首发，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050184\",\n    \"name\": \"米家智能洗碗机 Pro 嵌入式 18套\",\n    \"url\": \"https://www.ithome.com/0/947/412.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"小米旗下“米家智能洗碗机 Pro 嵌入式 18 套”现已在有品开启预售\",\n    \"reason\": \"原文明确该型号已在有品开启预售，属新品预售公告；报道时间为 2026-05-07，事件同月，故首次发布候选为 2026-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/946/623.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI K90 Max 手机已于 4 月 21 日正式发布\",\n    \"reason\": \"原文发布事件主体为 REDMI K90 Max，并非 Redmi 泛型号；输入型号无法与具体型号对应，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050184\",\n    \"name\": \"米家智能洗碗机 Pro 嵌入式 18套\",\n    \"url\": \"https://www.ithome.com/0/945/843.htm\",\n    \"date\": \"2026-05\",\n    \"quote\": \"小米现已在有品上架“米家智能洗碗机 Pro 嵌入式 18 套”\",\n    \"reason\": \"原文明确该型号已上架，属新品推出公告；报道时间 2026-05-01，事件同月，首次发布候选为 2026-05。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871526,
+  "id": "0cb4b716-11b9-4e38-a172-53046775e5bb",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 681,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2038,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2719
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:16409\",\n    \"name\": \"米家声波电动牙刷T302\",\n    \"url\": \"https://www.ithome.com/1/007/140.htm\",\n    \"date\": null,\n    \"quote\": \"米家声波电动牙刷 T302 缓震版已于昨日开售\",\n    \"reason\": \"原文仅提及“T302 缓震版”开售，型号名含“缓震版”后缀，与输入型号“T302”不是同一型号；且“昨日开售”为销售事件，无发布公告，无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6103\",\n    \"name\": \"米家声波电动牙刷\",\n    \"url\": \"https://www.ithome.com/1/007/140.htm\",\n    \"date\": null,\n    \"quote\": \"米家声波电动牙刷 T302 缓震版已于昨日开售\",\n    \"reason\": \"输入型号为泛称“米家声波电动牙刷”，原文仅涉及“T302 缓震版”这一具体型号，前缀包含不证明身份；且无该泛称型号的发布公告，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/1/004/687.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家电动剃须刀 S101 云纹刀网版上架小米有品，将于 9 月 21 日 10 点开启新品众筹\",\n    \"reason\": \"输入型号为泛称“米家电动剃须刀”，原文仅涉及“S101 云纹刀网版”，后缀与具体型号不同，前缀包含不证明身份；无该泛称型号的发布公告，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20905\",\n    \"name\": \"米家富矿净水器\",\n    \"url\": \"https://www.ithome.com/0/998/678.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日宣布推出米家富矿净水器 2 并开启预售\",\n    \"reason\": \"原文发布的是“米家富矿净水器 2”，带后代数字“2”，与输入型号“米家富矿净水器”不是同一型号；无该型号的发布公告，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/0/997/927.htm\",\n    \"date\": null,\n    \"quote\": \"米家石墨烯暖风机 C 今日在小米有品开启众筹\",\n    \"reason\": \"原文发布的是“米家石墨烯暖风机 C”，带后缀“C”，与输入型号“米家石墨烯暖风机”不是同一型号；无该型号的发布公告，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870126,
+  "id": "0217938701211254f170dda172df2cc79a65077ac74d404baf5b7",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 704,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 3401,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 4105
+  }
+}

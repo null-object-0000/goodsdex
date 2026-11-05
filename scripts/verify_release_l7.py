@@ -1,5 +1,6 @@
 """Fetch untrusted proposals once, globally paced, and queue evidence for review."""
 import gzip
+import fcntl
 import hashlib
 import json
 from pathlib import Path
@@ -16,6 +17,13 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'docs/release-coverage/L7'
 
 def fetch(url):
+    OUT.mkdir(parents=True, exist_ok=True)
+    # Discovery and verification share one publisher request clock.
+    with (OUT/'fetch.lock').open('a+') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        return _fetch(url)
+
+def _fetch(url):
     key=hashlib.sha256(url.encode()).hexdigest()[:20]
     folder=OUT/'captures';folder.mkdir(exist_ok=True)
     path=folder/(key+'.json')

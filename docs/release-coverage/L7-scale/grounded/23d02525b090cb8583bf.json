@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25713\",\n    \"name\": \"小米智能摄像机 4 Pro\",\n    \"url\": \"https://www.ithome.com/1/012/452.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日宣布，小米智能摄像机 4 Pro 已正式开售，首发价为 329 元\",\n    \"reason\": \"原文仅说明10月13日已正式开售，未给出首次发布/首销的具体年月；报道时间为2026-10-13，但“已正式开售”不能证明首次发布月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25720\",\n    \"name\": \"米家洗衣机 健康洗 双筒1kg\",\n    \"url\": \"https://www.ithome.com/1/012/086.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米现已在京东 上架“米家洗衣机 健康洗 双筒 1KG”并开启预售，该产品 将于 10 月 20 日开启首销\",\n    \"reason\": \"型号完全匹配；原文事件为开启预售并明确将于10月20日首销，报道时间为2026-10-12，同月锚点成立，故首次发布年月候选为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25740\",\n    \"name\": \"米家空调 速冷静2027 大1.5匹\",\n    \"url\": \"https://www.ithome.com/1/011/328.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米米家空调速冷静 2027 大 1.5 匹现已开启预售， 售价 1899 元\",\n    \"reason\": \"型号“速冷静2027 大1.5匹”与原文一致；原文事件为现已开启预售，报道时间为2026-10-10，同月锚点成立，故首次发布年月候选为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/011/118.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在有品上架 REDMI 显示器支架臂（ 点此访问 ），该产品将于 10 月 12 日开售\",\n    \"reason\": \"输入型号仅为“Redmi”，原文产品为“REDMI 显示器支架臂”，型号名不完整且不能仅凭前缀包含证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25741\",\n    \"name\": \"小米智能摄像机 3\",\n    \"url\": \"https://www.ithome.com/1/010/994.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能摄像机 3 今日开售，500 万像素，升级 3K 超清画质，支持红外夜视，首销 179 元\",\n    \"reason\": \"原文仅说明10月9日今日开售/首销，未给出首次发布的具体年月；报道时间为2026-10-09，但“今日开售”不能证明首次发布月，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870490,
+  "id": "021793870486521ab257ece25bd0fea81c82ca5c15ec8fde564f0",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 756,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2442,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3198
+  }
+}

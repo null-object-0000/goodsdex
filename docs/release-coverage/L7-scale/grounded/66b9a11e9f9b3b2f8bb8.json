@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25331\",\n    \"name\": \"米家石墨烯暖风机 C\",\n    \"url\": \"https://www.ithome.com/0/997/927.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"米家石墨烯暖风机 C 今日在小米有品开启众筹\",\n    \"reason\": \"型号精确匹配“米家石墨烯暖风机 C”；原文事件为“今日开启众筹”，报道日期为2026-09-03，事件与报道同月，故首次发布年月为2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/0/994/408.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在有品上架“米家石墨烯暖风机 C”\",\n    \"reason\": \"输入型号为“米家石墨烯暖风机”，原文仅出现“米家石墨烯暖风机 C”，C为后缀不同型号，不能证明同一身份；且原文事件为上架/将众筹，非该型号首次发布，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25331\",\n    \"name\": \"米家石墨烯暖风机 C\",\n    \"url\": \"https://www.ithome.com/0/994/408.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"小米现已在有品上架“米家石墨烯暖风机 C”（ 点此访问 ），将于 9 月 2 日开启众筹\",\n    \"reason\": \"型号精确匹配“米家石墨烯暖风机 C”；原文事件为将于9月2日开启众筹，报道日期为2026-08-26，相对月份有原文锚点，故首次发布年月为2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25214\",\n    \"name\": \"米家智能净烟机 3 Pro\",\n    \"url\": \"https://www.ithome.com/0/991/295.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"继标准版之后，米家智能净烟机 3 Pro 也已经上架京东并开启全款预售\",\n    \"reason\": \"型号精确匹配“米家智能净烟机 3 Pro”；原文事件为已上架并开启全款预售，报道日期为2026-08-18，事件与报道同月，故首次发布年月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25149\",\n    \"name\": \"米家无雾加湿器3 1500mL/h\",\n    \"url\": \"https://www.ithome.com/0/990/432.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米旗下米家无雾加湿器 3 1500mL/h 将于今天 10 点在有品开启众筹\",\n    \"reason\": \"型号精确匹配“米家无雾加湿器 3 1500mL/h”；原文事件为将于今天10点开启众筹，报道日期为2026-08-17，相对月份有原文锚点，故首次发布年月为2026-08。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870122,
+  "id": "fab2e9b7-0619-4240-9886-e22998b633fc",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 763,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2542,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3305
+  }
+}

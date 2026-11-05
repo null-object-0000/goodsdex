@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/979/135.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米现已在有品上架新款米家电动剃须刀……预售首发价 199.75 元\",\n    \"reason\": \"原文明确为“新款米家电动剃须刀”且“已在有品上架”“预售首发”，报道时间为2026-07-20，事件与报道同月，可确定首发月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/978/864.htm\",\n    \"date\": null,\n    \"quote\": \"REDMI K Pad 2 新增 16GB+256GB 版本，今日 10:00 开售，首销到手价 4399 元\",\n    \"reason\": \"原文事件为REDMI K Pad 2新增16+256GB配置版本开售，并非该型号首次发布；输入型号名为“Redmi”过于宽泛，无法确认对应具体型号首发，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25060\",\n    \"name\": \"米家显示器挂灯2\",\n    \"url\": \"https://www.ithome.com/0/977/172.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米旗下米家显示器挂灯 2 现已在有品开启众筹\",\n    \"reason\": \"原文明确为“米家显示器挂灯 2”开启众筹，属新品首次众筹公告；报道时间2026-07-15，事件同月，可确定首发月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/976/714.htm\",\n    \"date\": null,\n    \"quote\": \"小米今天宣布推出 REDMI Note 17 标准版手机\",\n    \"reason\": \"原文发布的是REDMI Note 17标准版，输入型号名为“Redmi”过于宽泛，不能证明该输入型号即Note 17标准版，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/976/707.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Note 17 Pro 手机正式发布\",\n    \"reason\": \"原文发布的是REDMI Note 17 Pro，Pro为不同型号；输入型号名为“Redmi”过于宽泛，不能证明身份，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870682,
+  "id": "0ecbca9a-2858-4557-9a58-1f121d4d2341",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 662,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2099,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2761
+  }
+}

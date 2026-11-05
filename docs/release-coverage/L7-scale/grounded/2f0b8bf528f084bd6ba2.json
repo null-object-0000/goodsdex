@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25740\",\n    \"name\": \"米家空调 速冷静2027 大1.5匹\",\n    \"url\": \"https://www.ithome.com/1/011/328.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米米家空调速冷静 2027 大 1.5 匹现已开启预售\",\n    \"reason\": \"原文明确该型号已开启预售，报道时间为2026-10-10，事件与报道同月，可确定首发月为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/011/118.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在有品上架 REDMI 显示器支架臂\",\n    \"reason\": \"输入型号名为“Redmi”，原文实际产品为“REDMI 显示器支架臂”，型号名不匹配，无法确认身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25741\",\n    \"name\": \"小米智能摄像机 3\",\n    \"url\": \"https://www.ithome.com/1/010/994.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米智能摄像机 3 今日开售\",\n    \"reason\": \"原文明确该型号今日开售，报道时间为2026-10-09，事件与报道同月，可确定首发月为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20565\",\n    \"name\": \"米家桌面学习灯\",\n    \"url\": \"https://www.ithome.com/1/010/842.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日宣布，米家桌面学习灯 Max 预约开启\",\n    \"reason\": \"输入型号为“米家桌面学习灯”，原文产品为“米家桌面学习灯 Max”，Max为不同型号，不能证明身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25627\",\n    \"name\": \"米家桌面学习灯 Max\",\n    \"url\": \"https://www.ithome.com/1/010/842.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米今日宣布，米家桌面学习灯 Max 预约开启\",\n    \"reason\": \"原文明确该型号预约开启，报道时间为2026-10-09，事件与报道同月，可确定首发月为2026-10。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871455,
+  "id": "0217938714521065c7f85291e6ad850e47f0b8bb356de2f17ffae",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 600,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2324,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2924
+  }
+}

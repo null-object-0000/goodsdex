@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20809\",\n    \"name\": \"米家无线洗地机4C\",\n    \"url\": \"https://www.ithome.com/0/980/998.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家注意到，小米上一次推出米家无线洗地机 4C 还是在 2024 年。\",\n    \"reason\": \"原文仅提及4C于2024年推出，未给出具体月份；且该句为背景回顾，非本次发布事件，无法确定首次发布月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21625\",\n    \"name\": \"米家无线洗地机4\",\n    \"url\": \"https://www.ithome.com/0/980/998.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家注意到，小米上一次推出米家无线洗地机 4C 还是在 2024 年。\",\n    \"reason\": \"原文只出现“4C”，未出现“米家无线洗地机4”这一精确型号；4C与4不是同一型号，不能据此认定身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25000\",\n    \"name\": \"米家无线洗地机 5\",\n    \"url\": \"https://www.ithome.com/0/980/998.htm\",\n    \"date\": null,\n    \"quote\": \"《 小米米家无线洗地机 5 开启预约：180° 躺平四重防缠绕，1399 元 》\",\n    \"reason\": \"原文仅在相关阅读标题中提及“米家无线洗地机 5 开启预约”，无具体年月锚点，且为链接标题非正文事件，无法确定首次发布月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25093\",\n    \"name\": \"米家无线洗地机 5C\",\n    \"url\": \"https://www.ithome.com/0/980/998.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"IT之家 7 月 24 日消息，小米新上架了一款米家无线洗地机 5C，官方定价 999 元……8 月 3 日正式开售。\",\n    \"reason\": \"原文明确“新上架了一款米家无线洗地机 5C”，型号精确匹配；报道日期为2026-07-24，事件“新上架”与报道同月，故首次发布月为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25090\",\n    \"name\": \"米家净化加湿器3 Pro\",\n    \"url\": \"https://www.ithome.com/0/980/167.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"IT之家 7 月 22 日消息，小米旗下米家净化加湿器 3 Pro 现已在有品开启众筹（ 点此访问 ），众筹价 1699 元。\",\n    \"reason\": \"原文明确“米家净化加湿器 3 Pro 现已在有品开启众筹”，型号精确匹配；报道日期为2026-07-22，众筹开启与报道同月，故首次发布月为2026-07。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871504,
+  "id": "0217938715008305c7f85291e6ad850e47f0b8bb356de2f826658",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 766,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1994,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2760
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:10000070\",\n    \"name\": \"小米MIX 2\",\n    \"url\": \"https://www.ithome.com/0/325/269.htm\",\n    \"date\": \"2017-09\",\n    \"quote\": \"9月11日，小米MIX2发布会在北京工业大学体育馆举行。\",\n    \"reason\": \"原文明确小米MIX2发布会于9月11日举行，报道发布于2017-09-11，事件与报道同月，可确定首次发布年月为2017-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:8107\",\n    \"name\": \"儿童滑板车\",\n    \"url\": \"https://www.ithome.com/0/322/811.htm\",\n    \"date\": \"2017-08\",\n    \"quote\": \"今天上午小米旗下米家揭晓了小米众筹第106&107期产品……名为“小扬多功能婴儿背带腰凳”以及“贝瓦BEVA儿童滑板车”，目前已经在有品当中开启众筹。\",\n    \"reason\": \"原文明确贝瓦BEVA儿童滑板车为本次众筹产品并已开启众筹，报道发布于2017-08-24，事件与报道同月，可确定首次众筹/发布年月为2017-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6526\",\n    \"name\": \"米家小相机\",\n    \"url\": \"https://www.ithome.com/0/322/236.htm\",\n    \"date\": \"2017-08\",\n    \"quote\": \"今天MIJIA米家官方微博预告了8月22日上午10点将发布新品……米家APP更新内容已经将产品名称曝光——米家小相机。\",\n    \"reason\": \"原文预告8月22日发布新品并曝光名称为米家小相机，报道发布于2017-08-21，相对月份有原文锚点且同月，可确定首次发布年月为2017-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:3922\",\n    \"name\": \"电助力折叠自行车\",\n    \"url\": \"https://www.ithome.com/0/321/190.htm\",\n    \"date\": null,\n    \"quote\": \"此前骑记还与米家联合推出过电助力折叠自行车。\",\n    \"reason\": \"原文仅以“此前”提及电助力折叠自行车曾推出，未给出该型号首次发布的具体年月，无法确定，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10000067\",\n    \"name\": \"Free Tie 真皮板鞋\",\n    \"url\": \"https://www.ithome.com/0/321/179.htm\",\n    \"date\": \"2017-08\",\n    \"quote\": \"今天上午，小米旗下智能家居品牌米家联合第三方企业FreeTie正式发布了Free Tie真皮板鞋，售价为199元。\",\n    \"reason\": \"原文明确Free Tie真皮板鞋于当天正式发布，报道发布于2017-08-15，事件与报道同月，可确定首次发布年月为2017-08。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870451,
+  "id": "c1cdd11a-5d5c-49d6-8564-9516327b9db5",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 719,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1761,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2480
+  }
+}

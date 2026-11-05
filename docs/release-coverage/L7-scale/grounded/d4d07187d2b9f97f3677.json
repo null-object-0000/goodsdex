@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/831/566.htm\",\n    \"date\": null,\n    \"quote\": \"REDMI（两款）新品：宣称“强得有点离谱，能上高端发布会”\",\n    \"reason\": \"原文仅提及REDMI两款新品将在月底发布会推出，未给出具体型号名，无法确认输入型号Redmi的身份，且无确切发布年月锚点，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/831/519.htm\",\n    \"date\": null,\n    \"quote\": \"REDMI（两款）新品：宣称“强得有点离谱， 能上高端发布会 ”\",\n    \"reason\": \"原文仅提及REDMI两款新品将在月底发布会推出，未给出具体型号名，无法确认输入型号Redmi的身份，且无确切发布年月锚点，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20901\",\n    \"name\": \"米家净水器N1 800G\",\n    \"url\": \"https://www.ithome.com/0/822/629.htm\",\n    \"date\": \"2025-01\",\n    \"quote\": \"小米米家净水器 N1 800G 今日迎来上市，首发到手价 1199 元\",\n    \"reason\": \"原文明确型号为米家净水器N1 800G，事件为今日上市（首发），报道时间为2025年1月6日，事件与报道同月，可确定首次发布年月为2025-01。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:18523\",\n    \"name\": \"米家智能微蒸烤一体机\",\n    \"url\": \"https://www.ithome.com/0/821/872.htm\",\n    \"date\": \"2025-01\",\n    \"quote\": \"小米今日推出一款米家智能微蒸烤一体机 P1，售价为 3499 元，将于 1 月 6 日晚 8 点开售。\",\n    \"reason\": \"原文型号为米家智能微蒸烤一体机P1，输入型号为米家智能微蒸烤一体机，P1为后缀型号，按规则后代/后缀不是同一型号，身份不匹配，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20905\",\n    \"name\": \"米家富矿净水器\",\n    \"url\": \"https://www.ithome.com/0/821/854.htm\",\n    \"date\": \"2025-01\",\n    \"quote\": \"小米今日推出一款米家富矿净水器并开启预约，1 月 6 日 10 点开售，价格为 3499 元。\",\n    \"reason\": \"原文明确型号为米家富矿净水器，事件为今日推出并开启预约（新品推出），报道时间为2025年1月2日，事件与报道同月，可确定首次发布年月为2025-01。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870147,
+  "id": "105f2d40-2850-4b4f-9c7f-afb029668814",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 728,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2238,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2966
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:24246\",\n    \"name\": \"米家无线洗地机 5 Pro\",\n    \"url\": \"https://www.ithome.com/0/987/331.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日宣布旗下米家无线洗地机 5 Pro 泡沫版正式开售\",\n    \"reason\": \"原文仅宣布“5 Pro 泡沫版”开售，泡沫版为不同型号；正文中“米家无线洗地机 5 Pro”仅作为产品介绍主体出现，无该精确型号的首次发布/开售公告，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25000\",\n    \"name\": \"米家无线洗地机 5\",\n    \"url\": \"https://www.ithome.com/0/987/331.htm\",\n    \"date\": null,\n    \"quote\": \"米家无线洗地机 5 Pro 泡沫版正式开售\",\n    \"reason\": \"原文只出现“5 Pro 泡沫版”和“5 Pro”，未出现精确型号“米家无线洗地机 5”，前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25158\",\n    \"name\": \"米家无线洗地机 5 Pro泡沫版\",\n    \"url\": \"https://www.ithome.com/0/987/331.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"IT之家 8 月 8 日消息，小米官方今日宣布旗下米家无线洗地机 5 Pro 泡沫版正式开售\",\n    \"reason\": \"原文明确“今日宣布……5 Pro 泡沫版正式开售”，报道日期为2026-08-08，事件同月，故首次开售月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25092\",\n    \"name\": \"米家便携电动剃须刀 Pro\",\n    \"url\": \"https://www.ithome.com/0/985/298.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"IT之家 8 月 4 日消息，小米旗下米家便携电动剃须刀 Pro 将于今天 10 点在有品开启预售\",\n    \"reason\": \"原文明确该精确型号“将于今天10点开启预售”，报道日期2026-08-04提供“今天”锚点，事件同月，故首次预售月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7129\",\n    \"name\": \"米家便携电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/985/298.htm\",\n    \"date\": null,\n    \"quote\": \"小米旗下米家便携电动剃须刀 Pro 将于今天 10 点在有品开启预售\",\n    \"reason\": \"原文仅涉及“米家便携电动剃须刀 Pro”，未出现精确型号“米家便携电动剃须刀”，Pro为不同型号，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871315,
+  "id": "as-qh59xrqati",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 708,
+    "prompt_tokens": 1764,
+    "total_tokens": 2472
+  }
+}

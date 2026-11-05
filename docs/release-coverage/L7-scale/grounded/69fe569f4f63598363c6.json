@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/991/945.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Watch 6 活力版智能手表今日发布并开售\",\n    \"reason\": \"原文仅提及“REDMI Watch 6 活力版”发布，未单独提及“Redmi”这一泛品牌/系列名作为独立型号发布，无法确认该输入所指型号身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:22153\",\n    \"name\": \"REDMI Watch 6\",\n    \"url\": \"https://www.ithome.com/0/991/945.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI Watch 6 活力版智能手表今日发布并开售\",\n    \"reason\": \"原文发布的是“REDMI Watch 6 活力版”，活力版为独立型号后缀，不能证明“REDMI Watch 6”标准版同场发布，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25161\",\n    \"name\": \"REDMI Watch 6 活力版\",\n    \"url\": \"https://www.ithome.com/0/991/945.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"IT之家 8 月 20 日消息，小米 REDMI Watch 6 活力版智能手表今日发布并开售\",\n    \"reason\": \"原文明确“REDMI Watch 6 活力版”于报道当日（8 月 20 日）发布并开售，报道时间为 2026-08-20，事件同月，故首次发布年月为 2026-08。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870507,
+  "id": "0217938705049724f170dda172df2cc79a65077ac74d4047d32c0",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 412,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 929,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 1341
+  }
+}

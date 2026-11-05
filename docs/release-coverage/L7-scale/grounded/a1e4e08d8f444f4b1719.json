@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25270\",\n    \"name\": \"米家智能宠物饮水机 2 除菌版\",\n    \"url\": \"https://www.ithome.com/0/993/766.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米“米家智能宠物饮水机 2 除菌版”将于今天 10 点开启首销\",\n    \"reason\": \"原文明确该型号“除菌版”于报道当日（8月25日）10点开启首销，属新品首销公告，报道时间与事件同月，可确定首发月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25159\",\n    \"name\": \"米家制冰机\",\n    \"url\": \"https://www.ithome.com/0/993/398.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"此前在小米有品众筹的米家制冰机现已上架京东平台，将于 8 月 31 日 10:00 现货开售\",\n    \"reason\": \"原文称该新品此前已在小米有品众筹，本次为8月31日现货开售；众筹属首次众筹公告，但原文未给出众筹具体月份，仅能确认现货开售在2026-08，且报道同月，故取2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/993/152.htm\",\n    \"date\": null,\n    \"quote\": \"米家扫拖机器人 7C 现已在小米有品上架预约……8 月 26 日 10 点现货开售\",\n    \"reason\": \"输入型号名为泛称“米家扫拖机器人”，原文实际发布的是“米家扫拖机器人 7C”，型号名不含7C，后代/具体型号不证明同一身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25228\",\n    \"name\": \"米家扫拖机器人7C\",\n    \"url\": \"https://www.ithome.com/0/993/152.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"米家扫拖机器人 7C 现已在小米有品上架预约……8 月 26 日 10 点现货开售\",\n    \"reason\": \"原文明确型号“米家扫拖机器人 7C”已上架预约并将于8月26日现货开售，属新品推出公告，报道时间2026-08与事件同月，可确定首发月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/992/400.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI K100 Pro / Max 手机已于 8 月 11 日晚正式发布\",\n    \"reason\": \"输入型号名仅为品牌“Redmi”，原文发布的是REDMI K100 Pro / Max具体型号，品牌名不证明同一型号身份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871478,
+  "id": "021793871473633ab257ece25bd0fea81c82ca5c15ec8fdaa449c",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 756,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2711,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3467
+  }
+}

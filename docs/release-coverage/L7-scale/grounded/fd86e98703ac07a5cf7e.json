@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25211\",\n    \"name\": \"小米充电宝 自带线 20000 67W\",\n    \"url\": \"https://www.ithome.com/0/988/458.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米旗下新国标版本“小米充电宝自带线 20000 45W”和“小米充电宝自带线 20000 67W”将于今晚 7 点在有品开启首销\",\n    \"reason\": \"原文明确点名“小米充电宝自带线 20000 67W”将于今晚7点开启首销，报道时间为2026-08-11，事件同月，故首次发布/首销月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/988/332.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家电动剃须刀理容礼盒今日正式开售\",\n    \"reason\": \"原文仅提及“米家电动剃须刀理容礼盒”开售，未单独提及“米家电动剃须刀”这一基础型号的发布或首销，无法确认该型号身份与首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25092\",\n    \"name\": \"米家便携电动剃须刀 Pro\",\n    \"url\": \"https://www.ithome.com/0/988/332.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"米家便携电动剃须刀 Pro 也已开售，京东显示 349 元\",\n    \"reason\": \"原文明确点名“米家便携电动剃须刀 Pro”已开售，报道时间为2026-08-11，事件同月，故首次发布/开售月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25097\",\n    \"name\": \"米家电动剃须刀 理容礼盒\",\n    \"url\": \"https://www.ithome.com/0/988/332.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米米家电动剃须刀理容礼盒今日正式开售\",\n    \"reason\": \"原文明确点名“米家电动剃须刀理容礼盒”今日正式开售，报道时间为2026-08-11，事件同月，故首次发布/开售月为2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7129\",\n    \"name\": \"米家便携电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/988/332.htm\",\n    \"date\": null,\n    \"quote\": \"米家便携电动剃须刀 Pro 也已开售\",\n    \"reason\": \"原文仅提及“米家便携电动剃须刀 Pro”，Pro为不同型号，不能证明基础型号“米家便携电动剃须刀”的身份与首发月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871489,
+  "id": "021793871485017ab257ece25bd0fea81c82ca5c15ec8fd3ab086",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 715,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2607,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3322
+  }
+}

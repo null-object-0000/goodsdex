@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25000\",\n    \"name\": \"米家无线洗地机 5\",\n    \"url\": \"https://www.ithome.com/0/982/306.htm\",\n    \"date\": null,\n    \"quote\": \"《 小米米家无线洗地机 5 开启预约：180° 躺平四重防缠绕，1399 元 》\",\n    \"reason\": \"原文仅以相关阅读标题提及米家无线洗地机 5 开启预约，未给出该型号首次发布/预售的具体年月，报道时间为2026-07-28但事件无锚点，无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25093\",\n    \"name\": \"米家无线洗地机 5C\",\n    \"url\": \"https://www.ithome.com/0/982/306.htm\",\n    \"date\": \"2026-07\",\n    \"quote\": \"小米米家无线洗地机 5C 今日开启预售，官方定价 999 元……8 月 3 日正式开售。\",\n    \"reason\": \"型号精确为米家无线洗地机 5C（非5），原文称今日开启预售，报道时间为2026-07-28，事件与报道同月，故首次发布（预售）为2026-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/982/109.htm\",\n    \"date\": null,\n    \"quote\": \"小米现官宣将于 8 月 4 日在印度推出一款 POCO M8 Power 手机……该机实际上为小米 REDMI Note 17 标准版的“套娃机”\",\n    \"reason\": \"输入型号仅为“Redmi”品牌级名称，原文涉及的是 POCO M8 Power 与 REDMI Note 17 标准版，无法将“Redmi”这一宽泛名称限定为某一具体型号，且发布为印度市场，非中国大陆首发，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20809\",\n    \"name\": \"米家无线洗地机4C\",\n    \"url\": \"https://www.ithome.com/0/980/998.htm\",\n    \"date\": null,\n    \"quote\": \"小米上一次推出米家无线洗地机 4C 还是在 2024 年。\",\n    \"reason\": \"原文仅回顾米家无线洗地机 4C 于2024年推出，未给出具体月份，且为旧品回顾而非本次发布事件，无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21625\",\n    \"name\": \"米家无线洗地机4\",\n    \"url\": \"https://www.ithome.com/0/980/998.htm\",\n    \"date\": null,\n    \"quote\": \"这款新品相比 4C 升级到了 18000Pa 吸力\",\n    \"reason\": \"原文只提及“4C”，未出现“米家无线洗地机4”这一精确型号，前缀包含不证明身份，且无该型号发布日期信息，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870687,
+  "id": "0217938706815526cb63cadb26a6eb1a5dd8bb71cce3d7fc2f73d",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 745,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1937,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2682
+  }
+}

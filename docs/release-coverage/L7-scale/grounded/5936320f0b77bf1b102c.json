@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:12188\",\n    \"name\": \"米家激光投影电视 1S 4K\",\n    \"url\": \"https://www.ithome.com/0/491/510.htm\",\n    \"date\": \"2020-06\",\n    \"quote\": \"米家激光投影1S 4K版 6月9日上新，敬请期待。\",\n    \"reason\": \"原文明确型号为米家激光投影1S 4K版，事件为6月9日上新（发布/上架），报道时间为2020年6月8日，同月锚点，故取2020-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6419\",\n    \"name\": \"米家电水壶\",\n    \"url\": \"https://www.ithome.com/0/489/679.htm\",\n    \"date\": null,\n    \"quote\": \"米家电水壶1S现已上架，1.7L大容量，支持约55℃低耗保温，售价为149元。\",\n    \"reason\": \"原文型号为米家电水壶1S，与输入型号米家电水壶不同（1S为后代型号，非同一型号），不能证明输入型号的首发，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:8131\",\n    \"name\": \"米家直流变频落地扇\",\n    \"url\": \"https://www.ithome.com/0/487/650.htm\",\n    \"date\": null,\n    \"quote\": \"今天小米正式发布了米家直流变频落地扇2，该产品售价 349元 ，将于5月18日上午10点首卖。\",\n    \"reason\": \"原文型号为米家直流变频落地扇2，与输入型号米家直流变频落地扇不同（2为后代型号，非同一型号），不能证明输入型号的首发，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/484/298.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已推出米家扫拖机器人G1，能扫会拖，可一步完成整屋清洁，零售价999元，首发到手价899元。\",\n    \"reason\": \"原文型号为米家扫拖机器人G1，与输入型号米家扫拖机器人不同（G1为后代型号，非同一型号），不能证明输入型号的首发，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/481/314.htm\",\n    \"date\": null,\n    \"quote\": \"米家电动剃须刀S300现已发布，3D浮动贴面 +双层刀片，支持IPX7 级防水，采用了Type-C充电，售价为99元，4月9日开卖。\",\n    \"reason\": \"原文型号为米家电动剃须刀S300，与输入型号米家电动剃须刀不同（S300为后代型号，非同一型号），不能证明输入型号的首发，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871395,
+  "id": "as-4b0bh4zdux",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 740,
+    "prompt_tokens": 1902,
+    "total_tokens": 2642
+  }
+}

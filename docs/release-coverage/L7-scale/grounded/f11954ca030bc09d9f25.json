@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/939/756.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日官宣 REDMI Buds 8 耳机 4 月 21 日与 K90 Max 同场发布\",\n    \"reason\": \"输入型号名为“Redmi”，但原文事件主体是“REDMI Buds 8 耳机”，型号名不匹配且“Redmi”为品牌前缀，不能证明该输入型号身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19651\",\n    \"name\": \"米家保温杯Ti 2\",\n    \"url\": \"https://www.ithome.com/0/939/580.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在有品为旗下米家保温杯 Ti 2 新增“月光银”版本\",\n    \"reason\": \"原文事件是为已存在的米家保温杯 Ti 2 新增“月光银”版本并众筹，属于旧型号新增配色/版本，并非该型号首次发布，不能确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050233\",\n    \"name\": \"米家无线洗地机 5 Pro\",\n    \"url\": \"https://www.ithome.com/0/939/478.htm\",\n    \"date\": \"2026-04\",\n    \"quote\": \"小米旗下米家无线洗地机 5 Pro 现已在京东发售，首发价 2599 元\",\n    \"reason\": \"原文明确型号为“米家无线洗地机 5 Pro”，事件为“现已在京东发售”并标“首发价”，报道时间为2026-04-15，事件与报道同月，可确定首次发售月为2026-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24246\",\n    \"name\": \"米家无线洗地机 5 Pro\",\n    \"url\": \"https://www.ithome.com/0/939/478.htm\",\n    \"date\": \"2026-04\",\n    \"quote\": \"小米旗下米家无线洗地机 5 Pro 现已在京东发售，首发价 2599 元\",\n    \"reason\": \"原文明确型号为“米家无线洗地机 5 Pro”，事件为“现已在京东发售”并标“首发价”，报道时间为2026-04-15，事件与报道同月，可确定首次发售月为2026-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25000\",\n    \"name\": \"米家无线洗地机 5\",\n    \"url\": \"https://www.ithome.com/0/939/478.htm\",\n    \"date\": null,\n    \"quote\": \"小米旗下米家无线洗地机 5 Pro 现已在京东发售，首发价 2599 元\",\n    \"reason\": \"原文仅涉及“米家无线洗地机 5 Pro”，输入型号“米家无线洗地机 5”为其前缀型号但非同一型号，原文未提及该型号发布，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870713,
+  "id": "0217938707063454f170dda172df2cc79a65077ac74d404582939",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 735,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1758,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2493
+  }
+}

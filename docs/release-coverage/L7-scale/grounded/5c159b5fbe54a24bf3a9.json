@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20078\",\n    \"name\": \"米家弹盖保温杯\",\n    \"url\": \"https://www.ithome.com/0/998/150.htm\",\n    \"date\": null,\n    \"quote\": \"米家弹盖保温杯 2 现已在小米有品开启众筹\",\n    \"reason\": \"原文仅提及“米家弹盖保温杯 2”，未出现“米家弹盖保温杯”（无2）这一型号；型号名的后代不是同一型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25272\",\n    \"name\": \"米家弹盖保温杯2\",\n    \"url\": \"https://www.ithome.com/0/998/150.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"IT之家 9 月 3 日消息，米家弹盖保温杯 2 现已在小米有品开启众筹，活动时间为 9 月 2 日到 9 月 9 日\",\n    \"reason\": \"原文明确“米家弹盖保温杯 2 现已在小米有品开启众筹”，事件为众筹开启，报道日期为2026-09-03，事件同月，故取2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/997/750.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日继续预热小米 18 Fold“中折叠”手机\",\n    \"reason\": \"原文主体为小米 18 Fold，未出现“Redmi”作为独立型号发布信息；仅前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25436\",\n    \"name\": \"米家夜灯4\",\n    \"url\": \"https://www.ithome.com/0/997/388.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"IT之家 9 月 2 日消息，小米米家夜灯 4 单只装上架预约，将于 9 月 9 日下周三开启众筹\",\n    \"reason\": \"原文明确“小米米家夜灯 4”上架预约并将于9月9日开启众筹，报道日期2026-09-02，事件同月且有原文锚点，故取2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/997/165.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在海外市场推出 POCO F9 Ultra 手机，该机本质上就是 REDMI K100 Pro Max 的“套娃机”\",\n    \"reason\": \"原文为海外推出 POCO F9 Ultra，提及 REDMI K100 Pro Max 仅为规格参考，未发布“Redmi”型号；且为海外发布非中国大陆，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870494,
+  "id": "021793870490964ab257ece25bd0fea81c82ca5c15ec8fdfec6e4",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 713,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2286,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2999
+  }
+}

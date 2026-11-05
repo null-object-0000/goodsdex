@@ -14,7 +14,17 @@ def assert_cars_unchanged(before, after):
     old = {r['id']: r for r in before if is_car(r)}
     new = {r['id']: r for r in after if is_car(r)}
     if old != new:
-        raise ValueError('Hourly refresh changed car objects')
+        # Product dates are a separate, captured and fingerprint-bound input.
+        # Permit exactly that committed replay; price, trims and source evidence
+        # still compare byte-for-byte against the previous publication.
+        from goodsdex.release_l7 import apply as apply_l7
+        from goodsdex.release_tolerance import apply as select_release
+        expected = {}
+        for key, row in old.items():
+            enriched = apply_l7([row])[0]
+            expected[key] = select_release([enriched])[0] if enriched != row else row
+        if expected != new:
+            raise ValueError('Hourly refresh changed car objects')
 
 
 def merge_cars(previous, cars, approved):

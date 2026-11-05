@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/009/624.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 电视 X RGB-Mini LED 2027 竞技版今日开启预售，将于 10 月 12 日 20:00 正式开售\",\n    \"reason\": \"输入型号名为“Redmi”，过于宽泛，原文对应的是“小米 REDMI 电视 X RGB-Mini LED 2027 竞技版”，属于具体电视型号，不能确认与输入型号同一身份；且原文仅给出预售/开售日，未给出首次发布年月，报道时间为2026-10-04，事件为预售，无法确定中国大陆首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:5010\",\n    \"name\": \"小米门窗传感器\",\n    \"url\": \"https://www.ithome.com/1/008/634.htm\",\n    \"date\": null,\n    \"quote\": \"小米门窗传感器 3 已上架，将于 10 月 12 日 10 点开启众筹\",\n    \"reason\": \"输入型号为“小米门窗传感器”，原文为“小米门窗传感器 3”，后代型号不是同一型号；原文事件为众筹开启，报道时间2026-09-30，众筹日期为10月12日，但未明确年份锚点，且众筹不等于首次发布，无法确定首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25673\",\n    \"name\": \"米家钛保温杯 茶水分离版\",\n    \"url\": \"https://www.ithome.com/1/008/466.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家钛保温杯茶水分离版 500ml 今日上架有品……10 月 14 日 10:00 开启众筹\",\n    \"reason\": \"原文型号与输入型号一致（米家钛保温杯茶水分离版），但事件为“上架有品”和“开启众筹”，报道时间2026-09-29，众筹日期10月14日无年份锚点；众筹/上架不等于首次发布，无法确定首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25714\",\n    \"name\": \"小米充电宝 磁吸自带线 10000 45W\",\n    \"url\": \"https://www.ithome.com/1/008/298.htm\",\n    \"date\": null,\n    \"quote\": \"小米充电宝磁吸自带线 10000 45W 现已在京东开售\",\n    \"reason\": \"原文型号与输入型号一致，但事件为“现已在京东开售”，属于上架/开售，报道时间2026-09-29，未明确首次发布年月；开售不等于首次发布，无法确定，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25516\",\n    \"name\": \"米家洗衣机 护衣洗Pro 至尊版 热泵洗烘13kg\",\n    \"url\": \"https://www.ithome.com/1/008/003.htm\",\n    \"date\": null,\n    \"quote\": \"小米首款热泵洗烘一体机（米家洗衣 机 护 衣洗 Pro 至尊 版 热 泵洗烘 13kg）今日上架小米商城、小米有品等平台\",\n    \"reason\": \"原文型号与输入型号一致（米家洗衣机 护衣洗Pro 至尊版 热泵洗烘13kg），事件为“今日上架”，报道时间2026-09-28，但“上架”不等于首次发布；标题称“发布”，正文事件为上架，未明确首次发布年月，无法确定，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871454,
+  "id": "cc446a3c-cd2f-4a57-b460-72defc5fad44",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 883,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2261,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3144
+  }
+}

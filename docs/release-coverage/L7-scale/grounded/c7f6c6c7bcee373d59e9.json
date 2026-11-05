@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20807\",\n    \"name\": \"米家智能变频除湿机 30L\",\n    \"url\": \"https://www.ithome.com/0/814/907.htm\",\n    \"date\": \"2024-12\",\n    \"quote\": \"小米米家智能变频除湿机 30L 将于今天 10 点在京东开售\",\n    \"reason\": \"原文明确型号为米家智能变频除湿机 30L，事件为今天10点开售（首销），报道时间为2024-12-03，原文锚点“今天”指向2024年12月，可确定首次开售月份为2024-12。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20448\",\n    \"name\": \"米家声波扫振电动牙刷\",\n    \"url\": \"https://www.ithome.com/0/814/878.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家声波扫振电动牙刷 Pro 将于 12 月 3 日 0 点开售\",\n    \"reason\": \"原文仅提及“米家声波扫振电动牙刷 Pro”，输入型号为“米家声波扫振电动牙刷”，Pro为后代型号，不能证明同一型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20809\",\n    \"name\": \"米家无线洗地机4C\",\n    \"url\": \"https://www.ithome.com/0/814/856.htm\",\n    \"date\": \"2024-12\",\n    \"quote\": \"小米米家无线洗地机 4C 将于今日在京东平台开售，首发价 1099 元\",\n    \"reason\": \"原文明确型号为米家无线洗地机 4C，事件为今日在京东平台开售（首发），报道时间为2024-12-02，原文锚点“今日”指向2024年12月，可确定首次开售月份为2024-12。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21625\",\n    \"name\": \"米家无线洗地机4\",\n    \"url\": \"https://www.ithome.com/0/814/856.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家无线洗地机 4C 将于今日在京东平台开售，首发价 1099 元\",\n    \"reason\": \"原文仅提及“米家无线洗地机 4C”，输入型号为“米家无线洗地机4”，4C为后代型号，不能证明同一型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20809\",\n    \"name\": \"米家无线洗地机4C\",\n    \"url\": \"https://www.ithome.com/0/814/664.htm\",\n    \"date\": \"2024-12\",\n    \"quote\": \"小米米家无线洗地机 4C 将于今日 10:00 在京东平台开售，首发价 1099 元\",\n    \"reason\": \"原文明确型号为米家无线洗地机 4C，事件为今日10:00在京东平台开售（首发），报道时间为2024-12-02，原文锚点“今日”指向2024年12月，可确定首次开售月份为2024-12。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871349,
+  "id": "0b8105f8-9309-407f-97ca-8f25b906c08b",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 774,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2075,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2849
+  }
+}

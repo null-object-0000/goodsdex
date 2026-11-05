@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:3556\",\n    \"name\": \"米家恒温电水壶\",\n    \"url\": \"https://www.ithome.com/0/651/732.htm\",\n    \"date\": null,\n    \"quote\": \"米家恒温电水壶 2 Pro 宣布将于明日 0 点线上开售\",\n    \"reason\": \"输入型号为“米家恒温电水壶”，原文事件主体为“米家恒温电水壶 2 Pro”，属于后代型号，不是同一型号；且原文仅提“明日0点开售”，无明确日期锚点，无法确定该输入型号的首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:14785\",\n    \"name\": \"MIJIA K歌麦克风\",\n    \"url\": \"https://www.ithome.com/0/649/944.htm\",\n    \"date\": null,\n    \"quote\": \"今年 9 月，小米推出了一款 MIJIA K 歌麦克风，现在又上架了一款 MIJIA K 歌麦克风大屏版\",\n    \"reason\": \"输入型号为“MIJIA K歌麦克风”，原文明确“今年9月”推出的是该型号，但报道时间为2022-10-30，原文未给出“今年9月”的具体年份锚点，无法确定YYYY-MM，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/649/242.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已上架了米家电动剃须刀 S301 黑侠客， 售价 199 元\",\n    \"reason\": \"输入型号为“米家电动剃须刀”，原文事件主体为“米家电动剃须刀 S301 黑侠客”，属于带后缀的具体型号，不是同一型号；且“现已上架”不能确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/648/604.htm\",\n    \"date\": null,\n    \"quote\": \"小米宣布会在 10 月 27 日的 Redmi Note 12 系列发布会上带来其他五款产品\",\n    \"reason\": \"输入型号仅为“Redmi”，原文中“Redmi Note 12 系列”是发布会名称，并非该输入型号本身；正文主体为米家洗烘一体机12kg，与输入型号身份不符，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050151\",\n    \"name\": \"米家冰箱 对开门\",\n    \"url\": \"https://www.ithome.com/0/647/858.htm\",\n    \"date\": \"2022-10\",\n    \"quote\": \"IT之家 10 月 20 日消息，小米今日宣布推出米家冰箱对开门 456L 墨羽岩版本和米家冰箱十字对开门 520L 墨羽岩版本\",\n    \"reason\": \"输入型号“米家冰箱 对开门”与原文“米家冰箱对开门 456L 墨羽岩版本”前缀一致但容量/颜色后缀不同，严格按规则不能仅凭前缀包含证明同一型号；但原文“今日宣布推出”且报道时间为2022-10-20，事件同月，若视为该系列对开门冰箱的发布公告可确定2022-10。考虑型号限定严格性，存在容量后缀差异，身份不能完全确定，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871384,
+  "id": "0217938713782354f170dda172df2cc79a65077ac74d4041d2463",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 834,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2092,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2926
+  }
+}

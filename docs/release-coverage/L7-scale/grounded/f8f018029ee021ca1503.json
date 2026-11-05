@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:15863\",\n    \"name\": \"米家智能直流变频循环扇 落地式\",\n    \"url\": \"https://www.ithome.com/0/612/320.htm\",\n    \"date\": \"2022-04\",\n    \"quote\": \"今天，小米发布了米家智能直流变频循环扇落地式，4 月 13 日开启众筹\",\n    \"reason\": \"原文明确“今天”发布该型号，报道日期为2022-04-11，事件同月，故首次发布年月为2022-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:15841\",\n    \"name\": \"米家智能冷热饮水机\",\n    \"url\": \"https://www.ithome.com/0/611/284.htm\",\n    \"date\": \"2022-04\",\n    \"quote\": \"小米方面今日宣布，米家智能冷热饮水机将于 4 月 6 日上午 10:00 在小米商城、小米之家众筹开启\",\n    \"reason\": \"原文“今日宣布”该型号将于4月6日众筹开启，报道日期为2022-04-04，事件同月且有原文锚点，故首次发布年月为2022-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050151\",\n    \"name\": \"米家冰箱 对开门\",\n    \"url\": \"https://www.ithome.com/0/610/660.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家冰箱对开门 630L 冰晶版 拥有 630L 储存空间与 20 格分区 ，将于今日 20:00 正式全渠道开售。\",\n    \"reason\": \"原文仅提及“630L 冰晶版”今日开售，输入型号为“米家冰箱 对开门”，未限定容量/版本，无法确认是否为同一型号的首次发布，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/608/416.htm\",\n    \"date\": null,\n    \"quote\": \"今日，小米正式宣布推出米家扫拖机器人 3C。\",\n    \"reason\": \"原文发布的是“米家扫拖机器人 3C”，输入型号为“米家扫拖机器人”，后代型号不视为同一型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21680\",\n    \"name\": \"米家高速吹风机\",\n    \"url\": \"https://www.ithome.com/0/592/434.htm\",\n    \"date\": null,\n    \"quote\": \"小米上周推出了米家高速吹风机 H700，原价 799 元，众筹价 699 元，将于 12 月 15 日上午 10:00 开启众筹\",\n    \"reason\": \"原文发布的是“米家高速吹风机 H700”，输入型号为“米家高速吹风机”，后代型号不视为同一型号；且“上周”无具体年月锚点，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871389,
+  "id": "as-p9ntrzw9pu",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 726,
+    "prompt_tokens": 1885,
+    "total_tokens": 2611
+  }
+}

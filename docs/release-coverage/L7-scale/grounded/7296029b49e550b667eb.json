@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/997/750.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日继续预热小米 18 Fold“中折叠”手机。\",\n    \"reason\": \"原文仅预热小米18 Fold，未提及Redmi型号发布；型号身份不匹配，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25436\",\n    \"name\": \"米家夜灯4\",\n    \"url\": \"https://www.ithome.com/0/997/388.htm\",\n    \"date\": \"2026-09\",\n    \"quote\": \"小米米家夜灯 4 单只装上架预约，将于 9 月 9 日下周三开启众筹\",\n    \"reason\": \"原文明确米家夜灯4将于9月9日开启众筹，报道时间为2026年9月2日，事件同月，锚点为9月9日，故取2026-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/0/997/165.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在海外市场推出 POCO F9 Ultra 手机，该机本质上就是 REDMI K100 Pro Max 的“套娃机”\",\n    \"reason\": \"原文为海外推出POCO F9 Ultra，Redmi K100 Pro Max仅作参照，未提Redmi型号中国大陆首发；身份与地域不符，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11507\",\n    \"name\": \"米家LED灯泡 蓝牙MESH版\",\n    \"url\": \"https://www.ithome.com/0/996/420.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米现已在京东上架米家 LED 灯泡蓝牙 Mesh 版\",\n    \"reason\": \"原文明确该型号已在京东上架，报道时间为2026年8月31日，事件同月，取2026-08。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050113\",\n    \"name\": \"米家洗衣机Pro\",\n    \"url\": \"https://www.ithome.com/0/996/360.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"小米今日宣布米家洗衣机 Pro 超电解新风系列预售开启\",\n    \"reason\": \"原文明确米家洗衣机Pro超电解新风系列预售开启，报道时间为2026年8月31日，事件同月，取2026-08。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871466,
+  "id": "70451181-99a2-435f-a2b0-b97cdd13b090",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 628,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2275,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2903
+  }
+}

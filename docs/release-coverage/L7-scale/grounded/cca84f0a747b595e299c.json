@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/001/359.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日宣布，REDMI 显示器 A27U Type-C 120Hz 2027 开启预售\",\n    \"reason\": \"输入型号仅为“Redmi”，原文事件主体是“REDMI 显示器 A27U Type-C 120Hz 2027”，属于具体显示器型号，不能证明“Redmi”这一泛品牌/系列名本身首次发布；且“今日”相对月份需原文锚点，报道时间为2026-09-11，但正文未给出可独立锚定的发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/1/001/274.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日宣布，米家石墨烯暖风机 C 开启预售\",\n    \"reason\": \"输入型号为“米家石墨烯暖风机”，原文事件主体是“米家石墨烯暖风机 C”，C 为不同型号后缀，不能仅因前缀包含认定同一型号；故不能确定该输入型号的首发月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25331\",\n    \"name\": \"米家石墨烯暖风机 C\",\n    \"url\": \"https://www.ithome.com/1/001/274.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日宣布，米家石墨烯暖风机 C 开启预售\",\n    \"reason\": \"原文明确“米家石墨烯暖风机 C 开启预售”，身份匹配；但“今日”为相对时间，正文未给出可锚定的具体年月，报道时间不能单独作为首发月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20078\",\n    \"name\": \"米家弹盖保温杯\",\n    \"url\": \"https://www.ithome.com/0/998/150.htm\",\n    \"date\": null,\n    \"quote\": \"米家弹盖保温杯 2 现已在小米有品开启众筹，活动时间为 9 月 2 日到 9 月 9 日\",\n    \"reason\": \"输入型号为“米家弹盖保温杯”，原文事件主体是“米家弹盖保温杯 2”，数字 2 为后代型号，不是同一型号；不能确定输入型号首发月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25272\",\n    \"name\": \"米家弹盖保温杯2\",\n    \"url\": \"https://www.ithome.com/0/998/150.htm\",\n    \"date\": null,\n    \"quote\": \"米家弹盖保温杯 2 现已在小米有品开启众筹，活动时间为 9 月 2 日到 9 月 9 日\",\n    \"reason\": \"原文明确“米家弹盖保温杯 2”开启众筹，身份匹配；但正文只写“9 月 2 日到 9 月 9 日”，未给出年份，报道时间为2026-09-03也不能替代原文事件年月，故无法确定 YYYY-MM。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871469,
+  "id": "0217938714652985c7f85291e6ad850e47f0b8bb356de2f697b18",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 772,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2043,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2815
+  }
+}

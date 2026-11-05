@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:21400\",\n    \"name\": \"米家口袋照片打印机 Pro\",\n    \"url\": \"https://www.ithome.com/1/013/962.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日宣布推出米家口袋照片打印机 Pro 礼盒装，定价为 799 元，相比此前已上市产品最大的区别在于其应用了全新的礼盒专属浅紫色。\",\n    \"reason\": \"原文仅宣布推出“礼盒装”，并明确其与“此前已上市产品”不同；输入型号为“米家口袋照片打印机 Pro”本体，礼盒装不是同一型号，原文未给出本体首次发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25800\",\n    \"name\": \"米家口袋照片打印机pro 礼盒装\",\n    \"url\": \"https://www.ithome.com/1/013/962.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"IT之家 10 月 16 日消息，小米官方今日宣布推出米家口袋照片打印机 Pro 礼盒装，定价为 799 元\",\n    \"reason\": \"型号限定为“礼盒装”，原文明确“今日宣布推出”该礼盒装；报道日期为2026-10-16且事件同月，故首次发布年月为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/013/949.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 首款耳夹式耳机将于本月与 K100 手机同场发布，命名为 REDMI Clip Neo。\",\n    \"reason\": \"输入型号仅为品牌名“Redmi”，原文发布对象是“REDMI Clip Neo”耳机；品牌名不证明具体型号身份，且“本月”需报道月份锚点但对象不匹配，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/013/625.htm\",\n    \"date\": null,\n    \"quote\": \"小米新上架了一款“REDMI 显示器 G27Q 240Hz 2026 标准版”，京东显示 10 月 21 日首发价不超过 799 元。\",\n    \"reason\": \"输入型号仅为品牌名“Redmi”，原文对象为“REDMI 显示器 G27Q 240Hz 2026 标准版”；品牌名不证明具体型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:23905\",\n    \"name\": \"REDMI 显示器 G27Q 240Hz 2026\",\n    \"url\": \"https://www.ithome.com/1/013/625.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米新上架了一款“REDMI 显示器 G27Q 240Hz 2026 标准版”，京东显示 10 月 21 日首发价不超过 799 元。\",\n    \"reason\": \"原文对象为“REDMI 显示器 G27Q 240Hz 2026 标准版”，输入型号缺少“标准版”，后缀不同不视为同一型号；但原文明确该标准版10月21日首发，报道为2026-10-15，事件同月，故按原文事件给出2026-10。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871447,
+  "id": "as-ct4umz0bhg",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 809,
+    "prompt_tokens": 2694,
+    "total_tokens": 3503
+  }
+}

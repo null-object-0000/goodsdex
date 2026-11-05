@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/1/015/182.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家扫拖机器人 7 Max 今日 10:00 正式开启预售\",\n    \"reason\": \"原文仅涉及“米家扫拖机器人 7 Max”的预售，未提及无后缀的“米家扫拖机器人”型号；型号名后代不证明同一身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25672\",\n    \"name\": \"米家扫拖机器人 7 Max\",\n    \"url\": \"https://www.ithome.com/1/015/182.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"IT之家 10 月 20 日消息，小米米家扫拖机器人 7 Max 今日 10:00 正式开启预售\",\n    \"reason\": \"原文明确“米家扫拖机器人 7 Max”于10月20日今日开启预售，报道时间为2026-10-20，事件同月，可确定首发年月为2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20089\",\n    \"name\": \"Redmi\",\n    \"url\": \"https://www.ithome.com/1/014/664.htm\",\n    \"date\": null,\n    \"quote\": \"小米卢伟冰发布 REDMI K100 全新配色「流萤绿」官图，新机定档 10 月 27 日发布\",\n    \"reason\": \"原文仅涉及“REDMI K100”的发布定档，未提及无后缀的“Redmi”型号；型号名后代不证明同一身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21680\",\n    \"name\": \"米家高速吹风机\",\n    \"url\": \"https://www.ithome.com/1/014/231.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已推出米家高速吹风机 Mini，售价 299 元，商品页面显示新品到手价 199 元起，将于 10 月 20 日 10 点在小米有品开始预售\",\n    \"reason\": \"原文仅涉及“米家高速吹风机 Mini”的推出与预售，未提及无后缀的“米家高速吹风机”型号；型号名后代不证明同一身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25789\",\n    \"name\": \"米家高速吹风机 Mini\",\n    \"url\": \"https://www.ithome.com/1/014/231.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"IT之家 10 月 17 日消息，小米现已推出米家高速吹风机 Mini，售价 299 元，商品页面显示新品到手价 199 元起，将于 10 月 20 日 10 点在小米有品开始预售\",\n    \"reason\": \"原文明确“米家高速吹风机 Mini”已推出，并将于10月20日开启预售；报道时间为2026-10-17，事件同月，可确定首发年月为2026-10。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870477,
+  "id": "16202a68-d16e-4307-becf-78bb52a7f314",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 755,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2135,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2890
+  }
+}

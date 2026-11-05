@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:10050243\",\n    \"name\": \"米家扫拖机器人 7 Max\",\n    \"url\": \"https://www.ithome.com/1/011/775.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"IT之家 10 月 12 日消息，小米官方宣布，米家扫拖机器人 7 Max 今日 10:00 正式开启预售\",\n    \"reason\": \"原文明确型号“米家扫拖机器人 7 Max”，事件为“今日 10:00 正式开启预售”，报道日期为 10 月 12 日，同月锚点成立，故取 2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/1/011/775.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 10 月 12 日消息，小米官方宣布，米家扫拖机器人 7 Max 今日 10:00 正式开启预售\",\n    \"reason\": \"原文仅出现“米家扫拖机器人 7 Max”，未单独发布“米家扫拖机器人”这一无后缀型号；仅前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25672\",\n    \"name\": \"米家扫拖机器人 7 Max\",\n    \"url\": \"https://www.ithome.com/1/011/775.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"IT之家 10 月 12 日消息，小米官方宣布，米家扫拖机器人 7 Max 今日 10:00 正式开启预售\",\n    \"reason\": \"原文明确型号“米家扫拖机器人 7 Max”，事件为“今日 10:00 正式开启预售”，报道日期为 10 月 12 日，同月锚点成立，故取 2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25712\",\n    \"name\": \"米家洗衣机 健康洗 三筒11kg\",\n    \"url\": \"https://www.ithome.com/1/011/107.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"IT之家 10 月 9 日消息，小米“米家洗衣机健康洗三筒 11kg”今日 20:00 开售\",\n    \"reason\": \"原文明确型号“米家洗衣机健康洗三筒 11kg”，事件为“今日 20:00 开售”，报道日期为 10 月 9 日，同月锚点成立，故取 2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:16409\",\n    \"name\": \"米家声波电动牙刷T302\",\n    \"url\": \"https://www.ithome.com/1/011/067.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"IT之家 10 月 9 日消息，小米宣布旗下米家声波电动牙刷 T302 缓震版开启首销\",\n    \"reason\": \"原文型号为“米家声波电动牙刷 T302 缓震版”，输入型号“米家声波电动牙刷T302”缺少“缓震版”后缀；按规则后代/版本不是同一型号，仅前缀包含不证明身份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793871315,
+  "id": "021793871311305ab257ece25bd0fea81c82ca5c15ec8fdcb3bdd",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 796,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2784,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3580
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:6103\",\n    \"name\": \"米家声波电动牙刷\",\n    \"url\": \"https://www.ithome.com/0/528/177.htm\",\n    \"date\": null,\n    \"quote\": \"小米商城年度众筹销量之星是米家声波电动牙刷 T100，售价 39.9 元\",\n    \"reason\": \"原文仅提及米家声波电动牙刷 T100 为年度众筹销量之星，未给出该型号首次发布/众筹的具体年月；T100 为具体型号后缀，与输入型号名不完全等同，且报道时间为2021-01，事件为年度盘点而非首发，无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:8109\",\n    \"name\": \"米家投影仪\",\n    \"url\": \"https://www.ithome.com/0/528/177.htm\",\n    \"date\": null,\n    \"quote\": \"年度众筹新锐之星则包括米家互联网洗碗机、小米净水器、米家投影仪青春版等 17 件产品。\",\n    \"reason\": \"原文仅提及“米家投影仪青春版”，为米家投影仪的后代/变体型号，不能证明与输入型号“米家投影仪”为同一型号；且为年度盘点，非首发公告，无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7528\",\n    \"name\": \"米家电磁炉\",\n    \"url\": \"https://www.ithome.com/0/524/963.htm\",\n    \"date\": null,\n    \"quote\": \"小米早在 2017 年就曾推出米家电磁炉，售价仅为 299 元\",\n    \"reason\": \"原文提及米家电磁炉早在2017年推出，但仅到年，未给出具体月；且该句为背景回顾，非本次首发公告（本次为米家双口电磁炉众筹），无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7528\",\n    \"name\": \"米家电磁炉\",\n    \"url\": \"https://www.ithome.com/0/524/559.htm\",\n    \"date\": null,\n    \"quote\": \"小米早在 2017 年就曾推出米家电磁炉，售价仅为 299 元\",\n    \"reason\": \"原文提及米家电磁炉早在2017年推出，但仅到年，未给出具体月；且为背景回顾，非首发公告（本次为米家双口电磁炉将于12月16日众筹），无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:8109\",\n    \"name\": \"米家投影仪\",\n    \"url\": \"https://www.ithome.com/0/507/141.htm\",\n    \"date\": null,\n    \"quote\": \"米家投影仪青春版 2 现已开启众筹\",\n    \"reason\": \"原文事件为“米家投影仪青春版 2”开启众筹，属于米家投影仪的后代/变体型号，不能证明与输入型号“米家投影仪”为同一型号；且未给出具体年月（仅报道时间2020-09-04），无法确定首发月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793870428,
+  "id": "6dc7b648-95d1-4615-b604-c7847b1dc0e3",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 759,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2105,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2864
+  }
+}
