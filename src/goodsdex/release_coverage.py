@@ -48,6 +48,9 @@ def precision(r):
 
 
 def usable(r):
+    if r.get('policy') == 'upgrade-release-14-45-v1':
+        from .release_tolerance import normalize
+        return normalize(r) is not None
     if not precision(r) or r.get('usage') in ('disabled', 'internal') or r.get('display_allowed') is False or r.get('internal_only'):
         return False
     if r.get('source') not in ('official', 'official_hidden', 'third_party', 'series_inherit'):
@@ -64,6 +67,9 @@ def usable(r):
 
 
 def effective(row):
+    selected = row.get('release_effective') or {}
+    if usable(selected):
+        return selected
     r = row.get('release') or {}
     if usable(r):
         return r
@@ -78,6 +84,10 @@ def effective(row):
 
 def apply_priority_dates(rows, lane_files=None):
     output = deepcopy(rows)
+    if lane_files is None:
+        for row in output:
+            row.pop('release_effective', None)
+            row.pop('release_decision', None)
     from collections import defaultdict
     by_id = defaultdict(list)
     for row in output:
@@ -147,6 +157,9 @@ def apply_priority_dates(rows, lane_files=None):
                 source='series_inherit', release_source='series_inherit', usage='reference',
                 label='系列推出月份（继承）', inherited_from=r.get('batch_id'))
             row['release_source'] = 'series_inherit'
+    if lane_files is None:
+        from .release_tolerance import apply, expand
+        output = apply(expand(output))
     return output
 
 
@@ -159,7 +172,7 @@ def missing_reason(row):
 
 def matrix(rows):
     def empty():
-        return dict(total=0, day=0, month=0, none=0, not_obtained=0, official_absent=0, series_inherit=0, official=0, third_party=0)
+        return dict(total=0, day=0, month=0, none=0, not_obtained=0, official_absent=0, series_inherit=0, official=0, third_party=0, llm_crossed=0)
     brands, groups, total = {}, {}, empty()
     for row in rows:
         b = row.get('brand') or '未知'
@@ -177,7 +190,7 @@ def matrix(rows):
             if r and (r.get('release_source') == 'series_inherit' or r.get('source') == 'series_inherit'):
                 t['series_inherit'] += 1
             elif r:
-                t['official' if r['source'] in ('official', 'official_hidden') else 'third_party'] += 1
+                t['official' if r['source'] in ('official', 'official_hidden') else 'llm_crossed' if r.get('release_source') == 'llm_crossed' else 'third_party'] += 1
     for t in [total, *brands.values(), *groups.values()]:
         t['covered'] = t['day'] + t['month']
         t['ratio'] = t['covered'] / t['total'] if t['total'] else None

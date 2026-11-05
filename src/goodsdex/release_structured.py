@@ -126,9 +126,8 @@ def bounds(value):
 
 
 def conflict(a,b):
-    x,y=bounds(a),bounds(b)
-    # Ambiguous month ranges crossing 45 days also require review.
-    return max(abs((x[0]-y[1]).days),abs((y[0]-x[1]).days))>45
+    from .release_crosschecks import delta_days
+    return delta_days(a,b)>45
 
 
 def apply(rows,bundle=None):
@@ -149,7 +148,8 @@ def apply(rows,bundle=None):
             old=old.get('previous_release') or {};row['release']=deepcopy(old)
             for k in ('release_source','release_precision','release_evidence','release_quote','release_confidence','release_cross_check'):row.pop(k,None)
         if not valid:continue
-        valid.sort(key=lambda e:list(SITES).index(e['site']))
+        from .release_crosschecks import delta_days
+        valid.sort(key=lambda e:(max((delta_days(e['field']['raw_date'], other['field']['raw_date']) for other in valid if other['field']['event']==e['field']['event']), default=0), e['field']['granularity']!='day', list(SITES).index(e['site'])))
         row['release_structured_crosschecks']=deepcopy(valid)
         if protected(row):
             official=next((row[k] for k in ('release','release_inherited','release_series') if (row.get(k) or {}).get('source') in ('official','official_hidden') and (row.get(k) or {}).get('date')),None)
@@ -167,6 +167,11 @@ def apply(rows,bundle=None):
             continue
         first=valid[0];f=first['field'];e=first['evidence'];second=next((x['evidence']['url'] for x in valid[1:] if x['site']!=first['site']),'')
         r=dict(date=f['date'],granularity=f['granularity'],source='third_party',policy=POLICY,lane='L6',level='product',event=f['event'],market='CN',confidence='medium' if first['site']=='baike' else 'high',evidence=deepcopy(e),usage='fact',display_allowed=True,internal_only=False,crosscheck_status='structured_verified',manual_review_required=False,alternates=deepcopy(valid[1:]),previous_release=deepcopy(old),label='发布时间（第三方结构化）')
+        compared=[delta_days(f['raw_date'],other['field']['raw_date']) for other in valid[1:] if other['field']['event']==f['event']]
+        r['release_tolerance_days']=14
+        r['release_delta_days']=max(compared,default=None)
+        if r['release_delta_days'] is not None and r['release_delta_days']>14:
+            r['confidence']='medium'
         r['display']=f['date']
         row['release']=r;row.pop('release_structured_review',None)
         row.update(release_source='third_party',release_precision=r['granularity'],release_evidence=e['url'],release_quote=e['quote'],release_confidence=r['confidence'],release_cross_check=second)

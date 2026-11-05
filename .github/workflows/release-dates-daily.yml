@@ -44,6 +44,7 @@ jobs:
           mkdir -p _data/docs/release-coverage
           cp docs/release-coverage/????-??-??.md _data/docs/release-coverage/
           cp docs/release-coverage/coverage.json _data/docs/release-coverage/
+          cp docs/release-coverage/conflicts.json docs/release-coverage/tolerance-*.json _data/docs/release-coverage/
           if [ -d docs/release-coverage/L5 ]; then cp -r docs/release-coverage/L5 _data/docs/release-coverage/; fi
           if [ -d docs/release-coverage/L6 ]; then cp -r docs/release-coverage/L6 _data/docs/release-coverage/; fi
       - uses: actions/upload-artifact@v4

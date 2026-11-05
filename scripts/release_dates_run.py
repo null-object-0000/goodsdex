@@ -134,6 +134,8 @@ def main():
         results['L6'] = run_lane('L6',apply_priority_dates(before),args.output,not args.no_live,full=args.l6_full)
     after=apply_priority_dates(before)
     report(before,after,results,args.output,provenance)
+    from release_tolerance_run import report as tolerance_report
+    tolerance_report(before, after, args.output)
     if args.apply:
         if not args.goods:raise ValueError('--apply requires --goods')
         args.goods.write_text(json.dumps(after,ensure_ascii=False,indent=1)+'\n')

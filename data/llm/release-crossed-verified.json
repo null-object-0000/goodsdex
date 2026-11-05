@@ -1,0 +1,1847 @@
+{
+  "schema": 1,
+  "candidates": [
+    {
+      "ids": [
+        "CN:dji:sku:153291",
+        "CN:dji:sku:153321"
+      ],
+      "family": "大疆|相机|osmopocket3",
+      "release": {
+        "date": "2023-10",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "announcement",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.ithome.com/0/727/633.htm",
+          "quote": "IT之家 10 月 25 日消息，大疆 Osmo Pocket 3 口袋云台相机今日发布，标准版官方售价 3499 元，全能套装版 4499 元。",
+          "locator": "Article timestamp 2023/10/25 and first paragraph",
+          "source_type": "third_party",
+          "capture_type": "http_response",
+          "capture_file": "docs/release-coverage/tolerance-evidence/pocket3.html",
+          "sha256": "925204623e6e86963b64eddea5e4a53c160a51b0285b5b552c56591c508b950f",
+          "captured_at": "2026-11-05T06:12:13.813781+00:00"
+        },
+        "llm_crosscheck": {
+          "date": "2023-10",
+          "model": "deepseek-v4.1-flash-1017",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.dji.com/cn/osmo-pocket-3",
+            "quote": "",
+            "reason": "DJI Osmo Pocket 3 于2023年10月发布，官网产品页及多家媒体（如The Verge、Engadget）2023年10月报道可佐证；此处按已知发布月份填2023-10，但未提供可回指的具体原文链接，故quote为null。",
+            "capture_type": "model_output",
+            "locator": "choices[0].message.content.evidence",
+            "source_type": "third_party",
+            "sha256": "6d995092e4865b943651e35ec834277316a13d520574c643862270560a33cef5",
+            "captured_at": "2026-11-03T06:58:50.216161+00:00",
+            "artifact": "responses/384984eb49114f1ab8c060f9.json",
+            "note": "Hash and capture time identify the model response, not a fetched source page. Source citation is unverified except where sampled."
+          },
+          "independence_reason": "Captured IT之家 article independent of retained model response; exact Osmo Pocket 3 standard/creator named and CN launch prices explicit.",
+          "source_date": "2023-10-25"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111340"
+      ],
+      "family": "GLOBAL:apple_support:model:111340",
+      "names": {
+        "GLOBAL:apple_support:model:111340": "MacBook Pro（14 英寸，2023 年）"
+      },
+      "release": {
+        "date": "2023-02",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2023/01/apple-unveils-macbook-pro-featuring-m2-pro-and-m2-max/",
+          "quote": "id 视网膜 XDR 显示屏、丰富的连接方式、1080p FaceTime 高清摄像头、六扬声器音响系统及录音棚级麦克风，将无与伦比的功能发挥得淋漓尽致。结合 macOS Ventura，MacBook Pro 为用户带来无可匹敌的使用体验。新款 14 英寸及 16 英寸 MacBook Pro 将于 1 月 19 日起即可订购，并将于 2 月 3 日（周五）起正式发售。 “搭载 Apple 芯片的 MacBook Pro 颠覆了笔记本电脑这一产品类型，帮助专业用户随时随地突破工作流的极限，完成此前人们认为笔记本电脑无法胜任的工作。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“今天，Mac",
+          "sha256": "7b743f13df0e33ea3e11f9984cfd13f82259836c983a055ea0c8a0b67e3776cc",
+          "captured_at": "2026-11-05T06:21:45.128341+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/619c82298265a459c703de4a.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2023-02",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2023/01/apple-unveils-macbook-pro-featuring-m2-pro-and-m2-max/",
+            "quote": "2023 年 1 月 17 日 | id 视网膜 XDR 显示屏、丰富的连接方式、1080p FaceTime 高清摄像头、六扬声器音响系统及录音棚级麦克风，将无与伦比的功能发挥得淋漓尽致。结合 macOS Ventura，MacBook Pro 为用户带来无可匹敌的使用体验。新款 14 英寸及 16 英寸 MacBook Pro 将于 1 月 19 日起即可订购，并将于 2 月 3 日（周五）起正式发售。 “搭载 Apple 芯片的 MacBook Pro 颠覆了笔记本电脑这一产品类型，帮助专业用户随时随地突破工作流的极限，完成此前人们认为笔记本电脑无法胜任的工作。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“今天，Mac",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "00ca981f53141349f0f070ba7e5515be52647c070458e1727c354fd4eaf3c4ea",
+            "captured_at": "2026-11-03T04:26:59.320334+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2023-02"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111832"
+      ],
+      "family": "GLOBAL:apple_support:model:111832",
+      "names": {
+        "GLOBAL:apple_support:model:111832": "Apple Watch Ultra 2"
+      },
+      "release": {
+        "date": "2023-09",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2023/09/apple-unveils-apple-watch-ultra-2/",
+          "quote": "2 依然具有常规使用下长达 36 小时的电池续航时间，低电量模式下更长达 72 小时。 顾客可首次在每种 Apple Watch 中选购碳中和表款，这代表 Apple 2030 目标——到 2030 年底前在整个运营、生产供应链和产品生命周期完全实现碳中和——达成意义重大的里程碑。 Apple Watch Ultra 2 今日起接受订购，9 月 22 日（周五）起正式发售。 Apple Watch 2 支持更大的海拔高度范围和设备端处理 Siri 请求功能，watchOS 10 的功能带来全新骑行体验，帮助用户探索户外世界。 “今年，我们最坚固耐用、功能强大的 Apple Watch 变得更加出色了。”Apple 首",
+          "sha256": "b0a0b09ff995b6be3a512980d98433144a7d8c07d7732747e1ea2f3c8ef36bd3",
+          "captured_at": "2026-11-05T06:21:45.332669+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/0bf872dda7e5dd8f894fe7f5.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2023-09",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2023/09/apple-unveils-apple-watch-ultra-2/",
+            "quote": "2023 年 9 月 12 日 | 2 依然具有常规使用下长达 36 小时的电池续航时间，低电量模式下更长达 72 小时。 顾客可首次在每种 Apple Watch 中选购碳中和表款，这代表 Apple 2030 目标——到 2030 年底前在整个运营、生产供应链和产品生命周期完全实现碳中和——达成意义重大的里程碑。 Apple Watch Ultra 2 今日起接受订购，9 月 22 日（周五）起正式发售。 Apple Watch 2 支持更大的海拔高度范围和设备端处理 Siri 请求功能，watchOS 10 的功能带来全新骑行体验，帮助用户探索户外世界。 “今年，我们最坚固耐用、功能强大的 Apple Watch 变得更加出色了。”Apple 首",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "bec35dd074b0a7c743ea1f5c378982edcd0388f7b9932a6d124d8e290817cc42",
+            "captured_at": "2026-11-03T04:26:55.247896+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2023-09"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111838"
+      ],
+      "family": "GLOBAL:apple_support:model:111838",
+      "names": {
+        "GLOBAL:apple_support:model:111838": "MacBook Pro（16 英寸，2023 年）"
+      },
+      "release": {
+        "date": "2023-02",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2023/01/apple-unveils-macbook-pro-featuring-m2-pro-and-m2-max/",
+          "quote": "id 视网膜 XDR 显示屏、丰富的连接方式、1080p FaceTime 高清摄像头、六扬声器音响系统及录音棚级麦克风，将无与伦比的功能发挥得淋漓尽致。结合 macOS Ventura，MacBook Pro 为用户带来无可匹敌的使用体验。新款 14 英寸及 16 英寸 MacBook Pro 将于 1 月 19 日起即可订购，并将于 2 月 3 日（周五）起正式发售。 “搭载 Apple 芯片的 MacBook Pro 颠覆了笔记本电脑这一产品类型，帮助专业用户随时随地突破工作流的极限，完成此前人们认为笔记本电脑无法胜任的工作。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“今天，Mac",
+          "sha256": "7b743f13df0e33ea3e11f9984cfd13f82259836c983a055ea0c8a0b67e3776cc",
+          "captured_at": "2026-11-05T06:21:45.128341+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/619c82298265a459c703de4a.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2023-02",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2023/01/apple-unveils-macbook-pro-featuring-m2-pro-and-m2-max/",
+            "quote": "2023 年 1 月 17 日 | id 视网膜 XDR 显示屏、丰富的连接方式、1080p FaceTime 高清摄像头、六扬声器音响系统及录音棚级麦克风，将无与伦比的功能发挥得淋漓尽致。结合 macOS Ventura，MacBook Pro 为用户带来无可匹敌的使用体验。新款 14 英寸及 16 英寸 MacBook Pro 将于 1 月 19 日起即可订购，并将于 2 月 3 日（周五）起正式发售。 “搭载 Apple 芯片的 MacBook Pro 颠覆了笔记本电脑这一产品类型，帮助专业用户随时随地突破工作流的极限，完成此前人们认为笔记本电脑无法胜任的工作。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“今天，Mac",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "00ca981f53141349f0f070ba7e5515be52647c070458e1727c354fd4eaf3c4ea",
+            "captured_at": "2026-11-03T04:26:59.320334+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2023-02"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111841"
+      ],
+      "family": "GLOBAL:apple_support:model:111841",
+      "names": {
+        "GLOBAL:apple_support:model:111841": "12.9 英寸 iPad Pro（第 6 代）"
+      },
+      "release": {
+        "date": "2022-10",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2022/10/apple-introduces-next-generation-ipad-pro-supercharged-by-the-m2-chip/",
+          "quote": "雳端口以及四扬声器音频系统。全新 iPadOS 16 功能包括台前调度、全面支持外接显示器 1 、桌面级 app 和参考模式——进一步提升 iPad 上的 pro 级工作流。在先进的硬件和 iPadOS 16 的加持之下，iPad Pro 拥有一套由强大的 pro 级 app 组成的、独一无二的超凡生态系统。新版 iPad Pro 将于 10 月 20 日（周四）起接受订购，并将于 10 月 26 日（周三）起正式发售。 “新一代 iPad Pro 不断突破 iPad 的可能性，进一步提升多用、强大而又便携的终极 iPad 体验。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“搭载 M2 芯片，新版 iPad Pro 性能超群，并支持一系列",
+          "sha256": "6e2d63c5b8ef27ac60405ecc9121b4ecd096ba9ae5d7e9884ae9c87bb3fd3f8a",
+          "captured_at": "2026-11-05T06:21:44.987353+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/be40bb0ad755d943369484bb.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2022-10",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2022/10/apple-introduces-next-generation-ipad-pro-supercharged-by-the-m2-chip/",
+            "quote": "2022 年 10 月 18 日 | 雳端口以及四扬声器音频系统。全新 iPadOS 16 功能包括台前调度、全面支持外接显示器 1 、桌面级 app 和参考模式——进一步提升 iPad 上的 pro 级工作流。在先进的硬件和 iPadOS 16 的加持之下，iPad Pro 拥有一套由强大的 pro 级 app 组成的、独一无二的超凡生态系统。新版 iPad Pro 将于 10 月 20 日（周四）起接受订购，并将于 10 月 26 日（周三）起正式发售。 “新一代 iPad Pro 不断突破 iPad 的可能性，进一步提升多用、强大而又便携的终极 iPad 体验。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“搭载 M2 芯片，新版 iPad Pro 性能超群，并支持一系列",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "e91ae02dcc2c7dfd7999ffbb3f7ea3ec6cdbd0c4f92d4f1c9d832197a1d027b6",
+            "captured_at": "2026-11-03T04:27:00.855132+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2022-10"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111842"
+      ],
+      "family": "GLOBAL:apple_support:model:111842",
+      "names": {
+        "GLOBAL:apple_support:model:111842": "11 英寸 iPad Pro（第 4 代）"
+      },
+      "release": {
+        "date": "2022-10",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2022/10/apple-introduces-next-generation-ipad-pro-supercharged-by-the-m2-chip/",
+          "quote": "雳端口以及四扬声器音频系统。全新 iPadOS 16 功能包括台前调度、全面支持外接显示器 1 、桌面级 app 和参考模式——进一步提升 iPad 上的 pro 级工作流。在先进的硬件和 iPadOS 16 的加持之下，iPad Pro 拥有一套由强大的 pro 级 app 组成的、独一无二的超凡生态系统。新版 iPad Pro 将于 10 月 20 日（周四）起接受订购，并将于 10 月 26 日（周三）起正式发售。 “新一代 iPad Pro 不断突破 iPad 的可能性，进一步提升多用、强大而又便携的终极 iPad 体验。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“搭载 M2 芯片，新版 iPad Pro 性能超群，并支持一系列",
+          "sha256": "6e2d63c5b8ef27ac60405ecc9121b4ecd096ba9ae5d7e9884ae9c87bb3fd3f8a",
+          "captured_at": "2026-11-05T06:21:44.987353+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/be40bb0ad755d943369484bb.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2022-10",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2022/10/apple-introduces-next-generation-ipad-pro-supercharged-by-the-m2-chip/",
+            "quote": "2022 年 10 月 18 日 | 雳端口以及四扬声器音频系统。全新 iPadOS 16 功能包括台前调度、全面支持外接显示器 1 、桌面级 app 和参考模式——进一步提升 iPad 上的 pro 级工作流。在先进的硬件和 iPadOS 16 的加持之下，iPad Pro 拥有一套由强大的 pro 级 app 组成的、独一无二的超凡生态系统。新版 iPad Pro 将于 10 月 20 日（周四）起接受订购，并将于 10 月 26 日（周三）起正式发售。 “新一代 iPad Pro 不断突破 iPad 的可能性，进一步提升多用、强大而又便携的终极 iPad 体验。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“搭载 M2 芯片，新版 iPad Pro 性能超群，并支持一系列",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "e91ae02dcc2c7dfd7999ffbb3f7ea3ec6cdbd0c4f92d4f1c9d832197a1d027b6",
+            "captured_at": "2026-11-03T04:27:00.855132+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2022-10"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111843"
+      ],
+      "family": "GLOBAL:apple_support:model:111843",
+      "names": {
+        "GLOBAL:apple_support:model:111843": "HomePod (第二代)"
+      },
+      "release": {
+        "date": "2023-02",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2023/01/apple-introduces-the-new-homepod-with-breakthrough-sound-and-intelligence/",
+          "quote": "，支持播放沉浸式空间音频曲目，呈现前所未有的聆听体验。HomePod 带来管理日常任务、控制智能家居的便利新方式，用户可以使用 Siri 创建智能家居自动化功能，在家中触发烟雾或一氧化碳警报时获得通知，或者查看房间的温度与湿度——以上操作不必动手就能完成。 新款 HomePod 从今日起可在线或通过 Apple Store app 订购，2 月 3 日（周五）起正式发售。 “利用我们的专业音频技术和创新，新款 HomePod 可呈现醇厚深沉的低音、自然的中音和清澈细腻的高音。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“随着 HomePod mini 大受欢迎，我们看到用户对体积更大、声学",
+          "sha256": "85bea918c4da04553c839239a055a14081a52ca395c5bcce0a3af445ed9ded92",
+          "captured_at": "2026-11-05T06:21:45.120860+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/95d9dfa400db1effbfb5ea14.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2023-02",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2023/01/apple-introduces-the-new-homepod-with-breakthrough-sound-and-intelligence/",
+            "quote": "2023 年 1 月 18 日 | ，支持播放沉浸式空间音频曲目，呈现前所未有的聆听体验。HomePod 带来管理日常任务、控制智能家居的便利新方式，用户可以使用 Siri 创建智能家居自动化功能，在家中触发烟雾或一氧化碳警报时获得通知，或者查看房间的温度与湿度——以上操作不必动手就能完成。 新款 HomePod 从今日起可在线或通过 Apple Store app 订购，2 月 3 日（周五）起正式发售。 “利用我们的专业音频技术和创新，新款 HomePod 可呈现醇厚深沉的低音、自然的中音和清澈细腻的高音。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“随着 HomePod mini 大受欢迎，我们看到用户对体积更大、声学",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "af543228cc70cfca5d6f1266c933032d60591840c1f6518a91409e15ff254532",
+            "captured_at": "2026-11-03T04:26:58.414389+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2023-02"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111852"
+      ],
+      "family": "GLOBAL:apple_support:model:111852",
+      "names": {
+        "GLOBAL:apple_support:model:111852": "Apple Watch Ultra"
+      },
+      "release": {
+        "date": "2022-09",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2022/09/introducing-apple-watch-ultra/",
+          "quote": "为 Apple Watch Ultra 大面积显示屏设计的“寻路者”表盘包括融入时间显示区域的指南针，并提供了可容纳多达 8 项复杂功能的空间。Apple Watch Ultra 同时带来 3 款新表带：野径回环式表带、高山回环式表带和海洋表带，分别以独特设计为每一场冒险提供安全舒适的佩戴体验。 Apple Watch Ultra 将于 9 月 9 日起开放订购，9 月 23 日（周五）正式发售。 Apple 营运总监 Jeff Williams 表示：“我们从世界各地的探险家和运动员身上汲取灵感，打造出一款为全新与极限环境设计的新款 Apple Watch，也是迄今最耐用、最强大的 Apple Watch。Apple Watch Ultr",
+          "sha256": "7b760e92234d6e0cf3be473de51eaf71591db93a4b1480eec4746836db3e5541",
+          "captured_at": "2026-11-05T06:21:44.784446+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/490e771b9116d442d48debe2.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2022-09",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2022/09/introducing-apple-watch-ultra/",
+            "quote": "2022 年 9 月 7 日 | 为 Apple Watch Ultra 大面积显示屏设计的“寻路者”表盘包括融入时间显示区域的指南针，并提供了可容纳多达 8 项复杂功能的空间。Apple Watch Ultra 同时带来 3 款新表带：野径回环式表带、高山回环式表带和海洋表带，分别以独特设计为每一场冒险提供安全舒适的佩戴体验。 Apple Watch Ultra 将于 9 月 9 日起开放订购，9 月 23 日（周五）正式发售。 Apple 营运总监 Jeff Williams 表示：“我们从世界各地的探险家和运动员身上汲取灵感，打造出一款为全新与极限环境设计的新款 Apple Watch，也是迄今最耐用、最强大的 Apple Watch。Apple Watch Ultr",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "7b7a8295c920b23148a2a5a83d60e3e089820a0f4d8a719dfe6ea4c99c639c34",
+            "captured_at": "2026-11-03T04:27:02.031898+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2022-09"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111854"
+      ],
+      "family": "GLOBAL:apple_support:model:111854",
+      "names": {
+        "GLOBAL:apple_support:model:111854": "iPhone 14 Plus"
+      },
+      "release": {
+        "date": "2022-10",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2022/09/apple-introduces-iphone-14-and-iphone-14-plus/",
+          "quote": "再加上出色的电池续航、超高的耐用性、高速 5G，让 iPhone 14 系列更胜以往。iPhone 14 和 iPhone 14 Plus 提供午夜色、蓝色、星光色、紫色和红色 5 种配色选择。两款机型于 9 月 9 日（周五）起接受预购，其中 iPhone 14 于 9 月 16 日 （周五）正式发售，iPhone 14 Plus 于 10 月 7 日（周五）正式发售。 “我们的用户每一天都离不开 iPhone，而 iPhone 14 和 iPhone 14 Plus 又新添突破性的技术和重要的安全功能。iPhone 14 Plus 配备更大的全新 6.7 英寸显示屏，用户在浏览网页时能看到更多内容，甚至更多文本",
+          "sha256": "69c82cbca4001582156002bb90ff0adf9e775ee6595ca2f94514dda6df578e9c",
+          "captured_at": "2026-11-05T06:21:43.729321+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/c366d07e8e5dbc4a454868e1.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2022-10",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2022/09/apple-introduces-iphone-14-and-iphone-14-plus/",
+            "quote": "2022 年 9 月 8 日 | 再加上出色的电池续航、超高的耐用性、高速 5G，让 iPhone 14 系列更胜以往。iPhone 14 和 iPhone 14 Plus 提供午夜色、蓝色、星光色、紫色和红色 5 种配色选择。两款机型于 9 月 9 日（周五）起接受预购，其中 iPhone 14 于 9 月 16 日 （周五）正式发售，iPhone 14 Plus 于 10 月 7 日（周五）正式发售。 “我们的用户每一天都离不开 iPhone，而 iPhone 14 和 iPhone 14 Plus 又新添突破性的技术和重要的安全功能。iPhone 14 Plus 配备更大的全新 6.7 英寸显示屏，用户在浏览网页时能看到更多内容，甚至更多文本",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "ae2e850aba8ae7b323a1372244875d273004216db715fa08842856083a714f8d",
+            "captured_at": "2026-11-03T04:27:01.310739+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2022-10"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111858"
+      ],
+      "family": "GLOBAL:apple_support:model:111858",
+      "names": {
+        "GLOBAL:apple_support:model:111858": "AirPods Max 1"
+      },
+      "release": {
+        "date": "2020-12",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2020/12/apple-introduces-airpods-max-the-magic-of-airpods-in-a-stunning-over-ear-design/",
+          "quote": "s Max ，这款创新的无线耳机将 AirPods 的奇妙体验带到具有高保真音效的包耳式设计中。AirPods Max 结合了定制声学设计、H1芯片和先进软件以支持计算音频，通过自适应均衡、主动降噪、通透模式和空间音频带来突破性的聆听体验。AirPods Max 共有深空灰色、银色、天蓝色、绿色和粉色五种靓丽颜色，今日起接受预订，下周二 12 月 15 日开始发售。 “AirPods 在全球备受欢迎，因其轻松的设置、卓越的音质和标志性的设计深受青睐。通过 AirPods Max，我们将 AirPods 的奇妙体验带到精美的包耳式设计中，并带来令人惊叹的高保真音质。” Apple 全球市场营销高级副总裁 Gre",
+          "sha256": "377e806e012024ce4f7172056f32515e8ee22133ac53411375a569b9cef83901",
+          "captured_at": "2026-11-05T06:21:41.609906+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/0228692a33558056bbf8a65e.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2020-12",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2020/12/apple-introduces-airpods-max-the-magic-of-airpods-in-a-stunning-over-ear-design/",
+            "quote": "2020 年 12 月 8 日 | s Max ，这款创新的无线耳机将 AirPods 的奇妙体验带到具有高保真音效的包耳式设计中。AirPods Max 结合了定制声学设计、H1芯片和先进软件以支持计算音频，通过自适应均衡、主动降噪、通透模式和空间音频带来突破性的聆听体验。AirPods Max 共有深空灰色、银色、天蓝色、绿色和粉色五种靓丽颜色，今日起接受预订，下周二 12 月 15 日开始发售。 “AirPods 在全球备受欢迎，因其轻松的设置、卓越的音质和标志性的设计深受青睐。通过 AirPods Max，我们将 AirPods 的奇妙体验带到精美的包耳式设计中，并带来令人惊叹的高保真音质。” Apple 全球市场营销高级副总裁 Gre",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "46b3044b0eb0df786a1b81bb2439b05681d50b58e025ba75f004afeb488060c7",
+            "captured_at": "2026-11-03T04:27:50.785766+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2020-12"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111863"
+      ],
+      "family": "GLOBAL:apple_support:model:111863",
+      "names": {
+        "GLOBAL:apple_support:model:111863": "AirPods 3"
+      },
+      "release": {
+        "date": "2021-10",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2021/10/introducing-the-next-generation-of-airpods/",
+          "quote": "ic 音乐、及其他各类电影和电视节目中，享受空间音频。新款 AirPods 抗汗抗水，并配有力度传感器，可方便直观地控制音乐和通话等。增强的电池续航提供最长可达 6 小时的聆听时间 1 ，搭配使用便携充电盒，则可享受最长可达 30 小时的聆听时间。AirPods（第三代）正式加入风靡全球的 Apple 耳机产品线，于今日起接受订购，并于 10 月 26 日（周二）起在零售店内发售。 “AirPods 凭借突破性的设计、卓越的音质和妙不可言的体验，彻底改变了无线耳机市场，”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“我们很高兴推出新一代 AirPods。通过自适应均衡和支持动态头部追踪的空间音频，新一",
+          "sha256": "5f718b4a5ff54a49936c0cc46cc836c943e074e729fa178a0952c8ca7c962373",
+          "captured_at": "2026-11-05T06:21:43.248106+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/2b63ec943203932e93724b77.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2021-10",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2021/10/introducing-the-next-generation-of-airpods/",
+            "quote": "2021 年 10 月 18 日 | ic 音乐、及其他各类电影和电视节目中，享受空间音频。新款 AirPods 抗汗抗水，并配有力度传感器，可方便直观地控制音乐和通话等。增强的电池续航提供最长可达 6 小时的聆听时间 1 ，搭配使用便携充电盒，则可享受最长可达 30 小时的聆听时间。AirPods（第三代）正式加入风靡全球的 Apple 耳机产品线，于今日起接受订购，并于 10 月 26 日（周二）起在零售店内发售。 “AirPods 凭借突破性的设计、卓越的音质和妙不可言的体验，彻底改变了无线耳机市场，”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“我们很高兴推出新一代 AirPods。通过自适应均衡和支持动态头部追踪的空间音频，新一",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "56bd4bcfc3a297f827cc968eba076cb049b71fa3090a173f404fa5f5fd8da643",
+            "captured_at": "2026-11-03T04:27:49.217853+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2021-10"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111867"
+      ],
+      "family": "GLOBAL:apple_support:model:111867",
+      "names": {
+        "GLOBAL:apple_support:model:111867": "MacBook Air (M2, 2022)"
+      },
+      "release": {
+        "date": "2022-07",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2022/07/all-new-macbook-air-with-m2-available-to-order-starting-friday-july-8/",
+          "quote": "ook Air 于 7 月 8 日（周五）起接受订购 MacBook Air 拥有全新纤薄设计、四种优雅外观，配备更宽大的 13.6 英寸 Liquid 视网膜显示屏，1080p 高清摄像头，支持 MagSafe 充电及更多强大功能 搭载 M2 芯片的全新 MacBook Air 于 7 月 8 日（周五）起面向顾客接受订购。 北京时间 7 月 8 日（周五）晚 8 点起，彻底重新设计、 搭载 M2 芯片的 MacBook Air 将接受订购，并于 7 月 15 日（周五）起向全球顾客发货。在 M2 芯片的强势驱动下，全新 MacBook Air 拥有更强的性能表现以及令人眼前一亮的纤薄设计，更加宽大的 13.6 英寸 Liquid 视网膜显示屏，1080p FaceTime 高清摄像头，四扬声器音响系统，最多 18 小时的电池续航时",
+          "sha256": "b22ed0ea92cd5cb7cd505e52fd5329d2cc646ffecdc3432890c3cbeaaf239c75",
+          "captured_at": "2026-11-05T06:21:43.596768+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/b44c6eb48658b3d84f3b180e.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2022-07",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2022/07/all-new-macbook-air-with-m2-available-to-order-starting-friday-july-8/",
+            "quote": "2022 年 7 月 6 日 | ook Air 于 7 月 8 日（周五）起接受订购 MacBook Air 拥有全新纤薄设计、四种优雅外观，配备更宽大的 13.6 英寸 Liquid 视网膜显示屏，1080p 高清摄像头，支持 MagSafe 充电及更多强大功能 搭载 M2 芯片的全新 MacBook Air 于 7 月 8 日（周五）起面向顾客接受订购。 北京时间 7 月 8 日（周五）晚 8 点起，彻底重新设计、 搭载 M2 芯片的 MacBook Air 将接受订购，并于 7 月 15 日（周五）起向全球顾客发货。在 M2 芯片的强势驱动下，全新 MacBook Air 拥有更强的性能表现以及令人眼前一亮的纤薄设计，更加宽大的 13.6 英寸 Liquid 视网膜显示屏，1080p FaceTime 高清摄像头，四扬声器音响系统，最多 18 小时的电池续航时",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "8119436bdf4fb43d5c2a017a397c752a69f6d8549cfb06172ddb9f3083d4e1b3",
+            "captured_at": "2026-11-03T04:27:03.190483+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2022-07"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111870"
+      ],
+      "family": "GLOBAL:apple_support:model:111870",
+      "names": {
+        "GLOBAL:apple_support:model:111870": "iPhone 13 Pro Max"
+      },
+      "release": {
+        "date": "2021-09",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2021/09/iphone-13-lineup-new-ipad-mini-and-ninth-generation-ipad-arrive-worldwide/",
+          "quote": "2021 年 9 月 24 日 iPhone 13 Pro、iPhone 13 Pro Max、iPhone 13、iPhone 13 mini、iPad mini 和 iPad（第九代）在全球范围内开始发售 集创新科技与优雅设计于一身的 iPhone 13 系列机型、强大的新款 iPad mini 和 iPad（第九代）于 9 月 24 日（周五）在全球范围内开始发售。 Apple Store 零售店与 Apple 在线商店向顾客敞开大门，欢迎他们了解并体验最新款 iPhone 与 iPad 机型。由内到外重新设计的 iPhone 13 Pro 与 iPhone 13 Pro Max 配备了 iPhone 有史",
+          "sha256": "51b572407261ebd08c0707f277cb50e95749775f80ab496ec7f82beae89110ee",
+          "captured_at": "2026-11-05T06:21:42.002881+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/d4c931e355b5d722fa539041.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2021-09",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2021/09/iphone-13-lineup-new-ipad-mini-and-ninth-generation-ipad-arrive-worldwide/",
+            "quote": "2021 年 9 月 24 日 | 2021 年 9 月 24 日 iPhone 13 Pro、iPhone 13 Pro Max、iPhone 13、iPhone 13 mini、iPad mini 和 iPad（第九代）在全球范围内开始发售 集创新科技与优雅设计于一身的 iPhone 13 系列机型、强大的新款 iPad mini 和 iPad（第九代）于 9 月 24 日（周五）在全球范围内开始发售。 Apple Store 零售店与 Apple 在线商店向顾客敞开大门，欢迎他们了解并体验最新款 iPhone 与 iPad 机型。由内到外重新设计的 iPhone 13 Pro 与 iPhone 13 Pro Max 配备了 iPhone 有史",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "51b572407261ebd08c0707f277cb50e95749775f80ab496ec7f82beae89110ee",
+            "captured_at": "2026-11-03T04:27:49.217920+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2021-09"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111871"
+      ],
+      "family": "GLOBAL:apple_support:model:111871",
+      "names": {
+        "GLOBAL:apple_support:model:111871": "iPhone 13 Pro"
+      },
+      "release": {
+        "date": "2021-09",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2021/09/iphone-13-lineup-new-ipad-mini-and-ninth-generation-ipad-arrive-worldwide/",
+          "quote": "2021 年 9 月 24 日 iPhone 13 Pro、iPhone 13 Pro Max、iPhone 13、iPhone 13 mini、iPad mini 和 iPad（第九代）在全球范围内开始发售 集创新科技与优雅设计于一身的 iPhone 13 系列机型、强大的新款 iPad mini 和 iPad（第九代）于 9 月 24 日（周五）在全球范围内开始发售。 Apple Store 零售店与 Apple 在线商店向顾客敞开大门，欢迎他们了解并体验最新款 iPhone 与 iPad 机型。由内到外重新设计的 iPhone 13 Pro 与 iPhone 13 Pro Max 配备了 iPhone 有史",
+          "sha256": "51b572407261ebd08c0707f277cb50e95749775f80ab496ec7f82beae89110ee",
+          "captured_at": "2026-11-05T06:21:42.002881+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/d4c931e355b5d722fa539041.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2021-09",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2021/09/iphone-13-lineup-new-ipad-mini-and-ninth-generation-ipad-arrive-worldwide/",
+            "quote": "2021 年 9 月 24 日 | 2021 年 9 月 24 日 iPhone 13 Pro、iPhone 13 Pro Max、iPhone 13、iPhone 13 mini、iPad mini 和 iPad（第九代）在全球范围内开始发售 集创新科技与优雅设计于一身的 iPhone 13 系列机型、强大的新款 iPad mini 和 iPad（第九代）于 9 月 24 日（周五）在全球范围内开始发售。 Apple Store 零售店与 Apple 在线商店向顾客敞开大门，欢迎他们了解并体验最新款 iPhone 与 iPad 机型。由内到外重新设计的 iPhone 13 Pro 与 iPhone 13 Pro Max 配备了 iPhone 有史",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "51b572407261ebd08c0707f277cb50e95749775f80ab496ec7f82beae89110ee",
+            "captured_at": "2026-11-03T04:27:49.217920+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2021-09"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111872"
+      ],
+      "family": "GLOBAL:apple_support:model:111872",
+      "names": {
+        "GLOBAL:apple_support:model:111872": "iPhone 13"
+      },
+      "release": {
+        "date": "2021-09",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2021/09/apple-introduces-iphone-13-and-iphone-13-mini/",
+          "quote": "的起始存储容量均为 128GB，为上一代的两倍，拥有行业领先的 IP68 级抗水性能，并可提供出色的 5G 体验。 iPhone 13 和 iPhone 13 mini 五种精美的铝金属外观：红色、星光色、午夜色、蓝色和粉色。 iPhone 13 和 iPhone 13 mini 提供粉色、蓝色、午夜色、星光色和红色 五种配色选择，将自 9 月 17 日（星期五）起接受预订，并于 9 月 24 日（星期五）正式发售。 “我们的用户每一天都离不开 iPhone，所以我们为大家带来了性能更强劲、用途更广泛、也更有乐趣的 iPhone 13 和 iPhone 13 mini。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“这两款机型设计美观，",
+          "sha256": "1855a271701c92f50c579cd3faad04f6511fb43ed80c6cf8465701b1882f861d",
+          "captured_at": "2026-11-05T06:21:41.797091+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/9f42bb69e0d6bb4d0f468591.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2021-09",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2021/09/apple-introduces-iphone-13-and-iphone-13-mini/",
+            "quote": "2021 年 9 月 14 日 | 的起始存储容量均为 128GB，为上一代的两倍，拥有行业领先的 IP68 级抗水性能，并可提供出色的 5G 体验。 iPhone 13 和 iPhone 13 mini 五种精美的铝金属外观：红色、星光色、午夜色、蓝色和粉色。 iPhone 13 和 iPhone 13 mini 提供粉色、蓝色、午夜色、星光色和红色 五种配色选择，将自 9 月 17 日（星期五）起接受预订，并于 9 月 24 日（星期五）正式发售。 “我们的用户每一天都离不开 iPhone，所以我们为大家带来了性能更强劲、用途更广泛、也更有乐趣的 iPhone 13 和 iPhone 13 mini。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“这两款机型设计美观，",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "5e2a55709d332f2d062f742bb4e407f96d99066f2b5cfc814d07e83e600ee8db",
+            "captured_at": "2026-11-03T04:27:49.218124+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2021-09"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111873"
+      ],
+      "family": "GLOBAL:apple_support:model:111873",
+      "names": {
+        "GLOBAL:apple_support:model:111873": "iPhone 13 mini"
+      },
+      "release": {
+        "date": "2021-09",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2021/09/apple-introduces-iphone-13-and-iphone-13-mini/",
+          "quote": "的起始存储容量均为 128GB，为上一代的两倍，拥有行业领先的 IP68 级抗水性能，并可提供出色的 5G 体验。 iPhone 13 和 iPhone 13 mini 五种精美的铝金属外观：红色、星光色、午夜色、蓝色和粉色。 iPhone 13 和 iPhone 13 mini 提供粉色、蓝色、午夜色、星光色和红色 五种配色选择，将自 9 月 17 日（星期五）起接受预订，并于 9 月 24 日（星期五）正式发售。 “我们的用户每一天都离不开 iPhone，所以我们为大家带来了性能更强劲、用途更广泛、也更有乐趣的 iPhone 13 和 iPhone 13 mini。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“这两款机型设计美观，",
+          "sha256": "1855a271701c92f50c579cd3faad04f6511fb43ed80c6cf8465701b1882f861d",
+          "captured_at": "2026-11-05T06:21:41.797091+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/9f42bb69e0d6bb4d0f468591.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2021-09",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2021/09/apple-introduces-iphone-13-and-iphone-13-mini/",
+            "quote": "2021 年 9 月 14 日 | 的起始存储容量均为 128GB，为上一代的两倍，拥有行业领先的 IP68 级抗水性能，并可提供出色的 5G 体验。 iPhone 13 和 iPhone 13 mini 五种精美的铝金属外观：红色、星光色、午夜色、蓝色和粉色。 iPhone 13 和 iPhone 13 mini 提供粉色、蓝色、午夜色、星光色和红色 五种配色选择，将自 9 月 17 日（星期五）起接受预订，并于 9 月 24 日（星期五）正式发售。 “我们的用户每一天都离不开 iPhone，所以我们为大家带来了性能更强劲、用途更广泛、也更有乐趣的 iPhone 13 和 iPhone 13 mini。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“这两款机型设计美观，",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "5e2a55709d332f2d062f742bb4e407f96d99066f2b5cfc814d07e83e600ee8db",
+            "captured_at": "2026-11-03T04:27:49.218124+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2021-09"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111874"
+      ],
+      "family": "GLOBAL:apple_support:model:111874",
+      "names": {
+        "GLOBAL:apple_support:model:111874": "iPhone 12 Pro Max"
+      },
+      "release": {
+        "date": "2020-11",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2020/10/apple-introduces-iphone-12-pro-and-iphone-12-pro-max-with-5g/",
+          "quote": "还能搭配全新推出的 MagSafe 磁吸配件，连接 iPhone 时既简单又轻松。 iPhone 12 Pro 和 iPhone 12 Pro Max 有石墨色、银色、金色和海蓝色四种不锈钢外观可选。iPhone 12 Pro 将于 10 月 16 日星期五开始预购，10 月 23 日星期五发售。iPhone 12 Pro Max 将于 11 月 6 日星期五开始预购，11 月 13 日星期五在零售店发售。 “这是 iPhone 的一次巨大飞跃，我们将为用户提供最出色的 5G 体验，并对想要将 iPhone 发挥到极致的使用者，提供我们最先进的技术。” Apple 全球市场营销高级副总裁 Greg Joswiak 表示。“每代 iPhone 的问世总",
+          "sha256": "13659096ba1f51c05e16a31720fa6b3ed7656f557a64a1e8909c4fcdaa9994ae",
+          "captured_at": "2026-11-05T06:21:40.334090+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/eaa7e5b05a8f9262a13eb03e.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2020-11",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2020/10/apple-introduces-iphone-12-pro-and-iphone-12-pro-max-with-5g/",
+            "quote": "2020 年 10 月 14 日 | 还能搭配全新推出的 MagSafe 磁吸配件，连接 iPhone 时既简单又轻松。 iPhone 12 Pro 和 iPhone 12 Pro Max 有石墨色、银色、金色和海蓝色四种不锈钢外观可选。iPhone 12 Pro 将于 10 月 16 日星期五开始预购，10 月 23 日星期五发售。iPhone 12 Pro Max 将于 11 月 6 日星期五开始预购，11 月 13 日星期五在零售店发售。 “这是 iPhone 的一次巨大飞跃，我们将为用户提供最出色的 5G 体验，并对想要将 iPhone 发挥到极致的使用者，提供我们最先进的技术。” Apple 全球市场营销高级副总裁 Greg Joswiak 表示。“每代 iPhone 的问世总",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "a4964577123d0f7c17935d08cdb8b72ad8529c01a0fe3fe373ef4c060d198296",
+            "captured_at": "2026-11-03T04:27:51.845857+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2020-11"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111875"
+      ],
+      "family": "GLOBAL:apple_support:model:111875",
+      "names": {
+        "GLOBAL:apple_support:model:111875": "iPhone 12 Pro"
+      },
+      "release": {
+        "date": "2020-10",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2020/10/apple-introduces-iphone-12-pro-and-iphone-12-pro-max-with-5g/",
+          "quote": "，可带来身临其境的增强现实 (AR) 体验，并加入了 MagSafe 磁吸功能，除了可进行高功率无线充电，还能搭配全新推出的 MagSafe 磁吸配件，连接 iPhone 时既简单又轻松。 iPhone 12 Pro 和 iPhone 12 Pro Max 有石墨色、银色、金色和海蓝色四种不锈钢外观可选。iPhone 12 Pro 将于 10 月 16 日星期五开始预购，10 月 23 日星期五发售。iPhone 12 Pro Max 将于 11 月 6 日星期五开始预购，11 月 13 日星期五在零售店发售。 “这是 iPhone 的一次巨大飞跃，我们将为用户提供最出色的 5G 体验，并对想要将 iPhone 发挥到极致的使用者，提供我们最先",
+          "sha256": "13659096ba1f51c05e16a31720fa6b3ed7656f557a64a1e8909c4fcdaa9994ae",
+          "captured_at": "2026-11-05T06:21:40.334090+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/eaa7e5b05a8f9262a13eb03e.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2020-10",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2020/10/apple-introduces-iphone-12-pro-and-iphone-12-pro-max-with-5g/",
+            "quote": "2020 年 10 月 14 日 | ，可带来身临其境的增强现实 (AR) 体验，并加入了 MagSafe 磁吸功能，除了可进行高功率无线充电，还能搭配全新推出的 MagSafe 磁吸配件，连接 iPhone 时既简单又轻松。 iPhone 12 Pro 和 iPhone 12 Pro Max 有石墨色、银色、金色和海蓝色四种不锈钢外观可选。iPhone 12 Pro 将于 10 月 16 日星期五开始预购，10 月 23 日星期五发售。iPhone 12 Pro Max 将于 11 月 6 日星期五开始预购，11 月 13 日星期五在零售店发售。 “这是 iPhone 的一次巨大飞跃，我们将为用户提供最出色的 5G 体验，并对想要将 iPhone 发挥到极致的使用者，提供我们最先",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "a4964577123d0f7c17935d08cdb8b72ad8529c01a0fe3fe373ef4c060d198296",
+            "captured_at": "2026-11-03T04:27:51.845857+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2020-10"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111876"
+      ],
+      "family": "GLOBAL:apple_support:model:111876",
+      "names": {
+        "GLOBAL:apple_support:model:111876": "iPhone 12"
+      },
+      "release": {
+        "date": "2020-10",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2020/10/apple-announces-iphone-12-and-iphone-12-mini-a-new-era-for-iphone-with-5g/",
+          "quote": "，提供高功率无线充电，与iPhone一贴即合。 6.1 英寸 iPhone 12 和 5.4 英寸 iPhone 12 mini 在设计上焕然一新，配有超视网膜 XDR 全面屏，提供引人入胜的观看体验。 iPhone 12 和 iPhone 12 mini 有蓝色、绿色、黑色、白色和红色五种精美的铝金属外观可选。iPhone 12 将于 10 月 16 日 (星期五) 开始预购，10 月 23 日 (星期五) 开始发售。iPhone 12 mini 将于 11 月 6 日 (星期五) 开始预购，11 月 13 日 (星期五) 开始在店内有售。 “对 5G 的支持，象征 iPhone 迈入全新境界。我们很高兴 iPhone 12 和 iPhone 12 mini 能",
+          "sha256": "3f7601e2d04c62d4b5a26bcf5d5b5206dc82144e5265afee88be56a636cb71dc",
+          "captured_at": "2026-11-05T06:21:40.228925+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/225722eefb98e77a5e95d737.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2020-10",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2020/10/apple-announces-iphone-12-and-iphone-12-mini-a-new-era-for-iphone-with-5g/",
+            "quote": "2020 年 10 月 14 日 | ，提供高功率无线充电，与iPhone一贴即合。 6.1 英寸 iPhone 12 和 5.4 英寸 iPhone 12 mini 在设计上焕然一新，配有超视网膜 XDR 全面屏，提供引人入胜的观看体验。 iPhone 12 和 iPhone 12 mini 有蓝色、绿色、黑色、白色和红色五种精美的铝金属外观可选。iPhone 12 将于 10 月 16 日 (星期五) 开始预购，10 月 23 日 (星期五) 开始发售。iPhone 12 mini 将于 11 月 6 日 (星期五) 开始预购，11 月 13 日 (星期五) 开始在店内有售。 “对 5G 的支持，象征 iPhone 迈入全新境界。我们很高兴 iPhone 12 和 iPhone 12 mini 能",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "33840752ad97684b1c03408792361c9d0b3ef51422f76064159658d280f74362",
+            "captured_at": "2026-11-03T04:27:51.312537+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2020-10"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111877"
+      ],
+      "family": "GLOBAL:apple_support:model:111877",
+      "names": {
+        "GLOBAL:apple_support:model:111877": "iPhone 12 mini"
+      },
+      "release": {
+        "date": "2020-11",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2020/10/apple-announces-iphone-12-and-iphone-12-mini-a-new-era-for-iphone-with-5g/",
+          "quote": "mini 在设计上焕然一新，配有超视网膜 XDR 全面屏，提供引人入胜的观看体验。 iPhone 12 和 iPhone 12 mini 有蓝色、绿色、黑色、白色和红色五种精美的铝金属外观可选。iPhone 12 将于 10 月 16 日 (星期五) 开始预购，10 月 23 日 (星期五) 开始发售。iPhone 12 mini 将于 11 月 6 日 (星期五) 开始预购，11 月 13 日 (星期五) 开始在店内有售。 “对 5G 的支持，象征 iPhone 迈入全新境界。我们很高兴 iPhone 12 和 iPhone 12 mini 能为广大用户带来这些精彩的新功能。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示。“我们再一次突破极限，",
+          "sha256": "3f7601e2d04c62d4b5a26bcf5d5b5206dc82144e5265afee88be56a636cb71dc",
+          "captured_at": "2026-11-05T06:21:40.228925+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/225722eefb98e77a5e95d737.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2020-11",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2020/10/apple-announces-iphone-12-and-iphone-12-mini-a-new-era-for-iphone-with-5g/",
+            "quote": "2020 年 10 月 14 日 | mini 在设计上焕然一新，配有超视网膜 XDR 全面屏，提供引人入胜的观看体验。 iPhone 12 和 iPhone 12 mini 有蓝色、绿色、黑色、白色和红色五种精美的铝金属外观可选。iPhone 12 将于 10 月 16 日 (星期五) 开始预购，10 月 23 日 (星期五) 开始发售。iPhone 12 mini 将于 11 月 6 日 (星期五) 开始预购，11 月 13 日 (星期五) 开始在店内有售。 “对 5G 的支持，象征 iPhone 迈入全新境界。我们很高兴 iPhone 12 和 iPhone 12 mini 能为广大用户带来这些精彩的新功能。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示。“我们再一次突破极限，",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "33840752ad97684b1c03408792361c9d0b3ef51422f76064159658d280f74362",
+            "captured_at": "2026-11-03T04:27:51.312537+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2020-11"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111886"
+      ],
+      "family": "GLOBAL:apple_support:model:111886",
+      "names": {
+        "GLOBAL:apple_support:model:111886": "iPad mini (第 6 代)"
+      },
+      "release": {
+        "date": "2021-09",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2021/09/apple-unveils-new-ipad-mini-with-breakthrough-performance-in-stunning-new-design/",
+          "quote": "Pad mini。新采用的 USB-C 接口支持更快的连接速度，蜂窝网络机型支持 5G ，为移动办公提供更多灵活便利。全新升级的摄像头、人物居中功能以及对 Apple Pencil（第二代） 的支持，为用户带来更多新的拍照和摄像方式，方便他们与亲友联络感情，或者随时记录自己的泉涌灵思。 新款 iPad mini 自即日起接受订购，并将于 9 月 24 日（星期五）起在零售店发售。 “新款 iPad mini 采用超便携设计，可广泛用于日常办公、处理创意工作及各类企业级应用，绝非其他同类产品所可比拟。” Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“它是一款划时代的新品，拥有全新的 Liquid 视网",
+          "sha256": "aec0e46c0cd4b5c83a5bd1816c0d72367813377a00e5ee777cb9949f4c78e87e",
+          "captured_at": "2026-11-05T06:21:41.994534+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/9c84e994b11c371edca1b75c.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2021-09",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2021/09/apple-unveils-new-ipad-mini-with-breakthrough-performance-in-stunning-new-design/",
+            "quote": "2021 年 9 月 14 日 | Pad mini。新采用的 USB-C 接口支持更快的连接速度，蜂窝网络机型支持 5G ，为移动办公提供更多灵活便利。全新升级的摄像头、人物居中功能以及对 Apple Pencil（第二代） 的支持，为用户带来更多新的拍照和摄像方式，方便他们与亲友联络感情，或者随时记录自己的泉涌灵思。 新款 iPad mini 自即日起接受订购，并将于 9 月 24 日（星期五）起在零售店发售。 “新款 iPad mini 采用超便携设计，可广泛用于日常办公、处理创意工作及各类企业级应用，绝非其他同类产品所可比拟。” Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“它是一款划时代的新品，拥有全新的 Liquid 视网",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "f839f752b1b90338966d097f679bc529f150dd6b79996d871c62171b5f609303",
+            "captured_at": "2026-11-03T04:27:49.695145+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2021-09"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111887"
+      ],
+      "family": "GLOBAL:apple_support:model:111887",
+      "names": {
+        "GLOBAL:apple_support:model:111887": "iPad Air（第 5 代）"
+      },
+      "release": {
+        "date": "2022-03",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2022/03/apple-introduces-the-most-powerful-and-versatile-ipad-air-ever/",
+          "quote": "d Air 更带来了许多精彩功能：支持人物居中的全新超广角前置摄像头能为用户提供更加自然的视频会议体验；USB-C 端口的速度提升最高可达 2 倍；蜂窝网络机型支持超高速 5G；起售价依然亲民。先进的摄像头及其与最新配件的兼容性，能够帮助内容创作者、游戏玩家、学生等不同人群实现创造力、生产力和自我表达上的突破。全新 iPad Air 于 3 月 11 日（星期五）起接受预购，并将于 3 月 18 日（星期五）正式发售。 “从要记录精美笔记的大学生，到全心投入新项目的内容创作者，再到喜好图像密集型游戏的玩家，用户们喜爱便携的 iPad Air 带来的超凡的性能以及多用性。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“凭借突破性的 M1 芯",
+          "sha256": "9c114f2300871422814ae3b16f185e8bfaacff4446ea5425c09abe5b1b9b3c52",
+          "captured_at": "2026-11-05T06:21:43.331866+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/e3732d86a7cea95d0650a85d.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2022-03",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2022/03/apple-introduces-the-most-powerful-and-versatile-ipad-air-ever/",
+            "quote": "2022 年 3 月 9 日 | d Air 更带来了许多精彩功能：支持人物居中的全新超广角前置摄像头能为用户提供更加自然的视频会议体验；USB-C 端口的速度提升最高可达 2 倍；蜂窝网络机型支持超高速 5G；起售价依然亲民。先进的摄像头及其与最新配件的兼容性，能够帮助内容创作者、游戏玩家、学生等不同人群实现创造力、生产力和自我表达上的突破。全新 iPad Air 于 3 月 11 日（星期五）起接受预购，并将于 3 月 18 日（星期五）正式发售。 “从要记录精美笔记的大学生，到全心投入新项目的内容创作者，再到喜好图像密集型游戏的玩家，用户们喜爱便携的 iPad Air 带来的超凡的性能以及多用性。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“凭借突破性的 M1 芯",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "d85f3564a549586d7c8f02249f382a7815f3f984328bab432c320a92ee0bc097",
+            "captured_at": "2026-11-03T04:27:05.794695+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2022-03"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111890"
+      ],
+      "family": "GLOBAL:apple_support:model:111890",
+      "names": {
+        "GLOBAL:apple_support:model:111890": "Studio Display"
+      },
+      "release": {
+        "date": "2022-03",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2022/03/apple-unveils-all-new-mac-studio-and-studio-display/",
+          "quote": "有宽大的 27 英寸 5K 视网膜显示屏，支持人物居中的 1200 万像素超广角摄像头，以及支持空间音频的高保真六扬声器音响系统。Mac Studio 与 Studio Display 能够完美搭配，相得益彰，可以将任何工作空间变为强大的创意工作室。两款产品作为 Apple 迄今最强大的 Mac 产品系列的新成员，于今日开放预购，并将于 3 月 18 日（星期五）起开始向顾客发货。 “我们无比激动地推出全新的 Mac 台式电脑 Mac Studio 和显示器 Studio Display。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“搭载 M1 Max 或 M1 Ultra 芯片的 Mac Stud",
+          "sha256": "2e0ce02116c6b1c7b2f6047212bf9b7c713fe5df394b60ef957a0071e7094a1b",
+          "captured_at": "2026-11-05T06:21:43.425933+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/62b97a53d6120955ef7bef84.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2022-03",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2022/03/apple-unveils-all-new-mac-studio-and-studio-display/",
+            "quote": "2022 年 3 月 8 日 | 有宽大的 27 英寸 5K 视网膜显示屏，支持人物居中的 1200 万像素超广角摄像头，以及支持空间音频的高保真六扬声器音响系统。Mac Studio 与 Studio Display 能够完美搭配，相得益彰，可以将任何工作空间变为强大的创意工作室。两款产品作为 Apple 迄今最强大的 Mac 产品系列的新成员，于今日开放预购，并将于 3 月 18 日（星期五）起开始向顾客发货。 “我们无比激动地推出全新的 Mac 台式电脑 Mac Studio 和显示器 Studio Display。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“搭载 M1 Max 或 M1 Ultra 芯片的 Mac Stud",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "ff6525b6758d71c0845d56f217d0e21c2708e82935ff3caad9127c013cd1937a",
+            "captured_at": "2026-11-03T04:27:05.794920+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2022-03"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111895"
+      ],
+      "family": "GLOBAL:apple_support:model:111895",
+      "names": {
+        "GLOBAL:apple_support:model:111895": "iMac（24 英寸，M1，2021 年)"
+      },
+      "release": {
+        "date": "2021-05",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2021/04/all-new-imac-ipad-pro-and-apple-tv-4k-orders-start-tomorrow/",
+          "quote": "设计格外紧凑纤薄的全新 iMac，以及迄今最强大、最先进的 iPad Pro，均由 M1 芯片强势驱动，可于明天开始订购，并于 5 月中下旬发售。此外，新登场的拥有紫色亮丽外观的 iPhone 12 和 iPhone 12 mini，以及设计小巧优雅、可帮你追踪查找重要物品的新配件 AirTag，也将于明天在全球零售店到货，并陆续送到顾客手中。 顾客在 Apple Store 零售店和 Apple Store 在线商店购买新产品时，可体验量身定制的购物服务，并获得专家的帮助。要享受更多便利，顾客也可使用 Apple",
+          "sha256": "c879bbfe5a5138fb464d3e71f3a426cbd28aa487bb77586eceb79e66f5f67353",
+          "captured_at": "2026-11-05T06:21:41.689230+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/059ab823231528370dd0bc61.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2021-05",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2021/04/all-new-imac-ipad-pro-and-apple-tv-4k-orders-start-tomorrow/",
+            "quote": "2021 年 4 月 29 日 | 设计格外紧凑纤薄的全新 iMac，以及迄今最强大、最先进的 iPad Pro，均由 M1 芯片强势驱动，可于明天开始订购，并于 5 月中下旬发售。此外，新登场的拥有紫色亮丽外观的 iPhone 12 和 iPhone 12 mini，以及设计小巧优雅、可帮你追踪查找重要物品的新配件 AirTag，也将于明天在全球零售店到货，并陆续送到顾客手中。 顾客在 Apple Store 零售店和 Apple Store 在线商店购买新产品时，可体验量身定制的购物服务，并获得专家的帮助。要享受更多便利，顾客也可使用 Apple",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "f9b2db4098e43a903cb356ebd111dc84d3b33bff75a158df6722d46717b72b7d",
+            "captured_at": "2026-11-03T04:27:49.846722+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2021-05"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111896"
+      ],
+      "family": "GLOBAL:apple_support:model:111896",
+      "names": {
+        "GLOBAL:apple_support:model:111896": "12.9 英寸 iPad Pro（第 5 代）"
+      },
+      "release": {
+        "date": "2021-05",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2021/04/apple-unveils-new-ipad-pro-with-m1-chip-and-stunning-liquid-retina-xdr-display/",
+          "quote": "逼真的细节，带来令人惊艳的视觉体验。5G 蜂窝网络机型能在移动场景中提供更高速的无线连接。为了给用户提供高速配件的专业级数据传输速度，iPad Pro 现在支持雷雳端口。另外，全新的超广角前置摄像头实现了新功能：人物居中，自动让用户保持在理想的构图中，使视频通话更具互动性。全新 iPad Pro 将于 4 月 30 日（星期五）起通过 apple.com.cn 接受订购，并将于五月中下旬开始发售。 “开创先河的 M1 芯片是 Mac 的一次突破，我们非常高兴能把它带到 iPad Pro 中。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“M1 巨大的",
+          "sha256": "a2f09f76741b10b545214c4410ed45ddcd7a330aa67d071f8426c8fdf107e283",
+          "captured_at": "2026-11-05T06:21:41.793966+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/519d203bb75b8d2589fc1022.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2021-05",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2021/04/apple-unveils-new-ipad-pro-with-m1-chip-and-stunning-liquid-retina-xdr-display/",
+            "quote": "2021 年 4 月 20 日 | 逼真的细节，带来令人惊艳的视觉体验。5G 蜂窝网络机型能在移动场景中提供更高速的无线连接。为了给用户提供高速配件的专业级数据传输速度，iPad Pro 现在支持雷雳端口。另外，全新的超广角前置摄像头实现了新功能：人物居中，自动让用户保持在理想的构图中，使视频通话更具互动性。全新 iPad Pro 将于 4 月 30 日（星期五）起通过 apple.com.cn 接受订购，并将于五月中下旬开始发售。 “开创先河的 M1 芯片是 Mac 的一次突破，我们非常高兴能把它带到 iPad Pro 中。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“M1 巨大的",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "cb77e6730f2edc51946effa02036e73387d2aaa60a3db5e581b1b2dff9a32408",
+            "captured_at": "2026-11-03T04:27:50.328591+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2021-05"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111897"
+      ],
+      "family": "GLOBAL:apple_support:model:111897",
+      "names": {
+        "GLOBAL:apple_support:model:111897": "11 英寸 iPad Pro（第 3 代）"
+      },
+      "release": {
+        "date": "2021-05",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2021/04/apple-unveils-new-ipad-pro-with-m1-chip-and-stunning-liquid-retina-xdr-display/",
+          "quote": "逼真的细节，带来令人惊艳的视觉体验。5G 蜂窝网络机型能在移动场景中提供更高速的无线连接。为了给用户提供高速配件的专业级数据传输速度，iPad Pro 现在支持雷雳端口。另外，全新的超广角前置摄像头实现了新功能：人物居中，自动让用户保持在理想的构图中，使视频通话更具互动性。全新 iPad Pro 将于 4 月 30 日（星期五）起通过 apple.com.cn 接受订购，并将于五月中下旬开始发售。 “开创先河的 M1 芯片是 Mac 的一次突破，我们非常高兴能把它带到 iPad Pro 中。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“M1 巨大的",
+          "sha256": "a2f09f76741b10b545214c4410ed45ddcd7a330aa67d071f8426c8fdf107e283",
+          "captured_at": "2026-11-05T06:21:41.793966+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/519d203bb75b8d2589fc1022.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2021-05",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2021/04/apple-unveils-new-ipad-pro-with-m1-chip-and-stunning-liquid-retina-xdr-display/",
+            "quote": "2021 年 4 月 20 日 | 逼真的细节，带来令人惊艳的视觉体验。5G 蜂窝网络机型能在移动场景中提供更高速的无线连接。为了给用户提供高速配件的专业级数据传输速度，iPad Pro 现在支持雷雳端口。另外，全新的超广角前置摄像头实现了新功能：人物居中，自动让用户保持在理想的构图中，使视频通话更具互动性。全新 iPad Pro 将于 4 月 30 日（星期五）起通过 apple.com.cn 接受订购，并将于五月中下旬开始发售。 “开创先河的 M1 芯片是 Mac 的一次突破，我们非常高兴能把它带到 iPad Pro 中。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“M1 巨大的",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "cb77e6730f2edc51946effa02036e73387d2aaa60a3db5e581b1b2dff9a32408",
+            "captured_at": "2026-11-03T04:27:50.328591+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2021-05"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111898"
+      ],
+      "family": "GLOBAL:apple_support:model:111898",
+      "names": {
+        "GLOBAL:apple_support:model:111898": "iPad（第 9 代)"
+      },
+      "release": {
+        "date": "2021-09",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2021/09/iphone-13-lineup-new-ipad-mini-and-ninth-generation-ipad-arrive-worldwide/",
+          "quote": "2021 年 9 月 24 日 iPhone 13 Pro、iPhone 13 Pro Max、iPhone 13、iPhone 13 mini、iPad mini 和 iPad（第九代）在全球范围内开始发售 集创新科技与优雅设计于一身的 iPhone 13 系列机型、强大的新款 iPad mini 和 iPad（第九代）于 9 月 24 日（周五）在全球范围内开始发售。 Apple Store 零售店与 Apple 在线商店向顾客敞开大门，欢迎他们了解并体验最新款 iPhone 与 iPad 机型。由内到外重新设计的 iPhone 13 Pro 与 iPhone 13 Pro Max 配备了 iPhone 有史",
+          "sha256": "51b572407261ebd08c0707f277cb50e95749775f80ab496ec7f82beae89110ee",
+          "captured_at": "2026-11-05T06:21:42.002881+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/d4c931e355b5d722fa539041.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2021-09",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2021/09/iphone-13-lineup-new-ipad-mini-and-ninth-generation-ipad-arrive-worldwide/",
+            "quote": "2021 年 9 月 24 日 | 2021 年 9 月 24 日 iPhone 13 Pro、iPhone 13 Pro Max、iPhone 13、iPhone 13 mini、iPad mini 和 iPad（第九代）在全球范围内开始发售 集创新科技与优雅设计于一身的 iPhone 13 系列机型、强大的新款 iPad mini 和 iPad（第九代）于 9 月 24 日（周五）在全球范围内开始发售。 Apple Store 零售店与 Apple 在线商店向顾客敞开大门，欢迎他们了解并体验最新款 iPhone 与 iPad 机型。由内到外重新设计的 iPhone 13 Pro 与 iPhone 13 Pro Max 配备了 iPhone 有史",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "51b572407261ebd08c0707f277cb50e95749775f80ab496ec7f82beae89110ee",
+            "captured_at": "2026-11-03T04:27:49.217920+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2021-09"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111900"
+      ],
+      "family": "GLOBAL:apple_support:model:111900",
+      "names": {
+        "GLOBAL:apple_support:model:111900": "Mac Studio（2022 年机型）"
+      },
+      "release": {
+        "date": "2022-03",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2022/03/apple-unveils-all-new-mac-studio-and-studio-display/",
+          "quote": "有宽大的 27 英寸 5K 视网膜显示屏，支持人物居中的 1200 万像素超广角摄像头，以及支持空间音频的高保真六扬声器音响系统。Mac Studio 与 Studio Display 能够完美搭配，相得益彰，可以将任何工作空间变为强大的创意工作室。两款产品作为 Apple 迄今最强大的 Mac 产品系列的新成员，于今日开放预购，并将于 3 月 18 日（星期五）起开始向顾客发货。 “我们无比激动地推出全新的 Mac 台式电脑 Mac Studio 和显示器 Studio Display。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“搭载 M1 Max 或 M1 Ultra 芯片的 Mac Stud",
+          "sha256": "2e0ce02116c6b1c7b2f6047212bf9b7c713fe5df394b60ef957a0071e7094a1b",
+          "captured_at": "2026-11-05T06:21:43.425933+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/62b97a53d6120955ef7bef84.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2022-03",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2022/03/apple-unveils-all-new-mac-studio-and-studio-display/",
+            "quote": "2022 年 3 月 8 日 | 有宽大的 27 英寸 5K 视网膜显示屏，支持人物居中的 1200 万像素超广角摄像头，以及支持空间音频的高保真六扬声器音响系统。Mac Studio 与 Studio Display 能够完美搭配，相得益彰，可以将任何工作空间变为强大的创意工作室。两款产品作为 Apple 迄今最强大的 Mac 产品系列的新成员，于今日开放预购，并将于 3 月 18 日（星期五）起开始向顾客发货。 “我们无比激动地推出全新的 Mac 台式电脑 Mac Studio 和显示器 Studio Display。”Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“搭载 M1 Max 或 M1 Ultra 芯片的 Mac Stud",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "ff6525b6758d71c0845d56f217d0e21c2708e82935ff3caad9127c013cd1937a",
+            "captured_at": "2026-11-03T04:27:05.794920+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2022-03"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111901"
+      ],
+      "family": "GLOBAL:apple_support:model:111901",
+      "names": {
+        "GLOBAL:apple_support:model:111901": "MacBook Pro（16 英寸，2021 年机型）"
+      },
+      "release": {
+        "date": "2021-10",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2021/10/apple-unveils-game-changing-macbook-pro/",
+          "quote": "发者、摄影师、影视工作者、3D 设计师、科学家、音乐制作人和所有希望使用全世界最佳笔记本电脑的用户所设计。新款 MacBook Pro 与搭载 M1 芯片的 13 英寸 MacBook Pro 一起，构成了迄今为止最强大的专业级 Mac 笔记本电脑产品阵容。新款 14 英寸和 16 英寸 MacBook Pro 自今日起接受订购，并将于 10 月 26 日（周二）起正式发售。 “我们的目标是打造出全世界最优秀的专业级笔记本电脑。今天，我们激动地推出搭载 M1 Pro 和 M1 Max 芯片的全新 MacBook Pro，这一组合会带来令人惊叹的性能表现、无出其右的电池续航时间与多项开创性的功能，为笔记本电脑带来颠覆性改",
+          "sha256": "45a13612ec0707d62b768cf21e0caf9992c3bce7074e516b4829ac0310f297e6",
+          "captured_at": "2026-11-05T06:21:43.102106+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/f1ab0c9a3bf12d81f0d1a381.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2021-10",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2021/10/apple-unveils-game-changing-macbook-pro/",
+            "quote": "2021 年 10 月 18 日 | 发者、摄影师、影视工作者、3D 设计师、科学家、音乐制作人和所有希望使用全世界最佳笔记本电脑的用户所设计。新款 MacBook Pro 与搭载 M1 芯片的 13 英寸 MacBook Pro 一起，构成了迄今为止最强大的专业级 Mac 笔记本电脑产品阵容。新款 14 英寸和 16 英寸 MacBook Pro 自今日起接受订购，并将于 10 月 26 日（周二）起正式发售。 “我们的目标是打造出全世界最优秀的专业级笔记本电脑。今天，我们激动地推出搭载 M1 Pro 和 M1 Max 芯片的全新 MacBook Pro，这一组合会带来令人惊叹的性能表现、无出其右的电池续航时间与多项开创性的功能，为笔记本电脑带来颠覆性改",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "73fd945ff7e6d6910bf07af60ee5a0a76e5c7aa22f86be77de8e4fa9b9d836b4",
+            "captured_at": "2026-11-03T04:27:48.068639+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2021-10"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111902"
+      ],
+      "family": "GLOBAL:apple_support:model:111902",
+      "names": {
+        "GLOBAL:apple_support:model:111902": "MacBook Pro（14 英寸，2021 年机型）"
+      },
+      "release": {
+        "date": "2021-10",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2021/10/apple-unveils-game-changing-macbook-pro/",
+          "quote": "发者、摄影师、影视工作者、3D 设计师、科学家、音乐制作人和所有希望使用全世界最佳笔记本电脑的用户所设计。新款 MacBook Pro 与搭载 M1 芯片的 13 英寸 MacBook Pro 一起，构成了迄今为止最强大的专业级 Mac 笔记本电脑产品阵容。新款 14 英寸和 16 英寸 MacBook Pro 自今日起接受订购，并将于 10 月 26 日（周二）起正式发售。 “我们的目标是打造出全世界最优秀的专业级笔记本电脑。今天，我们激动地推出搭载 M1 Pro 和 M1 Max 芯片的全新 MacBook Pro，这一组合会带来令人惊叹的性能表现、无出其右的电池续航时间与多项开创性的功能，为笔记本电脑带来颠覆性改",
+          "sha256": "45a13612ec0707d62b768cf21e0caf9992c3bce7074e516b4829ac0310f297e6",
+          "captured_at": "2026-11-05T06:21:43.102106+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/f1ab0c9a3bf12d81f0d1a381.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2021-10",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2021/10/apple-unveils-game-changing-macbook-pro/",
+            "quote": "2021 年 10 月 18 日 | 发者、摄影师、影视工作者、3D 设计师、科学家、音乐制作人和所有希望使用全世界最佳笔记本电脑的用户所设计。新款 MacBook Pro 与搭载 M1 芯片的 13 英寸 MacBook Pro 一起，构成了迄今为止最强大的专业级 Mac 笔记本电脑产品阵容。新款 14 英寸和 16 英寸 MacBook Pro 自今日起接受订购，并将于 10 月 26 日（周二）起正式发售。 “我们的目标是打造出全世界最优秀的专业级笔记本电脑。今天，我们激动地推出搭载 M1 Pro 和 M1 Max 芯片的全新 MacBook Pro，这一组合会带来令人惊叹的性能表现、无出其右的电池续航时间与多项开创性的功能，为笔记本电脑带来颠覆性改",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "73fd945ff7e6d6910bf07af60ee5a0a76e5c7aa22f86be77de8e4fa9b9d836b4",
+            "captured_at": "2026-11-03T04:27:48.068639+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2021-10"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111905"
+      ],
+      "family": "GLOBAL:apple_support:model:111905",
+      "names": {
+        "GLOBAL:apple_support:model:111905": "iPad Air（第 4 代）"
+      },
+      "release": {
+        "date": "2020-10",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2020/09/apple-unveils-all-new-ipad-air-with-a14-bionic-apples-most-advanced-chip/",
+          "quote": ".9 英寸 Liquid 视网膜屏、进一步升级的摄像头和音频系统、整合进顶部按钮的全新触控 ID 传感器，以及性能大幅提升的强劲芯片 A14 仿生。这一切，共同造就出这款强大多能的 iPad Air。全新 iPad Air 将于十月发售。 “今天，我们很高兴推出这款全新设计的、更为强大的 iPad Air，同时这也是新一代 Apple 芯片，A14 仿生的首秀。” Apple 全球市场营销高级副总裁 Greg Jos",
+          "sha256": "09559414a6dce2b8546b2c7afe296b3c25f92e5722c7b9f0c695ca9615d28230",
+          "captured_at": "2026-11-05T06:21:40.038738+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/24d5298aa553e3ca13db685a.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2020-10",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2020/09/apple-unveils-all-new-ipad-air-with-a14-bionic-apples-most-advanced-chip/",
+            "quote": "2020 年 9 月 15 日 | .9 英寸 Liquid 视网膜屏、进一步升级的摄像头和音频系统、整合进顶部按钮的全新触控 ID 传感器，以及性能大幅提升的强劲芯片 A14 仿生。这一切，共同造就出这款强大多能的 iPad Air。全新 iPad Air 将于十月发售。 “今天，我们很高兴推出这款全新设计的、更为强大的 iPad Air，同时这也是新一代 Apple 芯片，A14 仿生的首秀。” Apple 全球市场营销高级副总裁 Greg Jos",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "788a480a4db4f9b5606f0b52effcb7fabf8747b2c58a0cce059999c29532de9b",
+            "captured_at": "2026-11-03T04:27:52.165060+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2020-10"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111933"
+      ],
+      "family": "GLOBAL:apple_support:model:111933",
+      "names": {
+        "GLOBAL:apple_support:model:111933": "MacBook Air (Retina, 13 英寸, 2018)"
+      },
+      "release": {
+        "date": "2018-11",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2018/10/all-new-macbook-air-takes-flight/",
+          "quote": "价格与上市时间 全新 MacBook Air 起售价为 RMB 9,499 ，今日起可通过 apple.com/cn 订购。11 月 7 日 (星期三) 开始，可通过 Apple Store 零售店和",
+          "sha256": "96fb9ebb2adbb641a89231953f99fbe407b6edceb6a598f0e693dabbaa7dfef0",
+          "captured_at": "2026-11-05T06:21:40.037830+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/740ef6345e947b47a6fad7e6.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2018-11",
+          "model": "flowlet-flash",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2018/10/all-new-macbook-air-takes-flight/",
+            "quote": "2018 年 10 月 30 日 | 价格与上市时间 全新 MacBook Air 起售价为 RMB 9,499 ，今日起可通过 apple.com/cn 订购。11 月 7 日 (星期三) 开始，可通过 Apple Store 零售店和",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "4bc1a94366403917fcb1dde8035c50b0cbd3e10d86d3034edaf63d94b0129243",
+            "captured_at": "2026-11-03T04:27:56.572060+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2018-11"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111974"
+      ],
+      "family": "GLOBAL:apple_support:model:111974",
+      "names": {
+        "GLOBAL:apple_support:model:111974": "iPad Pro 11 英寸 (第 1 代)"
+      },
+      "release": {
+        "date": "2018-11",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2018/10/new-ipad-pro-with-all-screen-design-is-most-advanced-powerful-ipad-ever/",
+          "quote": "Pad Pro 上，同时进行无线充电。Apple Pencil 内置全新的触控传感器，可检测手指的触碰，让你能以全新方式在 app 中进行交互。全新的键盘式智能双面夹拥有简洁的一体式设计，可调式操作让它更加灵活多用。新一代 iPad Pro、Apple Pencil 和键盘式智能双面夹将于今日接受订购，并于 11 月 7 日星期三开始在零售店发售。 新一代 iPad Pro 搭配 Apple Pencil 和键盘式智能双面夹，各种事务，随时随地轻松搞定。 “新一代 iPad Pro 在高性能电脑领域、创意电脑领域、移动电脑领域都是一次巨大的飞跃。它拥有全新的设计，更加纤薄轻巧；超快的",
+          "sha256": "9aa115d57ba95ed7e35211f88dd4565b71fe2dfcc412a4d11a360f386a32792c",
+          "captured_at": "2026-11-05T06:21:40.037964+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/d6eb72544952114452d20e58.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2018-11",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2018/10/new-ipad-pro-with-all-screen-design-is-most-advanced-powerful-ipad-ever/",
+            "quote": "2018 年 10 月 30 日 | Pad Pro 上，同时进行无线充电。Apple Pencil 内置全新的触控传感器，可检测手指的触碰，让你能以全新方式在 app 中进行交互。全新的键盘式智能双面夹拥有简洁的一体式设计，可调式操作让它更加灵活多用。新一代 iPad Pro、Apple Pencil 和键盘式智能双面夹将于今日接受订购，并于 11 月 7 日星期三开始在零售店发售。 新一代 iPad Pro 搭配 Apple Pencil 和键盘式智能双面夹，各种事务，随时随地轻松搞定。 “新一代 iPad Pro 在高性能电脑领域、创意电脑领域、移动电脑领域都是一次巨大的飞跃。它拥有全新的设计，更加纤薄轻巧；超快的",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "f333d1ee80dc3981d4b8b1e63e3b67c1d2999fd8616d1d694c03247b27cf2ddc",
+            "captured_at": "2026-11-03T04:27:56.572264+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2018-11"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:111979"
+      ],
+      "family": "GLOBAL:apple_support:model:111979",
+      "names": {
+        "GLOBAL:apple_support:model:111979": "iPad Pro 12.9 英寸 (第 3 代)"
+      },
+      "release": {
+        "date": "2018-11",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2018/10/new-ipad-pro-with-all-screen-design-is-most-advanced-powerful-ipad-ever/",
+          "quote": "Pad Pro 上，同时进行无线充电。Apple Pencil 内置全新的触控传感器，可检测手指的触碰，让你能以全新方式在 app 中进行交互。全新的键盘式智能双面夹拥有简洁的一体式设计，可调式操作让它更加灵活多用。新一代 iPad Pro、Apple Pencil 和键盘式智能双面夹将于今日接受订购，并于 11 月 7 日星期三开始在零售店发售。 新一代 iPad Pro 搭配 Apple Pencil 和键盘式智能双面夹，各种事务，随时随地轻松搞定。 “新一代 iPad Pro 在高性能电脑领域、创意电脑领域、移动电脑领域都是一次巨大的飞跃。它拥有全新的设计，更加纤薄轻巧；超快的",
+          "sha256": "9aa115d57ba95ed7e35211f88dd4565b71fe2dfcc412a4d11a360f386a32792c",
+          "captured_at": "2026-11-05T06:21:40.037964+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/d6eb72544952114452d20e58.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2018-11",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2018/10/new-ipad-pro-with-all-screen-design-is-most-advanced-powerful-ipad-ever/",
+            "quote": "2018 年 10 月 30 日 | Pad Pro 上，同时进行无线充电。Apple Pencil 内置全新的触控传感器，可检测手指的触碰，让你能以全新方式在 app 中进行交互。全新的键盘式智能双面夹拥有简洁的一体式设计，可调式操作让它更加灵活多用。新一代 iPad Pro、Apple Pencil 和键盘式智能双面夹将于今日接受订购，并于 11 月 7 日星期三开始在零售店发售。 新一代 iPad Pro 搭配 Apple Pencil 和键盘式智能双面夹，各种事务，随时随地轻松搞定。 “新一代 iPad Pro 在高性能电脑领域、创意电脑领域、移动电脑领域都是一次巨大的飞跃。它拥有全新的设计，更加纤薄轻巧；超快的",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "f333d1ee80dc3981d4b8b1e63e3b67c1d2999fd8616d1d694c03247b27cf2ddc",
+            "captured_at": "2026-11-03T04:27:56.572264+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2018-11"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:117735"
+      ],
+      "family": "GLOBAL:apple_support:model:117735",
+      "names": {
+        "GLOBAL:apple_support:model:117735": "MacBook Pro（14 英寸，M3，2023 年 11 月）"
+      },
+      "release": {
+        "date": "2023-11",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2023/10/apple-unveils-new-macbook-pro-featuring-m3-chips/",
+          "quote": " Liquid 视网膜 XDR 显示屏，可使 SDR 内容亮度提升 20%；内置 1080p 摄像头与沉浸式六扬声器音响系统，并提供丰富的连接选项。这一系列产品电池续航时间最长可达 22 小时 1 ，实现极致专业便携体验，无论使用外接电源或电池供电均可提供同等性能表现，助用户随时随地展开工作。新款 MacBook Pro 今日起接受订购，11 月 7 日起正式发售。 “MacBook Pro 是独一无二的产品。得益于 Apple 芯片出类拔萃的高能效表现、最长可达 22 小时的电池续航时间、绚丽的 Liquid 视网膜 XDR 显示屏和先进的连接性能，MacBook Pro 能够助力用户成就非凡杰作。”App",
+          "sha256": "84d587be42a2b5fc21ca5f66f07187de5fb9dadf4a862d53386a5856f102d9fc",
+          "captured_at": "2026-11-05T06:21:45.341214+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/1a4b280aff17cf44babe5793.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2023-11",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2023/10/apple-unveils-new-macbook-pro-featuring-m3-chips/",
+            "quote": "2023 年 10 月 30 日 |  Liquid 视网膜 XDR 显示屏，可使 SDR 内容亮度提升 20%；内置 1080p 摄像头与沉浸式六扬声器音响系统，并提供丰富的连接选项。这一系列产品电池续航时间最长可达 22 小时 1 ，实现极致专业便携体验，无论使用外接电源或电池供电均可提供同等性能表现，助用户随时随地展开工作。新款 MacBook Pro 今日起接受订购，11 月 7 日起正式发售。 “MacBook Pro 是独一无二的产品。得益于 Apple 芯片出类拔萃的高能效表现、最长可达 22 小时的电池续航时间、绚丽的 Liquid 视网膜 XDR 显示屏和先进的连接性能，MacBook Pro 能够助力用户成就非凡杰作。”App",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "3c40bdd3970e4c7185547f061b2f31ee71b94774e5aa1ff68b3be7b6c1ad594a",
+            "captured_at": "2026-11-03T04:26:52.811974+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2023-11"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:117736"
+      ],
+      "family": "GLOBAL:apple_support:model:117736",
+      "names": {
+        "GLOBAL:apple_support:model:117736": "MacBook Pro（14 英寸，M3 Pro 或 M3 Max，2023 年 11 月）"
+      },
+      "release": {
+        "date": "2023-11",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2023/10/apple-unveils-new-macbook-pro-featuring-m3-chips/",
+          "quote": " Liquid 视网膜 XDR 显示屏，可使 SDR 内容亮度提升 20%；内置 1080p 摄像头与沉浸式六扬声器音响系统，并提供丰富的连接选项。这一系列产品电池续航时间最长可达 22 小时 1 ，实现极致专业便携体验，无论使用外接电源或电池供电均可提供同等性能表现，助用户随时随地展开工作。新款 MacBook Pro 今日起接受订购，11 月 7 日起正式发售。 “MacBook Pro 是独一无二的产品。得益于 Apple 芯片出类拔萃的高能效表现、最长可达 22 小时的电池续航时间、绚丽的 Liquid 视网膜 XDR 显示屏和先进的连接性能，MacBook Pro 能够助力用户成就非凡杰作。”App",
+          "sha256": "84d587be42a2b5fc21ca5f66f07187de5fb9dadf4a862d53386a5856f102d9fc",
+          "captured_at": "2026-11-05T06:21:45.341214+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/1a4b280aff17cf44babe5793.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2023-11",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2023/10/apple-unveils-new-macbook-pro-featuring-m3-chips/",
+            "quote": "2023 年 10 月 30 日 |  Liquid 视网膜 XDR 显示屏，可使 SDR 内容亮度提升 20%；内置 1080p 摄像头与沉浸式六扬声器音响系统，并提供丰富的连接选项。这一系列产品电池续航时间最长可达 22 小时 1 ，实现极致专业便携体验，无论使用外接电源或电池供电均可提供同等性能表现，助用户随时随地展开工作。新款 MacBook Pro 今日起接受订购，11 月 7 日起正式发售。 “MacBook Pro 是独一无二的产品。得益于 Apple 芯片出类拔萃的高能效表现、最长可达 22 小时的电池续航时间、绚丽的 Liquid 视网膜 XDR 显示屏和先进的连接性能，MacBook Pro 能够助力用户成就非凡杰作。”App",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "3c40bdd3970e4c7185547f061b2f31ee71b94774e5aa1ff68b3be7b6c1ad594a",
+            "captured_at": "2026-11-03T04:26:52.811974+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2023-11"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:117737"
+      ],
+      "family": "GLOBAL:apple_support:model:117737",
+      "names": {
+        "GLOBAL:apple_support:model:117737": "MacBook Pro（16 英寸，2023 年 11 月）"
+      },
+      "release": {
+        "date": "2023-11",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2023/10/apple-unveils-new-macbook-pro-featuring-m3-chips/",
+          "quote": " Liquid 视网膜 XDR 显示屏，可使 SDR 内容亮度提升 20%；内置 1080p 摄像头与沉浸式六扬声器音响系统，并提供丰富的连接选项。这一系列产品电池续航时间最长可达 22 小时 1 ，实现极致专业便携体验，无论使用外接电源或电池供电均可提供同等性能表现，助用户随时随地展开工作。新款 MacBook Pro 今日起接受订购，11 月 7 日起正式发售。 “MacBook Pro 是独一无二的产品。得益于 Apple 芯片出类拔萃的高能效表现、最长可达 22 小时的电池续航时间、绚丽的 Liquid 视网膜 XDR 显示屏和先进的连接性能，MacBook Pro 能够助力用户成就非凡杰作。”App",
+          "sha256": "84d587be42a2b5fc21ca5f66f07187de5fb9dadf4a862d53386a5856f102d9fc",
+          "captured_at": "2026-11-05T06:21:45.341214+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/1a4b280aff17cf44babe5793.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2023-11",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2023/10/apple-unveils-new-macbook-pro-featuring-m3-chips/",
+            "quote": "2023 年 10 月 30 日 |  Liquid 视网膜 XDR 显示屏，可使 SDR 内容亮度提升 20%；内置 1080p 摄像头与沉浸式六扬声器音响系统，并提供丰富的连接选项。这一系列产品电池续航时间最长可达 22 小时 1 ，实现极致专业便携体验，无论使用外接电源或电池供电均可提供同等性能表现，助用户随时随地展开工作。新款 MacBook Pro 今日起接受订购，11 月 7 日起正式发售。 “MacBook Pro 是独一无二的产品。得益于 Apple 芯片出类拔萃的高能效表现、最长可达 22 小时的电池续航时间、绚丽的 Liquid 视网膜 XDR 显示屏和先进的连接性能，MacBook Pro 能够助力用户成就非凡杰作。”App",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "3c40bdd3970e4c7185547f061b2f31ee71b94774e5aa1ff68b3be7b6c1ad594a",
+            "captured_at": "2026-11-03T04:26:52.811974+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2023-11"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:118451"
+      ],
+      "family": "GLOBAL:apple_support:model:118451",
+      "names": {
+        "GLOBAL:apple_support:model:118451": "iPad（第 8 代）"
+      },
+      "release": {
+        "date": "2020-09",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2020/09/apple-introduces-eighth-generation-ipad-with-a-huge-jump-in-performance/",
+          "quote": "no) — Apple 今日推出了第八代 iPad ，它配备强劲的 A12 仿生芯片，首次将神经网络引擎带至入门级 iPad。升级后的机型售价为 RMB 2,499 起，赋予这款备受喜爱且价格实惠的 iPad 更大价值。它配备绚丽夺目的 10.2 英寸视网膜显示屏、先进的摄像头以及够用一天电池续航力 1 。iPad 于今日接受订购，并于 9 月 20 日周日开始发售。 “我们很高兴为用户带来了更迅捷、更强大的第八代 iPad。” Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“新款 iPad 拥有绚丽的 10.2 英寸视网膜显示屏、性能提升的 A12 仿生、出色的摄像头等众多精彩。如今，用",
+          "sha256": "daa55fc2cecd5902950084d2a0afe230d5e4bffea6314ce1705f6e5de31ddc30",
+          "captured_at": "2026-11-05T06:21:40.038485+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/267ef4c673d2ebaec347ba74.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2020-09",
+          "model": "codex-interactive-session",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2020/09/apple-introduces-eighth-generation-ipad-with-a-huge-jump-in-performance/",
+            "quote": "2020 年 9 月 15 日 | no) — Apple 今日推出了第八代 iPad ，它配备强劲的 A12 仿生芯片，首次将神经网络引擎带至入门级 iPad。升级后的机型售价为 RMB 2,499 起，赋予这款备受喜爱且价格实惠的 iPad 更大价值。它配备绚丽夺目的 10.2 英寸视网膜显示屏、先进的摄像头以及够用一天电池续航力 1 。iPad 于今日接受订购，并于 9 月 20 日周日开始发售。 “我们很高兴为用户带来了更迅捷、更强大的第八代 iPad。” Apple 全球市场营销高级副总裁 Greg Joswiak 表示，“新款 iPad 拥有绚丽的 10.2 英寸视网膜显示屏、性能提升的 A12 仿生、出色的摄像头等众多精彩。如今，用",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "4b888e87330fc83554e2a92648d4e6a74f4697db9ac20828f461aa97d6f555e2",
+            "captured_at": "2026-11-03T04:27:52.404331+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2020-09"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:118453"
+      ],
+      "family": "GLOBAL:apple_support:model:118453",
+      "names": {
+        "GLOBAL:apple_support:model:118453": "Apple Watch Series 5"
+      },
+      "release": {
+        "date": "2019-09",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2019/09/apple-unveils-apple-watch-series-5/",
+          "quote": "自9月12日起，Apple Watch Series 5 (GPS) 和 Apple Watch Series 5 (GPS + 蜂窝网络) 可在 中国市场接受订购。两种表款均将于 9 月 20 日 (星期五) 起开始在店内有售。",
+          "sha256": "2e7c0634df3eb7a08bb6d4173089de0778feedcad926da0eda0b7edbdecd9a55",
+          "captured_at": "2026-11-05T06:21:40.038698+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/7087e4d8507a054f0a066534.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2019-09",
+          "model": "flowlet-flash",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2019/09/apple-unveils-apple-watch-series-5/",
+            "quote": "2019 年 9 月 11 日 | 自9月12日起，Apple Watch Series 5 (GPS) 和 Apple Watch Series 5 (GPS + 蜂窝网络) 可在 中国市场接受订购。两种表款均将于 9 月 20 日 (星期五) 起开始在店内有售。",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "161ebcd28426ed4a2fca4d35aefbd3b2316d2c85c233bbd4dd5e8e34c8d0e270",
+            "captured_at": "2026-11-03T04:27:54.550046+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2019-09"
+        },
+        "release_delta_days": 0
+      }
+    },
+    {
+      "ids": [
+        "GLOBAL:apple_support:model:118461"
+      ],
+      "family": "GLOBAL:apple_support:model:118461",
+      "names": {
+        "GLOBAL:apple_support:model:118461": "Mac Pro (2019)"
+      },
+      "release": {
+        "date": "2019-12",
+        "granularity": "month",
+        "source": "llm_crossed",
+        "level": "product",
+        "event": "availability",
+        "market": "CN",
+        "confidence": "high",
+        "evidence": {
+          "url": "https://www.apple.com.cn/newsroom/2019/11/apple-introduces-16-inch-macbook-pro-the-worlds-best-pro-notebook/",
+          "quote": "Mac Pro 与 Pro Display XDR Apple 今日同时宣布，全新 Mac Pro 和 Apple Pro Display XDR，这两款专业台式电脑和专业显示器的巅峰之作将于 12 月发售。",
+          "sha256": "987a28739513c58039b21d2a56a776446824fc1e1a2b535bc7e26b40c78eaaf5",
+          "captured_at": "2026-11-05T06:21:40.038211+00:00",
+          "capture_file": "docs/release-coverage/tolerance-llm-retained/269f3413f8c30d9c7cdb8743.html",
+          "capture_type": "http_response",
+          "source_type": "official",
+          "locator": "Freshly captured Apple Newsroom exact excerpt; original exact-ID extraction rechecked"
+        },
+        "llm_crosscheck": {
+          "date": "2019-12",
+          "model": "flowlet-flash",
+          "independent": true,
+          "identity_verified": true,
+          "event_verified": true,
+          "estimate_evidence": {
+            "url": "https://www.apple.com.cn/newsroom/2019/11/apple-introduces-16-inch-macbook-pro-the-worlds-best-pro-notebook/",
+            "quote": "2019 年 11 月 13 日 | Mac Pro 与 Pro Display XDR Apple 今日同时宣布，全新 Mac Pro 和 Apple Pro Display XDR，这两款专业台式电脑和专业显示器的巅峰之作将于 12 月发售。",
+            "locator": "Newsroom publication header + verbatim availability sentence",
+            "source_type": "official",
+            "sha256": "a65ceaf2d99b5c29b051e09d7212cd8cb9d80e9cc6e9868a6771f37a8477726e",
+            "captured_at": "2026-11-03T04:27:53.464498+00:00"
+          },
+          "independence_reason": "Fresh Apple source bytes matched retained excerpt. Exact support model identity was reviewed in original candidate input; month/event rechecked against availability sentence.",
+          "source_date": "2019-12"
+        },
+        "release_delta_days": 0
+      }
+    }
+  ]
+}
