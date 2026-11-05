@@ -41,4 +41,24 @@
 
 早期旧工作区基线与失败尝试日志一并保留；首个新测试的档案全等预期未计入既有品牌/品类规范化补充字段，已改为逐字段保证原始事实保留。正式实现基于干净最新主分支，不包含工作区其他任务的修改。
 
-正常发布使用现有 `filter-accessories` → `publish-release`，沿用候选合并、发布锁、测试门禁、整批 data 提交、OSS immutable blob 回读与 manifest 最后切换。正式提交、run id、线上回读补录在本节。
+正常发布使用现有 `filter-accessories` → `publish-release`，沿用候选合并、发布锁、测试门禁、整批 data 提交、OSS immutable blob 回读与 manifest 最后切换。
+
+- 规则实现提交：`f14c7e759f3fa3a7b51726f4ac40c85f7304b797`。
+- [正式发布 run 42029042338](https://github.com/null-object-0000/goodsdex/actions/runs/42029042338)：**completed / success**，含 OSS 镜像和所有回读门禁；发布门禁 **586 passed**。
+- [完整云端测试 run 42029041207](https://github.com/null-object-0000/goodsdex/actions/runs/42029041207)：**completed / success**，**1017 passed / 8 deselected**。
+- data 提交：`956252e13afb3f4e312ba8ef2769dc03c9edc872`，父提交为修前基线 `7e50a43e6`。
+- 线上 revision：`d71a31d3c62742a5b9bad0d1bc4d9b78`。独立回读 [线上 meta](https://spend-good.oss-cn-shanghai.aliyuncs.com/data/public/meta.json) 和同一 manifest 的 immutable goods/excluded blobs，校验 SHA-256、bytes、计数、归属 revision、全部排除源字段与规则证据。
+- 线上实际 **4822 = 3605 published + 1217 excluded**，`excluded_by_rule.apparel=77`；其余排除理由计数与修前相同。77 条恰为冻结命中清单，未新增或漏掉其他身份；正式发布其余 3605 行（含同 ID 冲突版本）按多重集合逐字段完全不变。
+- 洗烘一体机、误标服饰的波轮洗衣机、误标运动鞋的两只水杯仍发布；9 条非耐用品候选全部仍发布。喷雾和含睡衣套装无真实记录，合成测试验证边界，不冒充线上证据。
+- 后续加强两个历史快照的服饰档案断言（各恰为 41 条），定向 **65 passed**；常规发布测试列表补入 `test_apparel.py`，让后续发布也执行全部服饰边界检查。
+
+[线上核验 JSON](online-verification.json)、[完整线上排除字段](online-apparel.json)、[发布状态](publication.json)、[发布日志](publication.log)、[云端测试](cloud-tests.log) 均已保存。可复核 `python3 docs/apparel-filter-20261105/verify_online.py`；重放审计 `python3 docs/apparel-filter-20261105/report.py --public <本次public目录>`。
+
+线上关键片段：
+
+```json
+{"total_all":4822,"total_published":3605,"total_excluded":1217,
+ "excluded_by_rule":{"accessory":1083,"apparel":77,"preorder_deposit":1,
+ "service":46,"container":0,"duplicate":0,"invalid":6,"manual":4}}
+```
+

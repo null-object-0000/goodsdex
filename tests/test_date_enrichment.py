@@ -79,7 +79,9 @@ def test_finalizer_replays_and_details_only(tmp_path):
     assert excluded == {r['id'] for r in reviewed}
     assert all(not r.get('release') for r in archived)
     excluded.update(r['id'] for r in json.loads((tmp_path/'archive/services.json').read_text()))
-    excluded.update(r['id'] for r in json.loads((tmp_path/'archive/apparel.json').read_text()))
+    apparel = json.loads((tmp_path/'archive/apparel.json').read_text())
+    assert len(apparel) == 41  # Frozen snapshot: reviewed clothing and luggage only.
+    excluded.update(r['id'] for r in apparel)
     assert [{k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in result] == [
         {k:v for k,v in r.items() if k not in ('brand','brand_source')} for r in expected if r['id'] not in excluded]
     for field in ('page_first_archived','release_llm','release_series'):

@@ -118,7 +118,9 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
     assert all(not r.get('release') for r in excluded)
     excluded_ids={r['id'] for r in excluded}
     excluded_ids.update(r['id'] for r in json.loads((tmp_path / 'archive/services.json').read_text()))
-    excluded_ids.update(r['id'] for r in json.loads((tmp_path / 'archive/apparel.json').read_text()))
+    apparel = json.loads((tmp_path / 'archive/apparel.json').read_text())
+    assert len(apparel) == 41  # Frozen snapshot predates the Atour collection.
+    excluded_ids.update(r['id'] for r in apparel)
     # The L1-L4 stage independently replays exact official product statements,
     # including reviewed month-to-day upgrades, after the legacy date stage.
     from goodsdex.release_coverage import apply_priority_dates
