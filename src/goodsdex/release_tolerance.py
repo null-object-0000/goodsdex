@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 from .release_crosschecks import delta_days
 
 POLICY = 'upgrade-release-14-45-v1'
-SOURCES = ('official', 'third_party', 'llm_crossed', 'series_inherit')
+SOURCES = ('official', 'third_party', 'llm_crossed', 'series_inherit', 'llm_verified')
 
 
 def captured(r):
@@ -40,6 +40,12 @@ def normalize(r):
     if not precision(r) or not captured(r):
         return None
     source = r.get('source')
+    if source == 'llm_verified':
+        from .release_coverage import usable
+        if not usable(r): return None
+        r.update(release_source=source, release_delta_days=None, decision_usage=['age'],
+                 display=r['date'] + ' 发布', release_precision='month')
+        return r
     if source == 'llm': return None
     if source == 'series_inherit' and r.get('level') != 'series': return None
     if source == 'official_hidden': source = 'official'

@@ -1,0 +1,29 @@
+✔ 后台逐路由鉴权、登录 Origin/CSRF、限流、无 CORS 或凭据泄漏 (148.346228ms)
+✔ 去重来源统计、覆盖率、待修组合、服务端补充不污染统计、分页筛选与 raw 比对 (101.41659ms)
+✔ 备注事务版本冲突、持久化与公开构建隔离；退出、过期、轮换撤销 (79.209409ms)
+✔ 配置兼容与敏感来源字段脱敏 (0.473619ms)
+✔ 分片统计读取完整详情而非列表投影，校验失败显式失败、重试后恢复 (18.032762ms)
+✔ SPA theme bootstrap receives a unique CSP nonce without allowing arbitrary inline scripts (54.931796ms)
+✔ SPA shell / assets, JSON auth and server pagination preserve API boundaries (77.211683ms)
+GET /admin/login: 302; Location 前80字: /admin/auth/feishu; SPA=false
+GET /admin/login: 302; Location 前80字: /admin/auth/feishu; SPA=true
+✔ 默认飞书跳转与应急表单互斥；两条登录 POST 默认 404；脚本 token 保留 (122.034929ms)
+✔ 商品筛选四日期统一、全量导出、编辑安全校验、原子批量与审计 (106.416308ms)
+✔ archive 下架记录保留、可详情查看与恢复；分类编辑保持路径一致 (90.654578ms)
+✔ 四类日期优先级、模型搜索、多品牌联动筛选及排序 (4.83821ms)
+✔ 公开排除清单三档、CSV、规则详情、人工覆盖优先级、重开数据库与缺失容错 (140.356048ms)
+✔ 后台价格批量 GET 支持 token / 会话，拒绝未授权与无效参数，C 端契约不变 (58.270163ms)
+✔ day/month matrix rejects invalid days, model-only dates and archive timestamps, includes retired records (2.317113ms)
+✔ series inheritance downgrades day to month; third-party requires corroboration; empty official field is not absence (0.210724ms)
+✔ sharded coverage reads the hashed full export and counts same-id published configuration rows (14.659807ms)
+✔ admin edits reject year-only dates and mismatched precision (2.877125ms)
+✔ L5 single reviewed first report counts by source; legacy unverified stays excluded (0.186731ms)
+✔ L7 requires captured exact model policy and remains a separate source (0.188707ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1202.91756

@@ -1,0 +1,229 @@
+........................................................................ [  7%]
+........................................................................ [ 15%]
+........................................................................ [ 22%]
+........................................................................ [ 30%]
+........................................................................ [ 37%]
+........................................................................ [ 45%]
+........................................................................ [ 52%]
+........................................................................ [ 60%]
+........................................................................ [ 67%]
+........................................................................ [ 75%]
+........................................................................ [ 82%]
+........................................................................ [ 90%]
+...........F............................................................ [ 97%]
+.......................                                                  [100%]
+=================================== FAILURES ===================================
+_____ test_real_finalizer_publishes_exact_reviewed_memberships_and_replays _____
+
+tmp_path = PosixPath('/home/nichangen/.hermes/profiles/spendpoint/cache/scratch/pytest-of-nichangen/pytest-320/test_real_finalizer_publishes_0')
+
+    def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_path):
+        import subprocess
+        import sys
+        from goodsdex.shards import shard_for
+    
+        before = json.loads(gzip.decompress((DOC / 'baseline-goods.json.gz').read_bytes()))
+        (tmp_path / 'goods.json').write_text(json.dumps(before))
+        (tmp_path / 'meta.json').write_text('{}')
+        (tmp_path / 'prices.json').write_text('{}')
+        manifest = json.loads((DOC / 'batches.json').read_text())
+        expected = {key: b for b in manifest for key in b['ids']}
+        assert len(expected) == sum(b['members'] for b in manifest) == 149
+        # Retain the historical manifest checks and independently add the reviewed
+        # expansion manifest. Only memberships present in this old snapshot apply.
+        present = {r['id'] for r in before}
+        expansion = json.loads((ROOT / 'docs/xiaomi-series-expansion-20261104/reviewed-new-batches.json').read_text())
+        for b in expansion:
+            r = b['series_release']
+            for m in b['members']:
+                if m['id'] in present:
+                    assert m['id'] not in expected
+                    expected[m['id']] = dict(date=r['date'],batch_id=b['id'],url=r['evidence']['url'],granularity=r['granularity'])
+        # Add independently frozen dictionary additions; split legacy batches retain
+        # their original assertion, evidence and explicit lineage.
+        audit = ROOT / 'docs/xiaomi-release-dictionary-20261104'
+        for m in json.loads((audit / 'new-memberships.json').read_text()):
+            if m['id'] in present:
+                assert m['id'] not in expected
+                expected[m['id']] = dict(date=m['date'], batch_id=m['batch_id'],
+                                        url=m['evidence']['url'], granularity='day')
+        for repair in json.loads((audit / 'legacy-repairs.json').read_text()):
+            for key in repair['ids']:
+                if key in present:
+                    assert expected[key]['batch_id'] == repair['original_batch_id']
+                    expected[key] = dict(expected[key], batch_id=repair['batch_id'])
+        retrospective = ROOT / 'docs/release-dates-round10-20261104'
+        for batch in json.loads((retrospective / 'new-series-batches.json').read_text()):
+            for member in batch['members']:
+                if member['id'] in present:
+                    assert member['id'] not in expected
+                    r = batch['series_release']
+                    expected[member['id']] = dict(date=r['date'], batch_id=batch['id'],
+                                                  url=r['evidence']['url'], granularity=r['granularity'])
+        replacements = {key for c in json.loads((retrospective / 'replaced-candidates.json').read_text())
+                        for key in c['ids']}
+        command = [sys.executable, str(ROOT / 'scripts/finalize_public.py'), '--public', str(tmp_path)]
+        subprocess.run(command, check=True)
+        result = json.loads((tmp_path / 'goods.json').read_text())
+        by_id = {r['id']: r for r in result}
+        from goodsdex.release_dates import apply_release_dates
+        product_expected = apply_release_dates(before)
+        assert sum(bool(r.get('release')) for r in before) == 671
+        # New reviewed product assertions are a separate finalizer stage; series
+        # rollout must preserve its output, including every pre-existing release.
+        for old, updated in zip(before, product_expected, strict=True):
+            if old.get('release'):
+                prior = old['release']
+                if old['id'] in replacements:
+                    assert prior['source'] == 'third_party'
+                    assert updated['release']['source'] == 'official'
+                    # The reviewed official assertion replaces an internal media value;
+                    # retain the original statement even when market/event differ.
+                    assert any(c.get('source') == prior['source'] and c.get('date') == prior['date']
+                               and c.get('evidence') == prior['evidence']
+                               for c in updated['release']['checks'])
+                elif prior.get('source') == 'third_party':
+                    # Round 7 requires two captured real sources; LLM agreement is
+                    # retained as audit evidence but no longer unlocks display.
+                    assert updated['release']['date'] == prior['date']
+                    assert updated['release']['evidence'] == prior['evidence']
+                    assert updated['release']['checks'] == prior['checks']
+                    assert updated['release']['display_allowed'] is False
+                    assert updated['release']['display'] is None
+                else:
+                    assert updated['release'] == prior
+        excluded=json.loads((tmp_path / 'archive/accessories.json').read_text())
+        reviewed=json.loads((ROOT/'docs/name-fidelity-20261104/historical-exclusion-expectations.json').read_text())['docs/series-release-rollout-20261103/baseline-goods.json.gz']
+        assert {r['id'] for r in excluded} == {r['id'] for r in reviewed}
+        assert all(not r.get('release') for r in excluded)
+        excluded_ids={r['id'] for r in excluded}
+        excluded_ids.update(r['id'] for r in json.loads((tmp_path / 'archive/services.json').read_text()))
+        # The L1-L4 stage independently replays exact official product statements,
+        # including reviewed month-to-day upgrades, after the legacy date stage.
+        from goodsdex.release_coverage import apply_priority_dates
+        product_expected = apply_priority_dates(product_expected)
+        assert {r['id']: r.get('release') for r in result} == {r['id']: r.get('release') for r in product_expected if r['id'] not in excluded_ids}
+        assert {r['id'] for r in result if r.get('release_series')} == expected.keys()
+        assert all('series_release' not in r for r in result)
+        for key, batch in expected.items():
+            row = by_id[key]
+            series = row['release_series']
+            assert (series['date'], series['batch_id'], series['evidence']['url']) == (batch['date'], batch['batch_id'], batch['url'])
+            assert series['granularity'] == batch.get('granularity','month') and series['level'] == 'series'
+            assert series['inherited'] is (not bool((row.get('release') or {}).get('date')))
+            assert series['evidence']['quote'] and len(series['evidence']['sha256']) == 64
+            detail = json.loads((tmp_path / f'detail/{shard_for(key):02x}.json').read_text())
+            assert detail[key]['release_series'] == series
+        for filename in (tmp_path / 'index').glob('*.json'):
+            assert all('release_series' not in row for row in json.loads(filename.read_text())['items'])
+        # A collector may replace all rows; the next ordinary finalize restores the field.
+        stripped = [{k: v for k, v in r.items() if k != 'release_series'} for r in result]
+        (tmp_path / 'goods.json').write_text(json.dumps(stripped))
+>       subprocess.run(command, check=True)
+
+tests/test_series_release_rollout.py:142: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = None, capture_output = False, timeout = None, check = True
+popenargs = (['/home/nichangen/.hermes/installs/25640cc6d09ce8d9/environments/002ef3e13926420f8f93facca4403bee/venv/bin/python', '.../nichangen/.hermes/profiles/spendpoint/cache/scratch/pytest-of-nichangen/pytest-320/test_real_finalizer_publishes_0'],)
+kwargs = {}
+
+    def run(*popenargs,
+            input=None, capture_output=False, timeout=None, check=False, **kwargs):
+        """Run command with arguments and return a CompletedProcess instance.
+    
+        The returned instance will have attributes args, returncode, stdout and
+        stderr. By default, stdout and stderr are not captured, and those attributes
+        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
+        or pass capture_output=True to capture both.
+    
+        If check is True and the exit code was non-zero, it raises a
+        CalledProcessError. The CalledProcessError object will have the return code
+        in the returncode attribute, and output & stderr attributes if those streams
+        were captured.
+    
+        If timeout (seconds) is given and the process takes too long,
+         a TimeoutExpired exception will be raised.
+    
+        There is an optional argument "input", allowing you to
+        pass bytes or a string to the subprocess's stdin.  If you use this argument
+        you may not also use the Popen constructor's "stdin" argument, as
+        it will be used internally.
+    
+        By default, all communication is in bytes, and therefore any "input" should
+        be bytes, and the stdout and stderr will be bytes. If in text mode, any
+        "input" should be a string, and stdout and stderr will be strings decoded
+        according to locale encoding, or by "encoding" if set. Text mode is
+        triggered by setting any of text, encoding, errors or universal_newlines.
+    
+        The other arguments are the same as for the Popen constructor.
+        """
+        if input is not None:
+            if kwargs.get('stdin') is not None:
+                raise ValueError('stdin and input arguments may not both be used.')
+            kwargs['stdin'] = PIPE
+    
+        if capture_output:
+            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
+                raise ValueError('stdout and stderr arguments may not be used '
+                                 'with capture_output.')
+            kwargs['stdout'] = PIPE
+            kwargs['stderr'] = PIPE
+    
+        with Popen(*popenargs, **kwargs) as process:
+            try:
+                stdout, stderr = process.communicate(input, timeout=timeout)
+            except TimeoutExpired as exc:
+                process.kill()
+                if _mswindows:
+                    # Windows accumulates the output in a single blocking
+                    # read() call run on child threads, with the timeout
+                    # being done in a join() on those threads.  communicate()
+                    # _after_ kill() is required to collect that and add it
+                    # to the exception.
+                    exc.stdout, exc.stderr = process.communicate()
+                else:
+                    # POSIX _communicate already populated the output so
+                    # far into the TimeoutExpired exception.
+                    process.wait()
+                raise
+            except:  # Including KeyboardInterrupt, communicate handled that.
+                process.kill()
+                # We don't call process.wait() as .__exit__ does that for us.
+                raise
+            retcode = process.poll()
+            if check and retcode:
+>               raise CalledProcessError(retcode, process.args,
+                                         output=stdout, stderr=stderr)
+E               subprocess.CalledProcessError: Command '['/home/nichangen/.hermes/installs/25640cc6d09ce8d9/environments/002ef3e13926420f8f93facca4403bee/venv/bin/python', '/tmp/goodsdex-l7/scripts/finalize_public.py', '--public', '/home/nichangen/.hermes/profiles/spendpoint/cache/scratch/pytest-of-nichangen/pytest-320/test_real_finalizer_publishes_0']' returned non-zero exit status 1.
+
+/home/nichangen/.hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/subprocess.py:578: CalledProcessError
+----------------------------- Captured stdout call -----------------------------
+accessory gate: {"excluded_count": 24, "newly_excluded_count": 24, "denominator": 2887, "newly_excluded_ratio": 0.008313127814340146, "threshold": 0.05, "gate": "green", "review_sha256": "fc8dfd4a6b5b82d07034ecb1df4be4310766dfbfada1fc0f839cd52b62d6608d", "reviewed": false}
+{"before_rows": 2909, "after_rows": 2909, "before_unique_ids": 2904, "after_unique_ids": 2904, "merged_groups": 0, "removed_rows": 0, "conflict_groups": 3, "conflict_rows": 8, "conflicts_unchanged": true, "brands_before": {"Apple": 635, "大疆": 281, "富士": 63, "小米": 1690, "小米汽车": 3, "惠普": 218, "比亚迪": 14}, "brands_after": {"Apple": 635, "大疆": 281, "富士": 63, "小米": 1690, "小米汽车": 3, "惠普": 218, "比亚迪": 14}, "facets_before": {"REDMI K系列": 8, "REDMI Note系列": 10, "REDMI Turbo系列": 7, "REDMI 数字系列": 4, "REDMI路由器": 22, "Xiaomi Civi系列": 3, "Xiaomi MIX系列": 8, "Xiaomi 数字旗舰": 15, "中央空调Pro": 76, "云台": 44, "体脂秤": 5, "体重秤": 6, "修剪器": 4, "儿童手表": 10, "充电器": 12, "其他配件": 9, "冰箱": 81, "净水器": 51, "剃须刀": 22, "办公娱乐显示器": 63, "加湿器": 12, "双肩包": 13, "台式机": 44, "台灯": 2, "吸尘器": 26, "吹风机": 14, "壁挂空调": 76, "婴儿推车": 1, "宠物饮水机": 3, "家庭屏": 12, "家电": 583, "对讲机": 10, "小爱音箱": 40, "小米路由器": 22, "小背包": 17, "平板": 216, "平板配件": 7, "床垫": 7, "影像传输与控制设备": 7, "微蒸烤": 1, "户外电源": 32, "手机": 173, "手环": 3, "手表": 64, "打印机": 17, "扫地机器人": 59, "投影仪": 25, "插座": 1, "插座插排": 17, "摄像机": 41, "摄影器材配件": 6, "数据线": 2, "料理机": 7, "旅行箱": 11, "无人机": 51, "无线充电器": 13, "旧款机型": 226, "显示器": 9, "智能家庭": 2, "智能门锁": 23, "服饰": 6, "枕头": 10, "查看全部小米路由器": 22, "水壶": 17, "水杯": 17, "汽车": 17, "波轮洗衣机": 72, "洗地机": 41, "洗手机": 7, "洗碗机": 17, "游戏电竞显示器": 63, "滚筒洗衣机": 64, "灯具": 72, "烟灶": 67, "牙刷": 19, "理发器": 1, "电动牙刷": 2, "电暖器": 15, "电水壶": 2, "电磁炉": 11, "电脑": 210, "电视": 110, "电饭煲": 29, "益智积木": 3, "相机": 41, "相机镜头": 39, "眼镜": 15, "移动电源": 24, "空气净化器": 16, "空调": 2, "空间计算设备": 5, "穿戴": 26, "穿戴配件": 8, "立式空调": 76, "笔": 9, "笔记本": 201, "箱包": 1, "耳机": 59, "胸包": 16, "自拍杆": 1, "落地风扇": 16, "螺丝刀": 6, "走步机": 2, "路由器": 26, "运动相机": 94, "运动鞋": 2, "配件": 9, "键鼠套装": 12, "门铃/猫眼": 14, "除湿机": 5, "除螨仪": 5, "音箱": 56, "麦克风": 20}, "facets_after": {"REDMI K系列": 8, "REDMI Note系列": 10, "REDMI Turbo系列": 7, "REDMI 数字系列": 4, "REDMI路由器": 22, "Xiaomi Civi系列": 3, "Xiaomi MIX系列": 8, "Xiaomi 数字旗舰": 15, "中央空调Pro": 76, "云台": 44, "体脂秤": 5, "体重秤": 6, "修剪器": 4, "儿童手表": 10, "充电器": 12, "其他配件": 9, "冰箱": 81, "净水器": 51, "剃须刀": 22, "办公娱乐显示器": 63, "加湿器": 12, "双肩包": 13, "台式机": 44, "台灯": 2, "吸尘器": 26, "吹风机": 14, "壁挂空调": 76, "婴儿推车": 1, "宠物饮水机": 3, "家庭屏": 12, "家电": 583, "对讲机": 10, "小爱音箱": 40, "小米路由器": 22, "小背包": 17, "平板": 216, "平板配件": 7, "床垫": 7, "影像传输与控制设备": 7, "微蒸烤": 1, "户外电源": 32, "手机": 173, "手环": 3, "手表": 64, "打印机": 17, "扫地机器人": 59, "投影仪": 25, "插座": 1, "插座插排": 17, "摄像机": 41, "摄影器材配件": 6, "数据线": 2, "料理机": 7, "旅行箱": 11, "无人机": 51, "无线充电器": 13, "旧款机型": 226, "显示器": 9, "智能家庭": 2, "智能门锁": 23, "服饰": 6, "枕头": 10, "查看全部小米路由器": 22, "水壶": 17, "水杯": 17, "汽车": 17, "波轮洗衣机": 72, "洗地机": 41, "洗手机": 7, "洗碗机": 17, "游戏电竞显示器": 63, "滚筒洗衣机": 64, "灯具": 72, "烟灶": 67, "牙刷": 19, "理发器": 1, "电动牙刷": 2, "电暖器": 15, "电水壶": 2, "电磁炉": 11, "电脑": 210, "电视": 110, "电饭煲": 29, "益智积木": 3, "相机": 41, "相机镜头": 39, "眼镜": 15, "移动电源": 24, "空气净化器": 16, "空调": 2, "空间计算设备": 5, "穿戴": 26, "穿戴配件": 8, "立式空调": 76, "笔": 9, "笔记本": 201, "箱包": 1, "耳机": 59, "胸包": 16, "自拍杆": 1, "落地风扇": 16, "螺丝刀": 6, "走步机": 2, "路由器": 26, "运动相机": 94, "运动鞋": 2, "配件": 9, "键鼠套装": 12, "门铃/猫眼": 14, "除湿机": 5, "除螨仪": 5, "音箱": 56, "麦克风": 20}, "category_queries": [{"category": "洗手机", "before": 7, "after": 7}, {"category": "旧款机型", "before": 226, "after": 226}, {"category": "宠物饮水机", "before": 3, "after": 3}, {"category": "电视", "before": 110, "after": 110}, {"category": "打印机", "before": 17, "after": 17}], "merged_ids": [], "conflicts": [{"id": "CN:mi_cn:product:10050186", "type": "source_drift", "fields": ["image", "params"], "row_count": 3, "problems": ["Protected group: source_drift"], "rows_sha256": "640f06cd49e4d517bfd48f1106d6cbc97858bbde0cbc09c90362701dd0ed2731"}, {"id": "CN:mi_cn:product:20425", "type": "true_variant", "fields": ["gid", "market_price", "params", "price"], "row_count": 2, "problems": ["Protected group: true_variant"], "rows_sha256": "e30e1c973fac16ec4d052302b00c09fcd0f7ae4c92d74768b2dc29bd38af6b95"}, {"id": "CN:mi_cn:product:22172", "type": "true_variant", "fields": ["gid", "params"], "row_count": 3, "problems": ["Protected group: true_variant"], "rows_sha256": "58c6733857005b7c9a3e6b5441e6a2808ebfd2de7a38f0f2e3f47cd5c1a74836"}], "input_sha256": "3d232e25f5d2dace417bea8cfbcd3cf27d9e1e0083b07dbf7ab0d23672471707", "output_sha256": "92c86dd6a1ae860cfec312666f11b128625ac5473e8fd6c280494ddd2f62310f"}
+{"price_history": {"added": 2683, "backfilled": 2683, "months": 2, "observation_count": 2683, "earliest": "2026-10-13T09:45:55+08:00", "latest": "2026-11-03T18:16:12.095982+08:00"}}
+accessory gate: {"excluded_count": 0, "newly_excluded_count": 0, "denominator": 2817, "newly_excluded_ratio": 0.0, "threshold": 0.05, "gate": "green", "review_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945", "reviewed": false}
+----------------------------- Captured stderr call -----------------------------
+Traceback (most recent call last):
+  File "/tmp/goodsdex-l7/scripts/finalize_public.py", line 22, in <module>
+    print(json.dumps(finalize_public(args.public, previous, retained, reviewed_accessory_sha256=args.reviewed_accessory_sha256), ensure_ascii=False))
+                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/goodsdex-l7/src/goodsdex/dedupe.py", line 799, in finalize_public
+    meta['release_dates'] = coverage(output)
+                            ~~~~~~~~^^^^^^^^
+  File "/tmp/goodsdex-l7/src/goodsdex/release_dates.py", line 342, in coverage
+    sources[r['source']] += 1
+    ~~~~~~~^^^^^^^^^^^^^
+KeyError: 'llm_verified'
+=============================== warnings summary ===============================
+../../home/nichangen/.hermes/installs/25640cc6d09ce8d9/environments/002ef3e13926420f8f93facca4403bee/venv/lib/python3.14/site-packages/anyio/pytest_plugin.py:14
+  /home/nichangen/.hermes/installs/25640cc6d09ce8d9/environments/002ef3e13926420f8f93facca4403bee/venv/lib/python3.14/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_series_release_rollout.py::test_real_finalizer_publishes_exact_reviewed_memberships_and_replays
+1 failed, 958 passed, 8 deselected, 1 warning in 53.94s

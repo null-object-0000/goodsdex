@@ -1,0 +1,14 @@
+✔ day/month matrix rejects invalid days, model-only dates and archive timestamps, includes retired records (5.02849ms)
+✔ series inheritance downgrades day to month; third-party requires corroboration; empty official field is not absence (0.191473ms)
+✔ sharded coverage reads the hashed full export and counts same-id published configuration rows (13.837162ms)
+✔ admin edits reject year-only dates and mismatched precision (2.451201ms)
+✔ L5 single reviewed first report counts by source; legacy unverified stays excluded (0.155425ms)
+✔ L7 requires captured exact model policy and remains a separate source (0.195187ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 64.672567

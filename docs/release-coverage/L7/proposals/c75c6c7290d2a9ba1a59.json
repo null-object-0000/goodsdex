@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "[\n  {\n    \"id\": \"CN:mi_cn:product:10015\",\n    \"name\": \"小米小爱音箱 Play\",\n    \"date\": null,\n    \"url\": null,\n    \"quote\": null,\n    \"reason\": \"未能在允许来源中确知该单型号中国大陆首次发布年月及可核验URL，故留空。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050057\",\n    \"name\": \"Redmi Book 14\",\n    \"date\": null,\n    \"url\": null,\n    \"quote\": null,\n    \"reason\": \"Redmi Book 14 存在多代产品，输入未限定具体代际/配置，无法将系列或某代日期归于该单型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050058\",\n    \"name\": \"Redmi Book 16\",\n    \"date\": null,\n    \"url\": null,\n    \"quote\": null,\n    \"reason\": \"Redmi Book 16 存在多代产品，输入未限定具体代际/配置，无法将系列或某代日期归于该单型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050063\",\n    \"name\": \"标签打印机套装/标签打印机/标签纸 3卷\",\n    \"date\": null,\n    \"url\": null,\n    \"quote\": null,\n    \"reason\": \"该名称为套装/耗材组合，非明确单型号；未能在允许来源中确知对应首次发布年月及URL，故留空。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050071\",\n    \"name\": \"REDMI 智能电视 A 系列\",\n    \"date\": null,\n    \"url\": null,\n    \"quote\": null,\n    \"reason\": \"输入为系列名称而非单型号，按要求不得把系列日期给单型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050074\",\n    \"name\": \"REDMI智能电视 A Pro\",\n    \"date\": null,\n    \"url\": null,\n    \"quote\": null,\n    \"reason\": \"该名称为系列/子系列，未限定具体尺寸型号；不得将系列日期归于单型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050091\",\n    \"name\": \"百吋大屏电视\",\n    \"date\": null,\n    \"url\": null,\n    \"quote\": null,\n    \"reason\": \"名称为泛称，未指向可唯一识别的单型号；无法确知首次发布年月及URL，故留空。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050113\",\n    \"name\": \"米家洗衣机Pro\",\n    \"date\": null,\n    \"url\": null,\n    \"quote\": null,\n    \"reason\": \"米家洗衣机 Pro 存在多型号/多容量版本，输入未限定具体型号，无法确知单型号首次发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050135\",\n    \"name\": \"REDMI 电视 X 2026\",\n    \"date\": null,\n    \"url\": null,\n    \"quote\": null,\n    \"reason\": \"该名称为2026款系列，未限定具体尺寸单型号；不得将系列日期给单型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050143\",\n    \"name\": \"米家冰箱 三门\",\n    \"date\": null,\n    \"url\": null,\n    \"quote\": null,\n    \"reason\": \"名称为品类/门型描述，未指向可唯一识别的单型号；无法确知首次发布年月及URL，故留空。\"\n  }\n]",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793864205,
+  "id": "021793864200408ab257ece25bd0fea81c82ca5c15ec8fd5ce484",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 866,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 617,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 1483
+  }
+}
