@@ -1,0 +1,20 @@
+{
+  "domains": {
+    "baike.baidu.com": {
+      "logged_starts": 22,
+      "minimum_interval": 2.1000609397888184,
+      "interval_violations": 0
+    },
+    "pconline.com.cn": {
+      "logged_starts": 1,
+      "minimum_interval": null,
+      "interval_violations": 0
+    },
+    "zol.com.cn": {
+      "logged_starts": 5,
+      "minimum_interval": 2.1000871658325195,
+      "interval_violations": 0
+    }
+  },
+  "note": "Earliest collector logged completed responses only; later code also logs starts before transport. OSError starts may be absent in the early diagnostic log."
+}

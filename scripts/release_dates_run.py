@@ -16,13 +16,13 @@ sys.path[:0] = [str(ROOT/'src'), str(ROOT/'scripts')]
 from goodsdex.release_coverage import apply_priority_dates, matrix, effective
 
 FILES = {'L1':'hp-release-evidence.json','L2':'atour-release-evidence.json',
-         'L3':'xiaomi-priority-release-evidence.json','L4':'priority-series-release-evidence.json','L5':'l5-release-evidence.json'}
-MODULES = {'L1':'hp','L2':'atour','L3':'xiaomi','L4':'series','L5':'media'}
+         'L3':'xiaomi-priority-release-evidence.json','L4':'priority-series-release-evidence.json','L5':'l5-release-evidence.json','L6':'l6-release-evidence.json'}
+MODULES = {'L1':'hp','L2':'atour','L3':'xiaomi','L4':'series','L5':'media','L6':'structured'}
 
 
-def run_lane(lane, rows, directory, live):
-    target = ROOT/('data/third-party' if lane == 'L5' else 'data/official')/FILES[lane]
-    if not live and lane not in ('L4', 'L5') and target.exists():
+def run_lane(lane, rows, directory, live, full=False):
+    target = ROOT/('data/third-party' if lane in ('L5','L6') else 'data/official')/FILES[lane]
+    if not live and lane not in ('L4', 'L5','L6') and target.exists():
         return json.loads(target.read_text())
     module = importlib.import_module('release_lane_' + MODULES[lane])
     if lane == 'L1':
@@ -30,14 +30,14 @@ def run_lane(lane, rows, directory, live):
     elif lane == 'L2':
         result = module.run(rows, directory/lane, live=live,
             capture_path=ROOT/'docs/release-coverage/l2-atour/live-capture.json' if not live else None)
-    elif lane == 'L5':
+    elif lane in ('L5','L6'):
         official_rows = apply_priority_dates(rows, [ROOT/'data/official'/FILES[key] for key in ('L1','L2','L3','L4')])
-        result = module.run(official_rows, directory/'L5', live=live)
+        result = module.run(official_rows, directory/lane, live=live, **({'full':full} if lane=='L6' else {}))
     elif lane == 'L3':
         result = module.run_all(rows, directory/'l3-xiaomi/full', live=live)
     else:
         result = module.run(rows, directory/lane, live=live)
-    target = ROOT/('data/third-party' if lane == 'L5' else 'data/official')/FILES[lane]
+    target = ROOT/('data/third-party' if lane in ('L5','L6') else 'data/official')/FILES[lane]
     temporary = target.with_suffix('.json.tmp')
     temporary.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     temporary.replace(target)
@@ -66,6 +66,9 @@ def report(before, after, results, directory, provenance):
         '', '## 采集线结果']
     for lane,result in sorted(results.items()):
         lines += [f"- {lane}: `{json.dumps(result.get('summary',{}),ensure_ascii=False)}`"]
+    if 'L6' in results:
+        from release_lane_structured import append_report
+        append_report(lines, before, after, results['L6'], directory)
     if 'L3' in results:
         l3_only = matrix(apply_priority_dates(before, [ROOT/'data/official'/FILES['L3']]))
         lines += ['', f"L3 命中数包含已有日期复核；单独应用 L3 的净新增有效覆盖为 {l3_only['total']['covered']-b['total']['covered']} 行，其余为复核或精度提升。"]
@@ -103,6 +106,7 @@ def main():
     p.add_argument('--goods',type=Path)
     p.add_argument('--output',type=Path,default=ROOT/'docs/release-coverage')
     p.add_argument('--no-live',action='store_true',help='Replay existing captures explicitly')
+    p.add_argument('--l6-full',action='store_true',help='Explicitly expand L6 after the committed 300-gid pilot')
     p.add_argument('--apply',action='store_true',help='Append dates to --goods (CI candidate baseline)')
     args=p.parse_args()
     if args.goods:
@@ -118,7 +122,7 @@ def main():
     lanes=list(FILES) if args.lane=='all' else [args.lane]
     args.output.mkdir(parents=True,exist_ok=True)
     # L5 consumes official evidence, so wait for L1-L4 writes before evaluating it.
-    official_lanes = [lane for lane in lanes if lane != 'L5']
+    official_lanes = [lane for lane in lanes if lane not in ('L5','L6')]
     results = {}
     if official_lanes:
         with ThreadPoolExecutor(max_workers=len(official_lanes)) as pool:
@@ -126,6 +130,8 @@ def main():
             results={lane:job.result() for lane,job in jobs.items()}
     if 'L5' in lanes:
         results['L5'] = run_lane('L5',before,args.output,not args.no_live)
+    if 'L6' in lanes:
+        results['L6'] = run_lane('L6',apply_priority_dates(before),args.output,not args.no_live,full=args.l6_full)
     after=apply_priority_dates(before)
     report(before,after,results,args.output,provenance)
     if args.apply:

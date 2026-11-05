@@ -65,6 +65,13 @@ jobs:
           assert bundle['scope'] == os.environ['EXPECTED_SCOPE'], 'Candidate scope mismatch'
           PY
           python3 scripts/release_candidate.py merge --root _data --candidate "$RUNNER_TEMP/candidate/candidate.json"
+      - name: Restore captured L6 evidence for finalizer replay
+        run: |
+          if [ -f _data/docs/release-coverage/L6/result.json ]; then
+            mkdir -p docs/release-coverage/L6 data/third-party
+            cp -r _data/docs/release-coverage/L6/. docs/release-coverage/L6/
+            cp _data/docs/release-coverage/L6/result.json data/third-party/l6-release-evidence.json
+          fi
       - name: Test publication invariants
         run: |
           python3 -m pip install --quiet pytest Pillow requests beautifulsoup4

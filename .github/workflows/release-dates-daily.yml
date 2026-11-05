@@ -6,8 +6,12 @@ on:
     inputs:
       lane:
         type: choice
-        options: [all, L1, L2, L3, L4, L5]
+        options: [all, L1, L2, L3, L4, L5, L6]
         default: all
+      l6_full:
+        description: Expand L6 after reviewing the 300-gid pilot
+        type: boolean
+        default: false
 permissions:
   contents: write
   actions: read
@@ -34,11 +38,14 @@ jobs:
           ATOUR_PLAYWRIGHT_MODULE: /tmp/release-browser/node_modules/playwright
         run: |
           export ATOUR_CHROMIUM_PATH="$(node -e "process.stdout.write(require('/tmp/release-browser/node_modules/playwright').chromium.executablePath())")"
-          python3 scripts/release_dates_run.py --lane '${{ inputs.lane || 'all' }}' --goods _data/public/goods.json --output docs/release-coverage --apply
+          EXTRA=()
+          if [ '${{ inputs.l6_full }}' = true ]; then EXTRA+=(--l6-full); fi
+          python3 scripts/release_dates_run.py --lane '${{ inputs.lane || 'all' }}' --goods _data/public/goods.json --output docs/release-coverage --apply "${EXTRA[@]}"
           mkdir -p _data/docs/release-coverage
           cp docs/release-coverage/????-??-??.md _data/docs/release-coverage/
           cp docs/release-coverage/coverage.json _data/docs/release-coverage/
           if [ -d docs/release-coverage/L5 ]; then cp -r docs/release-coverage/L5 _data/docs/release-coverage/; fi
+          if [ -d docs/release-coverage/L6 ]; then cp -r docs/release-coverage/L6 _data/docs/release-coverage/; fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -47,6 +54,8 @@ jobs:
             docs/release-coverage/
             data/official/*release-evidence.json
             data/third-party/l5*
+            data/third-party/l6*
+            data/official/third_party_index.json
           retention-days: 30
       - uses: ./.github/actions/upload-candidate
         with:

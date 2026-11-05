@@ -7,5 +7,7 @@ exec 9>"/tmp/goodsdex-release-dates.lock"
 flock -n 9 || exit 0
 PYTHON_BIN="${GOODSDEX_PYTHON:-python3}"
 LANE="${GOODSDEX_RELEASE_LANE:-L3}"
-case "$LANE" in L1|L2|L3|L4|L5|all) ;; *) echo "Unknown release lane: $LANE" >&2; exit 2 ;; esac
-"$PYTHON_BIN" scripts/release_dates_run.py --lane "$LANE" --output "docs/release-coverage/scheduled/$LANE/$(date +%F)"
+case "$LANE" in L1|L2|L3|L4|L5|L6|all) ;; *) echo "Unknown release lane: $LANE" >&2; exit 2 ;; esac
+EXTRA=()
+if [ "${GOODSDEX_L6_FULL:-0}" = 1 ]; then EXTRA+=(--l6-full); fi
+"$PYTHON_BIN" scripts/release_dates_run.py --lane "$LANE" --output "docs/release-coverage/scheduled/$LANE/$(date +%F)" "${EXTRA[@]}"
