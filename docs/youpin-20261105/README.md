@@ -28,7 +28,7 @@ cookie：浏览器自行生成匿名统计/session cookie；curl 与 Python 均�
 
 19/20 与发布会同日，但 Xiaomi Sound 音箱（gid=161384）为 2023-09-14，比官方 2021-08-10 晚 **765 天**。该样本证明跨渠道重建商品/晚入驻时不能由 firstTime 还原产品首发。它不是 ctime：20 条的 firstTime 均晚于 ctime，差值从小时到十余天。scheduleOnSaleTime 部分缺失；Xiaomi 17 Ultra 的 schedule 晚于 firstTime 约277天，说明该计划字段也不是稳定首发时间。
 
-语义结论是基于字段关系与反例的推断，未取得有品字段契约来证明“不可重置的首次开售”。故不向所有映射记录泛化 19/20 的同日关系。逐条通过对照的19条符合用户14天容差，但已有更直接官方发布证据，无需用上架日替换。20条样本按可取得的官方材料和精确型号选择，偏重发布会产品，不能外推长尾准确率。Pad 8 依据官方稿明确列出的系列成员，另外4条仅接受无版本差异的品类后缀（音箱/手表/平板电脑），不将容量、颜色、Pro等变体随意归并。
+语义结论是基于字段关系与反例的推断，未取得有品字段契约来证明“不可重置的首次开售”。故不向所有映射记录泛化 19/20 的同日关系。逐条通过对照的19条符合用户14天容差，但已有更直接官方发布证据，无需用上架日替换。20份官方文件哈希已全部读回核验，见 official-evidence-verification.json。20条样本按可取得的官方材料和精确型号选择，偏重发布会产品，不能外推长尾准确率。Pad 8 依据官方稿明确列出的系列成员，另外4条仅接受无版本差异的品类后缀（音箱/手表/平板电脑），不将容量、颜色、Pro等变体随意归并。
 
 ## product_id → gid
 
@@ -47,8 +47,11 @@ SKU价格按分转元。H301 `productInfo.price=19900`（接口基础标价199�
 
 实际增量见 impact.json：上架日及日期上界17，新增 release **0**、分类修正 **0**、主图补齐 **0**。上界不计发布日期覆盖率。按题述相同口径，这条线的影响是 **43.97% → 43.97%（+0个百分点）**。32%低于用户指定50%估算门槛，不以1150×32%推算补日期数；发布日期可新增量当前证据支持为0。
 
-注意版本：本次抓取 data c1c2abde 的 meta.release_scope 是旧统计（3605发布行/3114整机，小米1368整机缺1001），与题述1150和43.97%不相同；baseline-meta.json/current-meta.json 原样保存以免混用。最终发布验收会另存最新revision与正式服务统计，任何其他已合并代码带来的变化不算本轮收益。
+覆盖率口径已核对正式 `/api/meta`：`release_precision.total` 正是题述 **1585/3605=43.9667%**，小米 `none=1150`。`release_scope` 另有整机口径（3114整机、小米1368整机缺1001）；两者是不同口径，不能混算。本报告验收沿用用户指定的 release_precision 全库口径，并保留两套原始统计。上架上界不进入任何发布日期覆盖分子。
 
 证据存储：raw/*.json.gz 包含完整JSON返回和请求体；sha256为当时HTTP响应字节摘要，response_json_sha256为保留JSON的可复验规范化摘要，二者不混淆。正式数据清单使用后者校验；首个curl原始字节另原样保留。
 
 验证：独立工作树基于 origin/main 8d6c6aba，离线全量 **1026 passed / 8 deselected / 0 failed**；8项为原有live标记，不增加跳过。原共享工作区初始941项通过；整合后快照预期需显式加入新的重放步骤，且新证据测试修正了真实响应 singlePrice=null 的空值处理，最终最新主线全量通过。正式发布回执另见 publication.json。
+
+
+正式验收：实现 [bfb79efe](https://github.com/null-object-0000/goodsdex/commit/bfb79efe2bd0336a2818cc64d8741f46248039e1)，发布 [42042803036](https://github.com/null-object-0000/goodsdex/actions/runs/42042803036) success，发布门禁644项通过；云端全量 [42042801918](https://github.com/null-object-0000/goodsdex/actions/runs/42042801918) 1026 passed / 8 deselected。data提交 fac12525，revision=369a86bfa25b472989518a68bbff41c9。OSS镜像已完成校验，正式API同步返回ok/count=3605/errors=[]。完整正式API整库与data发布集相等，17条详情的有品字段逐项相等，原商城gid/价格/price_kind/release/release_decision/分类/主图均与发布前相等，release_scope与release_precision前后完全相等。42个SKU offer中22个标promotion；发布日期覆盖率1585/3605，43.97%→43.97%。见 publication.json、online-verification.json、targets-online.json。
