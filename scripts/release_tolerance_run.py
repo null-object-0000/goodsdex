@@ -72,9 +72,9 @@ def report(before,after,output):
         '- 2025 年 5 月前后发布', '- 该系列 2023 年 3 月前后发布', '- 发布约 1 年半（medium：只提供年龄，不推断跨代）',
         '- release_decision.date固定YYYY-MM；usage明确age/generation；后台原始日精度和证据保留。',
         '', '## 测试与发布',
-        '- 数据仓完整回归：946 passed；API：367 passed / 4 skipped；C端换新与显示：14 passed，完整候选交互：6 passed。日志见tolerance-tests.log及消费仓docs/release-tolerance-20261105。',
-        '- 数据代码：999ebde8；数据发布run 41980347146 成功；data提交 a5e19cf02abec3b9b9a63f5aff12335af675cec1。完整云端测试run 41980346750 成功。',
-        '- 消费端代码：9448b1a；CI run 41979736019 成功；API部署已由HTTP 200完整提交号回读。线上goods.json与GitHub/OSS SHA256一致：772d8c3b4374632b534a8cac745ab10947832981d33739f4ecaa97d117488223。',
+        '- 数据仓云端完整回归：940 passed / 8 live deselected；API：367 passed / 4 skipped；C端换新与显示：15 passed，完整候选交互：6 passed。日志见tolerance-tests.log及消费仓docs/release-tolerance-20261105。',
+        '- 数据代码：7d70db21；数据发布run 41985186529 成功；data提交 0e34a0743a6c4bba56ed35056d4d5ffcc5cf4e3e。完整云端测试run 41985186097 成功。',
+        '- 消费端代码：9448b1a；CI run 41979736019 成功；API部署已由HTTP 200完整提交号回读。线上goods.json与GitHub/OSS SHA256一致：e006b7d154c4084101b785d63bd7a2a9e040e44517b8407982bec9535db20427。',
         '- 发布时间不是单独换机理由；本次只提供近似年龄和代际参考，不引入按日期强制建议换机的规则。',
         '',f'本轮冲突 {len(conflicts)} 条，见 conflicts.json。定时工作流保持原cron，新规则由常规finalizer和daily report重放。']
     (output/(date.today().isoformat()+'.md')).write_text('\n'.join(lines)+'\n')
