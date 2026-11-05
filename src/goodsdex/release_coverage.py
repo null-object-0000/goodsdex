@@ -52,7 +52,7 @@ def usable(r):
         return False
     if r.get('source') not in ('official', 'official_hidden', 'third_party', 'series_inherit'):
         return False
-    if r.get('source') == 'third_party' and r.get('crosscheck_status') != 'corroborated':
+    if r.get('source') == 'third_party' and r.get('crosscheck_status') != 'corroborated' and not (r.get('policy') == 'l5-first-report-v1' and r.get('crosscheck_status') == 'first_report_verified' and r.get('level') == 'product' and not r.get('manual_review_required')):
         return False
     if r.get('source') == 'series_inherit' and (r.get('granularity') != 'month' or r.get('level') != 'series'):
         return False
@@ -126,6 +126,9 @@ def apply_priority_dates(rows, lane_files=None):
                     row['release_missing'] = dict(reason='not_obtained', lane=bundle.get('lane'),
                         detail=obs.get('reason') or obs.get('status') or 'not_collected',
                         url=obs.get('url'), checked_at=obs.get('captured_at') or bundle.get('captured_at'))
+    if lane_files is None:
+        from .release_media import apply
+        output = apply(output)
     for row in output:
         if row.get('release_series'):
             # Product evidence can be added after series replay; synchronize on
@@ -151,7 +154,7 @@ def missing_reason(row):
 
 def matrix(rows):
     def empty():
-        return dict(total=0, day=0, month=0, none=0, not_obtained=0, official_absent=0, series_inherit=0)
+        return dict(total=0, day=0, month=0, none=0, not_obtained=0, official_absent=0, series_inherit=0, official=0, third_party=0)
     brands, groups, total = {}, {}, empty()
     for row in rows:
         b = row.get('brand') or '未知'
@@ -168,6 +171,8 @@ def matrix(rows):
                 t[missing_reason(row)] += 1
             if r and (r.get('release_source') == 'series_inherit' or r.get('source') == 'series_inherit'):
                 t['series_inherit'] += 1
+            elif r:
+                t['official' if r['source'] in ('official', 'official_hidden') else 'third_party'] += 1
     for t in [total, *brands.values(), *groups.values()]:
         t['covered'] = t['day'] + t['month']
         t['ratio'] = t['covered'] / t['total'] if t['total'] else None

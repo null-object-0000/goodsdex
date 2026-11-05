@@ -4,6 +4,7 @@ import argparse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 import hashlib
+import gzip
 import importlib
 import json
 from pathlib import Path
@@ -15,13 +16,13 @@ sys.path[:0] = [str(ROOT/'src'), str(ROOT/'scripts')]
 from goodsdex.release_coverage import apply_priority_dates, matrix, effective
 
 FILES = {'L1':'hp-release-evidence.json','L2':'atour-release-evidence.json',
-         'L3':'xiaomi-priority-release-evidence.json','L4':'priority-series-release-evidence.json'}
-MODULES = {'L1':'hp','L2':'atour','L3':'xiaomi','L4':'series'}
+         'L3':'xiaomi-priority-release-evidence.json','L4':'priority-series-release-evidence.json','L5':'l5-release-evidence.json'}
+MODULES = {'L1':'hp','L2':'atour','L3':'xiaomi','L4':'series','L5':'media'}
 
 
 def run_lane(lane, rows, directory, live):
-    target = ROOT/'data/official'/FILES[lane]
-    if not live and lane != 'L4' and target.exists():
+    target = ROOT/('data/third-party' if lane == 'L5' else 'data/official')/FILES[lane]
+    if not live and lane not in ('L4', 'L5') and target.exists():
         return json.loads(target.read_text())
     module = importlib.import_module('release_lane_' + MODULES[lane])
     if lane == 'L1':
@@ -29,11 +30,14 @@ def run_lane(lane, rows, directory, live):
     elif lane == 'L2':
         result = module.run(rows, directory/lane, live=live,
             capture_path=ROOT/'docs/release-coverage/l2-atour/live-capture.json' if not live else None)
+    elif lane == 'L5':
+        official_rows = apply_priority_dates(rows, [ROOT/'data/official'/FILES[key] for key in ('L1','L2','L3','L4')])
+        result = module.run(official_rows, directory/'L5', live=live)
     elif lane == 'L3':
         result = module.run_all(rows, directory/'l3-xiaomi/full', live=live)
     else:
         result = module.run(rows, directory/lane, live=live)
-    target = ROOT/'data/official'/FILES[lane]
+    target = ROOT/('data/third-party' if lane == 'L5' else 'data/official')/FILES[lane]
     target.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
     return result
 
@@ -49,14 +53,15 @@ def report(before, after, results, directory, provenance):
     for g, c in a['priority'].items():
         old=b['priority'].get(g,dict(covered=0,total=0,ratio=0))
         lines.append(f"| {g} | {old['covered']}/{old['total']} | {c['covered']}/{c['total']} | {old['ratio'] or 0:.1%} → {c['ratio'] or 0:.1%} |")
-    lines += ['', '| 品牌 | day | month | none | 可得未取到 | 官方无此信息 |', '|---|---:|---:|---:|---:|---:|']
+    lines += ['', '| 品牌 | day 前→后 | month 前→后 | none 前→后 | official | third_party | series_inherit |', '|---|---:|---:|---:|---:|---:|---:|']
     for brand, c in a['brands'].items():
-        lines.append(f"| {brand} | {c['day']} | {c['month']} | {c['none']} | {c['not_obtained']} | {c['official_absent']} |")
+        old=b["brands"].get(brand,{"day":0,"month":0,"none":0})
+        lines.append(f"| {brand} | {old['day']}→{c['day']} | {old['month']}→{c['month']} | {old['none']}→{c['none']} | {c['official']} | {c['third_party']} | {c['series_inherit']} |")
     lines += ['', f"全库有效覆盖：{b['total']['covered']}/{b['total']['total']} ({b['total']['ratio']:.1%}) → {a['total']['covered']}/{a['total']['total']} ({a['total']['ratio']:.1%})，净增 {a['total']['covered']-b['total']['covered']} 行。",
         '', f"全库前：{b['total']}；后：{a['total']}",
         '', '初始快照 day=0：旧管线将产品日期统一存到月；系列继承也一律截到月。原文出现具体日不代表已有产品级日精度记录。',
         '本轮只在精确产品身份和官方事件原文明示日期时新增 day；系列公告仍只继承 month，不能把新闻发布时间或系列发布日冒充配置首售日。',
-        '', '## 四线结果']
+        '', '## 采集线结果']
     for lane,result in sorted(results.items()):
         lines += [f"- {lane}: `{json.dumps(result.get('summary',{}),ensure_ascii=False)}`"]
     if 'L3' in results:
@@ -78,6 +83,9 @@ def report(before, after, results, directory, provenance):
     lines += ['', '## 10条本轮新增或精度提升的可复核日期样本']
     for s in samples:
         lines += [f"- {s['id']} · {s['name']} · {s['date']} ({s['precision']}) · {s['why']} · market={s['market']}\n  {s['url']}\n  原文：{s['quote']}"]
+    if 'L5' in results:
+        from release_lane_media_report import append_report
+        append_report(lines, before, after, results['L5'], directory)
     notes = ROOT/'docs/release-coverage/report-notes.md'
     if notes.exists():
         lines += ['', notes.read_text()]
@@ -101,6 +109,8 @@ def main():
         url='https://raw.githubusercontent.com/null-object-0000/goodsdex/data/public/goods.json'
         with urllib.request.urlopen(url,timeout=90) as response:raw=response.read()
         provenance=url
+    if raw.startswith(b'\x1f\x8b'):
+        raw = gzip.decompress(raw)
     provenance += '; sha256='+hashlib.sha256(raw).hexdigest()
     before=json.loads(raw)
     lanes=list(FILES) if args.lane=='all' else [args.lane]
