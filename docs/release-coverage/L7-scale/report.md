@@ -4,7 +4,7 @@
 
 本轮 **320 个唯一精确型号/年月/URL候选：132通过、188拒绝**。通过候选率41.25%；16个通过候选是同一型号同月的不同URL佐证，不重复增加覆盖。实际净增率为36.25%，不能套用上一轮已筛选50条的72%。
 
-证据与逐条判定：[summary.json](L7-scale/summary.json)、[audit.json](L7-scale/audit.json)、[带身份哈希的终审清单](L7-scale/review-decisions.json)、[完整命中证据](L7-scale/new-entries.json)。通过来源全部为IT之家；source=llm_verified、confidence=medium、month，保留每次HTTP200、正文gzip、SHA256、捕获时间。
+证据与逐条判定：[summary.json](summary.json)、[audit.json](audit.json)、[带身份哈希的终审清单](review-decisions.json)、[完整命中证据](new-entries.json)。通过来源全部为IT之家；source=llm_verified、confidence=medium、month，保留每次HTTP200、正文gzip、SHA256、捕获时间。
 
 |品牌|前|后|覆盖率 前→后|
 |---|---:|---:|---:|
@@ -25,7 +25,7 @@
 |亚朵星球|100|0|0|0|
 |比亚迪|11|1|1|0|
 
-小米完成≥250候选；亚朵≥100候选、比亚迪20候选 **未完成**。亚朵提交100个精确SKU身份后未得到有年月+可核URL的合格提案，不能将弃权充作候选拒绝。比亚迪只有11个未覆盖精确型号身份，本轮找到1个合格候选。品牌名/系列名预检排除32个有日期URL的原始提案（另含空值弃权）；全部不计入320个合格候选。见[ineligible.json](L7-scale/ineligible.json)。
+小米完成≥250候选；亚朵≥100候选、比亚迪20候选 **未完成**。亚朵提交100个精确SKU身份后未得到有年月+可核URL的合格提案，不能将弃权充作候选拒绝。比亚迪只有11个未覆盖精确型号身份，本轮找到1个合格候选。品牌名/系列名预检排除32个有日期URL的原始提案（另含空值弃权）；全部不计入320个合格候选。见[ineligible.json](ineligible.json)。
 
 ### 拒因分布
 
@@ -59,11 +59,11 @@
 |6|50|4|46|1585 → 1588|43.05% → 43.13%|
 |7|20|5|15|1588 → 1591|43.13% → 43.21%|
 
-抓取日志：[requests.jsonl](L7-scale/requests.jsonl)。启动阶段曾发生旧采集进程与新验证进程竞争节流状态，已停止两者并加跨进程文件锁后续跑；不把这段启动日志描述为全程严格间隔。正文捕获和身份/日期/事件审核不因此省略。
+抓取日志：[requests.jsonl](requests.jsonl)。启动阶段曾发生旧采集进程与新验证进程竞争节流状态，已停止两者并加跨进程文件锁后续跑；不把这段启动日志描述为全程严格间隔。正文捕获和身份/日期/事件审核不因此省略。
 
 ### 随机12条本轮命中样本
 
-固定种子20261105，从本轮通过的唯一ID抽样；同一型号不同URL不会重复占抽样位。全引文、正文哈希和捕获时间见[samples.json](L7-scale/samples.json)。
+固定种子20261105，从本轮通过的唯一ID抽样；同一型号不同URL不会重复占抽样位。全引文、正文哈希和捕获时间见[samples.json](samples.json)。
 
 - **米家石墨烯暖风机 Pro · 2026-09** · [正文](https://www.ithome.com/1/007/636.htm)
   页面命中：米家石墨烯暖风机 Pro 开启众筹，首发价 349 元 2026/9/28 8:09:32 来源： IT之家 作者： 漾仔 责编： 漾仔 评论： 感谢IT之家网友 很宅很怕生 的线索投递！ IT之家 9 月 28 日消息，小米旗下米家石墨烯暖风机 Pro 将于今天 10 点在京东开启众筹（ 点此访问 ），新品支持 2 米远距离环抱式送暖，支持 120° 上下送暖角度，众筹价 349 元。 该产品搭载 310mm PTC 陶瓷发热体，可在 10 分钟内让房间快速升温 7°C，适用面积 15-27m²。支持定向调节立体送暖，采用低风阻发热体，日常使用轻音不打扰。支持小米澎湃智联，可通过米家 App 与各种智能家居联动。 同时，该产品内置石墨烯高导热技术，支持 2200W 大功率速热，配备高动力送
@@ -103,7 +103,7 @@
 
 ### 亚朵单独结论
 
-**0/267 → 0/267**。本轮没有合格入库来源，不能将100次模型身份查询说成100个有证据候选。官方商城已知详情、官方IR回顾材料与历史首发材料的缺口不同：目前尚未找到对应当前SKU的精确代际、季节、尺寸、套装的首发月份。官方IR里Pro3.0或夏季款日期不能填给Pro4.0、冬季/四季款。背景证据见本报告上一轮亚朵结论及已有[l2-atour材料](l2-atour/)，本轮模型原始弃权见[L7-scale/proposals](L7-scale/proposals)。
+**0/267 → 0/267**。本轮没有合格入库来源，不能将100次模型身份查询说成100个有证据候选。官方商城已知详情、官方IR回顾材料与历史首发材料的缺口不同：目前尚未找到对应当前SKU的精确代际、季节、尺寸、套装的首发月份。官方IR里Pro3.0或夏季款日期不能填给Pro4.0、冬季/四季款。背景证据见本报告上一轮亚朵结论及已有[l2-atour材料](../l2-atour/)，本轮模型原始弃权见[L7-scale/proposals](proposals)。
 
 ### 距45%的缺口与追加量
 
@@ -132,6 +132,6 @@
 
 ### 发布与后台验收
 
-最终发布收据与线上复算见[publication.json](L7-scale/publication.json)。后台需要确认 /api/meta 与 /admin/api/catalog 均为同次快照，llm_verified=152；发布前已经读取线上40.06%基线。
+发布代码 **0b565bd1**，数据发布 [42006152117](https://github.com/null-object-0000/goodsdex/actions/runs/42006152117) **success**；代码CI [42006092476](https://github.com/null-object-0000/goodsdex/actions/runs/42006092476) 成功（964 passed、8 live deselected）。最终收据见[publication.json](publication.json)。OSS和后台已确认 **1,591/3,682、llm_verified=152**；/admin/api/catalog 为 HTTP200、statsStatus=complete；已执行正常 primeCatalog 同步，无需后台代码部署。数据revision：`5ba9b7035ad541fda3053c3d75ee1b9d`。完整API商品集逐字节SHA256校验及全品牌复算见[online-coverage.json](online-coverage.json)。
 
-测试：**972 passed，无失败；后台日期统计6项通过**。本轮最终回归及发布重放结果以[tests-final.log](L7-scale/tests-final.log)、[tests-replay.log](L7-scale/tests-replay.log)、[verify-release.log](L7-scale/verify-release.log)为准。修复汽车canonical重放遗漏release_confidence，以及汽车保护只允许重放已捕获并审核的L7日期；价格、配置、trim/source_record仍受完整对象保护。
+测试：**972 passed，无失败；后台日期统计6项通过**。本轮最终回归及发布重放结果以[tests-final.log](tests-final.log)、[tests-replay.log](tests-replay.log)、[verify-release.log](verify-release.log)为准。修复汽车canonical重放遗漏release_confidence，以及汽车保护只允许重放已捕获并审核的L7日期；价格、配置、trim/source_record仍受完整对象保护。
