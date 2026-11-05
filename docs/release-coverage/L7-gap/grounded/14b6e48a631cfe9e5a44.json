@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20064\",\n    \"name\": \"小米无线蓝牙双模鼠标2\",\n    \"url\": \"https://www.ithome.com/0/773/011.htm\",\n    \"date\": \"2024-06\",\n    \"quote\": \"IT之家 6 月 4 日消息，小米今日上架并开售了两款鼠标，小米无线蓝牙双模鼠标 2 售价 69 元\",\n    \"reason\": \"原文明确“今日上架并开售”小米无线蓝牙双模鼠标2，报道日期为2024-06-04，事件与报道同月，可确定首次发布/开售月为2024-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20104\",\n    \"name\": \"米家防蓝光眼镜 Pro\",\n    \"url\": \"https://www.ithome.com/0/779/526.htm\",\n    \"date\": \"2024-07\",\n    \"quote\": \"IT之家 7 月 4 日消息，小米米家防蓝光眼镜 Pro 现已上架京东等电商平台并开启预约，提供眉框、方框、圆框三种款式，售价 219 元，7 月 11 日 10 点开售（预计为预售）。\",\n    \"reason\": \"原文明确米家防蓝光眼镜 Pro 已上架并开启预约，报道日期为2024-07-04，事件与报道同月，可确定首次发布/预约月为2024-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20104\",\n    \"name\": \"米家防蓝光眼镜 Pro\",\n    \"url\": \"https://www.ithome.com/0/781/094.htm\",\n    \"date\": \"2024-07\",\n    \"quote\": \"IT之家 7 月 11 日消息，小米米家防蓝光眼镜 Pro （平光无度数）今日开售，提供眉框、方框、圆框三种款式，售价 219 元。\",\n    \"reason\": \"原文明确米家防蓝光眼镜 Pro 今日开售，报道日期为2024-07-11，事件与报道同月，可确定开售月为2024-07；但该文为开售报道，首发月已由前一篇预约报道确定为2024-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20105\",\n    \"name\": \"米家智能多功能养生壶P1\",\n    \"url\": \"https://www.ithome.com/0/778/349.htm\",\n    \"date\": \"2024-06\",\n    \"quote\": \"IT之家 6 月 28 日消息，上周在小米有品众筹的米家智能多功能养生壶 P1，现已在京东等电商平台开售，价格为 199 元。\",\n    \"reason\": \"原文明确米家智能多功能养生壶 P1 上周在小米有品众筹，现已开售；报道日期为2024-06-28，“上周”相对月份锚定在2024-06，可确定首次众筹/发布月为2024-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20107\",\n    \"name\": \"大肚保温杯\",\n    \"url\": \"https://www.ithome.com/0/779/609.htm\",\n    \"date\": \"2024-07\",\n    \"quote\": \"IT之家 7 月 4 日消息，小米大肚保温杯现已在京东平台开售，具有 1L 容量，售价 129 元。\",\n    \"reason\": \"原文明确小米大肚保温杯现已在京东平台开售，报道日期为2024-07-04，事件与报道同月，可确定首次开售月为2024-07。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900868,
+  "id": "021793900863819dfda270f226adba1bf628b57be6483cf425557",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 866,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1983,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2849
+  }
+}

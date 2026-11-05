@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20565\",\n    \"name\": \"米家桌面学习灯\",\n    \"url\": \"https://www.ithome.com/0/795/480.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家桌面学习灯 Pro 定于今天上午 10:00 开启预售\",\n    \"reason\": \"原文型号为“米家桌面学习灯 Pro”，与输入型号“米家桌面学习灯”不是同一型号（Pro 为后代/变体），不能证明基础型号首发，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20565\",\n    \"name\": \"米家桌面学习灯\",\n    \"url\": \"https://www.ithome.com/0/797/106.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家桌面学习灯 Pro 今日在京东平台开售\",\n    \"reason\": \"原文型号为“米家桌面学习灯 Pro”，与输入型号“米家桌面学习灯”不是同一型号，且为开售而非首次发布，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20565\",\n    \"name\": \"米家桌面学习灯\",\n    \"url\": \"https://www.ithome.com/0/802/092.htm\",\n    \"date\": \"2024-10\",\n    \"quote\": \"小米米家桌面学习灯今日在京东等平台开启预售\",\n    \"reason\": \"原文明确“米家桌面学习灯”（无 Pro）于报道当日 10 月 14 日开启预售，属新品首次预售公告，报道时间与事件同月，可确定首发月为 2024-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20585\",\n    \"name\": \"REDMI显示器A27Q 多功能支架版 2025款\",\n    \"url\": \"https://www.ithome.com/0/805/094.htm\",\n    \"date\": \"2024-10\",\n    \"quote\": \"小米 Redmi 显示器 A27Q 多功能支架版 2025 款现已在京东开启首销\",\n    \"reason\": \"原文明确该型号“多功能支架版 2025 款”开启首销，属新品首次销售公告，报道时间 10 月 25 日与事件同月，可确定首发月为 2024-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20866\",\n    \"name\": \"Redmi 14C\",\n    \"url\": \"https://www.ithome.com/0/790/780.htm\",\n    \"date\": null,\n    \"quote\": \"爆料称小米将于 8 月 31 日发布 Redmi 14C 智能手机\",\n    \"reason\": \"原文为媒体爆料“将于 8 月 31 日发布”，属传闻而非官方发布公告，且无原文锚点确认实际发布，不能确定首发月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900883,
+  "id": "4cca5e4c-060c-4e2a-b203-5da89098f727",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 675,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2187,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2862
+  }
+}

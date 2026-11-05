@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/649/242.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已上架了米家电动剃须刀 S301 黑侠客， 售价 199 元\",\n    \"reason\": \"原文型号为米家电动剃须刀 S301 黑侠客，属于输入型号的后代/变体，不是同一型号；且事件为“上架”而非明确首发，无法确定输入型号的首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/760/178.htm\",\n    \"date\": null,\n    \"quote\": \"此前在京东平台上架的小米米家电动剃须刀 S200，将于 4 月 6 日 0 点开售，首发售价 189 元。\",\n    \"reason\": \"原文型号为米家电动剃须刀 S200，属于输入型号的后代/变体，不是同一型号；虽含“首发”和相对日期锚点（4月6日），但身份不符，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/941/537.htm\",\n    \"date\": null,\n    \"quote\": \"米家电动剃须刀 Pro 套装版今日 18:00 开售。\",\n    \"reason\": \"原文型号为米家电动剃须刀 Pro 套装版，Pro/套装版属于不同型号，不是输入型号；事件为套装版开售，无法确定输入型号首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/988/332.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家电动剃须刀理容礼盒今日正式开售……米家便携电动剃须刀 Pro 也已开售\",\n    \"reason\": \"原文涉及理容礼盒和便携电动剃须刀 Pro，均为不同型号/套装，不是输入型号；无法确定输入型号首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/993/818.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在京东上架米家电动剃须刀 S100 云纹刀网版， 定价为 99 元\",\n    \"reason\": \"原文型号为米家电动剃须刀 S100 云纹刀网版，属于输入型号的后代/变体，不是同一型号；且事件为“上架”，无法确定输入型号首发月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900721,
+  "id": "021793900716747bc68ba76535d4d8d120d8e883d298b9597fdde",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 718,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2413,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3131
+  }
+}

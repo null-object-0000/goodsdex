@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:19676\",\n    \"name\": \"Redmi 显示器 G Pro 27\",\n    \"url\": \"https://www.ithome.com/0/846/494.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 显示器 G Pro 27Q 现已在京东平台发布，并将于 4 月 24 日 19:00 开售\",\n    \"reason\": \"原文发布的是 G Pro 27Q，与输入型号 G Pro 27 不同（后缀 Q 为不同型号），不能证明同一型号身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20039\",\n    \"name\": \"米家无线洗地机3 Max\",\n    \"url\": \"https://www.ithome.com/0/846/147.htm\",\n    \"date\": \"2024-05\",\n    \"quote\": \"小米米家无线洗地机 3 Max 发售于 2024 年 5 月 19 日\",\n    \"reason\": \"原文明确该型号发售于 2024 年 5 月 19 日，型号完全一致，取年月 2024-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20110\",\n    \"name\": \"米家方框偏光太阳镜\",\n    \"url\": \"https://www.ithome.com/0/852/852.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日推出了一款米家方框偏光太阳镜尼龙款，将于下周三开启众筹\",\n    \"reason\": \"原文推出的是“尼龙款”，与输入型号“米家方框偏光太阳镜”是否为同一型号无法确认（尼龙款可能为子型号/变体），且众筹时间为相对“下周三”无明确日历锚点，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20375\",\n    \"name\": \"Redmi投影仪 3\",\n    \"url\": \"https://www.ithome.com/0/846/076.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 投影仪 3 Lite 版现已在京东平台上架，售价 699 元，国补价 594.15 元，将于 4 月 22 日 20:00 开售\",\n    \"reason\": \"原文发布的是 Redmi 投影仪 3 Lite 版，与输入型号 Redmi投影仪 3 不同（Lite 为不同型号），不能证明同一型号身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20443\",\n    \"name\": \"小米鼠标 X1\",\n    \"url\": \"https://www.ithome.com/0/849/325.htm\",\n    \"date\": null,\n    \"quote\": \"小米鼠标 X1 哈利・波特版现已开售，新品采用“哈利・波特”定制主题设计\",\n    \"reason\": \"原文开售的是哈利・波特版（定制版），与输入型号小米鼠标 X1 普通版是否为同一型号无法确认，且原文未给出普通版首次发布年月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900772,
+  "id": "021793900767095888862656ddb6bf8fba16f467f9d03d9e6a45d",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 725,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2167,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2892
+  }
+}

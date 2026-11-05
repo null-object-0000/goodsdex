@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:6419\",\n    \"name\": \"米家电水壶\",\n    \"url\": \"https://www.ithome.com/0/760/040.htm\",\n    \"date\": null,\n    \"quote\": \"小米现上架了一款米家电水壶 S1，4 月 6 日上市，首发价 129 元。\",\n    \"reason\": \"原文发布的是“米家电水壶 S1”，属于带 S1 后缀的不同型号，与输入型号“米家电水壶”不是同一型号；仅前缀包含不证明身份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793901025,
+  "id": "021793901023730dfda270f226adba1bf628b57be6483cf32dbc9",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 147,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 414,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 561
+  }
+}

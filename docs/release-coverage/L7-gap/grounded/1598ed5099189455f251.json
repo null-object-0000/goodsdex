@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20803\",\n    \"name\": \"小米电视音响2.1\",\n    \"url\": \"https://www.ithome.com/0/813/733.htm\",\n    \"date\": null,\n    \"quote\": \"小米电视音响 2.0 和小米电视音响 2.1 今晚 8 时正式开售\",\n    \"reason\": \"原文仅提及11月27日开售，未给出首次发布/推出的年月；开售不等于首次发布，且无年份锚点，无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20809\",\n    \"name\": \"米家无线洗地机4C\",\n    \"url\": \"https://www.ithome.com/0/980/998.htm\",\n    \"date\": null,\n    \"quote\": \"小米上一次推出米家无线洗地机 4C 还是在 2024 年\",\n    \"reason\": \"原文仅回顾4C于2024年推出，未给出具体月份；且该文主体为5C新品，4C非本次发布对象，无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20809\",\n    \"name\": \"米家无线洗地机4C\",\n    \"url\": \"https://www.ithome.com/0/982/306.htm\",\n    \"date\": null,\n    \"quote\": \"小米上一次推出米家无线洗地机 4C 还是在 2024 年\",\n    \"reason\": \"原文仅回顾4C于2024年推出，未给出具体月份；且该文主体为5C预售，4C非本次发布对象，无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20878\",\n    \"name\": \"小米磁吸自带线充电宝10000 33W\",\n    \"url\": \"https://www.ithome.com/0/821/103.htm\",\n    \"date\": \"2024-12\",\n    \"quote\": \"小米现已在京东上架一款“小米磁吸自带线充电宝 10000 33W”， 定价为 169 元 ，将于 1 月 2 日 10:00 首销。\",\n    \"reason\": \"原文明确该型号已上架（推出），报道时间为2024年12月30日，事件同月，故首次发布年月为2024-12；1月2日为首销时间，非发布。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20981\",\n    \"name\": \"Xiaomi 智能音箱 Pro\",\n    \"url\": \"https://www.ithome.com/0/849/716.htm\",\n    \"date\": \"2025-02\",\n    \"quote\": \"小米 Xiaomi 智能音箱相比今年 2 月发布的 Xiaomi 智能音箱 Pro（299 元），价格便宜了 100 元\",\n    \"reason\": \"原文明确Xiaomi 智能音箱 Pro于今年（2025年）2月发布，型号名完全匹配（Pro为独立型号），可确定首发年月为2025-02。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900918,
+  "id": "as-xtz2huzhrf",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 720,
+    "prompt_tokens": 1993,
+    "total_tokens": 2713
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:4679\",\n    \"name\": \"小米便携鼠标\",\n    \"url\": \"https://www.ithome.com/0/773/011.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日上架并开售了两款鼠标，小米无线蓝牙双模鼠标 2 售价 69 元，小米便携鼠标 3 售价 99 元。\",\n    \"reason\": \"原文发布/开售的是“小米便携鼠标 3”，与输入型号“小米便携鼠标”不是同一型号（后代型号不证明身份），且原文未提及“小米便携鼠标”的首次发布，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:4792\",\n    \"name\": \"小米圈铁耳机Pro\",\n    \"url\": \"https://www.ithome.com/0/269/840.htm\",\n    \"date\": null,\n    \"quote\": \"包括小米蓝牙运动耳机，小米圈铁耳机Pro、小米便携鼠标等大家可能比较关注的产品。\",\n    \"reason\": \"原文仅以曝光列表提及“小米圈铁耳机Pro”为可能关注的产品，未给出该型号的正式发布/首发/开售时间，无法确定首次发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:5005\",\n    \"name\": \"小米人体传感器\",\n    \"url\": \"https://www.ithome.com/0/550/584.htm\",\n    \"date\": null,\n    \"quote\": \"与小米人体传感器配合，可实现智能开关的效果。\",\n    \"reason\": \"原文仅将“小米人体传感器”作为联动配件提及，未宣布该型号的发布或首发时间，无法确定首次发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6419\",\n    \"name\": \"米家电水壶\",\n    \"url\": \"https://www.ithome.com/0/760/191.htm\",\n    \"date\": null,\n    \"quote\": \"小米此前上架的米家多功能养生壶 N1、米家电水壶 S1 将于 4 月 6 日 0 点开售，首发价格分别为 99 元和 129 元。\",\n    \"reason\": \"原文发布/开售的是“米家电水壶 S1”，与输入型号“米家电水壶”不是同一型号（后缀 S1 不证明身份），且原文未提及“米家电水壶”的首次发布，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7129\",\n    \"name\": \"米家便携电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/988/332.htm\",\n    \"date\": null,\n    \"quote\": \"除此之外，米家便携电动剃须刀 Pro 也已开售，京东显示 349 元，叠加国补后 266.98 元。\",\n    \"reason\": \"原文开售的是“米家便携电动剃须刀 Pro”，与输入型号“米家便携电动剃须刀”不是同一型号（Pro 后缀不证明身份），且原文未提及“米家便携电动剃须刀”的首次发布，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900927,
+  "id": "as-t01awxjrqi",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 734,
+    "prompt_tokens": 2232,
+    "total_tokens": 2966
+  }
+}

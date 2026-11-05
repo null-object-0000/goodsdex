@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:19409\",\n    \"name\": \"小米智能门锁 2\",\n    \"url\": \"https://www.ithome.com/0/768/247.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能门锁 2 指静脉版已经于今日正式开售\",\n    \"reason\": \"原文仅涉及“小米智能门锁 2 指静脉版”的开售，指静脉版为独立型号，不能证明“小米智能门锁 2”本身的首发时间；且原文提到普通版首发价但未给出其发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19491\",\n    \"name\": \"米家无雾加湿器3[1200]\",\n    \"url\": \"https://www.ithome.com/0/796/359.htm\",\n    \"date\": null,\n    \"quote\": \"这款产品与去年推出的米家无雾加湿器 3 [1200] 款外观基本保持一致\",\n    \"reason\": \"原文仅提及[1200]款为“去年推出”，未给出具体发布年月；本次新品为[800]款，与[1200]款为不同型号，故无法确定[1200]款的首发月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19683\",\n    \"name\": \"Xiaomi 14 Ultra\",\n    \"url\": \"https://www.ithome.com/0/848/771.htm\",\n    \"date\": null,\n    \"quote\": \"以下机型已可体验 Xiaomi 15 Ultra Xiaomi 15 Pro Xiaomi 15 Xiaomi 14 Ultra\",\n    \"reason\": \"原文仅将 Xiaomi 14 Ultra 列入微信朋友圈实况照片适配机型，未涉及该型号的发布或开售事件，无法确定首发年月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19700\",\n    \"name\": \"Xiaomi 蓝牙音箱 mini\",\n    \"url\": \"https://www.ithome.com/0/818/922.htm\",\n    \"date\": null,\n    \"quote\": \"小米蓝牙音箱 Mini 推出“勃艮第红”特别版，今日 10 时正式开售\",\n    \"reason\": \"原文事件为“勃艮第红”特别版配色开售，特别版配色不属于新型号首发；原文未给出 Xiaomi 蓝牙音箱 mini 本身的首发年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19703\",\n    \"name\": \"Xiaomi 蓝牙音箱\",\n    \"url\": \"https://www.ithome.com/0/818/922.htm\",\n    \"date\": null,\n    \"quote\": \"小米蓝牙音箱 Mini 推出“勃艮第红”特别版，今日 10 时正式开售\",\n    \"reason\": \"原文仅涉及 Xiaomi 蓝牙音箱 Mini 的特别版配色开售，未提及 Xiaomi 蓝牙音箱（非 Mini）的发布或开售事件，无法确定其首发年月。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900908,
+  "id": "021793900904947dfda270f226adba1bf628b57be6483cf54beaa",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 696,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2436,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3132
+  }
+}

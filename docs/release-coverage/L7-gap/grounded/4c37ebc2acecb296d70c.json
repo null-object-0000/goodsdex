@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20854\",\n    \"name\": \"小米智能摄像机 视频通话版\",\n    \"url\": \"https://www.ithome.com/0/821/078.htm\",\n    \"date\": \"2024-12\",\n    \"quote\": \"IT之家 12 月 30 日消息，小米现已在京东上架一款 “小米智能摄像机 视频通话版” ，整体可以看作是桌面时钟和摄像头的组合， 定价为 299 元 。\",\n    \"reason\": \"原文明确该型号已在京东上架，标题为“发布”，报道日期为12月30日，事件与报道同月，可确定首次发布年月为2024-12。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20866\",\n    \"name\": \"Redmi 14C\",\n    \"url\": \"https://www.ithome.com/0/822/995.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 1 月 7 日消息，小米在海外发布了 REDMI 14C 5G 手机， 售价 9999 印度卢比起 。\",\n    \"reason\": \"原文明确为海外发布REDMI 14C 5G，非中国大陆首发；且型号为5G版，与输入型号Redmi 14C不能确认为同一型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20878\",\n    \"name\": \"小米磁吸自带线充电宝10000 33W\",\n    \"url\": \"https://www.ithome.com/0/821/849.htm\",\n    \"date\": \"2025-01\",\n    \"quote\": \"IT之家 1 月 2 日消息，小米磁吸自带线充电宝 10000 33W 今日开售，首销价格为 169 元，提供粉色、白色、蓝色、灰色四款配色。\",\n    \"reason\": \"原文明确该型号今日开售，报道日期为1月2日，事件与报道同月，可确定首次开售年月为2025-01。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20898\",\n    \"name\": \"小米运动对讲机\",\n    \"url\": \"https://www.ithome.com/0/822/560.htm\",\n    \"date\": \"2025-01\",\n    \"quote\": \"IT之家 1 月 6 日消息，小米运动对讲机今日正式开售，该款对讲机内置 1030mAh 电池、支持全国 5000 公里可对讲， 售价 399 元 。\",\n    \"reason\": \"原文明确该型号今日正式开售，报道日期为1月6日，事件与报道同月，可确定首次开售年月为2025-01。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20915\",\n    \"name\": \"小米公网对讲机 mini\",\n    \"url\": \"https://www.ithome.com/0/822/554.htm\",\n    \"date\": \"2025-01\",\n    \"quote\": \"IT之家 1 月 6 日消息，小米现已在有品上架一款“小米公网对讲机 mini”，主打“轻巧机身、全国 4G 对讲”， 首发价为 179 元 ，IT之家附商品页如下（ 点此访问 ）。\",\n    \"reason\": \"原文明确该型号已在有品上架并给出首发价，报道日期为1月6日，事件与报道同月，可确定首次上架年月为2025-01。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900772,
+  "id": "021793900767108bc68ba76535d4d8d120d8e883d298b955e98aa",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 815,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2001,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2816
+  }
+}

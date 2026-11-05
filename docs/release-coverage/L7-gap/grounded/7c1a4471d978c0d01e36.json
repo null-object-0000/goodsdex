@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20039\",\n    \"name\": \"米家无线洗地机3 Max\",\n    \"url\": \"https://www.ithome.com/0/861/656.htm\",\n    \"date\": \"2024-05\",\n    \"quote\": \"小米米家无线洗地机 3 Max 发售于 2024 年 5 月 19 日\",\n    \"reason\": \"原文明确写出该型号发售于2024年5月19日，型号完全匹配，事件为发售，可确定首发年月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20078\",\n    \"name\": \"米家弹盖保温杯\",\n    \"url\": \"https://www.ithome.com/0/994/811.htm\",\n    \"date\": null,\n    \"quote\": \"米家弹盖保温杯 2 现已在小米有品上架，将于 9 月 2 日开启众筹\",\n    \"reason\": \"原文型号为“米家弹盖保温杯 2”，与输入型号“米家弹盖保温杯”不同，后代型号不视为同一型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20078\",\n    \"name\": \"米家弹盖保温杯\",\n    \"url\": \"https://www.ithome.com/0/998/150.htm\",\n    \"date\": null,\n    \"quote\": \"米家弹盖保温杯 2 现已在小米有品开启众筹，活动时间为 9 月 2 日到 9 月 9 日\",\n    \"reason\": \"原文型号为“米家弹盖保温杯 2”，与输入型号“米家弹盖保温杯”不同，后代型号不视为同一型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20103\",\n    \"name\": \"米家折叠偏光太阳镜\",\n    \"url\": \"https://www.ithome.com/0/855/641.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家折叠偏光太阳镜套镜现已在京东等平台开售\",\n    \"reason\": \"原文型号为“米家折叠偏光太阳镜套镜”，与输入型号“米家折叠偏光太阳镜”不同，套装不视为同一型号；且原文仅称“现已在京东等平台开售”，无明确首次发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20448\",\n    \"name\": \"米家声波扫振电动牙刷\",\n    \"url\": \"https://www.ithome.com/0/814/878.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家声波扫振电动牙刷 Pro 将于 12 月 3 日 0 点开售\",\n    \"reason\": \"原文型号为“米家声波扫振电动牙刷 Pro”，与输入型号“米家声波扫振电动牙刷”不同，Pro 后缀不视为同一型号，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900689,
+  "id": "2cae7bf7-02f8-4ef8-82bd-226beaca650b",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 700,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2173,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2873
+  }
+}

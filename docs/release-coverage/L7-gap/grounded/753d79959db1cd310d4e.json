@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:19867\",\n    \"name\": \"米家多功能养生壶N1\",\n    \"url\": \"https://www.ithome.com/0/760/038.htm\",\n    \"date\": \"2024-04\",\n    \"quote\": \"小米现上架了一款米家多功能养生壶 N1，4 月 6 日上市，首发价 99 元。\",\n    \"reason\": \"原文明确型号为米家多功能养生壶 N1，事件为上市/首发，报道时间为2024年4月4日，上市日期4月6日同月，故首次发布年月为2024-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21680\",\n    \"name\": \"米家高速吹风机\",\n    \"url\": \"https://www.ithome.com/0/756/948.htm\",\n    \"date\": null,\n    \"quote\": \"小米去年五月推出了米家高速吹风机 H501，首发价 279 元。小米准备在明天的 Civi4 Pro 发布会上推出多款新品，包括 H501 的森野绿配色。\",\n    \"reason\": \"输入型号为米家高速吹风机，原文涉及的是米家高速吹风机 H501 及其森野绿配色，H501 为具体型号后缀，配色版本不是同一型号；且原文仅提及去年五月推出 H501，未给出米家高速吹风机（无后缀）的首次发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24607\",\n    \"name\": \"米家恒温电水壶\",\n    \"url\": \"https://www.ithome.com/0/737/839.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家恒温电水壶 P1 轻音版日前上架电商平台，主打四档恒温、实时数显等特性，12 月 8 日 10:00-9 日限时活动到手价不高于 179 元。\",\n    \"reason\": \"输入型号为米家恒温电水壶，原文涉及的是米家恒温电水壶 P1 轻音版，P1 及轻音版为具体型号/版本限定，不能证明无后缀的米家恒温电水壶身份；且事件为开售/促销，非该输入型号的首次发布，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25082\",\n    \"name\": \"米家电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/758/592.htm\",\n    \"date\": \"2024-03\",\n    \"quote\": \"小米今天推出了全新的米家电动剃须刀 S200，提供月岩灰、冰川银、柔光白三种配色可选，首发价 189 元。\",\n    \"reason\": \"原文明确推出米家电动剃须刀 S200，S200 为具体型号后缀，输入型号为米家电动剃须刀，仅前缀包含不证明身份；但原文同时以“米家电动剃须刀 S200”作为新品推出，输入名称缺少后缀，严格按规则不能确定同一型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:2665\",\n    \"name\": \"小米蓝牙音箱\",\n    \"url\": \"https://www.ithome.com/0/751/482.htm\",\n    \"date\": \"2024-02\",\n    \"quote\": \"小米蓝牙音箱、小米蓝牙音箱 Mini（IT之家注：原名如此）现已开启预售，今晚至 3 月 7 日上午为定金支付时段。\",\n    \"reason\": \"原文明确小米蓝牙音箱（与 Mini 并列，Mini 为另一型号）现已开启预售，报道时间为2024年2月22日，预售开启于当晚即2024年2月，故首次发布年月候选为2024-02。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793901028,
+  "id": "021793901023647bc68ba76535d4d8d120d8e883d298b95add377",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 887,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2065,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2952
+  }
+}

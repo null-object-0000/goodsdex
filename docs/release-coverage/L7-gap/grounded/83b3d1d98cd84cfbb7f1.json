@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:5434\",\n    \"name\": \"小米无线鼠标\",\n    \"url\": \"https://www.ithome.com/0/851/741.htm\",\n    \"date\": null,\n    \"quote\": \"小米无线鼠标 Lite 3 今日上架京东等平台，提供深空黑、素白灰两款配色，预售价 39 元，预计 5 月 14 日发货。\",\n    \"reason\": \"原文仅涉及“小米无线鼠标 Lite 3”，Lite 3 是不同型号，不能证明“小米无线鼠标”这一精确型号的首发；且“今日上架”为 Lite 3 的上架事件，不适用于该输入型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:6419\",\n    \"name\": \"米家电水壶\",\n    \"url\": \"https://www.ithome.com/0/852/350.htm\",\n    \"date\": null,\n    \"quote\": \"小米公司推出了米家电水壶 3，目前该产品已开启预约，将于 5 月 15 日 10 点开售，售价 109 元。\",\n    \"reason\": \"原文发布的是“米家电水壶 3”，属于后代型号，不能证明“米家电水壶”这一精确型号的首发；事件为米家电水壶 3 的预约/开售，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7808\",\n    \"name\": \"小米电视音响\",\n    \"url\": \"https://www.ithome.com/0/813/733.htm\",\n    \"date\": null,\n    \"quote\": \"小米电视音响 2.0 和小米电视音响 2.1 今晚 8 时正式开售，售价分别为 399 元、599 元\",\n    \"reason\": \"原文涉及“小米电视音响 2.0”和“小米电视音响 2.1”，均为带版本后缀的不同型号，不能证明“小米电视音响”这一精确型号的首发；事件为 2.0/2.1 开售，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900779,
+  "id": "02179390077676472ea91cebe75e8e291705b4c0b59095e47485c",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 491,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1290,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 1781
+  }
+}

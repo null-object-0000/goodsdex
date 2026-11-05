@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:21618\",\n    \"name\": \"小米智能门铃 4\",\n    \"url\": \"https://www.ithome.com/0/869/060.htm\",\n    \"date\": \"2025-07\",\n    \"quote\": \"小米智能门铃 4、4 Pro 现已上架京东等平台并开启预约，售价分别为 299 元和 499 元，将于 7 月 21 日 10:00 开售。\",\n    \"reason\": \"原文明确小米智能门铃 4 已上架并开启预约，报道日期为2025年7月18日，事件与报道同月，可确定首次发布/上架月份为2025-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21618\",\n    \"name\": \"小米智能门铃 4\",\n    \"url\": \"https://www.ithome.com/0/869/540.htm\",\n    \"date\": \"2025-07\",\n    \"quote\": \"小米智能门铃 4 / Pro 将于今日 10:00 在京东等平台开售，新品搭载超清双摄 + 米家联动，售价 299 元起。\",\n    \"reason\": \"原文为开售报道，报道日期2025年7月21日，'今日10:00开售'有原文锚点，事件同月，可确定2025-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21625\",\n    \"name\": \"米家无线洗地机4\",\n    \"url\": \"https://www.ithome.com/0/814/664.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家无线洗地机 4C 将于今日 10:00 在京东平台开售，首发价 1099 元。\",\n    \"reason\": \"原文型号为'米家无线洗地机 4C'，与输入型号'米家无线洗地机4'不同，4C为后代/变体型号，不能证明同一型号身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21625\",\n    \"name\": \"米家无线洗地机4\",\n    \"url\": \"https://www.ithome.com/0/814/856.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家无线洗地机 4C 将于今日在京东平台开售，首发价 1099 元。\",\n    \"reason\": \"原文型号为'米家无线洗地机 4C'，与输入型号'米家无线洗地机4'不同，4C为后代/变体型号，不能证明同一型号身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21680\",\n    \"name\": \"米家高速吹风机\",\n    \"url\": \"https://www.ithome.com/0/592/434.htm\",\n    \"date\": null,\n    \"quote\": \"小米上周推出了米家高速吹风机 H700，原价 799 元，众筹价 699 元，将于 12 月 15 日上午 10:00 开启众筹\",\n    \"reason\": \"原文型号为'米家高速吹风机 H700'，与输入型号'米家高速吹风机'不同，H700为具体型号后缀，不能证明同一型号身份；且'上周推出'无精确月份锚点，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900704,
+  "id": "cb2a371d-84a0-4de8-bd8d-05062f13ee03",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 790,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2221,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3011
+  }
+}

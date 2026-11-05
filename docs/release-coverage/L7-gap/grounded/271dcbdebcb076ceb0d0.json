@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/1/001/274.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今日宣布，米家石墨烯暖风机 C 开启预售\",\n    \"reason\": \"原文型号为“米家石墨烯暖风机 C”，与输入型号“米家石墨烯暖风机”不同（C为后缀型号），不能证明是同一型号；且事件为预售，非首次发布，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/1/002/830.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家石墨烯暖风机 C 现已开售\",\n    \"reason\": \"原文型号为“米家石墨烯暖风机 C”，与输入型号不同；且事件为开售，非首次发布，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/1/005/104.htm\",\n    \"date\": null,\n    \"quote\": \"小米官方今天在微博预热米家石墨烯暖风机 Pro，新品支持 2 米远距离环抱式送暖\",\n    \"reason\": \"原文型号为“米家石墨烯暖风机 Pro”，与输入型号不同（Pro为后缀型号）；且事件为预热，非正式发布，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/1/007/636.htm\",\n    \"date\": null,\n    \"quote\": \"小米旗下米家石墨烯暖风机 Pro 将于今天 10 点在京东开启众筹\",\n    \"reason\": \"原文型号为“米家石墨烯暖风机 Pro”，与输入型号不同；且事件为众筹开启，非首次发布，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/1/010/857.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家石墨烯暖风机 Pro 现已全渠道开售\",\n    \"reason\": \"原文型号为“米家石墨烯暖风机 Pro”，与输入型号不同；且事件为开售，非首次发布，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900685,
+  "id": "as-myr30mg2ag",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 618,
+    "prompt_tokens": 1853,
+    "total_tokens": 2471
+  }
+}

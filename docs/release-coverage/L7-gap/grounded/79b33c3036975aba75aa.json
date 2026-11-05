@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:5434\",\n    \"name\": \"小米无线鼠标\",\n    \"url\": \"https://www.ithome.com/0/785/456.htm\",\n    \"date\": null,\n    \"quote\": \"小米无线鼠标舒适版现已开售\",\n    \"reason\": \"输入型号为“小米无线鼠标”，原文事件主体为“小米无线鼠标舒适版”，属于不同型号（舒适版为后代/变体），仅前缀包含不证明身份；且原文仅称“现已开售”，无首次发布/首发公告，无法确定该型号中国大陆首次发布年月，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900882,
+  "id": "as-2wzd63pgum",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 149,
+    "prompt_tokens": 468,
+    "total_tokens": 617
+  }
+}

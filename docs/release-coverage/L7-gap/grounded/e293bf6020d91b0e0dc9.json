@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:24607\",\n    \"name\": \"米家恒温电水壶\",\n    \"url\": \"https://www.ithome.com/0/875/232.htm\",\n    \"date\": null,\n    \"quote\": \"米家恒温电水壶 3 Pro 今日全渠道开售，首发到手价 229 元。\",\n    \"reason\": \"原文仅涉及“米家恒温电水壶 3 Pro”的开售，Pro 为后代型号，与输入型号“米家恒温电水壶”不是同一型号，不能确定该型号的首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24884\",\n    \"name\": \"REDMI 17 5G\",\n    \"url\": \"https://www.ithome.com/0/955/302.htm\",\n    \"date\": null,\n    \"quote\": \"爆料称小米 时隔 4 年重返印度市场 ，在 6 月推出小米 17T 系列外， 还将推出 REDMI Turbo 5 和入门级 REDMI 17 5G。\",\n    \"reason\": \"原文为爆料称将在印度市场6月推出，非中国大陆发布，且为传闻/计划，无中国大陆首发公告，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24884\",\n    \"name\": \"REDMI 17 5G\",\n    \"url\": \"https://www.ithome.com/0/987/999.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在海外市场推出 REDMI 17 5G 和 REDMI 17 4G 手机\",\n    \"reason\": \"原文明确为海外市场发布，非中国大陆首发，不能确定中国大陆首次发布月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24895\",\n    \"name\": \"REDMI 17C\",\n    \"url\": \"https://www.ithome.com/0/994/263.htm\",\n    \"date\": null,\n    \"quote\": \"小米 REDMI 17C 5G 手机现已在海外市场发布。\",\n    \"reason\": \"原文为 REDMI 17C 5G 海外发布，5G 为后代型号且为海外市场，非中国大陆首发，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:25000\",\n    \"name\": \"米家无线洗地机 5\",\n    \"url\": \"https://www.ithome.com/0/937/905.htm\",\n    \"date\": null,\n    \"quote\": \"小米新推出了一款米家无线洗地机 5 Pro，京东显示为 2499 元，首发价 2149 元，叠加国补后 1934 元，将于 4 月 19 日开售。\",\n    \"reason\": \"原文发布的是“米家无线洗地机 5 Pro”，Pro 为后代型号，与输入型号“米家无线洗地机 5”不是同一型号，不能确定该型号首发月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900711,
+  "id": "021793900707666dfda270f226adba1bf628b57be6483cfd8b1ce",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 707,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2101,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2808
+  }
+}

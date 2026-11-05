@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:19409\",\n    \"name\": \"小米智能门锁 2\",\n    \"url\": \"https://www.ithome.com/0/787/832.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能生态官微今天上午宣布，小米智能门锁 2 系列“旗舰新品”将于 8 月 13（明）日正式登场。\",\n    \"reason\": \"原文仅宣布“小米智能门锁 2 系列”旗舰新品将于8月13日发布，未明确该系列中具体型号“小米智能门锁 2”本身；系列名不等于精确型号，且“明日”相对月份虽有报道月锚点，但身份限定不足，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19820\",\n    \"name\": \"Redmi Pad Pro\",\n    \"url\": \"https://www.ithome.com/0/795/790.htm\",\n    \"date\": null,\n    \"quote\": \"Redmi Pad Pro 平板电脑“12GB + 256GB”版本目前已经在小米商城上线……此次新品属于配置上新\",\n    \"reason\": \"原文事件是Redmi Pad Pro新增12GB+256GB配置版本上架，并非该型号首次发布；容量版本不是同一首发事件，且原文未给出Redmi Pad Pro首次发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20023\",\n    \"name\": \"米家记忆绵深睡枕\",\n    \"url\": \"https://www.ithome.com/0/805/484.htm\",\n    \"date\": null,\n    \"quote\": \"米家记忆绵深睡枕于今年 5 月上市\",\n    \"reason\": \"原文明确米家记忆绵深睡枕于今年5月上市，报道发布于2024年10月，可锚定首次上市月份为2024-05；但输入型号名为“米家记忆绵深睡枕”，原文同段写作“米家记忆绵深睡枕”，标题又作“小米米家记忆绵深睡枕”，存在名称细微差异，按精确型号从严仍可认定为同一产品，日期可确定。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20039\",\n    \"name\": \"米家无线洗地机3 Max\",\n    \"url\": \"https://www.ithome.com/0/772/192.htm\",\n    \"date\": \"2024-05\",\n    \"quote\": \"小米官方今日宣布，米家无线洗地机 3 Max 将于今晚 20 点开售，首发价为 2599 元。\",\n    \"reason\": \"原文明确米家无线洗地机3 Max于报道当日5月31日晚20点开售，属于新品正式开售/首发事件；报道发布于2024-05-31，事件同月，故首次发布年月为2024-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20039\",\n    \"name\": \"米家无线洗地机3 Max\",\n    \"url\": \"https://www.ithome.com/0/802/472.htm\",\n    \"date\": \"2024-05\",\n    \"quote\": \"小米米家无线洗地机 3 Max 发售于 2024 年 5 月 19 日，主打“180 度躺平杀菌洗烘，五合一全屋吸尘除螨”，首发价 2499 元。\",\n    \"reason\": \"原文直接说明米家无线洗地机3 Max发售于2024年5月19日，属于该型号首次发售信息；虽为促销文，但明确给出首发日期，故可确定首次发布年月为2024-05。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900869,
+  "id": "021793900863886bc68ba76535d4d8d120d8e883d298b9555ba54",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 840,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2569,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3409
+  }
+}

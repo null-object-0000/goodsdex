@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:21400\",\n    \"name\": \"米家口袋照片打印机Pro\",\n    \"url\": \"https://www.ithome.com/1/015/258.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家口袋照片打印机 Pro 礼盒装今日正式开售， 售价 799 元\",\n    \"reason\": \"原文仅报道礼盒装开售，礼盒装为套装非同一型号；未提供Pro标准版首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21468\",\n    \"name\": \"小米自带线屏显充电宝10000 45W\",\n    \"url\": \"https://www.ithome.com/0/862/343.htm\",\n    \"date\": \"2025-06\",\n    \"quote\": \"小米自带线屏显充电宝 10000 45W 现已在小米商城 App 中开启众筹，这款移动电源采用 2C+1A 设计， 首发价 179 元\",\n    \"reason\": \"原文明确该型号开启众筹并标首发价，报道时间为2025-06-20，事件同月，可确定首次众筹月为2025-06。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21468\",\n    \"name\": \"小米自带线屏显充电宝10000 45W\",\n    \"url\": \"https://www.ithome.com/0/865/023.htm\",\n    \"date\": null,\n    \"quote\": \"小米自带线屏显充电宝 10000 45W 已开售，售价 199 元\",\n    \"reason\": \"原文为开售报道，非首次发布/众筹；另一URL已确定首次众筹月，此条不重复确定，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21475\",\n    \"name\": \"小米智能门锁2 大屏猫眼版\",\n    \"url\": \"https://www.ithome.com/0/863/243.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能门锁 2 大屏猫眼版现已在京东开售，其主打“AI 指纹识别 + 智能猫眼”， 定价为 1599 元\",\n    \"reason\": \"原文仅报道首销/开售，未提供首次发布或众筹年月，无法确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21556\",\n    \"name\": \"米家洗衣机 洗烘12kg\",\n    \"url\": \"https://www.ithome.com/0/868/926.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家洗衣机洗烘 12kg 现已全渠道开售，支持 1.2 洗净比 + 智能烘干，售价 1899 元\",\n    \"reason\": \"原文仅报道全渠道开售，未提供首次发布年月，无法确定首发月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900704,
+  "id": "021793900699933bc68ba76535d4d8d120d8e883d298b95777326",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 689,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1987,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2676
+  }
+}

@@ -234,8 +234,12 @@ def apply_release_dates(rows, path=DEFAULT_INPUT, llm_path=None, crosscheck_path
             row.pop('release', None)
             continue
         if (row.get('release') or {}).get('source') == 'llm_verified':
-            from .release_l7 import INPUT, check
-            matches = [e for e in json.loads(INPUT.read_text())['entries'] if e['id'] == row['id']]
+            from .release_l7 import INPUT, check, fingerprint
+            # A reviewed ID can have multiple frozen spellings. Select the
+            # exact identity before validating its capture, independent of order.
+            matches = [e for e in json.loads(INPUT.read_text())['entries']
+                       if e['id'] == row['id'] and e['name'] == row['name']
+                       and e['identity_sha256'] == fingerprint(row)]
             if not any(check(e, row) == row['release'] for e in matches):
                 raise ValueError('L7 assertion no longer matches reviewed captured evidence')
             continue

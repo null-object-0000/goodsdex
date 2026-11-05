@@ -130,7 +130,14 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
     # The L1-L4 stage independently replays exact official product statements,
     # including reviewed month-to-day upgrades, after the legacy date stage.
     from goodsdex.release_coverage import apply_priority_dates
-    product_expected = apply_priority_dates(product_expected)
+    # Date identities use the independently reviewed official page names too.
+    # This frozen input still has truncated "Xiaomi" and a spurious "沙色";
+    # the real finalizer repairs both before checking captured product evidence.
+    from goodsdex.mi_names import apply_page_names
+    product_expected = apply_priority_dates(apply_page_names(product_expected))
+    product_by_id = {r['id']: r for r in product_expected}
+    assert product_by_id['CN:mi_cn:product:19703']['release']['date'] == '2024-02'
+    assert product_by_id['CN:mi_cn:product:20375']['release']['date'] == '2024-09'
     assert {r['id']: r.get('release') for r in result} == {r['id']: r.get('release') for r in product_expected if r['id'] not in excluded_ids}
     expected = {key: value for key, value in expected.items() if key not in excluded_ids}
     assert {r['id'] for r in result if r.get('release_series')} == expected.keys()

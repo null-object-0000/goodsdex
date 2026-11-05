@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20195\",\n    \"name\": \"小米无线鼠标舒适版\",\n    \"url\": \"https://www.ithome.com/0/785/456.htm\",\n    \"date\": \"2024-07\",\n    \"quote\": \"IT之家 7 月 31 日消息，小米无线鼠标舒适版现已开售\",\n    \"reason\": \"型号精确匹配“小米无线鼠标舒适版”；原文事件为“现已开售”，报道时间为2024-07-31，事件与报道同月，可确定首次开售月份为2024-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20233\",\n    \"name\": \"米家豆浆机\",\n    \"url\": \"https://www.ithome.com/0/783/556.htm\",\n    \"date\": \"2024-07\",\n    \"quote\": \"小米米家豆浆机现已上架小米有品，将于 7 月 24 日开启众筹\",\n    \"reason\": \"型号精确匹配“米家豆浆机”；原文明确将于7月24日开启众筹，报道时间为2024-07-22，相对月份有原文锚点，可确定首次众筹月份为2024-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20233\",\n    \"name\": \"米家豆浆机\",\n    \"url\": \"https://www.ithome.com/0/783/868.htm\",\n    \"date\": \"2024-07\",\n    \"quote\": \"IT之家 7 月 24 日消息，小米米家豆浆机今日开启众筹\",\n    \"reason\": \"型号精确匹配“米家豆浆机”；原文事件为“今日开启众筹”，报道时间为2024-07-24，事件与报道同月，可确定首次众筹月份为2024-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20233\",\n    \"name\": \"米家豆浆机\",\n    \"url\": \"https://www.ithome.com/0/786/395.htm\",\n    \"date\": null,\n    \"quote\": \"上个月在小米有品众筹的米家豆浆机，现已在京东平台上架，售价 199 元\",\n    \"reason\": \"型号精确匹配“米家豆浆机”；但原文事件为京东平台上架销售，属于后续渠道上架，非首次发布/众筹，不能据此确定中国大陆首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20293\",\n    \"name\": \"米家空气炸锅S1 6L\",\n    \"url\": \"https://www.ithome.com/0/789/076.htm\",\n    \"date\": \"2024-08\",\n    \"quote\": \"小米米家空气炸锅 S1 6L 现已上架京东平台并开启预约，8 月 20 日早 10 点开售\",\n    \"reason\": \"型号精确匹配“米家空气炸锅 S1 6L”；原文明确8月20日开售，报道时间为2024-08-16，相对月份有原文锚点，可确定首次开售月份为2024-08。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900871,
+  "id": "021793900868112bc68ba76535d4d8d120d8e883d298b95544b07",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 724,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2037,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2761
+  }
+}

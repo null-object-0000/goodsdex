@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:3806\",\n    \"name\": \"米家 LED 智能台灯\",\n    \"url\": \"https://www.ithome.com/0/316/965.htm\",\n    \"date\": null,\n    \"quote\": \"这也是继荣获IF金奖的米家LED智能台灯之后，Yeelight推出的又一款米家照明产品。\",\n    \"reason\": \"原文仅将米家LED智能台灯作为已获IF金奖的旧品提及，未给出其首次发布年月，无法确定首发时间。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:3922\",\n    \"name\": \"电助力折叠自行车\",\n    \"url\": \"https://www.ithome.com/0/240/555.htm\",\n    \"date\": null,\n    \"quote\": \"尤其此前小米电助力折叠自行车的推出比较吸引人\",\n    \"reason\": \"原文仅称此前已推出电助力折叠自行车，未给出具体发布年月；同文预告的新品为7月13日发布的其他产品，不能证明是该自行车首发。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:3922\",\n    \"name\": \"电助力折叠自行车\",\n    \"url\": \"https://www.ithome.com/0/321/190.htm\",\n    \"date\": null,\n    \"quote\": \"此前骑记还与米家联合推出过电助力折叠自行车。\",\n    \"reason\": \"原文仅回顾此前推出过电助力折叠自行车，本次发布/众筹的是骑记智能山地自行车，并非该型号首发，无法确定其首次发布年月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:4565\",\n    \"name\": \"小米手环2\",\n    \"url\": \"https://www.ithome.com/0/305/927.htm\",\n    \"date\": null,\n    \"quote\": \"小米手环2仅凭借远低于竞品手环的价格就获得了不少米粉的关注\",\n    \"reason\": \"原文仅将小米手环2作为已有产品讨论，并猜测4月27日可能发布新品，未给出小米手环2的首次发布年月。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:4679\",\n    \"name\": \"小米便携鼠标\",\n    \"url\": \"https://www.ithome.com/0/269/840.htm\",\n    \"date\": null,\n    \"quote\": \"包括小米蓝牙运动耳机，小米圈铁耳机Pro、小米便携鼠标等大家可能比较关注的产品。\",\n    \"reason\": \"原文仅称小米便携鼠标可能在此后推出，属于曝光列表中的预期新品，未给出正式发布或首发年月，不能确定。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900930,
+  "id": "021793900926761dfda270f226adba1bf628b57be6483cffe9a0f",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 604,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1890,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2494
+  }
+}

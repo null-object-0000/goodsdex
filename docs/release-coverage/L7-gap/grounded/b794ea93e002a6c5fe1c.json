@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20418\",\n    \"name\": \"米家破壁机N1\",\n    \"url\": \"https://www.ithome.com/0/795/479.htm\",\n    \"date\": \"2024-09\",\n    \"quote\": \"IT之家 9 月 13 日消息，小米米家破壁机 N1 今日发布\",\n    \"reason\": \"原文明确该型号今日发布，报道日期为2024-09-13，事件与报道同月，可确定首发年月为2024-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20418\",\n    \"name\": \"米家破壁机N1\",\n    \"url\": \"https://www.ithome.com/0/796/719.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家破壁机 N1 将于今日 10:00 开售\",\n    \"reason\": \"该文为开售报道，非首次发布；且另一URL已确认发布月，此条不重复确定首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20425\",\n    \"name\": \"Redmi Note 14 Pro+\",\n    \"url\": \"https://www.ithome.com/0/797/936.htm\",\n    \"date\": null,\n    \"quote\": \"Redmi Note 14 Pro+ 手机将首发 第三代骁龙 7s 芯片\",\n    \"reason\": \"原文仅称将首发芯片，未宣布手机本身发布或开售日期，无法确定该型号中国大陆首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20435\",\n    \"name\": \"米家IH电饭煲S1\",\n    \"url\": \"https://www.ithome.com/0/795/765.htm\",\n    \"date\": \"2024-09\",\n    \"quote\": \"小米米家 IH 电饭煲 S1（3L）今日在京东平台开启预售\",\n    \"reason\": \"原文明确该型号今日开启预售，报道日期为2024-09-14，事件与报道同月，可确定首发年月为2024-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20448\",\n    \"name\": \"米家声波扫振电动牙刷\",\n    \"url\": \"https://www.ithome.com/0/798/221.htm\",\n    \"date\": \"2024-09\",\n    \"quote\": \"IT之家 9 月 25 日消息，小米米家声波扫振电动牙刷现已发布\",\n    \"reason\": \"原文明确该型号现已发布，报道日期为2024-09-25，事件与报道同月，可确定首发年月为2024-09。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900873,
+  "id": "ba12db3a-deac-4004-842e-57dd2f4900b9",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 636,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1933,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2569
+  }
+}

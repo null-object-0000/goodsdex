@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:21625\",\n    \"name\": \"米家无线洗地机4\",\n    \"url\": \"https://www.ithome.com/0/982/306.htm\",\n    \"date\": null,\n    \"quote\": \"小米上一次推出米家无线洗地机 4C 还是在 2024 年。\",\n    \"reason\": \"原文仅提及米家无线洗地机 4C 于 2024 年推出，未提及目标型号“米家无线洗地机4”的发布事件；4C 与 4 不是同一型号，且仅有年份无月份，无法确定首发年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21630\",\n    \"name\": \"小米无线键鼠套装 舒适版\",\n    \"url\": \"https://www.ithome.com/0/870/070.htm\",\n    \"date\": \"2025-07\",\n    \"quote\": \"小米新推出了一款“小米无线键鼠套装舒适版”，今日 10 点开始预约，下周三（7 月 30 日）10 点开启众筹\",\n    \"reason\": \"原文明确该型号为“小米无线键鼠套装舒适版”，属新品推出；报道日期为 2025-07-23，原文“今日”锚定 7 月，众筹开启为 7 月 30 日，同月，故首次发布年月为 2025-07。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:23907\",\n    \"name\": \"REDMI 显示器 G25 300Hz\",\n    \"url\": \"https://www.ithome.com/1/017/498.htm\",\n    \"date\": \"2026-10\",\n    \"quote\": \"小米 REDMI 显示器 G25 300Hz 2027 已经上架京东并开售\",\n    \"reason\": \"原文标题与正文均指向 REDMI 显示器 G25 2027（300Hz 版本），与输入型号“REDMI 显示器 G25 300Hz”对应；报道日期 2026-10-24，原文称“已经上架京东并开售”，属新品开售事件，同月，故为 2026-10。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24607\",\n    \"name\": \"米家恒温电水壶\",\n    \"url\": \"https://www.ithome.com/0/651/923.htm\",\n    \"date\": null,\n    \"quote\": \"小米宣布将于明日（11 月 8 日）0 点开售米家恒温电水壶 2 Pro\",\n    \"reason\": \"原文发布/开售的是“米家恒温电水壶 2 Pro”，与输入型号“米家恒温电水壶”不是同一型号（Pro 为后代型号），原文未提供目标型号的发布事件，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:24884\",\n    \"name\": \"REDMI 17 5G\",\n    \"url\": \"https://www.ithome.com/0/986/393.htm\",\n    \"date\": \"2026-08\",\n    \"quote\": \"REDMI 已上架发售旗下新款入门级 5G 智能手机 REDMI 17 5G\",\n    \"reason\": \"原文明确型号为 REDMI 17 5G，属新款上架发售；报道日期 2026-08-06，事件同月，故首次发布年月为 2026-08。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900927,
+  "id": "021793900923616dfda270f226adba1bf628b57be6483cf35c482",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 807,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2304,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3111
+  }
+}

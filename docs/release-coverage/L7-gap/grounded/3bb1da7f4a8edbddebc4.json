@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20915\",\n    \"name\": \"小米公网对讲机 mini\",\n    \"url\": \"https://www.ithome.com/0/826/294.htm\",\n    \"date\": \"2025-01\",\n    \"quote\": \"本月初在小米有品众筹的小米公网对讲机 mini，现已上架京东平台并开售\",\n    \"reason\": \"原文明确该型号本月初在小米有品众筹，众筹属于首次发布/首发事件；报道时间为2025-01-21，'本月初'锚定到2025-01，故首次发布年月为2025-01。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20916\",\n    \"name\": \"米家有线吸尘器\",\n    \"url\": \"https://www.ithome.com/0/823/033.htm\",\n    \"date\": \"2025-01\",\n    \"quote\": \"小米现已在小米有品上架新款“米家有线吸尘器”\",\n    \"reason\": \"原文称'现已在小米有品上架新款米家有线吸尘器'，上架为新品推出事件；报道时间为2025-01-07，事件与报道同月，故首次发布年月为2025-01。注意原文另提2022年推出的米家有线吸尘器2为不同型号，不采用。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20995\",\n    \"name\": \"米家胶囊咖啡机S1\",\n    \"url\": \"https://www.ithome.com/0/833/173.htm\",\n    \"date\": \"2025-02\",\n    \"quote\": \"小米现已在有品上架一款“米家胶囊咖啡机 S1”\",\n    \"reason\": \"原文称'现已在有品上架一款米家胶囊咖啡机 S1'，上架为新品推出事件；报道时间为2025-02-24，事件与报道同月，故首次发布年月为2025-02。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20995\",\n    \"name\": \"米家胶囊咖啡机S1\",\n    \"url\": \"https://www.ithome.com/0/834/750.htm\",\n    \"date\": \"2025-03\",\n    \"quote\": \"小米“米家胶囊咖啡机 S1”现已在京东开启首销\",\n    \"reason\": \"原文称'现已在京东开启首销'，首销为销售事件而非首次发布；但同一型号在另一URL已确定首次发布为2025-02，本URL仅能确定首销月为2025-03，不能作为首次发布月，故弃权为null。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21002\",\n    \"name\": \"米家热泵烘干机 10kg\",\n    \"url\": \"https://www.ithome.com/0/817/198.htm\",\n    \"date\": \"2024-12\",\n    \"quote\": \"小米米家热泵烘干机 10kg 昨晚在京东平台开售，新品采用超薄全嵌设计，首发价格为 3599 元\",\n    \"reason\": \"原文称该型号'昨晚在京东平台开售'并给出'首发价格'，开售/首发为新品推出事件；报道时间为2024-12-12，'昨晚'锚定到2024-12-11，同月，故首次发布年月为2024-12。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900771,
+  "id": "36728114-5d09-4bcc-b32c-2a6a63f74e4b",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 792,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1978,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2770
+  }
+}

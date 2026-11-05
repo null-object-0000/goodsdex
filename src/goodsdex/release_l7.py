@@ -51,7 +51,10 @@ def month_tokens(value):
     return [f'{y}{sep}{mm}' for sep in ('-','/') for mm in (str(m),f'{m:02}')] + [f'{y}年{mm}月' for mm in (str(m),f'{m:02}')]
 
 def has_month(text,value):
-    return any(re.search(re.escape(t)+r'(?!\d)',normalize(text)) for t in month_tokens(value))
+    # 月 already delimits the month: a following day digit is legitimate.
+    # Numeric forms still need a boundary so /1 never matches /11.
+    return any(re.search(re.escape(t) + ('' if t.endswith('月') else r'(?!\d)'), normalize(text))
+               for t in month_tokens(value))
 
 def fingerprint(row):
     identity={k:v for k,v in row.items() if k in ('id','name','brand','model','sku','params','attributes','variant_attributes')}

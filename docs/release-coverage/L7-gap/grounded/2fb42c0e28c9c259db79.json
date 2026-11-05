@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:21005\",\n    \"name\": \"小米智能墙壁插座Pro\",\n    \"url\": \"https://www.ithome.com/0/834/508.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能墙壁插座 Pro Mesh 2.0 版现已在京东等平台上市\",\n    \"reason\": \"原文仅称“现已在京东等平台上市”，属于当前上架状态，未给出首次发布/首发/众筹等公告事件，无法确定中国大陆首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21025\",\n    \"name\": \"小米智能墙壁插座\",\n    \"url\": \"https://www.ithome.com/0/834/508.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能墙壁插座 Pro Mesh 2.0 版现已在京东等平台上市\",\n    \"reason\": \"原文只涉及“小米智能墙壁插座 Pro Mesh 2.0 版”，Pro 为不同型号，不能证明基础型号“小米智能墙壁插座”的身份；且事件仅为当前上市状态，无法确定首发年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21049\",\n    \"name\": \"米家高速水离子吹风机\",\n    \"url\": \"https://www.ithome.com/0/837/290.htm\",\n    \"date\": \"2025-03\",\n    \"quote\": \"小米米家今日推出一款高速水离子吹风机，新品首发价 379 元，补贴后 322.15 元，将于 3 月 20 日 10 点开售。\",\n    \"reason\": \"原文明确“今日推出”该新品，报道日期为2025-03-12，事件为新品推出/首发，型号为米家高速水离子吹风机，可确定首次发布年月为2025-03。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21049\",\n    \"name\": \"米家高速水离子吹风机\",\n    \"url\": \"https://www.ithome.com/0/839/223.htm\",\n    \"date\": \"2025-03\",\n    \"quote\": \"小米官方宣布，米家高速水离子吹风机今日 1000 开售\",\n    \"reason\": \"原文为开售公告，报道日期2025-03-20，事件为今日开售；结合同型号此前“今日推出”的发布事件，可确定首次发布年月为2025-03。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:21081\",\n    \"name\": \"小米轨道插座\",\n    \"url\": \"https://www.ithome.com/0/852/618.htm\",\n    \"date\": null,\n    \"quote\": \"小米轨道插座现已在京东开启首销\",\n    \"reason\": \"原文仅称“现已在京东开启首销”，属于当前首销上架状态，未给出首次发布/推出/众筹等公告事件及明确日期锚点，无法确定中国大陆首次发布年月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900772,
+  "id": "8288c8b2-fb99-4d24-bdd1-8c7eaa74eff9",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 697,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2107,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2804
+  }
+}

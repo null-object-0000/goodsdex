@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:10015\",\n    \"name\": \"小米小爱音箱 Play\",\n    \"url\": \"https://www.ithome.com/0/771/709.htm\",\n    \"date\": null,\n    \"quote\": \"下单赠送延保 5 年 + 价值 149 元的小米小爱音箱 Play 增强版 + 进口洗碗液 700ml*1 瓶。\",\n    \"reason\": \"原文仅将“小米小爱音箱 Play 增强版”作为赠品提及，并非发布/开售公告；且“增强版”与输入型号“小米小爱音箱 Play”不是同一型号，无法确定该型号中国大陆首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050143\",\n    \"name\": \"米家冰箱 三门\",\n    \"url\": \"https://www.ithome.com/0/851/457.htm\",\n    \"date\": \"2025-05\",\n    \"quote\": \"IT之家 5 月 8 日消息，小米米家新品冰箱三门 256L 现已在京东等平台上市，首发价 1499 元。\",\n    \"reason\": \"原文明确“小米米家新品冰箱三门 256L 现已在京东等平台上市，首发价 1499 元”，报道时间为 2025-05-08，事件同月，故首次发布年月为 2025-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050183\",\n    \"name\": \"米家洗衣机 超净洗洗烘\",\n    \"url\": \"https://www.ithome.com/0/799/652.htm\",\n    \"date\": null,\n    \"quote\": \"《 小米米家洗衣机超净洗洗烘 10kg 银灰发布：DD 直驱电机、洗净比 1.1，首发 1799 元 》\",\n    \"reason\": \"正文主事件是“小米米家智投洗 10kg+10kg 洗衣机 / 烘干机套装”开售；输入型号“米家洗衣机 超净洗洗烘”仅出现在相关阅读标题中，未给出该型号的发布年月，无法确定，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/643/289.htm\",\n    \"date\": null,\n    \"quote\": \"今日上午 10 点，小米全能米家扫拖机器人 1S 开启预售。这款扫拖机器人首发价 3699 元，将于 10 月 11 日 0 点正式开售。\",\n    \"reason\": \"原文发布/预售的是“米家全能扫拖机器人 1S”，与输入型号“米家扫拖机器人”不是同一型号；仅前缀包含不证明身份，无法确定输入型号首次发布年月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/812/883.htm\",\n    \"date\": null,\n    \"quote\": \"米家扫拖机器人 M40 ：创新双机械臂，扫拖皆可贴边清洁；12000Pa 飓风吸力，灰尘碎屑瞬间清理；实时毛发切割，落发、宠物毛不缠绕滚刷。\",\n    \"reason\": \"原文提及的是“米家扫拖机器人 M40”，与输入型号“米家扫拖机器人”不是同一型号；且原文称部分产品已在双十一期间开售，未给出该型号首次发布年月，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900906,
+  "id": "02179390090024472ea91cebe75e8e291705b4c0b59095e885ea1",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 842,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2753,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3595
+  }
+}

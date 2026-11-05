@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:10050230\",\n    \"name\": \"米家高速水离子吹风机 Pro\",\n    \"url\": \"https://www.ithome.com/0/989/580.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能生态今日宣布，米家高速水离子吹风机 Pro 单机版现已开售。\",\n    \"reason\": \"原文仅报道“单机版现已开售”，未提及该型号首次发布/首发/众筹等公告事件；开售不等于首次发布，且无法确定首次发布年月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/484/298.htm\",\n    \"date\": \"2020-04\",\n    \"quote\": \"IT之家 4月24日消息 小米现已推出米家扫拖机器人G1，能扫会拖，可一步完成整屋清洁，零售价999元，首发到手价899元。\",\n    \"reason\": \"原文事件为“现已推出”米家扫拖机器人G1，属新品推出公告；但输入型号为“米家扫拖机器人”，G1为后代型号，型号名后代不证明同一型号身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/543/795.htm\",\n    \"date\": null,\n    \"quote\": \"在本周举行的春季新品发布会上，小米推出了智能家居产品米家扫拖机器人 Pro。 这款产品今日正式开售，到手价 2699 元 。\",\n    \"reason\": \"原文事件为米家扫拖机器人 Pro 在春季新品发布会推出并今日开售；Pro为后代型号，与输入型号“米家扫拖机器人”非同一型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/553/203.htm\",\n    \"date\": null,\n    \"quote\": \"小米之家官方今日宣布全新升级的米家扫拖机器人 2C 上线官方商城……米家扫拖机器人 2C 价格为 1499 元，预售价为 1299 元 ，6 月 1 日全渠道开售。\",\n    \"reason\": \"原文事件为米家扫拖机器人 2C 上线并预售；2C为后代型号，与输入型号“米家扫拖机器人”非同一型号，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/0/565/345.htm\",\n    \"date\": null,\n    \"quote\": \"小米在前不久推出了米家扫拖机器人 2……米家扫拖机器人 2 将于 7 月 30 日全渠道开售，到手价 1599 元。\",\n    \"reason\": \"原文事件为米家扫拖机器人 2 推出并将于7月30日开售；2为后代型号，与输入型号“米家扫拖机器人”非同一型号，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900682,
+  "id": "as-cwimyibdg7",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 779,
+    "prompt_tokens": 2390,
+    "total_tokens": 3169
+  }
+}

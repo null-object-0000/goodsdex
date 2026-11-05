@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:20565\",\n    \"name\": \"米家桌面学习灯\",\n    \"url\": \"https://www.ithome.com/1/010/842.htm\",\n    \"date\": null,\n    \"quote\": \"小米今日宣布，米家桌面学习灯 Max 预约开启， 到手价 799 元\",\n    \"reason\": \"原文型号为“米家桌面学习灯 Max”，与输入型号“米家桌面学习灯”不是同一型号（Max为后代/变体），仅前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20565\",\n    \"name\": \"米家桌面学习灯\",\n    \"url\": \"https://www.ithome.com/1/012/187.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家桌面学习灯 Max 现已开售，售价 799 元\",\n    \"reason\": \"原文型号为“米家桌面学习灯 Max”，与输入型号“米家桌面学习灯”不是同一型号，且为开售而非首次发布，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20833\",\n    \"name\": \"米家智能宠物饮水机2\",\n    \"url\": \"https://www.ithome.com/0/991/397.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在京东上架“米家智能宠物饮水机 2 除菌版”，该产品主打 99% 除菌率，将于 8 月 25 日首销\",\n    \"reason\": \"原文型号为“米家智能宠物饮水机 2 除菌版”，与输入型号“米家智能宠物饮水机2”不是同一型号（除菌版为变体），仅前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20833\",\n    \"name\": \"米家智能宠物饮水机2\",\n    \"url\": \"https://www.ithome.com/0/993/766.htm\",\n    \"date\": null,\n    \"quote\": \"小米“米家智能宠物饮水机 2 除菌版”将于今天 10 点开启首销\",\n    \"reason\": \"原文型号为“米家智能宠物饮水机 2 除菌版”，与输入型号“米家智能宠物饮水机2”不是同一型号，且为首销而非首次发布，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:20854\",\n    \"name\": \"小米智能摄像机 视频通话版\",\n    \"url\": \"https://www.ithome.com/0/991/501.htm\",\n    \"date\": null,\n    \"quote\": \"小米智能摄像机视频通话版 2 单机今日上架小米有品并开启预约，8 月 26 日 10 点新开启众筹\",\n    \"reason\": \"原文型号为“小米智能摄像机视频通话版 2 单机”，与输入型号“小米智能摄像机 视频通话版”不是同一型号（2代及单机为变体），仅前缀包含不证明身份，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900693,
+  "id": "021793900688803bc68ba76535d4d8d120d8e883d298b95f2775f",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 724,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2624,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3348
+  }
+}

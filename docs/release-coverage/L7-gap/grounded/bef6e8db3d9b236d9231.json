@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/1/015/182.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家扫拖机器人 7 Max 今日 10:00 正式开启预售\",\n    \"reason\": \"原文仅涉及米家扫拖机器人 7 Max 的预售，型号名含“7 Max”后缀，与输入型号“米家扫拖机器人”不是同一型号；且无该基础型号首次发布信息，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:11374\",\n    \"name\": \"米家扫拖机器人\",\n    \"url\": \"https://www.ithome.com/1/020/740.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家扫拖机器人 7C 今年 8 月 27 日开售\",\n    \"reason\": \"原文涉及米家扫拖机器人 7C 的开售与促销，型号名含“7C”后缀，与输入型号“米家扫拖机器人”不是同一型号；且为旧品促销/降价报道，不能确定基础型号首发月，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:18505\",\n    \"name\": \"米家前置过滤器\",\n    \"url\": \"https://www.ithome.com/0/873/927.htm\",\n    \"date\": null,\n    \"quote\": \"小米今天推出米家前置过滤器 Pro，同期开启新品预约\",\n    \"reason\": \"原文发布的是米家前置过滤器 Pro，型号名含“Pro”后缀，与输入型号“米家前置过滤器”不是同一型号；仅前缀包含不证明身份，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/0/994/408.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在有品上架“米家石墨烯暖风机 C”，将于 9 月 2 日开启众筹\",\n    \"reason\": \"原文发布的是米家石墨烯暖风机 C，型号名含“C”后缀，与输入型号“米家石墨烯暖风机”不是同一型号；且众筹日期为相对月份，原文锚点为8月26日，对应9月，但型号身份不符，弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19140\",\n    \"name\": \"米家石墨烯暖风机\",\n    \"url\": \"https://www.ithome.com/0/997/927.htm\",\n    \"date\": null,\n    \"quote\": \"米家石墨烯暖风机 C 今日在小米有品开启众筹\",\n    \"reason\": \"原文发布的是米家石墨烯暖风机 C，型号名含“C”后缀，与输入型号“米家石墨烯暖风机”不是同一型号；仅前缀包含不证明身份，弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900686,
+  "id": "02179390068258872ea91cebe75e8e291705b4c0b59095e7e7421",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 703,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2455,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3158
+  }
+}

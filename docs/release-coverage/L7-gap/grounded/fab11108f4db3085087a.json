@@ -1,0 +1,29 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:19490\",\n    \"name\": \"米家洗衣机 超净洗 滚筒10kg 冰白\",\n    \"url\": \"https://www.ithome.com/0/735/785.htm\",\n    \"date\": \"2023-11\",\n    \"quote\": \"IT之家 11 月 29 日消息，小米上架了一款米家洗衣机超净洗滚筒 10kg 冰白款，标价 1399 元，而此前推出的黑色机型则为 1999 元。\",\n    \"reason\": \"原文明确为“米家洗衣机超净洗滚筒 10kg 冰白款”上架，颜色冰白与输入型号一致，且与黑色机型区分；报道时间为2023-11-29，事件同月，故首次发布年月为2023-11。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19495\",\n    \"name\": \"Redmi 电脑音箱\",\n    \"url\": \"https://www.ithome.com/0/738/578.htm\",\n    \"date\": \"2023-12\",\n    \"quote\": \"IT之家 12 月 12 日消息，Redmi 电脑音箱今日 10:00 全渠道开售，首发到手价 199 元。\",\n    \"reason\": \"原文明确为“Redmi 电脑音箱”今日全渠道开售，型号完全一致；报道时间为2023-12-12，事件同月，故首次发布年月为2023-12。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19530\",\n    \"name\": \"米家智能电热毯\",\n    \"url\": \"https://www.ithome.com/0/740/380.htm\",\n    \"date\": \"2023-12\",\n    \"quote\": \"IT之家 12 月 20 日消息，米家智能电热毯将于今日 10 点 — 12 月 27 日 10 点在 小米有品 进行众筹，到手价 189 元。\",\n    \"reason\": \"原文明确为“米家智能电热毯”今日开启众筹，型号完全一致；报道时间为2023-12-20，事件同月且有“今日”锚点，故首次发布年月为2023-12。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19530\",\n    \"name\": \"米家智能电热毯\",\n    \"url\": \"https://www.ithome.com/0/744/027.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 1 月 8 日消息，此前在小米有品众筹的米家智能电热毯，现已在京东等电商平台开售，售价 199 元。\",\n    \"reason\": \"原文为“此前众筹”的米家智能电热毯现已开售，属于旧品开售而非首次发布；首次众筹已在另一URL确定为2023-12，此条不能确定新的首发月，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19555\",\n    \"name\": \"米家智能除湿机 13L\",\n    \"url\": \"https://www.ithome.com/0/740/782.htm\",\n    \"date\": \"2023-12\",\n    \"quote\": \"IT之家 12 月 21 日消息，小米今天在京东上架了一款米家智能除湿机 13L，主打“静音 + 大除湿量”，售 799 元， 预约到手 749 元 。\",\n    \"reason\": \"原文明确为“米家智能除湿机 13L”今天在京东上架，型号完全一致；报道时间为2023-12-21，事件同月且有“今天”锚点，故首次发布年月为2023-12。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793901024,
+  "id": "02179390102026172ea91cebe75e8e291705b4c0b59095e996997",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "service_tier": "default",
+  "usage": {
+    "completion_tokens": 870,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2153,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 3023
+  }
+}

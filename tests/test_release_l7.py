@@ -98,3 +98,29 @@ def test_car_guard_allows_only_captured_l7_replay(tmp_path, monkeypatch):
     altered=deepcopy(result);altered[0]['release']['date']='2024-06'
     with pytest.raises(ValueError,match='car objects'):
         assert_cars_unchanged([row],altered)
+
+
+def test_chinese_month_followed_by_day_is_valid_but_other_months_are_not():
+    assert l7.has_month('2023 年 9 月 20 日首次发布', '2023-09')
+    assert l7.has_month('2023年09月20日', '2023-09')
+    assert not l7.has_month('2023年10月20日', '2023-09')
+    assert not l7.has_month('2023/11/20', '2023-01')
+
+
+def test_date_replay_selects_exact_reviewed_identity_before_checking(tmp_path, monkeypatch):
+    import json
+    from goodsdex.release_dates import apply_release_dates
+    row, entry = fixture(tmp_path, monkeypatch)
+    old_row = deepcopy(row)
+    old_row['name'] = old_row['name'].replace(' ', '')
+    old_entry = deepcopy(entry)
+    old_entry.update(name=old_row['name'], identity_sha256=l7.fingerprint(old_row),
+                     identity_terms=[old_row['name']])
+    bundle = tmp_path / 'identities.json'
+    bundle.write_text(json.dumps(dict(policy=l7.POLICY, entries=[old_entry, entry])))
+    monkeypatch.setattr(l7, 'INPUT', bundle)
+    row['release'] = deepcopy(entry['release'])
+    assert apply_release_dates([row])[0]['release'] == row['release']
+    row['params']['型号'] = 'H501 Pro'
+    with pytest.raises(ValueError, match='no longer matches'):
+        apply_release_dates([row])

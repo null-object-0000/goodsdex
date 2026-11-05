@@ -1,0 +1,27 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:10050143\",\n    \"name\": \"米家冰箱 三门\",\n    \"url\": \"https://www.ithome.com/0/843/600.htm\",\n    \"date\": \"2025-04\",\n    \"quote\": \"小米米家冰箱三门 215L 今日在京东等平台上市\",\n    \"reason\": \"原文明确该型号为215L三门冰箱，事件为“今日上市”，报道日期为2025-04-07，事件与报道同月，可确定首发月为2025-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050143\",\n    \"name\": \"米家冰箱 三门\",\n    \"url\": \"https://www.ithome.com/0/851/716.htm\",\n    \"date\": \"2025-05\",\n    \"quote\": \"小米米家冰箱三门 216L 新品今日在京东等平台上市\",\n    \"reason\": \"原文明确该型号为216L三门冰箱，事件为“新品今日上市”，报道日期为2025-05-09，事件与报道同月，可确定首发月为2025-05。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:10050219\",\n    \"name\": \"REDMI 显示器 G Pro\",\n    \"url\": \"https://www.ithome.com/0/846/494.htm\",\n    \"date\": \"2025-04\",\n    \"quote\": \"小米 REDMI 显示器 G Pro 27Q 现已在京东平台发布，并将于 4 月 24 日 19:00 开售\",\n    \"reason\": \"原文明确型号为REDMI显示器G Pro 27Q，事件为“现已在京东平台发布”，报道日期为2025-04-19，发布事件与报道同月，可确定首发月为2025-04。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19201\",\n    \"name\": \"米家即热管线机\",\n    \"url\": \"https://www.ithome.com/0/805/810.htm\",\n    \"date\": \"2023-09\",\n    \"quote\": \"小米米家即热管线机发售于 2023 年 9 月 20 日，支持 100℃ 真沸腾，首发价 1299 元。\",\n    \"reason\": \"原文明确该型号发售于2023年9月20日，事件为发售/首发，可确定首发月为2023-09。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:19263\",\n    \"name\": \"米家立式学习灯\",\n    \"url\": \"https://www.ithome.com/0/806/804.htm\",\n    \"date\": null,\n    \"quote\": \"小米米家立式学习灯 Pro 将于今晚 8 点在京东平台开售\",\n    \"reason\": \"原文型号为米家立式学习灯 Pro，与输入型号“米家立式学习灯”存在Pro后缀差异，属于不同型号；且“今晚8点”缺少明确日期锚点，无法确定首发月，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900768,
+  "id": "373ec228-63a3-4fdc-9846-5b2105dc73b7",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 712,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 1823,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 2535
+  }
+}

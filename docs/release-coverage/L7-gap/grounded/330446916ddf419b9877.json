@@ -1,0 +1,22 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "flag": 0,
+      "index": 0,
+      "message": {
+        "content": "```json\n[\n  {\n    \"id\": \"CN:mi_cn:product:6419\",\n    \"name\": \"米家电水壶\",\n    \"url\": \"https://www.ithome.com/0/489/679.htm\",\n    \"date\": null,\n    \"quote\": \"IT之家 5月28日消息 米家电水壶1S现已上架，1.7L大容量，支持约55℃低耗保温，售价为149元。\",\n    \"reason\": \"原文事件为“米家电水壶1S现已上架”，型号为1S，与输入型号“米家电水壶”不是同一型号（1S为后代/变体），仅前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7129\",\n    \"name\": \"米家便携电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/984/959.htm\",\n    \"date\": null,\n    \"quote\": \"小米现已在有品上架一款米家便携电动剃须刀 Pro（ 点此访问 ），其主打环抱锁须结构， 定价为 349 元，首发价 296.65 元 ，将于明天 10 点开启预售。\",\n    \"reason\": \"原文事件为“米家便携电动剃须刀 Pro”上架并将于明天预售，型号为Pro，与输入型号“米家便携电动剃须刀”不是同一型号，仅前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:7129\",\n    \"name\": \"米家便携电动剃须刀\",\n    \"url\": \"https://www.ithome.com/0/985/298.htm\",\n    \"date\": null,\n    \"quote\": \"小米旗下米家便携电动剃须刀 Pro 将于今天 10 点在有品开启预售（ 点此访问 ），其主打环抱锁须结构，定价为 349 元， 首发价 296.65 元 。\",\n    \"reason\": \"原文事件为“米家便携电动剃须刀 Pro”预售，型号为Pro，与输入型号“米家便携电动剃须刀”不是同一型号，仅前缀包含不证明身份，故弃权。\"\n  },\n  {\n    \"id\": \"CN:mi_cn:product:8134\",\n    \"name\": \"小米手环3\",\n    \"url\": \"https://www.ithome.com/0/305/927.htm\",\n    \"date\": null,\n    \"quote\": \"米家称新品“30天持续使用，24小时不间断佩戴，无需频繁充电”，莫非是小米手环3要来了？\",\n    \"reason\": \"原文仅为猜测“莫非是小米手环3要来了”，未确认发布或推出小米手环3，事件不确定，故弃权。\"\n  }\n]\n```",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1793900720,
+  "id": "as-heqmxabz54",
+  "model": "deepseek-v4.1-flash-1017",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 639,
+    "prompt_tokens": 1350,
+    "total_tokens": 1989
+  }
+}
