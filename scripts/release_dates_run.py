@@ -8,7 +8,7 @@ import importlib
 import json
 from pathlib import Path
 import sys
-import urllib.request
+import requests
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT/'src'), str(ROOT/'scripts')]
@@ -85,7 +85,9 @@ def main():
         raw=args.goods.read_bytes(); provenance=str(args.goods)
     else:
         url='https://raw.githubusercontent.com/null-object-0000/goodsdex/data/public/goods.json'
-        with urllib.request.urlopen(url,timeout=90) as response:raw=response.read()
+        response=requests.get(url,timeout=90)
+        response.raise_for_status()
+        raw=response.content
         provenance=url
     provenance += '; sha256='+hashlib.sha256(raw).hexdigest()
     before=json.loads(raw)
