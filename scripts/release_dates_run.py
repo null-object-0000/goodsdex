@@ -29,6 +29,8 @@ def run_lane(lane, rows, directory, live):
     elif lane == 'L2':
         result = module.run(rows, directory/lane, live=live,
             capture_path=ROOT/'docs/release-coverage/l2-atour/live-capture.json' if not live else None)
+    elif lane == 'L3':
+        result = module.run_all(rows, directory/'l3-xiaomi/full', live=live)
     else:
         result = module.run(rows, directory/lane, live=live)
     target = ROOT/'data/official'/FILES[lane]
@@ -50,24 +52,37 @@ def report(before, after, results, directory, provenance):
     lines += ['', '| 品牌 | day | month | none | 可得未取到 | 官方无此信息 |', '|---|---:|---:|---:|---:|---:|']
     for brand, c in a['brands'].items():
         lines.append(f"| {brand} | {c['day']} | {c['month']} | {c['none']} | {c['not_obtained']} | {c['official_absent']} |")
-    lines += ['', f"全库前：{b['total']}；后：{a['total']}", '', '## 四线结果']
+    lines += ['', f"全库有效覆盖：{b['total']['covered']}/{b['total']['total']} ({b['total']['ratio']:.1%}) → {a['total']['covered']}/{a['total']['total']} ({a['total']['ratio']:.1%})，净增 {a['total']['covered']-b['total']['covered']} 行。",
+        '', f"全库前：{b['total']}；后：{a['total']}",
+        '', '初始快照 day=0：旧管线将产品日期统一存到月；系列继承也一律截到月。原文出现具体日不代表已有产品级日精度记录。',
+        '本轮只在精确产品身份和官方事件原文明示日期时新增 day；系列公告仍只继承 month，不能把新闻发布时间或系列发布日冒充配置首售日。',
+        '', '## 四线结果']
     for lane,result in sorted(results.items()):
         lines += [f"- {lane}: `{json.dumps(result.get('summary',{}),ensure_ascii=False)}`"]
+    if 'L3' in results:
+        l3_only = matrix(apply_priority_dates(before, [ROOT/'data/official'/FILES['L3']]))
+        lines += ['', f"L3 命中数包含已有日期复核；单独应用 L3 的净新增有效覆盖为 {l3_only['total']['covered']-b['total']['covered']} 行，其余为复核或精度提升。"]
     samples=[]
-    candidates=sorted((r for r in after if effective(r)),key=lambda r:(not bool(r.get('release_inherited')),r['id']))
+    before_dates = {r['id']: effective(r) for r in before}
+    candidates=sorted((r for r in after if effective(r) and effective(r) != before_dates.get(r['id'])
+                       and effective(r).get('evidence', {}).get('source_type') == 'official'),
+                      key=lambda r:(effective(r)['granularity'] != 'day', r['id']))
     seen=set()
     for row in candidates:
-        r=effective(row);e=r.get('evidence') or {};key=(r['date'],e.get('url'))
+        r=effective(row);e=r.get('evidence') or {};key=row['id']
         if key in seen: continue
         seen.add(key)
         samples.append(dict(id=row['id'],name=row.get('name'),date=r['date'],precision=r['granularity'],
-            url=e.get('url'),quote=e.get('quote'),why='精确系列成员继承，截到证据月份；非SKU上市日' if r.get('release_source')=='series_inherit' or r.get('source')=='series_inherit' else '来源明示年月日' if r['granularity']=='day' else '来源支持月份；不填未知日',market=r.get('market')))
+            url=e.get('url'),quote='\n[…]\n'.join(fragment[:550].rstrip() for fragment in (e.get('quote') or '').split('\n[…]\n')),why='精确系列成员继承，截到证据月份；非SKU上市日' if r.get('release_source')=='series_inherit' or r.get('source')=='series_inherit' else '来源明示年月日' if r['granularity']=='day' else '来源支持月份；不填未知日',market=r.get('market')))
         if len(samples)==10:break
-    lines += ['', '## 10条可复核日期样本']
+    lines += ['', '## 10条本轮新增或精度提升的可复核日期样本']
     for s in samples:
         lines += [f"- {s['id']} · {s['name']} · {s['date']} ({s['precision']}) · {s['why']} · market={s['market']}\n  {s['url']}\n  原文：{s['quote']}"]
+    notes = ROOT/'docs/release-coverage/report-notes.md'
+    if notes.exists():
+        lines += ['', notes.read_text()]
     directory.mkdir(parents=True,exist_ok=True)
-    (directory/(str(now.date())+'.md')).write_text('\n'.join(lines)+'\n')
+    (directory/(str(now.date())+'.md')).write_text('\n'.join(lines).rstrip()+'\n')
     (directory/'coverage.json').write_text(json.dumps(dict(before=b,after=a,provenance=provenance),ensure_ascii=False,indent=2)+'\n')
     (directory/'samples.json').write_text(json.dumps(samples,ensure_ascii=False,indent=2)+'\n')
 

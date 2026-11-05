@@ -45,3 +45,23 @@ def test_series_day_evidence_is_only_month_in_coverage():
     assert effective(row)['granularity']=='month'
     assert row['release_series']['date']=='2025-03-04'
     assert effective(dict(row,release_series=dict(r,usage='disabled'))) is None
+
+
+def test_full_l3_applies_to_all_history_rows_and_keeps_existing_facts(tmp_path):
+    rows=[dict(id='a',category='手机'),dict(id='a',category='手机'),
+          dict(id='b',category='手机',release=release())]
+    r=release();r['evidence']['url']='https://www.mi.com/news'
+    path=tmp_path/'l3.json'
+    path.write_text(json.dumps(dict(lane='L3', candidates=[dict(family='a',ids=['a','b'],release=r)])))
+    out=apply_priority_dates(rows,[path])
+    assert [effective(r)['granularity'] for r in out]==['day','day','day']
+    assert out[2]==rows[2]
+    assert apply_priority_dates(out,[path])==out
+
+
+def test_l3_primary_source_cannot_be_replaced_by_media(tmp_path):
+    r=release();r.update(source='third_party',crosscheck_status='corroborated')
+    r['evidence'].update(source_type='third_party',url='https://www.ithome.com/news')
+    path=tmp_path/'l3.json';path.write_text(json.dumps(dict(lane='L3',candidates=[dict(family='a',ids=['a'],release=r)])))
+    with pytest.raises(ValueError,match='official primary'):
+        apply_priority_dates([dict(id='a',category='手机')],[path])

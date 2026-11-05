@@ -1,0 +1,208 @@
+{
+  "before_sha256": "e1fef5b70e8ac574cafc2a7f327e982721b6dc612ed18171688b3aca97e73ea6",
+  "rows": 3682,
+  "all_xiaomi_rows": 1624,
+  "unique_xiaomi_ids": 1619,
+  "l3_summary": {
+    "total": 1624,
+    "processed": 1624,
+    "hits": 44,
+    "missing": 1580,
+    "hit_precision": {
+      "day": 33,
+      "month": 11
+    },
+    "reasons": {
+      "no_exact_model_month_statement_in_official_corpus": 1552,
+      "official_exact_model_statement": 44,
+      "official_model_mention_without_reviewed_event_month": 28
+    },
+    "source_requests": 304,
+    "newsroom_articles": 249,
+    "newsroom_index_complete": true,
+    "reviewed_official_entries": 151,
+    "rejected_entries": {}
+  },
+  "request_starts": 304,
+  "minimum_interval_seconds": 2.1000261306762695,
+  "response_bodies_hash_checked": 304,
+  "official_assertions_hash_quote_checked": 151,
+  "official_new_or_upgraded_samples_checked": 10,
+  "coverage": {
+    "policy": "day-preferred-month-minimum-v1",
+    "counting_unit": "published_rows",
+    "total": {
+      "total": 3682,
+      "day": 33,
+      "month": 948,
+      "none": 2701,
+      "not_obtained": 2701,
+      "official_absent": 0,
+      "series_inherit": 186,
+      "covered": 981,
+      "ratio": 0.26643128734383487
+    },
+    "brands": {
+      "Apple": {
+        "total": 639,
+        "day": 0,
+        "month": 535,
+        "none": 104,
+        "not_obtained": 104,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "covered": 535,
+        "ratio": 0.837245696400626
+      },
+      "比亚迪": {
+        "total": 14,
+        "day": 0,
+        "month": 3,
+        "none": 11,
+        "not_obtained": 11,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "covered": 3,
+        "ratio": 0.21428571428571427
+      },
+      "大疆": {
+        "total": 281,
+        "day": 0,
+        "month": 97,
+        "none": 184,
+        "not_obtained": 184,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "covered": 97,
+        "ratio": 0.34519572953736655
+      },
+      "富士": {
+        "total": 63,
+        "day": 0,
+        "month": 52,
+        "none": 11,
+        "not_obtained": 11,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "covered": 52,
+        "ratio": 0.8253968253968254
+      },
+      "惠普": {
+        "total": 791,
+        "day": 0,
+        "month": 112,
+        "none": 679,
+        "not_obtained": 679,
+        "official_absent": 0,
+        "series_inherit": 112,
+        "covered": 112,
+        "ratio": 0.1415929203539823
+      },
+      "小米": {
+        "total": 1624,
+        "day": 33,
+        "month": 146,
+        "none": 1445,
+        "not_obtained": 1445,
+        "official_absent": 0,
+        "series_inherit": 74,
+        "covered": 179,
+        "ratio": 0.1102216748768473
+      },
+      "小米汽车": {
+        "total": 3,
+        "day": 0,
+        "month": 3,
+        "none": 0,
+        "not_obtained": 0,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "covered": 3,
+        "ratio": 1.0
+      },
+      "亚朵星球": {
+        "total": 267,
+        "day": 0,
+        "month": 0,
+        "none": 267,
+        "not_obtained": 267,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "covered": 0,
+        "ratio": 0.0
+      }
+    },
+    "priority": {
+      "笔记本 / 台式机": {
+        "total": 1040,
+        "day": 0,
+        "month": 278,
+        "none": 762,
+        "not_obtained": 762,
+        "official_absent": 0,
+        "series_inherit": 114,
+        "covered": 278,
+        "ratio": 0.2673076923076923
+      },
+      "汽车": {
+        "total": 17,
+        "day": 0,
+        "month": 6,
+        "none": 11,
+        "not_obtained": 11,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "covered": 6,
+        "ratio": 0.35294117647058826
+      },
+      "显示器": {
+        "total": 56,
+        "day": 0,
+        "month": 3,
+        "none": 53,
+        "not_obtained": 53,
+        "official_absent": 0,
+        "series_inherit": 1,
+        "covered": 3,
+        "ratio": 0.05357142857142857
+      },
+      "床品": {
+        "total": 234,
+        "day": 0,
+        "month": 0,
+        "none": 234,
+        "not_obtained": 234,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "covered": 0,
+        "ratio": 0.0
+      },
+      "电脑外设": {
+        "total": 12,
+        "day": 0,
+        "month": 0,
+        "none": 12,
+        "not_obtained": 12,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "covered": 0,
+        "ratio": 0.0
+      },
+      "宠物用品": {
+        "total": 4,
+        "day": 0,
+        "month": 0,
+        "none": 4,
+        "not_obtained": 4,
+        "official_absent": 0,
+        "series_inherit": 0,
+        "covered": 0,
+        "ratio": 0.0
+      }
+    }
+  },
+  "cron": "17 3 * * * GOODSDEX_PYTHON=/usr/bin/python3 /bin/bash /home/nichangen/代码/self-code/goodsdex/scripts/release_dates_cron.sh >> /tmp/goodsdex-release-dates-daily.log 2>&1",
+  "next_run": "2026-11-06T03:17:00+08:00",
+  "tests": "898 passed, 1 warning",
+  "test_command": "PYTHONPATH=src python3 -m pytest -q"
+}

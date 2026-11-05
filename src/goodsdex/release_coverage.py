@@ -75,35 +75,62 @@ def effective(row):
 
 def apply_priority_dates(rows, lane_files=None):
     output = deepcopy(rows)
-    by_id = {r['id']: r for r in output}
+    from collections import defaultdict
+    by_id = defaultdict(list)
+    for row in output:
+        by_id[row['id']].append(row)
     for path in lane_files or [ROOT / 'data/official' / n for n in LANE_FILES]:
         path = Path(path)
         if not path.exists():
             continue
         bundle = json.loads(path.read_text())
+        if bundle.get('lane') == 'L3':
+            from urllib.parse import urlparse
+            for candidate in bundle.get('candidates', []) + bundle.get('inherited_candidates', []):
+                evidence = candidate['release'].get('evidence') or {}
+                host = urlparse(evidence.get('url', '')).hostname or ''
+                if evidence.get('source_type') != 'official' or not (host == 'mi.com' or host.endswith('.mi.com')):
+                    raise ValueError('L3 requires Xiaomi official primary evidence')
         for candidate in bundle.get('candidates', []):
             from goodsdex.release_dates import validate
             r = validate(candidate)
+            r = deepcopy(r)
+            if bundle.get('lane') == 'L3':
+                parts = list(map(int, r['date'].split('-')))
+                r.update(family=candidate['family'],
+                         display=f'{parts[0]} 年 {parts[1]} 月' + (f' {parts[2]} 日' if len(parts) == 3 else ''),
+                         label='发布时间' if r['event'] == 'announcement' else '发售时间')
             for key in candidate['ids']:
-                row = by_id.get(key)
-                if row and priority_group(row) and not (row.get('release') or {}).get('date'):
-                    row['release'] = dict(deepcopy(r), usage='fact', display_allowed=True)
+                for row in by_id.get(key, []):
+                    old = row.get('release') or {}
+                    allowed = priority_group(row) or bundle.get('lane') == 'L3'
+                    upgrade = (old.get('granularity') == 'month' and r['granularity'] == 'day'
+                               and old.get('date') == r['date'][:7] and old.get('event') == r.get('event')
+                               and old.get('source') == r.get('source') == 'official')
+                    replay = (bundle.get('lane') == 'L3' and old.get('date') == r['date']
+                              and old.get('source') == r['source'] and old.get('evidence') == r['evidence'])
+                    if allowed and (not usable(old) or upgrade or replay):
+                        row['release'] = dict(deepcopy(r), usage='fact', display_allowed=True)
         for candidate in bundle.get('inherited_candidates', []):
             r = candidate['release']
             if r.get('source') != 'series_inherit' or r.get('release_source') != 'series_inherit' or r.get('granularity') != 'month' or not usable(r) or r.get('level') != 'series':
                 raise ValueError('Series inheritance requires captured month evidence')
             for key in candidate['ids']:
-                row = by_id.get(key)
-                if row and priority_group(row) and not effective(row):
-                    row['release_inherited'] = deepcopy(r)
-                    row['release_source'] = 'series_inherit'
+                for row in by_id.get(key, []):
+                    if (priority_group(row) or bundle.get('lane') == 'L3') and not effective(row):
+                        row['release_inherited'] = deepcopy(r)
+                        row['release_source'] = 'series_inherit'
         for obs in bundle.get('observations', []):
-            row = by_id.get(obs.get('id'))
-            if row and not effective(row):
-                row['release_missing'] = dict(reason='not_obtained', lane=bundle.get('lane'),
-                    detail=obs.get('reason') or obs.get('status') or 'not_collected',
-                    url=obs.get('url'), checked_at=obs.get('captured_at') or bundle.get('captured_at'))
+            for row in by_id.get(obs.get('id'), []):
+                if not effective(row):
+                    row['release_missing'] = dict(reason='not_obtained', lane=bundle.get('lane'),
+                        detail=obs.get('reason') or obs.get('status') or 'not_collected',
+                        url=obs.get('url'), checked_at=obs.get('captured_at') or bundle.get('captured_at'))
     for row in output:
+        if row.get('release_series'):
+            # Product evidence can be added after series replay; synchronize on
+            # this pass so the next ordinary finalizer cannot change the flag.
+            row['release_series']['inherited'] = not bool((row.get('release') or {}).get('date'))
         if not priority_group(row) or usable(row.get('release') or {}):
             continue
         r = row.get('release_series') or {}

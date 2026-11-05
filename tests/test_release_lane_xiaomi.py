@@ -43,3 +43,68 @@ def test_model_year_and_page_metadata_cannot_supply_month(tmp_path, monkeypatch)
     assert not result['candidates']
     assert not result['discoveries']
     assert result['summary']==dict(total=1,hits=0,missing=1)
+
+
+def test_full_catalogue_includes_nonpriority_and_rejects_third_party(tmp_path, monkeypatch):
+    import hashlib
+    raw = tmp_path/'launch.txt'
+    raw.write_text('September 25, 2025 Xiaomi 17 launched in mainland China.')
+    # run_all uses repository-relative evidence, including explicit absolute test paths.
+    evidence = dict(url='https://www.mi.com/news/launch', source_type='official',
+                    quote=raw.read_text(), sha256=hashlib.sha256(raw.read_bytes()).hexdigest(),
+                    captured_at='2026-11-05', capture_file=str(raw), locator='launch paragraph')
+    entries = [dict(id='launch', product_name='Xiaomi 17', aliases=[], date='2025-09-25',
+                    granularity='day', market='CN', event='announcement',
+                    origin='official_newsroom', evidence=evidence)]
+    import copy
+    bad=copy.deepcopy(entries[0]);bad.update(id='bad', product_name='Xiaomi 18')
+    bad['evidence'].update(url='https://www.ithome.com/news', source_type='third_party')
+    entries.append(bad)
+    rows=[dict(id='CN:mi_cn:product:1', name='Xiaomi 17', category='手机'),
+          dict(id='CN:mi_cn:product:2', name='Xiaomi 18', category='手机'),
+          dict(id='CN:mi_cn:product:3', name='Xiaomi 17 Pro', category='手机')]
+    monkeypatch.setattr(lane,'capture_serial',lambda url,directory,live:dict(url=url,status=200))
+    result=lane.run_all(rows,tmp_path/'out',live=False,entries=entries,enumerate_newsroom=False)
+    assert result['summary']['processed']==3
+    assert result['summary']['hits']==1
+    assert result['candidates'][0]['release']['granularity']=='day'
+    assert all(not r['official_absence_confirmed'] for r in result['records'])
+    raw.write_text('Changed evidence')
+    result=lane.run_all(rows,tmp_path/'out',live=False,entries=entries,enumerate_newsroom=False)
+    assert result['summary']['hits']==0
+    assert result['summary']['rejected_entries']=={'archived_hash_mismatch':1}
+
+
+def test_serial_fetch_resumes_without_network_and_no_live_never_fetches(tmp_path,monkeypatch):
+    monkeypatch.setattr(lane.requests,'get',lambda *a,**k: (_ for _ in ()).throw(AssertionError('network')))
+    url='https://www.mi.com/news'
+    assert lane.capture_serial(url,tmp_path,False)['reason']=='not_captured'
+    key=lane.hashlib.sha256(url.encode()).hexdigest()[:20]
+    (tmp_path/(key+'.json')).write_text(json.dumps(dict(url=url,status=200)))
+    assert lane.capture_serial(url,tmp_path,True)['status']==200
+
+
+def test_serial_requests_are_spaced_and_foreign_redirect_rejected(tmp_path, monkeypatch):
+    now=[100.0]; starts=[]
+    import time
+    monkeypatch.setattr(time,'time',lambda:now[0])
+    monkeypatch.setattr(time,'sleep',lambda delay:now.__setitem__(0,now[0]+delay))
+    class Response:
+        is_redirect=False
+        status_code=200
+        content=b'official body'
+        url='https://www.mi.com/news'
+    def get(*args,**kwargs):
+        starts.append(now[0]);return Response()
+    monkeypatch.setattr(lane.requests,'get',get)
+    # Keep capture files within ROOT because production stores relative paths.
+    monkeypatch.setattr(lane,'ROOT',tmp_path)
+    lane.capture_serial('https://www.mi.com/a',tmp_path/'captures',True)
+    lane.capture_serial('https://www.mi.com/b',tmp_path/'captures',True)
+    assert starts[1]-starts[0]>=2.1-1e-9
+    class Redirect:
+        is_redirect=True
+        headers={'Location':'https://www.ithome.com/date'}
+    monkeypatch.setattr(lane.requests,'get',lambda *a,**k:Redirect())
+    r=lane.capture_serial('https://www.mi.com/c',tmp_path/'captures',True)
+    assert r['reason']=='transport_error' and 'outside official' in r['error']
