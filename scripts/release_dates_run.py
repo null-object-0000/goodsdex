@@ -38,7 +38,9 @@ def run_lane(lane, rows, directory, live):
     else:
         result = module.run(rows, directory/lane, live=live)
     target = ROOT/('data/third-party' if lane == 'L5' else 'data/official')/FILES[lane]
-    target.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
+    temporary = target.with_suffix('.json.tmp')
+    temporary.write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n')
+    temporary.replace(target)
     return result
 
 
@@ -115,9 +117,15 @@ def main():
     before=json.loads(raw)
     lanes=list(FILES) if args.lane=='all' else [args.lane]
     args.output.mkdir(parents=True,exist_ok=True)
-    with ThreadPoolExecutor(max_workers=len(lanes)) as pool:
-        jobs={lane:pool.submit(run_lane,lane,before,args.output,not args.no_live) for lane in lanes}
-        results={lane:job.result() for lane,job in jobs.items()}
+    # L5 consumes official evidence, so wait for L1-L4 writes before evaluating it.
+    official_lanes = [lane for lane in lanes if lane != 'L5']
+    results = {}
+    if official_lanes:
+        with ThreadPoolExecutor(max_workers=len(official_lanes)) as pool:
+            jobs={lane:pool.submit(run_lane,lane,before,args.output,not args.no_live) for lane in official_lanes}
+            results={lane:job.result() for lane,job in jobs.items()}
+    if 'L5' in lanes:
+        results['L5'] = run_lane('L5',before,args.output,not args.no_live)
     after=apply_priority_dates(before)
     report(before,after,results,args.output,provenance)
     if args.apply:
