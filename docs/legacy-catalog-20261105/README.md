@@ -115,4 +115,4 @@
 
 “米家内衣物洗烘一体机”保留在主列表：CN:mi_cn:product:18431。
 
-完整逐项记录见 after-223.json；待人工清单见 manual-review.json（空）；完整排除计划见 exclusion-plan.json。截图、测试、提交和发布记录见 publication.md。
+完整逐项记录见 after-223.json；待人工清单见 manual-review.json（空）；完整排除计划见 exclusion-plan.json。截图、测试、提交和发布记录见 [publication.md](publication.md)。

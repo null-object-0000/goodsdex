@@ -1,0 +1,290 @@
+tests	Set up job	﻿2026-11-05T15:31:56.6096287Z Current runner version: '2.338.2'
+tests	Set up job	2026-11-05T15:31:56.6120592Z ##[group]Runner Image Provisioner
+tests	Set up job	2026-11-05T15:31:56.6121480Z Hosted Compute Agent
+tests	Set up job	2026-11-05T15:31:56.6122246Z Version: 20261028.624
+tests	Set up job	2026-11-05T15:31:56.6122892Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+tests	Set up job	2026-11-05T15:31:56.6123583Z Build Date: 2026-10-28T21:51:42Z
+tests	Set up job	2026-11-05T15:31:56.6124291Z Worker ID: {e52ee8a6-dd16-42ae-a3b7-6ddbb94d5b0f}
+tests	Set up job	2026-11-05T15:31:56.6125204Z Region: northcentralus
+tests	Set up job	2026-11-05T15:31:56.6125805Z Cloud: Azure
+tests	Set up job	2026-11-05T15:31:56.6126339Z ##[endgroup]
+tests	Set up job	2026-11-05T15:31:56.6127664Z ##[group]Operating System
+tests	Set up job	2026-11-05T15:31:56.6128281Z Ubuntu
+tests	Set up job	2026-11-05T15:31:56.6128777Z 26.04.1
+tests	Set up job	2026-11-05T15:31:56.6129302Z LTS
+tests	Set up job	2026-11-05T15:31:56.6129802Z ##[endgroup]
+tests	Set up job	2026-11-05T15:31:56.6130326Z ##[group]Runner Image
+tests	Set up job	2026-11-05T15:31:56.6130922Z Image: ubuntu-26.04
+tests	Set up job	2026-11-05T15:31:56.6131464Z Version: 20261101.186.1
+tests	Set up job	2026-11-05T15:31:56.6132502Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+tests	Set up job	2026-11-05T15:31:56.6134192Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+tests	Set up job	2026-11-05T15:31:56.6135262Z ##[endgroup]
+tests	Set up job	2026-11-05T15:31:56.6136381Z ##[group]GITHUB_TOKEN Permissions
+tests	Set up job	2026-11-05T15:31:56.6138803Z Contents: read
+tests	Set up job	2026-11-05T15:31:56.6139386Z Metadata: read
+tests	Set up job	2026-11-05T15:31:56.6139983Z ##[endgroup]
+tests	Set up job	2026-11-05T15:31:56.6141955Z Secret source: Actions
+tests	Set up job	2026-11-05T15:31:56.6142830Z Cache mode: write
+tests	Set up job	2026-11-05T15:31:56.6143543Z Prepare workflow directory
+tests	Set up job	2026-11-05T15:31:56.6573278Z Prepare all required actions
+tests	Set up job	2026-11-05T15:31:56.6645710Z Getting action download info
+tests	Set up job	2026-11-05T15:31:56.9115921Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+tests	Set up job	2026-11-05T15:31:57.0407185Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+tests	Set up job	2026-11-05T15:31:57.3886993Z Complete job name: tests
+tests	Run actions/checkout@v4	﻿2026-11-05T15:31:57.4663695Z ##[group]Run actions/checkout@v4
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4664961Z with:
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4665499Z   repository: null-object-0000/goodsdex
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4669611Z   token: ***
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4670094Z   ssh-strict: true
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4670594Z   ssh-user: git
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4671103Z   persist-credentials: true
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4671664Z   clean: true
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4672222Z   sparse-checkout-cone-mode: true
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4672788Z   fetch-depth: 1
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4673273Z   fetch-tags: false
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4673785Z   show-progress: true
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4674278Z   lfs: false
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4675125Z   submodules: false
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4675653Z   set-safe-directory: true
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4676193Z   allow-unsafe-pr-checkout: false
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.4677045Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7234144Z Syncing repository: null-object-0000/goodsdex
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7237097Z ##[group]Getting Git version info
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7238170Z Working directory is '/home/runner/work/goodsdex/goodsdex'
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7240046Z [command]/usr/bin/git version
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7257305Z git version 2.56.0
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7307492Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7315867Z Temporarily overriding HOME='/home/runner/work/_temp/d0fbd81d-b9ce-4c76-b6e5-7c03f2f59165' before making global git config changes
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7318427Z Adding repository directory to the temporary git global config as a safe directory
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7320413Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7352344Z Deleting the contents of '/home/runner/work/goodsdex/goodsdex'
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7356870Z ##[group]Initializing the repository
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7360239Z [command]/usr/bin/git init /home/runner/work/goodsdex/goodsdex
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7458745Z hint: Using 'master' as the name for the initial branch. This default branch name
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7460042Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7461575Z hint: to use in all of your new repositories, which will suppress this warning,
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7462515Z hint: call:
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7463061Z hint:
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7463642Z hint: 	git config --global init.defaultBranch <name>
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7464722Z hint:
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7465469Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7466624Z hint: 'development'. The just-created branch can be renamed via this command:
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7467687Z hint:
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7468305Z hint: 	git branch -m <name>
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7468986Z hint:
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7469842Z hint: Disable this message with "git config set advice.defaultBranchName false"
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7470998Z Initialized empty Git repository in /home/runner/work/goodsdex/goodsdex/.git/
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7487264Z [command]/usr/bin/git remote add origin https://github.com/null-object-0000/goodsdex
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7534661Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7536005Z ##[group]Disabling automatic garbage collection
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7537053Z [command]/usr/bin/git config --local gc.auto 0
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7578612Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7580130Z ##[group]Setting up auth
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7585663Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.7629466Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.8078284Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.8122263Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.8353291Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.8384802Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.8605690Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.8645185Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.8646760Z ##[group]Fetching the repository
+tests	Run actions/checkout@v4	2026-11-05T15:31:57.8655052Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +292a15c0a176751ea419cce048c9fc01fe969ffd:refs/remotes/origin/main
+tests	Run actions/checkout@v4	2026-11-05T15:32:13.9122106Z From https://github.com/null-object-0000/goodsdex
+tests	Run actions/checkout@v4	2026-11-05T15:32:13.9123271Z  * [new ref]         292a15c0a176751ea419cce048c9fc01fe969ffd -> origin/main
+tests	Run actions/checkout@v4	2026-11-05T15:32:13.9126687Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-11-05T15:32:13.9127971Z ##[group]Determining the checkout info
+tests	Run actions/checkout@v4	2026-11-05T15:32:13.9129531Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-11-05T15:32:13.9134372Z [command]/usr/bin/git sparse-checkout disable
+tests	Run actions/checkout@v4	2026-11-05T15:32:13.9184858Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+tests	Run actions/checkout@v4	2026-11-05T15:32:13.9213059Z ##[group]Checking out the ref
+tests	Run actions/checkout@v4	2026-11-05T15:32:13.9217069Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+tests	Run actions/checkout@v4	2026-11-05T15:32:14.9355119Z Updating files:  40% (6233/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:14.9580834Z Updating files:  41% (6247/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:14.9612160Z Updating files:  42% (6399/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:14.9637423Z Updating files:  43% (6552/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.0059708Z Updating files:  44% (6704/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.0158536Z Updating files:  45% (6856/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.0269914Z Updating files:  46% (7009/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.0351967Z Updating files:  47% (7161/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.0438092Z Updating files:  48% (7313/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.0515808Z Updating files:  49% (7466/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.0601814Z Updating files:  50% (7618/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.0685536Z Updating files:  51% (7770/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.0767705Z Updating files:  52% (7923/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.0850705Z Updating files:  53% (8075/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.0926927Z Updating files:  54% (8227/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.1007220Z Updating files:  55% (8380/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.1091713Z Updating files:  56% (8532/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.1443367Z Updating files:  57% (8684/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.1682218Z Updating files:  58% (8837/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.1823462Z Updating files:  59% (8989/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.1978657Z Updating files:  60% (9141/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.2098008Z Updating files:  61% (9294/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.2252576Z Updating files:  62% (9446/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.2434364Z Updating files:  63% (9599/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.2603255Z Updating files:  64% (9751/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.2768106Z Updating files:  65% (9903/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.2911850Z Updating files:  66% (10056/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.3070796Z Updating files:  67% (10208/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.3221678Z Updating files:  68% (10360/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.3363564Z Updating files:  69% (10513/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.3528626Z Updating files:  70% (10665/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.3676324Z Updating files:  71% (10817/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.3939026Z Updating files:  72% (10970/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.4173764Z Updating files:  73% (11122/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.4353086Z Updating files:  74% (11274/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.4501817Z Updating files:  75% (11427/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.4657417Z Updating files:  76% (11579/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.4807207Z Updating files:  77% (11731/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.4974954Z Updating files:  78% (11884/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.5165466Z Updating files:  79% (12036/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.5273315Z Updating files:  80% (12188/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.5411486Z Updating files:  81% (12341/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.5553422Z Updating files:  82% (12493/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.6055361Z Updating files:  83% (12646/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.6681655Z Updating files:  84% (12798/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.6760502Z Updating files:  85% (12950/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.6834875Z Updating files:  86% (13103/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.7476170Z Updating files:  87% (13255/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.7870830Z Updating files:  88% (13407/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.8623830Z Updating files:  89% (13560/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.9152012Z Updating files:  90% (13712/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.9355525Z Updating files:  91% (13864/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:15.9499993Z Updating files:  91% (13925/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.0327673Z Updating files:  92% (14017/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.0738099Z Updating files:  93% (14169/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.1478438Z Updating files:  94% (14321/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.1575287Z Updating files:  95% (14474/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.1828233Z Updating files:  96% (14626/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.1976054Z Updating files:  97% (14778/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.2051011Z Updating files:  98% (14931/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.2519483Z Updating files:  99% (15083/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.2520547Z Updating files: 100% (15235/15235)
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.2520963Z Updating files: 100% (15235/15235), done.
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.2654073Z Switched to a new branch 'main'
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.2658573Z branch 'main' set up to track 'origin/main'.
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.2720110Z ##[endgroup]
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.2764209Z [command]/usr/bin/git log -1 --format=%H
+tests	Run actions/checkout@v4	2026-11-05T15:32:16.2788176Z 292a15c0a176751ea419cce048c9fc01fe969ffd
+tests	Run actions/setup-python@v5	﻿2026-11-05T15:32:16.3057501Z ##[group]Run actions/setup-python@v5
+tests	Run actions/setup-python@v5	2026-11-05T15:32:16.3057943Z with:
+tests	Run actions/setup-python@v5	2026-11-05T15:32:16.3058236Z   python-version: 3.12
+tests	Run actions/setup-python@v5	2026-11-05T15:32:16.3058539Z   check-latest: false
+tests	Run actions/setup-python@v5	2026-11-05T15:32:16.3061311Z   token: ***
+tests	Run actions/setup-python@v5	2026-11-05T15:32:16.3061639Z   update-environment: true
+tests	Run actions/setup-python@v5	2026-11-05T15:32:16.3062080Z   allow-prereleases: false
+tests	Run actions/setup-python@v5	2026-11-05T15:32:16.3062464Z   freethreaded: false
+tests	Run actions/setup-python@v5	2026-11-05T15:32:16.3062777Z ##[endgroup]
+tests	Run actions/setup-python@v5	2026-11-05T15:32:16.4374818Z ##[group]Installed versions
+tests	Run actions/setup-python@v5	2026-11-05T15:32:16.7408491Z (node:2392) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+tests	Run actions/setup-python@v5	2026-11-05T15:32:16.7409732Z (Use `node --trace-deprecation ...` to show where the warning was created)
+tests	Run actions/setup-python@v5	2026-11-05T15:32:16.7410507Z Successfully set up CPython (3.12.16)
+tests	Run actions/setup-python@v5	2026-11-05T15:32:16.7411535Z ##[endgroup]
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	﻿2026-11-05T15:32:16.7621591Z ##[group]Run python -m pip install pytest Pillow requests beautifulsoup4
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:16.7622653Z ^[[36;1mpython -m pip install pytest Pillow requests beautifulsoup4^[[0m
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:16.7925223Z shell: /usr/bin/bash -e {0}
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:16.7925640Z env:
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:16.7925998Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:16.7926601Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:16.7927135Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:16.7927607Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:16.7928072Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:16.7928508Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:16.7928962Z ##[endgroup]
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:22.9312276Z Collecting pytest
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:22.9541453Z   Downloading pytest-9.2.0-py3-none-any.whl.metadata (7.9 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.1033705Z Collecting Pillow
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.1070222Z   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.1502120Z Collecting requests
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.1537247Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.1680736Z Collecting beautifulsoup4
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.1714968Z   Downloading beautifulsoup4-4.15.0-py3-none-any.whl.metadata (3.8 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.1822853Z Collecting iniconfig>=2 (from pytest)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.1857648Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.1985828Z Collecting packaging>=24 (from pytest)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.2020759Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.2134197Z Collecting pluggy<2,>=1.6 (from pytest)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.2167111Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.2314387Z Collecting pygments>=2.15 (from pytest)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.2348641Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.3308841Z Collecting charset_normalizer<4,>=2 (from requests)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.3345255Z   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.3515395Z Collecting idna<4,>=2.5 (from requests)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.3549037Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.3734780Z Collecting urllib3<3,>=1.26 (from requests)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.3766585Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.3917520Z Collecting certifi>=2023.5.7 (from requests)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.3950170Z   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.4108280Z Collecting soupsieve>=1.6.1 (from beautifulsoup4)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.4141067Z   Downloading soupsieve-4.0.1-py3-none-any.whl.metadata (4.4 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.4466943Z Collecting typing-extensions>=4.0.0 (from beautifulsoup4)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.4504983Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.4585533Z Downloading pytest-9.2.0-py3-none-any.whl (411 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.4686591Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.4743422Z Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.5331565Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 123.0 MB/s  0:00:00
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.5368043Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.5428156Z Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.5488026Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.5546771Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.5602916Z Downloading beautifulsoup4-4.15.0-py3-none-any.whl (109 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.5659418Z Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.5715565Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.5769037Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.5828229Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.5949710Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 99.9 MB/s  0:00:00
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.5982317Z Downloading soupsieve-4.0.1-py3-none-any.whl (50 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.6038470Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:23.9869634Z Installing collected packages: urllib3, typing-extensions, soupsieve, pygments, pluggy, Pillow, packaging, iniconfig, idna, charset_normalizer, certifi, requests, pytest, beautifulsoup4
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:25.6096754Z
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:25.6112815Z Successfully installed Pillow-13.0.0 beautifulsoup4-4.15.0 certifi-2026.10.23 charset_normalizer-3.5.2 idna-3.20 iniconfig-2.3.1 packaging-26.3 pluggy-1.7.0 pygments-2.21.0 pytest-9.2.0 requests-2.34.2 soupsieve-4.0.1 typing-extensions-4.16.0 urllib3-2.8.0
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:25.6120279Z
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:25.6120976Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+tests	Run python -m pip install pytest Pillow requests beautifulsoup4	2026-11-05T15:32:25.6121866Z [notice] To update, run: pip install --upgrade pip
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	﻿2026-11-05T15:32:25.6849537Z ##[group]Run PYTHONPATH=src python -m pytest -q -m "not live"
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:25.6850101Z ^[[36;1mPYTHONPATH=src python -m pytest -q -m "not live"^[[0m
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:25.6885047Z shell: /usr/bin/bash -e {0}
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:25.6885424Z env:
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:25.6885874Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:25.6886408Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:25.6886955Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:25.6887442Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:25.6887887Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:25.6888363Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:25.6888761Z ##[endgroup]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:31.9318674Z ........................................................................ [  6%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:34.7318481Z ........................................................................ [ 13%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:34.8309902Z ........................................................................ [ 20%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:36.1718122Z ........................................................................ [ 27%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:32:36.2086950Z ........................................................................ [ 34%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:33:20.4712581Z ........................................................................ [ 41%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:33:24.4940154Z ........................................................................ [ 48%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:33:26.8175139Z ........................................................................ [ 55%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:33:29.9914134Z ........................................................................ [ 62%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:33:37.4078541Z ........................................................................ [ 69%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:33:37.6810446Z ........................................................................ [ 76%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:33:44.2232319Z ........................................................................ [ 83%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:33:45.0473595Z ........................................................................ [ 90%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:34:24.3781947Z ........................................................................ [ 97%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:34:26.2329602Z .........................                                                [100%]
+tests	Run PYTHONPATH=src python -m pytest -q -m "not live"	2026-11-05T15:34:26.2330321Z 1033 passed, 8 deselected in 119.73s (0:01:59)
+tests	Post Run actions/setup-python@v5	﻿2026-11-05T15:34:26.3329586Z Post job cleanup.
+tests	Post Run actions/setup-python@v5	2026-11-05T15:34:26.4547118Z (node:2539) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+tests	Post Run actions/setup-python@v5	2026-11-05T15:34:26.4548147Z (Use `node --trace-deprecation ...` to show where the warning was created)
+tests	Post Run actions/checkout@v4	﻿2026-11-05T15:34:26.4791552Z Post job cleanup.
+tests	Post Run actions/checkout@v4	2026-11-05T15:34:26.5661303Z [command]/usr/bin/git version
+tests	Post Run actions/checkout@v4	2026-11-05T15:34:26.5700032Z git version 2.56.0
+tests	Post Run actions/checkout@v4	2026-11-05T15:34:26.5735212Z Temporarily overriding HOME='/home/runner/work/_temp/3822e360-9d79-4f6c-a5ef-1af7a8949975' before making global git config changes
+tests	Post Run actions/checkout@v4	2026-11-05T15:34:26.5736764Z Adding repository directory to the temporary git global config as a safe directory
+tests	Post Run actions/checkout@v4	2026-11-05T15:34:26.5740144Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/goodsdex/goodsdex
+tests	Post Run actions/checkout@v4	2026-11-05T15:34:26.5782123Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+tests	Post Run actions/checkout@v4	2026-11-05T15:34:26.5816338Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+tests	Post Run actions/checkout@v4	2026-11-05T15:34:26.6118598Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+tests	Post Run actions/checkout@v4	2026-11-05T15:34:26.6143163Z http.https://github.com/.extraheader
+tests	Post Run actions/checkout@v4	2026-11-05T15:34:26.6153304Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+tests	Post Run actions/checkout@v4	2026-11-05T15:34:26.6202170Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+tests	Post Run actions/checkout@v4	2026-11-05T15:34:26.6520269Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+tests	Post Run actions/checkout@v4	2026-11-05T15:34:26.6556258Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+tests	Complete job	﻿2026-11-05T15:34:26.6953804Z Cleaning up orphan processes
+tests	Complete job	2026-11-05T15:34:26.7282028Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
