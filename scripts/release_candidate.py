@@ -28,7 +28,7 @@ def allowed_path(name):
     return not p.is_absolute() and '..' not in p.parts and (
         name == 'public/goods.json' or
         any(name.startswith(prefix) for prefix in ('public/prices/', 'public/archive/',
-            'data/categories/', 'data/archive/', 'data/hp/', 'data/prices/', 'data/price-observations/')))
+            'docs/release-coverage/', 'data/categories/', 'data/archive/', 'data/hp/', 'data/prices/', 'data/price-observations/')))
 
 
 def merge_value(before, after, latest, label):
@@ -109,7 +109,7 @@ def pack(root, scope, target):
     # Stage only candidate inputs. Never include stale finalize output.
     tracked = git(root, 'ls-files').decode().splitlines()
     names = set(n for n in tracked if allowed_path(n))
-    for prefix in ('data/categories', 'data/archive', 'data/hp', 'data/prices', 'data/price-observations', 'public/prices', 'public/archive'):
+    for prefix in ('docs/release-coverage', 'data/categories', 'data/archive', 'data/hp', 'data/prices', 'data/price-observations', 'public/prices', 'public/archive'):
         if (root / prefix).exists():
             names.update(p.relative_to(root).as_posix() for p in (root / prefix).rglob('*') if p.is_file())
     for name in sorted(names):

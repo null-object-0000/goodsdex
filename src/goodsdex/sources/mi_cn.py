@@ -558,6 +558,10 @@ def _parse_pc(raw: str, url: str, pid: str) -> tuple[list[Capture], list[Asserti
     pi = pv.get("product_info") or {}
     gl = pv.get("goods_list") or []
     gi = (gl[0] or {}).get("goods_info", {}) if gl else {}
+    main_images = [{"url": image, "locator": f"$.data.goods_list[0].goods_info.imgs[{i}]"}
+                   for i, image in enumerate(gi.get("imgs") or []) if isinstance(image, str) and image]
+    if main_images:
+        out.append(A("pc_main_images", main_images, "$.data.goods_list[0].goods_info.imgs", "商品主图"))
     if pi.get("product_desc"):
         out.append(A("desc", pi["product_desc"], "$.data.product_info.product_desc", "商品简介"))
     if gi.get("price"):

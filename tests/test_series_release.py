@@ -79,10 +79,8 @@ def test_conflicts_rollback_and_year_precision(tmp_path, rows, bundle):
     bundle['enabled'] = True
     bundle['batches'][0]['series_release'].update(date='2025',granularity='year')
     path.write_text(json.dumps(bundle))
-    out=apply_series_releases(rows,path)
-    r=next(r['release_series'] for r in out if r['release_series']['batch_id']==bundle['batches'][0]['id'])
-    assert r['date']=='2025' and r['display'] is None
-    assert r['crosscheck_status']=='unverified' and r['usage']=='disabled'
+    with pytest.raises(ValueError, match='month or day'):
+        apply_series_releases(rows,path)
 
 
 def test_series_cannot_enter_product_release(bundle):

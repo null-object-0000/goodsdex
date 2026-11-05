@@ -67,6 +67,10 @@ def test_official_precision_does_not_invent_lower_units(tmp_path,when,precision,
     path=tmp_path/'series.json';path.write_text(json.dumps(bundle))
     rows=json.loads(gzip.decompress((DOC/'baseline.json.gz').read_bytes()))
     row=next(r for r in rows if r['id']==b['members'][0]['id'])
+    if precision == 'year':
+        with pytest.raises(ValueError, match='month or day'):
+            apply_series_releases([row],path)
+        return
     out=apply_series_releases([row],path)[0]['release_series']
     assert out['date']==when and out['display']==display
     bad=deepcopy(b);bad['series_release'].update(date='2025-02-30',granularity='day')

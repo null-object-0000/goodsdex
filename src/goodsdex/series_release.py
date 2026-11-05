@@ -36,8 +36,8 @@ def validate_batch(batch):
         pattern += r'-(?:0[1-9]|1[0-2])'
         if r['granularity'] == 'day':
             pattern += r'-(?:0[1-9]|[12]\d|3[01])'
-    elif r.get('granularity') != 'year':
-        raise ValueError('Series precision must be year, month or day')
+    else:
+        raise ValueError('Series precision must be month or day')
     if not re.fullmatch(pattern, str(r.get('date', ''))):
         raise ValueError('Invalid series date/precision')
     if r['granularity'] == 'day':

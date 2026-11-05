@@ -747,6 +747,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     # release > release_series > release_llm; page existence is independent.
     from goodsdex.date_enrichment import apply_date_enrichment
     output = apply_date_enrichment(output)
+    from goodsdex.release_coverage import apply_priority_dates
+    output = apply_priority_dates(output)
     from goodsdex.brands import normalize_brands, audit_brands
     brand_before = output
     output = normalize_brands(output)
@@ -793,6 +795,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     meta['release_dates'] = coverage(output)
     from goodsdex.release_scope import scope_coverage
     meta['release_scope'] = scope_coverage(output)
+    from goodsdex.release_coverage import matrix
+    meta['release_precision'] = matrix(output)
     meta['release_series'] = {
         'count': sum(bool(r.get('release_series')) for r in output),
         'inherited_without_product': sum(bool((r.get('release_series') or {}).get('inherited')) for r in output),
