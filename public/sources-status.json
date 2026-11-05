@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T18:59:12Z",
+  "generatedAt": "2026-11-05T19:22:04Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -18,8 +18,8 @@
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
       "lastAttemptAt": "2026-11-05T18:54:11Z",
-      "lastSuccessAt": "2026-11-05T18:15:08Z",
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-05T19:00:55Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42088706873",
       "error": null,
       "stale": false,
@@ -29,11 +29,11 @@
       "sourceId": "refresh-hp",
       "workflow": ".github/workflows/refresh-hp.yml",
       "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-05T18:07:52Z",
+      "lastAttemptAt": "2026-11-05T19:07:46Z",
       "lastSuccessAt": "2026-11-05T10:23:52Z",
-      "conclusion": "failure",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42081273125",
-      "error": "raise ValueError('L7 assertion no longer matches reviewed captured evidence')",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42090898335",
+      "error": null,
       "stale": false,
       "staleReason": null
     },
@@ -65,10 +65,10 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-05T18:56:15Z",
+      "lastAttemptAt": "2026-11-05T19:18:38Z",
       "lastSuccessAt": null,
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42088706873",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42090898335",
       "error": null,
       "stale": false,
       "staleReason": null
