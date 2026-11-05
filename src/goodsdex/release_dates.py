@@ -1,4 +1,4 @@
-"""Evidence-backed, month-only release dates. Unknown is always absent.
+"""Evidence-backed, day-preferred release dates; month is the minimum. Unknown is always absent.
 
 Candidates are reviewed inputs, never a lookup from model names or model years.
 LLM eligibility is bound to the exact candidate universe that was sampled.
@@ -28,9 +28,10 @@ def validate(candidate):
     r = candidate['release']
     if r.get('level', 'product') != 'product' or r.get('source') == 'series':
         raise ValueError('Series assertions belong in release_series, never release')
-    if not re.fullmatch(r'(?:19|20)\d{2}-(?:0[1-9]|1[0-2])', str(r.get('date', ''))):
-        raise ValueError('Release date must have month precision')
-    if r.get('granularity') != 'month' or r.get('source') not in ('official', 'official_hidden', 'third_party', 'llm'):
+    from goodsdex.release_coverage import precision
+    if not precision(r):
+        raise ValueError('Release date must have day or month precision')
+    if r.get('granularity') not in ('day', 'month') or r.get('source') not in ('official', 'official_hidden', 'third_party', 'llm'):
         raise ValueError('Invalid release provenance/granularity')
     if r.get('confidence') not in ('high', 'medium', 'low'):
         raise ValueError('Invalid release confidence')
@@ -49,7 +50,7 @@ def validate(candidate):
         raise ValueError('Evidence must identify its underlying source')
     official_domains = ('mi.com', 'apple.com', 'apple.com.cn', 'hpstore.cn',
                         'fujifilm-x.com', 'fujifilm.com', 'fujifilm.com.cn',
-                        'bydauto.com.cn', 'byd.com', 'dji.com')
+                        'bydauto.com.cn', 'byd.com', 'dji.com', 'hp.com', 'yaduo.com', 'atour.com')
     if e['source_type'] == 'official' and not any(
             url.hostname == d or url.hostname.endswith('.'+d) for d in official_domains):
         raise ValueError('Unofficial domain cannot be marked official')
@@ -278,9 +279,12 @@ def apply_release_dates(rows, path=DEFAULT_INPUT, llm_path=None, crosscheck_path
         r['usage'] = 'reference' if planned or is_hidden or inferred else 'fact'
         r['inferred'] = inferred
         r['family'] = c['family']
-        year, month = map(int, r['date'].split('-'))
+        parts = list(map(int, r['date'].split('-')))
+        year, month = parts[:2]
         r['display'] = (f'约 {year} 年 {month} 月（推断）' if inferred else
                         f'预计 {year} 年 {month} 月（官方计划）' if planned else f'{year} 年 {month} 月')
+        if len(parts) == 3 and not inferred:
+            r['display'] += f' {parts[2]} 日'
         r['label'] = ('推出月份（推断）' if inferred else '预计发售' if planned else
                       '发布时间' if r['event'] == 'announcement' else '发售时间')
         if r.get('retrospective') and r['source'] == 'official':
