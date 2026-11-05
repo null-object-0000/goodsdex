@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-05T18:23:47Z",
+  "generatedAt": "2026-11-05T18:54:09Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-05T18:07:45Z",
+      "lastAttemptAt": "2026-11-05T18:47:52Z",
       "lastSuccessAt": "2026-11-05T18:20:09Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42081255325",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42087691552",
       "error": null,
       "stale": false,
       "staleReason": null
@@ -31,9 +31,9 @@
       "expectedIntervalMinutes": 1440,
       "lastAttemptAt": "2026-11-05T18:07:52Z",
       "lastSuccessAt": "2026-11-05T10:23:52Z",
-      "conclusion": "in_progress",
+      "conclusion": "failure",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42081273125",
-      "error": null,
+      "error": "raise ValueError('L7 assertion no longer matches reviewed captured evidence')",
       "stale": false,
       "staleReason": null
     },
@@ -65,10 +65,10 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-05T18:20:11Z",
+      "lastAttemptAt": "2026-11-05T18:50:33Z",
       "lastSuccessAt": null,
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42081414028",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42087691552",
       "error": null,
       "stale": false,
       "staleReason": null
