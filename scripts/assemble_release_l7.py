@@ -13,6 +13,7 @@ def main():
  rows=json.loads(gzip.decompress((OUT/'baseline.json.gz').read_bytes()))
  by_id={r['id']:r for r in rows}
  proposals=json.loads((OUT/'verification.json').read_text())
+ approved = {(e['id'], e['date'], e['url']): e['identity_sha256'] for e in json.loads((OUT/'review-manifest.json').read_text())}
  entries=[];audit=[];seen=set()
  for i,p in enumerate(proposals):
   key=(p['id'],p['date'],p['url'])
@@ -21,6 +22,8 @@ def main():
   a=dict(index=i,id=p['id'],name=p['name'],date=p['date'],url=p['url'])
   if p.get('rejection'):a['rejection']=p['rejection']
   elif i in EXCLUDE:a.update(rejection='event_or_identity_unproven',detail=EXCLUDE[i])
+  elif key not in approved or approved[key] != fingerprint(by_id[p['id']]):
+   a.update(rejection='event_or_identity_unproven',detail='没有人工审核白名单或身份已变化')
   else:
    row=by_id[p['id']];c=p['capture']
    text=body_text(gzip.decompress((ROOT/c['capture_file']).read_bytes()))
