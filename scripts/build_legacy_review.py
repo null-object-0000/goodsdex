@@ -11,6 +11,7 @@ def main():
     ap=argparse.ArgumentParser();ap.add_argument('--before',type=Path,required=True);a=ap.parse_args()
     rows=json.loads(a.before.read_text())
     patches={r['id']:r for r in json.loads((ROOT/'data/supplements/verified-backfill-20261030.json').read_text()) if r.get('field')=='name'}
+    recover={r['id']:r for r in json.loads((ROOT/'docs/legacy-catalog-20261105/source-url-recovery.json').read_text())['items']}
     entries=[]
     for r in rows:
         p=patches.get(r['id']); archived=p['captured_at'] if p else None
@@ -18,8 +19,11 @@ def main():
         if not captured and r.get('captured_at','').startswith('2026-'):
             captured=r['captured_at']
         entries.append(dict(id=r['id'],reviewed_name=r['name'],category=category(r['name']),
-          category_basis='reviewed_product_noun',archived_at=archived,archived_source_url=p['source_url'] if p else None,
+          category_basis='reviewed_product_noun',reviewed_source_url=r.get('source_url') or recover.get(r['id'],{}).get('source_url'),archived_at=archived,archived_source_url=p['source_url'] if p else None,
           captured_at=captured,captured_at_basis='source_record.fetched_at' if r.get('fetched_at') else 'source_record.captured_at' if captured else 'unknown'))
+    for item,r in zip(entries,rows,strict=True):
+        if r.get('image') and r.get('image_scope')=='model':
+            item['reviewed_image_fields']={k:v for k,v in r.items() if k=='image' or (k.startswith('image_') and k not in ('image_missing','image_status'))}
     out=ROOT/'data/official/mi-legacy-categories.json'
     out.write_text(json.dumps(dict(schema=1,scope_count=223,baseline_sha256=hashlib.sha256(a.before.read_bytes()).hexdigest(),items=entries),ensure_ascii=False,indent=2)+'\n')
     print(Counter(e['category'] for e in entries));print('manual',[(e['id'],e['reviewed_name']) for e in entries if not e['category']])

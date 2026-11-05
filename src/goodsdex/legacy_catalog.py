@@ -105,6 +105,8 @@ def apply_legacy_catalog(rows, manifest=None):
                 row['category_review_source'] = 'mi-legacy-categories-v1'
                 family(row)
             continue
+        if entry and not row.get('source_url') and entry.get('reviewed_source_url'):
+            row['source_url'] = entry['reviewed_source_url']
         category = entry['category'] if entry else category_of(row.get('name') or '')
         row.update(category=category or '待人工', categories=[category or '待人工'],
                    category_review_required=not bool(category), category_review_source='mi-legacy-categories-v1', discontinued=True, status='retired', is_historical=True)
@@ -115,6 +117,12 @@ def apply_legacy_catalog(rows, manifest=None):
         row.pop('category_l2', None)
         if row.get('price') is None:
             row.update(price=None, price_missing='page_no_price')
+        approved_image = (entry or {}).get('reviewed_image_fields')
+        if (approved_image and approved_image.get('image_scope') == 'model'
+                and not row.get('image') and row.get('image_status') != 'official_unavailable'):
+            row.update(deepcopy(approved_image))
+            if row.get('image_status') == 'missing':
+                row.pop('image_status')
         # A family reference is useful evidence, but not this model's main image.
         if row.get('image') and row.get('image_scope') == 'series':
             keys = [k for k in row if k.startswith('image_') and k not in ('image_missing','image_status')]
