@@ -50,8 +50,12 @@ def report(before,after,output):
         f"全库逐行处理 {len(after)} 条：{old['total']['covered']}/{len(before)}（{old['total']['ratio']:.2%}）→ {new['total']['covered']}/{len(after)}（{new['total']['ratio']:.2%}）。目标45%；差 {max(0, __import__('math').ceil(len(after)*.45)-new['total']['covered'])} 条。",
         '', '≤14天可用于年龄和代际参考；15–45天medium，仅年龄；>45天日期留空并进入conflicts.json。delta=null表示无可比较的第二日期，不能解释为零误差。月级比较同月为0，不伪造日。',
         '', '四类来源净新增：'+str({s:additions[s] for s in ('official','third_party','llm_crossed','series_inherit')}),
-        '', '| 品牌 | 前 | 后 | 覆盖率 |','|---|---:|---:|---:|']
-    for b,v in new['brands'].items():lines.append(f"| {b} | {old['brands'].get(b,{}).get('covered',0)} | {v['covered']}/{v['total']} | {v['ratio']:.2%} |")
+        '', '| 品牌 | 前 | 后 | 覆盖率 | 目标 | 缺口 |','|---|---:|---:|---:|---:|---:|']
+    targets={'小米':.5,'惠普':.4,'亚朵星球':.3,'大疆':.6}
+    for b,v in new['brands'].items():
+        target=targets.get(b);goal=f'{target:.0%}' if target else '—'
+        gap=max(0,__import__('math').ceil(target*v['total'])-v['covered']) if target else '—'
+        lines.append(f"| {b} | {old['brands'].get(b,{}).get('covered',0)} | {v['covered']}/{v['total']} | {v['ratio']:.2%} | {goal} | {gap} |")
     lines+=['','| 品牌 | 来源 | 精度 | 条数 |','|---|---|---|---:|']
     for b,cs in cells.items():
         for (source,p),n in sorted(cs.items()):lines.append(f'| {b} | {source} | {p} | {n} |')
@@ -69,7 +73,9 @@ def report(before,after,output):
         '- release_decision.date固定YYYY-MM；usage明确age/generation；后台原始日精度和证据保留。',
         '', '## 测试与发布',
         '- 数据仓完整回归：946 passed；API：367 passed / 4 skipped；C端换新与显示：14 passed，完整候选交互：6 passed。日志见tolerance-tests.log及消费仓docs/release-tolerance-20261105。',
-        '- 消费端代码：9448b1a；CI run 41979736019。数据提交与发布run完成后补记。',
+        '- 数据代码：999ebde8；数据发布run 41980347146 成功；data提交 a5e19cf02abec3b9b9a63f5aff12335af675cec1。完整云端测试run 41980346750 成功。',
+        '- 消费端代码：9448b1a；CI run 41979736019 成功；API部署已由HTTP 200完整提交号回读。线上goods.json与GitHub/OSS SHA256一致：772d8c3b4374632b534a8cac745ab10947832981d33739f4ecaa97d117488223。',
+        '- 发布时间不是单独换机理由；本次只提供近似年龄和代际参考，不引入按日期强制建议换机的规则。',
         '',f'本轮冲突 {len(conflicts)} 条，见 conflicts.json。定时工作流保持原cron，新规则由常规finalizer和daily report重放。']
     (output/(date.today().isoformat()+'.md')).write_text('\n'.join(lines)+'\n')
     return data

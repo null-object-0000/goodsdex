@@ -14,7 +14,7 @@ with ThreadPoolExecutor(max_workers=6) as pool:cs=list(pool.map(lambda u:capture
 by_url={c['url']:c for c in cs};audits=[]
 for row in rows:
  r=row['release'];e=r['evidence'];c=by_url[e['url']];quote=e['quote'].split(' | ',1)[-1]
- text=Page(Path(c['capture_file']).read_bytes().decode('utf-8')).text if c['status']=='captured' else ''
+ text=Page((ROOT/c['capture_file']).read_bytes().decode('utf-8')).text if c['status']=='captured' else ''
  supported=bool(text and norm(quote) in norm(text))
  audits.append(dict(id=row['id'],name=row['name'],date=r['date'],event=r['event'],quote_found=supported,capture=c,quote=quote))
 save(directory/'audit.json',audits)
