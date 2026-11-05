@@ -25,8 +25,11 @@ def fetch(url, directory, live=True):
     key = hashlib.sha256(url.encode()).hexdigest()[:20]
     meta = directory / (key + '.json')
     if meta.exists():
-        cached = json.loads(meta.read_text())
-        if not (cached.get('reason') == 'transport_error' and 'is not in the subpath' in cached.get('error','')):
+        try:
+            cached = json.loads(meta.read_text())
+        except (OSError, ValueError):
+            cached = None  # Interrupted metadata write: retry with the same throttle.
+        if cached and not (cached.get('reason') == 'transport_error' and 'is not in the subpath' in cached.get('error','')):
             return cached
     if not live: return dict(url=url, reason='not_captured')
     if not publisher(url, primary=False): return dict(url=url, reason='source_not_allowed')
@@ -67,7 +70,9 @@ def fetch(url, directory, live=True):
         else: result['reason']='redirect_limit'
     except (OSError, ValueError) as error:
         result.update(reason='transport_error',error=str(error))
-    meta.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+    temporary = meta.with_suffix('.json.tmp')
+    temporary.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+    temporary.replace(meta)
     print('L5 '+url+' '+result['reason'],flush=True)
     return result
 
