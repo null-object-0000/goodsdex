@@ -52,30 +52,58 @@ def test_only_explicit_delisting_marks(scenario):
         assert all(result[0][key] == value for key, value in previous[0].items())
         assert_no_lost_ids(previous, result)
     else:
-        assert result == []
-        assert report['counts'] == dict(confirmed=0, unknown=1, revived=0)
-        assert report['unknown'][IDS[0]]['reason']
-        with pytest.raises(ValueError, match='Publication would drop'):
+        if scenario == 'available':
+            # Listed upstream but absent from this round's crawl: keep the full
+            # row, flagged as carried, so the gate is not tripped by a miss.
+            assert len(result) == 1
+            assert result[0]['carry_reason'] == 'crawl_missed_but_listed'
+            assert result[0]['carried_forward_at'] == NOW
+            assert result[0]['on_sale'] is True
+            assert all(result[0][key] == value for key, value in previous[0].items())
+            assert report['counts'] == dict(confirmed=0, unknown=0, revived=0, carried=1)
+            assert len(report['carried']) == 1
             assert_no_lost_ids(previous, result)
+        else:
+            assert result == []
+            assert report['counts'] == dict(confirmed=0, unknown=1, revived=0, carried=0)
+            assert report['unknown'][IDS[0]]['reason']
+            with pytest.raises(ValueError, match='Publication would drop'):
+                assert_no_lost_ids(previous, result)
     assert len(calls) == (1 if scenario in ('available', 'delisted') else 2)
 
 
-def test_five_retained_but_fake_available_loss_still_blocks():
-    fake = 'CN:mi_cn:product:20545'
-    previous = [row(key) for key in IDS + [fake]]
+def test_crawl_miss_on_listed_item_is_carried_and_flagged():
+    miss, lost = 'CN:mi_cn:product:20545', 'CN:mi_cn:product:20071'
+    previous = [row(key) for key in IDS + [miss, lost]]
 
     def fetch(key, timeout):
-        return dict(code=0, message='ok') if key == fake else removed(key, timeout)
+        if key == lost:
+            raise TimeoutError('probe failed')
+        return dict(code=0, message='ok') if key == miss else removed(key, timeout)
 
     archive, report = prepare(previous, [], {}, fetch, NOW)
     result = apply_archive([], archive)
-    assert report['counts'] == dict(confirmed=5, unknown=1, revived=0)
-    # Run the actual supplements gate, with the same source covered this round.
+    assert report['counts'] == dict(confirmed=5, unknown=1, revived=0, carried=1)
+    carried = [r for r in result if r['id'] == miss]
+    assert carried and carried[0]['carry_reason'] == 'crawl_missed_but_listed'
+    assert carried[0]['carried_forward_at'] == NOW and carried[0]['on_sale'] is True
+    # The carried row is still a full record, so the gate passes for it; the id
+    # whose liveness could not be confirmed still fails the gate.
     current = [row('CN:mi_cn:product:20833')] + result
     rows, _ = merge(current, [], previous[:-1], apply_backfills=False)
-    assert {r['id'] for r in rows} >= set(IDS)
-    with pytest.raises(ValueError, match=fake):
+    assert {r['id'] for r in rows} >= set(IDS) | {miss}
+    with pytest.raises(ValueError, match=lost):
         merge(current, [], previous, apply_backfills=False)
+
+
+def test_wholesale_crawl_miss_refuses_to_carry():
+    previous = [row(f'CN:mi_cn:product:{9000 + i}') for i in range(80)]
+
+    def fetch(key, timeout):
+        return dict(code=0, message='ok')
+
+    with pytest.raises(ValueError, match='Too many listed-but-missed'):
+        prepare(previous, [], {}, fetch, NOW)
 
 
 def test_revival_and_unknown_preserve_previous_delisting():

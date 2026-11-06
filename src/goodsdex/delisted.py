@@ -97,14 +97,28 @@ def prepare(previous, current, archive, fetcher=fetch_product, now=None):
     revived = {}
     for key, evidence in confirmed.items():
         items[key] = dict(row=deepcopy(old[key]), state='delisted', evidence=evidence)
+    carried = {}
     for key, evidence in available.items():
         if key in present and (old[key].get('delisted_evidence') or
                                items.get(key, {}).get('state') == 'delisted'):
             items[key] = dict(state='available', evidence=evidence)
             revived[key] = evidence
             unknown.pop(key, None)
-    report = dict(confirmed=confirmed, unknown=unknown, revived=revived,
-                  counts=dict(confirmed=len(confirmed), unknown=len(unknown), revived=len(revived)))
+        elif key not in present and not old[key].get('delisted_evidence') \
+                and items.get(key, {}).get('state') != 'delisted':
+            # Still listed upstream but this round's crawl did not return it.
+            # Keep the last complete row instead of failing the whole rebuild;
+            # the row is marked carried so downstream never reads it as fresh.
+            items[key] = dict(row=deepcopy(old[key]), state='carried', evidence=evidence)
+            carried[key] = evidence
+            unknown.pop(key, None)
+    report = dict(confirmed=confirmed, unknown=unknown, revived=revived, carried=carried,
+                  counts=dict(confirmed=len(confirmed), unknown=len(unknown), revived=len(revived),
+                              carried=len(carried)))
+    # A handful of single-item crawl misses is normal; a wholesale lane failure is not.
+    if len(carried) > max(30, int(len(previous) * 0.01)):
+        raise ValueError(f'Too many listed-but-missed products to carry: {len(carried)}'
+                         f' of {len(previous)}')
     return dict(schema=1, items=items), report
 
 
@@ -127,6 +141,21 @@ def apply_archive(current, archive):
     rows = [deepcopy(confirmed[r['id']]['row']) if r['id'] in confirmed else r
             for r in rows]
     rows.extend(deepcopy(entry['row']) for key, entry in confirmed.items() if key not in present)
+    for key, entry in items.items():
+        evidence = entry.get('evidence', {})
+        if (not ID_PATTERN.fullmatch(key) or entry.get('state') != 'carried'
+                or evidence.get('code') != 0 or evidence.get('url') != URL
+                or not evidence.get('probed_at') or key in present):
+            continue
+        if entry['row']['id'] != key:
+            raise ValueError('Carried archive identity mismatch')
+        row = deepcopy(entry['row'])
+        row['on_sale'] = True
+        row['carried_forward_at'] = evidence['probed_at']
+        row['carry_reason'] = 'crawl_missed_but_listed'
+        for key in [k for k in row if k.startswith('delisted_')]:
+            row.pop(key)
+        rows.append(row)
     for row in rows:
         entry = items.get(row['id'], {})
         evidence = entry.get('evidence', {})
