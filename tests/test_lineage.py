@@ -153,3 +153,10 @@ def test_missing_legacy_time_never_becomes_adopted_time_and_new_capture_required
     assert result['name']=='历史名'  # legacy compatibility; display remains unadopted
     obs=result['sources'][0]['observations'][0]
     with pytest.raises(ValueError,match='actual field capture time'): upsert_source(result,obs)
+
+
+def test_unadopted_legacy_name_does_not_create_observations_on_republication():
+    from goodsdex.product_sources import migrate_row
+    first=migrate_row({'id':'car','name':'历史名称','source_url':'https://www.byd.com/car'})
+    assert first['display']['name'] is None
+    assert migrate_row(first)==first

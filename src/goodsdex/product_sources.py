@@ -236,6 +236,9 @@ def legacy_observations(row):
             if not owner:
                 raise ValueError('Refreshed field lacks registered source: ' + field)
             stamp = row.get(field + '_captured_at') or row.get(field + '_fetched_at') or row.get('fetched_at') or row.get('captured_at')
+            from .lineage import valid_time
+            if field=='name' and old is None and not valid_time(stamp) and any(o['fields'].get('name')==row.get('name') for e in row.get('sources',[]) for o in e.get('observations',[e])):
+                continue  # the readable legacy name is already retained as an unadopted observation
             refreshed.append(_observation(owner, url, stamp, {field: row.get(field), **({'price_kind': row.get('price_kind')} if field == 'price' else {})}))
         return refreshed
     source = publisher(row.get('source_url'))
