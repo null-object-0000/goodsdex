@@ -1,8 +1,8 @@
 {
  "previous_count": 4468,
- "rebuilt_count": 4468,
+ "rebuilt_count": 4473,
  "added_count": 96,
- "count": 4564,
+ "count": 4569,
  "missing_ids": [],
  "added_ids": [
   "CN:mi_cn:product:10000060",
@@ -107,19 +107,22 @@
    "id": "CN:mi_cn:product:10050186",
    "type": "source_drift",
    "fields": [
+    "display",
     "image",
-    "params"
+    "params",
+    "sources"
    ],
    "row_count": 3,
    "problems": [
     "Protected group: source_drift"
    ],
-   "rows_sha256": "f1c9825551baf37af987622e4b2e476f5a41efbe248e6d75562933a6c8cb0a1f"
+   "rows_sha256": "a37ea7a2878682b905a3d502e18c9a4f51431806636cf1f4cd9b9362a307557a"
   },
   {
    "id": "CN:mi_cn:product:20425",
    "type": "true_variant",
    "fields": [
+    "display",
     "gid",
     "market_price",
     "params",
@@ -132,26 +135,29 @@
     "release_precision",
     "release_quote",
     "release_source",
-    "release_tolerance_days"
+    "release_tolerance_days",
+    "sources"
    ],
    "row_count": 2,
    "problems": [
     "Protected group: true_variant"
    ],
-   "rows_sha256": "ca3beabc46e4ea0f67f46f65cb1535daad92101887c446c93d639e08cbcf5e4f"
+   "rows_sha256": "d9957cf474a2503c0eaf2780e350dc0aa0095aade5de627bc8486aefe39ee93f"
   },
   {
    "id": "CN:mi_cn:product:22172",
    "type": "true_variant",
    "fields": [
+    "display",
     "gid",
-    "params"
+    "params",
+    "sources"
    ],
    "row_count": 3,
    "problems": [
     "Protected group: true_variant"
    ],
-   "rows_sha256": "417d1bdc9c1a6da521960a9de19e5c6e25f800d4232533a82b14249feaeef597"
+   "rows_sha256": "7f6204241465a1c1eb0a4301ef5244fc32b41fbe894de93a99927e5c3c348271"
   }
  ],
  "allowed_deletions": {},
@@ -1343,17 +1349,17 @@
   "youpin:185493"
  ],
  "deduplication": {
-  "before_rows": 4564,
-  "after_rows": 4564,
-  "before_unique_ids": 4559,
-  "after_unique_ids": 4559,
+  "before_rows": 4569,
+  "after_rows": 4569,
+  "before_unique_ids": 4564,
+  "after_unique_ids": 4564,
   "merged_groups": 0,
   "removed_rows": 0,
   "conflict_groups": 3,
   "conflict_rows": 8,
   "conflicts_unchanged": true,
   "brands_before": {
-   "Apple": 639,
+   "Apple": 644,
    "亚朵星球": 231,
    "大疆": 281,
    "富士": 63,
@@ -1364,7 +1370,7 @@
    "比亚迪": 14
   },
   "brands_after": {
-   "Apple": 639,
+   "Apple": 644,
    "亚朵星球": 231,
    "大疆": 281,
    "富士": 63,
@@ -1472,7 +1478,7 @@
    "新风机": 4,
    "无人机": 53,
    "无线充电器": 13,
-   "显示器": 9,
+   "显示器": 10,
    "智能后视镜": 1,
    "智能存储": 1,
    "智能家居": 16,
@@ -1566,7 +1572,7 @@
    "车载设备": 5,
    "运动相机": 94,
    "运动鞋": 2,
-   "配件": 71,
+   "配件": 75,
    "键鼠套装": 16,
    "门铃": 1,
    "门铃/猫眼": 14,
@@ -1687,7 +1693,7 @@
    "新风机": 4,
    "无人机": 53,
    "无线充电器": 13,
-   "显示器": 9,
+   "显示器": 10,
    "智能后视镜": 1,
    "智能存储": 1,
    "智能家居": 16,
@@ -1781,7 +1787,7 @@
    "车载设备": 5,
    "运动相机": 94,
    "运动鞋": 2,
-   "配件": 71,
+   "配件": 75,
    "键鼠套装": 16,
    "门铃": 1,
    "门铃/猫眼": 14,
@@ -1837,19 +1843,22 @@
     "id": "CN:mi_cn:product:10050186",
     "type": "source_drift",
     "fields": [
+     "display",
      "image",
-     "params"
+     "params",
+     "sources"
     ],
     "row_count": 3,
     "problems": [
      "Protected group: source_drift"
     ],
-    "rows_sha256": "f1c9825551baf37af987622e4b2e476f5a41efbe248e6d75562933a6c8cb0a1f"
+    "rows_sha256": "a37ea7a2878682b905a3d502e18c9a4f51431806636cf1f4cd9b9362a307557a"
    },
    {
     "id": "CN:mi_cn:product:20425",
     "type": "true_variant",
     "fields": [
+     "display",
      "gid",
      "market_price",
      "params",
@@ -1862,45 +1871,48 @@
      "release_precision",
      "release_quote",
      "release_source",
-     "release_tolerance_days"
+     "release_tolerance_days",
+     "sources"
     ],
     "row_count": 2,
     "problems": [
      "Protected group: true_variant"
     ],
-    "rows_sha256": "ca3beabc46e4ea0f67f46f65cb1535daad92101887c446c93d639e08cbcf5e4f"
+    "rows_sha256": "d9957cf474a2503c0eaf2780e350dc0aa0095aade5de627bc8486aefe39ee93f"
    },
    {
     "id": "CN:mi_cn:product:22172",
     "type": "true_variant",
     "fields": [
+     "display",
      "gid",
-     "params"
+     "params",
+     "sources"
     ],
     "row_count": 3,
     "problems": [
      "Protected group: true_variant"
     ],
-    "rows_sha256": "417d1bdc9c1a6da521960a9de19e5c6e25f800d4232533a82b14249feaeef597"
+    "rows_sha256": "7f6204241465a1c1eb0a4301ef5244fc32b41fbe894de93a99927e5c3c348271"
    }
   ],
-  "input_sha256": "ae9e9993d10d2831b28f00c74475cf6583ee1da41d971fdf4d73b151193cff68",
-  "output_sha256": "674c830c2e02f8ddbf8190dbf1ea8e3a0720a20066177d917c0bc0fef2a5d5e2"
+  "input_sha256": "69d4511ab53ec271a797f09b952f131d726cf4fd673c86b955df915ad126c96d",
+  "output_sha256": "62c0cfa06737f287af85d18d95402059e834930b8b943cabf1fa9deafa1a5b8d"
  },
- "published_count": 4468,
+ "published_count": 4467,
  "accessories": {
-  "excluded_count": 73,
-  "newly_excluded_count": 0,
+  "excluded_count": 79,
+  "newly_excluded_count": 1,
   "denominator": 4446,
-  "newly_excluded_ratio": 0.0,
+  "newly_excluded_ratio": 0.0002249212775528565,
   "threshold": 0.05,
   "gate": "green",
-  "review_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "review_sha256": "d648713f5dafadfaf1e4778443e95bf5eddc44cb6355dc9666b3474b07264feb",
   "reviewed": false
  },
  "brands": {
   "before": {
-   "Apple": 639,
+   "Apple": 644,
    "亚朵星球": 231,
    "大疆": 281,
    "富士": 63,
@@ -1911,7 +1923,7 @@
    "比亚迪": 14
   },
   "after": {
-   "Apple": 639,
+   "Apple": 644,
    "亚朵星球": 231,
    "大疆": 281,
    "富士": 63,
@@ -1921,7 +1933,7 @@
    "未知": 215,
    "比亚迪": 14
   },
-  "unknown_ratio": 0.04710780017528484,
+  "unknown_ratio": 0.047056248632085795,
   "unknown_prefix_top10": [
    [
     "mihome:6700",
