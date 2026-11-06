@@ -1,39 +1,39 @@
 {
-  "generatedAt": "2026-11-06T04:57:50Z",
+  "generatedAt": "2026-11-06T05:13:45Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-06T04:07:31Z",
+      "lastAttemptAt": "2026-11-06T05:07:32Z",
       "lastSuccessAt": "2026-11-06T02:22:48Z",
-      "conclusion": "cancelled",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42160603874",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42166522782",
       "error": null,
       "stale": true,
-      "staleReason": "已 2.6 小时无成功运行（预期每 60 分钟）"
+      "staleReason": "已 2.8 小时无成功运行（预期每 60 分钟）"
     },
     {
       "sourceId": "refresh-apple",
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-06T04:07:34Z",
+      "lastAttemptAt": "2026-11-06T05:07:35Z",
       "lastSuccessAt": "2026-11-06T02:14:17Z",
-      "conclusion": "failure",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42160608277",
-      "error": "raise ValueError('Canonical car product differs from source evidence')",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42166527729",
+      "error": null,
       "stale": true,
-      "staleReason": "已 2.7 小时无成功运行（预期每 60 分钟）"
+      "staleReason": "已 3.0 小时无成功运行（预期每 60 分钟）"
     },
     {
       "sourceId": "refresh-hp",
       "workflow": ".github/workflows/refresh-hp.yml",
       "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-06T04:07:37Z",
+      "lastAttemptAt": "2026-11-06T05:07:38Z",
       "lastSuccessAt": "2026-11-06T02:28:16Z",
-      "conclusion": "failure",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42160613101",
-      "error": "raise ValueError('Canonical car product differs from source evidence')",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42166532317",
+      "error": null,
       "stale": false,
       "staleReason": null
     },
@@ -65,10 +65,10 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-06T04:53:52Z",
+      "lastAttemptAt": "2026-11-06T05:09:29Z",
       "lastSuccessAt": null,
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42165059775",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42166527729",
       "error": null,
       "stale": false,
       "staleReason": null
