@@ -1,12 +1,12 @@
 {
  "zol": {
   "attempted": 300,
-  "queried": 222,
+  "queried": 221,
   "source_page_captures": 5,
   "source_status": {
    "200": 5
   },
-  "circuit_skips": 209,
+  "circuit_skips": 208,
   "mapped": 2,
   "hits": 0,
   "confidence": {
@@ -14,19 +14,19 @@
   },
   "precision": {},
   "reasons": {
-   "ambiguous_model_or_configuration": 78,
-   "unable_to_map": 220,
+   "ambiguous_model_or_configuration": 79,
+   "unable_to_map": 219,
    "parameter_identity_mismatch": 2
   },
   "brands": {
    "Apple": {
-    "attempted": 48,
-    "queried": 29,
+    "attempted": 41,
+    "queried": 26,
     "source_page_captures": 4,
     "source_status": {
      "200": 4
     },
-    "circuit_skips": 27,
+    "circuit_skips": 24,
     "mapped": 2,
     "hits": 0,
     "confidence": {
@@ -34,71 +34,71 @@
     },
     "precision": {},
     "reasons": {
-     "ambiguous_model_or_configuration": 19,
+     "ambiguous_model_or_configuration": 15,
      "parameter_identity_mismatch": 2,
-     "unable_to_map": 27
+     "unable_to_map": 24
     }
    },
    "亚朵星球": {
-    "attempted": 47,
-    "queried": 34,
+    "attempted": 41,
+    "queried": 31,
     "source_page_captures": 0,
     "source_status": {},
-    "circuit_skips": 33,
+    "circuit_skips": 30,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "ambiguous_model_or_configuration": 13,
-     "unable_to_map": 34
+     "unable_to_map": 31,
+     "ambiguous_model_or_configuration": 10
     }
    },
    "大疆": {
-    "attempted": 47,
-    "queried": 14,
+    "attempted": 41,
+    "queried": 13,
     "source_page_captures": 1,
     "source_status": {
      "200": 1
     },
-    "circuit_skips": 13,
+    "circuit_skips": 12,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "unable_to_map": 14,
-     "ambiguous_model_or_configuration": 33
+     "unable_to_map": 13,
+     "ambiguous_model_or_configuration": 28
     }
    },
    "富士": {
-    "attempted": 47,
-    "queried": 46,
+    "attempted": 40,
+    "queried": 39,
     "source_page_captures": 0,
     "source_status": {},
-    "circuit_skips": 44,
+    "circuit_skips": 37,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "unable_to_map": 46,
+     "unable_to_map": 39,
      "ambiguous_model_or_configuration": 1
     }
    },
    "小米": {
-    "attempted": 47,
-    "queried": 41,
+    "attempted": 40,
+    "queried": 33,
     "source_page_captures": 0,
     "source_status": {},
-    "circuit_skips": 39,
+    "circuit_skips": 31,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "unable_to_map": 41,
-     "ambiguous_model_or_configuration": 6
+     "ambiguous_model_or_configuration": 7,
+     "unable_to_map": 33
     }
    },
    "小米汽车": {
@@ -116,18 +116,30 @@
     }
    },
    "惠普": {
-    "attempted": 47,
-    "queried": 47,
+    "attempted": 40,
+    "queried": 40,
     "source_page_captures": 0,
     "source_status": {},
-    "circuit_skips": 45,
+    "circuit_skips": 38,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "unable_to_map": 47
+     "unable_to_map": 40
     }
+   },
+   "未知": {
+    "attempted": 0,
+    "queried": 0,
+    "source_page_captures": 0,
+    "source_status": {},
+    "circuit_skips": 0,
+    "mapped": 0,
+    "hits": 0,
+    "confidence": {},
+    "precision": {},
+    "reasons": {}
    },
    "比亚迪": {
     "attempted": 14,
@@ -148,92 +160,92 @@
  },
  "pconline": {
   "attempted": 300,
-  "queried": 222,
+  "queried": 221,
   "source_page_captures": 0,
   "source_status": {},
-  "circuit_skips": 211,
+  "circuit_skips": 210,
   "mapped": 0,
   "hits": 0,
   "confidence": {},
   "precision": {},
   "reasons": {
-   "ambiguous_model_or_configuration": 78,
-   "unable_to_map": 222
+   "ambiguous_model_or_configuration": 79,
+   "unable_to_map": 221
   },
   "brands": {
    "Apple": {
-    "attempted": 48,
-    "queried": 29,
+    "attempted": 41,
+    "queried": 26,
     "source_page_captures": 0,
     "source_status": {},
-    "circuit_skips": 29,
+    "circuit_skips": 26,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "ambiguous_model_or_configuration": 19,
-     "unable_to_map": 29
+     "ambiguous_model_or_configuration": 15,
+     "unable_to_map": 26
     }
    },
    "亚朵星球": {
-    "attempted": 47,
-    "queried": 34,
+    "attempted": 41,
+    "queried": 31,
     "source_page_captures": 0,
     "source_status": {},
-    "circuit_skips": 33,
+    "circuit_skips": 30,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "ambiguous_model_or_configuration": 13,
-     "unable_to_map": 34
+     "unable_to_map": 31,
+     "ambiguous_model_or_configuration": 10
     }
    },
    "大疆": {
-    "attempted": 47,
-    "queried": 14,
+    "attempted": 41,
+    "queried": 13,
     "source_page_captures": 0,
     "source_status": {},
-    "circuit_skips": 13,
+    "circuit_skips": 12,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "unable_to_map": 14,
-     "ambiguous_model_or_configuration": 33
+     "unable_to_map": 13,
+     "ambiguous_model_or_configuration": 28
     }
    },
    "富士": {
-    "attempted": 47,
-    "queried": 46,
+    "attempted": 40,
+    "queried": 39,
     "source_page_captures": 0,
     "source_status": {},
-    "circuit_skips": 44,
+    "circuit_skips": 37,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "unable_to_map": 46,
+     "unable_to_map": 39,
      "ambiguous_model_or_configuration": 1
     }
    },
    "小米": {
-    "attempted": 47,
-    "queried": 41,
+    "attempted": 40,
+    "queried": 33,
     "source_page_captures": 0,
     "source_status": {},
-    "circuit_skips": 39,
+    "circuit_skips": 31,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "unable_to_map": 41,
-     "ambiguous_model_or_configuration": 6
+     "ambiguous_model_or_configuration": 7,
+     "unable_to_map": 33
     }
    },
    "小米汽车": {
@@ -251,18 +263,30 @@
     }
    },
    "惠普": {
-    "attempted": 47,
-    "queried": 47,
+    "attempted": 40,
+    "queried": 40,
     "source_page_captures": 0,
     "source_status": {},
-    "circuit_skips": 45,
+    "circuit_skips": 38,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "unable_to_map": 47
+     "unable_to_map": 40
     }
+   },
+   "未知": {
+    "attempted": 0,
+    "queried": 0,
+    "source_page_captures": 0,
+    "source_status": {},
+    "circuit_skips": 0,
+    "mapped": 0,
+    "hits": 0,
+    "confidence": {},
+    "precision": {},
+    "reasons": {}
    },
    "比亚迪": {
     "attempted": 14,
@@ -283,102 +307,102 @@
  },
  "baike": {
   "attempted": 300,
-  "queried": 222,
+  "queried": 221,
   "source_page_captures": 22,
   "source_status": {
    "403": 22
   },
-  "circuit_skips": 428,
+  "circuit_skips": 438,
   "mapped": 0,
   "hits": 0,
   "confidence": {},
   "precision": {},
   "reasons": {
-   "ambiguous_model_or_configuration": 78,
-   "rate_limited_or_challenge": 222
+   "ambiguous_model_or_configuration": 79,
+   "rate_limited_or_challenge": 221
   },
   "brands": {
    "Apple": {
-    "attempted": 48,
-    "queried": 29,
+    "attempted": 41,
+    "queried": 26,
     "source_page_captures": 0,
     "source_status": {},
+    "circuit_skips": 54,
+    "mapped": 0,
+    "hits": 0,
+    "confidence": {},
+    "precision": {},
+    "reasons": {
+     "ambiguous_model_or_configuration": 15,
+     "rate_limited_or_challenge": 26
+    }
+   },
+   "亚朵星球": {
+    "attempted": 41,
+    "queried": 31,
+    "source_page_captures": 3,
+    "source_status": {
+     "403": 3
+    },
     "circuit_skips": 60,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "ambiguous_model_or_configuration": 19,
-     "rate_limited_or_challenge": 29
-    }
-   },
-   "亚朵星球": {
-    "attempted": 47,
-    "queried": 34,
-    "source_page_captures": 3,
-    "source_status": {
-     "403": 3
-    },
-    "circuit_skips": 66,
-    "mapped": 0,
-    "hits": 0,
-    "confidence": {},
-    "precision": {},
-    "reasons": {
-     "ambiguous_model_or_configuration": 13,
-     "rate_limited_or_challenge": 34
+     "rate_limited_or_challenge": 31,
+     "ambiguous_model_or_configuration": 10
     }
    },
    "大疆": {
-    "attempted": 47,
-    "queried": 14,
+    "attempted": 41,
+    "queried": 13,
     "source_page_captures": 3,
     "source_status": {
      "403": 3
     },
-    "circuit_skips": 29,
+    "circuit_skips": 27,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "rate_limited_or_challenge": 14,
-     "ambiguous_model_or_configuration": 33
+     "rate_limited_or_challenge": 13,
+     "ambiguous_model_or_configuration": 28
     }
    },
    "富士": {
-    "attempted": 47,
-    "queried": 46,
+    "attempted": 40,
+    "queried": 39,
     "source_page_captures": 4,
     "source_status": {
      "403": 4
     },
-    "circuit_skips": 88,
+    "circuit_skips": 74,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "rate_limited_or_challenge": 46,
+     "rate_limited_or_challenge": 39,
      "ambiguous_model_or_configuration": 1
     }
    },
    "小米": {
-    "attempted": 47,
-    "queried": 41,
+    "attempted": 40,
+    "queried": 33,
     "source_page_captures": 3,
     "source_status": {
      "403": 3
     },
-    "circuit_skips": 78,
+    "circuit_skips": 62,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "rate_limited_or_challenge": 41,
-     "ambiguous_model_or_configuration": 6
+     "ambiguous_model_or_configuration": 7,
+     "rate_limited_or_challenge": 33
     }
    },
    "小米汽车": {
@@ -398,20 +422,32 @@
     }
    },
    "惠普": {
-    "attempted": 47,
-    "queried": 47,
+    "attempted": 40,
+    "queried": 40,
     "source_page_captures": 3,
     "source_status": {
      "403": 3
     },
-    "circuit_skips": 91,
+    "circuit_skips": 77,
     "mapped": 0,
     "hits": 0,
     "confidence": {},
     "precision": {},
     "reasons": {
-     "rate_limited_or_challenge": 47
+     "rate_limited_or_challenge": 40
     }
+   },
+   "未知": {
+    "attempted": 0,
+    "queried": 0,
+    "source_page_captures": 0,
+    "source_status": {},
+    "circuit_skips": 0,
+    "mapped": 0,
+    "hits": 0,
+    "confidence": {},
+    "precision": {},
+    "reasons": {}
    },
    "比亚迪": {
     "attempted": 14,

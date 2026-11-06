@@ -1909,7 +1909,7 @@
   "id": "CN:hp_cn:sku:E70WNPC",
   "name": "惠普 战99 G2a 16英寸移动工作站 AMD 锐龙™ 9 9955HX 处理器 32GB+1TB NVIDIA® RTX PRO 500 笔记本电脑 GPU",
   "brand": "惠普",
-  "identity_sha256": "fcb22fa94d5c086d48fc8f2ade275a5fe24a86cde70858c6aee6d2300b9ce771",
+  "identity_sha256": "7ee77a55a24e7e5df278884af4de684b7f338d86c52023bd9d136afe931d15e5",
   "site": "pconline",
   "collector_version": 5,
   "attempts": [
@@ -5997,7 +5997,7 @@
   "id": "CN:hp_cn:sku:DZ5G5PA",
   "name": "惠普 HyperX 暗影精灵 PRO 16英寸无畏契约玩家典藏版游戏笔记本电脑 AMD 锐龙™ 9 9955HX 16GB+1TB NVIDIA® GeForce RTX™ 5060 笔记本电脑 GPU",
   "brand": "惠普",
-  "identity_sha256": "ce4280f0fd7e400648b824b11de98d2cb039d68244bf5637ad419a3d00f0c5cb",
+  "identity_sha256": "68934d99bdbb50986591178c614b344bc57761b0b70c289b9edb58e76cbbdd50",
   "site": "pconline",
   "collector_version": 5,
   "attempts": [
@@ -6313,7 +6313,7 @@
   "id": "CN:hp_cn:sku:DB2Q1PA",
   "name": "惠普 HyperX 暗影精灵MAX 16英寸游戏笔记本电脑 第二代英特尔®酷睿™ Ultra 9-290HX Plus 处理器 32GB+1TB NVIDIA® GeForce RTX™ 5090 独立显卡",
   "brand": "惠普",
-  "identity_sha256": "5b3b77b1d08ac03546f00c9965046bcb8893b89037c60d41018c7df62b8f5251",
+  "identity_sha256": "f27edde52b3f1847a6dfd07f8baa2afd5f2d2c6bf219b5884f8f925e4482d03c",
   "site": "pconline",
   "collector_version": 5,
   "attempts": [
@@ -8398,6 +8398,1237 @@
    },
    {
     "url": "https://www.baidu.com/s?wd=Apple+%22MacBook+Pro+%2816+%E8%8B%B1%E5%AF%B8%EF%BC%8C2019%29%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:71649": {
+  "id": "mihome:71649",
+  "name": "Redmi  Max 智能电视",
+  "brand": "小米",
+  "identity_sha256": "066aa8e17dde1421050ce3b1d2509cb98a7e068f4e97a325fa5630645dd89d4b",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [],
+  "status": "missing",
+  "reason": "ambiguous_model_or_configuration"
+ },
+ "mihome:75345": {
+  "id": "mihome:75345",
+  "name": "小白自清洁扫拖机器人V3 除菌版",
+  "brand": null,
+  "identity_sha256": "eb28bcaf1f67750cece09588c6776198db5627916f3e0ea9364b5ba1b38fbca6",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E5%B0%8F%E7%99%BD%E8%87%AA%E6%B8%85%E6%B4%81%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BAV3+%E9%99%A4%E8%8F%8C%E7%89%88%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:44:35.188482+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22%E5%B0%8F%E7%99%BD%E8%87%AA%E6%B8%85%E6%B4%81%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BAV3+%E9%99%A4%E8%8F%8C%E7%89%88%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/fb4804c841b46be19735be74b8afeeca2de15fe2a4c54036bd3f563b039810c2.html.gz",
+    "encoding": "utf-8",
+    "sha256": "c32f54b87c62ea986257110625082afc363bb9fd7b87fd30f87488e00be598be",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E5%B0%8F%E7%99%BD%E8%87%AA%E6%B8%85%E6%B4%81%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BAV3+%E9%99%A4%E8%8F%8C%E7%89%88%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:71464": {
+  "id": "mihome:71464",
+  "name": "石头扫拖机器人 T7S Plus",
+  "brand": null,
+  "identity_sha256": "533c99d5a1365b6cf88ab9a4dc74ee18e1494f375752198a24639b4a9e8bf0eb",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BA+T7S+Plus%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:44:42.402789+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BA+T7S+Plus%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/ac949aa7e2add09830e3049b4d5e09f23614e22872c76cbf9095688e73bf0209.html.gz",
+    "encoding": "utf-8",
+    "sha256": "44f07b0b3f83b8e0fe00cf19a1258b8e41fa8849e4181b4fc09be68f3c7496eb",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BA+T7S+Plus%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:70462": {
+  "id": "mihome:70462",
+  "name": "小白智能摄像机大众版C1",
+  "brand": null,
+  "identity_sha256": "670dcc59c8266605e000871af69141b7e8e4e195c1405205910f63df63fd7c3c",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E5%B0%8F%E7%99%BD%E6%99%BA%E8%83%BD%E6%91%84%E5%83%8F%E6%9C%BA%E5%A4%A7%E4%BC%97%E7%89%88C1%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:44:48.349026+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22%E5%B0%8F%E7%99%BD%E6%99%BA%E8%83%BD%E6%91%84%E5%83%8F%E6%9C%BA%E5%A4%A7%E4%BC%97%E7%89%88C1%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/5926cad8a337cdf89715dd7a1a15b2133ec96c76719b81a9aed46b0b50e4ca27.html.gz",
+    "encoding": "utf-8",
+    "sha256": "1590ce5616b405e54c1380d3cf755b8315017369027f9299c49bf47a35cc7fac",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E5%B0%8F%E7%99%BD%E6%99%BA%E8%83%BD%E6%91%84%E5%83%8F%E6%9C%BA%E5%A4%A7%E4%BC%97%E7%89%88C1%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:78604": {
+  "id": "mihome:78604",
+  "name": "Lydsto自清洁扫地机W2Edge",
+  "brand": null,
+  "identity_sha256": "3486a5caf5accd64d48a0baff7b9bf671eaa068fcd2bbf5beaf1c522498cd358",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22Lydsto%E8%87%AA%E6%B8%85%E6%B4%81%E6%89%AB%E5%9C%B0%E6%9C%BAW2Edge%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:44:57.457050+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=+%22Lydsto%E8%87%AA%E6%B8%85%E6%B4%81%E6%89%AB%E5%9C%B0%E6%9C%BAW2Edge%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/55043e07b18580a21c15652cfad6287e68cec196f351c0dd3432f1d6d512899b.html.gz",
+    "encoding": "utf-8",
+    "sha256": "9134e391c0fb76eee4fc07cafc567ee6f7ba987ac2391cb46ce81b6fd2023ad2",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22Lydsto%E8%87%AA%E6%B8%85%E6%B4%81%E6%89%AB%E5%9C%B0%E6%9C%BAW2Edge%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:34053": {
+  "id": "mihome:34053",
+  "name": "智米智能马桶一体机3S（智能版）",
+  "brand": null,
+  "identity_sha256": "90643321c1b8987e2c67ffce9c8e39f76dd93b4bdeba63056294d449a5731587",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E6%99%BA%E7%B1%B3%E6%99%BA%E8%83%BD%E9%A9%AC%E6%A1%B6%E4%B8%80%E4%BD%93%E6%9C%BA3S%EF%BC%88%E6%99%BA%E8%83%BD%E7%89%88%EF%BC%89%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:45:03.348392+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=+%22%E6%99%BA%E7%B1%B3%E6%99%BA%E8%83%BD%E9%A9%AC%E6%A1%B6%E4%B8%80%E4%BD%93%E6%9C%BA3S%EF%BC%88%E6%99%BA%E8%83%BD%E7%89%88%EF%BC%89%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/2850f4f450e33eba907d4ff481b00ac26060efd9e9dd0c3ce852344fdc146a65.html.gz",
+    "encoding": "utf-8",
+    "sha256": "0ff8c0ef8184cb1a9f5f68f0a79e18b24fde561df44289e20dfdd0ed1be91a94",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E6%99%BA%E7%B1%B3%E6%99%BA%E8%83%BD%E9%A9%AC%E6%A1%B6%E4%B8%80%E4%BD%93%E6%9C%BA3S%EF%BC%88%E6%99%BA%E8%83%BD%E7%89%88%EF%BC%89%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:14125": {
+  "id": "mihome:14125",
+  "name": "Yeelight 舒适暖浴霸 Pro",
+  "brand": null,
+  "identity_sha256": "ea09c90ddd12e3ffd6d0341bd675746cb0bdca19ce85d35baea634f6c38c488d",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [],
+  "status": "missing",
+  "reason": "ambiguous_model_or_configuration"
+ },
+ "mihome:16187": {
+  "id": "mihome:16187",
+  "name": "飞利浦踢脚线取暖器AHR4126CKD",
+  "brand": null,
+  "identity_sha256": "c3d11c975b53cf6428f85b3fb717a9c883681524bb416df2e6c58547f1eee39f",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E9%A3%9E%E5%88%A9%E6%B5%A6%E8%B8%A2%E8%84%9A%E7%BA%BF%E5%8F%96%E6%9A%96%E5%99%A8AHR4126CKD%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:45:09.457966+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=+%22%E9%A3%9E%E5%88%A9%E6%B5%A6%E8%B8%A2%E8%84%9A%E7%BA%BF%E5%8F%96%E6%9A%96%E5%99%A8AHR4126CKD%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/d72d8cadfe087a53e49d8c1e7557f55e97635225dfdad8eedcb228c569ef4acd.html.gz",
+    "encoding": "utf-8",
+    "sha256": "235885729f78607691b879b4a877ffa210bdd17488efd2e9954ddf7670e2e50c",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E9%A3%9E%E5%88%A9%E6%B5%A6%E8%B8%A2%E8%84%9A%E7%BA%BF%E5%8F%96%E6%9A%96%E5%99%A8AHR4126CKD%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:1059": {
+  "id": "mihome:1059",
+  "name": "智米直流变频落地扇2",
+  "brand": null,
+  "identity_sha256": "31d007d7ad565648126aeddcf73f05651fc3cba8003f7d1faffa817883d514da",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E6%99%BA%E7%B1%B3%E7%9B%B4%E6%B5%81%E5%8F%98%E9%A2%91%E8%90%BD%E5%9C%B0%E6%89%872%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:45:15.357554+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22%E6%99%BA%E7%B1%B3%E7%9B%B4%E6%B5%81%E5%8F%98%E9%A2%91%E8%90%BD%E5%9C%B0%E6%89%872%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/ae3a52b9be33f24b89ce3a6cde7e9ed3ae1179a14a14e001de823c025d70be5c.html.gz",
+    "encoding": "utf-8",
+    "sha256": "207e6cb7210275960d91b2c7c0629d2be2ada0b81d420dc1aaad3629aae2b3ae",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E6%99%BA%E7%B1%B3%E7%9B%B4%E6%B5%81%E5%8F%98%E9%A2%91%E8%90%BD%E5%9C%B0%E6%89%872%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:2769": {
+  "id": "mihome:2769",
+  "name": "飞利浦塔式冷风扇",
+  "brand": null,
+  "identity_sha256": "3670046798dc03f9a0c5d346eeed73a7571c723355449964d7498bc8aab44a88",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [],
+  "status": "missing",
+  "reason": "ambiguous_model_or_configuration"
+ },
+ "youpin:179952": {
+  "id": "youpin:179952",
+  "name": "Yeelight智能凉霸L1",
+  "brand": null,
+  "identity_sha256": "83b110ec169cf50fd2cc2542ea5c5c6af2d2c4ed7c92fd8082a2f51051db0f04",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22Yeelight%E6%99%BA%E8%83%BD%E5%87%89%E9%9C%B8L1%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:45:24.421770+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22Yeelight%E6%99%BA%E8%83%BD%E5%87%89%E9%9C%B8L1%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/01f8f6078cc2d5c179b8625f3be138b6fde003870af6e40037852d8978114820.html.gz",
+    "encoding": "utf-8",
+    "sha256": "ccc058e683a413ae8a397563642da18659ff6f0c0966e19857163d469f261cc1",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22Yeelight%E6%99%BA%E8%83%BD%E5%87%89%E9%9C%B8L1%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:68382": {
+  "id": "mihome:68382",
+  "name": "石头扫地机器人T7 Pro",
+  "brand": null,
+  "identity_sha256": "6f3060cc5b309aeeb98508a60bfe4f175479b585cabc126c3a9b027e8b7dbdf6",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BAT7+Pro%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:45:33.434445+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BAT7+Pro%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/9ad0211db4fcd770fb98baec06f8680ef208557f90643d48cfbe1a5160795f22.html.gz",
+    "encoding": "utf-8",
+    "sha256": "cdb0f159acc34b8d46888e8c5b2463adfd186650ab3e0aea0acd27196c44340f",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BAT7+Pro%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:803": {
+  "id": "mihome:803",
+  "name": "Aqara智能门锁 S2",
+  "brand": null,
+  "identity_sha256": "bccbf58258e1dfde379547b37afe3fe1ec39d0a211d6eae82da4d6867a1dd5db",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22Aqara%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81+S2%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:45:42.576379+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=+%22Aqara%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81+S2%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/fb2a1acc95c8deed28a846252d2ee9434a8a93df93a604b4451e3baad1efa534.html.gz",
+    "encoding": "utf-8",
+    "sha256": "7491ba14a8aac446cc79f1ff3b7138626c921d3d3463cad40c8c63afa4efe578",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22Aqara%E6%99%BA%E8%83%BD%E9%97%A8%E9%94%81+S2%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:68882": {
+  "id": "mihome:68882",
+  "name": "Lydsto 扫拖一体机R1",
+  "brand": null,
+  "identity_sha256": "062b93773dc0263eec98e07ad081ec1ebf32414aa7e680760789b8988716a1eb",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22Lydsto+%E6%89%AB%E6%8B%96%E4%B8%80%E4%BD%93%E6%9C%BAR1%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:45:48.405515+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22Lydsto+%E6%89%AB%E6%8B%96%E4%B8%80%E4%BD%93%E6%9C%BAR1%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/88c62dd033731c6bfb857de4fbeaae4905f95b0330d960e3e913d27cd8d30acd.html.gz",
+    "encoding": "utf-8",
+    "sha256": "9a12b1b3493fba029640204615047e2f809ae29e71cb59a0c218858631e338b6",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22Lydsto+%E6%89%AB%E6%8B%96%E4%B8%80%E4%BD%93%E6%9C%BAR1%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "miwear.headphone.m79ac": {
+  "id": "miwear.headphone.m79ac",
+  "name": "Redmi Buds 4活力版",
+  "brand": "小米",
+  "identity_sha256": "a750c119bc6417f81310c9f991199be16b2330ee08db618c383865296fbdab87",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=%E5%B0%8F%E7%B1%B3+%22Redmi+Buds+4%E6%B4%BB%E5%8A%9B%E7%89%88%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:45:57.431652+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=%E5%B0%8F%E7%B1%B3+%22Redmi+Buds+4%E6%B4%BB%E5%8A%9B%E7%89%88%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/4be70ba1331e8c5c5d1b4cdf9eb88cc8c30ecc721adebfb6cf809f78a0e0ccae.html.gz",
+    "encoding": "utf-8",
+    "sha256": "39ae8da97c69f5d5e77e5c946b675e6f2c9c28ebe4db5b6c226e2508672d5dbd",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=%E5%B0%8F%E7%B1%B3+%22Redmi+Buds+4%E6%B4%BB%E5%8A%9B%E7%89%88%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:1175": {
+  "id": "mihome:1175",
+  "name": "TOKIT 压力IH智能电饭煲",
+  "brand": null,
+  "identity_sha256": "b4b4682054a224afe5d4474231d34e18c2fdddb8e3c6ee0f7fd7ae668f87b560",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [],
+  "status": "missing",
+  "reason": "ambiguous_model_or_configuration"
+ },
+ "mihome:6292": {
+  "id": "mihome:6292",
+  "name": "TOKIT厨几 即热净饮一体机",
+  "brand": null,
+  "identity_sha256": "f3dcdfb21603d513a9664ddc27f75625d2dd8d9dd07a9b69c7589c46938aa7b6",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [],
+  "status": "missing",
+  "reason": "ambiguous_model_or_configuration"
+ },
+ "mihome:10682": {
+  "id": "mihome:10682",
+  "name": "追觅S10 Pro Plus",
+  "brand": null,
+  "identity_sha256": "aaf1b09aa1003b32ef10f2c2cffadf57da9ff96351ff22228256a27e82bd5548",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E8%BF%BD%E8%A7%85S10+Pro+Plus%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:46:03.348124+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22%E8%BF%BD%E8%A7%85S10+Pro+Plus%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/3dce7254690a869ef4e8fd7f92760dfa6d505ad3d9cb38b7edd7229e49858f8a.html.gz",
+    "encoding": "utf-8",
+    "sha256": "53e9a81e4fce659a26f16e65f812e23170e4921cb8ba286d75ba3db9c94ae81c",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E8%BF%BD%E8%A7%85S10+Pro+Plus%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:1632": {
+  "id": "mihome:1632",
+  "name": "Yeelight 智能暖悦浴霸",
+  "brand": null,
+  "identity_sha256": "0bac5f17feb1a166aab76eefae74307a807596745f2c7a29fea5e261ec0623bf",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [],
+  "status": "missing",
+  "reason": "ambiguous_model_or_configuration"
+ },
+ "mihome:591": {
+  "id": "mihome:591",
+  "name": "智米新风系统",
+  "brand": null,
+  "identity_sha256": "e5d1e6374e53c75bd2ff21ad18363cabc9fdb383cb4ffefa572de62f52c97a73",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [],
+  "status": "missing",
+  "reason": "ambiguous_model_or_configuration"
+ },
+ "mihome:757": {
+  "id": "mihome:757",
+  "name": "智米自然风风扇",
+  "brand": null,
+  "identity_sha256": "3f975f47250213d4efb62459120257388b8d9a221bfd3baf0492c2d78ccd8d25",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [],
+  "status": "missing",
+  "reason": "ambiguous_model_or_configuration"
+ },
+ "mihome:69004": {
+  "id": "mihome:69004",
+  "name": "Aqara智能晾衣机 Lite",
+  "brand": null,
+  "identity_sha256": "78e1f7315525138385de12c28649466160123fa41e39a81a1f36ed56acf04f91",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [],
+  "status": "missing",
+  "reason": "ambiguous_model_or_configuration"
+ },
+ "mihome:5181": {
+  "id": "mihome:5181",
+  "name": "Lydsto惯导扫拖机器人G2",
+  "brand": null,
+  "identity_sha256": "7d667602bfa3c886be7c86a3f736ce4b265367794a95d37daecb7b02a86b9bb6",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22Lydsto%E6%83%AF%E5%AF%BC%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BAG2%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:46:12.453977+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=+%22Lydsto%E6%83%AF%E5%AF%BC%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BAG2%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/6e2f111778af442e105c5e237be218e96a6e5ecbde7bea619766dc7a7b45406a.html.gz",
+    "encoding": "utf-8",
+    "sha256": "b16698a532ce0cb8ead397b4ea448bb619d72321516cb328aed3755658e8cd17",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22Lydsto%E6%83%AF%E5%AF%BC%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BAG2%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:894": {
+  "id": "mihome:894",
+  "name": "智米智能马桶盖Pro",
+  "brand": null,
+  "identity_sha256": "fd182b8aeff55e50d53c5475fba7c643fb1c8edc947d78b1043d1e2740ce15b1",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [],
+  "status": "missing",
+  "reason": "ambiguous_model_or_configuration"
+ },
+ "mihome:21840": {
+  "id": "mihome:21840",
+  "name": "Yeelight 智能浴霸 M1",
+  "brand": null,
+  "identity_sha256": "bf5e793dedbaf69fa0b16d428a1e3c1d58d774948e117c68ca82eac25c6da1a3",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22Yeelight+%E6%99%BA%E8%83%BD%E6%B5%B4%E9%9C%B8+M1%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:46:18.337701+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=+%22Yeelight+%E6%99%BA%E8%83%BD%E6%B5%B4%E9%9C%B8+M1%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/8b42811611f495e18f47604a4abf40123d21efc1db392591972feaad8f6d2b02.html.gz",
+    "encoding": "utf-8",
+    "sha256": "8956414b74f48e3abb6fc7c4c3103882141bfa370ecf95201f1d70070580df89",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22Yeelight+%E6%99%BA%E8%83%BD%E6%B5%B4%E9%9C%B8+M1%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "miwear.headphone.l77c": {
+  "id": "miwear.headphone.l77c",
+  "name": "Redmi Buds 4",
+  "brand": "小米",
+  "identity_sha256": "8a7091b746d46806edd7cb7e2410681d26f7682d7dd364518b4c04450508e8ee",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=%E5%B0%8F%E7%B1%B3+%22Redmi+Buds+4%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:46:24.343223+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=%E5%B0%8F%E7%B1%B3+%22Redmi+Buds+4%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/3108c2ae6a2463a90bdc8e0493c109ee8c98d032fde8ecf13d3b9890dfdd7bc5.html.gz",
+    "encoding": "utf-8",
+    "sha256": "6dd6d12e555c08a620a4ca5f887a724a7fc3dafb3324ed1728b236c8397d9865",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=%E5%B0%8F%E7%B1%B3+%22Redmi+Buds+4%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:16061": {
+  "id": "mihome:16061",
+  "name": "飞利浦多功能暖风机Series 6000 A1",
+  "brand": null,
+  "identity_sha256": "a066e113b2eedef92502aa0c15067089bae4969f4a38ae046f21e3db6c1a3eeb",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E9%A3%9E%E5%88%A9%E6%B5%A6%E5%A4%9A%E5%8A%9F%E8%83%BD%E6%9A%96%E9%A3%8E%E6%9C%BASeries+6000+A1%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:46:30.341592+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22%E9%A3%9E%E5%88%A9%E6%B5%A6%E5%A4%9A%E5%8A%9F%E8%83%BD%E6%9A%96%E9%A3%8E%E6%9C%BASeries+6000+A1%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/352d5f3c4475d0d01641d99fcdf960875be49f9e1149726ece4c6185b9dbf591.html.gz",
+    "encoding": "utf-8",
+    "sha256": "438648ceac84c3793680ecdfeef53f8a08b94f41cf54c92777583c2b4f567c90",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E9%A3%9E%E5%88%A9%E6%B5%A6%E5%A4%9A%E5%8A%9F%E8%83%BD%E6%9A%96%E9%A3%8E%E6%9C%BASeries+6000+A1%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:39250": {
+  "id": "mihome:39250",
+  "name": "REDMI Book 14 2027",
+  "brand": "小米",
+  "identity_sha256": "3ed18eda9e126f7d2bd18a12e6330a1576439c8ed22abdd7bf686b77190507c4",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=%E5%B0%8F%E7%B1%B3+%22REDMI+Book+14+2027%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:46:39.398245+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=%E5%B0%8F%E7%B1%B3+%22REDMI+Book+14+2027%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/06c0e8c2ba2975217f87c720245b033e4e2423ec0be5b60190aa7767b4c83372.html.gz",
+    "encoding": "utf-8",
+    "sha256": "92469e68c3612056d083d6adc8754587656977ab61a1ea97ebb628da2ec4b255",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=%E5%B0%8F%E7%B1%B3+%22REDMI+Book+14+2027%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:8726": {
+  "id": "mihome:8726",
+  "name": "Yeelight 舒适暖浴霸",
+  "brand": null,
+  "identity_sha256": "d7d3fd7ca0cf5a860ba130f13a19a14de0d8561989587f04ad48382d3365e200",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [],
+  "status": "missing",
+  "reason": "ambiguous_model_or_configuration"
+ },
+ "mihome:10401": {
+  "id": "mihome:10401",
+  "name": "追觅W10s Pro",
+  "brand": null,
+  "identity_sha256": "c636feb632ccbc8bb40178db6222abdf59999b727c38f3763aeb46b42c66375c",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E8%BF%BD%E8%A7%85W10s+Pro%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:46:48.435306+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=+%22%E8%BF%BD%E8%A7%85W10s+Pro%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/f2c4e0bc4462f626f3d7b69dd1514b3ae3b4a9fd3c14c0d4c7667fc990202900.html.gz",
+    "encoding": "utf-8",
+    "sha256": "3ea58f532a3d4409eab03b57d8f0ca8fabf9024e0f1760f49f449db22d659e2d",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E8%BF%BD%E8%A7%85W10s+Pro%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:73696": {
+  "id": "mihome:73696",
+  "name": "Lydsto扫拖一体机L1",
+  "brand": null,
+  "identity_sha256": "e9cc1a711d68b34f2618cb780bd775c0693dfca65be01cceaf56ac92a6273605",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22Lydsto%E6%89%AB%E6%8B%96%E4%B8%80%E4%BD%93%E6%9C%BAL1%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:46:54.454114+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=+%22Lydsto%E6%89%AB%E6%8B%96%E4%B8%80%E4%BD%93%E6%9C%BAL1%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/eebb53105e0f49688bc422151a527652aa113e3a152593fed73b0fcde7eb28db.html.gz",
+    "encoding": "utf-8",
+    "sha256": "66cb81eb3358e14c10780ce67cef839cca9002c648172030ba59e6571eb36c11",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22Lydsto%E6%89%AB%E6%8B%96%E4%B8%80%E4%BD%93%E6%9C%BAL1%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:74136": {
+  "id": "mihome:74136",
+  "name": "追觅 D10 Plus",
+  "brand": null,
+  "identity_sha256": "897cde11d71cc35112692cb439d773217e705ff56ff6c01900a5a5705c29e9d8",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E8%BF%BD%E8%A7%85+D10+Plus%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:47:00.351963+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22%E8%BF%BD%E8%A7%85+D10+Plus%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/bf6f9381dec741fefa2fcec47e73236c12daa9fdcaf1661dedd585156364cf09.html.gz",
+    "encoding": "utf-8",
+    "sha256": "4d386876db776a08ff5e3153ee75963b4b8cc821dc828df6dbe1aa31641bb8fc",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E8%BF%BD%E8%A7%85+D10+Plus%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:8925": {
+  "id": "mihome:8925",
+  "name": "Lydsto惯导扫拖机器人G1",
+  "brand": null,
+  "identity_sha256": "d394af1acbc66967e15f8fb54db33acbb4cb47c31de2980adb8ff20b83c05df1",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22Lydsto%E6%83%AF%E5%AF%BC%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BAG1%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:47:09.425818+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=+%22Lydsto%E6%83%AF%E5%AF%BC%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BAG1%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/4fd070ed630741273be7676ffd52776d6bb996c8bdc1bfc33d68f3384188450e.html.gz",
+    "encoding": "utf-8",
+    "sha256": "8d95ca86fb8211fea837a5b530c546304bd998170b0c9ac28dcd00563f42c84d",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22Lydsto%E6%83%AF%E5%AF%BC%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BAG1%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:25138": {
+  "id": "mihome:25138",
+  "name": "智米智能马桶一体机3PRO",
+  "brand": null,
+  "identity_sha256": "0cfa6c537f2b9bef3224e09254883b95f33faad413f19b88f99a459b715bd4bb",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E6%99%BA%E7%B1%B3%E6%99%BA%E8%83%BD%E9%A9%AC%E6%A1%B6%E4%B8%80%E4%BD%93%E6%9C%BA3PRO%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:47:15.389632+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=+%22%E6%99%BA%E7%B1%B3%E6%99%BA%E8%83%BD%E9%A9%AC%E6%A1%B6%E4%B8%80%E4%BD%93%E6%9C%BA3PRO%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/4aaed9f14169d461249954f60d8e71529445b0380aed29d574dcaed6d66c3c95.html.gz",
+    "encoding": "utf-8",
+    "sha256": "bbe33ab57fe9d2117f51cf2a3383901055d15ccdfcccf05f794099e68032ef9d",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E6%99%BA%E7%B1%B3%E6%99%BA%E8%83%BD%E9%A9%AC%E6%A1%B6%E4%B8%80%E4%BD%93%E6%9C%BA3PRO%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:2334": {
+  "id": "mihome:2334",
+  "name": "智米直流变频落地扇3",
+  "brand": null,
+  "identity_sha256": "642f552b0a196606adbc5e46c79c50f3d01185138319b995ccbc9697c59db629",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E6%99%BA%E7%B1%B3%E7%9B%B4%E6%B5%81%E5%8F%98%E9%A2%91%E8%90%BD%E5%9C%B0%E6%89%873%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:47:21.373477+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=+%22%E6%99%BA%E7%B1%B3%E7%9B%B4%E6%B5%81%E5%8F%98%E9%A2%91%E8%90%BD%E5%9C%B0%E6%89%873%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/29c872dc7fffd2480d927ed1087f9f12956cb2f949dfab5dfc4ae6caf3c6560e.html.gz",
+    "encoding": "utf-8",
+    "sha256": "3c6e6d5df5784478b5c170a8d568d637667b2cace81daca80213e3fda2d706b4",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E6%99%BA%E7%B1%B3%E7%9B%B4%E6%B5%81%E5%8F%98%E9%A2%91%E8%90%BD%E5%9C%B0%E6%89%873%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:599": {
+  "id": "mihome:599",
+  "name": "小瓦扫地机器人规划版",
+  "brand": null,
+  "identity_sha256": "5789cd9868216cc7523e34c8ae414536a4735c5eab360604eabb3ec67e8172ed",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [],
+  "status": "missing",
+  "reason": "ambiguous_model_or_configuration"
+ },
+ "mihome:69606": {
+  "id": "mihome:69606",
+  "name": "石头扫拖机器人 T7S",
+  "brand": null,
+  "identity_sha256": "8b5db15674ac93923b45e0d5325e5c760b6c85c276c2054913df98f8507a0c62",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BA+T7S%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:47:27.372236+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BA+T7S%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/4050c2618c5f458c7c4e974c24e80656ebd516be8450fb4638dfc10e13989b22.html.gz",
+    "encoding": "utf-8",
+    "sha256": "d538542f5944368a64d043936a67de52d6beda8925fe5a1d6a22783114a75f52",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BA+T7S%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:1178": {
+  "id": "mihome:1178",
+  "name": "TOKIT IH智能电饭煲",
+  "brand": null,
+  "identity_sha256": "ebc096b05efc17a118ffa0744546344f1d29a05e05697a1db307cd93772e53ce",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [],
+  "status": "missing",
+  "reason": "ambiguous_model_or_configuration"
+ },
+ "mihome:18247": {
+  "id": "mihome:18247",
+  "name": "Yeelight 智能浴霸 Z10",
+  "brand": null,
+  "identity_sha256": "224d62df110829ca816202b7cd9d8fe8067049006d30e6f5ce14656adf448475",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22Yeelight+%E6%99%BA%E8%83%BD%E6%B5%B4%E9%9C%B8+Z10%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:47:36.445397+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22Yeelight+%E6%99%BA%E8%83%BD%E6%B5%B4%E9%9C%B8+Z10%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/879c587e7f64566efe7955b7b5faeb30e10a129bc647f865e19ca83f5139bd7e.html.gz",
+    "encoding": "utf-8",
+    "sha256": "42dae43cde988415a2158f13fa004ce948da5e47657af87839f875cdff06425e",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22Yeelight+%E6%99%BA%E8%83%BD%E6%B5%B4%E9%9C%B8+Z10%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "youpin:120633": {
+  "id": "youpin:120633",
+  "name": "Redmi小爱触屏音箱 8",
+  "brand": "小米",
+  "identity_sha256": "35b1955d69037ee741bbef3e20ee1eb1aed584af8ae36d013c5132d3c614a1fd",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=%E5%B0%8F%E7%B1%B3+%22Redmi%E5%B0%8F%E7%88%B1%E8%A7%A6%E5%B1%8F%E9%9F%B3%E7%AE%B1+8%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:47:45.418147+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=%E5%B0%8F%E7%B1%B3+%22Redmi%E5%B0%8F%E7%88%B1%E8%A7%A6%E5%B1%8F%E9%9F%B3%E7%AE%B1+8%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/46e06e67b261fa201bfd6b3ffc86e4c92e59d54e31e273f946d62983d6a98840.html.gz",
+    "encoding": "utf-8",
+    "sha256": "6fd431483cb0e159aee0886287c54d32b091a8fd988abfc44ffdb657ec0f7fed",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=%E5%B0%8F%E7%B1%B3+%22Redmi%E5%B0%8F%E7%88%B1%E8%A7%A6%E5%B1%8F%E9%9F%B3%E7%AE%B1+8%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:74192": {
+  "id": "mihome:74192",
+  "name": "石头扫拖机器人T8 Plus",
+  "brand": null,
+  "identity_sha256": "fda4fbafe3b43a319f4917f1acf247085f4a30ab8e58e31a8a7b33026bb8e3c7",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BAT8+Plus%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:47:51.417182+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BAT8+Plus%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/b954d4c114892a6d76b0c9f0ee222636f783b5d7a5fc2217b226e17d61860656.html.gz",
+    "encoding": "utf-8",
+    "sha256": "275321886d8739b74a56feeb18101ae8491ee5d8a7425b18474c215d8ed6a788",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E6%8B%96%E6%9C%BA%E5%99%A8%E4%BA%BAT8+Plus%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:9193": {
+  "id": "mihome:9193",
+  "name": "TOKIT厨几 拍照烤箱32L",
+  "brand": null,
+  "identity_sha256": "5636303dae55a9f01c140e33880801feb23af5f22a630aee69d7899d6911e791",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22TOKIT%E5%8E%A8%E5%87%A0+%E6%8B%8D%E7%85%A7%E7%83%A4%E7%AE%B132L%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:48:00.502161+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22TOKIT%E5%8E%A8%E5%87%A0+%E6%8B%8D%E7%85%A7%E7%83%A4%E7%AE%B132L%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/0cd68c9bbff5875bb17e06c88d107c607f7b96f0f5848a219611d1ce593a5fb4.html.gz",
+    "encoding": "utf-8",
+    "sha256": "52354fe3642cf7b3cc7f5299c348bb2280d6dc5e99bfe057e55babffbb04d96f",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22TOKIT%E5%8E%A8%E5%87%A0+%E6%8B%8D%E7%85%A7%E7%83%A4%E7%AE%B132L%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:73943": {
+  "id": "mihome:73943",
+  "name": "追觅W10 Pro",
+  "brand": null,
+  "identity_sha256": "3c4e460f79eec9a14c0914236020befcc3c2ee871fcc35b45f1fb6b04a8d22eb",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E8%BF%BD%E8%A7%85W10+Pro%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:48:09.454502+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/?q=+%22%E8%BF%BD%E8%A7%85W10+Pro%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/a667ed7050fd1d2f1fe31d3a30e13b23ba976b23fe814a010d495f8f41d46f9a.html.gz",
+    "encoding": "utf-8",
+    "sha256": "89aa4c76363cfb14cf378cdea2bb0eca9bfe963d337b19eae96e39cc9a07169c",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E8%BF%BD%E8%A7%85W10+Pro%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:577": {
+  "id": "mihome:577",
+  "name": "石头扫地机器人S5",
+  "brand": null,
+  "identity_sha256": "1cb488c39c2043def2e78407dc9a799c3822eec3c7216f6cf55c1d693819c13e",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BAS5%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:48:15.357621+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BAS5%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/447d84be65c51ec9a85776156791a83bf376371f6303d4337ddb9f47ddbe709d.html.gz",
+    "encoding": "utf-8",
+    "sha256": "36231de0c5221a3104824526297586d0fb6839fbc8d627c34e73afe102f79a47",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E7%9F%B3%E5%A4%B4%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BAS5%22+site%3Aproduct.pconline.com.cn",
+    "reason": "search_challenge_circuit_open",
+    "kind": "exact_brand_model_site_search"
+   }
+  ],
+  "status": "missing",
+  "reason": "unable_to_map",
+  "discovery_failures": [
+   {
+    "engine": "baidu",
+    "reason": "search_challenge_circuit_open"
+   }
+  ]
+ },
+ "mihome:1297": {
+  "id": "mihome:1297",
+  "name": "智米电暖器智能版1S",
+  "brand": null,
+  "identity_sha256": "1fc3a354df2d3173f4c94ebb46875a21d6f1b53081a923ba9fcacf951a947e15",
+  "site": "pconline",
+  "collector_version": 5,
+  "attempts": [
+   {
+    "url": "https://cn.bing.com/search?q=+%22%E6%99%BA%E7%B1%B3%E7%94%B5%E6%9A%96%E5%99%A8%E6%99%BA%E8%83%BD%E7%89%881S%22+site%3Aproduct.pconline.com.cn",
+    "captured_at": "2026-11-06T10:48:24.491417+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?q=+%22%E6%99%BA%E7%B1%B3%E7%94%B5%E6%9A%96%E5%99%A8%E6%99%BA%E8%83%BD%E7%89%881S%22+site%3Aproduct.pconline.com.cn&mkt=zh-CN",
+    "capture_file": "docs/release-coverage/L6/captures/94093f694d089d126e26da1e491a31c5c9e6c6090207131fc1b58b86e6ff943d.html.gz",
+    "encoding": "utf-8",
+    "sha256": "72f845f0ec860815507092541fadec2737328540e644c33b0bf4da66dfa341c2",
+    "reason": "retrieved",
+    "kind": "exact_brand_model_site_search"
+   },
+   {
+    "url": "https://www.baidu.com/s?wd=+%22%E6%99%BA%E7%B1%B3%E7%94%B5%E6%9A%96%E5%99%A8%E6%99%BA%E8%83%BD%E7%89%881S%22+site%3Aproduct.pconline.com.cn",
     "reason": "search_challenge_circuit_open",
     "kind": "exact_brand_model_site_search"
    }
