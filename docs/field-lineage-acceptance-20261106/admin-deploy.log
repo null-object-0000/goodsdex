@@ -1,0 +1,14 @@
+admin-dist.tgz: OK
+api-deps.tgz: OK
+27880d856b98847da43db30bb086ee6f48b0deb2cf60fca0a47cbc8ab0e0e2fe  admin-dist.tgz
+c9aae47f40b5a590a9702716c40f8c63c113129ad8428d291af2ae84c1d5d8ca  api-deps.tgz
+dist files=83
+-rw-r--r-- 1 nichangen nichangen 1.2M Nov  6 12:47 /tmp/tmp.AlmwuEXN9o/artifacts/admin-dist.tgz
+-rw-r--r-- 1 nichangen nichangen  16M Nov  6 12:47 /tmp/tmp.AlmwuEXN9o/artifacts/api-deps.tgz
+4.0M	/tmp/tmp.AlmwuEXN9o/context/services/admin-pro/dist
+bd8d3dbecc6cb29ca08ae9cfd20a3ab515b1b4a9fccb144c7bc5985270aa4f9e  /tmp/tmp.AlmwuEXN9o/release.tgz
+Error: session resolve: login instance: SDKError:
+   StatusCode: 400
+   Code: ClientNotRunning
+   Message: code: 400, The aliyun service is not running on the instance. request id: 01A1AF2F-0804-5E3D-94CC-828B09D1E704
+   Data: {"Code":"ClientNotRunning","HostId":"ecs-workbench.aliyuncs.com","Message":"The aliyun service is not running on the instance.","Recommend":"https://api.aliyun.com/troubleshoot?q=ClientNotRunning&product=ecs-workbench&requestId=01A1AF2F-0804-5E3D-94CC-828B09D1E704","RequestId":"01A1AF2F-0804-5E3D-94CC-828B09D1E704"}

@@ -1,0 +1,82 @@
+{
+  "data_commit": "c647735cee0b0b0cb67b8c510b88a5e4aa9aaa5d",
+  "revision": "a418336baeb8496ab9032feae559cede",
+  "compressed_sha256": "c7e7b5ed5a2e225ea30599d20cb54b148536a728715737290fae77077cd2e168",
+  "rows": 4467,
+  "display_values_checked": 58759,
+  "errors": [],
+  "selection_replay_equal": true,
+  "history_replay_equal": true,
+  "legacy_values_equal": true,
+  "independent_samples": [
+    {
+      "id": "CN:byd:car:han:2023:dmi",
+      "display_equal": true
+    },
+    {
+      "id": "CN:apple_cn:commodity:MD3Y4CH/A",
+      "display_equal": true
+    },
+    {
+      "id": "CN:apple_cn:commodity:MDE14CH/A",
+      "display_equal": true
+    },
+    {
+      "id": "CN:dji:sku:142711",
+      "display_equal": true
+    },
+    {
+      "id": "CN:byd:car:goods-165:current:dmi",
+      "display_equal": true
+    }
+  ],
+  "coverage": {
+    "policy": "field-lineage-v1",
+    "counting_unit": "published_rows",
+    "total": 4467,
+    "covered": 1646,
+    "missing": 2821,
+    "conflicts": 0,
+    "groups": {
+      "official": 807,
+      "third_party": 108,
+      "series": 522,
+      "llm": 209
+    },
+    "sources": {
+      "apple_newsroom": 574,
+      "byd_official": 1,
+      "llm_verified": 209,
+      "ithome": 76,
+      "dji_official": 87,
+      "series_inherit": 522,
+      "kuaikeji": 23,
+      "fujifilm_official": 52,
+      "ifeng_tech": 1,
+      "mi_official_newsroom": 42,
+      "mi_store": 51,
+      "pchome": 2,
+      "sina_tech": 2,
+      "anzhuo": 1,
+      "eastmoney": 1,
+      "zol": 1,
+      "gsmarena": 1
+    },
+    "ratio": 0.3684799641817775
+  },
+  "method_distribution": {
+    "legacy_capture": 53532,
+    "page_fetch": 2377,
+    "series_inherit": 522,
+    "legacy_directory_mapping": 2328
+  },
+  "all_original_observations_retained": true,
+  "full_finalizer_replay": {
+    "rows": 4467,
+    "unchanged_goods_sha256": "569a50b18be29196a529de06f44ac5b03e3425a3e027c3e5e019059983f21605",
+    "new_price_observations": 0,
+    "car_products_verified": 17
+  },
+  "published_revision": "6be9a2be31ca4ac8bf9d88a3749eebf8",
+  "published_meta_counts_match": true
+}

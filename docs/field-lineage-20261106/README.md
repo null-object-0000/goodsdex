@@ -14,7 +14,7 @@ field_history 只在 value 变化时追加，包含 at、from、to、reason、ac
 - [90天冲突 fixture](conflict-fixture.json)：显式测试商品，display.release_date=null，conflicts 保留两来源，未写入生产。当前真实发布库无符合新规则的日期冲突，不虚构实际商品。
 - [覆盖率及逐行差异](audit/coverage.json)、[口径对账](audit/reconciliation.json)、[证据缺项](audit/issues.json)。
 
-题述46.08%是 **1646/3572**；已发布的896条新增设备无日期，当前相同旧规则为 **1646/4468=36.84%**。新来源分桶为 **官方807 + 第三方105 + 系列525 + LLM209 =1646**。41条旧 llm_crossed 依据真正抓取的发布者归类，模型交叉核对仍留原证据。全部旧日期镜像保留，采纳日期的精度及来源可能按新规则调整；逐行差异可复核。不是通过更改分母伪造覆盖率。
+题述46.08%是 **1646/3572**；已发布的896条新增设备无日期，当前相同旧规则为 **1646/4468=36.84%**。当前发布来源分桶为 **官方807 + 第三方108 + 系列522 + LLM209 =1646**。41条旧 llm_crossed 依据真正抓取的发布者归类，模型交叉核对仍留原证据。全部旧日期镜像保留，采纳日期的精度及来源可能按新规则调整；逐行差异可复核。不是通过更改分母伪造覆盖率。
 
 新结构可独立解析：`product_sources.materialize({'id':..., 'sources':...})`；不需要 release* 主列。旧字段只由迁移适配器读取，新增源走 upsert_source。
 
@@ -29,3 +29,5 @@ field_history 只在 value 变化时追加，包含 at、from、to、reason、ac
 ## 验证和发布
 
 正式提交与 run、线上读回结果见 publication.json。回归命令：`PYTHONPATH=src:scripts python -m pytest -q -m 'not live'`。迁移沿用 `migrate-product-sources.yml`：同一发布锁读取最新 data，备份原发布集，运行 finalizer、门禁、OSS 不可变分片、最后切换 manifest，不使用本地旧快照覆盖现网。
+
+当前4467行发布集、最新测试和截图验收见 [补齐验收](../field-lineage-acceptance-20261106/README.md)。上述4468行为较早审计快照，不能用作当前发布分母。

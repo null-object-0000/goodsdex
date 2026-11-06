@@ -1,0 +1,59 @@
+{
+  "historical": {
+    "covered": 1646,
+    "total": 3572,
+    "ratio": 0.4608062709966405
+  },
+  "before": {
+    "total": 4467,
+    "day": 128,
+    "month": 1518,
+    "none": 2821,
+    "not_obtained": 2821,
+    "official_absent": 0,
+    "series_inherit": 522,
+    "official": 807,
+    "third_party": 108,
+    "llm_crossed": 0,
+    "llm_verified": 209,
+    "covered": 1646,
+    "ratio": 0.3684799641817775
+  },
+  "after": {
+    "policy": "field-lineage-v1",
+    "counting_unit": "published_rows",
+    "total": 4467,
+    "covered": 1646,
+    "missing": 2821,
+    "conflicts": 0,
+    "groups": {
+      "official": 807,
+      "third_party": 108,
+      "series": 522,
+      "llm": 209
+    },
+    "sources": {
+      "apple_newsroom": 574,
+      "byd_official": 1,
+      "llm_verified": 209,
+      "ithome": 76,
+      "dji_official": 87,
+      "series_inherit": 522,
+      "kuaikeji": 23,
+      "fujifilm_official": 52,
+      "ifeng_tech": 1,
+      "mi_official_newsroom": 42,
+      "mi_store": 51,
+      "pchome": 2,
+      "sina_tech": 2,
+      "anzhuo": 1,
+      "eastmoney": 1,
+      "zol": 1,
+      "gsmarena": 1
+    },
+    "ratio": 0.3684799641817775
+  },
+  "published_row_delta": 895,
+  "covered_delta": 0,
+  "reason": "分母以当前发布行计；分组按采纳值的登记来源，旧llm_crossed按实际抓取发布者归类"
+}

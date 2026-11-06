@@ -1,0 +1,300 @@
+{
+  "id": "fixture:date-conflict",
+  "conflicts": [
+    {
+      "field": "release_date",
+      "reason": "来源日期相差超过45天，等待人工核查",
+      "pairs": [
+        {
+          "left": {
+            "value": "2025-01-01",
+            "source": "ithome",
+            "field": "release_date",
+            "captured_at": "2026-11-06T02:14:00+08:00",
+            "method": "manual",
+            "evidence_url": "https://www.ithome.com/fixture",
+            "quote": "合成测试证据；未抓取此URL",
+            "http_status": null,
+            "confidence": "low",
+            "source_group": "third_party",
+            "capture_time_missing": false,
+            "precision": "day",
+            "eligible": true
+          },
+          "right": {
+            "value": "2025-04-01",
+            "source": "tencent_news",
+            "field": "release_date",
+            "captured_at": "2026-11-06T02:14:00+08:00",
+            "method": "manual",
+            "evidence_url": "https://news.qq.com/fixture",
+            "quote": "合成测试证据；未抓取此URL",
+            "http_status": null,
+            "confidence": "low",
+            "source_group": "third_party",
+            "capture_time_missing": false,
+            "precision": "day",
+            "eligible": true
+          },
+          "gap_days": 90
+        }
+      ],
+      "alternatives": [
+        {
+          "value": "2025-01-01",
+          "source": "ithome",
+          "field": "release_date",
+          "captured_at": "2026-11-06T02:14:00+08:00",
+          "method": "manual",
+          "evidence_url": "https://www.ithome.com/fixture",
+          "quote": "合成测试证据；未抓取此URL",
+          "http_status": null,
+          "confidence": "low",
+          "source_group": "third_party",
+          "capture_time_missing": false,
+          "precision": "day",
+          "eligible": true
+        },
+        {
+          "value": "2025-04-01",
+          "source": "tencent_news",
+          "field": "release_date",
+          "captured_at": "2026-11-06T02:14:00+08:00",
+          "method": "manual",
+          "evidence_url": "https://news.qq.com/fixture",
+          "quote": "合成测试证据；未抓取此URL",
+          "http_status": null,
+          "confidence": "low",
+          "source_group": "third_party",
+          "capture_time_missing": false,
+          "precision": "day",
+          "eligible": true
+        }
+      ]
+    }
+  ],
+  "field_history": [
+    {
+      "at": "2026-11-06T02:14:00+08:00",
+      "field": "name",
+      "from": {
+        "value": null
+      },
+      "to": {
+        "value": "测试样例：日期冲突（非真实商品）",
+        "source": "mi_store",
+        "field": "name",
+        "source_url": "https://www.mi.com/product/fixture",
+        "captured_at": "2026-11-06T02:00:00+08:00",
+        "policy": "product-sources-v1",
+        "reason": "按官方商城、官方支持站、自有App目录、第三方顺序选取：mi_store",
+        "method": "manual",
+        "evidence_url": "https://www.mi.com/product/fixture",
+        "quote": null,
+        "http_status": null,
+        "confidence": "low",
+        "source_group": "official",
+        "capture_time_missing": false
+      },
+      "reason": "按官方商城、官方支持站、自有App目录、第三方顺序选取：mi_store",
+      "actor": "policy:field-lineage-v1"
+    },
+    {
+      "at": "2026-11-06T02:14:00+08:00",
+      "field": "release_date",
+      "from": {
+        "value": null
+      },
+      "to": {
+        "value": "2025-01-01",
+        "source": "ithome",
+        "field": "release_date",
+        "captured_at": "2026-11-06T02:14:00+08:00",
+        "method": "manual",
+        "evidence_url": "https://www.ithome.com/fixture",
+        "quote": "合成测试证据；未抓取此URL",
+        "http_status": null,
+        "confidence": "low",
+        "source_group": "third_party",
+        "capture_time_missing": false,
+        "precision": "day",
+        "reason": "按日期精度、官方优先、来源白名单和最早捕获时间选取：ithome",
+        "policy": "field-lineage-v1"
+      },
+      "reason": "按日期精度、官方优先、来源白名单和最早捕获时间选取：ithome",
+      "actor": "policy:field-lineage-v1"
+    },
+    {
+      "at": "2026-11-06T02:15:00+08:00",
+      "field": "release_date",
+      "from": {
+        "value": "2025-01-01",
+        "source": "ithome",
+        "field": "release_date",
+        "captured_at": "2026-11-06T02:14:00+08:00",
+        "method": "manual",
+        "evidence_url": "https://www.ithome.com/fixture",
+        "quote": "合成测试证据；未抓取此URL",
+        "http_status": null,
+        "confidence": "low",
+        "source_group": "third_party",
+        "capture_time_missing": false,
+        "precision": "day",
+        "reason": "按日期精度、官方优先、来源白名单和最早捕获时间选取：ithome",
+        "policy": "field-lineage-v1"
+      },
+      "to": {
+        "value": null
+      },
+      "reason": "来源冲突或缺少合格证据，清空采纳值",
+      "actor": "policy:field-lineage-v1"
+    }
+  ],
+  "lineage_policy": "field-lineage-v1",
+  "sources": [
+    {
+      "source": "ithome",
+      "role": "secondary",
+      "kind": "release_date",
+      "source_url": "https://www.ithome.com/fixture",
+      "captured_at": "2026-11-06T02:14:00+08:00",
+      "fields": {
+        "release_date": "2025-01-01",
+        "precision": "day",
+        "quote": "合成测试证据；未抓取此URL"
+      },
+      "evidence": {
+        "method": "manual",
+        "verified": false,
+        "confidence": "low",
+        "fixture": true
+      },
+      "observations": [
+        {
+          "source": "ithome",
+          "role": "secondary",
+          "kind": "release_date",
+          "source_url": "https://www.ithome.com/fixture",
+          "captured_at": "2026-11-06T02:14:00+08:00",
+          "fields": {
+            "release_date": "2025-01-01",
+            "precision": "day",
+            "quote": "合成测试证据；未抓取此URL"
+          },
+          "evidence": {
+            "method": "manual",
+            "verified": false,
+            "confidence": "low",
+            "fixture": true
+          }
+        }
+      ]
+    },
+    {
+      "source": "mi_store",
+      "role": "primary",
+      "kind": "product",
+      "source_url": "https://www.mi.com/product/fixture",
+      "captured_at": "2026-11-06T02:00:00+08:00",
+      "fields": {
+        "name": "测试样例：日期冲突（非真实商品）"
+      },
+      "evidence": {
+        "method": "manual",
+        "verified": false,
+        "confidence": "low",
+        "fixture": true
+      },
+      "observations": [
+        {
+          "source": "mi_store",
+          "role": "secondary",
+          "kind": "product",
+          "source_url": "https://www.mi.com/product/fixture",
+          "captured_at": "2026-11-06T02:00:00+08:00",
+          "fields": {
+            "name": "测试样例：日期冲突（非真实商品）"
+          },
+          "evidence": {
+            "method": "manual",
+            "verified": false,
+            "confidence": "low",
+            "fixture": true
+          }
+        }
+      ]
+    },
+    {
+      "source": "tencent_news",
+      "role": "secondary",
+      "kind": "release_date",
+      "source_url": "https://news.qq.com/fixture",
+      "captured_at": "2026-11-06T02:14:00+08:00",
+      "fields": {
+        "release_date": "2025-04-01",
+        "precision": "day",
+        "quote": "合成测试证据；未抓取此URL"
+      },
+      "evidence": {
+        "method": "manual",
+        "verified": false,
+        "confidence": "low",
+        "fixture": true
+      },
+      "observations": [
+        {
+          "source": "tencent_news",
+          "role": "secondary",
+          "kind": "release_date",
+          "source_url": "https://news.qq.com/fixture",
+          "captured_at": "2026-11-06T02:14:00+08:00",
+          "fields": {
+            "release_date": "2025-04-01",
+            "precision": "day",
+            "quote": "合成测试证据；未抓取此URL"
+          },
+          "evidence": {
+            "method": "manual",
+            "verified": false,
+            "confidence": "low",
+            "fixture": true
+          }
+        }
+      ]
+    }
+  ],
+  "primary_source": "mi_store",
+  "source_history": [],
+  "display": {
+    "name": {
+      "value": "测试样例：日期冲突（非真实商品）",
+      "source": "mi_store",
+      "field": "name",
+      "source_url": "https://www.mi.com/product/fixture",
+      "captured_at": "2026-11-06T02:00:00+08:00",
+      "policy": "product-sources-v1",
+      "reason": "按官方商城、官方支持站、自有App目录、第三方顺序选取：mi_store",
+      "method": "manual",
+      "evidence_url": "https://www.mi.com/product/fixture",
+      "quote": null,
+      "http_status": null,
+      "confidence": "low",
+      "source_group": "official",
+      "capture_time_missing": false,
+      "alternatives": []
+    },
+    "image": null,
+    "category": null,
+    "price": null,
+    "release_date": null
+  },
+  "source_policy": "product-sources-v1",
+  "release_effective": null,
+  "name": "测试样例：日期冲突（非真实商品）",
+  "image": null,
+  "category": null,
+  "price": null,
+  "price_missing": true,
+  "fixture": true,
+  "brand": "测试"
+}
