@@ -204,6 +204,9 @@ def materialize(row, previous=None, observations=(), rules=None, at=None):
         result['price_missing'] = row.get('price_missing') or True
     else:
         result['price_missing'] = False
+    if 'price_comparable' in row:
+        from .price_semantics import comparable
+        result['price_comparable'] = comparable(result)
     return result
 
 

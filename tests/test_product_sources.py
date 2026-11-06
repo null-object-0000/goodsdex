@@ -91,3 +91,16 @@ def test_collector_without_new_columns_uses_price_capture_time_and_preserves_dis
     raw=dict(id='p',name='产品',price=499,source_url='https://www.mi.com/product/1',fetched_at='2026-11-05T00:00:00Z',price_fetched_at='2026-11-07T00:00:00Z')
     new=migrate_row(raw,old)
     assert new['price']==499 and new['display']['price']['captured_at']=='2026-11-07T00:00:00Z'
+
+
+def test_display_price_recomputes_comparison_eligibility():
+    row=dict(id='car',price=None,price_kind='full',price_comparable=False)
+    result=materialize(row,observations=[obs('mi_store',name='产品',price=599,price_kind='full')])
+    from goodsdex.price_semantics import validate
+    validate([result])
+    assert result['price_comparable'] is True
+    cleared=obs('mi_store',price=None,price_kind='full')
+    cleared['captured_at']='2026-11-07T00:00:00Z'
+    result=upsert_source(result,cleared)
+    validate([result])
+    assert result['price_comparable'] is False
