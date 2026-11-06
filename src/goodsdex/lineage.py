@@ -17,6 +17,7 @@ def register(name, group, hosts=(), tier=3):
 for name, hosts, tier in [
  ('mi_store',('mi.com','m.mi.com'),0), ('mi_official_newsroom',('ir.mi.com',),0),
  ('mi_mtop',('api2.order.mi.com',),0), ('mihome_directory',('home.mi.com',),2),
+ ('earbuds_directory',('cn.tws.wear.xiaomiwear.com',),2),
  ('youpin',('xiaomiyoupin.com',),3), ('apple_newsroom',('apple.com','apple.com.cn'),0),
  ('apple_support',('support.apple.com',),1), ('apple_store',('store.apple.com','store.apple.com.cn'),0),
  ('hp_support',('support.hp.com',),1), ('hp_quickspecs',('h20195.www2.hp.com',),1),
@@ -36,7 +37,7 @@ for name, hosts in [
 register('llm_verified','llm')
 register('llm_estimate','llm')  # retained evidence only; never selectable
 register('series_inherit','series')
-METHODS = {'page_fetch','api','manual','series_inherit'}
+METHODS = {'page_fetch','api','anonymous_api','manual','series_inherit'}
 POLICY = 'field-lineage-v1'
 
 

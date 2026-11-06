@@ -15,10 +15,11 @@ SOURCE_TIERS = {
     'mi_store': 1, 'apple_store': 1, 'hp_store': 1, 'atour_official': 1,
     'dji_official': 1, 'fujifilm_official': 1, 'byd_official': 1, 'xiaomi_ev': 1,
     'mi_support': 2, 'apple_support': 2, 'hp_support': 2,
-    'hp_quickspecs': 2, 'mihome_directory': 3, 'youpin': 3,
+    'hp_quickspecs': 2, 'mihome_directory': 3, 'earbuds_directory': 3, 'youpin': 3,
     'zol': 4, 'baike': 4, 'pcauto': 4, 'jd': 4,
 }
 HOSTS = {
+    'cn.tws.wear.xiaomiwear.com': 'earbuds_directory',
     'home.mi.com': 'mihome_directory', 'xiaomiyoupin.com': 'youpin',
     'support.apple.com': 'apple_support', 'apple.com.cn': 'apple_store',
     'apple.com': 'apple_store', 'support.hp.com': 'hp_support',
@@ -179,6 +180,12 @@ def materialize(row, previous=None, observations=(), rules=None, at=None):
         raise ValueError(str(row.get('id')) + ': no evidence-backed product identity source')
     old = previous.get('primary_source')
     chosen = min(eligible, key=lambda s: (SOURCE_TIERS[s['source']], s['source'] != old, s['source']))['source']
+    # Directory model references keep their discovery identity even when a
+    # channel corroborates them. A channel SKU is not a new model identity.
+    if row.get('source') == 'earbuds_directory':
+        if not any(s['source'] == 'earbuds_directory' for s in eligible):
+            raise ValueError('Earbuds model requires CN directory identity evidence')
+        chosen = 'earbuds_directory'
     for s in sources:
         s['role'] = 'primary' if s['source'] == chosen else 'secondary'
         for obs in s['observations']:
@@ -187,9 +194,15 @@ def materialize(row, previous=None, observations=(), rules=None, at=None):
     if old and old != chosen:
         history.append(dict(at=at or datetime.now(timezone.utc).isoformat(),
                             **{'from': old, 'to': chosen}, reason='higher priority evidence-backed product source', policy=POLICY))
+    if row.get('source') == 'earbuds_directory':
+        rules = {**(rules or {}), 'name': ['earbuds_directory'],
+                 'image': ['earbuds_directory'], 'category': ['earbuds_directory']}
     display = derive(sources, rules)
     from .lineage import enrich_display
     display, conflicts, field_history = enrich_display(sources, display, previous, at)
+    if row.get('source') == 'earbuds_directory' and display['price'] is None:
+        display['price'] = dict(value=None, source=None, missing='no_channel_price',
+                                reason='目录无报价；第二源渠道标价仅作为关联证据保留')
     result.update(conflicts=conflicts, field_history=field_history, lineage_policy='field-lineage-v1')
     result.update(sources=sources, primary_source=chosen, source_history=history,
                   display=display, source_policy=POLICY)

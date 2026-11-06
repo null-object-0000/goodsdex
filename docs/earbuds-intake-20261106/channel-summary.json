@@ -1,0 +1,86 @@
+{
+ "all_23": {
+  "total": 23,
+  "matched": 2,
+  "rate": 0.08695652173913043,
+  "mi_store": 2,
+  "youpin": 1,
+  "errors": 0
+ },
+ "sample_10": {
+  "total": 10,
+  "matched": 2,
+  "rate": 0.2,
+  "mi_store": 2,
+  "youpin": 1,
+  "errors": 0
+ },
+ "sampling": "固定人工覆盖样本，含6条历史主线/限定、2条新主线与2条已知渠道候选；不是随机总体命中率估计",
+ "sample_models": [
+  "miwear.headphone.l76c",
+  "miwear.headphone.l77c",
+  "miwear.headphone.l71c",
+  "miwear.headphone.k75sc",
+  "miwear.headphone.l77sc",
+  "miwear.headphone.k75mcn",
+  "miwear.headphone.n75c",
+  "miwear.headphone.o76cn",
+  "miwear.headphone.o71c",
+  "miwear.headphone.q74cc"
+ ],
+ "matches": [
+  {
+   "model": "miwear.headphone.o71c",
+   "name": "Xiaomi Buds 5 Pro Wi-Fi",
+   "matches": [
+    {
+     "channel": "mi_store",
+     "product_id": "20978",
+     "name": "Xiaomi Buds 5 Pro Wi-Fi",
+     "mapping": "reviewed_wifi_sku",
+     "official_name": "Xiaomi Buds 5 Pro Wi-Fi版 幻影黑",
+     "price": 879.0,
+     "gid": "2230003554",
+     "source_url": "https://www.mi.com/shop/buy/detail?product_id=20978",
+     "detail_url": "https://api2.order.mi.com/product/view?product_id=20978&version=2",
+     "captured_at": "2026-11-06T05:39:17.908682+00:00",
+     "evidence_file": "raw/7a11e210e021583e6c8f8a94feb5fbeb5f21769ad69e4cd11fa12483340c95c1.json.gz",
+     "price_kind": "list"
+    }
+   ]
+  },
+  {
+   "model": "miwear.headphone.q74cc",
+   "name": "REDMI Clip Neo",
+   "matches": [
+    {
+     "channel": "mi_store",
+     "product_id": "25802",
+     "name": "REDMI Clip Neo 联名款",
+     "search_price": "449",
+     "official_name": "REDMI Clip Neo",
+     "price": 399.0,
+     "gid": "2230016745",
+     "source_url": "https://www.mi.com/shop/buy/detail?product_id=25802",
+     "detail_url": "https://api2.order.mi.com/product/view?product_id=25802&version=2",
+     "captured_at": "2026-11-06T05:41:47.076845+00:00",
+     "evidence_file": "raw/5b847bf5f988e78554aebeb2e866b9ab95709913142634802f00d39a5655d15d.json.gz",
+     "price_kind": "list"
+    },
+    {
+     "channel": "youpin",
+     "gid": "185253",
+     "name": "REDMI Clip Neo",
+     "search_price_fen": 39900,
+     "official_name": "REDMI Clip Neo",
+     "price": 399.0,
+     "source_url": "https://www.xiaomiyoupin.com/detail?gid=185253",
+     "detail_url": "https://www.xiaomiyoupin.com/api/gateway/detail",
+     "captured_at": "2026-11-06T05:39:25.534989+00:00",
+     "evidence_file": "raw/2c5a1abd7363f82e6059380cc49f18a91ec919c5efc731d9a124638e53fa2b3a.json.gz",
+     "price_kind": "list"
+    }
+   ]
+  }
+ ]
+}

@@ -710,7 +710,7 @@ def dedupe_rows(rows):
     return output, audit
 
 
-def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessory_sha256=None, mihome_catalog_only=False, mihome_intake_only=False, product_sources_only=False):
+def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessory_sha256=None, mihome_catalog_only=False, mihome_intake_only=False, product_sources_only=False, earbuds_intake_only=False):
     """Run after all brand publishers and guards, before push/OSS upload."""
     from goodsdex.supplements import metadata
     public = Path(public)
@@ -815,7 +815,18 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
             raise ValueError('Source migration requires previous snapshot and exclusive scope')
         from copy import deepcopy
         output = deepcopy(previous)
-    if product_sources_only or any(r.get('source_policy') for r in output):
+    from goodsdex.earbuds_intake import apply_intake as apply_earbuds
+    if earbuds_intake_only:
+        if previous is None or product_sources_only or mihome_catalog_only or mihome_intake_only:
+            raise ValueError('Earbuds intake requires previous snapshot and exclusive scope')
+        output = apply_earbuds(previous)
+        audit.update(before_rows=len(previous), after_rows=len(output),
+                     before_unique_ids=len({r['id'] for r in previous}),
+                     after_unique_ids=len({r['id'] for r in output}),
+                     publication_mode='earbuds_append_only',
+                     added_ids=[r['id'] for r in output[len(previous):]])
+        _, variant_stats = apply_variant_attributes(output)
+    if not earbuds_intake_only and (product_sources_only or any(r.get('source_policy') for r in output)):
         from goodsdex.product_sources import apply_sources
         output = apply_sources(output, previous or rows)
     audit["input_sha256"] = digest
@@ -861,7 +872,7 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     from uuid import uuid4
     revision = uuid4().hex
     generated_at = datetime.now(timezone.utc).isoformat()
-    if product_sources_only:
+    if product_sources_only or earbuds_intake_only:
         # Schema-only publication must retain already reviewed exclusion decisions.
         from copy import deepcopy
         excluded = deepcopy(json.loads((public / 'goods-excluded.json').read_text()))
@@ -874,18 +885,18 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     meta.update(revision=revision, generated_at=generated_at, total_all=len(rows) + len(historical_ids),
                 total_published=len(output), total_excluded=excluded["total"],
                 excluded_by_rule=excluded_by_rule(excluded))
-    if product_sources_only: meta['total_all'] = len(output) + excluded['total']
+    if product_sources_only or earbuds_intake_only: meta['total_all'] = len(output) + excluded['total']
     validate_excluded(meta, excluded, output)
     # All checks finish before the first release file is replaced.
     archive_path.parent.mkdir(parents=True, exist_ok=True)
-    if not product_sources_only:
+    if not (product_sources_only or earbuds_intake_only):
         atomic_write(apparel_path, apparel)
         atomic_write(service_path, services)
         atomic_write(archive_path, accessory_archive)
         atomic_write(retired_path, [r for r in output if r.get('status') == 'retired'])
         atomic_write(public / "archive/non-goods.json", reviewed)
     atomic_write(public / "goods-excluded.json", excluded)
-    if not product_sources_only:
+    if not (product_sources_only or earbuds_intake_only):
         atomic_write(public / "archive" / "brand-review.json", brand_audit["manual_review"])
     for name, value in (("goods.json", output), ("meta.json", meta), ("merge-audit.json", combined)):
         atomic_write(public / name, value)
