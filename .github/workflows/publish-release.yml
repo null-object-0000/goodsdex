@@ -184,6 +184,21 @@ jobs:
           assert len(after) - len(before) in (0, 23), 'Partial Earbuds intake'
           PYCODE
           python3 scripts/verify_earbuds_intake.py --before "$RUNNER_TEMP/goods-before.json" --public _data/public --output "$RUNNER_TEMP/earbuds-acceptance.json"
+      - name: Measure actual published additions after finalization
+        run: |
+          PYTHONPATH=src:scripts python3 - <<'PYCODE'
+          import json,os
+          from pathlib import Path
+          from source_registry import metrics
+          p=Path(os.environ['RUNNER_TEMP'])
+          result=metrics(json.loads((p/'goods-before.json').read_text()),json.loads(Path('_data/public/goods.json').read_text()))
+          (p/'source-metrics.json').write_text(json.dumps(result,ensure_ascii=False))
+          PYCODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-metrics
+          path: ${{ runner.temp }}/source-metrics.json
+          overwrite: true
       - name: Push one complete release to data
         env:
           RELEASE_SCOPE: ${{ inputs.scope }}

@@ -88,6 +88,10 @@ def build_shards(public):
         raw = status_path.read_bytes()
         files['sources-status.json'] = dict(sha256=hashlib.sha256(raw).hexdigest(),
             bytes=len(raw), count=len(json.loads(raw)['sources']))
+    registry_path = public / 'sources-registry.json'
+    if registry_path.exists():
+        raw = registry_path.read_bytes()
+        files['sources-registry.json'] = dict(sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw), count=len(json.loads(raw)))
     history_files = {}
     history = public / 'price-history'
     if (history / 'index.json').exists():

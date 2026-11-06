@@ -1,20 +1,27 @@
 name: refresh-mihome-catalog
 on:
+  schedule:
+    - cron: '52 19 * * *'
   workflow_dispatch:
 permissions:
   contents: write
   actions: read
   checks: read
+concurrency:
+  group: refresh-mihome-catalog
+  cancel-in-progress: false
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      contents: read
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/collect-base
-      # Frozen anonymous directory evidence is replayed by the shared finalizer.
+      - run: python3 -m pip install requests
+      - name: Collect fresh directory and discover unknown identities
+        env:
+          EARBUDS_AUTH_KEY: ${{ secrets.EARBUDS_AUTH_KEY }}
+        run: PYTHONPATH=src:scripts python3 scripts/collect_device_directories.py --source mihome
       - uses: ./.github/actions/upload-candidate
         with:
           scope: all
@@ -23,5 +30,4 @@ jobs:
     uses: ./.github/workflows/publish-release.yml
     with:
       scope: all
-      mihome_catalog_only: true
     secrets: inherit

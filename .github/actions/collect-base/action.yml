@@ -14,3 +14,5 @@ runs:
         persist-credentials: false
     - shell: bash
       run: python3 scripts/catalog_git_storage.py unpack --public _data/public
+    - shell: bash
+      run: cp _data/public/goods.json "$RUNNER_TEMP/source-before.json"

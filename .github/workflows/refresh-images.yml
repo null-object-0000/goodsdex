@@ -1,0 +1,29 @@
+name: refresh-images
+on:
+  schedule:
+    - cron: '22 20 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+  checks: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/collect-base
+      # No collector mutation: shared finalizer replays the frozen image review
+      # on the latest release while holding the normal publication lock.
+      - uses: ./.github/actions/upload-candidate
+        with:
+          scope: all
+  publish:
+    needs: collect
+    uses: ./.github/workflows/publish-release.yml
+    with:
+      scope: all
+    secrets: inherit

@@ -16,11 +16,15 @@ sys.path[:0] = [str(ROOT/'src'), str(ROOT/'scripts')]
 from goodsdex.release_coverage import apply_priority_dates, matrix, effective
 
 FILES = {'L1':'hp-release-evidence.json','L2':'atour-release-evidence.json',
-         'L3':'xiaomi-priority-release-evidence.json','L4':'priority-series-release-evidence.json','L5':'l5-release-evidence.json','L6':'l6-release-evidence.json'}
+         'L3':'xiaomi-priority-release-evidence.json','L4':'priority-series-release-evidence.json','L5':'l5-release-evidence.json','L6':'l6-release-evidence.json','L7':'l7-release-evidence.json'}
 MODULES = {'L1':'hp','L2':'atour','L3':'xiaomi','L4':'series','L5':'media','L6':'structured'}
 
 
 def run_lane(lane, rows, directory, live, full=False):
+    if lane == 'L7':
+        from goodsdex.release_l7 import apply
+        after=apply(rows)
+        return {'summary':{'changed':sum(a!=b for a,b in zip(rows,after)), 'mode':'reviewed_capture_revalidation'}}
     target = ROOT/('data/third-party' if lane in ('L5','L6') else 'data/official')/FILES[lane]
     if not live and lane not in ('L4', 'L5','L6') and target.exists():
         return json.loads(target.read_text())
