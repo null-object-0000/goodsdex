@@ -1,0 +1,635 @@
+[
+  {
+    "id": "mihome:23498",
+    "primary_source": "mihome_directory",
+    "sources": [
+      {
+        "source": "mihome_directory",
+        "role": "primary",
+        "source_url": "https://home.mi.com/webapp/content/baike/product/index.html?model=careco.camera.650#/",
+        "captured_at": "2026-11-06T00:43:09.574960+00:00",
+        "fields": {
+          "name": "4K云台摄像头",
+          "category": "摄像机",
+          "model": "careco.camera.650",
+          "pd_id": 23498,
+          "icon": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/54568e59ead21343726599bf44df5f82_1740201923377.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=JaX07ggUB1emVf7vFxQQeNhbvEA="
+        },
+        "evidence": {
+          "method": "legacy_capture"
+        },
+        "observations": [
+          {
+            "source": "mihome_directory",
+            "role": "secondary",
+            "source_url": "https://home.mi.com/webapp/content/baike/product/index.html?model=careco.camera.650#/",
+            "captured_at": "2026-11-06T00:43:09.574960+00:00",
+            "fields": {
+              "name": "4K云台摄像头",
+              "category": "摄像机",
+              "model": "careco.camera.650",
+              "pd_id": 23498,
+              "icon": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/54568e59ead21343726599bf44df5f82_1740201923377.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=JaX07ggUB1emVf7vFxQQeNhbvEA="
+            },
+            "evidence": {
+              "method": "legacy_directory_mapping",
+              "mapping": {},
+              "icon_scope": "device_icon"
+            }
+          },
+          {
+            "source": "mihome_directory",
+            "role": "secondary",
+            "source_url": "https://home.mi.com/webapp/content/baike/product/index.html?model=careco.camera.650#/",
+            "captured_at": "2026-11-06T00:43:09.574960+00:00",
+            "fields": {
+              "name": "4K云台摄像头",
+              "category": "摄像机"
+            },
+            "evidence": {
+              "method": "legacy_capture"
+            }
+          }
+        ]
+      }
+    ],
+    "display": {
+      "name": {
+        "value": "4K云台摄像头",
+        "source": "mihome_directory",
+        "field": "name",
+        "source_url": "https://home.mi.com/webapp/content/baike/product/index.html?model=careco.camera.650#/",
+        "captured_at": "2026-11-06T00:43:09.574960+00:00",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture"
+      },
+      "image": null,
+      "category": {
+        "value": "摄像机",
+        "source": "mihome_directory",
+        "field": "category",
+        "source_url": "https://home.mi.com/webapp/content/baike/product/index.html?model=careco.camera.650#/",
+        "captured_at": "2026-11-06T00:43:09.574960+00:00",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture",
+        "refined_by": "mihome"
+      },
+      "price": null
+    },
+    "source_history": [],
+    "price_missing": "no_channel_price"
+  },
+  {
+    "id": "CN:mi_cn:product:10330",
+    "primary_source": "mi_store",
+    "sources": [
+      {
+        "source": "mi_store",
+        "role": "primary",
+        "source_url": "https://www.mi.com/shop/buy/detail?product_id=10330",
+        "captured_at": "2026-10-27T08:16:25+08:00",
+        "fields": {
+          "name": "米家智能微波炉 20L",
+          "category": "家电",
+          "price": 399,
+          "price_kind": "full",
+          "image": "https://cdn.cnbj1.fds.api.mi-img.com/nr-upload-outer/3AFECBC6DC480465CDB7511D35EAE695_1789627282756.png",
+          "params": {}
+        },
+        "evidence": {
+          "method": "legacy_capture"
+        },
+        "observations": [
+          {
+            "source": "mi_store",
+            "role": "secondary",
+            "source_url": "https://www.mi.com/shop/buy/detail?product_id=10330",
+            "captured_at": "2026-10-27T08:16:25+08:00",
+            "fields": {
+              "name": "米家智能微波炉 20L",
+              "category": "家电",
+              "price": 399,
+              "price_kind": "full",
+              "image": "https://cdn.cnbj1.fds.api.mi-img.com/nr-upload-outer/3AFECBC6DC480465CDB7511D35EAE695_1789627282756.png",
+              "params": {}
+            },
+            "evidence": {
+              "method": "legacy_capture"
+            }
+          }
+        ]
+      },
+      {
+        "source": "mihome_directory",
+        "role": "secondary",
+        "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1697628600&lastPdId=12934",
+        "captured_at": null,
+        "fields": {
+          "name": "米家智能微波炉 20L",
+          "category": "微波炉",
+          "model": "chunmi.microwave.cmwb3",
+          "pd_id": 14931
+        },
+        "evidence": {
+          "method": "legacy_directory_mapping",
+          "mapping": {
+            "method": "exact_name",
+            "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1697628600&lastPdId=12934",
+            "source_sha256": "9be393ea1ed99e4760d7264f985ba9d3be49678148b6c725f00d874031826c70",
+            "category": "微波炉",
+            "classifications": [
+              {
+                "brand_id": 1520,
+                "id": 3,
+                "name": "厨房电器"
+              }
+            ]
+          },
+          "icon_scope": "device_icon",
+          "capture_time_missing": true
+        },
+        "observations": [
+          {
+            "source": "mihome_directory",
+            "role": "secondary",
+            "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1697628600&lastPdId=12934",
+            "captured_at": null,
+            "fields": {
+              "name": "米家智能微波炉 20L",
+              "category": "微波炉",
+              "model": "chunmi.microwave.cmwb3",
+              "pd_id": 14931
+            },
+            "evidence": {
+              "method": "legacy_directory_mapping",
+              "mapping": {
+                "method": "exact_name",
+                "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1697628600&lastPdId=12934",
+                "source_sha256": "9be393ea1ed99e4760d7264f985ba9d3be49678148b6c725f00d874031826c70",
+                "category": "微波炉",
+                "classifications": [
+                  {
+                    "brand_id": 1520,
+                    "id": 3,
+                    "name": "厨房电器"
+                  }
+                ]
+              },
+              "icon_scope": "device_icon",
+              "capture_time_missing": true
+            }
+          }
+        ]
+      }
+    ],
+    "display": {
+      "name": {
+        "value": "米家智能微波炉 20L",
+        "source": "mi_store",
+        "field": "name",
+        "source_url": "https://www.mi.com/shop/buy/detail?product_id=10330",
+        "captured_at": "2026-10-27T08:16:25+08:00",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture"
+      },
+      "image": {
+        "value": "https://cdn.cnbj1.fds.api.mi-img.com/nr-upload-outer/3AFECBC6DC480465CDB7511D35EAE695_1789627282756.png",
+        "source": "mi_store",
+        "field": "image",
+        "source_url": "https://www.mi.com/shop/buy/detail?product_id=10330",
+        "captured_at": "2026-10-27T08:16:25+08:00",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture",
+        "type": "product_photo"
+      },
+      "category": {
+        "value": "微波炉",
+        "source": "mihome_directory",
+        "field": "category",
+        "source_url": "https://home.mi.com/cgi-op/api/v1/brand/h5/list?brandId=1520&classifyId=0&limit=100&changeTime=1697628600&lastPdId=12934",
+        "captured_at": null,
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture",
+        "refined_by": "mihome"
+      },
+      "price": {
+        "value": 399,
+        "source": "mi_store",
+        "field": "price",
+        "source_url": "https://www.mi.com/shop/buy/detail?product_id=10330",
+        "captured_at": "2026-10-27T08:16:25+08:00",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture",
+        "kind": "full"
+      }
+    },
+    "source_history": [],
+    "price_missing": false
+  },
+  {
+    "id": "CN:apple_cn:commodity:MD3Y4CH/A",
+    "primary_source": "apple_store",
+    "sources": [
+      {
+        "source": "apple_store",
+        "role": "primary",
+        "source_url": "https://www.apple.com.cn/shop/buy-ipad/ipad",
+        "captured_at": "2026-11-06T08:30:54+08:00",
+        "fields": {
+          "name": "iPad",
+          "category": "平板",
+          "price_kind": "full",
+          "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-silver-wifi-select?wid=940&hei=1112&fmt=png-alpha&.v=MG1udWpyWFI4d3VJQmF2aGlucjRyYUtrNVcxNFM0TGJlbkh3VDIzWFBmY2hPVVo3RjZFdVpCTXpsVXRVUk9xbmJjNitDN2kyNWFITm1kN1lsSUFHR2J2UHJZOUZxd0JoWkRMWVBTV1Y2Z3YrNmVjbmk5c1V4VVk2VEt3TGcxekg",
+          "params": {
+            "part_number": "MD3Y4CH/A",
+            "variant_attrs": {
+              "dimensionCapacity": {
+                "value": "128gb",
+                "label": "128 GB"
+              },
+              "dimensionConnection": {
+                "value": "wifi",
+                "label": "无线局域网机型 每部 iPad 都能连接无线局域网，让你时刻连线。"
+              },
+              "dimensionColor": {
+                "value": "silver",
+                "label": "银色"
+              }
+            }
+          },
+          "price": 3799
+        },
+        "evidence": {
+          "method": "legacy_capture"
+        },
+        "observations": [
+          {
+            "source": "apple_store",
+            "role": "secondary",
+            "source_url": "https://www.apple.com.cn/shop/buy-ipad/ipad",
+            "captured_at": "2026-11-06T08:30:54+08:00",
+            "fields": {
+              "name": "iPad",
+              "category": "平板",
+              "price_kind": "full",
+              "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-silver-wifi-select?wid=940&hei=1112&fmt=png-alpha&.v=MG1udWpyWFI4d3VJQmF2aGlucjRyYUtrNVcxNFM0TGJlbkh3VDIzWFBmY2hPVVo3RjZFdVpCTXpsVXRVUk9xbmJjNitDN2kyNWFITm1kN1lsSUFHR2J2UHJZOUZxd0JoWkRMWVBTV1Y2Z3YrNmVjbmk5c1V4VVk2VEt3TGcxekg",
+              "params": {
+                "part_number": "MD3Y4CH/A",
+                "variant_attrs": {
+                  "dimensionCapacity": {
+                    "value": "128gb",
+                    "label": "128 GB"
+                  },
+                  "dimensionConnection": {
+                    "value": "wifi",
+                    "label": "无线局域网机型 每部 iPad 都能连接无线局域网，让你时刻连线。"
+                  },
+                  "dimensionColor": {
+                    "value": "silver",
+                    "label": "银色"
+                  }
+                }
+              }
+            },
+            "evidence": {
+              "method": "legacy_capture"
+            }
+          },
+          {
+            "source": "apple_store",
+            "role": "secondary",
+            "source_url": "https://www.apple.com.cn/shop/buy-ipad/ipad",
+            "captured_at": "2026-11-06T08:30:54+08:00",
+            "fields": {
+              "price": 3799,
+              "price_kind": "full"
+            },
+            "evidence": {
+              "method": "legacy_capture"
+            }
+          }
+        ]
+      }
+    ],
+    "display": {
+      "name": {
+        "value": "iPad",
+        "source": "apple_store",
+        "field": "name",
+        "source_url": "https://www.apple.com.cn/shop/buy-ipad/ipad",
+        "captured_at": "2026-11-06T08:30:54+08:00",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture"
+      },
+      "image": {
+        "value": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-2022-hero-silver-wifi-select?wid=940&hei=1112&fmt=png-alpha&.v=MG1udWpyWFI4d3VJQmF2aGlucjRyYUtrNVcxNFM0TGJlbkh3VDIzWFBmY2hPVVo3RjZFdVpCTXpsVXRVUk9xbmJjNitDN2kyNWFITm1kN1lsSUFHR2J2UHJZOUZxd0JoWkRMWVBTV1Y2Z3YrNmVjbmk5c1V4VVk2VEt3TGcxekg",
+        "source": "apple_store",
+        "field": "image",
+        "source_url": "https://www.apple.com.cn/shop/buy-ipad/ipad",
+        "captured_at": "2026-11-06T08:30:54+08:00",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture",
+        "type": "product_photo"
+      },
+      "category": {
+        "value": "平板",
+        "source": "apple_store",
+        "field": "category",
+        "source_url": "https://www.apple.com.cn/shop/buy-ipad/ipad",
+        "captured_at": "2026-11-06T08:30:54+08:00",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture"
+      },
+      "price": {
+        "value": 3799,
+        "source": "apple_store",
+        "field": "price",
+        "source_url": "https://www.apple.com.cn/shop/buy-ipad/ipad",
+        "captured_at": "2026-11-06T08:30:54+08:00",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture",
+        "kind": "full"
+      }
+    },
+    "source_history": [],
+    "price_missing": false
+  },
+  {
+    "id": "CN:hp_cn:sku:16H05PC",
+    "primary_source": "hp_support",
+    "sources": [
+      {
+        "source": "hp_support",
+        "role": "primary",
+        "source_url": "https://support.hp.com/cn-zh/product/troubleshooting/hp-probook-440-g6-notebook-pc/model/23201163?sku=16H05PC",
+        "captured_at": "2026-11-04T16:57:48.877Z",
+        "fields": {
+          "name": "HP ProBook 440 G6 Notebook PC",
+          "category": "笔记本",
+          "price": null,
+          "price_kind": "unknown",
+          "image": null,
+          "params": {
+            "产品编号": "16H05PC",
+            "型号": "HP ProBook 440 G6 Notebook PC",
+            "官方配置标识": "HP ProBook 440 G6 Notebook PC",
+            "source_specs": {
+              "productName": "HP ProBook 440 G6 Notebook PC",
+              "productSeriesName": "HP ProBook 440 G6 Notebook PC",
+              "productPlatform": "NOT SPECIFIED",
+              "productType": "Laptops and Hybrids"
+            },
+            "variant_attrs": {
+              "dimensionEdition": {
+                "value": "16H05PC",
+                "label": "16H05PC"
+              }
+            }
+          }
+        },
+        "evidence": {
+          "method": "legacy_capture"
+        },
+        "observations": [
+          {
+            "source": "hp_support",
+            "role": "secondary",
+            "source_url": "https://support.hp.com/cn-zh/product/troubleshooting/hp-probook-440-g6-notebook-pc/model/23201163?sku=16H05PC",
+            "captured_at": "2026-11-04T16:57:48.877Z",
+            "fields": {
+              "name": "HP ProBook 440 G6 Notebook PC",
+              "category": "笔记本",
+              "price": null,
+              "price_kind": "unknown",
+              "image": null,
+              "params": {
+                "产品编号": "16H05PC",
+                "型号": "HP ProBook 440 G6 Notebook PC",
+                "官方配置标识": "HP ProBook 440 G6 Notebook PC",
+                "source_specs": {
+                  "productName": "HP ProBook 440 G6 Notebook PC",
+                  "productSeriesName": "HP ProBook 440 G6 Notebook PC",
+                  "productPlatform": "NOT SPECIFIED",
+                  "productType": "Laptops and Hybrids"
+                },
+                "variant_attrs": {
+                  "dimensionEdition": {
+                    "value": "16H05PC",
+                    "label": "16H05PC"
+                  }
+                }
+              }
+            },
+            "evidence": {
+              "method": "legacy_capture"
+            }
+          }
+        ]
+      }
+    ],
+    "display": {
+      "name": {
+        "value": "HP ProBook 440 G6 Notebook PC",
+        "source": "hp_support",
+        "field": "name",
+        "source_url": "https://support.hp.com/cn-zh/product/troubleshooting/hp-probook-440-g6-notebook-pc/model/23201163?sku=16H05PC",
+        "captured_at": "2026-11-04T16:57:48.877Z",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture"
+      },
+      "image": null,
+      "category": {
+        "value": "笔记本",
+        "source": "hp_support",
+        "field": "category",
+        "source_url": "https://support.hp.com/cn-zh/product/troubleshooting/hp-probook-440-g6-notebook-pc/model/23201163?sku=16H05PC",
+        "captured_at": "2026-11-04T16:57:48.877Z",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture"
+      },
+      "price": null
+    },
+    "source_history": [],
+    "price_missing": true
+  },
+  {
+    "id": "CN:atour:spu:2099:sku:010020101010411-001",
+    "primary_source": "atour_official",
+    "sources": [
+      {
+        "source": "atour_official",
+        "role": "primary",
+        "source_url": "https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2099",
+        "captured_at": "2026-11-05T01:28:45.648Z",
+        "fields": {
+          "name": "亚朵星球 深睡枕 Pro4.0（深睡稳压枕） / 单只装(枕芯*1+岩溪蓝 外枕套*1)",
+          "category": "枕芯",
+          "price_kind": "full",
+          "image": "https://xbu-qiniu.yaduo.com/QN/chain/67da8787-5853-42a7-8884-290e3b47927d.jpg?imageMogr2/crop/!720x280a40a250/format/webp",
+          "params": {
+            "规格": "单只装(枕芯*1+岩溪蓝 外枕套*1)",
+            "官方规格选项": [
+              {
+                "skuName": "尺寸",
+                "skuNameId": "27",
+                "skuVals": [
+                  {
+                    "skuValId": "605",
+                    "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)"
+                  },
+                  {
+                    "skuValId": "915",
+                    "skuValName": "两只装(枕芯*2+岩溪蓝 外枕套*2)立省10元"
+                  },
+                  {
+                    "skuValId": "938",
+                    "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(深睡蓝)*1"
+                  },
+                  {
+                    "skuValId": "939",
+                    "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(岩溪蓝)*1"
+                  },
+                  {
+                    "skuValId": "940",
+                    "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(夜云紫)*1"
+                  },
+                  {
+                    "skuValId": "941",
+                    "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(原木青)*1"
+                  },
+                  {
+                    "skuValId": "950",
+                    "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(淡云粉)*1"
+                  },
+                  {
+                    "skuValId": "951",
+                    "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(白羽灰)*1"
+                  }
+                ]
+              }
+            ]
+          },
+          "price": 435
+        },
+        "evidence": {
+          "method": "legacy_capture"
+        },
+        "observations": [
+          {
+            "source": "atour_official",
+            "role": "secondary",
+            "source_url": "https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2099",
+            "captured_at": "2026-11-05T01:28:45.648Z",
+            "fields": {
+              "name": "亚朵星球 深睡枕 Pro4.0（深睡稳压枕） / 单只装(枕芯*1+岩溪蓝 外枕套*1)",
+              "category": "枕芯",
+              "price_kind": "full",
+              "image": "https://xbu-qiniu.yaduo.com/QN/chain/67da8787-5853-42a7-8884-290e3b47927d.jpg?imageMogr2/crop/!720x280a40a250/format/webp",
+              "params": {
+                "规格": "单只装(枕芯*1+岩溪蓝 外枕套*1)",
+                "官方规格选项": [
+                  {
+                    "skuName": "尺寸",
+                    "skuNameId": "27",
+                    "skuVals": [
+                      {
+                        "skuValId": "605",
+                        "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)"
+                      },
+                      {
+                        "skuValId": "915",
+                        "skuValName": "两只装(枕芯*2+岩溪蓝 外枕套*2)立省10元"
+                      },
+                      {
+                        "skuValId": "938",
+                        "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(深睡蓝)*1"
+                      },
+                      {
+                        "skuValId": "939",
+                        "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(岩溪蓝)*1"
+                      },
+                      {
+                        "skuValId": "940",
+                        "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(夜云紫)*1"
+                      },
+                      {
+                        "skuValId": "941",
+                        "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(原木青)*1"
+                      },
+                      {
+                        "skuValId": "950",
+                        "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(淡云粉)*1"
+                      },
+                      {
+                        "skuValId": "951",
+                        "skuValName": "单只装(枕芯*1+岩溪蓝 外枕套*1)+深睡枕套 Pro4.0(白羽灰)*1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "evidence": {
+              "method": "legacy_capture"
+            }
+          },
+          {
+            "source": "atour_official",
+            "role": "secondary",
+            "source_url": "https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2099",
+            "captured_at": "2026-11-05T01:28:45.648Z",
+            "fields": {
+              "price": 435,
+              "price_kind": "full"
+            },
+            "evidence": {
+              "method": "legacy_capture"
+            }
+          }
+        ]
+      }
+    ],
+    "display": {
+      "name": {
+        "value": "亚朵星球 深睡枕 Pro4.0（深睡稳压枕） / 单只装(枕芯*1+岩溪蓝 外枕套*1)",
+        "source": "atour_official",
+        "field": "name",
+        "source_url": "https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2099",
+        "captured_at": "2026-11-05T01:28:45.648Z",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture"
+      },
+      "image": {
+        "value": "https://xbu-qiniu.yaduo.com/QN/chain/67da8787-5853-42a7-8884-290e3b47927d.jpg?imageMogr2/crop/!720x280a40a250/format/webp",
+        "source": "atour_official",
+        "field": "image",
+        "source_url": "https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2099",
+        "captured_at": "2026-11-05T01:28:45.648Z",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture",
+        "type": "product_photo"
+      },
+      "category": {
+        "value": "枕芯",
+        "source": "atour_official",
+        "field": "category",
+        "source_url": "https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2099",
+        "captured_at": "2026-11-05T01:28:45.648Z",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture"
+      },
+      "price": {
+        "value": 435,
+        "source": "atour_official",
+        "field": "price",
+        "source_url": "https://h5mall.yaduo.com/subpacks/mall/goodsDetail/goodsDetail?id=2099",
+        "captured_at": "2026-11-05T01:28:45.648Z",
+        "policy": "product-sources-v1",
+        "reason": "field preference, publisher tier, latest capture",
+        "kind": "full"
+      }
+    },
+    "source_history": [],
+    "price_missing": false
+  }
+]
