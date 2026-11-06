@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T02:25:56Z",
+  "generatedAt": "2026-11-06T02:41:57Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -30,8 +30,8 @@
       "workflow": ".github/workflows/refresh-hp.yml",
       "expectedIntervalMinutes": 1440,
       "lastAttemptAt": "2026-11-06T02:07:09Z",
-      "lastSuccessAt": "2026-11-06T01:24:11Z",
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-06T02:28:16Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42148250139",
       "error": null,
       "stale": false,
@@ -65,11 +65,11 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-06T02:21:50Z",
+      "lastAttemptAt": "2026-11-06T02:28:17Z",
       "lastSuccessAt": null,
-      "conclusion": "in_progress",
+      "conclusion": "failure",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42149687990",
-      "error": null,
+      "error": "Process completed with exit code 1.",
       "stale": false,
       "staleReason": null
     }
