@@ -102,6 +102,14 @@ def test_real_finalizer_publishes_exact_reviewed_memberships_and_replays(tmp_pat
                 assert any(c.get('source') == prior['source'] and c.get('date') == prior['date']
                            and c.get('evidence') == prior['evidence']
                            for c in updated['release']['checks'])
+            elif old['id']=='CN:mi_cn:product:18520':
+                # This batch replaces H501 sale-only evidence with a separately
+                # verified announcement pair, retaining the entire earlier audit.
+                current=updated['release'];saved=current['previous_release']
+                assert current['date']=='2023-05' and current['event']=='announcement'
+                assert current['display_allowed'] and current['crosscheck_status']=='corroborated'
+                assert len(current['assertions'])==2
+                assert saved['date']==prior['date'] and saved['evidence']==prior['evidence']
             elif prior.get('source') == 'third_party':
                 # Round 7 requires two captured real sources; LLM agreement is
                 # retained as audit evidence but no longer unlocks display.

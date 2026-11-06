@@ -40,7 +40,7 @@ def test_retrospective_preserves_locked_apple_and_all_non_date_fields(corpus):
     assert locked == 417
     coverage = scope_coverage(after)['brands']
     assert coverage['Apple']['covered'] == 535
-    assert coverage['富士']['covered'] == 13
+    assert coverage['富士']['covered'] == 14
     assert coverage['大疆']['covered'] == 96
 
 
@@ -101,7 +101,7 @@ def test_exact_kit_page_required_and_market_is_visible(corpus):
     before, after = corpus
     original = {r['id']: r for r in before}
     allowed = {'CN:fuji:kit:x-e5-xf23mmf28-r-wr', 'CN:fuji:kit:x-h2-16-80mm',
-               'CN:fuji:kit:x-t50-xc15-45mm'}
+               'CN:fuji:kit:x-t50-xc15-45mm', 'CN:fuji:kit:x-s20-16-50mm'}
     for row in after:
         key = row['id']
         if key.startswith('CN:fuji:kit:') and key not in allowed:
@@ -112,7 +112,13 @@ def test_exact_kit_page_required_and_market_is_visible(corpus):
         if release.get('retrospective') and release.get('market') == 'JP':
             assert release['label'] == '日本发售时间'
         if release.get('retrospective') and release.get('market') == 'US':
-            assert release['label'] == '美国发售时间'
+            assert release['label'] == ('美国推出月份（官方回溯）' if release['event']=='announcement' else '美国发售时间')
+    kit=next(r['release'] for r in after if r['id']=='CN:fuji:kit:x-s20-16-50mm')
+    assert (kit['date'],kit['event'],kit['market'])==('2024-05','announcement','US')
+    evidence=kit['evidence']
+    raw=gzip.decompress((ROOT/evidence['capture_file']).read_bytes())
+    assert hashlib.sha256(raw).hexdigest()==evidence['sha256']
+    assert evidence['quote'] in raw.decode() and evidence['date_context'] in raw.decode()
 
 
 def test_xiaomi_history_remains_series_and_preserves_product_dates(corpus):

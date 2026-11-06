@@ -43,14 +43,19 @@ def test_no_single_reprint_llm_or_event_mixing():
 def test_frozen_media_review_and_replay(tmp_path):
  cs=json.loads((ROOT/'data/third-party/release-dates.json').read_text())['candidates']
  # Concrete expected release population, independent of the importer.
- assert {c['brand']:sum(x['brand']==c['brand'] for x in cs) for c in cs}=={'大疆':10,'小米':4,'比亚迪':2}
+ assert {c['brand']:sum(x['brand']==c['brand'] for x in cs) for c in cs}=={'大疆':10,'小米':12,'比亚迪':2}
  evidence=ROOT/'docs/release-dates-round7-20261104/evidence'
  for c in cs:
   assert len(c['assertions'])==2
   for a in c['assertions']:
    e=a['evidence'];key=hashlib.sha256(e['url'].encode()).hexdigest()[:16]
-   capture=json.loads((evidence/(key+'.json')).read_text())
-   raw=gzip.decompress((evidence/(key+'.html.gz')).read_bytes())
+   if c.get('review_batch') == 'user-items-20261106':
+    import re
+    capture={'text':re.sub(r'\s+', ' ', (ROOT/e['text_file']).read_text()).strip()}
+    raw=gzip.decompress((ROOT/e['capture_file']).read_bytes())
+   else:
+    capture=json.loads((evidence/(key+'.json')).read_text())
+    raw=gzip.decompress((evidence/(key+'.html.gz')).read_bytes())
    assert hashlib.sha256(raw).hexdigest()==e['sha256']
    assert e['quote'] in capture['text'] and e['identity_quote'] in capture['text']
   assert assess(c['assertions'])=={'status':'corroborated','delta_days':0,'display_allowed':True}
