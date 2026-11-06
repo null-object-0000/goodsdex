@@ -47,12 +47,15 @@ def reconcile(row, runs, now):
 def refresh(root, api, now=None):
     now=now or datetime.now(timezone.utc)
     target=root/'data/official/sources-registry.json'
-    previous=json.loads(target.read_text() if target.exists() else DEFAULT.read_text())
+    definitions=json.loads(DEFAULT.read_text())
+    saved={r['source']:r for r in json.loads(target.read_text())} if target.exists() else {}
+    previous=[dict(r,**{k:v for k,v in saved.get(r['source'],{}).items() if k not in ('workflow','schedule','period_minutes','scope','note')}) for r in definitions]
     rows=[]
     for row in previous:
         try:
             runs=api.get(f"actions/workflows/{row['workflow']}/runs?per_page=100")['workflow_runs']
             updated=reconcile(row,runs,now)
+            updated.pop('registry_error',None)
             if runs and updated['status']=='failure':
                 updated['failure_reason']=redact(first_error(api,runs[0]),api.token)
             if runs and runs[0]['status']=='completed' and row.get('metrics_run_id')!=runs[0]['id']:

@@ -1,0 +1,71 @@
+✔ 未配置或缺任一变量：隐藏按钮、OAuth 404（包括 SPA） (54.096529ms)
+OAuth Location 前120字: https://open.feishu.cn/open-apis/authen/v1/index?app_id=cli_aa1aa2596cb89cde&redirect_uri=https%3A%2F%2Fspend.snewbie.si
+✔ 授权跳转参数、登录页重定向、SPA 路由优先、GET 限制 (20.116718ms)
+✔ 签名、十分钟期限、nonce 绑定、清 Cookie 和三秒跳转 (22.280362ms)
+✔ 授权中重建 handler 后回调 303，落库会话再次重建后仍 200 (8.545702ms)
+✔ 重复授权码由上游一次性校验拒绝，失败清 Cookie (6.844374ms)
+✔ 白名单外拒绝、上游错误不泄露且失败清 Cookie (37.657927ms)
+✔ token / user_info 请求与白名单成功复用会话 Cookie、CSRF、退出 (8.04263ms)
+✔ 会话存储失败也显示重试入口并清除 OAuth Cookie (4.107602ms)
+✔ 归一化：前缀标签，至少三正一反 (4.601888ms)
+✔ 归一化：纯规格括号，至少三正一反 (0.992303ms)
+✔ 归一化：容量与尺寸，至少三正一反 (0.38902ms)
+✔ 归一化：内存组合，至少三正一反 (0.185579ms)
+✔ 归一化：容器容量列表，至少三正一反 (0.166184ms)
+✔ 归一化：颜色，至少三正一反 (0.120359ms)
+✔ 归一化：后缀保留代年，至少三正一反 (0.080362ms)
+✔ 归一化：空格，至少三正一反 (0.196722ms)
+✔ 保留 Pro/Max/Ultra、代次、年份、非规格括号；型号近似拒绝合并 (2.049315ms)
+✔ 同品牌二级品类及严格归一化才合，缺失身份不合；价格跨度仅否决 (0.80996ms)
+✔ 显式产品身份拒绝同名不同代，不把无身份记录混进已知产品 (1.028001ms)
+✔ 规格抽取为空不占位，容量颜色尺寸与参数去重且不改源记录 (1.127726ms)
+✔ 筛选后聚合分页、三档、已排除提示、逐条及CSV条数；价差否决不可被筛选绕过 (19.864461ms)
+✔ 第二轮容量：洗衣容量、毫升及原有存储组合，保留流量与型号 (0.627112ms)
+✔ 颜色进键：冰晶白及远峰蓝、钛金属配色隔离，保留颜色词型号 (0.673453ms)
+✔ 第二轮标点与同义词：仅等值键折叠空格、括号、全角与大小写 (0.593192ms)
+✔ 第二轮护栏：标签括号也不能吃掉版本、套装；价格及显式身份仍否决 (1.355936ms)
+✔ Apple 源身份中的颜色可折叠；芯片、年份、配置、尺寸、来源仍保留 (0.533142ms)
+✔ 双机套装容量整体抽取，套装件数不能被容量归一化吃掉 (0.324858ms)
+✔ 通用标题下 SKU 芯片 Max/Ultra 仍隔离，不读系列可选芯片描述 (0.842357ms)
+✔ HP Edition 为本条 SKU 编号时不误判为版本，真实 Pro 版本仍隔离 (0.228163ms)
+✔ 规格接口明确空抽取状态，不把没有抽到当成没有规格 (0.278252ms)
+✔ 同型号同色单机、云台套装、礼盒聚合，Lite 版等值且单机代表价与顺序无关 (0.674993ms)
+✔ Sound Max 三组合 >3倍可聚合；双支装标2，不以总价或折算价代替单机价 (0.354895ms)
+✔ 新聚合护栏：不同代、版本、颜色、配件仍分开；组合内异常价仍否决 (1.315108ms)
+✔ 服务端筛选后重新选择代表价，只有套装时明确禁止摊折旧 (2.688072ms)
+✔ admin batch: missing stays null, range and daily summaries preserve real counts/extrema (19.091262ms)
+✔ admin batch: exactly two reads for 30 gids; shared five-minute cache across ranges, eviction stays safe (10.440529ms)
+✔ admin status: unavailable is preserved; latest missing never falls back to an older price (3.457442ms)
+✔ admin sessions sqlite: OAuth login, restart, sliding expiry, devices, revoke and logout (96.831297ms)
+﹣ admin sessions mysql: OAuth login, restart, sliding expiry, devices, revoke and logout (0.250557ms) # SKIP
+✔ session TTL config validates and defaults to thirty days (0.664751ms)
+✔ tasks API: script CSRF scope, browser CSRF, filters, timeline, evidence and durable audited writes (110.587763ms)
+✔ task transaction rolls back task and event when audit fails, concurrent events remain intact (3.404032ms)
+﹣ admin tasks MySQL integration (0.128162ms) # SKIP
+✔ task CLI executes add, update, event and get from a Unicode repository path (485.052395ms)
+✔ 后台逐路由鉴权、登录 Origin/CSRF、限流、无 CORS 或凭据泄漏 (104.209714ms)
+✔ 去重来源统计、覆盖率、待修组合、服务端补充不污染统计、分页筛选与 raw 比对 (52.621758ms)
+✔ 备注事务版本冲突、持久化与公开构建隔离；退出、过期、轮换撤销 (24.145072ms)
+✔ 配置兼容与敏感来源字段脱敏 (0.499217ms)
+✔ 分片统计读取完整详情而非列表投影，校验失败显式失败、重试后恢复 (19.459965ms)
+✔ SPA theme bootstrap receives a unique CSP nonce without allowing arbitrary inline scripts (15.068365ms)
+✔ SPA shell / assets, JSON auth and server pagination preserve API boundaries (34.832552ms)
+GET /admin/login: 302; Location 前80字: /admin/auth/feishu; SPA=false
+GET /admin/login: 302; Location 前80字: /admin/auth/feishu; SPA=true
+✔ 默认飞书跳转与应急表单互斥；两条登录 POST 默认 404；脚本 token 保留 (35.489798ms)
+✔ 商品筛选四日期统一、全量导出、编辑安全校验、原子批量与审计 (91.069546ms)
+✔ archive 下架记录保留、可详情查看与恢复；分类编辑保持路径一致 (47.767282ms)
+✔ 四类日期优先级、模型搜索、多品牌联动筛选及排序 (4.76606ms)
+✔ 公开排除清单三档、CSV、规则详情、人工覆盖优先级、重开数据库与缺失容错 (136.725521ms)
+✔ 后台价格批量 GET 支持 token / 会话，拒绝未授权与无效参数，C 端契约不变 (16.76237ms)
+✔ sharded sync transfers only changed indexes, keeps lazy details and immutable generations (34.234406ms)
+✔ unsupported schema fails closed without fetching full catalog (3.96091ms)
+✔ 分片清单允许公开排除与来源状态 sidecar，排除清单缺失仍正常发布索引 (8.159674ms)
+ℹ tests 60
+ℹ suites 0
+ℹ pass 58
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 2
+ℹ todo 0
+ℹ duration_ms 882.896523
