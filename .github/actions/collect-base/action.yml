@@ -12,3 +12,5 @@ runs:
         path: _data
         fetch-depth: 1
         persist-credentials: false
+    - shell: bash
+      run: python3 scripts/catalog_git_storage.py unpack --public _data/public

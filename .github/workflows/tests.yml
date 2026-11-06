@@ -35,6 +35,7 @@ jobs:
       - name: Deliberate lost-ID candidate must fail verify
         if: ${{ inputs.inject_lost_id }}
         run: |
+          python3 scripts/catalog_git_storage.py unpack --public _guard_data/public
           cp _guard_data/public/goods.json "$RUNNER_TEMP/goods-before.json"
           python3 - <<'PY'
           import json

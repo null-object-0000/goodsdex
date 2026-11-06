@@ -21,6 +21,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Restore lossless catalogue from Git storage
+        run: python3 scripts/catalog_git_storage.py unpack --public _data/public
       - run: python3 -m pip install --quiet oss2
       - name: Mirror validated release (immutable blobs first, manifest last)
         env:

@@ -26,6 +26,8 @@ jobs:
           ref: data
           path: _data
           fetch-depth: 1
+      - name: Restore lossless catalogue from Git storage
+        run: python3 scripts/catalog_git_storage.py unpack --public _data/public
       - name: Test liveness contract
         run: |
           python3 -m pip install --quiet pytest oss2
