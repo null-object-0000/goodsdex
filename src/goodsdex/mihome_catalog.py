@@ -40,8 +40,12 @@ def apply_catalog(rows, manifest=None):
     result = restore_catalog_identity(rows, manifest)
     for row in result:
         e = entries.get(row['id'])
+        linked = bool(e and row.get('mihome_model') == e['model'] and row.get('mihome_pd_id') == e['pd_id'])
+        missing_or_truncated = bool(e and (not row.get('name') or (
+            re.search(r'(?:\.\.\.|…)$', row['name']) and
+            norm(e['name']).startswith(norm(re.sub(r'(?:\.\.\.|…)+$', '', row['name']))))))
         if (not e or row.get('is_container') or row.get('brand') not in (None,'小米')
-                or row.get('name') not in (e['expected_name'],e['name'])
+                or (row.get('name') not in (e['expected_name'],e['name']) and not (linked and missing_or_truncated))
                 or not identity_matches(row,e)):
             continue
         row.update(mihome_model=e['model'],mihome_pd_id=e['pd_id'])

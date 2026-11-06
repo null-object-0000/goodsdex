@@ -52,7 +52,12 @@ def build(root, destination):
     # Frozen pre-migration values must survive future directory refreshes.
     previous = json.loads(destination.read_text()) if destination.exists() else {'items': []}
     originals = {e['id']: e['legacy_original_fields'] for e in previous['items'] if 'legacy_original_fields' in e}
+    previous_icons = {e['id']: e.get('verified_icon', {}) for e in previous['items']}
     for e in items:
+        icon, prior = e.get('verified_icon', {}), previous_icons.get(e['id'], {})
+        if (prior.get('public_url') and icon.get('url') == prior.get('url')
+                and icon.get('sha256') == prior.get('sha256')):
+            icon['public_url'] = prior['public_url']
         if e['id'] in originals:
             e['legacy_original_fields'] = originals[e['id']]
     manifest=dict(schema=1,items=items);save(destination,manifest)
@@ -63,7 +68,7 @@ def build(root, destination):
     changes=[]
     for row,new in zip(rows,after):
         fields=[k for k in ('name_mihome','image_mihome','category_mihome') if row.get(k)!=new.get(k)]
-        if fields:changes.append(dict(id=row['id'],fields=fields,before={k:row.get(k) for k in ('name','image','category','name_mihome','image_mihome','category_mihome')},after={k:new.get(k) for k in ('name','image','category','name_mihome','image_mihome','category_mihome')},model=new['mihome_model'],pd_id=new['mihome_pd_id'],image_dimensions=[new.get('image_width'),new.get('image_height')]))
+        if fields:changes.append(dict(id=row['id'],fields=fields,before={k:row.get(k) for k in ('name','image','category','name_mihome','image_mihome','category_mihome')},after={k:new.get(k) for k in ('name','image','category','name_mihome','image_mihome','category_mihome')},model=new['mihome_model'],pd_id=new['mihome_pd_id'],image_dimensions=[(new.get('image_mihome') or {}).get('width'),(new.get('image_mihome') or {}).get('height')]))
     byid={x['id']:x for x in items};sample=[]
     for key in random.Random(20261106).sample(sorted(products),100):
         e=byid.get(key);sample.append(dict(id=key,name=products[key]['name'],matched=bool(e),model=e['model'] if e else None,method=e['method'] if e else None))

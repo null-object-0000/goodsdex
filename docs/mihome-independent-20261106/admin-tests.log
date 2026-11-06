@@ -1,0 +1,29 @@
+
+> @spendgood/admin-pro@6.0.3 test
+> node --test scripts/*.test.mjs
+
+(node:1055433) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/nichangen/.cache/spend-good-mihome-independent/services/admin-pro/src/goods-presentation.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /home/nichangen/.cache/spend-good-mihome-independent/services/admin-pro/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ name differences preserve unique fragments, including multiple interior changes (1.483655ms)
+✔ price delta uses group minimum and rounds decimal prices (0.141197ms)
+✔ JSON and links remove nested secrets and internal fields (0.528969ms)
+✔ A/B/C classification ignores cosmetic differences without changing grouping (0.917517ms)
+✔ attribute labels tolerate legacy and malformed records, and only display supported nonempty values (4.916906ms)
+✔ brand display resolves legacy paths, localized names and aliases without a whitelist (0.570239ms)
+✔ quantity tags and filtered representative prices never substitute kit totals for depreciation (0.233773ms)
+✔ retired models show no current offer and label their historical price (0.186417ms)
+✔ archive timestamps never render as collection dates (0.149552ms)
+✔ historical group has no representative quote from an arbitrary member (0.187864ms)
+✔ Mi Home display preserves sales name, official image, and independent category (0.245212ms)
+✔ Missing statuses preserve their timestamp and produce null even when a stale numeric price is present (0.732417ms)
+✔ A single observation stays single; market price is never a main-series observation (0.111346ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 84.972681

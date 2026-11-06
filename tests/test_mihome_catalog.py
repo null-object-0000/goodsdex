@@ -139,3 +139,14 @@ def test_unsigned_icon_url_keeps_exact_source_and_never_bypasses_url_proof():
     assert out['catalog_display']['image']==e['verified_icon']['public_url']
     e['verified_icon']['public_url']='https://example.com/unverified.png'
     with pytest.raises(ValueError):apply_catalog([r],dict(schema=1,items=[e]))
+
+
+def test_previously_verified_identity_allows_display_fallback_without_writing_name():
+    r,e=fixture();m=dict(schema=1,items=[e])
+    for name in ('', '米家…'):
+        row=apply_catalog([r],m)[0];row['name']=name
+        out=apply_catalog([row],m)[0]
+        assert out['name']==name and out['name_mihome']==e['name']
+        assert out['name_source']=='mihome_directory' and out['catalog_display']['name']==e['name']
+    unknown={**r,'name':''}
+    assert apply_catalog([unknown],m)==[unknown]
