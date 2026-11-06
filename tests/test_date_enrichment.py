@@ -83,6 +83,8 @@ def test_finalizer_replays_and_details_only(tmp_path):
     expected=apply_catalog(apply_covers(apply_catalog(expected)))
     from goodsdex.homeappliance_params import apply_params
     expected=apply_params(expected)
+    from goodsdex.manual_params import apply_manual_params
+    expected=apply_manual_params(expected)
     # Independently frozen expected exclusions include the title repair.
     # Enrichment and every retained field must still be identical.
     archived=json.loads((tmp_path/'archive/accessories.json').read_text())

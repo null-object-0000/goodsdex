@@ -1,0 +1,101 @@
+{
+  "baseline_commit": "07ca197023203fa8f73336ba5effea2d8c0d100c",
+  "input_sha256": "a354a5d979d1055857f016e5e526659cd1602602b970d85d3b4ce144fade25e8",
+  "coverage": {
+    "微波炉": {
+      "total": 5,
+      "before": 3,
+      "after": 3,
+      "percent": 60.0,
+      "remaining_statuses": {
+        "release_identity_review_required": 2
+      }
+    },
+    "扫地机器人": {
+      "total": 92,
+      "before": 57,
+      "after": 57,
+      "percent": 61.96,
+      "remaining_statuses": {
+        "release_identity_review_required": 1,
+        "no_pdf": 23,
+        "no_text": 2,
+        "table_not_found": 5,
+        "parse_failed": 4
+      }
+    },
+    "冰箱": {
+      "total": 147,
+      "before": 89,
+      "after": 89,
+      "percent": 60.54,
+      "remaining_statuses": {
+        "container_scope_unverified": 1,
+        "release_identity_review_required": 4,
+        "identity_unavailable": 4,
+        "parse_failed": 9,
+        "table_not_found": 20,
+        "no_pdf": 6,
+        "variant_scope_review_required": 9,
+        "no_text": 5
+      }
+    },
+    "空调": {
+      "total": 146,
+      "before": 52,
+      "after": 52,
+      "percent": 35.62,
+      "remaining_statuses": {
+        "identity_unavailable": 1,
+        "no_text": 2,
+        "download_error": 5,
+        "parse_failed": 14,
+        "table_not_found": 41,
+        "no_pdf": 31
+      }
+    },
+    "洗衣机": {
+      "total": 76,
+      "before": 59,
+      "after": 63,
+      "percent": 82.89,
+      "remaining_statuses": {
+        "container_scope_unverified": 1,
+        "identity_unavailable": 8,
+        "release_identity_review_required": 3,
+        "no_text": 1
+      }
+    }
+  },
+  "collection": {
+    "models": 330,
+    "statuses": {
+      "no_pdf": 85,
+      "no_text": 22,
+      "parsed": 74,
+      "table_not_found": 91,
+      "parse_failed": 53,
+      "download_error": 5
+    },
+    "parsed_over_downloaded": {
+      "parsed": 74,
+      "downloaded": 240,
+      "percent": 30.83
+    },
+    "parsed_over_heading_texts": {
+      "parsed": 74,
+      "detected_heading_texts": 127,
+      "percent": 58.27
+    }
+  },
+  "invariant_checks": {
+    "non_parameter_fields_unchanged": true,
+    "existing_parameter_values_unchanged": true,
+    "replay_idempotent": true
+  },
+  "added_fields": 321,
+  "records_with_added_fields": 63,
+  "candidate_records": 74,
+  "candidate_fields": 502,
+  "sample_count": 10
+}

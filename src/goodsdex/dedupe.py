@@ -838,6 +838,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     if not (product_sources_only or earbuds_intake_only or mihome_catalog_only or mihome_intake_only):
         from goodsdex.homeappliance_params import apply_params
         output = apply_params(output)
+        from goodsdex.manual_params import apply_manual_params
+        output = apply_manual_params(output)
     audit["input_sha256"] = digest
     audit["output_sha256"] = hashlib.sha256((json.dumps(output, ensure_ascii=False, indent=1) + "\n").encode()).hexdigest()
     audit_path = public / "merge-audit.json"
