@@ -160,3 +160,11 @@ def test_unadopted_legacy_name_does_not_create_observations_on_republication():
     first=migrate_row({'id':'car','name':'历史名称','source_url':'https://www.byd.com/car'})
     assert first['display']['name'] is None
     assert migrate_row(first)==first
+
+
+def test_rejected_legacy_effective_assertion_stays_in_issues_on_refresh():
+    from goodsdex.product_sources import migrate_row
+    row={'id':'legacy','name':'设备','source_url':'https://www.mi.com/p','fetched_at':'2026-11-06T00:00:00Z','release_effective':{'date':'2025-01','source':'llm','evidence':{'quote':'历史模型无链接估计'}}}
+    first=migrate_row(row)
+    assert first['lineage_issues']
+    assert migrate_row(first)==first

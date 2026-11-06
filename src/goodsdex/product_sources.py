@@ -304,7 +304,9 @@ def migrate_row(row, previous=None, **kwargs):
         for o in envelope['observations']:
             if not o.get('captured_at'):
                 issues.append(dict(source=o['source'],fields=list(o['fields']),reason='历史证据缺少真实抓取时间；保留原始观察，不作为display候选'))
-    result['lineage_issues']=issues
+    import json
+    retained=[*(previous or {}).get('lineage_issues',[]),*row.get('lineage_issues',[]),*issues]
+    result['lineage_issues']=list({json.dumps(i,sort_keys=True,ensure_ascii=False):i for i in retained}.values())
     return result
 
 
