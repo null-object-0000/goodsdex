@@ -21,3 +21,7 @@
 上次迁移 run 42149687990 失败于 price_comparable 与 display 价格不一致。本次 16c77402 在 display 镜像完成后重算可比性；新增测试覆盖有价及显式清价，30 条相关测试通过，4468 条真实迁移全部通过价格与唯一主源校验。
 
 迁移和字节级回滚说明见 migration-and-rollback.md。正式发布状态在后续记录中更新。
+
+## 发布存储限制修复
+
+42153459630 已通过全部 finalize 校验，但 GitHub 拒绝 275.89 MB 的 goods.json，未推送 data。be238875 改为 Git 中保存无损 goods.json.gz（真实数据 21 MB），所有 data checkout 入口先还原原始字节，OSS 和 API 继续读取原 goods.json。完整 sources、display、field_history 不删减。其余真实产物最大 19 MB。全量测试最终 1102 passed，另 API product-sources 两条回归均通过。
