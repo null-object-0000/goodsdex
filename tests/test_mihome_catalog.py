@@ -128,3 +128,14 @@ def test_migrate_all_90_old_changes_without_losing_other_source_fixes():
     later = next(r for r in legacy if r['id'] == 'CN:mi_cn:product:12136')
     later.update(name='商城后续已核实新名称', image='later-official-image')
     assert apply_catalog([later]) == [later]
+
+
+def test_unsigned_icon_url_keeps_exact_source_and_never_bypasses_url_proof():
+    r,e=fixture()
+    e['verified_icon']['url'] += '?GalaxyAccessKeyId=public-directory-key&Signature=public-signature'
+    e['verified_icon']['public_url'] = 'https://cdn.cnbj1.fds.api.mi-img.com/icon.png'
+    out=apply_catalog([r],dict(schema=1,items=[e]))[0]
+    assert out['image_mihome']['source_url']==e['verified_icon']['url']
+    assert out['catalog_display']['image']==e['verified_icon']['public_url']
+    e['verified_icon']['public_url']='https://example.com/unverified.png'
+    with pytest.raises(ValueError):apply_catalog([r],dict(schema=1,items=[e]))

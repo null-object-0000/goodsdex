@@ -35,6 +35,8 @@
 
 原批次冻结快照：**1,580/3,572=44.23% → 1,580/3,572=44.23%**。本轮开始时最新数据预演：**1,646/3,572=46.08% → 1,646/3,572=46.08%**。其它任务此前增加的日期不计作本轮增益。所有 release* 与 page_first_archived 字段逐条不变。真实发布父版本数字以 online-verification.json 为准。
 
-数据测试：基线 **1050 passed / 8 deselected**，修改后 **1052 passed / 8 deselected**，仅既有 pytest 插件弃用警告；含旧写入 90 条恢复、全库日期不变、幂等、后续来源保护与截断展示门禁。后台、API 与构建日志见本目录。直接 tsc 既有 Umi 类型导出配置错误在相同依赖环境前后都是 32 条，忽略位置后错误集合相同，未新增。
+数据测试：基线 **1050 passed / 8 deselected**，修改后 **1053 passed / 8 deselected**，仅既有 pytest 插件弃用警告；含旧写入 90 条恢复、全库日期不变、幂等、后续来源保护与截断展示门禁。后台、API 与构建日志见本目录。直接 tsc 既有 Umi 类型导出配置错误在相同依赖环境前后都是 32 条，忽略位置后错误集合相同，未新增。
 
 发布沿用共享发布锁和 mihome_catalog_only。门禁要求整库精确等于 apply_catalog(真实父版本)，防止价格、日期及其它任务变更混入本次迁移。发布回执与线上验证在 publication.json、online-verification.json。
+
+18 张图标的无签名地址全部重新匿名请求，HTTP 200 且 SHA-256 与原归档字节完全一致，见 [unsigned-icons.json](unsigned-icons.json)。image_mihome.url 使用已核验无签名地址，source_url 保留目录原链接，避免后台安全脱敏把签名图片链接隐藏。未放松凭据脱敏。

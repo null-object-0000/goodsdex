@@ -56,7 +56,10 @@ def apply_catalog(rows, manifest=None):
                     or not re.fullmatch('[a-f0-9]{64}', icon['sha256'])
                     or icon['width'] != 168 or icon['height'] != 168):
                 raise ValueError('Invalid device icon evidence')
-            row['image_mihome'] = dict(icon, size='168x168', source='mihome_directory',
+            public_url = icon.get('public_url', icon['url'])
+            if icon.get('public_url') and public_url != u._replace(query='', fragment='').geturl():
+                raise ValueError('Unverified public device icon URL')
+            row['image_mihome'] = dict(icon, url=public_url, source_url=icon['url'], size='168x168', source='mihome_directory',
                                        scope='device_icon', note='168×168 设备图标，非商品主图')
         row['catalog_display'] = display_catalog(row, e)
         if row['catalog_display']['name_source'] == 'mihome_directory' or not row.get('name_source'):
