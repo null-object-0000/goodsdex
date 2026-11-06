@@ -97,6 +97,58 @@ class ExistingCategoryRowsTests(unittest.TestCase):
         self.assertEqual(audit["count"], 2)
 
 
+class SourceCarryForwardTests(unittest.TestCase):
+    def test_uncovered_source_carries_whole_class_before_supplements(self):
+        current = dict(id='current', source='crawler', name='updated')
+        external = [dict(id=key, source='intake', name=key,
+                         opaque={'evidence': [None, {'keep': True}]})
+                    for key in ('external-1', 'external-2')]
+        previous = [current] + external
+        original = copy.deepcopy(previous)
+        # A supplemental row does not mean the rebuild covered its source.
+        extras = [dict(id='supplement', source='intake', catalog_identity='s')]
+        rows, audit = merge([current], extras, previous, apply_backfills=False)
+        self.assertEqual(rows, previous + extras)
+        self.assertEqual(previous, original)
+        self.assertEqual(audit['carried_ids'], ['external-1', 'external-2'])
+        self.assertEqual(audit['carried_sources'], ['intake'])
+        self.assertEqual(audit['missing_ids'], [])
+        self.assertEqual(audit['count'], audit['rebuilt_count'] + audit['added_count'])
+
+    def test_covered_source_missing_row_still_fails(self):
+        present = dict(id='present', source='crawler')
+        missing = dict(id='missing', source='crawler')
+        with self.assertRaisesRegex(ValueError, 'Publication would drop 1 IDs.*missing'):
+            merge([present], [], [present, missing], apply_backfills=False)
+
+    def test_car_hp_and_atour_still_carry_when_source_is_covered(self):
+        for missing in (dict(id='car', source='car_lane', product_type='car'),
+                        dict(id='CN:byd:car:legacy', source='car_lane'),
+                        dict(id='hp', source='hp_cn'), dict(id='atour', source='atour')):
+            with self.subTest(missing=missing):
+                current = dict(id='current', source=missing['source'])
+                rows, audit = merge([current], [], [current, missing], apply_backfills=False)
+                self.assertEqual(rows, [current, missing])
+                self.assertEqual(audit['carried_ids'], [missing['id']])
+
+    def test_missing_source_is_a_covered_bucket_when_present(self):
+        current = dict(id='current')
+        missing = dict(id='missing')
+        with self.assertRaisesRegex(ValueError, 'Publication would drop 1 IDs.*missing'):
+            merge([current], [], [current, missing], apply_backfills=False)
+        rows, audit = merge([dict(id='other', source='crawler')], [], [missing], apply_backfills=False)
+        self.assertIn(missing, rows)
+        self.assertEqual(audit['carried_sources'], [None])
+
+    def test_uncovered_source_does_not_resurrect_reviewed_deletions(self):
+        from goodsdex.release_policy import ALLOWED_DELETIONS
+        previous = [dict(id=key, source='uncovered') for key in ALLOWED_DELETIONS]
+        rows, audit = merge([], [], previous, apply_backfills=False)
+        self.assertEqual(rows, [])
+        self.assertEqual(audit['carried_ids'], [])
+        self.assertEqual(audit['allowed_deletions'], dict(ALLOWED_DELETIONS))
+
+
 class RefreshEntryPointTests(unittest.TestCase):
     def test_offline_refresh_replays_price_and_preserves_models_and_supplements(self):
         import subprocess

@@ -104,8 +104,14 @@ def test_shared_publication_does_not_replay_foreign_field_backfills(monkeypatch)
     result, audit = supplements.merge(base, [], base, apply_backfills=False)
     assert result == base
     assert audit['count'] == len(base)
+    result, audit = supplements.merge(base[:1], [], base, apply_backfills=False)
+    assert result == base
+    assert audit['carried_ids'] == ['apple']
+    assert audit['carried_sources'] == ['apple_support']
+    # Once the source is represented, losing another row must still fail.
     with pytest.raises(ValueError, match='drop'):
-        supplements.merge(base[:1], [], base, apply_backfills=False)
+        supplements.merge(base, [], base + [row('apple2', 'apple_support', None)],
+                          apply_backfills=False)
 
 
 def test_other_brand_ambiguous_rows_keep_original_positions():

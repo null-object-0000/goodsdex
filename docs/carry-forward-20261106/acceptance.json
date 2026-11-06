@@ -1,0 +1,37 @@
+{
+  "data_commit": "9d7971f5505c3325f5d616199491ed8342cd7f69",
+  "sample": "Previous rows restricted to apple_cn/apple_support/mi_cn; other sources omitted as whole classes",
+  "previous_count": 4491,
+  "sample_rebuilt_count": 640,
+  "result_count": 4587,
+  "carried_count": 3846,
+  "carried_sources": [
+    null,
+    "atour",
+    "dji_mall_json",
+    "earbuds_directory",
+    "fuji",
+    "goods_supplements:xiaomi_mobile_official",
+    "hp_cn",
+    "mihome",
+    "pcauto",
+    "xiaomi_archive_history",
+    "youpin"
+  ],
+  "target_carried_ids": [
+    "CN:mi_cn:product:19228",
+    "CN:mi_cn:product:19782",
+    "CN:mi_cn:product:20071",
+    "CN:mi_cn:product:20553",
+    "CN:mi_cn:product:20568",
+    "CN:mi_cn:product:24809",
+    "CN:mi_cn:product:25073"
+  ],
+  "target_carried_count": 7,
+  "missing_ids": [],
+  "covered_source_negative": {
+    "removed_id": "CN:apple_cn:commodity:MD3Y4CH/A",
+    "missing_count": 1,
+    "gate_error": "Publication would drop 1 IDs: ['CN:apple_cn:commodity:MD3Y4CH/A']"
+  }
+}

@@ -25,9 +25,18 @@ def indexed(rows, label, unique=False):
 def merge(rebuilt, supplements, previous, include_new_cars=False, *, apply_backfills=True):
     rebuilt = remove_reviewed_non_goods(rebuilt)
     supplements = remove_reviewed_non_goods(supplements)
-    # Other publishers cannot drop cars; only the separate daily job refreshes them.
+    # Measure coverage before adding supplements or carrying previous rows: neither
+    # proves that this rebuild ran a source's producer. Missing source is its own
+    # bucket, so a rebuild containing unsourced rows still guards their IDs.
+    covered_sources = {r.get('source') for r in rebuilt}
     present = {r['id'] for r in rebuilt}
-    rebuilt = rebuilt + [r for r in previous if (is_car(r) or r.get('source') in ('hp_cn', 'atour')) and r['id'] not in present]
+    # Preserve whole previous rows, as for the dedicated car/HP/Atour publishers.
+    # Reviewed deletions must not be resurrected by an uncovered source.
+    carried = [r for r in remove_reviewed_non_goods(previous)
+               if r['id'] not in present and
+               (r.get('source') not in covered_sources or is_car(r) or
+                r.get('source') in ('hp_cn', 'atour'))]
+    rebuilt = rebuilt + carried
     existing = indexed(rebuilt, "rebuilt")
     extra = indexed(supplements, "supplements", unique=True)
     old = indexed(previous, "previous")
@@ -53,6 +62,8 @@ def merge(rebuilt, supplements, previous, include_new_cars=False, *, apply_backf
         raise ValueError("count != rebuilt_count + added_count")
     audit = dict(previous_count=len(previous), rebuilt_count=len(rebuilt),
                  added_count=len(added), count=len(result), missing_ids=missing,
+                 carried_ids=sorted({r['id'] for r in carried}),
+                 carried_sources=sorted({r.get('source') for r in carried}, key=lambda s: (s is not None, s or '')),
                  added_ids=[r["id"] for r in added], conflicts=sorted(extra.keys() & existing.keys()))
     audit["allowed_deletions"] = allowed_deletions(previous, result)
     audit["backfill"] = backfill_audit
