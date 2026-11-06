@@ -1,4 +1,4 @@
-"""Xiaomi covers: exact miio realIcon, exact-id mtop, then existing image."""
+"""Exact-model covers: baike realIcon, verified pdicon, then store/existing image."""
 from __future__ import annotations
 from copy import deepcopy
 from datetime import datetime
@@ -9,6 +9,8 @@ import re
 
 DEFAULT_EVIDENCE = Path(__file__).resolve().parents[2] / 'data/official/xiaomi-cover-images.json'
 BAIKE_EVIDENCE = DEFAULT_EVIDENCE.with_name('xiaomi-realicon-images.json')
+PDID_EVIDENCE = DEFAULT_EVIDENCE.with_name('xiaomi-pdid-map.json')
+PDICON_BASE = 'https://cnbj1.fds.api.xiaomi.com/iotweb-product-center/'
 BAIKE_SOURCE = 'mijia_baike_realIcon'
 BAIKE_URL = 'https://home.mi.com/cgi-op/api/v1/baike/v2/product?model='
 SOURCE = 'mi_cn_mtop_cover'
@@ -24,6 +26,33 @@ def evidence():
 @lru_cache(maxsize=1)
 def baike_evidence():
     return json.loads(BAIKE_EVIDENCE.read_text()) if BAIKE_EVIDENCE.exists() else {}
+
+@lru_cache(maxsize=1)
+def pdid_evidence():
+    return json.loads(PDID_EVIDENCE.read_text()) if PDID_EVIDENCE.exists() else {}
+
+def apply_pdicons(rows, mappings=None):
+    """Replay exact-model pdIds; failed URL checks retain the incoming image."""
+    mappings = pdid_evidence() if mappings is None else mappings
+    result = deepcopy(rows)
+    for row in result:
+        entry = mappings.get(row.get('miio_model'))
+        if (not entry or not entry.get('usable')
+                or str(row.get('image_source', '')).startswith('mijia_baike')):
+            continue
+        pd_id = entry.get('pd_id')
+        if type(pd_id) is not int or pd_id <= 0:
+            continue
+        row.update(image=PDICON_BASE + str(pd_id) + '.png', image_source='mijia_pdicon')
+        # Do not carry dimensions/provenance belonging to a replaced poster.
+        for key in list(row):
+            if key.startswith('image_') and key not in ('image_source', 'image_mihome'):
+                row.pop(key)
+        row.update(image_scope='model', image_source_url=PDICON_BASE + str(pd_id) + '.png')
+        for key in ('width', 'height'):
+            if entry.get(key):
+                row['image_' + key] = entry[key]
+    return result
 
 def realicon_cover(row, observations):
     model = row.get('miio_model')
@@ -64,11 +93,14 @@ def patch_cover(row, observation):
         out.pop('image_fallback', None)
     return out
 
-def apply_covers(rows, observations=None, realicons=None):
+def apply_covers(rows, observations=None, realicons=None, pdicons=None):
     observations = evidence() if observations is None else observations
     realicons = baike_evidence() if realicons is None else realicons
     result = []
     for row in rows:
+        if str(row.get('image_source', '')).startswith('mijia_baike') and row.get('image'):
+            result.append(deepcopy(row))
+            continue
         preferred = realicon_cover(row, realicons) if is_xiaomi_product(row.get('id')) else None
         if preferred is not None:
             result.append(preferred)
@@ -85,7 +117,7 @@ def apply_covers(rows, observations=None, realicons=None):
                 result.append(deepcopy(row)); continue
             row = patch_cover(row, observation)
         result.append(deepcopy(row))
-    return result
+    return apply_pdicons(result, pdicons)
 
 def record_cover(rec, row):
     if not is_xiaomi_product(row.get('id')): return row
