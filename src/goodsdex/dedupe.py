@@ -710,7 +710,7 @@ def dedupe_rows(rows):
     return output, audit
 
 
-def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessory_sha256=None, mihome_catalog_only=False, mihome_intake_only=False):
+def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessory_sha256=None, mihome_catalog_only=False, mihome_intake_only=False, product_sources_only=False):
     """Run after all brand publishers and guards, before push/OSS upload."""
     from goodsdex.supplements import metadata
     public = Path(public)
@@ -810,6 +810,14 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     if previous is not None:
         from goodsdex.release_policy import assert_no_lost_ids
         assert_no_lost_ids(previous, output, retained_ids)
+    if product_sources_only:
+        if previous is None or mihome_catalog_only or mihome_intake_only:
+            raise ValueError('Source migration requires previous snapshot and exclusive scope')
+        from copy import deepcopy
+        output = deepcopy(previous)
+    if product_sources_only or any(r.get('source_policy') for r in output):
+        from goodsdex.product_sources import apply_sources
+        output = apply_sources(output, previous or rows)
     audit["input_sha256"] = digest
     audit["output_sha256"] = hashlib.sha256((json.dumps(output, ensure_ascii=False, indent=1) + "\n").encode()).hexdigest()
     audit_path = public / "merge-audit.json"
@@ -828,6 +836,9 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     from goodsdex.price_semantics import coverage as price_coverage
     meta.update(price_coverage(output))
     meta['variant_attrs'] = variant_stats
+    if output and all(r.get('source_policy') for r in output):
+        from goodsdex.product_sources import coverage as source_coverage
+        meta['product_sources'] = source_coverage(output)
     from goodsdex.release_dates import coverage
     meta['release_dates'] = coverage(output)
     from goodsdex.release_scope import scope_coverage

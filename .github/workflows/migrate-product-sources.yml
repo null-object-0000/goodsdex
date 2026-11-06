@@ -1,0 +1,23 @@
+name: migrate-product-sources
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+  checks: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/collect-base
+      - uses: ./.github/actions/upload-candidate
+        with:
+          scope: all
+  publish:
+    needs: prepare
+    uses: ./.github/workflows/publish-release.yml
+    with:
+      scope: all
+      product_sources_only: true
+    secrets: inherit
