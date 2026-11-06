@@ -64,7 +64,15 @@ def refresh(root, api, now=None):
                 if artifact:
                     raw=api.get(f"actions/artifacts/{artifact['id']}/zip",raw=True)
                     with zipfile.ZipFile(io.BytesIO(raw)) as archive:
-                        updated.update(json.loads(archive.read('source-metrics.json')))
+                        result=json.loads(archive.read('source-metrics.json'))
+                        # Failed publication candidates are never reported as additions to the library.
+                        if updated['status']!='success':
+                            result.update(items_new=0,new_with_date=0,new_date_ratio=None,additions=[])
+                        updated.update(result)
+                        batches=list(row.get('batches',[]))
+                        if result.get('items_new') and not any(b['run_id']==runs[0]['id'] for b in batches):
+                            batches.insert(0,dict(result,run_id=runs[0]['id'],published_at=runs[0]['updated_at']))
+                        updated['batches']=batches[:50]
                     updated['metrics_run_id']=runs[0]['id']
             rows.append(updated)
         except Exception as exc:
