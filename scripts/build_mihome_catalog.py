@@ -49,6 +49,12 @@ def build(root, destination):
                 e['verified_icon']=dict(url=d['icon'],width=im.width,height=im.height,sha256=hashlib.sha256(data).hexdigest())
             except Exception as ex:e['icon_error']=str(ex)
         items.append(e)
+    # Frozen pre-migration values must survive future directory refreshes.
+    previous = json.loads(destination.read_text()) if destination.exists() else {'items': []}
+    originals = {e['id']: e['legacy_original_fields'] for e in previous['items'] if 'legacy_original_fields' in e}
+    for e in items:
+        if e['id'] in originals:
+            e['legacy_original_fields'] = originals[e['id']]
     manifest=dict(schema=1,items=items);save(destination,manifest)
     after=apply_catalog(rows,manifest);a={r['id']:r for r in after}
     # This task owns zero date fields, including evidence and missing reasons.
@@ -56,13 +62,13 @@ def build(root, destination):
     assert all({k:r.get(k) for k in date_fields}=={k:s.get(k) for k in date_fields} for r,s in zip(rows,after))
     changes=[]
     for row,new in zip(rows,after):
-        fields=[k for k in ('name','image','category') if row.get(k)!=new.get(k)]
-        if fields:changes.append(dict(id=row['id'],fields=fields,before={k:row.get(k) for k in ('name','image','category')},after={k:new.get(k) for k in ('name','image','category')},model=new['mihome_model'],pd_id=new['mihome_pd_id'],image_dimensions=[new.get('image_width'),new.get('image_height')]))
+        fields=[k for k in ('name_mihome','image_mihome','category_mihome') if row.get(k)!=new.get(k)]
+        if fields:changes.append(dict(id=row['id'],fields=fields,before={k:row.get(k) for k in ('name','image','category','name_mihome','image_mihome','category_mihome')},after={k:new.get(k) for k in ('name','image','category','name_mihome','image_mihome','category_mihome')},model=new['mihome_model'],pd_id=new['mihome_pd_id'],image_dimensions=[new.get('image_width'),new.get('image_height')]))
     byid={x['id']:x for x in items};sample=[]
     for key in random.Random(20261106).sample(sorted(products),100):
         e=byid.get(key);sample.append(dict(id=key,name=products[key]['name'],matched=bool(e),model=e['model'] if e else None,method=e['method'] if e else None))
     stats=dict(device_count=len(devices),unique_pd_ids=len({d['pdId'] for d in devices}),product_population=len(products),matched=len(items),methods=dict(Counter(x['method'] for x in items)),sample_matched=sum(x['matched'] for x in sample),sample_total=100,
-               name_repairs=sum('name' in x['fields'] for x in changes),truncated_name_repairs=sum(x['method']=='core_capacity' for x in items),images_added=sum('image' in x['fields'] for x in changes),categories_repaired=sum('category' in x['fields'] for x in changes),
+               name_repairs=0,name_sources_added=sum('name_mihome' in x['fields'] for x in changes),truncated_name_repairs=sum(x['method']=='core_capacity' for x in items),images_added=0,image_sources_added=sum('image_mihome' in x['fields'] for x in changes),categories_repaired=0,category_sources_added=sum('category_mihome' in x['fields'] for x in changes),
                image_dimensions=dict(Counter(f"{x['verified_icon']['width']}x{x['verified_icon']['height']}" for x in items if x.get('verified_icon'))),
                classifications=dict(Counter(c for d in devices for c in {c['name'] for c in d['classifications']})),
                leaf_categories=dict(Counter(d['categoryName'] for d in devices)),

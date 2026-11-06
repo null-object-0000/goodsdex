@@ -17,10 +17,12 @@ def test_preserves_dates_params_input_and_icon_role_on_replay():
     r,e=fixture();before=deepcopy(r);m=dict(schema=1,items=[e]);out=apply_catalog([r],m)[0]
     assert r==before
     assert out['release']==r['release'] and out['params']==r['params']
-    assert out['name_raw']==r['name'] and out['category_raw']=='家电'
+    assert all(out[k] == r[k] for k in ('name', 'image', 'category', 'categories'))
+    assert out['name_mihome'] == e['name'] and out['name_source'] == 'xiaomi_store'
+    assert out['category_mihome'] == '净水机' and out['catalog_display']['category'] == '净水机'
     assert (out['mihome_model'],out['mihome_pd_id'])==(e['model'],987)
-    assert out['image_scope']=='device_icon' and out['image_source']=='mihome_icon'
-    assert out['image_width']==out['image_height']==168
+    assert out['image_mihome']['scope']=='device_icon' and out['catalog_display']['image_source']=='mihome_directory'
+    assert out['image_mihome']['width']==out['image_mihome']['height']==168
     assert apply_catalog([out],m)==[out]
 
 
@@ -35,7 +37,8 @@ def test_never_joins_ids_or_changes_other_variants_containers_or_images():
 def test_core_extension_requires_exact_existing_capacity_and_no_extra_suffix():
     r,e=fixture();r.update(name='米家洗衣机',params={'洗涤容量':'10kg'})
     e.update(expected_name=r['name'],name='米家洗衣机10kg',capacity='10kg',method='core_capacity')
-    m=dict(schema=1,items=[e]);assert apply_catalog([r],m)[0]['name']==e['name']
+    m=dict(schema=1,items=[e]);assert apply_catalog([r],m)[0]['name']==r['name']
+    assert apply_catalog([r],m)[0]['catalog_display']['name']==e['name']
     r['params']['洗涤容量']='12kg';assert apply_catalog([r],m)==[r]
     r['params']['洗涤容量']='10kg';e['name']='米家洗衣机Pro10kg';assert apply_catalog([r],m)==[r]
 
@@ -87,3 +90,41 @@ def test_scoped_publication_preserves_every_unowned_field(tmp_path):
     finalize_public(tmp_path,previous=[row],mihome_catalog_only=True)
     actual=json.loads((tmp_path/'goods.json').read_text())
     assert actual==apply_catalog([row])
+
+
+def test_display_fallbacks_require_missing_or_proven_truncation():
+    from goodsdex.mihome_catalog import display_catalog
+    row = dict(name='Xiaomi智能家庭屏 10', name_mihome='Xiaomi 智能家庭屏 10',
+               category='净水器', category_mihome='净水机', image='official',
+               image_mihome=dict(url='icon', width=168, height=168, note='设备图标'))
+    assert display_catalog(row)['name'] == row['name']
+    assert display_catalog(row)['image'] == 'official'
+    assert display_catalog(row)['category'] == '净水器'
+    row.update(name='', image=None)
+    view = display_catalog(row)
+    assert view['name'] == row['name_mihome'] and view['name_source'] == 'mihome_directory'
+    assert view['image_scope'] == 'device_icon' and view['image_width'] == 168
+    row['name'] = 'Xiaomi智能家庭屏…'
+    assert display_catalog(row)['name'] == row['name_mihome']
+    row['name'] = '家庭屏'
+    assert display_catalog(row)['name'] == '家庭屏'
+
+
+def test_migrate_all_90_old_changes_without_losing_other_source_fixes():
+    import gzip, json
+    from pathlib import Path
+    root = Path(__file__).resolve().parents[1]
+    # Frozen old writer, evaluated separately to reproduce the actual legacy rows.
+    namespace = {'__name__': 'goodsdex.old_mihome', '__file__': str(root/'src/goodsdex/mihome_catalog.py'), '__package__': 'goodsdex'}
+    old_code = (root/'docs/mihome-independent-20261106/legacy-writer.py.txt').read_text()
+    exec(compile(old_code, 'legacy-writer', 'exec'), namespace)
+    rows = json.loads(gzip.decompress((root/'docs/mihome-catalog-20261106/goods-before.json.gz').read_bytes()))
+    legacy = namespace['apply_catalog'](rows)
+    out = apply_catalog(legacy)
+    assert out == apply_catalog(rows)
+    for before, after in zip(rows, out):
+        for field in ('name', 'image', 'category', 'categories'):
+            assert (field in before, before.get(field)) == (field in after, after.get(field))
+    later = next(r for r in legacy if r['id'] == 'CN:mi_cn:product:12136')
+    later.update(name='商城后续已核实新名称', image='later-official-image')
+    assert apply_catalog([later]) == [later]

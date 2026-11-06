@@ -98,11 +98,11 @@ def test_actual_finalizer_preserves_links_and_model_images_in_excluded_sidecar(t
     all_rows=published+excluded
     assert len(published)==182 and len(excluded)==41 and len(all_rows)==223
     assert all(r.get('source_url') for r in all_rows)
-    # The frozen 50 images are retained; 17 missing devices now have audited icons.
-    assert sum(bool(r['image']) for r in all_rows)==67
-    icons=[r for r in all_rows if r.get('image_source')=='mihome_icon']
+    # Official images remain 50; 17 independent device icons are display fallbacks.
+    assert sum(bool(r['image']) for r in all_rows)==50
+    icons=[r['image_mihome'] for r in all_rows if r.get('image_mihome')]
     assert len(icons)==17
-    assert all(r['image_width']==r['image_height']==168 and r['image_scope']=='device_icon' for r in icons)
+    assert all(r['width']==r['height']==168 and r['scope']=='device_icon' for r in icons)
     from goodsdex.mihome_catalog import apply_catalog
     expected={r['id']:r for r in apply_catalog(reviewed)}
     assert all(r['source_url']==expected[r['id']]['source_url'] and r['image']==expected[r['id']]['image'] for r in all_rows)
