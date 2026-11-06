@@ -73,7 +73,7 @@ def test_refreshed_legacy_price_mirrors_latest_and_retains_evidence():
 
 
 def test_snapshot_rollback_restores_exact_legacy_release(tmp_path):
-    from migrate_product_sources import snapshot, restore
+    from scripts.migrate_product_sources import snapshot, restore
     public=tmp_path/'public';public.mkdir();(public/'detail').mkdir()
     (public/'goods.json').write_bytes(b'[{"id":"legacy","price":null}]\n')
     (public/'meta.json').write_bytes(b'{"schema":1}\n')
