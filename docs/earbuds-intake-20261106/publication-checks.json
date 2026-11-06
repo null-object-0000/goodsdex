@@ -1,0 +1,28 @@
+{
+ "steps": [
+  {
+   "name": "Test publication invariants",
+   "conclusion": "success"
+  },
+  {
+   "name": "Verify final release (no lost IDs and responsibility invariants)",
+   "conclusion": "success"
+  },
+  {
+   "name": "Verify append-only Earbuds publication",
+   "conclusion": "success"
+  },
+  {
+   "name": "Push one complete release to data",
+   "conclusion": "success"
+  },
+  {
+   "name": "Mirror and verify OSS (immutable blobs first, manifest last)",
+   "conclusion": "success"
+  }
+ ],
+ "price_history": {
+  "before_observations": 168897,
+  "after_observations": 168897
+ }
+}

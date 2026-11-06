@@ -83,3 +83,15 @@ AirPods Max 2的¥3999五行ID分别以MHWK4CH/A、MHWL4CH/A、MHWM4CH/A、MHWN4
 支持空价、目录主源、海外域名拒绝、日期拒绝、错误型号拒绝、来源保留、逐行重放与CN原始证据对账；共享发布锁内执行Earbuds专用追加模式，并断言after==apply_intake(before)，已有行（包括所有重复候选）完全不变。保留原排除决定和归档，更新发布元数据/分片。发布回执与最终线上读回结果将在完成后补入publication.json。
 
 真实快照完整finalizer重放通过：[replay-acceptance.json](replay-acceptance.json)，4468→4491、旧4468行逐字段相等、23条来源与详情分片核验通过、76个发布文件哈希核验通过，价格历史新增0。第一轮全量离线1108 passed/8 deselected；补充CN原始响应对账后定向46 passed。最终完整测试日志另见tests-final.log。
+
+
+## 正式发布结果
+
+实现提交 **837e4d3e23cad514f446a331dbfe34b1bc8c2a0b**；正式发布 [42170666925](https://github.com/null-object-0000/goodsdex/actions/runs/42170666925) **success**，包含data推送与OSS镜像/校验。data提交 **44a45f00bfa2eee8bef68158aa6278597354aec7**，revision **209c49d492144299bc1850e1cf41340c**，4468→4491。
+
+最终本地全量 **1109 passed / 8 deselected**；云端全量 [42170660216](https://github.com/null-object-0000/goodsdex/actions/runs/42170660216) **success**，同为1109 passed / 8 deselected。8项均为原有live项，不新增跳过。发布前追加门禁、价格语义、主源唯一性及旧行不变检查通过；回执见[publication.json](publication.json)、[完整run回执](publication-run.json)、[门禁摘要](publication-checks.json)。
+
+
+最终远端读回：[online-verification.json](online-verification.json)。完整data发布集等于旧4468行+23条新增，旧行逐字段不变；OSS实际20个详情分片中的23条完整记录均与data相同，分片SHA256与新主清单匹配。正式覆盖率1646/4491=36.65%，新可比报价0，所有重复候选保留。
+
+额外消费端状态探测：`https://spend.snewbie.site/api/meta`经代理及直连均返回HTTP 502，不能确认消费API已可用或已同步；本次data/OSS成功与该探测结果分开记录，见[consumer-api-status.json](consumer-api-status.json)。未将API异常算成数据发布成功的证据。
