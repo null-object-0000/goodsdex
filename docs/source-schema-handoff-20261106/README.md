@@ -22,6 +22,20 @@
 
 迁移和字节级回滚说明见 migration-and-rollback.md。正式发布状态在后续记录中更新。
 
-## 发布存储限制修复
+## 发布修复与最新快照
 
-42153459630 已通过全部 finalize 校验，但 GitHub 拒绝 275.89 MB 的 goods.json，未推送 data。be238875 改为 Git 中保存无损 goods.json.gz（真实数据 21 MB），所有 data checkout 入口先还原原始字节，OSS 和 API 继续读取原 goods.json。完整 sources、display、field_history 不删减。其余真实产物最大 19 MB。全量测试最终 1102 passed，另 API product-sources 两条回归均通过。
+远端整合验证最终为 1100 passed（integration-tests.log）。发布 run 42152318633 的价格门禁已通过，但暴露出 schema-only 迁移重审有品历史排除记录的问题，未推送 data。61f3397a 修复迁移范围隔离：保留既有排除决定及归档，仅更新发布 revision/时间及其一致性元数据。
+
+使用该失败 run 的完整回滚 artifact 在本地重放 finalize，成功且价格历史新增为 0（live-finalizer-replay.log）。最新快照 4467 行，ID 和旧字段无丢失，primary 唯一；与前述 4468 行审计快照时间不同，请以 live-snapshot-acceptance.json 为准。名称不变，图片变化 24 行、类目 406 行、价格 10 行；旧断言保留在 sources.observations，display 按远端已存在的证据规则派生，1971 条原无价商品全部仍在。源分布 2533 单源、1525 双源、409 三源及以上。
+
+本次重新发布代码提交为 6bb806ff，重试 run 42153459630。主分支部署修复在 /tmp/goodsdex-source-integration 隔离工作树完成；当前工作区的接手检查点未强推覆盖已推进的远端历史。
+
+42153459630 随后因 GitHub 100 MB 限制拒绝 goods.json（275.89 MB），未推送 data。be238875 将 Git 存储改为无损 goods.json.gz（21 MB），各 checkout 入口自动还原原始字节，OSS/API 原 JSON 契约不变，完整来源/外显/历史均保留。全量测试 1102 passed。最新发布代码 fb04a067，run 42154701910；启动时等待其他品牌发布持有的共享锁。
+
+## 最终发布成功
+
+run **42154701910**：prepare 与 publish 全部 success，含 data 推送、OSS 镜像与校验。发布代码 fb04a067；回执见 publication.json。发布 revision `a418336baeb8496ab9032feae559cede`，4467 行；最终主源分布见 published-meta.json（小米商城1550、米家895、惠普支持570等），单源2533、双源1525、3+源409，仅主源2533。
+
+发布后再次读取五条真实商品详情：旧字段零缺失、每条一个 primary；米家独有商品价格仍 null 且保留缺价原因。见 post-publication-compatibility.json。配套 API 来源回归 2 passed；Python 全量 1102 passed。
+
+当前工作区仍保留上次其他任务的未跟踪审计、缓存及日志，未删除或打包混入本次线上发布。独立代码工具均已按可验证范围提交保存。
