@@ -328,6 +328,9 @@ def upsert_source(row, observation, **kwargs):
     from .lineage import valid_time
     if not valid_time(observation.get('captured_at')):
         raise ValueError('new observations require actual field capture time')
+    from .lineage import METHODS
+    if observation['evidence']['method'] not in METHODS:
+        raise ValueError('new observations require page_fetch, api, manual or series_inherit method')
     return materialize(row, observations=[observation], **kwargs)
 
 

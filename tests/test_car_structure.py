@@ -215,3 +215,15 @@ def test_brand_attribution_replays_without_touching_immutable_car_sources():
     normalized[0]['brand_source'] = 'name'
     with pytest.raises(ValueError, match='brand attribution'):
         migrate(normalized)
+
+
+def test_source_mirrors_and_lineage_roundtrip_without_weakening_trim_or_display_checks():
+    from goodsdex.product_sources import migrate_row
+    rows=[migrate_row(r) for r in migrate(sources())]
+    assert migrate(rows)==rows
+    damaged=deepcopy(rows)
+    damaged[0]['trims'][0]['source_record']['price']+=1
+    with pytest.raises(ValueError):migrate(damaged)
+    damaged=deepcopy(rows)
+    damaged[0]['price']=123456789
+    with pytest.raises(ValueError,match='differs from source evidence'):migrate(damaged)

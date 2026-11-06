@@ -53,10 +53,16 @@ def migrate(rows):
                 from goodsdex.brands import infer_brand
                 if (original.get('brand'), original['brand_source']) != infer_brand(original):
                     raise ValueError('Canonical car brand attribution differs from rules')
-            structural = {k: v for k, v in original.items() if k not in ('sources', 'display', 'primary_source', 'discovered_by', 'source_history', 'source_policy', 'release', 'brand_source', 'release_effective', 'release_decision', 'release_source', 'release_precision', 'release_confidence', 'release_evidence', 'release_quote', 'release_tolerance_days', 'release_delta_days', 'release_conflicts')}
+            structural = {k: v for k, v in original.items() if k not in ('sources', 'display', 'primary_source', 'discovered_by', 'source_history', 'source_policy', 'release', 'brand_source', 'release_effective', 'release_decision', 'release_source', 'release_precision', 'release_confidence', 'release_evidence', 'release_quote', 'release_tolerance_days', 'release_delta_days', 'release_conflicts', 'conflicts', 'field_history', 'lineage_issues', 'lineage_policy')}
             if 'price_basis_kind' in original:
                 from goodsdex.price_semantics import normalize
                 expected = [normalize(r) for r in expected]
+            if original.get('source_policy') == 'product-sources-v1':
+                # Product display mirrors are derived from source observations,
+                # independently of the immutable trim records checked above.
+                from goodsdex.product_sources import materialize
+                expected = [materialize(r, previous=original) for r in expected]
+                expected = [{k:v for k,v in r.items() if k in structural} for r in expected]
             if len(expected) != 1 or expected[0] != structural:
                 raise ValueError('Canonical car product differs from source evidence')
         if not is_car(original) or original.get('trims') is not None:

@@ -6,7 +6,7 @@ from goodsdex.product_sources import materialize, migrate_row, upsert_source, co
 def obs(source='mihome_directory', **fields):
     hosts={'mihome_directory':'home.mi.com','mi_store':'www.mi.com','hp_support':'support.hp.com','youpin':'www.xiaomiyoupin.com'}
     return dict(source=source, captured_at='2026-11-06T00:00:00Z', source_url='https://'+hosts.get(source,'example.org')+'/product/1',
-                fields=fields, evidence={'method':'official_page'})
+                fields=fields, evidence={'method':'page_fetch'})
 
 
 def test_discovery_no_price_then_store_promotion_and_history():
@@ -122,3 +122,14 @@ def test_schema_migration_preserves_reviewed_exclusion_decisions(tmp_path, monke
     assert after['items'][0]['exclusion']==excluded['items'][0]['exclusion']
     assert after['items'][0]['excluded_reason']=='manual'
     assert json.loads((tmp_path/'meta.json').read_text())['total_all']==2
+
+
+def test_new_capture_requires_standard_method_but_historical_method_is_retained():
+    legacy=obs('mi_store',name='产品');legacy['evidence']['method']='legacy_capture'
+    old=materialize({'id':'p'},observations=[legacy])
+    assert old['display']['name']['method']=='legacy_capture'
+    with pytest.raises(ValueError,match='page_fetch, api, manual or series_inherit'):
+        upsert_source(old,legacy)
+    legacy['evidence']['method']='api'
+    legacy['captured_at']='2026-11-07T00:00:00Z'
+    assert upsert_source(old,legacy)['display']['name']['method']=='api'
