@@ -13,7 +13,7 @@ def save(p,data):
 def main():
     p=argparse.ArgumentParser();p.add_argument('--source',choices=['mihome','earbuds','gap'],required=True);p.add_argument('--root',type=Path,default=Path('_data'));a=p.parse_args()
     rows=json.loads((a.root/'public/goods.json').read_text())
-    target=a.root/'data/categories'; known={str(r.get('miio_model') or r.get('mihome_model')) for r in rows}
+    target=a.root/'data/categories'; known={str(r.get('miio_model') or r.get('mihome_model') or r.get('model')) for r in rows}
     if a.source=='earbuds':
         key=os.environ.get('EARBUDS_AUTH_KEY')
         if not key:raise RuntimeError('Missing EARBUDS_AUTH_KEY repository secret')
@@ -34,7 +34,7 @@ def main():
     for d in devices:models.setdefault(d.get('model'),[]).append(d)
     if a.source!='gap':
         for row in rows:
-            matches=models.get(row.get('miio_model') or row.get('mihome_model'),[])
+            matches=models.get(row.get('miio_model') or row.get('mihome_model') or row.get('model'),[])
             if len(matches)==1:
                 d=matches[0];row['name_'+a.source]=d['name']
         save(a.root/'public/goods.json',rows)
