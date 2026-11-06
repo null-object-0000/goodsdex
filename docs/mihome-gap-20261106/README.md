@@ -93,3 +93,20 @@ PYTHONPATH=src:scripts python3 -m pytest -q -m 'not live'
 ```
 
 先将 evidence.tar.gz 解压到本目录可复用缓存，避免重复网络请求。本次仅 A 类收录；B/C CSV 提供完整逐项列表，C 类未收到决定前保留待定。
+
+
+## 发布与线上验收
+
+- 代码提交：[2b2c87d9](https://github.com/null-object-0000/goodsdex/commit/2b2c87d99d677b1cb429fefc83159b0833d29dbc)
+- 发布 run：[42139313271，success](https://github.com/null-object-0000/goodsdex/actions/runs/42139313271)
+- 主分支 CI：[42139296278，success](https://github.com/null-object-0000/goodsdex/actions/runs/42139296278)
+- 数据提交：[ebc449cc](https://github.com/null-object-0000/goodsdex/commit/ebc449cc9b4540776abf6918a97ad0ad643cb979)
+- 线上 revision：`bae58bad447942d28e37b25dd519ca54`。
+
+线上实际父版本仍是 3,572 行，新增后 4,468 行；有日期分子仍为 1,646。**46.08% → 36.84%**，与事前测算一致。旧行所有字段完全不变；120 有价 / 776 无价，84 可比。已按 OSS manifest 的内容摘要读取不可变 blobs，核对整库、全部 896 条新增轻索引和 10 条样本详情；当前 manifest 指针也与本次 revision 一致。
+
+完整结果见 [online-verification.json](online-verification.json)、[publication.json](publication.json)；原始运行记录见 [publication-run.json](publication-run.json) / [日志](publication-run.log)。真实发布父快照为 [publication-before.json.gz](publication-before.json.gz)，发布 meta 为 [publication-meta.json](publication-meta.json)。
+
+```bash
+python3 docs/mihome-gap-20261106/verify_online.py --data-commit ebc449cc9b4540776abf6918a97ad0ad643cb979 --run-id 42139313271
+```
