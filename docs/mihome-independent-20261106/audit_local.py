@@ -2,6 +2,7 @@ import json,gzip,collections,hashlib,tarfile
 from pathlib import Path
 from goodsdex.mihome_catalog import apply_catalog,norm
 from goodsdex.release_coverage import effective
+Path('.task-tmp').mkdir(exist_ok=True)
 root=Path('docs/mihome-independent-20261106');origin=Path('docs/mihome-catalog-20261106')
 changes=json.loads((origin/'changes.json').read_text());m=json.loads(Path('data/official/mihome-catalog.json').read_text());entries={e['id']:e for e in m['items']}
 ns={'__name__':'goodsdex.old','__package__':'goodsdex','__file__':str(Path('src/goodsdex/mihome_catalog.py').resolve())};exec((root/'legacy-writer.py.txt').read_text(),ns)

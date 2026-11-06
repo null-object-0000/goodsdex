@@ -40,3 +40,21 @@
 发布沿用共享发布锁和 mihome_catalog_only。门禁要求整库精确等于 apply_catalog(真实父版本)，防止价格、日期及其它任务变更混入本次迁移。发布回执与线上验证在 publication.json、online-verification.json。
 
 18 张图标的无签名地址全部重新匿名请求，HTTP 200 且 SHA-256 与原归档字节完全一致，见 [unsigned-icons.json](unsigned-icons.json)。image_mihome.url 使用已核验无签名地址，source_url 保留目录原链接，避免后台安全脱敏把签名图片链接隐藏。未放松凭据脱敏。
+
+
+## 后台上线证据
+
+后台提交 `7d95619e32e903fc8d2a110848cf2703daed1f09`；[构建与 API CI 42134065192](https://github.com/null-object-0000/spend-good/actions/runs/42134065192) success。ECS 部署已完成，三次公网 health 都返回同一提交，见 admin-deploy。实际线上双源展示 JS 的 SHA-256 与该 CI artifact 一致，见 admin-live-assets.json。后台 13 测试通过；API 371 通过、4 跳过，无失败。
+
+[桌面双源与图标截图](admin-3488-1440.png)、[手机截图](admin-device-icon-390.png)、[格式名并列截图](admin-12136-1440.png)、[品类并列截图](admin-10330-1440.png)来自真实 API + 隔离 SQLite 的实际审核记录，图标使用原始已验证字节；不是生产登录会话截图。5 张图标均检查自然宽度 168 和可见角色标签，手机无横向溢出，浏览器运行错误 0。
+
+首次迁移 [42133960169](https://github.com/null-object-0000/goodsdex/actions/runs/42133960169) 已成功，真实父子版本全库精确比较见 first-migration-verification.json：名称恢复 58、原图片字段恢复 18、原分类恢复 28；独立名称 330；日期 1646 → 1646。后续最终发布仅完善已验证公开图标地址及缺名展示门禁，最终 OSS/后台核验见 publication.json。
+
+
+## 最终发布与线上核验完成
+
+代码提交 `2e630213d7ff0de314799d02f8f6a93cf072610e`；[最终发布 42134849232](https://github.com/null-object-0000/goodsdex/actions/runs/42134849232) **success**，发布门禁 **662 passed**；[CI 42134849594](https://github.com/null-object-0000/goodsdex/actions/runs/42134849594) **success，1054 passed / 8 deselected**。
+
+数据提交 `308fc9bda99a9aa1303b1cd0a1aeaa7c44780cc9`；真实父版本 `c878130c59c25404b4e33076ad92890d1175df51`；OSS revision `be87a47ca5d64261a994611bd5e899f2`。整库、10 条详情和 5 条图标详情、全部小米轻索引双源字段均经不可变 blob SHA-256 读回核验。3572 行逐字段精确等于 apply_catalog(真实父版本)，日期相关字段逐条不变：**1646/3572 = 46.08% → 1646/3572 = 46.08%，+0.00 个百分点**。最终发布的原 name/image/category 增量都是 0，因为首次迁移已完成对应原值恢复；两轮结果分别留证。
+
+后台已显式同步最终数据；[真实生产后台 15 条接口结果](live-admin.json)包含 **10 条商城/米家名称逐字一致、5 条官方缺图记录的可公开访问无签名图标 URL 与 device_icon/168×168 标记**。未放松鉴权或凭据脱敏；同期部署的实际线上 JS 与 CI artifact 哈希相同。完整回执见 [publication.json](publication.json)，机器验证见 [online-verification.json](online-verification.json)。
