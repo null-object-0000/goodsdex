@@ -102,6 +102,17 @@ jobs:
           retention-days: 7
           if-no-files-found: warn
 
+      - name: Confirm delisted products and retain full records
+        run: PYTHONPATH=src python3 scripts/confirm_delisted.py
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: delisted-evidence-${{ github.run_id }}
+          path: docs/delisted-*/report.json
+          retention-days: 30
+          if-no-files-found: warn
+
       - name: Rebuild public dataset
         run: |
           export PYTHONPATH=src

@@ -89,6 +89,9 @@ def publish(rebuilt, out_dir, previous, supplements=DEFAULT_SUPPLEMENTS, include
         extras += apply_intake([])
     from goodsdex.retirement import reconcile, archive_observations
     rebuilt = reconcile(previous, rebuilt, archive_observations(out_dir, previous))
+    if not car_refresh:
+        from goodsdex.delisted import apply_archive, load_archive
+        rebuilt = apply_archive(rebuilt, load_archive(out_dir))
     if car_refresh:
         extras = car_refresh_supplements(extras, previous)
     result, audit = merge(rebuilt, extras, previous, include_new_cars, apply_backfills=apply_backfills)

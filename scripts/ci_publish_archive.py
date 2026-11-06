@@ -38,6 +38,11 @@ def main() -> int:
         except Exception as e:
             print(f"  ⚠ 跳过 {f.name}: {type(e).__name__}")
             continue
+        if f.name == "_delisted.json":
+            # Full public rows + API evidence, not a slim category archive.
+            (out / f.name).write_text(json.dumps(d, ensure_ascii=False, indent=1),
+                                      encoding="utf-8")
+            continue
         items = d.get("items") or {}
         total += len(items)
         missing += sum(1 for it in items.values() if it.get("missing_since"))

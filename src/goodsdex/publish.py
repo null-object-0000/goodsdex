@@ -74,6 +74,11 @@ def to_public(rec: dict) -> dict:
             item["name_source"] = p["name_source"]
             if isinstance(source, dict) and source.get("kind") == "official_page_title":
                 item["source_url"] = source["url"]
+        # Only a successful mobile business response proves current availability;
+        # failed captures may still contain a cached product identity.
+        if any(c.get("source") == "mi_cn_mobile" and c.get("status") == "success"
+               for c in rec.get("captures", [])):
+            item["on_sale"] = True
         from goodsdex.accessories import classify
         item["is_accessory"] = classify(item)["accessory"]
         if item["is_accessory"]:
@@ -91,8 +96,8 @@ def to_public(rec: dict) -> dict:
     return normalize_public_row(item)
 
 
-def build(cats_dir: Path = Path("data/categories"),
-          out_dir: Path = Path("public"), supplements: Path = DEFAULT_SUPPLEMENTS) -> dict:
+def collect_public(cats_dir):
+    """Use the same source projection for absence checks and publication."""
     items = []
     for f in sorted(glob.glob(str(Path(cats_dir) / "*.json"))):
         try:
@@ -103,6 +108,12 @@ def build(cats_dir: Path = Path("data/categories"),
             items.append(to_public(r))
 
     items.sort(key=lambda x: str(x.get("id")))
+    return items
+
+
+def build(cats_dir: Path = Path("data/categories"),
+          out_dir: Path = Path("public"), supplements: Path = DEFAULT_SUPPLEMENTS) -> dict:
+    items = collect_public(cats_dir)
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 

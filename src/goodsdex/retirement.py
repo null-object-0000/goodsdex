@@ -23,6 +23,8 @@ def archive_observations(public, previous):
     known = {r['id']: r for r in previous}
     result = {}
     for path in sorted((Path(public) / 'archive').glob('*.json')):
+        if path.name == '_delisted.json':
+            continue  # Separate explicit API evidence, consumed by delisted.apply_archive.
         archive = json.loads(path.read_text())
         if not isinstance(archive, dict) or not isinstance(archive.get('items'), dict):
             continue
