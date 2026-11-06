@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T15:31:12Z",
+  "generatedAt": "2026-11-06T15:38:08Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -19,9 +19,9 @@
       "expectedIntervalMinutes": 60,
       "lastAttemptAt": "2026-11-06T15:16:32Z",
       "lastSuccessAt": "2026-11-06T15:18:26Z",
-      "conclusion": "in_progress",
+      "conclusion": "failure",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42241512925",
-      "error": null,
+      "error": "Process completed with exit code 1.",
       "stale": false,
       "staleReason": null
     },
@@ -65,11 +65,11 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-06T15:18:56Z",
+      "lastAttemptAt": "2026-11-06T15:32:49Z",
       "lastSuccessAt": null,
-      "conclusion": "in_progress",
+      "conclusion": "failure",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42241512925",
-      "error": null,
+      "error": "Process completed with exit code 1.",
       "stale": false,
       "staleReason": null
     }
