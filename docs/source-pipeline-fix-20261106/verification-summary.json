@@ -1,0 +1,53 @@
+{
+  "data_branch_release": {
+    "source_file": "/tmp/goods.json.gz (repos/null-object-0000/goodsdex/contents/public/goods.json.gz?ref=data)",
+    "total_rows": 4491,
+    "unique_ids": 4486,
+    "protected_multi_row_duplicates": 5,
+    "missing_364_in_previous": 364,
+    "missing_364_by_source": {
+      "apple_cn": 16,
+      "dji_mall_json": 281,
+      "fuji": 63,
+      "mi_cn (backfilled)": 4
+    }
+  },
+  "supplements_bundle": {
+    "path": "data/supplements/goods-supplements.json",
+    "previous_row_count": 403,
+    "added_row_count": 364,
+    "new_row_count": 767
+  },
+  "step1_crawl_all_rebuild_public_dataset": {
+    "command": "python3 -m goodsdex.publish --cats data/categories --out _data/public",
+    "previous_count": 4491,
+    "rebuilt_count": 5661,
+    "added_count": 1465,
+    "pre_finalize_total_rows": 7126,
+    "pre_finalize_unique_ids": 5188,
+    "missing_ids_count": 0,
+    "missing_364_retained": 364,
+    "missing_364_dropped": [],
+    "why_7125_vs_4491": {
+      "pre_finalize_rows": 7126,
+      "multi_category_duplicate_rows_before_dedupe": 1938,
+      "pre_finalize_unique_ids": 5188,
+      "accessories_and_services_archived_by_finalize_public": 702,
+      "post_finalize_unique_ids": 4486,
+      "protected_multi_category_rows_kept": 5,
+      "post_finalize_total_rows": 4491
+    }
+  },
+  "step2_drop364_publish_verify_finalize": {
+    "input_previous_rows": 4491,
+    "simulated_rebuilt_without_364_rows": 4127,
+    "after_supplements_publish_rows": 4587,
+    "after_supplements_publish_missing_364_retained": 364,
+    "verify_goods_release_exit_code": 0,
+    "after_finalize_public_rows": 4491,
+    "after_finalize_public_unique_ids": 4486,
+    "after_finalize_public_missing_364_retained": 364,
+    "finalize_dedupe": null,
+    "finalize_accessory_gate": null
+  }
+}
