@@ -35,11 +35,26 @@ MODEL_DEVICE = re.compile(r'(?:DJI\s+(?:Mini|Mavic|Air|Avata|Neo|Flip|Inspire|Ma
 PARTS = re.compile(r'机器人传感器|手机云台|配件|模块|减震|拓展|扩展|连接|转接|保护(?:组件|贴纸|锁扣|胶套)|收纳|遮光|镜头盖|电池|滤芯|滤网|充电器|充电线|数据线|表带|腕带|表圈|键盘|背带|肩带|半链|桌搭|增幅仪|影像套装|充电桩|充放电枪|喷嘴|拖布|滚刷|尘袋|刀头|墨粉|织布面板|音频连接器|触控笔|手机夹|主刷|边刷|手链|自动上下水|面板|防水壳|控制线|滤镜|ND\s*镜')
 
 
+# Exact durable-device names verified against Mi Home and channel evidence.
+# Battery editions and compatibility notes do not turn the principal into a part.
+MIHOME_DURABLE_NAMES = {
+    ('小爱音箱 Art 电池版', '音箱'),
+    ('小米室外摄像机电池版（摄像机）', '摄像机'),
+    ('巨省电 风管机 4P 新一级能效（适用于智能空气管理面板）', '空调'),
+    ('巨省电 风管机 大3P 新一级能效（适用于智能空气管理面板）', '空调'),
+    ('米家智能直流变频循环落地扇 电池版', '风扇'),
+    ('米家直流变频循环落地扇 电池版', '电风扇'),
+    ('米家直流变频落地扇2 电池版', '风扇'),
+    ('风管机 3匹 一级能效（适用于智能空气管理面板）', '空调'),
+}
+
 def classify(row):
     """Return a reviewable decision, never relying on brand, IDs or old kind."""
     if is_car(row) or row.get('brand') in ('比亚迪', '小米汽车'):
         return dict(accessory=False, basis='car', matched='汽车单列')
     name = str(row.get('name') or '')
+    if (name, row.get('category')) in MIHOME_DURABLE_NAMES:
+        return dict(accessory=False, basis='whole_device', matched='reviewed_durable_device')
     categories = list(dict.fromkeys([row.get('category') or '', *(row.get('categories') or [])]))
     words = [w for w in ACCESSORY_WORDS if w.casefold() in name.casefold()]
     # Bundled accessories after 配/含/赠/送 do not change the principal product.

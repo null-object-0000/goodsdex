@@ -710,11 +710,14 @@ def dedupe_rows(rows):
     return output, audit
 
 
-def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessory_sha256=None, mihome_catalog_only=False):
+def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessory_sha256=None, mihome_catalog_only=False, mihome_intake_only=False):
     """Run after all brand publishers and guards, before push/OSS upload."""
     from goodsdex.supplements import metadata
     public = Path(public)
     rows, digest = load_rows(public / "goods.json")
+    from goodsdex.mihome_intake import apply_intake
+    if mihome_intake_only:
+        rows = apply_intake(rows)
     from goodsdex.mihome_catalog import restore_catalog_identity
     rows = restore_catalog_identity(rows)
     from goodsdex.release_policy import remove_reviewed_non_goods, assert_no_empty_shells, allowed_deletions
@@ -800,6 +803,10 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
         # This manual metadata publication owns only the reviewed catalog patch.
         # Other lanes may have unpublished changes; do not roll those out here.
         output = apply_catalog(previous)
+    if mihome_intake_only:
+        if previous is None or mihome_catalog_only:
+            raise ValueError('Mi Home intake requires previous snapshot and exclusive scope')
+        output = apply_intake(previous)
     if previous is not None:
         from goodsdex.release_policy import assert_no_lost_ids
         assert_no_lost_ids(previous, output, retained_ids)

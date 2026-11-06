@@ -1,0 +1,4 @@
+origin/main f1c7ce4e
+PYTHONPATH=src:scripts python3 -m pytest -q -m 'not live' --disable-warnings
+1054 passed, 8 deselected, 1 warning in 68.97s
+Observed before changes; output recorded from exec session 16659.

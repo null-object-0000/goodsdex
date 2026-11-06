@@ -64,7 +64,7 @@ def normalize(row):
         row['price'] = None
         if 'promo_price' in row:
             row['promo_price'] = None
-    row['price_missing'] = ('page_no_price' if row.get('price_missing') == 'page_no_price' and not amount(row.get('price')) else not amount(row.get('price')))
+    row['price_missing'] = (row['price_missing'] if row.get('price_missing') in ('page_no_price', 'no_channel_price') and not amount(row.get('price')) else not amount(row.get('price')))
     row['price_comparable'] = comparable(row)
     if 'trims' in row:
         row['trims'] = [normalize(t) for t in row['trims']]

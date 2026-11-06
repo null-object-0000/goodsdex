@@ -1,0 +1,23 @@
+name: intake-mihome
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+  checks: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/collect-base
+      - uses: ./.github/actions/upload-candidate
+        with:
+          scope: all
+  publish:
+    needs: collect
+    uses: ./.github/workflows/publish-release.yml
+    with:
+      scope: all
+      mihome_intake_only: true
+    secrets: inherit

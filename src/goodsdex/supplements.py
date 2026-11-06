@@ -73,6 +73,9 @@ def car_refresh_supplements(supplements, previous):
 def publish(rebuilt, out_dir, previous, supplements=DEFAULT_SUPPLEMENTS, include_new_cars=False, *, apply_backfills=True, car_refresh=False):
     # Validate before writing either release file. Missing supplements fail closed.
     extras = json.loads(Path(supplements).read_text(encoding="utf-8"))
+    if Path(supplements) == DEFAULT_SUPPLEMENTS and not car_refresh:
+        from goodsdex.mihome_intake import apply_intake
+        extras += apply_intake([])
     from goodsdex.retirement import reconcile, archive_observations
     rebuilt = reconcile(previous, rebuilt, archive_observations(out_dir, previous))
     if car_refresh:

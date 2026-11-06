@@ -11,6 +11,10 @@ on:
         type: string
         default: ''
         required: false
+      mihome_intake_only:
+        type: boolean
+        default: false
+        required: false
       mihome_catalog_only:
         type: boolean
         default: false
@@ -80,7 +84,7 @@ jobs:
       - name: Test publication invariants
         run: |
           python3 -m pip install --quiet pytest Pillow requests beautifulsoup4
-          PYTHONPATH=src:scripts python3 -m pytest -q tests/test_atour.py tests/test_legacy_catalog.py tests/test_retirement.py tests/test_hp_history.py tests/test_hp.py tests/test_accessories.py tests/test_mi_names.py tests/test_mi_legacy_names.py tests/test_identity.py tests/test_exclusions.py tests/test_apparel.py tests/test_brands.py tests/test_release_policy.py tests/test_release_tolerance.py tests/test_release_dates.py tests/test_official_retrospective_release.py tests/test_series_release.py tests/test_series_release_rollout.py tests/test_date_enrichment.py tests/test_release_crosschecks.py tests/test_release_scope_media.py tests/test_supplement_publish.py tests/test_dedupe.py tests/test_shards.py tests/test_release_candidate.py tests/test_mirror_public.py tests/test_sources_status.py tests/test_source_urls.py tests/test_car_structure.py tests/test_price_history.py tests/test_price_semantics.py tests/test_variant_attributes.py tests/test_mihome_catalog.py
+          PYTHONPATH=src:scripts python3 -m pytest -q tests/test_atour.py tests/test_legacy_catalog.py tests/test_retirement.py tests/test_hp_history.py tests/test_hp.py tests/test_accessories.py tests/test_mi_names.py tests/test_mi_legacy_names.py tests/test_identity.py tests/test_exclusions.py tests/test_apparel.py tests/test_brands.py tests/test_release_policy.py tests/test_release_tolerance.py tests/test_release_dates.py tests/test_official_retrospective_release.py tests/test_series_release.py tests/test_series_release_rollout.py tests/test_date_enrichment.py tests/test_release_crosschecks.py tests/test_release_scope_media.py tests/test_supplement_publish.py tests/test_dedupe.py tests/test_shards.py tests/test_release_candidate.py tests/test_mirror_public.py tests/test_sources_status.py tests/test_source_urls.py tests/test_car_structure.py tests/test_price_history.py tests/test_price_semantics.py tests/test_variant_attributes.py tests/test_mihome_catalog.py tests/test_mihome_intake.py
       - name: Verify final release (no lost IDs and responsibility invariants)
         env:
           RELEASE_SCOPE: ${{ inputs.scope }}
@@ -108,9 +112,11 @@ jobs:
         env:
           REVIEWED_ACCESSORY_SHA256: ${{ inputs.reviewed_accessory_sha256 }}
           MIHOME_CATALOG_ONLY: ${{ inputs.mihome_catalog_only }}
+          MIHOME_INTAKE_ONLY: ${{ inputs.mihome_intake_only }}
         run: |
           EXTRA=()
           if [ "$MIHOME_CATALOG_ONLY" = true ]; then EXTRA+=(--mihome-catalog-only); fi
+          if [ "$MIHOME_INTAKE_ONLY" = true ]; then EXTRA+=(--mihome-intake-only); fi
           python3 scripts/finalize_public.py --public _data/public --previous "$RUNNER_TEMP/goods-before.json" --reviewed-accessory-sha256 "$REVIEWED_ACCESSORY_SHA256" "${EXTRA[@]}"
           if [ "$MIHOME_CATALOG_ONLY" = true ]; then
             PYTHONPATH=src python3 - <<'PY'
@@ -121,6 +127,17 @@ jobs:
           after = json.loads(Path('_data/public/goods.json').read_text())
           assert after == apply_catalog(before), 'Unexpected fields changed in Mi Home metadata publication'
           PY
+          fi
+          if [ "$MIHOME_INTAKE_ONLY" = true ]; then
+            PYTHONPATH=src python3 - <<'PYCODE'
+          import json, os
+          from pathlib import Path
+          from goodsdex.mihome_intake import apply_intake
+          before = json.loads((Path(os.environ['RUNNER_TEMP']) / 'goods-before.json').read_text())
+          after = json.loads(Path('_data/public/goods.json').read_text())
+          assert after == apply_intake(before), 'Unexpected change outside reviewed Mi Home intake'
+          assert after[:len(before)] == before, 'Existing product fields changed'
+          PYCODE
           fi
       - name: Push one complete release to data
         env:

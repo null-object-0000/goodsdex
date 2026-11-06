@@ -32,7 +32,7 @@ def main():
     for k in 'ABC':
         rows=[r for r in out if r['classification']==k];save(a.out/f'{k}.json',rows)
         with (a.out/f'{k}.csv').open('w',encoding='utf-8-sig',newline='') as f:
-            keys=['model','pd_id','name','category','brand','jumpUrl','classification','reason','existing_same_name_ids'];w=csv.DictWriter(f,keys,extrasaction='ignore');w.writeheader();w.writerows(rows)
+            keys=['model','pd_id','name','category','brand','jumpUrl','classification','reason','existing_same_name_ids'];w=csv.DictWriter(f,keys,extrasaction='ignore',lineterminator='\n');w.writeheader();w.writerows(rows)
     counts=collections.Counter((r['classification'],r['brand'],r['category']) for r in out)
     save(a.out/'brand-category-counts.json',[dict(classification=k,brand=b,category=c,count=n) for (k,b,c),n in sorted(counts.items())])
     sample=random.Random(20261106).sample([r for r in out if r['classification']=='A'],50);save(a.out/'sample-50-input.json',sample)
