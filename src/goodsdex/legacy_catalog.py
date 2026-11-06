@@ -130,7 +130,11 @@ def apply_legacy_catalog(rows, manifest=None):
             for key in keys:
                 row.pop(key, None)
             row.update(image=None, image_scope=None, image_status='missing')
-        if not row.get('image') or row.get('image_status') == 'official_unavailable':
+        # An exact-id mtop failure may keep the already saved view image.
+        # Its unavailable status refers to the clean official cover, not this fallback.
+        cover_fallback = (str(row.get('id', '')).startswith('CN:mi_cn:product:')
+                          and row.get('image_fallback') == 'mtop_official_unavailable')
+        if not row.get('image') or (row.get('image_status') == 'official_unavailable' and not cover_fallback):
             row.update(image=None, image_missing='page_no_image')
         else:
             row.pop('image_missing', None)

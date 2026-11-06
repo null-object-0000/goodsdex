@@ -796,6 +796,10 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     from goodsdex.price_semantics import apply as apply_price_semantics
     output = apply_legacy_catalog(apply_price_semantics(output))
     from goodsdex.mihome_catalog import apply_catalog
+    # Image-only exact-id evidence replay; release policy and gates are unchanged.
+    if not (mihome_catalog_only or mihome_intake_only or product_sources_only or earbuds_intake_only):
+        from goodsdex.xiaomi_covers import apply_covers
+        output = apply_covers(output)
     output = apply_catalog(output)
     if mihome_catalog_only:
         if previous is None:

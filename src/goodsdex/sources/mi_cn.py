@@ -634,3 +634,34 @@ def fetch_page_title(pid: str) -> tuple[list[Capture], list[Assertion]]:
     return [cap], [Assertion(assertion_id=f"{cap.capture_id}:name", subject_id=pid,
         capture_id=cap.capture_id, source=SRC_TITLE, attribute="name", raw_value=name,
         locator="title", page="官方购买页", parser_version="mi-title-v1")]
+
+
+def fetch_cover(pid: str) -> tuple[list[Capture], list[Assertion]]:
+    """Independent mtop channel for clean goodsList[0] main image, exact product id."""
+    from ..xiaomi_covers import SOURCE, LOCATOR
+    headers = {'Content-Type': 'application/x-www-form-urlencoded',
+               'X-User-Agent': 'mi-shop', 'Mishop-Channel-Id': '1',
+               'X-Mishop-App-Source': '1', 'Mishop-Client-Id': '1'}
+    raw, image, error, http = '', None, '', 0
+    status = CaptureStatus.SUCCESS
+    try:
+        req = urllib.request.Request(MTOP_URL, data=json.dumps([{}, {'productId': int(pid)}]).encode(), headers=headers)
+        with urllib.request.urlopen(req, timeout=20) as response:
+            raw, http = response.read().decode('utf-8'), response.status
+        d = json.loads(raw)
+        goods = ((d.get('data') or {}).get('goodsInfo') or {}).get('goodsList') or []
+        if d.get('code') == 0 and goods:
+            image = goods[0].get('imgUrl')
+        if not isinstance(image, str) or not image.startswith('https://'):
+            image = None
+            status, error = CaptureStatus.PARTIAL, 'official_unavailable: ' + str(d.get('message'))
+    except Exception as exc:
+        status, error = CaptureStatus.TRANSPORT_ERROR, str(exc)
+    cap = Capture.make(SOURCE, MTOP_URL, raw, status=status, error=error,
+                       http_status=http, method='POST', request_headers=headers,
+                       request_body=json.dumps([{}, {'productId': int(pid)}]), parser_version='mi-cover-v1')
+    assertion = Assertion(assertion_id=cap.capture_id + ':official_main_image',
+                          subject_id=str(pid), capture_id=cap.capture_id, source=SOURCE,
+                          attribute='official_main_image', raw_value=image, locator=LOCATOR,
+                          availability=Availability.PROVIDED if image else Availability.NOT_COLLECTED)
+    return [cap], [assertion]

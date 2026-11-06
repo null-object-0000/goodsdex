@@ -79,7 +79,8 @@ def test_finalizer_replays_and_details_only(tmp_path):
     from goodsdex.mijia_baike import apply_baike
     expected=apply_baike(expected)
     from goodsdex.mihome_catalog import apply_catalog
-    expected=apply_catalog(expected)
+    from goodsdex.xiaomi_covers import apply_covers
+    expected=apply_catalog(apply_covers(expected))
     # Independently frozen expected exclusions include the title repair.
     # Enrichment and every retained field must still be identical.
     archived=json.loads((tmp_path/'archive/accessories.json').read_text())

@@ -83,7 +83,7 @@ def collect_one(pid: str, name_hint: str = "", category: str = "",
                                     external_ids=prod.external_ids),
                     discovery=discovery or {})
 
-    for fn in (mi_cn.fetch_mobile, mi_cn.fetch_pc, mi_cn.fetch_page_title):
+    for fn in (mi_cn.fetch_mobile, mi_cn.fetch_pc, mi_cn.fetch_page_title, mi_cn.fetch_cover):
         try:
             caps, assertions = fn(pid)
         except Exception as e:

@@ -32,7 +32,7 @@ _NOISE = {
     # ① 未公开的展示素材；主图 img_url 另以顶层 image 输出
     "carousel", "pc_imgs", "buyer_imgs", "qa_items", "pc_tabs",
     "desc", "attrs", "colors", "sell_points", "review_tags",
-    "buy_options",
+    "buy_options", "official_main_image",
     # ② 顶层字段的原始来源；img_url 对应顶层 image
     "name", "short_title", "price", "market_price", "pc_price",
     "pc_market_price", "gid", "sku", "commodity_id", "img_url",
@@ -86,6 +86,8 @@ def to_public(rec: dict) -> dict:
     # 去掉空值与内部标记
     item["params"] = {k: val for k, val in item["params"].items()
                       if not str(k).startswith("_") and val not in (None, "", [])}
+    from goodsdex.xiaomi_covers import record_cover
+    item = record_cover(rec, item)
     return normalize_public_row(item)
 
 
