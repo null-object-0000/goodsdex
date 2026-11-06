@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T07:52:56Z",
+  "generatedAt": "2026-11-06T08:05:42Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -11,7 +11,7 @@
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42178140400",
       "error": null,
       "stale": true,
-      "staleReason": "已 2.4 小时无成功运行（预期每 60 分钟）"
+      "staleReason": "已 2.6 小时无成功运行（预期每 60 分钟）"
     },
     {
       "sourceId": "refresh-apple",
@@ -19,9 +19,9 @@
       "expectedIntervalMinutes": 60,
       "lastAttemptAt": "2026-11-06T07:15:01Z",
       "lastSuccessAt": "2026-11-06T07:51:33Z",
-      "conclusion": "in_progress",
+      "conclusion": "failure",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42179625012",
-      "error": null,
+      "error": "Process completed with exit code 1.",
       "stale": false,
       "staleReason": null
     },
@@ -65,11 +65,11 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-06T07:17:06Z",
+      "lastAttemptAt": "2026-11-06T08:02:46Z",
       "lastSuccessAt": null,
-      "conclusion": "in_progress",
+      "conclusion": "failure",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42179625012",
-      "error": null,
+      "error": "Process completed with exit code 1.",
       "stale": false,
       "staleReason": null
     }
