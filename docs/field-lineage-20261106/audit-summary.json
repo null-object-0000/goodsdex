@@ -1,0 +1,58 @@
+{
+  "baseline": {
+    "total": 4468,
+    "day": 33,
+    "month": 1613,
+    "none": 2822,
+    "not_obtained": 2822,
+    "official_absent": 0,
+    "series_inherit": 522,
+    "official": 779,
+    "third_party": 95,
+    "llm_crossed": 41,
+    "llm_verified": 209,
+    "covered": 1646,
+    "ratio": 0.3683974932855864
+  },
+  "lineage": {
+    "policy": "field-lineage-v1",
+    "counting_unit": "published_rows",
+    "total": 4468,
+    "covered": 1646,
+    "missing": 2822,
+    "conflicts": 0,
+    "groups": {
+      "official": 807,
+      "third_party": 108,
+      "series": 522,
+      "llm": 209
+    },
+    "sources": {
+      "apple_newsroom": 574,
+      "byd_official": 1,
+      "llm_verified": 209,
+      "ithome": 76,
+      "dji_official": 87,
+      "series_inherit": 522,
+      "kuaikeji": 23,
+      "fujifilm_official": 52,
+      "ifeng_tech": 1,
+      "mi_official_newsroom": 42,
+      "mi_store": 51,
+      "pchome": 2,
+      "sina_tech": 2,
+      "anzhuo": 1,
+      "eastmoney": 1,
+      "zol": 1,
+      "gsmarena": 1
+    },
+    "ratio": 0.3683974932855864
+  },
+  "issues": {
+    "历史证据缺少真实抓取时间；保留原始观察，不作为display候选": 932,
+    "Source requires observed captured_at with timezone": 245,
+    "series_inherit requires source_series and samples": 109,
+    "Source requires evidence URL": 1
+  },
+  "delta_rows": 95
+}

@@ -839,6 +839,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     if output and all(r.get('source_policy') for r in output):
         from goodsdex.product_sources import coverage as source_coverage
         meta['product_sources'] = source_coverage(output)
+        from goodsdex.lineage import coverage as lineage_coverage
+        meta['field_lineage'] = lineage_coverage(output)
     from goodsdex.release_dates import coverage
     meta['release_dates'] = coverage(output)
     from goodsdex.release_scope import scope_coverage

@@ -1,0 +1,245 @@
+{
+  "id": "fixture:lineage-date-conflict",
+  "fixture": true,
+  "conflicts": [
+    {
+      "field": "release_date",
+      "reason": "来源日期相差超过45天，等待人工核查",
+      "pairs": [
+        {
+          "left": {
+            "value": "2025-01-01",
+            "source": "ithome",
+            "field": "release_date",
+            "captured_at": "2026-11-06T02:14:00+08:00",
+            "method": "manual",
+            "evidence_url": "https://www.ithome.com/fixture-lineage",
+            "quote": "fixture：一月发布",
+            "http_status": null,
+            "confidence": "low",
+            "source_group": "third_party",
+            "capture_time_missing": false,
+            "precision": "day",
+            "eligible": true
+          },
+          "right": {
+            "value": "2025-04-01",
+            "source": "tencent_news",
+            "field": "release_date",
+            "captured_at": "2026-11-06T02:14:00+08:00",
+            "method": "manual",
+            "evidence_url": "https://news.qq.com/fixture-lineage",
+            "quote": "fixture：四月发布",
+            "http_status": null,
+            "confidence": "low",
+            "source_group": "third_party",
+            "capture_time_missing": false,
+            "precision": "day",
+            "eligible": true
+          },
+          "gap_days": 90
+        }
+      ],
+      "alternatives": [
+        {
+          "value": "2025-01-01",
+          "source": "ithome",
+          "field": "release_date",
+          "captured_at": "2026-11-06T02:14:00+08:00",
+          "method": "manual",
+          "evidence_url": "https://www.ithome.com/fixture-lineage",
+          "quote": "fixture：一月发布",
+          "http_status": null,
+          "confidence": "low",
+          "source_group": "third_party",
+          "capture_time_missing": false,
+          "precision": "day",
+          "eligible": true
+        },
+        {
+          "value": "2025-04-01",
+          "source": "tencent_news",
+          "field": "release_date",
+          "captured_at": "2026-11-06T02:14:00+08:00",
+          "method": "manual",
+          "evidence_url": "https://news.qq.com/fixture-lineage",
+          "quote": "fixture：四月发布",
+          "http_status": null,
+          "confidence": "low",
+          "source_group": "third_party",
+          "capture_time_missing": false,
+          "precision": "day",
+          "eligible": true
+        }
+      ]
+    }
+  ],
+  "field_history": [
+    {
+      "at": "2026-11-06T02:14:00+08:00",
+      "field": "name",
+      "from": {
+        "value": null
+      },
+      "to": {
+        "value": "fixture · 日期冲突演示",
+        "source": "mi_store",
+        "field": "name",
+        "source_url": "https://www.mi.com/fixture-lineage",
+        "captured_at": "2026-11-06T02:14:00+08:00",
+        "policy": "product-sources-v1",
+        "reason": "按官方商城、官方支持站、自有App目录、第三方顺序选取：mi_store",
+        "method": "manual",
+        "evidence_url": "https://www.mi.com/fixture-lineage",
+        "quote": "测试数据，不是实际商品证据",
+        "http_status": null,
+        "confidence": "low",
+        "source_group": "official",
+        "capture_time_missing": false
+      },
+      "reason": "按官方商城、官方支持站、自有App目录、第三方顺序选取：mi_store",
+      "actor": "policy:field-lineage-v1"
+    }
+  ],
+  "lineage_policy": "field-lineage-v1",
+  "sources": [
+    {
+      "source": "ithome",
+      "role": "secondary",
+      "kind": "release_date",
+      "captured_at": "2026-11-06T02:14:00+08:00",
+      "source_url": "https://www.ithome.com/fixture-lineage",
+      "fields": {
+        "release_date": "2025-01-01",
+        "precision": "day",
+        "quote": "fixture：一月发布"
+      },
+      "evidence": {
+        "method": "manual",
+        "verified": false,
+        "confidence": "low"
+      },
+      "observations": [
+        {
+          "source": "ithome",
+          "role": "secondary",
+          "kind": "release_date",
+          "captured_at": "2026-11-06T02:14:00+08:00",
+          "source_url": "https://www.ithome.com/fixture-lineage",
+          "fields": {
+            "release_date": "2025-01-01",
+            "precision": "day",
+            "quote": "fixture：一月发布"
+          },
+          "evidence": {
+            "method": "manual",
+            "verified": false,
+            "confidence": "low"
+          }
+        }
+      ]
+    },
+    {
+      "source": "mi_store",
+      "role": "primary",
+      "kind": "product",
+      "captured_at": "2026-11-06T02:14:00+08:00",
+      "source_url": "https://www.mi.com/fixture-lineage",
+      "fields": {
+        "name": "fixture · 日期冲突演示"
+      },
+      "evidence": {
+        "method": "manual",
+        "verified": false,
+        "confidence": "low",
+        "quote": "测试数据，不是实际商品证据"
+      },
+      "observations": [
+        {
+          "source": "mi_store",
+          "role": "secondary",
+          "kind": "product",
+          "captured_at": "2026-11-06T02:14:00+08:00",
+          "source_url": "https://www.mi.com/fixture-lineage",
+          "fields": {
+            "name": "fixture · 日期冲突演示"
+          },
+          "evidence": {
+            "method": "manual",
+            "verified": false,
+            "confidence": "low",
+            "quote": "测试数据，不是实际商品证据"
+          }
+        }
+      ]
+    },
+    {
+      "source": "tencent_news",
+      "role": "secondary",
+      "kind": "release_date",
+      "captured_at": "2026-11-06T02:14:00+08:00",
+      "source_url": "https://news.qq.com/fixture-lineage",
+      "fields": {
+        "release_date": "2025-04-01",
+        "precision": "day",
+        "quote": "fixture：四月发布"
+      },
+      "evidence": {
+        "method": "manual",
+        "verified": false,
+        "confidence": "low"
+      },
+      "observations": [
+        {
+          "source": "tencent_news",
+          "role": "secondary",
+          "kind": "release_date",
+          "captured_at": "2026-11-06T02:14:00+08:00",
+          "source_url": "https://news.qq.com/fixture-lineage",
+          "fields": {
+            "release_date": "2025-04-01",
+            "precision": "day",
+            "quote": "fixture：四月发布"
+          },
+          "evidence": {
+            "method": "manual",
+            "verified": false,
+            "confidence": "low"
+          }
+        }
+      ]
+    }
+  ],
+  "primary_source": "mi_store",
+  "source_history": [],
+  "display": {
+    "name": {
+      "value": "fixture · 日期冲突演示",
+      "source": "mi_store",
+      "field": "name",
+      "source_url": "https://www.mi.com/fixture-lineage",
+      "captured_at": "2026-11-06T02:14:00+08:00",
+      "policy": "product-sources-v1",
+      "reason": "按官方商城、官方支持站、自有App目录、第三方顺序选取：mi_store",
+      "method": "manual",
+      "evidence_url": "https://www.mi.com/fixture-lineage",
+      "quote": "测试数据，不是实际商品证据",
+      "http_status": null,
+      "confidence": "low",
+      "source_group": "official",
+      "capture_time_missing": false,
+      "alternatives": []
+    },
+    "image": null,
+    "category": null,
+    "price": null,
+    "release_date": null
+  },
+  "source_policy": "product-sources-v1",
+  "release_effective": null,
+  "name": "fixture · 日期冲突演示",
+  "image": null,
+  "category": null,
+  "price": null,
+  "price_missing": true
+}

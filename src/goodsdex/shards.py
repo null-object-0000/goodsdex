@@ -45,6 +45,9 @@ def build_shards(public):
         sections = [s for s in p.get('specs_sections', []) if re.sub(r'\d+$', '', str(s.get('heading'))) in ['存储', '存储设备', '容量', '内存', '外观', '颜色', '无线连接']]
         if sections:
             values['specs_sections'] = sections
+        if 'display' in row:
+            item['display'] = {k:({f:v[f] for f in ('value','source','source_group','captured_at','precision','reason') if f in v} if v else None) for k,v in row['display'].items() if '.' not in k and k in ('name','image','price','category','release_date')}
+            item['lineage_policy']=row.get('lineage_policy')
         if 'sources' in row:
             item['sources'] = [{**{k: v for k, v in source.items() if k not in ('observations', 'fields')},
                                 'fields': {k: v for k, v in source['fields'].items() if k not in ('params', 'parameters')}}

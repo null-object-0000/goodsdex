@@ -25,7 +25,7 @@ HOSTS = {
     'h20195.www2.hp.com': 'hp_quickspecs', 'hpstore.cn': 'hp_store',
     'hp.com': 'hp_store', 'mi.com': 'mi_store', 'yaduo.com': 'atour_official',
     'dji.com': 'dji_official', 'fujifilm-x.com': 'fujifilm_official',
-    'fujifilm.com': 'fujifilm_official', 'bydauto.com.cn': 'byd_official',
+    'fujifilm.com': 'fujifilm_official', 'fujifilm.com.cn': 'fujifilm_official', 'bydauto.com.cn': 'byd_official',
     'byd.com': 'byd_official', 'xiaomiev.com': 'xiaomi_ev',
     'pcauto.com.cn': 'pcauto', 'jd.com': 'jd', 'zol.com.cn': 'zol',
     'baike.baidu.com': 'baike',
@@ -49,8 +49,9 @@ def publisher(url):
 
 
 def validate_source(s):
-    if not isinstance(s.get('source'), str) or not s['source']:
-        raise ValueError('source must be a nonempty publisher identifier')
+    from .lineage import REGISTRY
+    if s.get('source') not in REGISTRY:
+        raise ValueError('source must be a registered publisher identifier')
     if not isinstance(s.get('fields'), dict):
         raise ValueError('source fields must be an object')
     if urlsplit(str(s.get('source_url') or '')).scheme not in ('http', 'https'):
@@ -67,8 +68,16 @@ def validate_source(s):
                 raise ValueError('capture time must include timezone')
         except (TypeError, AttributeError):
             raise ValueError('invalid capture time') from None
-    # Unknown publishers may retain evidence, but cannot become primary.
+    if s['source'] == 'llm_verified' and not s['evidence'].get('verified'):
+        raise ValueError('llm_verified requires a verified evidence URL')
+    if s['source'] == 'series_inherit' and (not s['fields'].get('source_series') or not s['fields'].get('samples')):
+        raise ValueError('series_inherit requires source_series and samples')
+    # Dates are independent secondary observations.
     actual = publisher(s['source_url'])
+    if s['source'] not in SOURCE_TIERS and s['source'] not in ('series_inherit','llm_verified','llm_estimate'):
+        from .lineage import publisher as registered_publisher
+        if registered_publisher(s['source_url']) != s['source']:
+            raise ValueError('publisher does not match registered evidence URL: '+s['source'])
     if s['source'] in SOURCE_TIERS and actual != s['source']:
         raise ValueError('publisher does not match source evidence URL: ' + s['source'])
 
@@ -115,19 +124,26 @@ def derive(sources, rules=None):
     for field in ('name', 'image', 'category', 'price'):
         candidates = []
         for envelope in sources:
-            observations = [s for s in envelope['observations'] if field in s['fields'] and s.get('eligible', True)]
+            observations = [s for s in envelope['observations'] if field in s['fields'] and s.get('eligible', True) and s.get('captured_at')]
             if not observations or SOURCE_TIERS.get(envelope['source'], 5) >= 5:
                 continue
             latest = max(observations, key=lambda s: (_time(s), _signature(s)))
             # An explicit null clears this publisher's previous assertion.
             if latest['fields'][field] is not None:
+                if field == 'image':
+                    from .lineage import REGISTRY
+                    if REGISTRY[latest['source']]['group'] != 'official': continue
+                    f=latest['fields']; kind=f.get('image_kind',f.get('image_type','product_photo'))
+                    if kind not in ('product_main','product_photo','white_background','specification','device_icon'): continue
+                    if kind=='device_icon' and not (f.get('width')==168 and f.get('height')==168 and f.get('is_product_main') is False): continue
                 candidates.append(latest)
         def rank(s):
             preference = rules.get(field, [])
             preference_rank = preference.index(s['source']) if s['source'] in preference else len(preference)
             tier = SOURCE_TIERS.get(s['source'], 5)
             policy_rank = (preference_rank, tier) if field in overrides or field == 'category' else (tier, preference_rank)
-            return (*policy_rank, -_time(s), s['source'], _signature(s))
+            image_rank={'product_main':0,'product_photo':0,'white_background':1,'specification':1,'device_icon':2}.get(s['fields'].get('image_kind',s['fields'].get('image_type','product_photo')),3) if field=='image' else 0
+            return (image_rank,*policy_rank, -_time(s), s['source'], _signature(s))
         if not candidates:
             display[field] = None
             continue
@@ -136,11 +152,19 @@ def derive(sources, rules=None):
                      source_url=chosen['source_url'], captured_at=chosen.get('captured_at'),
                      policy=POLICY, reason='field preference, publisher tier, latest capture')
         if field == 'image':
-            value['type'] = chosen['fields'].get('image_type', 'product_photo')
+            value['type'] = chosen['fields'].get('image_kind',chosen['fields'].get('image_type', 'product_photo'))
         if field == 'price':
             value['kind'] = chosen['fields'].get('price_kind', 'unknown')
         if field == 'category' and chosen['source'] == 'mihome_directory':
             value['refined_by'] = 'mihome'
+        from .lineage import assertion
+        proof = assertion(chosen, field)
+        value.update(proof)
+        value['alternatives'] = [assertion(o,field) for e in sources for o in e['observations'] if field in o['fields'] and o is not chosen]
+        if field=='price':
+            value['price_kind']=chosen['fields'].get('price_kind','unknown')
+            value['promo']=chosen['fields'].get('promo',value['price_kind'] in ('promotion','promo'))
+        value['reason'] = {'name':'按官方商城、官方支持站、自有App目录、第三方顺序选取', 'image':'按官方商品主图、白底或规格图、168×168设备图标顺序选取', 'price':'按官方商城现价、渠道价顺序选取，保留促销标记', 'category':'按字段规则和来源优先级选取'}[field] + '：' + chosen['source']
         display[field] = value
     return display
 
@@ -162,16 +186,20 @@ def materialize(row, previous=None, observations=(), rules=None, at=None):
     if old and old != chosen:
         history.append(dict(at=at or datetime.now(timezone.utc).isoformat(),
                             **{'from': old, 'to': chosen}, reason='higher priority evidence-backed product source', policy=POLICY))
-    display = deepcopy(row.get('display') or {})
-    display.update(derive(sources, rules))
+    display = derive(sources, rules)
+    from .lineage import enrich_display
+    display, conflicts, field_history = enrich_display(sources, display, previous, at)
+    result.update(conflicts=conflicts, field_history=field_history, lineage_policy='field-lineage-v1')
     result.update(sources=sources, primary_source=chosen, source_history=history,
                   display=display, source_policy=POLICY)
+    from .release_coverage import effective
+    result['release_effective']=effective(result)
     if previous.get('discovered_by'):
         result['discovered_by'] = previous['discovered_by']
     if not result.get('discovered_by') and SOURCE_TIERS[chosen] >= 3:
         result['discovered_by'] = chosen
     for field in ('name', 'image', 'category', 'price'):
-        result[field] = deepcopy(display[field]['value']) if display[field] else None
+        result[field] = deepcopy(display[field]['value']) if display[field] else (row.get(field) if field=='name' else None)
     if result['price'] is None:
         result['price_missing'] = row.get('price_missing') or True
     else:
@@ -255,11 +283,26 @@ def legacy_observations(row):
         observations.append(_observation('mihome_directory', baike['product_url'], baike.get('captured_at'),
             dict(name=baike.get('productName'), model=baike.get('model'), parameters=baike.get('parameters')),
             {'method': 'legacy_baike_mapping', 'sha256': baike.get('product_sha256')}))
+    for observation in observations:
+        if 'image' in observation['fields']:
+            for key in ('image_kind','image_type','width','height','is_product_main'):
+                value=row.get(key) if key in ('image_kind','image_type','is_product_main') else row.get('image_'+key)
+                if value is not None: observation['fields'][key]=value
+            if row.get('image_source_type'):
+                observation['fields'].setdefault('image_kind',row['image_source_type'])
     return observations
 
 
 def migrate_row(row, previous=None, **kwargs):
-    return materialize(row, previous, legacy_observations(row), **kwargs)
+    from .lineage import legacy_sources
+    dates,issues=legacy_sources(row,dates_only=True)
+    result=materialize(row, previous, [*legacy_observations(row),*dates], **kwargs)
+    for envelope in result['sources']:
+        for o in envelope['observations']:
+            if not o.get('captured_at'):
+                issues.append(dict(source=o['source'],fields=list(o['fields']),reason='历史证据缺少真实抓取时间；保留原始观察，不作为display候选'))
+    result['lineage_issues']=issues
+    return result
 
 
 def coverage(rows):
@@ -273,6 +316,9 @@ def coverage(rows):
 def upsert_source(row, observation, **kwargs):
     """Collector boundary: no collector may assign a different publisher's fields."""
     validate_source(observation)
+    from .lineage import valid_time
+    if not valid_time(observation.get('captured_at')):
+        raise ValueError('new observations require actual field capture time')
     return materialize(row, observations=[observation], **kwargs)
 
 

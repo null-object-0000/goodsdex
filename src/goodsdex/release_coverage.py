@@ -74,6 +74,12 @@ def usable(r):
 
 
 def effective(row):
+    if row.get('lineage_policy'):
+        from .lineage import REGISTRY
+        a=(row.get('display') or {}).get('release_date')
+        if not a: return None
+        group=REGISTRY[a['source']]['group']
+        return dict(date=a['value'],granularity=a['precision'],source={'official':'official','third_party':'third_party','series':'series_inherit','llm':'llm_verified'}[group], release_source={'official':'official','third_party':'third_party','series':'series_inherit','llm':'llm_verified'}[group],evidence={'url':a['evidence_url'],'captured_at':a['captured_at'],'quote':a.get('quote')})
     selected = row.get('release_effective') or {}
     if usable(selected):
         return selected
