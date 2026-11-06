@@ -1,0 +1,49 @@
+{
+  "20545": {
+    "name": "米家智能微波炉P1",
+    "mobile_request": {
+      "url": "https://m.mi.com/mtop/xiaomishop/product/info",
+      "method": "POST",
+      "body": "[{}, {\"productId\": \"20545\"}]",
+      "captured_at": "2026-11-06T12:59:35.350652+00:00",
+      "sha256": "b83596e8ec324d4e3308fd8235703e124ba344cedf792993734b60076e56e595",
+      "http_status": 200
+    },
+    "parameter_count": 0,
+    "pc_url": "https://api2.order.mi.com/product/view?product_id=20545&version=2",
+    "pc_sha256": "64a00932b054e4b35651f4149d13ce6bddcc39a32714ff339624a85898588cef",
+    "pc_tabs": [
+      "商品详情"
+    ],
+    "pc_image_count": 12,
+    "pc_description": "800W变频微波 | 一级能耗 | 平板大空间 | 3项专业解冻",
+    "pc_spec_status": "无结构化参数；详情规格为图片，未从图中取值",
+    "conclusion": "能拿到：官方 PDF 有可提取文字的基本参数表；候选已逐项核对，暂因日期身份指纹冲突不写 params。",
+    "manual_url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/b3180755ff4b7db4b9b7ca893c5be7f5_1777528674238.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=uDPQdZFncNQv52mH7dw0vZVWWCA=",
+    "manual_printed_page": 11,
+    "manual_pdf_page": 13,
+    "quote": "额定容积 20 L；额定输入功率 1250 W；微波输出功率 800 W；产品型号 MWB04M。"
+  },
+  "21312": {
+    "name": "米家微波炉20L 节能版",
+    "mobile_request": {
+      "url": "https://m.mi.com/mtop/xiaomishop/product/info",
+      "method": "POST",
+      "body": "[{}, {\"productId\": \"21312\"}]",
+      "captured_at": "2026-11-06T13:01:18.360442+00:00",
+      "sha256": "edb77e0cf369eaf17939d6c71b3d8b4580223006dd458d4ef98a1b24e6864350",
+      "http_status": 200
+    },
+    "parameter_count": 0,
+    "pc_url": "https://api2.order.mi.com/product/view?product_id=21312&version=2",
+    "pc_sha256": "4086f70ab97bfde8d7f4ed4ee95f7279214629e30297245c1acdac69c8dbbee3",
+    "pc_tabs": [
+      "商品详情"
+    ],
+    "pc_image_count": 17,
+    "pc_description": "700W速热微波+2级能耗 |  双旋钮操作 |  360°旋转加热+专业解冻",
+    "pc_spec_status": "无结构化参数；详情规格为图片，未从图中取值",
+    "conclusion": "本轮实测入口拿不到结构化参数：商城 info 与 PC 详情均无规格字段；仅有图像规格和商品简介。未验证有独立文本说明书，不把 21480 的说明书借给它。",
+    "extra_note": "21312 是非智能米家微波炉20L 节能版；21480 是米家智能微波炉20L 节能版，二者不同。未新增 21312 商品，也未给它填值。"
+  }
+}

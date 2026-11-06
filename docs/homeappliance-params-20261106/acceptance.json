@@ -1,0 +1,104 @@
+{
+  "branch": "feat/homeappliance-params",
+  "input_data_commit": "44a45f00bfa2eee8bef68158aa6278597354aec7",
+  "input_json_sha256": "3fd96f1e1a731ffef78126aef56844fb1aa0599a77c07f4da71e381785d31d38",
+  "coverage": {
+    "微波炉": {
+      "total": 5,
+      "before": 0,
+      "after": 3,
+      "missing_reasons": {
+        "release_identity_review_required": 2
+      }
+    },
+    "空调": {
+      "total": 146,
+      "before": 1,
+      "after": 52,
+      "missing_reasons": {
+        "identity_unverified": 1,
+        "image_only_spec": 24,
+        "source_error": 5,
+        "no_unambiguous_text_spec": 55,
+        "page_no_spec": 9
+      }
+    },
+    "扫地机器人": {
+      "total": 92,
+      "before": 10,
+      "after": 57,
+      "missing_reasons": {
+        "image_only_spec": 12,
+        "page_no_spec": 14,
+        "no_unambiguous_text_spec": 9
+      }
+    },
+    "冰箱": {
+      "total": 147,
+      "before": 70,
+      "after": 89,
+      "missing_reasons": {
+        "container_scope_unverified": 2,
+        "identity_unverified": 6,
+        "no_unambiguous_text_spec": 34,
+        "image_only_spec": 12,
+        "page_no_spec": 4
+      }
+    }
+  },
+  "verification": {
+    "rows": 4491,
+    "candidate_fields_verified": {
+      "official": 731,
+      "third_party": 95
+    },
+    "non_spec_fields_unchanged": true,
+    "replay_idempotent": true,
+    "sample_count": 10,
+    "deferred": [
+      {
+        "id": "CN:mi_cn:product:12548",
+        "reason": "release_identity_review_required",
+        "available_fields": [
+          "容量",
+          "额定功率",
+          "噪音值",
+          "产品尺寸",
+          "产品型号"
+        ]
+      },
+      {
+        "id": "CN:mi_cn:product:20545",
+        "reason": "release_identity_review_required",
+        "available_fields": [
+          "容量",
+          "额定功率",
+          "能效等级",
+          "噪音值",
+          "产品尺寸",
+          "产品型号"
+        ]
+      }
+    ]
+  },
+  "tests": {
+    "offline_passed": 1136,
+    "live_unverified": 8,
+    "log": "tests-final.log"
+  },
+  "protected_files_unchanged": {
+    "data/supplements/goods-supplements.json": "3715f88c30bc3e77acc4af6fcd981c5db9425fd162b810cdffe5f55896592ffb",
+    "src/goodsdex/release_crosschecks.py": "b5e7bc735f360352b8d88d6e5162b828da69cdd3bca8099118d261e065537433",
+    "src/goodsdex/release_dates.py": "66ca3cf3c8966389a78021ff4bf6b7c247772a03891054f20274f2b580e645bd",
+    "src/goodsdex/release_structured.py": "c4957d50fd7f792b8134208f94320e62ee15eea17eab869f089ceaf55b67dda1",
+    "src/goodsdex/release_coverage.py": "d05a3ce6130a95ce787a94e4c1466ea9e7d736b992727adb8b3fd86e63b9eccc",
+    "src/goodsdex/release_l7.py": "83992af275e17fa7260764d30635f1ed799a74abacdf899bda8777544ae2f0f2",
+    "src/goodsdex/release_tolerance.py": "3e3338b492ce50881ac7dd267a4be1cbd8e34fae4e9a3532e0c2b5c8c20acb3f",
+    "src/goodsdex/release_policy.py": "989daa3e6eefb2be9dba27395d29ed8d88cf88507bf028112fa25f1294e7bb2c",
+    "src/goodsdex/release_scope.py": "44d12ca70b7c35b24cf989acdb887eaa69ccbae5a0d0f6c8383570b862dce251",
+    "src/goodsdex/release_media.py": "de65f10e72bfd8735c2be32f4ec73082bd38ca5a9e757f183c21f4dfe58a38de"
+  },
+  "push": false,
+  "deployment": false,
+  "workflow_triggered": false
+}

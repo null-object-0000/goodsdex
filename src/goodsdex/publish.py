@@ -93,7 +93,8 @@ def to_public(rec: dict) -> dict:
                       if not str(k).startswith("_") and val not in (None, "", [])}
     from goodsdex.xiaomi_covers import record_cover
     item = record_cover(rec, item)
-    return normalize_public_row(item)
+    from goodsdex.homeappliance_params import apply_params
+    return apply_params([normalize_public_row(item)])[0]
 
 
 def collect_public(cats_dir):

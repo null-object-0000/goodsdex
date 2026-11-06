@@ -1,0 +1,35 @@
+{
+  "rows": 4491,
+  "candidate_fields_verified": {
+    "official": 731,
+    "third_party": 95
+  },
+  "non_spec_fields_unchanged": true,
+  "replay_idempotent": true,
+  "sample_count": 10,
+  "deferred": [
+    {
+      "id": "CN:mi_cn:product:12548",
+      "reason": "release_identity_review_required",
+      "available_fields": [
+        "容量",
+        "额定功率",
+        "噪音值",
+        "产品尺寸",
+        "产品型号"
+      ]
+    },
+    {
+      "id": "CN:mi_cn:product:20545",
+      "reason": "release_identity_review_required",
+      "available_fields": [
+        "容量",
+        "额定功率",
+        "能效等级",
+        "噪音值",
+        "产品尺寸",
+        "产品型号"
+      ]
+    }
+  ]
+}

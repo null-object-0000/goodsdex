@@ -73,3 +73,13 @@ docs/mihome-catalog-20261106/raw/
 
 .baseline-*.json
 docs/mihome-gap-20261106/raw/
+
+# Full appliance manuals are reproducible from manuals.json; retain text + hashes.
+docs/homeappliance-params-20261106/manuals/
+# Full source inventory can be restored from the documented data commit.
+docs/homeappliance-params-20261106/goods-4491.json.gz
+docs/homeappliance-params-20261106/goods-before.json.gz
+# Byte-exact appliance API/HTML captures and PDF text live in evidence.tar.gz.
+docs/homeappliance-params-20261106/raw/
+docs/homeappliance-params-20261106/texts/
+docs/homeappliance-params-20261106/third-party/

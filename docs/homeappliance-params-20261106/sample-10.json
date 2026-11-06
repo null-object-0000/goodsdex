@@ -1,0 +1,1043 @@
+[
+  {
+    "id": "mihome:66347",
+    "name": "米家微波炉",
+    "category": "微波炉",
+    "source_type": "official",
+    "params": {
+      "能效等级": {
+        "value": "三级能效",
+        "source_field": "能效等级",
+        "raw_value": [
+          "三级能效"
+        ],
+        "locator": "$.data.list[0]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=chunmi.microwave.n20l01",
+        "sha256": "b0cb710be6e91e5a0ba8e031163194f0b1a52dd5f4a5c1fdc04cceb067fceec0",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T12:59:52.650378+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"能效等级\", \"attributeValue\": [\"三级能效\"], \"unit\": null}"
+      },
+      "安装方式": {
+        "value": "台式",
+        "source_field": "安装方式",
+        "raw_value": [
+          "台式"
+        ],
+        "locator": "$.data.list[1]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=chunmi.microwave.n20l01",
+        "sha256": "b0cb710be6e91e5a0ba8e031163194f0b1a52dd5f4a5c1fdc04cceb067fceec0",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T12:59:52.650378+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"安装方式\", \"attributeValue\": [\"台式\"], \"unit\": null}"
+      },
+      "内胆材质": {
+        "value": "涂层材质",
+        "source_field": "内胆材质",
+        "raw_value": [
+          "涂层材质"
+        ],
+        "locator": "$.data.list[3]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=chunmi.microwave.n20l01",
+        "sha256": "b0cb710be6e91e5a0ba8e031163194f0b1a52dd5f4a5c1fdc04cceb067fceec0",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T12:59:52.650378+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"内胆材质\", \"attributeValue\": [\"涂层材质\"], \"unit\": null}"
+      },
+      "加热方式": {
+        "value": "平板加热",
+        "source_field": "加热方式",
+        "raw_value": [
+          "平板加热"
+        ],
+        "locator": "$.data.list[5]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=chunmi.microwave.n20l01",
+        "sha256": "b0cb710be6e91e5a0ba8e031163194f0b1a52dd5f4a5c1fdc04cceb067fceec0",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T12:59:52.650378+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"加热方式\", \"attributeValue\": [\"平板加热\"], \"unit\": null}"
+      },
+      "容量": {
+        "value": "20",
+        "source_field": "容量",
+        "raw_value": [
+          "20"
+        ],
+        "locator": "$.data.list[6]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=chunmi.microwave.n20l01",
+        "sha256": "b0cb710be6e91e5a0ba8e031163194f0b1a52dd5f4a5c1fdc04cceb067fceec0",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T12:59:52.650378+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"容量\", \"attributeValue\": [\"20\"], \"unit\": null}"
+      },
+      "面板材质": {
+        "value": "平板",
+        "source_field": "面板材质",
+        "raw_value": [
+          "平板"
+        ],
+        "locator": "$.data.list[7]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=chunmi.microwave.n20l01",
+        "sha256": "b0cb710be6e91e5a0ba8e031163194f0b1a52dd5f4a5c1fdc04cceb067fceec0",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T12:59:52.650378+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"面板材质\", \"attributeValue\": [\"平板\"], \"unit\": null}"
+      },
+      "产品类型": {
+        "value": "微波炉",
+        "source_field": "产品类型",
+        "raw_value": [
+          "微波炉"
+        ],
+        "locator": "$.data.list[8]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=chunmi.microwave.n20l01",
+        "sha256": "b0cb710be6e91e5a0ba8e031163194f0b1a52dd5f4a5c1fdc04cceb067fceec0",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T12:59:52.650378+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"产品类型\", \"attributeValue\": [\"微波炉\"], \"unit\": null}"
+      },
+      "额定功率": {
+        "value": "1150",
+        "source_field": "额定功率",
+        "raw_value": [
+          "1150"
+        ],
+        "locator": "$.data.list[10]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=chunmi.microwave.n20l01",
+        "sha256": "b0cb710be6e91e5a0ba8e031163194f0b1a52dd5f4a5c1fdc04cceb067fceec0",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T12:59:52.650378+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"额定功率\", \"attributeValue\": [\"1150\"], \"unit\": null}"
+      },
+      "产品净重": {
+        "value": "10.8",
+        "source_field": "产品净重",
+        "raw_value": [
+          "10.8"
+        ],
+        "locator": "$.data.list[11]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=chunmi.microwave.n20l01",
+        "sha256": "b0cb710be6e91e5a0ba8e031163194f0b1a52dd5f4a5c1fdc04cceb067fceec0",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T12:59:52.650378+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"产品净重\", \"attributeValue\": [\"10.8\"], \"unit\": null}"
+      },
+      "产品尺寸": {
+        "value": "447,347,281",
+        "source_field": "产品尺寸",
+        "raw_value": [
+          "447,347,281"
+        ],
+        "locator": "$.data.list[12]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=chunmi.microwave.n20l01",
+        "sha256": "b0cb710be6e91e5a0ba8e031163194f0b1a52dd5f4a5c1fdc04cceb067fceec0",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T12:59:52.650378+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"产品尺寸\", \"attributeValue\": [\"447,347,281\"], \"unit\": null}"
+      },
+      "噪音值": {
+        "value": "60dB(A)",
+        "source_field": "噪音值",
+        "raw_value": "60dB(A)",
+        "quote": "噪音值          60dB(A)                 能效等级          3级",
+        "locator": "PDF page 12: 噪音值",
+        "page": 12,
+        "method": "pdf_text",
+        "url": "https://tips.joyami.com/chunmi.microwave.n20l01/introdution.pdf",
+        "sha256": "350ae978e3ca885608e6e98d1490f70a1434ae3867e0e7d87948b9f7314ac208",
+        "text_sha256": "9da4ae2516c6256249ed64a613ac5187e1791ae6e4bb2106eb61e876503d8ce3",
+        "source_type": "official",
+        "source": "manufacturer_manual",
+        "model": "chunmi.microwave.n20l01"
+      },
+      "产品型号": {
+        "value": "MWBLXE1ACM",
+        "source_field": "产品型号",
+        "raw_value": "MWBLXE1ACM",
+        "quote": "产品名称         微波炉                     产品型号          MWBLXE1ACM",
+        "locator": "PDF page 12: 产品型号",
+        "page": 12,
+        "method": "pdf_text",
+        "url": "https://tips.joyami.com/chunmi.microwave.n20l01/introdution.pdf",
+        "sha256": "350ae978e3ca885608e6e98d1490f70a1434ae3867e0e7d87948b9f7314ac208",
+        "text_sha256": "9da4ae2516c6256249ed64a613ac5187e1791ae6e4bb2106eb61e876503d8ce3",
+        "source_type": "official",
+        "source": "manufacturer_manual",
+        "model": "chunmi.microwave.n20l01"
+      }
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:10330",
+    "name": "米家智能微波炉 20L",
+    "category": "微波炉",
+    "source_type": "official",
+    "params": {
+      "容量": {
+        "value": "20L",
+        "source_field": "额定容积",
+        "raw_value": "20L",
+        "quote": "额定容积         20L                     额定输入功率        1150W",
+        "locator": "PDF page 12: 额定容积",
+        "page": 12,
+        "method": "pdf_text",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/f0537fdb23cb223dd9b08e79c8b8935c_1789373364346.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=2bJvwSyN7w9VS3TRERjC4r0Ds2M=",
+        "sha256": "350ae978e3ca885608e6e98d1490f70a1434ae3867e0e7d87948b9f7314ac208",
+        "text_sha256": "9da4ae2516c6256249ed64a613ac5187e1791ae6e4bb2106eb61e876503d8ce3",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "chunmi.microwave.cmwb3"
+      },
+      "额定功率": {
+        "value": "1150W",
+        "source_field": "额定输入功率",
+        "raw_value": "1150W",
+        "quote": "额定容积         20L                     额定输入功率        1150W",
+        "locator": "PDF page 12: 额定输入功率",
+        "page": 12,
+        "method": "pdf_text",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/f0537fdb23cb223dd9b08e79c8b8935c_1789373364346.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=2bJvwSyN7w9VS3TRERjC4r0Ds2M=",
+        "sha256": "350ae978e3ca885608e6e98d1490f70a1434ae3867e0e7d87948b9f7314ac208",
+        "text_sha256": "9da4ae2516c6256249ed64a613ac5187e1791ae6e4bb2106eb61e876503d8ce3",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "chunmi.microwave.cmwb3"
+      },
+      "能效等级": {
+        "value": "3级",
+        "source_field": "能效等级",
+        "raw_value": "3级",
+        "quote": "噪音值          60dB(A)                 能效等级          3级",
+        "locator": "PDF page 12: 能效等级",
+        "page": 12,
+        "method": "pdf_text",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/f0537fdb23cb223dd9b08e79c8b8935c_1789373364346.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=2bJvwSyN7w9VS3TRERjC4r0Ds2M=",
+        "sha256": "350ae978e3ca885608e6e98d1490f70a1434ae3867e0e7d87948b9f7314ac208",
+        "text_sha256": "9da4ae2516c6256249ed64a613ac5187e1791ae6e4bb2106eb61e876503d8ce3",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "chunmi.microwave.cmwb3"
+      },
+      "噪音值": {
+        "value": "60dB(A)",
+        "source_field": "噪音值",
+        "raw_value": "60dB(A)",
+        "quote": "噪音值          60dB(A)                 能效等级          3级",
+        "locator": "PDF page 12: 噪音值",
+        "page": 12,
+        "method": "pdf_text",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/f0537fdb23cb223dd9b08e79c8b8935c_1789373364346.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=2bJvwSyN7w9VS3TRERjC4r0Ds2M=",
+        "sha256": "350ae978e3ca885608e6e98d1490f70a1434ae3867e0e7d87948b9f7314ac208",
+        "text_sha256": "9da4ae2516c6256249ed64a613ac5187e1791ae6e4bb2106eb61e876503d8ce3",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "chunmi.microwave.cmwb3"
+      },
+      "产品尺寸": {
+        "value": "447×347×281mm",
+        "source_field": "产品尺寸",
+        "raw_value": "447×347×281mm",
+        "quote": "产品尺寸         447×347×281mm           微波输出功率        700W",
+        "locator": "PDF page 12: 产品尺寸",
+        "page": 12,
+        "method": "pdf_text",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/f0537fdb23cb223dd9b08e79c8b8935c_1789373364346.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=2bJvwSyN7w9VS3TRERjC4r0Ds2M=",
+        "sha256": "350ae978e3ca885608e6e98d1490f70a1434ae3867e0e7d87948b9f7314ac208",
+        "text_sha256": "9da4ae2516c6256249ed64a613ac5187e1791ae6e4bb2106eb61e876503d8ce3",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "chunmi.microwave.cmwb3"
+      },
+      "产品型号": {
+        "value": "MWBLXE1ACM",
+        "source_field": "产品型号",
+        "raw_value": "MWBLXE1ACM",
+        "quote": "产品名称         微波炉                     产品型号          MWBLXE1ACM",
+        "locator": "PDF page 12: 产品型号",
+        "page": 12,
+        "method": "pdf_text",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/f0537fdb23cb223dd9b08e79c8b8935c_1789373364346.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=2bJvwSyN7w9VS3TRERjC4r0Ds2M=",
+        "sha256": "350ae978e3ca885608e6e98d1490f70a1434ae3867e0e7d87948b9f7314ac208",
+        "text_sha256": "9da4ae2516c6256249ed64a613ac5187e1791ae6e4bb2106eb61e876503d8ce3",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "chunmi.microwave.cmwb3"
+      }
+    }
+  },
+  {
+    "id": "CN:mi_cn:product:21480",
+    "name": "米家智能微波炉 20L 节能版",
+    "category": "微波炉",
+    "source_type": "official",
+    "params": {
+      "容量": {
+        "value": "20L",
+        "source_field": "额定容积",
+        "raw_value": "20L",
+        "quote": "额定容积         20L                     额定输入功率          1150W",
+        "locator": "PDF page 10: 额定容积",
+        "page": 10,
+        "method": "pdf_text",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/d1b4e02d3f34b093b10dc57c8d1897af_1744874625291.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=BHacmZqaw70skRTratJ8FsHq3+8=",
+        "sha256": "89cc439800db671448233154f05b11a6230b091570a467437656e4c270aede64",
+        "text_sha256": "6177d7ed3cd77bb813d829f850c2c5a45720901102fb781bdbac63656b6fb3ea",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "xiaomi.microwave.cm20l2"
+      },
+      "额定功率": {
+        "value": "1150W",
+        "source_field": "额定输入功率",
+        "raw_value": "1150W",
+        "quote": "额定容积         20L                     额定输入功率          1150W",
+        "locator": "PDF page 10: 额定输入功率",
+        "page": 10,
+        "method": "pdf_text",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/d1b4e02d3f34b093b10dc57c8d1897af_1744874625291.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=BHacmZqaw70skRTratJ8FsHq3+8=",
+        "sha256": "89cc439800db671448233154f05b11a6230b091570a467437656e4c270aede64",
+        "text_sha256": "6177d7ed3cd77bb813d829f850c2c5a45720901102fb781bdbac63656b6fb3ea",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "xiaomi.microwave.cm20l2"
+      },
+      "能效等级": {
+        "value": "2级",
+        "source_field": "能效等级",
+        "raw_value": "2级",
+        "quote": "能效等级         2级                      效率值             56%",
+        "locator": "PDF page 10: 能效等级",
+        "page": 10,
+        "method": "pdf_text",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/d1b4e02d3f34b093b10dc57c8d1897af_1744874625291.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=BHacmZqaw70skRTratJ8FsHq3+8=",
+        "sha256": "89cc439800db671448233154f05b11a6230b091570a467437656e4c270aede64",
+        "text_sha256": "6177d7ed3cd77bb813d829f850c2c5a45720901102fb781bdbac63656b6fb3ea",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "xiaomi.microwave.cm20l2"
+      },
+      "噪音值": {
+        "value": "60dB(A)",
+        "source_field": "噪 音 值",
+        "raw_value": "60dB(A)",
+        "quote": "能效执行标准       GB 24849-2017           噪 音 值           60dB(A)",
+        "locator": "PDF page 10: 噪 音 值",
+        "page": 10,
+        "method": "pdf_text",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/d1b4e02d3f34b093b10dc57c8d1897af_1744874625291.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=BHacmZqaw70skRTratJ8FsHq3+8=",
+        "sha256": "89cc439800db671448233154f05b11a6230b091570a467437656e4c270aede64",
+        "text_sha256": "6177d7ed3cd77bb813d829f850c2c5a45720901102fb781bdbac63656b6fb3ea",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "xiaomi.microwave.cm20l2"
+      },
+      "产品尺寸": {
+        "value": "447×347×281mm",
+        "source_field": "产品尺寸",
+        "raw_value": "447×347×281mm",
+        "quote": "产品尺寸         447×347×281mm           微波输出功率          700W",
+        "locator": "PDF page 10: 产品尺寸",
+        "page": 10,
+        "method": "pdf_text",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/d1b4e02d3f34b093b10dc57c8d1897af_1744874625291.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=BHacmZqaw70skRTratJ8FsHq3+8=",
+        "sha256": "89cc439800db671448233154f05b11a6230b091570a467437656e4c270aede64",
+        "text_sha256": "6177d7ed3cd77bb813d829f850c2c5a45720901102fb781bdbac63656b6fb3ea",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "xiaomi.microwave.cm20l2"
+      },
+      "产品型号": {
+        "value": "MWBLXE1ACMb",
+        "source_field": "产品型号",
+        "raw_value": "MWBLXE1ACMb",
+        "quote": "产品名称         微波炉                     产品型号            MWBLXE1ACMb",
+        "locator": "PDF page 10: 产品型号",
+        "page": 10,
+        "method": "pdf_text",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/d1b4e02d3f34b093b10dc57c8d1897af_1744874625291.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=BHacmZqaw70skRTratJ8FsHq3+8=",
+        "sha256": "89cc439800db671448233154f05b11a6230b091570a467437656e4c270aede64",
+        "text_sha256": "6177d7ed3cd77bb813d829f850c2c5a45720901102fb781bdbac63656b6fb3ea",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "xiaomi.microwave.cm20l2"
+      }
+    }
+  },
+  {
+    "id": "mihome:1481",
+    "name": "米家互联网空调C1（大1匹/变频/一级能效）",
+    "category": "空调",
+    "source_type": "official",
+    "params": {
+      "能效等级": {
+        "value": "1级",
+        "source_field": "能效等级",
+        "raw_value": "1",
+        "quote": "能效等级                      1                    1              1                 1",
+        "locator": "PDF page 19: 能效等级",
+        "page": 19,
+        "method": "pdf_text",
+        "hardware_models": [
+          "KFR-35GW/S1A1",
+          "KFR-35GW/N1A1",
+          "KFR-34GW/N1A1",
+          "KFR-35GW/D2A1"
+        ],
+        "selection": "all_columns_explicitly_equal",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/b3435f1c9e052b08f0684aad8c7cb8e2_1777272282591.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=/bYmDukWqcEqiR3VqYHllQCfh30=",
+        "sha256": "9485e67bc51614adfa6350af431bce88e9ac2aac1ccfc9f21fa6a9b708bf6f9b",
+        "text_sha256": "13dd308075238dd31f47cd4dcbf414d8ccceb1b2462b6351c97e62fe4c710304",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "xiaomi.aircondition.ma9"
+      }
+    }
+  },
+  {
+    "id": "mihome:18806",
+    "name": "空调 自然风Pro 双出风 立式3匹 超一级能效",
+    "category": "空调",
+    "source_type": "official",
+    "params": {
+      "款式": {
+        "value": "分体落地式（柜机）",
+        "source_field": "款式",
+        "raw_value": [
+          "分体落地式（柜机）"
+        ],
+        "locator": "$.data.list[0]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=xiaomi.airc.rr1r00",
+        "sha256": "e5b0c900e0ba1392dcf2d5b4642fbf15e915e65766a9d204a4ad261cb6825eef",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T13:00:44.193569+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"款式\", \"attributeValue\": [\"分体落地式（柜机）\"], \"unit\": null}"
+      },
+      "产品系列": {
+        "value": "自然风",
+        "source_field": "产品系列",
+        "raw_value": [
+          "自然风"
+        ],
+        "locator": "$.data.list[1]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=xiaomi.airc.rr1r00",
+        "sha256": "e5b0c900e0ba1392dcf2d5b4642fbf15e915e65766a9d204a4ad261cb6825eef",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T13:00:44.193569+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"产品系列\", \"attributeValue\": [\"自然风\"], \"unit\": null}"
+      },
+      "匹数": {
+        "value": "3匹",
+        "source_field": "匹数",
+        "raw_value": [
+          "3匹"
+        ],
+        "locator": "$.data.list[2]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=xiaomi.airc.rr1r00",
+        "sha256": "e5b0c900e0ba1392dcf2d5b4642fbf15e915e65766a9d204a4ad261cb6825eef",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T13:00:44.193569+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"匹数\", \"attributeValue\": [\"3匹\"], \"unit\": null}"
+      },
+      "能效": {
+        "value": "一级",
+        "source_field": "能效",
+        "raw_value": [
+          "一级"
+        ],
+        "locator": "$.data.list[3]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=xiaomi.airc.rr1r00",
+        "sha256": "e5b0c900e0ba1392dcf2d5b4642fbf15e915e65766a9d204a4ad261cb6825eef",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T13:00:44.193569+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"能效\", \"attributeValue\": [\"一级\"], \"unit\": null}"
+      },
+      "适用面积": {
+        "value": "30~40㎡",
+        "source_field": "适用面积",
+        "raw_value": [
+          "30~40㎡"
+        ],
+        "locator": "$.data.list[4]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=xiaomi.airc.rr1r00",
+        "sha256": "e5b0c900e0ba1392dcf2d5b4642fbf15e915e65766a9d204a4ad261cb6825eef",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T13:00:44.193569+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"适用面积\", \"attributeValue\": [\"30~40㎡\"], \"unit\": null}"
+      },
+      "冷暖类型": {
+        "value": "冷暖",
+        "source_field": "冷暖类型",
+        "raw_value": [
+          "冷暖"
+        ],
+        "locator": "$.data.list[5]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=xiaomi.airc.rr1r00",
+        "sha256": "e5b0c900e0ba1392dcf2d5b4642fbf15e915e65766a9d204a4ad261cb6825eef",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T13:00:44.193569+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"冷暖类型\", \"attributeValue\": [\"冷暖\"], \"unit\": null}"
+      },
+      "定频/变频": {
+        "value": "变频",
+        "source_field": "定频/变频",
+        "raw_value": [
+          "变频"
+        ],
+        "locator": "$.data.list[6]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=xiaomi.airc.rr1r00",
+        "sha256": "e5b0c900e0ba1392dcf2d5b4642fbf15e915e65766a9d204a4ad261cb6825eef",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T13:00:44.193569+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"定频/变频\", \"attributeValue\": [\"变频\"], \"unit\": null}"
+      },
+      "是否支持小爱同学控制": {
+        "value": "是",
+        "source_field": "是否支持小爱同学控制",
+        "raw_value": [
+          "是"
+        ],
+        "locator": "$.data.list[7]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=xiaomi.airc.rr1r00",
+        "sha256": "e5b0c900e0ba1392dcf2d5b4642fbf15e915e65766a9d204a4ad261cb6825eef",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T13:00:44.193569+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"是否支持小爱同学控制\", \"attributeValue\": [\"是\"], \"unit\": null}"
+      },
+      "整机质保期": {
+        "value": "10年",
+        "source_field": "整机质保期",
+        "raw_value": [
+          "10年"
+        ],
+        "locator": "$.data.list[8]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=xiaomi.airc.rr1r00",
+        "sha256": "e5b0c900e0ba1392dcf2d5b4642fbf15e915e65766a9d204a4ad261cb6825eef",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T13:00:44.193569+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"整机质保期\", \"attributeValue\": [\"10年\"], \"unit\": null}"
+      },
+      "APF值": {
+        "value": "5.01",
+        "source_field": "APF值",
+        "raw_value": [
+          "5.01"
+        ],
+        "locator": "$.data.list[9]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=xiaomi.airc.rr1r00",
+        "sha256": "e5b0c900e0ba1392dcf2d5b4642fbf15e915e65766a9d204a4ad261cb6825eef",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T13:00:44.193569+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"APF值\", \"attributeValue\": [\"5.01\"], \"unit\": null}"
+      },
+      "制冷量（整机）": {
+        "value": "7320(700-9700)",
+        "source_field": "制冷量（整机）",
+        "raw_value": [
+          "7320(700-9700)"
+        ],
+        "locator": "$.data.list[10]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=xiaomi.airc.rr1r00",
+        "sha256": "e5b0c900e0ba1392dcf2d5b4642fbf15e915e65766a9d204a4ad261cb6825eef",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T13:00:44.193569+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"制冷量（整机）\", \"attributeValue\": [\"7320(700-9700)\"], \"unit\": null}"
+      },
+      "制热量（整机）": {
+        "value": "9850(700-12550)W",
+        "source_field": "制热量（整机）",
+        "raw_value": [
+          "9850(700-12550)W"
+        ],
+        "locator": "$.data.list[11]",
+        "method": "structured_attribute",
+        "url": "https://home.mi.com/cgi-op/api/v1/baike/v2/attribute?model=xiaomi.airc.rr1r00",
+        "sha256": "e5b0c900e0ba1392dcf2d5b4642fbf15e915e65766a9d204a4ad261cb6825eef",
+        "source_type": "official",
+        "source": "mijia_baike",
+        "captured_at": "2026-11-06T13:00:44.193569+00:00",
+        "quote": "{\"bitSet\": [0, 1, 1], \"attributeName\": \"制热量（整机）\", \"attributeValue\": [\"9850(700-12550)W\"], \"unit\": null}"
+      },
+      "能效等级": {
+        "value": "1级",
+        "source_field": "能效等级",
+        "raw_value": "1",
+        "quote": "能效等级                            1",
+        "locator": "PDF page 19: 能效等级",
+        "page": 19,
+        "method": "pdf_text",
+        "hardware_models": [
+          "72LW-NA11/M1A1"
+        ],
+        "selection": "single_model",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/8b2af9d47188241d5d441023813bc4a1_1782733627780.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=uCs7r14HZeqacWjkFcHpbIoFs+E=",
+        "sha256": "bb0c425ec3ce552b1b7a3fc11aefeb2a31f8cfcb4f350a692c7a892abe56aaf9",
+        "text_sha256": "51a6f94f0799ef9a328ba0c91e6c2b900928adf9d088454cb11043005407416a",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "xiaomi.airc.rr1r00"
+      }
+    }
+  },
+  {
+    "id": "mihome:10313",
+    "name": "小米空调巨省电 1.5匹 一级 适用米家速冷静/鎏金版/静雅白",
+    "category": "空调",
+    "source_type": "official",
+    "params": {
+      "能效等级": {
+        "value": "1级",
+        "source_field": "能效等级",
+        "raw_value": "1",
+        "quote": "能效等级                      1                    1              1                 1",
+        "locator": "PDF page 19: 能效等级",
+        "page": 19,
+        "method": "pdf_text",
+        "hardware_models": [
+          "KFR-35GW/S1A1",
+          "KFR-35GW/N1A1",
+          "KFR-34GW/N1A1",
+          "KFR-35GW/D2A1"
+        ],
+        "selection": "all_columns_explicitly_equal",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/3f377a57580993bbd305774f69e3ec3f_1782352198881.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=QELy2FFF29tmqhU8rKcowv0atjQ=",
+        "sha256": "9485e67bc51614adfa6350af431bce88e9ac2aac1ccfc9f21fa6a9b708bf6f9b",
+        "text_sha256": "13dd308075238dd31f47cd4dcbf414d8ccceb1b2462b6351c97e62fe4c710304",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "xiaomi.aircondition.m9"
+      }
+    }
+  },
+  {
+    "id": "mihome:74270",
+    "name": "智米洗地机器人开拓者A1",
+    "category": "扫地机器人",
+    "source_type": "official",
+    "params": {
+      "电池容量": {
+        "value": "5200mAh",
+        "source_field": "电池容量",
+        "raw_value": "电池容量      5200mAh",
+        "quote": "电池容量      5200mAh",
+        "locator": "PDF page 24: battery row",
+        "page": 24,
+        "method": "pdf_text",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/4c39523a340d48dcbd5ea3dae6c8d73b_1645596602288.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=hodfPkOEB3LZrfSIc7htbcxiTzI=",
+        "sha256": "d6b7cc4a7534bb6ebb8eb75e10da33a56a3bf5528cd78e3506f22119cce4260f",
+        "text_sha256": "f147798730e9d44b4224e27f07df6bb6eb373b87f68cd471db5d0cdb257d08e9",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "zhimi.vacuum.wa1"
+      }
+    }
+  },
+  {
+    "id": "mihome:72763",
+    "name": "追觅W10",
+    "category": "扫地机器人",
+    "source_type": "third_party",
+    "params": {
+      "额定功率": {
+        "value": "65W",
+        "locator": "#newPmVal_16",
+        "source_field": "额定功率",
+        "raw_value": "65W",
+        "quote": "额定功率：65W",
+        "url": "https://detail.zol.com.cn/1395/1394686/param.shtml",
+        "sha256": "df5ca6714aca4e7a99aea4e8c92fe5cae60c35ede638a8bc221504b4da5eb5cc",
+        "source_type": "third_party",
+        "source": "zol",
+        "method": "third_party_html",
+        "reviewed_model": "dreame.vacuum.p2027",
+        "source_title": "【追觅W10参数】dreame W10扫地机器人参数_规格_性能_功能-ZOL中关村在线",
+        "captured_at": "2026-11-06T13:18:43.397894+00:00"
+      },
+      "额定电压": {
+        "value": "100V-240V/50Hz",
+        "locator": "#newPmVal_15",
+        "source_field": "额定电压",
+        "raw_value": "100V-240V/50Hz",
+        "quote": "额定电压：100V-240V/50Hz",
+        "url": "https://detail.zol.com.cn/1395/1394686/param.shtml",
+        "sha256": "df5ca6714aca4e7a99aea4e8c92fe5cae60c35ede638a8bc221504b4da5eb5cc",
+        "source_type": "third_party",
+        "source": "zol",
+        "method": "third_party_html",
+        "reviewed_model": "dreame.vacuum.p2027",
+        "source_title": "【追觅W10参数】dreame W10扫地机器人参数_规格_性能_功能-ZOL中关村在线",
+        "captured_at": "2026-11-06T13:18:43.397894+00:00"
+      },
+      "产品尺寸": {
+        "value": "主机：334*314*105 \n清水坞：375*400*430mmmm",
+        "locator": "#newPmVal_19",
+        "source_field": "产品尺寸",
+        "raw_value": "主机：334*314*105 \n清水坞：375*400*430mmmm",
+        "quote": "产品尺寸：主机：334*314*105 \n清水坞：375*400*430mmmm",
+        "url": "https://detail.zol.com.cn/1395/1394686/param.shtml",
+        "sha256": "df5ca6714aca4e7a99aea4e8c92fe5cae60c35ede638a8bc221504b4da5eb5cc",
+        "source_type": "third_party",
+        "source": "zol",
+        "method": "third_party_html",
+        "reviewed_model": "dreame.vacuum.p2027",
+        "source_title": "【追觅W10参数】dreame W10扫地机器人参数_规格_性能_功能-ZOL中关村在线",
+        "captured_at": "2026-11-06T13:18:43.397894+00:00"
+      },
+      "充电时间": {
+        "value": "6小时",
+        "locator": "#newPmVal_18",
+        "source_field": "充电时间",
+        "raw_value": "6小时",
+        "quote": "充电时间：6小时",
+        "url": "https://detail.zol.com.cn/1395/1394686/param.shtml",
+        "sha256": "df5ca6714aca4e7a99aea4e8c92fe5cae60c35ede638a8bc221504b4da5eb5cc",
+        "source_type": "third_party",
+        "source": "zol",
+        "method": "third_party_html",
+        "reviewed_model": "dreame.vacuum.p2027",
+        "source_title": "【追觅W10参数】dreame W10扫地机器人参数_规格_性能_功能-ZOL中关村在线",
+        "captured_at": "2026-11-06T13:18:43.397894+00:00"
+      },
+      "吸力": {
+        "value": "4000Pa",
+        "locator": "#newPmVal_1",
+        "source_field": "吸尘能力",
+        "raw_value": "4000Pa",
+        "quote": "吸尘能力：4000Pa",
+        "url": "https://detail.zol.com.cn/1395/1394686/param.shtml",
+        "sha256": "df5ca6714aca4e7a99aea4e8c92fe5cae60c35ede638a8bc221504b4da5eb5cc",
+        "source_type": "third_party",
+        "source": "zol",
+        "method": "third_party_html",
+        "reviewed_model": "dreame.vacuum.p2027",
+        "source_title": "【追觅W10参数】dreame W10扫地机器人参数_规格_性能_功能-ZOL中关村在线",
+        "captured_at": "2026-11-06T13:18:43.397894+00:00"
+      },
+      "尘盒容量": {
+        "value": "0.45L",
+        "locator": "#newPmVal_3",
+        "source_field": "集尘容量",
+        "raw_value": "0.45L",
+        "quote": "集尘容量：0.45L",
+        "url": "https://detail.zol.com.cn/1395/1394686/param.shtml",
+        "sha256": "df5ca6714aca4e7a99aea4e8c92fe5cae60c35ede638a8bc221504b4da5eb5cc",
+        "source_type": "third_party",
+        "source": "zol",
+        "method": "third_party_html",
+        "reviewed_model": "dreame.vacuum.p2027",
+        "source_title": "【追觅W10参数】dreame W10扫地机器人参数_规格_性能_功能-ZOL中关村在线",
+        "captured_at": "2026-11-06T13:18:43.397894+00:00"
+      }
+    }
+  },
+  {
+    "id": "mihome:7903",
+    "name": "米家对开门冰箱 485L",
+    "category": "冰箱",
+    "source_type": "official",
+    "params": {
+      "总容量": {
+        "value": "485L",
+        "source_field": "总容积",
+        "raw_value": "485L",
+        "quote": "总容积                       485L",
+        "locator": "PDF page 12: 总容积",
+        "page": 12,
+        "method": "pdf_text",
+        "hardware_models": [
+          "BCD-485WMSA"
+        ],
+        "covered_capacities": [
+          "485L"
+        ],
+        "scope_quote": "产品型号                      BCD-485WMSA\n总容积                       485L",
+        "selection": "single_model",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/fb08f1f71cc05129b0072a14f84629b9_1642488585807.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=rxOkxs94uNFVCbFBYxPe9Rm4Sfk=",
+        "sha256": "796473ec143c2d4a77c3a2c11d4bf6b40e94c34f9f9388c1732fb027fdd19f35",
+        "text_sha256": "c1fa4de3955923411346822f0aead444fad38341177200990fea726da0a231e3",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "midjd7.fridge.4852"
+      },
+      "能效等级": {
+        "value": "2级",
+        "source_field": "能效等级",
+        "raw_value": "2级",
+        "quote": "能效等级                      2级",
+        "locator": "PDF page 12: 能效等级",
+        "page": 12,
+        "method": "pdf_text",
+        "hardware_models": [
+          "BCD-485WMSA"
+        ],
+        "covered_capacities": [
+          "485L"
+        ],
+        "scope_quote": "产品型号                      BCD-485WMSA\n总容积                       485L",
+        "selection": "single_model",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/fb08f1f71cc05129b0072a14f84629b9_1642488585807.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=rxOkxs94uNFVCbFBYxPe9Rm4Sfk=",
+        "sha256": "796473ec143c2d4a77c3a2c11d4bf6b40e94c34f9f9388c1732fb027fdd19f35",
+        "text_sha256": "c1fa4de3955923411346822f0aead444fad38341177200990fea726da0a231e3",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "midjd7.fridge.4852"
+      },
+      "冷冻室容积": {
+        "value": "200L",
+        "source_field": "冷冻室容积",
+        "raw_value": "200L",
+        "quote": "冷冻室容积                     200L",
+        "locator": "PDF page 12: 冷冻室容积",
+        "page": 12,
+        "method": "pdf_text",
+        "hardware_models": [
+          "BCD-485WMSA"
+        ],
+        "covered_capacities": [
+          "485L"
+        ],
+        "scope_quote": "产品型号                      BCD-485WMSA\n总容积                       485L",
+        "selection": "single_model",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/fb08f1f71cc05129b0072a14f84629b9_1642488585807.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=rxOkxs94uNFVCbFBYxPe9Rm4Sfk=",
+        "sha256": "796473ec143c2d4a77c3a2c11d4bf6b40e94c34f9f9388c1732fb027fdd19f35",
+        "text_sha256": "c1fa4de3955923411346822f0aead444fad38341177200990fea726da0a231e3",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "midjd7.fridge.4852"
+      },
+      "冷藏室容积": {
+        "value": "285L",
+        "source_field": "冷藏室容积",
+        "raw_value": "285L",
+        "quote": "冷藏室容积                     285L",
+        "locator": "PDF page 12: 冷藏室容积",
+        "page": 12,
+        "method": "pdf_text",
+        "hardware_models": [
+          "BCD-485WMSA"
+        ],
+        "covered_capacities": [
+          "485L"
+        ],
+        "scope_quote": "产品型号                      BCD-485WMSA\n总容积                       485L",
+        "selection": "single_model",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/fb08f1f71cc05129b0072a14f84629b9_1642488585807.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=rxOkxs94uNFVCbFBYxPe9Rm4Sfk=",
+        "sha256": "796473ec143c2d4a77c3a2c11d4bf6b40e94c34f9f9388c1732fb027fdd19f35",
+        "text_sha256": "c1fa4de3955923411346822f0aead444fad38341177200990fea726da0a231e3",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "midjd7.fridge.4852"
+      },
+      "噪音值": {
+        "value": "38dB(A)",
+        "source_field": "噪声（声功率级）",
+        "raw_value": "38dB(A)",
+        "quote": "噪声（声功率级）                  38dB(A)",
+        "locator": "PDF page 12: 噪声（声功率级）",
+        "page": 12,
+        "method": "pdf_text",
+        "hardware_models": [
+          "BCD-485WMSA"
+        ],
+        "covered_capacities": [
+          "485L"
+        ],
+        "scope_quote": "产品型号                      BCD-485WMSA\n总容积                       485L",
+        "selection": "single_model",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/fb08f1f71cc05129b0072a14f84629b9_1642488585807.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=rxOkxs94uNFVCbFBYxPe9Rm4Sfk=",
+        "sha256": "796473ec143c2d4a77c3a2c11d4bf6b40e94c34f9f9388c1732fb027fdd19f35",
+        "text_sha256": "c1fa4de3955923411346822f0aead444fad38341177200990fea726da0a231e3",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "midjd7.fridge.4852"
+      }
+    }
+  },
+  {
+    "id": "mihome:36924",
+    "name": "米家冰箱Pro 600L十字 自动制冰",
+    "category": "冰箱",
+    "source_type": "official",
+    "params": {
+      "总容量": {
+        "value": "600L",
+        "source_field": "总容积",
+        "raw_value": "600L",
+        "quote": "总容积                                  600L",
+        "locator": "PDF page 18: 总容积",
+        "page": 18,
+        "method": "pdf_text",
+        "hardware_models": [
+          "BCD-600WKMPDIN"
+        ],
+        "covered_capacities": [
+          "600L"
+        ],
+        "scope_quote": "产品型号                             BCD-600WKMPDIN\n总容积                                  600L",
+        "selection": "single_model",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/a4dc704be5ed79120574429a4ccc98fe_1785928348161.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=hDHdcOi7TyQUUK9t1/Gyiuulf78=",
+        "sha256": "2787257f9752bd25f9d743cd73ac65841c40209125d0585063ea838b4e3d6630",
+        "text_sha256": "00192cb25aa20e3083750d4d96c4634242a50eb6164daacc5d9b30242566ed4e",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "midjd.fridge.bs60s"
+      },
+      "能效等级": {
+        "value": "1级",
+        "source_field": "能效等级",
+        "raw_value": "1级",
+        "quote": "能效等级                                   1级",
+        "locator": "PDF page 18: 能效等级",
+        "page": 18,
+        "method": "pdf_text",
+        "hardware_models": [
+          "BCD-600WKMPDIN"
+        ],
+        "covered_capacities": [
+          "600L"
+        ],
+        "scope_quote": "产品型号                             BCD-600WKMPDIN\n总容积                                  600L",
+        "selection": "single_model",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/a4dc704be5ed79120574429a4ccc98fe_1785928348161.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=hDHdcOi7TyQUUK9t1/Gyiuulf78=",
+        "sha256": "2787257f9752bd25f9d743cd73ac65841c40209125d0585063ea838b4e3d6630",
+        "text_sha256": "00192cb25aa20e3083750d4d96c4634242a50eb6164daacc5d9b30242566ed4e",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "midjd.fridge.bs60s"
+      },
+      "冷冻室容积": {
+        "value": "225L",
+        "source_field": "冷冻室容积",
+        "raw_value": "225L",
+        "quote": "冷冻室容积                                  225L",
+        "locator": "PDF page 18: 冷冻室容积",
+        "page": 18,
+        "method": "pdf_text",
+        "hardware_models": [
+          "BCD-600WKMPDIN"
+        ],
+        "covered_capacities": [
+          "600L"
+        ],
+        "scope_quote": "产品型号                             BCD-600WKMPDIN\n总容积                                  600L",
+        "selection": "single_model",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/a4dc704be5ed79120574429a4ccc98fe_1785928348161.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=hDHdcOi7TyQUUK9t1/Gyiuulf78=",
+        "sha256": "2787257f9752bd25f9d743cd73ac65841c40209125d0585063ea838b4e3d6630",
+        "text_sha256": "00192cb25aa20e3083750d4d96c4634242a50eb6164daacc5d9b30242566ed4e",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "midjd.fridge.bs60s"
+      },
+      "冷藏室容积": {
+        "value": "339L",
+        "source_field": "冷藏室容积",
+        "raw_value": "339L",
+        "quote": "冷藏室容积                                  339L",
+        "locator": "PDF page 18: 冷藏室容积",
+        "page": 18,
+        "method": "pdf_text",
+        "hardware_models": [
+          "BCD-600WKMPDIN"
+        ],
+        "covered_capacities": [
+          "600L"
+        ],
+        "scope_quote": "产品型号                             BCD-600WKMPDIN\n总容积                                  600L",
+        "selection": "single_model",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/a4dc704be5ed79120574429a4ccc98fe_1785928348161.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=hDHdcOi7TyQUUK9t1/Gyiuulf78=",
+        "sha256": "2787257f9752bd25f9d743cd73ac65841c40209125d0585063ea838b4e3d6630",
+        "text_sha256": "00192cb25aa20e3083750d4d96c4634242a50eb6164daacc5d9b30242566ed4e",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "midjd.fridge.bs60s"
+      },
+      "变温室容积": {
+        "value": "36L",
+        "source_field": "变温室容积",
+        "raw_value": "36L",
+        "quote": "变温室容积                                  36L",
+        "locator": "PDF page 18: 变温室容积",
+        "page": 18,
+        "method": "pdf_text",
+        "hardware_models": [
+          "BCD-600WKMPDIN"
+        ],
+        "covered_capacities": [
+          "600L"
+        ],
+        "scope_quote": "产品型号                             BCD-600WKMPDIN\n总容积                                  600L",
+        "selection": "single_model",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/a4dc704be5ed79120574429a4ccc98fe_1785928348161.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=hDHdcOi7TyQUUK9t1/Gyiuulf78=",
+        "sha256": "2787257f9752bd25f9d743cd73ac65841c40209125d0585063ea838b4e3d6630",
+        "text_sha256": "00192cb25aa20e3083750d4d96c4634242a50eb6164daacc5d9b30242566ed4e",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "midjd.fridge.bs60s"
+      },
+      "噪音值": {
+        "value": "35dB(A)",
+        "source_field": "噪声（声功率级）",
+        "raw_value": "35dB(A)",
+        "quote": "噪声（声功率级）                                35dB(A)",
+        "locator": "PDF page 18: 噪声（声功率级）",
+        "page": 18,
+        "method": "pdf_text",
+        "hardware_models": [
+          "BCD-600WKMPDIN"
+        ],
+        "covered_capacities": [
+          "600L"
+        ],
+        "scope_quote": "产品型号                             BCD-600WKMPDIN\n总容积                                  600L",
+        "selection": "single_model",
+        "url": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/a4dc704be5ed79120574429a4ccc98fe_1785928348161.pdf?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=hDHdcOi7TyQUUK9t1/Gyiuulf78=",
+        "sha256": "2787257f9752bd25f9d743cd73ac65841c40209125d0585063ea838b4e3d6630",
+        "text_sha256": "00192cb25aa20e3083750d4d96c4634242a50eb6164daacc5d9b30242566ed4e",
+        "source_type": "official",
+        "source": "mijia_manual",
+        "model": "midjd.fridge.bs60s"
+      }
+    }
+  }
+]
