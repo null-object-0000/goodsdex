@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-11-06T08:55:13Z",
+  "generatedAt": "2026-11-06T09:13:41Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-06T08:07:31Z",
+      "lastAttemptAt": "2026-11-06T09:07:32Z",
       "lastSuccessAt": "2026-11-06T05:28:55Z",
       "conclusion": "cancelled",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42185440064",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42192644747",
       "error": null,
       "stale": true,
-      "staleReason": "已 3.4 小时无成功运行（预期每 60 分钟）"
+      "staleReason": "已 3.7 小时无成功运行（预期每 60 分钟）"
     },
     {
       "sourceId": "refresh-apple",
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-06T08:07:34Z",
+      "lastAttemptAt": "2026-11-06T09:07:34Z",
       "lastSuccessAt": "2026-11-06T08:42:52Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42185444752",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42192650576",
       "error": null,
       "stale": false,
       "staleReason": null
@@ -29,11 +29,11 @@
       "sourceId": "refresh-hp",
       "workflow": ".github/workflows/refresh-hp.yml",
       "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-06T08:07:37Z",
+      "lastAttemptAt": "2026-11-06T09:07:37Z",
       "lastSuccessAt": "2026-11-06T08:18:25Z",
-      "conclusion": "failure",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42185450517",
-      "error": "Process completed with exit code 1.",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42192656763",
+      "error": null,
       "stale": false,
       "staleReason": null
     },
@@ -65,11 +65,11 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-06T08:48:51Z",
+      "lastAttemptAt": "2026-11-06T09:09:46Z",
       "lastSuccessAt": null,
-      "conclusion": "failure",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42185450517",
-      "error": "Process completed with exit code 1.",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42192650576",
+      "error": null,
       "stale": false,
       "staleReason": null
     }
