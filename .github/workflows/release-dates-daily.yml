@@ -30,6 +30,10 @@ jobs:
           node-version: '22'
       - name: Install bounded collectors
         run: |
+          # release_lane_xiaomi 解析官方 PDF 时直接调 pdftotext（poppler-utils），
+          # runner 镜像没带，缺了会让整条 xiaomi lane 抛 FileNotFoundError、collect 判红。
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          command -v pdftotext
           python3 -m pip install requests beautifulsoup4
           npm install --prefix /tmp/release-browser playwright@1.56.1
           /tmp/release-browser/node_modules/.bin/playwright install --with-deps chromium
