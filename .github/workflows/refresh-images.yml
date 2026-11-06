@@ -16,8 +16,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/collect-base
-      # No collector mutation: shared finalizer replays the frozen image review
-      # on the latest release while holding the normal publication lock.
+      - run: python3 -m pip install requests Pillow
+      - name: Collect only missing official product images
+        run: PYTHONPATH=src:scripts python3 scripts/refresh_missing_images.py
       - uses: ./.github/actions/upload-candidate
         with:
           scope: all

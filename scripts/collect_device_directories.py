@@ -32,6 +32,11 @@ def main():
     # Existing IDs are retained. Only exact, unique model matches may enrich their directory fields.
     models={}
     for d in devices:models.setdefault(d.get('model'),[]).append(d)
+    if a.source in ('gap','earbuds'):
+        from directory_intake import intake
+        rows,pending=intake(rows,missing,a.source)
+        save(target/(a.source+'-review-queue.json'),pending)
+        save(a.root/'public/goods.json',rows)
     if a.source!='gap':
         for row in rows:
             matches=models.get(row.get('miio_model') or row.get('mihome_model') or row.get('model'),[])

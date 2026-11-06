@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/collect-base
-      - run: python3 -m pip install requests
+      - run: python3 -m pip install requests Pillow
       - name: Collect fresh directory and discover unknown identities
         env:
           EARBUDS_AUTH_KEY: ${{ secrets.EARBUDS_AUTH_KEY }}
