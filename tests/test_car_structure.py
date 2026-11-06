@@ -227,3 +227,7 @@ def test_source_mirrors_and_lineage_roundtrip_without_weakening_trim_or_display_
     damaged=deepcopy(rows)
     damaged[0]['price']=123456789
     with pytest.raises(ValueError,match='differs from source evidence'):migrate(damaged)
+
+    damaged=deepcopy(rows)
+    damaged[0].pop('model_year')
+    with pytest.raises(ValueError,match='differs from source evidence'):migrate(damaged)
