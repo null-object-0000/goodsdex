@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T05:13:45Z",
+  "generatedAt": "2026-11-06T05:23:44Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -11,19 +11,19 @@
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42166522782",
       "error": null,
       "stale": true,
-      "staleReason": "已 2.8 小时无成功运行（预期每 60 分钟）"
+      "staleReason": "已 3.0 小时无成功运行（预期每 60 分钟）"
     },
     {
       "sourceId": "refresh-apple",
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
       "lastAttemptAt": "2026-11-06T05:07:35Z",
-      "lastSuccessAt": "2026-11-06T02:14:17Z",
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-06T05:19:30Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42166527729",
       "error": null,
-      "stale": true,
-      "staleReason": "已 3.0 小时无成功运行（预期每 60 分钟）"
+      "stale": false,
+      "staleReason": null
     },
     {
       "sourceId": "refresh-hp",
@@ -31,7 +31,7 @@
       "expectedIntervalMinutes": 1440,
       "lastAttemptAt": "2026-11-06T05:07:38Z",
       "lastSuccessAt": "2026-11-06T02:28:16Z",
-      "conclusion": "in_progress",
+      "conclusion": "cancelled",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42166532317",
       "error": null,
       "stale": false,
@@ -66,8 +66,8 @@
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
       "lastAttemptAt": "2026-11-06T05:09:29Z",
-      "lastSuccessAt": null,
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-06T05:19:30Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42166527729",
       "error": null,
       "stale": false,
