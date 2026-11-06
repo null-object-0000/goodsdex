@@ -104,3 +104,21 @@ def test_display_price_recomputes_comparison_eligibility():
     result=upsert_source(result,cleared)
     validate([result])
     assert result['price_comparable'] is False
+
+
+def test_schema_migration_preserves_reviewed_exclusion_decisions(tmp_path, monkeypatch):
+    import json
+    from goodsdex.dedupe import finalize_public
+    from goodsdex.exclusions import REASONS
+    row=dict(id='CN:mi_cn:product:test',name='设备',price=None,price_kind='unknown',price_comparable=False,category='设备',params={},source_url='https://www.mi.com/product/test')
+    (tmp_path/'goods.json').write_text(json.dumps([row]))
+    excluded=dict(total=1,reasons={r:int(r=='manual') for r in REASONS},items=[dict(id='reviewed:1',name='已复核记录',excluded_reason='manual',matched_rule='manual',excluded_at='old',exclusion={'basis':'reviewed_id'})])
+    (tmp_path/'goods-excluded.json').write_text(json.dumps(excluded))
+    import goodsdex.exclusions
+    def forbidden(*args,**kwargs): raise AssertionError('Schema migration reclassified exclusions')
+    monkeypatch.setattr(goodsdex.exclusions,'build_excluded',forbidden)
+    finalize_public(tmp_path,previous=[row],product_sources_only=True)
+    after=json.loads((tmp_path/'goods-excluded.json').read_text())
+    assert after['items'][0]['exclusion']==excluded['items'][0]['exclusion']
+    assert after['items'][0]['excluded_reason']=='manual'
+    assert json.loads((tmp_path/'meta.json').read_text())['total_all']==2

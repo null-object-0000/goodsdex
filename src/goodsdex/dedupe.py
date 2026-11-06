@@ -861,22 +861,32 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     from uuid import uuid4
     revision = uuid4().hex
     generated_at = datetime.now(timezone.utc).isoformat()
-    excluded = build_excluded(apply_page_names(rows), output, [*accessory_archive, *services, *apparel], reviewed, duplicate_rows, generated_at, revision)
+    if product_sources_only:
+        # Schema-only publication must retain already reviewed exclusion decisions.
+        from copy import deepcopy
+        excluded = deepcopy(json.loads((public / 'goods-excluded.json').read_text()))
+        excluded.update(generatedAt=generated_at, revision=revision)
+        for item in excluded['items']: item['excluded_at'] = generated_at
+    else:
+        excluded = build_excluded(apply_page_names(rows), output, [*accessory_archive, *services, *apparel], reviewed, duplicate_rows, generated_at, revision)
     input_ids = {r["id"] for r in rows}
     historical_ids = {r["id"] for r in excluded["items"]} - input_ids
     meta.update(revision=revision, generated_at=generated_at, total_all=len(rows) + len(historical_ids),
                 total_published=len(output), total_excluded=excluded["total"],
                 excluded_by_rule=excluded_by_rule(excluded))
+    if product_sources_only: meta['total_all'] = len(output) + excluded['total']
     validate_excluded(meta, excluded, output)
     # All checks finish before the first release file is replaced.
     archive_path.parent.mkdir(parents=True, exist_ok=True)
-    atomic_write(apparel_path, apparel)
-    atomic_write(service_path, services)
-    atomic_write(archive_path, accessory_archive)
-    atomic_write(retired_path, [r for r in output if r.get('status') == 'retired'])
-    atomic_write(public / "archive/non-goods.json", reviewed)
+    if not product_sources_only:
+        atomic_write(apparel_path, apparel)
+        atomic_write(service_path, services)
+        atomic_write(archive_path, accessory_archive)
+        atomic_write(retired_path, [r for r in output if r.get('status') == 'retired'])
+        atomic_write(public / "archive/non-goods.json", reviewed)
     atomic_write(public / "goods-excluded.json", excluded)
-    atomic_write(public / "archive" / "brand-review.json", brand_audit["manual_review"])
+    if not product_sources_only:
+        atomic_write(public / "archive" / "brand-review.json", brand_audit["manual_review"])
     for name, value in (("goods.json", output), ("meta.json", meta), ("merge-audit.json", combined)):
         atomic_write(public / name, value)
     return audit
