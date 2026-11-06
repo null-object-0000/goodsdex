@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-06T13:07:12Z",
+  "generatedAt": "2026-11-06T13:10:14Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-06T12:07:31Z",
+      "lastAttemptAt": "2026-11-06T13:07:34Z",
       "lastSuccessAt": "2026-11-06T12:33:26Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42215273849",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42222968605",
       "error": null,
       "stale": false,
       "staleReason": null
@@ -17,10 +17,10 @@
       "sourceId": "refresh-apple",
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-06T12:07:34Z",
+      "lastAttemptAt": "2026-11-06T13:07:38Z",
       "lastSuccessAt": "2026-11-06T12:24:30Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42215280378",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42222977008",
       "error": null,
       "stale": false,
       "staleReason": null
@@ -65,11 +65,11 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-06T13:00:54Z",
+      "lastAttemptAt": "2026-11-06T13:09:51Z",
       "lastSuccessAt": null,
-      "conclusion": "failure",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42217840198",
-      "error": "Process completed with exit code 1.",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42222977008",
+      "error": null,
       "stale": false,
       "staleReason": null
     }
