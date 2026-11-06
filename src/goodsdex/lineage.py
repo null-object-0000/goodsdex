@@ -74,7 +74,8 @@ def valid_time(value):
 def validate_source(s):
     if s.get('source') not in REGISTRY: raise ValueError('Unregistered source: '+str(s.get('source')))
     if not valid_time(s.get('captured_at')): raise ValueError('Source requires observed captured_at with timezone')
-    if urlparse(str(s.get('source_url') or '')).scheme not in ('http','https'):
+    url = urlparse(str(s.get('source_url') or ''))
+    if url.scheme not in ('http','https') or not url.hostname:
         raise ValueError('Source requires evidence URL')
     if (s.get('evidence') or {}).get('method') not in METHODS: raise ValueError('Source requires method')
     if s['source'] == 'llm_verified' and not s['evidence'].get('verified'):

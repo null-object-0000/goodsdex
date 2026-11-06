@@ -168,3 +168,14 @@ def test_rejected_legacy_effective_assertion_stays_in_issues_on_refresh():
     first=migrate_row(row)
     assert first['lineage_issues']
     assert migrate_row(first)==first
+
+
+@pytest.mark.parametrize('url', ['', 'https://', 'https:///missing-host', 'file:///proof'])
+def test_verified_llm_requires_a_complete_evidence_url_at_both_boundaries(url):
+    from goodsdex.product_sources import upsert_source
+    observation=source('llm_verified')
+    observation['source_url']=url
+    with pytest.raises(ValueError,match='evidence URL'):
+        resolve([observation])
+    with pytest.raises(ValueError,match='evidence URL'):
+        upsert_source({'id':'p'},observation)

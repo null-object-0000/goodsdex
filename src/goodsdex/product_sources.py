@@ -54,7 +54,8 @@ def validate_source(s):
         raise ValueError('source must be a registered publisher identifier')
     if not isinstance(s.get('fields'), dict):
         raise ValueError('source fields must be an object')
-    if urlsplit(str(s.get('source_url') or '')).scheme not in ('http', 'https'):
+    url = urlsplit(str(s.get('source_url') or ''))
+    if url.scheme not in ('http', 'https') or not url.hostname:
         raise ValueError('source requires an evidence URL')
     if not (s.get('evidence') or {}).get('method'):
         raise ValueError('source requires an evidence method')

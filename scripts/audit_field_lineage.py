@@ -11,7 +11,7 @@ from goodsdex.product_sources import apply_sources as apply_lineage
 from goodsdex.release_coverage import matrix,effective
 
 p=argparse.ArgumentParser();p.add_argument('--input',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
-rows=json.loads(a.input.read_text());out=apply_lineage(rows,rows);a.output.mkdir(parents=True,exist_ok=True)
+rows=json.loads(gzip.decompress(a.input.read_bytes()) if a.input.suffix=='.gz' else a.input.read_bytes());out=apply_lineage(rows,rows);a.output.mkdir(parents=True,exist_ok=True)
 def write(name,value): (a.output/name).write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
 (a.output/'goods.json.gz').write_bytes(gzip.compress(json.dumps(out,ensure_ascii=False,separators=(',',':')).encode(),mtime=0))
 write('registry.json',REGISTRY)
@@ -33,5 +33,5 @@ for before,after in zip(rows,out):
   changes.append(dict(id=after['id'],before=b,after=d,conflicts=after['conflicts'],issues=after['lineage_issues']))
 report=dict(baseline=old,lineage=new,delta_rows=len(changes),issues=dict(Counter(i['reason'] for r in out for i in r['lineage_issues'])),changes=changes)
 write('coverage.json',report)
-write('reconciliation.json',dict(historical={'covered':1646,'total':3572,'ratio':1646/3572},before=old['total'],after=new,reason='新增896条设备不新增日期；旧llm_crossed按实际被抓取发布者归类，不当作裸LLM'))
+write('reconciliation.json',dict(historical={'covered':1646,'total':3572,'ratio':1646/3572},before=old['total'],after=new,published_row_delta=len(rows)-3572,covered_delta=new['covered']-1646,reason='分母以当前发布行计；分组按采纳值的登记来源，旧llm_crossed按实际抓取发布者归类'))
 print(json.dumps({'baseline':old['total'],'lineage':new,'issues':report['issues'],'delta_rows':len(changes)},ensure_ascii=False,indent=2))
