@@ -101,7 +101,10 @@ def apply_covers(rows, observations=None, realicons=None, pdicons=None):
         if str(row.get('image_source', '')).startswith('mijia_baike') and row.get('image'):
             result.append(deepcopy(row))
             continue
-        preferred = realicon_cover(row, realicons) if is_xiaomi_product(row.get('id')) else None
+        # Verified baike covers also serve mihome/youpin rows via exact model.
+        entry = realicons.get(row.get('miio_model'), {})
+        verified = ((entry.get('width') or 0) >= 400 and (entry.get('height') or 0) >= 400)
+        preferred = realicon_cover(row, realicons) if (is_xiaomi_product(row.get('id')) or verified) else None
         if preferred is not None:
             result.append(preferred)
             continue
