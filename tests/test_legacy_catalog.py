@@ -98,11 +98,14 @@ def test_actual_finalizer_preserves_links_and_model_images_in_excluded_sidecar(t
     all_rows=published+excluded
     assert len(published)==182 and len(excluded)==41 and len(all_rows)==223
     assert all(r.get('source_url') for r in all_rows)
-    # Official images remain 50; 17 independent device icons are display fallbacks.
-    assert sum(bool(r['image']) for r in all_rows)==50
+    # Legacy evidence supplies 50 images; realIcon fills 20 previously missing images.
+    assert sum(bool(r['image']) for r in reviewed)==50
+    assert sum(bool(r['image']) for r in all_rows)==70
     icons=[r['image_mihome'] for r in all_rows if r.get('image_mihome')]
     assert len(icons)==17
     assert all(r['width']==r['height']==168 and r['scope']=='device_icon' for r in icons)
     from goodsdex.mihome_catalog import apply_catalog
-    expected={r['id']:r for r in apply_catalog(reviewed)}
+    from goodsdex.mijia_baike import apply_baike
+    from goodsdex.xiaomi_covers import apply_covers
+    expected={r['id']:r for r in apply_catalog(apply_covers(apply_catalog(apply_baike(reviewed))))}
     assert all(r['source_url']==expected[r['id']]['source_url'] and r['image']==expected[r['id']]['image'] for r in all_rows)

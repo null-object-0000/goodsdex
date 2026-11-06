@@ -1,4 +1,4 @@
-"""Exact-id mtop covers. No series substitution and no image mirroring."""
+"""Xiaomi covers: exact miio realIcon, exact-id mtop, then existing image."""
 from __future__ import annotations
 from copy import deepcopy
 from datetime import datetime
@@ -8,6 +8,9 @@ import json
 import re
 
 DEFAULT_EVIDENCE = Path(__file__).resolve().parents[2] / 'data/official/xiaomi-cover-images.json'
+BAIKE_EVIDENCE = DEFAULT_EVIDENCE.with_name('xiaomi-realicon-images.json')
+BAIKE_SOURCE = 'mijia_baike_realIcon'
+BAIKE_URL = 'https://home.mi.com/cgi-op/api/v1/baike/v2/product?model='
 SOURCE = 'mi_cn_mtop_cover'
 LOCATOR = '$.data.goodsInfo.goodsList[0].imgUrl'
 
@@ -17,6 +20,21 @@ def is_xiaomi_product(key):
 @lru_cache(maxsize=1)
 def evidence():
     return json.loads(DEFAULT_EVIDENCE.read_text()) if DEFAULT_EVIDENCE.exists() else {}
+
+@lru_cache(maxsize=1)
+def baike_evidence():
+    return json.loads(BAIKE_EVIDENCE.read_text()) if BAIKE_EVIDENCE.exists() else {}
+
+def realicon_cover(row, observations):
+    model = row.get('miio_model')
+    observation = observations.get(model) if model else None
+    if not observation or observation.get('model') != model:
+        return None
+    url = observation.get('image')
+    if not isinstance(url, str) or not url.startswith('https://'):
+        return None
+    return patch_cover(row, dict(observation, source=BAIKE_SOURCE,
+                                source_url=BAIKE_URL + model))
 
 def patch_cover(row, observation):
     out = deepcopy(row)
@@ -36,22 +54,29 @@ def patch_cover(row, observation):
             out['image_fallback'] = 'mtop_official_unavailable'
         out['image_note'] = 'mtop 主图未验证；保留原图，不借用其他型号图片；checked_at=' + str(observation.get('captured_at'))
     else:
-        out.update(image_source=SOURCE,
-                   image_source_url='https://m.mi.com/mtop/xiaomishop/product/info',
+        source = observation.get('source', SOURCE)
+        out.update(image_source=source,
+                   image_source_url=observation.get('source_url', 'https://m.mi.com/mtop/xiaomishop/product/info'),
                    image_captured_at=observation.get('captured_at'), image_scope='model',
-                   image_note=LOCATOR + '; exact productId=' + row['id'].split(':')[-1])
+                   image_note=('$.data.realIcon; exact miio_model=' + row['miio_model']
+                               if source == BAIKE_SOURCE else LOCATOR + '; exact productId=' + row['id'].split(':')[-1]))
         out.pop('image_missing', None)
         out.pop('image_fallback', None)
     return out
 
-def apply_covers(rows, observations=None):
+def apply_covers(rows, observations=None, realicons=None):
     observations = evidence() if observations is None else observations
+    realicons = baike_evidence() if realicons is None else realicons
     result = []
     for row in rows:
+        preferred = realicon_cover(row, realicons) if is_xiaomi_product(row.get('id')) else None
+        if preferred is not None:
+            result.append(preferred)
+            continue
         observation = observations.get(row.get('id')) if is_xiaomi_product(row.get('id')) else None
         if observation is not None:
             # A newer collector observation wins over the frozen backfill.
-            at = row.get('image_checked_at') or (row.get('image_captured_at') if row.get('image_source') == SOURCE else '') or ''
+            at = (row.get('image_checked_at') or (row.get('image_captured_at') if row.get('image_source') == SOURCE else '') or '') if row.get('image_source') != BAIKE_SOURCE else ''
             try:
                 newer = datetime.fromisoformat(at) > datetime.fromisoformat(observation.get('captured_at', ''))
             except (ValueError, TypeError):
@@ -64,6 +89,8 @@ def apply_covers(rows, observations=None):
 
 def record_cover(rec, row):
     if not is_xiaomi_product(row.get('id')): return row
+    preferred = realicon_cover(row, baike_evidence())
+    if preferred is not None: return preferred
     pid = row['id'].split(':')[-1]
     assertions = [a for a in rec.get('assertions', []) if a.get('source') == SOURCE
                   and a.get('attribute') == 'official_main_image' and str(a.get('subject_id')) == pid]

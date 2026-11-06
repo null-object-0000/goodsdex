@@ -71,3 +71,45 @@ def test_unavailable_fallback_survives_history_replay():
     assert history[0]['image']==row['image']
     assert history[0]['image_status']=='official_unavailable'
     assert apply_covers(history,obs)[0]['image']==first[0]['image']
+
+
+def test_realicon_priority_over_newer_mtop_and_exact_model_only():
+    from goodsdex.xiaomi_covers import BAIKE_SOURCE, BAIKE_URL
+    model = 'xiaomi.pet_waterer.70m2'
+    row = dict(id=PID, miio_model=model, image=URL, image_source=SOURCE,
+               image_checked_at='2026-11-07T00:00:00Z', image_width=800, image_height=800,
+               price=199, release={'date':'2024-12-24'}, params={'型号':'ABC'})
+    baike = {model:dict(model=model, image='https://example.org/realIcon.png',
+                        width=480, height=480, captured_at='2026-11-06T00:00:00Z')}
+    before = deepcopy(row)
+    result = apply_covers([row], {PID:dict(image=URL)}, baike)[0]
+    assert row == before
+    assert result['image'] == baike[model]['image']
+    assert result['image_source'] == BAIKE_SOURCE
+    assert result['image_source_url'] == BAIKE_URL + model
+    assert (result['image_width'], result['image_height']) == (480,480)
+    assert {k:v for k,v in row.items() if not k.startswith('image')} == {k:v for k,v in result.items() if not k.startswith('image')}
+    assert apply_covers([result], {PID:dict(image=URL)}, baike) == [result]
+    mismatch = {model:dict(baike[model], model='other.model.v1')}
+    assert apply_covers([dict(id=PID,miio_model=model)], {PID:dict(image=URL)}, mismatch)[0]['image'] == URL
+
+
+def test_realicon_failure_or_missing_model_falls_back_to_mtop_then_existing():
+    model = 'xiaomi.pet_waterer.70m2'
+    for unavailable in ({}, {model:dict(model=model,image=None,error='offline')},
+                        {model:dict(model=model,image='http://invalid')}):
+        row = dict(id=PID, miio_model=model, image='original')
+        selected = apply_covers([row], {PID:dict(image=URL)}, unavailable)[0]
+        assert selected['image'] == URL and selected['image_source'] == SOURCE
+        selected = apply_covers([row], {PID:dict(image=None)}, unavailable)[0]
+        assert selected['image'] == 'original' and selected['image_status'] == 'official_unavailable'
+    available = {model:dict(model=model,image='https://example.org/realIcon.png')}
+    assert apply_covers([dict(id=PID,image='original')], {PID:dict(image=URL)}, available)[0]['image'] == URL
+
+
+def test_realicon_never_changes_other_sources_even_with_same_miio_model():
+    model = 'xiaomi.pet_waterer.70m2'
+    rows = [dict(id='CN:'+source+':product:20833',miio_model=model,image=source)
+            for source in ('apple_cn','hp','dji','fujifilm','mihome')]
+    assert apply_covers(rows, {r['id']:dict(image=URL) for r in rows},
+                        {model:dict(model=model,image=URL)}) == rows

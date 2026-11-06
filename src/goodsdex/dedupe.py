@@ -799,6 +799,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     # Image-only exact-id evidence replay; release policy and gates are unchanged.
     if not (mihome_catalog_only or mihome_intake_only or product_sources_only or earbuds_intake_only):
         from goodsdex.xiaomi_covers import apply_covers
+        # Resolve miio_model before selecting realIcon, including on first replay.
+        output = apply_catalog(output)
         output = apply_covers(output)
     output = apply_catalog(output)
     if mihome_catalog_only:
