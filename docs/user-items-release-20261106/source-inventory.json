@@ -1,0 +1,13 @@
+{
+  "code_baseline": "5b6dddc7",
+  "data_baseline": "2cd5f4173b420a8c51b674a293313f544233f4e7",
+  "published_path": "public/goods.json.gz",
+  "baseline_sha256": "ddddd6b1c4c2a044e9c49dede9cc88f63783820812ea99920869d0ae84fba0b9",
+  "http_captures": 194,
+  "http_status_counts": {
+    "200": 191,
+    "403": 3
+  },
+  "official_tool_capture": "evidence/fuji-official-web.txt.gz",
+  "note": "sha256 of HTTP evidence is decompressed raw response; official tool capture hash is decompressed original browsing-tool page text, not the separate curl 403 response"
+}
