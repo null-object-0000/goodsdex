@@ -138,3 +138,23 @@ def test_non_ascii_archive_name_is_allowed_and_unquoted(tmp_path):
     names = git(tmp_path, 'diff', '--cached', '--name-only').decode().splitlines()
     assert names == ['data/archive/REDMI 系列.json']
     assert all(allowed_path(n) for n in names)
+
+
+def test_pack_skips_throttle_logs_instead_of_staging_them(tmp_path):
+    """采集日志不能进候选包；旧实现先暂存再校验，导致整轮发布失败。"""
+    import subprocess
+    from release_candidate import pack
+    root = tmp_path
+    subprocess.run(['git', 'init', '-q', str(root)], check=True)
+    (root / 'docs/release-coverage/L5/throttle').mkdir(parents=True)
+    (root / 'docs/release-coverage/L5/throttle/requests.jsonl').write_text('{"a":1}\n', encoding='utf-8')
+    (root / 'data/categories').mkdir(parents=True)
+    (root / 'data/categories/phones.json').write_text('[]', encoding='utf-8')
+    subprocess.run(['git', '-C', str(root), 'add', '-A'], check=True)
+    subprocess.run(['git', '-C', str(root), '-c', 'user.email=t@t', '-c', 'user.name=t',
+                    'commit', '-qm', 'init'], check=True)
+    (root / 'docs/release-coverage/L5/throttle/requests.jsonl').write_text('{"a":2}\n', encoding='utf-8')
+    out = tmp_path / 'cand.json'
+    pack(root, 'release_dates', out)
+    bundle = json.loads(out.read_text())
+    assert not any(n.endswith('.jsonl') for n in bundle['files'])

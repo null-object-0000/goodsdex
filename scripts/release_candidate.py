@@ -118,7 +118,10 @@ def pack(root, scope, target):
     names = set(n for n in tracked if allowed_path(n))
     for prefix in ('docs/release-coverage', 'data/categories', 'data/archive', 'data/hp', 'data/prices', 'data/price-observations', 'public/prices', 'public/archive'):
         if (root / prefix).exists():
-            names.update(p.relative_to(root).as_posix() for p in (root / prefix).rglob('*') if p.is_file())
+            # 同一套 allowed_path 判定：不允许发布的文件连暂存都不进，
+            # 否则会被后面的校验拦成 "Unexpected staged candidate path"。
+            names.update(rel for p in (root / prefix).rglob('*') if p.is_file()
+                         and allowed_path(rel := p.relative_to(root).as_posix()))
     for name in sorted(names):
         git(root, 'add', '-f', '--', name)
     changed = git(root, 'diff', '--cached', '--name-only').decode().splitlines()
