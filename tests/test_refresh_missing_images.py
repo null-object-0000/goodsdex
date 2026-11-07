@@ -64,16 +64,16 @@ def test_script_exit_and_report(case, expected, counts, tmp_path, monkeypatch, c
             evidence=dict(method='page_fetch'))])
     path.write_text(json.dumps(rows))
     raw = io.BytesIO()
-    Image.new('RGB', (300, 300)).save(raw, format='PNG')
+    Image.new('RGB', (400, 400)).save(raw, format='PNG')
 
     def fetch(url, **kwargs):
         if case == 'empty':
             pytest.fail('Existing image must not be fetched')
-        if case == 'network' or kwargs.get('params', {}).get('product_id') == '2':
+        if case == 'network' or kwargs.get('json', [{}, {}])[1].get('productId') == 2:
             raise requests.Timeout('upstream timed out')
         if case in ('absent', 'mixed_failure'):
             return response(404)
-        if 'params' not in kwargs:
+        if 'json' not in kwargs:
             return response(content=raw.getvalue())
         return response(payload=dict(data=dict(
             product=dict(name='Other model' if case == 'mismatch' else 'Exact model'),
@@ -81,6 +81,7 @@ def test_script_exit_and_report(case, expected, counts, tmp_path, monkeypatch, c
                            [dict(imgUrl='https://official.example/main.png')]))))
 
     monkeypatch.setattr(requests, 'get', fetch)
+    monkeypatch.setattr(requests, 'post', fetch)
     with pytest.raises(SystemExit) as exit_info:
         runpy.run_path(str(ROOT / 'scripts/refresh_missing_images.py'), run_name='__main__')
     assert exit_info.value.code == expected
@@ -99,3 +100,113 @@ def test_script_exit_and_report(case, expected, counts, tmp_path, monkeypatch, c
 def test_programming_error_is_not_upstream_absence():
     with pytest.raises(TypeError, match='bug'):
         failure_status(TypeError('bug'))
+
+
+def test_removed_blocked_source():
+    assert 'api2.order.mi.com' not in (ROOT / 'scripts/refresh_missing_images.py').read_text()
+
+
+def png(size):
+    raw = io.BytesIO()
+    Image.new('RGB', size).save(raw, format='PNG')
+    return raw.getvalue()
+
+
+def test_realicon_preferred_and_image_only():
+    from refresh_missing_images import refresh
+    row = dict(id='CN:mi_cn:product:1', name='Exact model', miio_model='vendor.device.v1',
+               price=123, params={'a': 'b'}, release='2024-01', display={'price': {'value': 123}})
+    def baike(model):
+        assert model == row['miio_model']
+        return dict(model=model, image='https://official.example/real.png', width=480, height=480,
+                    source_url='https://home.mi.com/cgi-op/api/v1/baike/v2/product?model=' + model,
+                    captured_at='2026-11-07T00:00:00Z', image_sha256='abc')
+    def forbidden(*a, **kw):
+        pytest.fail('realIcon must win without requesting mtop or icons')
+    after, audit = refresh([row], forbidden, post=forbidden, baike=baike)
+    assert audit[0]['source'] == 'mijia_baike_realIcon'
+    assert after[0]['image_width'] == 480
+    assert {k: v for k, v in after[0].items() if k not in ('sources', 'display', 'image')
+            and not k.startswith('image_')} == {k: v for k, v in row.items() if k != 'display'}
+    assert after[0]['display']['price'] == row['display']['price']
+
+
+@pytest.mark.parametrize('baike_failure', ['no_realIcon', 'undersized', 'http_error'])
+def test_baike_fallback_to_mtop(baike_failure):
+    from refresh_missing_images import refresh
+    from goodsdex.sources.mi_cn import MTOP_HEADERS, MTOP_URL
+    def post(url, **kw):
+        assert url == MTOP_URL and kw['headers'] == MTOP_HEADERS
+        assert kw['json'] == [{}, {'productId': 1}]
+        return response(payload={'code': 0, 'data': {'product': {'name': 'Exact model'},
+            'goodsInfo': {'goodsList': [{'picUrl': 'https://official.example/main.png'}]}}})
+    after, audit = refresh([dict(id='CN:mi_cn:product:1', name='Exact model', miio_model='a.b.c')],
+        lambda *a, **kw: response(content=png((800, 800))), post=post,
+        baike=lambda model: dict(failure=baike_failure, product_request={'http_status': 503}))
+    assert audit[0]['status'] == 'added'
+    assert audit[0]['source'] == 'mi_cn_mtop_cover'
+    assert after[0]['image_width'] == 800
+
+
+@pytest.mark.parametrize('size,status', [((399, 480), 'no_official_image'),
+                                         ((480, 399), 'no_official_image'),
+                                         ((400, 400), 'added')])
+def test_pics_dimensions_and_no_device_icon(size, status):
+    from refresh_missing_images import refresh
+    def post(*a, **kw):
+        return response(payload={'data': {'product': {'name': 'Exact model',
+            'icon': 'https://official.example/device.png',
+            'pics': [{'url': 'https://official.example/main.png'}]}}})
+    def fetch(url, **kw):
+        assert url.endswith('/main.png')
+        return response(content=png(size))
+    row = dict(id='CN:mi_cn:product:1', name='Exact model')
+    after, audit = refresh([row], fetch, post=post)
+    assert audit[0]['status'] == status
+    if status != 'added':
+        assert after == [row]
+
+
+def test_limit_and_scope():
+    from refresh_missing_images import refresh
+    rows = [dict(id=f'CN:mi_cn:product:{i}', name='X') for i in range(110)]
+    rows[:0] = [dict(id='mihome:1'), dict(id='CN:mi_cn:product:999', image='existing')]
+    calls = []
+    def post(url, **kw):
+        calls.append(url)
+        return response(404)
+    after, audit = refresh(rows, limit=500, post=post)
+    assert len(calls) == len(audit) == 100
+    assert after == rows
+
+
+def test_baike_network_failure_not_hidden_by_mtop_absence():
+    from refresh_missing_images import refresh
+    row = dict(id='CN:mi_cn:product:1', name='X', miio_model='a.b.c')
+    after, audit = refresh([row], post=lambda *a, **kw: response(404),
+        baike=lambda model: dict(failure='http_error', product_request={'http_status': 429}))
+    assert after == [row]
+    assert audit[0]['status'] == 'network_error'
+
+
+def test_white_background_preferred_over_other_main_shots():
+    from refresh_missing_images import refresh
+    def post(*a, **kw):
+        return response(payload={'data': {'product': {'name': 'X',
+            'pics': ['https://official.example/white.png']},
+            'goodsInfo': {'goodsList': [{'picUrl': 'https://official.example/dark.png'}]}}})
+    def fetch(url, **kw):
+        raw = io.BytesIO()
+        Image.new('RGB', (480, 480), 'white' if 'white.png' in url else 'black').save(raw, format='PNG')
+        return response(content=raw.getvalue())
+    after, audit = refresh([dict(id='CN:mi_cn:product:1', name='X')], fetch, post=post)
+    assert after[0]['image'] == audit[0]['url'] == 'https://official.example/white.png'
+
+
+def test_baike_timeout_can_fall_back():
+    from refresh_missing_images import refresh
+    def baike(model):
+        raise requests.Timeout('timeout')
+    _, audit = refresh([dict(id='CN:mi_cn:product:1', name='X', miio_model='a.b.c')],
+                       post=lambda *a, **kw: response(404), baike=baike)
+    assert audit[0]['status'] == 'network_error'

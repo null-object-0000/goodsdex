@@ -51,5 +51,5 @@ def test_image_refresh_skips_existing_and_rejects_ambiguous_identity():
         def raise_for_status(self):pass
         def json(self):return dict(data=dict(product=dict(name='Another generation')))
     rows=[dict(id='CN:mi_cn:product:1',name='Exact model')]
-    after,audit=refresh(rows,fetch=lambda *a,**k:Response())
+    after,audit=refresh(rows,post=lambda *a,**k:Response())
     assert after==rows and audit[0]['status']=='no_official_image'
