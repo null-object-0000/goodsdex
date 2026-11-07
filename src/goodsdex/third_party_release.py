@@ -52,6 +52,11 @@ def assess(assertions):
     return dict(status=status, delta_days=delta, display_allowed=status=='corroborated')
 
 
+
+def _same_name(a, b):
+    """商品名的空白差异（全角/连续空格）不算身份变化。"""
+    return " ".join(str(a or "").split()) == " ".join(str(b or "").split())
+
 def apply_third_party(rows, path=INPUT):
     bundle = json.loads(Path(path).read_text()) if Path(path).exists() else dict(schema=1,candidates=[])
     if bundle.get('schema') != 1:
@@ -66,8 +71,11 @@ def apply_third_party(rows, path=INPUT):
         c = by_id.get(row['id'])
         old = row.get('release') or {}
         if c and old.get('source') not in ('official', 'official_hidden'):
-            if (c['name'] != row['name'] or release_scope(row)['tier'] != 'machine'
-                or sum(r.get('name') == c['name'] for r in rows) != 1):
+            # 同一商品可能出现在多个分类快照里（同 id 多行），按 id 去重后
+            # 再判断"名字是否唯一属于它"。
+            same_name_ids = {r['id'] for r in rows if _same_name(r.get('name'), c['name'])}
+            if (not _same_name(row['name'], c['name']) or release_scope(row)['tier'] != 'machine'
+                or len(same_name_ids) != 1):
                 raise ValueError('Media identity/scope changed: '+row['id'])
             assertions = c['assertions']
             decision = assess(assertions)

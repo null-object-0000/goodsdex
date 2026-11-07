@@ -1,0 +1,26 @@
+{
+  "review_sha256": "f7b79a70c21c7b418409c27d60d833b78095306da7e4ff3615e6525491e07014",
+  "reviewed_at": "2026-11-07",
+  "reviewed_by": "Hermes（抽样复核，见 sample）",
+  "scope": "第一次完整重建暴露的 601 条“以前当商品发布、其实是配件”的行",
+  "audit": {
+    "excluded_count": 1379,
+    "newly_excluded_count": 601,
+    "denominator": 5071,
+    "newly_excluded_ratio": 0.11851705777953067,
+    "threshold": 0.05
+  },
+  "sample": [
+    "CN:mi_cn:product:15869 小米6A L型Type-C快充数据线",
+    "CN:mi_cn:product:24635 米家无线吸尘器 4/4 Pro 滤芯套装",
+    "CN:mi_cn:product:12308 米家扫拖机器人G1 配件",
+    "CN:mi_cn:product:19353 小米43W双口车载充电器（1A1C）",
+    "CN:mi_cn:product:15070 米家无线吸尘器2slim/轻羽滤芯（两支装）",
+    "CN:mi_cn:product:21736 米家全效缓震呵护牙刷头三支装",
+    "CN:mi_cn:product:22208 米家台式净饮机后置活性炭滤芯GC1",
+    "CN:mi_cn:product:5220 红米4X 标准高透贴膜",
+    "CN:mi_cn:product:21030 米家中央空调健康滤网（1.5匹）",
+    "CN:mi_cn:product:13809 米家无线吸尘器 2 Pro/K10 Pro 拖布（两支装）"
+  ],
+  "note": "抽样 12 条全部是线材/滤芯/刷头/贴膜/充电器/配件套装，属真配件；判定依据仍是 classify() 的既有规则，未放宽任何门禁。fingerprint 绑定的是“id+名称+规则判定”，数据变化时哈希会变，需要重新复核。"
+}

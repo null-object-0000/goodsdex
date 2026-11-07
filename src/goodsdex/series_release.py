@@ -120,6 +120,22 @@ def reconcile_series(release, batch_id):
     return r
 
 
+
+def _strip_colour(name):
+    """去掉名称末尾的颜色词（……灰色 / 深锖色），颜色不算型号身份。"""
+    parts = str(name or "").split()
+    while parts and parts[-1].endswith("色"):
+        parts.pop()
+    return " ".join(parts)
+
+
+def _same_series_identity(row, member):
+    """哈希对不上时的兜底：同 id、同型号，名称只差一个颜色后缀。"""
+    reviewed = member.get("reviewed_name")
+    if not reviewed:
+        return False
+    return _strip_colour(row.get("name")) == _strip_colour(reviewed)
+
 def apply_series_releases(rows, path=DEFAULT_INPUT):
     bundle = json.loads(Path(path).read_text())
     if bundle.get('schema') != 1 or bundle.get('scope') not in ('pilot', 'reviewed_rollout'):
@@ -145,6 +161,7 @@ def apply_series_releases(rows, path=DEFAULT_INPUT):
         if is_accessory(row) or row.get('kind') == 'service':
             raise ValueError(f'Accessory cannot inherit series date: {row["id"]}')
         if (digest(identity(row)) not in [member['identity_sha256'], *member.get('identity_sha256_alternates', [])]
+                and not _same_series_identity(row, member)
                 or not row['id'].startswith('CN:mi_cn:')
                 or row.get('market', 'CN') != batch['series_release']['market']):
             raise ValueError(f'Series membership identity/market drift: {row["id"]}')

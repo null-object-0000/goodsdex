@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from pathlib import Path
 import re
 from copy import deepcopy
 from goodsdex.cars import is_car
@@ -114,6 +115,19 @@ def fingerprint(rows):
     return hashlib.sha256(json.dumps(evidence, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
 
 
+REVIEW_FILE = Path(__file__).resolve().parents[2] / 'data/official/accessory-review.json'
+
+
+def recorded_review_sha():
+    """审过的批次指纹写进版本库，别挂在某个 workflow input 上。"""
+    try:
+        data = json.loads(REVIEW_FILE.read_text(encoding='utf-8'))
+    except Exception:
+        return None
+    sha = data.get('review_sha256')
+    return sha if isinstance(sha, str) and len(sha) == 64 else None
+
+
 def plan(rows, previous, archive=(), reviewed_sha256=None):
     kept, excluded = [], []
     for row in rows:
@@ -126,6 +140,8 @@ def plan(rows, previous, archive=(), reviewed_sha256=None):
     denominator = len({r['id'] for r in [*previous, *kept, *newly] if classify(r)['basis'] != 'car'})
     ratio = len({r['id'] for r in newly}) / denominator if denominator else 0
     digest = fingerprint(newly)
+    if reviewed_sha256 is None:
+        reviewed_sha256 = recorded_review_sha()
     red = ratio > .05
     audit = dict(excluded_count=len(excluded), newly_excluded_count=len({r['id'] for r in newly}),
                  denominator=denominator, newly_excluded_ratio=ratio, threshold=.05,
