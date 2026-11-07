@@ -27,6 +27,9 @@ def git(root, *args):
 
 def allowed_path(name):
     p = PurePosixPath(name)
+    # 采集过程的节流/请求日志是诊断产物，不参与发布，也不该走候选增量比对。
+    if name.startswith('docs/release-coverage/') and name.endswith('.jsonl'):
+        return False
     return not p.is_absolute() and '..' not in p.parts and (
         name == 'public/goods.json' or
         any(name.startswith(prefix) for prefix in ('public/prices/', 'public/archive/',
