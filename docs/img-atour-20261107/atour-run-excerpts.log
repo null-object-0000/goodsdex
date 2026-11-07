@@ -1,0 +1,42 @@
+2026-11-06T01:32:27.3224388Z ##[group]Run mkdir -p "$RUNNER_TEMP/atour-evidence"
+2026-11-06T01:32:27.3224639Z [36;1mmkdir -p "$RUNNER_TEMP/atour-evidence"[0m
+2026-11-06T01:32:27.3224872Z [36;1mnode scripts/capture_atour.cjs "$RUNNER_TEMP/atour-evidence/capture.json"[0m
+2026-11-06T01:32:27.3225220Z [36;1mpython3 scripts/crawl_atour.py --capture "$RUNNER_TEMP/atour-evidence/capture.json" --public _data/public[0m
+2026-11-06T01:32:27.3241910Z shell: /usr/bin/bash -e {0}
+2026-11-06T01:32:27.3242049Z env:
+2026-11-06T01:32:27.3242194Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-06T01:32:27.3242445Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-06T01:32:27.3242664Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-06T01:32:27.3242870Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-06T01:32:27.3243068Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-06T01:32:27.3243298Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-06T01:32:27.3243811Z   PLAYWRIGHT_MODULE: /home/runner/work/_temp/atour-browser/node_modules/playwright
+2026-11-06T01:32:27.3244102Z ##[endgroup]
+2026-11-06T01:33:27.8261146Z page.goto: Timeout 60000ms exceeded.
+2026-11-06T01:33:27.8261481Z Call log:
+2026-11-06T01:33:27.8262025Z   - navigating to "https://h5mall.yaduo.com/", waiting until "domcontentloaded"
+2026-11-06T01:33:27.8262308Z 
+2026-11-06T01:33:27.8262509Z     at /home/runner/work/goodsdex/goodsdex/scripts/capture_atour.cjs:41:14 {
+2026-11-06T01:33:27.8262818Z   name: 'TimeoutError'
+2026-11-06T01:33:27.8263726Z }
+2026-11-06T01:33:27.8341336Z ##[error]Process completed with exit code 1.
+2026-11-06T01:33:27.8391456Z ##[group]Run actions/upload-artifact@v4
+2026-11-06T01:33:27.8391834Z with:
+2026-11-06T01:33:27.8391953Z   name: atour-evidence-42144359599-1
+2026-11-06T01:33:27.8392113Z   path: /home/runner/work/_temp/atour-evidence/
+2026-11-06T01:33:27.8392268Z   retention-days: 7
+2026-11-06T01:33:27.8392385Z   if-no-files-found: warn
+2026-11-06T01:33:27.8392509Z   compression-level: 6
+2026-11-06T01:33:27.8392626Z   overwrite: false
+2026-11-06T01:33:27.8392739Z   include-hidden-files: false
+2026-11-06T01:33:27.8392866Z env:
+2026-11-06T01:33:27.8392999Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-06T01:33:27.8393222Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-06T01:33:27.8393445Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-06T01:33:27.8393643Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-06T01:33:27.8393853Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-06T01:33:27.8394069Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-06T01:33:27.8394239Z ##[endgroup]
+2026-11-06T01:33:27.9511453Z (node:3245) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-06T01:33:27.9512051Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-06T01:33:27.9556539Z ##[warning]No files were found with the provided path: /home/runner/work/_temp/atour-evidence/. No artifacts will be uploaded.

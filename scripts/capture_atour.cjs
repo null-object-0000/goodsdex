@@ -18,7 +18,7 @@ function saveBusiness(value) {
   await context.route('https://api-shoppingmall.yaduo.com/**', async route=>{
    // Only storefront reads used by the official anonymous page are permitted.
    const req=route.request(), u=new URL(req.url());
-   if (!['/common/getPublicKey/v1','/index/getConfig','/goods/spu/pageByParam/v1','/goods/spu/getNewDetail/v1','/goods/sku/getGoodsSkuPanel/v1'].includes(u.pathname)) {await route.abort();return;}
+   if (!['/common/getPublicKey/v1','/index/getConfig','/goods/spu/pageByParam','/goods/spu/getNewDetailById','/goods/sku/getGoodsSkuPanelBySpuId'].includes(u.pathname)) {await route.abort();return;}
    const previous=chain; let done; chain=new Promise(r=>done=r);
    await previous;
    try {

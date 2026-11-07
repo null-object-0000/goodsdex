@@ -2,10 +2,24 @@
 from datetime import datetime,timezone
 import hashlib,io,json
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 import requests
 from PIL import Image
 from goodsdex.mihome_intake import norm
 from goodsdex.product_sources import materialize
+
+
+def failure_status(exc):
+    # A missing resource is expected; access failures do not prove absence.
+    if isinstance(exc, requests.HTTPError) and exc.response is not None:
+        return 'no_official_image' if exc.response.status_code == 404 else 'network_error'
+    if isinstance(exc, HTTPError):
+        return 'no_official_image' if exc.code == 404 else 'network_error'
+    if isinstance(exc, (requests.RequestException, URLError, TimeoutError)):
+        return 'network_error'
+    if isinstance(exc, (ValueError, OSError)):
+        return 'no_official_image'
+    raise exc  # Programming errors must not be reported as upstream absence.
 
 
 def refresh(rows,fetch=requests.get,limit=100):
@@ -29,11 +43,18 @@ def refresh(rows,fetch=requests.get,limit=100):
             observation=dict(source='mi_store',role='secondary',kind='channel_listing',source_url=proof,captured_at=at,fields=dict(image=image,image_kind='product_main',width=im.width,height=im.height),evidence=dict(method='api_product_identity_and_image_get',http_status=200,verified=True,sha256=hashlib.sha256(raw).hexdigest()))
             result[i]=materialize(row,observations=[observation],at=at)
             audit.append(dict(id=row['id'],status='added',url=image,sha256=hashlib.sha256(raw).hexdigest()))
-        except Exception as exc:audit.append(dict(id=row['id'],status='pending',reason=str(exc)))
+        except Exception as exc:audit.append(dict(id=row['id'],status=failure_status(exc),reason=str(exc)))
     return result,audit
 
-if __name__=='__main__':
+def main():
     path=Path('_data/public/goods.json');rows=json.loads(path.read_text());after,audit=refresh(rows)
     path.write_text(json.dumps(after,ensure_ascii=False,indent=1)+'\n')
     target=Path('_data/data/categories/image-refresh-report.json');target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(audit,ensure_ascii=False,indent=1)+'\n')
-    if audit and all(a['status']=='pending' for a in audit):raise SystemExit('No official image verified; see image-refresh-report.json')
+    counts={status:sum(a['status']==status for a in audit)
+            for status in ('added','no_official_image','network_error')}
+    print(f"本轮 {len(audit)} 个候选：补上 {counts['added']}、上游无图 {counts['no_official_image']}、网络失败 {counts['network_error']}")
+    return int(bool(audit) and counts['network_error']>0 and counts['added']==0)
+
+
+if __name__=='__main__':
+    raise SystemExit(main())
