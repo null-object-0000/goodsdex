@@ -44,6 +44,22 @@ def _is_timestamp_key(key):
     return key in TIMESTAMP_FIELDS or key.endswith('_at')
 
 
+# 采集观测账本：不是商品资料，是「我们看过它几次」。两条采集线各记各的必然不同，
+# 取较大值即可，不该让整轮采集因为计数器不同而报废。
+COUNTER_FIELDS = ('times_seen', 'seen_count', 'hit_count', 'miss_count')
+
+
+def _is_counter_key(key):
+    return key in COUNTER_FIELDS or key.endswith('_count')
+
+
+def _largest(*values):
+    numbers = [v for v in values if v is not MISSING and isinstance(v, (int, float)) and not isinstance(v, bool)]
+    if not numbers:
+        return MISSING
+    return max(numbers)
+
+
 def merge_value(before, after, latest, label):
     if before == after or latest == after:
         return latest
@@ -61,8 +77,15 @@ def merge_value(before, after, latest, label):
         return out
     # 时间戳不是数据：别人刚写过 updated_at / last_seen_at 不该逼整个采集重跑一轮。
     # 采集线的「最后一次看到」字段不止这两个名字，凡是 *_at 一律按时间戳处理。
-    if _is_timestamp_key(label.rsplit('.', 1)[-1]):
+    leaf = label.rsplit('.', 1)[-1]
+    if _is_timestamp_key(leaf):
+        print(f'watch: bookkeeping timestamp moved at {label}', file=sys.stderr)
         return latest if latest is not MISSING else after
+    if _is_counter_key(leaf):
+        merged = _largest(before, after, latest)
+        if merged is not MISSING:
+            print(f'watch: observation counter moved at {label}: {merged}', file=sys.stderr)
+            return merged
     raise ValueError(f'Concurrent change at {label}; re-run this collector against latest data')
 
 

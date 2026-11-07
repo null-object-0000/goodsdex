@@ -191,3 +191,25 @@ def test_real_field_conflict_still_fails():
     latest = {'id': 'x', 'price': 3}
     with pytest.raises(ValueError, match='Concurrent change'):
         merge_value(before, after, latest, 'data/archive/x.json')
+
+
+def test_times_seen_counter_merges_to_the_larger_value():
+    """times_seen 是观测次数，两条采集线各记各的，取较大值而不是报冲突。"""
+    from release_candidate import merge_value
+    before = {'id': 'x', 'price': 1, 'times_seen': 12}
+    after = {'id': 'x', 'price': 2, 'times_seen': 13}
+    latest = {'id': 'x', 'price': 1, 'times_seen': 15}
+    out = merge_value(before, after, latest, 'data/archive/Apple_airpods.json.items.CN:apple_cn:commodity:MKFW4CH/A')
+    assert out['price'] == 2
+    assert out['times_seen'] == 15
+
+
+def test_counter_field_cannot_swallow_a_real_price_change():
+    """计数器放行不等于整行放行：价格变了仍然要报。"""
+    import pytest
+    from release_candidate import merge_value
+    before = {'id': 'x', 'price': 1, 'times_seen': 12}
+    after = {'id': 'x', 'price': 2, 'times_seen': 13}
+    latest = {'id': 'x', 'price': 3, 'times_seen': 15}
+    with pytest.raises(ValueError, match='Concurrent change'):
+        merge_value(before, after, latest, 'data/archive/Apple_airpods.json')
