@@ -23,8 +23,11 @@ def reviewed_observations(public, rows, previous):
     path = public / 'archive/non-goods.json'
     observations = {r['id']: r for r in json.loads(path.read_text())} if path.exists() else {}
     # Source categories retain reviewed records removed by older publishers.
-    from goodsdex.publish import to_public
-    for source in sorted((public.parent / 'data/categories').glob('*.json')):
+    from goodsdex.publish import is_category_snapshot_file, record_id, to_public
+    cats_dir = public.parent / 'data/categories'
+    for source in sorted(cats_dir.glob('*.json')) if cats_dir.exists() else ():
+        if not is_category_snapshot_file(source):
+            continue
         try:
             records = json.loads(source.read_text())
         except Exception as exc:
@@ -38,14 +41,13 @@ def reviewed_observations(public, rows, previous):
             print(f'[exclusions] skip non-list {source.name}', file=sys.stderr)
             continue
         skipped = 0
-        for record in records:
+        for idx, record in enumerate(records):
             if not isinstance(record, dict):
                 skipped += 1
                 continue
-            p = record.get('product') or {}
-            key = p.get('variant_id') or p.get('product_id')
+            key = record_id(record)
             if key in ALLOWED_DELETIONS:
-                observations[key] = to_public(record)
+                observations[key] = to_public(record, source_file=source.name, row_index=idx)
         if skipped:
             print(f'[exclusions] {source.name}: skipped {skipped} non-object entries',
                   file=sys.stderr)

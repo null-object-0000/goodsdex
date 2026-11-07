@@ -12,12 +12,17 @@ from goodsdex.release_policy import (remove_reviewed_non_goods, assert_no_empty_
 DEFAULT_SUPPLEMENTS = Path(__file__).resolve().parents[2] / "data/supplements/goods-supplements.json"
 
 
-def indexed(rows, label, unique=False):
+def indexed(rows, label, unique=False, *, source_file=None):
     result = {}
-    for row in rows:
+    for idx, row in enumerate(rows):
+        if not isinstance(row, dict):
+            loc = f" ({source_file}#{idx})" if source_file else f" (row #{idx})"
+            raise ValueError(f"{label}{loc}: expected dict row, got {type(row).__name__}")
         key = row.get("id")
         if not isinstance(key, str) or not key or (unique and key in result):
-            raise ValueError(f"{label}: missing/duplicate id: {key!r}")
+            fname = row.get("_source_file") or source_file or "unknown"
+            rline = row.get("_source_row", idx)
+            raise ValueError(f"{label} ({fname}#{rline}): missing/duplicate id: {key!r}")
         result[key] = row
     return result
 

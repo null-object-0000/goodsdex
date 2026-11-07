@@ -143,9 +143,12 @@ if __name__ == "__main__":
     a = ap.parse_args()
 
     # 从分类文件收集 gid
+    from goodsdex.publish import iter_category_files
     gids = []
-    for f in sorted(Path("data/categories").glob("*.json")):
-        for r in json.loads(f.read_text(encoding="utf-8")):
+    for _f, recs in iter_category_files("data/categories"):
+        for r in recs:
+            if not isinstance(r, dict):
+                continue
             v = (r.get("view") or {}).get("values") or {}
             if v.get("gid"):
                 gids.append(str(v["gid"]))

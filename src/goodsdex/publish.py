@@ -14,7 +14,6 @@
 """
 from __future__ import annotations
 
-import glob
 import json
 import sys
 from datetime import datetime, timezone, timedelta
@@ -23,6 +22,55 @@ from goodsdex.supplements import DEFAULT_SUPPLEMENTS, publish
 from goodsdex.public_fields import normalize_public_row
 
 CST = timezone(timedelta(hours=8))
+
+# data/categories/ 混放的非商品快照文件后缀（审计报告、设备目录、发现集、人工待审队列）。
+_NON_SNAPSHOT_SUFFIXES = (
+    "-report.json",
+    "-directory.json",
+    "-discovery.json",
+    "-review-queue.json",
+)
+
+
+def is_category_snapshot_file(path: Path) -> bool:
+    """判断路径是否为商品分类快照文件名（排除审计报告与目录/发现/待审队列）。"""
+    name = Path(path).name
+    return name.endswith(".json") and not name.endswith(_NON_SNAPSHOT_SUFFIXES)
+
+
+def iter_category_files(cats_dir: Path | str):
+    """集中枚举分类商品快照文件并解析记录列表。
+
+    排除规则统一收口于此：
+      - 跳过 `*-report.json` / `*-directory.json` / `*-discovery.json` / `*-review-queue.json`
+      - 跳过无法解析或顶层不是 list 的 JSON（如目录型 dict）
+      - 仅产出顶层 list，由调用方或 `iter_category_records` 消费
+    """
+    cats_path = Path(cats_dir)
+    if not cats_path.exists():
+        return
+    for f in sorted(cats_path.glob("*.json")):
+        if not is_category_snapshot_file(f):
+            continue
+        try:
+            recs = json.loads(f.read_text(encoding="utf-8"))
+        except Exception as exc:
+            print(f"[publish] skip unreadable {f.name}: {exc}", file=sys.stderr)
+            continue
+        if not isinstance(recs, list):
+            continue
+        yield f, recs
+
+
+def record_id(rec: dict) -> str | None:
+    """提取内部商品快照记录的唯一身份（variant_id 优先，其次 product_id）。"""
+    if not isinstance(rec, dict):
+        return None
+    p = rec.get("product")
+    if not isinstance(p, dict):
+        return None
+    vid = p.get("variant_id") or p.get("product_id")
+    return vid if isinstance(vid, str) and vid.strip() else None
 
 # view.values 里**不属于商品属性**的键。
 # 分三类：
@@ -40,12 +88,20 @@ _NOISE = {
 }
 
 
-def to_public(rec: dict) -> dict:
-    """把一条内部记录转成发布条目（保留可核对性）"""
+def to_public(rec: dict, *, source_file: str | None = None, row_index: int | None = None) -> dict:
+    """把一条内部记录转成发布条目（保留可核对性）。
+
+    契约：必须拥有非空字符串身份（product.variant_id 或 product.product_id），
+    绝不允许产出 id=None 的行。
+    """
+    rid = record_id(rec)
+    if not rid:
+        loc = f" ({source_file}#{row_index})" if source_file is not None else ""
+        raise ValueError(f"to_public: record missing product.product_id/variant_id{loc}")
     p = rec.get("product") or {}
     v = (rec.get("view") or {}).get("values") or {}
     item = {
-        "id": p.get("variant_id") or p.get("product_id"),
+        "id": rid,
         "name": p.get("name"),
         "kind": p.get("kind"),
         "category": p.get("category"),
@@ -98,45 +154,25 @@ def to_public(rec: dict) -> dict:
     return apply_public_params([normalize_public_row(item)])[0][0]
 
 
-# data/categories/ mixes product snapshots with operational artefacts written by
-# collectors and audits. Only snapshots may enter the publication; the rest are
-# named here so a new artefact cannot silently become a "product".
-NON_PRODUCT_SUFFIXES = ("-report.json", "-review-queue.json", "-directory.json",
-                        "-discovery.json", "-index.json", "-manifest.json")
-
-
-def iter_category_files(cats_dir):
-    """Yield only product snapshots; one place decides what counts as one."""
-    for f in sorted(glob.glob(str(Path(cats_dir) / "*.json"))):
-        if Path(f).name.endswith(NON_PRODUCT_SUFFIXES):
-            continue
-        yield Path(f)
-
-
 def collect_public(cats_dir):
     """Use the same source projection for absence checks and publication."""
-    items, skipped = [], 0
-    for f in iter_category_files(cats_dir):
-        try:
-            recs = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
-            continue
-        if not isinstance(recs, list):
-            continue
-        for r in recs:
+    items = []
+    skipped_non_dict = 0
+    skipped_no_id = 0
+    for f, recs in iter_category_files(cats_dir):
+        for idx, r in enumerate(recs):
             if not isinstance(r, dict):
-                skipped += 1
+                skipped_non_dict += 1
                 continue
-            row = to_public(r)
-            if not isinstance(row.get("id"), str) or not row["id"]:
-                # No identity means no product: refuse to publish it as one.
-                skipped += 1
+            if not record_id(r):
+                skipped_no_id += 1
+                print(f"[publish] skip record without product id at {f.name}#{idx}", file=sys.stderr)
                 continue
-            items.append(row)
-    if skipped:
-        print(f"[publish] skipped {skipped} non-product entries in {Path(cats_dir)}",
-              file=sys.stderr)
+            items.append(to_public(r, source_file=f.name, row_index=idx))
 
+    if skipped_non_dict or skipped_no_id:
+        print(f"[publish] skipped {skipped_non_dict} non-dict rows and {skipped_no_id} missing-id rows",
+              file=sys.stderr)
     items.sort(key=lambda x: str(x.get("id")))
     return items
 

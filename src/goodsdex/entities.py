@@ -67,13 +67,10 @@ if __name__ == "__main__":
     import json
     import sys
     from pathlib import Path
+    from goodsdex.publish import iter_category_files
     root = Path(__file__).resolve().parents[2]
-    allrecs = []
-    for f in sorted(glob.glob(str(root / "data" / "categories" / "*.json"))):
-        try:
-            allrecs += json.loads(Path(f).read_text(encoding="utf-8"))
-        except Exception:
-            pass
+    allrecs = [r for _f, recs in iter_category_files(root / "data" / "categories")
+               for r in recs if isinstance(r, dict)]
     st = effective_stats(allrecs)
     print("口径统计：")
     for k, v in st.items():

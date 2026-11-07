@@ -36,10 +36,10 @@ class PublishTests(unittest.TestCase):
     def test_missing_image_is_null_without_carousel_fallback(self):
         for values in ({}, {"img_url": None}, {"img_url": ""},
                        {"carousel": ["https://example.com/other.jpg"]}):
-            item = to_public({"view": {"values": values}})
+            item = to_public({"product": {"product_id": "mi-123"}, "view": {"values": values}})
             assert item["image"] is None
             assert item["params"] == {}
-        assert to_public({})["image"] is None
+        assert to_public({"product": {"product_id": "mi-123"}})["image"] is None
 
 
 if __name__ == "__main__":
@@ -58,3 +58,47 @@ def test_collect_public_ignores_audit_reports(tmp_path):
     ids = [r.get('id') for r in collect_public(cats)]
     assert all(isinstance(i, str) and i for i in ids), ids
     assert len(ids) == 1
+
+
+def test_iter_category_files_excludes_directory_discovery_and_review_queues(tmp_path):
+    """dict 型目录/发现文件与 *-review-queue.json 等非商品快照必须被 iter_category_files 集中排除。"""
+    import json
+    from goodsdex.publish import collect_public, iter_category_files
+    cats = tmp_path / 'categories'
+    cats.mkdir()
+    (cats / '电视.json').write_text(json.dumps([{'product': {'product_id': 'CN:mi_cn:product:1'}, 'source': 'mi_cn'}]), encoding='utf-8')
+    (cats / 'mihome-directory.json').write_text(json.dumps({'schema': 1, 'items': [{'model': 'm1'}]}), encoding='utf-8')
+    (cats / 'mihome-discovery.json').write_text(json.dumps({'schema': 1, 'items': []}), encoding='utf-8')
+    (cats / 'earbuds-directory.json').write_text(json.dumps({'schema': 1, 'items': []}), encoding='utf-8')
+    (cats / 'gap-review-queue.json').write_text(json.dumps([{'model': 'xiaomi.switch.scr2h', 'reason': '整机白名单以外，保留人工审核'}]), encoding='utf-8')
+    (cats / 'arbitrary-dict.json').write_text(json.dumps({'not': 'a list'}), encoding='utf-8')
+
+    files = [f.name for f, _ in iter_category_files(cats)]
+    assert files == ['电视.json']
+    rows = collect_public(cats)
+    assert [r['id'] for r in rows] == ['CN:mi_cn:product:1']
+
+
+def test_to_public_and_collect_public_reject_missing_id_rows(tmp_path):
+    """to_public 契约：不允许产出 id=None 的行；collect_public 丢弃缺 id 的残缺行。"""
+    import json
+    import pytest
+    from goodsdex.publish import collect_public, to_public
+    from goodsdex.supplements import indexed
+
+    for bad in ({}, {'product': {}}, {'product': {'name': '无ID'}}, {'model': 'x', 'reason': 'audit'}):
+        with pytest.raises(ValueError, match='missing product.product_id/variant_id'):
+            to_public(bad, source_file='gap-review-queue.json', row_index=0)
+
+    cats = tmp_path / 'categories'
+    cats.mkdir()
+    (cats / 'mixed.json').write_text(json.dumps([
+        {'product': {'product_id': 'CN:mi_cn:product:100', 'name': '正常商品'}},
+        {'product': {'name': '缺id商品'}},
+        {'model': 'xiaomi.switch.scr2h', 'reason': '整机白名单以外'},
+    ]), encoding='utf-8')
+    rows = collect_public(cats)
+    assert [r['id'] for r in rows] == ['CN:mi_cn:product:100']
+
+    with pytest.raises(ValueError, match=r'rebuilt \(gap-review-queue\.json#0\): missing/duplicate id: None'):
+        indexed([{'id': None, '_source_file': 'gap-review-queue.json', '_source_row': 0}], 'rebuilt')
