@@ -158,3 +158,17 @@ def test_non_goods_replay_and_future_collection_preserve_source_facts(tmp_path):
     meta['total_excluded'] = 1
     with pytest.raises(ValueError):
         validate_excluded(meta, read(tmp_path, 'goods-excluded.json'), read(tmp_path, 'goods.json'))
+
+
+def test_reviewed_observations_tolerates_auxiliary_json(tmp_path):
+    """data/categories/ also holds auxiliary reports; they must not crash finalize."""
+    from goodsdex.exclusions import reviewed_observations
+    import json
+    cats = tmp_path / 'data' / 'categories'
+    cats.mkdir(parents=True)
+    (tmp_path / 'public').mkdir()
+    (cats / 'report.json').write_text(json.dumps([{'id': 'x', 'status': 'added'}]), encoding='utf-8')
+    (cats / 'mapping.json').write_text(json.dumps({'a': {'product': {'product_id': 'p1'}}}), encoding='utf-8')
+    (cats / 'strings.json').write_text(json.dumps(['a', 'b']), encoding='utf-8')
+    (cats / 'broken.json').write_text('{not json', encoding='utf-8')
+    assert reviewed_observations(tmp_path / 'public', [], []) == []

@@ -2,6 +2,7 @@
 from collections import Counter
 from copy import deepcopy
 import json
+import sys
 
 from goodsdex.accessories import classify, exclusion_reason
 from goodsdex.brands import normalize_brands
@@ -24,11 +25,30 @@ def reviewed_observations(public, rows, previous):
     # Source categories retain reviewed records removed by older publishers.
     from goodsdex.publish import to_public
     for source in sorted((public.parent / 'data/categories').glob('*.json')):
-        for record in json.loads(source.read_text()):
+        try:
+            records = json.loads(source.read_text())
+        except Exception as exc:
+            print(f'[exclusions] skip unreadable {source.name}: {exc}', file=sys.stderr)
+            continue
+        if isinstance(records, dict):
+            # Auxiliary reports live next to category snapshots; only mapping
+            # payloads can carry product records.
+            records = [v for v in records.values() if isinstance(v, dict)]
+        if not isinstance(records, list):
+            print(f'[exclusions] skip non-list {source.name}', file=sys.stderr)
+            continue
+        skipped = 0
+        for record in records:
+            if not isinstance(record, dict):
+                skipped += 1
+                continue
             p = record.get('product') or {}
             key = p.get('variant_id') or p.get('product_id')
             if key in ALLOWED_DELETIONS:
                 observations[key] = to_public(record)
+        if skipped:
+            print(f'[exclusions] {source.name}: skipped {skipped} non-object entries',
+                  file=sys.stderr)
     for row in [*(previous or []), *rows]:
         if row['id'] in ALLOWED_DELETIONS:
             observations[row['id']] = deepcopy(row)
