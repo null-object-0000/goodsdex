@@ -150,4 +150,4 @@ def test_normal_crawler_export_replays_audited_specs(tmp_path, monkeypatch):
     path=tmp_path/'params.json';path.write_text(json.dumps(m));monkeypatch.setattr(homeappliance_params,'DEFAULT',path)
     out=to_public(dict(product=dict(product_id=r['id'],name=r['name'],category='微波炉'),view={'values':{}}))
     assert out['params']=={'容量':'20 L'}
-    assert out['params_sources']['容量']['source_type']=='official'
+    assert 'params_sources' not in out

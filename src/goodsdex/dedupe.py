@@ -835,11 +835,10 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
     if not earbuds_intake_only and (product_sources_only or any(r.get('source_policy') for r in output)):
         from goodsdex.product_sources import apply_sources
         output = apply_sources(output, previous or rows)
+    parameter_audit = None
     if not (product_sources_only or earbuds_intake_only or mihome_catalog_only or mihome_intake_only):
-        from goodsdex.homeappliance_params import apply_params
-        output = apply_params(output)
-        from goodsdex.manual_params import apply_manual_params
-        output = apply_manual_params(output)
+        from goodsdex.manual_params import apply_public_params
+        output, parameter_audit = apply_public_params(output)
     audit["input_sha256"] = digest
     audit["output_sha256"] = hashlib.sha256((json.dumps(output, ensure_ascii=False, indent=1) + "\n").encode()).hexdigest()
     audit_path = public / "merge-audit.json"
@@ -906,6 +905,8 @@ def finalize_public(public, previous=None, retained_ids=(), *, reviewed_accessor
         atomic_write(archive_path, accessory_archive)
         atomic_write(retired_path, [r for r in output if r.get('status') == 'retired'])
         atomic_write(public / "archive/non-goods.json", reviewed)
+    if parameter_audit is not None:
+        atomic_write(public / "parameter-audit.json", parameter_audit)
     atomic_write(public / "goods-excluded.json", excluded)
     if not (product_sources_only or earbuds_intake_only):
         atomic_write(public / "archive" / "brand-review.json", brand_audit["manual_review"])

@@ -165,3 +165,26 @@ def apply_manual_params(rows, manifest=None):
             row['params_source_type'] = next(iter(kinds)) if len(kinds) == 1 else 'mixed'
         if not sources: row.pop('params_sources', None)
     return result
+
+
+def apply_public_params(rows):
+    """Project only params into goods; keep evidence and outcomes in an audit."""
+    from . import homeappliance_params
+    appliance = (json.loads(homeappliance_params.DEFAULT.read_text())
+                 if homeappliance_params.DEFAULT.exists() else {'schema': 1, 'items': []})
+    manual = (json.loads(DEFAULT.read_text())
+              if DEFAULT.exists() else {'schema': 1, 'items': []})
+    enriched = apply_manual_params(homeappliance_params.apply_params(rows, appliance), manual)
+    output = deepcopy(rows)
+    candidate_ids = {e['id'] for m in (appliance, manual) for e in m['items']}
+    audit_fields = ('params_sources', 'params_missing', 'params_missing_evidence',
+                    'params_conflicts', 'params_source_type')
+    outcomes = []
+    for before, after, public in zip(rows, enriched, output):
+        if 'params' in after:
+            public['params'] = deepcopy(after['params'])
+        if before['id'] in candidate_ids:
+            outcomes.append(dict(id=before['id'], params=deepcopy(after.get('params', {})),
+                                 **{key: deepcopy(after[key]) for key in audit_fields if key in after}))
+    return output, dict(schema=1, evidence=dict(homeappliance=appliance, manual=manual),
+                        outcomes=outcomes)

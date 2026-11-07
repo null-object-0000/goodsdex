@@ -89,3 +89,32 @@ def test_adjacent_unknown_label_is_a_boundary_but_numeric_tail_is_not():
     assert out['params']['产品净重']['value']=='72kg'
     for line in ('产品净重    72kg    73kg','额定电压   额定频率    220V    50Hz','额定电压   220'):
         assert parse_manual('基本参数\n'+line+'\n','test.model',URL)['params']=={}
+
+
+@pytest.mark.parametrize('state', [
+    {'status': 'retired', 'on_sale': False, 'delisted_at': '2026-11-07'},
+    {'on_sale': True, 'carried_forward_at': '2026-11-07'},
+    {'image': 'https://example.com/real.png', 'image_source': 'mijia_baike_realIcon'},
+    {'image': 'https://example.com/store.png', 'image_source': 'xiaomi_store'},
+])
+def test_public_projection_preserves_all_non_params_and_separates_audit(tmp_path, monkeypatch, state):
+    from goodsdex import manual_params, homeappliance_params
+    row, manifest = fixture()
+    row.update(state, price=123, market_price=456, source='mi_cn',
+               params_sources={'existing': {'source': 'prior'}},
+               params_missing='existing_marker')
+    before = deepcopy(row)
+    manual_path = tmp_path/'manual.json'
+    manual_path.write_text(json.dumps(manifest))
+    appliance_path = tmp_path/'appliance.json'
+    appliance_path.write_text(json.dumps({'schema': 1, 'items': []}))
+    monkeypatch.setattr(manual_params, 'DEFAULT', manual_path)
+    monkeypatch.setattr(homeappliance_params, 'DEFAULT', appliance_path)
+    out, audit = manual_params.apply_public_params([row])
+    assert row == before
+    assert out[0]['params'] == {'额定电压': '220V'}
+    assert {k: v for k, v in out[0].items() if k != 'params'} == {
+        k: v for k, v in before.items() if k != 'params'}
+    assert audit['outcomes'][0]['params_sources']['额定电压']['source'] == 'manual_pdf'
+    assert audit['evidence']['manual'] == manifest
+    assert manual_params.apply_public_params(out)[0] == out
