@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T12:53:19Z",
+  "generatedAt": "2026-11-07T13:04:06Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -18,12 +18,12 @@
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
       "lastAttemptAt": "2026-11-07T12:07:35Z",
-      "lastSuccessAt": "2026-11-07T10:18:26Z",
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-07T12:58:52Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42371086954",
       "error": null,
-      "stale": true,
-      "staleReason": "已 2.6 小时无成功运行（预期每 60 分钟）"
+      "stale": false,
+      "staleReason": null
     },
     {
       "sourceId": "refresh-hp",
@@ -66,8 +66,8 @@
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
       "lastAttemptAt": "2026-11-07T12:48:30Z",
-      "lastSuccessAt": null,
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-07T12:58:51Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42371086954",
       "error": null,
       "stale": false,
