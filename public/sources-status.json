@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T12:37:39Z",
+  "generatedAt": "2026-11-07T12:46:59Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -23,7 +23,7 @@
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42371086954",
       "error": null,
       "stale": true,
-      "staleReason": "已 2.3 小时无成功运行（预期每 60 分钟）"
+      "staleReason": "已 2.5 小时无成功运行（预期每 60 分钟）"
     },
     {
       "sourceId": "refresh-hp",
@@ -31,9 +31,9 @@
       "expectedIntervalMinutes": 1440,
       "lastAttemptAt": "2026-11-07T11:19:17Z",
       "lastSuccessAt": "2026-11-07T09:42:30Z",
-      "conclusion": "in_progress",
+      "conclusion": "failure",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42367679569",
-      "error": null,
+      "error": "Merge candidate onto latest release: ValueError: Concurrent change at data/hp/collection-status.json.checked_at; re-run this collector against latest data",
       "stale": false,
       "staleReason": null
     },
