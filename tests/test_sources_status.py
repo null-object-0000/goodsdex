@@ -188,3 +188,29 @@ def test_hp_degraded_is_not_a_successful_observation():
     assert row['lastSuccessAt'] == '2026-10-30T23:23:00Z'
     assert row['expectedIntervalMinutes'] == 1440
     assert row['stale']
+
+
+def test_first_error_reports_exception_and_step_not_exit_code():
+    """面板不该只说 exit code 1：要报失败步骤 + 真异常。"""
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
+    from generate_sources_status import first_error
+
+    log = "\n".join([
+        "2026-11-07T11:08:20Z ValueError: Concurrent change at data/archive/x.json.updated_at",
+        "##[error]Process completed with exit code 1.",
+    ])
+
+    class Api:
+        def get(self, path, raw=False):
+            if path.startswith('actions/jobs/') and path.endswith('/logs'):
+                return log.encode()
+            raise AssertionError(path)
+
+    job = dict(id=1, status='completed', conclusion='failure', check_run_url='x/1',
+               steps=[dict(number=10, name='Merge candidate onto latest release', conclusion='failure')])
+    out = first_error(Api(), dict(id=9), [job])
+    assert 'Merge candidate onto latest release' in out
+    assert 'Concurrent change at data/archive/x.json.updated_at' in out
+    assert 'exit code' not in out

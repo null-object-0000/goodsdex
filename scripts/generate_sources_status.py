@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import re
+import re
 from urllib.error import HTTPError
 from urllib.request import Request, build_opener, HTTPRedirectHandler, urlopen
 
@@ -74,18 +75,33 @@ def redact(message, token):
     return message.strip()[:200]
 
 
+EXC_LINE = re.compile(r'((?:\w+Error|\w+Exception|AssertionError):\s+.+)$')
+
+
 def first_error(api, run, jobs=None):
     jobs = jobs if jobs is not None else list(api.pages(f"actions/runs/{run['id']}/jobs?filter=latest", 'jobs'))
     unavailable = False
+    generic = None
     for job in jobs:
         if conclusion(job) != 'failure':
             continue
+        step = next((s.get('name') for s in job.get('steps') or []
+                     if s.get('conclusion') == 'failure'), None)
         # Log access needs only actions:read. Check annotations are a fallback.
         try:
             log = api.get(f"actions/jobs/{job['id']}/logs", raw=True).decode('utf-8', errors='replace')
             for line in log.splitlines():
-                if '##[error]' in line:
-                    return line.split('##[error]', 1)[1].strip()
+                text = line.strip()
+                # 真因通常是最后那条 Python 异常，不是 "exit code 1" 这种空话。
+                match = EXC_LINE.search(text)
+                if match:
+                    return f'{step}: {match.group(1)}' if step else match.group(1)
+                if '##[error]' in text:
+                    message = text.split('##[error]', 1)[1].strip()
+                    if 'Process completed with exit code' in message:
+                        generic = generic or (f'{step}: {message}' if step else message)
+                    else:
+                        return f'{step}: {message}' if step else message
         except Exception:
             unavailable = True
         try:
@@ -99,6 +115,8 @@ def first_error(api, run, jobs=None):
                     break
         except Exception:
             unavailable = True
+    if generic:
+        return generic
     return '无法读取失败日志/注解，请查看 runUrl' if unavailable else None
 
 
