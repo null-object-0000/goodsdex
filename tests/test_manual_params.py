@@ -18,6 +18,9 @@ URL = 'https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/test.pdf'
 ])
 def test_real_official_pdf(model,page,expected):
     path=FIXTURES/(model+'.pdf')
+    if not path.exists():
+        # 真实 PDF 是采集缓存（.gitignore），CI 里没有；有就校验字节，没有就跳过。
+        pytest.skip(f'{path.name} 不在本地（PDF 缓存不入库），跳过真实样本校验')
     evidence=json.loads((FIXTURES/'sources.json').read_text())[model]
     assert hashlib.sha256(path.read_bytes()).hexdigest()==evidence['pdf_sha256']
     text=subprocess.run(['pdftotext','-layout',str(path),'-'],check=True,capture_output=True).stdout.decode()
