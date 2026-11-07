@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import glob
 import json
+import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from goodsdex.supplements import DEFAULT_SUPPLEMENTS, publish
@@ -97,24 +98,44 @@ def to_public(rec: dict) -> dict:
     return apply_public_params([normalize_public_row(item)])[0][0]
 
 
+# data/categories/ mixes product snapshots with operational artefacts written by
+# collectors and audits. Only snapshots may enter the publication; the rest are
+# named here so a new artefact cannot silently become a "product".
+NON_PRODUCT_SUFFIXES = ("-report.json", "-review-queue.json", "-directory.json",
+                        "-discovery.json", "-index.json", "-manifest.json")
+
+
+def iter_category_files(cats_dir):
+    """Yield only product snapshots; one place decides what counts as one."""
+    for f in sorted(glob.glob(str(Path(cats_dir) / "*.json"))):
+        if Path(f).name.endswith(NON_PRODUCT_SUFFIXES):
+            continue
+        yield Path(f)
+
+
 def collect_public(cats_dir):
     """Use the same source projection for absence checks and publication."""
-    items = []
-    for f in sorted(glob.glob(str(Path(cats_dir) / "*.json"))):
-        # data/categories/ also carries audit reports (e.g. image-refresh-report.json);
-        # they are not product snapshots and must never enter the publication.
-        if Path(f).name.endswith("-report.json"):
-            continue
+    items, skipped = [], 0
+    for f in iter_category_files(cats_dir):
         try:
-            recs = json.loads(Path(f).read_text(encoding="utf-8"))
+            recs = json.loads(f.read_text(encoding="utf-8"))
         except Exception:
             continue
         if not isinstance(recs, list):
             continue
         for r in recs:
             if not isinstance(r, dict):
+                skipped += 1
                 continue
-            items.append(to_public(r))
+            row = to_public(r)
+            if not isinstance(row.get("id"), str) or not row["id"]:
+                # No identity means no product: refuse to publish it as one.
+                skipped += 1
+                continue
+            items.append(row)
+    if skipped:
+        print(f"[publish] skipped {skipped} non-product entries in {Path(cats_dir)}",
+              file=sys.stderr)
 
     items.sort(key=lambda x: str(x.get("id")))
     return items
