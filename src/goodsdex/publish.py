@@ -173,6 +173,30 @@ def collect_public(cats_dir):
     if skipped_non_dict or skipped_no_id:
         print(f"[publish] skipped {skipped_non_dict} non-dict rows and {skipped_no_id} missing-id rows",
               file=sys.stderr)
+    # 同一个商品会出现在多个分类快照里。发布集是「一个 id 一条」，
+    # 这里合并（分类取并集，字段取先出现的非空值），否则下游会把它们当冲突。
+    merged, order = {}, []
+    for item in items:
+        key = item["id"]
+        base = merged.get(key)
+        if base is None:
+            merged[key] = item
+            order.append(key)
+            continue
+        labels = list(dict.fromkeys([*(base.get("categories") or []),
+                                     *(item.get("categories") or []),
+                                     base.get("category"), item.get("category")]))
+        labels = [label for label in labels if label]
+        for field, value in item.items():
+            if base.get(field) in (None, "", [], {}) and value not in (None, "", [], {}):
+                base[field] = value
+        if len(labels) > 1:
+            base["categories"] = labels
+    merged_ids = len(items) - len(order)
+    if merged_ids:
+        print(f"[publish] merged {merged_ids} duplicate snapshots into {len(order)} products",
+              file=sys.stderr)
+    items = [merged[key] for key in order]
     items.sort(key=lambda x: str(x.get("id")))
     return items
 

@@ -352,4 +352,21 @@ def apply_sources(rows, previous=()):
     by_id = defaultdict(deque)
     for row in previous:
         by_id[row['id']].append(row)
-    return [migrate_row(row, by_id[row['id']].popleft() if by_id[row['id']] else None) for row in rows]
+    out = []
+    for row in rows:
+        prev = by_id[row['id']].popleft() if by_id[row['id']] else None
+        try:
+            out.append(migrate_row(row, prev))
+        except ValueError as exc:
+            # 历史行没有可追溯的来源信封（旧发布集就有这类行）：留着并记账，
+            # 不因为一条无来源的老行让整次发布失败；也不给它伪造证据。
+            if 'no evidence-backed product identity source' not in str(exc):
+                raise
+            kept = dict(row)
+            issues = list(kept.get('lineage_issues') or [])
+            issues.append(dict(source=str(kept.get('source') or 'legacy'),
+                               fields=['identity'],
+                               reason='历史行缺少来源信封，无法迁移；原样保留，不计入来源统计'))
+            kept['lineage_issues'] = issues
+            out.append(kept)
+    return out

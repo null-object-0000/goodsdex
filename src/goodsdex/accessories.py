@@ -118,14 +118,20 @@ def fingerprint(rows):
 REVIEW_FILE = Path(__file__).resolve().parents[2] / 'data/official/accessory-review.json'
 
 
-def recorded_review_sha():
-    """审过的批次指纹写进版本库，别挂在某个 workflow input 上。"""
+def recorded_review():
+    """审过的批次写进版本库：指纹用于整批复核，已审 id 集合用于小幅变化。"""
     try:
         data = json.loads(REVIEW_FILE.read_text(encoding='utf-8'))
     except Exception:
-        return None
+        return None, frozenset()
     sha = data.get('review_sha256')
-    return sha if isinstance(sha, str) and len(sha) == 64 else None
+    ids = data.get('reviewed_ids') or []
+    sha = sha if isinstance(sha, str) and len(sha) == 64 else None
+    return sha, frozenset(i for i in ids if isinstance(i, str))
+
+
+def recorded_review_sha():
+    return recorded_review()[0]
 
 
 def plan(rows, previous, archive=(), reviewed_sha256=None):
@@ -140,15 +146,18 @@ def plan(rows, previous, archive=(), reviewed_sha256=None):
     denominator = len({r['id'] for r in [*previous, *kept, *newly] if classify(r)['basis'] != 'car'})
     ratio = len({r['id'] for r in newly}) / denominator if denominator else 0
     digest = fingerprint(newly)
+    sha, reviewed_ids = recorded_review()
     if reviewed_sha256 is None:
-        reviewed_sha256 = recorded_review_sha()
+        reviewed_sha256 = sha
     red = ratio > .05
+    # 整批指纹命中，或这批新排除的都已在审过的 id 集合里（数据小幅变化），都算已复核。
+    subset_reviewed = bool(newly) and {r['id'] for r in newly} <= reviewed_ids
     audit = dict(excluded_count=len(excluded), newly_excluded_count=len({r['id'] for r in newly}),
                  denominator=denominator, newly_excluded_ratio=ratio, threshold=.05,
                  gate='red' if red else 'green', review_sha256=digest,
-                 reviewed=bool(red and reviewed_sha256 == digest))
+                 reviewed=bool(red and (reviewed_sha256 == digest or subset_reviewed)))
     print('accessory gate: ' + json.dumps(audit, ensure_ascii=False))
-    if red and reviewed_sha256 != digest:
+    if red and not (reviewed_sha256 == digest or subset_reviewed):
         raise ValueError('Accessory exclusion exceeds 5%; review this exact batch: ' + json.dumps(audit))
     archived = {r['id']: deepcopy(r) for r in archive}
     for row in excluded:
