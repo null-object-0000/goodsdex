@@ -44,3 +44,17 @@ class PublishTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def test_collect_public_ignores_audit_reports(tmp_path):
+    """Audit reports beside category snapshots must not become products."""
+    import json
+    from goodsdex.publish import collect_public
+    cats = tmp_path / 'categories'
+    cats.mkdir()
+    (cats / 'phones.json').write_text(json.dumps([{'product': {'product_id': 'p1'}, 'source': 'mi_cn'}]), encoding='utf-8')
+    (cats / 'image-refresh-report.json').write_text(json.dumps([{'id': 'x', 'status': 'added'}]), encoding='utf-8')
+    (cats / 'weird.json').write_text(json.dumps(['raw', 3]), encoding='utf-8')
+    ids = [r.get('id') for r in collect_public(cats)]
+    assert all(isinstance(i, str) and i for i in ids), ids
+    assert len(ids) == 1

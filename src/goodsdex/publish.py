@@ -101,11 +101,19 @@ def collect_public(cats_dir):
     """Use the same source projection for absence checks and publication."""
     items = []
     for f in sorted(glob.glob(str(Path(cats_dir) / "*.json"))):
+        # data/categories/ also carries audit reports (e.g. image-refresh-report.json);
+        # they are not product snapshots and must never enter the publication.
+        if Path(f).name.endswith("-report.json"):
+            continue
         try:
             recs = json.loads(Path(f).read_text(encoding="utf-8"))
         except Exception:
             continue
+        if not isinstance(recs, list):
+            continue
         for r in recs:
+            if not isinstance(r, dict):
+                continue
             items.append(to_public(r))
 
     items.sort(key=lambda x: str(x.get("id")))

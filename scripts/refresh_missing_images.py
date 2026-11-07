@@ -158,7 +158,7 @@ def refresh(rows, fetch=None, limit=100, *, post=None, baike=None):
 def main():
     path=Path('_data/public/goods.json');rows=json.loads(path.read_text());after,audit=refresh(rows)
     path.write_text(json.dumps(after,ensure_ascii=False,indent=1)+'\n')
-    target=Path('_data/data/categories/image-refresh-report.json');target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(audit,ensure_ascii=False,indent=1)+'\n')
+    target=Path('_data/public/image-refresh-report.json');target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(audit,ensure_ascii=False,indent=1)+'\n')
     counts={status:sum(a['status']==status for a in audit)
             for status in ('added','no_official_image','network_error')}
     print(f"本轮 {len(audit)} 个候选：补上 {counts['added']}、上游无图 {counts['no_official_image']}、网络失败 {counts['network_error']}")

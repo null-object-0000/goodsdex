@@ -85,7 +85,7 @@ def test_script_exit_and_report(case, expected, counts, tmp_path, monkeypatch, c
     with pytest.raises(SystemExit) as exit_info:
         runpy.run_path(str(ROOT / 'scripts/refresh_missing_images.py'), run_name='__main__')
     assert exit_info.value.code == expected
-    audit = json.loads((tmp_path / '_data/data/categories/image-refresh-report.json').read_text())
+    audit = json.loads((tmp_path / '_data/public/image-refresh-report.json').read_text())
     assert tuple(sum(a['status'] == status for a in audit)
                  for status in ('added', 'no_official_image', 'network_error')) == counts
     added, absent, network = counts
