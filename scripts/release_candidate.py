@@ -51,6 +51,9 @@ def merge_value(before, after, latest, label):
             else:
                 out[key] = value
         return out
+    # 时间戳不是数据：别人刚写过 updated_at 不该逼整个采集重跑一轮。
+    if label.rsplit('.', 1)[-1] in ('updated_at', 'fetched_at'):
+        return latest if latest is not MISSING else after
     raise ValueError(f'Concurrent change at {label}; re-run this collector against latest data')
 
 

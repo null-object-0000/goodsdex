@@ -158,3 +158,14 @@ def test_pack_skips_throttle_logs_instead_of_staging_them(tmp_path):
     pack(root, 'release_dates', out)
     bundle = json.loads(out.read_text())
     assert not any(n.endswith('.jsonl') for n in bundle['files'])
+
+
+def test_timestamp_only_conflict_does_not_force_a_rerun():
+    """并发发布只改了 updated_at 时，取最新即可，不必整轮重采。"""
+    from release_candidate import merge_value
+    before = {'id': 'x', 'price': 1, 'updated_at': '2026-11-01'}
+    after = {'id': 'x', 'price': 2, 'updated_at': '2026-11-07T00:00:00'}
+    latest = {'id': 'x', 'price': 1, 'updated_at': '2026-11-07T01:00:00'}
+    out = merge_value(before, after, latest, 'data/archive/x.json')
+    assert out['price'] == 2
+    assert out['updated_at'] == '2026-11-07T01:00:00'
