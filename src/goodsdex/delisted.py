@@ -126,7 +126,7 @@ def apply_archive(current, archive):
     """Replay only explicit evidence, keeping full archived rows for absent IDs."""
     rows = deepcopy(current)
     items = archive.get('items', {})
-    present = {r['id'] for r in rows}
+    present = {r['id'] for r in rows if isinstance(r, dict) and isinstance(r.get('id'), str)}
     confirmed = {}
     for key, entry in items.items():
         evidence = entry.get('evidence', {})
@@ -138,7 +138,7 @@ def apply_archive(current, archive):
             confirmed[key] = entry
     # A failed detail capture may leave a shell in categories. Keep the last
     # complete published record for confirmed delistings, including its params.
-    rows = [deepcopy(confirmed[r['id']]['row']) if r['id'] in confirmed else r
+    rows = [deepcopy(confirmed[r['id']]['row']) if isinstance(r, dict) and r.get('id') in confirmed else r
             for r in rows]
     rows.extend(deepcopy(entry['row']) for key, entry in confirmed.items() if key not in present)
     for key, entry in items.items():
@@ -157,9 +157,14 @@ def apply_archive(current, archive):
             row.pop(key)
         rows.append(row)
     for row in rows:
-        entry = items.get(row['id'], {})
+        rid = row.get('id') if isinstance(row, dict) else None
+        if not isinstance(rid, str):
+            # Category snapshots may contain auxiliary or placeholder entries
+            # without an identity; they are not ours to annotate.
+            continue
+        entry = items.get(rid, {})
         evidence = entry.get('evidence', {})
-        if not ID_PATTERN.fullmatch(row['id']) or evidence.get('url') != URL or not evidence.get('probed_at'):
+        if not ID_PATTERN.fullmatch(rid) or evidence.get('url') != URL or not evidence.get('probed_at'):
             continue
         if entry.get('state') == 'delisted' and is_delisted(evidence):
             row.update(on_sale=False, delisted_at=evidence['probed_at'][:10],

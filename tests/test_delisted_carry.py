@@ -256,3 +256,12 @@ def test_unverified_archive_cannot_carry_an_id():
                      dict(code=400480502, probed_at=NOW, url='https://example.com')):
         archive = dict(items={IDS[0]: dict(row=row(IDS[0]), state='delisted', evidence=evidence)})
         assert apply_archive([], archive) == []
+
+
+def test_apply_archive_tolerates_rows_without_identity():
+    """Category snapshots can carry auxiliary rows with no id; annotating must skip them."""
+    archive, _ = prepare([row(IDS[0])], [], {}, removed, NOW)
+    rows = [{'name': '辅助行，无 id'}, {'id': None, 'name': '空 id'}, 'raw-string', row(IDS[0])]
+    out = apply_archive(rows, archive)
+    assert out[0] == rows[0] and out[1] == rows[1] and out[2] == 'raw-string'
+    assert out[3]['on_sale'] is False and out[3]['delisted_at'] == '2026-11-07'
