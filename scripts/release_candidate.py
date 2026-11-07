@@ -36,6 +36,14 @@ def allowed_path(name):
             'docs/release-coverage/', 'data/categories/', 'data/archive/', 'data/hp/', 'data/prices/', 'data/price-observations/')))
 
 
+TIMESTAMP_FIELDS = ('updated_at', 'fetched_at', 'last_seen_at', 'first_seen_at',
+                    'checked_at', 'observed_at', 'collected_at', 'crawled_at')
+
+
+def _is_timestamp_key(key):
+    return key in TIMESTAMP_FIELDS or key.endswith('_at')
+
+
 def merge_value(before, after, latest, label):
     if before == after or latest == after:
         return latest
@@ -51,8 +59,9 @@ def merge_value(before, after, latest, label):
             else:
                 out[key] = value
         return out
-    # 时间戳不是数据：别人刚写过 updated_at 不该逼整个采集重跑一轮。
-    if label.rsplit('.', 1)[-1] in ('updated_at', 'fetched_at'):
+    # 时间戳不是数据：别人刚写过 updated_at / last_seen_at 不该逼整个采集重跑一轮。
+    # 采集线的「最后一次看到」字段不止这两个名字，凡是 *_at 一律按时间戳处理。
+    if _is_timestamp_key(label.rsplit('.', 1)[-1]):
         return latest if latest is not MISSING else after
     raise ValueError(f'Concurrent change at {label}; re-run this collector against latest data')
 

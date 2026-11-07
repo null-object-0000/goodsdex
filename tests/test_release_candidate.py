@@ -169,3 +169,25 @@ def test_timestamp_only_conflict_does_not_force_a_rerun():
     out = merge_value(before, after, latest, 'data/archive/x.json')
     assert out['price'] == 2
     assert out['updated_at'] == '2026-11-07T01:00:00'
+
+
+def test_last_seen_at_conflict_does_not_force_a_rerun():
+    """Apple 目录用 last_seen_at 记「最后一次看到」，它和 updated_at 一样不是数据。"""
+    from release_candidate import merge_value
+    before = {'id': 'x', 'price': 1, 'last_seen_at': '2026-11-06T00:00:00'}
+    after = {'id': 'x', 'price': 2, 'last_seen_at': '2026-11-07T00:00:00'}
+    latest = {'id': 'x', 'price': 1, 'last_seen_at': '2026-11-07T01:00:00'}
+    out = merge_value(before, after, latest, 'data/archive/Apple_airpods.json')
+    assert out['price'] == 2
+    assert out['last_seen_at'] == '2026-11-07T01:00:00'
+
+
+def test_real_field_conflict_still_fails():
+    """真正改了数据字段（价格）时仍然要报，不能顺手放过。"""
+    import pytest
+    from release_candidate import merge_value
+    before = {'id': 'x', 'price': 1}
+    after = {'id': 'x', 'price': 2}
+    latest = {'id': 'x', 'price': 3}
+    with pytest.raises(ValueError, match='Concurrent change'):
+        merge_value(before, after, latest, 'data/archive/x.json')
