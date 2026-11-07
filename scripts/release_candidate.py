@@ -20,7 +20,9 @@ SCOPES = ('prices', 'apple', 'hp', 'atour', 'cars', 'legacy', 'all')
 
 
 def git(root, *args):
-    return subprocess.check_output(['git', '-C', str(root), *args])
+    # core.quotePath would escape non-ASCII paths ("\347\263\273..."), which then
+    # fail the prefix allowlist below. Keep real UTF-8 names.
+    return subprocess.check_output(['git', '-C', str(root), '-c', 'core.quotePath=false', *args])
 
 
 def allowed_path(name):

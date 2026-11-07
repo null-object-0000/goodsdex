@@ -119,3 +119,22 @@ def test_other_brand_ambiguous_rows_keep_original_positions():
     candidate = copy.deepcopy(base)
     candidate[1]['price'] = 201
     assert merge_goods(base, candidate, base, 'hp') == candidate
+
+
+def test_non_ascii_archive_name_is_allowed_and_unquoted(tmp_path):
+    """Chinese category names (e.g. 'REDMI 系列.json') must survive the allowlist.
+
+    git quotes non-ASCII paths by default ("data/archive/REDMI \\347\\263\\273..."),
+    which used to fail the prefix check and abort the whole crawl run.
+    """
+    import subprocess
+    from release_candidate import git
+    assert allowed_path('data/archive/REDMI 系列.json')
+    subprocess.run(['git', 'init', '-q', str(tmp_path)], check=True)
+    (tmp_path / 'data' / 'archive').mkdir(parents=True)
+    target = tmp_path / 'data' / 'archive' / 'REDMI 系列.json'
+    target.write_text('[]', encoding='utf-8')
+    subprocess.run(['git', '-C', str(tmp_path), 'add', '-f', '--', 'data/archive'], check=True)
+    names = git(tmp_path, 'diff', '--cached', '--name-only').decode().splitlines()
+    assert names == ['data/archive/REDMI 系列.json']
+    assert all(allowed_path(n) for n in names)
