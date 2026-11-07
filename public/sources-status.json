@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-07T02:07:09Z",
+  "generatedAt": "2026-11-07T02:10:11Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-07T00:57:40Z",
+      "lastAttemptAt": "2026-11-07T02:07:31Z",
       "lastSuccessAt": "2026-11-07T01:40:49Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42321342982",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42327632838",
       "error": null,
       "stale": false,
       "staleReason": null
@@ -17,10 +17,10 @@
       "sourceId": "refresh-apple",
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-07T01:03:55Z",
+      "lastAttemptAt": "2026-11-07T02:07:35Z",
       "lastSuccessAt": "2026-11-07T01:54:04Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42321946599",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42327637448",
       "error": null,
       "stale": false,
       "staleReason": null
@@ -29,11 +29,11 @@
       "sourceId": "refresh-hp",
       "workflow": ".github/workflows/refresh-hp.yml",
       "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-07T01:07:33Z",
+      "lastAttemptAt": "2026-11-07T02:07:38Z",
       "lastSuccessAt": "2026-11-06T23:38:11Z",
-      "conclusion": "degraded",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42322302904",
-      "error": "blocked: 403 from hpstore.cn",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42327641868",
+      "error": null,
       "stale": false,
       "staleReason": null
     },
