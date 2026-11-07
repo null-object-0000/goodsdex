@@ -28,7 +28,7 @@ _NON_SNAPSHOT_SUFFIXES = (
     "-report.json",
     "-directory.json",
     "-discovery.json",
-    "-review-queue.json",
+    "-review-queue.json", "-index.json", "-manifest.json",
 )
 
 

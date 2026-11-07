@@ -130,11 +130,17 @@ def _strip_colour(name):
 
 
 def _same_series_identity(row, member):
-    """哈希对不上时的兜底：同 id、同型号，名称只差一个颜色后缀。"""
+    """只容忍「名称末尾多/少一个颜色词」：把审过的名字代回去重算哈希，必须命中。"""
     reviewed = member.get("reviewed_name")
-    if not reviewed:
+    pinned = member.get("identity_sha256")
+    if not reviewed or not pinned:
         return False
-    return _strip_colour(row.get("name")) == _strip_colour(reviewed)
+    if _strip_colour(row.get("name")) != _strip_colour(reviewed):
+        return False
+    # 除名称以外（型号、参数）必须完全一致，否则仍是身份漂移。
+    probe = dict(identity(row))
+    probe["name"] = reviewed
+    return digest(probe) == pinned
 
 def apply_series_releases(rows, path=DEFAULT_INPUT):
     bundle = json.loads(Path(path).read_text())
