@@ -8,11 +8,16 @@
 环境：OSS_ACCESS_KEY_ID / OSS_ACCESS_KEY_SECRET（GitHub Secrets）
 """
 import argparse
+import base64
+import gzip
 import hashlib
 import json
 import os
 import sys
 import threading
+import re
+import tempfile
+from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 
 import oss2
@@ -23,11 +28,38 @@ PREFIX = 'data/public/'
 FILES = ('goods.json', 'meta.json', 'merge-audit.json', 'sources-status.json', 'sources-registry.json')
 
 
+def object_headers(name, destination, size):
+    """Cache content-addressed blobs forever; revalidate live pointers/status."""
+    immutable = destination.startswith('blobs/')
+    live = destination in ('meta.json', 'sources-status.json', 'sources-registry.json',
+                           'prices/latest.json', 'price-history/index.json')
+    headers = {'Content-Type': 'application/gzip' if name.endswith('.gz') else 'application/json',
+               'Cache-Control': ('public, max-age=31536000, immutable' if immutable else
+                                 'no-cache, max-age=0, must-revalidate' if live else
+                                 'public, max-age=3600, must-revalidate')}
+    if name.endswith(('.json', '.jsonl')) and size >= 1024:
+        headers['Content-Encoding'] = 'gzip'
+    return headers
+
+
+def object_matches(head, expected, desired):
+    headers = {k.lower(): str(v) for k, v in head.headers.items()}
+    wire_md5 = headers.get('x-oss-meta-wire-md5', '')
+    wire_bytes = headers.get('x-oss-meta-wire-bytes', '')
+    return (headers.get('x-oss-meta-sha256') == expected
+            and all(headers.get(k.lower(), '') == v for k, v in desired.items())
+            and headers.get('content-encoding', '') == desired.get('Content-Encoding', '')
+            and bool(re.fullmatch('[a-f0-9]{32}', wire_md5))
+            and headers.get('etag', '').strip('"').lower() == wire_md5
+            and wire_bytes.isdigit() and int(wire_bytes) > 0
+            and headers.get('content-length') == wire_bytes)
+
+
 def upload_release(public, uploads, make_bucket, workers=4):
     """Parallelize verified objects; publish meta only after every worker succeeds.
 
-    Each thread owns its OSS client/session. Immutable blobs and aliases retain
-    their PUT + GET digest checks; failures leave the manifest unpublished.
+    Each thread owns its OSS client/session. Changed objects retain PUT + GET
+    digest checks; verified unchanged aliases also skip payload transfers.
     """
     clients = threading.local()
     def upload(entry):
@@ -36,23 +68,34 @@ def upload_release(public, uploads, make_bucket, workers=4):
             clients.bucket = make_bucket()
         bucket = clients.bucket
         path = public / name
+        with path.open('rb') as file:
+            expected = hashlib.file_digest(file, 'sha256').hexdigest()
+        desired = object_headers(name, destination, path.stat().st_size)
+        try:
+            if object_matches(bucket.head_object(PREFIX + destination), expected, desired):
+                return 0
+        except oss2.exceptions.NoSuchKey:
+            pass
         local = path.read_bytes()
-        expected = hashlib.sha256(local).hexdigest()
-        if destination.startswith('blobs/'):
-            try:
-                head = bucket.head_object(PREFIX + destination)
-                if head.headers.get('x-oss-meta-sha256') == expected:
-                    return 0
-            except oss2.exceptions.NoSuchKey:
-                pass
-        result = bucket.put_object_from_file(PREFIX + destination, str(path),
-            headers={'Content-Type': 'application/gzip' if name.endswith('.gz') else 'application/json', 'x-oss-meta-sha256': expected})
+        wire = gzip.compress(local, compresslevel=6, mtime=0) if desired.get('Content-Encoding') else local
+        wire_md5 = hashlib.md5(wire).hexdigest()
+        headers = {**desired, 'x-oss-meta-sha256': expected,
+                   'x-oss-meta-wire-md5': wire_md5, 'x-oss-meta-wire-bytes': str(len(wire)),
+                   'Content-MD5': base64.b64encode(bytes.fromhex(wire_md5)).decode()}
+        with tempfile.TemporaryDirectory(prefix='oss-wire-') as folder:
+            upload_path = Path(folder) / 'object'
+            upload_path.write_bytes(wire)
+            result = bucket.put_object_from_file(PREFIX + destination, str(upload_path), headers=headers)
         if result.status != 200:
             raise RuntimeError(f'OSS upload failed: {destination} HTTP {result.status}')
         remote = bucket.get_object(PREFIX + destination).read()
+        # oss2 normally decodes Content-Encoding through requests.iter_content.
+        # Also support transports exposing the compressed representation verbatim.
+        if desired.get('Content-Encoding') and remote.startswith(b'\x1f\x8b'):
+            remote = gzip.decompress(remote)
         if hashlib.sha256(remote).hexdigest() != expected:
             raise RuntimeError(f'OSS readback mismatch: {destination}')
-        print(f'OSS GET verified {destination}: bytes={len(local)} sha256={expected}')
+        print(f'OSS GET verified {destination}: bytes={len(local)} wire_bytes={len(wire)} sha256={expected}')
         return 1
     objects = [(name, destination) for name, destination in uploads if destination not in ('meta.json', 'price-history/index.json')]
     manifest = [(name, destination) for name, destination in uploads if destination == 'meta.json']
@@ -108,8 +151,7 @@ def main():
     uploaded = upload_release(public, uploads,
         lambda: oss2.Bucket(oss2.Auth(key_id, key_secret), ENDPOINT, args.bucket))
     if not uploaded:
-        print('没有任何文件被镜像，判定为失败', file=sys.stderr)
-        return 1
+        print('OSS mirror already verified and current; no object payload transferred')
     return 0
 
 

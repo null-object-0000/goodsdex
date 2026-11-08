@@ -26,6 +26,8 @@ def test_manifest_waits_for_all_verified_objects_and_clients_are_thread_local(tm
         def __init__(self):
             self.owner = threading.get_ident()
             owners[id(self)] = self.owner
+        def head_object(self, destination):
+            raise KeyError(destination)
         def put_object_from_file(self, destination, path, headers):
             assert self.owner == threading.get_ident()
             with lock:
@@ -48,6 +50,8 @@ def test_manifest_waits_for_all_verified_objects_and_clients_are_thread_local(tm
 def test_failed_readback_does_not_publish_manifest(tmp_path, mirror):
     puts = []
     class Bucket:
+        def head_object(self, destination):
+            raise KeyError(destination)
         def put_object_from_file(self, destination, path, headers):
             puts.append(destination)
             return types.SimpleNamespace(status=200)
@@ -82,6 +86,8 @@ def test_status_manifest_descriptor_drives_blob_and_public_alias(tmp_path, mirro
     digest = hashlib.sha256(status).hexdigest()
     assert ('sources-status.json', f'blobs/{digest}.json') in captured
     assert ('sources-status.json', 'sources-status.json') in captured
+    monkeypatch.setattr(mirror, 'upload_release', lambda public, uploads, make_bucket: 0)
+    assert mirror.main() == 0  # A verified no-op must not trigger retries/publication alerts.
     # Every manifest hash is validated before the upload function can run.
     (tmp_path/'sources-status.json').write_bytes(b'changed after manifest')
     with pytest.raises(ValueError, match='changed after generation'):
@@ -120,6 +126,8 @@ def test_history_index_follows_month_readback_and_precedes_meta(tmp_path, mirror
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(name.encode())
     class Bucket:
+        def head_object(self, destination):
+            raise KeyError(destination)
         def put_object_from_file(self, destination, path, headers):
             store[destination] = Path(path).read_bytes()
             events.append(('put', destination))
@@ -150,3 +158,87 @@ def test_separate_history_descriptors_are_mirrored(tmp_path, mirror, monkeypatch
     assert mirror.main()==0
     assert ('price-history/index.json','price-history/index.json') in captured
     assert ('price-history/2026-11.jsonl.gz','price-history/2026-11.jsonl.gz') in captured
+
+
+@pytest.mark.parametrize('sdk_decodes_gzip', [False, True])
+def test_unchanged_aliases_and_blobs_transfer_no_payload_after_verified_compressed_upload(tmp_path, mirror, sdk_decodes_gzip):
+    import gzip
+    import hashlib
+    import base64
+    store, metadata, events = {}, {}, []
+    class Bucket:
+        def head_object(self, destination):
+            if destination not in store:
+                raise KeyError(destination)
+            return types.SimpleNamespace(headers=metadata[destination])
+        def put_object_from_file(self, destination, path, headers):
+            wire = Path(path).read_bytes()
+            assert headers['Content-MD5'] == base64.b64encode(hashlib.md5(wire).digest()).decode()
+            store[destination] = wire
+            metadata[destination] = {k.lower(): v for k, v in headers.items()}
+            metadata[destination].update({'etag': '"'+hashlib.md5(wire).hexdigest().upper()+'"',
+                                          'content-length': str(len(wire))})
+            events.append(('put', destination))
+            return types.SimpleNamespace(status=200)
+        def get_object(self, destination):
+            events.append(('get', destination))
+            wire = store[destination]
+            if sdk_decodes_gzip and metadata[destination].get('content-encoding') == 'gzip':
+                wire = gzip.decompress(wire)
+            return io.BytesIO(wire)
+    raw = b'[{"name":"repeated product evidence"}]\n' * 1000
+    (tmp_path/'goods.json').write_bytes(raw)
+    (tmp_path/'meta.json').write_bytes(b'{"revision":1}')
+    blob = 'blobs/'+hashlib.sha256(raw).hexdigest()+'.json'
+    uploads = [('goods.json','goods.json'), ('goods.json',blob), ('meta.json','meta.json')]
+    assert mirror.upload_release(tmp_path, uploads, Bucket) == 3
+    assert gzip.decompress(store[mirror.PREFIX+'goods.json']) == raw
+    assert len(store[mirror.PREFIX+'goods.json']) < len(raw) / 10
+    assert metadata[mirror.PREFIX+blob]['cache-control'] == 'public, max-age=31536000, immutable'
+    assert metadata[mirror.PREFIX+'goods.json']['cache-control'] == 'public, max-age=3600, must-revalidate'
+    assert metadata[mirror.PREFIX+'meta.json']['cache-control'] == 'no-cache, max-age=0, must-revalidate'
+    assert events[-2:] == [('put',mirror.PREFIX+'meta.json'), ('get',mirror.PREFIX+'meta.json')]
+    events.clear()
+    assert mirror.upload_release(tmp_path, uploads, Bucket) == 0
+    assert events == []
+    (tmp_path/'meta.json').write_bytes(b'{"revision":2}')
+    assert mirror.upload_release(tmp_path, uploads, Bucket) == 1
+    assert events == [('put',mirror.PREFIX+'meta.json'), ('get',mirror.PREFIX+'meta.json')]
+
+
+def test_cached_sha_alone_cannot_skip_wire_or_cache_header_migration(tmp_path, mirror):
+    import hashlib
+    raw = b'{}'
+    (tmp_path/'meta.json').write_bytes(raw)
+    puts = []
+    class Bucket:
+        def head_object(self, destination):
+            return types.SimpleNamespace(headers={'x-oss-meta-sha256': hashlib.sha256(raw).hexdigest()})
+        def put_object_from_file(self, destination, path, headers):
+            puts.append(destination)
+            return types.SimpleNamespace(status=200)
+        def get_object(self, destination):
+            return io.BytesIO(raw)
+    assert mirror.upload_release(tmp_path, [('meta.json','meta.json')], Bucket) == 1
+    assert puts == [mirror.PREFIX+'meta.json']
+
+
+def test_precompressed_history_is_never_double_encoded(tmp_path, mirror):
+    import gzip
+    raw = gzip.compress(b'[{"price":10}]', mtime=0)
+    (tmp_path/'history.jsonl.gz').write_bytes(raw)
+    (tmp_path/'meta.json').write_bytes(b'{}')
+    store = {}
+    class Bucket:
+        def head_object(self, destination):
+            raise KeyError(destination)
+        def put_object_from_file(self, destination, path, headers):
+            store[destination] = Path(path).read_bytes()
+            if destination.endswith('history.jsonl.gz'):
+                assert headers['Content-Type'] == 'application/gzip'
+                assert 'Content-Encoding' not in headers
+            return types.SimpleNamespace(status=200)
+        def get_object(self, destination):
+            return io.BytesIO(store[destination])
+    mirror.upload_release(tmp_path, [('history.jsonl.gz','history.jsonl.gz'),('meta.json','meta.json')], Bucket)
+    assert store[mirror.PREFIX+'history.jsonl.gz'] == raw
