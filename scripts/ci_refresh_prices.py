@@ -95,6 +95,8 @@ def main() -> int:
                 it["price"] = np["price"]
                 mp = num(np.get("market_price"))
                 it["market_price"] = (int(mp) if mp is not None and mp.is_integer() else mp)
+                from goodsdex.discovery_prices import normalize_discovery_quote
+                normalize_discovery_quote(it)
         print(f"回灌完成，价格变化 {changed} 条")
 
     assert_cars_unchanged(previous, items)
