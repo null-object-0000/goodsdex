@@ -57,3 +57,29 @@ def test_source_failures_are_cached_but_oss_permission_failures_abort(monkeypatc
     class Bucket:
         def put_object(self,*a,**k):raise PermissionError('AccessDenied')
     with pytest.raises(PermissionError):m.mirror(SRC,Bucket())
+
+
+def test_route_publication_retries_transient_failures_without_reuploading():
+    calls=[];closed=[];delays=[]
+    class Response:
+        def __init__(self,status):self.status_code=status
+        def raise_for_status(self):
+            if self.status_code>=400:raise m.requests.HTTPError(response=self)
+        def json(self):return {'ok':True}
+        def close(self):closed.append(self.status_code)
+    def post(*args,**kwargs):
+        calls.append(kwargs['data'])
+        return Response([503,429,200][len(calls)-1])
+    m.publish_routes('https://example.com','token',[{'sourceUrl':SRC,'objectKey':None}],post=post,sleep=delays.append)
+    assert len(set(calls))==1 and closed==[503,429,200] and delays==[2,4]
+    calls.clear();closed.clear();delays.clear()
+    def denied(*args,**kwargs):calls.append(1);return Response(403)
+    with pytest.raises(m.requests.HTTPError):m.publish_routes('https://example.com','token',[],post=denied,sleep=delays.append)
+    assert calls==[1] and closed==[403] and delays==[]
+
+
+def test_route_publication_bounds_network_retries():
+    calls=[];delays=[]
+    def disconnected(*args,**kwargs):calls.append(1);raise m.requests.ConnectionError()
+    with pytest.raises(m.requests.ConnectionError):m.publish_routes('https://example.com','token',[],post=disconnected,sleep=delays.append)
+    assert len(calls)==6 and delays==[2,4,8,16,32]
