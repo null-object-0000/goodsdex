@@ -50,11 +50,6 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Sources status $(date -u +%Y-%m-%dT%H:%MZ)"
           git push origin HEAD:data
-      - name: Mirror and verify OSS (manifest last)
-        env:
-          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
-          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
-        run: python3 scripts/mirror_public_to_oss.py --public _data/public
       - name: Record status evidence
         if: always()
         uses: actions/upload-artifact@v4
