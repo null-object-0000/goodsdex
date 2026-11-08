@@ -19,13 +19,13 @@ def source():
 def test_saved_successful_collection_can_recover_publication():
     run, jobs, bundle = source()
     validate(run, jobs, bundle, '123', 'owner/repo')
+    run['event'] = 'schedule'
+    validate(run, jobs, bundle, '123', 'owner/repo')
 
 
 def test_legacy_full_replacement_candidate_cannot_be_replayed():
     run,jobs,bundle=source();bundle.pop('collector_mode')
     with pytest.raises(ValueError,match='recollected'):validate(run,jobs,bundle,'123','owner/repo')
-    run['event'] = 'schedule'
-    validate(run, jobs, bundle, '123', 'owner/repo')
 
 
 @pytest.mark.parametrize('change', [
