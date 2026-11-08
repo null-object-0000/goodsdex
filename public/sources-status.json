@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T06:15:02Z",
+  "generatedAt": "2026-11-08T06:31:25Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -18,8 +18,8 @@
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
       "lastAttemptAt": "2026-11-08T06:07:34Z",
-      "lastSuccessAt": "2026-11-08T05:19:44Z",
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-08T06:20:35Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42453454415",
       "error": null,
       "stale": false,
@@ -65,11 +65,11 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-08T06:10:22Z",
+      "lastAttemptAt": "2026-11-08T06:20:37Z",
       "lastSuccessAt": null,
-      "conclusion": "in_progress",
+      "conclusion": "failure",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42453561689",
-      "error": null,
+      "error": "Finalize once (dedupe, tombstones, normalization, shards): ValueError: Media identity/scope changed: CN:mi_cn:product:10015",
       "stale": false,
       "staleReason": null
     }
