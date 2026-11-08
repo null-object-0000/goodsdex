@@ -12,6 +12,24 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Diagnose a single public origin image without cloud writes
+        run: |
+          python3 -m pip install --quiet requests Pillow
+          python3 - <<'PY'
+          import sys
+          sys.path.insert(0, 'scripts')
+          from mirror_product_images import download,convert
+          src='https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202502071658_0eb3002d3d509ee15831f567e338f30f.jpg'
+          try:
+              raw=download(src)
+              print({'sourceBytes':len(raw),'compressedBytes':len(convert(raw))})
+          except Exception as e:
+              print({'error':type(e).__name__,'detail':str(e)[:600]})
+          PY
+          exit 1
       - uses: actions/checkout@v4
         with:
           ref: data
