@@ -1,0 +1,32 @@
+name: retire-oss-catalog
+on:
+  workflow_dispatch:
+    inputs:
+      expected_api_commit:
+        description: 'Exact healthy MySQL API deployment commit'
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  retire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet oss2
+      - name: Retain old online JSON as private rollback backups
+        env:
+          EXPECTED_API_COMMIT: ${{ inputs.expected_api_commit }}
+          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
+          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+        run: python scripts/retire_oss_catalog.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: retired-oss-catalog
+          path: retired-oss-catalog.json
+          retention-days: 7
