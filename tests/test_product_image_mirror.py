@@ -36,6 +36,9 @@ def test_legacy_jpeg_repair_is_explicit_and_skips_already_repaired_assets():
     assert m.pending([SRC],route,repair_legacy=True)==[SRC]
     route[m.keys(SRC)[0]]={'objectKey':'goods/'+ 'b'*64+'.png'}
     assert m.pending([SRC],route,repair_legacy=True)==[]
+    # 现行物件名是 sha256（64 位）；只要是 .jpg 就说明透明通道被拍平过，修复时应当重取。
+    route[m.keys(SRC)[0]]={'objectKey':'goods/'+ 'c'*64+'.jpg'}
+    assert m.pending([SRC],route,repair_legacy=True)==[SRC]
 
 
 def test_palette_transparency_survives_conversion():

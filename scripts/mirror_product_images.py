@@ -47,7 +47,8 @@ def pending(urls, routes, now=None, retry_failed=False, repair_legacy=False):
         entries=[routes[k] for k in keys(src) if k in routes]
         # The old SHA1-named JPEG pipeline discarded source transparency. Repair
         # these only on explicit backfill; modern assets never download again.
-        legacy=lambda key:bool(re.fullmatch(r'goods/[a-f0-9]{40}\.jpg',key))
+        # JPEG 不可能带透明通道：任何 .jpg 物件都是「拍平过的」封面，值得重取一次。
+        legacy=lambda key:bool(re.fullmatch(r'goods/[a-f0-9]{40,64}\.jpg',key))
         if any(e.get('objectKey') and not e['objectKey'].endswith('.webp') and not (repair_legacy and legacy(e['objectKey'])) for e in entries): continue
         # Failed source URLs retry at most once a day across all collectors.
         if not retry_failed and any(not e.get('objectKey') and e.get('checkedAt') and (now-datetime.fromisoformat(e['checkedAt'].replace('Z','+00:00'))).total_seconds()<86400 for e in entries): continue
