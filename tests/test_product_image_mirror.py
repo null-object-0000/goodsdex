@@ -15,6 +15,18 @@ def test_existing_resized_covers_and_recent_failures_do_not_download_again():
     route={m.keys(SRC)[0]:{'objectKey':None,'checkedAt':now.isoformat()}}
     assert m.pending([SRC],route,now)==[]
     assert m.pending([SRC],route,now+timedelta(days=1))==[SRC]
+    assert m.pending([SRC],route,now,retry_failed=True)==[SRC]
+    assert m.pending([SRC],{m.keys(SRC)[0]:{'objectKey':'goods/a.webp'}},now,retry_failed=True)==[]
+
+def test_real_image_bytes_are_accepted_when_cdn_labels_png_as_text_plain():
+    source=io.BytesIO();Image.new('RGBA',(32,32),(255,0,0,255)).save(source,format='PNG');raw=source.getvalue()
+    class Response:
+        status_code=200;headers={'Content-Type':'text/plain'}
+        def raise_for_status(self):pass
+        def iter_content(self,_):return [raw]
+        def close(self):pass
+    assert m.convert(m.download(SRC,get=lambda *a,**k:Response())).startswith(b'RIFF')
+    with pytest.raises(Exception):m.convert(b'<html>not an image</html>')
 
 def test_compressed_webp_retains_transparency_and_limits_dimensions():
     source=io.BytesIO();Image.new('RGBA',(1600,900),(255,0,0,0)).save(source,format='PNG')

@@ -28,7 +28,7 @@ def keys(src):
     return [hashlib.sha1(v.encode()).hexdigest()[:32] for v in dict.fromkeys([src,plain])]
 
 
-def pending(urls, routes, now=None):
+def pending(urls, routes, now=None, retry_failed=False):
     now = now or datetime.now(timezone.utc)
     result=[]
     for src in sorted(set(urls)):
@@ -36,7 +36,7 @@ def pending(urls, routes, now=None):
         entries=[routes[k] for k in keys(src) if k in routes]
         if any(e.get('objectKey') for e in entries): continue
         # Failed source URLs retry at most once a day across all collectors.
-        if any(e.get('checkedAt') and (now-datetime.fromisoformat(e['checkedAt'].replace('Z','+00:00'))).total_seconds()<86400 for e in entries): continue
+        if not retry_failed and any(e.get('checkedAt') and (now-datetime.fromisoformat(e['checkedAt'].replace('Z','+00:00'))).total_seconds()<86400 for e in entries): continue
         result.append(src)
     return result
 
@@ -52,8 +52,8 @@ def download(src, get=requests.get):
                 from urllib.parse import urljoin
                 src=urljoin(src,response.headers['Location']);continue
             response.raise_for_status()
-            if not response.headers.get('Content-Type','').lower().startswith('image/'):
-                raise ValueError('Source is not an image')
+            # Xiaomi's iotweb CDN serves valid PNGs as text/plain. The bounded
+            # decoder below validates actual pixels instead of trusting MIME.
             chunks=[];size=0
             for chunk in response.iter_content(65536):
                 size+=len(chunk)
@@ -66,6 +66,7 @@ def download(src, get=requests.get):
 
 def convert(raw):
     with Image.open(io.BytesIO(raw)) as image:
+        if image.width*image.height>16_000_000:raise ValueError('Oversized image dimensions')
         image=ImageOps.exif_transpose(image).convert('RGBA')
         image.thumbnail((480,480),Image.Resampling.LANCZOS)
         out=io.BytesIO();image.save(out,format='WEBP',quality=82,method=4)
@@ -98,7 +99,7 @@ def publish_routes(base,token,assets,post=requests.post):
 def main():
     data=json.load(sys.stdin);base=os.environ['CATALOG_API_URL'];token=os.environ['CATALOG_IMPORT_TOKEN']
     assert urlparse(base).scheme=='https' and len(token)>=32
-    urls=pending(data['urls'],data['routes'])
+    urls=pending(data['urls'],data['routes'],retry_failed=data.get('retryFailed',False))
     # Nothing new: no source downloads, no OSS operations, no route writes.
     if not urls: print(json.dumps(dict(uploaded=0,failed=0,bytes=0)));return
     import oss2

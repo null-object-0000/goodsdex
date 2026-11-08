@@ -92,6 +92,6 @@ export async function publish({root,baseUrl,token,fetchImpl=fetch,dryRun=false,m
   return {total:rows.length,changed:changed.length,batches,wireBytes,version,dryRun,history,images};
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
-  try{console.log(JSON.stringify(await publish({root:process.argv[2]||'_data/public',baseUrl:process.env.CATALOG_API_URL,token:process.env.CATALOG_IMPORT_TOKEN,dryRun:process.argv.includes('--dry-run'),mirrorImages:async input=>{const result=spawnSync(process.env.PYTHON||'python3',['scripts/mirror_product_images.py'],{input:JSON.stringify(input),encoding:'utf8',maxBuffer:1024*1024});if(result.status!==0)throw Error('Image mirror failed; catalogue import stopped');return JSON.parse(result.stdout);}})));}
+  try{console.log(JSON.stringify(await publish({root:process.argv[2]||'_data/public',baseUrl:process.env.CATALOG_API_URL,token:process.env.CATALOG_IMPORT_TOKEN,dryRun:process.argv.includes('--dry-run'),mirrorImages:async input=>{const result=spawnSync(process.env.PYTHON||'python3',['scripts/mirror_product_images.py'],{input:JSON.stringify({...input,retryFailed:process.env.IMAGE_RETRY_FAILED==='true'}),encoding:'utf8',maxBuffer:1024*1024});if(result.status!==0)throw Error('Image mirror failed; catalogue import stopped');return JSON.parse(result.stdout);}})));}
   catch(error){console.error(error.message);process.exitCode=1;}
 }

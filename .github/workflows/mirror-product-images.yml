@@ -1,6 +1,11 @@
 name: mirror-product-images
 on:
   workflow_dispatch:
+    inputs:
+      retry_failed:
+        description: 'Retry failed source URLs immediately; existing successful mirrors remain untouched'
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -32,4 +37,5 @@ jobs:
           CATALOG_IMPORT_TOKEN: ${{ secrets.CATALOG_IMPORT_TOKEN }}
           OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
           OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+          IMAGE_RETRY_FAILED: ${{ inputs.retry_failed }}
         run: node scripts/publish_mysql.mjs _data/public
