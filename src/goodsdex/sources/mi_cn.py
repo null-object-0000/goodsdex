@@ -498,9 +498,9 @@ def fetch_mobile(pid: str) -> tuple[list[Capture], list[Assertion]]:
                 k = str(x.get("productId") or "")
                 if k and k not in kids:
                     kids.append(k)
-            # 只有一个不同 ID 且它就是 goodsList[0] -> 不是容器，
-            # 而是"同一商品的多个 SKU"（或单元素列表），无需展开
-            if len(kids) > 1:
+            # Even one foreign child is not this product's SKU. Never attach
+            # that child's price/specification to the requested parent's name.
+            if kids:
                 out.append(A("_container_children", kids,
                              "$.data.goodsInfo.goodsList", "容器子商品"))
     return captures, out
@@ -663,10 +663,14 @@ def fetch_cover(pid: str) -> tuple[list[Capture], list[Assertion]]:
         d = json.loads(raw)
         goods = ((d.get('data') or {}).get('goodsInfo') or {}).get('goodsList') or []
         if d.get('code') == 0 and goods:
-            image = goods[0].get('imgUrl')
+            data=d.get('data') or {};product=data.get('product') or {}
+            if str(product.get('productId'))!=str(pid) or str(goods[0].get('productId'))!=str(pid):
+                status,error=CaptureStatus.SOURCE_ERROR,'Product identity mismatch in cover response'
+            else:image = goods[0].get('imgUrl')
         if not isinstance(image, str) or not image.startswith('https://'):
             image = None
-            status, error = CaptureStatus.PARTIAL, 'official_unavailable: ' + str(d.get('message'))
+            if status==CaptureStatus.SUCCESS:
+                status, error = CaptureStatus.PARTIAL, 'official_unavailable: ' + str(d.get('message'))
     except Exception as exc:
         status, error = CaptureStatus.TRANSPORT_ERROR, str(exc)
     cap = Capture.make(SOURCE, MTOP_URL, raw, status=status, error=error,

@@ -30,6 +30,7 @@ def discover(previous, excluded, categories, *, enumerate_products=mi_cn.enumera
     # An interrupted scan never masquerades as complete and never changes data.
     if failed:
         return previous,[],{'ok':False,'failed_categories':sorted(set(failed)),'categories':observations}
+    print(json.dumps({'phase':'discovered','categories':len(observations),'known':len(known),'new_candidates':len(candidates)}),flush=True)
     remaining=dict(candidates);seen=set()
     while remaining:
         batch=remaining;remaining={}

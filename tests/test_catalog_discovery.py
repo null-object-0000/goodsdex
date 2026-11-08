@@ -52,6 +52,24 @@ def test_mobile_wrong_id_emits_no_price_or_name_assertions(monkeypatch):
     assert not assertions and caps[0].status.value=='source_error'
 
 
+def test_single_foreign_sku_is_a_container_not_its_parents_data(monkeypatch):
+    payload={'code':0,'data':{'product':{'productId':10,'name':'Parent'},'goodsInfo':{'goodsList':[{'productId':20,'price':500}]}}}
+    monkeypatch.setattr(mi_cn,'_mtop_call',lambda *args:(payload,json.dumps(payload),200,''))
+    caps,assertions=mi_cn.fetch_mobile('10')
+    assert next(a.raw_value for a in assertions if a.attribute=='_container_children')==['20']
+
+
+def test_container_expands_to_verified_new_child_without_publishing_parent():
+    def enumeration(query):return {'items':[{'pid':'10'}],'discovery':{'completeness':'complete'}}
+    def collect(pid,*args):
+        r=record(pid)
+        if pid=='10':r['product'].update(is_container=True,container_children=['20'])
+        return r
+    after,records,report=discover([],[],{'A':'a'},enumerate_products=enumeration,collect=collect)
+    assert [r['id'] for r in after]==['CN:mi_cn:product:20']
+    assert report['quarantined'][0]['pid']=='10'
+
+
 def test_discovery_candidate_contains_only_additions_and_preserves_concurrent_prices(tmp_path):
     sys.path.insert(0,str(Path(__file__).parents[1]/'scripts'))
     from release_candidate import pack,merge_candidate
