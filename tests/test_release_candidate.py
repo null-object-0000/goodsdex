@@ -339,3 +339,33 @@ def test_hp_report_conflicting_or_unordered_observations_still_fail(stamp):
         merge_run_report({'fetched_at': '2026-11-08T00:00:00Z'},
                          {'fetched_at': '2026-11-08T01:00:00Z', 'error_count': 1},
                          {'fetched_at': stamp, 'error_count': 2}, 'data/hp/audit.json')
+
+
+def test_candidate_reads_logical_baselines_from_compressed_git_storage(tmp_path):
+    import gzip
+    import subprocess
+    from release_candidate import pack
+    before = {'public/goods.json': b'[{"id":"same","name":"old"}]\n',
+              'data/categories/家电.json': b'[{"product":{"variant_id":"same","name":"old"}}]\n'}
+    subprocess.run(['git', 'init', '-q', str(tmp_path)], check=True)
+    for name, raw in before.items():
+        path = tmp_path / (name + '.gz')
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(gzip.compress(raw, mtime=0))
+    subprocess.run(['git', '-C', str(tmp_path), 'add', '-A'], check=True)
+    subprocess.run(['git', '-C', str(tmp_path), '-c', 'user.email=t@t', '-c', 'user.name=t',
+                    'commit', '-qm', 'compressed baseline'], check=True)
+    for name, raw in before.items():
+        (tmp_path / name).write_bytes(raw.replace(b'old', b'new'))
+    candidate = tmp_path / 'candidate.json'
+    pack(tmp_path, 'all', candidate)
+    files = json.loads(candidate.read_text())['files']
+    assert set(files) == set(before)
+    for name, raw in before.items():
+        assert base64.b64decode(files[name]['before']) == raw
+        assert base64.b64decode(files[name]['after']) == raw.replace(b'old', b'new')
+        (tmp_path / name).write_bytes(raw)
+    merge_candidate(tmp_path, candidate)
+    for name, raw in before.items():
+        assert json.loads((tmp_path / name).read_bytes()) == json.loads(raw.replace(b'old', b'new'))
+    assert not allowed_path('data/categories/家电.json.gz')

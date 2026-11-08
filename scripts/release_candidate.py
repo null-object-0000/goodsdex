@@ -6,6 +6,7 @@ JSONL observations are append-only and deduplicated by observation hour.
 from __future__ import annotations
 import argparse
 import base64
+import gzip
 import json
 import subprocess
 import sys
@@ -22,14 +23,18 @@ RUN_REPORTS = {'data/hp/audit.json': 'fetched_at',
                'data/hp/collection-status.json': 'checked_at'}
 
 
-def git(root, *args):
+def git(root, *args, quiet=False):
     # core.quotePath would escape non-ASCII paths ("\347\263\273..."), which then
     # fail the prefix allowlist below. Keep real UTF-8 names.
-    return subprocess.check_output(['git', '-C', str(root), '-c', 'core.quotePath=false', *args])
+    return subprocess.check_output(['git', '-C', str(root), '-c', 'core.quotePath=false', *args],
+                                   stderr=subprocess.DEVNULL if quiet else None)
 
 
 def allowed_path(name):
     p = PurePosixPath(name)
+    # Candidates contain logical JSON deltas, never Git's compressed representation.
+    if name.startswith('data/categories/') and name.endswith('.json.gz'):
+        return False
     # 采集过程的节流/请求日志是诊断产物，不参与发布，也不该走候选增量比对。
     if name.startswith('docs/release-coverage/') and name.endswith('.jsonl'):
         return False
@@ -309,6 +314,9 @@ def pack(root, scope, target):
     # Stage only candidate inputs. Never include stale finalize output.
     tracked = git(root, 'ls-files').decode().splitlines()
     names = set(n for n in tracked if allowed_path(n))
+    # goods.json is restored from goods.json.gz and is intentionally untracked.
+    if (root / 'public/goods.json').exists():
+        names.add('public/goods.json')
     for prefix in ('docs/release-coverage', 'data/categories', 'data/archive', 'data/hp', 'data/prices', 'data/price-observations', 'public/prices', 'public/archive'):
         if (root / prefix).exists():
             # 同一套 allowed_path 判定：不允许发布的文件连暂存都不进，
@@ -323,9 +331,14 @@ def pack(root, scope, target):
         if not allowed_path(name):
             raise ValueError(f'Unexpected staged candidate path: {name}')
         try:
-            before = git(root, 'show', f'HEAD:{name}')
+            before = git(root, 'show', f'HEAD:{name}', quiet=True)
         except subprocess.CalledProcessError:
             before = None
+            if name == 'public/goods.json' or (name.startswith('data/categories/') and name.endswith('.json')):
+                try:
+                    before = gzip.decompress(git(root, 'show', f'HEAD:{name}.gz', quiet=True))
+                except subprocess.CalledProcessError:
+                    pass
         after = (root / name).read_bytes() if (root / name).exists() else None
         files[name] = {k: base64.b64encode(v).decode() if v is not None else None
                        for k, v in (('before', before), ('after', after))}

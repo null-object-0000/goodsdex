@@ -100,6 +100,18 @@ jobs:
             cp -r _data/docs/release-coverage/L6/. docs/release-coverage/L6/
             cp _data/docs/release-coverage/L6/result.json data/third-party/l6-release-evidence.json
           fi
+      - name: Rebuild legacy full-crawl candidates missing their logical public delta
+        if: ${{ inputs.scope == 'all' }}
+        run: |
+          PYTHONPATH=src python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          bundle = json.loads((Path(os.environ['RUNNER_TEMP']) / 'candidate/candidate.json').read_text())
+          if 'public/goods.json' not in bundle['files']:
+              from goodsdex.publish import build
+              print('Rebuild public view from merged snapshots: legacy candidate omitted untracked goods.json')
+              build(Path('_data/data/categories'), Path('_data/public'))
+          PY
       - name: Test publication invariants
         run: |
           python3 -m pip install --quiet pytest Pillow requests beautifulsoup4
