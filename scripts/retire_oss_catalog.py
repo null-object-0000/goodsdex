@@ -42,12 +42,33 @@ def main():
             return {'key':key, 'bytes':size, 'previous_acl':before}
         except Exception as error:
             return {'key':key, 'bytes':size, 'error_type':type(error).__name__}
+    def checkpoint():
+        temporary = Path('retired-oss-catalog.json.tmp')
+        temporary.write_text(json.dumps({'objects':changed}, ensure_ascii=False))
+        temporary.replace('retired-oss-catalog.json')
+    # Close the high-volume mutable entry points first, before old immutable blobs.
+    primary = [item for item in targets if item[0][len(ROOT):] in ALIASES]
+    remaining = [item for item in targets if item not in primary]
+    print(json.dumps({'target_objects':len(targets), 'primary_aliases':len(primary)}), flush=True)
+    for item in primary:
+        row = retire(item)
+        changed.append(row)
+        checkpoint()
+        if 'error_type' in row:
+            raise RuntimeError('Primary catalogue ACL update failed; inspect the rollback manifest')
+    print('Primary catalogue aliases are private; retiring historical blobs', flush=True)
+    executor = concurrent.futures.ThreadPoolExecutor(max_workers=8)
     try:
-        with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
-            for row in executor.map(retire, targets):
-                changed.append(row)
+        futures = [executor.submit(retire, item) for item in remaining]
+        for future in concurrent.futures.as_completed(futures):
+            changed.append(future.result())
+            if len(changed) % 100 == 0:
+                checkpoint()
+            if len(changed) % 500 == 0:
+                print(json.dumps({'processed':len(changed), 'total':len(targets)}), flush=True)
     finally:
-        Path('retired-oss-catalog.json').write_text(json.dumps({'objects':changed}, ensure_ascii=False))
+        checkpoint()
+        executor.shutdown(wait=False, cancel_futures=True)
     failures = sum('error_type' in row for row in changed)
     if failures:
         raise RuntimeError(f'{failures} ACL operations failed; inspect the private rollback manifest')
