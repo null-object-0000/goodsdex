@@ -340,6 +340,10 @@ def pack(root, scope, target):
                 except subprocess.CalledProcessError:
                     pass
         after = (root / name).read_bytes() if (root / name).exists() else None
+        # Restored JSON is untracked, so Git sees it as added even when its
+        # logical bytes equal HEAD's gzip. Do not upload huge no-op deltas.
+        if before == after:
+            continue
         files[name] = {k: base64.b64encode(v).decode() if v is not None else None
                        for k, v in (('before', before), ('after', after))}
     target.parent.mkdir(parents=True, exist_ok=True)

@@ -369,3 +369,8 @@ def test_candidate_reads_logical_baselines_from_compressed_git_storage(tmp_path)
     for name, raw in before.items():
         assert json.loads((tmp_path / name).read_bytes()) == json.loads(raw.replace(b'old', b'new'))
     assert not allowed_path('data/categories/家电.json.gz')
+    # Repacking an unchanged restored baseline must not duplicate its large raw bytes.
+    for name, raw in before.items():
+        (tmp_path / name).write_bytes(raw)
+    pack(tmp_path, 'all', candidate)
+    assert json.loads(candidate.read_text())['files'] == {}
