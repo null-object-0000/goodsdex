@@ -213,3 +213,100 @@ def test_counter_field_cannot_swallow_a_real_price_change():
     latest = {'id': 'x', 'price': 3, 'times_seen': 15}
     with pytest.raises(ValueError, match='Concurrent change'):
         merge_value(before, after, latest, 'data/archive/Apple_airpods.json')
+
+
+def observed_variant(identity, stamp, price=100, **values):
+    """The real Apple snapshot shape, including the selected capture links."""
+    values = dict(price=price, **values)
+    capture = f'{identity}-{stamp}-{price}'
+    return dict(product=dict(variant_id=identity, source='apple_cn',
+                             price_fetched_at=stamp, price_status='provided'),
+                fetched_at=stamp,
+                captures=[dict(capture_id=capture, status='success', fetched_at=stamp)],
+                assertions=[dict(assertion_id=f'{capture}-{key}', capture_id=capture,
+                                 attribute=key, normalized_value=value)
+                            for key, value in values.items()],
+                view=dict(values=values, selected_from={key: f'{capture}-{key}'
+                                                       for key in values}))
+
+
+def test_category_merges_variants_and_keeps_newest_price_with_its_evidence(tmp_path):
+    old = observed_variant('airpods', '2026-11-08T00:00:00Z')
+    crawl = observed_variant('airpods', '2026-11-08T01:00:00Z', 101,
+                             specs_table={'battery': '6 hours'})
+    hourly = observed_variant('airpods', '2026-11-08T02:00:00Z', 102)
+    # Hourly price refresh retained the old spec selection, rather than fetching specs.
+    latest_only = observed_variant('new-hourly-SKU', '2026-11-08T02:00:00Z')
+    crawl_only = observed_variant('new-crawl-SKU', '2026-11-08T01:00:00Z')
+    path = tmp_path / 'data/categories/Apple_airpods.json'
+    path.parent.mkdir(parents=True)
+    path.write_text(json.dumps([hourly, latest_only]))
+    candidate = bundle(tmp_path, {path.relative_to(tmp_path).as_posix(): (
+        json.dumps([old]).encode(), json.dumps([crawl, crawl_only]).encode())})
+    merge_candidate(tmp_path, candidate)
+    result = json.loads(path.read_text())
+    assert [r['product']['variant_id'] for r in result] == ['airpods', 'new-hourly-SKU', 'new-crawl-SKU']
+    merged = result[0]
+    assert merged['view']['values'] == dict(price=102, specs_table={'battery': '6 hours'})
+    assert merged['view']['selected_from']['price'] == hourly['view']['selected_from']['price']
+    assert merged['product']['price_fetched_at'] == hourly['product']['price_fetched_at']
+    assert merged['fetched_at'] == hourly['fetched_at']
+    assert {c['capture_id'] for c in merged['captures']} >= {
+        crawl['captures'][0]['capture_id'], hourly['captures'][0]['capture_id']}
+    # Publish-only retries must not duplicate evidence or change the result.
+    merge_candidate(tmp_path, candidate)
+    assert json.loads(path.read_text()) == result
+
+
+def test_category_selects_candidate_if_its_observation_is_newer():
+    from release_candidate import merge_category
+    old = observed_variant('airpods', '2026-11-08T00:00:00Z')
+    crawl = observed_variant('airpods', '2026-11-08T10:00:00+08:00', 102)
+    hourly = observed_variant('airpods', '2026-11-08T01:00:00Z', 101)
+    result = merge_category([old], [crawl], [hourly], 'data/categories/Apple_airpods.json')[0]
+    assert result['view']['values']['price'] == 102
+    assert result['product']['price_fetched_at'] == crawl['product']['price_fetched_at']
+
+
+@pytest.mark.parametrize('stamp', ['not-a-date', '2026-11-08T02:00:00', '2026-11-08T01:00:00Z'])
+def test_category_rejects_unordered_or_simultaneous_contradictory_prices(stamp):
+    from release_candidate import merge_category
+    old = observed_variant('airpods', '2026-11-08T00:00:00Z')
+    crawl = observed_variant('airpods', '2026-11-08T01:00:00Z', 101)
+    hourly = observed_variant('airpods', stamp, 102)
+    with pytest.raises(ValueError, match='Concurrent change'):
+        merge_category([old], [crawl], [hourly], 'data/categories/Apple_airpods.json')
+
+
+def test_category_rejects_duplicate_variant_ids():
+    from release_candidate import merge_category
+    old = observed_variant('airpods', '2026-11-08T00:00:00Z')
+    crawl = observed_variant('airpods', '2026-11-08T01:00:00Z')
+    hourly = observed_variant('airpods', '2026-11-08T02:00:00Z')
+    with pytest.raises(ValueError, match='Ambiguous category identity'):
+        merge_category([old], [crawl, crawl], [hourly], 'data/categories/Apple_airpods.json')
+
+
+def test_category_rejects_rewritten_capture_before_any_file_is_written(tmp_path):
+    old = observed_variant('airpods', '2026-11-08T00:00:00Z')
+    crawl = observed_variant('airpods', '2026-11-08T01:00:00Z')
+    hourly = copy.deepcopy(crawl)
+    hourly['captures'][0]['response_hash'] = 'contradictory content under same capture ID'
+    path = tmp_path / 'data/categories/Apple_airpods.json'
+    path.parent.mkdir(parents=True)
+    path.write_text(json.dumps([hourly]))
+    original = path.read_bytes()
+    candidate = bundle(tmp_path, {
+        'data/categories/new.json': (None, b'[]'),
+        path.relative_to(tmp_path).as_posix(): (json.dumps([old]).encode(), json.dumps([crawl]).encode())})
+    with pytest.raises(ValueError, match='Conflicting immutable evidence'):
+        merge_candidate(tmp_path, candidate)
+    assert not (path.parent / 'new.json').exists()
+    assert path.read_bytes() == original
+
+
+def test_category_unknown_list_shape_still_fails_closed():
+    from release_candidate import merge_category
+    with pytest.raises(ValueError, match='Ambiguous category identity'):
+        merge_category([{'name': 'old'}], [{'name': 'crawl'}], [{'name': 'hourly'}],
+                       'data/categories/unknown.json')
