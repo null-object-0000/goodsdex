@@ -1,4 +1,4 @@
-# 共享发布入口；仅由采集 workflow 调用。产出唯一 data 发布集及 OSS 镜像。
+# 共享发布入口；仅由采集 workflow 调用。验证后增量写入现有 MySQL API。
 # 只有此 job 可以合并、门禁、finalize、推 data；整个过程持同一把锁。
 name: publish-release
 on:
@@ -28,9 +28,9 @@ on:
         default: false
         required: false
     secrets:
-      OSS_ACCESS_KEY_ID:
+      CATALOG_API_URL:
         required: true
-      OSS_ACCESS_KEY_SECRET:
+      CATALOG_IMPORT_TOKEN:
         required: true
 permissions:
   contents: write
@@ -52,13 +52,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Require OSS credentials before publishing
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Require database import credentials before publishing
         env:
-          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
-          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
+          CATALOG_API_URL: ${{ secrets.CATALOG_API_URL }}
+          CATALOG_IMPORT_TOKEN: ${{ secrets.CATALOG_IMPORT_TOKEN }}
         run: |
-          test -n "$OSS_ACCESS_KEY_ID" && test -n "$OSS_ACCESS_KEY_SECRET" || {
-            echo '::error::缺少 OSS 密钥，拒绝发布'; exit 1;
+          test -n "$CATALOG_API_URL" && test -n "$CATALOG_IMPORT_TOKEN" || {
+            echo '::error::缺少商品库专用导入配置，拒绝发布'; exit 1;
           }
       - name: Read latest data while holding publication lock
         uses: actions/checkout@v4
@@ -233,13 +236,11 @@ jobs:
           git commit -m "$RELEASE_SCOPE publication $(date -u +%Y-%m-%dT%H:%MZ)"
           # No force push or automatic conflict resolution. A failed mirror is rerunnable.
           git push origin HEAD:data
-      - name: Mirror and verify OSS (immutable blobs first, manifest last)
+      - name: Import only changed records into the authoritative MySQL catalogue
         env:
-          OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
-          OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
-        run: |
-          python3 -m pip install --quiet oss2
-          python3 scripts/mirror_public_to_oss.py --public _data/public
+          CATALOG_API_URL: ${{ secrets.CATALOG_API_URL }}
+          CATALOG_IMPORT_TOKEN: ${{ secrets.CATALOG_IMPORT_TOKEN }}
+        run: node scripts/publish_mysql.mjs _data/public
       - name: Record release summary
         run: |
           python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"

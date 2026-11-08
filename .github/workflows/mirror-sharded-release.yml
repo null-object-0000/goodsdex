@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      - name: Retired catalogue mirror
+        run: |
+          echo '::error::商品库已迁入 MySQL。OSS 仅用于图片、证据和冷备份；禁止重新发布在线商品 JSON。'
+          exit 1
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
         with:
