@@ -1,9 +1,9 @@
 # 汽车独立采集；北京时间每天 12:17，产出已审查汽车候选。
-# 产出候选差量 artifact；共享 publish-release 负责合并、门禁、分片和 OSS。
+# 产出候选差量 artifact；共享 publish-release 负责门禁及 MySQL 增量导入。
 name: refresh-cars
 on:
   schedule:
-    - cron: '17 4 * * *'
+    - cron: '17 4 * * 0'
   workflow_dispatch:
     inputs:
       verified_only:

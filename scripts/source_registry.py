@@ -55,6 +55,12 @@ def refresh(root, api, now=None):
         try:
             runs=api.get(f"actions/workflows/{row['workflow']}/runs?per_page=100")['workflow_runs']
             updated=reconcile(row,runs,now)
+            try:
+                workflow = api.get(f"actions/workflows/{row['workflow']}")
+            except Exception:
+                workflow = {}
+            if str(workflow.get('state', '')).startswith('disabled'):
+                updated.update(previous_status=updated.get('status'), status='paused', stale=False, alert=False)
             updated.pop('registry_error',None)
             if runs and updated['status']=='failure':
                 updated['failure_reason']=redact(first_error(api,runs[0]),api.token)

@@ -1,7 +1,7 @@
 name: release-dates-daily
 on:
   schedule:
-    - cron: '17 19 * * *'
+    - cron: '17 19 * * 0'
   workflow_dispatch:
     inputs:
       lane:
@@ -44,7 +44,7 @@ jobs:
           export ATOUR_CHROMIUM_PATH="$(node -e "process.stdout.write(require('/tmp/release-browser/node_modules/playwright').chromium.executablePath())")"
           EXTRA=()
           if [ '${{ inputs.l6_full }}' = true ]; then EXTRA+=(--l6-full); fi
-          python3 scripts/release_dates_run.py --lane '${{ inputs.lane || 'all' }}' --goods _data/public/goods.json --output docs/release-coverage --apply "${EXTRA[@]}"
+          python3 scripts/release_dates_run.py --lane '${{ inputs.lane || 'L1' }}' --goods _data/public/goods.json --output docs/release-coverage --apply "${EXTRA[@]}"
           mkdir -p _data/docs/release-coverage
           cp docs/release-coverage/????-??-??.md _data/docs/release-coverage/
           cp docs/release-coverage/coverage.json _data/docs/release-coverage/

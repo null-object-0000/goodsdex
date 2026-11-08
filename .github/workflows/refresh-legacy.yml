@@ -1,9 +1,9 @@
 # 小米旧款回填；每日增量刷新，产出旧款商品与分类缓存候选。
-# 产出候选差量 artifact；共享 publish-release 负责合并、门禁、分片和 OSS。
+# 产出候选差量 artifact；共享 publish-release 负责门禁及 MySQL 增量导入。
 name: refresh-legacy
 on:
   schedule:
-    - cron: '34 20 * * *'
+    - cron: '34 20 * * 0'
   workflow_dispatch:
 permissions:
   contents: write

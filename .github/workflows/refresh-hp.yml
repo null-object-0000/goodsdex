@@ -1,9 +1,9 @@
 # 惠普源封锁期间每天北京时间 12:43 探测一次；恢复后仍每日采集。
-# 产出候选差量 artifact；共享 publish-release 负责合并、门禁、分片和 OSS。
+# 产出候选差量 artifact；共享 publish-release 负责门禁及 MySQL 增量导入。
 name: refresh-hp
 on:
   schedule:
-    - cron: '43 4 * * *'
+    - cron: '43 4 * * 0'
   workflow_dispatch:
     inputs:
       history_only:
