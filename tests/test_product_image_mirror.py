@@ -29,6 +29,22 @@ def test_real_image_bytes_are_accepted_when_cdn_labels_png_as_text_plain():
     assert m.convert(m.download(SRC,get=lambda *a,**k:Response())).startswith(b'\xff\xd8')
     with pytest.raises(Exception):m.convert(b'<html>not an image</html>')
 
+
+def test_legacy_jpeg_repair_is_explicit_and_skips_already_repaired_assets():
+    route={m.keys(SRC)[0]:{'objectKey':'goods/'+ 'a'*40+'.jpg'}}
+    assert m.pending([SRC],route)==[]
+    assert m.pending([SRC],route,repair_legacy=True)==[SRC]
+    route[m.keys(SRC)[0]]={'objectKey':'goods/'+ 'b'*64+'.png'}
+    assert m.pending([SRC],route,repair_legacy=True)==[]
+
+
+def test_palette_transparency_survives_conversion():
+    image=Image.new('P',(32,32),0);image.putpalette([0,0,0,255,255,255]+[0]*762)
+    image.paste(1,(8,8,24,24));source=io.BytesIO();image.save(source,format='PNG',transparency=0)
+    with Image.open(io.BytesIO(m.convert(source.getvalue()))) as result:
+        assert result.format=='PNG' and result.mode=='RGBA'
+        assert result.getpixel((0,0))[3]==0 and result.getpixel((16,16))[3]==255
+
 def test_native_png_retains_transparency_and_limits_dimensions():
     source=io.BytesIO();Image.new('RGBA',(1600,900),(255,0,0,0)).save(source,format='PNG')
     result=m.convert(source.getvalue())

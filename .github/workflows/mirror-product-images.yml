@@ -2,6 +2,10 @@ name: mirror-product-images
 on:
   workflow_dispatch:
     inputs:
+      repair_legacy:
+        description: 'Re-fetch legacy JPEG covers once to restore lost transparency'
+        type: boolean
+        default: false
       retry_failed:
         description: 'Retry failed source URLs immediately; existing successful mirrors remain untouched'
         type: boolean
@@ -38,4 +42,5 @@ jobs:
           OSS_ACCESS_KEY_ID: ${{ secrets.OSS_ACCESS_KEY_ID }}
           OSS_ACCESS_KEY_SECRET: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
           IMAGE_RETRY_FAILED: ${{ inputs.retry_failed }}
+          IMAGE_REPAIR_LEGACY: ${{ inputs.repair_legacy }}
         run: node scripts/publish_mysql.mjs _data/public
