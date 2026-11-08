@@ -9,6 +9,7 @@ import os
 import sys
 import time
 import threading
+import re
 from urllib.parse import urlparse, urlsplit, urlunsplit, parse_qsl, urlencode
 import requests
 from PIL import Image, ImageOps
@@ -38,13 +39,16 @@ def keys(src):
     return [hashlib.sha1(v.encode()).hexdigest()[:32] for v in dict.fromkeys([src,plain])]
 
 
-def pending(urls, routes, now=None, retry_failed=False):
+def pending(urls, routes, now=None, retry_failed=False, repair_legacy=False):
     now = now or datetime.now(timezone.utc)
     result=[]
     for src in sorted(set(urls)):
         if not isinstance(src,str) or urlparse(src).scheme!='https': continue
         entries=[routes[k] for k in keys(src) if k in routes]
-        if any(e.get('objectKey') and not e['objectKey'].endswith('.webp') for e in entries): continue
+        # The old SHA1-named JPEG pipeline discarded source transparency. Repair
+        # these only on explicit backfill; modern assets never download again.
+        legacy=lambda key:bool(re.fullmatch(r'goods/[a-f0-9]{40}\.jpg',key))
+        if any(e.get('objectKey') and not e['objectKey'].endswith('.webp') and not (repair_legacy and legacy(e['objectKey'])) for e in entries): continue
         # Failed source URLs retry at most once a day across all collectors.
         if not retry_failed and any(not e.get('objectKey') and e.get('checkedAt') and (now-datetime.fromisoformat(e['checkedAt'].replace('Z','+00:00'))).total_seconds()<86400 for e in entries): continue
         result.append(src)
@@ -127,7 +131,7 @@ def publish_routes(base,token,assets,post=requests.post,sleep=time.sleep):
 def main():
     data=json.load(sys.stdin);base=os.environ['CATALOG_API_URL'];token=os.environ['CATALOG_IMPORT_TOKEN']
     assert urlparse(base).scheme=='https' and len(token)>=32
-    urls=pending(data['urls'],data['routes'],retry_failed=data.get('retryFailed',False))
+    urls=pending(data['urls'],data['routes'],retry_failed=data.get('retryFailed',False),repair_legacy=data.get('repairLegacy',False))
     # Nothing new: no source downloads, no OSS operations, no route writes.
     if not urls: print(json.dumps(dict(uploaded=0,failed=0,bytes=0)));return
     import oss2
