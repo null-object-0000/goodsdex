@@ -18,6 +18,8 @@ from goodsdex.release_policy import assert_no_lost_ids
 
 MISSING = object()
 SCOPES = ('prices', 'apple', 'hp', 'atour', 'cars', 'legacy', 'all')
+RUN_REPORTS = {'data/hp/audit.json': 'fetched_at',
+               'data/hp/collection-status.json': 'checked_at'}
 
 
 def git(root, *args):
@@ -97,6 +99,20 @@ def observation_time(value):
         return stamp if stamp.utcoffset() is not None else None
     except (AttributeError, TypeError, ValueError):
         return None
+
+
+def merge_run_report(before, after, latest, label):
+    """A run's audit and its arrays/counters are one observation, not product deltas."""
+    if before == after or after == latest:
+        return latest
+    if latest == before:
+        return after
+    field = RUN_REPORTS[label]
+    if isinstance(after, dict) and isinstance(latest, dict):
+        at, ct = (observation_time(row.get(field)) for row in (after, latest))
+        if at is not None and ct is not None and at != ct:
+            return after if at > ct else latest
+    raise ValueError(f'Concurrent change at {label}; no unambiguous report order')
 
 
 def merge_evidence(before, after, latest, key, label):
@@ -362,7 +378,8 @@ def merge_candidate(root, candidate):
             def decode(raw):
                 return json.loads(raw) if raw is not None else MISSING
             from goodsdex.publish import is_category_snapshot_file
-            merge = (merge_category if name.startswith('data/categories/')
+            merge = (merge_run_report if name in RUN_REPORTS else
+                     merge_category if name.startswith('data/categories/')
                      and is_category_snapshot_file(name) else merge_value)
             result = merge(decode(before), decode(after), decode(latest), name)
             value = None if result is MISSING else (json.dumps(result, ensure_ascii=False, indent=1) + '\n').encode()

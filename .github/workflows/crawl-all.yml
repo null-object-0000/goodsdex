@@ -27,6 +27,10 @@ on:
         description: '指定分类（空格分隔，留空=全部）'
         required: false
         default: ''
+      candidate_run_id:
+        description: '恢复发布：复用已采集成功但发布失败的 main 分支 run ID；留空则重新采集'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -35,6 +39,7 @@ permissions:
 
 jobs:
   crawl:
+    if: ${{ !github.event.inputs.candidate_run_id }}
     runs-on: ubuntu-latest
     # 实测 runner 上比本地慢约 5 倍（同一分类：本地 40s / runner 204s，
     # 因为每次请求的往返延迟高得多）。本地 23.6 分钟的采集在 runner 上
@@ -148,8 +153,46 @@ jobs:
       - uses: ./.github/actions/upload-candidate
         with:
           scope: all
+  recover:
+    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.candidate_run_id != '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: candidate-${{ github.event.inputs.candidate_run_id }}
+          run-id: ${{ github.event.inputs.candidate_run_id }}
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/candidate
+      - uses: actions/download-artifact@v4
+        with:
+          name: source-metrics
+          run-id: ${{ github.event.inputs.candidate_run_id }}
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/saved-metrics
+      - name: Validate saved collector provenance and responsibility
+        env:
+          RECOVERY_RUN_ID: ${{ github.event.inputs.candidate_run_id }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/validate_crawl_recovery.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidate-${{ github.run_id }}
+          path: ${{ runner.temp }}/candidate/candidate.json
+          retention-days: 7
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: source-metrics
+          path: ${{ runner.temp }}/saved-metrics/source-metrics.json
+          if-no-files-found: error
   publish:
-    needs: crawl
+    needs: [crawl, recover]
+    if: ${{ always() && (needs.crawl.result == 'success' || needs.recover.result == 'success') }}
     uses: ./.github/workflows/publish-release.yml
     with:
       scope: all
