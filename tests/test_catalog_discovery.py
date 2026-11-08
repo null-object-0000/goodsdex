@@ -89,3 +89,20 @@ def test_discovery_candidate_contains_only_additions_and_preserves_concurrent_pr
     merge_candidate(tmp_path,candidate);assert json.loads(p.read_text())==[latest,normalized]
     p.write_text(json.dumps([{**old,'name':'corrupted'},new]),encoding='utf-8')
     with pytest.raises(ValueError,match='Discovery cannot change'):pack(tmp_path,'all',candidate,'discovery')
+
+
+def test_discovery_preserves_every_existing_legacy_duplicate_version(tmp_path):
+    sys.path.insert(0,str(Path(__file__).parents[1]/'scripts'))
+    from release_candidate import pack,merge_candidate
+    def git(*args):return subprocess.run(['git','-C',str(tmp_path),*args],check=True,capture_output=True)
+    git('init','-q');p=tmp_path/'public/goods.json';p.parent.mkdir()
+    old=[{'id':'CN:mi_cn:product:1','name':'same product','price':100},
+         {'id':'CN:mi_cn:product:1','name':'same product','price':120}]
+    new={'id':'CN:mi_cn:product:2','name':'new','name_source':{'identity_verified':True}}
+    p.write_text(json.dumps(old),encoding='utf-8');git('add','-A');git('-c','user.name=t','-c','user.email=t@t','commit','-qm','baseline')
+    p.write_text(json.dumps([*old,new]),encoding='utf-8');candidate=tmp_path/'candidate.json'
+    pack(tmp_path,'all',candidate,'discovery')
+    p.write_text(json.dumps(old),encoding='utf-8');merge_candidate(tmp_path,candidate)
+    assert json.loads(p.read_text())==[*old,new]
+    p.write_text(json.dumps([old[0],new]),encoding='utf-8')
+    with pytest.raises(ValueError,match='Discovery cannot change'):pack(tmp_path,'all',candidate,'discovery')

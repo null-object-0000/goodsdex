@@ -349,8 +349,10 @@ def pack(root, scope, target, collector_mode=None):
             continue
         if collector_mode=='discovery' and name=='public/goods.json':
             old=json.loads(before or b'[]');new=json.loads(after or b'[]')
-            previous={r['id']:r for r in old};current={r['id']:r for r in new}
-            if len(current)!=len(new) or any(current.get(key)!=row for key,row in previous.items()):
+            # Some legacy snapshots retain multiple source versions of one ID.
+            # Preserve each existing group exactly; only new IDs must be unique.
+            previous,current=groups(old),groups(new)
+            if any(current.get(key)!=rows for key,rows in previous.items()) or any(len(rows)!=1 for key,rows in current.items() if key not in previous):
                 raise ValueError('Discovery cannot change or remove existing products')
             additions=[r for r in new if r['id'] not in previous]
             before=b'[]';after=json.dumps(additions,ensure_ascii=False).encode()
