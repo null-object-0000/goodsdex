@@ -10,6 +10,7 @@ import json
 import subprocess
 import sys
 from collections import defaultdict
+from datetime import datetime
 from pathlib import Path, PurePosixPath
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
@@ -87,6 +88,147 @@ def merge_value(before, after, latest, label):
             print(f'watch: observation counter moved at {label}: {merged}', file=sys.stderr)
             return merged
     raise ValueError(f'Concurrent change at {label}; re-run this collector against latest data')
+
+
+def observation_time(value):
+    """Compare source observations, never publication time or lexical ISO strings."""
+    try:
+        stamp = datetime.fromisoformat(value.replace('Z', '+00:00'))
+        return stamp if stamp.utcoffset() is not None else None
+    except (AttributeError, TypeError, ValueError):
+        return None
+
+
+def merge_evidence(before, after, latest, key, label):
+    def index(rows):
+        out = {}
+        for row in rows:
+            identity = row.get(key) if isinstance(row, dict) else None
+            if not isinstance(identity, str) or not identity or identity in out:
+                raise ValueError(f'Ambiguous evidence identity at {label}')
+            out[identity] = row
+        return out
+    b, a, c = (index(rows) for rows in (before, after, latest))
+    result = dict(c)
+    for identity, row in a.items():
+        if identity in c and c[identity] != row:
+            raise ValueError(f'Conflicting immutable evidence at {label}.{identity}')
+        result[identity] = row
+    # Keep the evidence that either concurrent observation still references.
+    for identity, row in b.items():
+        result.setdefault(identity, row)
+    return list(result.values())
+
+
+def merge_record(before, after, latest, label):
+    """Merge views with their selected assertion, retaining both evidence bundles."""
+    if before == after or after == latest:
+        return latest
+    if latest == before:
+        return after
+    if not all(isinstance(row, dict) for row in (before, after, latest)):
+        return merge_value(before, after, latest, label)
+    records = (before, after, latest)
+    special = {'view', 'captures', 'assertions', 'fetched_at'}
+    # Price metadata must follow the selected price observation as one unit.
+    price_fields = {'price_fetched_at', 'price_status', 'price_kind', 'currency'}
+    plain = [{k: v for k, v in row.items() if k not in special} for row in records]
+    for row in plain:
+        row['product'] = {k: v for k, v in row.get('product', {}).items()
+                          if k not in price_fields}
+    result = merge_value(*plain, label)
+    for field, key in (('captures', 'capture_id'), ('assertions', 'assertion_id')):
+        result[field] = merge_evidence(*(row.get(field, []) for row in records),
+                                       key, f'{label}.{field}')
+
+    def selection(record, field):
+        view = record.get('view', {})
+        return (view.get('values', {}).get(field, MISSING),
+                view.get('selected_from', {}).get(field, MISSING))
+
+    def selected_time(record, field):
+        _, aid = selection(record, field)
+        assertion = next((a for a in record.get('assertions', [])
+                          if a.get('assertion_id') == aid), {})
+        capture = next((c for c in record.get('captures', [])
+                        if c.get('capture_id') == assertion.get('capture_id')), {})
+        if capture.get('status') != 'success':
+            return None
+        return observation_time(capture.get('fetched_at'))
+
+    views = [row.get('view', {}) for row in records]
+    view = merge_value(*({k: v for k, v in v.items()
+                         if k not in ('values', 'selected_from')} for v in views),
+                       f'{label}.view')
+    view.update(values={}, selected_from={})
+    fields = dict.fromkeys(k for v in views for k in v.get('values', {}))
+    for field in fields:
+        b, a, c = (selection(row, field) for row in records)
+        if a == b or a == c:
+            chosen = latest
+        elif c == b:
+            chosen = after
+        else:
+            at, ct = selected_time(after, field), selected_time(latest, field)
+            if at is None or ct is None or (at == ct and a[0] != c[0]):
+                raise ValueError(f'Concurrent change at {label}.view.{field}; '
+                                 'no unambiguous observation order')
+            chosen = after if at > ct else latest
+        value, aid = selection(chosen, field)
+        if value is not MISSING:
+            view['values'][field] = value
+        if aid is not MISSING:
+            view['selected_from'][field] = aid
+        if field == 'price':
+            for key in price_fields:
+                if key in chosen.get('product', {}):
+                    result['product'][key] = chosen['product'][key]
+    if 'price' not in fields:
+        for key in price_fields:
+            value = merge_value(*(r.get('product', {}).get(key, MISSING)
+                                  for r in records), f'{label}.product.{key}')
+            if value is not MISSING:
+                result['product'][key] = value
+    result['view'] = view
+    stamps = [(observation_time(row.get('fetched_at')), row.get('fetched_at'))
+              for row in (after, latest)]
+    if all(t is not None for t, _ in stamps):
+        result['fetched_at'] = max(stamps, key=lambda pair: pair[0])[1]
+    else:
+        result['fetched_at'] = merge_value(*(r.get('fetched_at', MISSING)
+                                            for r in records), f'{label}.fetched_at')
+        if result['fetched_at'] is MISSING:
+            result.pop('fetched_at')
+    return result
+
+
+def merge_category(before, after, latest, label):
+    """A category is a set of independently observed variants, not an atomic list."""
+    if before == after or after == latest:
+        return latest
+    if latest == before:
+        return after
+    if not all(isinstance(rows, list) for rows in (before, after, latest)):
+        return merge_value(before, after, latest, label)
+    from goodsdex.publish import record_id
+    def index(rows):
+        out = {}
+        for row in rows:
+            identity = record_id(row)
+            if not identity or identity in out:
+                raise ValueError(f'Ambiguous category identity at {label}')
+            out[identity] = row
+        return out
+    b, a, c = (index(rows) for rows in (before, after, latest))
+    out = dict(c)
+    for identity in dict.fromkeys([*b, *a]):
+        old, new, current = (rows.get(identity, MISSING) for rows in (b, a, c))
+        value = merge_record(old, new, current, f'{label}[{identity}]')
+        if value is MISSING:
+            out.pop(identity, None)
+        else:
+            out[identity] = value
+    return list(out.values())
 
 
 def groups(rows):
@@ -219,7 +361,10 @@ def merge_candidate(root, candidate):
         elif name.endswith('.json'):
             def decode(raw):
                 return json.loads(raw) if raw is not None else MISSING
-            result = merge_value(decode(before), decode(after), decode(latest), name)
+            from goodsdex.publish import is_category_snapshot_file
+            merge = (merge_category if name.startswith('data/categories/')
+                     and is_category_snapshot_file(name) else merge_value)
+            result = merge(decode(before), decode(after), decode(latest), name)
             value = None if result is MISSING else (json.dumps(result, ensure_ascii=False, indent=1) + '\n').encode()
         else:
             value = merge_value(before, after, latest, name)
