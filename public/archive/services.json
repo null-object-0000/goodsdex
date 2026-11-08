@@ -858,5 +858,47 @@
   "brand": "小米",
   "brand_source": "id_prefix",
   "source_url": "https://www.mi.com/shop/buy/detail?product_id=19045"
+ },
+ {
+  "id": "CN:mi_cn:product:24837",
+  "name": "Xiaomi 17 系列 优惠屏 屏幕换新服务",
+  "kind": "service",
+  "category": "游戏电竞显示器",
+  "categories": [
+   "游戏电竞显示器"
+  ],
+  "price": "535",
+  "market_price": "535",
+  "gid": 2230012222,
+  "image": "https://cdn.cnbj1.fds.api.mi-img.com/nr-upload-outer/AA0D4051C4C07C7440EAD79044E10F81_1779971579024.png",
+  "fetched_at": "2026-11-08T22:04:48+08:00",
+  "params": {
+   "pc_main_images": [
+    {
+     "url": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/3417B505B12FBB64F2EA6BD644418DCF.png",
+     "locator": "$.data.goods_list[0].goods_info.imgs[0]"
+    }
+   ]
+  },
+  "name_source": {
+   "kind": "mobile_api",
+   "url": "https://m.mi.com/mtop/xiaomishop/product/info?gid=2230012222",
+   "capture_id": "cbaf23f2c79c",
+   "requested_at": "2026-11-08T22:04:50+08:00",
+   "sha256": "b920d833686bb7d6",
+   "product_id": "24837",
+   "identity_verified": true
+  },
+  "on_sale": true,
+  "is_accessory": false,
+  "image_status": "available",
+  "image_checked_at": "2026-11-08T22:04:53+08:00",
+  "image_source": "mi_cn_mtop_cover",
+  "image_source_url": "https://m.mi.com/mtop/xiaomishop/product/info",
+  "image_captured_at": "2026-11-08T22:04:53+08:00",
+  "image_scope": "model",
+  "image_note": "$.data.goodsInfo.goodsList[0].imgUrl; exact productId=24837",
+  "brand": "小米",
+  "brand_source": "id_prefix"
  }
 ]

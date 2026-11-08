@@ -40152,5 +40152,55 @@
     "电池"
    ]
   }
+ },
+ {
+  "id": "CN:mi_cn:product:23614",
+  "name": "米家洗地机5MAX/5PRO泡沫清洁液",
+  "kind": "accessory",
+  "category": "家电",
+  "categories": [
+   "家电"
+  ],
+  "price": "49",
+  "market_price": "59",
+  "gid": 2230007882,
+  "image": "https://cdn.cnbj1.fds.api.mi-img.com/nr-upload-outer/1679091C5A880FAF6FB5E6087EB1B2DC_1772532175206.png",
+  "fetched_at": "2026-11-08T22:05:18+08:00",
+  "params": {
+   "pc_main_images": [
+    {
+     "url": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/BDE9BEFA720F8DE5A3EB445872694E16.png",
+     "locator": "$.data.goods_list[0].goods_info.imgs[0]"
+    }
+   ]
+  },
+  "name_source": {
+   "kind": "mobile_api",
+   "url": "https://m.mi.com/mtop/xiaomishop/product/info?gid=2230007882",
+   "capture_id": "fcb10acf5c4b",
+   "requested_at": "2026-11-08T22:05:20+08:00",
+   "sha256": "69374478c11d2d16",
+   "product_id": "23614",
+   "identity_verified": true
+  },
+  "on_sale": true,
+  "is_accessory": true,
+  "image_status": "available",
+  "image_checked_at": "2026-11-08T22:05:22+08:00",
+  "image_source": "mi_cn_mtop_cover",
+  "image_source_url": "https://m.mi.com/mtop/xiaomishop/product/info",
+  "image_captured_at": "2026-11-08T22:05:22+08:00",
+  "image_scope": "model",
+  "image_note": "$.data.goodsInfo.goodsList[0].imgUrl; exact productId=23614",
+  "brand": "小米",
+  "brand_source": "id_prefix",
+  "excluded_reason": "accessory:name",
+  "exclusion": {
+   "accessory": true,
+   "basis": "name",
+   "matched": [
+    "清洁液"
+   ]
+  }
  }
 ]
