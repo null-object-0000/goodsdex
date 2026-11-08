@@ -76,7 +76,7 @@ def test_discovery_candidate_contains_only_additions_and_preserves_concurrent_pr
     def git(*args):return subprocess.run(['git','-C',str(tmp_path),*args],check=True,capture_output=True)
     git('init','-q');p=tmp_path/'public/goods.json';p.parent.mkdir()
     old={'id':'CN:mi_cn:product:1','name':'old','price':300,'params':{'evidence':'x'*10000}}
-    new={'id':'CN:mi_cn:product:2','name':'new','price':200}
+    new={'id':'CN:mi_cn:product:2','name':'new','price':200,'name_source':{'identity_verified':True}}
     p.write_text(json.dumps([old]),encoding='utf-8');git('add','-A');git('-c','user.name=t','-c','user.email=t@t','commit','-qm','baseline')
     p.write_text(json.dumps([old,new]),encoding='utf-8');candidate=tmp_path/'candidate.json'
     pack(tmp_path,'all',candidate,'discovery');bundle=json.loads(candidate.read_text())
@@ -84,5 +84,8 @@ def test_discovery_candidate_contains_only_additions_and_preserves_concurrent_pr
     assert json.loads(base64.b64decode(bundle['files']['public/goods.json']['before']))==[]
     latest={**old,'price':350};p.write_text(json.dumps([latest]),encoding='utf-8')
     merge_candidate(tmp_path,candidate);assert json.loads(p.read_text())==[latest,new]
+    normalized={**new,'price':250,'normalized':True}
+    p.write_text(json.dumps([latest,normalized]),encoding='utf-8')
+    merge_candidate(tmp_path,candidate);assert json.loads(p.read_text())==[latest,normalized]
     p.write_text(json.dumps([{**old,'name':'corrupted'},new]),encoding='utf-8')
     with pytest.raises(ValueError,match='Discovery cannot change'):pack(tmp_path,'all',candidate,'discovery')

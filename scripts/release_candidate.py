@@ -370,15 +370,27 @@ def merge_candidate(root, candidate):
     bundle = json.loads(candidate.read_text())
     if bundle['schema'] != 1 or bundle['scope'] not in SCOPES:
         raise ValueError('Unsupported candidate')
+    discovery=bundle.get('collector_mode')=='discovery'
+    if discovery and bundle['scope']!='all':raise ValueError('Invalid discovery scope')
     writes = {}
     for name, delta in bundle['files'].items():
         if not allowed_path(name):
             raise ValueError(f'Forbidden candidate path: {name}')
+        if discovery and name!='public/goods.json' and not re.fullmatch(r'data/categories/discovered-[0-9]+\.json',name):
+            raise ValueError('Unexpected discovery candidate path: '+name)
         path = root / name
         before, after = (base64.b64decode(delta[k]) if delta[k] is not None else None for k in ('before', 'after'))
         latest = path.read_bytes() if path.exists() else None
         if name == 'public/goods.json':
-            result = merge_goods(json.loads(before), json.loads(after), json.loads(latest), bundle['scope'])
+            old,new,current=(json.loads(raw) for raw in (before,after,latest))
+            if discovery:
+                if old:raise ValueError('Discovery candidates must be additions-only')
+                if len({r['id'] for r in new})!=len(new) or any(not re.fullmatch(r'CN:mi_cn:product:[0-9]+',r['id']) or not (r.get('name_source') or {}).get('identity_verified') for r in new):
+                    raise ValueError('Discovery addition lacks verified product identity')
+                # A retry after finalization, or a concurrent collector, may
+                # already have installed this ID. Its current row always wins.
+                known={r['id'] for r in current};new=[r for r in new if r['id'] not in known]
+            result = merge_goods(old,new,current,bundle['scope'])
             value = (json.dumps(result, ensure_ascii=False, indent=1) + '\n').encode()
         elif name.endswith('.jsonl'):
             old_lines = (before or b'').splitlines()
