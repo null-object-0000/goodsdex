@@ -1,9 +1,9 @@
-# Apple CN 目录与价格；每小时 :33，目标总耗时 <8 分钟。
-# 产出候选差量 artifact；共享 publish-release 负责合并、门禁、分片和 OSS。
+# Apple CN 目录与价格；每日北京时间 02:33，目标总耗时 <8 分钟。
+# 产出候选差量 artifact；共享 publish-release 负责门禁及 MySQL 增量导入。
 name: refresh-apple
 on:
   schedule:
-    - cron: '33 * * * *'
+    - cron: '33 18 * * *'
   workflow_dispatch:
 permissions:
   contents: write

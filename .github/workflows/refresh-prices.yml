@@ -1,9 +1,9 @@
-# 小米／大疆／富士价格回灌；每小时 :23，目标总耗时 <5 分钟。
-# 产出候选差量 artifact；共享 publish-release 负责合并、门禁、分片和 OSS。
+# 小米／大疆／富士价格回灌；每日北京时间 02:23，目标总耗时 <5 分钟。
+# 产出候选差量 artifact；共享 publish-release 负责门禁及 MySQL 增量导入。
 name: refresh-prices
 on:
   schedule:
-    - cron: '23 * * * *'
+    - cron: '23 18 * * *'
   workflow_dispatch:
 permissions:
   contents: write

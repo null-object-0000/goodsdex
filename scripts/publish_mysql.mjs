@@ -1,6 +1,8 @@
 import {readFile} from 'node:fs/promises';
+import {createReadStream} from 'node:fs';
+import {createInterface} from 'node:readline';
 import {createHash} from 'node:crypto';
-import {gzipSync} from 'node:zlib';
+import {gzipSync,createGunzip} from 'node:zlib';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 
@@ -28,6 +30,35 @@ async function readVerified(root,meta,name){
   return JSON.parse(bytes);
 }
 
+export async function publishHistory({root,meta,baseline,request,dryRun}) {
+  const descriptors=meta.price_history?.files||{},known=new Set(baseline.historyFiles||[]);
+  const canonicalNames=Object.keys(descriptors).filter(n=>/^price-history\/\d{4}-\d{2}(?:-[ab])?\.jsonl\.gz$/.test(n));
+  const names=canonicalNames.length?canonicalNames:Object.keys(descriptors).filter(n=>/^prices\/\d{4}-\d{2}\.jsonl$/.test(n));
+  let chunks=0,wireBytes=0;
+  for(const name of names.sort()) {
+    const descriptor=descriptors[name];if(known.has(descriptor.sha256))continue;
+    const filename=path.join(root,name),digest=createHash('sha256');let bytes=0;
+    for await(const part of createReadStream(filename)){digest.update(part);bytes+=part.length;}
+    if(bytes!==descriptor.bytes||digest.digest('hex')!==descriptor.sha256)throw Error('Invalid history artifact: '+name);
+    const input=createReadStream(filename),lines=createInterface({input:name.endsWith('.gz')?input.pipe(createGunzip()):input,crlfDelay:Infinity});
+    let batch=[],size=0;
+    async function flush(){
+      if(!batch.length)return;const jsonl=batch.join('\n')+'\n',sha256=createHash('sha256').update(jsonl).digest('hex');
+      if(!known.has(sha256)){chunks++;const body={month:name.match(/\d{4}-\d{2}/)[0],sha256,jsonl};if(!dryRun){await request('history',body);wireBytes+=gzipSync(JSON.stringify(body)).length;}}
+      known.add(sha256);batch=[];size=0;
+    }
+    for await(const line of lines){
+      if(!line.trim())continue;
+      const row=JSON.parse(line),at=row.at||row.fetched_at;
+      if(baseline.historyCutoff&&Date.parse(at)<Date.parse(baseline.historyCutoff))continue;
+      const length=Buffer.byteLength(line)+1;if(length>8*1024*1024)throw Error('Oversized history observation');
+      if(batch.length>=2000||size+length>8*1024*1024)await flush();batch.push(line);size+=length;
+    }
+    await flush();
+  }
+  return {chunks,wireBytes};
+}
+
 export async function publish({root,baseUrl,token,fetchImpl=fetch,dryRun=false}){
   const endpoint=new URL(baseUrl);
   if(endpoint.protocol!=='https:'||endpoint.username||endpoint.password)throw Error('An HTTPS catalogue API URL is required');
@@ -53,7 +84,8 @@ export async function publish({root,baseUrl,token,fetchImpl=fetch,dryRun=false})
     for(;;){data={base_version:version,source_id:'goodsdex',rows:batchRows};batch={...data,batch_id:hash(data)};const plain=Buffer.byteLength(JSON.stringify(batch)),size=gzipSync(JSON.stringify(batch)).length;if(plain<=31*1024*1024&&size<=7*1024*1024){wireBytes+=size;break;}if(batchRows.length===1)throw Error('Single source record exceeds bounded importer capacity');batchRows=batchRows.slice(0,Math.ceil(batchRows.length/2));}
     const result=await request('import',batch);version=result.version;batches++;start+=batchRows.length;
   }
-  return {total:rows.length,changed:changed.length,batches,wireBytes,version,dryRun};
+  const history=await publishHistory({root,meta,baseline,request,dryRun});
+  return {total:rows.length,changed:changed.length,batches,wireBytes,version,dryRun,history};
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
   try{console.log(JSON.stringify(await publish({root:process.argv[2]||'_data/public',baseUrl:process.env.CATALOG_API_URL,token:process.env.CATALOG_IMPORT_TOKEN,dryRun:process.argv.includes('--dry-run')})));}
