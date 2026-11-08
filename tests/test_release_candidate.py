@@ -310,3 +310,32 @@ def test_category_unknown_list_shape_still_fails_closed():
     with pytest.raises(ValueError, match='Ambiguous category identity'):
         merge_category([{'name': 'old'}], [{'name': 'crawl'}], [{'name': 'hourly'}],
                        'data/categories/unknown.json')
+
+
+@pytest.mark.parametrize('name,field', [('data/hp/audit.json', 'fetched_at'),
+                                       ('data/hp/collection-status.json', 'checked_at')])
+@pytest.mark.parametrize('candidate_is_newer', [False, True])
+def test_hp_reports_keep_one_complete_run_including_its_errors_and_images(tmp_path, name, field, candidate_is_newer):
+    before = {field: '2026-11-08T00:00:00Z', 'images': [], 'error_count': 0}
+    older = {field: '2026-11-08T01:00:00Z', 'images': [{'url': 'old', 'ok': True}],
+             'requests': [{'url': 'a'}], 'error_count': 7}
+    newer = {field: '2026-11-08T10:00:00+08:00', 'images': [{'url': 'new', 'ok': False}],
+             'requests': [{'url': 'b'}], 'error_count': 1}
+    after, latest = (newer, older) if candidate_is_newer else (older, newer)
+    path = tmp_path / name
+    path.parent.mkdir(parents=True)
+    path.write_text(json.dumps(latest))
+    candidate = bundle(tmp_path, {name: (json.dumps(before).encode(), json.dumps(after).encode())})
+    merge_candidate(tmp_path, candidate)
+    assert json.loads(path.read_text()) == newer
+    merge_candidate(tmp_path, candidate)
+    assert json.loads(path.read_text()) == newer
+
+
+@pytest.mark.parametrize('stamp', ['invalid', '2026-11-08T01:00:00', '2026-11-08T01:00:00Z'])
+def test_hp_report_conflicting_or_unordered_observations_still_fail(stamp):
+    from release_candidate import merge_run_report
+    with pytest.raises(ValueError, match='no unambiguous report order'):
+        merge_run_report({'fetched_at': '2026-11-08T00:00:00Z'},
+                         {'fetched_at': '2026-11-08T01:00:00Z', 'error_count': 1},
+                         {'fetched_at': stamp, 'error_count': 2}, 'data/hp/audit.json')
