@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-11-08T14:35:23Z",
+  "generatedAt": "2026-11-08T22:23:31Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-08T14:28:06Z",
-      "lastSuccessAt": "2026-11-08T08:51:51Z",
+      "lastAttemptAt": "2026-11-08T22:16:30Z",
+      "lastSuccessAt": "2026-11-08T14:40:30Z",
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42489945412",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42529415370",
       "error": null,
       "stale": true,
-      "staleReason": "已 5.7 小时无成功运行（预期每 60 分钟）"
+      "staleReason": "已 7.7 小时无成功运行（预期每 60 分钟）"
     },
     {
       "sourceId": "refresh-apple",
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-08T09:07:32Z",
+      "lastAttemptAt": "2026-11-08T22:20:10Z",
       "lastSuccessAt": "2026-11-08T09:20:22Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42465831034",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42529721940",
       "error": null,
       "stale": true,
-      "staleReason": "已 5.3 小时无成功运行（预期每 60 分钟）"
+      "staleReason": "已 13.1 小时无成功运行（预期每 60 分钟）"
     },
     {
       "sourceId": "refresh-hp",
@@ -65,10 +65,10 @@
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-08T14:31:36Z",
+      "lastAttemptAt": "2026-11-08T22:22:51Z",
       "lastSuccessAt": null,
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42489945412",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42529721940",
       "error": null,
       "stale": false,
       "staleReason": null
