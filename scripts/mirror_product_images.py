@@ -34,9 +34,9 @@ def pending(urls, routes, now=None, retry_failed=False):
     for src in sorted(set(urls)):
         if not isinstance(src,str) or urlparse(src).scheme!='https': continue
         entries=[routes[k] for k in keys(src) if k in routes]
-        if any(e.get('objectKey') for e in entries): continue
+        if any(e.get('objectKey') and not e['objectKey'].endswith('.webp') for e in entries): continue
         # Failed source URLs retry at most once a day across all collectors.
-        if not retry_failed and any(e.get('checkedAt') and (now-datetime.fromisoformat(e['checkedAt'].replace('Z','+00:00'))).total_seconds()<86400 for e in entries): continue
+        if not retry_failed and any(not e.get('objectKey') and e.get('checkedAt') and (now-datetime.fromisoformat(e['checkedAt'].replace('Z','+00:00'))).total_seconds()<86400 for e in entries): continue
         result.append(src)
     return result
 
@@ -69,19 +69,30 @@ def convert(raw):
         if image.width*image.height>16_000_000:raise ValueError('Oversized image dimensions')
         image=ImageOps.exif_transpose(image).convert('RGBA')
         image.thumbnail((480,480),Image.Resampling.LANCZOS)
-        out=io.BytesIO();image.save(out,format='WEBP',quality=82,method=4)
+        out=io.BytesIO()
+        if image.getextrema()[3][0]<255:image.save(out,format='PNG',optimize=True)
+        else:image.convert('RGB').save(out,format='JPEG',quality=82,optimize=True,progressive=True)
         return out.getvalue()
 
 
-def mirror(src,bucket):
+def mirror(src,bucket,existing=None):
     try:
-        data=convert(download(src))
+        # Re-encode our initial WebP assets once; do not crawl their origins again.
+        previous=(existing or {}).get(keys(src)[0],{}).get('objectKey')
+        if previous and previous.endswith('.webp'):
+            response=requests.get('https://spend-good.oss-cn-shanghai.aliyuncs.com/'+previous,timeout=15)
+            try:response.raise_for_status();raw=response.content
+            finally:response.close()
+            if len(raw)>MAX_BYTES:raise ValueError('Oversized stored image')
+        else:raw=download(src)
+        data=convert(raw)
     except Exception:
         # A source 404/timeout never switches the client back to an unapproved CDN.
         return dict(sourceUrl=src,objectKey=None),0
-    key='goods/'+hashlib.sha256(data).hexdigest()+'.webp'
+    transparent=data.startswith(b'\x89PNG')
+    key='goods/'+hashlib.sha256(data).hexdigest()+('.png' if transparent else '.jpg')
     # Infrastructure failures abort publication rather than marking valid images missing.
-    bucket.put_object(key,data,headers={'Content-Type':'image/webp','Cache-Control':'public, max-age=31536000, immutable'})
+    bucket.put_object(key,data,headers={'Content-Type':'image/png' if transparent else 'image/jpeg','Cache-Control':'public, max-age=31536000, immutable'})
     return dict(sourceUrl=src,objectKey=key),len(data)
 
 
@@ -107,7 +118,7 @@ def main():
         'https://oss-cn-shanghai.aliyuncs.com','spend-good')
     result=dict(uploaded=0,failed=0,bytes=0);batch=[]
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
-        futures=[pool.submit(mirror,src,bucket) for src in urls]
+        futures=[pool.submit(mirror,src,bucket,data['routes']) for src in urls]
         for future in concurrent.futures.as_completed(futures):
             try:asset,size=future.result()
             except Exception:
