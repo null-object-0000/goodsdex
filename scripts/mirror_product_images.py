@@ -7,12 +7,22 @@ import io
 import json
 import os
 import sys
+import time
+import threading
 from urllib.parse import urlparse, urlsplit, urlunsplit, parse_qsl, urlencode
 import requests
 from PIL import Image, ImageOps
 
 Image.MAX_IMAGE_PIXELS = 16_000_000
 MAX_BYTES = 8 * 1024 * 1024
+_downloads = threading.local()
+
+
+def image_get(*args, **kwargs):
+    # Keep source connections separate from authenticated metadata publication.
+    if not hasattr(_downloads, 'session'):
+        _downloads.session = requests.Session()
+    return _downloads.session.get(*args, **kwargs)
 HOSTS = {'cdn.cnbj0.fds.api.mi-img.com', 'cdn.cnbj1.fds.api.mi-img.com',
          'static.home.mi.com', 'store.storeimages.cdn-apple.com', 'cdsassets.apple.com',
          'fujifilm-x.b-cdn.net', 'hp.widen.net', 'media.hpstore.cn',
@@ -41,7 +51,7 @@ def pending(urls, routes, now=None, retry_failed=False):
     return result
 
 
-def download(src, get=requests.get):
+def download(src, get=image_get):
     for _ in range(4):
         u=urlparse(src)
         if u.scheme!='https' or u.username or u.password or u.port not in (None,443) or u.hostname not in HOSTS:
@@ -80,7 +90,7 @@ def mirror(src,bucket,existing=None):
         # Re-encode our initial WebP assets once; do not crawl their origins again.
         previous=(existing or {}).get(keys(src)[0],{}).get('objectKey')
         if previous and previous.endswith('.webp'):
-            response=requests.get('https://spend-good.oss-cn-shanghai.aliyuncs.com/'+previous,timeout=15)
+            response=image_get('https://spend-good.oss-cn-shanghai.aliyuncs.com/'+previous,timeout=15)
             try:response.raise_for_status();raw=response.content
             finally:response.close()
             if len(raw)>MAX_BYTES:raise ValueError('Oversized stored image')
@@ -96,15 +106,22 @@ def mirror(src,bucket,existing=None):
     return dict(sourceUrl=src,objectKey=key),len(data)
 
 
-def publish_routes(base,token,assets,post=requests.post):
+def publish_routes(base,token,assets,post=requests.post,sleep=time.sleep):
     wire=gzip.compress(json.dumps({'assets':assets},ensure_ascii=False).encode(),mtime=0)
-    response=post(base.rstrip('/')+'/admin/api/catalog/images',data=wire,
-        headers={'Authorization':'Bearer '+token,'Content-Type':'application/json','Content-Encoding':'gzip'},
-        timeout=60,allow_redirects=False)
-    try:
-        response.raise_for_status()
-        if response.status_code!=200 or not response.json().get('ok'):raise ValueError('Image route publication rejected')
-    finally:response.close()
+    for attempt in range(6):
+        response=None
+        try:
+            response=post(base.rstrip('/')+'/admin/api/catalog/images',data=wire,
+                headers={'Authorization':'Bearer '+token,'Content-Type':'application/json','Content-Encoding':'gzip'},
+                timeout=60,allow_redirects=False)
+            response.raise_for_status()
+            if response.status_code!=200 or not response.json().get('ok'):raise ValueError('Image route publication rejected')
+            return
+        except requests.RequestException:
+            if attempt==5 or (response is not None and response.status_code not in (408,429) and response.status_code<500):raise
+        finally:
+            if response is not None:response.close()
+        sleep(2**(attempt+1))
 
 
 def main():
@@ -119,15 +136,16 @@ def main():
     result=dict(uploaded=0,failed=0,bytes=0);batch=[]
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         futures=[pool.submit(mirror,src,bucket,data['routes']) for src in urls]
-        for future in concurrent.futures.as_completed(futures):
-            try:asset,size=future.result()
-            except Exception:
-                for task in futures:task.cancel()
-                raise
-            batch.append(asset)
-            result['uploaded' if asset['objectKey'] else 'failed']+=1;result['bytes']+=size
-            if len(batch)==50:publish_routes(base,token,batch);batch=[]
-        if batch:publish_routes(base,token,batch)
+        try:
+            for future in concurrent.futures.as_completed(futures):
+                asset,size=future.result()
+                batch.append(asset)
+                result['uploaded' if asset['objectKey'] else 'failed']+=1;result['bytes']+=size
+                if len(batch)==50:publish_routes(base,token,batch);batch=[]
+            if batch:publish_routes(base,token,batch)
+        except Exception:
+            for task in futures:task.cancel()
+            raise
     print(json.dumps(result))
 
 
