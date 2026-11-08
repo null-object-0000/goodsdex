@@ -5,6 +5,7 @@ from .price_semantics import name_kind,amount
 
 def normalize_discovery_quote(row):
     source=row.get('name_source') or {}
+    if not isinstance(source,dict):return row
     if (not str(row.get('id','')).startswith('CN:mi_cn:product:')
             or source.get('identity_verified') is not True
             or str(source.get('product_id'))!=row['id'].rsplit(':',1)[-1]):return row

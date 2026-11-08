@@ -16,7 +16,7 @@ def test_verified_initial_string_quote_is_full_numeric_price():
 def test_fresh_price_refresh_repairs_only_verified_numeric_string_unknowns():
     result=normalize(normalize_discovery_quote(row(price=399,source_price='399',price_kind='unknown')))
     assert result['price']==399 and result['price_kind']=='full'
-    for source in ({},{'identity_verified':True,'product_id':'other'}):
+    for source in ({},'legacy',{'identity_verified':True,'product_id':'other'}):
         before=row(price=399,source_price='399',price_kind='unknown');before['name_source']=source
         assert normalize(normalize_discovery_quote(before))['price'] is None
     explicit=row(price=399,source_price='399',price_kind='unknown',price_kind_evidence={'basis':'manual review'})
