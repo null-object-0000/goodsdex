@@ -6,6 +6,7 @@ import json
 from .sources import mi_cn
 from .pipeline import collect_one
 from .publish import to_public
+from .discovery_prices import normalize_discovery_quote
 
 
 def discover(previous, excluded, categories, *, enumerate_products=mi_cn.enumerate_products,
@@ -50,7 +51,7 @@ def discover(previous, excluded, categories, *, enumerate_products=mi_cn.enumera
                             if child.isdigit() and child not in seen and 'CN:mi_cn:product:'+child not in known:
                                 remaining.setdefault(child,(category,{'name':'','variants':[]}))
                         raise ValueError('Container fields belong to child products')
-                    row=to_public(rec)
+                    row=normalize_discovery_quote(to_public(rec))
                     if not row.get('name') or not (row.get('name_source') or {}).get('identity_verified'):
                         raise ValueError('Unverified product name')
                     records.append(rec)
@@ -59,7 +60,7 @@ def discover(previous, excluded, categories, *, enumerate_products=mi_cn.enumera
     records.sort(key=lambda r:r['product']['product_id'])
     # Existing business fields, source evidence and prices remain byte-for-byte
     # equal as JSON values. Independent collectors own their regular refreshes.
-    after=[*previous,*(to_public(r) for r in records)]
+    after=[*previous,*(normalize_discovery_quote(to_public(r)) for r in records)]
     return after,records,{'ok':True,'categories':observations,'new_candidates':len(candidates),
                           'added':len(records),'known_retained':len(previous),'quarantined':quarantined}
 
