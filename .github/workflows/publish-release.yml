@@ -110,7 +110,7 @@ jobs:
           import json, os
           from pathlib import Path
           bundle = json.loads((Path(os.environ['RUNNER_TEMP']) / 'candidate/candidate.json').read_text())
-          if 'public/goods.json' not in bundle['files']:
+          if bundle.get('collector_mode') != 'discovery' and 'public/goods.json' not in bundle['files']:
               from goodsdex.publish import build
               print('Rebuild public view from merged snapshots: legacy candidate omitted untracked goods.json')
               build(Path('_data/data/categories'), Path('_data/public'))
@@ -221,6 +221,11 @@ jobs:
           name: source-metrics
           path: ${{ runner.temp }}/source-metrics.json
           overwrite: true
+      - name: Validate MySQL identities before committing the release
+        env:
+          CATALOG_API_URL: ${{ secrets.CATALOG_API_URL }}
+          CATALOG_IMPORT_TOKEN: ${{ secrets.CATALOG_IMPORT_TOKEN }}
+        run: node scripts/publish_mysql.mjs _data/public --dry-run
       - name: Push one complete release to data
         env:
           RELEASE_SCOPE: ${{ inputs.scope }}

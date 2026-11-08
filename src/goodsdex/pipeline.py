@@ -126,12 +126,15 @@ def collect_one(pid: str, name_hint: str = "", category: str = "",
 
     pd = prod.to_dict()
     pd["kind"] = prod_kind
+    mobile_verified=any(a.attribute=='_verified_product_id' and str(a.raw_value)==str(pid) for a in bundle.assertions)
+    pd['identity_evidence']['mobile_product_id']=str(pid) if mobile_verified else None
     if names:
         chosen = names[0]
         capture = next(c for c in bundle.captures if c.capture_id == chosen.capture_id)
         pd["name_source"] = dict(kind="official_page_title" if chosen.source == mi_cn.SRC_TITLE else "mobile_api",
                                  url=capture.url, capture_id=capture.capture_id,
                                  requested_at=capture.fetched_at, sha256=capture.response_hash)
+        pd['name_source'].update(product_id=str(pid),identity_verified=mobile_verified or capture.parser_version=='mi-title-v2')
         if chosen.source == mi_cn.SRC_TITLE:
             from .mi_names import SUFFIX
             pd["name_source"]["title"] = prod.name + SUFFIX

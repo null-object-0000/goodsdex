@@ -357,12 +357,22 @@ def fetch_mobile(pid: str) -> tuple[list[Capture], list[Assertion]]:
     cap0 = Capture.make(SRC_M, MTOP_URL, raw, method="POST", http_status=http,
                         parser_version=PARSER_VERSION)
     captures.append(cap0)
+    response_pid=((d.get('data') or {}).get('product') or {}).get('productId')
+    if response_pid is not None and str(response_pid)!=str(pid):
+        cap0.status=CaptureStatus.SOURCE_ERROR
+        cap0.error='Product identity mismatch in mobile response'
+        return captures, []
 
     # 带 gid 的第二次请求更全；失败则降级用第一次，标记 PARTIAL
     gid = ((d.get("data") or {}).get("product") or {}).get("defaultGid")
     if gid:
         d2, raw2, http2, err2 = _mtop_call(pid, gid)
         if not err2 and d2.get("code") == 0:
+            response_pid=((d2.get('data') or {}).get('product') or {}).get('productId')
+            if response_pid is not None and str(response_pid)!=str(pid):
+                captures.append(Capture.make(SRC_M,MTOP_URL,raw2,status=CaptureStatus.SOURCE_ERROR,
+                    error='Product identity mismatch in gid response',method='POST',http_status=http2))
+                return captures, []
             d, raw = d2, raw2
             cap0 = Capture.make(SRC_M, f"{MTOP_URL}?gid={gid}", raw2, method="POST",
                                 http_status=http2, parser_version=PARSER_VERSION)
@@ -391,6 +401,8 @@ def fetch_mobile(pid: str) -> tuple[list[Capture], list[Assertion]]:
 
     if prod.get("name"):
         out.append(A("name", prod["name"].strip(), "$.data.product.name", "商品名"))
+    if str(prod.get('productId'))==str(pid):
+        out.append(A('_verified_product_id',str(pid),'$.data.product.productId'))
     if prod.get("shortTitle"):
         out.append(A("short_title", prod["shortTitle"], "$.data.product.shortTitle", "副标题"))
     out.append(A("sell_points", prod.get("sellPointList") or [],
@@ -486,9 +498,9 @@ def fetch_mobile(pid: str) -> tuple[list[Capture], list[Assertion]]:
                 k = str(x.get("productId") or "")
                 if k and k not in kids:
                     kids.append(k)
-            # 只有一个不同 ID 且它就是 goodsList[0] -> 不是容器，
-            # 而是"同一商品的多个 SKU"（或单元素列表），无需展开
-            if len(kids) > 1:
+            # Even one foreign child is not this product's SKU. Never attach
+            # that child's price/specification to the requested parent's name.
+            if kids:
                 out.append(A("_container_children", kids,
                              "$.data.goodsInfo.goodsList", "容器子商品"))
     return captures, out
@@ -627,13 +639,13 @@ def fetch_page_title(pid: str) -> tuple[list[Capture], list[Assertion]]:
         return [Capture.make(SRC_TITLE, url, "", status=CaptureStatus.TRANSPORT_ERROR,
                              http_status=getattr(exc, "code", 0), error=str(exc))], []
     try:
-        name = page_name(raw)
+        name = page_name(raw,expected_pid=pid)
     except ValueError as exc:
         return [Capture.make(SRC_TITLE, url, raw, status=CaptureStatus.PARSE_ERROR, error=str(exc))], []
-    cap = Capture.make(SRC_TITLE, url, raw, http_status=200, parser_version="mi-title-v1")
+    cap = Capture.make(SRC_TITLE, url, raw, http_status=200, parser_version="mi-title-v2")
     return [cap], [Assertion(assertion_id=f"{cap.capture_id}:name", subject_id=pid,
         capture_id=cap.capture_id, source=SRC_TITLE, attribute="name", raw_value=name,
-        locator="title", page="官方购买页", parser_version="mi-title-v1")]
+        locator="title", page="官方购买页", parser_version="mi-title-v2")]
 
 
 def fetch_cover(pid: str) -> tuple[list[Capture], list[Assertion]]:
@@ -651,10 +663,14 @@ def fetch_cover(pid: str) -> tuple[list[Capture], list[Assertion]]:
         d = json.loads(raw)
         goods = ((d.get('data') or {}).get('goodsInfo') or {}).get('goodsList') or []
         if d.get('code') == 0 and goods:
-            image = goods[0].get('imgUrl')
+            data=d.get('data') or {};product=data.get('product') or {}
+            if str(product.get('productId'))!=str(pid) or str(goods[0].get('productId'))!=str(pid):
+                status,error=CaptureStatus.SOURCE_ERROR,'Product identity mismatch in cover response'
+            else:image = goods[0].get('imgUrl')
         if not isinstance(image, str) or not image.startswith('https://'):
             image = None
-            status, error = CaptureStatus.PARTIAL, 'official_unavailable: ' + str(d.get('message'))
+            if status==CaptureStatus.SUCCESS:
+                status, error = CaptureStatus.PARTIAL, 'official_unavailable: ' + str(d.get('message'))
     except Exception as exc:
         status, error = CaptureStatus.TRANSPORT_ERROR, str(exc)
     cap = Capture.make(SOURCE, MTOP_URL, raw, status=status, error=error,

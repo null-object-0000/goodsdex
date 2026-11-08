@@ -25,6 +25,8 @@ def validate(run, jobs, bundle, source_run_id, repository):
             or not isinstance(bundle.get('files'), dict)
             or not re.fullmatch(r'[0-9a-f]{40}', str(bundle.get('base', '')))):
         raise ValueError('Recovery artifact is not an all-scope publication candidate')
+    if bundle.get('collector_mode')!='discovery':
+        raise ValueError('Legacy full-replacement candidate must be recollected with product identity verification')
 
 
 def main():

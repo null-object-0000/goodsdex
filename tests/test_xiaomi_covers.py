@@ -46,7 +46,7 @@ def test_cover_request_uses_verified_channel_and_preserves_request_evidence(monk
         status=200
         def __enter__(self):return self
         def __exit__(self,*args):pass
-        def read(self):return json.dumps(dict(code=0,data=dict(goodsInfo=dict(goodsList=[dict(imgUrl=URL)])))).encode()
+        def read(self):return json.dumps(dict(code=0,data=dict(product=dict(productId=20833),goodsInfo=dict(goodsList=[dict(productId=20833,imgUrl=URL)])))).encode()
     def open_request(req,timeout):
         assert json.loads(req.data)==[{},dict(productId=20833)]
         assert req.get_header('Content-type')=='application/x-www-form-urlencoded'

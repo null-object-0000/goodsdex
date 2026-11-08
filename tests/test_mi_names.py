@@ -84,6 +84,7 @@ def test_collection_overwrites_nonempty_variant_name_with_title(monkeypatch):
     from goodsdex.sources import mi_cn
     monkeypatch.setattr(mi_cn,'fetch_mobile',lambda pid:([],[]))
     monkeypatch.setattr(mi_cn,'fetch_pc',lambda pid:([],[]))
+    monkeypatch.setattr(mi_cn,'fetch_cover',lambda pid:([],[]))
     title='Xiaomi Sound 2 Max 金属面板'
     cap=Capture.make(mi_cn.SRC_TITLE,'https://www.mi.com/shop/buy/detail?product_id=22105', '<title>'+title+'立即购买-小米商城</title>')
     assertion=Assertion(assertion_id='title:name',subject_id='22105',capture_id=cap.capture_id,
