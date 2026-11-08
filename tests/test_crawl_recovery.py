@@ -13,12 +13,17 @@ def source():
                  path='.github/workflows/crawl-all.yml', event='workflow_dispatch',
                  status='completed', conclusion='failure'),
             [dict(name='crawl', status='completed', conclusion='success')],
-            dict(schema=1, scope='all', base='a' * 40, files={}))
+            dict(schema=1, scope='all', base='a' * 40, files={},collector_mode='discovery'))
 
 
 def test_saved_successful_collection_can_recover_publication():
     run, jobs, bundle = source()
     validate(run, jobs, bundle, '123', 'owner/repo')
+
+
+def test_legacy_full_replacement_candidate_cannot_be_replayed():
+    run,jobs,bundle=source();bundle.pop('collector_mode')
+    with pytest.raises(ValueError,match='recollected'):validate(run,jobs,bundle,'123','owner/repo')
     run['event'] = 'schedule'
     validate(run, jobs, bundle, '123', 'owner/repo')
 

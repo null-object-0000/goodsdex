@@ -1,158 +1,51 @@
-# 每日全量发现与证据归档；只产出候选，发布统一交给 publish-release。
+# Full category discovery; existing rows and prices belong to independent collectors.
 name: crawl-all
-
-# 全量采集（低频，每天一次）
-#
-# 实测 runner 上完全可行（探针验证）：
-#   list_categories() 95 个分类
-#   fetch_mobile()    success，含 20 项参数
-#   fetch_pc()        success
-# 耗时约 26 分钟 —— 用 schedule 每天跑一次。
-#
-# 产物同样推到 data 分支（不碰 main）。
-#
-# 为什么低频：全量要打 3477 个商品的详情接口 + PC 参数页，
-# 26 分钟；而价格有批量接口只需 83 秒（见 refresh-prices.yml）。
-# 商品上新/下架是慢变化，每天一次足够。
-
 on:
   schedule:
-    # 每天 UTC 19:37 = 北京时间次日 03:37（低峰 + 避开整点）。
-    # 避开整点的理由同 refresh-prices：官方文档确认整点前后是
-    # Actions 高负载期，"some queued jobs may be dropped"。
-    - cron: '37 19 * * *'
+    - cron: '37 19 * * 6'  # Sunday 03:37 CST; full discovery is weekly before launch.
   workflow_dispatch:
     inputs:
       categories:
-        description: '指定分类（空格分隔，留空=全部）'
+        description: 'Official category names, space-separated; empty scans every category'
         required: false
         default: ''
       candidate_run_id:
-        description: '恢复发布：复用已采集成功但发布失败的 main 分支 run ID；留空则重新采集'
+        description: 'Recover a trusted saved candidate; empty creates a fresh discovery'
         required: false
         default: ''
-
 permissions:
   contents: write
   actions: read
   checks: read
-
 jobs:
   crawl:
     if: ${{ !github.event.inputs.candidate_run_id }}
     runs-on: ubuntu-latest
-    # 实测 runner 上比本地慢约 5 倍（同一分类：本地 40s / runner 204s，
-    # 因为每次请求的往返延迟高得多）。本地 23.6 分钟的采集在 runner 上
-    # 超过 90 分钟仍未跑完（跑到 85/95 被 timeout 掐掉）。
-    # 所以：timeout 给足 150 分钟，并把并发提到 4 —— 高延迟场景下
-    # 多几个在途请求能有效盖住等待（本地低延迟时收益不明显）。
+    timeout-minutes: 45
     permissions:
       contents: read
-    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-
       - uses: ./.github/actions/collect-base
-
-      - name: Crawl
+      - name: Discover every category and collect verified new products only
         env:
-          # 三态代理：runner 上禁代理（本机才需要 Clash）
           GOODSDEX_PROXY: ''
+          CATEGORIES: ${{ inputs.categories }}
         run: |
-          export PYTHONPATH=src:scripts
-          mkdir -p data
-          # 从上一次的产物里恢复「快照 + 档案」，让累积能跨 run 延续
-          if [ -d _data/data/categories ]; then
-            cp -r _data/data/categories data/ 2>/dev/null || true
-          fi
-          if [ -d _data/data/archive ]; then
-            cp -r _data/data/archive data/ 2>/dev/null || true
-          fi
-          ARGS="${{ github.event.inputs.categories }}"
-          if [ -n "$ARGS" ]; then
-            python3 scripts/crawl_all.py $ARGS --workers 4 --pause 1.5
-          else
-            python3 scripts/crawl_all.py --workers 4 --pause 1.5
-          fi
-
-      - name: Collect Xiaomi official legacy product pages
-        run: |
-          if ! PYTHONPATH=src python3 scripts/crawl_mi_legacy.py; then
-            echo "::warning::小米旧款采集失败，保留已有资料"
-          fi
-
-      - name: Crawl Apple CN official catalogue
-        run: |
-          # 部分失败已保留上次对应页面；错误明确留在报告，不能清空旧目录。
-          if ! PYTHONPATH=src python3 scripts/crawl_apple.py; then
-            echo "::warning::Apple 采集有缺口，保留上次记录；参见 apple-evidence 报告"
-          fi
-
-      - name: Backfill Apple historical model specifications
-        run: |
-          # 历史规格每 7 天重取；失败保留旧记录，绝不当作在售报价。
-          if ! PYTHONPATH=src python3 scripts/crawl_apple_history.py; then
-            echo "::warning::Apple 历史规格采集有缺口，参见 apple-evidence 中 history/report.json"
-          fi
-
+          # Treat input as arguments, never executable shell source.
+          read -r -a ARGS <<< "$CATEGORIES"
+          python3 scripts/discover_catalog.py --root _data "${ARGS[@]}"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: apple-evidence-${{ github.run_id }}
-          path: |
-            data/apple/
-            data/mi-legacy/
-          retention-days: 7
+          name: catalog-discovery-evidence-${{ github.run_id }}
+          path: _data/data/catalog-discovery-report.json
+          retention-days: 14
           if-no-files-found: warn
-
-      - name: Confirm delisted products and retain full records
-        run: PYTHONPATH=src python3 scripts/confirm_delisted.py
-
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: delisted-evidence-${{ github.run_id }}
-          path: docs/delisted-*/report.json
-          retention-days: 30
-          if-no-files-found: warn
-
-      - name: Rebuild public dataset
-        run: |
-          export PYTHONPATH=src
-          # Install this round's completeness/absence evidence before the
-          # publisher's no-lost-ID gate reconciles the previous full records.
-          python3 scripts/ci_publish_archive.py --archive data/archive \
-            --out _data/public/archive
-          python3 -m goodsdex.publish --cats data/categories --out _data/public
-          # 快照与档案保留在产物里，供下次运行恢复累积上下文
-          mkdir -p _data/data
-          cp -r data/categories _data/data/ 2>/dev/null || true
-          cp -r data/archive _data/data/ 2>/dev/null || true
-
-      - name: Collect HP CN computer configurations (daily only)
-        run: |
-          python3 -m pip install --quiet Pillow
-          # Retain the previous successful SKU archive across runs.
-          if ! python3 scripts/crawl_hp.py --out _data/data/hp --public _data/public \
-            --seed 'https://www.hpstore.cn/catalogsearch/result/?q=%E6%98%9F14'; then
-            echo "::warning::HP public collection has gaps; old SKUs retained; inspect data/hp/audit.json"
-          fi
-
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: hp-evidence-${{ github.run_id }}
-          path: |
-            _data/data/hp/
-            data/hp/raw/
-          retention-days: 7
-          if-no-files-found: warn
-
       - uses: ./.github/actions/upload-candidate
         with:
           scope: all
+          collector_mode: discovery
   recover:
     if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.candidate_run_id != '' }}
     runs-on: ubuntu-latest

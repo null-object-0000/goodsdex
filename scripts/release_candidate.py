@@ -10,6 +10,7 @@ import gzip
 import json
 import subprocess
 import sys
+import re
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path, PurePosixPath
@@ -310,7 +311,7 @@ def merge_goods(before, after, latest, scope):
     return result
 
 
-def pack(root, scope, target):
+def pack(root, scope, target, collector_mode=None):
     # Stage only candidate inputs. Never include stale finalize output.
     tracked = git(root, 'ls-files').decode().splitlines()
     names = set(n for n in tracked if allowed_path(n))
@@ -323,6 +324,8 @@ def pack(root, scope, target):
             # 否则会被后面的校验拦成 "Unexpected staged candidate path"。
             names.update(rel for p in (root / prefix).rglob('*') if p.is_file()
                          and allowed_path(rel := p.relative_to(root).as_posix()))
+    if collector_mode=='discovery':
+        names={n for n in names if n=='public/goods.json' or re.fullmatch(r'data/categories/discovered-[0-9]+\.json',n)}
     for name in sorted(names):
         git(root, 'add', '-f', '--', name)
     changed = git(root, 'diff', '--cached', '--name-only').decode().splitlines()
@@ -344,10 +347,22 @@ def pack(root, scope, target):
         # logical bytes equal HEAD's gzip. Do not upload huge no-op deltas.
         if before == after:
             continue
+        if collector_mode=='discovery' and name=='public/goods.json':
+            old=json.loads(before or b'[]');new=json.loads(after or b'[]')
+            previous={r['id']:r for r in old};current={r['id']:r for r in new}
+            if len(current)!=len(new) or any(current.get(key)!=row for key,row in previous.items()):
+                raise ValueError('Discovery cannot change or remove existing products')
+            additions=[r for r in new if r['id'] not in previous]
+            before=b'[]';after=json.dumps(additions,ensure_ascii=False).encode()
+            if not additions:continue
         files[name] = {k: base64.b64encode(v).decode() if v is not None else None
                        for k, v in (('before', before), ('after', after))}
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(json.dumps(dict(schema=1, scope=scope, base=git(root, 'rev-parse', 'HEAD').decode().strip(), files=files)))
+    bundle=dict(schema=1,scope=scope,base=git(root,'rev-parse','HEAD').decode().strip(),files=files)
+    if collector_mode:
+        if collector_mode!='discovery' or scope!='all':raise ValueError('Invalid collector mode')
+        bundle['collector_mode']=collector_mode
+    target.write_text(json.dumps(bundle))
     print(f'{scope}: packed {len(files)} changed inputs')
 
 
@@ -419,10 +434,11 @@ if __name__ == '__main__':
     ap.add_argument('--root', type=Path, required=True)
     ap.add_argument('--candidate', type=Path, required=True)
     ap.add_argument('--scope', choices=SCOPES)
+    ap.add_argument('--collector-mode',choices=('discovery',))
     args = ap.parse_args()
     if args.mode == 'pack':
         if not args.scope:
             ap.error('pack requires --scope')
-        pack(args.root, args.scope, args.candidate)
+        pack(args.root, args.scope, args.candidate,args.collector_mode)
     else:
         merge_candidate(args.root, args.candidate)

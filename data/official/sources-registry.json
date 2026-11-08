@@ -202,10 +202,10 @@
   {
     "source": "all_catalogs",
     "workflow": "crawl-all.yml",
-    "schedule": "daily 03:37 CST",
-    "period_minutes": 1440,
+    "schedule": "Sunday 03:37 CST",
+    "period_minutes": 10080,
     "scope": "all",
-    "note": "全量采集暂缓：跨商品网页标题污染待修复；日常目录与价格走独立增量采集",
+    "note": "周更遍历全部官方分类，仅抓新商品详情；身份核验后增量入库，不覆盖现有商品名称和最新价格",
     "last_run": null,
     "last_success": null,
     "items_found": 0,

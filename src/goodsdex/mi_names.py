@@ -4,13 +4,15 @@ from html.parser import HTMLParser
 from datetime import datetime
 import json
 import html
+import re
+import unicodedata
 from pathlib import Path
 
 SUFFIX = '立即购买-小米商城'
 DEFAULT = Path(__file__).resolve().parents[2] / 'data/official/mi-page-names.json'
 
 
-def page_name(document):
+def page_name(document, expected_pid=None):
     class Title(HTMLParser):
         def __init__(self):
             super().__init__(convert_charrefs=True)
@@ -30,6 +32,17 @@ def page_name(document):
     name = title[:-len(SUFFIX)].strip()
     if not name:
         raise ValueError('Empty official product name')
+    if expected_pid is not None:
+        marker=re.search(r'\bvar\s+\$GLOBAL_PAGE_INFO\s*=\s*',document)
+        if not marker:raise ValueError('Purchase page has no verifiable product identity')
+        try:
+            info,_=json.JSONDecoder().raw_decode(document[marker.end():])
+            product=info['product_info']
+            normalize=lambda s:re.sub(r'\s+','',unicodedata.normalize('NFKC',str(s)))
+            if str(product['product_id'])!=str(expected_pid) or normalize(product['name'])!=normalize(name):
+                raise ValueError('Purchase page product identity does not match request/title')
+        except (KeyError,TypeError,json.JSONDecodeError) as exc:
+            raise ValueError('Invalid purchase page product identity') from exc
     return name
 
 
