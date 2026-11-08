@@ -5,6 +5,7 @@ import {createHash} from 'node:crypto';
 import {gzipSync,createGunzip} from 'node:zlib';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
+import {spawnSync} from 'node:child_process';
 
 export function canonical(v){return Array.isArray(v)?v.map(canonical):v&&typeof v==='object'?Object.fromEntries(Object.keys(v).sort().map(k=>[k,canonical(v[k])])):v;}
 export const hash=v=>createHash('sha256').update(JSON.stringify(canonical(v))).digest('hex');
@@ -59,7 +60,7 @@ export async function publishHistory({root,meta,baseline,request,dryRun}) {
   return {chunks,wireBytes};
 }
 
-export async function publish({root,baseUrl,token,fetchImpl=fetch,dryRun=false}){
+export async function publish({root,baseUrl,token,fetchImpl=fetch,dryRun=false,mirrorImages}){
   const endpoint=new URL(baseUrl);
   if(endpoint.protocol!=='https:'||endpoint.username||endpoint.password)throw Error('An HTTPS catalogue API URL is required');
   if(!token||token.length<32)throw Error('Dedicated catalogue import token is required');
@@ -78,6 +79,9 @@ export async function publish({root,baseUrl,token,fetchImpl=fetch,dryRun=false})
   if(!rows.length)throw Error('Verified detail shards are required');
   if(meta.files['goods-excluded.json'])rows.push(...(await readVerified(root,meta,'goods-excluded.json')).items);
   const changed=plan(rows,baseline);
+  const imageRows=rows.filter(r=>!r.excluded_reason).flatMap(r=>[r,...(r.trims||[])]);
+  const urls=[...new Set(imageRows.filter(r=>r.image_status!=='official_unavailable').map(r=>r.image||r.image_url).filter(u=>typeof u==='string'&&u.startsWith('https://')&&!u.startsWith('https://spend-good.oss-cn-shanghai.aliyuncs.com/')))];
+  const images=!dryRun&&mirrorImages?await mirrorImages({urls,routes:baseline.imageRoutes||{}}):null;
   let version=baseline.version,wireBytes=0,batches=0;
   if(!dryRun)for(let start=0;start<changed.length;){
     let batchRows=changed.slice(start,start+50),data,batch;
@@ -85,9 +89,9 @@ export async function publish({root,baseUrl,token,fetchImpl=fetch,dryRun=false})
     const result=await request('import',batch);version=result.version;batches++;start+=batchRows.length;
   }
   const history=await publishHistory({root,meta,baseline,request,dryRun});
-  return {total:rows.length,changed:changed.length,batches,wireBytes,version,dryRun,history};
+  return {total:rows.length,changed:changed.length,batches,wireBytes,version,dryRun,history,images};
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){
-  try{console.log(JSON.stringify(await publish({root:process.argv[2]||'_data/public',baseUrl:process.env.CATALOG_API_URL,token:process.env.CATALOG_IMPORT_TOKEN,dryRun:process.argv.includes('--dry-run')})));}
+  try{console.log(JSON.stringify(await publish({root:process.argv[2]||'_data/public',baseUrl:process.env.CATALOG_API_URL,token:process.env.CATALOG_IMPORT_TOKEN,dryRun:process.argv.includes('--dry-run'),mirrorImages:async input=>{const result=spawnSync(process.env.PYTHON||'python3',['scripts/mirror_product_images.py'],{input:JSON.stringify(input),encoding:'utf8',maxBuffer:1024*1024});if(result.status!==0)throw Error('Image mirror failed; catalogue import stopped');return JSON.parse(result.stdout);}})));}
   catch(error){console.error(error.message);process.exitCode=1;}
 }

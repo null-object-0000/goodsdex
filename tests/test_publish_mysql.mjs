@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {plan,hash,publishHistory} from '../scripts/publish_mysql.mjs';
+import {plan,hash,publishHistory,publish} from '../scripts/publish_mysql.mjs';
 import {mkdtemp,writeFile,rm,mkdir} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
@@ -14,6 +14,16 @@ test('No-op publications transmit zero product records; canonical key order is s
 test('Preflight rejects contaminated identities before uploading any batches',()=>{
   const row={id:'CN:mi_cn:1',name:'太阳能摄像机'};
   assert.throws(()=>plan([row],{rows:[{id:row.id,sha256:'old',identity:{name:'小米音箱'}}]}),/Source identity changed/);
+});
+
+test('Image uploads start only after verified shards pass the source identity guard',async t=>{
+  const root=await mkdtemp(path.join(tmpdir(),'mysql-images-'));t.after(()=>rm(root,{recursive:true,force:true}));await mkdir(path.join(root,'detail'));
+  const row={id:'CN:mi_cn:1',name:'太阳能摄像机',image:'https://cdn.cnbj1.fds.api.mi-img.com/new.png'};
+  const bytes=Buffer.from(JSON.stringify({[row.id]:row}));await writeFile(path.join(root,'detail/00.json'),bytes);
+  await writeFile(path.join(root,'meta.json'),JSON.stringify({files:{'detail/00.json':{sha256:createHash('sha256').update(bytes).digest('hex'),bytes:bytes.length}}}));
+  let images=0;const fetchImpl=async()=>({ok:true,json:async()=>({rows:[{id:row.id,sha256:'old',identity:{name:'小米音箱'}}]})});
+  await assert.rejects(publish({root,baseUrl:'https://api.example.test',token:'a'.repeat(64),fetchImpl,mirrorImages:async()=>images++}),/Source identity changed/);
+  assert.equal(images,0);
 });
 test('Additions and price updates produce deltas, absent source IDs are retained',()=>{
   const row={id:'CN:mi_cn:1',name:'小米音箱',price:199};
