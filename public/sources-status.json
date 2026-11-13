@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-12T23:50:55Z",
+  "generatedAt": "2026-11-13T00:01:43Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
       "expectedIntervalMinutes": 60,
       "lastAttemptAt": "2026-11-12T23:42:39Z",
-      "lastSuccessAt": "2026-11-12T01:07:35Z",
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-12T23:58:03Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43331126427",
       "error": null,
-      "stale": true,
-      "staleReason": "已 22.7 小时无成功运行（预期每 60 分钟）"
+      "stale": false,
+      "staleReason": null
     },
     {
       "sourceId": "refresh-apple",
@@ -23,7 +23,7 @@
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43331539630",
       "error": null,
       "stale": true,
-      "staleReason": "已 22.5 小时无成功运行（预期每 60 分钟）"
+      "staleReason": "已 22.7 小时无成功运行（预期每 60 分钟）"
     },
     {
       "sourceId": "refresh-hp",
@@ -35,7 +35,7 @@
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42465834240",
       "error": null,
       "stale": true,
-      "staleReason": "已 110.3 小时无成功运行（预期每 1440 分钟）"
+      "staleReason": "已 110.5 小时无成功运行（预期每 1440 分钟）"
     },
     {
       "sourceId": "refresh-atour",
@@ -47,7 +47,7 @@
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42542812060",
       "error": "Capture anonymous official catalogue (serial, at least 2.1s): TypeError: Failed to fetch (api-shoppingmall.yaduo.com)",
       "stale": true,
-      "staleReason": "已 118.4 小时无成功运行（预期每 1440 分钟）"
+      "staleReason": "已 118.6 小时无成功运行（预期每 1440 分钟）"
     },
     {
       "sourceId": "refresh-cars",
@@ -59,13 +59,13 @@
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42366683564",
       "error": null,
       "stale": true,
-      "staleReason": "已 132.5 小时无成功运行（预期每 1440 分钟）"
+      "staleReason": "已 132.7 小时无成功运行（预期每 1440 分钟）"
     },
     {
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-12T23:48:03Z",
+      "lastAttemptAt": "2026-11-12T23:58:04Z",
       "lastSuccessAt": null,
       "conclusion": "in_progress",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43331539630",
