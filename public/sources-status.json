@@ -1,41 +1,41 @@
 {
-  "generatedAt": "2026-11-13T00:01:43Z",
+  "generatedAt": "2026-11-15T23:06:58Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-12T23:42:39Z",
+      "lastAttemptAt": "2026-11-15T22:58:50Z",
       "lastSuccessAt": "2026-11-12T23:58:03Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43331126427",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43772248253",
       "error": null,
-      "stale": false,
-      "staleReason": null
+      "stale": true,
+      "staleReason": "已 71.1 小时无成功运行（预期每 60 分钟）"
     },
     {
       "sourceId": "refresh-apple",
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
-      "lastAttemptAt": "2026-11-12T23:45:37Z",
-      "lastSuccessAt": "2026-11-12T01:20:47Z",
+      "lastAttemptAt": "2026-11-15T23:02:51Z",
+      "lastSuccessAt": "2026-11-13T00:09:12Z",
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43331539630",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43772626709",
       "error": null,
       "stale": true,
-      "staleReason": "已 22.7 小时无成功运行（预期每 60 分钟）"
+      "staleReason": "已 71.0 小时无成功运行（预期每 60 分钟）"
     },
     {
       "sourceId": "refresh-hp",
       "workflow": ".github/workflows/refresh-hp.yml",
       "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-08T09:07:34Z",
+      "lastAttemptAt": "2026-11-15T12:13:50Z",
       "lastSuccessAt": "2026-11-08T09:33:11Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42465834240",
-      "error": null,
+      "conclusion": "failure",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43712769181",
+      "error": "Process completed with exit code 1.",
       "stale": true,
-      "staleReason": "已 110.5 小时无成功运行（预期每 1440 分钟）"
+      "staleReason": "已 181.6 小时无成功运行（预期每 1440 分钟）"
     },
     {
       "sourceId": "refresh-atour",
@@ -47,28 +47,28 @@
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42542812060",
       "error": "Capture anonymous official catalogue (serial, at least 2.1s): TypeError: Failed to fetch (api-shoppingmall.yaduo.com)",
       "stale": true,
-      "staleReason": "已 118.6 小时无成功运行（预期每 1440 分钟）"
+      "staleReason": "已 189.7 小时无成功运行（预期每 1440 分钟）"
     },
     {
       "sourceId": "refresh-cars",
       "workflow": ".github/workflows/refresh-cars.yml",
       "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-07T11:05:22Z",
+      "lastAttemptAt": "2026-11-15T11:59:07Z",
       "lastSuccessAt": "2026-11-07T11:19:46Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/42366683564",
-      "error": null,
+      "conclusion": "failure",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43711526436",
+      "error": "Process completed with exit code 1.",
       "stale": true,
-      "staleReason": "已 132.7 小时无成功运行（预期每 1440 分钟）"
+      "staleReason": "已 203.8 小时无成功运行（预期每 1440 分钟）"
     },
     {
       "sourceId": "publish-release",
       "workflow": ".github/workflows/publish-release.yml",
       "expectedIntervalMinutes": null,
-      "lastAttemptAt": "2026-11-12T23:58:04Z",
+      "lastAttemptAt": "2026-11-15T23:05:52Z",
       "lastSuccessAt": null,
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43331539630",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43772626709",
       "error": null,
       "stale": false,
       "staleReason": null
