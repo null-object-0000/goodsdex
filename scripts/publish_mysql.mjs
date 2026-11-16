@@ -79,7 +79,7 @@ export async function publish({root,baseUrl,token,fetchImpl=fetch,dryRun=false,m
   if(!rows.length)throw Error('Verified detail shards are required');
   if(meta.files['goods-excluded.json'])rows.push(...(await readVerified(root,meta,'goods-excluded.json')).items);
   const changed=plan(rows,baseline);
-  const imageRows=rows.filter(r=>!r.excluded_reason).flatMap(r=>[r,...(r.trims||[])]);
+  const imageRows=rows.filter(r=>!r.excluded_reason).flatMap(r=>[r,...(r.trims||[]).map(t=>({...t,image:t.image||t.source_record?.image}))]);
   const urls=[...new Set(imageRows.filter(r=>r.image_status!=='official_unavailable').map(r=>r.image||r.image_url).filter(u=>typeof u==='string'&&u.startsWith('https://')&&!u.startsWith('https://spend-good.oss-cn-shanghai.aliyuncs.com/')))];
   const images=!dryRun&&mirrorImages?await mirrorImages({urls,routes:baseline.imageRoutes||{}}):null;
   let version=baseline.version,wireBytes=0,batches=0;

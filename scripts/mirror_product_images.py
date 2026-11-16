@@ -28,7 +28,7 @@ HOSTS = {'cdn.cnbj0.fds.api.mi-img.com', 'cdn.cnbj1.fds.api.mi-img.com',
          'static.home.mi.com', 'store.storeimages.cdn-apple.com', 'cdsassets.apple.com',
          'fujifilm-x.b-cdn.net', 'hp.widen.net', 'media.hpstore.cn',
          'ssl-product-images.www8-hp.com', 'www.hp.com', 'se-cdn.djiits.com', 'xbu-qiniu.yaduo.com',
-         's1.xiaomiev.com', 'www.bydauto.com.cn', 'www.byd.com'}
+         's1.xiaomiev.com', 'cache.bydoceanauto.com', 'www.bydauto.com.cn', 'www.byd.com'}
 
 
 def keys(src):
