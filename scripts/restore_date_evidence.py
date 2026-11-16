@@ -30,7 +30,7 @@ def restore(source, root):
         rel = path.relative_to(source); name = rel.as_posix()
         allowed = (name.startswith('docs/release-coverage/')
                    or (name.startswith('data/official/') and (rel.name.endswith('release-evidence.json') or rel.name == 'third_party_index.json'))
-                   or (name.startswith('data/third-party/') and rel.name.startswith(('l5', 'l6'))))
+                   or (name.startswith('data/third-party/') and rel.parts[2].startswith(('l5', 'l6'))))
         if not allowed:
             raise ValueError('Unexpected evidence path: ' + name)
         planned.append((path, root / rel))

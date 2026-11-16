@@ -22,3 +22,10 @@ def test_replay_requires_original_successful_trusted_collection():
         def get(self,path):
             return {'jobs':[{'name':'collect','conclusion':'failure'}]} if path.endswith('?per_page=100') else super().get(path)
     with pytest.raises(ValueError):validate_run('123',Failed())
+
+
+def test_replay_restores_recorded_capture_subdirectories(tmp_path):
+    src=tmp_path/'source';p=src/'data/third-party/l5-captures/fingerprint.html.gz';p.parent.mkdir(parents=True);p.write_bytes(b'captured response')
+    root=tmp_path/'root';root.mkdir()
+    assert restore(src,root)==1
+    assert (root/'data/third-party/l5-captures/fingerprint.html.gz').read_bytes()==b'captured response'
