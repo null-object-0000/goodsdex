@@ -17,6 +17,7 @@ from PIL import Image, ImageOps
 Image.MAX_IMAGE_PIXELS = 16_000_000
 MAX_BYTES = 8 * 1024 * 1024
 _downloads = threading.local()
+_source_failures = []
 
 
 def image_get(*args, **kwargs):
@@ -101,7 +102,8 @@ def mirror(src,bucket,existing=None):
             if len(raw)>MAX_BYTES:raise ValueError('Oversized stored image')
         else:raw=download(src)
         data=convert(raw)
-    except Exception:
+    except Exception as error:
+        _source_failures.append(dict(source_key=keys(src)[0],host=urlparse(src).hostname,reason=type(error).__name__,http_status=getattr(getattr(error,'response',None),'status_code',None)))
         # A source 404/timeout never switches the client back to an unapproved CDN.
         return dict(sourceUrl=src,objectKey=None),0
     transparent=data.startswith(b'\x89PNG')
@@ -151,6 +153,7 @@ def main():
         except Exception:
             for task in futures:task.cancel()
             raise
+    result['source_failures'] = list(_source_failures)
     print(json.dumps(result))
 
 
