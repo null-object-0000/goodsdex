@@ -102,3 +102,8 @@ def test_route_publication_bounds_network_retries():
     def disconnected(*args,**kwargs):calls.append(1);raise m.requests.ConnectionError()
     with pytest.raises(m.requests.ConnectionError):m.publish_routes('https://example.com','token',[],post=disconnected,sleep=delays.append)
     assert len(calls)==6 and delays==[2,4,8,16,32]
+
+
+def test_reviewed_byd_configuration_cdns_are_allowed_but_lookalikes_are_not():
+    assert {'cache.bydauto.com.cn','cache.bydoceanauto.com'} <= m.HOSTS
+    with pytest.raises(ValueError):m.download('https://cache.bydauto.com.cn.attacker.test/car.jpg')
