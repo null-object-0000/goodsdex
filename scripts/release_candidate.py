@@ -311,6 +311,20 @@ def merge_goods(before, after, latest, scope):
     return result
 
 
+def needs_legacy_rebuild(bundle):
+    """Only product snapshots can require legacy rebuild; directory audits cannot."""
+    if bundle.get('collector_mode') == 'discovery' or 'public/goods.json' in bundle['files']:
+        return False
+    from goodsdex.publish import is_category_snapshot_file
+    for name, change in bundle['files'].items():
+        if not name.startswith('data/categories/') or not is_category_snapshot_file(Path(name)):
+            continue
+        after = change.get('after')
+        if after is None or isinstance(json.loads(base64.b64decode(after)), list):
+            return True
+    return False
+
+
 def pack(root, scope, target, collector_mode=None):
     # Stage only candidate inputs. Never include stale finalize output.
     tracked = git(root, 'ls-files').decode().splitlines()

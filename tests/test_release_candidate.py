@@ -374,3 +374,14 @@ def test_candidate_reads_logical_baselines_from_compressed_git_storage(tmp_path)
         (tmp_path / name).write_bytes(raw)
     pack(tmp_path, 'all', candidate)
     assert json.loads(candidate.read_text())['files'] == {}
+
+
+def test_directory_only_deltas_never_rebuild_the_catalogue():
+    import base64, json
+    from release_candidate import needs_legacy_rebuild
+    encode=lambda x:base64.b64encode(json.dumps(x).encode()).decode()
+    b={'files':{'data/categories/mihome-directory.json':{'after':encode({'items':[{'model':'test'}]})},'data/categories/mihome-discovery.json':{'after':encode({'items':[]})}}}
+    assert not needs_legacy_rebuild(b)
+    assert not needs_legacy_rebuild({'files':{}})
+    assert needs_legacy_rebuild({'files':{'data/categories/phones.json':{'after':encode([{'product':{'variant_id':'one'}}])}}})
+    assert not needs_legacy_rebuild({'collector_mode':'discovery','files':{'data/categories/phones.json':{'after':encode([])}}})
