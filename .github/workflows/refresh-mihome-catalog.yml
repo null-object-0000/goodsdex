@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: '52 19 * * *'
   workflow_dispatch:
+    inputs:
+      candidate_run_id:
+        type: string
+        default: ''
+        description: 'Retry publication of a successful collection without collecting again'
 permissions:
   contents: write
   actions: read
@@ -18,14 +23,50 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/collect-base
+        if: ${{ inputs.candidate_run_id == '' }}
       - run: python3 -m pip install requests
+        if: ${{ inputs.candidate_run_id == '' }}
       - name: Collect fresh directory and discover unknown identities
+        if: ${{ inputs.candidate_run_id == '' }}
         env:
           EARBUDS_AUTH_KEY: ${{ secrets.EARBUDS_AUTH_KEY }}
         run: PYTHONPATH=src:scripts python3 scripts/collect_device_directories.py --source mihome
       - uses: ./.github/actions/upload-candidate
+        if: ${{ inputs.candidate_run_id == '' }}
         with:
           scope: all
+      - name: Validate the successful original directory collection
+        if: ${{ inputs.candidate_run_id != '' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          CANDIDATE_RUN_ID: ${{ inputs.candidate_run_id }}
+        run: python3 scripts/restore_date_evidence.py --validate-run "$CANDIDATE_RUN_ID" --workflow refresh-mihome-catalog.yml
+      - uses: actions/download-artifact@v4
+        if: ${{ inputs.candidate_run_id != '' }}
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.candidate_run_id }}
+          name: candidate-${{ inputs.candidate_run_id }}
+          path: ${{ runner.temp }}/directory-replay
+      - uses: actions/download-artifact@v4
+        if: ${{ inputs.candidate_run_id != '' }}
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.candidate_run_id }}
+          name: source-metrics
+          path: ${{ runner.temp }}/directory-metrics-replay
+      - uses: actions/upload-artifact@v4
+        if: ${{ inputs.candidate_run_id != '' }}
+        with:
+          name: candidate-${{ github.run_id }}
+          path: ${{ runner.temp }}/directory-replay/candidate.json
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: ${{ inputs.candidate_run_id != '' }}
+        with:
+          name: source-metrics
+          path: ${{ runner.temp }}/directory-metrics-replay/source-metrics.json
+          if-no-files-found: error
   publish:
     needs: collect
     uses: ./.github/workflows/publish-release.yml

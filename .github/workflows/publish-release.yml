@@ -112,7 +112,7 @@ jobs:
           import json, os
           from pathlib import Path
           bundle = json.loads((Path(os.environ['RUNNER_TEMP']) / 'candidate/candidate.json').read_text())
-          from release_candidate import needs_legacy_rebuild
+          from scripts.release_candidate import needs_legacy_rebuild
           if needs_legacy_rebuild(bundle):
               from goodsdex.publish import build
               print('Rebuild public view from merged snapshots: legacy candidate omitted untracked goods.json')

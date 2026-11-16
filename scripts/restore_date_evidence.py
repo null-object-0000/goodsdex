@@ -7,11 +7,11 @@ import shutil
 from generate_sources_status import GitHub
 
 
-def validate_run(run_id, api):
+def validate_run(run_id, api, workflow='release-dates-daily.yml'):
     if not re.fullmatch(r'[0-9]+', str(run_id)):
         raise ValueError('Invalid collection run id')
     run = api.get(f'actions/runs/{run_id}')
-    if (run.get('path', '').split('@')[0] != '.github/workflows/release-dates-daily.yml'
+    if (run.get('path', '').split('@')[0] != '.github/workflows/' + workflow
             or run.get('head_branch') != 'main'
             or run.get('event') not in ('schedule', 'workflow_dispatch')):
         raise ValueError('Evidence must originate from the main date collection workflow')
@@ -45,9 +45,10 @@ def restore(source, root):
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); mode = p.add_mutually_exclusive_group(required=True)
     mode.add_argument('--validate-run'); mode.add_argument('--from-directory', type=Path)
+    p.add_argument('--workflow', choices=('release-dates-daily.yml','refresh-mihome-catalog.yml'), default='release-dates-daily.yml')
     args = p.parse_args()
     if args.validate_run:
-        validate_run(args.validate_run, GitHub(os.environ['GITHUB_REPOSITORY'], os.environ['GITHUB_TOKEN']))
-        print('Validated original successful date collection')
+        validate_run(args.validate_run, GitHub(os.environ['GITHUB_REPOSITORY'], os.environ['GITHUB_TOKEN']), args.workflow)
+        print('Validated original successful collection')
     else:
         print('Restored', restore(args.from_directory, Path('.')), 'evidence files; product rows unchanged')
