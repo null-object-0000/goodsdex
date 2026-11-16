@@ -119,14 +119,14 @@ def _product(s):
             and s['fields'].get('name') is not None)
 
 
-def derive(sources, rules=None):
+def derive(sources, rules=None, *, legacy_images=False):
     overrides = rules or {}
     rules = {**DEFAULT_RULES, **overrides}
     display = {}
     for field in ('name', 'image', 'category', 'price'):
         candidates = []
         for envelope in sources:
-            observations = [s for s in envelope['observations'] if field in s['fields'] and s.get('eligible', True) and (s.get('captured_at') or field == 'image')]
+            observations = [s for s in envelope['observations'] if field in s['fields'] and s.get('eligible', True) and (s.get('captured_at') or (legacy_images and field == 'image'))]
             if not observations or SOURCE_TIERS.get(envelope['source'], 5) >= 5:
                 continue
             latest = max(observations, key=lambda s: (_time(s), _signature(s)))
@@ -197,7 +197,7 @@ def materialize(row, previous=None, observations=(), rules=None, at=None):
     if row.get('source') == 'earbuds_directory':
         rules = {**(rules or {}), 'name': ['earbuds_directory'],
                  'image': ['earbuds_directory'], 'category': ['earbuds_directory']}
-    display = derive(sources, rules)
+    display = derive(sources, rules, legacy_images=row.get('schema') != 'car-product-v2')
     from .lineage import enrich_display
     display, conflicts, field_history = enrich_display(sources, display, previous, at)
     if row.get('source') == 'earbuds_directory' and display['price'] is None:
