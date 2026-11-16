@@ -218,10 +218,12 @@ def materialize(row, previous=None, observations=(), rules=None, at=None):
         result['price_missing'] = row.get('price_missing') or True
     else:
         result['price_missing'] = False
-    if 'price_kind' in row:
-        # Source replay must preserve reviewed whole-offer/partial-payment semantics.
-        from .price_semantics import normalize
+    from .price_semantics import PARTIAL, normalize, comparable
+    if row.get('price_kind') in PARTIAL:
+        # Only clear partial offers; car aggregates retain their source-selected price.
         result = normalize(result)
+    elif 'price_comparable' in row:
+        result['price_comparable'] = comparable(result)
     return result
 
 
