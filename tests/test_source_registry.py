@@ -61,3 +61,8 @@ def test_frequent_failed_attempts_do_not_hide_stale_data():
     r=reconcile(dict(period_minutes=1440,last_success='2026-11-08T00:00:00Z'),[latest],now)
     assert r['data_stale'] and r['stale'] and r['alert']
     assert not r['run_stale']
+
+
+def test_operator_cancellation_does_not_increment_failure_streak():
+    r=reconcile(dict(period_minutes=1440),[run(3,'cancelled'),run(2,'failure'),run(1,'success')],datetime(2026,11,6,1,tzinfo=timezone.utc))
+    assert r['consecutive_failures']==1

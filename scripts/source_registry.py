@@ -34,7 +34,7 @@ def reconcile(row, runs, now):
     failures=0
     for r in completed:
         if conclusion(r)=='success': break
-        failures+=1
+        if conclusion(r)=='failure': failures+=1
     row['consecutive_failures']=failures
     success=next((r for r in completed if conclusion(r)=='success'),None)
     if success: row['last_success']=success['updated_at']
