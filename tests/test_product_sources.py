@@ -133,3 +133,16 @@ def test_new_capture_requires_standard_method_but_historical_method_is_retained(
     legacy['evidence']['method']='api'
     legacy['captured_at']='2026-11-07T00:00:00Z'
     assert upsert_source(old,legacy)['display']['name']['method']=='api'
+
+
+def test_source_replay_cannot_restore_partial_or_unknown_public_price():
+    from goodsdex.price_semantics import normalize, validate
+    for kind in ('unknown', 'deposit', 'upgrade_diff', 'bundle_extra'):
+        row = materialize({'id':'p', 'name':'产品'}, observations=[obs('mi_store', name='产品', price=599, price_kind='full')])
+        row.update(price_kind=kind)
+        normalized = normalize(row)
+        replayed = materialize(normalized)
+        assert replayed['price'] is None
+        assert replayed['source_price'] == 599
+        assert replayed['price_kind'] == kind
+        validate([replayed])

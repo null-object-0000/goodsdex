@@ -218,9 +218,10 @@ def materialize(row, previous=None, observations=(), rules=None, at=None):
         result['price_missing'] = row.get('price_missing') or True
     else:
         result['price_missing'] = False
-    if 'price_comparable' in row:
-        from .price_semantics import comparable
-        result['price_comparable'] = comparable(result)
+    if 'price_kind' in row:
+        # Source replay must preserve reviewed whole-offer/partial-payment semantics.
+        from .price_semantics import normalize
+        result = normalize(result)
     return result
 
 

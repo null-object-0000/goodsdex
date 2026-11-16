@@ -45,7 +45,15 @@ function saveBusiness(value) {
    if(!window.atourRequire)window.webpackJsonp.push([[991239],{},r=>window.atourRequire=r]);
    try{window.atourApi=window.atourRequire(5251);return typeof window.atourApi.pg==='function';}catch{return false;}
   },null,{timeout:60000});
-  const call=async(method,args)=>page.evaluate(async({method,args})=>await window.atourApi[method](args),{method,args});
+  const call=async(method,args)=>{
+   for(let attempt=0;attempt<3;attempt++){
+    try{return await page.evaluate(async({method,args})=>await window.atourApi[method](args),{method,args});}
+    catch(error){
+     if(attempt===2)throw error;
+     await new Promise(resolve=>setTimeout(resolve,3000*(attempt+1)));
+    }
+   }
+  };
   const pages=[];
   const first=await call('pg',{pageNo:1,pageSize:20});pages.push(first);
   for(let n=2;n<=first.pageInfo.totalPage;n++) pages.push(await call('pg',{pageNo:n,pageSize:20}));

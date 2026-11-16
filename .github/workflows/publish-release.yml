@@ -110,7 +110,8 @@ jobs:
           import json, os
           from pathlib import Path
           bundle = json.loads((Path(os.environ['RUNNER_TEMP']) / 'candidate/candidate.json').read_text())
-          if bundle.get('collector_mode') != 'discovery' and 'public/goods.json' not in bundle['files']:
+          if (bundle.get('collector_mode') != 'discovery' and 'public/goods.json' not in bundle['files']
+                  and any(name.startswith('data/categories/') for name in bundle['files'])):
               from goodsdex.publish import build
               print('Rebuild public view from merged snapshots: legacy candidate omitted untracked goods.json')
               build(Path('_data/data/categories'), Path('_data/public'))
