@@ -39,7 +39,10 @@ def reconcile(row, runs, now):
     success=next((r for r in completed if conclusion(r)=='success'),None)
     if success: row['last_success']=success['updated_at']
     row['alert']=failures>=2
-    row['stale']=(now-stamp(row['last_run'])).total_seconds()>row['period_minutes']*90
+    row['run_stale']=(now-stamp(row['last_run'])).total_seconds()>row['period_minutes']*90
+    row['data_stale']=not row.get('last_success') or (now-stamp(row['last_success'])).total_seconds()>row['period_minutes']*90
+    row['stale']=row['data_stale']
+    row['alert']=row['alert'] or row['data_stale']
     if row['status']=='success': row['failure_reason']=None
     return row
 

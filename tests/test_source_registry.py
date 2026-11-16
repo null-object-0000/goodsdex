@@ -6,9 +6,9 @@ def run(id, result):
 
 def test_two_failures_and_recovery():
     row=dict(period_minutes=1440,last_success='2026-11-05T00:00:00Z')
-    failed=reconcile(row,[run(3,'failure'),run(2,'failure'),run(1,'success')],datetime.now(timezone.utc))
+    failed=reconcile(row,[run(3,'failure'),run(2,'failure'),run(1,'success')],datetime(2026,11,6,1,tzinfo=timezone.utc))
     assert failed['alert'] and failed['consecutive_failures']==2
-    fixed=reconcile(failed,[run(4,'success'),run(3,'failure')],datetime.now(timezone.utc))
+    fixed=reconcile(failed,[run(4,'success'),run(3,'failure')],datetime(2026,11,6,1,tzinfo=timezone.utc))
     assert not fixed['alert'] and fixed['consecutive_failures']==0
     assert fixed['last_success']=='2026-11-06T00:01:00Z'
 
@@ -53,3 +53,11 @@ def test_image_refresh_skips_existing_and_rejects_ambiguous_identity():
     rows=[dict(id='CN:mi_cn:product:1',name='Exact model')]
     after,audit=refresh(rows,post=lambda *a,**k:Response())
     assert after==rows and audit[0]['status']=='no_official_image'
+
+
+def test_frequent_failed_attempts_do_not_hide_stale_data():
+    now=datetime(2026,11,16,tzinfo=timezone.utc)
+    latest=run(9,'failure');latest['created_at']='2026-11-16T00:00:00Z'
+    r=reconcile(dict(period_minutes=1440,last_success='2026-11-08T00:00:00Z'),[latest],now)
+    assert r['data_stale'] and r['stale'] and r['alert']
+    assert not r['run_stale']

@@ -146,3 +146,11 @@ def test_source_replay_cannot_restore_partial_or_unknown_public_price():
         assert replayed['source_price'] == 599
         assert replayed['price_kind'] == kind
         validate([replayed])
+
+
+def test_legacy_official_image_can_display_without_inventing_capture_time():
+    row=migrate_row(dict(id='old',name='Old',image='https://cdn.example.com/old.jpg',price=599,source_url='https://www.mi.com/product/old'))
+    assert row['image']=='https://cdn.example.com/old.jpg'
+    assert row['display']['image']['capture_time_missing']
+    assert row['display']['image']['captured_at'] is None
+    assert row['price'] is None

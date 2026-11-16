@@ -126,7 +126,7 @@ def derive(sources, rules=None):
     for field in ('name', 'image', 'category', 'price'):
         candidates = []
         for envelope in sources:
-            observations = [s for s in envelope['observations'] if field in s['fields'] and s.get('eligible', True) and s.get('captured_at')]
+            observations = [s for s in envelope['observations'] if field in s['fields'] and s.get('eligible', True) and (s.get('captured_at') or field == 'image')]
             if not observations or SOURCE_TIERS.get(envelope['source'], 5) >= 5:
                 continue
             latest = max(observations, key=lambda s: (_time(s), _signature(s)))
