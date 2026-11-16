@@ -13,6 +13,7 @@ permissions:
 concurrency:
   group: mysql-source-status
   cancel-in-progress: false
+  queue: max
 jobs:
   status:
     runs-on: ubuntu-latest

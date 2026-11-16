@@ -15,6 +15,7 @@ permissions:
 concurrency:
   group: goodsdex-data-publication
   cancel-in-progress: false
+  queue: max
 jobs:
   images:
     runs-on: ubuntu-latest

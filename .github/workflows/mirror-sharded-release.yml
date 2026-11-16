@@ -8,6 +8,7 @@ concurrency:
   group: goodsdex-data-publication
   cancel-in-progress: false
   queue: max
+  queue: max
 jobs:
   mirror:
     runs-on: ubuntu-latest

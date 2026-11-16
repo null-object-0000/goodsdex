@@ -47,6 +47,7 @@ jobs:
       group: goodsdex-data-publication
       cancel-in-progress: false
       queue: max
+      queue: max
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
