@@ -6,6 +6,14 @@ def is_car(row):
     return row.get('product_type') == 'car' or str(row.get('id', '')).startswith(('CN:byd:car:', 'CN:xiaomi_ev:car:'))
 
 
+def replay_car_dates(row):
+    """Replay only the captured date enrichment admitted by the car boundary."""
+    from goodsdex.release_l7 import apply as apply_l7
+    from goodsdex.release_tolerance import apply as select_release
+    enriched = apply_l7([row])[0]
+    return select_release([enriched])[0] if enriched != row else deepcopy(row)
+
+
 def assert_cars_unchanged(before, after):
     counts = lambda rows: (sum(is_car(r) for r in rows), sum(r.get('product_type') == 'car' for r in rows))
     print(f'Hourly car counts before={counts(before)}, after={counts(after)}')
@@ -17,12 +25,7 @@ def assert_cars_unchanged(before, after):
         # Product dates are a separate, captured and fingerprint-bound input.
         # Permit exactly that committed replay; price, trims and source evidence
         # still compare byte-for-byte against the previous publication.
-        from goodsdex.release_l7 import apply as apply_l7
-        from goodsdex.release_tolerance import apply as select_release
-        expected = {}
-        for key, row in old.items():
-            enriched = apply_l7([row])[0]
-            expected[key] = select_release([enriched])[0] if enriched != row else row
+        expected = {key: replay_car_dates(row) for key, row in old.items()}
         if expected != new:
             raise ValueError('Hourly refresh changed car objects')
 

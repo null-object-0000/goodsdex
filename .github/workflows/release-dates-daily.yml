@@ -4,6 +4,10 @@ on:
     - cron: '17 19 * * 0'
   workflow_dispatch:
     inputs:
+      evidence_run_id:
+        type: string
+        default: ''
+        description: 'Replay a successful main-branch collection artifact, retaining its actual capture times'
       lane:
         type: choice
         options: [all, L1, L2, L3, L4, L5, L6, L7]
@@ -22,6 +26,7 @@ jobs:
     timeout-minutes: 45
     permissions:
       contents: read
+      actions: read
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/collect-base
@@ -37,12 +42,30 @@ jobs:
           python3 -m pip install requests beautifulsoup4
           npm install --prefix /tmp/release-browser playwright@1.56.1
           /tmp/release-browser/node_modules/.bin/playwright install --with-deps chromium
+      - name: Validate the original date collection
+        if: ${{ inputs.evidence_run_id != '' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          EVIDENCE_RUN_ID: ${{ inputs.evidence_run_id }}
+        run: python3 scripts/restore_date_evidence.py --validate-run "$EVIDENCE_RUN_ID"
+      - uses: actions/download-artifact@v4
+        if: ${{ inputs.evidence_run_id != '' }}
+        with:
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.evidence_run_id }}
+          name: release-date-evidence-${{ inputs.evidence_run_id }}
+          path: ${{ runner.temp }}/date-evidence-replay
+      - name: Restore captured evidence without replacing catalogue rows
+        if: ${{ inputs.evidence_run_id != '' }}
+        run: python3 scripts/restore_date_evidence.py --from-directory "$RUNNER_TEMP/date-evidence-replay"
       - name: Collect independent lanes and append verified dates only
         env:
+          EVIDENCE_RUN_ID: ${{ inputs.evidence_run_id }}
           ATOUR_PLAYWRIGHT_MODULE: /tmp/release-browser/node_modules/playwright
         run: |
           export ATOUR_CHROMIUM_PATH="$(node -e "process.stdout.write(require('/tmp/release-browser/node_modules/playwright').chromium.executablePath())")"
           EXTRA=()
+          if [ -n "$EVIDENCE_RUN_ID" ]; then EXTRA+=(--no-live); fi
           if [ '${{ inputs.l6_full }}' = true ]; then EXTRA+=(--l6-full); fi
           python3 scripts/release_dates_run.py --lane '${{ inputs.lane || 'L1' }}' --goods _data/public/goods.json --output docs/release-coverage --apply "${EXTRA[@]}"
           mkdir -p _data/docs/release-coverage

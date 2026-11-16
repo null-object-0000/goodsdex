@@ -231,3 +231,13 @@ def test_source_mirrors_and_lineage_roundtrip_without_weakening_trim_or_display_
     damaged=deepcopy(rows)
     damaged[0].pop('model_year')
     with pytest.raises(ValueError,match='differs from source evidence'):migrate(damaged)
+
+
+def test_date_replay_keeps_car_metadata_and_rejects_price_changes(monkeypatch):
+    from goodsdex.cars import replay_car_dates, assert_cars_unchanged
+    import goodsdex.release_l7
+    monkeypatch.setattr(goodsdex.release_l7,'apply',lambda rows:deepcopy(rows))
+    row={'id':'CN:byd:car:fixture','product_type':'car','price':100,'release_effective':{'date':'2026-01'},'release_decision':{'policy':'kept'},'trims':[{'price':100}]}
+    assert replay_car_dates(row)==row
+    bad=deepcopy(row);bad['price']=101
+    with pytest.raises(ValueError,match='car objects'):assert_cars_unchanged([row],[bad])

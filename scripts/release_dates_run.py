@@ -137,6 +137,10 @@ def main():
     if 'L6' in lanes:
         results['L6'] = run_lane('L6',apply_priority_dates(before),args.output,not args.no_live,full=args.l6_full)
     after=apply_priority_dates(before)
+    # Date collection must not clear/recompute unrelated car projection metadata.
+    from goodsdex.cars import is_car, replay_car_dates
+    cars={r['id']:replay_car_dates(r) for r in before if is_car(r)}
+    after=[cars.get(r['id'],r) for r in after]
     report(before,after,results,args.output,provenance)
     from release_tolerance_run import report as tolerance_report
     tolerance_report(before, after, args.output)
