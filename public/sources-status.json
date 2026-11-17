@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T02:14:13Z",
+  "generatedAt": "2026-11-17T02:48:57Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
@@ -18,12 +18,12 @@
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 60,
       "lastAttemptAt": "2026-11-17T01:56:02Z",
-      "lastSuccessAt": "2026-11-15T23:27:27Z",
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-17T02:22:22Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43999252032",
       "error": null,
-      "stale": true,
-      "staleReason": "已 26.8 小时无成功运行（预期每 60 分钟）"
+      "stale": false,
+      "staleReason": null
     },
     {
       "sourceId": "refresh-hp",
@@ -35,7 +35,7 @@
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43872922562",
       "error": null,
       "stale": true,
-      "staleReason": "已 208.7 小时无成功运行（预期每 1440 分钟）"
+      "staleReason": "已 209.3 小时无成功运行（预期每 1440 分钟）"
     },
     {
       "sourceId": "refresh-atour",
@@ -47,7 +47,7 @@
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43871894055",
       "error": "Process completed with exit code 1.",
       "stale": true,
-      "staleReason": "已 216.8 小时无成功运行（预期每 1440 分钟）"
+      "staleReason": "已 217.4 小时无成功运行（预期每 1440 分钟）"
     },
     {
       "sourceId": "refresh-cars",
@@ -59,7 +59,7 @@
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43872929271",
       "error": "Process completed with exit code 1.",
       "stale": true,
-      "staleReason": "已 230.9 小时无成功运行（预期每 1440 分钟）"
+      "staleReason": "已 231.5 小时无成功运行（预期每 1440 分钟）"
     },
     {
       "sourceId": "publish-release",
