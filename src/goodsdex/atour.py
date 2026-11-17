@@ -4,6 +4,7 @@ from datetime import datetime
 from copy import deepcopy
 from pathlib import Path
 import json
+import hashlib
 import re
 
 BRAND = '亚朵星球'
@@ -84,6 +85,7 @@ def package(s, p):
 
 def build_rows(capture, images=None, categories=None):
     validate_capture(capture)
+    capture_hash = hashlib.sha256(json.dumps(capture, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
     images=images if images is not None else json.loads(IMAGE_MANIFEST.read_text())['skus']
     categories=categories if categories is not None else json.loads(CATEGORY_MANIFEST.read_text())['spus']
     result=[]
@@ -125,6 +127,11 @@ def build_rows(capture, images=None, categories=None):
                 captured_at=e['captured_at'],fetched_at=e['captured_at'],price_fetched_at=e['captured_at'],
                 record_level='sku',kind='whole',status='available',official_sku_status=s.get('spuStatus'),
                 stock_num=s.get('stockNum'),catalog_scope='official_h5_brand_current_sku_options')
+            row['name_evidence'] = dict(kind='atour_official_sku', capture_sha256=capture_hash,
+                source_url=row['source_url'], captured_at=e['captured_at'],
+                listing={k:p[k] for k in ('id','spuName')},
+                detail={k:e['detail'][k] for k in ('id','spuName')},
+                sku={k:s[k] for k in ('id','spuId','skuNo','skuName')})
             from goodsdex.price_semantics import normalize
             result.append(normalize(row))
     return result

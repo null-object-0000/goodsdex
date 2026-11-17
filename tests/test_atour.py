@@ -24,6 +24,10 @@ def test_sku_fidelity_package_specs_price_and_namespace():
     assert r['name']=='亚朵星球 慢回弹记忆绵枕 / 两只装70*42*6cm'
     assert r['sku_no']=='0123' and r['price']==278 and r['promo_price']==260
     assert r['bundle'] and r['package_quantity']==2
+    assert r['name_evidence']['listing'] == c['entries'][0]['listing']
+    assert r['name_evidence']['detail']['spuName'] == r['official_name']
+    assert r['name_evidence']['sku']['skuNo'] == r['sku_no']
+    assert len(r['name_evidence']['capture_sha256']) == 64
     assert r['specs']['height']=='6cm' and r['specs']['filling'] is None
     assert infer_brand(r)==('亚朵星球','id_prefix')
     assert coverage([r])['sku_count']==1

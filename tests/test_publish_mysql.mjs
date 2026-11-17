@@ -6,6 +6,18 @@ import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {gzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
+import {readFileSync} from 'node:fs';
+import {atourIdentity} from '../scripts/atour-name-update.mjs';
+test('Atour title updates require a fresh official observation bound to the unchanged SPU and SKU',()=>{
+  const {before,after}=JSON.parse(readFileSync(new URL('./fixtures/atour-name-update.json',import.meta.url)));
+  const baseline={rows:[{id:before.id,sha256:hash(before),identity:{name:before.name,...atourIdentity(before)}}]};
+  assert.deepEqual(plan([after],baseline),[after]);
+  for(const damage of [r=>delete r.name_evidence,r=>r.name_evidence.sku.spuId++,r=>r.name_evidence.detail.spuName='其它商品',r=>r.sku_id++,r=>r.name='其它商品',r=>r.name_evidence.captured_at=before.captured_at,r=>r.name_evidence.source_url='https://example.com/']){
+    const row=structuredClone(after);damage(row);
+    assert.throws(()=>plan([row],baseline),/Source identity changed/);
+  }
+  assert.throws(()=>plan([after],{rows:[{id:before.id,sha256:hash(before),identity:{name:before.name}}]}),/Source identity changed/,'old server must be upgraded before a renamed source can publish');
+});
 test('No-op publications transmit zero product records; canonical key order is stable',()=>{
   const row={id:'CN:mi_cn:1',name:'小米音箱',params:{颜色:'白色'}};
   assert.equal(hash(row),hash({params:{颜色:'白色'},name:'小米音箱',id:row.id}));
