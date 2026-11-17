@@ -1,6 +1,7 @@
 """Release exclusion contract. Recomputed from observations, never the last view."""
 from collections import Counter
 from copy import deepcopy
+from datetime import datetime, timezone
 import json
 import sys
 
@@ -16,6 +17,24 @@ REASONS = (
 # Reviewed identities, not inference from the human-readable deletion text.
 DELETION_REASONS = {key: ('invalid' if key.startswith('CN:mi_cn:') else 'manual')
                     for key in ALLOWED_DELETIONS}
+
+
+def latest_archived_observation(row):
+    """The archive retains its first snapshot; the view uses newer bound facts."""
+    def stamp(item):
+        try:
+            value = datetime.fromisoformat(item.get('fetched_at') or item.get('captured_at') or '')
+            return value.replace(tzinfo=value.tzinfo or timezone.utc).timestamp()
+        except (ValueError, TypeError, OverflowError):
+            return float('-inf')
+    candidates = [row]
+    for item in row.get('subsequent_observations') or []:
+        if not isinstance(item, dict) or item.get('id') != row['id']:
+            continue
+        if any(row.get(k) is not None and str(row[k]) != str(item.get(k)) for k in ('gid','product_id')):
+            continue
+        candidates.append(item)
+    return max(candidates, key=stamp)
 
 
 def reviewed_observations(public, rows, previous):
@@ -65,7 +84,7 @@ def build_excluded(rows, published, accessory_archive, reviewed, duplicate_rows,
     from that input. Safe duplicate reductions count as rows, like meta.count.
     """
     published_ids = {r['id'] for r in published}
-    candidates = {r['id']: r for r in [*accessory_archive, *reviewed]}
+    candidates = {r['id']: latest_archived_observation(r) for r in [*accessory_archive, *reviewed]}
     for row in rows:
         if row['id'] not in published_ids:
             candidates[row['id']] = row

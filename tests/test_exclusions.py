@@ -8,6 +8,24 @@ from goodsdex.shards import build_shards
 from goodsdex.exclusions import REASONS
 
 
+def test_car_only_publication_keeps_latest_bound_excluded_name_without_mutating_archive(tmp_path):
+    from copy import deepcopy
+    key='CN:mi_cn:product:16030'
+    first=dict(id=key,name='米家智能无叶净化扇滤芯 通用',gid=2221500202,fetched_at='2026-10-27T08:20:24+08:00',category='家电')
+    fresh=dict(first,name='米家智能无叶净化扇滤芯',fetched_at='2026-10-27T13:14:20.791483+00:00',source='goods_supplements:xiaomi_mobile_official')
+    archive=dict(first,subsequent_observations=[fresh,dict(fresh,id='another',name='错误滤芯',fetched_at='2026-11-17T00:00:00Z'),dict(fresh,gid=99,name='其它规格滤芯',fetched_at='2026-11-17T00:00:00Z')])
+    before=deepcopy(archive)
+    (tmp_path/'archive').mkdir();(tmp_path/'archive/accessories.json').write_text(json.dumps([archive]))
+    # A car refresh supplies no unrelated published accessories or supplements.
+    (tmp_path/'goods.json').write_text('[]')
+    for _ in range(2):
+        finalize_public(tmp_path, previous=[])
+        item=read(tmp_path,'goods-excluded.json')['items'][0]
+        assert item['name']==fresh['name'] and item['gid']==fresh['gid']
+        assert item['fetched_at']==fresh['fetched_at']
+        assert read(tmp_path,'archive/accessories.json')==[before]
+
+
 def read(root, name):
     return json.loads((root / name).read_text())
 
