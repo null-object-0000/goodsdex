@@ -63,6 +63,17 @@ def mark_delisted(row, evidence):
                   delisted_evidence=row.get('delisted_evidence') or evidence)
     return result
 
+def replacement_evidence(row, info, previous, known_ids):
+    """A verified different, known SKU is a replacement page, never this SKU."""
+    final=urlparse(info.get('final_url',''))
+    old_ids={r['id'] for r in previous}
+    if (old_ids and info.get('status')==200 and info.get('redirects') and info.get('final_url')!=info.get('url')
+            and final.scheme=='https' and final.hostname=='www.hpstore.cn'
+            and row['id'] not in old_ids and row['id'] in known_ids):
+        return dict(reason='sku_redirected_to_other_known_sku', replacement_part_number=row['part_number'],
+                    original_ids=sorted(old_ids), **info)
+    return None
+
 
 def clean(s):
     return re.sub(r'\s+', ' ', html.unescape(re.sub('<[^>]+>', ' ', s))).strip()
@@ -94,7 +105,9 @@ class Client:
             with urllib.request.urlopen(request, timeout=50) as response:
                 payload = json.load(response)
         except HTTPError as exc:
-            raise RuntimeError('HP source reader HTTP ' + str(exc.code)) from None
+            try:message=str(json.load(exc).get('error',''))[:200].replace(self.relay_token,'[REDACTED]')
+            except Exception:message=''
+            raise RuntimeError('HP source reader HTTP ' + str(exc.code) + (': '+message if message else '')) from None
         data = base64.b64decode(payload['body_base64'], validate=True)
         if payload['url'] != url or payload['bytes'] != len(data) or payload['sha256'] != hashlib.sha256(data).hexdigest():
             raise ValueError('HP source reader evidence digest mismatch')
@@ -349,6 +362,12 @@ def main():
             if info.get('final_url', url) != url and PRODUCT_MARKER not in text:
                 raise ValueError('Unexpected non-product destination: ' + info.get('final_url', url))
             row,img=parse_product(text,url,info['fetched_at'])
+            if known_ids is not None and url in prior_by_url and row['id'] not in {r['id'] for r in prior_by_url[url]}:
+                replaced=replacement_evidence(row,info,prior_by_url[url],known_ids)
+                if not replaced:raise ValueError('Archived URL changed SKU identity without a verified official replacement redirect')
+                delisted.append(replaced)
+                delisted_rows.extend(mark_delisted(r,replaced) for r in prior_by_url[url])
+                continue
             if known_ids is not None and row['id'] not in known_ids:
                 raise ValueError('Archived URL changed SKU identity; daily discovery must review it')
             if img not in checks: images[img],checks[img]=image_check(client,img)
@@ -414,11 +433,11 @@ def main():
                and all(e.get('status') == 403 or e.get('error') == 'No successful SKU observations'
                        for e in errors))
     status = dict(conclusion='degraded' if blocked else ('failure' if errors else 'success'),
-                  error='blocked: 403 from hpstore.cn' if blocked else None,
+                  error='blocked: 403 from hpstore.cn' if blocked else errors[0].get('error') if errors else None,
                   checked_at=audit['fetched_at'], count=len(rows), requests=client.requests,
                   retry_policy='weekly Sunday at 04:43 UTC (12:43 Asia/Shanghai)')
     write_json(args.out/'collection-status.json', status)
-    print('GOODSDEX_SOURCE_STATUS=' + json.dumps(status, ensure_ascii=False), flush=True)
+    print('GOODSDEX_SOURCE_STATUS=' + json.dumps({k:v for k,v in status.items() if k!='requests'}, ensure_ascii=False), flush=True)
     # Workflow success means an unavailable source was handled; never freshness.
     # Keep both the SKU archive and successful image audit byte-for-byte intact.
     if blocked:

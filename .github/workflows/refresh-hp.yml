@@ -6,6 +6,10 @@ on:
     - cron: '43 4 * * 0'
   workflow_dispatch:
     inputs:
+      replay_run:
+        description: 'Resume a failed live capture: verify saved raw SHA256 and fetch only missing pages (scheduled runs always fetch fresh)'
+        type: string
+        default: ''
       history_only:
         description: 'Import verified official historical SKUs without refreshing live store pages'
         type: boolean
@@ -26,6 +30,7 @@ jobs:
     timeout-minutes: 35
     permissions:
       contents: read
+      actions: read
     outputs:
       conclusion: ${{ steps.hp.outputs.conclusion }}
     steps:
@@ -39,6 +44,19 @@ jobs:
       - run: python3 -m pip install --quiet Pillow
       - name: Import verified official historical configurations
         run: python3 scripts/import_hp_history.py --out _data/data/hp --public _data/public
+      - name: Validate live capture resume reference
+        if: ${{ inputs.replay_run != '' }}
+        env:
+          REPLAY_RUN: ${{ inputs.replay_run }}
+        run: '[[ "$REPLAY_RUN" =~ ^[0-9]+$ ]]'
+      - name: Read previous failed live capture evidence
+        if: ${{ inputs.replay_run != '' }}
+        uses: actions/download-artifact@v4
+        with:
+          name: hp-evidence-${{ inputs.replay_run }}-1
+          run-id: ${{ inputs.replay_run }}
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/hp-replay
       - id: hp
         name: Refresh HP configurations (known SKUs; reuse verified images; serial rate limit)
         # Bound collection separately so evidence/candidate upload and cleanup
@@ -47,9 +65,18 @@ jobs:
         env:
           HP_SOURCE_API_URL: ${{ secrets.CATALOG_API_URL }}
           HP_SOURCE_API_TOKEN: ${{ secrets.CATALOG_IMPORT_TOKEN }}
+          REPLAY_RUN: ${{ inputs.replay_run }}
         run: |
           if [ '${{ inputs.history_only }}' != 'true' ]; then
-            python3 scripts/crawl_hp.py --out _data/data/hp --public _data/public --reuse-images --known-only --interval-from-start
+            EXTRA=()
+            if [ -n "$REPLAY_RUN" ]; then
+              CAPTURE="$RUNNER_TEMP/hp-replay/_data/data/hp"
+              ln -s "$RUNNER_TEMP/hp-replay/data/hp/raw" "$CAPTURE/raw"
+              mkdir -p data/hp/raw
+              cp -a "$CAPTURE/raw/." data/hp/raw/
+              EXTRA+=(--replay "$CAPTURE")
+            fi
+            python3 scripts/crawl_hp.py --out _data/data/hp --public _data/public --reuse-images --known-only --interval-from-start "${EXTRA[@]}"
           fi
           python3 - <<'PYCODE'
           import json, os

@@ -316,3 +316,18 @@ def test_domestic_reader_transport_rejection_is_not_misreported_as_official_403(
     monkeypatch.setattr(hp.urllib.request,'urlopen',denied)
     with pytest.raises(RuntimeError,match='HP source reader HTTP 403'):
         hp.Client(interval_from_start=True).get(URL)
+
+
+def test_known_replacement_redirect_retires_original_without_borrowing_replacement_configuration():
+    row=hp.parse_product(FIXTURE,URL,'2026-11-17T00:00:00Z')[0]
+    original=dict(row,id='CN:hp_cn:sku:OLDPA',part_number='OLDPA',price=999)
+    info=dict(url='https://www.hpstore.cn/old-oldpa.html',final_url=URL,status=200,redirects=[dict(status=301,from_url='https://www.hpstore.cn/old-oldpa.html',to=URL)],fetched_at='2026-11-17T00:00:00Z',sha256='a'*64)
+    evidence=hp.replacement_evidence(row,info,[original],{original['id'],row['id']})
+    assert evidence['replacement_part_number']==row['part_number']
+    retired=hp.mark_delisted(original,evidence)
+    assert retired['id']==original['id'] and retired['price']==999 and retired['part_number']=='OLDPA'
+    assert retired['sale_status']=='delisted'
+    assert hp.replacement_evidence(row,dict(info,redirects=[]),[original],{row['id']}) is None
+    assert hp.replacement_evidence(row,dict(info,final_url='https://example.com/login'),[original],{row['id']}) is None
+    assert hp.replacement_evidence(row,info,[original],{original['id']}) is None
+    assert hp.replacement_evidence(row,info,[row],{row['id']}) is None
