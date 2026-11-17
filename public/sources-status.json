@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-11-17T04:10:35Z",
+  "generatedAt": "2026-11-17T04:48:39Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
-      "expectedIntervalMinutes": 60,
+      "expectedIntervalMinutes": 1440,
       "lastAttemptAt": "2026-11-17T01:53:59Z",
       "lastSuccessAt": "2026-11-17T02:10:21Z",
       "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43999009209",
       "error": null,
-      "stale": true,
-      "staleReason": "已 2.0 小时无成功运行（预期每 60 分钟）"
+      "stale": false,
+      "staleReason": null
     },
     {
       "sourceId": "refresh-apple",
       "workflow": ".github/workflows/refresh-apple.yml",
-      "expectedIntervalMinutes": 60,
+      "expectedIntervalMinutes": 1440,
       "lastAttemptAt": "2026-11-17T01:56:02Z",
       "lastSuccessAt": "2026-11-17T02:22:22Z",
       "conclusion": "success",
@@ -28,38 +28,38 @@
     {
       "sourceId": "refresh-hp",
       "workflow": ".github/workflows/refresh-hp.yml",
-      "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-17T04:02:15Z",
+      "expectedIntervalMinutes": 10080,
+      "lastAttemptAt": "2026-11-17T04:43:00Z",
       "lastSuccessAt": "2026-11-08T09:33:11Z",
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/44014331234",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/44019080257",
       "error": null,
-      "stale": true,
-      "staleReason": "已 210.6 小时无成功运行（预期每 1440 分钟）"
+      "stale": false,
+      "staleReason": null
     },
     {
       "sourceId": "refresh-atour",
       "workflow": ".github/workflows/refresh-atour.yml",
-      "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-17T04:05:30Z",
+      "expectedIntervalMinutes": 10080,
+      "lastAttemptAt": "2026-11-17T04:39:15Z",
       "lastSuccessAt": "2026-11-08T01:26:06Z",
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/44014715867",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/44018661824",
       "error": null,
-      "stale": true,
-      "staleReason": "已 218.7 小时无成功运行（预期每 1440 分钟）"
+      "stale": false,
+      "staleReason": null
     },
     {
       "sourceId": "refresh-cars",
       "workflow": ".github/workflows/refresh-cars.yml",
-      "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-17T04:02:17Z",
+      "expectedIntervalMinutes": 10080,
+      "lastAttemptAt": "2026-11-17T04:39:13Z",
       "lastSuccessAt": "2026-11-07T11:19:46Z",
       "conclusion": "in_progress",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/44014335381",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/44018658096",
       "error": null,
-      "stale": true,
-      "staleReason": "已 232.8 小时无成功运行（预期每 1440 分钟）"
+      "stale": false,
+      "staleReason": null
     },
     {
       "sourceId": "publish-release",
