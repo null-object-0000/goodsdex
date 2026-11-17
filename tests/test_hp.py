@@ -279,3 +279,40 @@ class BlockedSourceTests(unittest.TestCase):
             self.assertEqual([c.args[0] for c in sleep.call_args_list], [5, 10])
         with patch.object(client, '_get_once', side_effect=[forbidden, (b'ok', {})]), patch.object(hp.time, 'sleep'):
             self.assertEqual(client.get(URL), (b'ok', {}))
+
+
+def test_domestic_reader_keeps_original_evidence_and_never_persists_importer_credential(monkeypatch, tmp_path):
+    import base64, hashlib
+    monkeypatch.setenv('HP_SOURCE_API_URL', 'https://catalog.example.test/')
+    token='private-reader-credential-'+'x'*40
+    monkeypatch.setenv('HP_SOURCE_API_TOKEN', token)
+    raw=FIXTURE.encode()
+    payload=dict(url=URL,final_url=URL,status=200,redirects=[],content_type='text/html',bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest(),fetched_at='2026-11-17T00:00:00Z',body_base64=base64.b64encode(raw).decode())
+    requests=[]
+    def read(request, **kwargs):
+        requests.append(request)
+        assert request.full_url=='https://catalog.example.test/admin/api/catalog/hp-source'
+        assert json.loads(request.data)==dict(url=URL)
+        assert request.get_header('Authorization')=='Bearer '+token
+        return io.BytesIO(json.dumps(payload).encode())
+    monkeypatch.setattr(hp.urllib.request,'urlopen',read)
+    client=hp.Client(tmp_path, interval_from_start=True)
+    data,info=client.get(URL)
+    assert data==raw and info['url']==URL and info['transport']=='catalogue_api_cn'
+    assert token not in json.dumps(client.requests)
+    assert (tmp_path/(payload['sha256']+'.bin')).read_bytes()==raw
+    payload['sha256']='0'*64
+    import pytest
+    with pytest.raises(ValueError,match='digest mismatch'):
+        hp.Client(interval_from_start=True).get(URL)
+
+
+def test_domestic_reader_transport_rejection_is_not_misreported_as_official_403(monkeypatch):
+    import pytest
+    monkeypatch.setenv('HP_SOURCE_API_URL', 'https://catalog.example.test/')
+    monkeypatch.setenv('HP_SOURCE_API_TOKEN', 'x'*64)
+    def denied(*args,**kwargs):
+        raise hp.HTTPError('https://catalog.example.test/admin/api/catalog/hp-source',403,'Denied',{},None)
+    monkeypatch.setattr(hp.urllib.request,'urlopen',denied)
+    with pytest.raises(RuntimeError,match='HP source reader HTTP 403'):
+        hp.Client(interval_from_start=True).get(URL)

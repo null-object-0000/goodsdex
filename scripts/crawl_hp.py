@@ -6,6 +6,8 @@ Requires Pillow for decoding/validating images (python3 -m pip install Pillow).
 """
 from __future__ import annotations
 import argparse
+import base64
+import os
 from copy import deepcopy
 import hashlib
 import html
@@ -77,6 +79,32 @@ class Client:
         self.last = {}
         self.raw = raw
         self.requests = []
+        self.relay_url = os.environ.get('HP_SOURCE_API_URL')
+        self.relay_token = os.environ.get('HP_SOURCE_API_TOKEN')
+        if self.relay_url:
+            parsed = urlparse(self.relay_url)
+            if parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password or parsed.query or parsed.fragment or not self.relay_token or len(self.relay_token) < 32:
+                raise ValueError('A trusted HTTPS HP source reader and importer credential are required')
+
+    def _read_domestic(self, url):
+        request = urllib.request.Request(urljoin(self.relay_url, '/admin/api/catalog/hp-source'),
+            data=json.dumps({'url': url}).encode(),
+            headers={'Authorization': 'Bearer ' + self.relay_token, 'Content-Type': 'application/json'})
+        try:
+            with urllib.request.urlopen(request, timeout=50) as response:
+                payload = json.load(response)
+        except HTTPError as exc:
+            raise RuntimeError('HP source reader HTTP ' + str(exc.code)) from None
+        data = base64.b64decode(payload['body_base64'], validate=True)
+        if payload['url'] != url or payload['bytes'] != len(data) or payload['sha256'] != hashlib.sha256(data).hexdigest():
+            raise ValueError('HP source reader evidence digest mismatch')
+        if urlparse(payload['final_url']).hostname != 'www.hpstore.cn':
+            raise ValueError('Unexpected HP source reader destination')
+        info = {k:payload[k] for k in ('url','final_url','status','redirects','content_type','bytes','sha256','fetched_at')}
+        info['transport'] = 'catalogue_api_cn'
+        if payload['status'] >= 400:
+            raise HTTPError(payload['final_url'], payload['status'], 'Official HP source HTTP ' + str(payload['status']), payload.get('headers', {}), io.BytesIO(data))
+        return data, info
     def get(self, url):
         for attempt in range(3):
             try:
@@ -95,12 +123,15 @@ class Client:
         if self.interval_from_start:
             self.last[host] = time.monotonic()
         try:
-            redirects = RedirectEvidence()
-            with urllib.request.build_opener(redirects).open(urllib.request.Request(url, headers={'User-Agent': ('GoodsDex/1.0 (public computer catalogue; daily)' if attempt == 0 else 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36')}), timeout=45) as r:
-                data = r.read()
-                info = dict(url=url, final_url=r.url, status=r.status, redirects=redirects.redirects,
-                            content_type=r.headers.get('Content-Type',''), bytes=len(data),
-                            sha256=hashlib.sha256(data).hexdigest(), fetched_at=datetime.now(timezone.utc).isoformat())
+            if self.relay_url and host == 'www.hpstore.cn' and urlparse(url).path.endswith('.html'):
+                data, info = self._read_domestic(url)
+            else:
+                redirects = RedirectEvidence()
+                with urllib.request.build_opener(redirects).open(urllib.request.Request(url, headers={'User-Agent': ('GoodsDex/1.0 (public computer catalogue; daily)' if attempt == 0 else 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36')}), timeout=45) as r:
+                    data = r.read()
+                    info = dict(url=url, final_url=r.url, status=r.status, redirects=redirects.redirects,
+                                content_type=r.headers.get('Content-Type',''), bytes=len(data),
+                                sha256=hashlib.sha256(data).hexdigest(), fetched_at=datetime.now(timezone.utc).isoformat())
         except HTTPError as exc:
             self.requests.append(dict(
                 url=url, status=exc.code, fetched_at=datetime.now(timezone.utc).isoformat(),
@@ -385,7 +416,7 @@ def main():
     status = dict(conclusion='degraded' if blocked else ('failure' if errors else 'success'),
                   error='blocked: 403 from hpstore.cn' if blocked else None,
                   checked_at=audit['fetched_at'], count=len(rows), requests=client.requests,
-                  retry_policy='daily at 04:43 UTC (12:43 Asia/Shanghai)')
+                  retry_policy='weekly Sunday at 04:43 UTC (12:43 Asia/Shanghai)')
     write_json(args.out/'collection-status.json', status)
     print('GOODSDEX_SOURCE_STATUS=' + json.dumps(status, ensure_ascii=False), flush=True)
     # Workflow success means an unavailable source was handled; never freshness.
