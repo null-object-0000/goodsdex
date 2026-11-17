@@ -8,6 +8,7 @@ import {gzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {atourIdentity} from '../scripts/atour-name-update.mjs';
+import {hpIdentity} from '../scripts/hp-name-update.mjs';
 test('Atour title updates require a fresh official observation bound to the unchanged SPU and SKU',()=>{
   const {before,after}=JSON.parse(readFileSync(new URL('./fixtures/atour-name-update.json',import.meta.url)));
   const baseline={rows:[{id:before.id,sha256:hash(before),identity:{name:before.name,...atourIdentity(before)}}]};
@@ -53,4 +54,13 @@ test('Price history sends stable compressed chunks and only the appended tail on
   rows.push(JSON.stringify({gid:'CN:mi_cn:1',at:'2026-11-08T02:00:00Z',price:20,currency:'CNY',price_type:'price'}));meta=await save();
   assert.equal((await publishHistory({root,meta,baseline,request,dryRun:false})).chunks,1);
   assert.equal(requests.at(-1).jsonl.trim().split('\n').length,2);
+});
+
+test('HP name corrections bind the same SKU to fresh matching context, specification and derived configuration',()=>{
+ const {before,after}=JSON.parse(readFileSync(new URL('./fixtures/hp-name-update.json',import.meta.url)));
+ const baseline={rows:[{id:before.id,sha256:hash(before),identity:{name:before.name,product_id:before.product_id,...hpIdentity(before)}}]};
+ assert.deepEqual(plan([after],baseline),[after]);
+ for(const damage of [r=>delete r.name_evidence,r=>r.name_evidence.context_sku='OTHERPA',r=>r.name_evidence.specs['CPU型号']='wrong',r=>r.name='different computer',r=>r.fetched_at=before.fetched_at,r=>r.product_id+='another']){
+  const row=structuredClone(after);damage(row);assert.throws(()=>plan([row],baseline),/Source identity changed/);
+ }
 });

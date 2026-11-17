@@ -239,6 +239,9 @@ def parse_product(text, url, fetched_at):
                price_kind='store_sale' if price is not None else None,currency='CNY',
                price_fetched_at=fetched_at if price is not None else None,
                market_price=None,image=None,fetched_at=fetched_at,params=params)
+    row['name_evidence']=dict(kind='hp_official_sku',sha256=hashlib.sha256(text.encode()).hexdigest(),
+        source_url=url,captured_at=fetched_at,context_sku=source['sku'],specification_sku=p['SKU'],
+        source_name=source_name,specs={k:params[k] for k in CORE})
     # Search shorthand only: never relabel a new 星Book as an old 星14 Pro.
     star = re.search(r'星(?:Book)?(.*?)\s*(\d+(?:\.\d+)?)英寸',model,re.I)
     if star:

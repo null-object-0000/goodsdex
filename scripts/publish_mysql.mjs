@@ -7,6 +7,7 @@ import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {spawnSync} from 'node:child_process';
 import {canUpdateAtourName} from './atour-name-update.mjs';
+import {canUpdateHpName} from './hp-name-update.mjs';
 
 export function canonical(v){return Array.isArray(v)?v.map(canonical):v&&typeof v==='object'?Object.fromEntries(Object.keys(v).sort().map(k=>[k,canonical(v[k])])):v;}
 export const hash=v=>createHash('sha256').update(JSON.stringify(canonical(v))).digest('hex');
@@ -20,7 +21,7 @@ export function plan(rows,baseline) {
     const old=known.get(row.id);
     if(old?.sha256===hash(row))continue;
     for(const key of ['name','gid','product_id'])if(old?.identity?.[key]!=null&&normalized(old.identity[key])!==normalized(row[key])) {
-      if(key==='name' && canUpdateAtourName({id:old.id,...old.identity},row))continue;
+      if(key==='name' && (canUpdateAtourName({id:old.id,...old.identity},row)||canUpdateHpName({id:old.id,...old.identity},row)))continue;
       throw Error(`Source identity changed: ${row.id} (${key}); evidence review required, no batches uploaded`);
     }
     changed.push(row);
