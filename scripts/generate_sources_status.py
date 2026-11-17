@@ -6,12 +6,14 @@ import json
 import os
 from pathlib import Path
 import re
-import re
 from urllib.error import HTTPError
 from urllib.request import Request, build_opener, HTTPRedirectHandler, urlopen
 
-SOURCES = [('refresh-prices', 60), ('refresh-apple', 60), ('refresh-hp', 1440), ('refresh-atour', 1440),
-           ('refresh-cars', 1440), ('publish-release', None)]
+_REGISTRY = json.loads((Path(__file__).resolve().parents[1] / 'data/official/sources-registry.json').read_text())
+_PERIODS = {row['workflow']: row['period_minutes'] for row in _REGISTRY}
+SOURCES = [(source, _PERIODS[source + '.yml']) for source in
+           ('refresh-prices', 'refresh-apple', 'refresh-hp', 'refresh-atour', 'refresh-cars')]
+SOURCES.append(('publish-release', None))
 
 
 class NoRedirect(HTTPRedirectHandler):

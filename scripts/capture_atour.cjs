@@ -1,24 +1,39 @@
 /* Anonymous official H5 reader. Never persists headers, cookies, storage or tokens. */
 const fs = require('node:fs');
-const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
-const out = process.argv[2];
-if (!out) throw Error('Output JSON required');
-function saveBusiness(value) {
+const READ_PATHS = new Set([
+ '/common/getPublicKey/v1', '/index/getConfig',
+ '/goods/spu/pageByParam', '/goods/spu/pageByParam/v1',
+ '/goods/spu/getNewDetailById', '/goods/spu/getNewDetail/v1',
+ '/goods/sku/getGoodsSkuPanelBySpuId', '/goods/sku/getGoodsSkuPanel/v1',
+]);
+function skipResource(url, type) {
+ const u = new URL(url);
+ return ['image', 'media', 'font'].includes(type) ||
+  (u.hostname === 'oss-front-code-prod-c.yaduo.com' && u.pathname.startsWith('/manual/collect-privity'));
+}
+function saveBusiness(out, value) {
  const check=x=>{if(Array.isArray(x))x.forEach(check);else if(x&&typeof x==='object')for(const [k,v] of Object.entries(x)){
   if(/cookie|token|authorization|unionid/i.test(k))throw Error('Credential-bearing payload must not be stored');
   check(v);
  }};
  check(value);fs.writeFileSync(out,JSON.stringify(value,null,2)+'\n');
 }
-(async()=>{
+async function capture(out) {
+ const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH || undefined,headless:true,args:['--no-sandbox']});
  try {
   const context=await browser.newContext();
+  // The synchronous analytics script can stall DOMContentLoaded from Actions.
+  // It is unrelated to the anonymous catalogue reader and is never collected.
+  await context.route('**/*', async route => {
+   if (skipResource(route.request().url(), route.request().resourceType())) await route.abort();
+   else await route.continue();
+  });
   let chain=Promise.resolve(), last=0; const requests=[];
   await context.route('https://api-shoppingmall.yaduo.com/**', async route=>{
    // Only storefront reads used by the official anonymous page are permitted.
    const req=route.request(), u=new URL(req.url());
-   if (!['/common/getPublicKey/v1','/index/getConfig','/goods/spu/pageByParam','/goods/spu/getNewDetailById','/goods/sku/getGoodsSkuPanelBySpuId'].includes(u.pathname)) {await route.abort();return;}
+   if (!READ_PATHS.has(u.pathname) || !['GET', 'POST'].includes(req.method())) {await route.abort();return;}
    const previous=chain; let done; chain=new Promise(r=>done=r);
    await previous;
    try {
@@ -65,8 +80,14 @@ function saveBusiness(value) {
    entries.push({listing:p,panel,detail,captured_at:new Date().toISOString()});
    console.log(p.id,p.spuName,panel.skuVOS.length);
    // Persist business objects only; no request/response envelopes or browser state.
-   saveBusiness({complete:false,pages,entries,requests});
+   saveBusiness(out,{complete:false,pages,entries,requests});
   }
-  saveBusiness({complete:true,pages,entries,requests,captured_at:new Date().toISOString()});
+  saveBusiness(out,{complete:true,pages,entries,requests,captured_at:new Date().toISOString()});
  }finally{await browser.close();}
-})().catch(e=>{console.error(e);process.exitCode=1;});
+}
+module.exports = {READ_PATHS, skipResource};
+if (require.main === module) {
+ const out = process.argv[2];
+ if (!out) throw Error('Output JSON required');
+ capture(out).catch(e=>{console.error(e);process.exitCode=1;});
+}

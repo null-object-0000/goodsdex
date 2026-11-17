@@ -49,17 +49,17 @@ def test_without_token_is_explicit_unknown_for_all_sources():
 
 
 def test_latest_failure_retains_real_previous_success_and_first_error():
-    api = API(run(result='failure'), run(id=98, at='2026-11-03T15:00:00Z'))
+    api = API(run(result='failure'), run(id=98, at='2026-11-01T15:00:00Z'))
     rows = generate('o/r', 'test-token', NOW, api)['sources']
     row = rows[0]
     assert row['conclusion'] == 'failure'
     assert row['lastAttemptAt'] == '2026-11-03T19:00:00Z'
-    assert row['lastSuccessAt'] == '2026-11-03T15:00:00Z'
+    assert row['lastSuccessAt'] == '2026-11-01T15:00:00Z'
     assert row['runUrl'].endswith('/100')
     assert row['error'] == 'first failure'
     assert row['stale'] is True
-    assert row['staleReason'] == '已 5.0 小时无成功运行（预期每 60 分钟）'
-    assert rows[3]['stale'] is False  # daily cars, not hourly
+    assert row['staleReason'] == '已 53.0 小时无成功运行（预期每 1440 分钟）'
+    assert rows[3]['stale'] is False  # weekly Atour, not hourly
     assert rows[-1]['expectedIntervalMinutes'] is None
 
 
@@ -175,7 +175,7 @@ def test_hp_degraded_is_not_a_successful_observation():
     class HP(API):
         def pages(self, path, key):
             if key == 'workflow_runs':
-                return iter([run(id=100), run(id=98, at='2026-10-30T23:23:00Z')])
+                return iter([run(id=100), run(id=98, at='2026-10-10T23:23:00Z')])
             return iter([dict(id=100 if '/100/' in path else 98, name='collect')])
         def get(self, path, raw=False):
             if '/logs' in path:
@@ -185,8 +185,8 @@ def test_hp_degraded_is_not_a_successful_observation():
     row = generate('o/r', 'test-token', NOW, HP())['sources'][2]
     assert row['conclusion'] == 'degraded'
     assert row['error'] == 'blocked: 403 from hpstore.cn'
-    assert row['lastSuccessAt'] == '2026-10-30T23:23:00Z'
-    assert row['expectedIntervalMinutes'] == 1440
+    assert row['lastSuccessAt'] == '2026-10-10T23:23:00Z'
+    assert row['expectedIntervalMinutes'] == 10080
     assert row['stale']
 
 

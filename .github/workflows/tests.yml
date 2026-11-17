@@ -25,6 +25,7 @@ jobs:
         with:
           node-version: 24
       - run: node --test tests/test_publish_mysql.mjs
+      - run: node --test tests/test_capture_atour.cjs
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
