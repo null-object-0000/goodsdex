@@ -11,12 +11,18 @@
    "desc": "",
    "model": "mibx5.fridge.bd47m",
    "ptId": 32,
-   "changeTime": 1794879591,
+   "changeTime": 1794894000,
    "categoryName": "冰箱",
    "brand_ids": [
     1520
    ],
-   "classifications": []
+   "classifications": [
+    {
+     "brand_id": 1520,
+     "id": 3,
+     "name": "厨房电器"
+    }
+   ]
   },
   {
    "pdId": 40281,
@@ -2135,29 +2141,6 @@
    ]
   },
   {
-   "pdId": 35233,
-   "name": "米家智能空气炸锅P1 6.5L",
-   "icon": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/41fb6b4bb810510ce8e387c2e6c0d0a6_1775540885560.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=v4JZ8VbvxiyoBffa1N90GyugWfQ=",
-   "jumpUrl": "https://home.mi.com/webapp/content/baike/product/index.html?model=xiaomi.fryer.maf16j#/",
-   "score": null,
-   "price": null,
-   "desc": "烹饪免翻面 精烤烹饪曲线 高效速烤 40-230℃电子控温 APP智能操控",
-   "model": "xiaomi.fryer.maf16j",
-   "ptId": 223,
-   "changeTime": 1788243000,
-   "categoryName": "空气炸锅",
-   "brand_ids": [
-    1520
-   ],
-   "classifications": [
-    {
-     "brand_id": 1520,
-     "id": 3,
-     "name": "厨房电器"
-    }
-   ]
-  },
-  {
    "pdId": 30341,
    "name": "米家洗衣机 迷你双区洗 洗烘5kg",
    "icon": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/2319c8e66c371e08a7dc66e9738e7b11_1782386059278.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=nY01Itj1p8Xh42pP7Jyv9im2w7U=",
@@ -3498,7 +3481,7 @@
    "jumpUrl": "https://home.mi.com/webapp/content/baike/product/index.html?model=xiaomi.pre_cooker.eh2#/",
    "score": "75",
    "price": null,
-   "desc": "",
+   "desc": "IH高压15分钟脱骨，0氟涂层健康双胆，智能无级调压，双重泄压速排。",
    "model": "xiaomi.pre_cooker.eh2",
    "ptId": 133,
    "changeTime": 1782125400,
@@ -4364,6 +4347,23 @@
      "name": "厨房电器"
     }
    ]
+  },
+  {
+   "pdId": 33621,
+   "name": "米家冰箱Pro 对开620L",
+   "icon": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/f563bd6488a4874c35991c0c1e1053b3_1775186778506.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=sGE7G/nghesGR6pD2YDMHf03yvk=",
+   "jumpUrl": "https://home.mi.com/webapp/content/baike/product/index.html?model=mibx5.fridge.bd47j#/",
+   "score": "100",
+   "price": null,
+   "desc": "",
+   "model": "mibx5.fridge.bd47j",
+   "ptId": 32,
+   "changeTime": 1779104400,
+   "categoryName": "冰箱",
+   "brand_ids": [
+    1520
+   ],
+   "classifications": []
   },
   {
    "pdId": 34346,
@@ -8488,7 +8488,7 @@
    "icon": "https://cnbj1.fds.api.xiaomi.com/iotweb-product-center/25117.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=Lw+jmjiE6A7OMSEaX4z56V32d6w=",
    "jumpUrl": "https://home.mi.com/webapp/content/baike/product/index.html?model=xiaomi.humidifier.600#/",
    "score": "63",
-   "price": "419",
+   "price": "499",
    "desc": "",
    "model": "xiaomi.humidifier.600",
    "ptId": 49,
@@ -10260,7 +10260,7 @@
    "jumpUrl": "https://home.mi.com/webapp/content/baike/product/index.html?model=xiaomi.projector.rm3lit#/",
    "score": "91",
    "price": null,
-   "desc": "",
+   "desc": "定制密闭式光机，1080P物理分辨率，无感自动校正，无感自动对焦",
    "model": "xiaomi.projector.rm3lit",
    "ptId": 146,
    "changeTime": 1745286600,
@@ -12719,7 +12719,7 @@
    "name": "米家智能顶侧双吸油烟机S2",
    "icon": "https://cnbj1.fds.api.xiaomi.com/iotweb-product-center/15995.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=0L9SIlj/FVcWHL++jAU6JROHRPs=",
    "jumpUrl": "https://home.mi.com/webapp/content/baike/product/index.html?model=xiaomi.hood.ymv8#/",
-   "score": "56",
+   "score": "57",
    "price": "2599",
    "desc": "平齐橱柜、智能升降、烟灶联动、 智能干洗",
    "model": "xiaomi.hood.ymv8",
@@ -13332,6 +13332,29 @@
      "brand_id": 1520,
      "id": 20,
      "name": "清洁电器"
+    }
+   ]
+  },
+  {
+   "pdId": 18475,
+   "name": "米家智能空气炸锅P1 6.5L",
+   "icon": "https://cnbj1.fds.api.xiaomi.com/iotweb-product-center/18475.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=e1cml6IqlgD0T17b9qz6tDN8noI=",
+   "jumpUrl": "https://home.mi.com/webapp/content/baike/product/index.html?model=xiaomi.fryer.maf16#/",
+   "score": "91",
+   "price": null,
+   "desc": "烹饪免翻面 精烤烹饪曲线 高效速烤 40-230℃电子控温 APP智能操控",
+   "model": "xiaomi.fryer.maf16",
+   "ptId": 223,
+   "changeTime": 1723011000,
+   "categoryName": "空气炸锅",
+   "brand_ids": [
+    1520
+   ],
+   "classifications": [
+    {
+     "brand_id": 1520,
+     "id": 3,
+     "name": "厨房电器"
     }
    ]
   },
@@ -23253,7 +23276,7 @@
    "name": "小米室外摄像机电池版（摄像机）",
    "icon": "https://cnbj1.fds.api.xiaomi.com/iotweb-product-center/69960.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=MKVlrBnGhOr+/mlYZNhZbOk+Jzc=",
    "jumpUrl": "https://home.mi.com/webapp/content/baike/product/index.html?model=mxiang.camera.mwc11#/",
-   "score": "24",
+   "score": "25",
    "price": null,
    "desc": "IP65级防尘防水设计， 130度广角视野",
    "model": "mxiang.camera.mwc11",
@@ -29367,17 +29390,17 @@
    ]
   },
   {
-   "pdId": 33621,
-   "name": "米家冰箱Pro 对开620L",
-   "icon": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/f563bd6488a4874c35991c0c1e1053b3_1775186778506.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=sGE7G/nghesGR6pD2YDMHf03yvk=",
-   "jumpUrl": "https://home.mi.com/webapp/content/baike/product/index.html?model=mibx5.fridge.bd47j#/",
-   "score": "100",
+   "pdId": 35233,
+   "name": "米家智能空气炸锅P1 6.5L",
+   "icon": "https://cdn.cnbj1.fds.api.mi-img.com/iotweb-product-center/41fb6b4bb810510ce8e387c2e6c0d0a6_1775540885560.png?GalaxyAccessKeyId=AKVGLQWBOVIRQ3XLEW&Expires=9223372036854775807&Signature=v4JZ8VbvxiyoBffa1N90GyugWfQ=",
+   "jumpUrl": "https://home.mi.com/webapp/content/baike/product/index.html?model=xiaomi.fryer.maf16j#/",
+   "score": null,
    "price": null,
-   "desc": "",
-   "model": "mibx5.fridge.bd47j",
-   "ptId": 32,
-   "changeTime": 1779104400,
-   "categoryName": "冰箱",
+   "desc": "烹饪免翻面 精烤烹饪曲线 高效速烤 40-230℃电子控温 APP智能操控",
+   "model": "xiaomi.fryer.maf16j",
+   "ptId": 223,
+   "changeTime": 1788243000,
+   "categoryName": "空气炸锅",
    "brand_ids": [
     1520
    ],
