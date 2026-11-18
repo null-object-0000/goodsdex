@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-18T01:11:10Z",
+  "generatedAt": "2026-11-18T01:24:04Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
       "expectedIntervalMinutes": 1440,
       "lastAttemptAt": "2026-11-18T01:01:55Z",
-      "lastSuccessAt": "2026-11-17T02:10:21Z",
-      "conclusion": "in_progress",
+      "lastSuccessAt": "2026-11-18T01:19:18Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/44212613719",
       "error": null,
       "stale": false,
@@ -30,12 +30,12 @@
       "workflow": ".github/workflows/refresh-hp.yml",
       "expectedIntervalMinutes": 10080,
       "lastAttemptAt": "2026-11-17T05:46:15Z",
-      "lastSuccessAt": null,
-      "conclusion": "unknown",
+      "lastSuccessAt": "2026-11-17T05:58:21Z",
+      "conclusion": "success",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/44023131361",
-      "error": "GitHub 状态读取失败（HTTPError）",
-      "stale": true,
-      "staleReason": "无可确认的成功运行（预期每 10080 分钟）"
+      "error": null,
+      "stale": false,
+      "staleReason": null
     },
     {
       "sourceId": "refresh-atour",
