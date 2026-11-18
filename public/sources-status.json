@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-17T05:50:20Z",
+  "generatedAt": "2026-11-18T01:11:10Z",
   "sources": [
     {
       "sourceId": "refresh-prices",
       "workflow": ".github/workflows/refresh-prices.yml",
       "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-17T01:53:59Z",
+      "lastAttemptAt": "2026-11-18T01:01:55Z",
       "lastSuccessAt": "2026-11-17T02:10:21Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43999009209",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/44212613719",
       "error": null,
       "stale": false,
       "staleReason": null
@@ -17,10 +17,10 @@
       "sourceId": "refresh-apple",
       "workflow": ".github/workflows/refresh-apple.yml",
       "expectedIntervalMinutes": 1440,
-      "lastAttemptAt": "2026-11-17T01:56:02Z",
+      "lastAttemptAt": "2026-11-18T01:07:44Z",
       "lastSuccessAt": "2026-11-17T02:22:22Z",
-      "conclusion": "success",
-      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/43999252032",
+      "conclusion": "in_progress",
+      "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/44213379013",
       "error": null,
       "stale": false,
       "staleReason": null
@@ -30,12 +30,12 @@
       "workflow": ".github/workflows/refresh-hp.yml",
       "expectedIntervalMinutes": 10080,
       "lastAttemptAt": "2026-11-17T05:46:15Z",
-      "lastSuccessAt": "2026-11-08T09:33:11Z",
-      "conclusion": "in_progress",
+      "lastSuccessAt": null,
+      "conclusion": "unknown",
       "runUrl": "https://github.com/null-object-0000/goodsdex/actions/runs/44023131361",
-      "error": null,
-      "stale": false,
-      "staleReason": null
+      "error": "GitHub 状态读取失败（HTTPError）",
+      "stale": true,
+      "staleReason": "无可确认的成功运行（预期每 10080 分钟）"
     },
     {
       "sourceId": "refresh-atour",
