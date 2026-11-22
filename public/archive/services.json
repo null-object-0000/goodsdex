@@ -900,5 +900,56 @@
   "image_note": "$.data.goodsInfo.goodsList[0].imgUrl; exact productId=24837",
   "brand": "小米",
   "brand_source": "id_prefix"
+ },
+ {
+  "id": "CN:mi_cn:product:25963",
+  "name": "Xiaomi 18 9.9元预约福袋",
+  "kind": "machine",
+  "category": "Xiaomi 数字旗舰",
+  "categories": [
+   "Xiaomi 数字旗舰"
+  ],
+  "price": 9.9,
+  "market_price": 9.9,
+  "gid": 2230017487,
+  "image": "https://cdn.cnbj1.fds.api.mi-img.com/nr-upload-outer/F138DD88A9865C438E63F180165AC78D_1795094793523.png",
+  "fetched_at": "2026-11-22T07:58:58+08:00",
+  "params": {
+   "pc_main_images": [
+    {
+     "url": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1795082516.47686066.png",
+     "locator": "$.data.goods_list[0].goods_info.imgs[0]"
+    }
+   ]
+  },
+  "name_source": {
+   "kind": "official_page_title",
+   "url": "https://www.mi.com/shop/buy/detail?product_id=25963",
+   "capture_id": "99fdca504fe9",
+   "requested_at": "2026-11-22T07:59:02+08:00",
+   "sha256": "cae99fc396f7e9b2",
+   "product_id": "25963",
+   "identity_verified": true,
+   "title": "Xiaomi 18 9.9元预约福袋立即购买-小米商城"
+  },
+  "source_url": "https://www.mi.com/shop/buy/detail?product_id=25963",
+  "on_sale": true,
+  "is_accessory": false,
+  "image_status": "available",
+  "image_checked_at": "2026-11-22T07:59:03+08:00",
+  "image_source": "mi_cn_mtop_cover",
+  "image_source_url": "https://m.mi.com/mtop/xiaomishop/product/info",
+  "image_captured_at": "2026-11-22T07:59:03+08:00",
+  "image_scope": "model",
+  "image_note": "$.data.goodsInfo.goodsList[0].imgUrl; exact productId=25963",
+  "release_decision": {
+   "date": null,
+   "precision": null,
+   "source": null,
+   "display": null,
+   "usage": []
+  },
+  "brand": "小米",
+  "brand_source": "id_prefix"
  }
 ]
